@@ -1,0 +1,64 @@
+
+<html>
+<body>
+
+<canvas id="canvas" width="2700" height="2700"></canvas>
+<div style="display:none;">
+<img id="set" src="screenshot0.png">
+</div>
+
+<canvas id="myCanvas" style="border:1px solid #d3d3d3;background:#ffffff;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+window.onload = function() {
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var image = document.getElementById('set');
+
+
+
+
+for (i = 0; i < 10; i++){
+for (j = 0; j < 20; j++){
+	var si = 5;
+	var sj = 2;
+	ctx.drawImage(image, si * 32, sj * 32, 32, 32, 32*i, 32*j, 32, 32);
+}
+}
+
+
+ctx.drawImage(image,400,0);
+
+// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation
+
+
+
+
+
+c= getRandomColor();
+ctx.globalCompositeOperation = 'hue';
+ctx.fillStyle=getRandomColor() + "40";
+ctx.fillRect(0,0,150,500);
+ctx.fillRect(400,0,250,500);
+
+ctx.globalCompositeOperation = 'color';
+ctx.fillStyle=getRandomColor() + "50";
+ctx.fillRect(0,0,150,500);
+ctx.fillRect(400,0,250,500);
+
+
+}
+
+</script>
+</body>
+</html>
