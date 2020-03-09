@@ -40,7 +40,10 @@ class Color {
       this.b = validate(b);
     }
 
-    toHsv(r, g, b) {
+    toHsv() {
+      var r = this.r;
+      var g = this.g;
+      var b = this.b;
       r /= 255, g /= 255, b /= 255;
 
       var max = Math.max(r, g, b), min = Math.min(r, g, b);
@@ -86,7 +89,6 @@ class Color {
 
     hoffset(i) {
       var h = this.toHsv();
-
       var s = h[1];// - ((h[1] > 0.5) * 2 - 1) * i;
       var v = h[2] - ((h[2] > 0.5) * 2 - 1) * i;
 

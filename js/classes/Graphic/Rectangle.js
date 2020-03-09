@@ -1,16 +1,16 @@
-// use(LEVEL)
+// use(VisualElement)
 
-class Rectangle {
+class Rectangle extends VisualElement {
     constructor(x, y, w, h, color) {
+        super(x,y,w,h);
 
-        var html_element = document.createElement('div');
-        html_element.style.position = "absolute";
-        html_element.style.top = y + "px";
-        html_element.style.left = x + "px";
-        html_element.style.width = w + "px";
-        html_element.style.height = h + "px";
-        html_element.style.backgroundColor = color;
+        var html_rectangle = document.createElement('div');
+        html_rectangle.style.backgroundColor = color;
+        html_rectangle.style.width = "100%";
+        html_rectangle.style.height = "100%";
+        html_rectangle.style.zIndex = -1;
+        this.container.style.zIndex = -1;
 
-        LEVEL.html().appendChild(html_element);
+        this.container.appendChild(html_rectangle);
     }
 }
