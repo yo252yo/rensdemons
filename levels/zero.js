@@ -18,3 +18,9 @@ new Rectangle(10,450,500,400, color2.code());
 (new StaticSprite("testing/house.png", color4.code())).move(150,30);
 
 (new StaticSprite("testing/tree.png", color3.code())).move(240,280);
+
+/*
+var style = document.createElement('style');
+style.innerHTML = "div{ border-style: dotted; }";
+document.body.appendChild(style);
+*/
