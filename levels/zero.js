@@ -1,8 +1,8 @@
 
-var color1 = Color.random();
-var color2 = color1.opposite();
-var color3 = color2.hoffset(0.3);
-var color4 = color3.hoffset(0.2);
+var color2 = Color.random().hoffset(0.4);
+var color1 = color2.opposite();
+var color3 = color2.hoffset(-0.25);
+var color4 = color3.hoffset(-0.15);
 
 document.body.style.backgroundColor = color1.code();
 

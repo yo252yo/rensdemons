@@ -89,8 +89,25 @@ class Color {
 
     hoffset(i) {
       var h = this.toHsv();
+      var mod = 1;
+
+      //if (!strict && h[2] > 0.5) { mod = -1; }
+
       var s = h[1];// - ((h[1] > 0.5) * 2 - 1) * i;
-      var v = h[2] - ((h[2] > 0.5) * 2 - 1) * i;
+      var v = h[2] + i;
+
+//      var si = h[1] + h[2] > 1;
+  //    var s = h[1] - (si * 2 - 1) * i;
+    //  var v = h[2] - (si * 2 - 1) * i;
+
+      return Color.fromHsv(h[0], s, v);
+    }
+
+    hmoffset(i) {
+      var h = this.toHsv();
+
+      var s = h[1];// - ((h[1] > 0.5) * 2 - 1) * i;
+      var v = h[2] * i;
 
 //      var si = h[1] + h[2] > 1;
   //    var s = h[1] - (si * 2 - 1) * i;
