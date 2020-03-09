@@ -8,19 +8,25 @@ document.body.style.backgroundColor = color_player.code();
 
 new Rectangle(10,450,500,400, color_background.code());
 
-(new StaticSprite("testing/char1.png", color_player.code())).move(100,100);
+(new StaticSprite("testing/char1.png", color_player.code())).place_at(50,50);
+//(new MovingSprite("testing/vx_chara01_a.png", color_player.code(), 32, 48)).place_at(100,100);
+/*
+ var a = (new MovingSprite("testing/vx_chara01_a.png", color_player.code(), 32, 48));
+ a.place_at(100,100);
+ a.move(1,0);
+*/
 
-(new StaticSprite("testing/tree.png", color_obj_light.code())).move(20,0);
-(new StaticSprite("testing/tree.png", color_obj_light.code())).move(150,30);
-(new StaticSprite("testing/tree.png", color_obj_light.code())).move(290,60);
+(new StaticSprite("testing/tree.png", color_obj_light.code())).place_at(20,0);
+(new StaticSprite("testing/tree.png", color_obj_light.code())).place_at(150,30);
+(new StaticSprite("testing/tree.png", color_obj_light.code())).place_at(290,60);
 
 
-(new StaticSprite("testing/house.png", color_obj_dark.code())).move(150,30);
+(new StaticSprite("testing/house.png", color_obj_dark.code())).place_at(150,30);
 
-(new StaticSprite("testing/tree.png", color_obj_light.code())).move(240,280);
+(new StaticSprite("testing/tree.png", color_obj_light.code())).place_at(240,280);
 
 /*
 var style = document.createElement('style');
-style.innerHTML = "div{ border-style: dotted; }";
+style.innerHTML = "div{ border: 3px dotted; margin:-3px; }";
 document.body.appendChild(style);
 */

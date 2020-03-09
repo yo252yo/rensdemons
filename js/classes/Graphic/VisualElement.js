@@ -16,7 +16,7 @@ class VisualElement {
         LEVEL.html().appendChild(this.container);
     }
 
-    move(x, y){
+    place_at(x, y){
       this.container.style.top = y + "px";
       this.container.style.left = x + "px";
     }

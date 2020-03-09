@@ -29,7 +29,8 @@ load_module("RESOURCES");
 load_module("LEVEL");
 
 load_class("Graphic/VisualElement"); // parent
-load_class("Graphic/CanvasElement"); 
+load_class("Graphic/CanvasElement");
 load_class("Graphic/Color");
 load_class("Graphic/Rectangle");
 load_class("Graphic/StaticSprite");
+load_class("Graphic/MovingSprite");

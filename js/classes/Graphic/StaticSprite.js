@@ -1,4 +1,4 @@
-// use(VisualElement)
+// use(CanvasElement)
 
 class StaticSprite extends CanvasElement {
     constructor(path, color) {
@@ -14,6 +14,6 @@ class StaticSprite extends CanvasElement {
       this.html_canvas.height = this.resource.height;
 
       this.html_canvas.getContext('2d').drawImage(this.resource, 0, 0);
-      super.draw();
+      super.tint();
     }
 }

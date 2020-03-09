@@ -13,7 +13,7 @@ class CanvasElement extends VisualElement {
         this.container.appendChild(this.html_canvas);
     }
 
-    draw() {
+    tint() {
       this.html_canvas.getContext('2d').globalCompositeOperation = 'source-in';
       this.html_canvas.getContext('2d').fillStyle = this.color;
       this.html_canvas.getContext('2d').fillRect(0, 0, this.html_canvas.width, this.html_canvas.height);
