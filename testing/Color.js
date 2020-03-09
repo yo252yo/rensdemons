@@ -64,6 +64,8 @@ class Color {
     }
 
     static random() {
+  //    var rand = hsvToRgb(Math.random(), Math.random(), Math.random());
+//      return new Color(rand[0], rand[1], rand[2]);
       return new Color(Color.r256(), Color.r256(), Color.r256());
     }
 
@@ -90,6 +92,10 @@ class Color {
 
       var s = h[1];// - ((h[1] > 0.5) * 2 - 1) * i;
       var v = h[2] - ((h[2] > 0.5) * 2 - 1) * i;
+
+//      var si = h[1] + h[2] > 1;
+  //    var s = h[1] - (si * 2 - 1) * i;
+    //  var v = h[2] - (si * 2 - 1) * i;
 
       var r = hsvToRgb(h[0], s, v);
       return new Color(r[0], r[1], r[2]);
