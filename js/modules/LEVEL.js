@@ -10,7 +10,7 @@ const LEVEL = {
 
       load_js("levels/" + name);
       console.log("- Loaded level " + name);
-  }
+  },
 
 
 };

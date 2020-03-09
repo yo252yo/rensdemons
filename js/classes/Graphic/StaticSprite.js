@@ -1,21 +1,6 @@
 // use(VisualElement)
 
 class StaticSprite extends VisualElement {
-  // TODO put resource in its own module
-    static get_resource(name) {
-        var resource = document.getElementById("R_" + name);
-        if (resource) {
-            return resource;
-        }
-        var resource = document.createElement("img");
-        resource.id = "R_" + name;
-        resource.src = name;
-        resource.style = "display:none;";
-
-        document.body.appendChild(resource);
-        return resource;
-    }
-
     constructor(path, color) {
         // TODO could be more meaningful
         super(0,0,0,0);
@@ -31,10 +16,9 @@ class StaticSprite extends VisualElement {
       this.html_canvas.style.position = "absolute";
       this.container.appendChild(this.html_canvas);
 
-      this.resource = StaticSprite.get_resource(this.path);
+      this.resource = RESOURCES.get_img(this.path);
       var thing_to_draw = this;
-      this.resource.addEventListener('load', function(){ thing_to_draw.draw(); });
-      this.draw(); // In case it's already loaded
+      RESOURCES.onload(this.resource, function(){ thing_to_draw.draw(); });
     }
 
     draw() {
