@@ -25,7 +25,8 @@ window.onload = function() {
 
 
 // All imports
-load_class("Color");
-load_class("GraphicElement");
+load_class("Graphic/Color");
+load_class("Graphic/Rectangle");
+load_class("Graphic/StaticSprite");
 
 load_module("LEVEL");

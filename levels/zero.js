@@ -6,17 +6,12 @@ var color4 = color3.hoffset(0.2);
 
 document.body.style.backgroundColor = color1.code();
 
-var char = new GraphicElement("testing/char1.png", color1.code());
-char.move(100,100);
+new Rectangle(10,10,500,400, color2.code());
 
-var tree = new GraphicElement("testing/tree.png", color3.code());
-tree.move(20,0);
+(new StaticSprite("testing/char1.png", color1.code())).move(100,100);
 
-var tree = new GraphicElement("testing/tree.png", color3.code());
-tree.move(200,30);
+(new StaticSprite("testing/tree.png", color3.code())).move(20,0);
+(new StaticSprite("testing/tree.png", color3.code())).move(200,30);
+(new StaticSprite("testing/tree.png", color3.code())).move(250,50);
 
-var tree = new GraphicElement("testing/tree.png", color3.code());
-tree.move(250,50);
-
-var h = new GraphicElement("testing/house.png", color4.code());
-h.move(250,50);
+(new StaticSprite("testing/house.png", color4.code())).move(250,50);

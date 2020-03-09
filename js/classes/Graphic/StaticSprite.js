@@ -1,6 +1,6 @@
 // use(LEVEL)
 
-class GraphicElement {
+class StaticSprite {
     static get_resource(name) {
         var resource = document.getElementById("R_" + name);
         if (resource) {
@@ -28,7 +28,7 @@ class GraphicElement {
       this.html_canvas.style.position = "absolute";
       LEVEL.html().appendChild(this.html_canvas);
 
-      this.resource = GraphicElement.get_resource(this.path);
+      this.resource = StaticSprite.get_resource(this.path);
       var thing_to_draw = this;
       this.resource.addEventListener('load', function(){ thing_to_draw.draw(); });
       this.draw(); // In case it's already loaded
