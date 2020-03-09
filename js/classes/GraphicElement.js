@@ -1,3 +1,5 @@
+// use(LEVEL)
+
 class GraphicElement {
     static get_resource(name) {
         var resource = document.getElementById("R_" + name);
@@ -24,7 +26,7 @@ class GraphicElement {
       this.html_canvas = document.createElement('canvas');
       this.html_canvas.id = "GE_" + this.id;
       this.html_canvas.style.position = "absolute";
-      document.body.appendChild(this.html_canvas);
+      LEVEL.html().appendChild(this.html_canvas);
 
       this.resource = GraphicElement.get_resource(this.path);
       var thing_to_draw = this;
