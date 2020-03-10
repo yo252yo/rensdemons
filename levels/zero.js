@@ -1,9 +1,7 @@
 
-document.body.style.backgroundColor = PALETTE.color_player.code();
 
-new Rectangle(10,450,500,400, PALETTE.color_background.code());
 
-(new StaticSprite("testing/char1.png", PALETTE.color_player.code())).place_at(50,150);
+
 //(new MovingSprite("testing/vx_chara01_a.png", color_player.code(), 32, 48)).place_at(100,100);
 /*
  var a = (new MovingSprite("testing/vx_chara01_a.png", color_player.code(), 32, 48));
@@ -13,14 +11,16 @@ new Rectangle(10,450,500,400, PALETTE.color_background.code());
 
 CHARACTER.initialize(100, 100);
 
-(new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code())).place_at(20,100);
-(new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code())).place_at(150,130);
-(new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code())).place_at(290,160);
+new S_Tree(20,100);
+new S_Tree(150,130);
+new S_Tree(290,160);
+new S_Tree(240,380);
+
+new S_House(160,350);
+
+new S_Floor(10,450,500,400);
 
 
-(new StaticSprite("testing/house.png", PALETTE.color_obj_dark.code())).place_at(160,350);
-
-(new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code())).place_at(240,380);
 
 /*
 var style = document.createElement('style');

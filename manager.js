@@ -79,8 +79,10 @@ new Class("Graphic/VisualElement");
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
 
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
-IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
+IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
+IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/Library_StaticSprites");
+IMPORTS.classes['Graphic/Rectangle'].child_class("Graphic/Library_Rectangles");
 
 // All inits
 new Import("startup");
