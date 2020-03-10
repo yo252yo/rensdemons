@@ -14,10 +14,24 @@ class Object {
     }
 
     adjust_hitbox(x,y,w,h){
-      this.h_x = x;
-      this.h_y = y;
-      this.h_w = w;
-      this.h_h = h;
+      this.h_x = x - CHARACTER.margin_right;
+      this.h_y = y + CHARACTER.margin_top;
+      this.h_w = w + CHARACTER.margin_left + CHARACTER.margin_right;
+      this.h_h = h + CHARACTER.margin_top + CHARACTER.margin_bottom;
+    }
+
+    draw_hitbox(){
+
+      var html_rectangle = document.createElement('div');
+      html_rectangle.style.top = (this.h_y - this.h_h) + "px";
+      html_rectangle.style.left = this.h_x + "px";
+      html_rectangle.style.width = this.h_w + "px";
+      html_rectangle.style.height = this.h_h + "px";
+      html_rectangle.style.position = "absolute";
+      html_rectangle.style.border = "3px dotted";
+      html_rectangle.style.margin = "-3px";
+
+      document.body.appendChild(html_rectangle);
     }
 
     is_walkable(x,y) {

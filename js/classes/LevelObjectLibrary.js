@@ -16,7 +16,7 @@ class S_Tree extends Object {
   constructor(x, y) {
     var visual = new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code());
     super(visual, x, y);
-    this.adjust_hitbox(x+20,y,20,40);
+    this.adjust_hitbox(x+20,y,20,15);
     //wrong ??
   }
 }
