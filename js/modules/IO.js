@@ -11,7 +11,7 @@ const IO = {
   },
 
   onClick: function(x,y){
-//      CHARACTER.move_to(destination_x, destination_Y);
+    LEVEL.click(x, y);
   },
 
   onPressKey: function(key){
@@ -38,16 +38,16 @@ const IO = {
 
       for (var key in IO._PRESSED_KEYS) {
           if (key === 'w' || key === 87) {
-              //CHARACTER.move_up();
+            LEVEL.up();
           }
           if (key === 's' || key === 83) {
-            //  CHARACTER.move_down();
+            LEVEL.down();
           }
           if (key === 'a' || key === 65) {
-            //  CHARACTER.move_left();
+            LEVEL.left();
           }
           if (key === 'd' || key === 68) {
-            //  CHARACTER.move_right();
+            LEVEL.right();
           }
       }
   },
