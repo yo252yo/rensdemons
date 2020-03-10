@@ -26,8 +26,9 @@ window.onload = function() {
 
 // All imports
 load_module("RESOURCES");
-load_module("LEVEL");
 load_module("IO");
+load_module("LEVEL");
+load_module("CHARACTER");
 
 
 load_class("Graphic/Color");

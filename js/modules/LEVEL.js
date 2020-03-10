@@ -1,3 +1,4 @@
+// use(CHARACTER)
 
 const LEVEL = {
   html: function(){
@@ -5,12 +6,15 @@ const LEVEL = {
   },
 
   load: function(name) {
-      // resets the level
-      LEVEL.html().innerHTML = "";
+      LEVEL.clear();
 
       load_js("levels/" + name);
       console.log("- Loaded level " + name);
   },
 
+  clear: function(){
+      LEVEL.html().innerHTML = "";
+      CHARACTER.clear();
+  }
 
 };

@@ -12,6 +12,7 @@ class StaticSprite extends CanvasElement {
       // Now that it's loaded we can measure.
       this.html_canvas.width = this.resource.width;
       this.html_canvas.height = this.resource.height;
+      super.adjust_dimensions(this.resource.width, this.resource.height);
 
       this.html_canvas.getContext('2d').drawImage(this.resource, 0, 0);
       super.tint();

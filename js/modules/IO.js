@@ -1,5 +1,4 @@
 
-
 const IO = {
   _PRESSED_KEYS: {},
 
@@ -28,17 +27,16 @@ const IO = {
   },
 
   keyManager: function(){
-      if ('escape' in _PRESSED_KEYS || 'esc' in _PRESSED_KEYS || 27 in _PRESSED_KEYS){
+      if ('escape' in IO._PRESSED_KEYS || 'esc' in IO._PRESSED_KEYS || 27 in IO._PRESSED_KEYS){
 
       }
-      if ('shift' in _PRESSED_KEYS || 16 in _PRESSED_KEYS){
+      if ('shift' in IO._PRESSED_KEYS || 16 in IO._PRESSED_KEYS){
           //CHARACTER.run();
       } else {
           //CHARACTER.walk();
       }
 
-      for (var key in _PRESSED_KEYS) {
-
+      for (var key in IO._PRESSED_KEYS) {
           if (key === 'w' || key === 87) {
               //CHARACTER.move_up();
           }

@@ -7,6 +7,7 @@ class MovingSprite extends CanvasElement {
       super(color);
       this.width = width;
       this.height = height;
+      super.adjust_dimensions(this.width, this.height);
 
       this.sprite_index_x = 0;
       this.sprite_index_y = 0;
@@ -57,5 +58,6 @@ class MovingSprite extends CanvasElement {
           this.sprite_index_y = 3;
       }
       this.animation_cycle();
+      super.move(dx, dy);
     }
 }
