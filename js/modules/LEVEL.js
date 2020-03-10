@@ -60,7 +60,7 @@ const LEVEL = {
 
     // TODO: improve
     var tx= x-15;
-    var ty = y+20;
+    var ty = y;
 
     if (LEVEL.is_walkable(tx,ty)){
       CHARACTER.sprite.place_at(tx,ty);

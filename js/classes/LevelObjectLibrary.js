@@ -16,7 +16,8 @@ class S_Tree extends Object {
   constructor(x, y) {
     var visual = new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code());
     super(visual, x, y);
-    this.adjust_hitbox(x,y,200,200);
+    this.adjust_hitbox(x+20,y,20,40);
+    //wrong ??
   }
 }
 
@@ -24,6 +25,6 @@ class S_House extends Object {
   constructor(x, y) {
     var visual = new StaticSprite("testing/house.png", PALETTE.color_obj_dark.code());
     super(visual, x, y);
-    this.adjust_hitbox(x,y,200,200);
+    this.adjust_hitbox(x,y,175,200);
   }
 }
