@@ -42,20 +42,29 @@ const LEVEL = {
 
   up: function(){
     // TODO: improve
-    CHARACTER.sprite.move(0,-10);
+    if (LEVEL.is_walkable(CHARACTER.x, CHARACTER.y-10)){
+      CHARACTER.move(0,-10);
+    }
   },
   down: function(){
     // TODO: improve
-    CHARACTER.sprite.move(0,10);
+    if (LEVEL.is_walkable(CHARACTER.x, CHARACTER.y+10)){
+      CHARACTER.move(0,10);
+    }
   },
   left: function(){
     // TODO: improve
-    CHARACTER.sprite.move(-10,0);
+    if (LEVEL.is_walkable(CHARACTER.x-10, CHARACTER.y)){
+      CHARACTER.move(-10,0);
+    }
   },
   right: function(){
     // TODO: improve
-    CHARACTER.sprite.move(10,0);
+    if (LEVEL.is_walkable(CHARACTER.x+10, CHARACTER.y)){
+      CHARACTER.move(10,0);
+    }
   },
+
   click: function(x,y){
 
     // TODO: improve
