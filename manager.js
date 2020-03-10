@@ -29,6 +29,7 @@ load_module("RESOURCES");
 load_module("IO");
 load_module("LEVEL");
 load_module("CHARACTER");
+load_module("PALETTE");
 
 
 load_class("Graphic/Color");
@@ -37,3 +38,6 @@ load_class("Graphic/VisualElement"); // parent
     load_class("Graphic/StaticSprite");
     load_class("Graphic/MovingSprite");
   load_class("Graphic/Rectangle");
+
+// All inits
+load_js("startup");
