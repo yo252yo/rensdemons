@@ -7,6 +7,7 @@ class S_Floor extends Object {
     super(visual, x, y);
 
     this.visual_element.adjust_depth(-1);
+    this.adjust_hitbox(x,y,w,h);
     this.make_walkable();
   }
 }
@@ -15,6 +16,7 @@ class S_Tree extends Object {
   constructor(x, y) {
     var visual = new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code());
     super(visual, x, y);
+    this.adjust_hitbox(x,y,200,200);
   }
 }
 
@@ -22,5 +24,6 @@ class S_House extends Object {
   constructor(x, y) {
     var visual = new StaticSprite("testing/house.png", PALETTE.color_obj_dark.code());
     super(visual, x, y);
+    this.adjust_hitbox(x,y,200,200);
   }
 }

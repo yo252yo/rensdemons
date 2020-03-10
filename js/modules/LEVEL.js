@@ -21,8 +21,23 @@ const LEVEL = {
       CHARACTER.clear();
   },
 
-  index_object:function(object){
+  index_object: function(object){
       LEVEL.elements.push(object);
+  },
+
+  is_walkable: function(x, y){
+    var walkable = false;
+
+    // could be optimized by ordering elements
+    for(var i in LEVEL.elements){
+      var t = LEVEL.elements[i].is_walkable(x,y);
+      if (t == -1) {
+        return false;
+      } else if (t == 1){
+        walkable = true;
+      }
+    }
+    return walkable;
   },
 
   up: function(){
@@ -42,7 +57,13 @@ const LEVEL = {
     CHARACTER.sprite.move(10,0);
   },
   click: function(x,y){
+
     // TODO: improve
-    CHARACTER.sprite.place_at(x-15,y+20);
+    var tx= x-15;
+    var ty = y+20;
+
+    if (LEVEL.is_walkable(tx,ty)){
+      CHARACTER.sprite.place_at(tx,ty);
+    }
   },
 };
