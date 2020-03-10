@@ -1,6 +1,6 @@
 
 const RESOURCES = {
-  get_img(name) {
+  get_img: function(name) {
       var resource = document.getElementById("R_" + name);
       if (resource) {
           return resource;
@@ -14,7 +14,7 @@ const RESOURCES = {
       return resource;
   },
 
-  onload(resource, f){
+  onload: function(resource, f){
     resource.addEventListener('load', f);
     f(); // In case it's already loaded
   },

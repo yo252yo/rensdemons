@@ -1,10 +1,10 @@
 
 const LEVEL = {
-  html(){
+  html: function(){
     return document.getElementById("level");
   },
 
-  load(name) {
+  load: function(name) {
       // resets the level
       LEVEL.html().innerHTML = "";
 
