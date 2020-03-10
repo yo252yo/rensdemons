@@ -18,18 +18,23 @@ const LEVEL = {
   },
 
   up: function(){
+    // TODO: improve
     CHARACTER.sprite.move(0,-10);
   },
   down: function(){
+    // TODO: improve
     CHARACTER.sprite.move(0,10);
   },
   left: function(){
+    // TODO: improve
     CHARACTER.sprite.move(-10,0);
   },
   right: function(){
+    // TODO: improve
     CHARACTER.sprite.move(10,0);
   },
   click: function(x,y){
+    // TODO: improve
     CHARACTER.sprite.place_at(x-15,y+20);
   },
 };
