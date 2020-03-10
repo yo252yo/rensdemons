@@ -1,4 +1,5 @@
 // use(CHARACTER)
+// use(manager.js)
 
 const LEVEL = {
   html: function(){
@@ -8,7 +9,7 @@ const LEVEL = {
   load: function(name) {
       LEVEL.clear();
 
-      load_js("levels/" + name);
+      new Import("levels/" + name);
       console.log("- Loaded level " + name);
   },
 
