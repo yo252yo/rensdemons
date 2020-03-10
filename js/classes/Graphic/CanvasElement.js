@@ -2,7 +2,7 @@
 
 class CanvasElement extends VisualElement {
     constructor(color) {
-        // TODO could be more meaningful
+        // Canvas properties are measured at drawing time
         super(0,0,0,0);
         this.id = Math.floor(Math.random() * 1000) + "/" + Date.now();
         this.color = color;

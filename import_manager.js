@@ -81,8 +81,9 @@ IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
-IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/Library_StaticSprites");
-IMPORTS.classes['Graphic/Rectangle'].child_class("Graphic/Library_Rectangles");
+
+new Class("LevelObject");
+IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 
 // All inits
 new Import("startup");

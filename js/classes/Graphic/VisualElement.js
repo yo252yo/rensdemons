@@ -1,4 +1,4 @@
-// use(LEVEL)
+// runtime: LEVEL
 
 class VisualElement {
     constructor(x, y, w, h) {
@@ -34,5 +34,9 @@ class VisualElement {
       this.y += dy;
       this.x += dx;
       this.refresh_position();
+    }
+
+    adjust_depth(z){
+      this.container.style.zIndex = z;
     }
 }

@@ -1,4 +1,5 @@
 // use(CanvasElement)
+// runtime: RESOURCES
 
 var _ANIMATION_SPEED = 80;
 

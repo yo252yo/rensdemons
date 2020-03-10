@@ -1,3 +1,4 @@
+// runtime: LEVEL
 
 const IO = {
   _PRESSED_KEYS: {},

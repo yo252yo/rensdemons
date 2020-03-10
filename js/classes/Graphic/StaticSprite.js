@@ -1,4 +1,5 @@
 // use(CanvasElement)
+// runtime: RESOURCES
 
 class StaticSprite extends CanvasElement {
     constructor(path, color) {

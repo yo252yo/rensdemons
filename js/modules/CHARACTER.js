@@ -1,4 +1,4 @@
-// use(MovingSprite)
+// runtime MovingSprite, PALETTE
 
 const CHARACTER = {
   initialize: function(x, y){

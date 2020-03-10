@@ -1,7 +1,9 @@
-// use(CHARACTER)
+// runtime (CHARACTER)
 // use(manager.js)
 
 const LEVEL = {
+  elements: [],
+
   html: function(){
     return document.getElementById("level");
   },
@@ -15,7 +17,12 @@ const LEVEL = {
 
   clear: function(){
       LEVEL.html().innerHTML = "";
+      LEVEL.elements = [];
       CHARACTER.clear();
+  },
+
+  index_object:function(object){
+      LEVEL.elements.push(object);
   },
 
   up: function(){
