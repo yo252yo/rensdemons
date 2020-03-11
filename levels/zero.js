@@ -9,7 +9,7 @@
  a.move(1,0);
 */
 
-CHARACTER.initialize(100, 100);
+CHARACTER.initialize(80, 60);
 
 new S_Tree(20,100);
 new S_Tree(150,130);
