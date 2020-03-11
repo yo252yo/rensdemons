@@ -18,4 +18,9 @@ class StaticSprite extends CanvasElement {
       this.html_canvas.getContext('2d').drawImage(this.resource, 0, 0);
       super.tint();
     }
+
+    adjust_depth(z){
+      super.adjust_depth(z);
+      this.html_canvas.style.zIndex = z;
+    }
 }

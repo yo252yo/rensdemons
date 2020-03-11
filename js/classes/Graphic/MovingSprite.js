@@ -64,4 +64,9 @@ class MovingSprite extends CanvasElement {
       this.animation_cycle();
       super.move(dx, dy);
     }
+
+    adjust_depth(z){
+      super.adjust_depth(z);
+      this.html_canvas.style.zIndex = z;
+    }
 }
