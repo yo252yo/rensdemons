@@ -1,3 +1,2 @@
 running
 mobile continuous pressing
-window scrolling on mobile only scrolls 80% of the way

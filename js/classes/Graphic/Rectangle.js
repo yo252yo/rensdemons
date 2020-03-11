@@ -10,7 +10,7 @@ class Rectangle extends VisualElement {
         this.html_rectangle.style.height = "100%";
         this.html_rectangle.style.zIndex = -1;
         this.container.style.zIndex = -1;
-        this.container.style.padding = "0px 100px 100px 0px";
+//        this.container.style.padding = "0px 100px 100px 0px";
 
         this.container.appendChild(this.html_rectangle);
     }
