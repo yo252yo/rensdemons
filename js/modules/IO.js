@@ -3,8 +3,17 @@
 const IO = {
   _PRESSED_KEYS: {},
 
+
+  scroll_screen: function(){
+    var winWidth = Math.min(window.outerWidth, window.innerWidth, document.documentElement.clientWidth);
+    var winHeight = Math.min(window.outerHeight, window.innerHeight, document.documentElement.clientHeight);
+    window.scrollTo(CHARACTER.x - winWidth/2, CHARACTER.y - winHeight/2);
+    // scroll to position in the middle of the screen instead of corner
+  },
+
   onScroll: function(event){
       event.preventDefault();
+      return true;
       /*if (DRAWING.lock_scroll) {
           DRAWING.scroll();
           return false;

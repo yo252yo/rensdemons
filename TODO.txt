@@ -1,2 +1,2 @@
 window scrolling
-better rectangle hitbox
+running

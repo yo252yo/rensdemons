@@ -50,6 +50,7 @@ const CHARACTER = {
     this.x += x;
     this.y += y;
     this.sprite.move(x, y);
+    IO.scroll_screen();
   },
 
   is_moving: function(){
