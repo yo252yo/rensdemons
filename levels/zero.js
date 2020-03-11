@@ -18,7 +18,7 @@ new S_Tree(240,380);
 
 new S_House(160,350);
 
-new S_Floor(10,2050,2000,2000);
+new S_Floor(10,4050,5000,4000);
 
 for (var i = 50; i< 5000; i+= 250){
 for (var j = 150; j< 4000; j+= 250){
