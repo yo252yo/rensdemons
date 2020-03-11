@@ -1,7 +1,7 @@
 // use (Color)
 
 const PALETTE = {
-  initialize: function() {
+  pick_harmonized_palette(){
     this.color_background = Color.random().hoffset(0.45);
     this.color_void = this.color_background.opposite();
 
@@ -9,6 +9,20 @@ const PALETTE = {
     this.color_player = this.color_obj_light.opposite();
 
     this.color_obj_dark = this.color_obj_light.hoffset(-0.2);
+  },
+
+  pick_random_palette(){
+    this.color_background = Color.random();
+
+    this.color_void = Color.random();
+    this.color_player = this.color_void.hoffset(0.3);
+
+    this.color_obj_light = Color.random().hoffset(0.3);
+    this.color_obj_dark = this.color_obj_light.hoffset(-0.2);
+  },
+
+  initialize: function() {
+    this.pick_harmonized_palette();
 
     document.body.style.backgroundColor = this.color_void.code();
   },
