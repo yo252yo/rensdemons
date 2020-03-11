@@ -1,1 +1,3 @@
-CHARACTER.moveTo
+window scrolling
+
+zindex not working on chrome mobile

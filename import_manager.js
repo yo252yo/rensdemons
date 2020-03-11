@@ -85,10 +85,11 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 
-// All inits
-new Import("startup");
-
-// tech demo
 window.onload = function() {
-  LEVEL.load("zero");
+  var init = new Import("startup");
+
+  // tech demo
+  init.child_function(function(){
+    LEVEL.load("zero");
+  });
 }
