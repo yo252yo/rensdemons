@@ -52,6 +52,10 @@ const CHARACTER = {
     this.sprite.move(x, y);
   },
 
+  is_moving: function(){
+     return this.destination_x  != -1 || this.destination_y != -1;
+  },
+
   try_move_by: function(dx,dy){
     if (LEVEL.is_walkable(this.x + dx, this.y+dy)){
       this.move(dx,dy);
@@ -61,29 +65,36 @@ const CHARACTER = {
   },
 
   try_move_up: function(){
+    this.clear_destination();
     this.try_move_by(0, -1 * this._WALKING_INCREMENT);
   },
   try_move_down: function(){
+    this.clear_destination();
     this.try_move_by(0, this._WALKING_INCREMENT);
   },
   try_move_left: function(){
+    this.clear_destination();
     this.try_move_by(-1 * this._WALKING_INCREMENT, 0);
   },
   try_move_right: function(){
+    this.clear_destination();
     this.try_move_by(this._WALKING_INCREMENT, 0);
   },
 
   try_move_to: function(x, y){
-    var are_we_moving = this.destination_x  != -1 || this.destination_y != -1;
+    var currently_moving = this.is_moving();
     this.destination_x = x - this.width / 2;
     this.destination_y = y + 10;
 
-    if (!are_we_moving){
+    if (!currently_moving){
       this.auto_walk();
     }
   },
 
   auto_walk: function() {
+    if (! this.is_moving()){
+      return;
+    }
     if (this.is_at(this.destination_x, this.destination_y)){
         this.clear_destination();
         return;
