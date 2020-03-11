@@ -24,7 +24,7 @@ class Import {
     onloaded() {
        this.loaded = true;
 
-       if (CONSOLE.sys_log){
+       if (CONSOLE && CONSOLE.sys_log){
          CONSOLE.sys_log(">> Loaded " + this.src);
        }
        for (var i in this.atload){
