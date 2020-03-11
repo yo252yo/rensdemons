@@ -9,28 +9,28 @@ const LEVEL = {
   },
 
   load: function(name) {
-      LEVEL.clear();
+      this.clear();
 
       new Import("levels/" + name);
       console.log("- Loaded level " + name);
   },
 
   clear: function(){
-      LEVEL.html().innerHTML = "";
-      LEVEL.elements = [];
+      this.html().innerHTML = "";
+      this.elements = [];
       CHARACTER.clear();
   },
 
   index_object: function(object){
-      LEVEL.elements.push(object);
+      this.elements.push(object);
   },
 
   is_walkable: function(x, y){
     var walkable = false;
 
     // could be optimized by ordering elements
-    for(var i in LEVEL.elements){
-      var t = LEVEL.elements[i].is_walkable(x,y);
+    for(var i in this.elements){
+      var t = this.elements[i].is_walkable(x,y);
       if (t == -1) {
         return false;
       } else if (t == 1){
@@ -40,39 +40,9 @@ const LEVEL = {
     return walkable;
   },
 
-  up: function(){
-    // TODO: improve
-    if (LEVEL.is_walkable(CHARACTER.x, CHARACTER.y-10)){
-      CHARACTER.move(0,-10);
-    }
-  },
-  down: function(){
-    // TODO: improve
-    if (LEVEL.is_walkable(CHARACTER.x, CHARACTER.y+10)){
-      CHARACTER.move(0,10);
-    }
-  },
-  left: function(){
-    // TODO: improve
-    if (LEVEL.is_walkable(CHARACTER.x-10, CHARACTER.y)){
-      CHARACTER.move(-10,0);
-    }
-  },
-  right: function(){
-    // TODO: improve
-    if (LEVEL.is_walkable(CHARACTER.x+10, CHARACTER.y)){
-      CHARACTER.move(10,0);
-    }
-  },
-
-  click: function(x,y){
-
-    // TODO: improve
-    var tx= x-15;
-    var ty = y;
-
-    if (LEVEL.is_walkable(tx,ty)){
-      CHARACTER.sprite.place_at(tx,ty);
-    }
-  },
+  up: function(){ CHARACTER.try_move_up(); },
+  down: function(){ CHARACTER.try_move_down(); },
+  left: function(){ CHARACTER.try_move_left(); },
+  right: function(){ CHARACTER.try_move_right(); },
+  click: function(x, y){ CHARACTER.try_move_to(x, y); },
 };

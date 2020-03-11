@@ -1,7 +1,7 @@
 // use(CanvasElement)
 // runtime: RESOURCES
 
-var _ANIMATION_SPEED = 80;
+var _ANIMATION_SPEED = 100;
 
 class MovingSprite extends CanvasElement {
     constructor(path, color, width, height) {
@@ -46,17 +46,20 @@ class MovingSprite extends CanvasElement {
     }
 
     move(dx, dy){
-      if (dx > 0){
-          this.sprite_index_y = 2;
-      }
-      if (dx < 0){
-          this.sprite_index_y = 1;
-      }
-      if (dy > 0){
-          this.sprite_index_y = 0;
-      }
-      if (dy < 0){
-          this.sprite_index_y = 3;
+      if (Math.abs(dx) > Math.abs(dy)){
+        if (dx > 0){
+            this.sprite_index_y = 2;
+        }
+        if (dx < 0){
+            this.sprite_index_y = 1;
+        }
+      } else {
+        if (dy > 0){
+            this.sprite_index_y = 0;
+        }
+        if (dy < 0){
+            this.sprite_index_y = 3;
+        }
       }
       this.animation_cycle();
       super.move(dx, dy);

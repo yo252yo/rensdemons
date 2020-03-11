@@ -16,28 +16,28 @@ const IO = {
   },
 
   onPressKey: function(key){
-    if (!(key in IO._PRESSED_KEYS)) {
-        IO._PRESSED_KEYS[key] = true;
+    if (!(key in this._PRESSED_KEYS)) {
+        this._PRESSED_KEYS[key] = true;
     }
-    IO.keyManager();
+    this.keyManager();
   },
 
   onReleaseKey: function(key){
-    delete IO._PRESSED_KEYS[key];
-    IO.keyManager();
+    delete this._PRESSED_KEYS[key];
+    this.keyManager();
   },
 
   keyManager: function(){
-      if ('escape' in IO._PRESSED_KEYS || 'esc' in IO._PRESSED_KEYS || 27 in IO._PRESSED_KEYS){
+      if ('escape' in this._PRESSED_KEYS || 'esc' in this._PRESSED_KEYS || 27 in this._PRESSED_KEYS){
 
       }
-      if ('shift' in IO._PRESSED_KEYS || 16 in IO._PRESSED_KEYS){
+      if ('shift' in this._PRESSED_KEYS || 16 in this._PRESSED_KEYS){
           //CHARACTER.run();
       } else {
           //CHARACTER.walk();
       }
 
-      for (var key in IO._PRESSED_KEYS) {
+      for (var key in this._PRESSED_KEYS) {
           if (key === 'w' || key === 87) {
             LEVEL.up();
           }
