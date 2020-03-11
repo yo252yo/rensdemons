@@ -24,7 +24,9 @@ class Import {
     onloaded() {
        this.loaded = true;
 
-       console.log(">> Loaded " + this.src);
+       if (CONSOLE.sys_log){
+         CONSOLE.sys_log(">> Loaded " + this.src);
+       }
        for (var i in this.atload){
          this.atload[i]();
        }
@@ -67,6 +69,7 @@ const IMPORTS = {
 
 
 // All imports
+new Module("CONSOLE");
 new Module("RESOURCES");
 new Module("IO");
 new Module("LEVEL");

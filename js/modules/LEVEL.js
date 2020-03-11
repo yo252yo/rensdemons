@@ -1,4 +1,4 @@
-// runtime (CHARACTER)
+// runtime (CHARACTER, CONSOLE)
 // use(manager.js)
 
 const LEVEL = {
@@ -12,7 +12,7 @@ const LEVEL = {
       this.clear();
 
       new Import("levels/" + name);
-      console.log("- Loaded level " + name);
+      CONSOLE.sys_log("- Loaded level " + name);
   },
 
   clear: function(){
