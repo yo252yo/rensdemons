@@ -7,7 +7,7 @@ class S_Floor extends Object {
     super(visual, x, y);
 
     this.visual_element.adjust_depth(-1);
-    this.adjust_hitbox(x,y,w,h);
+    this.adjust_hitbox(x + 10,y,w- 20,h-10);
     this.make_walkable();
   }
 }

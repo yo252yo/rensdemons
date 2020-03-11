@@ -26,6 +26,8 @@ class Import {
 
        if (CONSOLE && CONSOLE.sys_log){
          CONSOLE.sys_log(">> Loaded " + this.src);
+       } else{
+         console.log(">> Loaded " + this.src);
        }
        for (var i in this.atload){
          this.atload[i]();
