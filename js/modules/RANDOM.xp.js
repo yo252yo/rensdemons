@@ -39,9 +39,6 @@ const RANDOM = {
   },
 
   test: function(){
-    for (var i = 0 ; i < 30; i++){
-        console.log(this.camelize(RANDOM.name()));
-    }
   },
 
 };
