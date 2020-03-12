@@ -1,2 +1,4 @@
 running
 mobile continuous pressing
+random generation
+find sprites

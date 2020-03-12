@@ -98,3 +98,5 @@ window.onload = function() {
     LEVEL.load("zero");
   });
 }
+
+new Module("RANDOM.xp");
