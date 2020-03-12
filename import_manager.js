@@ -48,6 +48,12 @@ class Import {
       this.child_function(function() {child.write_html();});
       return child;
     }
+
+    child_module(name){
+      var child = new Module(name, true);
+      this.child_function(function() {child.write_html();});
+      return child;
+    }
 }
 
 class Module extends Import {
@@ -90,6 +96,11 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 
+
+new Class("Markov");
+IMPORTS.classes['Markov'].child_module("RANDOM.xp");
+
+
 window.onload = function() {
   var init = new Import("startup");
 
@@ -98,5 +109,3 @@ window.onload = function() {
     LEVEL.load("zero");
   });
 }
-
-new Module("RANDOM.xp");
