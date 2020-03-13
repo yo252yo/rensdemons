@@ -76,8 +76,6 @@ class TextBox extends VisualElement {
     }
 
     cut_text(text) {
-      console.log(text);
-        console.log(this);
       if (text.length <= this.letter_capacity){
         return [text, ""];
       }
