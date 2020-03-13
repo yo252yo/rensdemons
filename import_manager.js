@@ -43,6 +43,12 @@ class Import {
       }
     }
 
+    child_import(name){
+      var child = new Import(name, true);
+      this.child_function(function() {child.write_html();});
+      return child;
+    }
+
     child_class(name){
       var child = new Class(name, true);
       this.child_function(function() {child.write_html();});
@@ -95,10 +101,6 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 
 new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
-
-
-new Class("Markov");
-IMPORTS.classes['Markov'].child_module("RANDOM.xp");
 
 
 window.onload = function() {
