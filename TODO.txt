@@ -1,4 +1,8 @@
 running
 mobile continuous pressing
+
+textbanner scrolling on mobile is impossible because of event handler
+https://stackoverflow.com/questions/6139225/how-to-detect-a-long-touch-pressure-with-javascript-for-android-and-iphone
+
 random generation
 find sprites

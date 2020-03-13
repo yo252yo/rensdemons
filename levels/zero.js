@@ -25,6 +25,17 @@ for (var j = 150; j< 4000; j+= 250){
   new S_Tree(i,j);
 }}
 
+
+var t = new TextBanner();
+t.change_text("This is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a test");
+
+
+var t = new TextBox(50,100,50,50);
+t.change_text("Th");
+
+var t = new TextBox(200,200,50,50,20);
+t.change_text("Th");
+
 /*
 var style = document.createElement('style');
 style.innerHTML = "div{ border: 3px dotted; margin:-3px; }";

@@ -1,13 +1,11 @@
-// runtime: LEVEL
+// runtime: LEVEL, SCREEN
 
 const IO = {
   _PRESSED_KEYS: {},
 
 
   scroll_screen: function(){
-    var winWidth = Math.min(window.outerWidth, window.innerWidth, document.documentElement.clientWidth);
-    var winHeight = Math.min(window.outerHeight, window.innerHeight, document.documentElement.clientHeight);
-    window.scrollTo(CHARACTER.x - winWidth/2, CHARACTER.y - winHeight/2);
+    window.scrollTo(CHARACTER.x - SCREEN.width()/2, CHARACTER.y - SCREEN.height()/2);
   },
 
   onScroll: function(event){

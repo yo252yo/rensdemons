@@ -119,4 +119,8 @@ class Color {
 
       return Color.fromHsv(h[0], s, v);
     }
+
+    is_dark(){
+      return (this.r + this.g + this.b) < 3 * 128;
+    }
 }

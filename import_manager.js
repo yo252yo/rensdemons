@@ -84,6 +84,7 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
+new Module("SCREEN");
 new Module("RESOURCES");
 new Module("IO");
 new Module("LEVEL");
@@ -94,6 +95,8 @@ new Module("PALETTE");
 new Class("Graphic/Color");
 new Class("Graphic/VisualElement");
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
+IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextBox");
+IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
 
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
