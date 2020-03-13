@@ -35,6 +35,7 @@ t.change_text("Th");
 
 var t = new TextBox(200,200,50,50,20);
 t.change_text("Th");
+t.set_opacity(0.7);
 
 /*
 var style = document.createElement('style');

@@ -39,4 +39,8 @@ class VisualElement {
     adjust_depth(z){
       this.container.style.zIndex = z;
     }
+
+    set_opacity(o){
+      this.container.style.opacity = o;
+    }
 }
