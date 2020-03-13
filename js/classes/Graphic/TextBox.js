@@ -2,6 +2,36 @@
 // runtime PALETTE
 
 var _TEXTBOX_ZINDEX = 10000;
+var _LETTER_SIZE = [];
+
+
+
+var TEXT_STYLE = function(div){
+  div.style.fontSize = "27px";
+  div.style.fontFamily = "monospace";
+}
+
+// Initialize the module (measure char size)
+var test_div = document.createElement('div');
+document.body.appendChild(test_div);
+test_div.innerHTML="Lorem Ipsum is simply dummy text of the printing a<br />";
+test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
+test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
+test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
+test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a";
+test_div.style.height = "auto";
+test_div.style.width = "auto";
+test_div.style.position = "absolute";
+test_div.style.whiteSpace = "nowrap";
+
+TEXT_STYLE(test_div);
+
+var char_width = test_div.clientWidth / 50;
+var char_height = test_div.clientHeight / 5;
+
+_LETTER_SIZE = [char_width, char_height];
+
+test_div.style.display="none";
 
 
 class TextBox extends VisualElement {
@@ -29,7 +59,7 @@ class TextBox extends VisualElement {
         this.html.style.border = "5px outset " + PALETTE.text_border().code();
         this.html.style.color = PALETTE.text_color().code();
 
-        this.text_style(this.html);
+        TEXT_STYLE(this.html);
         this.measure_text(w, h, padding);
 
         this.html.style.padding = padding + "px";
@@ -39,43 +69,11 @@ class TextBox extends VisualElement {
         this.container.appendChild(this.html);
     }
 
-    text_style(div){
-      div.style.fontSize = "27px";
-      div.style.fontFamily = "monospace";
-    }
-
-    // TODO: we shouldnt measure it for every div :)
     measure_text(w, h, padding){
-      var test_div = document.createElement('div');
-      this.container.appendChild(test_div);
-      test_div.innerHTML="Lorem Ipsum is simply dummy text of the printing a<br />";
-      test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
-      test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
-      test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
-      test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a";
-      test_div.style.height = "auto";
-      test_div.style.width = "auto";
-      test_div.style.position = "absolute";
-      test_div.style.whiteSpace = "nowrap";
-
-      this.text_style(test_div);
-
-      var text_height = h - 2 * padding; // 30
-      var text_width = w - 2 * padding; // 15
-      var char_width = test_div.clientWidth / 50;
-      var char_height = test_div.clientHeight / 5;
-      console.log(test_div.clientWidth);
-      console.log(test_div.clientHeight);
-      console.log(char_width);
-      console.log(char_height);
-      console.log(text_width);
-      console.log(text_height);
-      this.letter_capacity = Math.floor(text_width / char_width) * Math.floor(text_height / char_height);
-      console.log(this.letter_capacity);
-
-      test_div.style.display="none";
+      var text_height = h - 2 * padding;
+      var text_width = w - 2 * padding;
+      this.letter_capacity = Math.floor(text_width / _LETTER_SIZE[0]) * Math.floor(text_height / _LETTER_SIZE[1]);
     }
-
 
     cut_text(text) {
       console.log(text);
@@ -84,7 +82,7 @@ class TextBox extends VisualElement {
         return [text, ""];
       }
 
-      var hard_cut = text.substring(0, this.letter_capacity-1); // +1 in case we end on a space -3 for the elipsis
+      var hard_cut = text.substring(0, this.letter_capacity-6); // -1 works but without elipsis
       var lastSpace = hard_cut.lastIndexOf(" ");
       var start = text.substring(0, lastSpace);
       var end = text.substring(1 + lastSpace);
@@ -94,7 +92,7 @@ class TextBox extends VisualElement {
     change_text(text){
       this.html.innerHTML = this.cut_text(text)[0];
       if (this.cut_text(text)[1] != ""){
-        this.html.innerHTML += "";
+        this.html.innerHTML += "...";
       }
     }
 
