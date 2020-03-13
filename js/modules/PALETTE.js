@@ -24,35 +24,27 @@ const PALETTE = {
   text_background(){
     var base = this.color_obj_dark;
     if (PALETTE.color_obj_dark.is_dark()){
-      return base.hoffset(-0.4);
+      return base.hoffset(-0.3);
     } else{
-      return base.hoffset(0.4);
+      return base.hoffset(0.3);
     }
   },
 
   text_color(){
     var base =  this.color_obj_light;
     if (PALETTE.color_obj_dark.is_dark()){
-      return base.hoffset(0.4);
+      return base.hoffset(0.5);
     } else{
-      return base.hoffset(-0.4);
+      return base.hoffset(-0.5);
     }
   },
 
   text_border(){
   if (PALETTE.color_obj_dark.is_dark()){
-    return this.color_void.hoffset(0.4);
+    return this.color_void.hoffset(0.3);
   } else{
-    return this.color_void.hoffset(-0.4);
+    return this.color_void.hoffset(-0.3);
   }
-  },
-
-  text_shade(){
-    if (PALETTE.color_void.is_dark()){
-      return new Color(255,255,255);
-    } else{
-      return new Color(0,0,0);
-    }
   },
 
   initialize: function() {
