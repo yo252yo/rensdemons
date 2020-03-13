@@ -24,7 +24,7 @@ class Import {
     onloaded() {
        this.loaded = true;
 
-       if (CONSOLE && CONSOLE.sys_log){
+       if (typeof CONSOLE !== 'undefined') {
          CONSOLE.sys_log(">> Loaded " + this.src);
        } else{
          console.log(">> Loaded " + this.src);
