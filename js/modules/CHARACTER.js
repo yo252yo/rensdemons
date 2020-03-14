@@ -12,7 +12,7 @@ const CHARACTER = {
     this.width = 32;
     this.height = 48;
 
-    this.clear_destination();
+    this.stop_autowalk();
 
     this.margin_left = -10;
     this.margin_right = 20;
@@ -21,7 +21,7 @@ const CHARACTER = {
 
     this.sprite = new MovingSprite("testing/vx_chara01_a.png", PALETTE.color_player.code(), this.width, this.height);
     this.sprite.place_at(x, y);
-    
+
     IO.scroll_screen();
   },
 
@@ -29,9 +29,15 @@ const CHARACTER = {
     this.sprite = undefined;
   },
 
-  clear_destination: function() {
+  stop_autowalk: function() {
       this.destination_x = -1;
       this.destination_y = -1;
+  },
+
+  gravity_center: function (){
+    var center_x = this.x + this.width / 2;
+    var center_y = this.y - this.height / 2;
+    return [center_x, center_y];
   },
 
   is_at_x: function(x) {
@@ -68,19 +74,19 @@ const CHARACTER = {
   },
 
   try_move_up: function(){
-    this.clear_destination();
+    this.stop_autowalk();
     this.try_move_by(0, -1 * this._WALKING_INCREMENT);
   },
   try_move_down: function(){
-    this.clear_destination();
+    this.stop_autowalk();
     this.try_move_by(0, this._WALKING_INCREMENT);
   },
   try_move_left: function(){
-    this.clear_destination();
+    this.stop_autowalk();
     this.try_move_by(-1 * this._WALKING_INCREMENT, 0);
   },
   try_move_right: function(){
-    this.clear_destination();
+    this.stop_autowalk();
     this.try_move_by(this._WALKING_INCREMENT, 0);
   },
 
@@ -99,7 +105,7 @@ const CHARACTER = {
       return;
     }
     if (this.is_at(this.destination_x, this.destination_y)){
-        this.clear_destination();
+        this.stop_autowalk();
         return;
     }
 
@@ -115,7 +121,7 @@ const CHARACTER = {
     if (this.try_move_by(dx, dy)) {
       setTimeout(function(){ CHARACTER.auto_walk(); }, CHARACTER._AUTO_WALK_TICK);
     } else {
-      this.clear_destination();
+      this.stop_autowalk();
       return;
     }
   },

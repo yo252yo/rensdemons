@@ -2,6 +2,8 @@
 // use(manager.js)
 
 const LEVEL = {
+  _INTERACTION_DISTANCE: 70,
+
   elements: [],
 
   html: function(){
@@ -40,7 +42,7 @@ const LEVEL = {
     return walkable;
   },
 
-  select_at: function(x, y){
+  select_interactible_at: function(x, y){
     var here = [];
 
     // could be optimized by ordering elements
@@ -67,18 +69,26 @@ const LEVEL = {
     }
   },
 
+  try_interact: function(element){
+    if(element.distance_to_character() < this._INTERACTION_DISTANCE){
+      element.interaction();
+      CHARACTER.stop_autowalk();
+      return true;
+    }
+  },
+
   up: function(){ CHARACTER.try_move_up(); },
   down: function(){ CHARACTER.try_move_down(); },
   left: function(){ CHARACTER.try_move_left(); },
   right: function(){ CHARACTER.try_move_right(); },
 
   click: function(x, y){
-    var element = this.select_at(x, y);
+    var element = this.select_interactible_at(x, y);
     if (! element){
       CHARACTER.try_move_to(x, y);
-    } else{
-      if (element.interaction) {
-        element.interaction();
+    } else {
+      if (! this.try_interact(element)){
+        CHARACTER.try_move_to(x, y);
       }
     }
   },

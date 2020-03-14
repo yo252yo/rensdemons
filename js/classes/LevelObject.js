@@ -1,4 +1,4 @@
-// runtime: LEVEL
+// runtime: LEVEL, CHARACTER
 
 
 class Object {
@@ -64,5 +64,28 @@ class Object {
         }
       }
       return 0;
+    }
+
+    distance_to_character(){
+      var c = CHARACTER.gravity_center();
+
+      var x = c[0];
+      if (c[0] < this.visual_element.x){
+        x = this.visual_element.x;
+      } else if (c[0] > this.visual_element.x + this.visual_element.width){
+        x = this.visual_element.x + this.visual_element.width;
+      }
+
+      var y = c[1];
+      if (c[1] < this.visual_element.y - this.visual_element.height){
+        y = this.visual_element.y - this.visual_element.height;
+      } else if (c[1] > this.visual_element.y){
+        y = this.visual_element.y;
+      }
+
+      var d = Math.sqrt(Math.pow(c[0] - x, 2) + Math.pow(c[1] - y, 2));
+      console.log(this);
+      console.log(d);
+      return d;
     }
 }

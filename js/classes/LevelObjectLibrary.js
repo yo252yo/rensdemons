@@ -22,8 +22,7 @@ class S_Tree extends Object {
   }
 
   interaction() {
-    var t = new TextBanner();
-    t.change_text("It's a tree, mario");
+    var t = new TextBanner("It's a tree, mario");
   }
 }
 
@@ -32,5 +31,9 @@ class S_House extends Object {
     var visual = new StaticSprite("testing/house.png", PALETTE.color_obj_dark.code());
     super(visual, x, y);
     this.adjust_hitbox(x,y,175,200);
+  }
+
+  interaction() {
+    var t = new TextBanner("It's not a tree, mario");
   }
 }

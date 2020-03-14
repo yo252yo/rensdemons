@@ -5,7 +5,7 @@ var _TEXTBOX_ZINDEX = 10000;
 
 
 class TextBanner extends TextBox {
-    constructor() {
+    constructor(text) {
         var top = Math.floor(SCREEN.height() * 0.62);
         var left = Math.floor(SCREEN.width() * 0.1);
         var height = Math.floor(SCREEN.height() * 0.31);
@@ -16,5 +16,9 @@ class TextBanner extends TextBox {
         super(left,top+height, width, height, padding);
 
         IO.control_dialog(this);
+
+        if (text){
+          this.change_text(text);
+        }
     }
 }
