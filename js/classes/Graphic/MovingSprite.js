@@ -65,6 +65,23 @@ class MovingSprite extends CanvasElement {
       super.move(dx, dy);
     }
 
+    facing_direction(){
+      switch(this.sprite_index_y) {
+        case 1:
+          return "LEFT";
+          break;
+        case 2:
+          return "RIGHT";
+          break;
+        case 3:
+          return "UP";
+          break;
+        default:
+          return "DOWN";
+          break;
+      }
+    }
+
     adjust_depth(z){
       super.adjust_depth(z);
       this.html_canvas.style.zIndex = z;

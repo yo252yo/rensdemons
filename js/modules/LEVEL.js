@@ -2,7 +2,8 @@
 // use(manager.js)
 
 const LEVEL = {
-  _INTERACTION_DISTANCE: 70,
+  _MAX_INTERACTION_DISTANCE: 70,
+  _FACE_INTERACTION_DISTANCE: 20,
 
   elements: [],
 
@@ -70,10 +71,34 @@ const LEVEL = {
   },
 
   try_interact: function(element){
-    if(element.distance_to_character() < this._INTERACTION_DISTANCE){
+    if(element.distance_to_character() < this._MAX_INTERACTION_DISTANCE){
       element.interaction();
       CHARACTER.stop_autowalk();
       return true;
+    }
+  },
+
+  interact_in_front: function(){
+    var c = CHARACTER.gravity_center();
+    var x = c[0];
+    var y = c[1];
+    switch(CHARACTER.facing_direction()) {
+      case "LEFT":
+        x -= this._FACE_INTERACTION_DISTANCE;
+        break;
+      case "RIGHT":
+        x += this._FACE_INTERACTION_DISTANCE;
+        break;
+      case "UP":
+        y -= this._FACE_INTERACTION_DISTANCE;
+        break;
+      default:
+        y += this._FACE_INTERACTION_DISTANCE;
+        break;
+    }
+    var element = this.select_interactible_at(x, y);
+    if (element) {
+      this.try_interact(element);
     }
   },
 

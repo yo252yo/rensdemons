@@ -84,8 +84,6 @@ class Object {
       }
 
       var d = Math.sqrt(Math.pow(c[0] - x, 2) + Math.pow(c[1] - y, 2));
-      console.log(this);
-      console.log(d);
       return d;
     }
 }

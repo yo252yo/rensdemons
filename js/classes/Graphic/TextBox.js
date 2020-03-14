@@ -2,6 +2,7 @@
 // runtime PALETTE
 
 var _TEXTBOX_ZINDEX = 10000;
+var _MIN_PAGE_TIME_MS = 500;
 var _LETTER_SIZE = [];
 
 
@@ -72,6 +73,8 @@ class TextBox extends VisualElement {
         this.container.appendChild(this.html);
 
         this.pending_text = "";
+
+        this.last_turned = (new Date()).getTime();
     }
 
     measure_text(w, h, padding){
@@ -110,6 +113,11 @@ class TextBox extends VisualElement {
     }
 
     turn_page (){
+      var now =  (new Date()).getTime();
+      if (now - this.last_turned < _MIN_PAGE_TIME_MS){
+        return;
+      }
+      this.last_turned = now;
       if (this.pending_text == ""){
         IO.control_character();
         this.destroy();

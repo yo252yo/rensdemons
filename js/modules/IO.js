@@ -28,6 +28,9 @@ const IO_CHARACTER = {
           if (key === 'd' || key === 68) {
             LEVEL.right();
           }
+          if (key === ' ' || key === 32) {
+            LEVEL.interact_in_front();
+          }
       }
   },
 }

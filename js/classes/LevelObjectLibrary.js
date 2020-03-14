@@ -22,7 +22,7 @@ class S_Tree extends Object {
   }
 
   interaction() {
-    var t = new TextBanner("It's a tree, mario");
+    new TextBanner("It's a tree, mario");
   }
 }
 
@@ -34,6 +34,6 @@ class S_House extends Object {
   }
 
   interaction() {
-    var t = new TextBanner("It's not a tree, mario");
+    new TextBanner("It's not a tree, mario");
   }
 }

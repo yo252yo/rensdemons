@@ -61,6 +61,10 @@ const CHARACTER = {
     IO.scroll_screen();
   },
 
+  facing_direction: function(){
+    return this.sprite.facing_direction();
+  },
+
   is_moving: function(){
      return this.destination_x  != -1 || this.destination_y != -1;
   },
