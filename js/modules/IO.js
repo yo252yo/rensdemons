@@ -5,7 +5,7 @@ const IO_CHARACTER = {
     LEVEL.click(x, y);
   },
 
-  keyManager: function(pressed_keys){
+  continuousKeyManager: function(pressed_keys){
       if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys){
 
       }
@@ -41,10 +41,8 @@ const IO_DIALOG = {
     this.dialog.turn_page();
   },
 
-  keyManager: function(pressed_keys){
-    if(pressed_keys.length > 0){
-      this.dialog.turn_page();
-    }
+  onPressKey: function(key){
+    this.dialog.turn_page();
   },
 }
 
@@ -76,20 +74,28 @@ const IO = {
     if (!(key in this._PRESSED_KEYS)) {
         this._PRESSED_KEYS[key] = true;
     }
-    this.keyManager();
+    this.continuousKeyManager();
+
+    if (this._ACTIVE_SYSTEM.onPressKey){
+      this._ACTIVE_SYSTEM.onPressKey(key);
+    }
   },
 
   onReleaseKey: function(key){
     delete this._PRESSED_KEYS[key];
-    this.keyManager();
+    this.continuousKeyManager();
   },
 
   onClick: function(x,y){
-    this._ACTIVE_SYSTEM.onClick(x,y);
+    if (this._ACTIVE_SYSTEM.onClick){
+      this._ACTIVE_SYSTEM.onClick(x,y);
+    }
   },
 
-  keyManager: function(){
-    this._ACTIVE_SYSTEM.keyManager(this._PRESSED_KEYS);
+  continuousKeyManager: function(){
+    if (this._ACTIVE_SYSTEM.continuousKeyManager){
+      this._ACTIVE_SYSTEM.continuousKeyManager(this._PRESSED_KEYS);
+    }
   },
 }
 

@@ -79,8 +79,6 @@ class TextBox extends VisualElement {
       var text_width = w - 2 * padding;
       var line_width = Math.floor(text_width / _LETTER_SIZE[0]);
       var num_lines = Math.floor(text_height / _LETTER_SIZE[1]);
-      console.log(num_lines);
-      console.log(line_width);
       this.letter_capacity = line_width * num_lines;
     }
 
@@ -112,7 +110,6 @@ class TextBox extends VisualElement {
     }
 
     turn_page (){
-      console.log(this.pending_text);
       if (this.pending_text == ""){
         IO.control_character();
         this.destroy();
