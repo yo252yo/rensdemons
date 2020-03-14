@@ -21,6 +21,8 @@ const CHARACTER = {
 
     this.sprite = new MovingSprite("testing/vx_chara01_a.png", PALETTE.color_player.code(), this.width, this.height);
     this.sprite.place_at(x, y);
+    
+    IO.scroll_screen();
   },
 
   clear: function (){
@@ -46,7 +48,7 @@ const CHARACTER = {
       return (this.is_at_x(x) && this.is_at_y(y));
   },
 
-  move(x, y){
+  move: function(x, y){
     this.x += x;
     this.y += y;
     this.sprite.move(x, y);
