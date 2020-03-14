@@ -1,24 +1,75 @@
 // runtime: LEVEL, SCREEN
 
+const IO_CHARACTER = {
+  onClick: function(x,y){
+    LEVEL.click(x, y);
+  },
+
+  keyManager: function(pressed_keys){
+      if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys){
+
+      }
+      if ('shift' in pressed_keys || 16 in pressed_keys){
+          //CHARACTER.run();
+      } else {
+          //CHARACTER.walk();
+      }
+
+      for (var key in pressed_keys) {
+          if (key === 'w' || key === 87) {
+            LEVEL.up();
+          }
+          if (key === 's' || key === 83) {
+            LEVEL.down();
+          }
+          if (key === 'a' || key === 65) {
+            LEVEL.left();
+          }
+          if (key === 'd' || key === 68) {
+            LEVEL.right();
+          }
+      }
+  },
+}
+
+const IO_DIALOG = {
+  set_dialog: function(dialog){
+    this.dialog = dialog;
+  },
+
+  onClick: function(x,y){
+    this.dialog.turn_page();
+  },
+
+  keyManager: function(pressed_keys){
+    if(pressed_keys.length > 0){
+      this.dialog.turn_page();
+    }
+  },
+}
+
+
 const IO = {
   _PRESSED_KEYS: {},
+  _ACTIVE_SYSTEM: IO_CHARACTER,
 
 
   scroll_screen: function(){
     window.scrollTo(CHARACTER.x - SCREEN.width()/2, CHARACTER.y - SCREEN.height()/2);
   },
 
+  control_dialog(dialog){
+    this._ACTIVE_SYSTEM = IO_DIALOG;
+    IO_DIALOG.set_dialog(dialog);
+  },
+
+  control_character(){
+    this._ACTIVE_SYSTEM = IO_CHARACTER;
+  },
+
   onScroll: function(event){
       event.preventDefault();
       return true;
-      /*if (DRAWING.lock_scroll) {
-          DRAWING.scroll();
-          return false;
-      }*/
-  },
-
-  onClick: function(x,y){
-    LEVEL.click(x, y);
   },
 
   onPressKey: function(key){
@@ -33,30 +84,12 @@ const IO = {
     this.keyManager();
   },
 
+  onClick: function(x,y){
+    this._ACTIVE_SYSTEM.onClick(x,y);
+  },
+
   keyManager: function(){
-      if ('escape' in this._PRESSED_KEYS || 'esc' in this._PRESSED_KEYS || 27 in this._PRESSED_KEYS){
-
-      }
-      if ('shift' in this._PRESSED_KEYS || 16 in this._PRESSED_KEYS){
-          //CHARACTER.run();
-      } else {
-          //CHARACTER.walk();
-      }
-
-      for (var key in this._PRESSED_KEYS) {
-          if (key === 'w' || key === 87) {
-            LEVEL.up();
-          }
-          if (key === 's' || key === 83) {
-            LEVEL.down();
-          }
-          if (key === 'a' || key === 65) {
-            LEVEL.left();
-          }
-          if (key === 'd' || key === 68) {
-            LEVEL.right();
-          }
-      }
+    this._ACTIVE_SYSTEM.keyManager(this._PRESSED_KEYS);
   },
 }
 

@@ -43,4 +43,9 @@ class VisualElement {
     set_opacity(o){
       this.container.style.opacity = o;
     }
+
+    destroy(){
+      LEVEL.html().removeChild(this.container);
+      delete this;
+    }
 }

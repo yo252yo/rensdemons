@@ -1,5 +1,5 @@
 // use(TextBox)
-// runtime SCREEN
+// runtime SCREEN, IO
 
 var _TEXTBOX_ZINDEX = 10000;
 
@@ -14,5 +14,7 @@ class TextBanner extends TextBox {
         var padding = 30;
 
         super(left,top+height, width, height, padding);
+
+        IO.control_dialog(this);
     }
 }

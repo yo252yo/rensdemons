@@ -22,6 +22,8 @@ test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a";
 test_div.style.height = "auto";
 test_div.style.width = "auto";
 test_div.style.position = "absolute";
+test_div.style.background = "red";
+test_div.style.zIndex = "100000";
 test_div.style.whiteSpace = "nowrap";
 
 TEXT_STYLE(test_div);
@@ -31,7 +33,7 @@ var char_height = test_div.clientHeight / 5;
 
 _LETTER_SIZE = [char_width, char_height];
 
-test_div.style.display="none";
+//test_div.style.display="none";
 
 
 class TextBox extends VisualElement {
@@ -65,14 +67,21 @@ class TextBox extends VisualElement {
         this.html.style.padding = padding + "px";
 
         this.html.style.overflow = "hidden";
+        this.html.style.wordBreak = "break-all";
 
         this.container.appendChild(this.html);
+
+        this.pending_text = "";
     }
 
     measure_text(w, h, padding){
       var text_height = h - 2 * padding;
       var text_width = w - 2 * padding;
-      this.letter_capacity = Math.floor(text_width / _LETTER_SIZE[0]) * Math.floor(text_height / _LETTER_SIZE[1]);
+      var line_width = Math.floor(text_width / _LETTER_SIZE[0]);
+      var num_lines = Math.floor(text_height / _LETTER_SIZE[1]);
+      console.log(num_lines);
+      console.log(line_width);
+      this.letter_capacity = line_width * num_lines;
     }
 
     cut_text(text) {
@@ -80,7 +89,7 @@ class TextBox extends VisualElement {
         return [text, ""];
       }
 
-      var hard_cut = text.substring(0, this.letter_capacity-6); // -1 works but without elipsis
+      var hard_cut = text.substring(0, this.letter_capacity-3); // +1 in case the last is space, -3 for elipsis
       var lastSpace = hard_cut.lastIndexOf(" ");
       var start = text.substring(0, lastSpace);
       var end = text.substring(1 + lastSpace);
@@ -91,11 +100,24 @@ class TextBox extends VisualElement {
       this.html.innerHTML = this.cut_text(text)[0];
       if (this.cut_text(text)[1] != ""){
         this.html.innerHTML += "...";
+        this.pending_text = this.cut_text(text)[1];
+      } else {
+        this.pending_text = "";
       }
     }
 
     adjust_depth(z){
       super.adjust_depth(z);
       this.html.style.zIndex = z;
+    }
+
+    turn_page (){
+      console.log(this.pending_text);
+      if (this.pending_text == ""){
+        IO.control_character();
+        this.destroy();
+      } else {
+        this.change_text(this.pending_text);
+      }
     }
 }

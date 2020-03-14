@@ -29,13 +29,14 @@ for (var j = 150; j< 4000; j+= 250){
 var t = new TextBanner();
 t.change_text("This is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis isa tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis isa tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a teshis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a tehis is a test");
 
-
+/*
 var t = new TextBox(50,100,50,50);
 t.change_text("Th");
 
 var t = new TextBox(200,200,50,50);
 t.change_text("Th");
 t.set_opacity(0.7);
+*/
 
 /*
 var style = document.createElement('style');
