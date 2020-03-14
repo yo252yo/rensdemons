@@ -10,8 +10,18 @@ class VisualElement {
         this.place_at(x, y);
     }
 
+    is_at(x,y) {
+      if (x >= this.x && x <= this.x + this.width){
+        if (y >= this.y - this.height && y <= this.y){
+          return true;
+        }
+      }
+      return false;
+    }
+
     adjust_dimensions(w,h){
       this.height = h;
+      this.width = w;
       this.container.style.width = w + "px";
       this.container.style.height = h + "px";
       this.refresh_position();
@@ -38,6 +48,10 @@ class VisualElement {
 
     adjust_depth(z){
       this.container.style.zIndex = z;
+    }
+
+    get_depth(z){
+      return this.container.style.zIndex;
     }
 
     set_opacity(o){

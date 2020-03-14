@@ -20,6 +20,11 @@ class S_Tree extends Object {
     visual.set_opacity(0.9);
     //wrong ??
   }
+
+  interaction() {
+    var t = new TextBanner();
+    t.change_text("It's a tree, mario");
+  }
 }
 
 class S_House extends Object {

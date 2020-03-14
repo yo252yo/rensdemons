@@ -40,9 +40,46 @@ const LEVEL = {
     return walkable;
   },
 
+  select_at: function(x, y){
+    var here = [];
+
+    // could be optimized by ordering elements
+    for(var i in this.elements){
+      if (this.elements[i].is_interactible(x,y)){
+        here.push(this.elements[i]);
+      }
+    }
+
+    if (here.length == 0) {
+      return undefined;
+    } else if (here.length == 1){
+      return here[0]
+    } else { // if theres several elements we chose the one on top
+      var max = here[0].get_depth();
+      var argmax = here[0];
+      for (var int = 1; i < here.length; i ++){
+        if(here[i].get_depth() > max){
+          max = here[i].get_depth();
+          argmax = here[i];
+        }
+      }
+      return argmax;
+    }
+  },
+
   up: function(){ CHARACTER.try_move_up(); },
   down: function(){ CHARACTER.try_move_down(); },
   left: function(){ CHARACTER.try_move_left(); },
   right: function(){ CHARACTER.try_move_right(); },
-  click: function(x, y){ CHARACTER.try_move_to(x, y); },
+
+  click: function(x, y){
+    var element = this.select_at(x, y);
+    if (! element){
+      CHARACTER.try_move_to(x, y);
+    } else{
+      if (element.interaction) {
+        element.interaction();
+      }
+    }
+  },
 };

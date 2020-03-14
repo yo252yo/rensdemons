@@ -34,14 +34,33 @@ class Object {
       document.body.appendChild(html_rectangle);
     }
 
-    is_walkable(x,y) {
+    get_depth() {
+      return this.visual_element.get_depth();
+    }
+
+    is_at_hitbox(x,y) {
       if (x >= this.h_x && x <= this.h_x + this.h_w){
         if (y >= this.h_y - this.h_h && y <= this.h_y){
-          if (this.walkable){
-            return 1;
-          } else if (! this.walkable) {
-            return -1;
-          }
+          return true;
+        }
+      }
+      return false;
+    }
+
+    is_at_sprite(x,y) {
+      return this.visual_element.is_at(x,y);
+    }
+
+    is_interactible(x, y){
+      return (this.interaction && this.is_at_sprite(x,y));
+    }
+
+    is_walkable(x,y) {
+      if (this.is_at_hitbox(x,y)){
+        if (this.walkable){
+          return 1;
+        } else if (! this.walkable) {
+          return -1;
         }
       }
       return 0;
