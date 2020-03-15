@@ -2,7 +2,7 @@
 // runtime PALETTE
 
 var _TEXTBOX_ZINDEX = 10000;
-var _MIN_PAGE_TIME_MS = 500;
+var _MIN_PAGE_TIME_MS = 250;
 var _LETTER_SIZE = [];
 
 
