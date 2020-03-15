@@ -1,11 +1,11 @@
 // runtime: LEVEL, SCREEN
 
 const IO_CHARACTER = {
-  onClick: function(x,y){
-    LEVEL.click(x, y);
+  click: function(x,y, is_hold){
+    LEVEL.click(x, y, is_hold);
   },
 
-  continuousKeyManager: function(pressed_keys){
+  manageKeys: function(pressed_keys){
       if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys){
 
       }
@@ -40,11 +40,13 @@ const IO_DIALOG = {
     this.dialog = dialog;
   },
 
-  onClick: function(x,y){
-    this.dialog.turn_page();
+  click: function(x,y, is_hold){
+    if (! is_hold){
+      this.dialog.turn_page();
+    }
   },
 
-  onPressKey: function(key){
+  pressKey: function(key){
     this.dialog.turn_page();
   },
 }
@@ -53,18 +55,18 @@ const IO_DIALOG = {
 const IO = {
   _PRESSED_KEYS: {},
   _ACTIVE_SYSTEM: IO_CHARACTER,
-
+  _MOUSE_DOWN: false,
 
   scroll_screen: function(){
     window.scrollTo(CHARACTER.x - SCREEN.width()/2, CHARACTER.y - SCREEN.height()/2);
   },
 
-  control_dialog(dialog){
+  control_dialog: function(dialog){
     this._ACTIVE_SYSTEM = IO_DIALOG;
     IO_DIALOG.set_dialog(dialog);
   },
 
-  control_character(){
+  control_character: function(){
     this._ACTIVE_SYSTEM = IO_CHARACTER;
   },
 
@@ -74,34 +76,62 @@ const IO = {
   },
 
   onPressKey: function(key){
-    if (!(key in this._PRESSED_KEYS)) {
-        this._PRESSED_KEYS[key] = true;
+    if (!(key in IO._PRESSED_KEYS)) {
+        IO._PRESSED_KEYS[key] = true;
     }
-    this.continuousKeyManager();
+    IO.continuousKeyManager();
 
-    if (this._ACTIVE_SYSTEM.onPressKey){
-      this._ACTIVE_SYSTEM.onPressKey(key);
+    if (IO._ACTIVE_SYSTEM.pressKey){
+      IO._ACTIVE_SYSTEM.pressKey(key);
     }
   },
 
   onReleaseKey: function(key){
-    delete this._PRESSED_KEYS[key];
-    this.continuousKeyManager();
-  },
-
-  onClick: function(x,y){
-    if (this._ACTIVE_SYSTEM.onClick){
-      this._ACTIVE_SYSTEM.onClick(x,y);
-    }
+    delete IO._PRESSED_KEYS[key];
+    IO.continuousKeyManager();
   },
 
   continuousKeyManager: function(){
-    if (this._ACTIVE_SYSTEM.continuousKeyManager){
-      this._ACTIVE_SYSTEM.continuousKeyManager(this._PRESSED_KEYS);
+    if (this._ACTIVE_SYSTEM.manageKeys){
+      this._ACTIVE_SYSTEM.manageKeys(this._PRESSED_KEYS);
+    }
+  },
+
+  onClick: function(event, is_hold){
+    var x = event.clientX;
+    var y = event.clientY;
+    if(!x || !y){ // for mobile
+      x = event.changedTouches[0].clientX;
+      y = event.changedTouches[0].clientY;
+    }
+
+    event.preventDefault();
+    var destination_x = window.pageXOffset + x;
+    var destination_Y = window.pageYOffset + y;
+
+    if (IO._ACTIVE_SYSTEM.click){
+      IO._ACTIVE_SYSTEM.click(destination_x, destination_Y, is_hold);
+    }
+  },
+
+  onClickHold: function(event, is_hold){
+    IO.onClick(event, true);
+  },
+
+  onMouseup: function(){
+    IO._MOUSE_DOWN = false;
+  },
+
+  onMousedown: function(){
+    IO._MOUSE_DOWN = true;
+  },
+
+  onMousemove: function(event){
+    if (IO._MOUSE_DOWN){
+      IO.onClickHold(event);
     }
   },
 }
-
 
 // Events listeners
 
@@ -117,21 +147,13 @@ document.addEventListener('keyup', function (event) {
 
 
 window.addEventListener('scroll', IO.onScroll, { passive: false });
-window.addEventListener('touchmove', IO.onScroll, { passive: false});
 window.addEventListener('resize', IO.onScroll, { passive: false});
 
-window.addEventListener('click', function (event) {
-    event.preventDefault();
-    var destination_x = window.pageXOffset + event.clientX;
-    var destination_Y = window.pageYOffset + event.clientY;
+window.addEventListener('click', IO.onClick, { passive: false});
+window.addEventListener('touchstart', IO.onClick, { passive: false});
 
-    IO.onClick(destination_x, destination_Y);
-}, { passive: false});
+window.addEventListener('touchmove', IO.onClickHold, { passive: false});
 
-window.addEventListener('touchstart',function (event) {
-    event.preventDefault();
-    var destination_x = window.pageXOffset + event.touches[0].clientX;
-    var destination_Y = window.pageYOffset + event.touches[0].clientY;
-
-    IO.onClick(destination_x, destination_Y);
-}, { passive: false});
+window.addEventListener('mouseup', IO.onMouseup, { passive: false});
+window.addEventListener('mousedown', IO.onMousedown, { passive: false});
+window.addEventListener('mousemove', IO.onMousemove, { passive: false});

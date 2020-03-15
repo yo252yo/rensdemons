@@ -2,12 +2,12 @@ atom parenthesis matching
 
 running
 
-mobile continuous pressing
-
-https://stackoverflow.com/questions/6139225/how-to-detect-a-long-touch-pressure-with-javascript-for-android-and-iphone
-
 random generation
 find sprites
+
+dialog writing animation?
+
+zindex is sometimes broken on mobile
 
 ASsets
 https://kenney.nl/assets

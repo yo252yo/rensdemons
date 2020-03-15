@@ -107,9 +107,9 @@ const LEVEL = {
   left: function(){ CHARACTER.try_move_left(); },
   right: function(){ CHARACTER.try_move_right(); },
 
-  click: function(x, y){
+  click: function(x, y, is_hold){
     var element = this.select_interactible_at(x, y);
-    if (! element){
+    if (! element || is_hold){
       CHARACTER.try_move_to(x, y);
     } else {
       if (! this.try_interact(element)){
