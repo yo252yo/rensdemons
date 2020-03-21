@@ -19,7 +19,7 @@ const CHARACTER = {
     this.margin_top = 5;
     this.margin_bottom = 0;
 
-    this.sprite = new MovingSprite("testing/vx_chara01_a.png", PALETTE.color_player.code(), this.width, this.height);
+    this.sprite = new MovingSprite("assets/sora.png", PALETTE.color_player.code(), this.width, this.height);
     this.sprite.place_at(x, y);
 
     IO.scroll_screen();

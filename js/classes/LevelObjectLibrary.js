@@ -14,10 +14,10 @@ class S_Floor extends Object {
 
 class S_Tree extends Object {
   constructor(x, y) {
-    var visual = new StaticSprite("testing/tree.png", PALETTE.color_obj_light.code());
+    var visual = new StaticSprite("assets/tree.png", PALETTE.color_obj_light.code());
     super(visual, x, y);
     this.adjust_hitbox(x+20,y,20,15);
-    visual.set_opacity(0.9);
+    //visual.set_opacity(0.9);
     //wrong ??
   }
 
@@ -36,4 +36,53 @@ class S_House extends Object {
   interaction() {
     new TextBanner("It's not a tree, mario");
   }
+}
+
+class M_ChildM extends Object {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/child_m.png", PALETTE.color_obj_dark.code(), 32, 48);
+    super(visual, x, y);
+    this.visual = visual;
+//    this.adjust_hitbox(x+20,y,20,15);
+    //visual.set_opacity(0.9);
+    //wrong ??
+  }
+
+  interaction() {
+    new TextBanner("It's a mchild, mario");
+//    this.visual.move(10,10);
+  }
+}
+
+
+  class M_ChildF extends Object {
+    constructor(x, y) {
+      var visual = new MovingSprite("assets/child_f.png", PALETTE.color_obj_dark.code(), 32, 48);
+      super(visual, x, y);
+      this.visual = visual;
+  //    this.adjust_hitbox(x+20,y,20,15);
+      //visual.set_opacity(0.9);
+      //wrong ??
+    }
+
+    interaction() {
+      new TextBanner("It's a fchild, mario");
+  //    this.visual.move(10,10);
+    }
+}
+
+  class M_Priest extends Object {
+    constructor(x, y) {
+      var visual = new MovingSprite("assets/priest.png", PALETTE.color_obj_dark.code(), 32, 48);
+      super(visual, x, y);
+      this.visual = visual;
+  //    this.adjust_hitbox(x+20,y,20,15);
+      //visual.set_opacity(0.9);
+      //wrong ??
+    }
+
+    interaction() {
+      new TextBanner("It's a priest, mario");
+  //    this.visual.move(10,10);
+    }
 }

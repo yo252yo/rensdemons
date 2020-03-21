@@ -1,0 +1,18 @@
+characters
+  http://untamed.wild-refuge.net/rmxpresources.php?characters
+  https://pipoya.itch.io/pipoya-free-rpg-character-sprites-32x32
+
+elements
+  https://kenney.nl/assets/background-elements
+  https://devilsworkshop.itch.io/low-poly-3d-and-pixel-2d-rpg-game-assets
+
+nope
+  https://www.reinerstilesets.de/graphics/2d-grafiken/2d-animals/
+  https://opengameart.org/art-search?keys=house
+  https://www.gameart2d.com/freebies.html
+
+directories:
+  https://itch.io/game-assets/free
+  https://letsmakegames.org/resources/art-assets-for-game-developers/
+  https://github.com/Kavex/GameDev-Resources
+  https://craftpix.net/

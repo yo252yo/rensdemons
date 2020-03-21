@@ -3,22 +3,10 @@ atom parenthesis matching
 running
 
 random generation
-find sprites
 
 dialog writing animation?
 
 zindex is sometimes broken on mobile
-
-ASsets
-https://kenney.nl/assets
-https://opengameart.org/art-search?keys=house
-https://itch.io/game-assets/free
-https://craftpix.net/
-https://letsmakegames.org/resources/art-assets-for-game-developers/
-https://www.gameart2d.com/freebies.html
-https://github.com/Kavex/GameDev-Resources
-http://untamed.wild-refuge.net/rmxpresources.php?characters
-https://www.reinerstilesets.de/graphics/2d-grafiken/2d-monsters/
 
 
 sidekick name
