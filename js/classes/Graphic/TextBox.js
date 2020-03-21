@@ -2,6 +2,7 @@
 // runtime PALETTE
 
 var _TEXTBOX_ZINDEX = 10000;
+var _LETTER_BY_LETTER_DELAY = 20;
 var _MIN_PAGE_TIME_MS = 250;
 var _LETTER_SIZE = [];
 
@@ -63,7 +64,7 @@ class TextBox extends VisualElement {
         this.html.style.color = PALETTE.text_color().code();
 
         TEXT_STYLE(this.html);
-        this.measure_text(w, h, padding);
+        this.measure_letter_capability(w, h, padding);
 
         this.html.style.padding = padding + "px";
 
@@ -72,12 +73,12 @@ class TextBox extends VisualElement {
 
         this.container.appendChild(this.html);
 
-        this.pending_text = "";
+        this.text_future_pages = "";
 
         this.last_turned = (new Date()).getTime();
     }
 
-    measure_text(w, h, padding){
+    measure_letter_capability(w, h, padding){
       var text_height = h - 2 * padding;
       var text_width = w - 2 * padding;
       var line_width = Math.floor(text_width / _LETTER_SIZE[0]);
@@ -85,7 +86,7 @@ class TextBox extends VisualElement {
       this.letter_capacity = line_width * num_lines;
     }
 
-    cut_text(text) {
+    cut_text_to_page(text) {
       if (text.length <= this.letter_capacity){
         return [text, ""];
       }
@@ -97,14 +98,37 @@ class TextBox extends VisualElement {
       return [start, end];
     }
 
-    change_text(text){
-      this.html.innerHTML = this.cut_text(text)[0];
-      if (this.cut_text(text)[1] != ""){
-        this.html.innerHTML += "...";
-        this.pending_text = this.cut_text(text)[1];
-      } else {
-        this.pending_text = "";
+    clear_html(){
+      this.html.innerHTML = "";
+    }
+
+    static print_text(textbox, instant){
+      if (instant){
+        textbox.html.innerHTML += textbox.text_printing;
+        textbox.text_printing = "";
+        return;
       }
+
+      var char = textbox.text_printing[0];
+      var left = textbox.text_printing.substring(1);
+
+      if (textbox.text_printing) {
+        textbox.html.innerHTML += char;
+        textbox.text_printing = left;
+        textbox.text_printing_timeout = setTimeout(TextBox.print_text, _LETTER_BY_LETTER_DELAY, textbox);
+      }
+    }
+
+    change_text(text, instant){
+      this.text_printing = this.cut_text_to_page(text)[0];
+      if (this.cut_text_to_page(text)[1] != ""){
+        this.text_printing += "...";
+        this.text_future_pages = this.cut_text_to_page(text)[1];
+      } else {
+        this.text_future_pages = "";
+      }
+      this.clear_html();
+      TextBox.print_text(this, instant);
     }
 
     adjust_depth(z){
@@ -113,16 +137,22 @@ class TextBox extends VisualElement {
     }
 
     turn_page (){
+      if (this.text_printing_timeout){
+        clearTimeout(this.text_printing_timeout);
+        delete this.text_printing_timeout;
+        TextBox.print_text(this, true);
+        return;
+      }
       var now =  (new Date()).getTime();
       if (now - this.last_turned < _MIN_PAGE_TIME_MS){
         return;
       }
       this.last_turned = now;
-      if (this.pending_text == ""){
+      if (this.text_future_pages == ""){
         IO.control_character();
         this.destroy();
       } else {
-        this.change_text(this.pending_text);
+        this.change_text(this.text_future_pages);
       }
     }
 }
