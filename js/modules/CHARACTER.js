@@ -1,132 +1,22 @@
 // runtime MovingSprite, PALETTE, LEVEL
 
 const CHARACTER = {
-  _WALKING_INCREMENT: 5,
-  _AUTOWALK_INCREMENT: 7,
-  _IS_AT_PRECISION: 5.1,
-  _AUTO_WALK_TICK: 40,
-
   initialize: function(x, y){
-    this.x = x;
-    this.y = y;
-    this.width = 32;
-    this.height = 48;
-
-    this.stop_autowalk();
-
-    this.margin_left = -10;
-    this.margin_right = 20;
-    this.margin_top = 5;
-    this.margin_bottom = 0;
-
-    this.sprite = new MovingSprite("assets/sora.png", PALETTE.color_player.code(), this.width, this.height);
-    this.sprite.place_at(x, y);
-
+    var width = 32;
+    var height = 48;
+    var sprite = new MovingSprite("assets/sora.png", PALETTE.color_player.code(), width, height);
+    this.character = new MovingObject(sprite, x, y, width, height);
     IO.scroll_screen();
   },
 
   clear: function (){
-    this.sprite = undefined;
-  },
-
-  stop_autowalk: function() {
-      this.destination_x = -1;
-      this.destination_y = -1;
-  },
-
-  gravity_center: function (){
-    var center_x = this.x + this.width / 2;
-    var center_y = this.y - this.height / 2;
-    return [center_x, center_y];
-  },
-
-  is_at_x: function(x) {
-      return (Math.abs(this.x - x) < this._IS_AT_PRECISION);
-  },
-
-
-  is_at_y: function(y) {
-      return (Math.abs(this.y - y) < this._IS_AT_PRECISION);
-  },
-
-
-  is_at: function(x, y) {
-      return (this.is_at_x(x) && this.is_at_y(y));
-  },
-
-  move: function(x, y){
-    this.x += x;
-    this.y += y;
-    this.sprite.move(x, y);
-    IO.scroll_screen();
-  },
-
-  facing_direction: function(){
-    return this.sprite.facing_direction();
-  },
-
-  is_moving: function(){
-     return this.destination_x  != -1 || this.destination_y != -1;
-  },
-
-  try_move_by: function(dx,dy){
-    if (LEVEL.is_walkable(this.x + dx, this.y+dy)){
-      this.move(dx,dy);
-      return true;
-    }
-    return false;
-  },
-
-  try_move_up: function(){
-    this.stop_autowalk();
-    this.try_move_by(0, -1 * this._WALKING_INCREMENT);
-  },
-  try_move_down: function(){
-    this.stop_autowalk();
-    this.try_move_by(0, this._WALKING_INCREMENT);
-  },
-  try_move_left: function(){
-    this.stop_autowalk();
-    this.try_move_by(-1 * this._WALKING_INCREMENT, 0);
-  },
-  try_move_right: function(){
-    this.stop_autowalk();
-    this.try_move_by(this._WALKING_INCREMENT, 0);
-  },
-
-  try_move_to: function(x, y){
-    var currently_moving = this.is_moving();
-    this.destination_x = x - this.width / 2;
-    this.destination_y = y + 10;
-
-    if (!currently_moving){
-      this.auto_walk();
+    if (this.character) {
+      this.character.sprite = undefined;
     }
   },
 
-  auto_walk: function() {
-    if (! this.is_moving()){
-      return;
-    }
-    if (this.is_at(this.destination_x, this.destination_y)){
-        this.stop_autowalk();
-        return;
-    }
-
-    var dx = this.destination_x - this.x;
-    var dy = this.destination_y - this.y;
-
-    var coef = this._AUTOWALK_INCREMENT / Math.sqrt(dx * dx + dy * dy);
-    if (coef < 1){
-      dx = Math.floor(dx * coef);
-      dy = Math.floor(dy * coef);
-    }
-
-    if (this.try_move_by(dx, dy)) {
-      setTimeout(function(){ CHARACTER.auto_walk(); }, CHARACTER._AUTO_WALK_TICK);
-    } else {
-      this.stop_autowalk();
-      return;
-    }
+  get: function() {
+      return this.character;
   },
+
 };

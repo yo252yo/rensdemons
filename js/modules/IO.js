@@ -58,7 +58,7 @@ const IO = {
   _MOUSE_DOWN: false,
 
   scroll_screen: function(){
-    window.scrollTo(CHARACTER.x - SCREEN.width()/2, CHARACTER.y - SCREEN.height()/2);
+    window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
   },
 
   control_dialog: function(dialog){

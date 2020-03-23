@@ -73,16 +73,16 @@ const LEVEL = {
   try_interact: function(element){
     if(element.distance_to_character() < this._MAX_INTERACTION_DISTANCE){
       element.interaction();
-      CHARACTER.stop_autowalk();
+      CHARACTER.get().stop_autowalk();
       return true;
     }
   },
 
   interact_in_front: function(){
-    var c = CHARACTER.gravity_center();
+    var c = CHARACTER.get().gravity_center();
     var x = c[0];
     var y = c[1];
-    switch(CHARACTER.facing_direction()) {
+    switch(CHARACTER.get().facing_direction()) {
       case "LEFT":
         x -= this._FACE_INTERACTION_DISTANCE;
         break;
@@ -102,18 +102,18 @@ const LEVEL = {
     }
   },
 
-  up: function(){ CHARACTER.try_move_up(); },
-  down: function(){ CHARACTER.try_move_down(); },
-  left: function(){ CHARACTER.try_move_left(); },
-  right: function(){ CHARACTER.try_move_right(); },
+  up: function(){ CHARACTER.get().try_move_up(); },
+  down: function(){ CHARACTER.get().try_move_down(); },
+  left: function(){ CHARACTER.get().try_move_left(); },
+  right: function(){ CHARACTER.get().try_move_right(); },
 
   click: function(x, y, is_hold){
     var element = this.select_interactible_at(x, y);
     if (! element || is_hold){
-      CHARACTER.try_move_to(x, y);
+      CHARACTER.get().try_move_to(x, y);
     } else {
       if (! this.try_interact(element)){
-        CHARACTER.try_move_to(x, y);
+        CHARACTER.get().try_move_to(x, y);
       }
     }
   },

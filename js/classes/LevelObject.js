@@ -14,10 +14,10 @@ class Object {
     }
 
     adjust_hitbox(x,y,w,h){
-      this.h_x = x - CHARACTER.margin_right;
-      this.h_y = y + CHARACTER.margin_top;
-      this.h_w = w + CHARACTER.margin_left + CHARACTER.margin_right;
-      this.h_h = h + CHARACTER.margin_top + CHARACTER.margin_bottom;
+      this.h_x = x - CHARACTER.get().margin_right;
+      this.h_y = y + CHARACTER.get().margin_top;
+      this.h_w = w + CHARACTER.get().margin_left + CHARACTER.get().margin_right;
+      this.h_h = h + CHARACTER.get().margin_top + CHARACTER.get().margin_bottom;
     }
 
     draw_hitbox(){
@@ -67,7 +67,7 @@ class Object {
     }
 
     distance_to_character(){
-      var c = CHARACTER.gravity_center();
+      var c = CHARACTER.get().gravity_center();
 
       var x = c[0];
       if (c[0] < this.visual_element.x){

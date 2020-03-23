@@ -104,6 +104,8 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 
 new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
+IMPORTS.classes['LevelObject'].child_class("MovingObject");
+IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 
 
 window.onload = function() {
