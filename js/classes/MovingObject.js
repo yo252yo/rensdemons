@@ -24,12 +24,6 @@ class MovingObject extends Object {
     this.margin_bottom = 0;
 
     this.sprite.place_at(x, y);
-
-  //  IO.scroll_screen();
-  }
-
-  clear (){
-    this.sprite = undefined;
   }
 
   stop_autowalk() {
@@ -37,22 +31,22 @@ class MovingObject extends Object {
       this.destination_y = -1;
   }
 
-  gravity_center (){
+  gravity_center(){
     var center_x = this.x + this.width / 2;
     var center_y = this.y - this.height / 2;
     return [center_x, center_y];
   }
 
-  is_at_x(x) {
+  _is_at_x(x) {
       return (Math.abs(this.x - x) < _IS_AT_PRECISION);
   }
 
-  is_at_y(y) {
+  _is_at_y(y) {
       return (Math.abs(this.y - y) < _IS_AT_PRECISION);
   }
 
   is_at(x, y) {
-      return (this.is_at_x(x) && this.is_at_y(y));
+      return (this._is_at_x(x) && this._is_at_y(y));
   }
 
   move(x, y){
@@ -66,11 +60,11 @@ class MovingObject extends Object {
     return this.sprite.facing_direction();
   }
 
-  is_moving(){
+  is_walking(){
      return this.destination_x  != -1 || this.destination_y != -1;
   }
 
-  try_move_by(dx,dy){
+  _try_move_by(dx,dy){
     if (LEVEL.is_walkable(this.x + dx, this.y+dy)){
       this.move(dx,dy);
       return true;
@@ -78,28 +72,28 @@ class MovingObject extends Object {
     return false;
   }
 
-  try_move_up(){
+  _try_move_up(){
     this.stop_autowalk();
-    this.try_move_by(0, -1 * _WALKING_INCREMENT);
+    this._try_move_by(0, -1 * _WALKING_INCREMENT);
   }
 
-  try_move_down(){
+  _try_move_down(){
     this.stop_autowalk();
-    this.try_move_by(0, _WALKING_INCREMENT);
+    this._try_move_by(0, _WALKING_INCREMENT);
   }
 
-  try_move_left(){
+  _try_move_left(){
     this.stop_autowalk();
-    this.try_move_by(-1 * _WALKING_INCREMENT, 0);
+    this._try_move_by(-1 * _WALKING_INCREMENT, 0);
   }
 
-  try_move_right(){
+  _try_move_right(){
     this.stop_autowalk();
-    this.try_move_by(_WALKING_INCREMENT, 0);
+    this._try_move_by(_WALKING_INCREMENT, 0);
   }
 
-  try_move_to(x, y){
-    var currently_moving = this.is_moving();
+  try_walk_to(x, y){
+    var currently_moving = this.is_walking();
     this.destination_x = x - this.width / 2;
     this.destination_y = y + 10;
 
@@ -108,8 +102,18 @@ class MovingObject extends Object {
     }
   }
 
+  try_walk_by(dx, dy){
+    var currently_moving = this.is_walking();
+    this.destination_x = this.x + dx;
+    this.destination_y = this.y + dy;
+
+    if (!currently_moving){
+      MovingObject.auto_walk(this);
+    }
+  }
+
   static auto_walk(moving_object) {
-    if (! moving_object.is_moving()){
+    if (! moving_object.is_walking()){
       return;
     }
     if (moving_object.is_at(moving_object.destination_x, moving_object.destination_y)){
@@ -126,7 +130,7 @@ class MovingObject extends Object {
       dy = Math.floor(dy * coef);
     }
 
-    if (moving_object.try_move_by(dx, dy)) {
+    if (moving_object._try_move_by(dx, dy)) {
       setTimeout(function(){ MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
     } else {
       moving_object.stop_autowalk();

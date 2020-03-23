@@ -12,7 +12,7 @@ class M_ChildM extends MovingObject {
   }
 
   interaction() {
-    this.try_move_to(1000,1000);
+    this.try_walk_by(100,100);
     //new TextBanner("It's a mchild, mario");
 //    this.visual.move(10,10);
   }
@@ -31,7 +31,7 @@ class M_ChildM extends MovingObject {
 
     interaction() {
       //new TextBanner("It's a fchild, mario");
-      this.try_move_to(10,10);
+      this.try_walk_by(-50,-50);
     }
 }
 

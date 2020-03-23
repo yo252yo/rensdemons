@@ -110,10 +110,10 @@ const LEVEL = {
   click: function(x, y, is_hold){
     var element = this.select_interactible_at(x, y);
     if (! element || is_hold){
-      CHARACTER.get().try_move_to(x, y);
+      CHARACTER.get().try_walk_to(x, y);
     } else {
       if (! this.try_interact(element)){
-        CHARACTER.get().try_move_to(x, y);
+        CHARACTER.get().try_walk_to(x, y);
       }
     }
   },
