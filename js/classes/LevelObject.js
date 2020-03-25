@@ -13,14 +13,14 @@ class Object {
       this.walkable = true;
     }
 
-    adjust_hitbox(x,y,w,h){
+    adjust_hitbox(x,y,w,h) {
       this.h_x = x - CHARACTER.get().margin_right;
       this.h_y = y + CHARACTER.get().margin_top;
       this.h_w = w + CHARACTER.get().margin_left + CHARACTER.get().margin_right;
       this.h_h = h + CHARACTER.get().margin_top + CHARACTER.get().margin_bottom;
     }
 
-    draw_hitbox(){
+    draw_hitbox() {
 
       var html_rectangle = document.createElement('div');
       html_rectangle.style.top = (this.h_y - this.h_h) + "px";
@@ -39,8 +39,8 @@ class Object {
     }
 
     is_at_hitbox(x,y) {
-      if (x >= this.h_x && x <= this.h_x + this.h_w){
-        if (y >= this.h_y - this.h_h && y <= this.h_y){
+      if (x >= this.h_x && x <= this.h_x + this.h_w) {
+        if (y >= this.h_y - this.h_h && y <= this.h_y) {
           return true;
         }
       }
@@ -51,13 +51,13 @@ class Object {
       return this.visual_element.is_at(x,y);
     }
 
-    is_interactible(x, y){
+    is_interactible(x, y) {
       return (this.interaction && this.is_at_sprite(x,y));
     }
 
     is_walkable(x,y) {
-      if (this.is_at_hitbox(x,y)){
-        if (this.walkable){
+      if (this.is_at_hitbox(x,y)) {
+        if (this.walkable) {
           return 1;
         } else if (! this.walkable) {
           return -1;
@@ -66,20 +66,20 @@ class Object {
       return 0;
     }
 
-    distance_to_character(){
+    distance_to_character() {
       var c = CHARACTER.get().gravity_center();
 
       var x = c[0];
-      if (c[0] < this.visual_element.x){
+      if (c[0] < this.visual_element.x) {
         x = this.visual_element.x;
-      } else if (c[0] > this.visual_element.x + this.visual_element.width){
+      } else if (c[0] > this.visual_element.x + this.visual_element.width) {
         x = this.visual_element.x + this.visual_element.width;
       }
 
       var y = c[1];
-      if (c[1] < this.visual_element.y - this.visual_element.height){
+      if (c[1] < this.visual_element.y - this.visual_element.height) {
         y = this.visual_element.y - this.visual_element.height;
-      } else if (c[1] > this.visual_element.y){
+      } else if (c[1] > this.visual_element.y) {
         y = this.visual_element.y;
       }
 

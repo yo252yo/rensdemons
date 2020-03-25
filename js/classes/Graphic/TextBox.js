@@ -8,7 +8,7 @@ var _LETTER_SIZE = [];
 
 
 
-var TEXT_STYLE = function(div){
+var TEXT_STYLE = function(div) {
   div.style.fontSize = "27px";
   div.style.fontFamily = "monospace";
 }
@@ -42,7 +42,7 @@ class TextBox extends VisualElement {
     constructor(x, y, w, h, padding) {
         super(x,y,w,h);
 
-        if (!padding){
+        if (!padding) {
           padding = 7;
         }
 
@@ -78,7 +78,7 @@ class TextBox extends VisualElement {
         this.last_turned = (new Date()).getTime();
     }
 
-    measure_letter_capability(w, h, padding){
+    measure_letter_capability(w, h, padding) {
       var text_height = h - 2 * padding;
       var text_width = w - 2 * padding;
       var line_width = Math.floor(text_width / _LETTER_SIZE[0]);
@@ -87,7 +87,7 @@ class TextBox extends VisualElement {
     }
 
     cut_text_to_page(text) {
-      if (text.length <= this.letter_capacity){
+      if (text.length <= this.letter_capacity) {
         return [text, ""];
       }
 
@@ -98,12 +98,12 @@ class TextBox extends VisualElement {
       return [start, end];
     }
 
-    clear_html(){
+    clear_html() {
       this.html.innerHTML = "";
     }
 
-    static print_text(textbox, instant){
-      if (instant){
+    static print_text(textbox, instant) {
+      if (instant) {
         textbox.html.innerHTML += textbox.text_printing;
         textbox.text_printing = "";
         return;
@@ -119,9 +119,9 @@ class TextBox extends VisualElement {
       }
     }
 
-    change_text(text, instant){
+    change_text(text, instant) {
       this.text_printing = this.cut_text_to_page(text)[0];
-      if (this.cut_text_to_page(text)[1] != ""){
+      if (this.cut_text_to_page(text)[1] != "") {
         this.text_printing += "...";
         this.text_future_pages = this.cut_text_to_page(text)[1];
       } else {
@@ -131,24 +131,24 @@ class TextBox extends VisualElement {
       TextBox.print_text(this, instant);
     }
 
-    adjust_depth(z){
+    adjust_depth(z) {
       super.adjust_depth(z);
       this.html.style.zIndex = z;
     }
 
-    turn_page (){
-      if (this.text_printing_timeout){
+    turn_page() {
+      if (this.text_printing_timeout) {
         clearTimeout(this.text_printing_timeout);
         delete this.text_printing_timeout;
         TextBox.print_text(this, true);
         return;
       }
       var now =  (new Date()).getTime();
-      if (now - this.last_turned < _MIN_PAGE_TIME_MS){
+      if (now - this.last_turned < _MIN_PAGE_TIME_MS) {
         return;
       }
       this.last_turned = now;
-      if (this.text_future_pages == ""){
+      if (this.text_future_pages == "") {
         IO.control_character();
         this.destroy();
       } else {

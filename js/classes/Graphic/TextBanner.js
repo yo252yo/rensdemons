@@ -17,7 +17,7 @@ class TextBanner extends TextBox {
 
         IO.control_dialog(this);
 
-        if (text){
+        if (text) {
           this.change_text(text);
         }
     }

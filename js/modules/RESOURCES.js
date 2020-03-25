@@ -14,7 +14,7 @@ const RESOURCES = {
       return resource;
   },
 
-  onload: function(resource, f){
+  onload: function(resource, f) {
     resource.addEventListener('load', f);
     f(); // In case it's already loaded
   },

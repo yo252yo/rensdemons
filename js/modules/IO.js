@@ -1,15 +1,15 @@
 // runtime: LEVEL, SCREEN
 
 const IO_CHARACTER = {
-  click: function(x,y, is_hold){
+  click: function(x,y, is_hold) {
     LEVEL.click(x, y, is_hold);
   },
 
-  manageKeys: function(pressed_keys){
-      if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys){
+  manageKeys: function(pressed_keys) {
+      if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys) {
 
       }
-      if ('shift' in pressed_keys || 16 in pressed_keys){
+      if ('shift' in pressed_keys || 16 in pressed_keys) {
           //CHARACTER.run();
       } else {
           //CHARACTER.walk();
@@ -36,17 +36,17 @@ const IO_CHARACTER = {
 }
 
 const IO_DIALOG = {
-  set_dialog: function(dialog){
+  set_dialog: function(dialog) {
     this.dialog = dialog;
   },
 
-  click: function(x,y, is_hold){
-    if (! is_hold){
+  click: function(x,y, is_hold) {
+    if (! is_hold) {
       this.dialog.turn_page();
     }
   },
 
-  pressKey: function(key){
+  pressKey: function(key) {
     this.dialog.turn_page();
   },
 }
@@ -57,50 +57,50 @@ const IO = {
   _ACTIVE_SYSTEM: IO_CHARACTER,
   _MOUSE_DOWN: false,
 
-  scroll_screen: function(){
+  scroll_screen: function() {
     window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
   },
 
-  control_dialog: function(dialog){
+  control_dialog: function(dialog) {
     this._ACTIVE_SYSTEM = IO_DIALOG;
     IO_DIALOG.set_dialog(dialog);
   },
 
-  control_character: function(){
+  control_character: function() {
     this._ACTIVE_SYSTEM = IO_CHARACTER;
   },
 
-  onScroll: function(event){
+  onScroll: function(event) {
       event.preventDefault();
       return true;
   },
 
-  onPressKey: function(key){
+  onPressKey: function(key) {
     if (!(key in IO._PRESSED_KEYS)) {
         IO._PRESSED_KEYS[key] = true;
     }
     IO.continuousKeyManager();
 
-    if (IO._ACTIVE_SYSTEM.pressKey){
+    if (IO._ACTIVE_SYSTEM.pressKey) {
       IO._ACTIVE_SYSTEM.pressKey(key);
     }
   },
 
-  onReleaseKey: function(key){
+  onReleaseKey: function(key) {
     delete IO._PRESSED_KEYS[key];
     IO.continuousKeyManager();
   },
 
-  continuousKeyManager: function(){
-    if (this._ACTIVE_SYSTEM.manageKeys){
+  continuousKeyManager: function() {
+    if (this._ACTIVE_SYSTEM.manageKeys) {
       this._ACTIVE_SYSTEM.manageKeys(this._PRESSED_KEYS);
     }
   },
 
-  onClick: function(event, is_hold){
+  onClick: function(event, is_hold) {
     var x = event.clientX;
     var y = event.clientY;
-    if(!x || !y){ // for mobile
+    if(!x || !y) { // for mobile
       x = event.changedTouches[0].clientX;
       y = event.changedTouches[0].clientY;
     }
@@ -109,25 +109,25 @@ const IO = {
     var destination_x = window.pageXOffset + x;
     var destination_Y = window.pageYOffset + y;
 
-    if (IO._ACTIVE_SYSTEM.click){
+    if (IO._ACTIVE_SYSTEM.click) {
       IO._ACTIVE_SYSTEM.click(destination_x, destination_Y, is_hold);
     }
   },
 
-  onClickHold: function(event, is_hold){
+  onClickHold: function(event, is_hold) {
     IO.onClick(event, true);
   },
 
-  onMouseup: function(){
+  onMouseup: function() {
     IO._MOUSE_DOWN = false;
   },
 
-  onMousedown: function(){
+  onMousedown: function() {
     IO._MOUSE_DOWN = true;
   },
 
-  onMousemove: function(event){
-    if (IO._MOUSE_DOWN){
+  onMousemove: function(event) {
+    if (IO._MOUSE_DOWN) {
       IO.onClickHold(event);
     }
   },

@@ -15,7 +15,7 @@ class MovingSprite extends CanvasElement {
 
       this.resource = RESOURCES.get_img(path);
       var thing_to_draw = this;
-      RESOURCES.onload(this.resource, function(){ thing_to_draw.draw(); });
+      RESOURCES.onload(this.resource, function() { thing_to_draw.draw(); });
     }
 
     draw() {
@@ -37,27 +37,27 @@ class MovingSprite extends CanvasElement {
       anime.animate_lock = 1;
       anime.sprite_index_x = 1;
       anime.draw();
-      setTimeout(function(){
+      setTimeout(function() {
           anime.sprite_index_x = 2; anime.draw();
-              setTimeout(function(){
+              setTimeout(function() {
                   anime.sprite_index_x = 0; anime.draw(); anime.animate_lock = 0;
                   }, _ANIMATION_SPEED);
           }, _ANIMATION_SPEED);
     }
 
-    move(dx, dy){
-      if (Math.abs(dx) > Math.abs(dy)){
-        if (dx > 0){
+    move(dx, dy) {
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0) {
             this.sprite_index_y = 2;
         }
-        if (dx < 0){
+        if (dx < 0) {
             this.sprite_index_y = 1;
         }
       } else {
-        if (dy > 0){
+        if (dy > 0) {
             this.sprite_index_y = 0;
         }
-        if (dy < 0){
+        if (dy < 0) {
             this.sprite_index_y = 3;
         }
       }
@@ -65,7 +65,7 @@ class MovingSprite extends CanvasElement {
       super.move(dx, dy);
     }
 
-    facing_direction(){
+    facing_direction() {
       switch(this.sprite_index_y) {
         case 1:
           return "LEFT";
@@ -82,7 +82,7 @@ class MovingSprite extends CanvasElement {
       }
     }
 
-    adjust_depth(z){
+    adjust_depth(z) {
       super.adjust_depth(z);
       this.html_canvas.style.zIndex = z;
     }

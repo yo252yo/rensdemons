@@ -11,15 +11,15 @@ class VisualElement {
     }
 
     is_at(x,y) {
-      if (x >= this.x && x <= this.x + this.width){
-        if (y >= this.y - this.height && y <= this.y){
+      if (x >= this.x && x <= this.x + this.width) {
+        if (y >= this.y - this.height && y <= this.y) {
           return true;
         }
       }
       return false;
     }
 
-    adjust_dimensions(w,h){
+    adjust_dimensions(w,h) {
       this.height = h;
       this.width = w;
       this.container.style.width = w + "px";
@@ -34,31 +34,31 @@ class VisualElement {
       this.container.style.zIndex = this.y;
     }
 
-    place_at(x, y){
+    place_at(x, y) {
       this.y = y;
       this.x = x;
       this.refresh_position();
     }
 
-    move(dx, dy){
+    move(dx, dy) {
       this.y += dy;
       this.x += dx;
       this.refresh_position();
     }
 
-    adjust_depth(z){
+    adjust_depth(z) {
       this.container.style.zIndex = z;
     }
 
-    get_depth(z){
+    get_depth(z) {
       return this.container.style.zIndex;
     }
 
-    set_opacity(o){
+    set_opacity(o) {
       this.container.style.opacity = o;
     }
 
-    destroy(){
+    destroy() {
       LEVEL.html().removeChild(this.container);
       delete this;
     }

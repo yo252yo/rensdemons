@@ -15,7 +15,7 @@ class Rectangle extends VisualElement {
         this.container.appendChild(this.html_rectangle);
     }
 
-    adjust_depth(z){
+    adjust_depth(z) {
       super.adjust_depth(z);
       this.html_rectangle.style.zIndex = z;
     }

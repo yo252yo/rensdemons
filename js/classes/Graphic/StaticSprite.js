@@ -6,7 +6,7 @@ class StaticSprite extends CanvasElement {
       super(color);
       this.resource = RESOURCES.get_img(path);
       var thing_to_draw = this;
-      RESOURCES.onload(this.resource, function(){ thing_to_draw.draw(); });
+      RESOURCES.onload(this.resource, function() { thing_to_draw.draw(); });
     }
 
     draw() {
@@ -19,7 +19,7 @@ class StaticSprite extends CanvasElement {
       super.tint();
     }
 
-    adjust_depth(z){
+    adjust_depth(z) {
       super.adjust_depth(z);
       this.html_canvas.style.zIndex = z;
     }

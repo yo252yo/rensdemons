@@ -7,7 +7,7 @@ class Color {
       return new Color(r256(), r256(), r256());
     }
 
-    static fromHsv(h, s, v){
+    static fromHsv(h, s, v) {
         var r, g, b;
 
         var i = Math.floor(h * 6);
@@ -29,7 +29,7 @@ class Color {
     }
 
     constructor(r, g, b) {
-      var validate = function(n){
+      var validate = function(n) {
         if (n<0) {  return 0; }
         else if (n > 255) { return 255; }
         else { return n; }
@@ -70,7 +70,7 @@ class Color {
     code() {
       var tohex = function(num) {
         var s = num.toString(16).toUpperCase();
-        if (s.length < 2){
+        if (s.length < 2) {
           s = "0" + s;
         }
         return s;
@@ -94,7 +94,7 @@ class Color {
       //if (!strict && h[2] > 0.5) { mod = -1; }
 
       var s = h[1];// - ((h[1] > 0.5) * 2 - 1) * i;
-      if (symetrical &&  h[2] > 0.5){
+      if (symetrical &&  h[2] > 0.5) {
         var v = h[2] - i;
       } else {
         var v = h[2] + i;
@@ -120,7 +120,7 @@ class Color {
       return Color.fromHsv(h[0], s, v);
     }
 
-    is_dark(){
+    is_dark() {
       return (this.r + this.g + this.b) < 3 * 128;
     }
 }
