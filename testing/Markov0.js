@@ -64,6 +64,7 @@ class Markov {
   }
 
   ingest(word) {
+    //word = word.toLowerCase();
     word = "^^" + word + "$";
     for (var i =0; i<word.length -2; i++){
       this._increment(word[i], word[i+1], word[i+2]);
