@@ -63,7 +63,8 @@ class Markov {
   }
 
   _undecorate(word){
-    return word.substr(this.depth - 1).split("$")[0];
+    var s = word.split("^");
+    return s[s.length-1].split("$")[0];
   }
 
   generate_word(){
@@ -102,8 +103,12 @@ class Markov {
           continue;
         }
         var lsplit = line.split(" ")[0].split("/")[0];
-        this.ingest(lsplit);
+        this.ingest(this.toCamelCase(lsplit));
       }
+    }
+
+    toCamelCase(str){
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
 
     ingest_all (text){
@@ -171,7 +176,7 @@ class Markov {
       return mutating[pos];
     }
 
-    _mutate_at(word, pos){
+    _tweak_mutate_at(word, pos){
       var pattern_end = Math.min(pos + 1, word.length - 1);
       var pattern_start = pattern_end - this.depth + 1;
       var pattern_pos = pos - pattern_start;
@@ -185,26 +190,38 @@ class Markov {
       return mutated;
     }
 
-    mutate(word){
-      var prefix = this._get_prefix();
-      var decorated = this._decorate(word);
-
-      var mutations = 1 + Math.floor(Math.random() * 3);
-      for (var i =0; i< mutations; i++){
-        var mutate_pos = prefix.length + Math.floor(Math.random() * word.length);
-        word = this._mutate_at(decorated, mutate_pos);
+    _mutate_at(word, pos){
+      var m = Math.random();
+      if (m < 0.03){ // delete mutation
+        return word.substr(0, pos) + word.substr(pos+1);
+      } else if (m < 0.1) { // additive mutation
+        var new_word = word.substr(0, pos) + "'" + word.substr(pos);
+        return this._tweak_mutate_at(new_word, pos);
+      } else {
+        return this._tweak_mutate_at(word, pos);
       }
-      return this._undecorate(word);
+    }
+
+    mutate(word, mutations){
+      var mutated_word = word;
+      while(mutated_word == word){
+        var prefix = this._get_prefix();
+        var decorated = this._decorate(mutated_word);
+
+        var mutations = 1 + Math.floor(Math.random() * mutations);
+        for (var i =0; i< mutations; i++){
+          var mutate_pos = prefix.length + Math.floor(Math.random() * word.length);
+          mutated_word = this._mutate_at(decorated, mutate_pos);
+        }
+        mutated_word = this._undecorate(mutated_word);
+      }
+      return mutated_word;
     }
 }
-
-var m = new Markov(4);
-m.ingest("AorithAepithAerothAeriah");
-m.array;
 
 
 var r = [];
 for (var i = 0; i<100; i++){
-  r.push(m.mutate("Aerith"));
+  r.push(m.mutate("Aerith", 10));
 }
 r;

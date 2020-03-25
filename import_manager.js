@@ -91,6 +91,10 @@ new Module("LEVEL");
 new Module("CHARACTER");
 new Module("PALETTE");
 
+new Module("STRING_UTILS");
+IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");
+IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
+
 
 new Class("Graphic/Color");
 new Class("Graphic/VisualElement");
