@@ -94,6 +94,7 @@ new Module("PALETTE");
 new Module("STRING_UTILS");
 IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");
 IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
+IMPORTS.classes['Generation/MarkovModels'].child_module("DICTIONARY");
 
 
 new Class("Graphic/Color");
