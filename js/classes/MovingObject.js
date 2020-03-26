@@ -72,22 +72,22 @@ class MovingObject extends Object {
     return false;
   }
 
-  _try_move_up() {
+  try_move_up() {
     this.stop_autowalk();
     this._try_move_by(0, -1 * _WALKING_INCREMENT);
   }
 
-  _try_move_down() {
+  try_move_down() {
     this.stop_autowalk();
     this._try_move_by(0, _WALKING_INCREMENT);
   }
 
-  _try_move_left() {
+  try_move_left() {
     this.stop_autowalk();
     this._try_move_by(-1 * _WALKING_INCREMENT, 0);
   }
 
-  _try_move_right() {
+  try_move_right() {
     this.stop_autowalk();
     this._try_move_by(_WALKING_INCREMENT, 0);
   }
