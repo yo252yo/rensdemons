@@ -31,7 +31,7 @@ const DICTIONARY = {
   _DICTIONARY: new DisctionaryInternal(),
 
   get: function(key) {
-    return _DICTIONARY[key];
+    return this._DICTIONARY[key];
   },
 
   reset: function() {
