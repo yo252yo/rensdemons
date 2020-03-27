@@ -1,6 +1,6 @@
 
 
-
+/*
 
 var parchment_canvas = document.createElement('canvas');
 parchment_canvas.id = "IE_map0";
@@ -27,7 +27,7 @@ RESOURCES.onload(resource, function() {
 //  },4000);
  });
 
-//      drawmap();
+*/      drawmap();
 
 function drawmap(){
 
