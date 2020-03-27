@@ -19,15 +19,15 @@ class DisctionaryInternal {
 
   // Generators
   _gen_sidekick_name = function() {
-    this.sidekick_name = MARKOV_MODELS.human_names.mutate("Aerith", 20);
+    this.sidekick_name = MARKOV_MODELS.human_names.mutate("Aerith", 5);
   };
 
     _gen_world_name = function() {
-      this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 40);
+      this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
     };
 
     _gen_demon_lord = function() {
-      this.demon_lord = MARKOV_MODELS.human_names.mutate("Bowser", 40);
+      this.demon_lord = MARKOV_MODELS.human_names.mutate("Bowser", 12);
     };
 }
 

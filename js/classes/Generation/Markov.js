@@ -25,7 +25,7 @@ class Markov {
 
   _str_undecorate(word) {
     var s = word.split("^");
-    return s[s.length-1].split("$")[0];
+    return STRING_UTILS.camel_case(s[s.length-1].split("$")[0]);
   }
 
   // Helper util
@@ -196,9 +196,9 @@ class Markov {
       var nb_mut = 1 + Math.floor(Math.random() * mutations);
       for (var i =0; i< nb_mut; i++) {
         var mutate_pos = prefix.length + Math.floor(Math.random() * word.length);
-        mutated_word = this._mutate_at(decorated, mutate_pos);
+        decorated = this._mutate_at(decorated, mutate_pos);
       }
-      mutated_word = this._str_undecorate(mutated_word);
+      mutated_word = this._str_undecorate(decorated);
     }
     return mutated_word;
   }
