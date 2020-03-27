@@ -1,5 +1,12 @@
 
 const RESOURCES = {
+  _LOADED: {},
+
+  is_loaded: function(item) {
+    this._LOADED[item.id] = true;
+  },
+
+
   get_img: function(name) {
       var resource = document.getElementById("R_" + name);
       if (resource) {
@@ -9,14 +16,18 @@ const RESOURCES = {
       resource.id = "R_" + name;
       resource.src = name;
       resource.style = "display:none;";
+      resource.onload = function(){RESOURCES.is_loaded(resource);};
 
       document.body.appendChild(resource);
       return resource;
   },
 
   onload: function(resource, f) {
-    resource.addEventListener('load', f);
-    f(); // In case it's already loaded
+    if(! this._LOADED[resource.id]){
+      resource.addEventListener('load', f);
+    } else {
+      f(); // In case it's already loaded
+    }
   },
 
 };
