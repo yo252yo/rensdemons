@@ -122,7 +122,25 @@ class TextBox extends VisualElement {
       }
     }
 
+    process_text(text) {
+      var processed = "";
+      while (text.indexOf("$$") >= 0){
+        var pos = text.indexOf("$$");
+        processed += text.substr(0, pos);
+        text = text.substr(pos + 2); //"$$"
+        var end = text.indexOf("$");
+        if (end == -1) end = text.length -1;
+        var key = text.substr(0, end);
+        text = text.substr(end + 1);
+
+        processed += DICTIONARY.get(key);
+      }
+      processed += text;
+      return processed;
+    }
+
     change_text(text, instant) {
+      text = this.process_text(text);
       this.text_printing = this.cut_text_to_page(text)[0];
       if (this.cut_text_to_page(text)[1] != "") {
         this.text_printing += "...";

@@ -19,19 +19,28 @@ class DisctionaryInternal {
 
   // Generators
   _gen_sidekick_name = function() {
-    this.sidekick_name = MARKOV_MODELS.human_names.mutate("Aerith", 10);
+    this.sidekick_name = MARKOV_MODELS.human_names.mutate("Aerith", 20);
   };
 
-  _gen_world_name = function() {
-    this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 20);
-  };
+    _gen_world_name = function() {
+      this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 40);
+    };
+
+    _gen_demon_lord = function() {
+      this.demon_lord = MARKOV_MODELS.human_names.mutate("Bowser", 40);
+    };
 }
 
 const DICTIONARY = {
   _DICTIONARY: new DisctionaryInternal(),
 
   get: function(key) {
-    return this._DICTIONARY[key];
+    if (key in this._DICTIONARY){
+      return this._DICTIONARY[key];
+    } else{
+      console.error("Wrong dictionary key: " + key);
+      return "";
+    }
   },
 
   reset: function() {
