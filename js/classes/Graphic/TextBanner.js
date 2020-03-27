@@ -22,3 +22,16 @@ class TextBanner extends TextBox {
         }
     }
 }
+
+
+class TextBannerSequence {
+  static make(texts){
+    if (texts.length == 0) return;
+    var banner = new TextBanner(texts[0]);
+    banner.onEnd(
+      function(){
+        TextBannerSequence.make(texts.slice(1));
+      }
+    )
+  }
+}

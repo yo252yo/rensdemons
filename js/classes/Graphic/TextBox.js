@@ -116,6 +116,9 @@ class TextBox extends VisualElement {
         textbox.html.innerHTML += char;
         textbox.text_printing = left;
         textbox.text_printing_timeout = setTimeout(TextBox.print_text, _LETTER_BY_LETTER_DELAY, textbox);
+      } else {
+        clearTimeout(textbox.text_printing_timeout);
+        delete textbox.text_printing_timeout;
       }
     }
 
@@ -150,9 +153,16 @@ class TextBox extends VisualElement {
       this.last_turned = now;
       if (this.text_future_pages == "") {
         IO.control_character();
+        if (this.on_end_function){
+          this.on_end_function();
+        }
         this.destroy();
       } else {
         this.change_text(this.text_future_pages);
       }
+    }
+
+    onEnd(f){
+      this.on_end_function = f;
     }
 }
