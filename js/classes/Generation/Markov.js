@@ -174,9 +174,9 @@ class Markov {
   _mutate_at(word, pos) {
     var m = Math.random();
 
-    if (m < 0.03) { // delete mutation
+    if (m < 0.05) { // delete mutation
       return word.substr(0, pos) + word.substr(pos+1);
-    } else if (m < 0.1) { // additive mutation
+    } else if (m < 0.2) { // additive mutation
       var new_word = word.substr(0, pos) + "'" + word.substr(pos);
       return this._tweak_mutate_at(new_word, pos);
     } else {

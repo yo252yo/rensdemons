@@ -1,7 +1,7 @@
 running
 
-random generation
+investigate why Markov mutations are so conservative
 
-dialog writing animation?
+save points
 
 zindex is sometimes broken on mobile
