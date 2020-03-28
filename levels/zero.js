@@ -34,18 +34,18 @@ function drawmap(){
      var map1_canvas = document.createElement('canvas');
    map1_canvas.id = "IE_map";
    map1_canvas.style.position = "absolute";
-   map1_canvas.style.left = "40%";
-   map1_canvas.style.top = "25%";
-   map1_canvas.style.width = "500px";
-   map1_canvas.style.height = "500px";
-   map1_canvas.width = "500";
-   map1_canvas.height = "500";
+   map1_canvas.style.left = "50%";
+   map1_canvas.style.top = "10%";
+   map1_canvas.style.width = "700px";
+   map1_canvas.style.height = "700px";
+   map1_canvas.width = "700";
+   map1_canvas.height = "700";
    map1_canvas.style.zIndex = 10;
    LEVEL.html().appendChild(map1_canvas);
    var map1 = RESOURCES.get_img("testing/circle.png");
 
    RESOURCES.onload(map1, function() {
-     map1_canvas.getContext('2d').drawImage(map1, 0, 0,200,200);
+     map1_canvas.getContext('2d').drawImage(map1, 0, 0,400,400);
 
         map1_canvas.getContext('2d').globalCompositeOperation = 'source-in';
         map1_canvas.getContext('2d').fillStyle = PALETTE.color_obj_dark.code();
@@ -59,12 +59,12 @@ function drawmap(){
      var map2_canvas = document.createElement('canvas');
      map2_canvas.id = "IE_map2";
      map2_canvas.style.position = "absolute";
-     map2_canvas.style.left = "40%";
-     map2_canvas.style.top = "25%";
-     map2_canvas.style.width = "500px";
-     map2_canvas.style.height = "500px";
-     map2_canvas.width = "500";
-     map2_canvas.height = "500";
+     map2_canvas.style.left = "50%";
+     map2_canvas.style.top = "10%";
+     map2_canvas.style.width = "700px";
+     map2_canvas.style.height = "700px";
+     map2_canvas.width = "700";
+     map2_canvas.height = "700";
      map2_canvas.style.zIndex = 15;
      LEVEL.html().appendChild(map2_canvas);
      var map2 = RESOURCES.get_img("testing/map2.png");
@@ -73,14 +73,14 @@ function drawmap(){
         var offset1 = Math.floor(Math.random() * 4500);
            var offset2 = Math.floor(Math.random() * 4500);
 
-          map2_canvas.getContext('2d').drawImage(map2,offset1,offset2,500,500, 0, 0, 250, 250);
+          map2_canvas.getContext('2d').drawImage(map2,offset1,offset2,500,500, 0, 0, 500, 500);
 
           map2_canvas.getContext('2d').globalCompositeOperation = 'source-in';
           map2_canvas.getContext('2d').fillStyle = PALETTE.color_obj_light.code();
           map2_canvas.getContext('2d').fillRect(0, 0, map2_canvas.clientWidth, map2_canvas.clientHeight);
 
          map2_canvas.getContext('2d').globalCompositeOperation = 'destination-in';
-         map2_canvas.getContext('2d').drawImage(map1, 0, 0,200,200);
+         map2_canvas.getContext('2d').drawImage(map1, 0, 0,400,400);
 
      //  },4000);
       });
