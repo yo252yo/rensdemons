@@ -25,12 +25,15 @@ class TextBanner extends TextBox {
 
 
 class TextBannerSequence {
-  static make(texts){
-    if (texts.length == 0) return;
+  static make(texts, callback){
+    if (texts.length == 0) {
+      if (callback) return callback();
+      else return;
+    }
     var banner = new TextBanner(texts[0]);
     banner.onEnd(
       function(){
-        TextBannerSequence.make(texts.slice(1));
+        TextBannerSequence.make(texts.slice(1), callback);
       }
     )
   }

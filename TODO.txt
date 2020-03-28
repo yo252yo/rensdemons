@@ -1,6 +1,6 @@
 running
 
-investigate why Markov mutations are so conservative
+properly center planet
 
 save points
 

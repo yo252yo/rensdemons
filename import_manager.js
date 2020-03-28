@@ -118,6 +118,6 @@ window.onload = function() {
 
   // tech demo
   init.child_function(function(){
-    LEVEL.load("zero");
+    LEVEL.load("introduction");
   });
 }
