@@ -56,43 +56,43 @@ const IO_CHARACTER = {
 
 const IO_DIALOG = {
   set_dialog: function(dialog) {
-    this.dialog = dialog;
+    IO.dialog = dialog;
   },
 
   click: function(x,y, is_hold) {
     if (! is_hold) {
-      this.dialog.turn_page();
+      IO.dialog.turn_page();
     }
   },
 
   pressKey: function(key) {
-    this.dialog.turn_page();
+    IO.dialog.turn_page();
   },
 }
 
 const IO_MENU = {
   set_menu: function(menu) {
-    this.menu = menu;
+    IO.menu = menu;
   },
 
   pressKey: function(key) {
     if (KEYS_UTIL.is_up(key)) {
-      this.menu.move_select(1);
+      IO.menu.move_select(1);
     }
     if (KEYS_UTIL.is_down(key)) {
-      this.menu.move_select(-1);
+      IO.menu.move_select(-1);
     }
     if (KEYS_UTIL.is_ok(key)) {
-      this.menu.confirm_select();
+      IO.menu.confirm_select();
     }
   },
 
   menu_pick: function(choice) {
-    this.menu.pick(choice);
+    IO.menu.pick(choice);
   },
 
   menu_select: function(choice) {
-    this.menu.select(choice);
+    IO.menu.select(choice);
   },
 }
 
@@ -108,27 +108,27 @@ const IO = {
   },
 
   activate: function(system) {
-    this._PREVIOUS_SYSTEM = this._ACTIVE_SYSTEM;
-    this._ACTIVE_SYSTEM = system;
+    IO._PREVIOUS_SYSTEM = IO._ACTIVE_SYSTEM;
+    IO._ACTIVE_SYSTEM = system;
   },
 
   control_dialog: function(dialog) {
-    this.activate(IO_DIALOG);
+    IO.activate(IO_DIALOG);
     IO_DIALOG.set_dialog(dialog);
   },
 
   control_menu: function(menu) {
-    this.last_activation = (new Date()).getTime();
-    this.activate(IO_MENU);
+    IO.last_activation = (new Date()).getTime();
+    IO.activate(IO_MENU);
     IO_MENU.set_menu(menu);
   },
 
   control_character: function() {
-    this.activate(IO_CHARACTER);
+    IO.activate(IO_CHARACTER);
   },
 
   cede_control: function() {
-    this.activate(this._PREVIOUS_SYSTEM);
+    IO.activate(IO._PREVIOUS_SYSTEM);
   },
 
 
@@ -155,12 +155,17 @@ const IO = {
   },
 
   continuousKeyManager: function() {
-    if (this._ACTIVE_SYSTEM.manageKeys) {
-      this._ACTIVE_SYSTEM.manageKeys(this._PRESSED_KEYS);
+    if (IO._ACTIVE_SYSTEM.manageKeys) {
+      IO._ACTIVE_SYSTEM.manageKeys(IO._PRESSED_KEYS);
     }
   },
 
   onClick: function(event, is_hold) {
+    console.log(IO._ACTIVE_SYSTEM);
+    if (IO._ACTIVE_SYSTEM == IO_MENU){
+      return;
+    }
+
     var x = event.clientX;
     var y = event.clientY;
     if(!x || !y) { // for mobile
@@ -196,14 +201,14 @@ const IO = {
   },
 
   menu_pick: function(choice){
-    if (this._ACTIVE_SYSTEM != IO_MENU){
+    if (IO._ACTIVE_SYSTEM != IO_MENU){
       return;
     }
     IO_MENU.menu_pick(choice);
   },
 
   menu_select: function(choice){
-    if (this._ACTIVE_SYSTEM != IO_MENU){
+    if (IO._ACTIVE_SYSTEM != IO_MENU){
       return;
     }
     IO_MENU.menu_select(choice);

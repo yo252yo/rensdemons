@@ -48,7 +48,7 @@ class TextMenu extends TextElement {
 
     close() {
       this.destroy();
-      IO.cede_control();
+      setTimeout(function() { IO.cede_control(); }, 500);
     }
 
     pick(choice) {

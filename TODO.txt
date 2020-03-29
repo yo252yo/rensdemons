@@ -2,12 +2,8 @@ running
 
 properly center planet
 
-save points
+saves
 
 zindex is sometimes broken on mobile
 
-
 direction arrows
-
-
-CLICK EVENT ON MENU WORKS ONLY 33% OF TIMES
