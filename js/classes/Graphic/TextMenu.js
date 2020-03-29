@@ -1,6 +1,30 @@
 // use(TextElement)
 // runtime SCREEN, IO
 
+var _CHOICES_COOLDOWN = 500;
+
+var MenuChoiceExecutor = function() {
+  this._busy  = false;
+};
+
+MenuChoiceExecutor.prototype.synchronize = function(task) {
+  if (!this._busy){
+     this._execute(task);
+   }
+};
+
+MenuChoiceExecutor.prototype._execute = function(task) {
+  this._busy = true;
+
+  var self = this;
+  (function(){
+    task();
+    setTimeout(function(){  self._busy = false; }, _CHOICES_COOLDOWN );
+  })();
+};
+
+const _EXECUTOR = new MenuChoiceExecutor();
+
 
 
 class TextMenu extends TextElement {
@@ -20,30 +44,51 @@ class TextMenu extends TextElement {
         this.options = options;
         this.selected = 0;
         this.print_menu();
+        this.last_executed = (new Date());
     }
 
     print_menu() {
-      var html = this.title;
-      html += "<br />";
+      var html = this.title + "<br /><br />";
+      this.html.innerHTML = html;
 
-      var index = 0;
+      this.html_menu = document.createElement('div');
+      this.html.appendChild(this.html_menu);
+      this.update_menu();
+    }
+
+    update_menu() {
+      this.html_menu.innerHTML = "";
+
       for (var i in this.options){
-          html += "<br />";
-          if (index == this.selected){
+          var current_item = document.createElement('div');
+          current_item.href = "javascript:IO.menu_pick(index);";
+          (function(item, index){
+            var pick = function() {IO.menu_pick(index); };
+            // We have to be clever because we dont know which fucking event
+            // will fucking fire.
+            var select = function(event) {
+              if (event.button > 0){
+                IO.menu_pick(index);
+              } else{
+                IO.menu_select(index);
+              }
+           };
+
+          item.addEventListener('mousedown', pick);
+          item.addEventListener('click', pick);
+          item.addEventListener('mousemove', select);
+          }(current_item, i));
+
+          var html = "";
+          if (i == this.selected){
               html += ">";
           } else {
               html += "_";
           }
 
-          html += " ";
-          html += '<span onclick="IO.menu_pick(\'' + i + '\');"';
-          // For some reason putting a listener on mouseenter or mouseover on this fucks up everything.
-          html += ' onmousemove="IO.menu_select(\'' + i + '\');"';
-          html += '>' + this.options[i]["text"];
-          html += "</span>";
-          index ++;
+          current_item.innerHTML = html  + this.options[i]["text"];
+          this.html_menu.appendChild(current_item);
       }
-      this.html.innerHTML = html;
     }
 
     close() {
@@ -61,15 +106,22 @@ class TextMenu extends TextElement {
 
     select(choice) {
       this.selected = parseInt(choice);
-      this.print_menu();
+      this.update_menu();
     }
 
+    // Since several JS events can be fired, we need to be careful about executing
+    // only once, hence the synchronous lock.
     execute(choice) {
-      if(this.options[choice]["effect"] == "##CLOSE"){
-        this.close();
+      var f = null;
+      var menu = this;
+
+      if(menu.options[choice]["effect"] == "##CLOSE"){
+        f = function() {menu.close();};
       } else {
-        this.options[choice]["effect"]();
+        f = menu.options[choice]["effect"];
       }
+
+      _EXECUTOR.synchronize(f);
     }
 
     move_select(offset) {
@@ -81,7 +133,7 @@ class TextMenu extends TextElement {
       if (this.selected < 0){
         this.selected += this.options.length;
       }
-      this.print_menu();
+      this.update_menu();
     }
 
     confirm_select() {

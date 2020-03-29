@@ -12,10 +12,6 @@ class TextBanner extends TextBox {
         var padding = 30;
 
         super(left,top+height, width, height, padding);
-        // TODO: This is not great, the banner sets the dialog control but the
-        // box gives it back! The box is in a weird state of both supporting
-        // pagination and not.
-        IO.control_dialog(this);
 
         if (text) {
           this.change_text(text);

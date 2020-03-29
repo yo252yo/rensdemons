@@ -36,6 +36,8 @@ class TextBox extends TextElement {
         this.measure_letter_capability(w, h, padding);
         this.text_future_pages = "";
         this.last_turned = (new Date()).getTime();
+        
+        IO.control_dialog(this);
     }
 
     measure_letter_capability(w, h, padding) {

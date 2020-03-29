@@ -49,7 +49,7 @@ class S_SavePoint extends LevelObject {
     new TextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
                   [
                     {"text": "Worship", "effect": function(){ alert("Not implemented");}},
-                    {"text": "Postpone", "effect": "##CLOSE"},
+                    {"text": "Postpone", "effect": "##CLOSE"}
                  ]);
   }
 }

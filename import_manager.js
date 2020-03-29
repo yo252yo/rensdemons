@@ -86,7 +86,12 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("SCREEN");
 new Module("RESOURCES");
+
 new Module("IO");
+IMPORTS.modules['IO'].child_module("IO/IO_DIALOG");
+IMPORTS.modules['IO'].child_module("IO/IO_CHARACTER");
+IMPORTS.modules['IO'].child_module("IO/IO_MENU");
+
 new Module("LEVEL");
 new Module("CHARACTER");
 new Module("PALETTE");

@@ -6,7 +6,7 @@ const CHARACTER = {
     var height = 48;
     var sprite = new MovingSprite("assets/sora.png", PALETTE.color_player.code(), width, height);
     this.character = new MovingObject(sprite, x, y, width, height);
-    IO.scroll_screen();
+    SCREEN.scroll_screen_to_character();
   },
 
   clear: function () {

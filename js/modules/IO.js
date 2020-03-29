@@ -1,5 +1,4 @@
 // runtime: LEVEL, SCREEN
-
 const KEYS_UTIL = {
   is_up: function(key) {
     return key === 'w' || key === 87;
@@ -18,107 +17,39 @@ const KEYS_UTIL = {
   },
 }
 
-const IO_CHARACTER = {
-
-  click: function(x,y, is_hold) {
-    LEVEL.click(x, y, is_hold);
-  },
-
-  manageKeys: function(pressed_keys) {
-      if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys) {
-
-      }
-      if ('shift' in pressed_keys || 16 in pressed_keys) {
-          //CHARACTER.run();
-      } else {
-          //CHARACTER.walk();
-      }
-
-      for (var key in pressed_keys) {
-          if (KEYS_UTIL.is_up(key)) {
-            LEVEL.up();
-          }
-          if (KEYS_UTIL.is_down(key)) {
-            LEVEL.down();
-          }
-          if (KEYS_UTIL.is_left(key)) {
-            LEVEL.left();
-          }
-          if (KEYS_UTIL.is_right(key)) {
-            LEVEL.right();
-          }
-          if (KEYS_UTIL.is_ok(key)) {
-            LEVEL.interact_in_front();
-          }
-      }
-  },
-}
-
-const IO_DIALOG = {
-  set_dialog: function(dialog) {
-    IO.dialog = dialog;
-  },
-
-  click: function(x,y, is_hold) {
-    if (! is_hold) {
-      IO.dialog.turn_page();
-    }
-  },
-
-  pressKey: function(key) {
-    IO.dialog.turn_page();
-  },
-}
-
-const IO_MENU = {
-  set_menu: function(menu) {
-    IO.menu = menu;
-  },
-
-  pressKey: function(key) {
-    if (KEYS_UTIL.is_up(key)) {
-      IO.menu.move_select(1);
-    }
-    if (KEYS_UTIL.is_down(key)) {
-      IO.menu.move_select(-1);
-    }
-    if (KEYS_UTIL.is_ok(key)) {
-      IO.menu.confirm_select();
-    }
-  },
-
-  menu_pick: function(choice) {
-    IO.menu.pick(choice);
-  },
-
-  menu_select: function(choice) {
-    IO.menu.select(choice);
-  },
-}
-
 
 const IO = {
   _PRESSED_KEYS: {},
-  _PREVIOUS_SYSTEM: IO_CHARACTER,
-  _ACTIVE_SYSTEM: IO_CHARACTER,
+  _PREVIOUS_SYSTEMS: [],
+  _ACTIVE_SYSTEM: null,
   _MOUSE_DOWN: false,
 
-  scroll_screen: function() {
-    window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
+
+  // Manage the lock and stack.
+  clear_inputs: function() {
+    IO._PRESSED_KEYS= {};
   },
 
-  activate: function(system) {
-    IO._PREVIOUS_SYSTEM = IO._ACTIVE_SYSTEM;
+  activate: function(system, skip_push) {
+    IO.clear_inputs();
+    if(! skip_push){
+      IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+    }
     IO._ACTIVE_SYSTEM = system;
   },
 
+  cede_control: function() {
+    IO.activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+  },
+
+
+  // Grabing control methods.
   control_dialog: function(dialog) {
     IO.activate(IO_DIALOG);
     IO_DIALOG.set_dialog(dialog);
   },
 
   control_menu: function(menu) {
-    IO.last_activation = (new Date()).getTime();
     IO.activate(IO_MENU);
     IO_MENU.set_menu(menu);
   },
@@ -127,11 +58,8 @@ const IO = {
     IO.activate(IO_CHARACTER);
   },
 
-  cede_control: function() {
-    IO.activate(IO._PREVIOUS_SYSTEM);
-  },
 
-
+  // Global events handlers
   onScroll: function(event) {
       event.preventDefault();
       return true;
@@ -142,26 +70,25 @@ const IO = {
         IO._PRESSED_KEYS[key] = true;
     }
 
-    if (IO._ACTIVE_SYSTEM.pressKey) {
-      IO._ACTIVE_SYSTEM.pressKey(key);
+    if (IO._ACTIVE_SYSTEM.onPressKey) {
+      IO._ACTIVE_SYSTEM.onPressKey(key);
     } else {
-      IO.continuousKeyManager();
+      IO.onContinuousKeyPress();
     }
   },
 
   onReleaseKey: function(key) {
     delete IO._PRESSED_KEYS[key];
-    IO.continuousKeyManager();
+    IO.onContinuousKeyPress();
   },
 
-  continuousKeyManager: function() {
-    if (IO._ACTIVE_SYSTEM.manageKeys) {
-      IO._ACTIVE_SYSTEM.manageKeys(IO._PRESSED_KEYS);
+  onContinuousKeyPress: function() {
+    if (IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
+      IO._ACTIVE_SYSTEM.onContinuousKeyPress(IO._PRESSED_KEYS);
     }
   },
 
   onClick: function(event, is_hold) {
-    console.log(IO._ACTIVE_SYSTEM);
     if (IO._ACTIVE_SYSTEM == IO_MENU){
       return;
     }
@@ -177,8 +104,8 @@ const IO = {
     var destination_x = window.pageXOffset + x;
     var destination_Y = window.pageYOffset + y;
 
-    if (IO._ACTIVE_SYSTEM.click) {
-      IO._ACTIVE_SYSTEM.click(destination_x, destination_Y, is_hold);
+    if (IO._ACTIVE_SYSTEM.onClick) {
+      IO._ACTIVE_SYSTEM.onClick(destination_x, destination_Y, is_hold);
     }
   },
 
@@ -200,17 +127,14 @@ const IO = {
     }
   },
 
+  // Module specific handlers
   menu_pick: function(choice){
-    if (IO._ACTIVE_SYSTEM != IO_MENU){
-      return;
-    }
+    if (IO._ACTIVE_SYSTEM != IO_MENU){        return;    }
     IO_MENU.menu_pick(choice);
   },
 
   menu_select: function(choice){
-    if (IO._ACTIVE_SYSTEM != IO_MENU){
-      return;
-    }
+    if (IO._ACTIVE_SYSTEM != IO_MENU){        return;     }
     IO_MENU.menu_select(choice);
   },
 }

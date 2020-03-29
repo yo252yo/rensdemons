@@ -53,7 +53,8 @@ class MovingObject extends LevelObject {
     this.x += x;
     this.y += y;
     this.sprite.move(x, y);
-    IO.scroll_screen();
+    // In case we're the character, can be optimized
+    SCREEN.scroll_screen_to_character();
   }
 
   facing_direction() {
