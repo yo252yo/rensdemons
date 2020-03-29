@@ -8,7 +8,7 @@ document.body.style.backgroundColor = color1.code();
 
 (new StaticSprite("testing/char1.png", color1.code())).place_at(100,100);
 
-var tree = new StaticSprite("testing/tree.png", color3.code());
+var tree = new S_SavePoint("testing/tree.png", color3.code());
 tree.place_at(20,0);
 
 var tree = new StaticSprite("testing/tree.png", color3.code());

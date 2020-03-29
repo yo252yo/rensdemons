@@ -37,3 +37,15 @@ class S_House extends Object {
     new TextBanner("It's not a tree, mario");
   }
 }
+
+class S_SavePoint extends Object {
+  constructor(x, y) {
+    var visual = new StaticSprite("assets/savepoint.png", PALETTE.color_obj_dark.code());
+    super(visual, x, y);
+    this.adjust_hitbox(x+5,y-5,40,10);
+  }
+
+  interaction() {
+    new TextBanner("You found an Altar of the Goddess. Will you pray that She remembers you?");
+  }
+}

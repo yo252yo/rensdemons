@@ -81,7 +81,7 @@ const LEVEL = {
   interact_in_front: function() {
     var c = CHARACTER.get().gravity_center();
     var x = c[0];
-    var y = c[1];
+    var y = c[1] + 10; // its more intuitive to take a point closer to legs
     switch(CHARACTER.get().facing_direction()) {
       case "LEFT":
         x -= this._FACE_INTERACTION_DISTANCE;

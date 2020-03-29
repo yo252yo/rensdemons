@@ -16,8 +16,3 @@ directories:
   https://letsmakegames.org/resources/art-assets-for-game-developers/
   https://github.com/Kavex/GameDev-Resources
   https://craftpix.net/
-
-
-
-Used:
-https://opengameart.org/content/old-parchment-paper

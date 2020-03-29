@@ -11,7 +11,7 @@
 
 CHARACTER.initialize(80, 60);
 
-new S_Tree(20,100);
+new S_SavePoint(20,200);
 new S_Tree(150,130);
 new S_Tree(290,160);
 new S_Tree(240,380);
