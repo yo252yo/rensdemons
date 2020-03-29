@@ -1,6 +1,25 @@
 // runtime: LEVEL, SCREEN
 
+const KEYS_UTIL = {
+  is_up: function(key) {
+    return key === 'w' || key === 87;
+  },
+  is_down: function(key) {
+    return key === 's' || key === 83;
+  },
+  is_left: function(key) {
+    return key === 'a' || key === 65;
+  },
+  is_right: function(key) {
+    return key === 'd' || key === 68;
+  },
+  is_ok: function(key) {
+    return key === ' ' || key === 32;
+  },
+}
+
 const IO_CHARACTER = {
+
   click: function(x,y, is_hold) {
     LEVEL.click(x, y, is_hold);
   },
@@ -16,19 +35,19 @@ const IO_CHARACTER = {
       }
 
       for (var key in pressed_keys) {
-          if (key === 'w' || key === 87) {
+          if (KEYS_UTIL.is_up(key)) {
             LEVEL.up();
           }
-          if (key === 's' || key === 83) {
+          if (KEYS_UTIL.is_down(key)) {
             LEVEL.down();
           }
-          if (key === 'a' || key === 65) {
+          if (KEYS_UTIL.is_left(key)) {
             LEVEL.left();
           }
-          if (key === 'd' || key === 68) {
+          if (KEYS_UTIL.is_right(key)) {
             LEVEL.right();
           }
-          if (key === ' ' || key === 32) {
+          if (KEYS_UTIL.is_ok(key)) {
             LEVEL.interact_in_front();
           }
       }
@@ -51,9 +70,36 @@ const IO_DIALOG = {
   },
 }
 
+const IO_MENU = {
+  set_menu: function(menu) {
+    this.menu = menu;
+  },
+
+  pressKey: function(key) {
+    if (KEYS_UTIL.is_up(key)) {
+      this.menu.move_select(1);
+    }
+    if (KEYS_UTIL.is_down(key)) {
+      this.menu.move_select(-1);
+    }
+    if (KEYS_UTIL.is_ok(key)) {
+      this.menu.confirm_select();
+    }
+  },
+
+  menu_pick: function(choice) {
+    this.menu.pick(choice);
+  },
+
+  menu_select: function(choice) {
+    this.menu.select(choice);
+  },
+}
+
 
 const IO = {
   _PRESSED_KEYS: {},
+  _PREVIOUS_SYSTEM: IO_CHARACTER,
   _ACTIVE_SYSTEM: IO_CHARACTER,
   _MOUSE_DOWN: false,
 
@@ -61,14 +107,30 @@ const IO = {
     window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
   },
 
+  activate: function(system) {
+    this._PREVIOUS_SYSTEM = this._ACTIVE_SYSTEM;
+    this._ACTIVE_SYSTEM = system;
+  },
+
   control_dialog: function(dialog) {
-    this._ACTIVE_SYSTEM = IO_DIALOG;
+    this.activate(IO_DIALOG);
     IO_DIALOG.set_dialog(dialog);
   },
 
-  control_character: function() {
-    this._ACTIVE_SYSTEM = IO_CHARACTER;
+  control_menu: function(menu) {
+    this.last_activation = (new Date()).getTime();
+    this.activate(IO_MENU);
+    IO_MENU.set_menu(menu);
   },
+
+  control_character: function() {
+    this.activate(IO_CHARACTER);
+  },
+
+  cede_control: function() {
+    this.activate(this._PREVIOUS_SYSTEM);
+  },
+
 
   onScroll: function(event) {
       event.preventDefault();
@@ -79,10 +141,11 @@ const IO = {
     if (!(key in IO._PRESSED_KEYS)) {
         IO._PRESSED_KEYS[key] = true;
     }
-    IO.continuousKeyManager();
 
     if (IO._ACTIVE_SYSTEM.pressKey) {
       IO._ACTIVE_SYSTEM.pressKey(key);
+    } else {
+      IO.continuousKeyManager();
     }
   },
 
@@ -131,6 +194,20 @@ const IO = {
       IO.onClickHold(event);
     }
   },
+
+  menu_pick: function(choice){
+    if (this._ACTIVE_SYSTEM != IO_MENU){
+      return;
+    }
+    IO_MENU.menu_pick(choice);
+  },
+
+  menu_select: function(choice){
+    if (this._ACTIVE_SYSTEM != IO_MENU){
+      return;
+    }
+    IO_MENU.menu_select(choice);
+  },
 }
 
 // Events listeners
@@ -138,11 +215,13 @@ const IO = {
 document.addEventListener('keydown', function (event) {
     var key = event.key || event.keyCode;
     IO.onPressKey(key.toLowerCase());
+    event.preventDefault();
 });
 
 document.addEventListener('keyup', function (event) {
     var key = event.key || event.keyCode;
     IO.onReleaseKey(key.toLowerCase());
+    event.preventDefault();
 });
 
 

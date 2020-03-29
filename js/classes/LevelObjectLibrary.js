@@ -1,7 +1,7 @@
 // use(Object)
 // runtime: Rectangle, StaticSprite
 
-class S_Floor extends Object {
+class S_Floor extends LevelObject {
   constructor(x, y, w, h) {
     var visual = new Rectangle(x,y,w,h, PALETTE.color_background.code());
     super(visual, x, y);
@@ -12,7 +12,7 @@ class S_Floor extends Object {
   }
 }
 
-class S_Tree extends Object {
+class S_Tree extends LevelObject {
   constructor(x, y) {
     var visual = new StaticSprite("assets/tree.png", PALETTE.color_obj_light.code());
     super(visual, x, y);
@@ -26,7 +26,7 @@ class S_Tree extends Object {
   }
 }
 
-class S_House extends Object {
+class S_House extends LevelObject {
   constructor(x, y) {
     var visual = new StaticSprite("testing/house.png", PALETTE.color_obj_dark.code());
     super(visual, x, y);
@@ -38,7 +38,7 @@ class S_House extends Object {
   }
 }
 
-class S_SavePoint extends Object {
+class S_SavePoint extends LevelObject {
   constructor(x, y) {
     var visual = new StaticSprite("assets/savepoint.png", PALETTE.color_obj_dark.code());
     super(visual, x, y);
@@ -46,6 +46,10 @@ class S_SavePoint extends Object {
   }
 
   interaction() {
-    new TextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?");
+    new TextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
+                  [
+                    {"text": "Worship", "effect": function(){ alert("Not implemented");}},
+                    {"text": "Postpone", "effect": "##CLOSE"},
+                 ]);
   }
 }

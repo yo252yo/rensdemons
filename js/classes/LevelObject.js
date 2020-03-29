@@ -1,7 +1,7 @@
 // runtime: LEVEL, CHARACTER
 
 
-class Object {
+class LevelObject {
     constructor(sprite, x, y) {
         this.visual_element = sprite;
         this.visual_element.place_at(x,y);

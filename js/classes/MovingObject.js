@@ -1,12 +1,12 @@
 // runtime MovingSprite, PALETTE, LEVEL
-// use(Object)
+// use(LevelObject)
 
 var _WALKING_INCREMENT = 5;
 var _AUTOWALK_INCREMENT = 7;
 var _IS_AT_PRECISION = 5.1;
 var _AUTO_WALK_TICK = 40;
 
-class MovingObject extends Object {
+class MovingObject extends LevelObject {
   constructor(visual, x, y, w, h) {
     super(visual, x, y);
     this.sprite = visual;

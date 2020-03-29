@@ -121,7 +121,7 @@ class TextBox extends TextElement {
       }
       this.last_turned = now;
       if (this.text_future_pages == "") {
-        IO.control_character();
+        IO.cede_control();
         if (this.on_end_function){
           this.on_end_function();
         }
