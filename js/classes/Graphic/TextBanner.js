@@ -1,10 +1,8 @@
 // use(TextBox)
 // runtime SCREEN, IO
 
-var _TEXTBOX_ZINDEX = 10000;
 
-
-class TextBanner extends TextBox {
+class TextBanner  extends TextBox {
     constructor(text) {
         var top = Math.floor(SCREEN.height() * 0.62);
         var left = Math.floor(SCREEN.width() * 0.1);

@@ -46,6 +46,6 @@ class S_SavePoint extends Object {
   }
 
   interaction() {
-    new TextBanner("You found an Altar of the Goddess. Will you pray that She remembers you?");
+    new TextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?");
   }
 }

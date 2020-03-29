@@ -100,8 +100,10 @@ IMPORTS.classes['Generation/MarkovModels'].child_module("DICTIONARY");
 new Class("Graphic/Color");
 new Class("Graphic/VisualElement");
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
-IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextBox");
+IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextElement");
+IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextBox");
 IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
+IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextMenu");
 
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
