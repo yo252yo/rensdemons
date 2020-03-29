@@ -3,6 +3,10 @@
 
 var _CHOICES_COOLDOWN = 500;
 
+
+// Since the JS events for mouseover and click are all over the place, we need
+// to compensate using a simple mutex
+
 var MenuChoiceExecutor = function() {
   this._busy  = false;
 };
@@ -24,7 +28,6 @@ MenuChoiceExecutor.prototype._execute = function(task) {
 };
 
 const _EXECUTOR = new MenuChoiceExecutor();
-
 
 
 class TextMenu extends TextElement {
@@ -61,7 +64,7 @@ class TextMenu extends TextElement {
 
       for (var i in this.options){
           var current_item = document.createElement('div');
-          current_item.href = "javascript:IO.menu_pick(index);";
+          // Closure because weird loop behavior.
           (function(item, index){
             var pick = function() {IO.menu_pick(index); };
             // We have to be clever because we dont know which fucking event
