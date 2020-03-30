@@ -5,7 +5,7 @@ const PALETTE = {
     this.color_background = Color.random().hoffset(0.5);
     this.color_void = this.color_background.opposite();
 
-    this.color_obj_light = this.color_background.hoffset(-0.3);
+    this.color_obj_light = this.color_background.hoffset(-0.4);
     this.color_player =  this.color_obj_light.opposite();
 
     this.color_obj_dark = this.color_obj_light.hoffset(-0.2);

@@ -7,3 +7,6 @@ saves
 zindex is sometimes broken on mobile
 
 direction arrows
+
+
+dont forget to do a proper title screen in particula for mobile

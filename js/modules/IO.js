@@ -70,7 +70,7 @@ const IO = {
         IO._PRESSED_KEYS[key] = true;
     }
 
-    if (IO._ACTIVE_SYSTEM.onPressKey) {
+    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey) {
       IO._ACTIVE_SYSTEM.onPressKey(key);
     } else {
       IO.onContinuousKeyPress();
@@ -83,7 +83,7 @@ const IO = {
   },
 
   onContinuousKeyPress: function() {
-    if (IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
+    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
       IO._ACTIVE_SYSTEM.onContinuousKeyPress(IO._PRESSED_KEYS);
     }
   },
@@ -104,7 +104,7 @@ const IO = {
     var destination_x = window.pageXOffset + x;
     var destination_Y = window.pageYOffset + y;
 
-    if (IO._ACTIVE_SYSTEM.onClick) {
+    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
       IO._ACTIVE_SYSTEM.onClick(destination_x, destination_Y, is_hold);
     }
   },
