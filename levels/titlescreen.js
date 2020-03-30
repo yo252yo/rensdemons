@@ -18,3 +18,10 @@ setTimeout(function(){
   adapt_sprite(s1, 1);
   adapt_sprite(s2, 2);
 }, 500);
+
+new TextMenu("",
+              [
+                {"text": "New game", "effect": function(){ LEVEL.load("introduction");}},
+                {"text": "Load", "effect": function(){ alert("Not implemented");}},
+                {"text": "Options", "effect": function(){ alert("Not implemented");}}
+             ]);

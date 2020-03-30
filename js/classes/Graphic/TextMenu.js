@@ -51,8 +51,10 @@ class TextMenu extends TextElement {
     }
 
     print_menu() {
-      var html = this.title + "<br /><br />";
-      this.html.innerHTML = html;
+      if (this.title) {
+        var html = this.title + "<br /><br />";
+        this.html.innerHTML = html;
+      }
 
       this.html_menu = document.createElement('div');
       this.html.appendChild(this.html_menu);

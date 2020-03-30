@@ -11,11 +11,18 @@ const LEVEL = {
     return document.getElementById("level");
   },
 
-  load: function(name) {
+  _actual_load: function(name) {
       this.clear();
 
       new Import("levels/" + name);
       CONSOLE.sys_log("- Loaded level " + name);
+  },
+
+  load: function(name) {
+    // We never want change to be too fast.
+    setTimeout(function(){
+      LEVEL._actual_load(name);
+    }, 500);
   },
 
   clear: function() {
