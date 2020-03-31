@@ -57,7 +57,7 @@ RESOURCES.onload(base_resource, function() {
  });
 
 var nextPage = function(){
-  setTimeout(function(){ LEVEL.load("zero1"); }, 1500);
+  setTimeout(function(){ LEVEL.setup("zero1"); }, 1500);
 }
 var displayText = function() {
   TextBannerSequence.make([
@@ -72,4 +72,4 @@ var displayText = function() {
   ], nextPage);
 }
 
-setTimeout(displayText, 1500);
+setTimeout(displayText, 1000);

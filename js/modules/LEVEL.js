@@ -5,24 +5,41 @@ const LEVEL = {
   _MAX_INTERACTION_DISTANCE: 70,
   _FACE_INTERACTION_DISTANCE: 20,
 
+  loaded_level_name: "",
+  loaded_character_pos: null,
   elements: [],
 
   html: function() {
     return document.getElementById("level");
   },
 
-  _actual_load: function(name) {
-      this.clear();
-
-      new Import("levels/" + name);
-      CONSOLE.sys_log("- Loaded level " + name);
+  initialize_character: function(x, y) {
+    if (LEVEL.loaded_character_pos){
+      CHARACTER.initialize(LEVEL.loaded_character_pos[0], LEVEL.loaded_character_pos[1]);
+      LEVEL.loaded_character_pos = null;
+    } else {
+      CHARACTER.initialize(x,y);
+    }
   },
 
-  load: function(name) {
-    // We never want change to be too fast.
-    setTimeout(function(){
-      LEVEL._actual_load(name);
-    }, 500);
+  setup: function(name) {
+    LEVEL.loaded_level_name = name;
+    this.clear();
+
+    new Import("levels/" + name);
+    CONSOLE.sys_log("- Loaded level " + name);
+  },
+
+  export: function(){
+    return {
+      loaded_level_name: LEVEL.loaded_level_name,
+      saved_character: [CHARACTER.character.x, CHARACTER.character.y],
+    }
+  },
+
+  load: function(save) {
+    LEVEL.loaded_character_pos = save.saved_character;
+    LEVEL.setup(save.loaded_level_name);
   },
 
   clear: function() {

@@ -11,8 +11,6 @@ class MovingObject extends LevelObject {
     super(visual, x, y);
     this.sprite = visual;
 
-    this.x = x;
-    this.y = y;
     this.width = w;
     this.height = h;
 
@@ -23,6 +21,12 @@ class MovingObject extends LevelObject {
     this.margin_top = 5;
     this.margin_bottom = 0;
 
+    this.place_at(x,y);
+  }
+
+  place_at(x,y){
+    this.x = x;
+    this.y = y;
     this.sprite.place_at(x, y);
   }
 

@@ -8,5 +8,7 @@ zindex is sometimes broken on mobile
 
 direction arrows
 
+stop IO during loading, start IO on level.start
+
 
 dont forget to do a proper title screen in particula for mobile

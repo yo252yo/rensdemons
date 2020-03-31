@@ -86,6 +86,7 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("SCREEN");
 new Module("RESOURCES");
+new Module("SAVE");
 
 new Module("IO");
 IMPORTS.modules['IO'].child_module("IO/IO_DIALOG");
@@ -125,6 +126,7 @@ window.onload = function() {
 
   // tech demo
   init.child_function(function(){
-    LEVEL.load("titlescreen");
+    LEVEL.setup("zero1");
+    //LEVEL.setup("titlescreen");
   });
 }

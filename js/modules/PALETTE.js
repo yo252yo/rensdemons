@@ -5,8 +5,8 @@ const PALETTE = {
     this.color_background = Color.random().hoffset(0.5);
     this.color_void = this.color_background.opposite();
 
-    this.color_obj_light = this.color_background.hoffset(-0.4);
-    this.color_player =  this.color_obj_light.opposite();
+    this.color_obj_light = this.color_background.hoffset(-0.3);
+    this.color_player = this.color_void.hoffset(0.3, true); //  this.color_obj_light.opposite();
 
     this.color_obj_dark = this.color_obj_light.hoffset(-0.2);
   },
@@ -51,6 +51,28 @@ const PALETTE = {
     this.pick_harmonized_palette();
 
     document.body.style.backgroundColor = this.color_void.code();
+  },
+
+  export: function() {
+    return {
+      "color_background": this.color_background,
+      "color_void": this.color_void,
+
+      "color_obj_light": this.color_obj_light,
+      "color_player": this.color_player,
+
+      "color_obj_dark": this.color_obj_dark,
+    };
+  },
+
+  load: function(save) {
+    this.color_background = save.color_background;
+    this.color_void = save.color_void;
+
+    this.color_obj_light = save.color_obj_light;
+    this.color_player = save.color_player;
+
+    this.color_obj_dark = save.color_obj_dark;
   },
 
 };

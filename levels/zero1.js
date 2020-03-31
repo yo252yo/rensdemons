@@ -9,7 +9,7 @@
  a.move(1,0);
 */
 
-CHARACTER.initialize(80, 60);
+LEVEL.initialize_character(80, 60);
 
 new S_SavePoint(20,200);
 new S_Tree(150,130);

@@ -1,6 +1,6 @@
 
 
-class DisctionaryInternal {
+class DictionaryInternal {
   constructor(copy) {
     if (copy){
     }
@@ -32,7 +32,7 @@ class DisctionaryInternal {
 }
 
 const DICTIONARY = {
-  _DICTIONARY: new DisctionaryInternal(),
+  _DICTIONARY: new DictionaryInternal(),
 
   get: function(key) {
     if (key in this._DICTIONARY){
@@ -44,9 +44,14 @@ const DICTIONARY = {
   },
 
   reset: function() {
-    this._DICTIONARY = new DisctionaryInternal();
+    this._DICTIONARY = new DictionaryInternal();
   },
 
-  load: function() {
+  export: function() {
+    return this._DICTIONARY;
+  },
+
+  load: function(dictionary) {
+    this._DICTIONARY = dictionary;
   },
 }
