@@ -26,116 +26,120 @@ const IO = {
 
 
   // Manage the lock and stack.
-  clear_inputs: function() {
+  _clear_inputs: function() {
     IO._PRESSED_KEYS= {};
   },
 
-  activate: function(system, skip_push) {
-    IO.clear_inputs();
+  _activate: function(system, skip_push) {
+    IO._clear_inputs();
     if(! skip_push){
       IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
     }
     IO._ACTIVE_SYSTEM = system;
   },
 
-  cede_control: function() {
-    IO.activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+  // Control structure API
+  control: {
+    cede: function() {
+      IO._activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+    },
+
+    dialog: function(dialog) {
+      IO._activate(IO_DIALOG);
+      IO_DIALOG.set_dialog(dialog);
+    },
+
+    menu: function(menu) {
+      IO._activate(IO_MENU);
+      IO_MENU.set_menu(menu);
+    },
+
+    character: function() {
+      IO._activate(IO_CHARACTER);
+    },
   },
-
-
-  // Grabing control methods.
-  control_dialog: function(dialog) {
-    IO.activate(IO_DIALOG);
-    IO_DIALOG.set_dialog(dialog);
-  },
-
-  control_menu: function(menu) {
-    IO.activate(IO_MENU);
-    IO_MENU.set_menu(menu);
-  },
-
-  control_character: function() {
-    IO.activate(IO_CHARACTER);
-  },
-
 
   // Global events handlers
-  onScroll: function(event) {
+  handlers: {
+    onScroll: function(event) {
+        event.preventDefault();
+        return true;
+    },
+
+    onPressKey: function(key) {
+      if (!(key in IO._PRESSED_KEYS)) {
+          IO._PRESSED_KEYS[key] = true;
+      }
+
+      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey) {
+        IO._ACTIVE_SYSTEM.onPressKey(key);
+      } else {
+        IO.handlers.onContinuousKeyPress();
+      }
+    },
+
+    onReleaseKey: function(key) {
+      delete IO._PRESSED_KEYS[key];
+      IO.handlers.onContinuousKeyPress();
+    },
+
+    onContinuousKeyPress: function() {
+      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
+        IO._ACTIVE_SYSTEM.onContinuousKeyPress(IO._PRESSED_KEYS);
+      }
+    },
+
+    onClick: function(event, is_hold) {
+      if (IO._ACTIVE_SYSTEM == IO_MENU){
+        return;
+      }
+
+      var x = event.clientX;
+      var y = event.clientY;
+      if(!x || !y) { // for mobile
+        x = event.changedTouches[0].clientX;
+        y = event.changedTouches[0].clientY;
+      }
+
       event.preventDefault();
-      return true;
-  },
+      var destination_x = window.pageXOffset + x;
+      var destination_Y = window.pageYOffset + y;
 
-  onPressKey: function(key) {
-    if (!(key in IO._PRESSED_KEYS)) {
-        IO._PRESSED_KEYS[key] = true;
-    }
+      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
+        IO._ACTIVE_SYSTEM.onClick(destination_x, destination_Y, is_hold);
+      }
+    },
 
-    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey) {
-      IO._ACTIVE_SYSTEM.onPressKey(key);
-    } else {
-      IO.onContinuousKeyPress();
-    }
-  },
+    onClickHold: function(event, is_hold) {
+      IO.handlers.onClick(event, true);
+    },
 
-  onReleaseKey: function(key) {
-    delete IO._PRESSED_KEYS[key];
-    IO.onContinuousKeyPress();
-  },
+    onMouseup: function() {
+      IO._MOUSE_DOWN = false;
+    },
 
-  onContinuousKeyPress: function() {
-    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
-      IO._ACTIVE_SYSTEM.onContinuousKeyPress(IO._PRESSED_KEYS);
-    }
-  },
+    onMousedown: function() {
+      IO._MOUSE_DOWN = true;
+    },
 
-  onClick: function(event, is_hold) {
-    if (IO._ACTIVE_SYSTEM == IO_MENU){
-      return;
-    }
-
-    var x = event.clientX;
-    var y = event.clientY;
-    if(!x || !y) { // for mobile
-      x = event.changedTouches[0].clientX;
-      y = event.changedTouches[0].clientY;
-    }
-
-    event.preventDefault();
-    var destination_x = window.pageXOffset + x;
-    var destination_Y = window.pageYOffset + y;
-
-    if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
-      IO._ACTIVE_SYSTEM.onClick(destination_x, destination_Y, is_hold);
-    }
-  },
-
-  onClickHold: function(event, is_hold) {
-    IO.onClick(event, true);
-  },
-
-  onMouseup: function() {
-    IO._MOUSE_DOWN = false;
-  },
-
-  onMousedown: function() {
-    IO._MOUSE_DOWN = true;
-  },
-
-  onMousemove: function(event) {
-    if (IO._MOUSE_DOWN) {
-      IO.onClickHold(event);
-    }
+    onMousemove: function(event) {
+      if (IO._MOUSE_DOWN) {
+        IO.handlers.onClickHold(event);
+      }
+    },
   },
 
   // Module specific handlers
-  menu_pick: function(choice){
-    if (IO._ACTIVE_SYSTEM != IO_MENU){        return;    }
-    IO_MENU.menu_pick(choice);
-  },
+  menu: {
+    menu_pick: function(choice){
+      if (IO._ACTIVE_SYSTEM != IO_MENU){        return;    }
+      IO_MENU.menu_pick(choice);
+    },
 
-  menu_select: function(choice){
-    if (IO._ACTIVE_SYSTEM != IO_MENU){        return;     }
-    IO_MENU.menu_select(choice);
+    menu_select: function(choice){
+      if (IO._ACTIVE_SYSTEM != IO_MENU){        return;     }
+      IO_MENU.menu_select(choice);
+    },
   },
 }
 
@@ -143,25 +147,25 @@ const IO = {
 
 document.addEventListener('keydown', function (event) {
     var key = event.key || event.keyCode;
-    IO.onPressKey(key.toLowerCase());
+    IO.handlers.onPressKey(key.toLowerCase());
     event.preventDefault();
 });
 
 document.addEventListener('keyup', function (event) {
     var key = event.key || event.keyCode;
-    IO.onReleaseKey(key.toLowerCase());
+    IO.handlers.onReleaseKey(key.toLowerCase());
     event.preventDefault();
 });
 
 
-window.addEventListener('scroll', IO.onScroll, { passive: false });
-window.addEventListener('resize', IO.onScroll, { passive: false});
+window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
+window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
 
-window.addEventListener('click', IO.onClick, { passive: false});
-window.addEventListener('touchstart', IO.onClick, { passive: false});
+window.addEventListener('click', IO.handlers.onClick, { passive: false});
+window.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
 
-window.addEventListener('touchmove', IO.onClickHold, { passive: false});
+window.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
 
-window.addEventListener('mouseup', IO.onMouseup, { passive: false});
-window.addEventListener('mousedown', IO.onMousedown, { passive: false});
-window.addEventListener('mousemove', IO.onMousemove, { passive: false});
+window.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
+window.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
+window.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});

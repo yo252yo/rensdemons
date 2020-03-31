@@ -22,21 +22,21 @@ class DictionaryInternal {
     this.sidekick_name = MARKOV_MODELS.human_names.mutate("Aerith", 5);
   };
 
-    _gen_world_name = function() {
-      this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
-    };
+  _gen_world_name = function() {
+    this.world_name = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
+  };
 
-    _gen_demon_lord = function() {
-      this.demon_lord = MARKOV_MODELS.human_names.mutate("Bowser", 12);
-    };
+  _gen_demon_lord = function() {
+    this.demon_lord = MARKOV_MODELS.human_names.mutate("Bowser", 12);
+  };
 }
 
 const DICTIONARY = {
   _DICTIONARY: new DictionaryInternal(),
 
   get: function(key) {
-    if (key in this._DICTIONARY){
-      return this._DICTIONARY[key];
+    if (key in DICTIONARY._DICTIONARY){
+      return DICTIONARY._DICTIONARY[key];
     } else{
       console.error("Wrong dictionary key: " + key);
       return "";
@@ -44,16 +44,16 @@ const DICTIONARY = {
   },
 
   reset: function() {
-    this._DICTIONARY = new DictionaryInternal();
+    DICTIONARY._DICTIONARY = new DictionaryInternal();
   },
 
   save: {
     export: function() {
-      return this._DICTIONARY;
+      return DICTIONARY._DICTIONARY;
     },
 
     load: function(dictionary) {
-      this._DICTIONARY = dictionary;
+      DICTIONARY._DICTIONARY = dictionary;
     },
   },
 }

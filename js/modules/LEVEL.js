@@ -24,7 +24,7 @@ const LEVEL = {
 
   setup: function(name) {
     LEVEL.loaded_level_name = name;
-    this.clear();
+    LEVEL.clear();
 
     new Import("levels/" + name);
     CONSOLE.sys_log("- Loaded level " + name);
@@ -45,21 +45,21 @@ const LEVEL = {
   },
 
   clear: function() {
-      this.html().innerHTML = "";
-      this.elements = [];
+      LEVEL.html().innerHTML = "";
+      LEVEL.elements = [];
       CHARACTER.clear();
   },
 
   index_object: function(object) {
-      this.elements.push(object);
+      LEVEL.elements.push(object);
   },
 
   is_walkable: function(x, y) {
     var walkable = false;
 
     // could be optimized by ordering elements
-    for(var i in this.elements) {
-      var t = this.elements[i].is_walkable(x,y);
+    for(var i in LEVEL.elements) {
+      var t = LEVEL.elements[i].is_walkable(x,y);
       if (t == -1) {
         return false;
       } else if (t == 1) {
@@ -73,9 +73,9 @@ const LEVEL = {
     var here = [];
 
     // could be optimized by ordering elements
-    for(var i in this.elements) {
-      if (this.elements[i].is_interactible(x,y)) {
-        here.push(this.elements[i]);
+    for(var i in LEVEL.elements) {
+      if (LEVEL.elements[i].is_interactible(x,y)) {
+        here.push(LEVEL.elements[i]);
       }
     }
 
@@ -97,7 +97,7 @@ const LEVEL = {
   },
 
   try_interact: function(element) {
-    if(element.distance_to_character() < this._MAX_INTERACTION_DISTANCE) {
+    if(element.distance_to_character() < LEVEL._MAX_INTERACTION_DISTANCE) {
       element.interaction();
       CHARACTER.get().stop_autowalk();
       return true;
@@ -108,23 +108,23 @@ const LEVEL = {
     var c = CHARACTER.get().gravity_center();
     var x = c[0];
     var y = c[1] + 10; // its more intuitive to take a point closer to legs
-    switch(CHARACTER.get().facing_direction()) {
+    switch (CHARACTER.get().facing_direction()) {
       case "LEFT":
-        x -= this._FACE_INTERACTION_DISTANCE;
+        x -= LEVEL._FACE_INTERACTION_DISTANCE;
         break;
       case "RIGHT":
-        x += this._FACE_INTERACTION_DISTANCE;
+        x += LEVEL._FACE_INTERACTION_DISTANCE;
         break;
       case "UP":
-        y -= this._FACE_INTERACTION_DISTANCE;
+        y -= LEVEL._FACE_INTERACTION_DISTANCE;
         break;
       default:
-        y += this._FACE_INTERACTION_DISTANCE;
+        y += LEVEL._FACE_INTERACTION_DISTANCE;
         break;
     }
-    var element = this.select_interactible_at(x, y);
+    var element = LEVEL.select_interactible_at(x, y);
     if (element) {
-      this.try_interact(element);
+      LEVEL.try_interact(element);
     }
   },
 
@@ -134,11 +134,11 @@ const LEVEL = {
   right: function() { CHARACTER.get().try_move_right(); },
 
   click: function(x, y, is_hold) {
-    var element = this.select_interactible_at(x, y);
+    var element = LEVEL.select_interactible_at(x, y);
     if (! element || is_hold) {
       CHARACTER.get().try_walk_to(x, y);
     } else {
-      if (! this.try_interact(element)) {
+      if (! LEVEL.try_interact(element)) {
         CHARACTER.get().try_walk_to(x, y);
       }
     }

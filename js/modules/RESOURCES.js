@@ -3,7 +3,7 @@ const RESOURCES = {
   _LOADED: {},
 
   is_loaded: function(item) {
-    this._LOADED[item.id] = true;
+    RESOURCES._LOADED[item.id] = true;
   },
 
 
@@ -23,7 +23,7 @@ const RESOURCES = {
   },
 
   onload: function(resource, f) {
-    if(! this._LOADED[resource.id]){
+    if(! RESOURCES._LOADED[resource.id]){
       resource.addEventListener('load', f);
     } else {
       f(); // In case it's already loaded

@@ -1,15 +1,15 @@
 
 class SaveFile {
   constructor() {
-    this.palette = PALETTE.save.export();
-    this.dictionary = DICTIONARY.save.export();
-    this.level_save = LEVEL.save.export();
+    SAVE.palette = PALETTE.save.export();
+    SAVE.dictionary = DICTIONARY.save.export();
+    SAVE.level_save = LEVEL.save.export();
   }
 
   load() {
-    PALETTE.save.load(this.palette);
-    DICTIONARY.save.load(this.dictionary);
-    LEVEL.save.load(this.level_save);
+    PALETTE.save.load(SAVE.palette);
+    DICTIONARY.save.load(SAVE.dictionary);
+    LEVEL.save.load(SAVE.level_save);
   }
 }
 

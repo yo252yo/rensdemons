@@ -41,7 +41,7 @@ class TextMenu extends TextElement {
 
         super(left,top+height, width, height, padding);
 
-        IO.control_menu(this);
+        IO.control.menu(this);
 
         this.title = title;
         this.options = options;
@@ -68,14 +68,14 @@ class TextMenu extends TextElement {
           var current_item = document.createElement('div');
           // Closure because weird loop behavior.
           (function(item, index){
-            var pick = function() {IO.menu_pick(index); };
+            var pick = function() {IO.menu.pick(index); };
             // We have to be clever because we dont know which fucking event
             // will fucking fire.
             var select = function(event) {
               if (event.button > 0){
-                IO.menu_pick(index);
+                IO.menu.pick(index);
               } else{
-                IO.menu_select(index);
+                IO.menu.select(index);
               }
            };
 
@@ -98,7 +98,7 @@ class TextMenu extends TextElement {
 
     close() {
       this.destroy();
-      setTimeout(function() { IO.cede_control(); }, 500);
+      setTimeout(function() { IO.control.cede(); }, 500);
     }
 
     pick(choice) {

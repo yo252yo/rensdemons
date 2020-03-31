@@ -5,18 +5,18 @@ const CHARACTER = {
     var width = 32;
     var height = 48;
     var sprite = new MovingSprite("assets/sora.png", PALETTE.color_player.code(), width, height);
-    this.character = new MovingObject(sprite, x, y, width, height);
+    CHARACTER.character = new MovingObject(sprite, x, y, width, height);
     SCREEN.scroll_screen_to_character();
   },
 
   clear: function () {
-    if (this.character) {
-      this.character.sprite = undefined;
+    if (CHARACTER.character) {
+      CHARACTER.character.sprite = undefined;
     }
   },
 
   get: function() {
-      return this.character;
+      return CHARACTER.character;
   },
 
 };

@@ -37,7 +37,7 @@ class TextBox extends TextElement {
         this.text_future_pages = "";
         this.last_turned = (new Date()).getTime();
         
-        IO.control_dialog(this);
+        IO.control.dialog(this);
     }
 
     measure_letter_capability(w, h, padding) {
@@ -123,7 +123,7 @@ class TextBox extends TextElement {
       }
       this.last_turned = now;
       if (this.text_future_pages == "") {
-        IO.cede_control();
+        IO.control.cede();
         if (this.on_end_function){
           this.on_end_function();
         }
