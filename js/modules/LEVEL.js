@@ -30,16 +30,18 @@ const LEVEL = {
     CONSOLE.sys_log("- Loaded level " + name);
   },
 
-  export: function(){
-    return {
-      loaded_level_name: LEVEL.loaded_level_name,
-      saved_character: [CHARACTER.character.x, CHARACTER.character.y],
-    }
-  },
+  save: {
+    export: function(){
+      return {
+        loaded_level_name: LEVEL.loaded_level_name,
+        saved_character: [CHARACTER.character.x, CHARACTER.character.y],
+      }
+    },
 
-  load: function(save) {
-    LEVEL.loaded_character_pos = save.saved_character;
-    LEVEL.setup(save.loaded_level_name);
+    load: function(save) {
+      LEVEL.loaded_character_pos = save.saved_character;
+      LEVEL.setup(save.loaded_level_name);
+    },
   },
 
   clear: function() {

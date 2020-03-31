@@ -47,11 +47,13 @@ const DICTIONARY = {
     this._DICTIONARY = new DictionaryInternal();
   },
 
-  export: function() {
-    return this._DICTIONARY;
-  },
+  save: {
+    export: function() {
+      return this._DICTIONARY;
+    },
 
-  load: function(dictionary) {
-    this._DICTIONARY = dictionary;
+    load: function(dictionary) {
+      this._DICTIONARY = dictionary;
+    },
   },
 }

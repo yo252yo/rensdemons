@@ -53,26 +53,28 @@ const PALETTE = {
     document.body.style.backgroundColor = this.color_void.code();
   },
 
-  export: function() {
-    return {
-      "color_background": this.color_background,
-      "color_void": this.color_void,
+  save: {
+    export: function() {
+      return {
+        "color_background": this.color_background,
+        "color_void": this.color_void,
 
-      "color_obj_light": this.color_obj_light,
-      "color_player": this.color_player,
+        "color_obj_light": this.color_obj_light,
+        "color_player": this.color_player,
 
-      "color_obj_dark": this.color_obj_dark,
-    };
-  },
+        "color_obj_dark": this.color_obj_dark,
+      };
+    },
 
-  load: function(save) {
-    this.color_background = save.color_background;
-    this.color_void = save.color_void;
+    load: function(save) {
+      this.color_background = save.color_background;
+      this.color_void = save.color_void;
 
-    this.color_obj_light = save.color_obj_light;
-    this.color_player = save.color_player;
+      this.color_obj_light = save.color_obj_light;
+      this.color_player = save.color_player;
 
-    this.color_obj_dark = save.color_obj_dark;
+      this.color_obj_dark = save.color_obj_dark;
+    },
   },
 
 };
