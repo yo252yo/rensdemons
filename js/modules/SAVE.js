@@ -14,7 +14,24 @@ class SaveFile {
 }
 
 const SAVE = {
-  last_loaded: "",
   slots: [],
+
+  save: function(index) {
+    if (index == undefined) {
+      index = SAVE.slots.length;
+    }
+    SAVE.slots[index] = {
+      key: new Date(),
+      save: new SaveFile(),
+    };
+  },
+
+  load: function(index) {
+    if (index >= SAVE.slots.length){
+      console.error("Invalid save slot (" + index + ")");
+      return;
+    }
+    SAVE.slots[index].save.load();
+  }
 
 };
