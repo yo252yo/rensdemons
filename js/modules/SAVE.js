@@ -1,7 +1,7 @@
 
 class SaveFile {
   constructor() {
-    this.level_save = LEVEL.save();
+    this.level_save = LEVEL.export();
     this.palette = PALETTE.export();
     this.dictionary = DICTIONARY.export();
   }
