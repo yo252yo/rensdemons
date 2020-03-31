@@ -121,9 +121,16 @@ class TextMenu extends TextElement {
       var menu = this;
 
       if(menu.options[choice]["effect"] == "##CLOSE"){
-        f = function() {menu.close();};
+        f = function() { menu.close(); };
       } else {
-        f = menu.options[choice]["effect"];
+        f = function() {
+          var child = menu.options[choice]["effect"]();
+          console.log(child);
+          if(child){
+            menu.destroy();
+            IO.control.cede();
+          }
+        };
       }
 
       _EXECUTOR.synchronize(f);
