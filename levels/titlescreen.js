@@ -1,8 +1,8 @@
 
 
-var s0 = new StaticSprite("assets/title_layer0.png", PALETTE.color_player.code());
-var s1 = new StaticSprite("assets/title_layer1.png", PALETTE.color_background.code());
-var s2 = new StaticSprite("assets/title_layer2.png", PALETTE.color_obj_light.code());
+var s0 = new StaticSprite("assets/title_layer0.png", PALETTE.color('player').code());
+var s1 = new StaticSprite("assets/title_layer1.png", PALETTE.color('background').code());
+var s2 = new StaticSprite("assets/title_layer2.png", PALETTE.color('obj_light').code());
 
 function adapt_sprite(s, depth) {
   s.container.style.top = "0px";

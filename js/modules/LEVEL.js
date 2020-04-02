@@ -38,7 +38,7 @@ const LEVEL = {
       }
     },
 
-    load: function(save) {
+    import: function(save) {
       LEVEL.loaded_character_pos = save.saved_character;
       LEVEL.setup(save.loaded_level_name);
     },

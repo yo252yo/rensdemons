@@ -22,7 +22,7 @@ RESOURCES.onload(resource, function() {
 ///  setTimeout(function(){
 
      parchment_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-     parchment_canvas.getContext('2d').fillStyle = PALETTE.color_background.code();
+     parchment_canvas.getContext('2d').fillStyle = PALETTE.color('background').code();
      parchment_canvas.getContext('2d').fillRect(0, 0, parchment_canvas.clientWidth, parchment_canvas.clientHeight);
 
 //     drawmap();
@@ -51,7 +51,7 @@ function drawmap(){
      map1_canvas.getContext('2d').drawImage(map1, 0, 0,1000,1000);
 
         map1_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-        map1_canvas.getContext('2d').fillStyle = PALETTE.color_obj_dark.code();
+        map1_canvas.getContext('2d').fillStyle = PALETTE.color('obj_dark').code();
         map1_canvas.getContext('2d').fillRect(0, 0, map1_canvas.clientWidth, map1_canvas.clientHeight);
 
 
@@ -80,7 +80,7 @@ function drawmap(){
           map2_canvas.getContext('2d').drawImage(map2,offset1,offset2,1000,1000, 0, 0, 1000, 1000);
 
           map2_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-          map2_canvas.getContext('2d').fillStyle = PALETTE.color_obj_light.code();
+          map2_canvas.getContext('2d').fillStyle = PALETTE.color('obj_light').code();
           map2_canvas.getContext('2d').fillRect(0, 0, map2_canvas.clientWidth, map2_canvas.clientHeight);
 
          map2_canvas.getContext('2d').globalCompositeOperation = 'destination-in';
@@ -91,16 +91,16 @@ function drawmap(){
 };
 
 /*
-var parchment = new StaticSprite("testing/parchment.png", PALETTE.color_background.code());
+var parchment = new StaticSprite("testing/parchment.png", PALETTE.color('background').code());
 parchment.place_at(50,500);
 parchment.adjust_depth(0);
 
 
-var map1 = new StaticSprite("testing/map1.png", PALETTE.color_obj_light.code());
+var map1 = new StaticSprite("testing/map1.png", PALETTE.color('obj_light').code());
 map1.place_at(-60,1490);
 map1.adjust_depth(15);
 
-var map2 = new StaticSprite("testing/map2.png", PALETTE.color_obj_dark.code());
+var map2 = new StaticSprite("testing/map2.png", PALETTE.color('obj_dark').code());
 map2.place_at(-60,1490);
 map2.adjust_depth(10);
 

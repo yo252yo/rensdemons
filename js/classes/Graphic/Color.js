@@ -7,6 +7,11 @@ class Color {
       return new Color(r256(), r256(), r256());
     }
 
+    static import(string) {
+      var s = string.split("/");
+      return new Color(parseInt(s[0]), parseInt(s[1]), parseInt(s[2]));
+    }
+
     static fromHsv(h, s, v) {
         var r, g, b;
 
@@ -38,6 +43,10 @@ class Color {
       this.r = validate(r);
       this.g = validate(g);
       this.b = validate(b);
+    }
+
+    export(){
+      return this.r + "/" + this.g + "/" + this.b;
     }
 
     toHsv() {

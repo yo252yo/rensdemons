@@ -1,16 +1,17 @@
 // use (Color)
 
 const PALETTE = {
+  _COLORS: {},
 
   initialize: function() {
     PALETTE.generate.pick_harmonized_palette();
 
-    document.body.style.backgroundColor = PALETTE.color_void.code();
+    document.body.style.backgroundColor = PALETTE.color('void').code();
   },
 
   text_background: function() {
-    var base = PALETTE.color_obj_dark;
-    if (PALETTE.color_obj_dark.is_dark()) {
+    var base = PALETTE.color('obj_dark');
+    if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(-0.3);
     } else{
       return base.hoffset(0.3);
@@ -18,8 +19,8 @@ const PALETTE = {
   },
 
   text_color: function() {
-    var base =  PALETTE.color_obj_light;
-    if (PALETTE.color_obj_dark.is_dark()) {
+    var base =  PALETTE.color('obj_light');
+    if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(0.5);
     } else{
       return base.hoffset(-0.5);
@@ -27,56 +28,56 @@ const PALETTE = {
   },
 
   text_border: function() {
-    if (PALETTE.color_obj_dark.is_dark()) {
-      return PALETTE.color_void.hoffset(0.3);
+    if (PALETTE.color('obj_dark').is_dark()) {
+      return PALETTE.color('void').hoffset(0.3);
     } else{
-      return PALETTE.color_void.hoffset(-0.3);
+      return PALETTE.color('void').hoffset(-0.3);
     }
   },
 
   generate:{
     pick_harmonized_palette: function() {
-      PALETTE.color_background = Color.random().hoffset(0.5);
-      PALETTE.color_void = PALETTE.color_background.opposite();
+      PALETTE._COLORS['background'] = Color.random().hoffset(0.5);
+      PALETTE._COLORS['void'] = PALETTE._COLORS['background'].opposite();
 
-      PALETTE.color_obj_light = PALETTE.color_background.hoffset(-0.3);
-      PALETTE.color_player = PALETTE.color_void.hoffset(0.3, true); //  PALETTE.color_obj_light.opposite();
+      PALETTE._COLORS['obj_light'] = PALETTE._COLORS['background'].hoffset(-0.3);
+      PALETTE._COLORS['player'] = PALETTE._COLORS['void'].hoffset(0.3, true); //  PALETTE.color('obj_light').opposite();
 
-      PALETTE.color_obj_dark = PALETTE.color_obj_light.hoffset(-0.2);
+      PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(-0.2);
     },
 
     pick_random_palette: function() {
-      PALETTE.color_background = Color.random();
+      PALETTE._COLORS['background'] = Color.random();
 
-      PALETTE.color_void = Color.random();
-      PALETTE.color_player = PALETTE.color_void.hoffset(0.3, true);
+      PALETTE._COLORS['void'] = Color.random();
+      PALETTE._COLORS['player'] = PALETTE._COLORS['void'].hoffset(0.3, true);
 
-      PALETTE.color_obj_light = Color.random().hoffset(0.3, true);
-      PALETTE.color_obj_dark = PALETTE.color_obj_light.hoffset(0.2, true);
+      PALETTE._COLORS['obj_light'] = Color.random().hoffset(0.3, true);
+      PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(0.2, true);
     },
+  },
+
+  color(key){
+  //  console.log(key);
+    //  console.log(PALETTE._COLORS[key]);
+    return PALETTE._COLORS[key];
   },
 
   save: {
     export: function() {
-      return {
-        "color_background": PALETTE.color_background,
-        "color_void": PALETTE.color_void,
-
-        "color_obj_light": PALETTE.color_obj_light,
-        "color_player": PALETTE.color_player,
-
-        "color_obj_dark": PALETTE.color_obj_dark,
-      };
+      var result = {};
+      for (var key in PALETTE._COLORS){
+        result[key] = PALETTE._COLORS[key].export();
+      }
+    console.log(result);
+      return result;
     },
 
-    load: function(save) {
-      PALETTE.color_background = save.color_background;
-      PALETTE.color_void = save.color_void;
-
-      PALETTE.color_obj_light = save.color_obj_light;
-      PALETTE.color_player = save.color_player;
-
-      PALETTE.color_obj_dark = save.color_obj_dark;
+    import: function(save) {
+      for (var key in save) {
+        PALETTE._COLORS[key] = Color.import(save[key]);
+      }
+      document.body.style.backgroundColor = PALETTE.color('void').code();
     },
   },
 

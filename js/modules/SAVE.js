@@ -1,20 +1,28 @@
 
 class SaveFile {
   constructor() {
-    SAVE.palette = PALETTE.save.export();
-    SAVE.dictionary = DICTIONARY.save.export();
-    SAVE.level_save = LEVEL.save.export();
-  }
-
-  load() {
-    PALETTE.save.load(SAVE.palette);
-    DICTIONARY.save.load(SAVE.dictionary);
-    LEVEL.save.load(SAVE.level_save);
+    this.palette = PALETTE.save.export();
+    this.dictionary = DICTIONARY.save.export();
+    this.level_save = LEVEL.save.export();
   }
 }
 
 const SAVE = {
   slots: [],
+
+  export: function(){
+    return SAVE.slots;
+  },
+
+  import: function(slots){
+    return SAVE.slots = slots;
+  },
+
+  load_savefile: function(savefile){
+    PALETTE.save.import(savefile.palette);
+    DICTIONARY.save.import(savefile.dictionary);
+    LEVEL.save.import(savefile.level_save);
+  },
 
   save: function(index) {
     if (index == undefined) {
@@ -24,6 +32,7 @@ const SAVE = {
       key: (new Date()).toLocaleString(),
       save: new SaveFile(),
     };
+    DISK.set("saves", SAVE.export());
     CONSOLE.sys_log("# Saved in save slot " + index);
     return true;
   },
@@ -33,21 +42,19 @@ const SAVE = {
       console.error("Invalid save slot (" + index + ")");
       return;
     }
-    SAVE.slots[index].save.load();
+    SAVE.load_savefile(SAVE.slots[index].save);
     CONSOLE.sys_log("# Loaded save slot " + index);
   },
 
   _menu_from_slots: function(effect){
     var result = [];
     for(var i = 0; i < SAVE.slots.length; i++){
-      console.log(i);
       var slot = SAVE.slots[i];
       (function (f, index) {
         var callback = function() { return f(index); };
         result.push({"text": slot.key, "effect": callback});
       })(effect, i);
     }
-    console.log(result);
 
     return result;
   },

@@ -35,7 +35,7 @@ RESOURCES.onload(base_resource, function() {
 
   // Colors the base
   base_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-  base_canvas.getContext('2d').fillStyle = PALETTE.color_obj_dark.code();
+  base_canvas.getContext('2d').fillStyle = PALETTE.color('obj_dark').code();
   base_canvas.getContext('2d').fillRect(0, 0, size, size);
 
   RESOURCES.onload(seed_resource, function() {
@@ -47,7 +47,7 @@ RESOURCES.onload(base_resource, function() {
 
     // Colors the seed
     seed_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-    seed_canvas.getContext('2d').fillStyle = PALETTE.color_obj_light.code();
+    seed_canvas.getContext('2d').fillStyle = PALETTE.color('obj_light').code();
     seed_canvas.getContext('2d').fillRect(0, 0, size, size);
 
     // Cut to the base

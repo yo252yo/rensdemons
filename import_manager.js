@@ -86,6 +86,7 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("SCREEN");
 new Module("RESOURCES");
+new Module("DISK");
 new Module("SAVE");
 
 new Module("IO");
@@ -123,10 +124,4 @@ IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 
 window.onload = function() {
   var init = new Import("startup");
-
-  // tech demo
-  init.child_function(function(){
-    LEVEL.setup("zero1");
-    //LEVEL.setup("titlescreen");
-  });
 }

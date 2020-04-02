@@ -125,7 +125,6 @@ class TextMenu extends TextElement {
       } else {
         f = function() {
           var child = menu.options[choice]["effect"]();
-          console.log(child);
           if(child){
             menu.destroy();
             IO.control.cede();

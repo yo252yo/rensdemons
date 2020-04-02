@@ -12,3 +12,5 @@ stop IO during loading, start IO on level.start
 
 
 dont forget to do a proper title screen in particula for mobile
+
+click to validate save moves the character
