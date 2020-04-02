@@ -3,12 +3,6 @@
 const PALETTE = {
   _COLORS: {},
 
-  initialize: function() {
-    PALETTE.generate.pick_harmonized_palette();
-
-    document.body.style.backgroundColor = PALETTE.color('void').code();
-  },
-
   text_background: function() {
     var base = PALETTE.color('obj_dark');
     if (PALETTE.color('obj_dark').is_dark()) {
@@ -58,18 +52,24 @@ const PALETTE = {
   },
 
   color(key){
-  //  console.log(key);
-    //  console.log(PALETTE._COLORS[key]);
     return PALETTE._COLORS[key];
   },
 
-  save: {
+  factory: {
+    make_new: function() {
+      // TODO: at some point i want to pick random instead
+      PALETTE.generate.pick_harmonized_palette();
+
+      DISK.set('palette', PALETTE.factory.export());
+
+      document.body.style.backgroundColor = PALETTE.color('void').code();
+    },
+
     export: function() {
       var result = {};
       for (var key in PALETTE._COLORS){
         result[key] = PALETTE._COLORS[key].export();
       }
-    console.log(result);
       return result;
     },
 

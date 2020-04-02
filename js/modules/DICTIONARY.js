@@ -1,7 +1,7 @@
 
 
 class DictionaryGenerator {
-  initialize() {
+  make_new() {
     for(var propt in this){
       if(propt.startsWith("_gen")){
         this[propt]();
@@ -35,11 +35,12 @@ const DICTIONARY = {
     }
   },
 
-  initialize: function() {
-    (new DictionaryGenerator()).initialize();
-  },
+  factory: {
+    make_new: function() {
+      (new DictionaryGenerator()).make_new();
+      DISK.set('dictionary', DICTIONARY.factory.export());
+    },
 
-  save: {
     export: function() {
       return DICTIONARY._DICTIONARY;
     },

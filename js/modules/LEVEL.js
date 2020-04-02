@@ -30,7 +30,7 @@ const LEVEL = {
     CONSOLE.sys_log("- Loaded level " + name);
   },
 
-  save: {
+  factory: {
     export: function(){
       return {
         loaded_level_name: LEVEL.loaded_level_name,

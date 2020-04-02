@@ -1,7 +1,5 @@
 
 // TODO, improve with memory management
-DISK.initialize();
-PALETTE.initialize();
-DICTIONARY.initialize();
+DISK.initialize_game();
 
-LEVEL.setup("zero1");
+LEVEL.setup("titlescreen");
