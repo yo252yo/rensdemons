@@ -22,6 +22,6 @@ setTimeout(function(){
 new TextMenu("",
               [
                 {"text": "New game", "effect": function(){ LEVEL.setup("introduction");}},
-                {"text": "Load", "effect": function(){ SAVE.print.load_menu(); return true; }},
+                {"text": "Load", "effect": function(){ return SAVE.print.load_menu(); }},
                 {"text": "Options", "effect": function(){ alert("Not implemented");}}
              ]);
