@@ -35,6 +35,15 @@ const IO = {
     if(! skip_push){
       IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
     }
+
+    if (system.onClick){
+      // Make it so we cant click straight away in a new environment to avoid click leak.
+      setTimeout(function(){
+        IO.click_interceptor.activate();
+      }, 100);
+    } else {
+      IO.click_interceptor.deactivate();
+    }
     IO._ACTIVE_SYSTEM = system;
   },
 
@@ -56,6 +65,30 @@ const IO = {
 
     character: function() {
       IO._activate(IO_CHARACTER);
+    },
+  },
+
+  click_interceptor: {
+    activate: function() {
+      window.addEventListener('click', IO.handlers.onClick, { passive: false});
+      window.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
+
+      window.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
+
+      window.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
+      window.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
+      window.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
+    },
+
+    deactivate: function() {
+      window.removeEventListener('click', IO.handlers.onClick, { passive: false});
+      window.removeEventListener('touchstart', IO.handlers.onClick, { passive: false});
+
+      window.removeEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
+
+      window.removeEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
+      window.removeEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
+      window.removeEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
     },
   },
 
@@ -160,12 +193,3 @@ document.addEventListener('keyup', function (event) {
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
-
-window.addEventListener('click', IO.handlers.onClick, { passive: false});
-window.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
-
-window.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
-
-window.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
-window.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
-window.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
