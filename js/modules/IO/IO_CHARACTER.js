@@ -4,15 +4,6 @@ const IO_CHARACTER = {
   },
 
   onContinuousKeyPress: function(pressed_keys) {
-      if ('escape' in pressed_keys || 'esc' in pressed_keys || 27 in pressed_keys) {
-
-      }
-      if ('shift' in pressed_keys || 16 in pressed_keys) {
-          //CHARACTER.run();
-      } else {
-          //CHARACTER.walk();
-      }
-
       for (var key in pressed_keys) {
           if (KEYS_UTIL.is_up(key)) {
             LEVEL.up();
@@ -30,5 +21,14 @@ const IO_CHARACTER = {
             LEVEL.interact_in_front();
           }
       }
+  },
+
+  is_running: function() {
+    for (var key in IO._PRESSED_KEYS){
+      if (KEYS_UTIL.is_shift(key)) {
+        return true;
+      }
+    }
+    return false;
   },
 }

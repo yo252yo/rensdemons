@@ -1,19 +1,41 @@
 // runtime: LEVEL, SCREEN
 const KEYS_UTIL = {
   is_up: function(key) {
-    return key === 'w' || key === 87;
+    return key === 'w' || key === 87 || key === 'arrowup' || key === 38;
   },
   is_down: function(key) {
-    return key === 's' || key === 83;
+    return key === 's' || key === 83 || key === 'arrowdown' || key === 40;
   },
   is_left: function(key) {
-    return key === 'a' || key === 65;
+    return key === 'a' || key === 65 || key === 'arrowleft' || key === 37;
   },
   is_right: function(key) {
-    return key === 'd' || key === 68;
+    return key === 'd' || key === 68 || key === 'arrowright' || key === 39;
   },
+  is_space: function(key) {
+    return key === ' ' || key === 32;
+  },
+  is_alt: function(key) {
+    return key === 'alt' || key === 18;
+  },
+  is_ctrl: function(key) {
+    return key === 'control' || key === 17;
+  },
+  is_shift: function(key) {
+    return key === 'shift' || key === 16;
+  },
+  is_esc: function(key) {
+    return key === 'escape' || key === 27;
+  },
+  is_enter: function(key) {
+    return key === 'enter' || key === 13;
+  },
+
   is_ok: function(key) {
     return key === ' ' || key === 32;
+  },
+  is_modifier: function(key) {
+    return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
   },
 }
 
@@ -103,8 +125,7 @@ const IO = {
       if (!(key in IO._PRESSED_KEYS)) {
           IO._PRESSED_KEYS[key] = true;
       }
-
-      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey) {
+      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey && !KEYS_UTIL.is_modifier(key)) {
         IO._ACTIVE_SYSTEM.onPressKey(key);
       } else {
         IO.handlers.onContinuousKeyPress();

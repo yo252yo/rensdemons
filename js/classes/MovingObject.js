@@ -2,9 +2,9 @@
 // use(LevelObject)
 
 var _WALKING_INCREMENT = 5;
-var _AUTOWALK_INCREMENT = 7;
+var _RUNNING_BONUS = 1.8;
 var _IS_AT_PRECISION = 5.1;
-var _AUTO_WALK_TICK = 40;
+var _AUTO_WALK_TICK = 30;
 
 class MovingObject extends LevelObject {
   constructor(visual, x, y, w, h) {
@@ -77,24 +77,31 @@ class MovingObject extends LevelObject {
     return false;
   }
 
+  _movement_increment() {
+    if (CHARACTER.character == this && IO_CHARACTER.is_running()){
+      return Math.floor(_WALKING_INCREMENT * _RUNNING_BONUS);
+    }
+    return _WALKING_INCREMENT;
+  }
+
   try_move_up() {
     this.stop_autowalk();
-    this._try_move_by(0, -1 * _WALKING_INCREMENT);
+    this._try_move_by(0, -1 * this._movement_increment());
   }
 
   try_move_down() {
     this.stop_autowalk();
-    this._try_move_by(0, _WALKING_INCREMENT);
+    this._try_move_by(0, this._movement_increment());
   }
 
   try_move_left() {
     this.stop_autowalk();
-    this._try_move_by(-1 * _WALKING_INCREMENT, 0);
+    this._try_move_by(-1 * this._movement_increment(), 0);
   }
 
   try_move_right() {
     this.stop_autowalk();
-    this._try_move_by(_WALKING_INCREMENT, 0);
+    this._try_move_by(this._movement_increment(), 0);
   }
 
   try_walk_to(x, y) {
@@ -129,7 +136,7 @@ class MovingObject extends LevelObject {
     var dx = moving_object.destination_x - moving_object.x;
     var dy = moving_object.destination_y - moving_object.y;
 
-    var coef = _AUTOWALK_INCREMENT / Math.sqrt(dx * dx + dy * dy);
+    var coef = moving_object._movement_increment() / Math.sqrt(dx * dx + dy * dy);
     if (coef < 1) {
       dx = Math.floor(dx * coef);
       dy = Math.floor(dy * coef);
