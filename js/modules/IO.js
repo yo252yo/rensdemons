@@ -32,7 +32,7 @@ const KEYS_UTIL = {
   },
 
   is_ok: function(key) {
-    return key === ' ' || key === 32;
+    return KEYS_UTIL.is_space(key);
   },
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
@@ -58,7 +58,7 @@ const IO = {
       IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
     }
 
-    if (system.onClick){
+    if (system && system.onClick){
       // Make it so we cant click straight away in a new environment to avoid click leak.
       setTimeout(function(){
         IO.click_interceptor.activate();

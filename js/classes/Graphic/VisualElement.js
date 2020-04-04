@@ -59,7 +59,11 @@ class VisualElement {
     }
 
     destroy() {
-      LEVEL.html().removeChild(this.container);
+      try {
+        LEVEL.html().removeChild(this.container);
+      } catch (e) {
+        // could happen if LEVEL has been changed too fast
+      }
       delete this;
     }
 }
