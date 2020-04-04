@@ -52,41 +52,47 @@ const IO = {
     IO._PRESSED_KEYS= {};
   },
 
-  _activate: function(system, skip_push) {
-    IO._clear_inputs();
-    if(! skip_push){
-      IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+  _try_special_key_actions: function(key) {
+    if (KEYS_UTIL.is_esc(key) && IO._ACTIVE_SYSTEM == IO_CHARACTER){
+      INTERFACE.display_escape_menu();
     }
-
-    if (system && system.onClick){
-      // Make it so we cant click straight away in a new environment to avoid click leak.
-      setTimeout(function(){
-        IO.click_interceptor.activate();
-      }, 100);
-    } else {
-      IO.click_interceptor.deactivate();
-    }
-    IO._ACTIVE_SYSTEM = system;
   },
 
   // Control structure API
   control: {
+    _activate: function(system, skip_push) {
+      IO._clear_inputs();
+      if(! skip_push){
+        IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+      }
+
+      if (system && system.onClick){
+        // Make it so we cant click straight away in a new environment to avoid click leak.
+        setTimeout(function(){
+          IO.click_interceptor.activate();
+        }, 100);
+      } else {
+        IO.click_interceptor.deactivate();
+      }
+      IO._ACTIVE_SYSTEM = system;
+    },
+
     cede: function() {
-      IO._activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+      IO.control._activate(IO._PREVIOUS_SYSTEMS.pop(), true);
     },
 
     dialog: function(dialog) {
-      IO._activate(IO_DIALOG);
+      IO.control._activate(IO_DIALOG);
       IO_DIALOG.set_dialog(dialog);
     },
 
     menu: function(menu) {
-      IO._activate(IO_MENU);
+      IO.control._activate(IO_MENU);
       IO_MENU.set_menu(menu);
     },
 
     character: function() {
-      IO._activate(IO_CHARACTER);
+      IO.control._activate(IO_CHARACTER);
     },
   },
 
@@ -122,6 +128,9 @@ const IO = {
     },
 
     onPressKey: function(key) {
+      if (IO._try_special_key_actions(key)){
+        return;
+      }
       if (!(key in IO._PRESSED_KEYS)) {
           IO._PRESSED_KEYS[key] = true;
       }

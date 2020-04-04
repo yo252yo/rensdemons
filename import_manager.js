@@ -121,6 +121,7 @@ IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 
+new Module("INTERFACE");
 
 window.onload = function() {
   var init = new Import("startup");
