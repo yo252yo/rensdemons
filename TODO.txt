@@ -11,4 +11,4 @@ what to do when menu overflows the screen
 escape should dismisses escapable menus (like the escape menu)
 
 options doesnt have a good way back path when its accessed from the main titlescreen menu
-(titlescreen should regen the menu when its not there)
+(titlescreen should regen the menu when its not there or we should have a back in menu, nested menus support)
