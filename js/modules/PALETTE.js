@@ -55,12 +55,23 @@ const PALETTE = {
     return PALETTE._COLORS[key];
   },
 
+  color_code_with_default: function(key, def) {
+      var color_from_name = PALETTE.color(key);
+      if (color_from_name) {
+        return color_from_name.code()
+      } else {
+        return def;
+      }
+  },
+
   _color_interface: function() {
     document.body.style.backgroundColor = PALETTE.color('void').code();
     var escape_button = document.getElementById('IFE_escape_menu_button');
     escape_button.style.background = PALETTE.text_background().code();
     escape_button.style.borderColor = PALETTE.text_border().code();
     escape_button.style.color = PALETTE.text_color().code();
+
+    LEVEL.redraw();
   },
 
   factory: {

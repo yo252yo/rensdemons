@@ -13,6 +13,16 @@ const LEVEL = {
     return document.getElementById("level");
   },
 
+  redraw: function() {
+    for(var i in LEVEL.elements){
+      var el = LEVEL.elements[i];
+      if(el.visual_element && el.visual_element.draw){
+        el.visual_element.draw();
+      }
+    }
+    CHARACTER.redraw();
+  },
+
   initialize_character: function(x, y) {
     if (LEVEL.loaded_character_pos){
       CHARACTER.initialize(LEVEL.loaded_character_pos[0], LEVEL.loaded_character_pos[1]);

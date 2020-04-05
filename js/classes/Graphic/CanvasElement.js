@@ -15,7 +15,7 @@ class CanvasElement extends VisualElement {
 
     tint() {
       this.html_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-      this.html_canvas.getContext('2d').fillStyle = this.color;
+      this.html_canvas.getContext('2d').fillStyle = PALETTE.color_code_with_default(this.color, this.color);
       this.html_canvas.getContext('2d').fillRect(0, 0, this.html_canvas.width, this.html_canvas.height);
     }
 }
