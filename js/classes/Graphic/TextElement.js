@@ -36,7 +36,7 @@ class TextElement extends VisualElement {
         this.html.style.background = PALETTE.text_background().code();
         this.html.style.border = "5px outset " + PALETTE.text_border().code();
         this.html.style.color = PALETTE.text_color().code();
-
+        
         TEXT_STYLE(this.html);
 
         this.html.style.padding = padding + "px";

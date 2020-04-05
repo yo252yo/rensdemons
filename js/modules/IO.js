@@ -52,10 +52,24 @@ const IO = {
     IO._PRESSED_KEYS= {};
   },
 
-  _try_special_key_actions: function(key) {
-    if (KEYS_UTIL.is_esc(key) && IO._ACTIVE_SYSTEM == IO_CHARACTER){
-      INTERFACE.display_escape_menu();
-    }
+  interface: {
+    _can_open_escape_menu: function() {
+      return IO._ACTIVE_SYSTEM == IO_CHARACTER;
+    },
+
+    _try_special_key_actions: function(key) {
+      if (KEYS_UTIL.is_esc(key) && IO.interface._can_open_escape_menu()){
+        INTERFACE.display_escape_menu();
+      }
+    },
+
+    _check_transition_impact: function() {
+      if (IO.interface._can_open_escape_menu()){
+        document.getElementById('IFE_escape_menu_button').style.visibility = "visible";
+      } else {
+        document.getElementById('IFE_escape_menu_button').style.visibility = "hidden";
+      }
+    },
   },
 
   // Control structure API
@@ -75,6 +89,7 @@ const IO = {
         IO.click_interceptor.deactivate();
       }
       IO._ACTIVE_SYSTEM = system;
+      IO.interface._check_transition_impact();
     },
 
     cede: function() {
@@ -98,25 +113,27 @@ const IO = {
 
   click_interceptor: {
     activate: function() {
-      window.addEventListener('click', IO.handlers.onClick, { passive: false});
-      window.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
+      var level = document.getElementById("level");
+      level.addEventListener('click', IO.handlers.onClick, { passive: false});
+      level.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
 
-      window.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
+      level.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
 
-      window.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
-      window.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
-      window.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
+      level.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
+      level.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
+      level.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
     },
 
     deactivate: function() {
-      window.removeEventListener('click', IO.handlers.onClick, { passive: false});
-      window.removeEventListener('touchstart', IO.handlers.onClick, { passive: false});
+      var level = document.getElementById("level");
+      level.removeEventListener('click', IO.handlers.onClick, { passive: false});
+      level.removeEventListener('touchstart', IO.handlers.onClick, { passive: false});
 
-      window.removeEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
+      level.removeEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
 
-      window.removeEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
-      window.removeEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
-      window.removeEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
+      level.removeEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
+      level.removeEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
+      level.removeEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
     },
   },
 
@@ -128,7 +145,7 @@ const IO = {
     },
 
     onPressKey: function(key) {
-      if (IO._try_special_key_actions(key)){
+      if (IO.interface._try_special_key_actions(key)){
         return;
       }
       if (!(key in IO._PRESSED_KEYS)) {

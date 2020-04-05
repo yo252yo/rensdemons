@@ -7,3 +7,5 @@ dont forget to do a proper title screen in particula for mobile
 escape menu
 
 what to do when menu overflows the screen
+
+escape should dismisses escapable menus (like the escape menu)
