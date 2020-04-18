@@ -7,17 +7,18 @@ const LEVEL = {
 
   loaded_level_name: "",
   loaded_character_pos: null,
-  elements: [],
+  objects: [],
+  visual_elements: [],
 
   html: function() {
     return document.getElementById("level");
   },
 
   redraw: function() {
-    for(var i in LEVEL.elements){
-      var el = LEVEL.elements[i];
-      if(el.visual_element && el.visual_element.draw){
-        el.visual_element.draw();
+    for(var i in LEVEL.visual_elements){
+      var el = LEVEL.visual_elements[i];
+      if(el.draw){
+        el.draw();
       }
     }
     CHARACTER.redraw();
@@ -56,20 +57,35 @@ const LEVEL = {
 
   clear: function() {
       LEVEL.html().innerHTML = "";
-      LEVEL.elements = [];
+      LEVEL.objects = [];
+      LEVEL.visual_elements = [];
       CHARACTER.clear();
   },
 
+  index_visual_element: function(object) {
+      LEVEL.visual_elements.push(object);
+  },
+
+  remove_visual_element: function(object) {
+    const index = LEVEL.visual_elements.indexOf(object);
+    if (index > -1) {
+      LEVEL.visual_elements.splice(index, 1);
+    }
+  },
+
   index_object: function(object) {
-      LEVEL.elements.push(object);
+      LEVEL.objects.push(object);
   },
 
   is_walkable: function(x, y) {
     var walkable = false;
 
-    // could be optimized by ordering elements
-    for(var i in LEVEL.elements) {
-      var t = LEVEL.elements[i].is_walkable(x,y);
+    // could be optimized by ordering objects
+    for(var i in LEVEL.objects) {
+      if (! LEVEL.objects[i].is_walkable){
+        continue;
+      }
+      var t = LEVEL.objects[i].is_walkable(x,y);
       if (t == -1) {
         return false;
       } else if (t == 1) {
@@ -82,10 +98,10 @@ const LEVEL = {
   select_interactible_at: function(x, y) {
     var here = [];
 
-    // could be optimized by ordering elements
-    for(var i in LEVEL.elements) {
-      if (LEVEL.elements[i].is_interactible(x,y)) {
-        here.push(LEVEL.elements[i]);
+    // could be optimized by ordering objects
+    for(var i in LEVEL.objects) {
+      if (LEVEL.objects[i].is_interactible && LEVEL.objects[i].is_interactible(x,y)) {
+        here.push(LEVEL.objects[i]);
       }
     }
 
@@ -93,7 +109,7 @@ const LEVEL = {
       return undefined;
     } else if (here.length == 1) {
       return here[0]
-    } else { // if theres several elements we chose the one on top
+    } else { // if theres several objects we chose the one on top
       var max = here[0].get_depth();
       var argmax = here[0];
       for (var int = 1; i < here.length; i ++) {

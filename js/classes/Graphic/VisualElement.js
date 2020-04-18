@@ -5,6 +5,7 @@ class VisualElement {
         this.container = document.createElement('div');
         this.container.style.position = "absolute";
         LEVEL.html().appendChild(this.container);
+        LEVEL.index_visual_element(this);
 
         this.adjust_dimensions(w, h);
         this.place_at(x, y);
@@ -60,6 +61,7 @@ class VisualElement {
 
     destroy() {
       try {
+        LEVEL.remove_visual_element(this);
         LEVEL.html().removeChild(this.container);
       } catch (e) {
         // could happen if LEVEL has been changed too fast

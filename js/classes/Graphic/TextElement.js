@@ -32,11 +32,8 @@ class TextElement extends VisualElement {
         this.container.style.width = w + "px";
         this.html.style.height = (h - 2 * padding) + "px";
         this.html.style.width = (w - 2 * padding) + "px";
+        this.draw();
 
-        this.html.style.background = PALETTE.text_background().code();
-        this.html.style.border = "5px outset " + PALETTE.text_border().code();
-        this.html.style.color = PALETTE.text_color().code();
-        
         TEXT_STYLE(this.html);
 
         this.html.style.padding = padding + "px";
@@ -54,5 +51,11 @@ class TextElement extends VisualElement {
     adjust_depth(z) {
       super.adjust_depth(z);
       this.html.style.zIndex = z;
+    }
+
+    draw() {
+      this.html.style.background = PALETTE.text_background().code();
+      this.html.style.border = "5px outset " + PALETTE.text_border().code();
+      this.html.style.color = PALETTE.text_color().code();
     }
 }
