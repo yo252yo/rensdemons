@@ -21,6 +21,15 @@ const PALETTE = {
     }
   },
 
+  text_dialog_color: function() {
+    var base =  PALETTE.text_color();
+    if (base.is_dark()) {
+      return base.hoffset(0.4);
+    } else{
+      return base.hoffset(-0.4);
+    }
+  },
+
   text_border: function() {
     if (PALETTE.color('obj_dark').is_dark()) {
       return PALETTE.color('void').hoffset(0.3);

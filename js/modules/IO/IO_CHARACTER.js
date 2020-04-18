@@ -1,5 +1,8 @@
 const IO_CHARACTER = {
   onClick: function(x,y, is_hold) {
+    if(IO.track_click) {
+      CONSOLE.sys_log("(" + x + "," + y + ")");
+    }
     LEVEL.click(x, y, is_hold);
   },
 

@@ -36,7 +36,7 @@ class TextBox extends TextElement {
         this.measure_letter_capability(w, h, padding);
         this.text_future_pages = "";
         this.last_turned = (new Date()).getTime();
-        
+
         IO.control.dialog(this);
     }
 
@@ -61,6 +61,14 @@ class TextBox extends TextElement {
     }
 
     static print_text(textbox, instant) {
+      var preroll = "";
+      while(textbox.text_printing.indexOf(">") > 0) {
+        var cutoff = textbox.text_printing.indexOf(">");
+        preroll += textbox.text_printing.substr(0, cutoff+1);
+        textbox.text_printing = textbox.text_printing.substr(cutoff + 1, textbox.text_printing.length - cutoff);
+      }
+      textbox.html.innerHTML += preroll;
+
       if (instant) {
         textbox.html.innerHTML += textbox.text_printing;
         textbox.text_printing = "";
@@ -80,7 +88,7 @@ class TextBox extends TextElement {
       }
     }
 
-    process_text(text) {
+    fill_words_from_dictionary(text) {
       var processed = "";
       while (text.indexOf("$$") >= 0){
         var pos = text.indexOf("$$");
@@ -97,9 +105,21 @@ class TextBox extends TextElement {
       return processed;
     }
 
+    process_for_dialog(text) {
+      var space = text.indexOf(" ");
+      var period = text.indexOf(":");
+      if (space == period + 1)  {
+        this.html.style.color = PALETTE.text_dialog_color().code();
+        return text = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + text.substr(0, period + 1) + "</span>" +  text.substr(period + 1, text.length - period);
+      } else {
+        return text;
+      }
+    }
+
     change_text(text, instant) {
-      text = this.process_text(text);
+      text = this.fill_words_from_dictionary(text);
       this.text_printing = this.cut_text_to_page(text)[0];
+      this.text_printing = this.process_for_dialog(this.text_printing);
       if (this.cut_text_to_page(text)[1] != "") {
         this.text_printing += "...";
         this.text_future_pages = this.cut_text_to_page(text)[1];
