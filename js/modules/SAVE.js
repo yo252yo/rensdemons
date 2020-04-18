@@ -58,6 +58,7 @@ const SAVE = {
           result.push({"text": slot.key, "effect": callback});
         })(effect, i);
       }
+      result.push({"text": "Back", "effect": "##BACK"});
 
       return result;
     },

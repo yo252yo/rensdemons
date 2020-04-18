@@ -41,6 +41,7 @@ class TextMenu extends TextElement {
 
         super(left,top+height, width, height, padding);
 
+        this.parent = IO._menu;
         IO.control.menu(this);
 
         this.title = title;
@@ -101,6 +102,13 @@ class TextMenu extends TextElement {
       setTimeout(function() { IO.control.cede(); }, 500);
     }
 
+    back() {
+      IO.control.cede();
+      // Maybe we need to explicitely save title and option because of destroy()
+      new TextMenu(this.parent.title, this.parent.options);
+      this.destroy();
+    }
+
     pick(choice) {
       if (! this.options[choice]){
         console.error("Invalid menu choice: " + choice);
@@ -122,6 +130,8 @@ class TextMenu extends TextElement {
 
       if(menu.options[choice]["effect"] == "##CLOSE"){
         f = function() { menu.close(); };
+      } else if(menu.options[choice]["effect"] == "##BACK"){
+        f = function() { menu.back(); };
       } else {
         f = function() {
           var child = menu.options[choice]["effect"]();

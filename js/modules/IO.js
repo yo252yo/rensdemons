@@ -211,14 +211,14 @@ const IO = {
 
   // Module specific handlers
   menu: {
-    menu_pick: function(choice){
+    pick: function(choice){
       if (IO._ACTIVE_SYSTEM != IO_MENU){        return;    }
-      IO_MENU.menu_pick(choice);
+      IO_MENU.pick(choice);
     },
 
-    menu_select: function(choice){
+    select: function(choice){
       if (IO._ACTIVE_SYSTEM != IO_MENU){        return;     }
-      IO_MENU.menu_select(choice);
+      IO_MENU.select(choice);
     },
   },
 }

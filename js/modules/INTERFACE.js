@@ -12,7 +12,7 @@ const INTERFACE = {
     new TextMenu("",
                   [
                     {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); return false; }},
-                    {"text": "Close", "effect": "##CLOSE"}
+                    {"text": "Back", "effect": "##BACK"}
                  ]);
   },
 }
