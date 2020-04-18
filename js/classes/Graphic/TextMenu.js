@@ -103,10 +103,14 @@ class TextMenu extends TextElement {
     }
 
     back() {
-      IO.control.cede();
-      // Maybe we need to explicitely save title and option because of destroy()
-      new TextMenu(this.parent.title, this.parent.options);
-      this.destroy();
+      if (this.parent) {
+        IO.control.cede();
+        // Maybe we need to explicitely save title and option because of destroy()
+        new TextMenu(this.parent.title, this.parent.options);
+        this.destroy();
+      } else {
+        this.close();
+      }
     }
 
     pick(choice) {
