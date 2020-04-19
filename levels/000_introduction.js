@@ -39,8 +39,8 @@ RESOURCES.onload(base_resource, function() {
   base_canvas.getContext('2d').fillRect(0, 0, size, size);
 
   RESOURCES.onload(seed_resource, function() {
-    var offset1 = Math.floor(Math.random() * (5000 - size));
-    var offset2 = Math.floor(Math.random() * (5000 - size));
+    var offset1 = RANDOM.int(5000 - size);
+    var offset2 = RANDOM.int(5000 - size);
 
     // Draws the seed
     seed_canvas.getContext('2d').drawImage(seed_resource, offset1, offset2, size, size, 0, 0, size, size);

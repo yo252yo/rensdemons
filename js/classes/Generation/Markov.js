@@ -28,23 +28,6 @@ class Markov {
     return STRING_UTILS.camel_case(s[s.length-1].split("$")[0]);
   }
 
-  // Helper util
-  _util_pick_letter_in_array(candidates) {
-    var total = 0;
-    for (var i in candidates) {
-      total += candidates[i];
-    }
-
-    var index = Math.random() * total;
-    for (var i in candidates) {
-      index -= candidates[i];
-      if (index <= 0) {
-        return i;
-      }
-    }
-    return "$"; // Should not happen, though
-  }
-
   // Array operations
   _kernel_increment(sequence) {
     if(!this.kernel[sequence]) {
@@ -63,7 +46,7 @@ class Markov {
         candidates[sequence[sequence.length - 1]] = this.kernel[sequence];
       }
     }
-    return this._util_pick_letter_in_array(candidates);
+    return RANDOM.pick_in_weighted_array(candidates);
   }
 
   _kernel_find_mutation(mutating_sequence, pos) {
@@ -73,8 +56,8 @@ class Markov {
         candidates[sequence[pos]] = this.kernel[sequence];
       }
     }
-    var winner = this._util_pick_letter_in_array(candidates);
-    if (winner == "$") {
+    var winner = RANDOM.pick_in_weighted_array(candidates);
+    if (winner == "$") { // We simply don't mutate.
       winner = mutating_sequence[pos];
     }
     return winner;
@@ -172,7 +155,7 @@ class Markov {
   }
 
   _mutate_at(word, pos) {
-    var m = Math.random();
+    var m = RANDOM.float();
 
     if (m < 0.05) { // delete mutation
       return word.substr(0, pos) + word.substr(pos+1);
@@ -193,9 +176,9 @@ class Markov {
       var prefix = this._str_prefix();
       var decorated = this._str_decorate(mutated_word);
 
-      var nb_mut = 1 + Math.floor(Math.random() * mutations);
+      var nb_mut = 1 + RANDOM.int(mutations);
       for (var i =0; i< nb_mut; i++) {
-        var mutate_pos = prefix.length + Math.floor(Math.random() * word.length);
+        var mutate_pos = prefix.length + RANDOM.int(word.length);
         decorated = this._mutate_at(decorated, mutate_pos);
       }
       mutated_word = this._str_undecorate(decorated);

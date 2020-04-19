@@ -84,6 +84,7 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
+new Module("RANDOM");
 new Module("SCREEN");
 new Module("RESOURCES");
 new Module("DISK");

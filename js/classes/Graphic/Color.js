@@ -1,10 +1,6 @@
 class Color {
     static random() {
-      var r256 = function() {
-        return Math.floor(Math.random() * 256);
-      };
-
-      return new Color(r256(), r256(), r256());
+      return new Color(RANDOM.int(256), RANDOM.int(256), RANDOM.int(256));
     }
 
     static import(string) {

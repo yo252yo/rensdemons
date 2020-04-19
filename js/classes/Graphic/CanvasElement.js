@@ -4,7 +4,7 @@ class CanvasElement extends VisualElement {
     constructor(color) {
         // Canvas properties are measured at drawing time
         super(0,0,0,0);
-        this.id = Math.floor(Math.random() * 1000) + "/" + Date.now();
+        this.id = RANDOM.int(1000) + "/" + Date.now();
         this.color = color;
 
         this.html_canvas = document.createElement('canvas');
