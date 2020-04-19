@@ -53,6 +53,10 @@ const IO = {
   },
 
   interface: {
+    _can_trigger_level_event: function() {
+      return IO._ACTIVE_SYSTEM == IO_CHARACTER;
+    },
+
     _can_open_escape_menu: function() {
       return IO._ACTIVE_SYSTEM == IO_CHARACTER;
     },

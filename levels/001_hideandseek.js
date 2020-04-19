@@ -88,4 +88,7 @@ TextBannerSequence.make([
 ], function(){ IO.control.character(); });
 
 
-// React to Object.keys(CHILDREN_FOUND).length
+var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
+LEVEL.add_trigger(foundAll, function() {
+  alert("test");
+});

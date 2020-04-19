@@ -4,11 +4,13 @@
 const LEVEL = {
   _MAX_INTERACTION_DISTANCE: 70,
   _FACE_INTERACTION_DISTANCE: 20,
+  _TRIGGER_COOLDOWN: 2000,
 
   loaded_level_name: "",
   loaded_character_pos: null,
   objects: [],
   visual_elements: [],
+  triggers: [],
 
   html: function() {
     return document.getElementById("level");
@@ -34,8 +36,8 @@ const LEVEL = {
   },
 
   setup: function(name) {
-    LEVEL.loaded_level_name = name;
     LEVEL.clear();
+    LEVEL.loaded_level_name = name;
 
     new Import("levels/" + name);
     CONSOLE.sys_log("- Loaded level " + name);
@@ -56,10 +58,14 @@ const LEVEL = {
   },
 
   clear: function() {
-      LEVEL.html().innerHTML = "";
-      LEVEL.objects = [];
-      LEVEL.visual_elements = [];
-      CHARACTER.clear();
+    for(var condition in LEVEL.triggers) {
+      clearTimeout(condition);
+    }
+    LEVEL.html().innerHTML = "";
+    LEVEL.objects = [];
+    LEVEL.visual_elements = [];
+    LEVEL.triggers = [];
+    CHARACTER.clear();
   },
 
   index_visual_element: function(object) {
@@ -170,6 +176,15 @@ const LEVEL = {
       if (! LEVEL.try_interact(element)) {
         CHARACTER.get().try_walk_to(x, y);
       }
+    }
+  },
+
+  add_trigger: function(f_condition, f_execute) {
+    if(f_condition() && IO.interface._can_trigger_level_event()){
+      f_execute();
+    } else {
+      var trigger = setTimeout(function(){ LEVEL.add_trigger(f_condition, f_execute); }, LEVEL._TRIGGER_COOLDOWN);
+      LEVEL.triggers.push(trigger);
     }
   },
 };
