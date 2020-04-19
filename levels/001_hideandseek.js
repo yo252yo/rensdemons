@@ -5,7 +5,10 @@ new S_Floor(50,550,1000,500);
 
 new S_Tree(110,270);
 new S_Tree(135,470);
-new S_Tree(150,130);
+var t1 = new S_Tree(150,130);
+t1.hide_in(new M_ChildF());
+
+
 new S_Tree(240,380);
 new S_Tree(265,500);
 new S_Tree(290,160);

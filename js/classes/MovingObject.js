@@ -70,7 +70,7 @@ class MovingObject extends LevelObject {
   }
 
   _try_move_by(dx,dy) {
-    if (LEVEL.is_walkable(this.x + dx, this.y+dy)) {
+    if (LEVEL.is_walkable(this.x + dx, this.y+dy, this)) {
       this.move(dx,dy);
       return true;
     }

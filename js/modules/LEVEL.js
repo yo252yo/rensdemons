@@ -77,12 +77,15 @@ const LEVEL = {
       LEVEL.objects.push(object);
   },
 
-  is_walkable: function(x, y) {
+  is_walkable: function(x, y, initiator) {
     var walkable = false;
 
     // could be optimized by ordering objects
     for(var i in LEVEL.objects) {
-      if (! LEVEL.objects[i].is_walkable){
+      if (LEVEL.objects[i] == initiator) {
+        continue;
+      }
+      if (! LEVEL.objects[i].is_walkable) {
         continue;
       }
       var t = LEVEL.objects[i].is_walkable(x,y);

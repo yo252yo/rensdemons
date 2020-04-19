@@ -23,10 +23,10 @@ class LevelObject {
     draw_hitbox() {
 
       var html_rectangle = document.createElement('div');
-      html_rectangle.style.top = (this.h_y - this.h_h) + "px";
-      html_rectangle.style.left = this.h_x + "px";
-      html_rectangle.style.width = this.h_w + "px";
-      html_rectangle.style.height = this.h_h + "px";
+      html_rectangle.style.top = (this.visual_element.y + this.h_y - this.h_h) + "px";
+      html_rectangle.style.left = (this.visual_element.x + this.h_x) + "px";
+      html_rectangle.style.width = (this.h_w) + "px";
+      html_rectangle.style.height = (this.h_h) + "px";
       html_rectangle.style.position = "absolute";
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
@@ -39,8 +39,8 @@ class LevelObject {
     }
 
     is_at_hitbox(x,y) {
-      if (x >= this.h_x && x <= this.h_x + this.h_w) {
-        if (y >= this.h_y - this.h_h && y <= this.h_y) {
+      if (x >= this.visual_element.x + this.h_x && x <= this.visual_element.x + this.h_x + this.h_w) {
+        if (y >= this.visual_element.y + this.h_y - this.h_h && y <= this.visual_element.y + this.h_y) {
           return true;
         }
       }
