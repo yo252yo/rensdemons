@@ -4,7 +4,6 @@
 
 class MM_Child extends MovingObject {
   constructor(x, y, visual) {
-    var visual = new MovingSprite("assets/child_m.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
     this.adjust_hitbox(10, 0, 10, 5);
   }

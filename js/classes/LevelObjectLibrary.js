@@ -33,7 +33,7 @@ class S_Tree extends LevelObject {
   interaction() {
     if (this.hidden_in){
       this.hidden_in.place_at(this.visual_element.x, this.visual_element.y - 20);
-      this.hidden_in.try_walk_by(-40, 20);
+      this.hidden_in.try_walk_by(-40, 30);
       this.hidden_in.interaction();
       this.hidden_in = null;
     } else {

@@ -46,7 +46,11 @@ class Markov {
         candidates[sequence[sequence.length - 1]] = this.kernel[sequence];
       }
     }
-    return RANDOM.pick_in_weighted_array(candidates);
+    var winner = RANDOM.pick_in_weighted_array(candidates);
+    if (! winner) {
+      return "";
+    }
+    return winner;
   }
 
   _kernel_find_mutation(mutating_sequence, pos) {
@@ -57,7 +61,7 @@ class Markov {
       }
     }
     var winner = RANDOM.pick_in_weighted_array(candidates);
-    if (winner == "$") { // We simply don't mutate.
+    if (!winner || winner == "$") { // We simply don't mutate.
       winner = mutating_sequence[pos];
     }
     return winner;

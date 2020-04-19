@@ -21,6 +21,14 @@ class DictionaryGenerator {
   _gen_demon_lord = function() {
     DICTIONARY._DICTIONARY['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
   };
+
+  _gen_child_friends = function() {
+    DICTIONARY._DICTIONARY['child_friends_m1'] = 'Michael';
+    DICTIONARY._DICTIONARY['child_friends_m2'] = 'Nicholas';
+    DICTIONARY._DICTIONARY['child_friends_m3'] = 'Andrew';
+    DICTIONARY._DICTIONARY['child_friends_f1'] = 'Sarah';
+    DICTIONARY._DICTIONARY['child_friends_f2'] = 'Emily';
+  };
 }
 
 const DICTIONARY = {
