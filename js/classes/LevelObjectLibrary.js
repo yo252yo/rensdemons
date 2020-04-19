@@ -22,7 +22,12 @@ class S_Tree extends LevelObject {
   }
 
   interaction() {
-    new TextBanner("It's a tree, mario");
+    new TextBannerRandom([
+      "It's a tree.",
+      "Lustrous leaves, bulky branches... yes, definitely a tree.",
+      "The foliage of the tree casts a pleasant shadow.",
+      "It's a completely normal tree, hiding nothing whatsoever.",
+    ]);
   }
 }
 

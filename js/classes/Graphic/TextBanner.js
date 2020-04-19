@@ -34,3 +34,22 @@ class TextBannerSequence {
     )
   }
 }
+
+class TextBannerRandom {
+  constructor(possibilities) {
+    new TextBanner(RANDOM.pick(possibilities));
+  }
+}
+
+
+class TextBannerProgressive {
+  constructor(lines) {
+    this.state = 0;
+    this.lines = lines;
+  }
+
+  progress() {
+    new TextBanner(this.lines[this.state]);
+    this.state = Math.min(this.state + 1, this.lines.length - 1);
+  }
+}
