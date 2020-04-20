@@ -54,6 +54,8 @@ class S_Column extends LevelObject {
   interaction() {
     new TextBannerRandom([
       "It's a column.",
+      "Nothing but a column.",
+      "A simple yet elegant stone column. It's supporting the roof.",
     ]);
   }
 }
@@ -83,6 +85,6 @@ class S_House extends LevelObject {
   }
 
   interaction() {
-    new TextBanner("It's not a tree, mario");
+    new TextBanner("It's not a tree");
   }
 }
