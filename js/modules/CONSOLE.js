@@ -6,4 +6,9 @@ const CONSOLE = {
     CONSOLE.logs.push(t);
     console.log("%c " + t, "color:#AAAAAA;font-style: italic;");
   },
+
+  error: function(t) {
+    CONSOLE.logs.push(t);
+    console.log("%c " + t, "color:#AA0000;");
+  },
 };

@@ -17,8 +17,6 @@ class S_Tree extends LevelObject {
     var visual = new StaticSprite("assets/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
-    //visual.set_opacity(0.9);
-    //wrong ??
   }
 
   default_text() {
@@ -46,15 +44,17 @@ class S_Tree extends LevelObject {
   }
 }
 
-class S_House extends LevelObject {
+class S_Column extends LevelObject {
   constructor(x, y) {
-    var visual = new StaticSprite("testing/house.png", 'obj_dark');
+    var visual = new StaticSprite("assets/column.png", 'obj_light');
     super(visual, x, y);
-    this.adjust_hitbox(0,0,175,200);
+    this.adjust_hitbox(10,0,20,15);
   }
 
   interaction() {
-    new TextBanner("It's not a tree, mario");
+    new TextBannerRandom([
+      "It's a column.",
+    ]);
   }
 }
 
@@ -71,5 +71,18 @@ class S_SavePoint extends LevelObject {
                     {"text": "Worship", "effect": function(){ return SAVE.print.save_menu(); }},
                     {"text": "Postpone", "effect": "##CLOSE"}
                  ]);
+  }
+}
+
+
+class S_House extends LevelObject {
+  constructor(x, y) {
+    var visual = new StaticSprite("testing/house.png", 'obj_dark');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,175,200);
+  }
+
+  interaction() {
+    new TextBanner("It's not a tree, mario");
   }
 }

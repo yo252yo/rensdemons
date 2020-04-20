@@ -11,6 +11,17 @@ var child_in_tree = function (x, y, name, child, dialog) {
   (new S_Tree(x,y)).hide_in(child);
 }
 
+var make_priest = function (x, y) {
+  var priest = new M_Priest(x,y);
+  priest.interaction = function() {
+    TextBannerSequence.make([
+      "Priest: \"Thank you for coming, Second Born. Your trial is about to begin.\"",
+      "Priest: \"Please come with us to the temple for further instructions.\"",
+    ], function(){ LEVEL.setup("002_trialinstruction"); });
+   };
+  priest.try_walk_by(-50, 60);
+}
+
 new S_Floor(50,550,1000,500);
 
 new S_Tree(110,270);
@@ -90,5 +101,12 @@ TextBannerSequence.make([
 
 var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
 LEVEL.add_trigger(foundAll, function() {
-  alert("test");
+  make_priest(1030,300);
+  make_priest(1030,250);
+  make_priest(1030,350);
+
+  TextBannerSequence.make([
+    "Priest: \"The time has come. Candidates for the Trial of the Second-Borns, please do follow us.\"",
+    "$$sidekick_name$: \"Good luck! Please be safe and come back!\"",
+  ], function(){ IO.control.character(); });
 });
