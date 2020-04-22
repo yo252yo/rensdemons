@@ -90,6 +90,7 @@ new S_Tree(950,185);
 
 // start
 
+SAVE.autosave();
 TextBannerSequence.make([
   "Although for now, the Promised Child, unaware of the fate that awaited, was simply playing hide and seek in the outskirts of town.",
   "Ren: \"... 97\"",

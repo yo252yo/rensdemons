@@ -27,11 +27,16 @@ const SAVE = {
   },
 
   save: function(index) {
+    var key = (new Date()).toLocaleString();
+
     if (index == undefined) {
       index = SAVE.slots.length;
     }
+    if (index == 0){
+      key = "AUTOSAVE";
+    }
     SAVE.slots[index] = {
-      key: (new Date()).toLocaleString(),
+      key: key,
       save: new SaveFile(),
     };
     DISK.set("saves", SAVE.factory.export());
@@ -49,9 +54,10 @@ const SAVE = {
   },
 
   print: {
-    _menu_from_slots: function(effect){
+    _menu_from_slots: function(effect, start){
+      if (start == undefined){ start = 0; }
       var result = [];
-      for(var i = 0; i < SAVE.slots.length; i++){
+      for(var i = start; i < SAVE.slots.length; i++){
         var slot = SAVE.slots[i];
         (function (f, index) {
           var callback = function() { return f(index); };
@@ -67,7 +73,7 @@ const SAVE = {
       new TextMenu("Save in slot?",
                     [
                       {"text": "New save", "effect": function(){ return SAVE.save(); }},
-                   ].concat(SAVE.print._menu_from_slots(function(i){ return SAVE.save(i);}))
+                   ].concat(SAVE.print._menu_from_slots(function(i){ return SAVE.save(i);}, 1))
                  );
       return true;
     },
@@ -81,6 +87,10 @@ const SAVE = {
                   );
       return true;
     },
+  },
+
+  autosave: function(){
+    SAVE.save(0);
   },
 
 };
