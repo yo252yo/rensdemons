@@ -26,7 +26,6 @@ setTimeout(function(){
 
 new TextMenu("",
               [
-                {"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); return true; }},
                 {"text": "Load", "effect": function(){ return SAVE.print.load_menu(); }},
-                {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); return true; }},
+                {"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); return true; }},
              ]);
