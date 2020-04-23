@@ -13,6 +13,7 @@ var make_priest = function (x, y) {
 
 
 LEVEL.initialize_character(350, 700);
+SAVE.autosave();
 
 for (var i = 100; i< 700; i += 100) {
   new S_Column(150,i);
@@ -34,5 +35,6 @@ new M_ChildF(280, 710);
 
 TextBannerSequence.make([
   "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
-  "Priest: \"Many before you have failed. But one day, the Promised Child will come, for it is foretold. And that day may well be today.\"",
+  "Priest: \"Many before you have failed. But you know as much as we do that the times are hard and require efforts. One day, the Promised Child will come and liberate us from the tyranny of $$demon_lord$, for it has been foretold. And that day may well be today.\"",
+  "Priest: \"Now, second-borns, today we will see if the Promised Child is among you. I truly hope it is.\"",
 ], function(){ IO.control.character(); });
