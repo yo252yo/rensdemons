@@ -29,6 +29,7 @@ class M_Priest extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/priest.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
+    this.adjust_hitbox(7, 3, 20, 12);
   }
 
   interaction() {
