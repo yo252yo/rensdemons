@@ -11,6 +11,7 @@ const LEVEL = {
   objects: [],
   visual_elements: [],
   triggers: [],
+  start_function: null,
 
   html: function() {
     return document.getElementById("level");
@@ -26,12 +27,16 @@ const LEVEL = {
     CHARACTER.redraw();
   },
 
-  initialize_character: function(x, y) {
-    if (LEVEL.loaded_character_pos){
+  initialize_with_character: function(x, y) {
+    if (LEVEL.loaded_character_pos) {
       CHARACTER.initialize(LEVEL.loaded_character_pos[0], LEVEL.loaded_character_pos[1]);
       LEVEL.loaded_character_pos = null;
+      IO.control.character();
     } else {
       CHARACTER.initialize(x,y);
+      if (LEVEL.start_function) {
+        LEVEL.start_function();
+      }
     }
   },
 
@@ -186,5 +191,12 @@ const LEVEL = {
       var trigger = setTimeout(function(){ LEVEL.add_trigger(f_condition, f_execute); }, LEVEL._TRIGGER_COOLDOWN);
       LEVEL.triggers.push(trigger);
     }
+  },
+
+  at_start: function(f) {
+    if(LEVEL.loaded_character_pos) {
+      return; // We're coming from a save
+    }
+    f();
   },
 };

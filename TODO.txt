@@ -14,5 +14,3 @@ text banner is too small and skewed on the left :/
 maybe have the element turn around when talked to
 
 PRIESTS DONG HAVE HITBOX
-
-load is triggering the intro text of the levels

@@ -1,5 +1,15 @@
 
-LEVEL.initialize_character(150, 300);
+LEVEL.start_function = function() {
+  TextBannerSequence.make([
+    "Although for now, the Promised Child, unaware of the fate that awaited, was simply playing hide and seek in the outskirts of town.",
+    "Ren: \"... 97\"",
+    "Ren: \"... 98\"",
+    "Ren: \"... 99\"",
+    "Ren: \"... 100! Ready or not, here I come!\"",
+  ], function(){ SAVE.autosave(); IO.control.character(); });
+};
+LEVEL.initialize_with_character(150, 300);
+
 
 var CHILDREN_FOUND = {};
 
@@ -88,16 +98,6 @@ child_in_tree(930, 460, "cfm3", new M_ChildM(),
 
 new S_Tree(950,185);
 
-// start
-
-SAVE.autosave();
-TextBannerSequence.make([
-  "Although for now, the Promised Child, unaware of the fate that awaited, was simply playing hide and seek in the outskirts of town.",
-  "Ren: \"... 97\"",
-  "Ren: \"... 98\"",
-  "Ren: \"... 99\"",
-  "Ren: \"... 100! Ready or not, here I come!\"",
-], function(){ IO.control.character(); });
 
 
 var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
