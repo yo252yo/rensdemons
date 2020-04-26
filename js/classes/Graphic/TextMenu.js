@@ -31,15 +31,10 @@ const _EXECUTOR = new MenuChoiceExecutor();
 
 
 class TextMenu extends TextElement {
-    constructor(title, options) {
-        var top = Math.floor(SCREEN.height() * 0.2);
-        var left = Math.floor(SCREEN.width() * 0.2);
-        var height = 0;//Math.floor(SCREEN.height() * 0.31);
-        var width = Math.floor(SCREEN.width() * 0.6);
-
+    constructor(title, options, x, y, w, h) {
         var padding = 30;
 
-        super(left,top+height, width, height, padding);
+        super(x,y, w, h, padding);
 
         this.parent = IO._menu;
         IO.control.menu(this);
@@ -106,7 +101,8 @@ class TextMenu extends TextElement {
       if (this.parent) {
         IO.control.cede();
         // Maybe we need to explicitely save title and option because of destroy()
-        new TextMenu(this.parent.title, this.parent.options);
+        // This should create an object of the same type as "this".
+        new this.constructor(this.parent.title, this.parent.options);
         this.destroy();
       } else {
         this.close();
@@ -163,5 +159,31 @@ class TextMenu extends TextElement {
 
     confirm_select() {
       this.execute(this.selected);
+    }
+}
+
+class CenteredTextMenu extends TextMenu {
+    constructor(title, options) {
+        var top = Math.floor(SCREEN.height() * 0.2);
+        var left = Math.floor(SCREEN.width() * 0.2);
+        var height = 0;//Math.floor(SCREEN.height() * 0.31);
+        var width = Math.floor(SCREEN.width() * 0.6);
+
+        super(title, options, left,top+height, width, height);
+    }
+}
+
+class BattleMenu extends TextMenu {
+    constructor(title, options) {
+        var top = Math.floor(SCREEN.height() * 0.6);
+        var left = Math.floor(SCREEN.width() * 0.6);
+        var height = Math.floor(SCREEN.height() * 0.3);
+        var width = Math.floor(SCREEN.width() * 0.3);
+
+        super(title, options, left,top+height, width, height);
+
+        this.html.style.background = PALETTE.text_color().code();
+        this.html.style.border = "2px solid " + PALETTE.text_border().code();
+        this.html.style.color = PALETTE.text_background().code();
     }
 }

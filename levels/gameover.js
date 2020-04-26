@@ -24,7 +24,7 @@ setTimeout(function(){
   adapt_sprite(s2, 2);
 }, 500);
 
-new TextMenu("",
+new CenteredTextMenu("",
               [
                 {"text": "Load", "effect": function(){ return SAVE.print.load_menu(); }},
                 {"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); return true; }},

@@ -68,7 +68,7 @@ class S_SavePoint extends LevelObject {
   }
 
   interaction() {
-    new TextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
+    new CenteredTextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
                   [
                     {"text": "Worship", "effect": function(){ return SAVE.print.save_menu(); }},
                     {"text": "Postpone", "effect": "##CLOSE"}

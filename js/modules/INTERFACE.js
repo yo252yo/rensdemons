@@ -1,6 +1,6 @@
 const INTERFACE = {
   display_escape_menu: function() {
-    new TextMenu("",
+    new CenteredTextMenu("",
                   [
                     {"text": "Back to title", "effect": function(){ LEVEL.setup("titlescreen"); return true; }},
                     {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); return true; }},
@@ -9,7 +9,7 @@ const INTERFACE = {
   },
 
   display_options_menu: function() {
-    new TextMenu("",
+    new CenteredTextMenu("",
                   [
                     {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); return false; }},
                     {"text": "Back", "effect": "##BACK"}

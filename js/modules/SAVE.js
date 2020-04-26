@@ -70,7 +70,7 @@ const SAVE = {
     },
 
     save_menu: function(){
-      new TextMenu("Save in slot?",
+      new CenteredTextMenu("Save in slot?",
                     [
                       {"text": "New save", "effect": function(){ return SAVE.save(); }},
                    ].concat(SAVE.print._menu_from_slots(function(i){ return SAVE.save(i);}, 1))
@@ -82,7 +82,7 @@ const SAVE = {
       if (SAVE.slots.length == 0)  {
         return false;
       }
-      new TextMenu("Load from slot?",
+      new CenteredTextMenu("Load from slot?",
                     SAVE.print._menu_from_slots(function(i){ return SAVE.load(i);})
                   );
       return true;
