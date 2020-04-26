@@ -89,6 +89,7 @@ new Module("SCREEN");
 new Module("RESOURCES");
 new Module("DISK");
 new Module("SAVE");
+new Module("BATTLE");
 
 new Module("IO");
 IMPORTS.modules['IO'].child_module("IO/IO_DIALOG");
