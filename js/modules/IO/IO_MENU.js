@@ -5,10 +5,10 @@ const IO_MENU = {
 
   onPressKey: function(key) {
     if (KEYS_UTIL.is_up(key)) {
-      IO._menu.move_select(1);
+      IO._menu.move_select(-1);
     }
     if (KEYS_UTIL.is_down(key)) {
-      IO._menu.move_select(-1);
+      IO._menu.move_select(1);
     }
     if (KEYS_UTIL.is_ok(key)) {
       IO._menu.confirm_select();
