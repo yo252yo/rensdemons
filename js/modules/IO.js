@@ -244,3 +244,4 @@ document.addEventListener('keyup', function (event) {
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
+window.addEventListener('touchend', IO.handlers.onScroll, { passive: false});
