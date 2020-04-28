@@ -15,6 +15,14 @@ const DISK = {
         DISK._record_to_storage();
     },
 
+    get(key) {
+      if (DISK._CONTENT[key]){
+        return DISK._CONTENT[key];
+      } else {
+        return undefined;
+      }
+    },
+
     hard_reset() {
         DISK._CONTENT = {};
         DISK._record_to_storage();
