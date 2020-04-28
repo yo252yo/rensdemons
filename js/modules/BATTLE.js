@@ -98,7 +98,7 @@ const BATTLE = {
   },
 
   reload: function(){
-    BATTLE.setup(BATTLE.current_battle);
+    BATTLE.setup(BATTLE.current_battle, BATTLE.callback);
   },
 
   can_reload: function(){
