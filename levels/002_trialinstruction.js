@@ -14,12 +14,15 @@ LEVEL.initialize_with_character(350, 700);
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
   priest.interaction = function() {
+    BATTLE.setup("viper");
+
+    /*
     new TextBannerRandom([
       "Priest: \"May you be the Promised Child.\"",
       "Priest: \"I pray you are the one to bring us salvation.\"",
       "Priest: \"Have no fear, your sacrifice is worthwhile in the eye of the Goddess.\"",
       "Priest: \"Do not forget to pray at the altar. Only Her strength can help you.\"",
-    ]);
+    ]);*/
  };
 }
 

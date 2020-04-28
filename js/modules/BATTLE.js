@@ -3,6 +3,7 @@ const BATTLE = {
   player_actions: [],
   monster_actions: [],
   current_battle: "",
+  previous_position: undefined,
 
   clear: function() {
     BATTLE.player_actions = [];
@@ -49,6 +50,14 @@ const BATTLE = {
     ];
   },
 
+  prepare_win: function (text){
+    BATTLE.monster_actions = [
+      function() {
+        TextBannerSequence.make([text], BATTLE.win);
+      }
+    ];
+  },
+
   start: function(text) {
     BATTLE.monster_turn(text);
   },
@@ -57,7 +66,16 @@ const BATTLE = {
     LEVEL.setup("gameover");
   },
 
+  win: function(text) {
+    LEVEL.factory.import(BATTLE.previous_position);
+  },
+
   setup: function(name) {
+    // This trycatch is dangerous but this fails in debug mode
+    try {
+      BATTLE.previous_position = LEVEL.factory.export();
+    } catch(error) {}
+    
     LEVEL.clear();
     BATTLE.clear();
     BATTLE.current_battle = name;

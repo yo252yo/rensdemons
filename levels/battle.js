@@ -1,1 +1,0 @@
-BATTLE.setup("viper");

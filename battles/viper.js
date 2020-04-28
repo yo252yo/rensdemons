@@ -1,5 +1,7 @@
 
-new LevelObject(new StaticSprite("assets/snake.png", 'background'), SCREEN.width() / 2 - 200, SCREEN.height() / 2);
+var s = new StaticSprite("assets/snake.png", 'background');
+s.container.style.position = "fixed";
+new LevelObject(s, SCREEN.width() / 2 - 200, SCREEN.height() / 2);
 
 // we need to die every choice, and after first death can escape death through the goddess
 
@@ -26,6 +28,7 @@ BATTLE.player_actions['Call help'] = function() {
 var add_swear_loyalty = function() {
   BATTLE.player_actions['Swear loyalty'] = function (){
     delete BATTLE.player_actions['Swear loyalty'];
+    BATTLE.prepare_win("");
     return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
   };
 }
