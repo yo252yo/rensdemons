@@ -3,20 +3,35 @@
 
 
 class TextBanner extends TextBox {
-    constructor(text) {
-        var top = Math.floor(SCREEN.height() * 0.62);
-        var left = Math.floor(SCREEN.width() * 0.1);
-        var height = Math.floor(SCREEN.height() * 0.31);
-        var width = Math.floor(SCREEN.width() * 0.8);
-
-        var padding = 30;
-
-        super(left,top+height, width, height, padding);
-
-        if (text) {
-          this.change_text(text);
-        }
+  static getDimensions() {
+    if(SCREEN.is_mobile()){
+      return {
+          top: Math.floor(SCREEN.height() * 0.5),
+          left: Math.floor(SCREEN.width() * 0.05),
+          height: Math.floor(SCREEN.height() * 0.45),
+          width: Math.floor(SCREEN.width() * 0.9),
+          padding: 10,
+          };
+    } else {
+      return {
+          top: Math.floor(SCREEN.height() * 0.62),
+          left: Math.floor(SCREEN.width() * 0.1),
+          height: Math.floor(SCREEN.height() * 0.31),
+          width: Math.floor(SCREEN.width() * 0.8),
+          padding: 30,
+          };
     }
+  }
+
+  constructor(text) {
+      var d = TextBanner.getDimensions();
+
+      super(d.left,d.top+d.height, d.width, d.height, d.padding);
+
+      if (text) {
+        this.change_text(text);
+      }
+  }
 }
 
 

@@ -31,9 +31,7 @@ const _EXECUTOR = new MenuChoiceExecutor();
 
 
 class TextMenu extends TextElement {
-    constructor(title, options, x, y, w, h) {
-        var padding = 30;
-
+    constructor(title, options, x, y, w, h, padding) {
         super(x,y, w, h, padding);
 
         this.parent = IO._menu;
@@ -163,24 +161,56 @@ class TextMenu extends TextElement {
 }
 
 class CenteredTextMenu extends TextMenu {
-    constructor(title, options) {
-        var top = Math.floor(SCREEN.height() * 0.2);
-        var left = Math.floor(SCREEN.width() * 0.2);
-        var height = 0;//Math.floor(SCREEN.height() * 0.31);
-        var width = Math.floor(SCREEN.width() * 0.6);
+    static getDimensions() {
+      if(SCREEN.is_mobile()){
+        return {
+            top: Math.floor(SCREEN.height() * 0.1),
+            left: Math.floor(SCREEN.width() * 0.1),
+            height: 0,
+            width: Math.floor(SCREEN.width() * 0.8),
+            padding: 10,
+            };
+      } else {
+        return {
+            top: Math.floor(SCREEN.height() * 0.2),
+            left: Math.floor(SCREEN.width() * 0.2),
+            height: 0,
+            width: Math.floor(SCREEN.width() * 0.6),
+            padding: 30,
+            };
+      }
+    }
 
-        super(title, options, left,top+height, width, height);
+    constructor(title, options) {
+        var d = CenteredTextMenu.getDimensions();
+        super(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
     }
 }
 
 class BattleMenu extends TextMenu {
-    constructor(title, options) {
-        var top = Math.floor(SCREEN.height() * 0.6);
-        var left = Math.floor(SCREEN.width() * 0.6);
-        var height = Math.floor(SCREEN.height() * 0.3);
-        var width = Math.floor(SCREEN.width() * 0.3);
+    static getDimensions() {
+      if(SCREEN.is_mobile()){
+        return {
+            top: Math.floor(SCREEN.height() * 0.4),
+            left: Math.floor(SCREEN.width() * 0.4),
+            height: Math.floor(SCREEN.height() * 0.5),
+            width: Math.floor(SCREEN.width() * 0.5),
+            padding: 10,
+            };
+      } else {
+        return {
+            top: Math.floor(SCREEN.height() * 0.6),
+            left: Math.floor(SCREEN.width() * 0.6),
+            height: Math.floor(SCREEN.height() * 0.3),
+            width: Math.floor(SCREEN.width() * 0.3),
+            padding: 30,
+            };
+      }
+    }
 
-        super(title, options, left,top+height, width, height);
+    constructor(title, options) {
+        var d = BattleMenu.getDimensions();
+        super(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
         this.html.style.background = PALETTE.text_color().code();
         this.html.style.border = "2px solid " + PALETTE.text_border().code();
