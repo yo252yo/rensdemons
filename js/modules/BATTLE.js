@@ -4,10 +4,14 @@ const BATTLE = {
   monster_actions: [],
   current_battle: "",
   previous_position: undefined,
+  callback: undefined,
 
   clear: function() {
     BATTLE.player_actions = [];
     BATTLE.monster_actions = [];
+    BATTLE.callback = undefined;
+    BATTLE.previous_position = undefined;
+    BATTLE.current_battle = "";
   },
 
   player_turn: function() {
@@ -68,17 +72,26 @@ const BATTLE = {
 
   win: function(text) {
     LEVEL.factory.import(BATTLE.previous_position);
+
+    if (BATTLE.callback){
+      setTimeout(BATTLE.callback, 200);
+    }
   },
 
-  setup: function(name) {
+  setup: function(name, callback) {
+    LEVEL.clear();
+    BATTLE.clear();
+
     // This trycatch is dangerous but this fails in debug mode
     try {
       BATTLE.previous_position = LEVEL.factory.export();
     } catch(error) {}
-    
-    LEVEL.clear();
-    BATTLE.clear();
+
     BATTLE.current_battle = name;
+
+    if(callback) {
+      BATTLE.callback = callback;
+    }
 
     new Import("battles/" + name);
     CONSOLE.sys_log("- Loaded battle " + name);

@@ -27,8 +27,7 @@ BATTLE.player_actions['Call help'] = function() {
 
 var add_swear_loyalty = function() {
   BATTLE.player_actions['Swear loyalty'] = function (){
-    delete BATTLE.player_actions['Swear loyalty'];
-    BATTLE.prepare_win("");
+    BATTLE.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
     return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
   };
 }
