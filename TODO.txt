@@ -11,3 +11,11 @@ escape should dismisses escapable menus (like the escape menu)
 text banner is too small and skewed on the left :/
 
 maybe have the element turn around when talked to
+
+
+- walking speed is too slow by default on keyboard
+- at the end of hide and seek the event can trigger several times (popping multiple priests)
+- check behavior of maintained click
+- hitbox tree too big?
+
+improve keyboard controls (cf mota) and keyboard speed (cf robin)

@@ -78,14 +78,15 @@ const BATTLE = {
     }
   },
 
-  setup: function(name, callback) {
+  setup: function(name, callback, previous_position) {
     LEVEL.clear();
     BATTLE.clear();
 
-    // This trycatch is dangerous but this fails in debug mode
-    try {
+    if (previous_position) {
+      BATTLE.previous_position = previous_position;
+    } else {
       BATTLE.previous_position = LEVEL.factory.export();
-    } catch(error) {}
+    }
 
     BATTLE.current_battle = name;
 
@@ -98,7 +99,7 @@ const BATTLE = {
   },
 
   reload: function(){
-    BATTLE.setup(BATTLE.current_battle, BATTLE.callback);
+    BATTLE.setup(BATTLE.current_battle, BATTLE.callback, BATTLE.previous_position);
   },
 
   can_reload: function(){
