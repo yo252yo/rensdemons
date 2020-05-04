@@ -12,7 +12,6 @@ text banner is too small and skewed on the left :/
 
 maybe have the element turn around when talked to
 
-better text split
 - walking speed is too slow by default on keyboard
 - check behavior of maintained click
 - hitbox tree too big?

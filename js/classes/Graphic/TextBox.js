@@ -43,49 +43,77 @@ class TextBox extends TextElement {
     measure_letter_capability(w, h, padding) {
       var text_height = h - 2 * padding;
       var text_width = w - 2 * padding;
-      var line_width = Math.floor(text_width / _LETTER_SIZE[0]);
-      var num_lines = Math.floor(text_height / _LETTER_SIZE[1]);
-      this.letter_capacity = line_width * num_lines;
+      this.line_width = Math.floor(text_width / _LETTER_SIZE[0]);
+      this.num_lines = Math.floor(text_height / _LETTER_SIZE[1]);
+      this.letter_capacity = this.line_width * this.num_lines;
     }
 
-    cut_text_to_page(text) {
-      if (text.length <= this.letter_capacity) {
-        return [text, ""];
+    cut_lines(left){
+      var result = [];
+
+      while (left.length > this.line_width){
+        var hard_cut = left.substring(0, this.line_width);
+        // Makes extra space for ...
+        if ((result.length + 1 ) % this.num_lines == 0){
+          hard_cut = hard_cut.substring(0, hard_cut.length - 3);
+        }
+        var lastSpace = hard_cut.lastIndexOf(" ");
+        result.push(left.substring(0, lastSpace));
+        left = left.substring(1 + lastSpace);
       }
 
-      var hard_cut = text.substring(0, this.letter_capacity-3); // +1 in case the last is space, -3 for elipsis
-      var lastSpace = hard_cut.lastIndexOf(" ");
-      var start = text.substring(0, lastSpace);
-      var end = text.substring(1 + lastSpace);
-      return [start, end];
+      result.push(left);
+      return result;
+    }
+
+    cut_to_pages(text) {
+      var lines = this.cut_lines(text);
+      var pages = [];
+      var page = "";
+
+      for (var l = 0; l <lines.length; l++){
+        page += lines[l];
+        if ((l+1) % this.num_lines == 0 && l != lines.length - 1) {
+          pages.push(page + "...");
+          page = "";
+        } else {
+          page +=  "<br />";
+        }
+      }
+      if(page){
+        pages.push(page);
+      }
+      return pages;
     }
 
     static print_text(textbox, instant) {
-      var preroll = "";
-      while(textbox.text_printing.indexOf(">") > 0) {
-        var cutoff = textbox.text_printing.indexOf(">");
-        preroll += textbox.text_printing.substr(0, cutoff+1);
-        textbox.text_printing = textbox.text_printing.substr(cutoff + 1, textbox.text_printing.length - cutoff);
-      }
-      textbox.html.innerHTML += preroll;
+      var text_printing = textbox.pages[0];
 
       if (instant) {
-        textbox.html.innerHTML += textbox.text_printing;
-        textbox.text_printing = "";
+        textbox.html.innerHTML += text_printing;
         return;
       }
 
-      var char = textbox.text_printing[0];
-      var left = textbox.text_printing.substring(1);
-
-      if (textbox.text_printing) {
-        textbox.html.innerHTML += char;
-        textbox.text_printing = left;
-        textbox.text_printing_timeout = setTimeout(TextBox.print_text, _LETTER_BY_LETTER_DELAY, textbox);
-      } else {
+      if(! text_printing) {
         clearTimeout(textbox.text_printing_timeout);
         delete textbox.text_printing_timeout;
+        return;
       }
+
+      if (text_printing.startsWith("<sp")) {
+        var cutoff = text_printing.indexOf("an>") + 2;
+        textbox.html.innerHTML += text_printing.substr(0, cutoff+1);
+        textbox.pages[0] = text_printing.substr(cutoff + 1, text_printing.length - cutoff);
+      } else if(text_printing.startsWith("<br")){
+        var cutoff = text_printing.indexOf(">");
+        textbox.html.innerHTML += text_printing.substr(0, cutoff+1);
+        textbox.pages[0] = text_printing.substr(cutoff + 1, text_printing.length - cutoff);
+      } else {
+        textbox.html.innerHTML += text_printing[0];
+        textbox.pages[0] = text_printing.substring(1);
+      }
+
+      textbox.text_printing_timeout = setTimeout(TextBox.print_text, _LETTER_BY_LETTER_DELAY, textbox);
     }
 
     fill_words_from_dictionary(text) {
@@ -105,51 +133,53 @@ class TextBox extends TextElement {
       return processed;
     }
 
-    process_for_dialog(text) {
+    process_for_dialog() {
+      var text = this.pages[0];
+
       var space = text.indexOf(" ");
       var period = text.indexOf(":");
       if (space == period + 1)  {
         this.html.style.color = PALETTE.text_dialog_color().code();
-        return text = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + text.substr(0, period + 1) + "</span>" +  text.substr(period + 1, text.length - period);
-      } else {
-        return text;
+        this.pages[0] = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + text.substr(0, period + 1) + "</span>" +  text.substr(period + 1, text.length - period);
       }
     }
 
     change_text(text, instant) {
       text = this.fill_words_from_dictionary(text);
-      this.text_printing = this.cut_text_to_page(text)[0];
-      this.text_printing = this.process_for_dialog(this.text_printing);
-      if (this.cut_text_to_page(text)[1] != "") {
-        this.text_printing += "...";
-        this.text_future_pages = this.cut_text_to_page(text)[1];
-      } else {
-        this.text_future_pages = "";
-      }
+      this.pages = this.cut_to_pages(text);
+      this.process_for_dialog(text);
+
       this.clear_html();
       TextBox.print_text(this, instant);
     }
 
     turn_page() {
+      // Accelerate display
       if (this.text_printing_timeout) {
         clearTimeout(this.text_printing_timeout);
         delete this.text_printing_timeout;
         TextBox.print_text(this, true);
         return;
       }
+      // Prevent double click
       var now =  (new Date()).getTime();
       if (now - this.last_turned < _MIN_PAGE_TIME_MS) {
         return;
       }
+
+      // Actually turns pages
       this.last_turned = now;
-      if (this.text_future_pages == "") {
+      this.pages = this.pages.slice(1);
+      this.html.innerHTML = "";
+
+      if (this.pages.length == 0) {
         IO.control.cede();
         if (this.on_end_function){
           this.on_end_function();
         }
         this.destroy();
       } else {
-        this.change_text(this.text_future_pages);
+         TextBox.print_text(this);
       }
     }
 
