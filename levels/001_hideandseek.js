@@ -101,7 +101,7 @@ new S_Tree(950,185);
 
 
 var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
-LEVEL.add_trigger(foundAll, function() {
+LEVEL.add_trigger("foundAllChildren", foundAll, function() {
   make_priest(1030,300);
   make_priest(1030,250);
   make_priest(1030,350);

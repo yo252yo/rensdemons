@@ -63,13 +63,13 @@ const LEVEL = {
   },
 
   clear: function() {
-    for(var condition in LEVEL.triggers) {
-      clearTimeout(condition);
+    for(var key in LEVEL.triggers) {
+      clearTimeout(LEVEL.triggers[key]);
     }
     LEVEL.html().innerHTML = "";
     LEVEL.objects = [];
     LEVEL.visual_elements = [];
-    LEVEL.triggers = [];
+    LEVEL.triggers = {};
     CHARACTER.clear();
   },
 
@@ -184,12 +184,18 @@ const LEVEL = {
     }
   },
 
-  add_trigger: function(f_condition, f_execute) {
-    if(f_condition() && IO.interface._can_trigger_level_event()){
+  add_trigger: function(key, f_condition, f_execute) {
+    if(LEVEL.triggers[key] && f_condition() && IO.interface._can_trigger_level_event()){
+      CONSOLE.sys_log("- Triggered event " + key);
+      delete LEVEL.triggers[key];
       f_execute();
     } else {
-      var trigger = setTimeout(function(){ LEVEL.add_trigger(f_condition, f_execute); }, LEVEL._TRIGGER_COOLDOWN);
-      LEVEL.triggers.push(trigger);
+      if (! LEVEL.triggers[key]){
+        CONSOLE.sys_log("- Registered event " + key);
+      }
+      LEVEL.triggers[key] = setTimeout(
+        function(){ LEVEL.add_trigger(key, f_condition, f_execute); },
+        LEVEL._TRIGGER_COOLDOWN);
     }
   },
 
