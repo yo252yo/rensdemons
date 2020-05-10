@@ -27,11 +27,6 @@ const IO_CHARACTER = {
   },
 
   is_running: function() {
-    for (var key in IO._PRESSED_KEYS){
-      if (KEYS_UTIL.is_shift(key)) {
-        return true;
-      }
-    }
-    return false;
+    return KEYS_UTIL.is_pressed.shift();
   },
 }

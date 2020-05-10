@@ -9,6 +9,9 @@ const SCREEN = {
   },
 
   scroll_screen_to_character: function() {
+    if (DEBUG.DEACTIVATE_SCROLL) {
+      return;
+    }
     window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
   },
 

@@ -23,6 +23,7 @@ class LevelObject {
     draw_hitbox() {
 
       var html_rectangle = document.createElement('div');
+      html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
       html_rectangle.style.top = (this.visual_element.y + this.h_y - this.h_h) + "px";
       html_rectangle.style.left = (this.visual_element.x + this.h_x) + "px";
       html_rectangle.style.width = (this.h_w) + "px";
@@ -31,7 +32,7 @@ class LevelObject {
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
 
-      document.body.appendChild(html_rectangle);
+      LEVEL.html().appendChild(html_rectangle);
     }
 
     get_depth() {

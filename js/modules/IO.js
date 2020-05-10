@@ -37,6 +37,30 @@ const KEYS_UTIL = {
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
   },
+
+  is_pressed: {
+    _generic: function (key_function) {
+      for (var key in IO._PRESSED_KEYS){
+        if (key_function(key)) {
+          return true;
+        }
+      }
+      return false;
+
+    },
+
+    shift: function() {
+      return KEYS_UTIL.is_pressed._generic(KEYS_UTIL.is_shift);
+    },
+    alt: function() {
+      return KEYS_UTIL.is_pressed._generic(KEYS_UTIL.is_alt);
+    },
+    ctrl: function() {
+      return KEYS_UTIL.is_pressed._generic(KEYS_UTIL.is_ctrl);
+    },
+  }
+
+
 }
 
 
@@ -186,11 +210,13 @@ const IO = {
       }
 
       event.preventDefault();
-      var destination_x = window.pageXOffset + x;
+      var destination_X = window.pageXOffset + x;
       var destination_Y = window.pageYOffset + y;
 
+      DEBUG.signal.mouse_position(destination_X, destination_Y);
+
       if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
-        IO._ACTIVE_SYSTEM.onClick(destination_x, destination_Y, is_hold);
+        IO._ACTIVE_SYSTEM.onClick(destination_X, destination_Y, is_hold);
       }
     },
 

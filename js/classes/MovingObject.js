@@ -2,11 +2,13 @@
 // use(LevelObject)
 
 var _WALKING_INCREMENT = 5;
-var _RUNNING_BONUS = 1.8;
 var _IS_AT_PRECISION = 5.1;
 var _AUTO_WALK_TICK = 30;
 
 class MovingObject extends LevelObject {
+
+  static _RUNNING_BONUS = 1.8;
+
   constructor(visual, x, y, w, h) {
     super(visual, x, y);
     this.sprite = visual;
@@ -79,7 +81,7 @@ class MovingObject extends LevelObject {
 
   _movement_increment() {
     if (CHARACTER.character == this && IO_CHARACTER.is_running()){
-      return Math.floor(_WALKING_INCREMENT * _RUNNING_BONUS);
+      return Math.floor(_WALKING_INCREMENT * MovingObject._RUNNING_BONUS);
     }
     return _WALKING_INCREMENT;
   }
