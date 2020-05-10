@@ -52,6 +52,60 @@ new S_Floor(2275,850,600,75);
 new S_Floor(2525,850,75,500);
 new S_Floor(2800,1100,75,325);
 
+// Mid right
+new S_Floor(2200,2575,75,400);
+new S_Floor(2200,2575,625,75);
+new S_Floor(2750,2575,75,650);
+new S_Floor(2575,1975,825,400);
+new S_Floor(3375,1925,550,75);
+new S_Floor(3650,1925,75,475);
+new S_Floor(3575,1500,325,300);
 
+new S_Floor(600,3125,925,75);
+new S_Floor(1450,3450,75,400);
+new S_Floor(1525,1550,500,75);
+new S_Floor(4850,550,75,275);
+new S_Floor(4275,550,725,75);
+
+// mid bot
+new S_Floor(1275,2825,75,275);
+new S_Floor(1275,2825,650,75);
+new S_Floor(1875,3075,75,325);
+new S_Floor(1875,3075,500,75);
+new S_Floor(2325,3375,925,525);
+new S_Floor(3200,3125,325,75);
+new S_Floor(3450,3675,75,625);
+new S_Floor(3450,3675,450,75);
+new S_Floor(3825,3975,75,375);
+new S_Floor(2825,3875,1050,75);
+new S_Floor(2825,3875,75,250);
+new S_Floor(2100,3700,800,75);
+new S_Floor(2100,3925,75,300);
+new S_Floor(1175,3925,1000,75);
+
+// bottom right
+new S_Floor(4450,2600,800,400);
+new S_Floor(3450,3125,75,300);
+new S_Floor(3875,2150,75,300);
+new S_Floor(3875,2150,250,75);
+new S_Floor(4050,2875,75,775);
+new S_Floor(4050,2450,425,75);
+new S_Floor(3450,2875,675,75);
+new S_Floor(4050,3075,75,275);
+new S_Floor(4050,3075,875,75);
+
+new S_Floor(3825,3975,375,75);
+ new S_Floor(4150,4250,75,350);
+ new S_Floor(4150,4250,875,75);
+  new S_Floor(4950,4250,75,500);
+  new S_Floor(4950,3825,625,75);
+   new S_Floor(5500,3825,75,600);
+   new S_Floor(5500,3300,725,75);
+   new S_Floor(6150,3275,75,900);
+   new S_Floor(5175,2450,1050,75);
+   new S_Floor(5700,2400,75,1175);
+   new S_Floor(4900,1250,875,75);
+   new S_Floor(4900,1725,75,500);
+   new S_Floor(6200,2875,775,75);
 
 IO.control.character();

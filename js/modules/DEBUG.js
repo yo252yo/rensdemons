@@ -55,6 +55,9 @@ const DEBUG = {
       }
       if(DEBUG.MOUSE_RECTANGLES) {
         if (KEYS_UTIL.is_pressed.alt()){
+          x = Math.round(x /25) * 25;
+          y = Math.round(y /25) * 25;
+
           if (DEBUG._previous_x) {
             var w = Math.abs(x - DEBUG._previous_x);
             var h = Math.abs(y - DEBUG._previous_y);

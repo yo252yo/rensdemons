@@ -2,9 +2,9 @@ const INTERFACE = {
   display_escape_menu: function() {
     new CenteredTextMenu("",
                   [
-                    {"text": "Back to title", "effect": function(){ LEVEL.setup("titlescreen"); return true; }},
                     {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); return true; }},
-                    {"text": "Back to game", "effect": "##CLOSE"}
+                    {"text": "Back to game", "effect": "##CLOSE"},
+                    {"text": "Back to title", "effect": function(){ LEVEL.setup("titlescreen"); return true; }},
                  ]);
   },
 
