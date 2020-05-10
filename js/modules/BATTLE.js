@@ -66,11 +66,21 @@ const BATTLE = {
     BATTLE.monster_turn(text);
   },
 
-  loss: function() {
-    LEVEL.setup("gameover");
+  end: function(text) {
+    PALETTE.color_interface();
   },
 
-  win: function(text) {
+  _loss: function() {
+    BATTLE.end();
+    setTimeout ( function() { LEVEL.setup("gameover");}, 1000);
+  },
+
+  loss: function() {
+    setTimeout (BATTLE._loss, 1000);
+  },
+
+  _win: function(text) {
+    BATTLE.end();
     LEVEL.factory.import(BATTLE.previous_position);
 
     if (BATTLE.callback){
@@ -78,16 +88,27 @@ const BATTLE = {
     }
   },
 
-  setup: function(name, callback, previous_position) {
+  win: function(text) {
+    setTimeout (BATTLE._win, 1000);
+  },
+
+  setup_animation: function (previous_position) {
+      var pos = previous_position.saved_character;
+      var html_rectangle = document.createElement('div');
+      html_rectangle.style.background =  PALETTE.color('obj_dark').code();
+      html_rectangle.style.top = pos[1] + "px";
+      html_rectangle.style.left = pos[0] + "px";
+      html_rectangle.class = "expanding_div";
+      html_rectangle.classList.add("expanding_div");
+      LEVEL.html().appendChild(html_rectangle);
+      console.log(html_rectangle);
+  },
+
+  _setup: function(name, callback, previous_position) {
     LEVEL.clear();
     BATTLE.clear();
-
-    if (previous_position) {
-      BATTLE.previous_position = previous_position;
-    } else {
-      BATTLE.previous_position = LEVEL.factory.export();
-    }
-
+    PALETTE.color_for_battle();
+    BATTLE.previous_position = previous_position;
     BATTLE.current_battle = name;
 
     if(callback) {
@@ -96,6 +117,17 @@ const BATTLE = {
 
     new Import("battles/" + name);
     CONSOLE.sys_log("- Loaded battle " + name);
+  },
+
+  setup: function(name, callback, previous_position) {
+    IO.control.cede();
+
+    if (!previous_position) {
+      previous_position = LEVEL.factory.export();
+    }
+
+    BATTLE.setup_animation(previous_position);
+    setTimeout ( function() { BATTLE._setup(name, callback, previous_position); }, 1000);
   },
 
   reload: function(){

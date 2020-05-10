@@ -20,6 +20,8 @@ improve keyboard controls (cf mota) and keyboard speed (cf robin)
 
 have an animation for click target
 
+music
+
 
 https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 

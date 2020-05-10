@@ -3,6 +3,24 @@
 const PALETTE = {
   _COLORS: {},
 
+  battle_menu_background: function() {
+    var base = PALETTE.color('void');
+    if (PALETTE.color('void').is_dark()) {
+      return base.hoffset(-0.3);
+    } else{
+      return base.hoffset(0.3);
+    }
+  },
+
+  battle_menu_color: function() {
+    var base =  PALETTE.color('player');
+    if (PALETTE.color('void').is_dark()) {
+      return base.hoffset(0.5);
+    } else{
+      return base.hoffset(-0.5);
+    }
+  },
+
   text_background: function() {
     var base = PALETTE.color('obj_dark');
     if (PALETTE.color('obj_dark').is_dark()) {
@@ -21,7 +39,7 @@ const PALETTE = {
     }
   },
 
-  text_dialog_color: function() {
+  text_speaker_color: function() {
     var base =  PALETTE.text_color();
     if (base.is_dark()) {
       return base.hoffset(0.4);
@@ -35,6 +53,12 @@ const PALETTE = {
       return PALETTE.color('void').hoffset(0.3);
     } else{
       return PALETTE.color('void').hoffset(-0.3);
+    }
+  },
+
+  print() {
+    for (var i in PALETTE._COLORS){
+      CONSOLE.debug(i + ": " + PALETTE._COLORS[i].code(), PALETTE._COLORS[i].code());
     }
   },
 
@@ -73,7 +97,7 @@ const PALETTE = {
       }
   },
 
-  _color_interface: function() {
+  color_interface: function() {
     document.body.style.backgroundColor = PALETTE.color('void').code();
     var escape_button = document.getElementById('IFE_escape_menu_button');
     escape_button.style.background = PALETTE.text_background().code();
@@ -83,6 +107,11 @@ const PALETTE = {
     LEVEL.redraw();
   },
 
+
+  color_for_battle: function() {
+    document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
+  },
+
   factory: {
     make_new: function() {
       // TODO: at some point i want to pick random instead
@@ -90,7 +119,7 @@ const PALETTE = {
 
       DISK.set('palette', PALETTE.factory.export());
 
-      PALETTE._color_interface();
+      PALETTE.color_interface();
     },
 
     export: function() {
@@ -105,7 +134,7 @@ const PALETTE = {
       for (var key in save) {
         PALETTE._COLORS[key] = Color.import(save[key]);
       }
-      PALETTE._color_interface();
+      PALETTE.color_interface();
     },
   },
 

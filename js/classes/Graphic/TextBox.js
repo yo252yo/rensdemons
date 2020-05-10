@@ -139,7 +139,7 @@ class TextBox extends TextElement {
       var space = text.indexOf(" ");
       var period = text.indexOf(":");
       if (space == period + 1)  {
-        this.html.style.color = PALETTE.text_dialog_color().code();
+        this.html.style.color = PALETTE.text_speaker_color().code();
         this.pages[0] = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + text.substr(0, period + 1) + "</span>" +  text.substr(period + 1, text.length - period);
       }
     }

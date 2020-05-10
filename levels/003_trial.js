@@ -95,17 +95,47 @@ new S_Floor(4050,3075,75,275);
 new S_Floor(4050,3075,875,75);
 
 new S_Floor(3825,3975,375,75);
- new S_Floor(4150,4250,75,350);
- new S_Floor(4150,4250,875,75);
-  new S_Floor(4950,4250,75,500);
-  new S_Floor(4950,3825,625,75);
-   new S_Floor(5500,3825,75,600);
-   new S_Floor(5500,3300,725,75);
-   new S_Floor(6150,3275,75,900);
-   new S_Floor(5175,2450,1050,75);
-   new S_Floor(5700,2400,75,1175);
-   new S_Floor(4900,1250,875,75);
-   new S_Floor(4900,1725,75,500);
-   new S_Floor(6200,2875,775,75);
+new S_Floor(4150,4250,75,350);
+new S_Floor(4150,4250,875,75);
+new S_Floor(4950,4250,75,500);
+new S_Floor(4950,3825,625,75);
+new S_Floor(5500,3825,75,600);
+new S_Floor(5500,3300,725,75);
+new S_Floor(6150,3275,75,900);
+new S_Floor(5175,2450,1050,75);
+new S_Floor(5700,2400,75,1175);
+new S_Floor(4900,1250,875,75);
+new S_Floor(4900,1725,75,500);
+new S_Floor(6200,2875,775,75);
+
+
+var battleCallback = function() {
+  TextBannerSequence.make([
+    "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened.",
+  ], function(){ LEVEL.setup("demoend"); });
+}
+
+var hp_menu = function () {
+  new CenteredTextMenu("",
+                [
+                  {"text": "Yes, sir", "effect": function(){ BATTLE.setup("viper", battleCallback); return true; }},
+                  {"text": "Not yet", "effect": "##CLOSE"},
+               ]
+             );
+}
+
+
+var make_priest = function (x, y) {
+  var priest = new M_Priest(x,y);
+ return priest;
+}
+var hp = make_priest(175, 170);
+hp.interaction = function() {
+  TextBannerSequence.make([
+    "The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?"
+  ], hp_menu);
+}
+
+
 
 IO.control.character();

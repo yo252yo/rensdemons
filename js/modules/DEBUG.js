@@ -29,7 +29,7 @@ const DEBUG = {
   },
 
   allow_scroll: function() {
-    delete document.style;
+    document.body.style.overflow = "scroll";
   },
 
   all: function() {

@@ -212,8 +212,8 @@ class BattleMenu extends TextMenu {
         var d = BattleMenu.getDimensions();
         super(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
-        this.html.style.background = PALETTE.text_color().code();
+        this.html.style.background = PALETTE.battle_menu_color().code();
         this.html.style.border = "2px solid " + PALETTE.text_border().code();
-        this.html.style.color = PALETTE.text_background().code();
+        this.html.style.color = PALETTE.battle_menu_background().code();
     }
 }
