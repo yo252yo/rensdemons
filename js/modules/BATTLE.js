@@ -1,7 +1,7 @@
 
 const BATTLE = {
-  player_actions: [],
-  monster_actions: [],
+  _player_actions: [],
+  _monster_actions: [],
   current_battle: "",
   previous_position: undefined,
   callback: undefined,
@@ -9,17 +9,17 @@ const BATTLE = {
   turn_factory: {
     player: function() {
       var options = [];
-      for (var i in BATTLE.player_actions){
+      for (var i in BATTLE._player_actions){
         (function(index){
           var f = function() {
-            var text = BATTLE.player_actions[index]();
+            var text = BATTLE._player_actions[index]();
             // If I don't go through timeout, I think the event canceling blocks IO for the banner.
             if (text) {
               setTimeout(function(){
-                TextBannerSequence.make(text, BATTLE.actions.play_monster);
+                TextBannerSequence.make(text, BATTLE.operations.play_monster);
               }, 200);
             } else {
-              setTimeout( BATTLE.actions.play_monster, 200);
+              setTimeout( BATTLE.operations.play_monster, 200);
             }
             return true;
           };
@@ -36,25 +36,47 @@ const BATTLE = {
     },
   },
 
-  actions: {
-    play_monster: function () {
-      RANDOM.pick(BATTLE.monster_actions)();
+  player_actions: {
+    add: function(name, f) {
+      BATTLE._player_actions[name] = f;
     },
 
-    prepare_doom: function (doom){
-      BATTLE.monster_actions = [
+    remove: function(name) {
+      delete BATTLE._player_actions[name];
+    },
+  },
+
+  monster_actions: {
+    add_textual: function(text) {
+      BATTLE._monster_actions.push(
+       function() { BATTLE.turn_factory.monster(text); }
+      );
+    },
+
+    make_unique: function (f) {
+      BATTLE._monster_actions = [f];
+    },
+
+    prepare_loss: function (doom){
+      BATTLE.monster_actions.make_unique(
         function() {
-          TextBannerSequence.make([doom], BATTLE.actions.lose);
+          TextBannerSequence.make([doom], BATTLE.operations.lose);
         }
-      ];
+      );
     },
 
     prepare_win: function (text){
-      BATTLE.monster_actions = [
+      BATTLE.monster_actions.make_unique(
         function() {
-          TextBannerSequence.make([text], BATTLE.actions.win);
+          TextBannerSequence.make([text], BATTLE.operations.win);
         }
-      ];
+      );
+    },
+  },
+
+  operations: {
+    play_monster: function () {
+      RANDOM.pick(BATTLE._monster_actions)();
     },
 
     start: function(text) {
@@ -72,8 +94,8 @@ const BATTLE = {
 
   builder: {
     clear: function() {
-      BATTLE.player_actions = [];
-      BATTLE.monster_actions = [];
+      BATTLE._player_actions = [];
+      BATTLE._monster_actions = [];
       BATTLE.callback = undefined;
       BATTLE.previous_position = undefined;
       BATTLE.current_battle = "";
