@@ -7,12 +7,18 @@ body {
  -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-
 .expanding_div {
-  background-color: red;
   position: fixed;
   animation-name: expand;
   animation-duration: 1s;
+  z-index:1000;
+}
+
+.collapsing_div {
+  position: fixed;
+  animation-name: expand;
+  animation-duration: 1s;
+  animation-direction: reverse;
   z-index:1000;
 }
 
