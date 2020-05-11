@@ -13,13 +13,13 @@ BATTLE.player_actions['Back away'] = function() {
 //           "Priest: \"Come on, child! The trial must happen.\""];
 //  } else {
   DISK.set("viper_defeat", true);
-  BATTLE.prepare_doom("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
+  BATTLE.actions.prepare_doom("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
   return ["You try to go further back, but you trip and fall on the ground."];
 //  }
 };
 BATTLE.player_actions['Call help'] = function() {
   DISK.set("viper_defeat", true);
-  BATTLE.prepare_doom("The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.");
+  BATTLE.actions.prepare_doom("The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.");
   return ["You shout, terrified, in hope that someone around will help.",
          "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
          "The children around are trembling and exchanging frightened looks, too afraid for their own lives to do anything."];
@@ -27,7 +27,7 @@ BATTLE.player_actions['Call help'] = function() {
 
 var add_swear_loyalty = function() {
   BATTLE.player_actions['Swear loyalty'] = function (){
-    BATTLE.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
+    BATTLE.actions.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
     return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
   };
 }
@@ -46,9 +46,9 @@ if (DISK.get("viper_defeat")) {
 }
 
 BATTLE.monster_actions.push(
- function() { BATTLE.monster_turn("The viper hisses and spits."); },
- function() { BATTLE.monster_turn("The viper slithers on the ground towards you."); },
- function() { BATTLE.monster_turn("The viper gets ever closer, snapping its jaw, showing all too clearly its giant fangs."); }
+ function() { BATTLE.turn_factory.monster("The viper hisses and spits."); },
+ function() { BATTLE.turn_factory.monster("The viper slithers on the ground towards you."); },
+ function() { BATTLE.turn_factory.monster("The viper gets ever closer, snapping its jaw, showing all too clearly its giant fangs."); }
 );
 
-BATTLE.start("A vicious viper ventured into view.");
+BATTLE.actions.start("A vicious viper ventured into view.");

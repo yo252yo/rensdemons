@@ -48,12 +48,10 @@ new S_SavePoint(275, 120);
 var hp_menu = function () {
   new CenteredTextMenu("",
                 [
-                  {"text": "Yes, sir", "effect": function(){ BATTLE.setup("viper", battleCallback); return true; }},
+                  {"text": "Yes, sir", "effect": function(){ BATTLE.api.make("viper", battleCallback); return true; }},
                   {"text": "Not yet", "effect": "##CLOSE"},
                ]
              );
-
-
 }
 
 var hp = make_priest(275, 70);

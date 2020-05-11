@@ -26,8 +26,8 @@ setTimeout(function(){
 
 var options = [];
 
-if (BATTLE.can_reload()) {
-  options.push({"text": "Retry battle", "effect": function(){ BATTLE.reload(); return true; }});
+if (BATTLE.api.can_reload()) {
+  options.push({"text": "Retry battle", "effect": function(){ BATTLE.api.reload(); return true; }});
 }
 options.push({"text": "Load", "effect": function(){ return SAVE.print.load_menu(); }});
 options.push({"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); return true; }});

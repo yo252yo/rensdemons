@@ -6,73 +6,72 @@ const BATTLE = {
   previous_position: undefined,
   callback: undefined,
 
-  player_turn: function() {
-    var options = [];
-    for (var i in BATTLE.player_actions){
-      (function(index){
-        var f = function() {
-          var text = BATTLE.player_actions[index]();
-          // If I don't go through timeout, I think the event canceling blocks IO for the banner.
-          if (text) {
-            setTimeout(function(){
-              TextBannerSequence.make(text, BATTLE.play_monster);
-            }, 200);
-          } else {
-            setTimeout( BATTLE.play_monster, 200);
-          }
-          return true;
-        };
+  turn_factory: {
+    player: function() {
+      var options = [];
+      for (var i in BATTLE.player_actions){
+        (function(index){
+          var f = function() {
+            var text = BATTLE.player_actions[index]();
+            // If I don't go through timeout, I think the event canceling blocks IO for the banner.
+            if (text) {
+              setTimeout(function(){
+                TextBannerSequence.make(text, BATTLE.actions.play_monster);
+              }, 200);
+            } else {
+              setTimeout( BATTLE.actions.play_monster, 200);
+            }
+            return true;
+          };
 
-        options.push({"text": index, "effect": f});
-      })(i);
+          options.push({"text": index, "effect": f});
+        })(i);
 
-    }
-    new BattleMenu("", options);
-  },
-
-  monster_turn: function(text) {
-    TextBannerSequence.make([text], BATTLE.player_turn);
-  },
-
-  play_monster: function () {
-    RANDOM.pick(BATTLE.monster_actions)();
-  },
-
-  prepare_doom: function (doom){
-    BATTLE.monster_actions = [
-      function() {
-        TextBannerSequence.make([doom], BATTLE.loss);
       }
-    ];
+      new BattleMenu("", options);
+    },
+
+    monster: function(text) {
+      TextBannerSequence.make([text], BATTLE.turn_factory.player);
+    },
   },
 
-  prepare_win: function (text){
-    BATTLE.monster_actions = [
-      function() {
-        TextBannerSequence.make([text], BATTLE.win);
-      }
-    ];
+  actions: {
+    play_monster: function () {
+      RANDOM.pick(BATTLE.monster_actions)();
+    },
+
+    prepare_doom: function (doom){
+      BATTLE.monster_actions = [
+        function() {
+          TextBannerSequence.make([doom], BATTLE.actions.lose);
+        }
+      ];
+    },
+
+    prepare_win: function (text){
+      BATTLE.monster_actions = [
+        function() {
+          TextBannerSequence.make([text], BATTLE.actions.win);
+        }
+      ];
+    },
+
+    start: function(text) {
+      BATTLE.turn_factory.monster(text);
+    },
+
+    lose: function() {
+      BATTLE.builder.teardown.start(BATTLE.builder.teardown.loss);
+    },
+
+    win: function(text) {
+      BATTLE.builder.teardown.start(BATTLE.builder.teardown.win);
+    },
   },
 
-  start: function(text) {
-    BATTLE.monster_turn(text);
-  },
-
-  loss: function() {
-    BATTLE.manager.teardown.start(BATTLE.manager.teardown.loss);
-  },
-
-  win: function(text) {
-    BATTLE.manager.teardown.start(BATTLE.manager.teardown.win);
-  },
-
-  setup: function(name, callback, previous_position) {
-    BATTLE.manager.setup.start(name, callback, previous_position);
-  },
-
-  manager: {
+  builder: {
     clear: function() {
-      console.log("A");
       BATTLE.player_actions = [];
       BATTLE.monster_actions = [];
       BATTLE.callback = undefined;
@@ -82,7 +81,7 @@ const BATTLE = {
 
     setup: {
       start: function(name, callback, previous_position) {
-        BATTLE.manager.clear();
+        BATTLE.builder.clear();
         IO.control.cede();
 
         if (!previous_position) {
@@ -90,8 +89,8 @@ const BATTLE = {
         }
 
         BATTLE.previous_position = previous_position;
-        BATTLE.manager.setup.animation();
-        setTimeout ( function() { BATTLE.manager.setup.end(name, callback); }, 1000);
+        BATTLE.builder.setup.animation();
+        setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
       },
 
       animation: function () {
@@ -102,8 +101,7 @@ const BATTLE = {
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("expanding_div");
           LEVEL.html().appendChild(html_rectangle);
-          console.log(html_rectangle);
-          // destroy
+          // Destroction of LEVEL children is in end();
       },
 
       end: function(name, callback) {
@@ -119,17 +117,16 @@ const BATTLE = {
         CONSOLE.sys_log("- Loaded battle " + name);
       },
     },
-    
+
     teardown: {
       start: function(ending) {
         PALETTE.color_interface();
         LEVEL.clear();
-        BATTLE.manager.teardown.animation();
-        setTimeout (function() {BATTLE.manager.teardown.end(ending);}, 1000);
+        BATTLE.builder.teardown.animation();
+        setTimeout (function() {BATTLE.builder.teardown.end(ending);}, 1000);
       },
 
       animation: function () {
-        console.log("AAA");
           var pos = BATTLE.previous_position.saved_character;
           var html_rectangle = document.createElement('div');
           html_rectangle.style.background =  PALETTE.color('obj_dark').code();
@@ -137,8 +134,7 @@ const BATTLE = {
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("collapsing_div");
           LEVEL.html().appendChild(html_rectangle);
-          console.log(html_rectangle);
-          // destroy
+          // Destroction of LEVEL children is in end();
       },
 
       end: function(ending) {
@@ -159,11 +155,17 @@ const BATTLE = {
     },
   },
 
-  reload: function(){
-    BATTLE.setup(BATTLE.current_battle, BATTLE.callback, BATTLE.previous_position);
-  },
+  api: {
+    reload: function(){
+      BATTLE.api.make(BATTLE.current_battle, BATTLE.callback, BATTLE.previous_position);
+    },
 
-  can_reload: function(){
-    return (BATTLE.current_battle != "");
+    can_reload: function(){
+      return (BATTLE.current_battle != "");
+    },
+
+    make: function(name, callback, previous_position) {
+      BATTLE.builder.setup.start(name, callback, previous_position);
+    },
   },
 };
