@@ -149,7 +149,7 @@ const BATTLE = {
     teardown: {
       start: function(ending) {
 
-        console.log("Exp won:" + (ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before));
+        console.log("Exp won:" + (ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before) + "(" + ABILITIES.completion(BATTLE.current_battle) + "%)");
 
         PALETTE.color_interface();
         LEVEL.clear();

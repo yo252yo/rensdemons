@@ -106,4 +106,10 @@ const ABILITIES = {
     }
     return score;
   },
+
+  completion: function(battle) {
+    var total = Object.keys(ABILITIES._abilities[battle]).length * 3;
+    var result = ABILITIES.score_battle(battle) / total;
+    return Math.floor(result * 1000) / 10;
+  },
 };
