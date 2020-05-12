@@ -44,6 +44,10 @@ const DISK = {
       } else {
         DICTIONARY.factory.make_new();
       }
+
+      if(DISK._CONTENT['abilities']){
+        ABILITIES.import(DISK._CONTENT['abilities']);
+      }
     },
 
     _load_storage() {
