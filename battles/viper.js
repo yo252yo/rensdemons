@@ -1,25 +1,26 @@
 var self = "viper";
 
+// ===================
+// =================== INITIALIZATION
+// ===================
 var s = new StaticSprite("assets/snake.png", 'background');
 s.container.style.position = "fixed";
 new LevelObject(s, SCREEN.width() / 2 - 200, SCREEN.height() / 2);
 
-// we need to die every choice, and after first death can escape death through the goddess
+// ===================
+// =================== FREE ABILITIES
+// ===================
 ABILITIES.unlock(self, "Back away");
 ABILITIES.unlock(self, "Call help");
 
+// ===================
+// =================== ABILITIES CALLBACKS
+// ===================
 
-//attempts = 0;
 var back_away = function() {
-//  attempts ++;
-//  if (attempts < 2) {
-//   return ["Your attempt to slowly back away fails. The viper advances forward. Behind, the priests shout:",
-//           "Priest: \"Come on, child! The trial must happen.\""];
-//  } else {
   ABILITIES.unlock(self, "Pray");
   BATTLE.monster_actions.prepare_loss("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
   return ["You try to go further back, but you trip and fall on the ground."];
-//  }
 };
 BATTLE.player_actions.add('Back away', back_away);
 
@@ -37,8 +38,6 @@ var swear_loyalty = function () {
   BATTLE.monster_actions.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
   return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
 };
-
-
 var pray = function() {
   ABILITIES.unlock(self, "Swear loyalty");
   BATTLE.player_actions.add('Swear loyalty', swear_loyalty);
@@ -49,11 +48,15 @@ var pray = function() {
 BATTLE.player_actions.add('Pray', pray);
 
 
-
-
-// Flavor attack text.
+// ===================
+// =================== DEFAULT MONSTER BEHAVIOR
+// ===================
 BATTLE.monster_actions.add_textual("The viper hisses and spits.");
 BATTLE.monster_actions.add_textual("The viper slithers on the ground towards you.");
 BATTLE.monster_actions.add_textual("The viper gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");
 
+
+// ===================
+// =================== START
+// ===================
 BATTLE.operations.start("A vicious viper ventured into view.");
