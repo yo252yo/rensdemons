@@ -3,6 +3,8 @@
 // Entry with DOOM
 const ABILITIES = {
   _abilities: {},
+  LOSS: "#LOSS",
+  WIN: "#WIN",
 
   save: function() {
     DISK.set("abilities", ABILITIES._abilities);
@@ -12,19 +14,23 @@ const ABILITIES = {
     ABILITIES._abilities = save;
   },
 
-  unlock: function(battle, name) {
+  unlock: function(battle, name, from) {
     if (!ABILITIES._abilities[battle]) {
       ABILITIES._abilities[battle] = {};
     }
-    
+
     if (!( name in ABILITIES._abilities[battle])) {
       ABILITIES._abilities[battle][name] = "";
       CONSOLE.debug("# ability unlocked: [" + name + "] on " + battle);
       ABILITIES.save();
     }
+
+    if(from) {
+      ABILITIES.develop(battle, from, name);
+    }
   },
 
-  try: function(battle, name, destination) {
+  develop: function(battle, name, destination) {
     if (!destination){
       destination = "tried";
     }
@@ -33,6 +39,10 @@ const ABILITIES = {
       CONSOLE.debug("# ability attempted: [" + name + "] on " + battle);
       ABILITIES._abilities[battle][name] = destination;
       ABILITIES.save();
+    }
+
+    if (destination == "#WIN" || destination == "#LOSS") {
+      // propagate to ascendants
     }
   },
 

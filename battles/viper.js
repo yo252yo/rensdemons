@@ -7,46 +7,59 @@ var s = new StaticSprite("assets/snake.png", 'background');
 s.container.style.position = "fixed";
 new LevelObject(s, SCREEN.width() / 2 - 200, SCREEN.height() / 2);
 
-// ===================
-// =================== FREE ABILITIES
-// ===================
-ABILITIES.unlock(self, "Back away");
-ABILITIES.unlock(self, "Call help");
+var EFFECTS = {};
+var make_player_action = function(name){
+  BATTLE.player_actions.add(name, EFFECTS[name]);
+}
 
 // ===================
 // =================== ABILITIES CALLBACKS
 // ===================
 
-var back_away = function() {
-  ABILITIES.unlock(self, "Pray");
+var pray = "Pray";
+var back_away = "Back away";
+var call_help = "Call help";
+var swear_loyalty = "Swear loyalty";
+
+
+EFFECTS[back_away] = function() {
+  ABILITIES.unlock(self, pray);
+  ABILITIES.develop(self, back_away, ABILITIES.LOSS);
   BATTLE.monster_actions.prepare_loss("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
   return ["You try to go further back, but you trip and fall on the ground."];
 };
-BATTLE.player_actions.add('Back away', back_away);
+make_player_action(back_away);
 
-var call_help = function() {
-  ABILITIES.unlock(self, "Pray");
+EFFECTS[call_help] = function() {
+  ABILITIES.unlock(self, pray);
+  ABILITIES.develop(self, call_help, ABILITIES.LOSS);
   BATTLE.monster_actions.prepare_loss("The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.");
   return ["You shout, terrified, in hope that someone around will help.",
          "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
          "The children around are trembling and exchanging frightened looks, too afraid for their own lives to do anything."];
 };
-BATTLE.player_actions.add('Call help', call_help);
+make_player_action(call_help);
 
-
-var swear_loyalty = function () {
+EFFECTS[swear_loyalty] = function () {
+  ABILITIES.develop(self, swear_loyalty, ABILITIES.WIN);
   BATTLE.monster_actions.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
   return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
 };
-var pray = function() {
-  ABILITIES.unlock(self, "Swear loyalty");
-  BATTLE.player_actions.add('Swear loyalty', swear_loyalty);
-  BATTLE.player_actions.remove('Pray');
+EFFECTS[pray] = function() {
+  ABILITIES.unlock(self, swear_loyalty, pray);
+  make_player_action(swear_loyalty);
+  BATTLE.player_actions.remove(pray);
   return ["You close your eyes and focus on your faith.",
           "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""];
 };
-BATTLE.player_actions.add('Pray', pray);
+make_player_action(pray);
 
+
+// ===================
+// =================== FREE ABILITIES
+// ===================
+ABILITIES.unlock(self, back_away);
+ABILITIES.unlock(self, call_help);
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
