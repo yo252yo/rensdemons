@@ -22,7 +22,7 @@ const ABILITIES = {
     }
   },
 
-  record: function(battle, name, destination) {
+  try: function(battle, name, destination) {
     if (!destination){
       destination = "tried";
     }

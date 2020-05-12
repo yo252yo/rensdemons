@@ -17,7 +17,7 @@ const BATTLE = {
 
         (function(index){
           var f = function() {
-            ABILITIES.record(BATTLE.current_battle, index);
+            ABILITIES.try(BATTLE.current_battle, index);
             var text = BATTLE._player_actions[index]();
             // If I don't go through timeout, I think the event canceling blocks IO for the banner.
             if (text) {
