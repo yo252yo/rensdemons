@@ -28,8 +28,8 @@ const BATTLE = {
             }
             return true;
           };
-
-          options.push({"text": index, "effect": f});
+          var menu_entry = ABILITIES.stylize(index, BATTLE.current_battle);
+          options.push({"text": menu_entry, "effect": f});
         })(i);
 
       }

@@ -36,13 +36,27 @@ const ABILITIES = {
     }
     ABILITIES.unlock(battle, name);
     if (ABILITIES._abilities[battle][name] != destination) {
-      CONSOLE.debug("# ability attempted: [" + name + "] on " + battle);
+      CONSOLE.debug("# ability developed: [" + name + "] on " + battle);
       ABILITIES._abilities[battle][name] = destination;
       ABILITIES.save();
     }
 
-    if (destination == "#WIN" || destination == "#LOSS") {
+    if (destination == ABILITIES.WIN || destination == ABILITIES.LOSS) {
       // propagate to ascendants
+    }
+  },
+
+  stylize: function(name, battle){
+    if (!ABILITIES._abilities[battle] || !ABILITIES._abilities[battle][name]) {
+      return name;
+    }
+    switch (ABILITIES._abilities[battle][name]) {
+      case ABILITIES.WIN:
+        return "<b>" + name + "</b>";
+      case ABILITIES.LOSS:
+        return "<s>" + name + "</s>";
+      default:
+        return name;
     }
   },
 
@@ -59,6 +73,9 @@ const ABILITIES = {
     switch (destination) {
       case "":
         return 1;
+      case ABILITIES.WIN:
+      case ABILITIES.LOSS:
+        return 3;
       default:
         return 2;
     }
