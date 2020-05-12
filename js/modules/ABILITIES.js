@@ -27,7 +27,6 @@ const ABILITIES = {
       destination = "tried";
     }
     ABILITIES.unlock(battle, name);
-    console.log(name + " > " + destination);
     if (ABILITIES._abilities[battle][name] != destination) {
       CONSOLE.DEBUG("α ability attempted: [" + name + "] on " + battle);
       ABILITIES._abilities[battle][name] = destination;
