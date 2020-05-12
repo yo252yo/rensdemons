@@ -11,7 +11,7 @@ const BATTLE = {
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        if (! ABILITIES.check(BATTLE.current_battle, i)) {
+        if (! ABILITIES.check_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
 

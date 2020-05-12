@@ -1,3 +1,6 @@
+// No entry = no ability
+// An entry = it leads somewhere
+// Entry with DOOM
 const ABILITIES = {
   _abilities: {},
 
@@ -10,34 +13,43 @@ const ABILITIES = {
   },
 
   unlock: function(battle, name) {
-    console.log(name + " unlocked");
     if (!ABILITIES._abilities[battle]) {
       ABILITIES._abilities[battle] = {};
     }
     if (!ABILITIES._abilities[battle][name]){
-      ABILITIES._abilities[battle][name] = "discovered";
-      ABILITIES.save();
+      ABILITIES._abilities[battle][name] = "";
+      CONSOLE.DEBUG("α ability unlocked: [" + name + "] on " + battle);
     }
   },
 
-  record: function(battle, name) {
-    console.log(name + " tried");
-    if (!ABILITIES._abilities[battle]) {
-      ABILITIES._abilities[battle] = {};
+  record: function(battle, name, destination) {
+    if (!destination){
+      destination = "tried";
     }
-    if (!ABILITIES._abilities[battle][name] || ABILITIES._abilities[battle][name] != "tried"){
-      ABILITIES._abilities[battle][name] = "tried";
-      ABILITIES.save();
+    ABILITIES.unlock(battle, name);
+    console.log(name + " > " + destination);
+    if (ABILITIES._abilities[battle][name] != destination) {
+      CONSOLE.DEBUG("α ability attempted: [" + name + "] on " + battle);
+      ABILITIES._abilities[battle][name] = destination;
     }
   },
 
-  check: function(battle, name) {
-    if (ABILITIES._abilities[battle]){
-      if (ABILITIES._abilities[battle][name]){
-        return ABILITIES._abilities[battle][name];
+  check_unlocked: function(battle, name) {
+    if (ABILITIES._abilities[battle]) {
+      if (name in ABILITIES._abilities[battle]) {
+        return true;
       }
     }
     return false;
+  },
+
+  score_destination: function(destination) {
+    switch (destination) {
+      case "":
+        return 1;
+      default:
+        return 2;
+    }
   },
 
   score_battle: function(battle) {
@@ -45,18 +57,9 @@ const ABILITIES = {
       return 0;
     }
     var score = 0;
-    for (var i in ABILITIES._abilities[battle]){
-      switch(ABILITIES._abilities[battle][i]){
-        case "discovered":
-          score += 1;
-          break;
-        case "tried":
-          score += 2;
-          break;
-      }
-
+    for (var i in ABILITIES._abilities[battle]) {
+      score += ABILITIES.score_destination(ABILITIES._abilities[battle][i]);
     }
-    console.log(score);
     return score;
   },
 };
