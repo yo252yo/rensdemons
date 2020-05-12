@@ -5,11 +5,16 @@ const BATTLE = {
   current_battle: "",
   previous_position: undefined,
   callback: undefined,
+  abilities_before: 0,
 
   turn_factory: {
     player: function() {
       var options = [];
-      for (var i in BATTLE._player_actions){
+      for (var i in BATTLE._player_actions) {
+        if (! ABILITIES.check(BATTLE.current_battle, i)) {
+          continue;
+        }
+
         (function(index){
           var f = function() {
             var text = BATTLE._player_actions[index]();
@@ -105,6 +110,7 @@ const BATTLE = {
       start: function(name, callback, previous_position) {
         BATTLE.builder.clear();
         IO.control.cede();
+        BATTLE.abilities_before = ABILITIES.score_battle(name);
 
         if (!previous_position) {
           previous_position = LEVEL.factory.export();
@@ -142,6 +148,9 @@ const BATTLE = {
 
     teardown: {
       start: function(ending) {
+
+        console.log("Exp won:" + (ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before));
+
         PALETTE.color_interface();
         LEVEL.clear();
         BATTLE.builder.teardown.animation();

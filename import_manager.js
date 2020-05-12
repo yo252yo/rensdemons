@@ -91,6 +91,7 @@ new Module("RESOURCES");
 new Module("DISK");
 new Module("SAVE");
 new Module("BATTLE");
+new Module("ABILITIES");
 
 new Module("IO");
 IMPORTS.modules['IO'].child_module("IO/IO_DIALOG");
