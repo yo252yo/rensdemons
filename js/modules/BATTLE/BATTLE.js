@@ -148,9 +148,16 @@ const BATTLE = {
 
     teardown: {
       start: function(ending) {
+        var exp_won = ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
+        if(exp_won > 0) {
+           var text = "All things considered, you still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
+           TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});
+        } else {
+          BATTLE.builder.teardown.start_teardown(ending);
+        }
+      },
 
-        console.log("Exp won:" + (ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before) + "(" + ABILITIES.completion(BATTLE.current_battle) + "%)");
-
+      start_teardown: function(ending) {
         PALETTE.color_interface();
         LEVEL.clear();
         BATTLE.builder.teardown.animation();
