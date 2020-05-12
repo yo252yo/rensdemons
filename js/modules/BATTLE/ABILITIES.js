@@ -16,9 +16,11 @@ const ABILITIES = {
     if (!ABILITIES._abilities[battle]) {
       ABILITIES._abilities[battle] = {};
     }
-    if (!ABILITIES._abilities[battle][name]){
+    
+    if (!( name in ABILITIES._abilities[battle])) {
       ABILITIES._abilities[battle][name] = "";
-      CONSOLE.DEBUG("α ability unlocked: [" + name + "] on " + battle);
+      CONSOLE.debug("# ability unlocked: [" + name + "] on " + battle);
+      ABILITIES.save();
     }
   },
 
@@ -28,8 +30,9 @@ const ABILITIES = {
     }
     ABILITIES.unlock(battle, name);
     if (ABILITIES._abilities[battle][name] != destination) {
-      CONSOLE.DEBUG("α ability attempted: [" + name + "] on " + battle);
+      CONSOLE.debug("# ability attempted: [" + name + "] on " + battle);
       ABILITIES._abilities[battle][name] = destination;
+      ABILITIES.save();
     }
   },
 

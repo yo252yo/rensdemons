@@ -86,26 +86,26 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("DEBUG");
 new Module("RANDOM");
-new Module("SCREEN");
-new Module("RESOURCES");
-new Module("DISK");
-new Module("SAVE");
-new Module("BATTLE");
-new Module("ABILITIES");
+new Module("GRAPHICS/SCREEN");
+new Module("MEMORY/RESOURCES");
+new Module("MEMORY/DISK");
+new Module("MEMORY/SAVE");
+new Module("BATTLE/BATTLE");
+new Module("BATTLE/ABILITIES");
 
-new Module("IO");
-IMPORTS.modules['IO'].child_module("IO/IO_DIALOG");
-IMPORTS.modules['IO'].child_module("IO/IO_CHARACTER");
-IMPORTS.modules['IO'].child_module("IO/IO_MENU");
+new Module("IO/IO");
+IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
+IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
+IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
-new Module("LEVEL");
-new Module("CHARACTER");
-new Module("PALETTE");
+new Module("LEVEL/LEVEL");
+new Module("LEVEL/CHARACTER");
+new Module("GRAPHICS/PALETTE");
 
 new Module("STRING_UTILS");
 IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");
 IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
-IMPORTS.classes['Generation/MarkovModels'].child_module("DICTIONARY");
+IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
 
 
 new Class("Graphic/Color");
@@ -125,7 +125,7 @@ IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 
-new Module("INTERFACE");
+new Module("GRAPHICS/INTERFACE");
 
 window.onload = function() {
   var init = new Import("startup");
