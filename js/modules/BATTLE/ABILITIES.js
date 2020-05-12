@@ -30,6 +30,19 @@ const ABILITIES = {
     }
   },
 
+  propagate_verdict: function(battle, name, verdict) {
+    if (name == ABILITIES.WIN || name == ABILITIES.LOSS) {
+      return;
+    }
+    for (var i in ABILITIES._abilities[battle]) {
+      if(ABILITIES._abilities[battle][i] == name){
+        ABILITIES._abilities[battle][i] = verdict;
+        ABILITIES.save();
+        ABILITIES.propagate_verdict(battle, i, verdict);
+      }
+    }
+  },
+
   develop: function(battle, name, destination) {
     if (!destination){
       destination = "tried";
@@ -42,7 +55,7 @@ const ABILITIES = {
     }
 
     if (destination == ABILITIES.WIN || destination == ABILITIES.LOSS) {
-      // propagate to ascendants
+      ABILITIES.propagate_verdict(battle, name, destination);
     }
   },
 
@@ -55,8 +68,10 @@ const ABILITIES = {
         return "<b>" + name + "</b>";
       case ABILITIES.LOSS:
         return "<s>" + name + "</s>";
-      default:
+      case "":
         return name;
+      default:
+        return "<i>" + name + "</i>";
     }
   },
 
@@ -69,7 +84,7 @@ const ABILITIES = {
     return false;
   },
 
-  score_destination: function(destination) {
+  _score_destination: function(destination) {
     switch (destination) {
       case "":
         return 1;
@@ -87,7 +102,7 @@ const ABILITIES = {
     }
     var score = 0;
     for (var i in ABILITIES._abilities[battle]) {
-      score += ABILITIES.score_destination(ABILITIES._abilities[battle][i]);
+      score += ABILITIES._score_destination(ABILITIES._abilities[battle][i]);
     }
     return score;
   },
