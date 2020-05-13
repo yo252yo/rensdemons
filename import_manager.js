@@ -114,6 +114,7 @@ IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextElement");
 IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextBox");
 IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
+IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/MenuScreen");
 IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextMenu");
 
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
@@ -125,7 +126,7 @@ IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 
-new Module("GRAPHICS/INTERFACE");
+new Module("INTERFACE");
 
 window.onload = function() {
   var init = new Import("startup");

@@ -41,7 +41,6 @@ const SAVE = {
     };
     DISK.set("saves", SAVE.factory.export());
     CONSOLE.sys_log("# Saved in save slot " + index);
-    return true;
   },
 
   load: function(index) {
@@ -60,7 +59,7 @@ const SAVE = {
       for(var i = start; i < SAVE.slots.length; i++){
         var slot = SAVE.slots[i];
         (function (f, index) {
-          var callback = function() { return f(index); };
+          var callback = function() { f(index); };
           result.push({"text": slot.key, "effect": callback});
         })(effect, i);
       }
@@ -69,23 +68,23 @@ const SAVE = {
       return result;
     },
 
-    save_menu: function(){
+    save_menu: function() {
       new CenteredTextMenu("Save in slot?",
                     [
-                      {"text": "New save", "effect": function(){ return SAVE.save(); }},
-                   ].concat(SAVE.print._menu_from_slots(function(i){ return SAVE.save(i);}, 1))
+                      {"text": "New save", "effect": function(){ SAVE.save(); }},
+                   ].concat(SAVE.print._menu_from_slots(function(i){ SAVE.save(i);}, 1))
                  );
       return true;
     },
 
-    load_menu: function(){
-      if (SAVE.slots.length == 0)  {
-        return false;
-      }
+    can_load: function() {
+      return (SAVE.slots.length > 0);
+    },
+
+    load_menu: function() {
       new CenteredTextMenu("Load from slot?",
                     SAVE.print._menu_from_slots(function(i){ return SAVE.load(i);})
                   );
-      return true;
     },
   },
 

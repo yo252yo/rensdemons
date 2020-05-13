@@ -112,4 +112,22 @@ const ABILITIES = {
     var result = ABILITIES.score_battle(battle) / total;
     return Math.floor(result * 1000) / 10;
   },
+
+  total_xp: function() {
+    var score = 0;
+    for (var i in ABILITIES._abilities) {
+      score += ABILITIES.score_battle(i);
+    }
+    return score;
+  },
+
+  // Clearly this needs balance :) but it will do for now.
+  level: function() {
+    var xp = ABILITIES.total_xp();
+    if (xp < 100){
+      return 1 + Math.floor(xp / 5);
+    }
+    return Math.floor(Math.log(xp) * 10) - 26;
+  },
+
 };

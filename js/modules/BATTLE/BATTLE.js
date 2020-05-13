@@ -150,7 +150,7 @@ const BATTLE = {
       start: function(ending) {
         var exp_won = ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
         if(exp_won > 0) {
-           var text = "All things considered, you still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
+           var text = "All things considered, styou still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
            TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});
         } else {
           BATTLE.builder.teardown.start_teardown(ending);

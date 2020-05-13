@@ -132,11 +132,12 @@ class TextMenu extends TextElement {
         f = function() { menu.back(); };
       } else {
         f = function() {
-          var child = menu.options[choice]["effect"]();
-          if(child){
+          var child = menu.options[choice]["effect"];
+          if(!menu.options[choice]["keep_open"]){
             IO.control.cede();
             menu.destroy();
           }
+          child();
         };
       }
 
