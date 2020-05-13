@@ -21,7 +21,7 @@ const ABILITIES = {
 
     if (!( name in ABILITIES._abilities[battle])) {
       ABILITIES._abilities[battle][name] = "";
-      CONSOLE.debug("# ability unlocked: [" + name + "] on " + battle);
+      CONSOLE.log.ability("unlocked: [" + name + "] on " + battle);
       ABILITIES.save();
     }
 
@@ -49,7 +49,7 @@ const ABILITIES = {
     }
     ABILITIES.unlock(battle, name);
     if (ABILITIES._abilities[battle][name] != destination) {
-      CONSOLE.debug("# ability developed: [" + name + "] on " + battle);
+      CONSOLE.log.ability("developed: [" + name + "] on " + battle);
       ABILITIES._abilities[battle][name] = destination;
       ABILITIES.save();
     }

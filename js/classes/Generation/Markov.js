@@ -38,7 +38,7 @@ class Markov {
 
   _kernel_find_next(letters) {
     if (letters.length != this.depth - 1) {
-      console.error("wrong letter number asked");
+      CONSOLE.error("wrong letter number asked");
     }
     var candidates = {};
     for(var sequence in this.kernel) {

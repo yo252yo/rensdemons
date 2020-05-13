@@ -109,7 +109,7 @@ class TextMenu extends TextElement {
 
     pick(choice) {
       if (! this.options[choice]){
-        console.error("Invalid menu choice: " + choice);
+        CONSOLE.error("Invalid menu choice: " + choice);
         return;
       }
       this.execute(choice);

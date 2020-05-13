@@ -1,6 +1,5 @@
 const IO_MENU = {
   set_menu: function(menu) {
-    console.log("M");
     IO._menu = menu;
   },
 

@@ -1,6 +1,5 @@
 const IO_DIALOG = {
   set_dialog: function(dialog) {
-    console.log("D");
     IO.dialog = dialog;
   },
 

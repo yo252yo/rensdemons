@@ -38,7 +38,7 @@ const DICTIONARY = {
     if (key in DICTIONARY._DICTIONARY){
       return DICTIONARY._DICTIONARY[key];
     } else{
-      console.error("Wrong dictionary key: " + key);
+      CONSOLE.error("Wrong dictionary key: " + key);
       return "";
     }
   },

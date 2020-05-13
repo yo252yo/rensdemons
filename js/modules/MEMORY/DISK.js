@@ -11,7 +11,7 @@ const DISK = {
             DISK._CONTENT = {};
         }
         DISK._CONTENT[key] = value;
-        CONSOLE.sys_log(". Disk state updated: " + key + "->" + value);
+        CONSOLE.log.disk(key + "->" + value);
         DISK._record_to_storage();
     },
 

@@ -25,7 +25,7 @@ class Import {
        this.loaded = true;
 
        if (typeof CONSOLE !== 'undefined') {
-         CONSOLE.sys_log(">> Loaded " + this.src);
+         CONSOLE.log.import(this.src);
        } else{
          console.log(">> Loaded " + this.src);
        }

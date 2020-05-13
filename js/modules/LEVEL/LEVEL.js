@@ -45,7 +45,7 @@ const LEVEL = {
     LEVEL.loaded_level_name = name;
 
     new Import("levels/" + name);
-    CONSOLE.sys_log("- Loaded level " + name);
+    CONSOLE.log.setup("level " + name);
   },
 
   factory: {
@@ -186,12 +186,12 @@ const LEVEL = {
 
   add_trigger: function(key, f_condition, f_execute) {
     if(LEVEL.triggers[key] && f_condition() && IO.interface._can_trigger_level_event()){
-      CONSOLE.sys_log("- Triggered event " + key);
+      CONSOLE.log.event("Triggered " + key);
       delete LEVEL.triggers[key];
       f_execute();
     } else {
       if (! LEVEL.triggers[key]){
-        CONSOLE.sys_log("- Registered event " + key);
+        CONSOLE.log.event("Registered " + key);
       }
       LEVEL.triggers[key] = setTimeout(
         function(){ LEVEL.add_trigger(key, f_condition, f_execute); },

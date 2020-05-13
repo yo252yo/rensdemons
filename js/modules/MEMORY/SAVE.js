@@ -40,16 +40,16 @@ const SAVE = {
       save: new SaveFile(),
     };
     DISK.set("saves", SAVE.factory.export());
-    CONSOLE.sys_log("# Saved in save slot " + index);
+    CONSOLE.log.save("Saved in save slot " + index);
   },
 
   load: function(index) {
     if (index >= SAVE.slots.length){
-      console.error("Invalid save slot (" + index + ")");
+      CONSOLE.error("Invalid save slot (" + index + ")");
       return;
     }
     SAVE._load_savefile(SAVE.slots[index].save);
-    CONSOLE.sys_log("# Loaded save slot " + index);
+    CONSOLE.log.save("Loaded save slot " + index);
   },
 
   print: {

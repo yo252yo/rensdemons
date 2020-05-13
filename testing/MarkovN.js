@@ -29,7 +29,7 @@ class Markov {
 
   _find_next(letters){
     if (letters.length != this.depth - 1){
-      console.error("wrong letter number asked");
+      CONSOLE.error("wrong letter number asked");
     }
     var candidates = {};
     var total = 0;

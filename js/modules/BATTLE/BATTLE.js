@@ -142,7 +142,7 @@ const BATTLE = {
         }
 
         new Import("battles/" + name);
-        CONSOLE.sys_log("- Loaded battle " + name);
+        CONSOLE.log.setup("battle " + name);
       },
     },
 
