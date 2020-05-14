@@ -91,7 +91,6 @@ new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
-new Module("BATTLE/ABILITIES");
 
 new Module("IO/IO");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
@@ -101,6 +100,9 @@ IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 new Module("LEVEL/LEVEL");
 new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
+
+new Module("MAP_UTIL");
+IMPORTS.modules['MAP_UTIL'].child_module("BATTLE/ABILITIES");
 
 new Module("STRING_UTILS");
 IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");

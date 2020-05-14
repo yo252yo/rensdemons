@@ -2,25 +2,24 @@
 // An entry = it leads somewhere
 // Entry with DOOM
 const ABILITIES = {
-  _abilities: {},
+  _outcomes: new FluidMap(),
+  _targets: new FluidMap(),
   LOSS: "#LOSS",
   WIN: "#WIN",
 
   save: function() {
-    DISK.set("abilities", ABILITIES._abilities);
+    DISK.set("abilities", {"outcomes": ABILITIES._outcomes.export()}, {"targets": ABILITIES._targets.export()});
   },
 
   import: function(save){
-    ABILITIES._abilities = save;
+    ABILITIES._outcomes = new FluidMap(save.outcomes);
+    ABILITIES._targets = new FluidMap(save.targets);
   },
 
   unlock: function(battle, name, from) {
-    if (!ABILITIES._abilities[battle]) {
-      ABILITIES._abilities[battle] = {};
-    }
-
-    if (!( name in ABILITIES._abilities[battle])) {
-      ABILITIES._abilities[battle][name] = "";
+    var v = ABILITIES._outcomes.get([battle, name]);
+    if (!v) {
+      ABILITIES._outcomes.set([battle, name], "");
       CONSOLE.log.ability("unlocked: [" + name + "] on " + battle);
       ABILITIES.save();
     }
@@ -34,9 +33,9 @@ const ABILITIES = {
     if (name == ABILITIES.WIN || name == ABILITIES.LOSS) {
       return;
     }
-    for (var i in ABILITIES._abilities[battle]) {
-      if(ABILITIES._abilities[battle][i] == name){
-        ABILITIES._abilities[battle][i] = verdict;
+    for (var i in ABILITIES._outcomes.get([battle])) {
+      if(ABILITIES._outcomes.get([battle, i]) == name){
+        ABILITIES._outcomes.set([battle, i], verdict);
         ABILITIES.save();
         ABILITIES.propagate_verdict(battle, i, verdict);
       }
@@ -48,9 +47,10 @@ const ABILITIES = {
       destination = "tried";
     }
     ABILITIES.unlock(battle, name);
-    if (ABILITIES._abilities[battle][name] != destination) {
+    var v = ABILITIES._outcomes.get([battle, name]);
+    if (v != destination) {
       CONSOLE.log.ability("developed: [" + name + "] on " + battle);
-      ABILITIES._abilities[battle][name] = destination;
+      ABILITIES._outcomes.set([battle, name], destination);
       ABILITIES.save();
     }
 
@@ -60,10 +60,7 @@ const ABILITIES = {
   },
 
   stylize: function(name, battle){
-    if (!ABILITIES._abilities[battle] || !ABILITIES._abilities[battle][name]) {
-      return name;
-    }
-    switch (ABILITIES._abilities[battle][name]) {
+    switch (ABILITIES._outcomes.get([battle,name])) {
       case ABILITIES.WIN:
         return "<b>" + name + "</b>";
       case ABILITIES.LOSS:
@@ -76,12 +73,7 @@ const ABILITIES = {
   },
 
   check_unlocked: function(battle, name) {
-    if (ABILITIES._abilities[battle]) {
-      if (name in ABILITIES._abilities[battle]) {
-        return true;
-      }
-    }
-    return false;
+    return (ABILITIES._outcomes.get([battle,name]) != null);
   },
 
   _score_destination: function(destination) {
@@ -97,25 +89,22 @@ const ABILITIES = {
   },
 
   score_battle: function(battle) {
-    if (!ABILITIES._abilities[battle]) {
-      return 0;
-    }
     var score = 0;
-    for (var i in ABILITIES._abilities[battle]) {
-      score += ABILITIES._score_destination(ABILITIES._abilities[battle][i]);
+    for (var i in ABILITIES._outcomes.get([battle])) {
+      score += ABILITIES._score_destination(ABILITIES._outcomes.get([battle,i]));
     }
     return score;
   },
 
   completion: function(battle) {
-    var total = Object.keys(ABILITIES._abilities[battle]).length * 3;
+    var total = Object.keys(ABILITIES._outcomes.get([battle])).length * 3;
     var result = ABILITIES.score_battle(battle) / total;
     return Math.floor(result * 1000) / 10;
   },
 
   total_xp: function() {
     var score = 0;
-    for (var i in ABILITIES._abilities) {
+    for (var i in ABILITIES._outcomes.get([])) {
       score += ABILITIES.score_battle(i);
     }
     return score;
@@ -131,28 +120,28 @@ const ABILITIES = {
   },
 
   get_all_battles: function(){
-    return Object.keys(ABILITIES._abilities);
+    return Object.keys(ABILITIES._outcomes.get([]));
   },
 
   display_tree: function(battle) {
     var html = "";
     var precursor = {};
-    for (var i in ABILITIES._abilities[battle]){
-      var t = ABILITIES._abilities[battle][i];
+    for (var i in ABILITIES._outcomes.get([battle])){
+      var t = ABILITIES._outcomes.get([battle,i]);
       if (!(t in precursor)){
         precursor[t] = [];
       }
       precursor[t].push(i);
     }
-    for (var i in ABILITIES._abilities[battle]){
+    for (var i in ABILITIES._outcomes.get([battle])){
       if(!(i in precursor)){
-        html += i + " -> " + ABILITIES._abilities[battle][i] + " <br /> ";
+        html += i + " -> " + ABILITIES._outcomes.get([battle, i]) + " <br /> ";
         // Need to call the children hierarhchically
         // Need to style the things from their outcomes
       }
     }
 
-
+// I NEED TO POPULATE ABILITIES._targets
     new MenuScreen("<b>" + battle + "</b> - " + ABILITIES.completion(battle) + "% <hr />" + html );
   },
 
