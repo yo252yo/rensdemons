@@ -79,13 +79,15 @@ class TextMenu extends TextElement {
           }(current_item, i));
 
           var html = "";
-          if (i == this.selected){
+          if (!this.options[i]["text"]){
+              html += "&nbsp;";
+          } else if (i == this.selected){
               html += ">";
           } else {
               html += "_";
           }
 
-          current_item.innerHTML = html  + this.options[i]["text"];
+          current_item.innerHTML = html + this.options[i]["text"];
           this.html_menu.appendChild(current_item);
       }
     }

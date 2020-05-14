@@ -130,4 +130,30 @@ const ABILITIES = {
     return Math.floor(Math.log(xp) * 10) - 26;
   },
 
+  get_all_battles: function(){
+    return Object.keys(ABILITIES._abilities);
+  },
+
+  display_tree: function(battle) {
+    var html = "";
+    var precursor = {};
+    for (var i in ABILITIES._abilities[battle]){
+      var t = ABILITIES._abilities[battle][i];
+      if (!(t in precursor)){
+        precursor[t] = [];
+      }
+      precursor[t].push(i);
+    }
+    for (var i in ABILITIES._abilities[battle]){
+      if(!(i in precursor)){
+        html += i + " -> " + ABILITIES._abilities[battle][i] + " <br /> ";
+        // Need to call the children hierarhchically
+        // Need to style the things from their outcomes
+      }
+    }
+
+
+    new MenuScreen("<b>" + battle + "</b> - " + ABILITIES.completion(battle) + "% <hr />" + html );
+  },
+
 };

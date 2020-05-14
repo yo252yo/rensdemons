@@ -27,3 +27,6 @@ https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07ae
 
 
 Add a new floor object that is hallway?
+
+
+abilities (completion etc...) dont know about affordances non unlocked!

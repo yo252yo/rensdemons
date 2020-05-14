@@ -1,15 +1,28 @@
 const INTERFACE = {
-  display_status_menu: function() {
-    new MenuScreen(`
-      <h2>Ren</h2>
-      Level: ` + ABILITIES.level() + ` (` + ABILITIES.total_xp() + ` xp)`
-    );
+  display_experience_menu: function() {
+    var battles = ABILITIES.get_all_battles();
+    var battles_options = [];
+    for(var i in battles) {
+      (function(index){
+        battles_options.push({
+          "text": battles[index] + " (" + ABILITIES.completion(battles[index]) + "%)",
+          "effect": function(){ ABILITIES.display_tree(battles[index]); }
+        });
+      }(i));
+    };
+
+
+    battles_options.push({"text": "", "effect": function(){}, "keep_open": true});
+    battles_options.push({"text": "Back", "effect": "##BACK"});
+
+    new CenteredTextMenu(`<b>Ren</b> - level ` + ABILITIES.level() + ` (` + ABILITIES.total_xp() + ` xp)`,
+      battles_options);
   },
 
   display_escape_menu: function() {
     new CenteredTextMenu("",
                   [
-                    {"text": "Status", "effect": function(){ INTERFACE.display_status_menu(); }},
+                    {"text": "Experience", "effect": function(){ INTERFACE.display_experience_menu(); }},
                     {"text": "", "effect": function(){}, "keep_open": true},
                     {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); }},
                     {"text": "Back to game", "effect": "##CLOSE"},
