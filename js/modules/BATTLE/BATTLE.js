@@ -44,7 +44,7 @@ const BATTLE = {
   player_actions: {
     add: function(name, f) {
       BATTLE._player_actions[name] = f;
-      ACTIONS.add_unknown(BATTLE.current_battle, name);
+      ACTIONS.declare(BATTLE.current_battle, name);
     },
 
     remove: function(name) {

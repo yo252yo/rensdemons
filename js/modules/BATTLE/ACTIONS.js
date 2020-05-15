@@ -39,7 +39,7 @@ const ACTIONS = {
     }
   },
 
-  add_unknown: function(battle, name) {
+  declare: function(battle, name) {
     // check inventory and all
     var v = ACTIONS._outcomes.get([battle, name]);
     if (!v) {
