@@ -45,8 +45,8 @@ const DISK = {
         DICTIONARY.factory.make_new();
       }
 
-      if(DISK._CONTENT['abilities']){
-        ACTIONS.factory.import(DISK._CONTENT['abilities']);
+      if(DISK._CONTENT['actions']){
+        ACTIONS.factory.import(DISK._CONTENT['actions']);
       }
     },
 

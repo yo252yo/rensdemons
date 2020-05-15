@@ -21,7 +21,6 @@ var back_away = "Back away";
 var call_help = "Call help";
 var swear_loyalty = "Swear loyalty";
 
-
 EFFECTS[back_away] = function() {
   ACTIONS.unlock(self, pray);
   ACTIONS.develop(self, back_away, ACTIONS.LOSS);

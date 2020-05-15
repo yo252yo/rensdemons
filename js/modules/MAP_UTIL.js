@@ -48,6 +48,23 @@ class FluidMap {
     }
   }
 
+  delete(key_list) {
+    var m = this._map;
+    for(var i =0; i < key_list.length; i++) {
+      var key = key_list[i];
+
+      if (i == key_list.length - 1) {
+        delete m[key];
+      } else {
+        if(key in m) {
+          m = m[key];
+        } else {
+          return;
+        }
+      }
+    }
+  }
+
   get(key_list) {
     var m = this._map;
     for(var i =0; i < key_list.length; i++){
@@ -58,5 +75,9 @@ class FluidMap {
       m = m[key];
     }
     return m;
+  }
+
+  length(key_list) {
+    return Object.keys(this.get(key_list)).length;
   }
 }

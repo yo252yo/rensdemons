@@ -30,8 +30,8 @@ const CONSOLE = {
       CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
     },
 
-    ability: function(operation) {
-      CONSOLE._sys_log("# Ability " + operation, "LightBlue");
+    action: function(operation) {
+      CONSOLE._sys_log("# Action " + operation, "LightBlue");
     },
 
     setup: function(name) {

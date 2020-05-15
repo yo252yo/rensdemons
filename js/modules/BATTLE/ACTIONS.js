@@ -4,29 +4,33 @@
 const ACTIONS = {
   _outcomes: new FluidMap(),
   _targets: new FluidMap(),
+  _unknowns: new FluidMap(),
   LOSS: "#LOSS",
   WIN: "#WIN",
 
   factory: {
     save: function() {
-      DISK.set("abilities",
-       {"outcomes": ACTIONS._outcomes.export(),
-       "targets": ACTIONS._targets.export()}
-     );
+      DISK.set("actions", {
+       "outcomes": ACTIONS._outcomes.export(),
+       "targets": ACTIONS._targets.export(),
+       "unknowns": ACTIONS._unknowns.export()
+     });
     },
 
     import: function(save){
       ACTIONS._outcomes = new FluidMap(save.outcomes);
       ACTIONS._targets = new FluidMap(save.targets);
+      ACTIONS._unknowns = new FluidMap(save.unknowns);
     },
   },
 
   unlock: function(battle, name, from) {
+    ACTIONS._unknowns.delete([battle, name]);
     var v = ACTIONS._outcomes.get([battle, name]);
     if (!v) {
       ACTIONS._outcomes.set([battle, name], "");
       ACTIONS._targets.set([battle, name], "");
-      CONSOLE.log.ability("unlocked: [" + name + "] on " + battle);
+      CONSOLE.log.action("unlocked: [" + name + "] on " + battle);
       ACTIONS.factory.save();
     }
 
@@ -35,14 +39,26 @@ const ACTIONS = {
     }
   },
 
+  add_unknown: function(battle, name) {
+    // check inventory and all
+    var v = ACTIONS._outcomes.get([battle, name]);
+    if (!v) {
+      if (! ACTIONS._unknowns.get([battle, name])) {
+        CONSOLE.log.action("unknown action discovered");
+        ACTIONS._unknowns.set([battle, name], true);
+        ACTIONS.factory.save();
+      }
+    }
+  },
+
   develop: function(battle, name, destination) {
-    if (!destination){
+    if (!destination) {
       destination = "tried";
     }
     ACTIONS.unlock(battle, name);
     var v = ACTIONS._outcomes.get([battle, name]);
     if (v != destination) {
-      CONSOLE.log.ability("developed: [" + name + "] on " + battle);
+      CONSOLE.log.action("developed: [" + name + "] on " + battle);
       ACTIONS._outcomes.set([battle, name], destination);
       ACTIONS._targets.set([battle, name], destination);
       ACTIONS.factory.save();
@@ -88,7 +104,12 @@ const ACTIONS = {
           starters.push([i, ""]);
         }
       }
-      return starters;
+      var unknowns = ACTIONS._unknowns.get([battle]);
+      var extras = [];
+      if (unknowns && unknowns.length > 0){
+        extras = Array(unknowns.length).fill(["?????", ""]);
+      }
+      return starters.concat(extras);
     },
   },
 
@@ -114,8 +135,8 @@ const ACTIONS = {
     },
 
     completion: function(battle) {
-      var total = Object.keys(ACTIONS._outcomes.get([battle])).length * 3;
-      var result = ACTIONS.score.score_battle(battle) / total;
+      var actions = ACTIONS._outcomes.length([battle]) + ACTIONS._unknowns.length([battle]);
+      var result = ACTIONS.score.score_battle(battle) / (3*actions);
       return Math.floor(result * 1000) / 10;
     },
 
@@ -173,7 +194,9 @@ const ACTIONS = {
           break;
         default:
           html[0] += "<br/> "
-          to_print.push([target, prefix + "&nbsp;&nbsp;"]);
+          if (target){
+            to_print.push([target, prefix + "&nbsp;&nbsp;"]);
+          }
           break;
       }
     },
