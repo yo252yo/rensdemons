@@ -29,7 +29,7 @@ class MenuScreen extends TextBox {
       super(d.left,d.top+d.height, d.width, d.height, d.padding);
 
       if (text) {
-        this.change_text(text, true);
+        this.change_text(text, true, true);
       }
   }
 }

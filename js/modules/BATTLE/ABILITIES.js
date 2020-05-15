@@ -127,18 +127,6 @@ const ABILITIES = {
   get_all_battles: function(){
     return Object.keys(ABILITIES._outcomes.get([]));
   },
-/*
-  add_ability_to_html: function(html, prefix, map_key, except){
-    for (var ability in ABILITIES._targets.get([battle])){
-      if(!(ability in except)){
-        var new_key = map_key.concat([ability]);
-
-        html += prefix + ability + " -> " + ABILITIES._targets.get(new_key) + " <br /> ";
-        html += ABILITIES.add_ability_to_html(html, prefix + "   ", new_key, []);
-        // Need to style the things from their outcomes
-      }
-    }
-  },*/
 
   display_tree: function(battle) {
     var html = "";
@@ -160,39 +148,27 @@ const ABILITIES = {
       var ability = pair[0];
       var prefix = pair[1];
       if (prefix){
-        html += prefix + "|-";
+        html += prefix + "|- ";
       }
-      html += ability.replace(' ', ''); // need to prevent the spacing to turning into <br /> per text treatment :/
-      // Need to style the things from their outcomes
+      html += ABILITIES.stylize(ability, battle);
 
-      console.log(pair);
       var target = ABILITIES._targets.get([battle, ability]);
         switch (target){
           case "":
-            html += "->???<br/> ";
+            html += " -> <i>?????</i><br/> ";
             break;
           case ABILITIES.WIN:
-            html += "->WIN<br/> ";
+            html += " -> <b>WIN</b><br/> ";
             break;
           case ABILITIES.LOSS:
-            html += "->LOSS<br/> ";
+            html += " -> <s>DEATH</s><br/> ";
             break;
           default:
             html += "<br/> "
-            console.log(target);
-            starters.push([target, prefix + ".."]);
+            starters.push([target, prefix + "&nbsp;&nbsp;"]);
             break;
         }
-        console.log(starters);
-//      html += " " + ability + " -> " + ABILITIES._targets.get([battle, ability]) + " <br /> ";
     }
-
-        console.log("A");
-            console.log(html);
-//    html += children()
-    // Need to call the children hierarhchically
-
-
 
     new MenuScreen("<b>" + battle + "</b> - " + ABILITIES.completion(battle) + "%<hr/>" + html );
   },

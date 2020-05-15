@@ -144,10 +144,14 @@ class TextBox extends TextElement {
       }
     }
 
-    change_text(text, instant) {
-      text = this.fill_words_from_dictionary(text);
-      this.pages = this.cut_to_pages(text);
-      this.process_for_dialog(text);
+    change_text(text, instant, skip_processing) {
+      if (skip_processing){
+        this.pages = [text];
+      } else {
+        text = this.fill_words_from_dictionary(text);
+        this.pages = this.cut_to_pages(text);
+        this.process_for_dialog(text);
+      }
 
       this.clear_html();
       TextBox.print_text(this, instant);
