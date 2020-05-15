@@ -78,6 +78,10 @@ class FluidMap {
   }
 
   length(key_list) {
-    return Object.keys(this.get(key_list)).length;
+    try {
+      return Object.keys(this.get(key_list)).length;
+    } catch (e) {
+      return 0;
+    }
   }
 }

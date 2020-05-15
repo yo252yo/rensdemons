@@ -104,11 +104,7 @@ const ACTIONS = {
           starters.push([i, ""]);
         }
       }
-      var unknowns = ACTIONS._unknowns.get([battle]);
-      var extras = [];
-      if (unknowns && unknowns.length > 0){
-        extras = Array(unknowns.length).fill(["?????", ""]);
-      }
+      var extras = Array(ACTIONS._unknowns.length([battle])).fill(["?????", ""]);
       return starters.concat(extras);
     },
   },
