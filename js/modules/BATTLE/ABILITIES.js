@@ -8,7 +8,10 @@ const ABILITIES = {
   WIN: "#WIN",
 
   save: function() {
-    DISK.set("abilities", {"outcomes": ABILITIES._outcomes.export()}, {"targets": ABILITIES._targets.export()});
+    DISK.set("abilities",
+     {"outcomes": ABILITIES._outcomes.export(),
+     "targets": ABILITIES._targets.export()}
+   );
   },
 
   import: function(save){
@@ -20,6 +23,7 @@ const ABILITIES = {
     var v = ABILITIES._outcomes.get([battle, name]);
     if (!v) {
       ABILITIES._outcomes.set([battle, name], "");
+      ABILITIES._targets.set([battle, name], "");
       CONSOLE.log.ability("unlocked: [" + name + "] on " + battle);
       ABILITIES.save();
     }
@@ -51,6 +55,7 @@ const ABILITIES = {
     if (v != destination) {
       CONSOLE.log.ability("developed: [" + name + "] on " + battle);
       ABILITIES._outcomes.set([battle, name], destination);
+      ABILITIES._targets.set([battle, name], destination);
       ABILITIES.save();
     }
 
@@ -122,27 +127,74 @@ const ABILITIES = {
   get_all_battles: function(){
     return Object.keys(ABILITIES._outcomes.get([]));
   },
+/*
+  add_ability_to_html: function(html, prefix, map_key, except){
+    for (var ability in ABILITIES._targets.get([battle])){
+      if(!(ability in except)){
+        var new_key = map_key.concat([ability]);
 
-  display_tree: function(battle) {
-    var html = "";
-    var precursor = {};
-    for (var i in ABILITIES._outcomes.get([battle])){
-      var t = ABILITIES._outcomes.get([battle,i]);
-      if (!(t in precursor)){
-        precursor[t] = [];
-      }
-      precursor[t].push(i);
-    }
-    for (var i in ABILITIES._outcomes.get([battle])){
-      if(!(i in precursor)){
-        html += i + " -> " + ABILITIES._outcomes.get([battle, i]) + " <br /> ";
-        // Need to call the children hierarhchically
+        html += prefix + ability + " -> " + ABILITIES._targets.get(new_key) + " <br /> ";
+        html += ABILITIES.add_ability_to_html(html, prefix + "   ", new_key, []);
         // Need to style the things from their outcomes
       }
     }
+  },*/
 
-// I NEED TO POPULATE ABILITIES._targets
-    new MenuScreen("<b>" + battle + "</b> - " + ABILITIES.completion(battle) + "% <hr />" + html );
+  display_tree: function(battle) {
+    var html = "";
+    var ancestors = new FluidMap();
+
+    for (var i in ABILITIES._targets.get([battle])){
+      var t = ABILITIES._targets.get([battle,i]);
+      ancestors.add([t], i);
+    }
+    var starters = [];
+    for (var i in ABILITIES._targets.get([battle])){
+      if(!(i in ancestors.get([]))){
+        starters.push([i, ""]);
+      }
+    }
+
+    while(starters.length > 0) {
+      var pair = starters.pop();
+      var ability = pair[0];
+      var prefix = pair[1];
+      if (prefix){
+        html += prefix + "|-";
+      }
+      html += ability.replace(' ', ''); // need to prevent the spacing to turning into <br /> per text treatment :/
+      // Need to style the things from their outcomes
+
+      console.log(pair);
+      var target = ABILITIES._targets.get([battle, ability]);
+        switch (target){
+          case "":
+            html += "->???<br/> ";
+            break;
+          case ABILITIES.WIN:
+            html += "->WIN<br/> ";
+            break;
+          case ABILITIES.LOSS:
+            html += "->LOSS<br/> ";
+            break;
+          default:
+            html += "<br/> "
+            console.log(target);
+            starters.push([target, prefix + ".."]);
+            break;
+        }
+        console.log(starters);
+//      html += " " + ability + " -> " + ABILITIES._targets.get([battle, ability]) + " <br /> ";
+    }
+
+        console.log("A");
+            console.log(html);
+//    html += children()
+    // Need to call the children hierarhchically
+
+
+
+    new MenuScreen("<b>" + battle + "</b> - " + ABILITIES.completion(battle) + "%<hr/>" + html );
   },
 
 };
