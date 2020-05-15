@@ -1,12 +1,12 @@
 const INTERFACE = {
   display_experience_menu: function() {
-    var battles = ABILITIES.get_all_battles();
+    var battles = ACTIONS.get_all_battles();
     var battles_options = [];
     for(var i in battles) {
       (function(index){
         battles_options.push({
-          "text": battles[index] + " (" + ABILITIES.completion(battles[index]) + "%)",
-          "effect": function(){ ABILITIES.display_tree(battles[index]); }
+          "text": battles[index] + " (" + ACTIONS.score.completion(battles[index]) + "%)",
+          "effect": function(){ ACTIONS.display.display_tree(battles[index]); }
         });
       }(i));
     };
@@ -15,7 +15,7 @@ const INTERFACE = {
     battles_options.push({"text": "", "effect": function(){}, "keep_open": true});
     battles_options.push({"text": "Back", "effect": "##BACK"});
 
-    new CenteredTextMenu(`<b>Ren</b> - level ` + ABILITIES.level() + ` (` + ABILITIES.total_xp() + ` xp)`,
+    new CenteredTextMenu(`<b>Ren</b> - level ` + ACTIONS.score.level() + ` (` + ACTIONS.score.total_xp() + ` xp)`,
       battles_options);
   },
 

@@ -102,7 +102,7 @@ new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
 
 new Module("MAP_UTIL");
-IMPORTS.modules['MAP_UTIL'].child_module("BATTLE/ABILITIES");
+IMPORTS.modules['MAP_UTIL'].child_module("BATTLE/ACTIONS");
 
 new Module("STRING_UTILS");
 IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");

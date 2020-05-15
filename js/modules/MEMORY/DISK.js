@@ -46,7 +46,7 @@ const DISK = {
       }
 
       if(DISK._CONTENT['abilities']){
-        ABILITIES.import(DISK._CONTENT['abilities']);
+        ACTIONS.factory.import(DISK._CONTENT['abilities']);
       }
     },
 

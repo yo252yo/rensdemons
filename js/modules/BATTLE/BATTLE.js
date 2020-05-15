@@ -11,7 +11,7 @@ const BATTLE = {
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        if (! ABILITIES.check_unlocked(BATTLE.current_battle, i)) {
+        if (! ACTIONS.check_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
 
@@ -28,7 +28,7 @@ const BATTLE = {
             }
             return true;
           };
-          var menu_entry = ABILITIES.stylize(index, BATTLE.current_battle);
+          var menu_entry = ACTIONS.display.stylize(index, BATTLE.current_battle);
           options.push({"text": menu_entry, "effect": f});
         })(i);
 
@@ -110,7 +110,7 @@ const BATTLE = {
       start: function(name, callback, previous_position) {
         BATTLE.builder.clear();
         IO.control.cede();
-        BATTLE.abilities_before = ABILITIES.score_battle(name);
+        BATTLE.abilities_before = ACTIONS.score.score_battle(name);
 
         if (!previous_position) {
           previous_position = LEVEL.factory.export();
@@ -148,9 +148,9 @@ const BATTLE = {
 
     teardown: {
       start: function(ending) {
-        var exp_won = ABILITIES.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
+        var exp_won = ACTIONS.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
         if(exp_won > 0) {
-           var text = "All things considered, styou still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
+           var text = "All things considered, you still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
            TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});
         } else {
           BATTLE.builder.teardown.start_teardown(ending);
