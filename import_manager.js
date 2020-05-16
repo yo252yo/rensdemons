@@ -84,8 +84,8 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
-new Module("DEBUG");
-new Module("RANDOM");
+new Module("UTILS/DEBUG");
+new Module("UTILS/RANDOM");
 new Module("GRAPHICS/SCREEN");
 new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
@@ -101,11 +101,11 @@ new Module("LEVEL/LEVEL");
 new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
 
-new Module("MAP_UTIL");
-IMPORTS.modules['MAP_UTIL'].child_module("BATTLE/ACTIONS");
+new Module("UTILS/MAP");
+IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/ACTIONS");
 
-new Module("STRING_UTILS");
-IMPORTS.modules['STRING_UTILS'].child_class("Generation/Markov");
+new Module("UTILS/STRING");
+IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
 IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
 IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
 
