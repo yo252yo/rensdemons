@@ -23,6 +23,8 @@ const INTERFACE = {
     new CenteredTextMenu("",
                   [
                     {"text": "Experience", "effect": function(){ INTERFACE.display_experience_menu(); }},
+                    {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
+                    {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
                     {"text": "", "effect": function(){}, "keep_open": true},
                     {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); }},
                     {"text": "Back to game", "effect": "##CLOSE"},

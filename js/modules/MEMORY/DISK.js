@@ -48,6 +48,16 @@ const DISK = {
       if(DISK._CONTENT['actions']){
         ACTIONS.factory.import(DISK._CONTENT['actions']);
       }
+
+      if(DISK._CONTENT['abilities']){
+        ABILITIES.factory.import(DISK._CONTENT['abilities']);
+      } else {
+        ABILITIES.factory.make_new();
+      }
+
+      if(DISK._CONTENT['inventory']){
+        INVENTORY.factory.import(DISK._CONTENT['inventory']);
+      }
     },
 
     _load_storage() {
