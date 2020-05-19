@@ -1,6 +1,7 @@
 // use (Color)
 
 const PALETTE = {
+  _DISK_KEY: "palette",
   _COLORS: {},
 
   battle_menu_background: function() {
@@ -113,11 +114,20 @@ const PALETTE = {
   },
 
   factory: {
+    initialize: function() {
+      var save = DISK.get(PALETTE._DISK_KEY);
+      if(save){
+        PALETTE.factory.import(save);
+      } else {
+        PALETTE.factory.make_new();
+      }
+    },
+
     make_new: function() {
       // TODO: at some point i want to pick random instead
       PALETTE.generate.pick_harmonized_palette();
 
-      DISK.set('palette', PALETTE.factory.export());
+      DISK.set(PALETTE._DISK_KEY, PALETTE.factory.export());
 
       PALETTE.color_interface();
     },
@@ -131,6 +141,7 @@ const PALETTE = {
     },
 
     import: function(save) {
+      if(!save) return;
       for (var key in save) {
         PALETTE._COLORS[key] = Color.import(save[key]);
       }

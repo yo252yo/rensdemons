@@ -53,6 +53,11 @@ EFFECTS[pray] = function() {
 };
 make_player_action(pray);
 
+// ===================
+// =================== FREE ABILITIES
+// ===================
+ACTIONS.unlock(self, back_away);
+ACTIONS.unlock(self, call_help);
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

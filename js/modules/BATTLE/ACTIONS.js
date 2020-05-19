@@ -2,6 +2,7 @@
 // An entry = it leads somewhere
 // Entry with DOOM
 const ACTIONS = {
+  _DISK_KEY: "actions",
   _outcomes: new FluidMap(),
   _targets: new FluidMap(),
   _unknowns: new FluidMap(),
@@ -9,8 +10,12 @@ const ACTIONS = {
   WIN: "#WIN",
 
   factory: {
+    initialize: function() {
+      ACTIONS.factory.import(DISK.get(ACTIONS._DISK_KEY));
+    },
+
     save: function() {
-      DISK.set("actions", {
+      DISK.set(ACTIONS._DISK_KEY, {
        "outcomes": ACTIONS._outcomes.export(),
        "targets": ACTIONS._targets.export(),
        "unknowns": ACTIONS._unknowns.export()
@@ -18,6 +23,7 @@ const ACTIONS = {
     },
 
     import: function(save){
+      if(!save) return;
       ACTIONS._outcomes = new FluidMap(save.outcomes);
       ACTIONS._targets = new FluidMap(save.targets);
       ACTIONS._unknowns = new FluidMap(save.unknowns);

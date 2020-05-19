@@ -8,14 +8,20 @@ class SaveFile {
 }
 
 const SAVE = {
+  _DISK_KEY: "saves",
   slots: [],
 
   factory: {
+    initialize: function() {
+      SAVE.factory.import(DISK.get(SAVE._DISK_KEY));
+    },
+
     export: function(){
       return SAVE.slots;
     },
 
     import: function(slots){
+      if(!slots) return;
       return SAVE.slots = slots;
     },
   },
@@ -39,7 +45,7 @@ const SAVE = {
       key: key,
       save: new SaveFile(),
     };
-    DISK.set("saves", SAVE.factory.export());
+    DISK.set(SAVE._DISK_KEY, SAVE.factory.export());
     CONSOLE.log.save("Saved in save slot " + index);
   },
 

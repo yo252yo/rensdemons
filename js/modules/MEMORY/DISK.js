@@ -29,35 +29,12 @@ const DISK = {
     },
 
     _restore_previous_state() {
-      if(DISK._CONTENT['saves']){
-        SAVE.factory.import(DISK._CONTENT['saves']);
-      }
-
-      if(DISK._CONTENT['palette']){
-        PALETTE.factory.import(DISK._CONTENT['palette']);
-      } else {
-        PALETTE.factory.make_new();
-      }
-
-      if(DISK._CONTENT['dictionary']){
-        DICTIONARY.factory.import(DISK._CONTENT['dictionary']);
-      } else {
-        DICTIONARY.factory.make_new();
-      }
-
-      if(DISK._CONTENT['actions']){
-        ACTIONS.factory.import(DISK._CONTENT['actions']);
-      }
-
-      if(DISK._CONTENT['abilities']){
-        ABILITIES.factory.import(DISK._CONTENT['abilities']);
-      } else {
-        ABILITIES.factory.make_new();
-      }
-
-      if(DISK._CONTENT['inventory']){
-        INVENTORY.factory.import(DISK._CONTENT['inventory']);
-      }
+      SAVE.factory.initialize();
+      PALETTE.factory.initialize();
+      DICTIONARY.factory.initialize();
+      ACTIONS.factory.initialize();
+      ABILITIES.factory.initialize();
+      INVENTORY.factory.initialize();
     },
 
     _load_storage() {
