@@ -114,15 +114,6 @@ const PALETTE = {
   },
 
   factory: {
-    initialize: function() {
-      var save = DISK.get(PALETTE._DISK_KEY);
-      if(save){
-        PALETTE.factory.import(save);
-      } else {
-        PALETTE.factory.make_new();
-      }
-    },
-
     make_new: function() {
       // TODO: at some point i want to pick random instead
       PALETTE.generate.pick_harmonized_palette();
@@ -141,7 +132,6 @@ const PALETTE = {
     },
 
     import: function(save) {
-      if(!save) return;
       for (var key in save) {
         PALETTE._COLORS[key] = Color.import(save[key]);
       }

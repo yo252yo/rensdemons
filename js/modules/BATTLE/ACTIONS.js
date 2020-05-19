@@ -10,10 +10,6 @@ const ACTIONS = {
   WIN: "#WIN",
 
   factory: {
-    initialize: function() {
-      ACTIONS.factory.import(DISK.get(ACTIONS._DISK_KEY));
-    },
-
     save: function() {
       DISK.set(ACTIONS._DISK_KEY, {
        "outcomes": ACTIONS._outcomes.export(),
@@ -23,7 +19,6 @@ const ACTIONS = {
     },
 
     import: function(save){
-      if(!save) return;
       ACTIONS._outcomes = new FluidMap(save.outcomes);
       ACTIONS._targets = new FluidMap(save.targets);
       ACTIONS._unknowns = new FluidMap(save.unknowns);

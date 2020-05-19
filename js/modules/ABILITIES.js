@@ -4,24 +4,14 @@ const ABILITIES = {
   _abilities: new FluidMap(),
 
   factory: {
-    initialize: function() {
-      var save = DISK.get(ABILITIES._DISK_KEY);
-      if(save){
-        ABILITIES.factory.import(save);
-      } else {
-        ABILITIES.factory.make_new();
-      }
-    },
-
     save: function() {
       DISK.set(ABILITIES._DISK_KEY, {
-       "abilities": ABILITIES._abilities.export()
+       "content": ABILITIES._abilities.export()
      });
     },
 
     import: function(save) {
-      if(!save) return;
-      ABILITIES._abilities = new FluidMap(save.abilities);
+      ABILITIES._abilities = new FluidMap(save["content"]);
     },
 
     make_new: function() {

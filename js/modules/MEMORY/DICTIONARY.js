@@ -45,15 +45,6 @@ const DICTIONARY = {
   },
 
   factory: {
-    initialize: function() {
-      var save = DISK.get(DICTIONARY._DISK_KEY);
-      if(save){
-        DICTIONARY.factory.import(save);
-      } else {
-        DICTIONARY.factory.make_new();
-      }
-    },
-
     make_new: function() {
       (new DictionaryGenerator()).make_new();
       DISK.set(DICTIONARY._DISK_KEY, DICTIONARY.factory.export());
@@ -64,7 +55,6 @@ const DICTIONARY = {
     },
 
     import: function(dictionary) {
-      if(!dictionary) return;
       DICTIONARY._DICTIONARY = dictionary;
     },
   },

@@ -12,16 +12,11 @@ const SAVE = {
   slots: [],
 
   factory: {
-    initialize: function() {
-      SAVE.factory.import(DISK.get(SAVE._DISK_KEY));
-    },
-
     export: function(){
       return SAVE.slots;
     },
 
     import: function(slots){
-      if(!slots) return;
       return SAVE.slots = slots;
     },
   },
