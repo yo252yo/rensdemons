@@ -28,12 +28,15 @@ const DISK = {
         DISK._record_to_storage();
     },
 
+    // Be careful, eval is evil
     _initialize: function(module_name) {
       var mod = eval(module_name);
+      if (!mod || !mod.factory) return;
+
       var save = DISK.get(mod._DISK_KEY);
-      if(save && mod.factory && mod.factory.import) {
+      if(save && mod.factory.import) {
         mod.factory.import(save);
-      } else if (mod.factory && mod.factory.make_new) {
+      } else if (mod.factory.make_new) {
         mod.factory.make_new();
       }
     },
