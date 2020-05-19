@@ -26,4 +26,8 @@ const INVENTORY = {
     },
   },
 
+  has_object: function(name) {
+    return INVENTORY._inventory.get([name]);
+  },
+
 }

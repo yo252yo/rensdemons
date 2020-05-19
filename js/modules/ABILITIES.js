@@ -31,4 +31,8 @@ const ABILITIES = {
     },
   },
 
+  has_ability: function(name) {
+    return ABILITIES._abilities.get([name]);
+  },
+
 }

@@ -45,6 +45,11 @@ const BATTLE = {
     add: function(name, f) {
       BATTLE._player_actions[name] = f;
       ACTIONS.declare(BATTLE.current_battle, name);
+
+      // Unlock base actions in our inventory
+      if(ABILITIES.has_ability(name) || INVENTORY.has_object(name)){
+        ACTIONS.unlock(BATTLE.current_battle, name);
+      }
     },
 
     remove: function(name) {
