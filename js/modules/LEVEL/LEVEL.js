@@ -82,10 +82,24 @@ const LEVEL = {
     if (index > -1) {
       LEVEL.visual_elements.splice(index, 1);
     }
+    delete object;
   },
 
   index_object: function(object) {
       LEVEL.objects.push(object);
+  },
+
+  remove_object: function(object) {
+      if (object.visual_element){
+        object.visual_element.destroy();
+      }
+      for (var i in LEVEL.objects){
+        if (LEVEL.objects[i] == object){
+            delete LEVEL.objects[i];
+        }
+      }
+      delete object;
+      LEVEL.redraw();
   },
 
   is_walkable: function(x, y, initiator) {

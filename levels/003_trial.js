@@ -110,9 +110,7 @@ new S_Floor(6200,2875,775,75);
 
 
 var battleCallback = function() {
-  TextBannerSequence.make([
-    "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened.",
-  ], function(){ LEVEL.setup("demoend"); });
+  LEVEL.remove_object(hp);
 }
 
 var hp_menu = function () {
