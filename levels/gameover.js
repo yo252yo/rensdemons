@@ -32,4 +32,4 @@ if (BATTLE.api.can_reload()) {
 options.push({"text": "Load", "effect": function(){ SAVE.print.load_menu(); }});
 options.push({"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); }});
 
-new CenteredTextMenu("", options);
+new CenteredTextMenu("This is not how you die.<br/>This is not how it's supposed to be.<br/>Your quest goes on.", options);
