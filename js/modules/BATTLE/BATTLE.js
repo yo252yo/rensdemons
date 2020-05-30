@@ -55,6 +55,12 @@ const BATTLE = {
     remove: function(name) {
       delete BATTLE._player_actions[name];
     },
+
+    register_map: function(map) {
+      for(var i in map) {
+        BATTLE.player_actions.add(i, map[i]);
+      }
+    },
   },
 
   monster_actions: {
