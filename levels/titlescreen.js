@@ -27,6 +27,7 @@ setTimeout(function(){
 new CenteredTextMenu("",
               [
                 {"text": "New game", "effect": function(){ LEVEL.setup("000_introduction"); }},
+                {"text": "$ALPHA$_ go to new content", "effect": function(){ LEVEL.setup("002_trialinstruction"); }},
                 {"text": "Load", "effect": function(){ SAVE.print.load_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); }},
              ]);
