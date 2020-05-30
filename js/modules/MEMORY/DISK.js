@@ -48,6 +48,7 @@ const DISK = {
       DISK._initialize("ACTIONS");
       DISK._initialize("ABILITIES");
       DISK._initialize("INVENTORY");
+      DISK._initialize("STATS");
     },
 
     _load_storage: function() {

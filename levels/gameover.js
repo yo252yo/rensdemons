@@ -38,3 +38,5 @@ var flavortext = RANDOM.pick(
   "There's another way.",
   "Your quest goes on."]);
 new CenteredTextMenu("<i>"+flavortext+"</i>", options);
+
+STATS.record.death();
