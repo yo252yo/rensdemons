@@ -28,7 +28,7 @@ const ACTIONS = {
   unlock: function(battle, name, from) {
     ACTIONS._unknowns.delete([battle, name]);
     var v = ACTIONS._outcomes.get([battle, name]);
-    if (!v) {
+    if (v == null) {
       ACTIONS._outcomes.set([battle, name], "");
       ACTIONS._targets.set([battle, name], "");
       CONSOLE.log.action("unlocked: [" + name + "] on " + battle);
@@ -43,9 +43,9 @@ const ACTIONS = {
   declare: function(battle, name) {
     // check inventory and all
     var v = ACTIONS._outcomes.get([battle, name]);
-    if (!v) {
+    if (v == null) {
       if (! ACTIONS._unknowns.get([battle, name])) {
-        CONSOLE.log.action("unknown action discovered");
+        CONSOLE.log.action("unknown action discovered ([" + name + "])");
         ACTIONS._unknowns.set([battle, name], true);
         ACTIONS.factory.save();
       }

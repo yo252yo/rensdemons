@@ -104,7 +104,9 @@ class TextMenu extends TextElement {
           this.html_menu.appendChild(current_item);
       }
 
-      this.html.scrollTo(0, selected_element.offsetTop - 200);
+      if (selected_element && selected_element.offsetTop){
+        this.html.scrollTo(0, selected_element.offsetTop - 200);
+      }
     }
 
     close() {

@@ -15,7 +15,6 @@ const BATTLE = {
           continue;
         }
 
-        // Put the undiscovered first
         (function(index){
           var f = function() {
             var text = BATTLE._player_actions[index]();
@@ -32,9 +31,23 @@ const BATTLE = {
           var menu_entry = ACTIONS.display.stylize(index, BATTLE.current_battle);
           options.push({"text": menu_entry, "effect": f});
         })(i);
-
       }
-      new BattleMenu("", options);
+
+      // Order the battle menu options.
+      var options_winning = [];
+      var options_unknown = [];
+      var options_others = [];
+      for (var i in options){
+          var o = options[i];
+          if(o.text.startsWith("<b>")){
+            options_winning.push(o);
+          } else if (o.text.startsWith("<i>") || !(o.text.startsWith("<"))){
+            options_unknown.push(o);
+          } else {
+            options_others.push(o);
+          }
+      }
+      new BattleMenu("", options_winning.concat(options_unknown).concat(options_others));
     },
 
     monster: function(text) {
