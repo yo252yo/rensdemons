@@ -8,6 +8,10 @@ const SCREEN = {
     return Math.min(window.outerHeight, window.innerHeight, document.documentElement.clientHeight);
   },
 
+  real_ratio: function() {
+    return screen.height / SCREEN.height();
+  },
+
   scroll_screen_to_character: function() {
     if (DEBUG.DEACTIVATE_SCROLL) {
       return;

@@ -20,6 +20,12 @@ class VisualElement {
       return false;
     }
 
+    adjust_height(h) {
+      this.height = h;
+      this.container.style.height = h + "px";
+      this.refresh_position();
+    }
+
     adjust_dimensions(w,h) {
       this.height = h;
       this.width = w;

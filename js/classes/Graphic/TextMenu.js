@@ -42,6 +42,18 @@ class TextMenu extends TextElement {
         this.selected = 0;
         this.print_menu();
         this.last_executed = (new Date());
+        this.handle_overflow(y,h);
+    }
+
+    // this was pretty hard, I wouldn't be surprised if it's wrong.
+    handle_overflow(y,h) {
+      var realY = y - h;
+      var max_height = SCREEN.height() - realY;
+      var new_height_scaled = Math.floor(0.9 * max_height / SCREEN.real_ratio());
+      if (this.html.clientHeight > max_height) {
+        this.html.style.height = new_height_scaled + "px";
+        this.html.style.overflow = "scroll";
+      }
     }
 
     print_menu() {
@@ -119,6 +131,7 @@ class TextMenu extends TextElement {
 
     select(choice) {
       this.selected = parseInt(choice);
+      // scrolltoselected
       this.update_menu();
     }
 
@@ -196,7 +209,7 @@ class BattleMenu extends TextMenu {
         return {
             top: Math.floor(SCREEN.height() * 0.4),
             left: Math.floor(SCREEN.width() * 0.4),
-            height: Math.floor(SCREEN.height() * 0.5),
+            height: 0,
             width: Math.floor(SCREEN.width() * 0.5),
             padding: 10,
             };
@@ -204,7 +217,7 @@ class BattleMenu extends TextMenu {
         return {
             top: Math.floor(SCREEN.height() * 0.6),
             left: Math.floor(SCREEN.width() * 0.6),
-            height: Math.floor(SCREEN.height() * 0.3),
+            height: 0,
             width: Math.floor(SCREEN.width() * 0.3),
             padding: 30,
             };

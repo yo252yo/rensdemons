@@ -2,6 +2,8 @@
 
 LEVEL.initialize_with_character(150, 150);
 
+new S_SavePoint(275, 120);
+
 // Top right
 new S_Floor(50,250,200,200);
 new S_Floor(125,600,75,375);

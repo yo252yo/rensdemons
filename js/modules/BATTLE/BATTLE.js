@@ -15,6 +15,7 @@ const BATTLE = {
           continue;
         }
 
+        // Put the undiscovered first
         (function(index){
           var f = function() {
             var text = BATTLE._player_actions[index]();

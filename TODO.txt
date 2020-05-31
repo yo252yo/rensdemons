@@ -4,8 +4,6 @@ zindex is sometimes broken on mobile
 
 dont forget to do a proper title screen in particula for mobile
 
-what to do when menu overflows the screen
-
 escape should dismisses escapable menus (like the escape menu)
 
 text banner is too small and skewed on the left :/
