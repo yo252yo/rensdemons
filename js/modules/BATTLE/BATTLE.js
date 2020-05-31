@@ -4,7 +4,7 @@ const BATTLE = {
   _monster_actions: [],
   current_battle: "",
   previous_position: undefined,
-  callback: undefined,
+  win_callback: undefined,
   abilities_before: 0,
 
   turn_factory: {
@@ -56,24 +56,57 @@ const BATTLE = {
   },
 
   player_actions: {
-    add: function(name, f) {
-      BATTLE._player_actions[name] = f;
-      ACTIONS.declare(BATTLE.current_battle, name);
+    add: function(action_object) {
+      BATTLE._player_actions[action_object.name] = function(){
+        action_object.function();
+        return action_object.description;
+      };
+      ACTIONS.declare(BATTLE.current_battle, action_object.name);
 
       // Unlock base actions in our inventory
-      if(ABILITIES.has_ability(name) || INVENTORY.has_object(name)){
-        ACTIONS.unlock(BATTLE.current_battle, name);
+      if(ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
+        ACTIONS.unlock(BATTLE.current_battle, action_object.name);
       }
+    },
+
+    _add_helper: function(action_object, result_enum, result_function) {
+      action_object.function = function(){
+        ACTIONS.develop(BATTLE.current_battle, action_object.name, result_enum);
+        result_function(action_object.effect);
+        if(action_object.extra_function){
+          action_object.extra_function();
+        }
+      }
+
+      BATTLE.player_actions.add(action_object);
+    },
+
+    add_losing_action: function(action_object) {
+      return BATTLE.player_actions._add_helper(
+        action_object,
+        ACTIONS.LOSS,
+        BATTLE.monster_actions.prepare_loss
+      );
+    },
+
+    add_escape_action: function(action_object) {
+      return BATTLE.player_actions._add_helper(
+        action_object,
+        ACTIONS.LOSS,
+        BATTLE.monster_actions.prepare_escape
+      );
+    },
+
+    add_winning_action: function(action_object) {
+      return BATTLE.player_actions._add_helper(
+        action_object,
+        ACTIONS.WIN,
+        BATTLE.monster_actions.prepare_win
+      );
     },
 
     remove: function(name) {
       delete BATTLE._player_actions[name];
-    },
-
-    register_map: function(map) {
-      for(var i in map) {
-        BATTLE.player_actions.add(i, map[i]);
-      }
     },
   },
 
@@ -139,7 +172,7 @@ const BATTLE = {
     clear: function() {
       BATTLE._player_actions = [];
       BATTLE._monster_actions = [];
-      BATTLE.callback = undefined;
+      BATTLE.win_callback = undefined;
       BATTLE.previous_position = undefined;
       BATTLE.current_battle = "";
     },
@@ -176,7 +209,7 @@ const BATTLE = {
         BATTLE.current_battle = name;
 
         if(callback) {
-          BATTLE.callback = callback;
+          BATTLE.win_callback = callback;
         }
 
         new Import("battles/" + name);
@@ -228,8 +261,8 @@ const BATTLE = {
       win: function() {
         LEVEL.factory.import(BATTLE.previous_position);
 
-        if (BATTLE.callback){
-          setTimeout(BATTLE.callback, 200);
+        if (BATTLE.win_callback){
+          setTimeout(BATTLE.win_callback, 200);
         }
       },
     },
@@ -237,7 +270,7 @@ const BATTLE = {
 
   api: {
     reload: function(){
-      BATTLE.api.make(BATTLE.current_battle, BATTLE.callback, BATTLE.previous_position);
+      BATTLE.api.make(BATTLE.current_battle, BATTLE.win_callback, BATTLE.previous_position);
     },
 
     can_reload: function(){

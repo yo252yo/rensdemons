@@ -12,39 +12,41 @@ var _PLAYER_ACTIONS = {};
 var pray = "Pray";
 var swear_loyalty = "Swear loyalty";
 
-_PLAYER_ACTIONS[ABILITY.Flee] = function() {
-  ACTIONS.unlock(battle_name, pray);
-  ACTIONS.develop(battle_name, ABILITY.Flee, ACTIONS.LOSS); // this should be automated its pretty forgettable.
-  BATTLE.monster_actions.prepare_escape("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
-  return ["You try to go further back, but you trip and fall on the ground."];
+BATTLE.player_actions.add_escape_action({
+  name: ABILITY.Flee,
+  description: ["You try to go further back, but you trip and fall on the ground."],
+  effect: "The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.",
+  extra_function: function(){ACTIONS.unlock(battle_name, pray);},
+});
+
+BATTLE.player_actions.add_losing_action({
+  name: ABILITY.CallHelp,
+  description: ["You shout, terrified, in hope that someone around will help.",
+                "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
+                "The children around are trembling and exchanging frightened looks, too afraid for their own lives to do anything."],
+  effect: "The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.",
+  extra_function: function(){ACTIONS.unlock(battle_name, pray);},
+});
+
+var unlock_swear_loyalty = function() {
+  BATTLE.player_actions.add_winning_action({
+    name: swear_loyalty,
+    description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""],
+    effect: "Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.",
+  });
 };
 
+BATTLE.player_actions.add({
+  name: pray,
+  description: ["You close your eyes and focus on your faith.",
+                "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
+  function: function() {
+    ACTIONS.unlock(battle_name, swear_loyalty, pray);
+    unlock_swear_loyalty();
+    BATTLE.player_actions.remove(pray);
+  },
+});
 
-_PLAYER_ACTIONS[ABILITY.CallHelp] = function() {
-  ACTIONS.unlock(battle_name, pray);
-  ACTIONS.develop(battle_name, ABILITY.CallHelp, ACTIONS.LOSS); // this should be automated its pretty forgettable.
-  BATTLE.monster_actions.prepare_loss("The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.");
-  return ["You shout, terrified, in hope that someone around will help.",
-         "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
-         "The children around are trembling and exchanging frightened looks, too afraid for their own lives to do anything."];
-};
-
-var swear_loyalty_function = function () {
-  ACTIONS.develop(battle_name, swear_loyalty, ACTIONS.WIN);
-  BATTLE.monster_actions.prepare_win("Suddenly, an eerie light basks the room. The snake grows stiff and stops moving. The creature is dead.");
-  return ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""];
-};
-
-_PLAYER_ACTIONS[pray] = function() {
-  ACTIONS.unlock(battle_name, swear_loyalty, pray);
-  BATTLE.player_actions.add(swear_loyalty, swear_loyalty_function);
-  BATTLE.player_actions.remove(pray);
-
-  return ["You close your eyes and focus on your faith.",
-          "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""];
-};
-
-BATTLE.player_actions.register_map(_PLAYER_ACTIONS);
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
