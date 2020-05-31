@@ -1,3 +1,8 @@
+const ABILITY = {
+  Flee: "Flee",
+  CallHelp: "Call help",
+}
+
 
 const ABILITIES = {
   _DISK_KEY: "abilities",
@@ -15,8 +20,8 @@ const ABILITIES = {
     },
 
     make_new: function() {
-      ABILITIES._abilities.set(["Back away"], true);
-      ABILITIES._abilities.set(["Call help"], true);
+      ABILITIES._abilities.set([ABILITY.Flee], true);
+      ABILITIES._abilities.set([ABILITY.CallHelp], true);
     },
   },
 

@@ -2,6 +2,9 @@ characters
   http://untamed.wild-refuge.net/rmxpresources.php?characters
   https://pipoya.itch.io/pipoya-free-rpg-character-sprites-32x32
 
+Monsters:
+  http://www.junkie-chain.jp/list.html
+
 elements
   https://kenney.nl/assets/background-elements
   https://devilsworkshop.itch.io/low-poly-3d-and-pixel-2d-rpg-game-assets
@@ -16,3 +19,8 @@ directories:
   https://letsmakegames.org/resources/art-assets-for-game-developers/
   https://github.com/Kavex/GameDev-Resources
   https://craftpix.net/
+
+https://itch.io/game-assets/free/tag-monsters/tag-rpgmaker
+
+https://opengameart.org/users/justin-nichol
+https://opengameart.org/users/redshrike

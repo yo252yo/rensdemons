@@ -10,20 +10,18 @@ var _PLAYER_ACTIONS = {};
 // ===================
 
 var pray = "Pray";
-var back_away = "Back away";
-var call_help = "Call help";
 var swear_loyalty = "Swear loyalty";
 
-_PLAYER_ACTIONS[back_away] = function() {
+_PLAYER_ACTIONS[ABILITY.Flee] = function() {
   ACTIONS.unlock(battle_name, pray);
-  ACTIONS.develop(battle_name, back_away, ACTIONS.LOSS);
+  ACTIONS.develop(battle_name, ABILITY.Flee, ACTIONS.LOSS);
   BATTLE.monster_actions.prepare_loss("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
   return ["You try to go further back, but you trip and fall on the ground."];
 };
 
-_PLAYER_ACTIONS[call_help] = function() {
+_PLAYER_ACTIONS[ABILITY.CallHelp] = function() {
   ACTIONS.unlock(battle_name, pray);
-  ACTIONS.develop(battle_name, call_help, ACTIONS.LOSS);
+  ACTIONS.develop(battle_name, ABILITY.CallHelp, ACTIONS.LOSS);
   BATTLE.monster_actions.prepare_loss("The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.");
   return ["You shout, terrified, in hope that someone around will help.",
          "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
