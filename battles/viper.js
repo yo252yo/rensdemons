@@ -15,7 +15,7 @@ var swear_loyalty = "Swear loyalty";
 _PLAYER_ACTIONS[ABILITY.Flee] = function() {
   ACTIONS.unlock(battle_name, pray);
   ACTIONS.develop(battle_name, ABILITY.Flee, ACTIONS.LOSS); // this should be automated its pretty forgettable.
-  BATTLE.monster_actions.prepare_loss("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
+  BATTLE.monster_actions.prepare_escape("The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.");
   return ["You try to go further back, but you trip and fall on the ground."];
 };
 

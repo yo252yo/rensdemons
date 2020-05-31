@@ -96,6 +96,14 @@ const BATTLE = {
       );
     },
 
+    prepare_escape: function (doom){
+      BATTLE.monster_actions.make_unique(
+        function() {
+          TextBannerSequence.make([doom], BATTLE.operations.escape);
+        }
+      );
+    },
+
     prepare_win: function (text){
       BATTLE.monster_actions.make_unique(
         function() {
@@ -116,6 +124,10 @@ const BATTLE = {
 
     lose: function() {
       BATTLE.builder.teardown.start(BATTLE.builder.teardown.loss);
+    },
+
+    escape: function() {
+      BATTLE.builder.teardown.start(BATTLE.builder.teardown.escape);
     },
 
     win: function(text) {
@@ -207,6 +219,10 @@ const BATTLE = {
 
       loss: function() {
         LEVEL.setup("gameover");
+      },
+
+      escape: function() {
+        LEVEL.factory.import(BATTLE.previous_position);
       },
 
       win: function() {
