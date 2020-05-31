@@ -69,7 +69,7 @@ class TextMenu extends TextElement {
 
     update_menu() {
       this.html_menu.innerHTML = "";
-
+      var selected_element = null;
       for (var i in this.options){
           var current_item = document.createElement('div');
           // Closure because weird loop behavior.
@@ -95,6 +95,7 @@ class TextMenu extends TextElement {
               html += "&nbsp;";
           } else if (i == this.selected){
               html += ">";
+              selected_element = current_item;
           } else {
               html += "_";
           }
@@ -102,6 +103,8 @@ class TextMenu extends TextElement {
           current_item.innerHTML = html + this.options[i]["text"];
           this.html_menu.appendChild(current_item);
       }
+
+      this.html.scrollTo(0, selected_element.offsetTop - 200);
     }
 
     close() {
@@ -131,7 +134,6 @@ class TextMenu extends TextElement {
 
     select(choice) {
       this.selected = parseInt(choice);
-      // scrolltoselected
       this.update_menu();
     }
 
