@@ -112,6 +112,7 @@ new S_Floor(6200,2875,775,75);
 
 
 var battleCallback = function() {
+  console.log(hp);
   LEVEL.remove_object(hp);
 }
 
@@ -137,5 +138,7 @@ hp.interaction = function() {
 }
 
 
+new S_battle(50, 170, 75, "viper");
+new S_battle(200, 200, 25, "viper");
 
 IO.control.character();

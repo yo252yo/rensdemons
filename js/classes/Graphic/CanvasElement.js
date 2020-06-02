@@ -12,7 +12,7 @@ class CanvasElement extends VisualElement {
         this.html_canvas.style.position = "absolute";
         this.container.appendChild(this.html_canvas);
     }
-
+    
     tint() {
       this.html_canvas.getContext('2d').globalCompositeOperation = 'source-in';
       this.html_canvas.getContext('2d').fillStyle = PALETTE.color_code_with_default(this.color, this.color);
