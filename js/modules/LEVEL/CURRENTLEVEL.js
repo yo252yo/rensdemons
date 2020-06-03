@@ -1,7 +1,7 @@
 // runtime (CHARACTER, CONSOLE)
 // use(manager.js)
 
-const LEVEL = {
+const CURRENTLEVEL = {
   _MAX_INTERACTION_DISTANCE: 70,
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 2000,
@@ -18,8 +18,8 @@ const LEVEL = {
   },
 
   redraw: function() {
-    for(var i in LEVEL.visual_elements){
-      var el = LEVEL.visual_elements[i];
+    for(var i in CURRENTLEVEL.visual_elements){
+      var el = CURRENTLEVEL.visual_elements[i];
       if(el.draw){
         el.draw();
       }
@@ -28,21 +28,21 @@ const LEVEL = {
   },
 
   initialize_with_character: function(x, y) {
-    if (LEVEL.loaded_character_pos) {
-      CHARACTER.initialize(LEVEL.loaded_character_pos[0], LEVEL.loaded_character_pos[1]);
-      LEVEL.loaded_character_pos = null;
+    if (CURRENTLEVEL.loaded_character_pos) {
+      CHARACTER.initialize(CURRENTLEVEL.loaded_character_pos[0], CURRENTLEVEL.loaded_character_pos[1]);
+      CURRENTLEVEL.loaded_character_pos = null;
       IO.control.character();
     } else {
       CHARACTER.initialize(x,y);
-      if (LEVEL.start_function) {
-        LEVEL.start_function();
+      if (CURRENTLEVEL.start_function) {
+        CURRENTLEVEL.start_function();
       }
     }
   },
 
   setup: function(name) {
-    LEVEL.clear();
-    LEVEL.loaded_level_name = name;
+    CURRENTLEVEL.clear();
+    CURRENTLEVEL.loaded_level_name = name;
 
     new Import("levels/" + name);
     CONSOLE.log.setup("level " + name);
@@ -51,69 +51,69 @@ const LEVEL = {
   factory: {
     export: function(){
       return {
-        loaded_level_name: LEVEL.loaded_level_name,
+        loaded_level_name: CURRENTLEVEL.loaded_level_name,
         saved_character: [CHARACTER.character.x, CHARACTER.character.y],
       }
     },
 
     import: function(save) {
-      LEVEL.loaded_character_pos = save.saved_character;
-      LEVEL.setup(save.loaded_level_name);
+      CURRENTLEVEL.loaded_character_pos = save.saved_character;
+      CURRENTLEVEL.setup(save.loaded_level_name);
     },
   },
 
   clear: function() {
-    for(var key in LEVEL.triggers) {
-      clearTimeout(LEVEL.triggers[key]);
+    for(var key in CURRENTLEVEL.triggers) {
+      clearTimeout(CURRENTLEVEL.triggers[key]);
     }
-    LEVEL.html().innerHTML = "";
-    LEVEL.objects = [];
-    LEVEL.visual_elements = [];
-    LEVEL.triggers = {};
+    CURRENTLEVEL.html().innerHTML = "";
+    CURRENTLEVEL.objects = [];
+    CURRENTLEVEL.visual_elements = [];
+    CURRENTLEVEL.triggers = {};
     CHARACTER.clear();
   },
 
   index_visual_element: function(object) {
-      LEVEL.visual_elements.push(object);
+      CURRENTLEVEL.visual_elements.push(object);
   },
 
   remove_visual_element: function(object) {
-    const index = LEVEL.visual_elements.indexOf(object);
+    const index = CURRENTLEVEL.visual_elements.indexOf(object);
     if (index > -1) {
-      LEVEL.visual_elements.splice(index, 1);
+      CURRENTLEVEL.visual_elements.splice(index, 1);
     }
     delete object;
   },
 
   index_object: function(object) {
-      LEVEL.objects.push(object);
+      CURRENTLEVEL.objects.push(object);
   },
 
   remove_object: function(object) {
       if (object.visual_element){
         object.visual_element.destroy();
       }
-      for (var i in LEVEL.objects){
-        if (LEVEL.objects[i] == object){
-            delete LEVEL.objects[i];
+      for (var i in CURRENTLEVEL.objects){
+        if (CURRENTLEVEL.objects[i] == object){
+            delete CURRENTLEVEL.objects[i];
         }
       }
       delete object;
-      LEVEL.redraw();
+      CURRENTLEVEL.redraw();
   },
 
   is_walkable: function(x, y, initiator) {
     var walkable = false;
 
     // could be optimized by ordering objects
-    for(var i in LEVEL.objects) {
-      if (LEVEL.objects[i] == initiator) {
+    for(var i in CURRENTLEVEL.objects) {
+      if (CURRENTLEVEL.objects[i] == initiator) {
         continue;
       }
-      if (! LEVEL.objects[i].is_walkable) {
+      if (! CURRENTLEVEL.objects[i].is_walkable) {
         continue;
       }
-      var t = LEVEL.objects[i].is_walkable(x,y);
+      var t = CURRENTLEVEL.objects[i].is_walkable(x,y);
       if (t == -1) {
         return false;
       } else if (t == 1) {
@@ -127,9 +127,9 @@ const LEVEL = {
     var here = [];
 
     // could be optimized by ordering objects
-    for(var i in LEVEL.objects) {
-      if (LEVEL.objects[i].is_interactible && LEVEL.objects[i].is_interactible(x,y)) {
-        here.push(LEVEL.objects[i]);
+    for(var i in CURRENTLEVEL.objects) {
+      if (CURRENTLEVEL.objects[i].is_interactible && CURRENTLEVEL.objects[i].is_interactible(x,y)) {
+        here.push(CURRENTLEVEL.objects[i]);
       }
     }
 
@@ -151,7 +151,7 @@ const LEVEL = {
   },
 
   try_interact: function(element) {
-    if(element.distance_to_character() < LEVEL._MAX_INTERACTION_DISTANCE) {
+    if(element.distance_to_character() < CURRENTLEVEL._MAX_INTERACTION_DISTANCE) {
       element.interaction();
       CHARACTER.get().stop_autowalk();
       return true;
@@ -164,21 +164,21 @@ const LEVEL = {
     var y = c[1] + 10; // its more intuitive to take a point closer to legs
     switch (CHARACTER.get().facing_direction()) {
       case "LEFT":
-        x -= LEVEL._FACE_INTERACTION_DISTANCE;
+        x -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE;
         break;
       case "RIGHT":
-        x += LEVEL._FACE_INTERACTION_DISTANCE;
+        x += CURRENTLEVEL._FACE_INTERACTION_DISTANCE;
         break;
       case "UP":
-        y -= LEVEL._FACE_INTERACTION_DISTANCE;
+        y -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE;
         break;
       default:
-        y += LEVEL._FACE_INTERACTION_DISTANCE;
+        y += CURRENTLEVEL._FACE_INTERACTION_DISTANCE;
         break;
     }
-    var element = LEVEL.select_interactible_at(x, y);
+    var element = CURRENTLEVEL.select_interactible_at(x, y);
     if (element) {
-      LEVEL.try_interact(element);
+      CURRENTLEVEL.try_interact(element);
     }
   },
 
@@ -188,33 +188,33 @@ const LEVEL = {
   right: function() { CHARACTER.get().try_move_right(); },
 
   click: function(x, y, is_hold) {
-    var element = LEVEL.select_interactible_at(x, y);
+    var element = CURRENTLEVEL.select_interactible_at(x, y);
     if (! element || is_hold) {
       CHARACTER.get().try_walk_to(x, y);
     } else {
-      if (! LEVEL.try_interact(element)) {
+      if (! CURRENTLEVEL.try_interact(element)) {
         CHARACTER.get().try_walk_to(x, y);
       }
     }
   },
 
   add_trigger: function(key, f_condition, f_execute) {
-    if(LEVEL.triggers[key] && f_condition() && IO.interface._can_trigger_level_event()){
+    if(CURRENTLEVEL.triggers[key] && f_condition() && IO.interface._can_trigger_level_event()){
       CONSOLE.log.event("Triggered " + key);
-      delete LEVEL.triggers[key];
+      delete CURRENTLEVEL.triggers[key];
       f_execute();
     } else {
-      if (! LEVEL.triggers[key]){
+      if (! CURRENTLEVEL.triggers[key]){
         CONSOLE.log.event("Registered " + key);
       }
-      LEVEL.triggers[key] = setTimeout(
-        function(){ LEVEL.add_trigger(key, f_condition, f_execute); },
-        LEVEL._TRIGGER_COOLDOWN);
+      CURRENTLEVEL.triggers[key] = setTimeout(
+        function(){ CURRENTLEVEL.add_trigger(key, f_condition, f_execute); },
+        CURRENTLEVEL._TRIGGER_COOLDOWN);
     }
   },
 
   at_start: function(f) {
-    if(LEVEL.loaded_character_pos) {
+    if(CURRENTLEVEL.loaded_character_pos) {
       return; // We're coming from a save
     }
     f();

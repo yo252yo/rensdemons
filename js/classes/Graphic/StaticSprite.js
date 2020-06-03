@@ -5,7 +5,6 @@ class StaticSprite extends CanvasElement {
     constructor(path, color, width, height) {
       super(color);
       if(width && height) {
-        console.log("AA");
         this.width = width;
         this.height = height;
         this.html_canvas.style.width = this.width + "px";

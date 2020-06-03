@@ -6,7 +6,7 @@ class LevelObject {
         this.visual_element = sprite;
         this.visual_element.place_at(x,y);
         this.walkable = false;
-        LEVEL.index_object(this);
+        CURRENTLEVEL.index_object(this);
     }
 
     make_walkable() {
@@ -32,7 +32,7 @@ class LevelObject {
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
 
-      LEVEL.html().appendChild(html_rectangle);
+      CURRENTLEVEL.html().appendChild(html_rectangle);
     }
 
     get_depth() {

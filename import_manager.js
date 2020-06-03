@@ -97,7 +97,7 @@ IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
-new Module("LEVEL/LEVEL");
+new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
 

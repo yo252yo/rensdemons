@@ -1,6 +1,6 @@
 
 
-LEVEL.initialize_character(80, 60);
+CURRENTLEVEL.initialize_character(80, 60);
 
 new S_Tree(20,100);
 new S_Tree(150,130);

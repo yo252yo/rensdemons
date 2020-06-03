@@ -1,5 +1,5 @@
 
-LEVEL.start_function = function() {
+CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     "Although for now, the Promised Child, unaware of the fate that awaited, was simply playing hide and seek in the outskirts of town.",
     "Ren: \"... 97\"",
@@ -8,7 +8,7 @@ LEVEL.start_function = function() {
     "Ren: \"... 100! Ready or not, here I come!\"",
   ], function(){ SAVE.autosave(); IO.control.character(); });
 };
-LEVEL.initialize_with_character(150, 300);
+CURRENTLEVEL.initialize_with_character(150, 300);
 
 
 var CHILDREN_FOUND = {};
@@ -27,7 +27,7 @@ var make_priest = function (x, y) {
     TextBannerSequence.make([
       "Priest: \"Thank you for coming, Second Born. Your trial is about to begin.\"",
       "Priest: \"Please come with us to the temple for further instructions.\"",
-    ], function(){ LEVEL.setup("002_trialinstruction"); });
+    ], function(){ CURRENTLEVEL.setup("002_trialinstruction"); });
    };
   priest.try_walk_by(-50, 60);
 }
@@ -101,7 +101,7 @@ new S_Tree(950,185);
 
 
 var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
-LEVEL.add_trigger("foundAllChildren", foundAll, function() {
+CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
   make_priest(1030,300);
   make_priest(1030,250);
   make_priest(1030,350);

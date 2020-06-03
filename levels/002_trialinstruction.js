@@ -1,5 +1,5 @@
 
-LEVEL.start_function = function() {
+CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
     "Priest: \"Many before you have failed. But you know as much as we do that the times are hard and require efforts. One day, the Promised Child will come and liberate us from the tyranny of $$demon_lord$, for it has been foretold. And that day may well be today.\"",
@@ -7,7 +7,7 @@ LEVEL.start_function = function() {
   ], function(){ SAVE.autosave(); IO.control.character(); });
 };
 
-LEVEL.initialize_with_character(350, 700);
+CURRENTLEVEL.initialize_with_character(350, 700);
 
 
 var battleCallback = function() {
@@ -16,7 +16,7 @@ var battleCallback = function() {
     "Priest: \"The day has finally come! The Promised Child is here! Praised be the Goddess.\"",
     "Priests and children alike were weeping tears of joys. For centuries, mankind had awaited this event. And now it was finally here. During their lifetime. In front of them. In their little town! The cheers lasted for a moment. Finally, the head priest turned towards Ren.",
     "Priest: \"Come, child. You have much to learn. Your journey is only beginning.\"",
-  ], function(){ LEVEL.setup("demoend"); });
+  ], function(){ CURRENTLEVEL.setup("demoend"); });
 }
 
 

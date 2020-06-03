@@ -28,7 +28,7 @@ const INTERFACE = {
                     {"text": "", "effect": function(){}, "keep_open": true},
                     {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); }},
                     {"text": "Back to game", "effect": "##CLOSE"},
-                    {"text": "Back to title", "effect": function(){ LEVEL.setup("titlescreen"); }},
+                    {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
                  ]);
   },
 

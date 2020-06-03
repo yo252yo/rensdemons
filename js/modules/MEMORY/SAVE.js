@@ -3,7 +3,7 @@ class SaveFile {
   constructor() {
     this.palette = PALETTE.factory.export();
     this.dictionary = DICTIONARY.factory.export();
-    this.level = LEVEL.factory.export();
+    this.currentlevel = CURRENTLEVEL.factory.export();
   }
 }
 
@@ -24,7 +24,7 @@ const SAVE = {
   _load_savefile: function(savefile){
     PALETTE.factory.import(savefile.palette);
     DICTIONARY.factory.import(savefile.dictionary);
-    LEVEL.factory.import(savefile.level);
+    CURRENTLEVEL.factory.import(savefile.currentlevel);
   },
 
   save: function(index) {

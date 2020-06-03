@@ -11,7 +11,7 @@ function load_module(name){
 
 window.onload = function() {
     console.log(">> Window loaded");
-            setTimeout(function(){ console.log("AAAAAA"); LEVEL.setup("town"); }, 2000);
+            setTimeout(function(){ console.log("AAAAAA"); CURRENTLEVEL.setup("town"); }, 2000);
     DRAWING.init();
     UNIVERSE.load();
     DRAWING.repaint();

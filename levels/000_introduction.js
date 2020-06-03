@@ -8,7 +8,7 @@ map_container.style.top = "100px";
 map_container.style.width = size + "px";
 map_container.style.height = size + "px";
 map_container.style.marginLeft = "-" + (size/2) + "px";
-LEVEL.html().appendChild(map_container);
+CURRENTLEVEL.html().appendChild(map_container);
 
 function map_canvas(zindex){
   var html_canvas = document.createElement('canvas');
@@ -57,7 +57,7 @@ RESOURCES.onload(base_resource, function() {
  });
 
 var nextPage = function(){
-  setTimeout(function(){ LEVEL.setup("001_hideandseek"); }, 1500);
+  setTimeout(function(){ CURRENTLEVEL.setup("001_hideandseek"); }, 1500);
 }
 var displayText = function() {
   TextBannerSequence.make([

@@ -184,7 +184,7 @@ const BATTLE = {
         BATTLE.abilities_before = ACTIONS.score.score_battle(name);
 
         if (!previous_position) {
-          previous_position = LEVEL.factory.export();
+          previous_position = CURRENTLEVEL.factory.export();
         }
 
         BATTLE.previous_position = previous_position;
@@ -199,12 +199,12 @@ const BATTLE = {
           html_rectangle.style.top = pos[1] + "px";
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("expanding_div");
-          LEVEL.html().appendChild(html_rectangle);
+          CURRENTLEVEL.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();
       },
 
       end: function(name, callback) {
-        LEVEL.clear();
+        CURRENTLEVEL.clear();
         PALETTE.color_for_battle();
         BATTLE.current_battle = name;
 
@@ -230,7 +230,7 @@ const BATTLE = {
 
       start_teardown: function(ending) {
         PALETTE.color_interface();
-        LEVEL.clear();
+        CURRENTLEVEL.clear();
         BATTLE.builder.teardown.animation();
         setTimeout (function() {BATTLE.builder.teardown.end(ending);}, 1000);
       },
@@ -242,7 +242,7 @@ const BATTLE = {
           html_rectangle.style.top = pos[1] + "px";
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("collapsing_div");
-          LEVEL.html().appendChild(html_rectangle);
+          CURRENTLEVEL.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();
       },
 
@@ -251,15 +251,15 @@ const BATTLE = {
       },
 
       loss: function() {
-        LEVEL.setup("gameover");
+        CURRENTLEVEL.setup("gameover");
       },
 
       escape: function() {
-        LEVEL.factory.import(BATTLE.previous_position);
+        CURRENTLEVEL.factory.import(BATTLE.previous_position);
       },
 
       win: function() {
-        LEVEL.factory.import(BATTLE.previous_position);
+        CURRENTLEVEL.factory.import(BATTLE.previous_position);
 
         if (BATTLE.win_callback){
           setTimeout(BATTLE.win_callback, 200);

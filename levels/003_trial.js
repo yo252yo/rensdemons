@@ -1,6 +1,6 @@
 
 
-LEVEL.initialize_with_character(150, 150);
+CURRENTLEVEL.initialize_with_character(150, 150);
 
 new S_SavePoint(275, 120);
 
@@ -113,7 +113,7 @@ new S_Floor(6200,2875,775,75);
 
 var battleCallback = function() {
   console.log(hp);
-  LEVEL.remove_object(hp);
+  CURRENTLEVEL.remove_object(hp);
 }
 
 var hp_menu = function () {
