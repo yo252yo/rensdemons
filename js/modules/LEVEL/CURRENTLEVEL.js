@@ -7,7 +7,6 @@ const CURRENTLEVEL = {
   _TRIGGER_COOLDOWN: 2000,
 
   loaded_level_name: "",
-  loaded_character_pos: null,
   objects: [],
   visual_elements: [],
   triggers: [],
@@ -28,9 +27,9 @@ const CURRENTLEVEL = {
   },
 
   initialize_with_character: function(x, y) {
-    if (CURRENTLEVEL.loaded_character_pos) {
-      CHARACTER.initialize(CURRENTLEVEL.loaded_character_pos[0], CURRENTLEVEL.loaded_character_pos[1]);
-      CURRENTLEVEL.loaded_character_pos = null;
+    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.loaded_level_name);
+    if (saved_pos[0] && saved_pos[1]) {
+      CHARACTER.initialize(saved_pos[0], saved_pos[1]);
       IO.control.character();
     } else {
       CHARACTER.initialize(x,y);
@@ -50,6 +49,7 @@ const CURRENTLEVEL = {
 
   factory: {
     export: function(){
+      LEVELSTATES.register_position(CURRENTLEVEL.loaded_level_name,CHARACTER.character.x, CHARACTER.character.y);
       return {
         loaded_level_name: CURRENTLEVEL.loaded_level_name,
         saved_character: [CHARACTER.character.x, CHARACTER.character.y],
@@ -57,7 +57,7 @@ const CURRENTLEVEL = {
     },
 
     import: function(save) {
-      CURRENTLEVEL.loaded_character_pos = save.saved_character;
+      //CURRENTLEVEL.loaded_character_pos = save.saved_character;
       CURRENTLEVEL.setup(save.loaded_level_name);
     },
   },
@@ -214,7 +214,8 @@ const CURRENTLEVEL = {
   },
 
   at_start: function(f) {
-    if(CURRENTLEVEL.loaded_character_pos) {
+    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.loaded_level_name);
+    if (saved_pos[0] && saved_pos[1]) {
       return; // We're coming from a save
     }
     f();

@@ -20,7 +20,6 @@ have an animation for click target
 
 music
 
-
 https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 
 make a centered image class
@@ -31,25 +30,21 @@ https://incompetech.filmmusic.io/song/4170-one-eyed-maestro
 
 https://soundcloud.com/si_ku
 
-
-
-import data from idea google doc??
-
-
-
-proximity triggered fights??
-traps??
+proximity triggered fights?? traps??
 
 we do not remember the state of the level (how many monsters died...)
-
 
 
 >> # Action developed: [Pray] on viper
 keeps repeating
 
-
-
 BATTLE OBJECT DOES NOT DISAPPEAR
 
+!SAVE POINT HITBOX IN THE WRONG PLACE
+
+!ABILITIES AND INVENTORY ARE IN DISK AND NOT SAVE
 
 SAVES IN AUTOSAVE SLOT IF THERES NO SAVE???
+
+* CURRENTLEVEL saves and gets position in a weid place
+* Does BATTLE really need to save and load currentlevel?

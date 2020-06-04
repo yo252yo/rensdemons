@@ -3,7 +3,7 @@ const BATTLE = {
   _player_actions: [],
   _monster_actions: [],
   current_battle: "",
-  previous_position: undefined,
+  saved_level: undefined,
   win_callback: undefined,
   abilities_before: 0,
 
@@ -173,27 +173,27 @@ const BATTLE = {
       BATTLE._player_actions = [];
       BATTLE._monster_actions = [];
       BATTLE.win_callback = undefined;
-      BATTLE.previous_position = undefined;
+      BATTLE.saved_level = undefined;
       BATTLE.current_battle = "";
     },
 
     setup: {
-      start: function(name, callback, previous_position) {
+      start: function(name, callback, saved_level) {
         BATTLE.builder.clear();
         IO.control.cede();
         BATTLE.abilities_before = ACTIONS.score.score_battle(name);
 
-        if (!previous_position) {
-          previous_position = CURRENTLEVEL.factory.export();
+        if (!saved_level) {
+          saved_level = CURRENTLEVEL.factory.export();
         }
 
-        BATTLE.previous_position = previous_position;
+        BATTLE.saved_level = saved_level;
         BATTLE.builder.setup.animation();
         setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
       },
 
       animation: function () {
-          var pos = BATTLE.previous_position.saved_character;
+          var pos = BATTLE.saved_level.saved_character;
           var html_rectangle = document.createElement('div');
           html_rectangle.style.background =  PALETTE.color('obj_dark').code();
           html_rectangle.style.top = pos[1] + "px";
@@ -236,7 +236,7 @@ const BATTLE = {
       },
 
       animation: function () {
-          var pos = BATTLE.previous_position.saved_character;
+          var pos = BATTLE.saved_level.saved_character;
           var html_rectangle = document.createElement('div');
           html_rectangle.style.background =  PALETTE.color('obj_dark').code();
           html_rectangle.style.top = pos[1] + "px";
@@ -255,11 +255,11 @@ const BATTLE = {
       },
 
       escape: function() {
-        CURRENTLEVEL.factory.import(BATTLE.previous_position);
+        CURRENTLEVEL.factory.import(BATTLE.saved_level);
       },
 
       win: function() {
-        CURRENTLEVEL.factory.import(BATTLE.previous_position);
+        CURRENTLEVEL.factory.import(BATTLE.saved_level);
 
         if (BATTLE.win_callback){
           setTimeout(BATTLE.win_callback, 200);
@@ -270,15 +270,15 @@ const BATTLE = {
 
   api: {
     reload: function(){
-      BATTLE.api.make(BATTLE.current_battle, BATTLE.win_callback, BATTLE.previous_position);
+      BATTLE.api.make(BATTLE.current_battle, BATTLE.win_callback, BATTLE.saved_level);
     },
 
     can_reload: function(){
       return (BATTLE.current_battle != "");
     },
 
-    make: function(name, callback, previous_position) {
-      BATTLE.builder.setup.start(name, callback, previous_position);
+    make: function(name, callback, saved_level) {
+      BATTLE.builder.setup.start(name, callback, saved_level);
     },
   },
 };

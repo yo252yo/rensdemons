@@ -4,6 +4,7 @@ class SaveFile {
     this.palette = PALETTE.factory.export();
     this.dictionary = DICTIONARY.factory.export();
     this.currentlevel = CURRENTLEVEL.factory.export();
+    this.levelstates = LEVELSTATES.factory.export();
   }
 }
 
@@ -25,6 +26,7 @@ const SAVE = {
     PALETTE.factory.import(savefile.palette);
     DICTIONARY.factory.import(savefile.dictionary);
     CURRENTLEVEL.factory.import(savefile.currentlevel);
+    LEVELSTATES.factory.import(savefile.levelstates);
   },
 
   save: function(index) {

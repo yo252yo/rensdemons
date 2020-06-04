@@ -18,7 +18,7 @@ const STATS = {
   record: {
     death: function() {
       STATS._stats.increment(["death"]);
-      STATS.factory.save();      
+      STATS.factory.save();
     },
   },
 

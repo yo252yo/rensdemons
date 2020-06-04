@@ -106,6 +106,7 @@ IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/ACTIONS");
 IMPORTS.modules['UTILS/MAP'].child_module("ABILITIES");
 IMPORTS.modules['UTILS/MAP'].child_module("INVENTORY");
 IMPORTS.modules['UTILS/MAP'].child_module("STATS");
+IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 
 new Module("UTILS/STRING");
 IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");

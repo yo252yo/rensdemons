@@ -9,3 +9,4 @@
 > Rens demons completely alternate rendering engine which makes something totally different but the same
 - https://rationalwiki.org/wiki/Last_Thursdayism
 - People whispering on the edge of the viewport
+- good end = stop playing, true end = forking the game on github
