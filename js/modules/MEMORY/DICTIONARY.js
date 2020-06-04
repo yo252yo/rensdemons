@@ -32,7 +32,6 @@ class DictionaryGenerator {
 }
 
 const DICTIONARY = {
-  _DISK_KEY: "dictionary",
   _DICTIONARY: {},
 
   get: function(key) {
@@ -47,15 +46,15 @@ const DICTIONARY = {
   factory: {
     make_new: function() {
       (new DictionaryGenerator()).make_new();
-      DISK.set(DICTIONARY._DISK_KEY, DICTIONARY.factory.export());
+      DISK.write("DICTIONARY");
     },
 
     export: function() {
       return DICTIONARY._DICTIONARY;
     },
 
-    import: function(dictionary) {
-      DICTIONARY._DICTIONARY = dictionary;
+    import: function(save) {
+      DICTIONARY._DICTIONARY = save;
     },
   },
 }

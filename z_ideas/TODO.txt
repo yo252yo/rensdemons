@@ -1,12 +1,8 @@
-properly center planet
-
 zindex is sometimes broken on mobile
 
 dont forget to do a proper title screen in particula for mobile
 
 escape should dismisses escapable menus (like the escape menu)
-
-text banner is too small and skewed on the left :/
 
 maybe have the element turn around when talked to
 
@@ -22,29 +18,20 @@ music
 
 https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 
-make a centered image class
-
-
-https://incompetech.filmmusic.io/song/4170-one-eyed-maestro
-
-
-https://soundcloud.com/si_ku
-
 proximity triggered fights?? traps??
 
 we do not remember the state of the level (how many monsters died...)
 
-
 >> # Action developed: [Pray] on viper
 keeps repeating
 
-BATTLE OBJECT DOES NOT DISAPPEAR
+BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
 
 !SAVE POINT HITBOX IN THE WRONG PLACE
-
-!ABILITIES AND INVENTORY ARE IN DISK AND NOT SAVE
 
 SAVES IN AUTOSAVE SLOT IF THERES NO SAVE???
 
 * CURRENTLEVEL saves and gets position in a weid place
 * Does BATTLE really need to save and load currentlevel?
+
+rename BATTLE/ACTIONS maybe its a bit weird? BATTLEACTIONS or ACTIONTREE?

@@ -5,23 +5,15 @@ const ABILITY = {
 
 
 const ABILITIES = {
-  _DISK_KEY: "abilities",
   _abilities: new FluidMap(),
 
   factory: {
-    save: function() {
-      DISK.set(ABILITIES._DISK_KEY, {
-       "content": ABILITIES._abilities.export()
-     });
+    export: function() {
+      return ABILITIES._abilities.export();
     },
 
     import: function(save) {
-      ABILITIES._abilities = new FluidMap(save["content"]);
-    },
-
-    make_new: function() {
-      ABILITIES._abilities.set([ABILITY.Flee], true);
-      ABILITIES._abilities.set([ABILITY.CallHelp], true);
+      ABILITIES._abilities = new FluidMap(save);
     },
   },
 
@@ -41,3 +33,7 @@ const ABILITIES = {
   },
 
 }
+
+  console.log("AAA");
+  ABILITIES._abilities.set([ABILITY.Flee], true);
+  ABILITIES._abilities.set([ABILITY.CallHelp], true);

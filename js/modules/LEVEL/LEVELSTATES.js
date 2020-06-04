@@ -4,15 +4,11 @@ const LEVELSTATES = {
 
   factory: {
     export: function(){
-      console.log(LEVELSTATES._states.export());
-      return {
-        level_states: LEVELSTATES._states.export(),
-      }
+      return LEVELSTATES._states.export();
     },
 
     import: function(save) {
-      LEVELSTATES._states = new FluidMap(save.level_states);
-        console.log(LEVELSTATES._states);
+      LEVELSTATES._states = new FluidMap(save);
     },
   },
 

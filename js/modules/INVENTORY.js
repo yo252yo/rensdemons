@@ -1,17 +1,14 @@
 
 const INVENTORY = {
-  _DISK_KEY: "inventory",
   _inventory: new FluidMap(),
 
   factory: {
-    save: function() {
-      DISK.set(INVENTORY._DISK_KEY, {
-       "content": INVENTORY._inventory.export()
-     });
+    export: function() {
+      return INVENTORY._inventory.export();
     },
 
-    import: function(save){
-      INVENTORY._inventory = new FluidMap(save["content"]);
+    import: function(save) {
+      INVENTORY._inventory = new FluidMap(save);
     },
   },
 

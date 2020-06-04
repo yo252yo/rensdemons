@@ -2,7 +2,6 @@
 // An entry = it leads somewhere
 // Entry with DOOM
 const ACTIONS = {
-  _DISK_KEY: "actions",
   _outcomes: new FluidMap(),
   _targets: new FluidMap(),
   _unknowns: new FluidMap(),
@@ -10,12 +9,12 @@ const ACTIONS = {
   WIN: "#WIN",
 
   factory: {
-    save: function() {
-      DISK.set(ACTIONS._DISK_KEY, {
+    export: function() {
+      return {
        "outcomes": ACTIONS._outcomes.export(),
        "targets": ACTIONS._targets.export(),
        "unknowns": ACTIONS._unknowns.export()
-     });
+     };
     },
 
     import: function(save){
@@ -32,7 +31,7 @@ const ACTIONS = {
       ACTIONS._outcomes.set([battle, name], "");
       ACTIONS._targets.set([battle, name], "");
       CONSOLE.log.action("unlocked: [" + name + "] on " + battle);
-      ACTIONS.factory.save();
+      DISK.write("ACTIONS");
     }
 
     if(from) {
@@ -47,7 +46,7 @@ const ACTIONS = {
       if (! ACTIONS._unknowns.get([battle, name])) {
         CONSOLE.log.action("unknown action discovered ([" + name + "])");
         ACTIONS._unknowns.set([battle, name], true);
-        ACTIONS.factory.save();
+        DISK.write("ACTIONS");
       }
     }
   },
@@ -62,7 +61,7 @@ const ACTIONS = {
       CONSOLE.log.action("developed: [" + name + "] on " + battle);
       ACTIONS._outcomes.set([battle, name], destination);
       ACTIONS._targets.set([battle, name], destination);
-      ACTIONS.factory.save();
+      DISK.write("ACTIONS");
     }
 
     if (destination == ACTIONS.WIN || destination == ACTIONS.LOSS) {
@@ -86,7 +85,7 @@ const ACTIONS = {
       for (var i in ACTIONS._outcomes.get([battle])) {
         if(ACTIONS._outcomes.get([battle, i]) == name){
           ACTIONS._outcomes.set([battle, i], verdict);
-          ACTIONS.factory.save();
+          DISK.write("ACTIONS");
           ACTIONS.internal._propagate_verdict(battle, i, verdict);
         }
       }

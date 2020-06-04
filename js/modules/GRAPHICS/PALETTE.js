@@ -1,7 +1,6 @@
 // use (Color)
 
 const PALETTE = {
-  _DISK_KEY: "palette",
   _COLORS: {},
 
   battle_menu_background: function() {
@@ -117,9 +116,7 @@ const PALETTE = {
     make_new: function() {
       // TODO: at some point i want to pick random instead
       PALETTE.generate.pick_harmonized_palette();
-
-      DISK.set(PALETTE._DISK_KEY, PALETTE.factory.export());
-
+      DISK.write("PALETTE");
       PALETTE.color_interface();
     },
 

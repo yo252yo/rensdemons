@@ -1,15 +1,22 @@
 
+// Modules part of the save, saved by users, they do not come back on page
+// reload.
+var _SAVED_MODULES = ["PALETTE", "DICTIONARY", "CURRENTLEVEL", "LEVELSTATES", "ACTIONS", "ABILITIES", "INVENTORY"];
+
 class SaveFile {
   constructor() {
-    this.palette = PALETTE.factory.export();
-    this.dictionary = DICTIONARY.factory.export();
-    this.currentlevel = CURRENTLEVEL.factory.export();
-    this.levelstates = LEVELSTATES.factory.export();
+    for (var i in _SAVED_MODULES){
+      var mod = eval(_SAVED_MODULES[i]); // Be careful, eval is evil
+      if (!mod || !mod.factory || !mod.factory.export) {
+        CONSOLE.error("Failing to export for a save: " + _SAVED_MODULES[i]);
+        continue;
+      }
+      this[_SAVED_MODULES[i]] = mod.factory.export();
+    }
   }
 }
 
 const SAVE = {
-  _DISK_KEY: "saves",
   slots: [],
 
   factory: {
@@ -17,16 +24,24 @@ const SAVE = {
       return SAVE.slots;
     },
 
-    import: function(slots){
-      return SAVE.slots = slots;
+    import: function(save){
+      return SAVE.slots = save;
+    },
+
+    make_new: function() {
+      // Nothing is needed.
     },
   },
 
   _load_savefile: function(savefile){
-    PALETTE.factory.import(savefile.palette);
-    DICTIONARY.factory.import(savefile.dictionary);
-    CURRENTLEVEL.factory.import(savefile.currentlevel);
-    LEVELSTATES.factory.import(savefile.levelstates);
+    for (var i in _SAVED_MODULES) {
+      var mod = eval(_SAVED_MODULES[i]); // Be careful, eval is evil
+      if (!mod || !mod.factory || !mod.factory.import || !(_SAVED_MODULES[i] in savefile)) {
+        CONSOLE.error("Failing to import for a save: " + _SAVED_MODULES[i]);
+        continue;
+      }
+      mod.factory.import(savefile[_SAVED_MODULES[i]]);
+    }
   },
 
   save: function(index) {
@@ -42,7 +57,7 @@ const SAVE = {
       key: key,
       save: new SaveFile(),
     };
-    DISK.set(SAVE._DISK_KEY, SAVE.factory.export());
+    DISK.write("SAVE");
     CONSOLE.log.save("Saved in save slot " + index);
   },
 

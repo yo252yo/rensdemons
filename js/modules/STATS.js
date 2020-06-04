@@ -1,24 +1,25 @@
 
 const STATS = {
-  _DISK_KEY: "stats",
   _stats: new FluidMap(),
 
   factory: {
-    save: function() {
-      DISK.set(STATS._DISK_KEY, {
-       "content": STATS._stats.export()
-     });
+    export: function() {
+      return STATS._stats.export();
     },
 
-    import: function(save){
-      STATS._stats = new FluidMap(save["content"]);
+    import: function(save) {
+      STATS._stats = new FluidMap(save);
+    },
+
+    make_new: function() {
+      // Nothing is needed.
     },
   },
 
   record: {
     death: function() {
       STATS._stats.increment(["death"]);
-      STATS.factory.save();
+      DISK.write("STATS");
     },
   },
 

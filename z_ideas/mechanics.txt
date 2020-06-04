@@ -1,0 +1,3 @@
+Cosmetic change sprite
+Can guess outcomes?
+Max ammo you can carry
