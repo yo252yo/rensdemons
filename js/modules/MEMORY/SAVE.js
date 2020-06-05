@@ -48,6 +48,7 @@ const SAVE = {
     var key = (new Date()).toLocaleString();
 
     if (index == undefined) {
+      if(SAVE.slots.length == 0) { SAVE.autosave(); } // only happens in debug where we never autosaved.
       index = SAVE.slots.length;
     }
     if (index == 0){

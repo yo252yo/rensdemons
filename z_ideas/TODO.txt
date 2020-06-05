@@ -26,7 +26,5 @@ BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
 
 !SAVE POINT HITBOX IN THE WRONG PLACE
 
-SAVES IN AUTOSAVE SLOT IF THERES NO SAVE???
-
 * CURRENTLEVEL saves and gets position in a weid place
 * Does BATTLE really need to save and load currentlevel?
