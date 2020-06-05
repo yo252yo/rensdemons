@@ -11,7 +11,7 @@ const BATTLE = {
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        if (! ACTIONS.check_unlocked(BATTLE.current_battle, i)) {
+        if (! BATTLETREE.check_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
 
@@ -28,7 +28,7 @@ const BATTLE = {
             }
             return true;
           };
-          var menu_entry = ACTIONS.display.stylize(index, BATTLE.current_battle);
+          var menu_entry = BATTLETREE.display.stylize(index, BATTLE.current_battle);
           options.push({"text": menu_entry, "effect": f});
         })(i);
       }
@@ -61,17 +61,17 @@ const BATTLE = {
         action_object.function();
         return action_object.description;
       };
-      ACTIONS.declare(BATTLE.current_battle, action_object.name);
+      BATTLETREE.declare(BATTLE.current_battle, action_object.name);
 
       // Unlock base actions in our inventory
       if(ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
-        ACTIONS.unlock(BATTLE.current_battle, action_object.name);
+        BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
       }
     },
 
     _add_helper: function(action_object, result_enum, result_function) {
       action_object.function = function(){
-        ACTIONS.develop(BATTLE.current_battle, action_object.name, result_enum);
+        BATTLETREE.develop(BATTLE.current_battle, action_object.name, result_enum);
         result_function(action_object.effect);
         if(action_object.extra_function){
           action_object.extra_function();
@@ -84,7 +84,7 @@ const BATTLE = {
     add_losing_action: function(action_object) {
       return BATTLE.player_actions._add_helper(
         action_object,
-        ACTIONS.LOSS,
+        BATTLETREE.LOSS,
         BATTLE.monster_actions.prepare_loss
       );
     },
@@ -92,7 +92,7 @@ const BATTLE = {
     add_escape_action: function(action_object) {
       return BATTLE.player_actions._add_helper(
         action_object,
-        ACTIONS.LOSS,
+        BATTLETREE.LOSS,
         BATTLE.monster_actions.prepare_escape
       );
     },
@@ -100,7 +100,7 @@ const BATTLE = {
     add_winning_action: function(action_object) {
       return BATTLE.player_actions._add_helper(
         action_object,
-        ACTIONS.WIN,
+        BATTLETREE.WIN,
         BATTLE.monster_actions.prepare_win
       );
     },
@@ -181,7 +181,7 @@ const BATTLE = {
       start: function(name, callback, saved_level) {
         BATTLE.builder.clear();
         IO.control.cede();
-        BATTLE.abilities_before = ACTIONS.score.score_battle(name);
+        BATTLE.abilities_before = BATTLETREE.score.score_battle(name);
 
         if (!saved_level) {
           saved_level = CURRENTLEVEL.factory.export();
@@ -219,7 +219,7 @@ const BATTLE = {
 
     teardown: {
       start: function(ending) {
-        var exp_won = ACTIONS.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
+        var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
         if(exp_won > 0) {
            var text = "All things considered, you still learned a lot through this encounter (" + ("*".repeat(exp_won)) + ").";
            TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});

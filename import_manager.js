@@ -102,7 +102,7 @@ new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
 
 new Module("UTILS/MAP");
-IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/ACTIONS");
+IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");
 IMPORTS.modules['UTILS/MAP'].child_module("ABILITIES");
 IMPORTS.modules['UTILS/MAP'].child_module("INVENTORY");
 IMPORTS.modules['UTILS/MAP'].child_module("STATS");

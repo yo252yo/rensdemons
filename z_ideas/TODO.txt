@@ -30,5 +30,3 @@ SAVES IN AUTOSAVE SLOT IF THERES NO SAVE???
 
 * CURRENTLEVEL saves and gets position in a weid place
 * Does BATTLE really need to save and load currentlevel?
-
-rename BATTLE/ACTIONS maybe its a bit weird? BATTLEACTIONS or ACTIONTREE?

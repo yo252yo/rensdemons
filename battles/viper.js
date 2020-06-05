@@ -16,7 +16,7 @@ BATTLE.player_actions.add_escape_action({
   name: ABILITY.Flee,
   description: ["You try to go further back, but you trip and fall on the ground."],
   effect: "The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.",
-  extra_function: function(){ACTIONS.unlock(battle_name, pray);},
+  extra_function: function(){BATTLETREE.unlock(battle_name, pray);},
 });
 
 BATTLE.player_actions.add_losing_action({
@@ -25,7 +25,7 @@ BATTLE.player_actions.add_losing_action({
                 "But nobody moves. The priests are observing the fight, completely detached. No doubt they've seen this play out countless times.",
                 "The children around are trembling and exchanging frightened looks, too afraid for their own lives to do anything."],
   effect: "The viper is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.",
-  extra_function: function(){ACTIONS.unlock(battle_name, pray);},
+  extra_function: function(){BATTLETREE.unlock(battle_name, pray);},
 });
 
 var unlock_swear_loyalty = function() {
@@ -41,7 +41,7 @@ BATTLE.player_actions.add({
   description: ["You close your eyes and focus on your faith.",
                 "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
   function: function() {
-    ACTIONS.unlock(battle_name, swear_loyalty, pray);
+    BATTLETREE.unlock(battle_name, swear_loyalty, pray);
     unlock_swear_loyalty();
     BATTLE.player_actions.remove(pray);
   },
