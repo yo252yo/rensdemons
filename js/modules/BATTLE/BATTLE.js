@@ -3,7 +3,7 @@ const BATTLE = {
   _player_actions: [],
   _monster_actions: [],
   current_battle: "",
-  saved_level: undefined,
+  origin_level: undefined,
   win_callback: undefined,
   abilities_before: 0,
 
@@ -173,27 +173,20 @@ const BATTLE = {
       BATTLE._player_actions = [];
       BATTLE._monster_actions = [];
       BATTLE.win_callback = undefined;
-      BATTLE.saved_level = undefined;
       BATTLE.current_battle = "";
     },
 
     setup: {
-      start: function(name, callback, saved_level) {
+      start: function(name, callback) {
         BATTLE.builder.clear();
         IO.control.cede();
         BATTLE.abilities_before = BATTLETREE.score.score_battle(name);
-
-        if (!saved_level) {
-          saved_level = CURRENTLEVEL.factory.export();
-        }
-
-        BATTLE.saved_level = saved_level;
         BATTLE.builder.setup.animation();
         setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
       },
 
       animation: function () {
-          var pos = BATTLE.saved_level.saved_character;
+          var pos = LEVELSTATES.get_position(BATTLE.origin_level);
           var html_rectangle = document.createElement('div');
           html_rectangle.style.background =  PALETTE.color('obj_dark').code();
           html_rectangle.style.top = pos[1] + "px";
@@ -236,7 +229,7 @@ const BATTLE = {
       },
 
       animation: function () {
-          var pos = BATTLE.saved_level.saved_character;
+          var pos = LEVELSTATES.get_position(BATTLE.origin_level);
           var html_rectangle = document.createElement('div');
           html_rectangle.style.background =  PALETTE.color('obj_dark').code();
           html_rectangle.style.top = pos[1] + "px";
@@ -255,11 +248,11 @@ const BATTLE = {
       },
 
       escape: function() {
-        CURRENTLEVEL.factory.import(BATTLE.saved_level);
+        CURRENTLEVEL.setup(BATTLE.origin_level);
       },
 
       win: function() {
-        CURRENTLEVEL.factory.import(BATTLE.saved_level);
+        CURRENTLEVEL.setup(BATTLE.origin_level);
 
         if (BATTLE.win_callback){
           setTimeout(BATTLE.win_callback, 200);
@@ -270,15 +263,18 @@ const BATTLE = {
 
   api: {
     reload: function(){
-      BATTLE.api.make(BATTLE.current_battle, BATTLE.win_callback, BATTLE.saved_level);
+      BATTLE.api.make(BATTLE.current_battle, BATTLE.win_callback, BATTLE.origin_level);
     },
 
     can_reload: function(){
       return (BATTLE.current_battle != "");
     },
 
-    make: function(name, callback, saved_level) {
-      BATTLE.builder.setup.start(name, callback, saved_level);
+    make: function(name, callback, origin_level) {
+      if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
+      LEVELSTATES.register_current();
+      BATTLE.origin_level = origin_level;
+      BATTLE.builder.setup.start(name, callback);
     },
   },
 };

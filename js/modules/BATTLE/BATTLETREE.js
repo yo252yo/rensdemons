@@ -31,7 +31,7 @@ const BATTLETREE = {
     if (v == null) {
       BATTLETREE._outcomes.set([battle, name], BATTLETREE.UNKNOWN);
       BATTLETREE._targets.set([battle, name], BATTLETREE.UNKNOWN);
-      CONSOLE.log.action("unlocked: [" + name + "] on " + battle);
+      CONSOLE.log.battletree("unlocked: [" + name + "] on " + battle);
       DISK.write("BATTLETREE");
     }
 
@@ -45,7 +45,7 @@ const BATTLETREE = {
     var v = BATTLETREE._outcomes.get([battle, name]);
     if (v == null) {
       if (! BATTLETREE._unknowns.get([battle, name])) {
-        CONSOLE.log.action("unknown action discovered ([" + name + "])");
+        CONSOLE.log.battletree("unknown action discovered ([" + name + "])");
         BATTLETREE._unknowns.set([battle, name], true);
         DISK.write("BATTLETREE");
       }
@@ -59,7 +59,7 @@ const BATTLETREE = {
     BATTLETREE.unlock(battle, name);
     var v = BATTLETREE._targets.get([battle, name]);
     if (v != destination) {
-      CONSOLE.log.action("developed: [" + name + "] -> [" + destination + "] on " + battle);
+      CONSOLE.log.battletree("developed: [" + name + "] -> [" + destination + "] on " + battle);
       BATTLETREE._outcomes.set([battle, name], destination);
       BATTLETREE._targets.set([battle, name], destination);
       DISK.write("BATTLETREE");

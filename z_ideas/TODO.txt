@@ -24,7 +24,4 @@ we do not remember the state of the level (how many monsters died...)
 
 BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
 
-!SAVE POINT HITBOX IN THE WRONG PLACE
-
-* CURRENTLEVEL saves and gets position in a weid place
-* Does BATTLE really need to save and load currentlevel?
+!SAVE POINT HITBOX IN THE WRONG PLACE, look at hide and seek everything is fucked!!

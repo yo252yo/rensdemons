@@ -6,7 +6,7 @@ const CURRENTLEVEL = {
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 2000,
 
-  loaded_level_name: "",
+  level_name: "",
   objects: [],
   visual_elements: [],
   triggers: [],
@@ -27,7 +27,7 @@ const CURRENTLEVEL = {
   },
 
   initialize_with_character: function(x, y) {
-    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.loaded_level_name);
+    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos[0] && saved_pos[1]) {
       CHARACTER.initialize(saved_pos[0], saved_pos[1]);
       IO.control.character();
@@ -39,26 +39,39 @@ const CURRENTLEVEL = {
     }
   },
 
-  setup: function(name) {
+  _setup_from_save: function(save) {
+    LEVELSTATES.register_current();
     CURRENTLEVEL.clear();
-    CURRENTLEVEL.loaded_level_name = name;
+    CURRENTLEVEL.level_name = save.level_name;
 
-    new Import("levels/" + name);
-    CONSOLE.log.setup("level " + name);
+    new Import("levels/" + save.level_name);
+    CONSOLE.log.setup("level " + save.level_name);
+  },
+
+  setup: function(name) {
+    // Try to restore previous state.
+    var save = LEVELSTATES.get_save(name);
+    if (! save){
+      save = {level_name: name};
+    }
+    CURRENTLEVEL._setup_from_save(save);
   },
 
   factory: {
     export: function(){
-      LEVELSTATES.register_position(CURRENTLEVEL.loaded_level_name,CHARACTER.character.x, CHARACTER.character.y);
+      var char_x, char_y;
+      if (CHARACTER.character){
+        char_x = CHARACTER.character.x;
+        char_y = CHARACTER.character.y;
+      }
       return {
-        loaded_level_name: CURRENTLEVEL.loaded_level_name,
-        saved_character: [CHARACTER.character.x, CHARACTER.character.y],
+        level_name: CURRENTLEVEL.level_name,
+        saved_character_position: [char_x, char_y],
       }
     },
 
     import: function(save) {
-      //CURRENTLEVEL.loaded_character_pos = save.saved_character;
-      CURRENTLEVEL.setup(save.loaded_level_name);
+      CURRENTLEVEL._setup_from_save(save);
     },
   },
 
@@ -214,9 +227,10 @@ const CURRENTLEVEL = {
   },
 
   at_start: function(f) {
-    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.loaded_level_name);
+    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos[0] && saved_pos[1]) {
       return; // We're coming from a save
+      // Mb this should be more generic? remember what eevnt happened in our save
     }
     f();
   },

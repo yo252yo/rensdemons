@@ -26,11 +26,15 @@ const CONSOLE = {
   },
 
   log: {
+    level: function(name) {
+      CONSOLE._sys_log(": " + name, "Pink");
+    },
+
     import: function(name) {
       CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
     },
 
-    action: function(operation) {
+    battletree: function(operation) {
       CONSOLE._sys_log("# Action " + operation, "LightBlue");
     },
 

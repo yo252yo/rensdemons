@@ -12,15 +12,28 @@ const LEVELSTATES = {
     },
   },
 
-  register_position: function(level, x, y) {
-    LEVELSTATES._states.set([level, "char_x"], x);
-    LEVELSTATES._states.set([level, "char_y"], y);
+  get_position: function(level) {
+    var saved = LEVELSTATES.get_save(level);
+    if (saved) {
+      return saved.saved_character_position;
+    } else {
+      return [undefined, undefined];
+    }
   },
 
-  get_position: function(level) {
-    return [
-      LEVELSTATES._states.get([level, "char_x"]),
-      LEVELSTATES._states.get([level, "char_y"])
-    ];
+  register_current: function() {
+    LEVELSTATES.register_from_save(CURRENTLEVEL.factory.export());
+  },
+
+  register_from_save: function(save) {
+    var name = save.level_name;
+    CONSOLE.log.level("Saved levelstate for " + save.level_name);
+    if (name) {
+      LEVELSTATES._states.set([name], save);
+     }
+  },
+
+  get_save: function(level) {
+    return LEVELSTATES._states.get([level]);
   },
 };
