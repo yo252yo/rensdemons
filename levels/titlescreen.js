@@ -1,8 +1,8 @@
 
 
-var s0 = new LevelObject(new StaticSprite("assets/title_layer0.png", 'player'), 0, SCREEN.height());
-var s1 = new LevelObject(new StaticSprite("assets/title_layer1.png", 'background'), 0, SCREEN.height());
-var s2 = new LevelObject(new StaticSprite("assets/title_layer2.png", 'obj_light'), 0, SCREEN.height());
+var s0 = new LevelObject(new StaticSprite("assets/screens/title_layer0.png", 'player'), 0, SCREEN.height());
+var s1 = new LevelObject(new StaticSprite("assets/screens/title_layer1.png", 'background'), 0, SCREEN.height());
+var s2 = new LevelObject(new StaticSprite("assets/screens/title_layer2.png", 'obj_light'), 0, SCREEN.height());
 
 
 function adapt_sprite(s, depth) {
@@ -30,4 +30,5 @@ new CenteredTextMenu("",
                 {"text": "$ALPHA$_ go to new content", "effect": function(){ CURRENTLEVEL.setup("002_trialinstruction"); }},
                 {"text": "Load", "effect": function(){ SAVE.print.load_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display_options_menu(); }},
+                {"text": "Credits", "effect": function(){ INTERFACE.display_credits_menu(); }},
              ]);

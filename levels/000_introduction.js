@@ -26,8 +26,8 @@ function map_canvas(zindex){
 var base_canvas = map_canvas(10);
 var seed_canvas = map_canvas(15);
 
-var base_resource = RESOURCES.get_img("assets/map_base.png");
-var seed_resource = RESOURCES.get_img("assets/map_seed.png");
+var base_resource = RESOURCES.get_img("assets/screens/map_base.png");
+var seed_resource = RESOURCES.get_img("assets/screens/map_seed.png");
 
 RESOURCES.onload(base_resource, function() {
   // Draws the base

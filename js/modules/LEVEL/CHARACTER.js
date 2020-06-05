@@ -4,7 +4,7 @@ const CHARACTER = {
   initialize: function(x, y) {
     var width = 32;
     var height = 48;
-    var sprite = new MovingSprite("assets/sora.png", 'player', width, height);
+    var sprite = new MovingSprite("assets/characters/sora.png", 'player', width, height);
     CHARACTER.character = new MovingObject(sprite, x, y, width, height);
     SCREEN.scroll_screen_to_character();
   },

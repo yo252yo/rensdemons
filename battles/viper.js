@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/viper.png", 'background');
+new CenteredImage("assets/battles/viper.png", 'background');
 var battle_name = "viper";
 var _PLAYER_ACTIONS = {};
 

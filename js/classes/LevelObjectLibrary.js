@@ -14,7 +14,7 @@ class S_Floor extends LevelObject {
 
 class S_Tree extends LevelObject {
   constructor(x, y) {
-    var visual = new StaticSprite("assets/tree.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
   }
@@ -46,7 +46,7 @@ class S_Tree extends LevelObject {
 
 class S_Column extends LevelObject {
   constructor(x, y) {
-    var visual = new StaticSprite("assets/column.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/column.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
   }
@@ -62,7 +62,7 @@ class S_Column extends LevelObject {
 
 class S_SavePoint extends LevelObject {
   constructor(x, y) {
-    var visual = new StaticSprite("assets/savepoint.png", 'obj_dark');
+    var visual = new StaticSprite("assets/objects/savepoint.png", 'obj_dark');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,10);
   }
@@ -78,7 +78,7 @@ class S_SavePoint extends LevelObject {
 
 class S_battle extends LevelObject {
   constructor(x, y, size, battle) {
-    var visual = new StaticSprite("assets/event.png", 'obj_dark', size, size);
+    var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
     super(visual, x, y);
     this.battle = battle;
 
