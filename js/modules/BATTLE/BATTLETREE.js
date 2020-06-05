@@ -187,7 +187,7 @@ const BATTLETREE = {
           html[0] += " -> <b>WIN</b><br/> ";
           break;
         case BATTLETREE.LOSS:
-          html[0] += " -> <s>DEATH</s><br/> ";
+          html[0] += " -> <s>LOSS</s><br/> ";
           break;
         default:
           html[0] += "<br/> "
