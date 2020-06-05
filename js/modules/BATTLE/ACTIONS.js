@@ -7,6 +7,7 @@ const ACTIONS = {
   _unknowns: new FluidMap(),
   LOSS: "#LOSS",
   WIN: "#WIN",
+  UNKNOWN: "#UNKNOWN",
 
   factory: {
     export: function() {
@@ -26,10 +27,10 @@ const ACTIONS = {
 
   unlock: function(battle, name, from) {
     ACTIONS._unknowns.delete([battle, name]);
-    var v = ACTIONS._outcomes.get([battle, name]);
+    var v = ACTIONS._targets.get([battle, name]);
     if (v == null) {
-      ACTIONS._outcomes.set([battle, name], "");
-      ACTIONS._targets.set([battle, name], "");
+      ACTIONS._outcomes.set([battle, name], ACTIONS.UNKNOWN);
+      ACTIONS._targets.set([battle, name], ACTIONS.UNKNOWN);
       CONSOLE.log.action("unlocked: [" + name + "] on " + battle);
       DISK.write("ACTIONS");
     }
@@ -56,9 +57,9 @@ const ACTIONS = {
       destination = "tried";
     }
     ACTIONS.unlock(battle, name);
-    var v = ACTIONS._outcomes.get([battle, name]);
+    var v = ACTIONS._targets.get([battle, name]);
     if (v != destination) {
-      CONSOLE.log.action("developed: [" + name + "] on " + battle);
+      CONSOLE.log.action("developed: [" + name + "] -> [" + destination + "] on " + battle);
       ACTIONS._outcomes.set([battle, name], destination);
       ACTIONS._targets.set([battle, name], destination);
       DISK.write("ACTIONS");
@@ -161,9 +162,9 @@ const ACTIONS = {
           return "<b>" + name + "</b>";
         case ACTIONS.LOSS:
           return "<s>" + name + "</s>";
-        case "":
+        case ACTIONS.UNKNOWN:
           return name;
-        default:
+        default: // Leads somewhere else.
           return "<i>" + name + "</i>";
       }
     },
@@ -179,8 +180,8 @@ const ACTIONS = {
 
       var target = ACTIONS._targets.get([battle, ability]);
       switch (target){
-        case "":
-          html[0] += " -> <i>?????</i><br/> ";
+        case ACTIONS.UNKNOWN:
+          html[0] += " -> ?????<br/> ";
           break;
         case ACTIONS.WIN:
           html[0] += " -> <b>WIN</b><br/> ";

@@ -22,9 +22,6 @@ proximity triggered fights?? traps??
 
 we do not remember the state of the level (how many monsters died...)
 
->> # Action developed: [Pray] on viper
-keeps repeating
-
 BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
 
 !SAVE POINT HITBOX IN THE WRONG PLACE
