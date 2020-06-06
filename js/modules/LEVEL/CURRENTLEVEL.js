@@ -7,9 +7,8 @@ const CURRENTLEVEL = {
   _TRIGGER_COOLDOWN: 2000,
 
   level_name: "",
-  level_objects: [],
+  level_objects: [], // Would benefit from being smartly indexed.
   destroyed_objects: [],
-  visual_elements: [],
   triggers: [],
   start_function: null,
 
@@ -217,6 +216,8 @@ const CURRENTLEVEL = {
       CHARACTER.initialize(x,y);
       if (CURRENTLEVEL.start_function) {
         CURRENTLEVEL.start_function();
+      } else {
+        IO.control.character();
       }
     }
   },
