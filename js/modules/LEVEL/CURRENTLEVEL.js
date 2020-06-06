@@ -165,6 +165,7 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.system.html().innerHTML = "";
       CURRENTLEVEL.level_objects = [];
       CURRENTLEVEL.triggers = {};
+      CURRENTLEVEL.start_function = null;
       CHARACTER.clear();
     },
 
