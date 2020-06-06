@@ -23,7 +23,7 @@ new S_Floor(3000,525,225,75);
 new S_Floor(3150,650,75,200);
 new S_Floor(3150,650,225,75);
 new S_Floor(3300,1100,75,525);
-  new S_Floor(2800,1100,1550,75);
+new S_Floor(2800,1100,1550,75);
 new S_Floor(4275,1100,75,950);
 
 // Center left

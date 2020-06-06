@@ -23,5 +23,3 @@ proximity triggered fights?? traps??
 we do not remember the state of the level (how many monsters died...)
 
 BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
-
-!SAVE POINT HITBOX IN THE WRONG PLACE, look at hide and seek everything is fucked!!

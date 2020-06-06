@@ -25,7 +25,7 @@ class StaticSprite extends CanvasElement {
         this.height = this.resource.height;
       }
 
-      //super.adjust_dimensions(this.width, this.height);
+      super.adjust_dimensions(this.width, this.height);
       this.html_canvas.getContext('2d').drawImage(this.resource, 0, 0);
       super.tint();
     }
