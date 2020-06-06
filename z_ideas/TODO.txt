@@ -20,7 +20,6 @@ https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07ae
 
 proximity triggered fights?? traps??
 
-CURRENTLEVEL.at_start never used???
 
 
 do i need to track visual elements in currentlevel or can it just be object.visual_element

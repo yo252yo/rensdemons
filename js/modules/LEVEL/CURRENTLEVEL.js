@@ -251,13 +251,4 @@ const CURRENTLEVEL = {
     }
   },
 
-  at_start: function(f) {
-    CONSOLE.stack_trace();
-    var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
-    if (saved_pos[0] && saved_pos[1]) {
-      return; // We're coming from a save
-      // Mb this should be more generic? remember what eevnt happened in our save
-    }
-    f();
-  },
 };
