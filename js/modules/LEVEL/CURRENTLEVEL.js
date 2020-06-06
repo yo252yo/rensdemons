@@ -150,8 +150,8 @@ const CURRENTLEVEL = {
     },
 
     redraw: function() {
-      for(var i in CURRENTLEVEL.visual_elements){
-        var el = CURRENTLEVEL.visual_elements[i];
+      for(var i in CURRENTLEVEL.level_objects){
+        var el = CURRENTLEVEL.level_objects[i].get_visual();
         if(el.draw){
           el.draw();
         }
@@ -165,7 +165,6 @@ const CURRENTLEVEL = {
       }
       CURRENTLEVEL.system.html().innerHTML = "";
       CURRENTLEVEL.level_objects = [];
-      CURRENTLEVEL.visual_elements = [];
       CURRENTLEVEL.triggers = {};
       CHARACTER.clear();
     },
@@ -198,18 +197,6 @@ const CURRENTLEVEL = {
       }
       CURRENTLEVEL.destroyed_objects.push(object.hash());
       CURRENTLEVEL.system.redraw();
-    },
-
-    index_visual_element: function(object) {
-        CURRENTLEVEL.visual_elements.push(object);
-    },
-
-    remove_visual_element: function(object) {
-      const index = CURRENTLEVEL.visual_elements.indexOf(object);
-      if (index > -1) {
-        CURRENTLEVEL.visual_elements.splice(index, 1);
-      }
-      delete object;
     },
 
     should_hide: function(hash) {

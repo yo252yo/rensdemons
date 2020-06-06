@@ -19,9 +19,3 @@ music
 https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 
 proximity triggered fights?? traps??
-
-
-
-do i need to track visual elements in currentlevel or can it just be object.visual_element
-its causing confusion cause when i try to remove an item from the level it may be tied to the wrong version of its sprite :/ (think after a battle)
-in fact currentlevel should probably keep all objects in a map keyed by hash

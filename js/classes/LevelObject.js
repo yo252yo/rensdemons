@@ -2,10 +2,6 @@
 
 
 class LevelObject {
-    hash() {
-      return this.constructor.name + "/" + this.x + "/" + this.y;
-    }
-
     constructor(sprite, x, y) {
         this.x = x;
         this.y = y;
@@ -17,6 +13,14 @@ class LevelObject {
         this.visual_element.place_at(x,y);
         this.walkable = false;
         CURRENTLEVEL.objects.index_object(this);
+    }
+
+    hash() {
+      return this.constructor.name + "/" + this.x + "/" + this.y;
+    }
+
+    get_visual() {
+      return this.visual_element;
     }
 
     make_walkable() {
