@@ -221,8 +221,6 @@ const CURRENTLEVEL = {
     },
   },
 
-
-
   initialize_with_character: function(x, y) {
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos[0] && saved_pos[1]) {
