@@ -12,7 +12,7 @@ parchment_canvas.style.top = "300px";
 parchment_canvas.width = "500";
 parchment_canvas.height = "666";
 parchment_canvas.style.zIndex = 0;
-CURRENTLEVEL.html().appendChild(parchment_canvas);
+CURRENTLEVEL.system.html().appendChild(parchment_canvas);
 
 
 var resource = RESOURCES.get_img("testing/parchment.png");
@@ -44,7 +44,7 @@ function drawmap(){
    map1_canvas.width = "1000";
    map1_canvas.height = "1000";
    map1_canvas.style.zIndex = 10;
-   CURRENTLEVEL.html().appendChild(map1_canvas);
+   CURRENTLEVEL.system.html().appendChild(map1_canvas);
    var map1 = RESOURCES.get_img("testing/circle.png");
 
    RESOURCES.onload(map1, function() {
@@ -70,7 +70,7 @@ function drawmap(){
      map2_canvas.width = "1000";
      map2_canvas.height = "1000";
      map2_canvas.style.zIndex = 15;
-     CURRENTLEVEL.html().appendChild(map2_canvas);
+     CURRENTLEVEL.system.html().appendChild(map2_canvas);
      var map2 = RESOURCES.get_img("testing/map2.png");
 
      RESOURCES.onload(map2, function() {

@@ -113,7 +113,7 @@ new S_Floor(6200,2875,775,75);
 
 var battleCallback = function() {
   console.log(hp);
-  CURRENTLEVEL.remove_object(hp);
+  CURRENTLEVEL.objects.remove_object(hp);
 }
 
 var hp_menu = function () {

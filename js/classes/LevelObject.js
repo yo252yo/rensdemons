@@ -2,11 +2,21 @@
 
 
 class LevelObject {
+    hash() {
+      return this.constructor.name + "/" + this.x + "/" + this.y;
+    }
+
     constructor(sprite, x, y) {
+        this.x = x;
+        this.y = y;
         this.visual_element = sprite;
+        if (CURRENTLEVEL.objects.should_hide(this.hash())){
+          return;
+        }
+
         this.visual_element.place_at(x,y);
         this.walkable = false;
-        CURRENTLEVEL.index_object(this);
+        CURRENTLEVEL.objects.index_object(this);
     }
 
     make_walkable() {
@@ -21,7 +31,6 @@ class LevelObject {
     }
 
     draw_hitbox() {
-
       var html_rectangle = document.createElement('div');
       html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
       html_rectangle.style.top = (this.visual_element.y + this.h_y - this.h_h) + "px";
@@ -32,7 +41,7 @@ class LevelObject {
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
 
-      CURRENTLEVEL.html().appendChild(html_rectangle);
+      CURRENTLEVEL.system.html().appendChild(html_rectangle);
     }
 
     get_depth() {

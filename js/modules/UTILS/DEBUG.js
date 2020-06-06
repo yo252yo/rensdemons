@@ -75,7 +75,7 @@ const DEBUG = {
             html_rectangle.style.height = h + "px";
             html_rectangle.style.background = color;
 
-            CURRENTLEVEL.html().appendChild(html_rectangle);
+            CURRENTLEVEL.system.html().appendChild(html_rectangle);
 
             delete DEBUG._previous_x;
             delete DEBUG._previous_y;

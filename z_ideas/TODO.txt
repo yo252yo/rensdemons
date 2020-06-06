@@ -23,3 +23,6 @@ proximity triggered fights?? traps??
 we do not remember the state of the level (how many monsters died...)
 
 BATTLE OBJECT DOES NOT DISAPPEAR (<< wtf??)
+
+
+CURRENTLEVEL.at_start never used???

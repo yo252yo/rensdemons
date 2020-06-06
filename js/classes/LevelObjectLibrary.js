@@ -90,7 +90,7 @@ class S_battle extends LevelObject {
     // default battle callback ^.^
     var battleCallback = function(){
       // this doesnt work
-      CURRENTLEVEL.remove_object(this);
+      CURRENTLEVEL.objects.remove_object(this);
     };
     BATTLE.api.make(this.battle, battleCallback);
   }

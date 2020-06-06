@@ -192,12 +192,12 @@ const BATTLE = {
           html_rectangle.style.top = pos[1] + "px";
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("expanding_div");
-          CURRENTLEVEL.html().appendChild(html_rectangle);
+          CURRENTLEVEL.system.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();
       },
 
       end: function(name, callback) {
-        CURRENTLEVEL.clear();
+        CURRENTLEVEL.system.clear();
         PALETTE.color_for_battle();
         BATTLE.current_battle = name;
 
@@ -223,7 +223,7 @@ const BATTLE = {
 
       start_teardown: function(ending) {
         PALETTE.color_interface();
-        CURRENTLEVEL.clear();
+        CURRENTLEVEL.system.clear();
         BATTLE.builder.teardown.animation();
         setTimeout (function() {BATTLE.builder.teardown.end(ending);}, 1000);
       },
@@ -235,7 +235,7 @@ const BATTLE = {
           html_rectangle.style.top = pos[1] + "px";
           html_rectangle.style.left = pos[0] + "px";
           html_rectangle.classList.add("collapsing_div");
-          CURRENTLEVEL.html().appendChild(html_rectangle);
+          CURRENTLEVEL.system.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();
       },
 

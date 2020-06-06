@@ -104,7 +104,7 @@ const PALETTE = {
     escape_button.style.borderColor = PALETTE.text_border().code();
     escape_button.style.color = PALETTE.text_color().code();
 
-    CURRENTLEVEL.redraw();
+    CURRENTLEVEL.system.redraw();
   },
 
 

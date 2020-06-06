@@ -8,7 +8,7 @@ map_container.style.top = "100px";
 map_container.style.width = size + "px";
 map_container.style.height = size + "px";
 map_container.style.marginLeft = "-" + (size/2) + "px";
-CURRENTLEVEL.html().appendChild(map_container);
+CURRENTLEVEL.system.html().appendChild(map_container);
 
 function map_canvas(zindex){
   var html_canvas = document.createElement('canvas');
