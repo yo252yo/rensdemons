@@ -22,7 +22,11 @@ const CONSOLE = {
   },
 
   stack_trace: function() {
-    throw "Stack trace print request";
+    console.trace();
+  },
+
+  break: function() {
+    throw "Break request";
   },
 
   log: {
