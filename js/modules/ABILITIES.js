@@ -34,6 +34,5 @@ const ABILITIES = {
 
 }
 
-  console.log("AAA");
   ABILITIES._abilities.set([ABILITY.Flee], true);
   ABILITIES._abilities.set([ABILITY.CallHelp], true);
