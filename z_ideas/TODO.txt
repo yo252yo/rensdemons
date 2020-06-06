@@ -1,6 +1,4 @@
-zindex is sometimes broken on mobile
-
-dont forget to do a proper title screen in particula for mobile
+? zindex is sometimes broken on mobile
 
 escape should dismisses escapable menus (like the escape menu)
 
@@ -16,6 +14,4 @@ have an animation for click target
 
 music
 
-https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
-
-proximity triggered fights?? traps??
+populate first dungeon
