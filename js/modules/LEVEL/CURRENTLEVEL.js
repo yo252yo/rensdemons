@@ -8,6 +8,7 @@ const CURRENTLEVEL = {
 
   level_name: "",
   level_objects: [],
+  destroyed_objects: [],
   visual_elements: [],
   triggers: [],
   start_function: null,
@@ -21,12 +22,27 @@ const CURRENTLEVEL = {
       }
       return {
         level_name: CURRENTLEVEL.level_name,
+        destroyed_objects: CURRENTLEVEL.destroyed_objects,
         saved_character_position: [char_x, char_y],
       }
     },
 
+    _setup_from_save: function(save) {
+      LEVELSTATES.register_current();
+      CURRENTLEVEL.system.clear();
+
+      CURRENTLEVEL.level_name = save.level_name;
+
+      if(save.destroyed_objects) {
+        CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
+      }
+
+      new Import("levels/" + save.level_name);
+      CONSOLE.log.setup("level " + save.level_name);
+    },
+
     import: function(save) {
-      CURRENTLEVEL.system._setup_from_save(save);
+      CURRENTLEVEL.factory._setup_from_save(save);
     },
   },
 
@@ -154,14 +170,6 @@ const CURRENTLEVEL = {
       CHARACTER.clear();
     },
 
-    _setup_from_save: function(save) {
-      LEVELSTATES.register_current();
-      CURRENTLEVEL.system.clear();
-      CURRENTLEVEL.level_name = save.level_name;
-
-      new Import("levels/" + save.level_name);
-      CONSOLE.log.setup("level " + save.level_name);
-    },
   },
 
   setup: function(name) {
@@ -170,7 +178,7 @@ const CURRENTLEVEL = {
     if (! save){
       save = {level_name: name};
     }
-    CURRENTLEVEL.system._setup_from_save(save);
+    CURRENTLEVEL.factory._setup_from_save(save);
   },
 
   objects: {
@@ -179,15 +187,16 @@ const CURRENTLEVEL = {
     },
 
     remove_object: function(object) {
-      if (object.visual_element){
-        object.visual_element.destroy();
-      }
       for (var i in CURRENTLEVEL.level_objects){
-        if (CURRENTLEVEL.level_objects[i] == object){
-            delete CURRENTLEVEL.level_objects[i];
+        if (CURRENTLEVEL.level_objects[i].hash() == object.hash()){
+          if (object != CURRENTLEVEL.level_objects[i]){
+            // destroy all homonyms
+            CURRENTLEVEL.level_objects[i].destroy();
+          }
+          CURRENTLEVEL.level_objects.splice(i, 1);
         }
       }
-      delete object;
+      CURRENTLEVEL.destroyed_objects.push(object.hash());
       CURRENTLEVEL.system.redraw();
     },
 
@@ -204,7 +213,11 @@ const CURRENTLEVEL = {
     },
 
     should_hide: function(hash) {
-      return false;
+      for (var i in CURRENTLEVEL.destroyed_objects){
+        if (CURRENTLEVEL.destroyed_objects[i] == hash){
+          return true;
+        }
+      }
     },
   },
 

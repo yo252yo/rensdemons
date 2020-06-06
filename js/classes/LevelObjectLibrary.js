@@ -88,9 +88,9 @@ class S_battle extends LevelObject {
 
   interaction() {
     // default battle callback ^.^
+    var self = this;
     var battleCallback = function(){
-      // this doesnt work
-      CURRENTLEVEL.objects.remove_object(this);
+      self.destroy();
     };
     BATTLE.api.make(this.battle, battleCallback);
   }

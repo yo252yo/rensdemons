@@ -96,4 +96,12 @@ class LevelObject {
       var d = Math.sqrt(Math.pow(c[0] - x, 2) + Math.pow(c[1] - y, 2));
       return d;
     }
+
+    destroy() {
+      if (this.visual_element){
+        this.visual_element.destroy();
+      }
+      CURRENTLEVEL.objects.remove_object(this);
+      delete this;
+    }
 }
