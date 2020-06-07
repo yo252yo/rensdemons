@@ -187,10 +187,7 @@ const BATTLE = {
 
       animation: function () {
           var pos = LEVELSTATES.get_position(BATTLE.origin_level);
-          var html_rectangle = document.createElement('div');
-          html_rectangle.style.background =  PALETTE.color('obj_dark').code();
-          html_rectangle.style.top = pos[1] + "px";
-          html_rectangle.style.left = pos[0] + "px";
+          var html_rectangle = HTML.div.make({left:pos[0], top:pos[1], background: 'obj_dark'});
           html_rectangle.classList.add("expanding_div");
           CURRENTLEVEL.system.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();
@@ -230,10 +227,7 @@ const BATTLE = {
 
       animation: function () {
           var pos = LEVELSTATES.get_position(BATTLE.origin_level);
-          var html_rectangle = document.createElement('div');
-          html_rectangle.style.background =  PALETTE.color('obj_dark').code();
-          html_rectangle.style.top = pos[1] + "px";
-          html_rectangle.style.left = pos[0] + "px";
+          var html_rectangle = HTML.div.make({left:pos[0], top:pos[1], background: 'obj_dark'});
           html_rectangle.classList.add("collapsing_div");
           CURRENTLEVEL.system.html().appendChild(html_rectangle);
           // Destroction of LEVEL children is in end();

@@ -11,13 +11,3 @@ improve keyboard controls (cf mota) and keyboard speed (cf robin)
 music
 
 populate first dungeon
-
-
-make canvas util:
-    // Draws the seed
-    seed_canvas.getContext('2d').drawImage(seed_resource, offset1, offset2, size, size, 0, 0, size, size);
-
-    // Colors the seed
-    seed_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-    seed_canvas.getContext('2d').fillStyle = PALETTE.color('obj_light').code();
-    seed_canvas.getContext('2d').fillRect(0, 0, size, size);

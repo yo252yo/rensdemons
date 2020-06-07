@@ -1,24 +1,18 @@
 
 var size = 600;
 
-var map_container = document.createElement('div');
-map_container.style.position = "absolute";
-map_container.style.left = "50%";
-map_container.style.top = "100px";
-map_container.style.width = size + "px";
-map_container.style.height = size + "px";
+var map_container = HTML.div.make({
+  left: "50%",
+  top: 100,
+  width: size,
+  height: size,
+});
+
 map_container.style.marginLeft = "-" + (size/2) + "px";
 CURRENTLEVEL.system.html().appendChild(map_container);
 
 function map_canvas(zindex){
-  var html_canvas = document.createElement('canvas');
-  html_canvas.style.position = "absolute";
-  html_canvas.style.width = size + "px";
-  html_canvas.style.height = size + "px";
-  html_canvas.width = size;
-  html_canvas.height = size;
-  html_canvas.style.zIndex = zindex;
-
+  var html_canvas =  HTML.canvas.make(size, size, zindex);
   map_container.appendChild(html_canvas);
   return html_canvas;
 }
@@ -34,9 +28,7 @@ RESOURCES.onload(base_resource, function() {
   base_canvas.getContext('2d').drawImage(base_resource, 0, 0, size, size);
 
   // Colors the base
-  base_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-  base_canvas.getContext('2d').fillStyle = PALETTE.color('obj_dark').code();
-  base_canvas.getContext('2d').fillRect(0, 0, size, size);
+  HTML.canvas.tint(base_canvas, "obj_dark");
 
   RESOURCES.onload(seed_resource, function() {
     var offset1 = RANDOM.int(5000 - size);
@@ -46,9 +38,7 @@ RESOURCES.onload(base_resource, function() {
     seed_canvas.getContext('2d').drawImage(seed_resource, offset1, offset2, size, size, 0, 0, size, size);
 
     // Colors the seed
-    seed_canvas.getContext('2d').globalCompositeOperation = 'source-in';
-    seed_canvas.getContext('2d').fillStyle = PALETTE.color('obj_light').code();
-    seed_canvas.getContext('2d').fillRect(0, 0, size, size);
+    HTML.canvas.tint(seed_canvas, "obj_light");
 
     // Cut to the base
     seed_canvas.getContext('2d').globalCompositeOperation = 'destination-in';

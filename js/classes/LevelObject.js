@@ -35,12 +35,13 @@ class LevelObject {
     }
 
     draw_hitbox() {
-      var html_rectangle = document.createElement('div');
+      var html_rectangle = HTML.div.make({
+        w:this.h_w,
+        h:this.h_h,
+        top:(this.visual_element.y + this.h_y - this.h_h),
+        left:(this.visual_element.x + this.h_x),
+      });
       html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
-      html_rectangle.style.top = (this.visual_element.y + this.h_y - this.h_h) + "px";
-      html_rectangle.style.left = (this.visual_element.x + this.h_x) + "px";
-      html_rectangle.style.width = (this.h_w) + "px";
-      html_rectangle.style.height = (this.h_h) + "px";
       html_rectangle.style.position = "absolute";
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";

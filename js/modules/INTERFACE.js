@@ -79,14 +79,8 @@ const INTERFACE = {
     },
 
     click_marker: function() {
-      var ressource = RESOURCES.get_img("assets/interface/cross.png");
-      RESOURCES.onload(ressource, function() {
-        var canvas =  document.getElementById("IME_click_confirmation_cross");
-        canvas.getContext('2d').drawImage(ressource, 0, 0);
-        canvas.getContext('2d').globalCompositeOperation = 'source-in';
-        canvas.getContext('2d').fillStyle = PALETTE.color('player').code();
-        canvas.getContext('2d').fillRect(0, 0, 25, 25);
-      });
+      var canvas =  document.getElementById("IME_click_confirmation_cross");
+      HTML.canvas.draw(canvas, "assets/interface/cross.png", "player");
     },
   },
 

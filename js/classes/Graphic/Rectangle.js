@@ -4,11 +4,9 @@ class Rectangle extends VisualElement {
     constructor(x, y, w, h, color) {
         super(x,y,w,h);
 
-        this.html_rectangle = document.createElement('div');
+        this.html_rectangle = HTML.div.make({w:"100%", h:"100%", z:-1});
+
         this.color = color;
-        this.html_rectangle.style.width = "100%";
-        this.html_rectangle.style.height = "100%";
-        this.html_rectangle.style.zIndex = -1;
         this.container.style.zIndex = -1;
 //        this.container.style.padding = "0px 100px 100px 0px";
 

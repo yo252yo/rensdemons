@@ -67,14 +67,13 @@ const DEBUG = {
 
             CONSOLE.debug("new S_Floor(" + x + "," + y + "," + w + "," + h + ");", color);
 
-            var html_rectangle = document.createElement('div');
-            html_rectangle.style.position = "absolute";
-            html_rectangle.style.top = (y-h) + "px";
-            html_rectangle.style.left = x + "px";
-            html_rectangle.style.width = w + "px";
-            html_rectangle.style.height = h + "px";
-            html_rectangle.style.background = color;
-
+            var html_rectangle = HTML.div.make({
+              top: (y-h),
+              left: x,
+              w: w,
+              h: h,
+              background: color,
+            });
             CURRENTLEVEL.system.html().appendChild(html_rectangle);
 
             delete DEBUG._previous_x;

@@ -2,8 +2,7 @@
 
 class VisualElement {
     constructor(x, y, w, h) {
-        this.container = document.createElement('div');
-        this.container.style.position = "absolute";
+        this.container = HTML.div.make();
         CURRENTLEVEL.system.html().appendChild(this.container);
 
         this.adjust_dimensions(w, h);
