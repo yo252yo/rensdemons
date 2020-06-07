@@ -68,7 +68,6 @@ const IO = {
   _PRESSED_KEYS: {},
   _PREVIOUS_SYSTEMS: [],
   _ACTIVE_SYSTEM: null,
-  _MOUSE_DOWN: false,
 
 
   // Manage the lock and stack.
@@ -87,7 +86,7 @@ const IO = {
 
     _try_special_key_actions: function(key) {
       if (KEYS_UTIL.is_esc(key) && IO.interface._can_open_escape_menu()){
-        INTERFACE.display_escape_menu();
+        INTERFACE.display.escape_menu();
       }
     },
 
@@ -147,8 +146,6 @@ const IO = {
 
       level.addEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
 
-      level.addEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
-      level.addEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
       level.addEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
     },
 
@@ -159,8 +156,6 @@ const IO = {
 
       level.removeEventListener('touchmove', IO.handlers.onClickHold, { passive: false});
 
-      level.removeEventListener('mouseup', IO.handlers.onMouseup, { passive: false});
-      level.removeEventListener('mousedown', IO.handlers.onMousedown, { passive: false});
       level.removeEventListener('mousemove', IO.handlers.onMousemove, { passive: false});
     },
   },
@@ -224,16 +219,8 @@ const IO = {
       IO.handlers.onClick(event, true);
     },
 
-    onMouseup: function() {
-      IO._MOUSE_DOWN = false;
-    },
-
-    onMousedown: function() {
-      IO._MOUSE_DOWN = true;
-    },
-
     onMousemove: function(event) {
-      if (IO._MOUSE_DOWN) {
+      if (event.buttons > 0) {
         IO.handlers.onClickHold(event);
       }
     },

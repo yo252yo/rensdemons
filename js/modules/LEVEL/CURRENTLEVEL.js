@@ -53,10 +53,13 @@ const CURRENTLEVEL = {
 
     click: function(x, y, is_hold) {
       var element = CURRENTLEVEL.io.select_interactible_at(x, y);
+
       if (! element || is_hold) {
+        INTERFACE.click_marker(x,y);
         CHARACTER.get().try_walk_to(x, y);
       } else {
         if (! CURRENTLEVEL.io.try_interact(element)) {
+          INTERFACE.click_marker(x,y);
           CHARACTER.get().try_walk_to(x, y);
         }
       }

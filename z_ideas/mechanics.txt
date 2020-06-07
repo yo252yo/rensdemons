@@ -1,3 +1,5 @@
 Cosmetic change sprite
 Can guess outcomes?
 Max ammo you can carry
+
+- walking speed is too slow by default on keyboard

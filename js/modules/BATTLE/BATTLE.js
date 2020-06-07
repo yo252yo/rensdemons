@@ -222,7 +222,7 @@ const BATTLE = {
       },
 
       start_teardown: function(ending) {
-        PALETTE.color_interface();
+        INTERFACE.color_interface();
         CURRENTLEVEL.system.clear();
         BATTLE.builder.teardown.animation();
         setTimeout (function() {BATTLE.builder.teardown.end(ending);}, 1000);

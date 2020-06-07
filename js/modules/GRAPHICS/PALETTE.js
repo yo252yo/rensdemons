@@ -97,17 +97,6 @@ const PALETTE = {
       }
   },
 
-  color_interface: function() {
-    document.body.style.backgroundColor = PALETTE.color('void').code();
-    var escape_button = document.getElementById('IFE_escape_menu_button');
-    escape_button.style.background = PALETTE.text_background().code();
-    escape_button.style.borderColor = PALETTE.text_border().code();
-    escape_button.style.color = PALETTE.text_color().code();
-
-    CURRENTLEVEL.system.redraw();
-  },
-
-
   color_for_battle: function() {
     document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
   },
@@ -117,7 +106,7 @@ const PALETTE = {
       // TODO: at some point i want to pick random instead
       PALETTE.generate.pick_harmonized_palette();
       DISK.write("PALETTE");
-      PALETTE.color_interface();
+      INTERFACE.color_interface();
     },
 
     export: function() {
@@ -132,7 +121,7 @@ const PALETTE = {
       for (var key in save) {
         PALETTE._COLORS[key] = Color.import(save[key]);
       }
-      PALETTE.color_interface();
+      INTERFACE.color_interface();
     },
   },
 

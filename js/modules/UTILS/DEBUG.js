@@ -21,9 +21,9 @@ const DEBUG = {
   },
 
   draw_hitboxes: function() {
-    for(var i in CURRENTLEVEL.objects) {
-      if (CURRENTLEVEL.objects[i].draw_hitbox) {
-        CURRENTLEVEL.objects[i].draw_hitbox();
+    for(var i in CURRENTLEVEL.level_objects) {
+      if (CURRENTLEVEL.level_objects[i].draw_hitbox) {
+        CURRENTLEVEL.level_objects[i].draw_hitbox();
       }
     }
   },
