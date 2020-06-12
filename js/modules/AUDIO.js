@@ -31,10 +31,16 @@ const AUDIO = {
     AUDIO._TRACKS[track].play();
   },
 
+  _start_music: function(){
+    AUDIO._MUSIC_PLAYER.play().catch(function(error) {
+      setTimeout(AUDIO._start_music, 100);
+    });
+  },
+
   _play_music: function(track){
     AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
-    AUDIO._MUSIC_PLAYER.play();
+    AUDIO._start_music();
   },
 
   _play_sfx: function(track){
