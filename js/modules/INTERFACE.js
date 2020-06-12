@@ -47,6 +47,7 @@ const INTERFACE = {
         new CenteredTextMenu(`<h3>Assets credits</h3>
            <b>Characters</b>: <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a><br />
            <b>Events</b>: <a href="http://www.junkie-chain.jp/main.html" target="_blank">Junkie-chain</a><br />
+           <b>Sound effects</b>: inventorysoundspack_windows and httpsopengameart.orgcontentspell-sounds-starter-pack<br />
            `);
     },
   },
@@ -62,6 +63,7 @@ const INTERFACE = {
     element.style.left = x-12;
     element.style.top = y-12;
     element.style.visibility = "visible";
+    AUDIO.effect.clickmove();
 
     if(INTERFACE._previous_timeout){
       clearTimeout(INTERFACE._previous_timeout);

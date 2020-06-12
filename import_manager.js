@@ -101,6 +101,7 @@ IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
+new Module("AUDIO");
 
 new Module("UTILS/MAP");
 IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");

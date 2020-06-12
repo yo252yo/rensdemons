@@ -32,6 +32,7 @@ const BATTLETREE = {
       BATTLETREE._outcomes.set([battle, name], BATTLETREE.UNKNOWN);
       BATTLETREE._targets.set([battle, name], BATTLETREE.UNKNOWN);
       CONSOLE.log.battletree("unlocked: [" + name + "] on " + battle);
+      AUDIO.effect.unlock();
       DISK.write("BATTLETREE");
     }
 

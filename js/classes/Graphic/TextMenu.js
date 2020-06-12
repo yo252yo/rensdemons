@@ -144,6 +144,7 @@ class TextMenu extends TextElement {
     execute(choice) {
       var f = null;
       var menu = this;
+      AUDIO.effect.choice();
 
       if(menu.options[choice]["effect"] == "##CLOSE"){
         f = function() { menu.close(); };

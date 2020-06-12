@@ -165,6 +165,9 @@ class TextBox extends TextElement {
         TextBox.print_text(this, true);
         return;
       }
+
+      AUDIO.effect.page();
+      
       // Prevent double click
       var now =  (new Date()).getTime();
       if (now - this.last_turned < _MIN_PAGE_TIME_MS) {

@@ -4,9 +4,9 @@ escape should dismisses escapable menus (like the escape menu)
 
 maybe have the element turn around when talked to
 
-- hitbox tree too big?
+hitbox tree too big?
 
-improve keyboard controls (cf mota) and keyboard speed (cf robin)
+improve keyboard controls (cf mota)
 
 music
 

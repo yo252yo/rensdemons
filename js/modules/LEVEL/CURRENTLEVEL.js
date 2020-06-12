@@ -96,6 +96,7 @@ const CURRENTLEVEL = {
       if(element.distance_to_character() < CURRENTLEVEL._MAX_INTERACTION_DISTANCE) {
         element.interaction();
         CHARACTER.get().stop_autowalk();
+        AUDIO.effect.interaction();
         return true;
       }
     },
