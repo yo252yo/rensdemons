@@ -37,6 +37,7 @@ const CURRENTLEVEL = {
       }
 
       new Import("levels/" + save.level_name);
+      AUDIO.music.stop();
       CONSOLE.log.setup("level " + save.level_name);
     },
 

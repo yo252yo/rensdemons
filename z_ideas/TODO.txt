@@ -8,6 +8,6 @@ hitbox tree too big?
 
 improve keyboard controls (cf mota)
 
-music
-
 populate first dungeon
+
+i think the cross display click prevents interacting with objects and forces to continue moving

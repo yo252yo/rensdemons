@@ -1,3 +1,4 @@
+AUDIO.music.introduction();
 
 var size = 600;
 

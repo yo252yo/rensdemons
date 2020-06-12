@@ -182,6 +182,7 @@ const BATTLE = {
         IO.control.cede();
         BATTLE.abilities_before = BATTLETREE.score.score_battle(name);
         BATTLE.builder.setup.animation();
+        AUDIO.music.battle();
         setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
       },
 

@@ -1,3 +1,4 @@
+AUDIO.music.hideandseek();
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

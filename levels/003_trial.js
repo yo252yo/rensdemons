@@ -1,4 +1,4 @@
-
+AUDIO.music.trial();
 
 CURRENTLEVEL.initialize_with_character(150, 150);
 
