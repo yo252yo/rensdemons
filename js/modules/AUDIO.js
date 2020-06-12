@@ -24,8 +24,13 @@ const AUDIO = {
     AUDIO._load_sound('interaction');
     AUDIO._load_music('the girl with the baseball bat');
     AUDIO._load_music('love planet');
-  },
+    AUDIO._load_music('time for adventure 4 opening');
+    AUDIO._load_music('champ de tournesol');
+    AUDIO._load_music('a tale about somewhere where the end of the story already occurs');
 
+    AUDIO._MUSIC_PLAYER.loop = true;
+    AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
+  },
 
   _play_buffered: function(track){
     AUDIO._TRACKS[track].play();

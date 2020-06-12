@@ -11,3 +11,8 @@ improve keyboard controls (cf mota)
 populate first dungeon
 
 i think the cross display click prevents interacting with objects and forces to continue moving
+
+cant dismiss credits on title?
+
+
+when i try new game several times i get the same game. expected ???
