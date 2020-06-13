@@ -3,7 +3,7 @@
 
 const CURRENTLEVEL = {
   _MAX_INTERACTION_DISTANCE: 70,
-  _FACE_INTERACTION_DISTANCE: 20,
+  _FACE_INTERACTION_DISTANCE: 10,
   _TRIGGER_COOLDOWN: 2000,
 
   level_name: "",
@@ -54,16 +54,18 @@ const CURRENTLEVEL = {
 
     click: function(x, y, is_hold) {
       var element = CURRENTLEVEL.io.select_interactible_at(x, y);
-
-      if (! element || is_hold) {
-        INTERFACE.click_marker(x,y);
-        CHARACTER.get().try_walk_to(x, y);
-      } else {
-        if (! CURRENTLEVEL.io.try_interact(element)) {
-          INTERFACE.click_marker(x,y);
+      if (element) {
+        if (!is_hold && CURRENTLEVEL.io.try_interact(element)) {
+          return; // We interact
+        } else {
+          // We silently advance
           CHARACTER.get().try_walk_to(x, y);
+          return;
         }
       }
+
+      INTERFACE.click_marker(x,y);
+      CHARACTER.get().try_walk_to(x, y);
     },
 
     select_interactible_at: function(x, y) {

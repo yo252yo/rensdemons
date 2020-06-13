@@ -1,18 +1,14 @@
-? zindex is sometimes broken on mobile
+? zindex was sometimes broken on mobile
 
 escape should dismisses escapable menus (like the escape menu)
 
+volume buttons skip dialog....
+
 maybe have the element turn around when talked to
 
-hitbox tree too big?
-
-improve keyboard controls (cf mota)
+- diagonal motion is badly handled (especially keyboard, especially animation)
+- keyboard makes a little break between first key press and prolonged motion
 
 populate first dungeon
 
-i think the cross display click prevents interacting with objects and forces to continue moving
-
 cant dismiss credits on title?
-
-
-when i try new game several times i get the same game. expected ???
