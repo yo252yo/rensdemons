@@ -1,3 +1,4 @@
+AUDIO.music.temple();
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

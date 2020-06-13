@@ -27,6 +27,8 @@ const AUDIO = {
     AUDIO._load_music('time for adventure 4 opening');
     AUDIO._load_music('champ de tournesol');
     AUDIO._load_music('a tale about somewhere where the end of the story already occurs');
+    AUDIO._load_music('un triste echo trop juste');
+    AUDIO._load_music('ambiant inconvenient truth');
 
     AUDIO._MUSIC_PLAYER.loop = true;
     AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
@@ -73,6 +75,8 @@ const AUDIO = {
     introduction: function() {    AUDIO._play_music('love planet'); },
     hideandseek: function() {     AUDIO._play_music('champ de tournesol'); },
     trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
+    gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
+    temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
 
   }
 };
