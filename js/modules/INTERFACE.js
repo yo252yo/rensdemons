@@ -44,7 +44,8 @@ const INTERFACE = {
     },
 
     credits_menu: function() {
-        new CenteredTextMenu(`<h3>Assets credits</h3>
+        new CenteredTextMenu(`
+           <h3>Assets credits</h3>
            <b>Characters</b>: <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a><br />
            <b>Events</b>: <a href="http://www.junkie-chain.jp/main.html" target="_blank">Junkie-chain</a><br />
            <b>Sound effects</b>: Audio Alchemist and <a href="https://opengameart.org/users/p0ss">p0ss</a><br />
