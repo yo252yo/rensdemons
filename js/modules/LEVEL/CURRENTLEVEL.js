@@ -2,7 +2,7 @@
 // use(manager.js)
 
 const CURRENTLEVEL = {
-  _MAX_INTERACTION_DISTANCE: 70,
+  _MAX_CLICK_INTERACTION_DISTANCE: 70,
   _FACE_INTERACTION_DISTANCE: 10,
   _TRIGGER_COOLDOWN: 2000,
 
@@ -96,7 +96,7 @@ const CURRENTLEVEL = {
     },
 
     try_interact: function(element) {
-      if(element.distance_to_character() < CURRENTLEVEL._MAX_INTERACTION_DISTANCE) {
+      if(element.distance_to_character() < CURRENTLEVEL._MAX_CLICK_INTERACTION_DISTANCE) {
         element.interaction();
         CHARACTER.get().stop_autowalk();
         AUDIO.effect.interaction();
