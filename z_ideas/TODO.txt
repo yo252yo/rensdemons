@@ -10,5 +10,3 @@ maybe have the element turn around when talked to
 - keyboard makes a little break between first key press and prolonged motion
 
 populate first dungeon
-
-cant dismiss credits on title?
