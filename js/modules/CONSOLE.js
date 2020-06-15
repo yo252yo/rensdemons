@@ -35,7 +35,7 @@ const CONSOLE = {
     },
 
     import: function(name) {
-      CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
+      //CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
     },
 
     battletree: function(operation) {
