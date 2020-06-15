@@ -23,6 +23,7 @@ const INTERFACE = {
     },
 
     escape_menu: function() {
+      AUDIO.effect.page();
       new CenteredTextMenu("",
                     [
                       {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
