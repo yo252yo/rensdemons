@@ -6,6 +6,4 @@ volume buttons skip dialog....
 
 maybe have the element turn around when talked to
 
-- diagonal motion is badly handled (especially keyboard, especially animation)
-
-populate first dungeon
+POPULATE FIRST DUNGEON

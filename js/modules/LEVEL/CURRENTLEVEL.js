@@ -47,11 +47,6 @@ const CURRENTLEVEL = {
   },
 
   io: {
-    up: function() { CHARACTER.get().try_move_up(); },
-    down: function() { CHARACTER.get().try_move_down(); },
-    left: function() { CHARACTER.get().try_move_left(); },
-    right: function() { CHARACTER.get().try_move_right(); },
-
     click: function(x, y, is_hold) {
       var element = CURRENTLEVEL.io.select_interactible_at(x, y);
       if (element) {

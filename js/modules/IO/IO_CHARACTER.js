@@ -4,21 +4,28 @@ const IO_CHARACTER = {
   },
 
   onContinuousKeyPress: function(pressed_keys) {
-    // TODO: better handle diagonals ^^
+    var c = CHARACTER.get();
+    if(!c){       return;    }
+    var x = 0;
+    var y = 0;
+
     for (var i in pressed_keys) {
         var key = pressed_keys[i];
         if (KEYS_UTIL.is_up(key)) {
-          CURRENTLEVEL.io.up();
+          y -= 1;
         }
         if (KEYS_UTIL.is_down(key)) {
-          CURRENTLEVEL.io.down();
+          y += 1;
         }
         if (KEYS_UTIL.is_left(key)) {
-          CURRENTLEVEL.io.left();
+          x -= 1;
         }
         if (KEYS_UTIL.is_right(key)) {
-          CURRENTLEVEL.io.right();
+          x += 1;
         }
+    }
+    if(x != 0 || y != 0) {
+      c.try_move(x, y);
     }
   },
 

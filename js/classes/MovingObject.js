@@ -71,7 +71,10 @@ class MovingObject extends LevelObject {
      return this.destination_x  != -1 || this.destination_y != -1;
   }
 
-  _try_move_by(dx,dy) {
+  _try_move_by_pixels(dx,dy, stop_autowalk) {
+    if(stop_autowalk){
+      this.stop_autowalk();
+    }
     if (CURRENTLEVEL.io.is_walkable(this.x + dx, this.y+dy, this)) {
       this.move(dx,dy);
       return true;
@@ -86,24 +89,13 @@ class MovingObject extends LevelObject {
     return _WALKING_INCREMENT;
   }
 
-  try_move_up() {
-    this.stop_autowalk();
-    this._try_move_by(0, -1 * this._movement_increment());
-  }
+  try_move_up() {    this.try_move(0, -1);  }
+  try_move_down() {    this.try_move(0, 1);  }
+  try_move_left() {    this.try_move(-1, 0);  }
+  try_move_right() {    this.try_move(1, 0);   }
 
-  try_move_down() {
-    this.stop_autowalk();
-    this._try_move_by(0, this._movement_increment());
-  }
-
-  try_move_left() {
-    this.stop_autowalk();
-    this._try_move_by(-1 * this._movement_increment(), 0);
-  }
-
-  try_move_right() {
-    this.stop_autowalk();
-    this._try_move_by(this._movement_increment(), 0);
+  try_move(unit_x, unit_y) {
+    this._try_move_by_pixels(this._movement_increment() * unit_x, this._movement_increment() * unit_y, true);
   }
 
   try_walk_to(x, y) {
@@ -144,7 +136,7 @@ class MovingObject extends LevelObject {
       dy = Math.floor(dy * coef);
     }
 
-    if (moving_object._try_move_by(dx, dy)) {
+    if (moving_object._try_move_by_pixels(dx, dy)) {
       setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
     } else {
       moving_object.stop_autowalk();
