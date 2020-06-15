@@ -4,7 +4,7 @@ CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
     "Priest: \"Many before you have failed. But you know as much as we do that the times are hard and require efforts. One day, the Promised Child will come and liberate us from the tyranny of $$demon_lord$, for it has been foretold. And that day may well be today.\"",
-    "Priest: \"Now, second-borns, today we will see if the Promised Child is among you. I truly hope it is. Please advance to the High Priest in orderly fashion.\"",
+    "Priest: \"Now, second-borns, today we will see if the Promised Child is among you. I truly hope it is. But our fate is not for me to decide. We must have faith in the Goddess. Only her Trial will reveal if \"",
   ], function(){ SAVE.autosave(); IO.control.character(); });
 };
 

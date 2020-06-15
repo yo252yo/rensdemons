@@ -4,23 +4,28 @@ const IO_CHARACTER = {
   },
 
   onContinuousKeyPress: function(pressed_keys) {
-      for (var key in pressed_keys) {
-          if (KEYS_UTIL.is_up(key)) {
-            CURRENTLEVEL.io.up();
-          }
-          if (KEYS_UTIL.is_down(key)) {
-            CURRENTLEVEL.io.down();
-          }
-          if (KEYS_UTIL.is_left(key)) {
-            CURRENTLEVEL.io.left();
-          }
-          if (KEYS_UTIL.is_right(key)) {
-            CURRENTLEVEL.io.right();
-          }
-          if (KEYS_UTIL.is_ok(key)) {
-            CURRENTLEVEL.io.interact_in_front();
-          }
-      }
+    // TODO: better handle diagonals ^^
+    for (var i in pressed_keys) {
+        var key = pressed_keys[i];
+        if (KEYS_UTIL.is_up(key)) {
+          CURRENTLEVEL.io.up();
+        }
+        if (KEYS_UTIL.is_down(key)) {
+          CURRENTLEVEL.io.down();
+        }
+        if (KEYS_UTIL.is_left(key)) {
+          CURRENTLEVEL.io.left();
+        }
+        if (KEYS_UTIL.is_right(key)) {
+          CURRENTLEVEL.io.right();
+        }
+    }
+  },
+
+  onPressKey: function(key) {
+    if (KEYS_UTIL.is_ok(key)) {
+      CURRENTLEVEL.io.interact_in_front();
+    }
   },
 
   is_running: function() {

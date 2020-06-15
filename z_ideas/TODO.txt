@@ -7,6 +7,5 @@ volume buttons skip dialog....
 maybe have the element turn around when talked to
 
 - diagonal motion is badly handled (especially keyboard, especially animation)
-- keyboard makes a little break between first key press and prolonged motion
 
 populate first dungeon

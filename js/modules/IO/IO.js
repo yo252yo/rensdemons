@@ -40,8 +40,8 @@ const KEYS_UTIL = {
 
   is_pressed: {
     _generic: function (key_function) {
-      for (var key in IO._PRESSED_KEYS){
-        if (key_function(key)) {
+      for (var i in IO._PRESSED_KEYS){
+        if (key_function(IO._PRESSED_KEYS[i])) {
           return true;
         }
       }
@@ -65,14 +65,15 @@ const KEYS_UTIL = {
 
 
 const IO = {
-  _PRESSED_KEYS: {},
+  _PRESSED_KEYS: [],
   _PREVIOUS_SYSTEMS: [],
   _ACTIVE_SYSTEM: null,
+  _CONTINUOUS_KEY_PRESS_TIC: 50,
 
 
   // Manage the lock and stack.
   _clear_inputs: function() {
-    IO._PRESSED_KEYS= {};
+    IO._PRESSED_KEYS= [];
   },
 
   interface: {
@@ -171,23 +172,27 @@ const IO = {
       if (IO.interface._try_special_key_actions(key)){
         return;
       }
-      if (!(key in IO._PRESSED_KEYS)) {
-          IO._PRESSED_KEYS[key] = true;
+      if (!(IO._PRESSED_KEYS.includes(key))) {
+          IO._PRESSED_KEYS.push(key);
       }
       if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onPressKey && !KEYS_UTIL.is_modifier(key)) {
         IO._ACTIVE_SYSTEM.onPressKey(key);
-      } else {
-        IO.handlers.onContinuousKeyPress();
       }
     },
 
     onReleaseKey: function(key) {
-      delete IO._PRESSED_KEYS[key];
-      IO.handlers.onContinuousKeyPress();
+      for(var i in IO._PRESSED_KEYS) {
+        if (IO._PRESSED_KEYS[i] == key) {
+          delete IO._PRESSED_KEYS[i];
+        }
+      }
     },
 
     onContinuousKeyPress: function() {
-      if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
+      setTimeout(IO.handlers.onContinuousKeyPress, IO._CONTINUOUS_KEY_PRESS_TIC);
+      if (IO._PRESSED_KEYS.length > 0 &&
+          IO._ACTIVE_SYSTEM &&
+          IO._ACTIVE_SYSTEM.onContinuousKeyPress) {
         IO._ACTIVE_SYSTEM.onContinuousKeyPress(IO._PRESSED_KEYS);
       }
     },
@@ -257,3 +262,6 @@ document.addEventListener('keyup', function (event) {
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
+
+// Turn on the continuous key press handler
+IO.handlers.onContinuousKeyPress();
