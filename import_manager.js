@@ -99,7 +99,6 @@ IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 new Module("LEVEL/CURRENTLEVEL");
-new Module("LEVEL/CHARACTER");
 new Module("GRAPHICS/PALETTE");
 new Module("AUDIO");
 
@@ -134,6 +133,7 @@ new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
+IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
 
 new Module("INTERFACE");
 

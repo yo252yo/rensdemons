@@ -1,11 +1,19 @@
 // runtime MovingSprite, PALETTE, LEVEL
 
-const CHARACTER = {
-  initialize: function(x, y) {
+
+
+class M_Character extends MovingObject {
+  constructor(x, y) {
     var width = 32;
     var height = 48;
-    var sprite = new MovingSprite("assets/characters/sora.png", 'player', width, height);
-    CHARACTER.character = new MovingObject(sprite, x, y, width, height);
+    var visual = new MovingSprite("assets/characters/sora.png", 'player', width, height);
+    super(visual, x, y, width, height);
+  }
+}
+
+const CHARACTER = {
+  initialize: function(x, y) {
+    CHARACTER.character = new M_Character(x, y);
     SCREEN.scroll_screen_to_character();
   },
 

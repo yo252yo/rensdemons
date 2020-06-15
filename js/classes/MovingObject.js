@@ -76,6 +76,9 @@ class MovingObject extends LevelObject {
       this.stop_autowalk();
     }
     if (CURRENTLEVEL.io.is_walkable(this.x + dx, this.y+dy, this)) {
+      // The hash is different every time we move, so instead we'll key the sound
+      // effect per class.
+      AUDIO.effect.footstep(1300 / this._movement_increment(), this.constructor.name);
       this.move(dx,dy);
       return true;
     }

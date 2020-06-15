@@ -2,6 +2,7 @@
 const AUDIO = {
   _TRACKS: {},
   _MUSIC_PLAYER: new Audio(),
+  _CURRENT_EFFECTS: {},
 
   VOLUME: {
     SFX: 0.8,
@@ -20,6 +21,7 @@ const AUDIO = {
     AUDIO._load_sound('unlock');
     AUDIO._load_sound('clickmove');
     AUDIO._load_sound('page');
+    AUDIO._load_sound('footstep');
     AUDIO._load_sound('choice');
     AUDIO._load_sound('interaction');
     AUDIO._load_music('the girl with the baseball bat');
@@ -50,19 +52,39 @@ const AUDIO = {
     AUDIO._start_music();
   },
 
-  _play_sfx: function(track){
+  _free_sfx_slot: function(key) {
+    delete AUDIO._CURRENT_EFFECTS[key];
+  },
+
+  _play_sfx: function(track, cooldown, key) {
+    if(!key)  {     key = track;  }
+    if(!cooldown) {   cooldown = 100;    }
+    
+    if (key && AUDIO._CURRENT_EFFECTS[key]) {
+      return;
+    }
+
     var audio = new Audio('assets/sounds/' + track + '.wav');
+    AUDIO._CURRENT_EFFECTS[key] = audio;
     audio.volume = AUDIO.VOLUME.SFX;
     audio.play();
+    setTimeout(function(){ AUDIO._free_sfx_slot(key); }, cooldown);
   },
 
   effect: {
     levelup: function() {         AUDIO._play_sfx('lvlup'); },
     unlock: function() {          AUDIO._play_sfx('unlock'); },
     clickmove: function() {       AUDIO._play_sfx('clickmove'); },
-    page: function() {            AUDIO._play_sfx('page'); },
     choice: function() {          AUDIO._play_sfx('choice'); },
     interaction: function() {     AUDIO._play_sfx('interaction'); },
+    footstep: function(cooldown, key) {
+      AUDIO._play_sfx('footstep', cooldown, key);
+    },
+    page: function() {
+      var t = 250;
+      if (_MIN_PAGE_TIME_MS)     t = _MIN_PAGE_TIME_MS;
+      AUDIO._play_sfx('page', t);
+    },
   },
 
   music: {
