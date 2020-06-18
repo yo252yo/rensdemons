@@ -35,6 +35,7 @@ class MovingObject extends LevelObject {
   stop_autowalk() {
       this.destination_x = -1;
       this.destination_y = -1;
+      delete this.walk_callback;
   }
 
   gravity_center() {
@@ -101,10 +102,11 @@ class MovingObject extends LevelObject {
     this._try_move_by_pixels(this._movement_increment() * unit_x, this._movement_increment() * unit_y, true);
   }
 
-  try_walk_to(x, y) {
+  try_walk_to(x, y, callback) {
     var currently_moving = this.is_walking();
     this.destination_x = x - this.width / 2;
     this.destination_y = y + 10;
+    this.walk_callback = callback;
 
     if (!currently_moving) {
       MovingObject.auto_walk(this);
@@ -126,6 +128,9 @@ class MovingObject extends LevelObject {
       return;
     }
     if (moving_object.is_at(moving_object.destination_x, moving_object.destination_y)) {
+        if(moving_object.walk_callback){
+          moving_object.walk_callback();
+        }
         moving_object.stop_autowalk();
         return;
     }

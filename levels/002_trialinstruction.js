@@ -1,14 +1,72 @@
 AUDIO.music.temple();
 
-CURRENTLEVEL.start_function = function() {
+var friend_go_7 =  function() {
   TextBannerSequence.make([
-    "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
-    "Priest: \"Many before you have failed. But you know as much as we do that the times are hard and require efforts. One day, the Promised Child will come and liberate us from the tyranny of $$demon_lord$, for it has been foretold. And that day may well be today.\"",
-    "Priest: \"Now, second-borns, today we will see if the Promised Child is among you. I truly hope it is. But our fate is not for me to decide. We must have faith in the Goddess. Only her Trial will reveal if \"",
-  ], function(){ SAVE.autosave(); IO.control.character(); });
+    "Priest: \"Now, may Ren step forward.\"",
+  ], function() {
+    friend.destroy();
+    SAVE.autosave();
+    IO.control.character();
+  });
 };
 
+var friend_go_6 =  function() {
+  TextBannerSequence.make([
+    "Screams echo in the distance.",
+  ], friend_go_7);
+};
+
+var friend_go_5 =  function() {
+  friend.try_walk_to(250,50, friend_go_6);
+};
+
+var friend_go_4 =  function() {
+  TextBannerSequence.make([
+    "$$child_friends_m1$: \"I... I don't want to go... I don't want to die yet!\"",
+    "Priest: \"My child, you might live.\"",
+    "$$child_friends_m1$: \"Please, please...\"",
+    "$$child_friends_m1$: \"Please, let me go...\"",
+    "Priest: \"Child, you must be brave. Go forth.\"",
+    "$$child_friends_m1$: \"...\"",
+  ], friend_go_5);
+};
+
+var friend_go_3 =  function() {
+  friend.try_walk_to(250,620, friend_go_4);
+};
+
+var friend_go_2 =  function() {
+  TextBannerSequence.make([
+    "$$child_friends_m1$: \"Wait... \"",
+  ], friend_go_3);
+};
+
+var friend_go_1 =  function() {
+  friend.try_walk_to(250,600, friend_go_2);
+};
+
+var friend_go_0 =  function() {
+  TextBannerSequence.make([
+    "$$child_friends_m1$: \"We all know how this goes... Ren, it was nice being friends with you.\""
+  ], friend_go_1);
+};
+
+var priest_explain =  function() {
+  SAVE.autosave();
+  TextBannerSequence.make([
+//    "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
+//    "Priest: \"Many before you have failed. But you know as much as we do that the times are hard and require efforts. One day, the Promised Child will come and liberate us from the tyranny of $$demon_lord$, for it has been foretold. And that day may well be today.\"",
+//    "Priest: \"Now, second-borns, today we will see if the Promised Child is among you. I truly hope it is. But our fate is not for me to decide. We must have faith in the Goddess. Only her Trial will reveal if you are worthy.\"",
+//    "Priest: \"It is very simple. When your name is called, just make your way to the head priest, at the back of this sanctuary. He will lead you to the Trial Chamber. The challenges that await you within cannot be overcome without the help of the Goddess. If you make it back, we will know that you are the Promised Child.\"",
+    "Priest: \"Now, $$child_friends_m1$, if you would.\"",
+  ], friend_go_0);
+};
+
+CURRENTLEVEL.start_function = priest_explain;
 CURRENTLEVEL.initialize_with_character(350, 700);
+
+
+var friend = new M_ChildM(250, 720);
 
 
 var battleCallback = function() {
@@ -44,18 +102,20 @@ for (var i = 100; i< 700; i += 100) {
   new S_Column(400,i);
 }
 
-new S_SavePoint(275, 120);
+new S_SavePoint(275, 250);
 
 var hp_menu = function () {
   new CenteredTextMenu("",
                 [
-                  {"text": "Yes, sir", "effect": function(){ BATTLE.api.make("viper", battleCallback); }},
+                  {"text": "Yes, sir", "effect": function(){
+                    // ------------------------
+                   }},
                   {"text": "Not yet", "effect": "##CLOSE"},
                ]
              );
 }
 
-var hp = make_priest(275, 70);
+var hp = make_priest(275, 100);
 hp.interaction = function() {
   TextBannerSequence.make([
     "The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?"
@@ -76,11 +136,6 @@ make_priest(350, 550);
 (new M_ChildF(180, 710)).interaction = function() {
   TextBannerSequence.make([
     "$$child_friends_f1$: \"You go ahead, I wanna watch your Trial. But you'll fail and I'll succeed, that's for sure!\""
-  ])
- };
-(new M_ChildM(250, 720)).interaction = function() {
-  TextBannerSequence.make([
-    "$$child_friends_m1$: \"We all know how this goes... It was nice being friends with you.\""
   ])
  };
 (new M_ChildF(280, 710)).interaction = function() {

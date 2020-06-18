@@ -7,3 +7,6 @@ volume buttons skip dialog....
 maybe have the element turn around when talked to
 
 POPULATE FIRST DUNGEON
+
+
+  make different walk speeds
