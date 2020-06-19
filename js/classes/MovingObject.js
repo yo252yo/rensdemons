@@ -17,12 +17,6 @@ class MovingObject extends LevelObject {
     this.height = h;
 
     this.stop_autowalk();
-/*
-    this.margin_left = -10;
-    this.margin_right = 20;
-    this.margin_top = 5;
-    this.margin_bottom = 0;*/
-
     this.place_at(x,y);
   }
 

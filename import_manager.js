@@ -135,6 +135,8 @@ IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
 
+new Class("Sequence");
+
 new Module("INTERFACE");
 
 window.onload = function() {
