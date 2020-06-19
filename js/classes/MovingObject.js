@@ -17,11 +17,11 @@ class MovingObject extends LevelObject {
     this.height = h;
 
     this.stop_autowalk();
-
+/*
     this.margin_left = -10;
     this.margin_right = 20;
     this.margin_top = 5;
-    this.margin_bottom = 0;
+    this.margin_bottom = 0;*/
 
     this.place_at(x,y);
   }
@@ -150,5 +150,9 @@ class MovingObject extends LevelObject {
       moving_object.stop_autowalk();
       return;
     }
+  }
+
+  static try_make_walk_to(moving_object, x, y, callback) {
+      return moving_object.try_walk_to(x,y, callback);
   }
 }

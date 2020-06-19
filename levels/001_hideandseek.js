@@ -9,7 +9,6 @@ CURRENTLEVEL.start_function = function() {
     "Ren: \"... 100! Ready or not, here I come!\"",
   ], function(){ SAVE.autosave(); IO.control.character(); });
 };
-CURRENTLEVEL.initialize_with_character(150, 300);
 
 
 var CHILDREN_FOUND = {};
@@ -112,3 +111,5 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
     "$$sidekick_name$: \"Good luck! Please be safe and come back!\"",
   ], function(){ IO.control.character(); });
 });
+
+CURRENTLEVEL.initialize_with_character(150, 300);

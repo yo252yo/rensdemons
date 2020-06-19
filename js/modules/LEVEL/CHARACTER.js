@@ -12,6 +12,11 @@ class M_Character extends MovingObject {
 }
 
 const CHARACTER = {
+  margin_left: -10,
+  margin_right: 20,
+  margin_top: 5,
+  margin_bottom: 0,
+
   initialize: function(x, y) {
     CHARACTER.character = new M_Character(x, y);
     SCREEN.scroll_screen_to_character();
