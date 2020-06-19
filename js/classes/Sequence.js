@@ -2,6 +2,10 @@
 class Sequence {
   static invoke_with_callback(f, args, c) {
     args.push(c);
+    if (f.length != args.length) {
+      CONSOLE.error("Attempting to chain function with wrong number of arguments (it's probably unchainable)", true);
+      console.log(f);
+    }
     f.apply(null, args);
   }
 

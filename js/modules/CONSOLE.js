@@ -17,8 +17,11 @@ const CONSOLE = {
     CONSOLE._sys_log(t, color);
   },
 
-  error: function(t) {
+  error: function(t, with_trace) {
     CONSOLE._sys_log(t, "Red", "font-weight:bold;");
+    if(with_trace){
+      CONSOLE.stack_trace();
+    }
   },
 
   stack_trace: function() {
