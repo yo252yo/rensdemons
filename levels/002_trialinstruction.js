@@ -25,6 +25,10 @@ friend_go.add_TextBannerSequence([
   "Priest: \"Child, you must be brave. Go forth.\"",
   "$$child_friends_m1$: \"...\"",
 ]);
+friend_go.add_function(function(callback) {
+  friend.change_speed(0.5);
+  callback();
+});
 friend_go.add_MoveObjectWalk(friend, 250, 50);
 friend_go.add_TextBannerSequence([
   "Screams echo in the distance.",

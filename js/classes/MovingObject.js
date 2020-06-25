@@ -1,7 +1,7 @@
 // runtime MovingSprite, PALETTE, LEVEL
 // use(LevelObject)
 
-var _WALKING_INCREMENT = 5;
+var _BASE_WALKING_INCREMENT = 5;
 var _IS_AT_PRECISION = 5.1;
 var _AUTO_WALK_TICK = 30;
 
@@ -48,6 +48,8 @@ class MovingObject extends LevelObject {
 
     this.width = w;
     this.height = h;
+
+    this.speed = 1;
 
     this.stop_autowalk();
     this.place_at(x,y);
@@ -99,6 +101,10 @@ class MovingObject extends LevelObject {
       delete this.walk_callback;
   }
 
+  change_speed(new_speed) {
+    this.speed = new_speed;
+  }
+
   _try_walk_by_pixels(dx,dy, stop_autowalk) {
     if(stop_autowalk){
       this.stop_autowalk();
@@ -114,10 +120,13 @@ class MovingObject extends LevelObject {
   }
 
   _movement_increment() {
+    var increment = _BASE_WALKING_INCREMENT * this.speed;
+
     if (CHARACTER.character == this && IO_CHARACTER.is_running()){
-      return Math.floor(_WALKING_INCREMENT * MovingObject._RUNNING_BONUS);
+      increment *= MovingObject._RUNNING_BONUS;
     }
-    return _WALKING_INCREMENT;
+
+    return Math.floor(increment);
   }
 
   try_step_up() {    this.try_step(0, -1);  }
