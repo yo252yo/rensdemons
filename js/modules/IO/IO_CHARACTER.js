@@ -25,7 +25,7 @@ const IO_CHARACTER = {
         }
     }
     if(x != 0 || y != 0) {
-      c.try_move(x, y);
+      c.try_step(x, y);
     }
   },
 
