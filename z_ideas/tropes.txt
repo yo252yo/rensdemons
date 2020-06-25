@@ -34,4 +34,5 @@ flashback sequence you know you survive
 actually you know you survive till the end of the game!!
 death flags, flags in general (Before you go there let me warn you)
 got ammo that means were gonna run into zombie soon
-clear whole floor before moving on	
+clear whole floor before moving on
+he knows the hitboxes

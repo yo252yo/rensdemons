@@ -11,4 +11,4 @@ POPULATE FIRST DUNGEON
 
   make different walk speeds
 
-  rename "move" to TP for moving object 
+  rename "move" to TP for moving object

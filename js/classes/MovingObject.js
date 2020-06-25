@@ -50,10 +50,10 @@ class MovingObject extends LevelObject {
       return (this._is_at_x(x) && this._is_at_y(y));
   }
 
-  move(x, y) {
+  shift(x, y) {
     this.x += x;
     this.y += y;
-    this.sprite.move(x, y);
+    this.sprite.shift(x, y);
     // In case we're the character, can be optimized
     SCREEN.scroll_screen_to_character();
   }
@@ -74,7 +74,7 @@ class MovingObject extends LevelObject {
       // The hash is different every time we move, so instead we'll key the sound
       // effect per class.
       AUDIO.effect.footstep(1300 / this._movement_increment(), this.constructor.name);
-      this.move(dx,dy);
+      this.shift(dx,dy);
       return true;
     }
     return false;

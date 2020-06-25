@@ -32,7 +32,7 @@ friend_go.add_TextBannerSequence([
 friend_go.add_TextBannerSequence([
   "Priest: \"Now, may Ren step forward.\"",
 ]);
-friend_go.add_function(function() {
+friend_go.add_function(function(ignored_callback) {
   friend.destroy();
   SAVE.autosave();
   IO.control.character();

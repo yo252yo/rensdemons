@@ -45,7 +45,7 @@ class VisualElement {
       this.refresh_position();
     }
 
-    move(dx, dy) {
+    shift(dx, dy) {
       this.y += dy;
       this.x += dx;
       this.refresh_position();

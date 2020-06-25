@@ -45,7 +45,7 @@ class MovingSprite extends CanvasElement {
           }, _ANIMATION_SPEED);
     }
 
-    move(dx, dy) {
+    shift(dx, dy) {
       if (Math.abs(dx) > Math.abs(dy)) {
         if (dx > 0) {
             this.sprite_index_y = 2;
@@ -62,7 +62,7 @@ class MovingSprite extends CanvasElement {
         }
       }
       this.animation_cycle();
-      super.move(dx, dy);
+      super.shift(dx, dy);
     }
 
     facing_direction() {
