@@ -13,9 +13,15 @@ class MovingSprite extends CanvasElement {
       this.sprite_index_x = 0;
       this.sprite_index_y = 0;
 
+      this.walk_speed = 1;
+
       this.resource = RESOURCES.get_img(path);
       var thing_to_draw = this;
       RESOURCES.onload(this.resource, function() { thing_to_draw.draw(); });
+    }
+
+    set_walk_speed(walk_speed){
+      this.walk_speed = walk_speed;
     }
 
     draw() {
@@ -37,12 +43,13 @@ class MovingSprite extends CanvasElement {
       anime.animate_lock = 1;
       anime.sprite_index_x = 1;
       anime.draw();
+      var timeout = Math.floor(_ANIMATION_SPEED / this.walk_speed);
       setTimeout(function() {
           anime.sprite_index_x = 2; anime.draw();
               setTimeout(function() {
                   anime.sprite_index_x = 0; anime.draw(); anime.animate_lock = 0;
-                  }, _ANIMATION_SPEED);
-          }, _ANIMATION_SPEED);
+                  }, timeout);
+          }, timeout);
     }
 
     shift(dx, dy) {
