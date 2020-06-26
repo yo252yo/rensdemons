@@ -6,6 +6,8 @@ volume buttons skip dialog....
 
 should i make a map?
 
+audio volume controls
+
 maybe have the element turn around when talked to
 
 i think edge doesnt like functions starting by _ esp nested in namespaces
