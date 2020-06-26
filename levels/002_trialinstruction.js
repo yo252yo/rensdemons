@@ -1,5 +1,7 @@
 AUDIO.music.temple();
 
+new Snippet("decors/temple");
+
 var friend = new M_ChildM(250, 720);
 var friend_go = new Sequence();
 friend_go.add_TextBannerSequence([
@@ -56,14 +58,6 @@ var make_priest = function (x, y) {
  return priest;
 }
 
-
-for (var i = 100; i< 700; i += 100) {
-  new S_Column(150,i);
-  new S_Column(400,i);
-}
-
-new S_SavePoint(275, 250);
-
 var hp_menu = function () {
   new CenteredTextMenu("",
                 [
@@ -83,8 +77,6 @@ hp.interaction = function() {
     "Head-Priest: \"The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?\""
   ], hp_menu);
 }
-
-new S_Floor(50,750,500,700);
 
 make_priest(200, 550);
 make_priest(275, 550);

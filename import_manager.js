@@ -76,6 +76,12 @@ class Class extends Import {
   }
 }
 
+class Snippet extends Import {
+  constructor(name) {
+    super("snippets/" + name, false);
+  }
+}
+
 const IMPORTS = {
   classes:{},
   modules:{},
