@@ -76,7 +76,14 @@ const BATTLETREE = {
   },
 
   get_all_battles: function(){
-    return Object.keys(BATTLETREE._outcomes.get([]));
+    var battles = Object.keys(BATTLETREE._outcomes.get([]));
+    var displayable_battles = [];
+    for(var b in battles){
+      if (!battles[b].startsWith("_")){
+        displayable_battles.push(battles[b]);
+      }
+    }
+    return displayable_battles;
   },
 
   internal: {

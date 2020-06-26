@@ -59,4 +59,4 @@ hp.interaction = function() {
 */
 
 new S_battle(50, 170, 75, "viper");
-new S_battle(200, 200, 25, "viper");
+new S_battle(200, 200, 25, "_viper");
