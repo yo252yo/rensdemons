@@ -4,10 +4,9 @@
 var _BASE_WALKING_INCREMENT = 5;
 var _IS_AT_PRECISION = 5.1;
 var _AUTO_WALK_TICK = 30;
+var _RUNNING_BONUS = 1.8;
 
 class MovingObject extends LevelObject {
-
-  static _RUNNING_BONUS = 1.8;
 
   static auto_walk(moving_object) {
     if (! moving_object.is_walking()) {
@@ -121,7 +120,7 @@ class MovingObject extends LevelObject {
     var increment = _BASE_WALKING_INCREMENT * this.sprite.walk_speed;
 
     if (CHARACTER.character == this && IO_CHARACTER.is_running()){
-      increment *= MovingObject._RUNNING_BONUS;
+      increment *= _RUNNING_BONUS;
     }
 
     return Math.floor(increment);
