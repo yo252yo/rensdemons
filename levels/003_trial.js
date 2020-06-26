@@ -123,7 +123,16 @@ var hp_menu = function () {
                ]
              );
 }
-
+/*
+var battleCallback = function() {
+  TextBannerSequence.make([
+    "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened.",
+    "Priest: \"The day has finally come! The Promised Child is here! Praised be the Goddess.\"",
+    "Priests and children alike were weeping tears of joys. For centuries, mankind had awaited this event. And now it was finally here. During their lifetime. In front of them. In their little town! The cheers lasted for a moment. Finally, the head priest turned towards Ren.",
+    "Priest: \"Come, child. You have much to learn. Your journey is only beginning.\"",
+  ], function(){ CURRENTLEVEL.setup("demoend"); });
+}
+*/
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);

@@ -2,7 +2,7 @@ AUDIO.music.hideandseek();
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
-    "Although for now, the Promised Child, unaware of the fate that awaited, was simply playing hide and seek in the outskirts of town.",
+    "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
     "Ren: \"... 97\"",
     "Ren: \"... 98\"",
     "Ren: \"... 99\"",

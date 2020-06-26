@@ -64,23 +64,13 @@ for (var i = 100; i< 700; i += 100) {
 
 new S_SavePoint(275, 250);
 
-
-
-var battleCallback = function() {
-  TextBannerSequence.make([
-    "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened.",
-    "Priest: \"The day has finally come! The Promised Child is here! Praised be the Goddess.\"",
-    "Priests and children alike were weeping tears of joys. For centuries, mankind had awaited this event. And now it was finally here. During their lifetime. In front of them. In their little town! The cheers lasted for a moment. Finally, the head priest turned towards Ren.",
-    "Priest: \"Come, child. You have much to learn. Your journey is only beginning.\"",
-  ], function(){ CURRENTLEVEL.setup("demoend"); });
-}
-
-
 var hp_menu = function () {
   new CenteredTextMenu("",
                 [
                   {"text": "Yes, sir", "effect": function(){
-                    // ------------------------
+                    TextBannerSequence.make([
+                      "The head priest makes a pompous gesture, and a faint snapping sound can be heard. The floor tile under Ren's feet slide to uncover a hole. With a little push from the priest, Ren falls in.",
+                    ], function(){ CURRENTLEVEL.setup("003_trial"); });
                    }},
                   {"text": "Not yet", "effect": "##CLOSE"},
                ]
@@ -90,7 +80,7 @@ var hp_menu = function () {
 var hp = make_priest(275, 100);
 hp.interaction = function() {
   TextBannerSequence.make([
-    "The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?"
+    "Head-Priest: \"The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?\""
   ], hp_menu);
 }
 
