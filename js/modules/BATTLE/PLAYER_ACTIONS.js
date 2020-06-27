@@ -52,18 +52,39 @@ const PLAYER_ACTIONS = {
 
   set_default: {
     pray: function() {
+      var description = RANDOM.pick([
+        "You close your eyes and begs the Goddess for help.",
+        "You focus your thoughts on the Goddess and pray for Her help.",
+        "You pray for the Goddess to come to your rescue.",
+      ]);
+      var effect = RANDOM.pick([
+        "The Goddess works in mysterious ways. Nothing happens.",
+        "The Goddess seems to ignore your call.",
+        "The Goddess probably deems that you should solve this situation on your own.",
+        "The Goddess wants you to find your own way.",
+        "The Goddess will not be troubled over such trivial matters.",
+      ]);
       PLAYER_ACTIONS.add.useless({
         name: ABILITY.Pray,
-        description: ["You close your eyes and begs the Goddess for help."],
-        effect: "The Goddess works in mysterious ways. Nothing happens.",
+        description: [description, effect],
       });
     },
 
     flee: function() {
+      var description = RANDOM.pick([
+        "You run away.",
+        "You turn around and attempt to escape.",
+        "You back away slowly.",
+      ]);
+      var effect = RANDOM.pick([
+        "In a stroke of luck, you manage to escape.",
+        "Your opponnent chases you for a bit, but you manage to escape.",
+        "As you turn around, your opponnent loses interest and runs off in the distance.",
+      ]);
       PLAYER_ACTIONS.add.escape({
         name: ABILITY.Flee,
-        description: ["You run away."],
-        effect: "The monster tries to pursue you, but you manage to escape.",
+        description: [description],
+        effect: effect,
       })
     },
   },
