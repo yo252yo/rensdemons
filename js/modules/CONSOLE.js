@@ -61,5 +61,8 @@ const CONSOLE = {
       CONSOLE._sys_log("- Event " + operation, "Orange");
     },
 
+    abilities : function(operation){
+      CONSOLE._sys_log(") Ability: " + operation, "Yellow");
+    },
   },
 };

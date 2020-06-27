@@ -1,6 +1,7 @@
 const ABILITY = {
   Flee: "Flee",
   CallHelp: "Call help",
+  Pray: "Pray",
 }
 
 
@@ -32,7 +33,12 @@ const ABILITIES = {
     return ABILITIES._abilities.get([name]);
   },
 
+  unlock: function(name) {
+    CONSOLE.log.abilities("Unlocked " + name);
+    ABILITIES._abilities.set([name], true);
+  },
+
 }
 
-  ABILITIES._abilities.set([ABILITY.Flee], true);
-  ABILITIES._abilities.set([ABILITY.CallHelp], true);
+ABILITIES._abilities.set([ABILITY.Flee], true);
+ABILITIES._abilities.set([ABILITY.CallHelp], true);

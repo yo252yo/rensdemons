@@ -9,7 +9,6 @@ var _PLAYER_ACTIONS = {};
 // =================== ABILITIES CALLBACKS
 // ===================
 
-var pray = "Pray";
 var swear_loyalty = "Swear loyalty";
 
 BATTLE.player_actions.add_losing_action({
@@ -17,7 +16,8 @@ BATTLE.player_actions.add_losing_action({
   description: ["You try to go further back, but you trip and fall on the ground."],
   effect: "The basilisk takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.",
   extra_function: function(){
-    BATTLETREE.unlock(battle_name, pray);
+    //BATTLETREE.unlock(battle_name, pray);
+    ABILITIES.unlock(ABILITY.Pray);
   },
 });
 
@@ -27,7 +27,8 @@ BATTLE.player_actions.add_losing_action({
                 "But nobody moves. Your voice echoes dreadfully through the maze of underground tunnels."],
   effect: "The basilisk is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness.",
   extra_function: function(){
-    BATTLETREE.unlock(battle_name, pray);
+    //BATTLETREE.unlock(battle_name, pray);
+    ABILITIES.unlock(ABILITY.Pray);
   },
 });
 
@@ -40,13 +41,13 @@ var unlock_swear_loyalty = function() {
 };
 
 BATTLE.player_actions.add({
-  name: pray,
+  name: ABILITY.Pray,
   description: ["You close your eyes and focus on your faith.",
                 "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
   function: function() {
-    BATTLETREE.unlock(battle_name, swear_loyalty, pray);
+    BATTLETREE.unlock(battle_name, swear_loyalty, ABILITY.Pray);
     unlock_swear_loyalty();
-    BATTLE.player_actions.remove(pray);
+    BATTLE.player_actions.remove(ABILITY.Pray);
   },
 });
 
