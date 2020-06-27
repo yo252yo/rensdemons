@@ -118,6 +118,24 @@ const BATTLE = {
     },
   },
 
+  set_default_player_actions: {
+    pray: function() {
+      BATTLE.player_actions.add({
+        name: ABILITY.Pray,
+        description: ["You close your eyes and begs the Goddess for help."],
+        effect: "The Goddess works in mysterious ways. Nothing happens.",
+      });
+    },
+
+    flee: function() {
+      BATTLE.player_actions.add_escape_action({
+        name: ABILITY.Flee,
+        description: ["You run away."],
+        effect: "The monster tries to pursue you, but you manage to escape.",
+      })
+    },
+  },
+
   monster_actions: {
     add_textual: function(text) {
       BATTLE._monster_actions.push(
@@ -280,5 +298,9 @@ const BATTLE = {
       BATTLE.origin_level = origin_level;
       BATTLE.builder.setup.start(name, callback);
     },
+  },
+
+  get_current_battle: function() {
+    return current_battle;
   },
 };
