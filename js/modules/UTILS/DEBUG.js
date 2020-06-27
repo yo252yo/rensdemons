@@ -8,6 +8,10 @@ const DEBUG = {
     DEBUG.MOUSE_RECTANGLES = true;
   },
 
+  draw_component: function() {
+    DEBUG.COMPONENT = true;
+  },
+
   activate_character_tp: function() {
     DEBUG.TP_CHARACTER = true;
   },
@@ -34,7 +38,8 @@ const DEBUG = {
 
   all: function() {
     DEBUG.log_mouse_positions();
-    DEBUG.draw_mouse_rectangles();
+    //DEBUG.draw_mouse_rectangles();
+    //DEBUG.draw_component();
     DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
@@ -48,40 +53,42 @@ const DEBUG = {
       if (DEBUG.MOUSE_POSITIONS) {
         CONSOLE.debug("Position:" + x + " / " + y);
       }
-      if (DEBUG.TP_CHARACTER) {
-        if (KEYS_UTIL.is_pressed.ctrl()){
-          CHARACTER.initialize(x, y);
-        }
+      if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
+        CHARACTER.initialize(x, y);
       }
-      if(DEBUG.MOUSE_RECTANGLES) {
-        if (KEYS_UTIL.is_pressed.alt()){
-          x = Math.round(x /25) * 25;
-          y = Math.round(y /25) * 25;
+      if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.alt()){
+        x = Math.round(x/5)*5;
+        y = Math.round(y/5)*5;
+        new S_battle(x, y, "#COMPONENT");
+        CONSOLE.debug('new S_battle('+x+', '+y+', "#COMPONENT");');
+      }
+      if (DEBUG.MOUSE_RECTANGLES && KEYS_UTIL.is_pressed.alt()){
+        x = Math.round(x /25) * 25;
+        y = Math.round(y /25) * 25;
 
-          if (DEBUG._previous_x) {
-            var w = Math.abs(x - DEBUG._previous_x);
-            var h = Math.abs(y - DEBUG._previous_y);
-            var x = Math.min(x, DEBUG._previous_x);
-            var y = Math.max(y, DEBUG._previous_y);
-            var color = Color.random().code();
+        if (DEBUG._previous_x) {
+          var w = Math.abs(x - DEBUG._previous_x);
+          var h = Math.abs(y - DEBUG._previous_y);
+          var x = Math.min(x, DEBUG._previous_x);
+          var y = Math.max(y, DEBUG._previous_y);
+          var color = Color.random().code();
 
-            CONSOLE.debug("new S_Floor(" + x + "," + y + "," + w + "," + h + ");", color);
+          CONSOLE.debug("new S_Floor(" + x + "," + y + "," + w + "," + h + ");", color);
 
-            var html_rectangle = HTML.div.make({
-              top: (y-h),
-              left: x,
-              w: w,
-              h: h,
-              background: color,
-            });
-            CURRENTLEVEL.system.html().appendChild(html_rectangle);
+          var html_rectangle = HTML.div.make({
+            top: (y-h),
+            left: x,
+            w: w,
+            h: h,
+            background: color,
+          });
+          CURRENTLEVEL.system.html().appendChild(html_rectangle);
 
-            delete DEBUG._previous_x;
-            delete DEBUG._previous_y;
-          } else {
-            DEBUG._previous_x = x;
-            DEBUG._previous_y = y;
-          }
+          delete DEBUG._previous_x;
+          delete DEBUG._previous_y;
+        } else {
+          DEBUG._previous_x = x;
+          DEBUG._previous_y = y;
         }
       }
     },

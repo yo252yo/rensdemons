@@ -76,7 +76,7 @@ class S_SavePoint extends LevelObject {
   }
 }
 
-class S_battle extends LevelObject {
+class S_battle_sizeable extends LevelObject {
   constructor(x, y, size, battle) {
     var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
     super(visual, x, y);
@@ -93,6 +93,12 @@ class S_battle extends LevelObject {
       self.destroy();
     };
     BATTLE.api.make(this.battle, battleCallback);
+  }
+}
+
+class S_battle extends S_battle_sizeable {
+  constructor(x, y, battle) {
+    super(x, y, 75, battle);
   }
 }
 
