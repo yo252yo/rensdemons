@@ -69,70 +69,8 @@ const BATTLE = {
       }
     },
 
-    _add_helper: function(action_object, result_enum, result_function) {
-      action_object.function = function(){
-        BATTLETREE.develop(BATTLE.current_battle, action_object.name, result_enum);
-        result_function(action_object.effect);
-        if(action_object.extra_function){
-          action_object.extra_function();
-        }
-      }
-
-      BATTLE.player_actions.add(action_object);
-    },
-
-    add_losing_action: function(action_object) {
-      return BATTLE.player_actions._add_helper(
-        action_object,
-        BATTLETREE.LOSS,
-        BATTLE.monster_actions.prepare_loss
-      );
-    },
-
-    add_useless_action: function(action_object) {
-      return BATTLE.player_actions._add_helper(
-        action_object,
-        BATTLETREE.NOTHING,
-        function(ignored) {}
-      );
-    },
-
-    add_escape_action: function(action_object) {
-      return BATTLE.player_actions._add_helper(
-        action_object,
-        BATTLETREE.NOTHING,
-        BATTLE.monster_actions.prepare_escape
-      );
-    },
-
-    add_winning_action: function(action_object) {
-      return BATTLE.player_actions._add_helper(
-        action_object,
-        BATTLETREE.WIN,
-        BATTLE.monster_actions.prepare_win
-      );
-    },
-
     remove: function(name) {
       delete BATTLE._player_actions[name];
-    },
-  },
-
-  set_default_player_actions: {
-    pray: function() {
-      BATTLE.player_actions.add({
-        name: ABILITY.Pray,
-        description: ["You close your eyes and begs the Goddess for help."],
-        effect: "The Goddess works in mysterious ways. Nothing happens.",
-      });
-    },
-
-    flee: function() {
-      BATTLE.player_actions.add_escape_action({
-        name: ABILITY.Flee,
-        description: ["You run away."],
-        effect: "The monster tries to pursue you, but you manage to escape.",
-      })
     },
   },
 
@@ -301,6 +239,6 @@ const BATTLE = {
   },
 
   get_current_battle: function() {
-    return current_battle;
+    return BATTLE.current_battle;
   },
 };

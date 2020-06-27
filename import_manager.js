@@ -98,6 +98,7 @@ new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
+new Module("BATTLE/PLAYER_ACTIONS");
 
 new Module("IO/IO");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");

@@ -7,8 +7,8 @@ new CenteredImage("assets/battles/cockroach.png", 'background');
 // =================== ABILITIES CALLBACKS
 // ===================
 
-BATTLE.set_default_player_actions.flee();
-BATTLE.set_default_player_actions.pray();
+PLAYER_ACTIONS.set_default.flee();
+PLAYER_ACTIONS.set_default.pray();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
