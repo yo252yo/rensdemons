@@ -51,9 +51,8 @@ PLAYER_ACTIONS.add.action({
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
 // ===================
-BATTLE.monster_actions.add_textual("The basilisk hisses and spits.");
-BATTLE.monster_actions.add_textual("The basilisk slithers on the ground towards you.");
-BATTLE.monster_actions.add_textual("The basilisk gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");
+BATTLE.monster_actions.add_textual("The Basilisk hisses and spits.");
+BATTLE.monster_actions.add_textual("The Basilisk gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");
 
 // ===================
 // =================== START

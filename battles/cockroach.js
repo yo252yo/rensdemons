@@ -13,7 +13,9 @@ PLAYER_ACTIONS.set_default.pray();
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
 // ===================
-BATTLE.monster_actions.add_textual("The cockroach does something.");
+BATTLE.monster_actions.add_textual("The Cockroach runs between your legs.");
+BATTLE.monster_actions.add_textual("The Cockroach emits small chirping sound.");
+BATTLE.monster_actions.add_textual("The Cockroach runs around in circles.");
 
 // ===================
 // =================== START
