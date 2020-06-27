@@ -21,6 +21,11 @@ initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
 
+MovingObject.js:120 Uncaught TypeError: Cannot read property 'walk_speed' of undefined
+    at M_Character._movement_increment (MovingObject.js:120)
+    at Function.auto_walk (MovingObject.js:26)
+    in battle
+
 proper loader and async loading for slow 3g
 
 

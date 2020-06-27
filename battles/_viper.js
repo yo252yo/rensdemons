@@ -2,7 +2,7 @@
 // =================== INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/viper.png", 'background');
-var battle_name = "viper";
+var battle_name = "_viper";
 var _PLAYER_ACTIONS = {};
 
 // ===================
@@ -11,7 +11,7 @@ var _PLAYER_ACTIONS = {};
 
 var pray = "Pray";
 var swear_loyalty = "Swear loyalty";
-
+/*
 BATTLE.player_actions.add_escape_action({
   name: ABILITY.Flee,
   description: ["You try to go further back, but you trip and fall on the ground."],
@@ -47,7 +47,7 @@ BATTLE.player_actions.add({
   },
 });
 
-
+*/
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
 // ===================

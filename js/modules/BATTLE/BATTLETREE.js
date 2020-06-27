@@ -8,6 +8,7 @@ const BATTLETREE = {
   LOSS: "#LOSS",
   WIN: "#WIN",
   UNKNOWN: "#UNKNOWN",
+  NOTHING: "#NOTHING",
 
   factory: {
     export: function() {
@@ -66,7 +67,7 @@ const BATTLETREE = {
       DISK.write("BATTLETREE");
     }
 
-    if (destination == BATTLETREE.WIN || destination == BATTLETREE.LOSS) {
+    if (destination == BATTLETREE.WIN || destination == BATTLETREE.LOSS || destination == BATTLETREE.NOTHING) {
       BATTLETREE.internal._propagate_verdict(battle, name, destination);
     }
   },
@@ -88,7 +89,7 @@ const BATTLETREE = {
 
   internal: {
     _propagate_verdict: function(battle, name, verdict) {
-      if (name == BATTLETREE.WIN || name == BATTLETREE.LOSS) {
+      if (name == BATTLETREE.WIN || name == BATTLETREE.LOSS || name == BATTLETREE.NOTHING) {
         return;
       }
       for (var i in BATTLETREE._outcomes.get([battle])) {
@@ -125,6 +126,7 @@ const BATTLETREE = {
           return 1;
         case BATTLETREE.WIN:
         case BATTLETREE.LOSS:
+        case BATTLETREE.NOTHING:
           return 3;
         default:
           return 2;
@@ -169,6 +171,7 @@ const BATTLETREE = {
         case BATTLETREE.WIN:
           return "<b>" + name + "</b>";
         case BATTLETREE.LOSS:
+        case BATTLETREE.NOTHING:
           return "<s>" + name + "</s>";
         case BATTLETREE.UNKNOWN:
           return name;
@@ -196,6 +199,9 @@ const BATTLETREE = {
           break;
         case BATTLETREE.LOSS:
           html[0] += " -> <s>LOSS</s><br/> ";
+          break;
+        case BATTLETREE.NOTHING:
+          html[0] += " --<br/> ";
           break;
         default:
           html[0] += "<br/> "

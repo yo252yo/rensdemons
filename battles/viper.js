@@ -10,15 +10,30 @@ var _PLAYER_ACTIONS = {};
 // ===================
 
 var pray = "Pray";
-var swear_loyalty = "Swear loyalty";
-/*
+
 BATTLE.player_actions.add_escape_action({
   name: ABILITY.Flee,
-  description: ["You try to go further back, but you trip and fall on the ground."],
-  effect: "The snake takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground.",
-  extra_function: function(){BATTLETREE.unlock(battle_name, pray);},
+  description: ["You run away."],
+  effect: "The monster tries to pursue you, but you manage to escape.",
 });
 
+BATTLE.player_actions.add({
+  name: ABILITY.Pray,
+  description: ["You close your eyes and begs the Goddess for help."],
+  effect: "The Goddess works in mysterious ways. Nothing happens.",
+  function: function() {
+    BATTLETREE.unlock(battle_name, "test", ABILITY.Pray);
+  },
+});
+
+BATTLE.player_actions.add_useless_action({
+  name: "test",
+  description: ["You sadasd away."],
+  effect: "The moasfgafsao pursue you, but you manage to escape.",
+  function: function() {
+  },
+});
+/*
 BATTLE.player_actions.add_losing_action({
   name: ABILITY.CallHelp,
   description: ["You shout, terrified, in hope that someone around will help.",
@@ -47,6 +62,7 @@ BATTLE.player_actions.add({
   },
 });
 
+*/
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
@@ -54,7 +70,7 @@ BATTLE.player_actions.add({
 BATTLE.monster_actions.add_textual("The viper hisses and spits.");
 BATTLE.monster_actions.add_textual("The viper slithers on the ground towards you.");
 BATTLE.monster_actions.add_textual("The viper gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");
-*/
+
 // ===================
 // =================== START
 // ===================

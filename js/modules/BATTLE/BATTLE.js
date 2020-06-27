@@ -89,10 +89,18 @@ const BATTLE = {
       );
     },
 
+    add_useless_action: function(action_object) {
+      return BATTLE.player_actions._add_helper(
+        action_object,
+        BATTLETREE.NOTHING,
+        function(ignored) {}
+      );
+    },
+
     add_escape_action: function(action_object) {
       return BATTLE.player_actions._add_helper(
         action_object,
-        BATTLETREE.LOSS,
+        BATTLETREE.NOTHING,
         BATTLE.monster_actions.prepare_escape
       );
     },
