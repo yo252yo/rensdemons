@@ -32,5 +32,16 @@ var displayText = function() {
     "In the rest of the game, Ren will set out to travel the world and get stronger to defeat the evil  $$demon_lord$. And of course, discover the secrets of this world in the process. And of course there's gonna be a bunch of weirdness and pseudo philosophy to this whole adventure.",
   ]);
 }
+/*
+var boss_callback = function() {
+  TextBannerSequence.make([
+    "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened.",
+    "Priest: \"The day has finally come! The Promised Child is here! Praised be the Goddess.\"",
+    "Priests and children alike were weeping tears of joys. For centuries, mankind had awaited this event. And now it was finally here. During their lifetime. In front of them. In their little town! The cheers lasted for a moment. Finally, the head priest turned towards Ren.",
+    "Priest: \"Come, child. You have much to learn. Your journey is only beginning.\"",
+  ], function(){ CURRENTLEVEL.setup("demoend"); });
+}
+
+*/
 
 setTimeout(displayText, 1000);
