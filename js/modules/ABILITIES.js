@@ -34,6 +34,7 @@ const ABILITIES = {
   },
 
   unlock: function(name) {
+    AUDIO.effect.unlock();
     CONSOLE.log.abilities("Unlocked " + name);
     ABILITIES._abilities.set([name], true);
   },
