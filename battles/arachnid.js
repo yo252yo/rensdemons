@@ -1,8 +1,8 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/viper.png", 'background');
-var battle_name = "viper";
+new CenteredImage("assets/battles/arachnid.png", 'background');
+var battle_name = "arachnid";
 var _PLAYER_ACTIONS = {};
 
 // ===================
@@ -58,4 +58,4 @@ BATTLE.monster_actions.add_textual("The viper gets ever closer, snapping its jaw
 // ===================
 // =================== START
 // ===================
-BATTLE.operations.start("A Vicious Viper Ventured into View.");
+BATTLE.operations.start("An Aversive Arachnid Appeared on your Arm.");
