@@ -38,8 +38,8 @@ const DEBUG = {
 
   all: function() {
     DEBUG.log_mouse_positions();
-    //DEBUG.draw_mouse_rectangles();
-    //DEBUG.draw_component();
+    DEBUG.draw_mouse_rectangles();
+    DEBUG.draw_component();
     DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
@@ -56,7 +56,7 @@ const DEBUG = {
       if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
         CHARACTER.initialize(x, y);
       }
-      if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.alt()){
+      if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.shift()){
         x = Math.round(x/5)*5;
         y = Math.round(y/5)*5;
         new S_battle(x, y, "#COMPONENT");
