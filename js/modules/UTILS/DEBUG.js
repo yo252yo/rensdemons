@@ -50,17 +50,12 @@ const DEBUG = {
 
   signal: {
     mouse_position: function(x, y) {
-      if (DEBUG.MOUSE_POSITIONS) {
-        CONSOLE.debug("Position:" + x + " / " + y);
-      }
-      if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
-        CHARACTER.initialize(x, y);
-      }
       if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.shift()){
         x = Math.round(x/5)*5;
         y = Math.round(y/5)*5;
         new S_battle(x, y, "#COMPONENT");
         CONSOLE.debug('new S_battle('+x+', '+y+', "#COMPONENT");');
+        return;
       }
       if (DEBUG.MOUSE_RECTANGLES && KEYS_UTIL.is_pressed.alt()){
         x = Math.round(x /25) * 25;
@@ -90,6 +85,13 @@ const DEBUG = {
           DEBUG._previous_x = x;
           DEBUG._previous_y = y;
         }
+        return;
+      }
+      if (DEBUG.MOUSE_POSITIONS) {
+        CONSOLE.debug("Position:" + x + " / " + y);
+      }
+      if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
+        CHARACTER.initialize(x, y);
       }
     },
   }
