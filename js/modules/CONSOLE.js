@@ -58,11 +58,17 @@ const CONSOLE = {
     },
 
     event : function(operation){
-      CONSOLE._sys_log("- Event " + operation, "Orange");
+      CONSOLE._sys_log("- Event " + operation, "Purple");
     },
 
     abilities : function(operation){
       CONSOLE._sys_log(") Ability: " + operation, "Yellow");
+    },
+
+    item : function(name, quantity){
+      var s = " ";
+      if (quantity > 0){ s = " +";}
+      CONSOLE._sys_log("} Item stock modification: " + name + s + quantity, "Orange");
     },
   },
 };

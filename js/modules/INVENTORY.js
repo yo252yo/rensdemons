@@ -1,4 +1,9 @@
 
+const ITEM = {
+  Rock: "Sharp rock",
+  Branch: "Branch",
+}
+
 const INVENTORY = {
   _inventory: new FluidMap(),
 
@@ -28,7 +33,19 @@ const INVENTORY = {
   },
 
   increase: function(name, quantity) {
+    if(!quantity) {quantity = 1;}
     INVENTORY._inventory.increment([name], quantity);
+    CONSOLE.log.item(name, quantity);
+  },
+
+  decrease: function(name, quantity) {
+    if(!quantity) {quantity = 1;}
+    CONSOLE.log.item(name, -1 * quantity);
+    INVENTORY._inventory.increment([name], -1 * quantity);
+    var g = INVENTORY._inventory.get([name]);
+    if (g <= 0){
+      INVENTORY._inventory.delete([name]);
+    }
   },
 
 }

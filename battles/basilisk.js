@@ -28,13 +28,11 @@ PLAYER_ACTIONS.add.losing({
   },
 });
 
-var unlock_swear_loyalty = function() {
-  PLAYER_ACTIONS.add.winning({
-    name: swear_loyalty,
-    description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""],
-    effect: "Suddenly, an eerie light basks the room. The basilisk grows stiff and stops moving. The creature is dead.",
-  });
-};
+PLAYER_ACTIONS.add.winning({
+  name: swear_loyalty,
+  description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""],
+  effect: "Suddenly, an eerie light basks the room. The basilisk grows stiff and stops moving. The creature is dead.",
+});
 
 PLAYER_ACTIONS.add.action({
   name: ABILITY.Pray,
@@ -42,7 +40,6 @@ PLAYER_ACTIONS.add.action({
                 "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
   function: function() {
     BATTLETREE.unlock(BATTLE.get_current_battle(), swear_loyalty, ABILITY.Pray);
-    unlock_swear_loyalty();
     BATTLE.player_actions.remove(ABILITY.Pray);
   },
 });
