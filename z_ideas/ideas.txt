@@ -12,4 +12,5 @@
 - good end = stop playing, true end = forking the game on github
 Plot devicr
 
-MC guffin 
+MC guffin
+- the goddess SAVED your soul (save/save)

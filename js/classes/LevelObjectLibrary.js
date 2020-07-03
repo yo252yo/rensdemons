@@ -94,6 +94,10 @@ class S_battle_sizeable extends LevelObject {
     };
     BATTLE.api.make(this.battle, battleCallback);
   }
+
+  hash() {
+    return super.hash() + "/" + this.battle;
+  }
 }
 
 class S_battle extends S_battle_sizeable {

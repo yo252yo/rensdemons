@@ -42,9 +42,13 @@ class LevelObject {
         left:(this.visual_element.x + this.h_x),
       });
       html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
+      html_rectangle.innerHTML += "<br />" + this.hash();
       html_rectangle.style.position = "absolute";
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
+      html_rectangle.style.zIndex = "30000";
+      html_rectangle.style.fontWeight = "bold";
+      html_rectangle.style.fontSize = "large";
 
       CURRENTLEVEL.system.html().appendChild(html_rectangle);
     }

@@ -15,7 +15,7 @@ welcome_boss.add_function(function(ignored_callback) {
   BATTLE.api.make("basilisk", boss_callback);
 });
 
- CURRENTLEVEL.start_function = function(){welcome_boss.call()};
+ CURRENTLEVEL.start_function = boss_callback //;function(){welcome_boss.call()};
  CURRENTLEVEL.initialize_with_character(150, 150);
 
 
