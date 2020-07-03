@@ -15,8 +15,8 @@ const INVENTORY = {
   display: {
     list: function() {
       var html = "";
-      for (var i in INVENTORY._inventory.get("[]")){
-        html += i + "<br/>";
+      for (var i in INVENTORY._inventory.get("")){
+        html += i + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
       }
 
       new MenuScreen("<b>Inventory</b><hr/>" + html );
@@ -25,6 +25,10 @@ const INVENTORY = {
 
   has_object: function(name) {
     return INVENTORY._inventory.get([name]);
+  },
+
+  increase: function(name, quantity) {
+    INVENTORY._inventory.increment([name], quantity);
   },
 
 }

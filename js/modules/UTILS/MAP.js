@@ -77,9 +77,12 @@ class FluidMap {
     return m;
   }
 
-  increment(key_list) {
+  increment(key_list, increment) {
+    if(!increment){
+      increment = 1;
+    }
     // could be optimized
-    this.set(key_list, this.get(key_list) + 1);
+    this.set(key_list, this.get(key_list) + increment);
   }
 
   length(key_list) {

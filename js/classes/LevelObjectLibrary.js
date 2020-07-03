@@ -76,37 +76,6 @@ class S_SavePoint extends LevelObject {
   }
 }
 
-class S_battle_sizeable extends LevelObject {
-  constructor(x, y, size, battle) {
-    var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
-    super(visual, x, y);
-    this.battle = battle;
-
-    //this.visual_element.draw();
-    this.adjust_hitbox(0,0,size,size);
-  }
-
-  interaction() {
-    // default battle callback ^.^
-    var self = this;
-    var battleCallback = function(){
-      self.destroy();
-    };
-    BATTLE.api.make(this.battle, battleCallback);
-  }
-
-  hash() {
-    return super.hash() + "/" + this.battle;
-  }
-}
-
-class S_battle extends S_battle_sizeable {
-  constructor(x, y, battle) {
-    super(x, y, 75, battle);
-  }
-}
-
-
 class S_House extends LevelObject {
   constructor(x, y) {
     var visual = new StaticSprite("testing/house.png", 'obj_dark');

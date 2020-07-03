@@ -53,8 +53,8 @@ const DEBUG = {
       if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.shift()){
         x = Math.round(x/5)*5;
         y = Math.round(y/5)*5;
-        new S_battle(x, y, "#COMPONENT");
-        CONSOLE.debug('new S_battle('+x+', '+y+', "#COMPONENT");');
+        new SE_battle(x, y, "#COMPONENT");
+        CONSOLE.debug('new SE_battle('+x+', '+y+', "#COMPONENT");');
         return;
       }
       if (DEBUG.MOUSE_RECTANGLES && KEYS_UTIL.is_pressed.alt()){

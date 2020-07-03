@@ -138,6 +138,7 @@ IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/CenteredImage");
 
 new Class("LevelObject");
 IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
+IMPORTS.classes['LevelObject'].child_class("EventLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
