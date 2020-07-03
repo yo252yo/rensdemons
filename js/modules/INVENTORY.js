@@ -1,7 +1,6 @@
 
 const ITEM = {
-  Rock: "Sharp rock",
-  Branch: "Branch",
+  Stick: "Stick",
 }
 
 const INVENTORY = {

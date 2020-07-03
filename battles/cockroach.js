@@ -9,6 +9,7 @@ new CenteredImage("assets/battles/cockroach.png", 'background');
 
 PLAYER_ACTIONS.set_default.flee();
 PLAYER_ACTIONS.set_default.pray();
+PLAYER_ACTIONS.set_default.stick();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

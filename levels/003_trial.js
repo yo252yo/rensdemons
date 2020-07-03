@@ -19,7 +19,7 @@ welcome_boss.add_function(function(ignored_callback) {
 // CURRENTLEVEL.start_function =  function(){welcome_boss.call()};
  CURRENTLEVEL.initialize_with_character(150, 150);
 
-new SE_treasure(210, 205, ITEM.Branch, 1, 25);
+new SE_treasure(210, 205, ITEM.Stick, 1, 25);
 
 
 

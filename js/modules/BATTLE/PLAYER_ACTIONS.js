@@ -87,5 +87,20 @@ const PLAYER_ACTIONS = {
         effect: effect,
       })
     },
+
+    stick: function() {
+      var description = RANDOM.pick([
+        "You wave the stick at your enemy.",
+        "You try to hit with a stick.",
+      ]);
+      var effect = RANDOM.pick([
+        "It dodges your attack pretty easily.",
+        "The blow does not seem to hurt it.",
+      ]);
+      PLAYER_ACTIONS.add.useless({
+        name: ITEM.Stick,
+        description: [description, effect],
+      });
+    },
   },
 }

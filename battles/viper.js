@@ -20,12 +20,12 @@ BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool
 BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
 
 PLAYER_ACTIONS.add.action({
-  name: ITEM.Branch,
+  name: ITEM.Stick,
   description: ["You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it."],
   function: function(){
-    INVENTORY.decrease(ITEM.Branch);
-    BATTLE.player_actions.remove(ITEM.Branch);
-    BATTLETREE.unlock(BATTLE.get_current_battle(), throwbranch, ITEM.Branch);
+    INVENTORY.decrease(ITEM.Stick);
+    BATTLE.player_actions.remove(ITEM.Stick);
+    BATTLETREE.unlock(BATTLE.get_current_battle(), throwbranch, ITEM.Stick);
   },
 });
 
