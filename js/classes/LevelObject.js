@@ -45,14 +45,20 @@ class LevelObject {
         top:(this.visual_element.y + this.h_y - this.h_h),
         left:(this.visual_element.x + this.h_x),
       });
-      html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
-      html_rectangle.innerHTML += "<br />" + this.debug_name();
       html_rectangle.style.position = "absolute";
-      html_rectangle.style.border = "3px dotted";
+      html_rectangle.style.border = "3px dotted DarkGrey";
       html_rectangle.style.margin = "-3px";
       html_rectangle.style.zIndex = "30000";
-      html_rectangle.style.fontWeight = "bold";
-      html_rectangle.style.fontSize = "large";
+
+      var label = HTML.div.make({w: 200, top: this.h_h/3, h:35});
+      label.innerHTML = this.debug_name();
+      label.style.fontWeight = "bold";
+      label.style.fontSize = "small";
+      label.style.overflow = "hidden";
+      label.style.backgroundColor = "#FFFFFF33";
+      html_rectangle.appendChild(label);
+
+      this.visual_element.container.style.opacity = 0.5;
 
       CURRENTLEVEL.system.html().appendChild(html_rectangle);
     }

@@ -98,3 +98,5 @@ new SE_battle(1285, 2195, "rodent");
  new SE_battle(150, 2540, "rodent");
  new SE_battle(1860, 2870, "rodent");
  new SE_battle(2410, 3645, "rodent");
+
+new SE_battle(1150, 3950, "_trial_exit", 150);
