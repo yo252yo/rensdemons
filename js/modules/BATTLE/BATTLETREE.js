@@ -134,6 +134,10 @@ const BATTLETREE = {
     },
 
     score_battle: function(battle) {
+      if (BATTLE.current_battle.startsWith("_")) {
+        return 0;
+      }
+
       var score = 0;
       for (var i in BATTLETREE._outcomes.get([battle])) {
         score += BATTLETREE.score._score_destination(BATTLETREE._outcomes.get([battle,i]));
@@ -167,6 +171,10 @@ const BATTLETREE = {
 
   display: {
     stylize: function(name, battle){
+      if (battle.startsWith("_")) {
+        return name;
+      }
+
       switch (BATTLETREE._outcomes.get([battle,name])) {
         case BATTLETREE.WIN:
           return "<b>" + name + "</b>";

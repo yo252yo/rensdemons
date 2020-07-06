@@ -55,3 +55,10 @@ class SE_treasure extends S_event {
     return super.hash() + "/" + this.object;
   }
 }
+
+class SE_small_treasure extends SE_treasure {
+  constructor(x, y, object) {
+    super(x, y, object, 1, 25);
+  }
+
+}

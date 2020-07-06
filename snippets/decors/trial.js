@@ -104,3 +104,8 @@ new S_Floor(5700,2400,75,1175);
 new S_Floor(4900,1250,875,75);
 new S_Floor(4900,1725,75,500);
 new S_Floor(6200,2875,775,75);
+
+// save points
+new S_SavePoint(875, 2350);
+new S_SavePoint(2855, 3185);
+new S_SavePoint(2045, 895);

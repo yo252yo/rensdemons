@@ -232,6 +232,12 @@ const BATTLE = {
 
     make: function(name, callback, origin_level) {
       if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
+      if(name.startsWith("&")){
+        BATTLE.pending_text = name.substring(1);
+        name = "_unique_event";
+      }
+
+
       LEVELSTATES.register_current();
       BATTLE.origin_level = origin_level;
       BATTLE.builder.setup.start(name, callback);

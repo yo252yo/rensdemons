@@ -19,11 +19,30 @@ welcome_boss.add_function(function(ignored_callback) {
 // CURRENTLEVEL.start_function =  function(){welcome_boss.call()};
  CURRENTLEVEL.initialize_with_character(150, 150);
 
-new SE_treasure(210, 205, ITEM.Stick, 1, 25);
 
+new SE_small_treasure(210, 205, ITEM.Stick);
+new SE_small_treasure(1180, 755, ITEM.Stick);
+new SE_small_treasure(1735, 85, ITEM.Stick);
+new SE_small_treasure(450, 2185, ITEM.Stick);
+new SE_small_treasure(1170, 3085, ITEM.Stick);
+new SE_small_treasure(1750, 3895, ITEM.Stick);
+new SE_small_treasure(1750, 3895, ITEM.Stick);
+new SE_small_treasure(3355, 3860, ITEM.Stick);
+new SE_small_treasure(3175, 2905, ITEM.Stick);
+new SE_small_treasure(6195, 3035, ITEM.Stick);
+new SE_small_treasure(5730, 1455, ITEM.Stick);
+new SE_small_treasure(3830, 1265, ITEM.Stick);
+new SE_small_treasure(3830, 1265, ITEM.Stick);
+new SE_small_treasure(3265, 1680, ITEM.Stick);
+new SE_small_treasure(4315, 445, ITEM.Stick);
+new SE_small_treasure(2130, 1035, ITEM.Stick);
+new SE_small_treasure(2130, 1035, ITEM.Stick);
+new SE_small_treasure(2575, 250, ITEM.Stick);
 
+new SE_battle(70, 125, "&You find on the ground the corpse of $$child_friends_m1$. It's obviously in a pretty bad shape, the Basilisk really did a number on him. You avert your eyes from the bloody remains. It's too much to handle.");
+new SE_battle(380, 530, "&You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...");
 
-new SE_battle(150, 575, "viper");
+new SE_battle(125, 575, "viper");
 new SE_battle(2550, 215, "viper");
 new SE_battle(2450, 300, "viper");
 new SE_battle(2650, 325, "viper");
