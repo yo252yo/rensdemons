@@ -31,8 +31,8 @@ class SE_battle extends S_event {
     BATTLE.api.make(this.battle, battleCallback);
   }
 
-  hash() {
-    return super.hash() + "/" + this.battle;
+  debug_name() {
+    return super.debug_name() + "/" + this.battle;
   }
 }
 
@@ -51,8 +51,8 @@ class SE_treasure extends S_event {
     ], function(){self.destroy();})
   }
 
-  hash() {
-    return super.hash() + "/" + this.object;
+  debug_name() {
+    return super.debug_name() + "/" + this.object;
   }
 }
 

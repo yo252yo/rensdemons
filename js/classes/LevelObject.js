@@ -19,6 +19,10 @@ class LevelObject {
       return this.constructor.name + "/" + this.x + "/" + this.y;
     }
 
+    debug_name() {
+      return this.hash();
+    }
+
     get_visual() {
       return this.visual_element;
     }
@@ -42,7 +46,7 @@ class LevelObject {
         left:(this.visual_element.x + this.h_x),
       });
       html_rectangle.innerHTML = this.visual_element.x + "," + this.visual_element.y + "," + this.visual_element.width + "," + this.visual_element.height;
-      html_rectangle.innerHTML += "<br />" + this.hash();
+      html_rectangle.innerHTML += "<br />" + this.debug_name();
       html_rectangle.style.position = "absolute";
       html_rectangle.style.border = "3px dotted";
       html_rectangle.style.margin = "-3px";
