@@ -50,7 +50,7 @@ const PLAYER_ACTIONS = {
     },
   },
 
-  set_default: {
+  default_useless: {
     pray: function() {
       var description = RANDOM.pick([
         "You close your eyes and begs the Goddess for help.",
@@ -72,14 +72,14 @@ const PLAYER_ACTIONS = {
 
     flee: function() {
       var description = RANDOM.pick([
-        "You run away.",
-        "You turn around and attempt to escape.",
+        "You try to run away.",
+        "You turn around and attempt to escape the $$&ENEMY$.",
         "You back away slowly.",
       ]);
       var effect = RANDOM.pick([
         "In a stroke of luck, you manage to escape.",
-        "Your opponnent chases you for a bit, but you manage to escape.",
-        "As you turn around, your opponnent loses interest and runs off in the distance.",
+        "The $$&ENEMY$ chases you for a bit, but you manage to escape.",
+        "As you turn around, the $$&ENEMY$ loses interest and runs off in the distance.",
       ]);
       PLAYER_ACTIONS.add.escape({
         name: ABILITY.Flee,
@@ -90,16 +90,47 @@ const PLAYER_ACTIONS = {
 
     stick: function() {
       var description = RANDOM.pick([
-        "You wave the stick at your enemy.",
-        "You try to hit with a stick.",
+        "You wave the stick at the $$&ENEMY$.",
+        "You try to hit the $$&ENEMY$ with a stick.",
       ]);
       var effect = RANDOM.pick([
-        "It dodges your attack pretty easily.",
-        "The blow does not seem to hurt it.",
+        "The $$&ENEMY$ dodges your attack pretty easily.",
+        "The blow does not seem to hurt the $$&ENEMY$.",
       ]);
       PLAYER_ACTIONS.add.useless({
         name: ITEM.Stick,
         description: [description, effect],
+      });
+    },
+
+    stone: function() {
+      var description = RANDOM.pick([
+        "You try to hit the $$&ENEMY$ with your sharp stone.",
+        "You throw the stone at the $$&ENEMY$.",
+      ]);
+      var effect = RANDOM.pick([
+        "The $$&ENEMY$ dodges it pretty easily.",
+        "It doesn't seem very effective. The $$&ENEMY$ doesn't budge.",
+      ]);
+      PLAYER_ACTIONS.add.useless({
+        name: ITEM.Stone,
+        description: [description, effect],
+      });
+    },
+  },
+
+  default_win: {
+    stone_crush: function() {
+      var description = RANDOM.pick([
+        "You try to crush the $$&ENEMY$ with the stone.",
+      ]);
+      var effect = RANDOM.pick([
+        "It's enough to rid you of it.",
+      ]);
+      PLAYER_ACTIONS.add.winning({
+        name: ITEM.Stone,
+        description: [description],
+        effect: effect,
       });
     },
   },

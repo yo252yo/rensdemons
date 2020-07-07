@@ -127,7 +127,11 @@ class TextBox extends TextElement {
         var key = text.substr(0, end);
         text = text.substr(end + 1);
 
-        processed += DICTIONARY.get(key);
+        if(key == "&ENEMY"){
+          processed += STRING_UTILS.camel_case(BATTLE.current_battle);
+        } else {
+          processed += DICTIONARY.get(key);
+        }
       }
       processed += text;
       return processed;
@@ -167,7 +171,7 @@ class TextBox extends TextElement {
       }
 
       AUDIO.effect.page();
-      
+
       // Prevent double click
       var now =  (new Date()).getTime();
       if (now - this.last_turned < _MIN_PAGE_TIME_MS) {

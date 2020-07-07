@@ -1,6 +1,7 @@
 
 const ITEM = {
   Stick: "Stick",
+  Stone: "Sharp Stone",
 }
 
 const INVENTORY = {

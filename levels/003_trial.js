@@ -39,6 +39,33 @@ new SE_small_treasure(2130, 1035, ITEM.Stick);
 new SE_small_treasure(2130, 1035, ITEM.Stick);
 new SE_small_treasure(2575, 250, ITEM.Stick);
 
+new SE_small_treasure(770, 425, ITEM.Stone);
+new SE_small_treasure(660, 690, ITEM.Stone);
+new SE_small_treasure(1705, 445, ITEM.Stone);
+new SE_small_treasure(3025, 495, ITEM.Stone);
+new SE_small_treasure(3350, 630, ITEM.Stone);
+new SE_small_treasure(4295, 540, ITEM.Stone);
+new SE_small_treasure(5290, 1235, ITEM.Stone);
+new SE_small_treasure(5410, 2425, ITEM.Stone);
+new SE_small_treasure(5410, 2425, ITEM.Stone);
+new SE_small_treasure(5120, 2305, ITEM.Stone);
+new SE_small_treasure(4955, 2415, ITEM.Stone);
+new SE_small_treasure(4710, 2390, ITEM.Stone);
+new SE_small_treasure(5155, 2570, ITEM.Stone);
+new SE_small_treasure(4470, 2450, ITEM.Stone);
+new SE_small_treasure(6170, 3130, ITEM.Stone);
+new SE_small_treasure(5165, 3805, ITEM.Stone);
+new SE_small_treasure(3130, 3320, ITEM.Stone);
+new SE_small_treasure(3130, 3320, ITEM.Stone);
+new SE_small_treasure(2750, 3660, ITEM.Stone);
+new SE_small_treasure(3665, 1470, ITEM.Stone);
+new SE_small_treasure(3665, 1470, ITEM.Stone);
+new SE_small_treasure(2835, 1830, ITEM.Stone);
+new SE_small_treasure(1690, 2230, ITEM.Stone);
+new SE_small_treasure(1040, 2195, ITEM.Stone);
+new SE_small_treasure(685, 2315, ITEM.Stone);
+
+
 new SE_battle(70, 125, "&You find on the ground the corpse of $$child_friends_m1$. It's obviously in a pretty bad shape, the Basilisk really did a number on him. You avert your eyes from the bloody remains. It's too much to handle.");
 new SE_battle(380, 530, "&You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...");
 

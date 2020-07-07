@@ -7,8 +7,9 @@ new CenteredImage("assets/battles/viper.png", 'background');
 // =================== ABILITIES CALLBACKS
 // ===================
 
-PLAYER_ACTIONS.set_default.flee();
-PLAYER_ACTIONS.set_default.pray();
+PLAYER_ACTIONS.default_useless.flee();
+PLAYER_ACTIONS.default_useless.pray();
+PLAYER_ACTIONS.default_useless.stone();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
