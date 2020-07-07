@@ -131,6 +131,9 @@ const PLAYER_ACTIONS = {
         name: ITEM.Stone,
         description: [description],
         effect: effect,
+        extra_function: function(){
+          INVENTORY.decrease(ITEM.Stone);
+        },
       });
     },
   },

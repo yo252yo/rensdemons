@@ -37,7 +37,6 @@ const HTML = {
   },
 
   div: {
-
     make: function(options){
       var div = document.createElement('div');
       div.style.position = "absolute";
