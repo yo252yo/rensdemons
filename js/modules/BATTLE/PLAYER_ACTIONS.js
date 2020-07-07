@@ -125,7 +125,7 @@ const PLAYER_ACTIONS = {
         "You try to crush the $$&ENEMY$ with the stone.",
       ]);
       var effect = RANDOM.pick([
-        "It's enough to rid you of it.",
+        "It's enough to rid you of it. You throw the dirty stone away.",
       ]);
       PLAYER_ACTIONS.add.winning({
         name: ITEM.Stone,
