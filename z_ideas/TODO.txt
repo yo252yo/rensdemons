@@ -15,3 +15,4 @@ POPULATE FIRST DUNGEON
 
 - Should there be randomness, for instance weapon efficiency?
 - And/or have monsters able to kill you out of the blue instead of flavor text?
+- Should the level/xp be more prominent? right now it's a bit hidden for RP reasons

@@ -19,6 +19,17 @@ welcome_boss.add_function(function(ignored_callback) {
 // CURRENTLEVEL.start_function =  function(){welcome_boss.call()};
  CURRENTLEVEL.initialize_with_character(150, 150);
 
+// new SE_battle(70, 225, "T" + ITEM.Stick);
+new SE_battle(1610, 105, "T" + ITEM.Elixir_fire);
+new SE_battle(2855, 1700, "T" + ITEM.Elixir_fire);
+new SE_battle(3015, 1665, "T" + ITEM.Elixir_fire);
+new SE_battle(4925, 1690, "T" + ITEM.Elixir_fire);
+new SE_battle(2430, 3315, "T" + ITEM.Elixir_fire);
+new SE_battle(4875, 330, "T" + ITEM.Elixir_fire);
+new SE_battle(4875, 330, "T" + ITEM.Elixir_fire);
+
+new SE_battle(625, 2365,  "T" + ITEM.Sword_wooden);
+
 
 new SE_small_treasure(210, 205, ITEM.Stick);
 new SE_small_treasure(1180, 755, ITEM.Stick);

@@ -236,6 +236,10 @@ const BATTLE = {
         BATTLE.pending_text = name.substring(1);
         name = "_unique_event";
       }
+      if(name.startsWith("T")){
+        BATTLE.pending_text = name.substring(1);
+        name = "_treasure";
+      }
 
 
       LEVELSTATES.register_current();
