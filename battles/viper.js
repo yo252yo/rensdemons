@@ -10,6 +10,7 @@ new CenteredImage("assets/battles/viper.png", 'background');
 PLAYER_ACTIONS.default_useless.flee();
 PLAYER_ACTIONS.default_useless.pray();
 PLAYER_ACTIONS.default_useless.stone();
+PLAYER_ACTIONS.default_win.elixir_fire();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
@@ -27,6 +28,15 @@ PLAYER_ACTIONS.add.action({
     INVENTORY.decrease(ITEM.Stick);
     BATTLE.player_actions.remove(ITEM.Stick);
     BATTLETREE.unlock(BATTLE.get_current_battle(), throwbranch, ITEM.Stick);
+  },
+});
+
+PLAYER_ACTIONS.add.winning({
+  name: ITEM.Sword_wooden,
+  description: ["You slice the Viper in half."],
+  effect: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
+  extra_function: function(){
+    INVENTORY.increase(ITEM.Fang);
   },
 });
 

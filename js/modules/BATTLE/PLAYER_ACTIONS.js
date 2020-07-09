@@ -120,6 +120,7 @@ const PLAYER_ACTIONS = {
   },
 
   default_win: {
+
     stone_crush: function() {
       var description = RANDOM.pick([
         "You try to crush the $$&ENEMY$ with the stone.",
@@ -133,6 +134,54 @@ const PLAYER_ACTIONS = {
         effect: effect,
         extra_function: function(){
           INVENTORY.decrease(ITEM.Stone);
+        },
+      });
+    },
+
+    sword_wooden: function() { // Chance to break ??
+      var description = RANDOM.pick([
+        "You attemp to stab the $$&ENEMY$ with your wooden sword.",
+      ]);
+      var effect = RANDOM.pick([
+        "It's pretty dull, but it's enough to get rid of the $$&ENEMY$.",
+      ]);
+      PLAYER_ACTIONS.add.winning({
+        name: ITEM.Sword_wooden,
+        description: [description],
+        effect: effect,
+      });
+    },
+
+    elixir_fire: function() {
+      var description = RANDOM.pick([
+        "You throw the elixir on the ground, near the $$&ENEMY$.",
+      ]);
+      var effect = RANDOM.pick([
+        "The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little.",
+      ]);
+      PLAYER_ACTIONS.add.winning({
+        name: ITEM.Elixir_fire,
+        description: [description],
+        effect: effect,
+        extra_function: function(){
+          INVENTORY.decrease(ITEM.Elixir_fire);
+        },
+      });
+    },
+
+    fang: function() {
+      var description = RANDOM.pick([
+        "You stab the $$&ENEMY$ with the fang still dripping with venom.",
+      ]);
+      var effect = RANDOM.pick([
+        "The $$&ENEMY$ convulses and then falls on the ground.",
+      ]);
+      PLAYER_ACTIONS.add.winning({
+        name: ITEM.Fang,
+        description: [description],
+        effect: effect,
+        extra_function: function(){
+          INVENTORY.decrease(ITEM.Fang);
         },
       });
     },

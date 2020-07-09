@@ -36,3 +36,8 @@ death flags, flags in general (Before you go there let me warn you)
 got ammo that means were gonna run into zombie soon
 clear whole floor before moving on
 he knows the hitboxes
+Anything fits in a small rucksack or waist bag.
+AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
+guards lkose aggro on reset or if you move
+no sleep or toilet
+https://www.quora.com/What-are-some-things-we-just-accept-in-video-games-because-they-re-video-games

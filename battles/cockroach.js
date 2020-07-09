@@ -11,6 +11,8 @@ PLAYER_ACTIONS.default_useless.flee();
 PLAYER_ACTIONS.default_useless.pray();
 PLAYER_ACTIONS.default_useless.stick();
 PLAYER_ACTIONS.default_win.stone_crush();
+PLAYER_ACTIONS.default_win.sword_wooden();
+PLAYER_ACTIONS.default_win.elixir_fire();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR
