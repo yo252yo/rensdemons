@@ -6,6 +6,10 @@ const ITEM = {
   Elixir_fire: "Fireball Elixir",
   Sword_wooden: "Wooden Sword",
   //Bone: "Bone",
+
+  isItem: function(s){
+    return (s in ITEM);
+  },
 }
 
 const INVENTORY = {

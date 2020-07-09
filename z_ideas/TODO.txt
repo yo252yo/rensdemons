@@ -21,7 +21,9 @@ the treasure battler should probs be close
 - Should the level/xp be more prominent? right now it's a bit hidden for RP reasons
 
 
-killing 2 things in a row is buggy (it keeps the stick and throw branch actions)
+
+
+
 animation at battle start is weird cause it expands far outside the screen if youre way below
 animation at the end of clue is weird (blink screen)
 we need to reset scrolling at level change
