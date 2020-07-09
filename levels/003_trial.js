@@ -126,15 +126,16 @@ new SE_battle(5970, 2430, "cockroach");
 new SE_battle(3175, 1875, "cockroach");
 
 new SE_battle(1285, 2195, "rodent");
- new SE_battle(460, 3795, "rodent");
- new SE_battle(3825, 3910, "rodent");
- new SE_battle(2790, 2875, "rodent");
- new SE_battle(4940, 4220, "rodent");
- new SE_battle(6890, 2850, "rodent");
- new SE_battle(2370, 820, "rodent");
- new SE_battle(1580, 1820, "rodent");
- new SE_battle(150, 2540, "rodent");
- new SE_battle(1860, 2870, "rodent");
- new SE_battle(2410, 3645, "rodent");
+new SE_battle(460, 3795, "rodent");
+new SE_battle(3825, 3910, "rodent");
+new SE_battle(2790, 2875, "rodent");
+new SE_battle(4940, 4220, "rodent");
+new SE_battle(6890, 2850, "rodent");
+new SE_battle(2370, 820, "rodent");
+new SE_battle(1580, 1820, "rodent");
+new SE_battle(150, 2540, "rodent");
+new SE_battle(1860, 2870, "rodent");
+new SE_battle(2410, 3645, "rodent");
 
-new SE_battle(1150, 3950, "_trial_exit", 150);
+new SE_battle(3685, 1375, "_trial_clue", 150);
+new SE_battle(1150, 4500, "_trial_exit", 150);

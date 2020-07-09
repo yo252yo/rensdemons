@@ -5,7 +5,7 @@ const PLAYER_ACTIONS = {
       action_object.function = function(){
         BATTLETREE.develop(BATTLE.current_battle, action_object.name, result_enum);
         result_function(action_object.effect);
-        if(action_object.extra_function){
+        if(action_object.extra_function) {
           action_object.extra_function();
         }
       }
