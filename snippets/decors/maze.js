@@ -246,3 +246,5 @@ new S_Floor(1075,275,100,50);
 new S_Floor(1125,350,50,100);
 new S_Floor(2325,1025,125,50);
 new S_Floor(825,1025,125,50);
+
+new S_SavePoint(1575, 1025);
