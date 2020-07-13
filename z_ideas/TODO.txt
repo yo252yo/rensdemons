@@ -38,15 +38,3 @@ You can get stuck if you fail your only branch, branch should only be consumed a
 
 some evnets are in walls
 some events dont disappear
-
-
-
-Uncaught TypeError: Cannot read property 'walk_speed' of undefined
-    at M_Character._movement_increment (MovingObject.js:120)
-    at Function.auto_walk (MovingObject.js:26)
-    at M_Character.try_walk_to (MovingObject.js:145)
-    at Object.click (CURRENTLEVEL.js:63)
-    at Object.onClick (IO_CHARACTER.js:3)
-    at Object.onClick (IO.js:219)
-    at Object.onClickHold (IO.js:224)
-    at HTMLDivElement.onMousemove (IO.js:229)

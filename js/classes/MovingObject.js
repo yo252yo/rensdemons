@@ -9,7 +9,7 @@ var _RUNNING_BONUS = 1.8;
 class MovingObject extends LevelObject {
 
   static auto_walk(moving_object) {
-    if (! moving_object.is_walking()) {
+    if (!moving_object || ! moving_object.is_walking()) {
       return;
     }
     if (moving_object.is_at(moving_object.destination_x, moving_object.destination_y)) {
