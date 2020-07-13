@@ -57,7 +57,10 @@ const HTML = {
           div.style.zIndex = options.z;
         }
         if(options.background){
-          div.style.background = PALETTE.color_code_with_default(options.background, options.background);;
+          div.style.background = PALETTE.color_code_with_default(options.background, options.background);
+        }
+        if(options.border){
+          div.style.border = options.border;
         }
       }
       return div;
