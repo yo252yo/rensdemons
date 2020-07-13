@@ -28,8 +28,6 @@ sometimes events are doubled
 
 you can kill michael
 
-
-animation at battle start is weird cause it expands far outside the screen if youre way below
 animation at the end of clue is weird (blink screen)
 we need to reset scrolling at level change
 statue of the godess goes off screens
