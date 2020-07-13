@@ -6,7 +6,11 @@
 
 window.onload = function() {
   DISK.initialize_game();
-  CURRENTLEVEL.setup("003_trial");
+  var lvl = (new URL(window.location.href)).searchParams.get("lvl");
+  if(!lvl){
+    lvl = "titlescreen";
+  }
+  CURRENTLEVEL.setup(lvl);
 
   setTimeout(DEBUG.all, 750);
 //  BATTLE.api.make("viper", undefined);

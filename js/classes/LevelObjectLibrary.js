@@ -60,6 +60,22 @@ class S_Column extends LevelObject {
   }
 }
 
+class S_Statue extends LevelObject {
+  constructor(x, y) {
+    var visual = new StaticSprite("assets/objects/statue.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(10,0,20,15);
+  }
+
+  interaction() {
+    new TextBannerRandom([
+      "It's a column.",
+      "Nothing but a column.",
+      "A simple yet elegant stone column. It's supporting the roof.",
+    ]);
+  }
+}
+
 class S_SavePoint extends LevelObject {
   constructor(x, y) {
     var visual = new StaticSprite("assets/objects/savepoint.png", 'obj_dark');

@@ -6,7 +6,11 @@
 
 window.onload = function() {
   DISK.initialize_game();
-  CURRENTLEVEL.setup("001_hideandseek");
+  var lvl = (new URL(window.location.href)).searchParams.get("lvl");
+  if(!lvl){
+    lvl = "titlescreen";
+  }
+  CURRENTLEVEL.setup(lvl);
   //BATTLE.api.make("viper", undefined);
 }
 
