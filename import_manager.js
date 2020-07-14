@@ -130,6 +130,7 @@ IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextBox");
 IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
 IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/MenuScreen");
 IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextMenu");
+IMPORTS.classes['Graphic/TextMenu'].child_class("Graphic/TextMenuImplementations");
 
 IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
