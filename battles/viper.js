@@ -33,9 +33,7 @@ var putSnakeOnStick = PLAYER_ACTIONS.unlock_replacing_function(
 PLAYER_ACTIONS.add.action({
   name: ITEM.Stick,
   description: ["You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it."],
-  function: function(){
-    putSnakeOnStick(ITEM.Stick);
-  },
+  function: putSnakeOnStick,
 });
 
 PLAYER_ACTIONS.add.winning({

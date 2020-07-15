@@ -61,7 +61,7 @@ const BATTLE = {
   player_actions: {
     add: function(action_object) {
       BATTLE._player_actions[action_object.name] = function(){
-        action_object.function();
+        action_object.function(action_object.name);
 
         if (action_object.ephemeral) {
           BATTLE.player_actions.remove(action_object.name);

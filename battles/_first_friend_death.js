@@ -79,7 +79,7 @@ var unlock_cryforhelp = PLAYER_ACTIONS.unlock_replacing_function(
     unlock: true,
     description: ["You scream at the top of your lungs. Someone, anyone, come and help! How can adults just let this happen? How can they sacrifice this child, and so many others before him?",
                   "But the only people who could help are the ones who caused this in the first place. Your calls remain unanswered."],
-    function: function() {  unlock_pray(cryforhelp); },
+    function: unlock_pray,
   }
 );
 
@@ -136,9 +136,7 @@ PLAYER_ACTIONS.add.action({
   unlock: true,
   description: ["You look at what remains of $$child_friends_m1$.",
                 "The poor child has been mauled by the beastly creature. He lies in the middle of a pool of blood. You hear a growl coming from his direction. Maybe... Maybe he's not quite dead."],
-  function: function() {
-    unlock_approach(look);
-  },
+  function: unlock_approach,
 });
 
 // ===================

@@ -40,9 +40,7 @@ PLAYER_ACTIONS.add.action({
   name: ABILITY.Pray,
   description: ["You close your eyes and focus on your faith.",
                 "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
-  function: function() {
-    swearLoyalty(ABILITY.Pray);
-  },
+  function: swearLoyalty,
 });
 
 
