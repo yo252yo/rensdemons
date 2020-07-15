@@ -66,6 +66,13 @@ const BATTLE = {
         if (action_object.ephemeral) {
           BATTLE.player_actions.remove(action_object.name);
         }
+
+        if(action_object.consume_item) {
+          INVENTORY.increase(action_object.consume_item);
+        }
+        if(action_object.give_item) {
+          INVENTORY.decrease(action_object.give_item);
+        }
         return action_object.description;
       };
 

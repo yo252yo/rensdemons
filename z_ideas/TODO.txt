@@ -40,5 +40,3 @@ some evnets are in walls
 some events dont disappear
 
 BATTLETREE is WRONG because it assumes each action has only 1 target when actions can have several targets but also several antecedants. Example: "examine wounds" on the child
-
-REFACTOR PLAYER_ACTIONS with an explicit class for actions

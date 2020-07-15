@@ -13,14 +13,14 @@ class ActionObject {
     this.replacing = copy.replacing;
     this.ephemeral = copy.ephemeral;
 
+    this.consume_item = copy.consume_item;
+    this.give_item = copy.give_item;
+
     // Used only in this helper for _with_outcome_function
     this._effect = copy._effect;
     this._extra_function = copy._extra_function;
     this._result_enum = copy._result_enum;
     this._result_function = copy._result_function;
-
-    this._consume_item = copy._consume_item;
-    this._give_item = copy._give_item;
   }
 }
 
@@ -49,12 +49,6 @@ const PLAYER_ACTIONS = {
                            action_object._result_enum);
         action_object._result_function(action_object._effect);
 
-        if(action_object._consume_item) {
-          INVENTORY.increase(action_object._consume_item);
-        }
-        if(action_object._give_item) {
-          INVENTORY.decrease(action_object._give_item);
-        }
         if(action_object._extra_function) {
           action_object._extra_function();
         }
@@ -178,7 +172,7 @@ const PLAYER_ACTIONS = {
         name: ITEM.Stone,
         description: [description],
         _effect: _effect,
-        _consume_item: ITEM.Stone,
+        consume_item: ITEM.Stone,
       });
     },
 
@@ -207,7 +201,7 @@ const PLAYER_ACTIONS = {
         name: ITEM.Elixir_fire,
         description: [description],
         _effect: _effect,
-        _consume_item: ITEM.Elixir_fire,
+        consume_item: ITEM.Elixir_fire,
       });
     },
 
@@ -222,7 +216,7 @@ const PLAYER_ACTIONS = {
         name: ITEM.Fang,
         description: [description],
         _effect: _effect,
-        _consume_item: ITEM.Fang,
+        consume_item: ITEM.Fang,
       });
     },
   },

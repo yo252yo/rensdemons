@@ -26,7 +26,7 @@ var putSnakeOnStick = PLAYER_ACTIONS.unlock_replacing_function(
     name: throwbranch,
     description: ["You throw the branch with its temporary occupant."],
     _effect: "They disappear together in the darkness, far from you.",
-    _consume_item: ITEM.Stick,
+    consume_item: ITEM.Stick,
   }
 );
 
@@ -40,7 +40,7 @@ PLAYER_ACTIONS.add.winning({
   name: ITEM.Sword_wooden,
   description: ["You slice the Viper in half."],
   _effect: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
-  _give_item: ITEM.Fang,
+  give_item: ITEM.Fang,
 });
 
 

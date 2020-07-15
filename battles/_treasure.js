@@ -19,7 +19,7 @@ PLAYER_ACTIONS.add.winning({
   _effect:  RANDOM.pick([
     "You open the chest and get its content. It's a " + BATTLE.pending_text + ".",
   ]),
-  _give_item: BATTLE.pending_text,
+  give_item: BATTLE.pending_text,
 });
 
 PLAYER_ACTIONS.add.winning({
@@ -28,7 +28,7 @@ PLAYER_ACTIONS.add.winning({
   _effect:  RANDOM.pick([
     "You burn the chest to the ground without even opening it.",
   ]),
-  _consume_item: ITEM.Elixir_fire,
+  consume_item: ITEM.Elixir_fire,
 });
 
 BATTLETREE.unlock(BATTLE.get_current_battle(), open);
