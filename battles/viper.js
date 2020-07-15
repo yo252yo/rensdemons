@@ -22,12 +22,12 @@ BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool
 BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
 
 function putSnakeOnStick(){
-  INVENTORY.decrease(ITEM.Stick);
-  PLAYER_ACTIONS.add.replace(ITEM.Stick, throwbranch);
   PLAYER_ACTIONS.add.winning({
     name: throwbranch,
     description: ["You throw the branch with its temporary occupant."],
-    effect: "They disappear together in the darkness, far from you.",
+    _effect: "They disappear together in the darkness, far from you.",
+    replacing: ITEM.Stick,
+    _consume_item: ITEM.Stick,
   });
 }
 
@@ -42,10 +42,8 @@ PLAYER_ACTIONS.add.action({
 PLAYER_ACTIONS.add.winning({
   name: ITEM.Sword_wooden,
   description: ["You slice the Viper in half."],
-  effect: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
-  extra_function: function(){
-    INVENTORY.increase(ITEM.Fang);
-  },
+  _effect: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
+  _give_item: ITEM.Fang,
 });
 
 

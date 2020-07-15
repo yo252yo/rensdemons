@@ -66,9 +66,18 @@ const BATTLE = {
       };
       BATTLETREE.declare(BATTLE.current_battle, action_object.name);
 
-      // Unlock base actions in our inventory
-      if(ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
+      if (action_object.replacing) {
+        BATTLETREE.unlock(BATTLE.current_battle, action_object.name, action_object.replacing);
+        BATTLE.player_actions.remove(action_object.replacing);
+      } else if (action_object.unlock) {
         BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
+      } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
+        // Unlock base actions in our inventory
+        BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
+      }
+
+      if (action_object.ephemeral) {
+          BATTLE.player_actions.remove(action_object.name);
       }
     },
 
