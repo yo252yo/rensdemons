@@ -62,9 +62,12 @@ const BATTLE = {
     add: function(action_object) {
       BATTLE._player_actions[action_object.name] = function(){
         action_object.function();
+
+        if (action_object.ephemeral) {
+          BATTLE.player_actions.remove(action_object.name);
+        }
         return action_object.description;
       };
-      BATTLETREE.declare(BATTLE.current_battle, action_object.name);
 
       if (action_object.replacing) {
         BATTLETREE.unlock(BATTLE.current_battle, action_object.name, action_object.replacing);
@@ -76,9 +79,8 @@ const BATTLE = {
         BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
       }
 
-      if (action_object.ephemeral) {
-          BATTLE.player_actions.remove(action_object.name);
-      }
+      BATTLETREE.declare(BATTLE.current_battle, action_object.name);
+
     },
 
     remove: function(name) {

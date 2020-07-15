@@ -24,37 +24,32 @@ var listen = "Listen";
 var examine = "Examine wounds";
 
 
-var unlock_telltruth = function(from) {
-  var action = "Tell the truth";
-  PLAYER_ACTIONS.add.action({
-    name: action,
-    replacing: from,
+var unlock_telltruth = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
+    name: "Tell the truth",
+    ephemeral: true,
+    unlock: true,
     description: ["Ren: \"It doesn't look good, buddy. I think this might be it...\"",
                   ],
-    function: function() { BATTLE.player_actions.remove(action); },
-    unlock: true,
     // NEEDMORE
-  });
-};
+  }
+);
 
-var unlock_lie = function(from) {
-  var action = "Lie";
-  PLAYER_ACTIONS.add.action({
-    name: action,
-    replacing: from,
+var unlock_lie = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
+    name: "Lie",
+    ephemeral: true,
+    unlock: true,
     description: ["Ren: \"Don't worry. It's gonna be okay. I'll find a way to help you.\"",
                   "But you can see in his eyes that he doesn't believe you."
                   ],
-    function: function() { BATTLE.player_actions.remove(action); },
-    unlock: true,
     // NEEDMORE
-  });
-};
+  }
+);
 
-var unlock_listen = function(from) {
-  PLAYER_ACTIONS.add.action({
+var unlock_listen = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
     name: listen,
-    replacing: from,
     unlock: true,
     description: ["Ren: \"I'm here! $$child_friends_m1$! Are you okay?\"",
                   "$$child_friends_m1$: \"Of course not! Everything hurts... I... can't see... tell me... how is it?\""],
@@ -62,59 +57,54 @@ var unlock_listen = function(from) {
       unlock_lie(listen);
       unlock_telltruth(listen);
     },
-  });
-};
+  }
+);
 
-var unlock_pray = function(from) {
-  var action = "Pray";
-  PLAYER_ACTIONS.add.action({
-    name: action,
-    replacing: from,
+var pray = "Pray";
+var unlock_pray = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
+    name: pray,
+    ephemeral: true,
     unlock: true,
     description: ["If the people can do such horrible things, surely the Goddess, in her Allmighty glory, is better than that.",
                   "You close your eyes and repeat prayers, hoping for a miracle.",
                   "But nothing happens. Long minutes pass without anything but the groans of pain of the dying child."],
-    function: function() { BATTLE.player_actions.remove(action); },
-  });
-};
+  }
+);
 
-var unlock_cryforhelp = function(from) {
-  var action = "Cry for help";
-  PLAYER_ACTIONS.add.action({
-    name: action,
-    replacing: from,
+var cryforhelp = "Cry for help";
+var unlock_cryforhelp = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
+    name: cryforhelp,
     unlock: true,
     description: ["You scream at the top of your lungs. Someone, anyone, come and help! How can adults just let this happen? How can they sacrifice this child, and so many others before him?",
                   "But the only people who could help are the ones who caused this in the first place. Your calls remain unanswered."],
-    function: function() {  unlock_pray(action); },
-  });
-};
+    function: function() {  unlock_pray(cryforhelp); },
+  }
+);
 
-var unlock_puke = function(from) {
-  PLAYER_ACTIONS.add.action({
-    replacing: from,
-    unlock: true,
-    ephemeral: true,
+var unlock_puke = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
     name: "Puke",
-    description: ["In the face of this gruesome spectacle, you cannot help but empty the content of your stomach on a wall."],
-  });
-};
-
-var unlock_stopbleeding = function(from) {
-  PLAYER_ACTIONS.add.action({
-    replacing: from,
-    unlock: true,
     ephemeral: true,
+    unlock: true,
+    description: ["In the face of this gruesome spectacle, you cannot help but empty the content of your stomach on a wall."],
+  }
+);
+
+var unlock_stopbleeding = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
     name: "Stop the bleeding",
+    ephemeral: true,
+    unlock: true,
     description: ["You press your hands on your friend's body to try and stop the bleeding. His flesh trembles under your skin. He has never seemed so frail. And cold.",
                   "Your hands are too small to cover his wounds. Soon, they're bathed in the warm red liquid. What you're doing is pretty useless."],
-   });
-};
+   }
+);
 
-var unlock_examine = function(from) {
-  PLAYER_ACTIONS.add.action({
+var unlock_examine = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
     name: examine,
-    replacing: from,
     unlock: true,
     description: ["You take a closer look at the wounds of your friend.",
                   "You try hard to fight nausea. You've never seen so much blood before. So much blood.",
@@ -124,13 +114,12 @@ var unlock_examine = function(from) {
       unlock_stopbleeding(examine);
       unlock_puke(examine);
     },
-  });
-};
+  }
+);
 
-var unlock_approach = function(from) {
-  PLAYER_ACTIONS.add.action({
+var unlock_approach = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.action, {
     name: approach,
-    replacing: from,
     unlock: true,
     description: ["You get closer to $$child_friends_m1$.",
                   "You can hear his irregular heavy breathing. You can barely make out a hoarse whisper.",
@@ -139,8 +128,8 @@ var unlock_approach = function(from) {
       unlock_listen(approach);
       unlock_examine(approach);
     },
-  });
-};
+  }
+);
 
 PLAYER_ACTIONS.add.action({
   name: look,

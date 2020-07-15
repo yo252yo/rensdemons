@@ -21,21 +21,20 @@ BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you
 BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?");
 BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
 
-function putSnakeOnStick(){
-  PLAYER_ACTIONS.add.winning({
+var putSnakeOnStick = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.winning, {
     name: throwbranch,
     description: ["You throw the branch with its temporary occupant."],
     _effect: "They disappear together in the darkness, far from you.",
-    replacing: ITEM.Stick,
     _consume_item: ITEM.Stick,
-  });
-}
+  }
+);
 
 PLAYER_ACTIONS.add.action({
   name: ITEM.Stick,
   description: ["You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it."],
   function: function(){
-    putSnakeOnStick();
+    putSnakeOnStick(ITEM.Stick);
   },
 });
 

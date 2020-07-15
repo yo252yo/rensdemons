@@ -28,21 +28,20 @@ PLAYER_ACTIONS.add.losing({
   },
 });
 
-function swearLoyalty() {
-  PLAYER_ACTIONS.add.winning({
+var swearLoyalty = PLAYER_ACTIONS.unlock_replacing_function(
+  PLAYER_ACTIONS.add.winning, {
     name: swear_loyalty,
-    replacing: ABILITY.Pray,
     description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""],
     _effect: "Suddenly, an eerie light basks the room. The basilisk grows stiff and stops moving. The creature is dead.",
-  });
-};
+  }
+);
 
 PLAYER_ACTIONS.add.action({
   name: ABILITY.Pray,
   description: ["You close your eyes and focus on your faith.",
                 "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
   function: function() {
-    swearLoyalty();
+    swearLoyalty(ABILITY.Pray);
   },
 });
 

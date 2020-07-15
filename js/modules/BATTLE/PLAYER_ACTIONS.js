@@ -4,7 +4,11 @@ class ActionObject {
     // Used in BATTLE
     this.name = copy.name;
     this.description = copy.description;
-    this.function = copy.function;
+    if(copy.function){
+      this.function = copy.function;
+    } else { // default null effect
+      this.function = function(){};
+    }
     this.unlock = copy.unlock;
     this.replacing = copy.replacing;
     this.ephemeral = copy.ephemeral;
@@ -22,6 +26,21 @@ class ActionObject {
 
 
 const PLAYER_ACTIONS = {
+  unlock_function: function(f, argument){
+    var result = function() {
+      f(argument);
+    };
+    return result;
+  },
+
+  unlock_replacing_function: function(f, argument){
+    var result = function(result_argument) {
+      argument.replacing = result_argument;
+      f(argument);
+    };
+    return result;
+  },
+
   add: {
     _with_outcome_function: function(action_object) {
       action_object.function = function(){
@@ -148,7 +167,6 @@ const PLAYER_ACTIONS = {
   },
 
   default_win: {
-
     stone_crush: function() {
       var description = RANDOM.pick([
         "You try to crush the $$&ENEMY$ with the stone.",
