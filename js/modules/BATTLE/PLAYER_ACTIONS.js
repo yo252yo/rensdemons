@@ -48,6 +48,33 @@ const PLAYER_ACTIONS = {
     action: function(action_object){
       BATTLE.player_actions.add(action_object);
     },
+
+// Can this be a parameter like action_object.unlock = true?
+    unlocked_action: function(action_object){
+      BATTLE.player_actions.add(action_object);
+      BATTLETREE.unlock(BATTLE.get_current_battle(), action_object.name);
+    },
+
+  // Can this be a parameter like action_object.replace = from_action
+    replace: function(from_action, to_action){
+      BATTLETREE.unlock(BATTLE.get_current_battle(), to_action, from_action);
+      BATTLE.player_actions.remove(from_action);
+    },
+
+      // Can this be a parameter like action_object.replace = from_action
+    throwaway_action: function(from, name, description, extra_function) {
+      PLAYER_ACTIONS.add.replace(from, name);
+      PLAYER_ACTIONS.add.unlocked_action({
+        name: name,
+        description: description,
+        function: function() {
+          BATTLE.player_actions.remove(name);
+          if(extra_function){
+            extra_function();
+          }
+        },
+      });
+    },
   },
 
   default_useless: {

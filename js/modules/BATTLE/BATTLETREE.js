@@ -80,7 +80,7 @@ const BATTLETREE = {
     var battles = Object.keys(BATTLETREE._outcomes.get([]));
     var displayable_battles = [];
     for(var b in battles){
-      if (!battles[b].startsWith("_")){
+      if (DEBUG.DISPLAY_ALL_TREES || !battles[b].startsWith("_")){
         displayable_battles.push(battles[b]);
       }
     }
@@ -171,7 +171,7 @@ const BATTLETREE = {
 
   display: {
     stylize: function(name, battle){
-      if (battle.startsWith("_")) {
+      if (battle == "_treasure") {
         return name;
       }
 

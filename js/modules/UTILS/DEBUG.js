@@ -20,6 +20,10 @@ const DEBUG = {
     DEBUG.TP_CHARACTER = true;
   },
 
+  display_all_trees: function() {
+    DEBUG.DISPLAY_ALL_TREES = true;
+  },
+
   deactivate_scroll: function() {
     DEBUG.DEACTIVATE_SCROLL = true;
   },
@@ -73,6 +77,7 @@ const DEBUG = {
     DEBUG.run_faster();
     DEBUG.allow_scroll();
     DEBUG.deactivate_scroll(); // This isnt great.
+    DEBUG.display_all_trees();
   },
 
 

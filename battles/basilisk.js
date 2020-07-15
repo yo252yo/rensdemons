@@ -29,8 +29,7 @@ PLAYER_ACTIONS.add.losing({
 });
 
 function swearLoyalty() {
-  BATTLETREE.unlock(BATTLE.get_current_battle(), swear_loyalty, ABILITY.Pray);
-  BATTLE.player_actions.remove(ABILITY.Pray);
+  PLAYER_ACTIONS.add.replace(swear_loyalty, ABILITY.Pray);
   PLAYER_ACTIONS.add.winning({
     name: swear_loyalty,
     description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\""],

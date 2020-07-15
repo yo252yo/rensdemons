@@ -23,8 +23,7 @@ BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident h
 
 function putSnakeOnStick(){
   INVENTORY.decrease(ITEM.Stick);
-  BATTLE.player_actions.remove(ITEM.Stick);
-  BATTLETREE.unlock(BATTLE.get_current_battle(), throwbranch, ITEM.Stick);
+  PLAYER_ACTIONS.add.replace(ITEM.Stick, throwbranch);
   PLAYER_ACTIONS.add.winning({
     name: throwbranch,
     description: ["You throw the branch with its temporary occupant."],

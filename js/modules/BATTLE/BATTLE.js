@@ -115,7 +115,11 @@ const BATTLE = {
 
   operations: {
     play_monster: function () {
-      RANDOM.pick(BATTLE._monster_actions)();
+      if (BATTLE._monster_actions.length > 0){
+        RANDOM.pick(BATTLE._monster_actions)();
+      } else {
+        BATTLE.turn_factory.player();
+      }
     },
 
     start: function(text) {
@@ -197,7 +201,6 @@ const BATTLE = {
 
       animation: function () {
           var pos = LEVELSTATES.get_position(BATTLE.origin_level);
-          console.log(pos);
           var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: 'obj_dark'});
           html_rectangle.classList.add("collapsing_div");
           html_rectangle.style.position = "fixed";

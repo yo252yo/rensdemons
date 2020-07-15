@@ -6,13 +6,17 @@
 
 window.onload = function() {
   DISK.initialize_game();
-  var lvl = (new URL(window.location.href)).searchParams.get("lvl");
-  if(!lvl){
-    lvl = "titlescreen";
-  }
-  CURRENTLEVEL.setup(lvl);
-
   setTimeout(DEBUG.all, 750);
+  var lvl = (new URL(window.location.href)).searchParams.get("lvl");
+  var save = (new URL(window.location.href)).searchParams.get("s");
+  if(lvl){
+    CURRENTLEVEL.setup(lvl);
+  } else if(save) {
+    SAVE.load(save);
+  } else {
+    SAVE.load(1);
+  }
+
 //  BATTLE.api.make("viper", undefined);
 }
 
