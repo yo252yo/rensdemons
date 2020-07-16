@@ -11,7 +11,7 @@ const BATTLE = {
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        if (! BATTLETREE.check_unlocked(BATTLE.current_battle, i)) {
+        if (! BATTLETREE.get.is_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
         if(ITEM.isItem(i) && !INVENTORY.has_object(i)){ // check our stock
@@ -62,7 +62,7 @@ const BATTLE = {
     _make_player_action: function(action_object) {
       /*
         action_object.function = function(){
-          BATTLETREE.develop(BATTLE.current_battle,
+          BATTLETREE.api.develop(BATTLE.current_battle,
                              action_object.name,
                              action_object._result_enum);
           action_object._result_function(action_object._effect);
@@ -72,7 +72,7 @@ const BATTLE = {
         action_object.function(action_object.name);
 
         if (action_object.outcome) {
-          BATTLETREE.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
+          BATTLETREE.api.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
 
           switch (action_object.outcome) {
             case BATTLETREE.WIN:
@@ -111,16 +111,17 @@ const BATTLE = {
       BATTLE._player_actions[action_object.name] = BATTLE.player_actions._make_player_action(action_object);
 
       if (action_object.replacing) {
-        BATTLETREE.unlock(BATTLE.current_battle, action_object.name, action_object.replacing);
+        BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
+        BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
         BATTLE.player_actions.remove(action_object.replacing);
       } else if (action_object.unlock) {
-        BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
+        BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
       } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
         // Unlock base actions in our inventory
-        BATTLETREE.unlock(BATTLE.current_battle, action_object.name);
+        BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
       }
 
-      BATTLETREE.declare(BATTLE.current_battle, action_object.name);
+      BATTLETREE.api.declare(BATTLE.current_battle, action_object.name);
 
     },
 

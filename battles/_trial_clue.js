@@ -19,10 +19,10 @@ PLAYER_ACTIONS.add({
   description: [],
   outcome_description: "Looking closely, you can see something engraved in the rock.",
   extra_function: function(){
-    BATTLETREE.unlock("_trial_exit", "Speak the secret word");
+    BATTLETREE.api.unlock("_trial_exit", "Speak the secret word");
   }
 });
-BATTLETREE.unlock(BATTLE.get_current_battle(), inspect);
+BATTLETREE.api.unlock(BATTLE.get_current_battle(), inspect);
 
 
 BATTLE.operations.start("You find yourself faced by a big statue of the Goddess. ");

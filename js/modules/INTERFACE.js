@@ -3,7 +3,7 @@ const INTERFACE = {
 
   display: {
     experience_menu: function() {
-      var battles = BATTLETREE.get_all_battles();
+      var battles = BATTLETREE.get.all_battles();
       var battles_options = [];
       for(var i in battles) {
         (function(index){
@@ -30,8 +30,9 @@ const INTERFACE = {
                       {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
                       {"text": "", "effect": function(){}, "keep_open": true},
-                      {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Back to game", "effect": "##CLOSE"},
+                      {"text": "", "effect": function(){}, "keep_open": true},
+                      {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
                    ]);
     },

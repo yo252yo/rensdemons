@@ -10,7 +10,7 @@ var escape_function = function(name){
     outcome: BATTLETREE.ESCAPE,
     outcome_description: "You move away from the scene, it's just too much for you to handle.",
   });
-  BATTLETREE.unlock(BATTLE.get_current_battle(), name);
+  BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
 }
 
 escape_function("Run away");

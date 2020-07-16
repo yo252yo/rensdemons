@@ -27,7 +27,7 @@ class FluidMap {
     }
   }
 
-  add(key_list, value) {
+  add(key_list, value, unique) {
     var m = this._map;
     for(var i =0; i <key_list.length; i++){
       var key = key_list[i];
@@ -36,7 +36,9 @@ class FluidMap {
         if (!(key in m)){
           m[key] = [value];
         } else {
-          m[key].push(value);
+          if(!unique || !(value in m[key])){
+            m[key].push(value);
+          }
         }
       } else {
         if(!(key in m)){

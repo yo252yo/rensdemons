@@ -1,129 +1,144 @@
 // No entry = no ability
 // An entry = it leads somewhere
 // Entry with DOOM
+
 const BATTLETREE = {
-  _outcomes: new FluidMap(),
   _targets: new FluidMap(),
-  _unknowns: new FluidMap(),
+
   LOSS: "#LOSS",
   WIN: "#WIN",
-  UNKNOWN: "#UNKNOWN",
+  HIDDEN: "#HIDDEN",
+  NOT_TRIED: "#NOT_TRIED",
   NOTHING: "#NOTHING",
   ESCAPE: "#ESCAPE",
 
   factory: {
     export: function() {
       return {
-       "outcomes": BATTLETREE._outcomes.export(),
-       "targets": BATTLETREE._targets.export(),
-       "unknowns": BATTLETREE._unknowns.export()
+       "tree": BATTLETREE._targets.export(),
      };
     },
 
     import: function(save){
-      BATTLETREE._outcomes = new FluidMap(save.outcomes);
-      BATTLETREE._targets = new FluidMap(save.targets);
-      BATTLETREE._unknowns = new FluidMap(save.unknowns);
+      BATTLETREE._targets = new FluidMap(save.tree);
     },
   },
 
-  unlock: function(battle, name, from) {
-    BATTLETREE._unknowns.delete([battle, name]);
-    var v = BATTLETREE._targets.get([battle, name]);
-    if (v == null) {
-      BATTLETREE._outcomes.set([battle, name], BATTLETREE.UNKNOWN);
-      BATTLETREE._targets.set([battle, name], BATTLETREE.UNKNOWN);
+  api: {
+    unlock: function(battle, name) {
+      if(BATTLETREE.get.is_unlocked(battle, name)){
+        return; // already unlocked
+      }
+
+      BATTLETREE._targets.set([battle, name], [BATTLETREE.NOT_TRIED]);
       CONSOLE.log.battletree("unlocked: [" + name + "] on " + battle);
       AUDIO.effect.unlock();
-      DISK.write("BATTLETREE");
-    }
-
-    if(from) {
-      BATTLETREE.develop(battle, from, name);
-    }
-  },
-
-  declare: function(battle, name) {
-    // check inventory and all
-    var v = BATTLETREE._outcomes.get([battle, name]);
-    if (v == null) {
-      if (! BATTLETREE._unknowns.get([battle, name])) {
-        CONSOLE.log.battletree("unknown action discovered ([" + name + "])");
-        BATTLETREE._unknowns.set([battle, name], true);
-        DISK.write("BATTLETREE");
-      }
-    }
-  },
-
-  develop: function(battle, name, destination) {
-    if (!destination) {
-      destination = "tried";
-    }
-    BATTLETREE.unlock(battle, name);
-    var v = BATTLETREE._targets.get([battle, name]);
-    if (v != destination) {
-      CONSOLE.log.battletree("developed: [" + name + "] -> [" + destination + "] on " + battle);
-      BATTLETREE._outcomes.set([battle, name], destination);
-      BATTLETREE._targets.set([battle, name], destination);
-      DISK.write("BATTLETREE");
-    }
-
-    if (destination == BATTLETREE.WIN || destination == BATTLETREE.LOSS || destination == BATTLETREE.NOTHING || destination == BATTLETREE.ESCAPE) {
-      BATTLETREE.internal._propagate_verdict(battle, name, destination);
-    }
-  },
-
-  check_unlocked: function(battle, name) {
-    return (BATTLETREE._outcomes.get([battle,name]) != null);
-  },
-
-  get_all_battles: function(){
-    var battles = Object.keys(BATTLETREE._outcomes.get([]));
-    var displayable_battles = [];
-    for(var b in battles){
-      if (DEBUG.DISPLAY_ALL_TREES || !battles[b].startsWith("_")){
-        displayable_battles.push(battles[b]);
-      }
-    }
-    return displayable_battles;
-  },
-
-  internal: {
-    _propagate_verdict: function(battle, name, verdict) {
-      if (name == BATTLETREE.WIN || name == BATTLETREE.LOSS || name == BATTLETREE.NOTHING || name == BATTLETREE.ESCAPE) {
-        return;
-      }
-      for (var i in BATTLETREE._outcomes.get([battle])) {
-        if(BATTLETREE._outcomes.get([battle, i]) == name){
-          BATTLETREE._outcomes.set([battle, i], verdict);
-          DISK.write("BATTLETREE");
-          BATTLETREE.internal._propagate_verdict(battle, i, verdict);
-        }
-      }
     },
 
-    _get_starters: function(battle) {
+    declare: function(battle, name) {
+      if (BATTLETREE._targets.get([battle, name]) != null) {
+        return; // already unlocked
+      }
+        // check inventory and all ???
+      BATTLETREE._targets.set([battle, name], [BATTLETREE.HIDDEN]);
+      CONSOLE.log.battletree("unknown action discovered ([" + name + "])");
+    },
+
+    develop: function(battle, name, destination) {
+      if (!destination) {
+        destination = BATTLETREE.NOTHING;
+      }
+
+      BATTLETREE.api.unlock(battle, name); // just in case
+
+      var node = BATTLETREE._targets.get([battle, name]);
+      if (node.includes(destination)) {    return;   }
+
+      if (BATTLETREE.get._check_node(node, BATTLETREE.NOT_TRIED) || BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN)) {
+        BATTLETREE._targets.set([battle, name], []);
+      }
+
+      CONSOLE.log.battletree("developed: [" + name + "] -> [" + destination + "] on " + battle);
+      BATTLETREE._targets.add([battle, name], destination);
+    },
+  },
+
+  get: {
+    outcome: function(battle, name){
+      var node = BATTLETREE._targets.get([battle, name]);
+      if(!node || node.length == 0){
+        return BATTLETREE.HIDDEN;
+      }
+      var outcomes = [];
+      for (var i in node) {
+        if([BATTLETREE.LOSS, BATTLETREE.WIN, BATTLETREE.HIDDEN, BATTLETREE.NOT_TRIED, BATTLETREE.NOTHING, BATTLETREE.ESCAPE].includes(node[i])){
+          outcomes.push(node[i]);
+        } else{
+          outcomes.push(BATTLETREE.get.outcome(battle, node[i]));
+        }
+      }
+      if(outcomes.includes(BATTLETREE.WIN)) return BATTLETREE.WIN;
+      if(outcomes.includes(BATTLETREE.LOSS)) return BATTLETREE.LOSS;
+      if(outcomes.includes(BATTLETREE.ESCAPE)) return BATTLETREE.ESCAPE;
+      if(outcomes.includes(BATTLETREE.NOTHING)) return BATTLETREE.NOTHING;
+      if(outcomes.includes(BATTLETREE.NOT_TRIED)) return BATTLETREE.NOT_TRIED;
+      return BATTLETREE.HIDDEN;
+    },
+
+    is_unlocked: function(battle, name) {
+      var node = BATTLETREE._targets.get([battle, name]);
+      return (node != null && !BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN));
+    },
+
+    _check_node: function(node, value){
+      return node.length == 1 && node[0] == value;
+    },
+
+    all_battles: function(){
+      var battles = Object.keys(BATTLETREE._targets.get([]));
+      var displayable_battles = [];
+      for(var b in battles){
+        if (DEBUG.DISPLAY_ALL_TREES || !battles[b].startsWith("_")){
+          displayable_battles.push(battles[b]);
+        }
+      }
+      return displayable_battles;
+    },
+
+    _starters: function(battle) {
       var ancestors = new FluidMap();
 
       for (var i in BATTLETREE._targets.get([battle])){
-        var t = BATTLETREE._targets.get([battle,i]);
-        ancestors.add([t], i);
+        var list = BATTLETREE._targets.get([battle, i]);
+        for (var t in list){
+          ancestors.add([list[t]], i);
+        }
       }
       var starters = [];
       for (var i in BATTLETREE._targets.get([battle])){
-        if(!(i in ancestors.get([]))){
-          starters.push([i, ""]);
-        }
+        if(ancestors.get([i])) { continue;  }
+        if(! BATTLETREE.get.is_unlocked(battle, i) ) { continue;  }
+
+        starters.push([i, ""]);
       }
-      var extras = Array(BATTLETREE._unknowns.length([battle])).fill(["?????", ""]);
-      return starters.concat(extras);
+      return starters;
     },
+
   },
 
   score: {
     _score_destination: function(destination) {
-      switch (destination) {
-        case "":
+      if(destination.length == 0){
+        return 0;
+      }
+      if(destination.length >= 2){
+        return 3;
+      }
+
+      switch (destination[0]) {
+        case BATTLETREE.HIDDEN:
+          return 0;
+        case BATTLETREE.NOT_TRIED:
           return 1;
         case BATTLETREE.WIN:
         case BATTLETREE.LOSS:
@@ -131,31 +146,31 @@ const BATTLETREE = {
         case BATTLETREE.ESCAPE:
           return 3;
         default:
-          return 2;
+          return 3; // Explored and leads somewhere
       }
     },
 
     score_battle: function(battle) {
-      if (BATTLE.current_battle.startsWith("_")) {
+      if (battle.startsWith("_")) {
         return 0;
       }
 
       var score = 0;
-      for (var i in BATTLETREE._outcomes.get([battle])) {
-        score += BATTLETREE.score._score_destination(BATTLETREE._outcomes.get([battle,i]));
+      for (var i in BATTLETREE._targets.get([battle])) {
+        score += BATTLETREE.score._score_destination(BATTLETREE._targets.get([battle,i]));
       }
       return score;
     },
 
     completion: function(battle) {
-      var actions = BATTLETREE._outcomes.length([battle]) + BATTLETREE._unknowns.length([battle]);
+      var actions = BATTLETREE._targets.length([battle]);
       var result = BATTLETREE.score.score_battle(battle) / (3*actions);
       return Math.floor(result * 1000) / 10;
     },
 
     total_xp: function() {
       var score = 0;
-      for (var i in BATTLETREE._outcomes.get([])) {
+      for (var i in BATTLETREE._targets.get([])) {
         score += BATTLETREE.score.score_battle(i);
       }
       return score;
@@ -177,21 +192,22 @@ const BATTLETREE = {
         return name;
       }
 
-      switch (BATTLETREE._outcomes.get([battle,name])) {
+      switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
           return "<b>" + name + "</b>";
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
           return "<s>" + name + "</s>";
-        case BATTLETREE.UNKNOWN:
+        case BATTLETREE.HIDDEN:
+        case BATTLETREE.NOT_TRIED:
           return name;
         default: // Leads somewhere else.
           return "<i>" + name + "</i>";
       }
     },
 
-    _display_tree_element: function(html, to_print, battle) {
+    _display_targets_element: function(html, to_print, battle) {
       var pair = to_print.pop();
       var ability = pair[0];
       var prefix = pair[1];
@@ -201,8 +217,11 @@ const BATTLETREE = {
       html[0] += "> " + BATTLETREE.display.stylize(ability, battle);
 
       var target = BATTLETREE._targets.get([battle, ability]);
-      switch (target){
-        case BATTLETREE.UNKNOWN:
+      if(!target){ target = BATTLETREE.HIDDEN; }
+
+      switch (target[0]){
+        case BATTLETREE.NOT_TRIED:
+        case BATTLETREE.HIDDEN:
           html[0] += " -> ?????<br/> ";
           break;
         case BATTLETREE.WIN:
@@ -212,13 +231,15 @@ const BATTLETREE = {
           html[0] += " -> <s>LOSS</s><br/> ";
           break;
         case BATTLETREE.NOTHING:
+          html[0] += " ---<br/> ";
+          break;
         case BATTLETREE.ESCAPE:
-          html[0] += " --<br/> ";
+          html[0] += " -[]<br/> ";
           break;
         default:
           html[0] += "<br/> "
-          if (target){
-            to_print.push([target, prefix + "&nbsp;&nbsp;"]);
+          for(var i in target){
+            to_print.push([target[i], prefix + "&nbsp;&nbsp;"]);
           }
           break;
       }
@@ -226,10 +247,10 @@ const BATTLETREE = {
 
     display_tree: function(battle) {
       var html = [""]; // to pass by reference.
-      var to_print = BATTLETREE.internal._get_starters(battle);
+      var to_print = BATTLETREE.get._starters(battle);
 
       while(to_print.length > 0) {
-        BATTLETREE.display._display_tree_element(html, to_print, battle);
+        BATTLETREE.display._display_targets_element(html, to_print, battle);
       }
 
       new MenuScreen("<b>" + battle + "</b> - " + BATTLETREE.score.completion(battle) + "%<hr/>" + html[0] );

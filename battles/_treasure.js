@@ -34,6 +34,6 @@ PLAYER_ACTIONS.add({
   consume_item: ITEM.Elixir_fire,
 });
 
-BATTLETREE.unlock(BATTLE.get_current_battle(), open);
+BATTLETREE.api.unlock(BATTLE.get_current_battle(), open);
 
 BATTLE.operations.start("You find a wooden chest. It doesn't seem locked.");
