@@ -39,7 +39,7 @@ const PLAYER_ACTIONS = {
       return result;
     },
 
-    unlocking_replacing_action: function(argument){
+    unlock_replacing_action: function(argument){
       var result = function(result_argument) {
         argument.replacing = result_argument;
         PLAYER_ACTIONS.add(argument);

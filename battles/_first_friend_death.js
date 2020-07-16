@@ -25,7 +25,7 @@ var listen = "Listen";
 var examine = "Examine wounds";
 
 
-var unlock_telltruth = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_telltruth = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Tell the truth",
   ephemeral: true,
   unlock: true,
@@ -34,7 +34,7 @@ var unlock_telltruth = PLAYER_ACTIONS.function.unlocking_replacing_action({
   // NEEDMORE
 });
 
-var unlock_lie = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Lie",
   ephemeral: true,
   unlock: true,
@@ -44,7 +44,7 @@ var unlock_lie = PLAYER_ACTIONS.function.unlocking_replacing_action({
   // NEEDMORE
 });
 
-var unlock_listen = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_listen = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: listen,
   unlock: true,
   description: ["Ren: \"I'm here! $$child_friends_m1$! Are you okay?\"",
@@ -56,7 +56,7 @@ var unlock_listen = PLAYER_ACTIONS.function.unlocking_replacing_action({
 });
 
 var pray = "Pray";
-var unlock_pray = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_pray = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: pray,
   ephemeral: true,
   unlock: true,
@@ -67,7 +67,7 @@ var unlock_pray = PLAYER_ACTIONS.function.unlocking_replacing_action({
 });
 
 var cryforhelp = "Cry for help";
-var unlock_cryforhelp = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_cryforhelp = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: cryforhelp,
   unlock: true,
   description: ["You scream at the top of your lungs. Someone, anyone, come and help! How can adults just let this happen? How can they sacrifice this child, and so many others before him?",
@@ -75,7 +75,7 @@ var unlock_cryforhelp = PLAYER_ACTIONS.function.unlocking_replacing_action({
   function: unlock_pray,
 });
 
-var unlock_puke = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_puke = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Puke",
   ephemeral: true,
   unlock: true,
@@ -83,7 +83,7 @@ var unlock_puke = PLAYER_ACTIONS.function.unlocking_replacing_action({
   description: ["In the face of this gruesome spectacle, you cannot help but empty the content of your stomach on a wall."],
 });
 
-var unlock_stopbleeding = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_stopbleeding = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Stop the bleeding",
   ephemeral: true,
   unlock: true,
@@ -92,7 +92,7 @@ var unlock_stopbleeding = PLAYER_ACTIONS.function.unlocking_replacing_action({
                 "Your hands are too small to cover his wounds. Soon, they're bathed in the warm red liquid. What you're doing is pretty useless."],
  });
 
-var unlock_examine = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_examine = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: examine,
   unlock: true,
   description: ["You take a closer look at the wounds of your friend.",
@@ -105,7 +105,7 @@ var unlock_examine = PLAYER_ACTIONS.function.unlocking_replacing_action({
   },
 });
 
-var unlock_approach = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var unlock_approach = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: approach,
   unlock: true,
   description: ["You get closer to $$child_friends_m1$.",

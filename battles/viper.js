@@ -21,7 +21,7 @@ BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you
 BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?");
 BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
 
-var putSnakeOnStick = PLAYER_ACTIONS.function.unlocking_replacing_action({
+var putSnakeOnStick = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: throwbranch,
   outcome: BATTLETREE.WIN,
   description: ["You throw the branch with its temporary occupant."],
