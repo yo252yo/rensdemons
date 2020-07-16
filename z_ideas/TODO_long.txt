@@ -6,6 +6,8 @@ proximity triggered fights?? traps??
 
 https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
+prevent zoom on desktop :((
+
 
 
 i think edge doesnt like functions starting by _ esp nested in namespaces
@@ -18,12 +20,6 @@ _restore_previous_state @ DISK.js:43
 initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
+? zindex was sometimes broken on mobile
 
-MovingObject.js:120 Uncaught TypeError: Cannot read property 'walk_speed' of undefined
-    at M_Character._movement_increment (MovingObject.js:120)
-    at Function.auto_walk (MovingObject.js:26)
-    in battle
-
-    ? zindex was sometimes broken on mobile
-
-    proper loader and async loading for slow 3g
+proper loader and async loading for slow 3g

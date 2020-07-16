@@ -103,10 +103,7 @@ class TextMenu extends TextElement {
           current_item.innerHTML = html + this.options[i]["text"];
           this.html_menu.appendChild(current_item);
       }
-
-      if (selected_element && selected_element.offsetTop){
-        this.html.scrollTo(0, selected_element.offsetTop - 200);
-      }
+      return selected_element;
     }
 
     close() {
@@ -173,7 +170,11 @@ class TextMenu extends TextElement {
       if (this.selected < 0){
         this.selected += this.options.length;
       }
-      this.update_menu();
+      var selected_element = this.update_menu();
+
+      if (selected_element && selected_element.offsetTop){
+        this.html.scrollTo(0, selected_element.offsetTop - 200);
+      }
     }
 
     confirm_select() {

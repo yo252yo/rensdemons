@@ -39,9 +39,5 @@ You can get stuck if you fail your only branch, branch should only be consumed a
 some evnets are in walls
 some events dont disappear
 
+
 BATTLETREE is WRONG because it assumes each action has only 1 target when actions can have several targets but also several antecedants. Example: "examine wounds" on the child
-
-
-testing lests me zoom ????!!??
-
-something scrols action back up ???
