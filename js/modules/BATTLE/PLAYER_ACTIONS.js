@@ -15,7 +15,6 @@ class ActionObject {
     }
     this.unlock = copy.unlock;
     this.replacing = copy.replacing;
-    this.ephemeral = copy.ephemeral;
 
     this.consume_item = copy.consume_item;
     this.give_item = copy.give_item;

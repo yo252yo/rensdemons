@@ -88,7 +88,7 @@ const BATTLE = {
         }
 
 
-        if (action_object.ephemeral) {
+        if (action_object.outcome == BATTLETREE.NOTHING) {
           BATTLE.player_actions.remove(action_object.name);
           // can we say it goes to nothing ?
         }
