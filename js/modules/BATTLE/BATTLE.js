@@ -59,22 +59,56 @@ const BATTLE = {
   },
 
   player_actions: {
-    add: function(action_object) {
-      BATTLE._player_actions[action_object.name] = function(){
+    _make_player_action: function(action_object) {
+      /*
+        action_object.function = function(){
+          BATTLETREE.develop(BATTLE.current_battle,
+                             action_object.name,
+                             action_object._result_enum);
+          action_object._result_function(action_object._effect);
+        }
+      */
+      var result = function(){
         action_object.function(action_object.name);
+
+        if (action_object.outcome) {
+          BATTLETREE.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
+
+          switch (action_object.outcome) {
+            case BATTLETREE.WIN:
+              BATTLE.monster_actions.prepare_win(action_object.outcome_description);
+              break;
+            case BATTLETREE.LOSS:
+              BATTLE.monster_actions.prepare_loss(action_object.outcome_description);
+              break;
+            case BATTLETREE.ESCAPE:
+              BATTLE.monster_actions.prepare_escape(action_object.outcome_description);
+              break;
+          }
+        }
+
 
         if (action_object.ephemeral) {
           BATTLE.player_actions.remove(action_object.name);
+          // can we say it goes to nothing ?
         }
 
         if(action_object.consume_item) {
-          INVENTORY.increase(action_object.consume_item);
+          INVENTORY.decrease(action_object.consume_item);
         }
         if(action_object.give_item) {
-          INVENTORY.decrease(action_object.give_item);
+          INVENTORY.increase(action_object.give_item);
+        }
+        if(action_object.extra_function) {
+          action_object.extra_function();
         }
         return action_object.description;
       };
+      return result;
+    },
+
+    add: function(action_object) {
+      BATTLE._player_actions[action_object.name] = BATTLE.player_actions._make_player_action(action_object);
 
       if (action_object.replacing) {
         BATTLETREE.unlock(BATTLE.current_battle, action_object.name, action_object.replacing);

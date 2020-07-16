@@ -21,25 +21,25 @@ BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you
 BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?");
 BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
 
-var putSnakeOnStick = PLAYER_ACTIONS.unlock_replacing_function(
-  PLAYER_ACTIONS.add.winning, {
-    name: throwbranch,
-    description: ["You throw the branch with its temporary occupant."],
-    _effect: "They disappear together in the darkness, far from you.",
-    consume_item: ITEM.Stick,
-  }
-);
+var putSnakeOnStick = PLAYER_ACTIONS.function.unlocking_replacing_action({
+  name: throwbranch,
+  outcome: BATTLETREE.WIN,
+  description: ["You throw the branch with its temporary occupant."],
+  outcome_description: "They disappear together in the darkness, far from you.",
+  consume_item: ITEM.Stick,
+});
 
-PLAYER_ACTIONS.add.action({
+PLAYER_ACTIONS.add({
   name: ITEM.Stick,
   description: ["You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it."],
   function: putSnakeOnStick,
 });
 
-PLAYER_ACTIONS.add.winning({
+PLAYER_ACTIONS.add({
   name: ITEM.Sword_wooden,
+  outcome: BATTLETREE.WIN,
   description: ["You slice the Viper in half."],
-  _effect: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
+  outcome_description: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
   give_item: ITEM.Fang,
 });
 
