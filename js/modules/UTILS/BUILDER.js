@@ -3,12 +3,18 @@ const BUILDER = {
   _LOG: [],
 
   _record: function(row, color) {
-    eval(row); // DANGER
     if(!color) {color = "#FFFFFF";};
     CONSOLE.debug(row, color);
+    eval(row); // DANGER
     if(! BUILDER._LOG.includes(row)){
       BUILDER._LOG.push(row);
     }
+  },
+
+  export() {
+    var log = BUILDER._LOG.join('\n');
+    navigator.clipboard.writeText(log);
+    CONSOLE.debug("Saved to clipboard");
   },
 
   draw_alt_rectangle: function(x, y){
@@ -97,8 +103,12 @@ const BUILDER = {
       BUILDER._BRUSH = brush;
     },
 
-    battle: function(name){
-      BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "');";
+    battle: function(name, size){
+      if(size){
+        BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "', " + size + ");";
+      } else {
+        BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "');";
+      }
     },
   },
 

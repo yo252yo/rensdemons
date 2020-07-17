@@ -169,6 +169,8 @@ const IO = {
     },
 
     onPressKey: function(key) {
+      DEBUG.signal.press_key(key);
+
       if (IO.interface._try_special_key_actions(key)){
         return;
       }

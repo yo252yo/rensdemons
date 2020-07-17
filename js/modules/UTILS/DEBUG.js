@@ -9,6 +9,10 @@ const DEBUG = {
     DEBUG.TP_CHARACTER = true;
   },
 
+  activate_builder: function() {
+    DEBUG.ACTIVATE_BUILDER = true;
+  },
+
   display_all_trees: function() {
     DEBUG.DISPLAY_ALL_TREES = true;
   },
@@ -57,9 +61,11 @@ const DEBUG = {
   },
 
   all: function() {
-    DEBUG.log_mouse_positions();
+    DEBUG.activate_builder();
     BUILDER.activate.alt_hallways();
     BUILDER.activate.shift_brush();
+
+    DEBUG.log_mouse_positions();
     DEBUG.draw_grid();
     DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
@@ -72,8 +78,10 @@ const DEBUG = {
 
   signal: {
     mouse_position: function(x, y) {
-      var intercepted = BUILDER.click(x,y);
-      if(intercepted){ return; }
+      if (DEBUG.ACTIVATE_BUILDER) {
+        var intercepted = BUILDER.click(x,y);
+        if(intercepted){ return; }
+      }
 
       if (DEBUG.MOUSE_POSITIONS) {
         CONSOLE.debug("Position:" + x + " / " + y);
@@ -82,6 +90,12 @@ const DEBUG = {
         CHARACTER.initialize(x, y);
       }
     },
-  }
+
+    press_key: function(key) {
+      if (DEBUG.ACTIVATE_BUILDER && key == "s" && KEYS_UTIL.is_pressed.ctrl()){
+        BUILDER.export();
+      }
+    },
+  },
 
 }
