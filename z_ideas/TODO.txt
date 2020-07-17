@@ -41,3 +41,6 @@ some events dont disappear
 
 
 SAVED doesnt remember good position of chara :/
+
+
+the ability tree doesnt overflow scroll :/

@@ -70,19 +70,27 @@ const BATTLETREE = {
         return BATTLETREE.HIDDEN;
       }
       var outcomes = [];
+      var has_children = false;
       for (var i in node) {
+        var o;
         if([BATTLETREE.LOSS, BATTLETREE.WIN, BATTLETREE.HIDDEN, BATTLETREE.NOT_TRIED, BATTLETREE.NOTHING, BATTLETREE.ESCAPE].includes(node[i])){
-          outcomes.push(node[i]);
-        } else{
-          outcomes.push(BATTLETREE.get.outcome(battle, node[i]));
+          o = node[i];
+        } else {
+          o = BATTLETREE.get.outcome(battle, node[i]);
+          has_children = true;
+        }
+        if(!outcomes.includes(o)){
+          outcomes.push(o);
         }
       }
-      if(outcomes.includes(BATTLETREE.WIN)) return BATTLETREE.WIN;
-      if(outcomes.includes(BATTLETREE.LOSS)) return BATTLETREE.LOSS;
-      if(outcomes.includes(BATTLETREE.ESCAPE)) return BATTLETREE.ESCAPE;
-      if(outcomes.includes(BATTLETREE.NOTHING)) return BATTLETREE.NOTHING;
-      if(outcomes.includes(BATTLETREE.NOT_TRIED)) return BATTLETREE.NOT_TRIED;
-      return BATTLETREE.HIDDEN;
+      if(outcomes.length == 1) {
+        if(outcomes[0] == BATTLETREE.NOT_TRIED && has_children){
+          return "Unexplored children";
+        }
+        return outcomes[0];
+      }
+
+      return "Leading to several possibilities";
     },
 
     is_unlocked: function(battle, name) {

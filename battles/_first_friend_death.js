@@ -8,7 +8,7 @@ var escape_function = function(name){
     name: name,
     description: [],
     outcome: BATTLETREE.ESCAPE,
-    outcome_description: "You move away from the scene, it's just too much for you to handle.",
+    outcome_description: "You move away from this cruel scene.",
   });
   BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
 }
@@ -25,25 +25,74 @@ var listen = "Listen";
 var examine = "Examine wounds";
 var pray = "Pray";
 var cryforhelp = "Cry for help";
+var lie = "Lie";
+var telltruth = "Tell the truth";
+var accept = "Listen to his request";
 
+var unlock_euthanasia = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "End his suffering",
+  unlock: true,
+  outcome: BATTLETREE.WIN,
+  description: ["You try to not think too much about what you're doing. You close your eyes, take a deep breath, and cover his face with the fabric of his shirt.",
+                "The seconds that follow seem like an eternity. The convulsions of the young boy's body never seem to end. But you never let go, even though your body shakes from sobbing."],
+  outcome_description: "And then, finally, they do.",
+});
+
+var unlock_goodbye = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Say goodbye",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: ["Ren: \"Not without sending you off.\"",
+                "Warm tears start running down your face. It seems so long ago that you both were joking together about the trial. A distant memory in a different world. You knew that not everyone made it through the Trial. But in a much more real way, you had no idea... You curse the world that lead you to this.",
+                "Ren: \"Goodbye, $$child_friends_m1$. You did not deserve this. I will always remember you...\""],
+});
+
+var unlock_refuse = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Refuse his request",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: ["You refuse to listen to $$child_friends_m1$. Surely there is something else that you can do."],
+});
+
+var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: accept,
+  unlock: true,
+  description: ["Ren: \"Anything you want.\"",
+                "$$child_friends_m1$: \"Please... It hurts... so much... I want it to stop... I don't want to go slow and painfully... Please, make it stop...\""],
+  function: function() {
+    unlock_euthanasia(accept);
+    unlock_goodbye(accept);
+    escape_function("Back away");
+  },
+});
 
 var unlock_telltruth = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Tell the truth",
+  name: telltruth,
   unlock: true,
   description: ["Ren: \"It doesn't look good, buddy. I think this might be it...\"",
-                ],
-  // NEEDMORE
-
+                "You expected him to be angry, but instead you can see acceptation in his eyes.",
+                "$$child_friends_m1$: \"I... I see... I knew it... Thanks...\"",
+                "His voice is peaceful, but his face is distorted by pain.",
+                "$$child_friends_m1$: \"Can I... ask you a favor?\"",
+                "A bad feeling sends a cold shiver down your spine.",
+              ],
+  function: function() {
+    unlock_refuse(telltruth);
+    unlock_accept(telltruth);
+  },
 });
 
 var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Lie",
+  name: lie,
   unlock: true,
   description: ["Ren: \"Don't worry. It's gonna be okay. I'll find a way to help you.\"",
-                "But you can see in his eyes that he doesn't believe you."
+                "But you can see in his eyes that he doesn't believe you.",
+                "$$child_friends_m1$: \"It hurts... So much... Please, do something... \""
                 ],
-  // NEEDMORE
-
+  function: function() {
+    unlock_euthanasia(lie);
+    escape_function("Back away");
+  },
 });
 
 var unlock_listen = PLAYER_ACTIONS.function.unlock_replacing_action({
