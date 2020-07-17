@@ -90,7 +90,6 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
-new Module("UTILS/DEBUG");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
 new Module("GRAPHICS/SCREEN");
@@ -99,6 +98,9 @@ new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
 new Module("BATTLE/PLAYER_ACTIONS");
+
+new Module("UTILS/BUILDER");
+IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 
 new Module("IO/IO");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");

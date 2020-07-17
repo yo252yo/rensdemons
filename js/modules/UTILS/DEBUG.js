@@ -1,19 +1,8 @@
 
 const DEBUG = {
+
   log_mouse_positions: function() {
     DEBUG.MOUSE_POSITIONS = true;
-  },
-
-  draw_mouse_rectangles: function() {
-    DEBUG.MOUSE_RECTANGLES = true;
-  },
-
-  draw_mouse_hallways: function() {
-    DEBUG.MOUSE_HALLWAYS = true;
-  },
-
-  draw_component: function() {
-    DEBUG.COMPONENT = true;
   },
 
   activate_character_tp: function() {
@@ -69,8 +58,8 @@ const DEBUG = {
 
   all: function() {
     DEBUG.log_mouse_positions();
-    DEBUG.draw_mouse_hallways();
-    DEBUG.draw_component();
+    BUILDER.activate.alt_hallways();
+    BUILDER.activate.shift_brush();
     DEBUG.draw_grid();
     DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
@@ -82,69 +71,10 @@ const DEBUG = {
 
 
   signal: {
-    _draw_mouse_rectangle: function(x, y){
-        var w = Math.abs(x - DEBUG._previous_x);
-        var h = Math.abs(y - DEBUG._previous_y);
-        var x = Math.min(x, DEBUG._previous_x);
-        var y = Math.max(y, DEBUG._previous_y);
-        var color = Color.random().code();
-
-        CONSOLE.debug("new S_Floor(" + x + "," + y + "," + w + "," + h + ");", color);
-
-        var html_rectangle = HTML.div.make({
-          top: (y-h),
-          left: x,
-          w: w,
-          h: h,
-          background: color,
-        });
-        CURRENTLEVEL.system.html().appendChild(html_rectangle);
-    },
-
-    _draw_mouse_hallways: function(x, y){
-        var w = Math.abs(x - DEBUG._previous_x) + 50;
-        var h = Math.abs(y - DEBUG._previous_y) + 50;
-        var x = Math.min(x, DEBUG._previous_x) - 25;
-        var y = Math.max(y, DEBUG._previous_y) + 25;
-        var color = Color.random().code();
-
-        CONSOLE.debug("new S_Floor(" + x + "," + y + "," + w + "," + h + ");", color);
-
-        var html_rectangle = HTML.div.make({
-          top: (y-h),
-          left: x,
-          w: w,
-          h: h,
-          background: color,
-        });
-        CURRENTLEVEL.system.html().appendChild(html_rectangle);
-    },
-
     mouse_position: function(x, y) {
-      if (DEBUG.COMPONENT && KEYS_UTIL.is_pressed.shift()){
-        x = Math.round(x/5)*5;
-        y = Math.round(y/5)*5;
-        new SE_battle(x, y, "#COMPONENT");
-        CONSOLE.debug('new SE_battle('+x+', '+y+', "#COMPONENT");');
-        return;
-      }
-      if (KEYS_UTIL.is_pressed.alt()){
-        x = Math.round(x /25) * 25;
-        y = Math.round(y /25) * 25;
-        if (DEBUG._previous_x) {
-          if (DEBUG.MOUSE_RECTANGLES){
-            DEBUG.signal._draw_mouse_rectangle(x, y);
-          } else if (DEBUG.MOUSE_HALLWAYS){
-            DEBUG.signal._draw_mouse_hallways(x, y);
-          }
-          delete DEBUG._previous_x;
-          delete DEBUG._previous_y;
-        } else {
-          DEBUG._previous_x = x;
-          DEBUG._previous_y = y;
-        }
-        return;
-      }
+      var intercepted = BUILDER.click(x,y);
+      if(intercepted){ return; }
+
       if (DEBUG.MOUSE_POSITIONS) {
         CONSOLE.debug("Position:" + x + " / " + y);
       }
