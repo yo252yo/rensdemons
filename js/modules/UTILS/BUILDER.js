@@ -1,6 +1,8 @@
 
 const BUILDER = {
   _LOG: [],
+  _BRUSH_GRANULARITY: 25,
+  _ALT_GRANULARITY: 25,
 
   _record: function(row, color) {
     if(!color) {color = "#FFFFFF";};
@@ -57,8 +59,8 @@ const BUILDER = {
 
   click: function(x, y) {
     if (BUILDER.SHIFT_BRUSH && KEYS_UTIL.is_pressed.shift()){
-      x = Math.round(x/5)*5;
-      y = Math.round(y/5)*5;
+      x = Math.round(x/BUILDER._BRUSH_GRANULARITY)*BUILDER._BRUSH_GRANULARITY;
+      y = Math.round(y/BUILDER._BRUSH_GRANULARITY)*BUILDER._BRUSH_GRANULARITY;
       var row = BUILDER._BRUSH;
       row = row.replace('$x', x);
       row = row.replace('$y', y);
@@ -66,8 +68,8 @@ const BUILDER = {
       return true;
     }
     if (KEYS_UTIL.is_pressed.alt()) {
-      x = Math.round(x /25) * 25;
-      y = Math.round(y /25) * 25;
+      x = Math.round(x /BUILDER._ALT_GRANULARITY) * BUILDER._ALT_GRANULARITY;
+      y = Math.round(y /BUILDER._ALT_GRANULARITY) * BUILDER._ALT_GRANULARITY;
       if (BUILDER._previous_x) {
         if (BUILDER.ALT_RECTANGLES){
           BUILDER.draw_alt_rectangle(x, y);

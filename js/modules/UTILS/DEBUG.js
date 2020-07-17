@@ -67,7 +67,7 @@ const DEBUG = {
 
     DEBUG.log_mouse_positions();
     DEBUG.draw_grid();
-    DEBUG.draw_hitboxes();
+    //DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
     DEBUG.allow_scroll();

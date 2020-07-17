@@ -4,7 +4,7 @@
 class S_event extends LevelObject {
   constructor(x, y, size) {
     if (!size){
-      size = 75;
+      size = 50;
     }
     var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
     super(visual, x, y);
