@@ -3,20 +3,10 @@
 // ===================
 new CenteredImage("assets/battles/child_m.png", 'background');
 
-var escape_function = function(name){
-  PLAYER_ACTIONS.add({
-    name: name,
-    description: [],
-    outcome: BATTLETREE.ESCAPE,
-    outcome_description: "You move away from this cruel scene.",
-  });
-  BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
-}
-
-escape_function("Run away");
-escape_function("Avert eyes");
-escape_function("Enter denial");
-escape_function("Go look for help");
+PLAYER_ACTIONS.default.escape("Run away");
+PLAYER_ACTIONS.default.escape("Avert eyes");
+PLAYER_ACTIONS.default.escape("Enter denial");
+PLAYER_ACTIONS.default.escape("Go look for help");
 
 
 var look = "Look";
@@ -28,6 +18,7 @@ var cryforhelp = "Cry for help";
 var lie = "Lie";
 var telltruth = "Tell the truth";
 var accept = "Listen to his request";
+
 
 var unlock_euthanasia = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "End his suffering",
@@ -62,7 +53,7 @@ var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function() {
     unlock_euthanasia(accept);
     unlock_goodbye(accept);
-    escape_function("Back away");
+    PLAYER_ACTIONS.default.escape("Back away");
   },
 });
 
@@ -91,7 +82,7 @@ var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
                 ],
   function: function() {
     unlock_euthanasia(lie);
-    escape_function("Back away");
+    PLAYER_ACTIONS.default.escape("Back away");
   },
 });
 

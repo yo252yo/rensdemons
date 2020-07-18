@@ -136,6 +136,22 @@ const PLAYER_ACTIONS = {
       });
     },
 
+    bone: function(will_break) {
+      var outcome = "It's enough to get rid of the $$&ENEMY$.";
+      var f = function(){};
+      if (will_break) {
+        outcome += " However, your makeshift weapon breaks in the process."
+        f = function(){ INVENTORY.decrease(ITEM.Bone); };
+      }
+      PLAYER_ACTIONS.add({
+        name: ITEM.Bone,
+        outcome: BATTLETREE.WIN,
+        description: ["You attemp to stab the $$&ENEMY$ with your sharp bone."],
+        outcome_description: outcome,
+        extra_function: f,
+      });
+    },
+
     elixir_fire: function() {
       PLAYER_ACTIONS.add({
         name: ITEM.Elixir_fire,
@@ -154,6 +170,18 @@ const PLAYER_ACTIONS = {
         outcome_description: "The $$&ENEMY$ convulses and then falls on the ground.",
         consume_item: ITEM.Fang,
       });
+    },
+  },
+
+  default: {
+    escape: function(name) {
+      PLAYER_ACTIONS.add({
+        name: name,
+        description: [],
+        outcome: BATTLETREE.ESCAPE,
+        outcome_description: "You move away from this cruel scene.",
+      });
+      BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
     },
   },
 }

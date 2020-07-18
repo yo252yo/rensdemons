@@ -14,6 +14,7 @@ PLAYER_ACTIONS.default_useless.stone();
 PLAYER_ACTIONS.default_win.sword_wooden();
 PLAYER_ACTIONS.default_win.elixir_fire();
 PLAYER_ACTIONS.default_win.fang();
+PLAYER_ACTIONS.default_win.bone();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

@@ -77,8 +77,8 @@ new SE_small_treasure(1040, 2195, ITEM.Stone);
 new SE_small_treasure(685, 2315, ITEM.Stone);
 
 
-new SE_battle(70, 125, "&You find on the ground the corpse of $$child_friends_m1$. It's obviously in a pretty bad shape, the Basilisk really did a number on him. You avert your eyes from the bloody remains. It's too much to handle.");
-new SE_battle(380, 530, "&You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...");
+//new SE_battle(70, 125, "&You find on the ground the corpse of $$child_friends_m1$. It's obviously in a pretty bad shape, the Basilisk really did a number on him. You avert your eyes from the bloody remains. It's too much to handle.");
+//new SE_battle(380, 530, "&You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...");
 
 new SE_battle(125, 575, "viper");
 new SE_battle(2550, 215, "viper");
