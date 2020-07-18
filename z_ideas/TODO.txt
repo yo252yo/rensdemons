@@ -13,7 +13,6 @@ maybe have the element turn around when talked to
 POPULATE FIRST DUNGEON
 
 traps
-remember encounters we fled ?
 the treasure battler should probs be close
 
 - For now, monsters can only kill you reactively if one of your action fails, but mb i should have more proactive monster attacks.
@@ -23,10 +22,8 @@ touch handler interupts boy walking
 touch handler interupts text during battle
 mota crashed during basilisk figh and it didnt pop again
 invisible wall on the room at top with 3 big encounters
-trasure chest didnt disappear but event cannot be retriggered
 sometimes events are doubled
 
-you can kill michael
 
 animation at the end of clue is weird (blink screen)
 we need to reset scrolling at level change
@@ -37,10 +34,6 @@ You can get stuck if you fail your only branch, branch should only be consumed a
 
 
 some evnets are in walls
-some events dont disappear
-
-
-after an event (ex, take a bone) some events might be unaccessible (ex, scratch on wall)
 
 
 SAVED doesnt remember good position of chara :/

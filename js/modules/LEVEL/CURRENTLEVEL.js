@@ -68,6 +68,9 @@ const CURRENTLEVEL = {
 
       // could be optimized by ordering objects
       for(var i in CURRENTLEVEL.level_objects) {
+        if (!CURRENTLEVEL.level_objects[i]){
+          continue;
+        }
         if (CURRENTLEVEL.level_objects[i].is_interactible && CURRENTLEVEL.level_objects[i].is_interactible(x,y)) {
           here.push(CURRENTLEVEL.level_objects[i]);
         }
@@ -104,6 +107,9 @@ const CURRENTLEVEL = {
 
       // could be optimized by ordering objects
       for(var i in CURRENTLEVEL.level_objects) {
+        if (!CURRENTLEVEL.level_objects[i]){
+          continue;
+        }
         if (CURRENTLEVEL.level_objects[i] == initiator) {
           continue;
         }
@@ -152,9 +158,9 @@ const CURRENTLEVEL = {
 
     redraw: function() {
       for(var i in CURRENTLEVEL.level_objects){
-        var el = CURRENTLEVEL.level_objects[i].get_visual();
-        if(el.draw){
-          el.draw();
+        var el = CURRENTLEVEL.level_objects[i];
+        if(el && el.get_visual && el.get_visual().draw){
+          el.get_visual().draw();
         }
       }
       CHARACTER.redraw();
@@ -189,12 +195,13 @@ const CURRENTLEVEL = {
 
     remove_object: function(object) {
       for (var i in CURRENTLEVEL.level_objects){
-        if (CURRENTLEVEL.level_objects[i].hash() == object.hash()){
-          if (object != CURRENTLEVEL.level_objects[i]){
+        var candidate = CURRENTLEVEL.level_objects[i];
+        if (candidate && candidate.hash() == object.hash()){
+          if (object != candidate){
             // destroy all homonyms
-            CURRENTLEVEL.level_objects[i].destroy();
+            candidate.destroy();
           }
-          CURRENTLEVEL.level_objects.splice(i, 1);
+          CURRENTLEVEL.level_objects[i] = null;
         }
       }
       CURRENTLEVEL.destroyed_objects.push(object.hash());

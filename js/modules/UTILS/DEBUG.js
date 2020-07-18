@@ -85,6 +85,7 @@ const DEBUG = {
 
       if (DEBUG.MOUSE_POSITIONS) {
         CONSOLE.debug("Position:" + x + " / " + y);
+        //console.log(document.elementFromPoint(x - window.pageXOffset, y - window.pageYOffset));
       }
       if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
         CHARACTER.initialize(x, y);

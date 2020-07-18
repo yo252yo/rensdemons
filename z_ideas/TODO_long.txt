@@ -21,5 +21,6 @@ initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
 ? zindex was sometimes broken on mobile
+? some events dont disappear as they should
 
 proper loader and async loading for slow 3g
