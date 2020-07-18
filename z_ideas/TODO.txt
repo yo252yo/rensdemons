@@ -37,7 +37,6 @@ some evnets are in walls
 
 revisit default PLAYER_ACTION and add variety
 
-  SAVED doesnt remember good position of chara :/
 
 
 the ability tree doesnt overflow scroll :/

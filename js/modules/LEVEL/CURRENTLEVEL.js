@@ -26,8 +26,8 @@ const CURRENTLEVEL = {
       }
     },
 
-    _setup_from_save: function(save) {
-      LEVELSTATES.register_current();
+    _setup_from_object: function(save) {
+      LEVELSTATES.register_from_save(save);
       CURRENTLEVEL.system.clear();
 
       CURRENTLEVEL.level_name = save.level_name;
@@ -38,11 +38,12 @@ const CURRENTLEVEL = {
 
       new Import("levels/" + save.level_name);
       AUDIO.music.stop();
-      CONSOLE.log.setup("level " + save.level_name);
+      CONSOLE.log.setup(save.level_name + " (done)");
     },
 
     import: function(save) {
-      CURRENTLEVEL.factory._setup_from_save(save);
+      CONSOLE.log.setup(save.level_name + " (from save)");
+      CURRENTLEVEL.factory._setup_from_object(save);
     },
   },
 
@@ -182,10 +183,13 @@ const CURRENTLEVEL = {
   setup: function(name) {
     // Try to restore previous state.
     var save = LEVELSTATES.get_save(name);
-    if (! save){
-      save = {level_name: name};
+    if (! save) {
+      CONSOLE.log.setup(name + " (new)");
+      CURRENTLEVEL.factory._setup_from_object({level_name: name});
+    } else {
+      CONSOLE.log.setup(name + " (from previous state)");
+      CURRENTLEVEL.factory._setup_from_object(save);
     }
-    CURRENTLEVEL.factory._setup_from_save(save);
   },
 
   objects: {
@@ -219,7 +223,7 @@ const CURRENTLEVEL = {
 
   initialize_with_character: function(x, y) {
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
-    if (saved_pos[0] && saved_pos[1]) {
+    if (saved_pos && saved_pos[0] && saved_pos[1]) {
       CHARACTER.initialize(saved_pos[0], saved_pos[1]);
       IO.control.character();
     } else {

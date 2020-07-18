@@ -46,7 +46,7 @@ const CONSOLE = {
     },
 
     setup: function(name) {
-      CONSOLE._sys_log("- Setup " + name, "LightGray");
+      CONSOLE._sys_log("- Setup level " + name, "LightGray");
     },
 
     disk: function(operation){

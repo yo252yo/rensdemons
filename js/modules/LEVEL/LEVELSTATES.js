@@ -4,6 +4,8 @@ const LEVELSTATES = {
 
   factory: {
     export: function(){
+      // Make sure we have the latest state.
+      LEVELSTATES.register_current();
       return LEVELSTATES._states.export();
     },
 
@@ -27,7 +29,7 @@ const LEVELSTATES = {
 
   register_from_save: function(save) {
     var name = save.level_name;
-    CONSOLE.log.level("Saved levelstate for " + save.level_name);
+    CONSOLE.log.level("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
     if (name) {
       LEVELSTATES._states.set([name], save);
      }
