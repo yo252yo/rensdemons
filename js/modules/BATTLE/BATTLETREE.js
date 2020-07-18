@@ -35,6 +35,11 @@ const BATTLETREE = {
       AUDIO.effect.unlock();
     },
 
+    lock: function(battle, name) {
+      BATTLETREE._targets.delete([battle, name]);
+      CONSOLE.log.battletree("locked: [" + name + "] on " + battle);
+    },
+
     declare: function(battle, name) {
       if (BATTLETREE._targets.get([battle, name]) != null) {
         return; // already unlocked

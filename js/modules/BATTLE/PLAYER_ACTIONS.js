@@ -44,7 +44,7 @@ const PLAYER_ACTIONS = {
       return result;
     },
   },
-
+  
   default_useless: {
     pray: function() {
       PLAYER_ACTIONS.add({

@@ -69,6 +69,13 @@ const BATTLE = {
         }
       */
       var result = function(){
+
+        if (action_object.replacing) {
+          BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
+          BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
+          BATTLE.player_actions.remove(action_object.replacing);
+        }
+        
         action_object.function(action_object.name);
         var description = action_object.description;
         if (typeof action_object.description == "string"){
@@ -116,11 +123,7 @@ const BATTLE = {
     add: function(action_object) {
       BATTLE._player_actions[action_object.name] = BATTLE.player_actions._make_player_action(action_object);
 
-      if (action_object.replacing) {
-        BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
-        BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
-        BATTLE.player_actions.remove(action_object.replacing);
-      } else if (action_object.unlock) {
+      if (action_object.unlock) {
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
       } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
         // Unlock base actions in our inventory
