@@ -24,22 +24,22 @@ BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident h
 var putSnakeOnStick = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: throwbranch,
   outcome: BATTLETREE.WIN,
-  description: ["You throw the branch with its temporary occupant."],
-  outcome_description: "They disappear together in the darkness, far from you.",
+  description: ["You throw the branch with its temporary occupant.",
+                "They disappear together in the darkness, far from you."],
   consume_item: ITEM.Stick,
 });
 
 PLAYER_ACTIONS.add({
   name: ITEM.Stick,
-  description: ["You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it."],
+  description: "You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it.",
   function: putSnakeOnStick,
 });
 
 PLAYER_ACTIONS.add({
   name: ITEM.Sword_wooden,
   outcome: BATTLETREE.WIN,
-  description: ["You slice the Viper in half."],
-  outcome_description: "In its fresh remains, you manage to extract one of its fangs. It could be useful later.",
+  description: ["You slice the Viper in half.",
+                "In its fresh remains, you manage to extract one of its fangs. It could be useful later."],
   give_item: ITEM.Fang,
 });
 

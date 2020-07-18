@@ -70,19 +70,25 @@ const BATTLE = {
       */
       var result = function(){
         action_object.function(action_object.name);
+        var description = action_object.description;
+        if (typeof action_object.description == "string"){
+          description = [action_object.description];
+        }
 
         if (action_object.outcome) {
+          var outcome_description = description[description.length - 1];
+          description = description.slice(0, description.length-1);
           BATTLETREE.api.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
 
           switch (action_object.outcome) {
             case BATTLETREE.WIN:
-              BATTLE.monster_actions.prepare_win(action_object.outcome_description);
+              BATTLE.monster_actions.prepare_win(outcome_description);
               break;
             case BATTLETREE.LOSS:
-              BATTLE.monster_actions.prepare_loss(action_object.outcome_description);
+              BATTLE.monster_actions.prepare_loss(outcome_description);
               break;
             case BATTLETREE.ESCAPE:
-              BATTLE.monster_actions.prepare_escape(action_object.outcome_description);
+              BATTLE.monster_actions.prepare_escape(outcome_description);
               break;
           }
         }
@@ -102,7 +108,7 @@ const BATTLE = {
         if(action_object.extra_function) {
           action_object.extra_function();
         }
-        return action_object.description;
+        return description;
       };
       return result;
     },
@@ -122,7 +128,6 @@ const BATTLE = {
       }
 
       BATTLETREE.api.declare(BATTLE.current_battle, action_object.name);
-
     },
 
     remove: function(name) {

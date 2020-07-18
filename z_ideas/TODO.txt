@@ -40,6 +40,9 @@ some evnets are in walls
 some events dont disappear
 
 
+after an event (ex, take a bone) some events might be unaccessible (ex, scratch on wall)
+
+
 SAVED doesnt remember good position of chara :/
 
 

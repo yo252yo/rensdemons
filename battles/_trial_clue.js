@@ -6,8 +6,7 @@ var inspect = "Inspect";
 PLAYER_ACTIONS.add({
   name: ABILITY.Flee,
   outcome: BATTLETREE.ESCAPE,
-  description: [],
-  outcome_description:  RANDOM.pick([
+  description: RANDOM.pick([
     "You turn away, trying to put this memory behind you.",
     "You make your way back to your path.",
   ]),
@@ -16,8 +15,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: inspect,
   outcome: BATTLETREE.ESCAPE,
-  description: [],
-  outcome_description: "Looking closely, you can see something engraved in the rock.",
+  description: "Looking closely, you can see something engraved in the rock.",
   extra_function: function(){
     BATTLETREE.api.unlock("_trial_exit", "Speak the secret word");
   }

@@ -25,8 +25,8 @@ var unlock_euthanasia = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   outcome: BATTLETREE.WIN,
   description: ["You try to not think too much about what you're doing. You close your eyes, take a deep breath, and cover his face with the fabric of his shirt.",
-                "The seconds that follow seem like an eternity. The convulsions of the young boy's body never seem to end. But you never let go, even though your body shakes from sobbing."],
-  outcome_description: "And then, finally, they do.",
+                "The seconds that follow seem like an eternity. The convulsions of the young boy's body never seem to end. But you never let go, even though your body shakes from sobbing.",
+                "And then, finally, they do."],
 });
 
 var unlock_goodbye = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -42,7 +42,7 @@ var unlock_refuse = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Refuse his request",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["You refuse to listen to $$child_friends_m1$. Surely there is something else that you can do."],
+  description: "You refuse to listen to $$child_friends_m1$. Surely there is something else that you can do.",
 });
 
 var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -118,7 +118,7 @@ var unlock_puke = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Puke",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["In the face of this gruesome spectacle, you cannot help but empty the content of your stomach on a wall."],
+  description: "In the face of this gruesome spectacle, you cannot help but empty the content of your stomach on a wall.",
 });
 
 var unlock_stopbleeding = PLAYER_ACTIONS.function.unlock_replacing_action({

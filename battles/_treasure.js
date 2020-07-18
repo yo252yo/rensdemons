@@ -5,32 +5,29 @@ var open = "Open";
 
 PLAYER_ACTIONS.add({
   name: ABILITY.Flee,
-  description: [],
-  outcome: BATTLETREE.ESCAPE,
-  outcome_description:  RANDOM.pick([
+  description: RANDOM.pick([
     "You turn away, not taking the treasure for now.",
     "You move away from the chest without touching its content.",
     "You renounce your chance to claim this treasure.",
   ]),
+  outcome: BATTLETREE.ESCAPE,
 });
 
 PLAYER_ACTIONS.add({
   name: open,
-  description: [],
-  outcome: BATTLETREE.WIN,
-  outcome_description: RANDOM.pick([
+  description: RANDOM.pick([
     "You open the chest and get its content. It's a " + BATTLE.pending_text + ".",
   ]),
+  outcome: BATTLETREE.WIN,
   give_item: BATTLE.pending_text,
 });
 
 PLAYER_ACTIONS.add({
   name: ITEM.Elixir_fire,
-  description: [],
-  outcome: BATTLETREE.WIN,
-  outcome_description: RANDOM.pick([
+  description: RANDOM.pick([
     "You burn the chest to the ground without even opening it.",
   ]),
+  outcome: BATTLETREE.WIN,
   consume_item: ITEM.Elixir_fire,
 });
 

@@ -4,9 +4,7 @@ class ActionObject {
     // Used in BATTLE
     this.name = copy.name;
     this.description = copy.description;
-
     this.outcome = copy.outcome;
-    this.outcome_description = copy.outcome_description;
 
     if(copy.function){
       this.function = copy.function;
@@ -76,12 +74,11 @@ const PLAYER_ACTIONS = {
           "You try to run away.",
           "You turn around and attempt to escape the $$&ENEMY$.",
           "You back away slowly.",
-        ])],
-        outcome_description: RANDOM.pick([
+        ]), RANDOM.pick([
           "In a stroke of luck, you manage to escape.",
           "The $$&ENEMY$ chases you for a bit, but you manage to escape.",
           "As you turn around, the $$&ENEMY$ loses interest and runs off in the distance.",
-        ]),
+        ])],
       })
     },
 
@@ -121,8 +118,8 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: ITEM.Stone,
         outcome: BATTLETREE.WIN,
-        description: ["You try to crush the $$&ENEMY$ with the stone."],
-        outcome_description: "It's enough to rid you of it. You throw the dirty stone away.",
+        description: ["You try to crush the $$&ENEMY$ with the stone.",
+                      "It's enough to rid you of it. You throw the dirty stone away."],
         consume_item: ITEM.Stone,
       });
     },
@@ -131,8 +128,8 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: ITEM.Sword_wooden,
         outcome: BATTLETREE.WIN,
-        description: ["You attemp to stab the $$&ENEMY$ with your wooden sword."],
-        outcome_description: "It's pretty dull, but it's enough to get rid of the $$&ENEMY$.",
+        description: ["You attemp to stab the $$&ENEMY$ with your wooden sword.",
+                      "It's pretty dull, but it's enough to get rid of the $$&ENEMY$."],
       });
     },
 
@@ -146,8 +143,7 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: ITEM.Bone,
         outcome: BATTLETREE.WIN,
-        description: ["You attemp to stab the $$&ENEMY$ with your sharp bone."],
-        outcome_description: outcome,
+        description: ["You attemp to stab the $$&ENEMY$ with your sharp bone.", outcome],
         extra_function: f,
       });
     },
@@ -156,8 +152,8 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: ITEM.Elixir_fire,
         outcome: BATTLETREE.WIN,
-        description: ["You throw the elixir on the ground, near the $$&ENEMY$."],
-        outcome_description: "The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little.",
+        description: ["You throw the elixir on the ground, near the $$&ENEMY$.",
+                      "The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little."],
         consume_item: ITEM.Elixir_fire,
       });
     },
@@ -166,8 +162,8 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: ITEM.Fang,
         outcome: BATTLETREE.WIN,
-        description: ["You stab the $$&ENEMY$ with the fang still dripping with venom."],
-        outcome_description: "The $$&ENEMY$ convulses and then falls on the ground.",
+        description: ["You stab the $$&ENEMY$ with the fang still dripping with venom.",
+                      "The $$&ENEMY$ convulses and then falls on the ground."],
         consume_item: ITEM.Fang,
       });
     },
@@ -177,9 +173,8 @@ const PLAYER_ACTIONS = {
     escape: function(name) {
       PLAYER_ACTIONS.add({
         name: name,
-        description: [],
+        description: "You move away from this cruel scene.",
         outcome: BATTLETREE.ESCAPE,
-        outcome_description: "You move away from this cruel scene.",
       });
       BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
     },
