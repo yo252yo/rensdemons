@@ -35,8 +35,9 @@ You can get stuck if you fail your only branch, branch should only be consumed a
 
 some evnets are in walls
 
+revisit default PLAYER_ACTION and add variety
 
-SAVED doesnt remember good position of chara :/
+  SAVED doesnt remember good position of chara :/
 
 
 the ability tree doesnt overflow scroll :/

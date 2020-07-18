@@ -169,10 +169,11 @@ const PLAYER_ACTIONS = {
     },
   },
 
-  default: {
+  make: {
     escape: function(name) {
       PLAYER_ACTIONS.add({
         name: name,
+        // add diversity
         description: "You move away from this cruel scene.",
         outcome: BATTLETREE.ESCAPE,
       });

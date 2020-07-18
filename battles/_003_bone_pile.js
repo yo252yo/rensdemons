@@ -1,6 +1,6 @@
 
-PLAYER_ACTIONS.default.escape("Run away");
-PLAYER_ACTIONS.default.escape("Avert eyes");
+PLAYER_ACTIONS.make.escape("Run away");
+PLAYER_ACTIONS.make.escape("Avert eyes");
 
 PLAYER_ACTIONS.default_useless.pray();
 

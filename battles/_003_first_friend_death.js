@@ -3,10 +3,10 @@
 // ===================
 new CenteredImage("assets/battles/child_m.png", 'background');
 
-PLAYER_ACTIONS.default.escape("Run away");
-PLAYER_ACTIONS.default.escape("Avert eyes");
-PLAYER_ACTIONS.default.escape("Enter denial");
-PLAYER_ACTIONS.default.escape("Go look for help");
+PLAYER_ACTIONS.make.escape("Run away");
+PLAYER_ACTIONS.make.escape("Avert eyes");
+PLAYER_ACTIONS.make.escape("Enter denial");
+PLAYER_ACTIONS.make.escape("Go look for help");
 
 
 var look = "Look";
@@ -53,7 +53,7 @@ var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function() {
     unlock_euthanasia(accept);
     unlock_goodbye(accept);
-    PLAYER_ACTIONS.default.escape("Back away");
+    PLAYER_ACTIONS.make.escape("Back away");
   },
 });
 
@@ -82,7 +82,7 @@ var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
                 ],
   function: function() {
     unlock_euthanasia(lie);
-    PLAYER_ACTIONS.default.escape("Back away");
+    PLAYER_ACTIONS.make.escape("Back away");
   },
 });
 
