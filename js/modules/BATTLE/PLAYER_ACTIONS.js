@@ -44,7 +44,7 @@ const PLAYER_ACTIONS = {
       return result;
     },
   },
-  
+
   default_useless: {
     pray: function() {
       PLAYER_ACTIONS.add({
@@ -173,11 +173,11 @@ const PLAYER_ACTIONS = {
     escape: function(name) {
       PLAYER_ACTIONS.add({
         name: name,
+        unlock: true,
         // add diversity
         description: "You move away from this cruel scene.",
         outcome: BATTLETREE.ESCAPE,
       });
-      BATTLETREE.api.unlock(BATTLE.get_current_battle(), name);
     },
   },
 }

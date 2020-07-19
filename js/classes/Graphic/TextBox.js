@@ -52,6 +52,15 @@ class TextBox extends TextElement {
       var result = [];
 
       while (left.length > this.line_width){
+        var br = left.indexOf("<br");
+        if (br > 0 && br <= this.line_width) {
+          result.push(left.substring(0, br));
+          left = left.substring(br);
+          left = left.substring(left.indexOf(">")+1);
+          continue;
+        }
+
+
         var hard_cut = left.substring(0, this.line_width);
         // Makes extra space for ...
         if ((result.length + 1 ) % this.num_lines == 0){

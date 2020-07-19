@@ -69,13 +69,6 @@ const BATTLE = {
         }
       */
       var result = function(){
-
-        if (action_object.replacing) {
-          BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
-          BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
-          BATTLE.player_actions.remove(action_object.replacing);
-        }
-        
         action_object.function(action_object.name);
         var description = action_object.description;
         if (typeof action_object.description == "string"){
@@ -122,6 +115,12 @@ const BATTLE = {
 
     add: function(action_object) {
       BATTLE._player_actions[action_object.name] = BATTLE.player_actions._make_player_action(action_object);
+
+      if (action_object.replacing) {
+        BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
+        BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
+        BATTLE.player_actions.remove(action_object.replacing);
+      }
 
       if (action_object.unlock) {
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
@@ -302,6 +301,8 @@ const BATTLE = {
 
     make: function(name, callback, origin_level) {
       if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
+      if (!callback) { callback = function(){}; }
+
       if(name.startsWith("&")){
         BATTLE.pending_text = name.substring(1);
         name = "_unique_event";

@@ -67,13 +67,7 @@ class S_Statue extends LevelObject {
     this.adjust_hitbox(10,0,20,15);
   }
 
-  interaction() {
-    new TextBannerRandom([
-      "It's a column.",
-      "Nothing but a column.",
-      "A simple yet elegant stone column. It's supporting the roof.",
-    ]);
-  }
+  interaction() {  }
 }
 
 class S_SavePoint extends LevelObject {
