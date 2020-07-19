@@ -30,10 +30,11 @@ const INTERFACE = {
                       {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
                       {"text": "", "effect": function(){}, "keep_open": true},
-                      {"text": "Back to game", "effect": "##CLOSE"},
-                      {"text": "", "effect": function(){}, "keep_open": true},
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
+                      {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
                       {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
+                      {"text": "", "effect": function(){}, "keep_open": true},
+                      {"text": "Back to game", "effect": "##CLOSE"},
                    ]);
     },
 
@@ -52,6 +53,14 @@ const INTERFACE = {
            <b>Events</b>: <a href="http://www.junkie-chain.jp/main.html" target="_blank">Junkie-chain</a><br />
            <b>Sound effects</b>: Audio Alchemist and <a href="https://opengameart.org/users/p0ss">p0ss</a><br />
            <b>Tiles</b>: REFMAP and FSM, Szadiart
+           `, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+    },
+
+    help_menu: function() {
+        new CenteredTextMenu(`
+           <a href="https://gamefaqs.gamespot.com/company/198099-yo252yo" target="_blank">gamefaq</a>
            `, [
                {"text": "Back", "effect": "##BACK"}
             ]);
