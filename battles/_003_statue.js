@@ -15,6 +15,7 @@ var stop_inspecting = function() {
 var inspect_boilerplate = "You inspect the statue of the Goddess. You notice that at the bottom, some lines are carved in the stone. It's very dusty, but you manage to make it out."
 var look_closer = "Look closer";
 var look_even_closer = "Look even closer";
+var speak = "Speak";
 
 var unlock_look_even_closer = PLAYER_ACTIONS.function.unlock_replacing_action({
   name:  "Look even closer",
@@ -26,6 +27,17 @@ PLAYER_ACTIONS.add({
   name: look_closer,
   description: ["There is nothing mode that stands out about the statue. You've seen hundreds like this. You could try to investigate further, if you're really looking for a hint."],
   function: unlock_look_even_closer,
+});
+
+PLAYER_ACTIONS.add({
+  name: speak,
+  description: ["You speak."],
+  function: function(){
+    var answer = prompt("What will you say?");
+    if(answer && answer.toLowerCase() == "act through me") {
+      BATTLE.monster_actions.prepare_win("You WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN");
+    }
+  },
 });
 
 
@@ -43,7 +55,10 @@ var make_riddle = function(direction, riddle) {
     description: [inspect_boilerplate, riddle],
     function: function() {
       BATTLETREE.api.unlock(battle, remember);
-      if(direction == "southern") { BATTLETREE.api.unlock(battle, look_closer); }
+      if(direction == "southern") {
+        BATTLETREE.api.unlock(battle, look_closer);
+        BATTLETREE.api.unlock(battle, speak);
+      }
       stop_inspecting();
     }
   });
@@ -57,9 +72,6 @@ PLAYER_ACTIONS.add({
   extra_function: stop_inspecting
 });
 
-
-
-var answer = "Act through me";
 
 make_riddle("western", "If the world is a stage, this is all you can do.<br />And when the curtain falls, it's time to start a new.<br />And though this speaks often of deceit and pretense.<br />So too this qualifies actions of any sense.");
 make_riddle("northern", "This word bridges the way between the start and goal.<br />This is what you traverse, this is your course in whole.<br />This qualifies your means, your intermediate grind.<br />Though this bares resemblance to the thoughts in your mind.");
