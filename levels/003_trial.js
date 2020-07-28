@@ -3,8 +3,12 @@ new Snippet("decors/maze");
 var make_statue = function(x, y, direction) {
   var statue = new S_Statue(x, y);
   statue.interaction = function() {
-    BATTLETREE.api.unlock("_003_statue", "Inspect " + direction + " statue");
-    BATTLE.api.make('_003_statue');
+    if(ABILITIES.has_ability("_passed_trial")){
+      CURRENTLEVEL.setup("004_trial_end");
+    } else {
+      BATTLETREE.api.unlock("_003_statue", "Inspect " + direction + " statue");
+      BATTLE.api.make('_003_statue');
+    }
   };
 }
 

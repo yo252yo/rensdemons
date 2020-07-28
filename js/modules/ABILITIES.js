@@ -22,7 +22,9 @@ const ABILITIES = {
     list: function() {
       var html = "";
       for (var i in ABILITIES._abilities.get("")){
-        html += i + "<br/>";
+        if (i[0] != "_") {
+          html += i + "<br/>";
+        }
       }
 
       new MenuScreen("<b>Abilities</b><hr/>" + html );
