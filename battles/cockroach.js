@@ -10,10 +10,10 @@ new CenteredImage("assets/battles/cockroach.png", 'background');
 PLAYER_ACTIONS.default_useless.flee();
 PLAYER_ACTIONS.default_useless.pray();
 PLAYER_ACTIONS.default_useless.stick();
-PLAYER_ACTIONS.default_win.stone_crush();
-PLAYER_ACTIONS.default_win.sword_wooden();
+PLAYER_ACTIONS.default_win.stone();
 PLAYER_ACTIONS.default_win.elixir_fire();
-PLAYER_ACTIONS.default_win.bone();
+PLAYER_ACTIONS.default_win.fang();
+PLAYER_ACTIONS.default_useless.bone();
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

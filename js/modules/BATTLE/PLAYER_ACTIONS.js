@@ -97,12 +97,27 @@ const PLAYER_ACTIONS = {
       });
     },
 
+    bone: function() {
+      PLAYER_ACTIONS.add({
+        name: ITEM.Stick,
+        outcome: BATTLETREE.NOTHING,
+        description: [RANDOM.pick([
+            "You try to stab the $$&ENEMY$ with the bone.",
+            "You try to hit the $$&ENEMY$ with your sharp bone.",
+          ]), RANDOM.pick([
+            "The $$&ENEMY$ dodges your attack pretty easily.",
+            "The blow does not seem to hurt the $$&ENEMY$.",
+          ])
+        ],
+      });
+    },
+
     stone: function() {
       PLAYER_ACTIONS.add({
         name: ITEM.Stone,
         outcome: BATTLETREE.NOTHING,
         description: [RANDOM.pick([
-            "You try to hit the $$&ENEMY$ with your sharp stone.",
+            "You try to hit the $$&ENEMY$ with your blunt stone.",
             "You throw the stone at the $$&ENEMY$.",
           ]), RANDOM.pick([
             "The $$&ENEMY$ dodges it pretty easily.",
@@ -114,7 +129,7 @@ const PLAYER_ACTIONS = {
   },
 
   default_win: {
-    stone_crush: function() {
+    stone: function() {
       PLAYER_ACTIONS.add({
         name: ITEM.Stone,
         outcome: BATTLETREE.WIN,

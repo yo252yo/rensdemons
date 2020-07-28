@@ -112,6 +112,18 @@ const BUILDER = {
         BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "');";
       }
     },
+
+    rubble: function(name, size){
+      if(size){
+        BUILDER._BRUSH = "new SE_battle($x, $y, 'R' + " + name + ", " + size + ");";
+      } else {
+        BUILDER._BRUSH = "new SE_battle($x, $y, 'R' + " + name + ");";
+      }
+    },
+
+    flooritem: function(name){
+      BUILDER._BRUSH = "new SE_small_treasure($x, $y, " + name + ");";
+    },
   },
 
 }

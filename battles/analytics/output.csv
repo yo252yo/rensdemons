@@ -1,5 +1,11 @@
-....... 	   bone	  stick	   fang	stone_c	   pray	sword_w	   flee	  stone	elixir_
-arachni	      W	      .	       	      W	      .	      W	      .	       	      W	
-cockroa	      W	      .	       	      W	      .	      W	      .	       	      W
-rodent.	      W	      .	      W	       	      .	      W	      .	      .	      W
-viper.j	       	       	       	       	      .	       	      .	      .	      W
+....... 	   bone	   pray	   flee	   fang	  stick	elixir_	  stone
+arachni	      .	      .	      .	       	      .	      W	      W
+cockroa	      .	      .	      .	      W	      .	      W	      W
+rodent.	      W>X     .	      .	      W	      .	      W	      .
+viper.j	      W	      .	      .	       	      W>F     W	      .
+
+
+
+rock -> arachnid, Cockroach
+bones-> viper -> fang -> rodent
+bones-> rodent

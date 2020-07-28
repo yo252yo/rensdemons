@@ -1,7 +1,7 @@
 
 const ITEM = {
   Stick: "Stick",
-  Stone: "Sharp Stone",
+  Stone: "Blunt Stone",
   Fang: "Venomous Fang",
   Elixir_fire: "Fireball Elixir",
   Sword_wooden: "Wooden Sword",

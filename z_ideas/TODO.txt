@@ -41,3 +41,5 @@ revisit default PLAYER_ACTION and add variety
 
 the ability tree doesnt overflow scroll :/
 
+
+the weird battles like Rbattle or &battle should probably just as well be different classesses,,,,

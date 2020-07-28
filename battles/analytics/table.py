@@ -12,7 +12,7 @@ def translate(verdict):
 weapons = set()
 effect = {}
 
-pattern = re.compile('PLAYER_ACTIONS\.default_(.*)\.(.*)\(\);')
+pattern = re.compile('PLAYER_ACTIONS\.default_(.*)\.(.*)\(.*\);')
 
 dir = os.path.dirname(os.getcwd())
 

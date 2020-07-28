@@ -25,10 +25,10 @@ const DEBUG = {
     MovingObject._RUNNING_BONUS = 10;
   },
 
-  draw_hitboxes: function() {
+  draw_hitboxes: function(even_floors) {
     for(var i in CURRENTLEVEL.level_objects) {
       if (CURRENTLEVEL.level_objects[i].draw_hitbox) {
-        CURRENTLEVEL.level_objects[i].draw_hitbox();
+        CURRENTLEVEL.level_objects[i].draw_hitbox(even_floors);
       }
     }
   },
@@ -67,7 +67,7 @@ const DEBUG = {
 
     DEBUG.log_mouse_positions();
     DEBUG.draw_grid();
-    //DEBUG.draw_hitboxes();
+    DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
     DEBUG.allow_scroll();

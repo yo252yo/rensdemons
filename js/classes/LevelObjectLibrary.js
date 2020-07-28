@@ -10,6 +10,12 @@ class S_Floor extends LevelObject {
     this.adjust_hitbox(10,0,w- 20,h-10);
     this.make_walkable();
   }
+
+  draw_hitbox(even_floors) {
+    if(even_floors){
+      super.draw_hitbox();
+    }
+  }
 }
 
 class S_Tree extends LevelObject {

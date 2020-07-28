@@ -311,6 +311,10 @@ const BATTLE = {
         BATTLE.pending_text = name.substring(1);
         name = "_treasure";
       }
+      if(name.startsWith("R")){
+        BATTLE.pending_text = name.substring(1);
+        name = "_rubble";
+      }
 
 
       LEVELSTATES.register_current();
