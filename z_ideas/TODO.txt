@@ -27,7 +27,6 @@ sometimes events are doubled
 
 animation at the end of clue is weird (blink screen)
 we need to reset scrolling at level change
-statue of the godess goes off screens
 
 
 You can get stuck if you fail your only branch, branch should only be consumed at end of fight
@@ -43,3 +42,13 @@ the ability tree doesnt overflow scroll :/
 
 
 the weird battles like Rbattle or &battle should probably just as well be different classesses,,,,
+
+
+cutscene lvl 2-> load -> go back to lvl 2, doesnt work ??
+
+when testing i had a viper battle go out of existence
+
+i think the transition between levels is fucked up probably because of concurrency
+
+
+better battler for statue, corpse

@@ -76,6 +76,12 @@ const IO = {
     IO._PRESSED_KEYS= [];
   },
 
+  clear_io_queue: function() {
+    IO._PREVIOUS_SYSTEMS = [];
+    IO._ACTIVE_SYSTEM = null;
+    CONSOLE.log.io("Clearing IO queue");
+  },
+
   interface: {
     _can_trigger_level_event: function() {
       return IO._ACTIVE_SYSTEM == IO_CHARACTER;
@@ -125,16 +131,19 @@ const IO = {
     },
 
     dialog: function(dialog) {
+      CONSOLE.log.io("Activating dialog");
       IO.control._activate(IO_DIALOG);
       IO_DIALOG.set_dialog(dialog);
     },
 
     menu: function(menu) {
+      CONSOLE.log.io("Activating menu");
       IO.control._activate(IO_MENU);
       IO_MENU.set_menu(menu);
     },
 
     character: function() {
+      CONSOLE.log.io("Activating character");
       IO.control._activate(IO_CHARACTER);
     },
   },

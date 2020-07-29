@@ -65,6 +65,10 @@ const CONSOLE = {
       CONSOLE._sys_log(") Ability: " + operation, "Yellow");
     },
 
+    io : function(operation){
+      CONSOLE._sys_log("]IO: " + operation, "Orange");
+    },
+
     item : function(name, quantity){
       var s = " ";
       if (quantity > 0){ s = " +";}
