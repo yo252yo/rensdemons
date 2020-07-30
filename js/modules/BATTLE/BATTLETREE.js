@@ -22,6 +22,10 @@ const BATTLETREE = {
     import: function(save){
       BATTLETREE._targets = new FluidMap(save.tree);
     },
+
+    make_new: function(){
+      BATTLETREE._targets = new FluidMap();
+    },
   },
 
   api: {

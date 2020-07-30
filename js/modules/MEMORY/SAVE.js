@@ -71,6 +71,21 @@ const SAVE = {
     CONSOLE.log.save("Loaded save slot " + index);
   },
 
+  make_new_game: function() {
+    for (var i in _SAVED_MODULES) {
+      if(_DISK_MODULES.includes(_SAVED_MODULES[i])){
+        continue; // No need to reset that which is on disk.
+      }
+
+      var mod = eval(_SAVED_MODULES[i]); // Be careful, eval is evil
+      if (!mod || !mod.factory || !mod.factory.make_new) {
+        CONSOLE.error("Failing to reset: " + _SAVED_MODULES[i]);
+        continue;
+      }
+      mod.factory.make_new();
+    }
+  },
+
   print: {
     _menu_from_slots: function(effect, start){
       if (start == undefined){ start = 0; }

@@ -26,6 +26,11 @@ const CURRENTLEVEL = {
       }
     },
 
+    make_new: function(){
+      CURRENTLEVEL.system.clear();
+      CURRENTLEVEL.destroyed_objects = [];
+    },
+
     _setup_from_object: function(save) {
       LEVELSTATES.register_from_save(save);
       CURRENTLEVEL.system.clear();

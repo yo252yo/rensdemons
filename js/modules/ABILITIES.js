@@ -16,6 +16,10 @@ const ABILITIES = {
     import: function(save) {
       ABILITIES._abilities = new FluidMap(save);
     },
+
+    make_new: function() {
+      ABILITIES._abilities = new FluidMap();
+    },
   },
 
   display: {

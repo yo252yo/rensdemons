@@ -1,5 +1,7 @@
 AUDIO.music.introduction();
 
+SAVE.make_new_game(); // In case we come here with ability tree or states...
+
 var size = 600;
 
 var map_container = HTML.div.make({

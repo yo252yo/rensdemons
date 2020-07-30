@@ -23,6 +23,10 @@ const INVENTORY = {
     import: function(save) {
       INVENTORY._inventory = new FluidMap(save);
     },
+
+    make_new: function() {
+      INVENTORY._inventory = new FluidMap();
+    },
   },
 
   display: {

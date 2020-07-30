@@ -44,8 +44,6 @@ the ability tree doesnt overflow scroll :/
 the weird battles like Rbattle or &battle should probably just as well be different classesses,,,,
 
 
-cutscene lvl 2-> load -> go back to lvl 2, doesnt work ??
-
 when testing i had a viper battle go out of existence
 
 i think the transition between levels is fucked up probably because of concurrency

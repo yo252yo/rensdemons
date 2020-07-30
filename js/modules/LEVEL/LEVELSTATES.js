@@ -9,6 +9,10 @@ const LEVELSTATES = {
       return LEVELSTATES._states.export();
     },
 
+    make_new: function() {
+      LEVELSTATES._states = new FluidMap();
+    },
+
     import: function(save) {
       LEVELSTATES._states = new FluidMap(save);
     },
