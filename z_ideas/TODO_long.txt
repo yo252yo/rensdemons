@@ -24,3 +24,7 @@ initialize_game @ DISK.js:58
 ? some events dont disappear as they should
 
 proper loader and async loading for slow 3g
+
+should i world make a map?
+
+invisible wall on the room at top with 3 big encounters (in cave.js)

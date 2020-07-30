@@ -1,52 +1,36 @@
-
 escape should dismisses escapable menus (like the escape menu)
 
 volume buttons skip dialog....
-
-should i world make a map?
 
 audio volume controls
 
 maybe have the element turn around when talked to
 
-
-POPULATE FIRST DUNGEON
-
-traps
 the treasure battler should probs be close
 
 - For now, monsters can only kill you reactively if one of your action fails, but mb i should have more proactive monster attacks.
 - mobile needs a bigger font
 
-touch handler interupts boy walking
-touch handler interupts text during battle
-mota crashed during basilisk figh and it didnt pop again
-invisible wall on the room at top with 3 big encounters
-sometimes events are doubled
+?touch handler interupts boy walking
+?touch handler interupts text during battle
+?mota crashed during basilisk figh and it didnt pop again
 
+?sometimes events are doubled
 
-animation at the end of clue is weird (blink screen)
+?animation at the end of clue is weird (blink screen)
 we need to reset scrolling at level change
 
 
-You can get stuck if you fail your only branch, branch should only be consumed at end of fight
-
-
-some evnets are in walls
+??some evnets are in walls
 
 revisit default PLAYER_ACTION and add variety
 
-
-
 the ability tree doesnt overflow scroll :/
-
 
 the weird battles like Rbattle or &battle should probably just as well be different classesses,,,,
 
-
 when testing i had a viper battle go out of existence
 
-i think the transition between levels is fucked up probably because of concurrency
-
+?i think the transition between levels is fucked up probably because of concurrency
 
 better battler for statue, corpse
