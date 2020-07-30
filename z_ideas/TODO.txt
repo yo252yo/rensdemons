@@ -6,10 +6,10 @@ audio volume controls
 
 maybe have the element turn around when talked to
 
-the treasure battler should probs be close
+the treasure battler should probs be closed
 
-- For now, monsters can only kill you reactively if one of your action fails, but mb i should have more proactive monster attacks.
-- mobile needs a bigger font
+For now, monsters can only kill you reactively if one of your action fails, but mb i should have more proactive monster attacks.
+mobile needs a bigger font
 
 ?touch handler interupts boy walking
 ?touch handler interupts text during battle
@@ -18,8 +18,8 @@ the treasure battler should probs be close
 ?sometimes events are doubled
 
 ?animation at the end of clue is weird (blink screen)
-we need to reset scrolling at level change
 
+we need to reset scrolling at level change
 
 ??some evnets are in walls
 
@@ -27,7 +27,7 @@ revisit default PLAYER_ACTION and add variety
 
 the ability tree doesnt overflow scroll :/
 
-when testing i had a viper battle go out of existence
+?when testing i had a viper battle go out of existence
 
 ?i think the transition between levels is fucked up probably because of concurrency
 
