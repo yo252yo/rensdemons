@@ -107,17 +107,17 @@ const BUILDER = {
 
     battle: function(name, size){
       if(size){
-        BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "', " + size + ");";
+        BUILDER._BRUSH = "new SBattle($x, $y, '" + name + "', " + size + ");";
       } else {
-        BUILDER._BRUSH = "new SE_battle($x, $y, '" + name + "');";
+        BUILDER._BRUSH = "new SBattle($x, $y, '" + name + "');";
       }
     },
 
     rubble: function(name, size){
       if(size){
-        BUILDER._BRUSH = "new SE_battle($x, $y, 'R' + " + name + ", " + size + ");";
+        BUILDER._BRUSH = "new SB_rubble($x, $y, " + name + ", " + size + ");";
       } else {
-        BUILDER._BRUSH = "new SE_battle($x, $y, 'R' + " + name + ");";
+        BUILDER._BRUSH = "new SB_rubble($x, $y, " + name + ");";
       }
     },
 

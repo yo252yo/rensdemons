@@ -299,23 +299,24 @@ const BATTLE = {
       return (BATTLE.current_battle != "");
     },
 
+    make_event: function(text, callback){
+      BATTLE.pending_text = text;
+      BATTLE.api.make("_unique_event", callback);
+    },
+
+    make_rubble: function(payoff, callback){
+      BATTLE.pending_text = payoff;
+      BATTLE.api.make("_rubble", callback);
+    },
+
+    make_treasure: function(payoff, callback){
+      BATTLE.pending_text = payoff;
+      BATTLE.api.make("_treasure", callback);
+    },
+
     make: function(name, callback, origin_level) {
       if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
       if (!callback) { callback = function(){}; }
-
-      if(name.startsWith("&")){
-        BATTLE.pending_text = name.substring(1);
-        name = "_unique_event";
-      }
-      if(name.startsWith("T")){
-        BATTLE.pending_text = name.substring(1);
-        name = "_treasure";
-      }
-      if(name.startsWith("R")){
-        BATTLE.pending_text = name.substring(1);
-        name = "_rubble";
-      }
-
 
       LEVELSTATES.register_current();
       BATTLE.origin_level = origin_level;

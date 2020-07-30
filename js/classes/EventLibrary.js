@@ -16,23 +16,43 @@ class S_event extends LevelObject {
   interaction() {}
 }
 
-class SE_battle extends S_event {
+class SBattle extends S_event {
   constructor(x, y, battle, size) {
     super(x, y, size);
     this.battle = battle;
   }
 
-  interaction() {
-    // default battle callback ^.^
+  make_default_callback(){
     var self = this;
-    var battleCallback = function(){
+    return function(){
       self.destroy();
     };
-    BATTLE.api.make(this.battle, battleCallback);
+  }
+
+  interaction() {
+    BATTLE.api.make(this.battle, this.make_default_callback());
   }
 
   debug_name() {
     return super.debug_name() + "/" + this.battle;
+  }
+}
+
+class SB_rubble extends SBattle {
+  interaction() {
+    BATTLE.api.make_rubble(this.battle, this.make_default_callback());
+  }
+}
+
+class SB_treasure extends SBattle {
+  interaction() {
+    BATTLE.api.make_treasure(this.battle, this.make_default_callback());
+  }
+}
+
+class SB_event extends SBattle {
+  interaction() {
+    BATTLE.api.make_event(this.battle, this.make_default_callback());
   }
 }
 
