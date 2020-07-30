@@ -2,8 +2,6 @@ escape should dismisses escapable menus (like the escape menu)
 
 volume buttons skip dialog....
 
-audio volume controls
-
 maybe have the element turn around when talked to
 
 the treasure battler should probs be closed

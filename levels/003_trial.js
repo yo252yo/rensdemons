@@ -1,4 +1,6 @@
 new Snippet("decors/maze");
+AUDIO.music.trial();
+
 
 var make_statue = function(x, y, direction) {
   var statue = new S_Statue(x, y);

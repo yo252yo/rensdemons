@@ -117,6 +117,7 @@ class MovingObject extends LevelObject {
   }
 
   _movement_increment() {
+    if(!this.sprite || !this.sprite.walk_speed){ return 0; }
     var increment = _BASE_WALKING_INCREMENT * this.sprite.walk_speed;
 
     if (CHARACTER.character == this && IO_CHARACTER.is_running()){

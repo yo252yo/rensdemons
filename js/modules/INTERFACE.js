@@ -38,10 +38,28 @@ const INTERFACE = {
                    ]);
     },
 
+
+
+
+    audio_menu: function() {
+        new CenteredTextMenu(`
+           <h3>Audio</h3>
+           <b>Music</b>: <input type="range" min="1" max="100" value="` + (AUDIO.VOLUME.MUSIC * 100) + `" class="slider" id="myRange" onInput="AUDIO.set_volume('MUSIC', this.value);"><br />
+           <b>Effects</b>: <input type="range" min="1" max="100" value="` + (AUDIO.VOLUME.SFX * 100) + `" class="slider" id="myRange" onInput="AUDIO.set_volume('SFX', this.value);">
+           `, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+    },
+
     options_menu: function() {
-      new CenteredTextMenu("",
+      new CenteredTextMenu(`
+                   <h3>Audio</h3>
+                   <b>Music</b>: <input type="range" min="1" max="100" value="` + (AUDIO.VOLUME.MUSIC * 100) + `" class="slider" id="myRange" onInput="AUDIO.set_volume('MUSIC', this.value);"><br />
+                   <b>Effects</b>: <input type="range" min="1" max="100" value="` + (AUDIO.VOLUME.SFX * 100) + `" class="slider" id="myRange" onInput="AUDIO.set_volume('SFX', this.value);">
+                   `,
                     [
                       {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); }, "keep_open": true},
+                      {"text": "", "effect": function(){}, "keep_open": true},
                       {"text": "Back", "effect": "##BACK"}
                    ]);
     },

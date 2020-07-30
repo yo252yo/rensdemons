@@ -59,7 +59,7 @@ const AUDIO = {
   _play_sfx: function(track, cooldown, key) {
     if(!key)  {     key = track;  }
     if(!cooldown) {   cooldown = 100;    }
-    
+
     if (key && AUDIO._CURRENT_EFFECTS[key]) {
       return;
     }
@@ -99,8 +99,15 @@ const AUDIO = {
     trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
     gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
     temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
+  },
 
-  }
+  set_volume(type, percentage){
+    AUDIO.VOLUME[type] = percentage / 100;
+    if(type == "MUSIC") {
+      AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
+
+    }
+  },
 };
 
 
