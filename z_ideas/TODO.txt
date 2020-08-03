@@ -30,3 +30,28 @@ the ability tree doesnt overflow scroll :/
 ?i think the transition between levels is fucked up probably because of concurrency
 
 better battler for statue, corpse
+
+
+
+
+  Première statue donne le premier indice
+
+  Trop denemis
+
+  Corner avoider
+
+  Fog of war
+
+  Move corpse
+
+  Rêver gras pour gagnant
+
+  Interact with space at less than 50px
+
+  Bar de vie
+
+  manque une enigme qui decrit mon tout
+
+j'ai tué une vipère avec l'os pointu , puis un rongeur et ça m'a dit que mon arme s'est brisée dans le combat, sur le combat suivant je l'avais plus effectivement (un cockroach) mais quand je suis retombé sur une vipère ça m'a remis sharp bone dans les posiblités
+
+  make color scheme better
