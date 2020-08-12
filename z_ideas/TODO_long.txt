@@ -30,3 +30,5 @@ should i world make a map?
 invisible wall on the room at top with 3 big encounters (in cave.js)
 
 menu back->back makes an infinite loop
+
+save audio settings to disk!

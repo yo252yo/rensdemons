@@ -19,6 +19,8 @@ const ABILITIES = {
 
     make_new: function() {
       ABILITIES._abilities = new FluidMap();
+      ABILITIES._abilities.set([ABILITY.Flee], true);
+      ABILITIES._abilities.set([ABILITY.CallHelp], true);
     },
   },
 
@@ -47,5 +49,5 @@ const ABILITIES = {
 
 }
 
-ABILITIES._abilities.set([ABILITY.Flee], true);
-ABILITIES._abilities.set([ABILITY.CallHelp], true);
+// Initialize
+ABILITIES.factory.make_new();
