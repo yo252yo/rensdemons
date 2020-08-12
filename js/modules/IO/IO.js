@@ -172,6 +172,19 @@ const IO = {
 
   // Global events handlers
   handlers: {
+
+    onKeyDown: function (event) {
+        var key = event.key || event.keyCode;
+        IO.handlers.onPressKey(key.toLowerCase());
+        event.preventDefault();
+    },
+
+    onKeyUp: function (event) {
+        var key = event.key || event.keyCode;
+        IO.handlers.onReleaseKey(key.toLowerCase());
+        event.preventDefault();
+    },
+
     onScroll: function(event) {
         event.preventDefault();
         return true;
@@ -258,17 +271,8 @@ const IO = {
 
 // Events listeners
 
-document.addEventListener('keydown', function (event) {
-    var key = event.key || event.keyCode;
-    IO.handlers.onPressKey(key.toLowerCase());
-    event.preventDefault();
-});
-
-document.addEventListener('keyup', function (event) {
-    var key = event.key || event.keyCode;
-    IO.handlers.onReleaseKey(key.toLowerCase());
-    event.preventDefault();
-});
+document.addEventListener('keydown', IO.handlers.onKeyDown);
+document.addEventListener('keyup', IO.handlers.onKeyUp);
 
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
