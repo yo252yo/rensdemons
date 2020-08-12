@@ -12,7 +12,11 @@ const TERMINAL = {
    document.getElementById('terminal_content').innerHTML = previous + "<br /> >" + content + "<br />" + result;
    document.getElementById('terminal_entry').value = '';
    document.getElementById('terminal_content').scrollTop = document.getElementById('terminal_content').scrollHeight;
-  }
+ },
+
+  recolor: function(){
+    PALETTE.factory.make_new();
+  },
 
 }
 
