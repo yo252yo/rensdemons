@@ -28,7 +28,7 @@ You know that this is a fetching quest
 Encounter the big boss before youre ready
 Attack by a sea monster
 Bosses have stages
-Expectation of being over or under level 
+Expectation of being over or under level
 every room has a purpose
 fake choices
 flashback sequence you know you survive
@@ -42,3 +42,4 @@ AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
 guards lkose aggro on reset or if you move
 no sleep or toilet
 https://www.quora.com/What-are-some-things-we-just-accept-in-video-games-because-they-re-video-games
+game gives me clue for next location
