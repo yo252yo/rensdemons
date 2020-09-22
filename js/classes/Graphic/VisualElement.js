@@ -63,6 +63,14 @@ class VisualElement {
       this.container.style.opacity = o;
     }
 
+    show() {
+      this.container.style.visibility = "visible";
+    }
+
+    hide() {
+      this.container.style.visibility = "hidden";
+    }
+
     destroy() {
       try {
         CURRENTLEVEL.system.html().removeChild(this.container);
