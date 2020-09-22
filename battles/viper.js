@@ -17,9 +17,9 @@ PLAYER_ACTIONS.default_win.elixir_fire();
 // ===================
 var throwbranch = "Throw branch";
 
-BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.");
-BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?");
-BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.");
+BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.", 1);
+BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?", 1);
+BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.", 1);
 
 var putSnakeOnStick = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: throwbranch,

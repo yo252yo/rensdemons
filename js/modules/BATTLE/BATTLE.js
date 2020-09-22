@@ -53,8 +53,28 @@ const BATTLE = {
       new BattleMenu("", options_winning.concat(options_unknown).concat(options_others));
     },
 
-    monster: function(text) {
-      TextBannerSequence.make([text], BATTLE.turn_factory.player);
+    monster: function(text, dodge_difficulty) {
+      if (!dodge_difficulty){
+        TextBannerSequence.make([text], BATTLE.turn_factory.player);
+      } else {
+        var callback = function (){
+          var a = new CenteredImage("assets/interface/circle.png", 'player');
+          a.adjust_depth(1);
+          var f = function(){
+          var answer = window.confirm("surivive?");
+            if (answer) {
+              BATTLE.turn_factory.player();
+            }
+            else {
+              TextBannerSequence.make([LANGUAGE.battle.dodge_fail()], BATTLE.operations.lose);
+            }
+          }
+          setTimeout(f, 1000);
+        }
+        TextBannerSequence.make([text + "<br />" +  LANGUAGE.battle.dodge()], callback);
+
+
+      }
     },
   },
 
@@ -138,9 +158,9 @@ const BATTLE = {
   },
 
   monster_actions: {
-    add_textual: function(text) {
+    add_textual: function(text, dodge_difficulty) {
       BATTLE._monster_actions.push(
-       function() { BATTLE.turn_factory.monster(text); }
+       function() { BATTLE.turn_factory.monster(text, dodge_difficulty); }
       );
     },
 

@@ -90,6 +90,7 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
+new Module("LANGUAGE");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
 new Module("GRAPHICS/SCREEN");
