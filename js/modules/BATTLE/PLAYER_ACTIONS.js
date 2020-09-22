@@ -23,6 +23,30 @@ class ActionObject {
 
 const PLAYER_ACTIONS = {
 
+  make_victory_in_n_hits: function(nb_hits, action_name, description) {
+    var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
+      name: action_name+ " ".repeat(nb_hits-1),
+      description: [description, "The enemy is dead."],
+      outcome: BATTLETREE.WIN,
+    });
+
+    for(var i=nb_hits-2; i>0; i--){
+        var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
+          name: action_name + " ".repeat(i),
+          description: [description],
+          function: previous_function,
+        });
+        previous_function = unlock_function;
+    }
+
+    PLAYER_ACTIONS.add({
+      name: action_name,
+      unlock: true,
+      description: [description],
+      function: previous_function,
+    });
+  },
+
   add: function(action_object){
     action = new ActionObject(action_object);
     BATTLE.player_actions.add(action);
