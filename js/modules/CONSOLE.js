@@ -69,6 +69,10 @@ const CONSOLE = {
       CONSOLE._sys_log("]IO: " + operation, "Orange");
     },
 
+    battle : function(operation){
+      CONSOLE._sys_log(". " + operation, "Pink");
+    },
+
     item : function(name, quantity){
       var s = " ";
       if (quantity > 0){ s = " +";}

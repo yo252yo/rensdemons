@@ -6,7 +6,6 @@ const BATTLE = {
   origin_level: undefined,
   win_callback: undefined,
   abilities_before: 0,
-  dodge_prompt: undefined,
 
   turn_factory: {
     player: function() {
@@ -58,25 +57,7 @@ const BATTLE = {
       if (!dodge_difficulty){
         TextBannerSequence.make([text], BATTLE.turn_factory.player);
       } else {
-        var callback = function (){
-          dodge_prompt.adjust_depth(100);
-          dodge_prompt.show();
-          var f = function(){
-          var answer = window.confirm("surivive?");
-            if (answer) {
-              dodge_prompt.hide();
-              BATTLE.turn_factory.player();
-            }
-            else {
-              dodge_prompt.hide();
-              TextBannerSequence.make([LANGUAGE.battle.dodge_fail()], BATTLE.operations.lose);
-            }
-          }
-          setTimeout(f, 1000);
-        }
-        TextBannerSequence.make([text + "<br />" +  LANGUAGE.battle.dodge()], callback);
-
-
+        TextBannerSequence.make([text + "<br />" +  LANGUAGE.battle.dodge()], DODGE.getCallback(dodge_difficulty));
       }
     },
   },
@@ -260,9 +241,7 @@ const BATTLE = {
 
         new Import("battles/" + name);
         CONSOLE.log.setup("battle " + name);
-
-        dodge_prompt = new CenteredImage("assets/interface/circle.png", 'player');
-        dodge_prompt.hide();
+        DODGE.init();
       },
     },
 

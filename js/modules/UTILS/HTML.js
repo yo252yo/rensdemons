@@ -6,6 +6,15 @@ const HTML = {
       canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
     },
 
+    draw_gradient_in: function(canvas, color, x, y, r){
+      canvas.getContext('2d').globalCompositeOperation = 'source-in';
+      var grd = canvas.getContext('2d').createRadialGradient(x, y, 2, x, y, r);
+      grd.addColorStop(0, PALETTE.color_code_with_default(color, color));
+      grd.addColorStop(1, "transparent");
+      canvas.getContext('2d').fillStyle = grd;
+      canvas.getContext('2d').fillRect(x-r, y-r, 2*r, 2*r);
+    },
+
     draw: function(canvas, path, color){
       var ressource = RESOURCES.get_img(path);
       RESOURCES.onload(ressource, function() {
@@ -43,6 +52,12 @@ const HTML = {
       if(options){
         if(options.w) {
           div.style.width = HTML._get_dimension_value(options.w);
+        }
+        if(options.position) {
+          div.style.position = options.position;
+        }
+        if(options.opacity) {
+          div.style.opacity = options.opacity;
         }
         if(options.h) {
           div.style.height = HTML._get_dimension_value(options.h);

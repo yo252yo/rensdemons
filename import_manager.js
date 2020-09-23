@@ -99,12 +99,14 @@ new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
 new Module("BATTLE/PLAYER_ACTIONS");
+new Module("BATTLE/DODGE");
 
 new Module("UTILS/BUILDER");
 IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 
 new Module("IO/IO");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
+IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 

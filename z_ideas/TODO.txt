@@ -57,3 +57,7 @@ better battler for statue, corpse
 j'ai tué une vipère avec l'os pointu , puis un rongeur et ça m'a dit que mon arme s'est brisée dans le combat, sur le combat suivant je l'avais plus effectivement (un cockroach) mais quand je suis retombé sur une vipère ça m'a remis sharp bone dans les posiblités
 
   make color scheme better
+
+dodge actually should probably have 2 dimensions, spatial difficulty and temporal difficulty
+
+dodge doesnt take into account difficulty for now

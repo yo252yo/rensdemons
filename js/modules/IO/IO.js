@@ -146,6 +146,11 @@ const IO = {
       CONSOLE.log.io("Activating character");
       IO.control._activate(IO_CHARACTER);
     },
+
+    dodge: function() {
+      CONSOLE.log.io("Activating dodge");
+      IO.control._activate(IO_DODGE);
+    },
   },
 
   click_interceptor: {
