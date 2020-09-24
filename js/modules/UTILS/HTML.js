@@ -10,6 +10,7 @@ const HTML = {
       canvas.getContext('2d').globalCompositeOperation = 'source-in';
       var grd = canvas.getContext('2d').createRadialGradient(x, y, 2, x, y, r);
       grd.addColorStop(0, PALETTE.color_code_with_default(color, color));
+      grd.addColorStop(0.3, PALETTE.color_code_with_default(color, color));
       grd.addColorStop(1, "transparent");
       canvas.getContext('2d').fillStyle = grd;
       canvas.getContext('2d').fillRect(x-r, y-r, 2*r, 2*r);
