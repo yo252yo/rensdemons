@@ -43,7 +43,7 @@ PLAYER_ACTIONS.add({
   give_item: ITEM.Fang,
 });
 
-PLAYER_ACTIONS.make_victory_in_n_hits(5, "test", "testsss");
+//PLAYER_ACTIONS.make_victory_in_n_hits(5, "test", "testsss");
 
 
 // ===================
