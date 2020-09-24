@@ -1,4 +1,6 @@
 
+
+
 const DODGE = {
   TIME_SHOWING_RESULTS_BEFORE_CLEANUP: 1500,
   sprite: {
@@ -44,11 +46,15 @@ const DODGE = {
       var attack_angle = attack_target * Math.PI * 2;
       var x = r + r * Math.cos(attack_angle);
       var y = r - r * Math.sin(attack_angle);
-      var radius = DODGE.sprite.prompt.width*(0.2 + 2 * attack_amplitude * 5.7);
-      DODGE.sprite.attacked = new CenteredImage("assets/interface/circle.png", 'player');
+      var radius = DODGE.sprite.prompt.width*(0.2 + 2 * attack_amplitude * 1.7);
+      DODGE.sprite.attacked = new CenteredImage("assets/interface/circle.png", 'obj_light');
+      HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, "obj_dark", x, y, radius);
       DODGE.sprite.attacked.show();
-      HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, "background", x, y, radius);
       DODGE.sprite.attacked.adjust_depth(99);
+    },
+
+    hit_confirm: function(){
+      HTML.canvas.tint(DODGE.sprite.attacked.html_canvas, "background");
     },
 
     defense: function(attack_target) {
@@ -147,6 +153,7 @@ const DODGE = {
 
     hit: function(){
       IO.control.cede();
+      DODGE.draw.hit_confirm();
 
       var str = "attack at " + DODGE.attack_angle + " with amplitude " + DODGE.attack_amplitude + " defending at " + DODGE.defense_angle;
       if (DODGE.outcome.compute()){
@@ -161,7 +168,7 @@ const DODGE = {
 
   getCallback: function(dodge_difficulty) {
     var callback = function (){
-      DODGE.attack_amplitude = 0.25; // From 0 to 0.5
+      DODGE.attack_amplitude = 0.4; // From 0 to 0.5
       DODGE.events.prompt();
     }
     return callback;
