@@ -150,7 +150,6 @@ const DODGE = {
       var warning_time = DODGE.params.warning_time_s * 1000;
       var rand_teak = 2 * (Math.random() - 0.5) * DODGE.params.time_variation * warning_time;
       warning_time = Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
-      console.log("warn time " + warning_time + " rand was " + rand_teak);
       setTimeout(DODGE.events.react, warning_time);
     },
 
@@ -163,7 +162,6 @@ const DODGE = {
       var react_time = DODGE.params.react_time_s * 1000;
       var rand_teak = 2 * (Math.random() - 0.5) * DODGE.params.time_variation * react_time;
       react_time = Math.max (DODGE.MIN_TIMEOUT, react_time + rand_teak);
-      console.log("react time " + react_time + " rand was " + rand_teak);
       setTimeout(DODGE.events.hit, react_time);
     },
 
