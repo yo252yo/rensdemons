@@ -80,6 +80,7 @@ const PLAYER_ACTIONS = {
   },
 
   can_flee: function() {
+    DEBUG.battle_log.set([BATTLE.current_battle, ABILITY.Flee], "-");
     PLAYER_ACTIONS.add({
       name: ABILITY.Flee,
       outcome: BATTLETREE.ESCAPE,
@@ -91,6 +92,8 @@ const PLAYER_ACTIONS = {
   },
 
   useless: function(name) {
+    DEBUG.battle_log.set([BATTLE.current_battle, name], "-");
+    console.log(BATTLE.current_battle);
     PLAYER_ACTIONS.add({
       name: name,
       outcome: BATTLETREE.NOTHING,
@@ -103,6 +106,9 @@ const PLAYER_ACTIONS = {
 
   // todo implement nb_hits
   win: function(name, nb_hits, consume) {
+    if (!nb_hits) { nb_hits = 1; }
+
+    DEBUG.battle_log.set([BATTLE.current_battle, name], nb_hits);
     var action_object = {
       name: name,
       outcome: BATTLETREE.WIN,

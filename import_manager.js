@@ -100,8 +100,6 @@ new Module("BATTLE/BATTLE");
 new Module("BATTLE/PLAYER_ACTIONS");
 new Module("BATTLE/DODGE");
 
-new Module("UTILS/BUILDER");
-IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 
 new Module("IO/IO");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
@@ -119,6 +117,9 @@ IMPORTS.modules['UTILS/MAP'].child_module("ABILITIES");
 IMPORTS.modules['UTILS/MAP'].child_module("INVENTORY");
 IMPORTS.modules['UTILS/MAP'].child_module("STATS");
 IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
+
+IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
+IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 
 const LANGUAGE = {};
 LANGUAGE.actions = {};

@@ -1,5 +1,6 @@
 
 const DEBUG = {
+  battle_log: new FluidMap(),
 
   log_mouse_positions: function() {
     DEBUG.MOUSE_POSITIONS = true;
