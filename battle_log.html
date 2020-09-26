@@ -18,7 +18,7 @@ var draw_table = function (){
     t += "</tr><tr><td>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
-      if (!v) v = " ";
+      if (!v) v = "x";
       t += "<td>" + v + "</td>";
     }
   }
@@ -26,7 +26,7 @@ var draw_table = function (){
     t += "</tr><tr><td>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ITEM[a]]);
-      if (!v) v = " ";
+      if (!v) v = "x";
       t += "<td>" + v + "</td>";
     }
   }

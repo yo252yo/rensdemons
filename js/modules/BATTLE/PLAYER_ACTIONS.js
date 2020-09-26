@@ -108,7 +108,7 @@ const PLAYER_ACTIONS = {
   win: function(name, nb_hits, consume) {
     if (!nb_hits) { nb_hits = 1; }
 
-    DEBUG.battle_log.set([BATTLE.current_battle, name], nb_hits);
+    DEBUG.battle_log.set([BATTLE.current_battle, name], (1/nb_hits).toFixed(2));
     var action_object = {
       name: name,
       outcome: BATTLETREE.WIN,
