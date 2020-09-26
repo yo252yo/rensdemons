@@ -18,16 +18,26 @@ var draw_table = function (){
     t += "</tr><tr><td>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
-      if (!v) v = "x";
-      t += "<td>" + v + "</td>";
+      if (!v) {
+        t += "<td style='background:black;'>" + v + "</td>";
+      } else if(v == "-"){
+        t += "<td style='background:grey;'>" + v + "</td>";
+      } else {
+        t += "<td>" + v + "</td>";
+      }
     }
   }
   for (var a in ITEM){
     t += "</tr><tr><td>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ITEM[a]]);
-      if (!v) v = "x";
-      t += "<td>" + v + "</td>";
+      if (!v) {
+        t += "<td style='background:black;'>" + v + "</td>";
+      } else if(v == "-"){
+        t += "<td style='background:grey;'>" + v + "</td>";
+      } else {
+        t += "<td>" + v + "</td>";
+      }
     }
   }
 

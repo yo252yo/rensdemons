@@ -22,31 +22,6 @@ class ActionObject {
 }
 
 const PLAYER_ACTIONS = {
-  // todo move
-  make_victory_in_n_hits: function(nb_hits, action_name, description) {
-    var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
-      name: action_name+ " ".repeat(nb_hits-1),
-      description: [description, "The enemy is dead."],
-      outcome: BATTLETREE.WIN,
-    });
-
-    for(var i=nb_hits-2; i>0; i--){
-        var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
-          name: action_name + " ".repeat(i),
-          description: [description],
-          function: previous_function,
-        });
-        previous_function = unlock_function;
-    }
-
-    PLAYER_ACTIONS.add({
-      name: action_name,
-      unlock: true,
-      description: [description],
-      function: previous_function,
-    });
-  },
-
   add: function(action_object){
     action = new ActionObject(action_object);
     BATTLE.player_actions.add(action);
@@ -93,7 +68,6 @@ const PLAYER_ACTIONS = {
 
   useless: function(name) {
     DEBUG.battle_log.set([BATTLE.current_battle, name], "-");
-    console.log(BATTLE.current_battle);
     PLAYER_ACTIONS.add({
       name: name,
       outcome: BATTLETREE.NOTHING,
@@ -104,11 +78,37 @@ const PLAYER_ACTIONS = {
     });
   },
 
-  // todo implement nb_hits
-  win: function(name, nb_hits, consume) {
-    if (!nb_hits) { nb_hits = 1; }
+  _win_in_several_hits: function(name, nb_hits, consume_item) {
+    var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
+      name: name + " ".repeat(nb_hits-1),
+      description: [
+        LANGUAGE.actions.get(name, "win", "description"),
+        LANGUAGE.actions.get(name, "win", "outcome")
+      ],
+      outcome: BATTLETREE.WIN,
+      consume_item: consume_item,
+    });
 
-    DEBUG.battle_log.set([BATTLE.current_battle, name], (1/nb_hits).toFixed(2));
+    for(var i=nb_hits-2; i>0; i--){
+        var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
+          name: name + " ".repeat(i),
+          description: [LANGUAGE.actions.get(name, "win", "description")],
+          function: previous_function,
+          consume_item: consume_item,
+        });
+        previous_function = unlock_function;
+    }
+
+    PLAYER_ACTIONS.add({
+      name: name,
+// This is where unlock would go if needed:      unlock: true,
+      description: [LANGUAGE.actions.get(name, "win", "description")],
+      function: previous_function,
+      consume_item: consume_item,
+    });
+  },
+
+  _win_in_one_hit: function(name, consume_item) {
     var action_object = {
       name: name,
       outcome: BATTLETREE.WIN,
@@ -116,10 +116,20 @@ const PLAYER_ACTIONS = {
         LANGUAGE.actions.get(name, "win", "description"),
         LANGUAGE.actions.get(name, "win", "outcome")
       ],
+      consume_item: consume_item,
     };
-    if(consume) {
-      action_object.consume_item = name;
-    }
     PLAYER_ACTIONS.add(action_object);
+  },
+
+  win: function(name, nb_hits, consume) {
+    if (!nb_hits) { nb_hits = 1; }
+    var consume_item = consume ? name : undefined;
+    DEBUG.battle_log.set([BATTLE.current_battle, name], (1/nb_hits).toFixed(2));
+
+    if(nb_hits <= 1){
+      PLAYER_ACTIONS._win_in_one_hit(name, consume_item);
+    } else {
+      PLAYER_ACTIONS._win_in_several_hits(name, nb_hits, consume_item);
+    }
   },
 }

@@ -14,7 +14,7 @@ PLAYER_ACTIONS.useless(ITEM.Stick);
 PLAYER_ACTIONS.useless(ITEM.Bone);
 
 PLAYER_ACTIONS.win(ITEM.Fang, 1, true);
-PLAYER_ACTIONS.win(ITEM.Stone, 1, true);
+PLAYER_ACTIONS.win(ITEM.Stone, 2, true);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 
 // ===================
