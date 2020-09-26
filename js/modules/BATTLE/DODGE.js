@@ -27,7 +27,7 @@ const DODGE = {
         h:"100%",
         top:0,
         left:0,
-        z:50,
+        z:10000,
         background: "obj_dark",
         position: "fixed",
         opacity: 0.01,
