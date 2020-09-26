@@ -1,8 +1,8 @@
 
-PLAYER_ACTIONS.make.escape("Run away");
-PLAYER_ACTIONS.make.escape("Avert eyes");
+PLAYER_ACTIONS.escape("Run away");
+PLAYER_ACTIONS.escape("Avert eyes");
 
-PLAYER_ACTIONS.default_useless.pray();
+PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 PLAYER_ACTIONS.add({
   name: "Dig",

@@ -1,7 +1,7 @@
 
 new CenteredImage("assets/battles/statue.png", 'background');
 
-PLAYER_ACTIONS.default_useless.pray();
+PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 var battle = "_003_statue";
 

@@ -22,7 +22,7 @@ class ActionObject {
 }
 
 const PLAYER_ACTIONS = {
-
+  // todo move
   make_victory_in_n_hits: function(nb_hits, action_name, description) {
     var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
       name: action_name+ " ".repeat(nb_hits-1),
@@ -69,154 +69,51 @@ const PLAYER_ACTIONS = {
     },
   },
 
-  default_useless: {
-    pray: function() {
-      PLAYER_ACTIONS.add({
-        name: ABILITY.Pray,
-        outcome: BATTLETREE.NOTHING,
-        description: [
-          RANDOM.pick([
-            "You close your eyes and begs the Goddess for help.",
-            "You focus your thoughts on the Goddess and pray for Her help.",
-            "You pray for the Goddess to come to your rescue.",
-          ]), RANDOM.pick([
-            "The Goddess works in mysterious ways. Nothing happens.",
-            "The Goddess seems to ignore your call.",
-            "The Goddess probably deems that you should solve this situation on your own.",
-            "The Goddess wants you to find your own way.",
-            "The Goddess will not be troubled over such trivial matters.",
-          ])
-        ],
-      });
-    },
-
-    flee: function() {
-      PLAYER_ACTIONS.add({
-        name: ABILITY.Flee,
-        outcome: BATTLETREE.ESCAPE,
-        description: [RANDOM.pick([
-          "You try to run away.",
-          "You turn around and attempt to escape the $$&ENEMY$.",
-          "You back away slowly.",
-        ]), RANDOM.pick([
-          "In a stroke of luck, you manage to escape.",
-          "The $$&ENEMY$ chases you for a bit, but you manage to escape.",
-          "As you turn around, the $$&ENEMY$ loses interest and runs off in the distance.",
-        ])],
-      })
-    },
-
-    stick: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Stick,
-        outcome: BATTLETREE.NOTHING,
-        description: [RANDOM.pick([
-            "You wave the stick at the $$&ENEMY$.",
-            "You try to hit the $$&ENEMY$ with a stick.",
-          ]), RANDOM.pick([
-            "The $$&ENEMY$ dodges your attack pretty easily.",
-            "The blow does not seem to hurt the $$&ENEMY$.",
-          ])
-        ],
-      });
-    },
-
-    bone: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Stick,
-        outcome: BATTLETREE.NOTHING,
-        description: [RANDOM.pick([
-            "You try to stab the $$&ENEMY$ with the bone.",
-            "You try to hit the $$&ENEMY$ with your sharp bone.",
-          ]), RANDOM.pick([
-            "The $$&ENEMY$ dodges your attack pretty easily.",
-            "The blow does not seem to hurt the $$&ENEMY$.",
-          ])
-        ],
-      });
-    },
-
-    stone: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Stone,
-        outcome: BATTLETREE.NOTHING,
-        description: [RANDOM.pick([
-            "You try to hit the $$&ENEMY$ with your blunt stone.",
-            "You throw the stone at the $$&ENEMY$.",
-          ]), RANDOM.pick([
-            "The $$&ENEMY$ dodges it pretty easily.",
-            "It doesn't seem very _effective. The $$&ENEMY$ doesn't budge.",
-          ])
-        ],
-      });
-    },
+  escape: function(name) {
+    PLAYER_ACTIONS.add({
+      name: name,
+      unlock: true,
+      // add diversity
+      description: LANGUAGE.battle.escape(),
+      outcome: BATTLETREE.ESCAPE,
+    });
   },
 
-  default_win: {
-    stone: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Stone,
-        outcome: BATTLETREE.WIN,
-        description: ["You try to crush the $$&ENEMY$ with the stone.",
-                      "It's enough to rid you of it. You throw the dirty stone away."],
-        consume_item: ITEM.Stone,
-      });
-    },
-
-    sword_wooden: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Sword_wooden,
-        outcome: BATTLETREE.WIN,
-        description: ["You attemp to stab the $$&ENEMY$ with your wooden sword.",
-                      "It's pretty dull, but it's enough to get rid of the $$&ENEMY$."],
-      });
-    },
-
-    bone: function(will_break) {
-      var outcome = "It's enough to get rid of the $$&ENEMY$.";
-      var f = function(){};
-      if (will_break) {
-        outcome += " However, your makeshift weapon breaks in the process."
-        f = function(){ INVENTORY.decrease(ITEM.Bone); };
-      }
-      PLAYER_ACTIONS.add({
-        name: ITEM.Bone,
-        outcome: BATTLETREE.WIN,
-        description: ["You attemp to stab the $$&ENEMY$ with your sharp bone.", outcome],
-        extra_function: f,
-      });
-    },
-
-    elixir_fire: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Elixir_fire,
-        outcome: BATTLETREE.WIN,
-        description: ["You throw the elixir on the ground, near the $$&ENEMY$.",
-                      "The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little."],
-        consume_item: ITEM.Elixir_fire,
-      });
-    },
-
-    fang: function() {
-      PLAYER_ACTIONS.add({
-        name: ITEM.Fang,
-        outcome: BATTLETREE.WIN,
-        description: ["You stab the $$&ENEMY$ with the fang still dripping with venom.",
-                      "The $$&ENEMY$ convulses and then falls on the ground."],
-        consume_item: ITEM.Fang,
-      });
-    },
+  can_flee: function() {
+    PLAYER_ACTIONS.add({
+      name: ABILITY.Flee,
+      outcome: BATTLETREE.ESCAPE,
+      description: [
+        LANGUAGE.actions.get(ABILITY.Flee, "useless", "description"),
+        LANGUAGE.actions.get(ABILITY.Flee, "useless", "outcome")
+      ],
+    });
   },
 
-  make: {
-    escape: function(name) {
-      PLAYER_ACTIONS.add({
-        name: name,
-        unlock: true,
-        // add diversity
-        description: "You move away from this cruel scene.",
-        outcome: BATTLETREE.ESCAPE,
-      });
-    },
+  useless: function(name) {
+    PLAYER_ACTIONS.add({
+      name: name,
+      outcome: BATTLETREE.NOTHING,
+      description: [
+        LANGUAGE.actions.get(name, "useless", "description"),
+        LANGUAGE.actions.get(name, "useless", "outcome")
+      ],
+    });
+  },
+
+  // todo implement nb_hits
+  win: function(name, nb_hits, consume) {
+    var action_object = {
+      name: name,
+      outcome: BATTLETREE.WIN,
+      description: [
+        LANGUAGE.actions.get(name, "win", "description"),
+        LANGUAGE.actions.get(name, "win", "outcome")
+      ],
+    };
+    if(consume) {
+      action_object.consume_item = name;
+    }
+    PLAYER_ACTIONS.add(action_object);
   },
 }

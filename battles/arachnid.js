@@ -7,12 +7,14 @@ new CenteredImage("assets/battles/arachnid.png", 'background');
 // =================== ABILITIES CALLBACKS
 // ===================
 
-PLAYER_ACTIONS.default_useless.flee();
-PLAYER_ACTIONS.default_useless.pray();
-PLAYER_ACTIONS.default_useless.stick();
-PLAYER_ACTIONS.default_useless.bone();
-PLAYER_ACTIONS.default_win.stone();
-PLAYER_ACTIONS.default_win.elixir_fire();
+PLAYER_ACTIONS.can_flee();
+
+PLAYER_ACTIONS.useless(ABILITY.Pray);
+PLAYER_ACTIONS.useless(ITEM.Stick);
+PLAYER_ACTIONS.useless(ITEM.Bone);
+
+PLAYER_ACTIONS.win(ITEM.Stone, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

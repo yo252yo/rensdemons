@@ -90,7 +90,6 @@ const IMPORTS = {
 
 // All imports
 new Module("CONSOLE");
-new Module("LANGUAGE");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
 new Module("GRAPHICS/SCREEN");
@@ -120,6 +119,12 @@ IMPORTS.modules['UTILS/MAP'].child_module("ABILITIES");
 IMPORTS.modules['UTILS/MAP'].child_module("INVENTORY");
 IMPORTS.modules['UTILS/MAP'].child_module("STATS");
 IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
+
+const LANGUAGE = {};
+LANGUAGE.actions = {};
+new Module("LANGUAGE/BATTLE");
+IMPORTS.modules['ABILITIES'].child_module("LANGUAGE/ABILITIES");
+IMPORTS.modules['INVENTORY'].child_module("LANGUAGE/ITEMS");
 
 new Module("UTILS/STRING");
 IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
