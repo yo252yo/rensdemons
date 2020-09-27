@@ -25,6 +25,18 @@ const PLAYER_ACTIONS = {
   add: function(action_object){
     action = new ActionObject(action_object);
     BATTLE.player_actions.add(action);
+    var log = DEBUG.battle_log.get([BATTLE.current_battle, action_object.name]);
+    if(log && log != "?") return;
+
+    if(action_object.outcome == BATTLETREE.ESCAPE || action_object.outcome == BATTLETREE.NOTHING) {
+      log = "-";
+    } else if (action_object.outcome == BATTLETREE.WIN) {
+      log = 1.00;
+    } else {
+      log = "?";
+    }
+    DEBUG.battle_log.set([BATTLE.current_battle, action_object.name], log);
+
   },
 
   function: {
@@ -55,7 +67,6 @@ const PLAYER_ACTIONS = {
   },
 
   can_flee: function() {
-    DEBUG.battle_log.set([BATTLE.current_battle, ABILITY.Flee], "-");
     PLAYER_ACTIONS.add({
       name: ABILITY.Flee,
       outcome: BATTLETREE.ESCAPE,
@@ -67,7 +78,6 @@ const PLAYER_ACTIONS = {
   },
 
   useless: function(name) {
-    DEBUG.battle_log.set([BATTLE.current_battle, name], "-");
     PLAYER_ACTIONS.add({
       name: name,
       outcome: BATTLETREE.NOTHING,
