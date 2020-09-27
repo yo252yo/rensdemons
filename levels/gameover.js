@@ -7,6 +7,7 @@ var s2 = new LevelObject(new StaticSprite("assets/screens/gameover_layer2.png", 
 
 
 function adapt_sprite(s, depth) {
+  s.visual_element.container.style.position = "fixed";
   s.visual_element.container.style.top = "0px";
   s.visual_element.container.style.left =  "0px";
   s.visual_element.container.style.height = "100%";
