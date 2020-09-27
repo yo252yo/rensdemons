@@ -8,7 +8,15 @@ https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
 prevent zoom on desktop :((
 
+?touch handler interupts boy walking
+?touch handler interupts text during battle
+?mota crashed during basilisk figh and it didnt pop again
 
+?sometimes events are doubled
+
+??some evnets are in walls
+
+?when testing i had a viper battle go out of existence
 
 i think edge doesnt like functions starting by _ esp nested in namespaces
 
@@ -32,3 +40,5 @@ invisible wall on the room at top with 3 big encounters (in cave.js)
 menu back->back makes an infinite loop
 
 save audio settings to disk!
+
+the treasure battler should probs be closed

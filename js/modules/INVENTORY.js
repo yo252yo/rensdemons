@@ -8,7 +8,12 @@ const ITEM = {
   Bone: "Sharp Bone",
 
   isItem: function(s){
-    return (s in ITEM);
+    for (var i in ITEM){
+      if(ITEM[i] == s){
+        return true;
+      }
+    }
+    return false;
   },
 }
 
