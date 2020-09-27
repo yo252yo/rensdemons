@@ -97,7 +97,7 @@ const DODGE = {
     },
 
     compute: function (){
-      if(!DODGE.defense_angle) { return false; }
+      if(DODGE.defense_angle == undefined) { return false; }
       if(!DODGE.attack_angle || !DODGE.params.attack_amplitude) { return true; }
 
       var diff = Math.abs(DODGE.attack_angle - DODGE.defense_angle);
