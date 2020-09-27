@@ -31,9 +31,13 @@ const PLAYER_ACTIONS = {
     if(action_object.outcome == BATTLETREE.ESCAPE || action_object.outcome == BATTLETREE.NOTHING) {
       log = "-";
     } else if (action_object.outcome == BATTLETREE.WIN) {
-      log = 1.00;
+      log = "1.00";
     } else {
       log = "?";
+    }
+
+    if (action_object.give_item){
+      log += "*";
     }
     DEBUG.battle_log.set([BATTLE.current_battle, action_object.name], log);
 
@@ -133,8 +137,13 @@ const PLAYER_ACTIONS = {
 
   win: function(name, nb_hits, consume) {
     if (!nb_hits) { nb_hits = 1; }
-    var consume_item = consume ? name : undefined;
-    DEBUG.battle_log.set([BATTLE.current_battle, name], (1/nb_hits).toFixed(2));
+    var log = (1/nb_hits).toFixed(2);
+    var consume_item = undefined;
+    if (consume){
+      log += "*";
+      consume_item = name;
+    }
+    DEBUG.battle_log.set([BATTLE.current_battle, name], log);
 
     if(nb_hits <= 1){
       PLAYER_ACTIONS._win_in_one_hit(name, consume_item);
