@@ -75,8 +75,8 @@ const PLAYER_ACTIONS = {
       name: ABILITY.Flee,
       outcome: BATTLETREE.ESCAPE,
       description: [
-        LANGUAGE.actions.get(ABILITY.Flee, "usage"),
-        LANGUAGE.actions.get(ABILITY.Flee, "fail")
+        LANGUAGE.actions.usage(ABILITY.Flee),
+        LANGUAGE.actions.fail(ABILITY.Flee)
       ],
     });
   },
@@ -86,8 +86,8 @@ const PLAYER_ACTIONS = {
       name: name,
       outcome: BATTLETREE.NOTHING,
       description: [
-        LANGUAGE.actions.get(name, "usage"),
-        LANGUAGE.actions.get(name, "fail")
+        LANGUAGE.actions.usage(name),
+        LANGUAGE.actions.fail(name)
       ],
     });
   },
@@ -96,8 +96,8 @@ const PLAYER_ACTIONS = {
     var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
       name: name + " ".repeat(nb_hits-1),
       description: [
-        LANGUAGE.actions.get(name, "usage"),
-        LANGUAGE.actions.get(name, "win")
+        LANGUAGE.actions.usage(name),
+        LANGUAGE.actions.win(name)
       ],
       outcome: BATTLETREE.WIN,
       consume_item: consume_item,
@@ -106,7 +106,7 @@ const PLAYER_ACTIONS = {
     for(var i=nb_hits-2; i>0; i--){
         var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
           name: name + " ".repeat(i),
-          description: [LANGUAGE.actions.get(name, "usage")],
+          description: [LANGUAGE.actions.usage(name)],
           function: previous_function,
           consume_item: consume_item,
         });
@@ -116,7 +116,7 @@ const PLAYER_ACTIONS = {
     PLAYER_ACTIONS.add({
       name: name,
 // This is where unlock would go if needed:      unlock: true,
-      description: [LANGUAGE.actions.get(name, "usage")],
+      description: [LANGUAGE.actions.usage(name)],
       function: previous_function,
       consume_item: consume_item,
     });
@@ -127,8 +127,8 @@ const PLAYER_ACTIONS = {
       name: name,
       outcome: BATTLETREE.WIN,
       description: [
-        LANGUAGE.actions.get(name, "win", "description"),
-        LANGUAGE.actions.get(name, "win", "outcome")
+        LANGUAGE.actions.usage(name),
+        LANGUAGE.actions.win(name)
       ],
       consume_item: consume_item,
     };

@@ -17,7 +17,7 @@ LANGUAGE.actions[ITEM.Bone] = {
   usage: function(){
     return RANDOM.pick([
       "You try to stab the $$&ENEMY$ with the " + ITEM.Bone + ".",
-      "You try to hit the $$&ENEMY$ with your sharp " + ITEM.Bone + ".",
+      "You try to hit the $$&ENEMY$ with your " + ITEM.Bone + ".",
     ]);
   },
   fail: function(){

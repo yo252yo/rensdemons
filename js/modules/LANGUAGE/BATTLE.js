@@ -16,11 +16,27 @@ LANGUAGE.battle = {
   },
 };
 
-LANGUAGE.actions.get = function(name, type) {
+LANGUAGE.actions.usage = function(name) {
   try{
-    return LANGUAGE.actions[name][type]();
+    return LANGUAGE.actions[name]["usage"]();
   } catch (e){
-    return LANGUAGE.actions["generic"][type]();
+    return LANGUAGE.actions["generic"]["usage"]();
+  }
+};
+
+LANGUAGE.actions.win = function(name) {
+  try{
+    return LANGUAGE.actions[name]["win"]();
+  } catch (e){
+    return LANGUAGE.actions["generic"]["win"]();
+  }
+};
+
+LANGUAGE.actions.fail = function(name) {
+  try{
+    return LANGUAGE.actions[name]["fail"]();
+  } catch (e){
+    return LANGUAGE.actions["generic"]["fail"]();
   }
 };
 

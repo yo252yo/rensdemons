@@ -46,7 +46,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: ITEM.Bone,
   outcome: BATTLETREE.WIN,
-  description: ["You slice the Viper in half with the sharp bone.",
+  description: [LANGUAGE.actions.usage(ITEM.Bone),
                 "In its fresh remains, you manage to extract one of its fangs. It could be useful later."],
   give_item: ITEM.Fang,
 });
