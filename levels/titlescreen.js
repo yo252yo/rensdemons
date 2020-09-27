@@ -10,6 +10,7 @@ function adapt_sprite(s, depth) {
   s.visual_element.container.style.left =  "0px";
   s.visual_element.container.style.height = "100%";
   s.visual_element.html_canvas.style.height = "100%";
+  s.visual_element.html_canvas.style.position = "fixed";
   s.visual_element.adjust_depth(depth);
 
   s.visual_element.draw = function (){

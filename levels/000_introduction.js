@@ -9,6 +9,7 @@ var map_container = HTML.div.make({
   top: 100,
   width: size,
   height: size,
+  position: "fixed",
 });
 
 map_container.style.marginLeft = "-" + (size/2) + "px";
