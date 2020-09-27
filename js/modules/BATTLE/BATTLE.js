@@ -143,6 +143,9 @@ const BATTLE = {
 
   monster_actions: {
     add_textual: function(text, dodge_difficulty) {
+      if (dodge_difficulty) {
+        DEBUG.battle_log.add([BATTLE.current_battle, "#ATTACKS"], dodge_difficulty);
+      }
       BATTLE._monster_actions.push(
        function() { BATTLE.turn_factory.monster(text, dodge_difficulty); }
       );
