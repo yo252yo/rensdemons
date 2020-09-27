@@ -16,21 +16,16 @@ LANGUAGE.battle = {
   },
 };
 
-LANGUAGE.actions.get = function(name, outcome, type) {
+LANGUAGE.actions.get = function(name, type) {
   try{
-    return LANGUAGE.actions[name][outcome][type]();
+    return LANGUAGE.actions[name][type]();
   } catch (e){
-    return LANGUAGE.actions["generic"][outcome][type]();
+    return LANGUAGE.actions["generic"][type]();
   }
 };
 
 LANGUAGE.actions.generic = {
-  useless:{
-    description: function(){},
-    outcome: function(){},
-  },
-  win:{
-    description: function(){},
-    outcome: function(){},
-  }
+  usage: function(){},
+  win: function(){},
+  fail: function(){},
 };

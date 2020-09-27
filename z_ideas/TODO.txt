@@ -61,3 +61,5 @@ j'ai tué une vipère avec l'os pointu , puis un rongeur et ça m'a dit que mon 
 dodge actually should probably have 2 dimensions, spatial difficulty and temporal difficulty
 
 dodge doesnt take into account difficulty for now
+
+i think load grets you back to the last position before a fight, not the position of the save, maybe....
