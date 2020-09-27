@@ -16,32 +16,38 @@ LANGUAGE.battle = {
   },
 };
 
-LANGUAGE.actions.usage = function(name) {
+LANGUAGE.actions.generic = {
+  usage: function(){
+    return "You attack the $$&ENEMY$.";
+  },
+  win: function(){
+    return "This gets rid of the $$&ENEMY$.";
+  },
+  fail: function(){
+    return "This does not affect the $$&ENEMY$.";
+  },
+};
+
+
+//------------------------------------------------------------------------------
+//Functions
+
+LANGUAGE.actions._get = function(name, type) {
   try{
-    return LANGUAGE.actions[name]["usage"]();
+    return LANGUAGE.actions[name][type]();
   } catch (e){
-    return LANGUAGE.actions["generic"]["usage"]();
+    return LANGUAGE.actions["generic"][type]();
   }
+};
+
+LANGUAGE.actions.usage = function(name) {
+  return LANGUAGE.actions._get(name, "usage");
 };
 
 LANGUAGE.actions.win = function(name) {
-  try{
-    return LANGUAGE.actions[name]["win"]();
-  } catch (e){
-    return LANGUAGE.actions["generic"]["win"]();
-  }
+  return LANGUAGE.actions._get(name, "win");
 };
 
 LANGUAGE.actions.fail = function(name) {
-  try{
-    return LANGUAGE.actions[name]["fail"]();
-  } catch (e){
-    return LANGUAGE.actions["generic"]["fail"]();
-  }
-};
-
-LANGUAGE.actions.generic = {
-  usage: function(){},
-  win: function(){},
-  fail: function(){},
+  return LANGUAGE.actions._get(name, "fail");
 };
