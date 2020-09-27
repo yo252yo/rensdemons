@@ -19,9 +19,15 @@ PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 // ===================
 var throwbranch = "Throw branch";
 
-BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.", {default: true});
-BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?", {default: true});
-BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.", {default: true});
+var attack = {
+  attack_amplitude: 0.01, // Between 0 and 1
+  warning_time_s: 0.5,
+  react_time_s: 0.1,
+  time_variation: 0.01, // 1 = 100%
+};
+BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.", attack);
+BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?", attack);
+BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.", attack);
 
 var putSnakeOnStick = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: throwbranch,

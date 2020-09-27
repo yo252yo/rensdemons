@@ -42,7 +42,17 @@ var draw_table = function (){
   t += "</tr><tr>";
   t += "</tr><tr><td>#ATTACKS</td>";
   for (var b in battle_names){
-    var v = JSON.stringify(DEBUG.battle_log.get([battle_names[b], "#ATTACKS"]));
+    var seen = [];
+    var v = "";
+    var attacks = DEBUG.battle_log.get([battle_names[b], "#ATTACKS"]);
+    for (var a in attacks){
+      var s = JSON.stringify(attacks[a]).replaceAll(',', ', ');
+      if (!seen.includes(s)){
+        seen.push(s);
+        v += s;
+        v += "<br />";
+      }
+    }
     t += "<td style='font-size: 8pt;width: 20px;'>" + v + "</td>";
   }
 
