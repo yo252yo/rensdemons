@@ -4,22 +4,22 @@ const PALETTE = {
   _COLORS: {},
 
   battle_menu_background: function() {
-    var base = PALETTE.color('void').soffset(-0.15);
+    var base = PALETTE.color('player');
   //  return base.hoffset(0.6);
     if (PALETTE.color('void').is_dark()) {
-      return base.hoffset(-0.5);
-    } else{
       return base.hoffset(0.5);
+    } else{
+      return base.hoffset(-0.5); // i dont think this happens in regular mode
     }
   },
 
   battle_menu_color: function() {
-    var base =  PALETTE.color('player');
+    var base =  PALETTE.color('void');
   //  return base.hoffset(-0.7);
     if (PALETTE.color('void').is_dark()) {
-      return base.hoffset(0.7);
+      return base.hoffset(-0.5);
     } else{
-      return base.hoffset(-0.7);
+      return base.hoffset(0.5); // i dont think this happens in regular mode
     }
   },
 
@@ -28,7 +28,7 @@ const PALETTE = {
     if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(-0.3);
     } else{
-      return base.hoffset(0.3); // i dont think this happens
+      return base.hoffset(0.3); // i dont think this happens in regular mode
     }
   },
 
@@ -37,7 +37,7 @@ const PALETTE = {
     if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(0.5);
     } else{
-      return base.hoffset(-0.5); // i dont think this happens
+      return base.hoffset(-0.5); // i dont think this happens in regular mode
     }
   },
 
@@ -65,7 +65,7 @@ const PALETTE = {
   },
 
   generate: {
-    pick_harmonized_palette: function() {
+    pick_harmonized_palette: function() { // based on one color
       PALETTE._COLORS['background'] = Color.random().hoffset(0.5);
       PALETTE._COLORS['void'] = PALETTE._COLORS['background'].opposite();
 
@@ -75,12 +75,14 @@ const PALETTE = {
       PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(-0.25);
     },
 
-    pick_random_palette: function() {
+    pick_random_palette: function() { // based on three color
       PALETTE._COLORS['background'] = Color.random();
 
+      // First contrast
       PALETTE._COLORS['void'] = Color.random();
       PALETTE._COLORS['player'] = PALETTE._COLORS['void'].hoffset(0.3, true);
 
+      // Second contrast
       PALETTE._COLORS['obj_light'] = Color.random().hoffset(0.3, true);
       PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(0.2, true);
     },
@@ -106,7 +108,7 @@ const PALETTE = {
   factory: {
     make_new: function() {
       // TODO: at some point i want to pick random instead
-      PALETTE.generate.pick_harmonized_palette();
+      PALETTE.generate.pick_random_palette();
       DISK.write("PALETTE");
       INTERFACE.color_interface();
     },
