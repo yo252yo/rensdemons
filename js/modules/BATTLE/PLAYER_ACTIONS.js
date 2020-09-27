@@ -36,7 +36,7 @@ const PLAYER_ACTIONS = {
       log = "?";
     }
 
-    if (action_object.give_item){
+    if (action_object.consume_item){
       log += "*";
     }
     DEBUG.battle_log.set([BATTLE.current_battle, action_object.name], log);
