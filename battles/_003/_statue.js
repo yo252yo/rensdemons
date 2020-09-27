@@ -3,7 +3,7 @@ new CenteredImage("assets/battles/statue.png", 'background');
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 
-var battle = "_003_statue";
+var battle = "_003/_statue";
 
 var stop_inspecting = function() {
   BATTLETREE.api.lock(battle, "Inspect western statue");

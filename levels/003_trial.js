@@ -8,8 +8,8 @@ var make_statue = function(x, y, direction) {
     if(ABILITIES.has_ability("_passed_trial")){
       CURRENTLEVEL.setup("004_trial_end");
     } else {
-      BATTLETREE.api.unlock("_003_statue", "Inspect " + direction + " statue");
-      BATTLE.api.make('_003_statue');
+      BATTLETREE.api.unlock("_003/_statue", "Inspect " + direction + " statue");
+      BATTLE.api.make('_003/_statue');
     }
   };
 }
@@ -20,8 +20,8 @@ make_statue(1585, 1850, "southern");
 make_statue(830, 1025, "western");
 
 
-new SBattle(1525, 975, '_003_first_friend_death');
-new SBattle(1525, 1075, '_003_bone_pile');
+new SBattle(1525, 975, '_003/_first_friend_death');
+new SBattle(1525, 1075, '_003/_bone_pile');
 
 new SB_event(1675, 1100, 'You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...', 25);
 new SB_event(1275, 1400, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
