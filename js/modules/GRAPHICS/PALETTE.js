@@ -4,20 +4,22 @@ const PALETTE = {
   _COLORS: {},
 
   battle_menu_background: function() {
-    var base = PALETTE.color('void');
+    var base = PALETTE.color('void').soffset(-0.15);
+  //  return base.hoffset(0.6);
     if (PALETTE.color('void').is_dark()) {
-      return base.hoffset(-0.3);
+      return base.hoffset(-0.5);
     } else{
-      return base.hoffset(0.3);
+      return base.hoffset(0.5);
     }
   },
 
   battle_menu_color: function() {
     var base =  PALETTE.color('player');
+  //  return base.hoffset(-0.7);
     if (PALETTE.color('void').is_dark()) {
-      return base.hoffset(0.5);
+      return base.hoffset(0.7);
     } else{
-      return base.hoffset(-0.5);
+      return base.hoffset(-0.7);
     }
   },
 
@@ -26,7 +28,7 @@ const PALETTE = {
     if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(-0.3);
     } else{
-      return base.hoffset(0.3);
+      return base.hoffset(0.3); // i dont think this happens
     }
   },
 
@@ -35,7 +37,7 @@ const PALETTE = {
     if (PALETTE.color('obj_dark').is_dark()) {
       return base.hoffset(0.5);
     } else{
-      return base.hoffset(-0.5);
+      return base.hoffset(-0.5); // i dont think this happens
     }
   },
 
@@ -67,10 +69,10 @@ const PALETTE = {
       PALETTE._COLORS['background'] = Color.random().hoffset(0.5);
       PALETTE._COLORS['void'] = PALETTE._COLORS['background'].opposite();
 
-      PALETTE._COLORS['obj_light'] = PALETTE._COLORS['background'].hoffset(-0.3);
-      PALETTE._COLORS['player'] = PALETTE._COLORS['void'].hoffset(0.3, true); //  PALETTE.color('obj_light').opposite();
+      PALETTE._COLORS['obj_light'] = PALETTE._COLORS['background'].hoffset(-0.35);
+      PALETTE._COLORS['player'] = PALETTE._COLORS['void'].hoffset(0.5, true); //  PALETTE.color('obj_light').opposite();
 
-      PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(-0.2);
+      PALETTE._COLORS['obj_dark'] = PALETTE._COLORS['obj_light'].hoffset(-0.25);
     },
 
     pick_random_palette: function() {

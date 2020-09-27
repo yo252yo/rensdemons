@@ -76,7 +76,7 @@ const DODGE = {
       if(DODGE.sprite.defense){
         DODGE.sprite.defense.destroy();
       }
-      DODGE.sprite.defense = new CenteredImage("assets/interface/circle.png", 'player');
+      DODGE.sprite.defense = new CenteredImage("assets/interface/circle.png", 'void');
       DODGE.sprite.defense.show();
       HTML.canvas.draw_gradient_in(DODGE.sprite.defense.html_canvas, "void", x, y, radius);
       DODGE.sprite.defense.adjust_depth(100099); // The sprite is a level object and has the zindex of its y.

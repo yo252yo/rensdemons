@@ -86,6 +86,8 @@ class Color {
 
     opposite() {
       return new Color(256 - this.r, 256 - this.g, 256 - this.b);
+//  var h = this.toHsv();
+//  return Color.fromHsv((h[0]+0.5)%1, h[1], h[2]);
     }
 
     offset(i) {
@@ -123,6 +125,11 @@ class Color {
     //  var v = h[2] - (si * 2 - 1) * i;
 
       return Color.fromHsv(h[0], s, v);
+    }
+
+    soffset(i) {
+      var h = this.toHsv();
+      return Color.fromHsv(h[0], h[1] + i,  h[2]);
     }
 
     is_dark() {

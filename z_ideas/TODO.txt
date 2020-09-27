@@ -35,6 +35,4 @@ better battler for statue, corpse
 
   manque une enigme qui decrit mon tout
 
-  make color scheme better
-
 i think load grets you back to the last position before a fight, not the position of the save, maybe....
