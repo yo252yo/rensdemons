@@ -12,7 +12,7 @@ const BATTLE = {
       var options = [];
       for (var i in BATTLE._player_actions) {
         i = i.trim();
-        if (! BATTLETREE.get.is_unlocked(BATTLE.current_battle, i)) {
+        if (! BATTLETREE.api.is_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
         if(ITEM.isItem(i) && !(INVENTORY.has_object(i)>0)){ // check our stock

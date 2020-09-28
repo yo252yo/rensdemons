@@ -38,7 +38,9 @@ const INVENTORY = {
     list: function() {
       var html = "";
       for (var i in INVENTORY._inventory.get("")){
-        html += i + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
+        if (i[0] != "_") {
+          html += i + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
+        }
       }
 
       new MenuScreen("<b>Inventory</b><hr/>" + html );

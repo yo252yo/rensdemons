@@ -16,9 +16,6 @@ the ability tree doesnt overflow scroll :/
 
 better battler for statue, corpse
 
-Première statue donne le premier indice, no north south east west anymore
-manque une enigme qui decrit mon tout
-
 Fog of war ?
 
 Trop denemis

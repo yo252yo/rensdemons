@@ -42,3 +42,5 @@ menu back->back makes an infinite loop
 save audio settings to disk!
 
 the treasure battler should probs be closed
+
+i dont like how we store saved data as hidden abilities and items :P

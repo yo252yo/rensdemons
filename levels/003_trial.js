@@ -2,13 +2,27 @@ new Snippet("decors/maze");
 AUDIO.music.trial();
 
 
-var make_statue = function(x, y, direction) {
+var make_statue = function(x, y, position) {
   var statue = new S_Statue(x, y);
+  var is_new = ! ABILITIES.has_ability("_trial_visited_" + position);
   statue.interaction = function() {
-    if(ABILITIES.has_ability("_passed_trial")){
+    if(ABILITIES.has_ability("_trial_passed")){
       CURRENTLEVEL.setup("004_trial_end");
+    } else if (is_new) {
+      ABILITIES.unlock("_trial_visited_" + position);
+      var next = "first";
+      switch(INVENTORY.has_object("_trial_statues")){
+        case 1:
+          next = "second"; break;
+        case 2:
+          next = "third"; break;
+        case 3:
+          next = "fourth"; break;
+      }
+      INVENTORY.increase("_trial_statues");
+      BATTLETREE.api.unlock("_003/_statue", "Inspect " + next + " statue");
+      BATTLE.api.make('_003/_statue');
     } else {
-      BATTLETREE.api.unlock("_003/_statue", "Inspect " + direction + " statue");
       BATTLE.api.make('_003/_statue');
     }
   };

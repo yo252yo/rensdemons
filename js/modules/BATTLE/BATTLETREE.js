@@ -29,8 +29,13 @@ const BATTLETREE = {
   },
 
   api: {
+    is_unlocked: function(battle, name) {
+      var node = BATTLETREE._targets.get([battle, name]);
+      return (node != null && !BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN));
+    },
+
     unlock: function(battle, name) {
-      if(BATTLETREE.get.is_unlocked(battle, name)){
+      if(BATTLETREE.api.is_unlocked(battle, name)){
         return; // already unlocked
       }
 
@@ -102,11 +107,6 @@ const BATTLETREE = {
       return "Leading to several possibilities";
     },
 
-    is_unlocked: function(battle, name) {
-      var node = BATTLETREE._targets.get([battle, name]);
-      return (node != null && !BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN));
-    },
-
     _check_node: function(node, value){
       return node.length == 1 && node[0] == value;
     },
@@ -134,7 +134,7 @@ const BATTLETREE = {
       var starters = [];
       for (var i in BATTLETREE._targets.get([battle])){
         if(ancestors.get([i])) { continue;  }
-        if(! BATTLETREE.get.is_unlocked(battle, i) ) { continue;  }
+        if(! BATTLETREE.api.is_unlocked(battle, i) ) { continue;  }
 
         starters.push([i, ""]);
       }
