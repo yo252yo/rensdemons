@@ -36,12 +36,12 @@ class VisualElement {
       // visual elements are indexed at their bottom left corner
       this.container.style.top = (this.y - this.height) + "px";
       this.container.style.left = this.x + "px";
-      this.container.style.zIndex = this.y;
+      this.container.style.zIndex = parseInt(this.y);
     }
 
     place_at(x, y) {
-      this.y = y;
-      this.x = x;
+      this.y = parseInt(y);
+      this.x = parseInt(x);
       this.refresh_position();
     }
 
@@ -52,7 +52,7 @@ class VisualElement {
     }
 
     adjust_depth(z) {
-      this.container.style.zIndex = z;
+      this.container.style.zIndex = parseInt(z);
     }
 
     get_depth(z) {
