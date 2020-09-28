@@ -187,6 +187,7 @@ const CURRENTLEVEL = {
 
   setup: function(name) {
     IO.clear_io_queue();
+    window.scrollTo(0,0);
     // Try to restore previous state.
     var save = LEVELSTATES.get_save(name);
     if (! save) {

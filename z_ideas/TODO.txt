@@ -4,11 +4,9 @@ volume buttons skip dialog....
 
 maybe have the element turn around when talked to
 
-mobile needs a bigger font
+mobile needs a bigger font?
 
 ?animation at the end of clue is weird (blink screen)
-
-we need to reset scrolling at level change
 
 add variety to LANGUAGE
 
@@ -18,19 +16,16 @@ the ability tree doesnt overflow scroll :/
 
 better battler for statue, corpse
 
+Première statue donne le premier indice, no north south east west anymore
+manque une enigme qui decrit mon tout
 
-  Première statue donne le premier indice, no north south east west anymore
+Fog of war ?
 
-  Trop denemis
+Trop denemis
+Move corpse ?
 
-  Fog of war ?
+Interact with space at less than 50px
 
-  Move corpse ?
-
-  Interact with space at less than 50px
-
-  SEGFAULT WHEN TRYING TO PRINT A STRING LONGER THAN THE DISPLAY CNA AFFORD (LIKE **********************************************)
-
-  manque une enigme qui decrit mon tout
+SEGFAULT WHEN TRYING TO PRINT A STRING LONGER THAN THE DISPLAY CNA AFFORD (LIKE **********************************************)
 
 i think load grets you back to the last position before a fight, not the position of the save, maybe....
