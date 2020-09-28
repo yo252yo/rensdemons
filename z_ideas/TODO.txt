@@ -23,8 +23,6 @@ better battler for statue, corpse
 
   Trop denemis
 
-  Corner avoider
-
   Fog of war ?
 
   Move corpse ?

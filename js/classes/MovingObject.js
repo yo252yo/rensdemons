@@ -31,6 +31,13 @@ class MovingObject extends LevelObject {
 
     if (moving_object._try_walk_by_pixels(dx, dy)) {
       setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
+      return;
+    } else if (moving_object._try_walk_by_pixels(dx, 0)) {
+      setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
+      return;
+    } else if (moving_object._try_walk_by_pixels(0, dy)) {
+      setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
+      return;
     } else {
       moving_object.stop_autowalk();
       return;
@@ -111,7 +118,8 @@ class MovingObject extends LevelObject {
       // effect per class.
       AUDIO.effect.footstep(1300 / this._movement_increment(), this.constructor.name);
       this._shift(dx,dy);
-      return true;
+      // we return false if we havent rly moved
+      return (dx != 0) || (dy != 0);
     }
     return false;
   }
