@@ -32,5 +32,6 @@ new CenteredTextMenu("",
                 {"text": "$ALPHA$_ CLEAN MEMORY", "effect": function(){ DISK.hard_reset(); }, "keep_open": true},
                 {"text": "Load", "effect": function(){ SAVE.print.load_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
+                {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
                 {"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }},
              ]);
