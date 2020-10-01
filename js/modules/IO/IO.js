@@ -37,6 +37,9 @@ const KEYS_UTIL = {
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
   },
+  is_system_key: function(key){
+    return key.length > 1 && (key.startsWith("media") || key.startsWith("audio"));
+  },
 
   is_pressed: {
     _generic: function (key_function) {
@@ -198,6 +201,9 @@ const IO = {
     onPressKey: function(key) {
       DEBUG.signal.press_key(key);
 
+      if (KEYS_UTIL.is_system_key(key)){
+        return;
+      }
       if (IO.interface._try_special_key_actions(key)){
         return;
       }

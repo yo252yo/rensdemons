@@ -1,7 +1,5 @@
 escape should dismisses escapable menus (like the escape menu)
 
-volume buttons skip dialog....
-
 maybe have the element turn around when talked to
 
 mobile needs a bigger font?
