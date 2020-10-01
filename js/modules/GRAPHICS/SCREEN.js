@@ -16,7 +16,10 @@ const SCREEN = {
     if (DEBUG.DEACTIVATE_SCROLL) {
       return;
     }
-    window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
+    var x = CHARACTER.get().x - SCREEN.width()/2;
+    var y = CHARACTER.get().y - SCREEN.height()/2;
+    CURRENTLEVEL.system.move_fog(x, y);
+    window.scrollTo(x,y);
   },
 
   is_mobile: function() {

@@ -1,4 +1,10 @@
 const HTML = {
+  js:{
+    clone: function(obj){
+      return JSON.parse(JSON.stringify(obj));
+    }
+  },
+
   canvas: {
     tint: function(canvas, color){
       canvas.getContext('2d').globalCompositeOperation = 'source-in';
@@ -51,14 +57,17 @@ const HTML = {
       var div = document.createElement('div');
       div.style.position = "absolute";
       if(options){
-        if(options.w) {
-          div.style.width = HTML._get_dimension_value(options.w);
+        if(options.id) {
+          div.id = options.id;
         }
         if(options.position) {
           div.style.position = options.position;
         }
         if(options.opacity) {
           div.style.opacity = options.opacity;
+        }
+        if(options.w) {
+          div.style.width = HTML._get_dimension_value(options.w);
         }
         if(options.h) {
           div.style.height = HTML._get_dimension_value(options.h);
