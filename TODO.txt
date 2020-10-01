@@ -2,8 +2,6 @@ escape should dismisses escapable menus (like the escape menu)
 
 maybe have the element turn around when talked to
 
-mobile needs a bigger font?
-
 ?animation at the end of clue is weird (blink screen)
 
 add variety to LANGUAGE

@@ -7,7 +7,11 @@ var _LETTER_SIZE = [];
 
 
 var TEXT_STYLE = function(div) {
-  div.style.fontSize = "27px";
+  if(SCREEN.is_mobile()){
+    div.style.fontSize = "33px";
+  } else {
+    div.style.fontSize = "27px";
+  }
   div.style.fontFamily = "monospace";
 }
 
