@@ -23,24 +23,55 @@ var inspect_boilerplate = "You inspect the statue of the Goddess. You notice tha
 var look_closer = "Look closer";
 var look_even_closer = "Look even closer";
 var speak = "Speak";
+var description = "You find scratch marks under the text.";
+var hint = "*** ******* **";
+var solution = "act through me";
+var getDescription = function(){ return description; }
+var getHint = function(){ return hint; }
 
-var unlock_look_even_closerer = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name:  "Look even closer still",
-  unlock: true,
-  description: ["You think you can distinguish a few letters.", "A** T*r**g* M*"],
-});
+var updateHint = function(proposal) {
+  var s = "";
+  var i = 0;
+  while(i < proposal.length){
+    if(proposal[i] == solution[i]){
+      s += proposal[i];
+    } else {
+      s += hint[i];
+    }
+    i++;
+  }
+  while(i < hint.length){
+    s += hint[i];
+    i++;
+  }
+  hint = s;
+  BATTLE.player_actions.remove(look_closer);
+  BATTLE.player_actions.remove(look_even_closer);
+  PLAYER_ACTIONS.add(tip_object());
+}
 
-var unlock_look_even_closer = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name:  look_even_closer,
-  unlock: true,
-  description: ["You find scratch marks under the text.", "*** ******* **"],
-  function: unlock_look_even_closerer,
-});
+var attempts = 0;
+var tip_object = function() {
+  return {
+    name: look_even_closer,
+    unlock: true,
+    description: [getDescription(), getHint()],
+    function: function() {
+      attempts++;
+      if (attempts > 1) {
+        description = "You find scratch marks under the text. You can make out a few letters.";
+        updateHint("a** *h***g* *e");
+      }
+      BATTLE.player_actions.remove(look_even_closer);
+      PLAYER_ACTIONS.add(tip_object());
+    },
+  };
+}
 
 PLAYER_ACTIONS.add({
   name: look_closer,
   description: ["There is nothing mode that stands out about the statue. You've seen hundreds like this. You could try to investigate further, if you're really desperate for a hint."],
-  function: unlock_look_even_closer,
+  function: PLAYER_ACTIONS.function.unlock_replacing_action(tip_object()),
 });
 
 PLAYER_ACTIONS.add({
@@ -48,7 +79,9 @@ PLAYER_ACTIONS.add({
   description: ["You speak."],
   function: function(){
     var answer = prompt("What will you say?");
-    if(answer && answer.toLowerCase() == "act through me") {
+    answer = answer.toLowerCase();
+    updateHint(answer);
+    if(answer && answer == solution) {
       BATTLE.monster_actions.prepare_win("As the words are uttered, a weird senstation engulfes your body. Nothing seems to have changed, no sound or flashing light. Yet, you've never been so sure that something had happened. Was it the fabric of the universe? Or was it only inside your head?");
       BATTLE.win_callback = function() {
         TextBannerSequence.make([
