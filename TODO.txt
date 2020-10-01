@@ -26,3 +26,5 @@ Interact with space at less than 50px
 SEGFAULT WHEN TRYING TO PRINT A STRING LONGER THAN THE DISPLAY CNA AFFORD (LIKE **********************************************)
 
 i think load grets you back to the last position before a fight, not the position of the save, maybe....
+
+should we have better feedback for the riddle ?? like works a bit

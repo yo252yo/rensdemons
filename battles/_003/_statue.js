@@ -7,7 +7,6 @@ var battle = "_003/_statue";
 
 var update_inspect = function (order){
   if( BATTLETREE.api.is_unlocked(battle, "Inspect " + order + " statue")){
-    console.log("updating" + order);
     BATTLETREE.api.lock(battle, "Inspect " + order + " statue");
     BATTLETREE.api.unlock(battle, "Remember " + order + " statue");
   }
@@ -26,13 +25,13 @@ var look_even_closer = "Look even closer";
 var speak = "Speak";
 
 var unlock_look_even_closerer = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name:  "Look even closer",
+  name:  "Look even closer still",
   unlock: true,
   description: ["You think you can distinguish a few letters.", "A** T*r**g* M*"],
 });
 
 var unlock_look_even_closer = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name:  "Look even closer",
+  name:  look_even_closer,
   unlock: true,
   description: ["You find scratch marks under the text.", "*** ******* **"],
   function: unlock_look_even_closerer,
