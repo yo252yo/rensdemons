@@ -3,3 +3,5 @@
 DISK.initialize_game();
 
 CURRENTLEVEL.setup("titlescreen");
+
+console.log("started");
