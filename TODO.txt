@@ -22,6 +22,3 @@ SEGFAULT WHEN TRYING TO PRINT A STRING LONGER THAN THE DISPLAY CNA AFFORD (LIKE 
 i think load grets you back to the last position before a fight, not the position of the save, maybe....
 
 martyrdom gauge
-
-
-refactor/polish fog of war ( remov in debug, remove from title screen)

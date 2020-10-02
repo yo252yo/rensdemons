@@ -18,7 +18,7 @@ const SCREEN = {
     }
     var x = CHARACTER.get().x - SCREEN.width()/2;
     var y = CHARACTER.get().y - SCREEN.height()/2;
-    CURRENTLEVEL.system.move_fog(x, y);
+    FOG.move(x, y);
     window.scrollTo(x,y);
   },
 

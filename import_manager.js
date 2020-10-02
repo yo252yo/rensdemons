@@ -108,6 +108,7 @@ IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
 IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 new Module("LEVEL/CURRENTLEVEL");
+new Module("LEVEL/FOG");
 new Module("GRAPHICS/PALETTE");
 new Module("AUDIO");
 

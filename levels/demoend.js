@@ -45,3 +45,4 @@ var boss_callback = function() {
 */
 
 setTimeout(displayText, 1000);
+FOG.stop();

@@ -35,3 +35,5 @@ new CenteredTextMenu("",
                 {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
                 {"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }},
              ]);
+
+ FOG.stop();

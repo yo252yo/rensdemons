@@ -67,3 +67,5 @@ var displayText = function() {
 }
 
 setTimeout(displayText, 1000);
+
+FOG.stop();
