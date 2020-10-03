@@ -29,11 +29,18 @@ const FOG = {
     FOG.move(0,0);
   },
 
+  _stop: function(name){
+    var d = document.getElementById(name);
+    if(d){
+      d.remove()
+    }
+  },
+  
   stop: function(){
-      document.getElementById("fog_top").remove();
-      document.getElementById("fog_bot").remove();
-      document.getElementById("fog_left").remove();
-      document.getElementById("fog_right").remove();
+      FOG._stop("fog_top");
+      FOG._stop("fog_bot");
+      FOG._stop("fog_left");
+      FOG._stop("fog_right");
   },
 
   move: function(x, y){
