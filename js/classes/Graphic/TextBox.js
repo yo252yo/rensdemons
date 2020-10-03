@@ -67,6 +67,9 @@ class TextBox extends TextElement {
           hard_cut = hard_cut.substring(0, hard_cut.length - 3);
         }
         var lastSpace = hard_cut.lastIndexOf(" ");
+        if (lastSpace < 0){
+          lastSpace = hard_cut.length;
+        }
         result.push(left.substring(0, lastSpace));
         left = left.substring(1 + lastSpace);
       }
