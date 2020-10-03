@@ -39,6 +39,14 @@ const CONSOLE = {
 
     import: function(name) {
       //CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
+      var bar = document.getElementById("loading_bar");
+      var logs = document.getElementById("loading_log");
+      if(bar){
+        bar.innerHTML += "|";
+      }
+      if (logs){
+        logs.innerHTML += "<br />>> Loaded " + name.substr(10);
+      }
     },
 
     battletree: function(operation) {
