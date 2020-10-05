@@ -96,7 +96,9 @@ const IO = {
 
     _try_special_key_actions: function(key) {
       if (KEYS_UTIL.is_esc(key) && IO.interface._can_open_escape_menu()){
+        console.log("opening menu");
         INTERFACE.display.escape_menu();
+        return true;
       }
     },
 
@@ -218,7 +220,9 @@ const IO = {
     onReleaseKey: function(key) {
       for(var i in IO._PRESSED_KEYS) {
         if (IO._PRESSED_KEYS[i] == key) {
-          delete IO._PRESSED_KEYS[i];
+          var k = IO._PRESSED_KEYS[i];
+          IO._PRESSED_KEYS.splice(i, 1);
+          delete k;
         }
       }
     },

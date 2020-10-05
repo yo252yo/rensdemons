@@ -35,13 +35,13 @@ class TextMenu extends TextElement {
         super(x,y, w, h, padding);
 
         this.parent = IO._menu;
+        this.last_executed = (new Date());
         IO.control.menu(this);
-
         this.title = title;
         this.options = options;
         this.selected = 0;
+        this.in_destruction = false;
         this.print_menu();
-        this.last_executed = (new Date());
         this.handle_overflow(y,h);
     }
 
@@ -107,11 +107,14 @@ class TextMenu extends TextElement {
     }
 
     close() {
+      this.in_destruction = true;
       this.destroy();
       setTimeout(function() { IO.control.cede(); }, 500);
     }
 
     back() {
+      this.in_destruction = true;
+      
       if (this.parent) {
         IO.control.cede();
         // Maybe we need to explicitely save title and option because of destroy()
@@ -139,6 +142,8 @@ class TextMenu extends TextElement {
     // Since several JS events can be fired, we need to be careful about executing
     // only once, hence the synchronous lock.
     execute(choice) {
+      if (this.in_destruction){return;}
+
       var f = null;
       var menu = this;
       AUDIO.effect.choice();
@@ -179,5 +184,25 @@ class TextMenu extends TextElement {
 
     confirm_select() {
       this.execute(this.selected);
+    }
+
+    try_escape() {
+      if (this.in_destruction){return;}
+
+      if (new Date() - this.last_executed < 600){
+        return;
+      }
+      for(var i in this.options) {
+        if (this.options[i]["effect"] == "##CLOSE"){
+          this.close();
+          return;
+        }
+      }
+      for(var i in this.options) {
+        if (this.options[i]["effect"] == "##BACK"){
+          this.back();
+          return;
+        }
+      }
     }
 }
