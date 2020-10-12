@@ -9,6 +9,7 @@ class MM_Child extends MovingObject {
   }
 
   interaction() {
+    this.face_character();
     CONSOLE.error("No interaction implemented for child.");
   }
 }
@@ -33,6 +34,7 @@ class M_Priest extends MovingObject {
   }
 
   interaction() {
+    this.face_character();
     CONSOLE.error("No interaction implemented for priest.");
   }
 }

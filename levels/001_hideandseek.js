@@ -15,6 +15,7 @@ var CHILDREN_FOUND = {};
 
 var child_in_tree = function (x, y, name, child, dialog) {
   child.interaction = function() {
+    this.face_character();
      CHILDREN_FOUND[name] = true;
      dialog.progress();
    };
@@ -24,6 +25,7 @@ var child_in_tree = function (x, y, name, child, dialog) {
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
   priest.interaction = function() {
+    this.face_character();
     TextBannerSequence.make([
       "Priest: \"Thank you for coming, Second Born. Your trial is about to begin.\"",
       "Priest: \"Please come with us to the temple for further instructions.\"",

@@ -42,3 +42,5 @@ save audio settings to disk!
 the treasure battler should probs be closed
 
 i dont like how we store saved data as hidden abilities and items :P
+
+?animation at the end of clue is weird (blink screen)

@@ -5,6 +5,7 @@ new Snippet("decors/temple");
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
   priest.interaction = function() {
+    this.face_character();
 
     new TextBannerRandom([
       "Priest: \"The day has finally come! The Promised Child is here! Praised be the Goddess.\"",
@@ -29,16 +30,19 @@ make_priest(350, 550);
 //  ], function(){ LEVEL.setup("demoend"); });
 
 (new M_ChildM(150, 670)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "After this unlikely escape from a certain death, this child is overwhelmed by emotion. He's too stunned to talk, and simply weeps of joy."
   ])
  };
 (new M_ChildF(180, 710)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "TODO."
   ])
  };
 (new M_ChildF(280, 710)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "TODO."
   ])

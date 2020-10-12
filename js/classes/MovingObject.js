@@ -164,4 +164,10 @@ class MovingObject extends LevelObject {
       MovingObject.auto_walk(this);
     }
   }
+
+  face_character() {
+    var c = CHARACTER.get().gravity_center();
+    var t = this.gravity_center();
+    this.sprite.shift(c[0] - t[0], c[1] - t[1], true);
+  }
 }

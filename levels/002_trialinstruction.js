@@ -47,7 +47,7 @@ friend_go.add_function(function(ignored_callback) {
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
   priest.interaction = function() {
-
+    this.face_character();
     new TextBannerRandom([
       "Priest: \"May you be the Promised Child.\"",
       "Priest: \"I pray you are the one to bring us salvation.\"",
@@ -73,6 +73,7 @@ var hp_menu = function () {
 
 var hp = make_priest(275, 100);
 hp.interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "Head-Priest: \"The task that awaits you is a perillous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Godess' power?\""
   ], hp_menu);
@@ -83,16 +84,19 @@ make_priest(275, 550);
 make_priest(350, 550);
 
 (new M_ChildM(150, 670)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "The child is just weeping in silence."
   ])
  };
 (new M_ChildF(180, 710)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "$$child_friends_f1$: \"You go ahead, I wanna watch your Trial. But you'll fail and I'll succeed, that's for sure!\""
   ])
  };
 (new M_ChildF(280, 710)).interaction = function() {
+  this.face_character();
   TextBannerSequence.make([
     "Girl: \"I'm scared... so scared... why did I have to be a Second-Born! I wish big brother were never here! No! I wish big brother were the Promised Child... Mommy...\""
   ])

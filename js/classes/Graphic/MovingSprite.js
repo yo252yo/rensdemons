@@ -52,24 +52,45 @@ class MovingSprite extends CanvasElement {
           }, timeout);
     }
 
-    shift(dx, dy) {
+    shift(dx, dy, prevent_motion) {
       if (Math.abs(dx) > Math.abs(dy)) {
         if (dx > 0) {
-            this.sprite_index_y = 2;
+            this.face("RIGHT");
         }
         if (dx < 0) {
-            this.sprite_index_y = 1;
+            this.face("LEFT");
         }
       } else {
         if (dy > 0) {
-            this.sprite_index_y = 0;
+            this.face("DOWN");
         }
         if (dy < 0) {
-            this.sprite_index_y = 3;
+            this.face("UP");
         }
       }
       this.animation_cycle();
-      super.shift(dx, dy);
+      if (!prevent_motion){
+        super.shift(dx, dy);
+      }
+    }
+
+    face(direction) {
+      switch(direction) {
+        case "LEFT":
+          this.sprite_index_y = 1;
+          break;
+        case "RIGHT":
+          this.sprite_index_y = 2;
+          break;
+        case "UP":
+          this.sprite_index_y = 3;
+          break;
+        case "DOWN": // "DOWN"
+          this.sprite_index_y = 0;
+          break;
+        default: // "DOWN"
+          break;
+      }
     }
 
     facing_direction() {
