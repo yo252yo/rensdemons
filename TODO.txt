@@ -1,5 +1,3 @@
-add variety to LANGUAGE
-
 the ability tree doesnt overflow scroll :/
 
 ?i think the transition between levels is fucked up probably because of concurrency
@@ -13,5 +11,3 @@ Redesign level:
 martyrdom gauge
 
 LOADING REZ MICHAEL in lvl 02
-
-zooming fucks up the FOG
