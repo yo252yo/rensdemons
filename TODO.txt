@@ -2,12 +2,8 @@ the ability tree doesnt overflow scroll :/
 
 ?i think the transition between levels is fucked up probably because of concurrency
 
-better battler for statue, corpse
-
 Redesign level:
 - Trop denemis
 - Move corpse ?
 
 martyrdom gauge
-
-LOADING REZ MICHAEL in lvl 02

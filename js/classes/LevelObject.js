@@ -5,8 +5,13 @@ class LevelObject {
     constructor(sprite, x, y) {
         this.x = x;
         this.y = y;
+        this.original_x = x;
+        this.original_y = y;
         this.visual_element = sprite;
+
         if (CURRENTLEVEL.objects.should_hide(this.hash())){
+          this.visual_element.destroy();
+          console.log("hiding");
           return;
         }
 
@@ -16,7 +21,7 @@ class LevelObject {
     }
 
     hash() {
-      return this.constructor.name + "/" + this.x + "/" + this.y;
+      return this.constructor.name + "/" + this.original_x + "/" + this.original_y;
     }
 
     debug_name() {
