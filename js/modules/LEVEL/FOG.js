@@ -2,11 +2,13 @@
 const FOG = {
   VIEWPORT_H: 500,
   VIEWPORT_W: 500,
+  MASK_WIDTH: 2*SCREEN.width(),
+  MASK_HEIGHT: 2*SCREEN.height(),
 
   draw: function() {
     var base_obj = {
-        w:2*SCREEN.width(),
-        h:2*SCREEN.height(),
+        w:FOG.MASK_WIDTH,
+        h:FOG.MASK_HEIGHT,
         z:10000,
         background: "player",
         position: "absolute",
@@ -26,6 +28,7 @@ const FOG = {
     CURRENTLEVEL.system.html().appendChild(HTML.div.make(border_bot));
     CURRENTLEVEL.system.html().appendChild(HTML.div.make(border_left));
     CURRENTLEVEL.system.html().appendChild(HTML.div.make(border_right));
+
     FOG.move(0,0);
   },
 
@@ -35,7 +38,7 @@ const FOG = {
       d.remove()
     }
   },
-  
+
   stop: function(){
       FOG._stop("fog_top");
       FOG._stop("fog_bot");
@@ -44,20 +47,17 @@ const FOG = {
   },
 
   move: function(x, y){
-    var h = SCREEN.height();
-    var w = SCREEN.width();
+    document.getElementById("fog_top").style.top = y - FOG.VIEWPORT_H/2 - FOG.MASK_HEIGHT;
+    document.getElementById("fog_top").style.left = x - FOG.MASK_WIDTH/2;
 
-    var top_border = Math.ceil((h - FOG.VIEWPORT_H) / 2);
-    var side_border = Math.ceil((w - FOG.VIEWPORT_W) / 2);
+    document.getElementById("fog_bot").style.top = y + FOG.VIEWPORT_H/2;
+    document.getElementById("fog_bot").style.left = x - FOG.MASK_WIDTH/2;
 
-    document.getElementById("fog_top").style.top = y + (top_border-2*h);
-    document.getElementById("fog_top").style.left = x + 0;
-    document.getElementById("fog_bot").style.top = y + (h-top_border);
-    document.getElementById("fog_bot").style.left = x + 0;
-    document.getElementById("fog_left").style.top = y + 0;
-    document.getElementById("fog_left").style.left = x + (side_border-2*w);
-    document.getElementById("fog_right").style.top = y + 0;
-    document.getElementById("fog_right").style.left = x + (w-side_border);
+    document.getElementById("fog_left").style.top = y - FOG.MASK_HEIGHT/2;
+    document.getElementById("fog_left").style.left = x - FOG.VIEWPORT_W/2 - FOG.MASK_WIDTH;
+
+    document.getElementById("fog_right").style.top = y - FOG.MASK_HEIGHT/2;
+    document.getElementById("fog_right").style.left = x + FOG.VIEWPORT_W/2;
   },
 
 }

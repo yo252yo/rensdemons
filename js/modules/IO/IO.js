@@ -292,6 +292,7 @@ document.addEventListener('keyup', IO.handlers.onKeyUp);
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
+window.addEventListener('wheel', IO.handlers.onScroll, { passive: false});
 
 // Turn on the continuous key press handler
 IO.handlers.onContinuousKeyPress();

@@ -13,3 +13,5 @@ Redesign level:
 martyrdom gauge
 
 LOADING REZ MICHAEL in lvl 02
+
+zooming fucks up the FOG
