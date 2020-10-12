@@ -289,7 +289,6 @@ const IO = {
 document.addEventListener('keydown', IO.handlers.onKeyDown);
 document.addEventListener('keyup', IO.handlers.onKeyUp);
 
-
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
 window.addEventListener('wheel', IO.handlers.onScroll, { passive: false});

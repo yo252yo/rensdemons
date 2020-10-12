@@ -20,6 +20,9 @@ const DEBUG = {
 
   deactivate_scroll: function() {
     DEBUG.DEACTIVATE_SCROLL = true;
+    window.removeEventListener('scroll', IO.handlers.onScroll);
+    window.removeEventListener('resize', IO.handlers.onScroll);
+    window.removeEventListener('wheel', IO.handlers.onScroll);
   },
 
   run_faster: function() {
