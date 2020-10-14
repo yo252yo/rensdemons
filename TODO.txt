@@ -1,5 +1,3 @@
-the ability tree doesnt overflow scroll :/
-
 Redesign level:
 - Trop denemis
 - Move corpse ?

@@ -27,3 +27,5 @@ the treasure battler should probs be closed
 i dont like how we store saved data as hidden abilities and items :P
 
 should the LANGUAGE bits be generated from a pattern (or metapatern)?
+
+at the first boss, retry develops your ability, but loading the previous save forgets about your ability, which is a bit sad

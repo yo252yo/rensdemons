@@ -31,5 +31,6 @@ class MenuScreen extends TextBox {
       if (text) {
         this.change_text(text, true, true);
       }
+      this.scroll_if_overflow();
   }
 }

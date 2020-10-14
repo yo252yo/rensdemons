@@ -42,18 +42,7 @@ class TextMenu extends TextElement {
         this.selected = 0;
         this.in_destruction = false;
         this.print_menu();
-        this.handle_overflow(y,h);
-    }
-
-    // this was pretty hard, I wouldn't be surprised if it's wrong.
-    handle_overflow(y,h) {
-      var realY = y - h;
-      var max_height = SCREEN.height() - realY;
-      var new_height_scaled = Math.floor(0.9 * max_height / SCREEN.real_ratio());
-      if (this.html.clientHeight > max_height) {
-        this.html.style.height = new_height_scaled + "px";
-        this.html.style.overflow = "scroll";
-      }
+        this.scroll_if_overflow();
     }
 
     print_menu() {
@@ -114,7 +103,7 @@ class TextMenu extends TextElement {
 
     back() {
       this.in_destruction = true;
-      
+
       if (this.parent) {
         IO.control.cede();
         // Maybe we need to explicitely save title and option because of destroy()
