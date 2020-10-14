@@ -96,7 +96,6 @@ const IO = {
 
     _try_special_key_actions: function(key) {
       if (KEYS_UTIL.is_esc(key) && IO.interface._can_open_escape_menu()){
-        console.log("opening menu");
         INTERFACE.display.escape_menu();
         return true;
       }
@@ -200,6 +199,13 @@ const IO = {
         return true;
     },
 
+    onWheel: function(event) {
+      if (event.ctrlKey){ // forbids only zoom
+        event.preventDefault();
+        return true;
+      }
+    },
+
     onPressKey: function(key) {
       DEBUG.signal.press_key(key);
 
@@ -291,7 +297,7 @@ document.addEventListener('keyup', IO.handlers.onKeyUp);
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
-window.addEventListener('wheel', IO.handlers.onScroll, { passive: false});
+window.addEventListener('wheel', IO.handlers.onWheel, { passive: false});
 
 // Turn on the continuous key press handler
 IO.handlers.onContinuousKeyPress();

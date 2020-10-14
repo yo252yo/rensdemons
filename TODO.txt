@@ -2,4 +2,4 @@ Redesign level:
 - Trop denemis
 - Move corpse ?
 
-martyrdom gauge
+martyrdom gauge/menu
