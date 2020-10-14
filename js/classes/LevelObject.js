@@ -11,7 +11,6 @@ class LevelObject {
 
         if (CURRENTLEVEL.objects.should_hide(this.hash())){
           this.visual_element.destroy();
-          console.log("hiding");
           return;
         }
 

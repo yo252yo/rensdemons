@@ -11,7 +11,8 @@ class SaveFile {
         CONSOLE.error("Failing to export for a save: " + _SAVED_MODULES[i]);
         continue;
       }
-      this[_SAVED_MODULES[i]] = mod.factory.export();
+      // Make sure we dont keep a reference to a living object.
+      this[_SAVED_MODULES[i]] = JSON.parse(JSON.stringify(mod.factory.export()));
     }
   }
 }
