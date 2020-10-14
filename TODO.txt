@@ -1,7 +1,5 @@
 the ability tree doesnt overflow scroll :/
 
-?i think the transition between levels is fucked up probably because of concurrency
-
 Redesign level:
 - Trop denemis
 - Move corpse ?

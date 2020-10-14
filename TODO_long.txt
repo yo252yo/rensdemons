@@ -6,18 +6,6 @@ proximity triggered fights?? traps??
 
 https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
-prevent zoom on desktop :((
-
-?touch handler interupts boy walking
-?touch handler interupts text during battle
-?mota crashed during basilisk figh and it didnt pop again
-
-?sometimes events are doubled
-
-??some evnets are in walls
-
-?when testing i had a viper battle go out of existence
-
 i think edge doesnt like functions starting by _ esp nested in namespaces
 
 async errors: Uncaught ReferenceError: DICTIONARY is not defined
@@ -28,21 +16,14 @@ _restore_previous_state @ DISK.js:43
 initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
-? zindex was sometimes broken on mobile
-? some events dont disappear as they should
+should i make a world map?
 
-should i world make a map?
-
-invisible wall on the room at top with 3 big encounters (in cave.js)
-
-menu back->back makes an infinite loop
+menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
 
 save audio settings to disk!
 
 the treasure battler should probs be closed
 
 i dont like how we store saved data as hidden abilities and items :P
-
-?animation at the end of clue is weird (blink screen)
 
 should the LANGUAGE bits be generated from a pattern (or metapatern)?
