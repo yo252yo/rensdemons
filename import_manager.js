@@ -114,9 +114,10 @@ new Module("AUDIO");
 
 new Module("UTILS/MAP");
 IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");
-IMPORTS.modules['UTILS/MAP'].child_module("ABILITIES");
-IMPORTS.modules['UTILS/MAP'].child_module("INVENTORY");
-IMPORTS.modules['UTILS/MAP'].child_module("STATS");
+IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/ABILITIES");
+IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/INVENTORY");
+IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/STATS");
+IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/MARTYRDOM");
 IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 
 IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
@@ -125,8 +126,8 @@ IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 const LANGUAGE = {};
 LANGUAGE.actions = {};
 new Module("LANGUAGE/BATTLE");
-IMPORTS.modules['ABILITIES'].child_module("LANGUAGE/ABILITIES");
-IMPORTS.modules['INVENTORY'].child_module("LANGUAGE/ITEMS");
+IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
+IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
 
 new Module("UTILS/STRING");
 IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
