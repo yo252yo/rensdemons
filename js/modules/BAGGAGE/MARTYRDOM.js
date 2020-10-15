@@ -46,12 +46,12 @@ const MARTYRDOM = {
   },
 
   effect: function(category) { // scale of 0 to 1
-    var ladder = [0.02, 0.05, 0.1, 0.25, 0.5, 0.7, 0.8, 0.9];
+    var ladder = [0, 0.01, 0.02, 0.05, 0.1, 0.25, 0.5, 0.7, 0.8, 0.9];
     var n = MARTYRDOM._get.lvl(category);
     if(n <= 7){
       return ladder[n];
     } else {
-      return 1-0.1/(n-6);
+      return 1-0.1/(n-8);
     }
   },
 
