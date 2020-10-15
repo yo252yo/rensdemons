@@ -29,7 +29,7 @@ const INTERFACE = {
                       {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
                       {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
-                      {"text": "Martyrdom", "effect": function(){ MARTYRDOM.display(); }},
+                      {"text": "Martyrdom", "effect": function(){ MARTYRDOM.display.menu(); }},
                       {"text": "", "effect": function(){}, "keep_open": true},
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},

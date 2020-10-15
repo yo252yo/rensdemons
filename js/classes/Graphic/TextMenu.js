@@ -45,6 +45,11 @@ class TextMenu extends TextElement {
         this.scroll_if_overflow();
     }
 
+    change(title, options){
+      this.title = title;
+      this.options = options;
+    }
+
     print_menu() {
       if (this.title) {
         var html = this.title + "<br /><br />";
