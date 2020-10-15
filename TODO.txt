@@ -1,3 +1,6 @@
 Redesign level:
 - Trop denemis
 - Move corpse ?
+
+
+does it save after fight defeat??
