@@ -42,4 +42,5 @@ var flavortext = RANDOM.pick(
 new CenteredTextMenu("<i>"+flavortext+"</i>", options);
 
 STATS.record.death();
+MARTYRDOM.increase();
 FOG.stop();

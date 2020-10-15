@@ -4,3 +4,6 @@ Max ammo you can carry
 
 - walking speed is too slow by default on keyboard
 ptet ca devrait etre une ability unlockable de pouvoir voir les monstres avant de les encounter tiesn
+
+
+save slots, inventory slots, equipment at once

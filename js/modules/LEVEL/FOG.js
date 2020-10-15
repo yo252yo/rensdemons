@@ -1,7 +1,7 @@
 
 const FOG = {
-  VIEWPORT_H: 500,
-  VIEWPORT_W: 500,
+  VIEWPORT_H: 400,
+  VIEWPORT_W: 400,
   MASK_WIDTH: 2*SCREEN.width(),
   MASK_HEIGHT: 2*SCREEN.height(),
 
