@@ -37,7 +37,7 @@ const MARTYRDOM = {
   purchase: function(category) {
     var p = MARTYRDOM._get.price(category);
     if (p <= MARTYRDOM._spare_points){
-      MARTYRDOM._progress.increment([category]);
+      MARTYRDOM._progress.increment([MARTYRDOMS[category]]);
       MARTYRDOM._spare_points -= p;
       MARTYRDOM.display._fill_menu();
     } else {
@@ -57,7 +57,7 @@ const MARTYRDOM = {
 
   _get: {
     lvl: function(category) {
-      var lvl = MARTYRDOM._progress.get([category]);
+      var lvl = MARTYRDOM._progress.get([MARTYRDOMS[category]]);
       if (!lvl){ lvl = 0; }
       return lvl;
     },

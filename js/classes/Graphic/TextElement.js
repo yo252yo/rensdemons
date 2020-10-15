@@ -67,15 +67,20 @@ class TextElement extends VisualElement {
     scroll_if_overflow() {
       var height_before = this.html.style.height;
       this.html.style.height = ""; // we need clientHeight to be meaningful.
-
-      var realY = this.y - this.height;
-      var max_height = SCREEN.height() - realY;
-      var new_height_scaled = Math.floor(0.9 * max_height / SCREEN.real_ratio());
-      if (this.html.clientHeight > max_height) {
-        this.html.style.height = new_height_scaled + "px";
-        this.html.style.overflow = "scroll";
-      } else {
-        this.html.style.height = height_before;
+      var self = this;
+      var f = function(){
+        var realY = self.y - self.height;
+        var max_height = SCREEN.height() - realY;
+        var new_height_scaled = Math.floor(0.9 * max_height / SCREEN.real_ratio());
+        console.log(`${self.html.clientHeight} ${max_height} ${self.html.style.height}`);
+        console.log(self.html);
+        if (self.html.clientHeight > max_height) {
+          self.html.style.height = new_height_scaled + "px";
+          self.html.style.overflow = "scroll";
+        } else {
+          self.html.style.height = height_before;
+        }
       }
+      setTimeout(f, 100);
     }
 }
