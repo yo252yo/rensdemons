@@ -72,8 +72,6 @@ class TextElement extends VisualElement {
         var realY = self.y - self.height;
         var max_height = SCREEN.height() - realY;
         var new_height_scaled = Math.floor(0.9 * max_height / SCREEN.real_ratio());
-        console.log(`${self.html.clientHeight} ${max_height} ${self.html.style.height}`);
-        console.log(self.html);
         if (self.html.clientHeight > max_height) {
           self.html.style.height = new_height_scaled + "px";
           self.html.style.overflow = "scroll";

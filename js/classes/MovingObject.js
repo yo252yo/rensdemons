@@ -128,8 +128,11 @@ class MovingObject extends LevelObject {
     if(!this.sprite || !this.sprite.walk_speed){ return 0; }
     var increment = _BASE_WALKING_INCREMENT * this.sprite.walk_speed;
 
-    if (CHARACTER.character == this && IO_CHARACTER.is_running()){
-      increment *= _RUNNING_BONUS;
+    if (CHARACTER.character == this){
+      increment *= (1 + _RUNNING_BONUS * MARTYRDOM.effect(MARTYRDOMS.Movement));
+      if(IO_CHARACTER.is_running()) {
+        increment *= _RUNNING_BONUS;
+      }
     }
 
     return Math.floor(increment);

@@ -34,10 +34,10 @@ const MARTYRDOM = {
     MARTYRDOM._spare_points ++;
   },
 
-  purchase: function(category) {
-    var p = MARTYRDOM._get.price(category);
+  purchase: function(category_index) {
+    var p = MARTYRDOM._get.price(category_index);
     if (p <= MARTYRDOM._spare_points){
-      MARTYRDOM._progress.increment([MARTYRDOMS[category]]);
+      MARTYRDOM._progress.increment([MARTYRDOMS[category_index]]);
       MARTYRDOM._spare_points -= p;
       MARTYRDOM.display._fill_menu();
     } else {
@@ -46,9 +46,9 @@ const MARTYRDOM = {
   },
 
   effect: function(category) { // scale of 0 to 1
-    var ladder = [0, 0.01, 0.02, 0.05, 0.1, 0.25, 0.5, 0.7, 0.8, 0.9];
+    var ladder = [0, 0.03, 0.06, 0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 0.9];
     var n = MARTYRDOM._get.lvl(category);
-    if(n <= 7){
+    if(n <= 9){
       return ladder[n];
     } else {
       return 1-0.1/(n-8);
@@ -57,14 +57,14 @@ const MARTYRDOM = {
 
   _get: {
     lvl: function(category) {
-      var lvl = MARTYRDOM._progress.get([MARTYRDOMS[category]]);
+      var lvl = MARTYRDOM._progress.get([category]);
       if (!lvl){ lvl = 0; }
       return lvl;
     },
 
-    price: function(category) {
+    price: function(category_index) {
       var ladder = [2, 4, 8, 15, 30, 50, 75, 100];
-      var n = MARTYRDOM._get.lvl(category);
+      var n = MARTYRDOM._get.lvl(MARTYRDOMS[category_index]);
       if(n <= 7){
         return ladder[n];
       } else {
@@ -74,8 +74,9 @@ const MARTYRDOM = {
   },
 
   display: {
-    _category: function(category){
-      return `${MARTYRDOMS[category]} (${MARTYRDOM._get.lvl(category)})`;
+    _category: function(category_index){
+      var category = MARTYRDOMS[category_index];
+      return `${category} (${MARTYRDOM._get.lvl(category)})`;
     },
 
     _fill_menu: function(){
