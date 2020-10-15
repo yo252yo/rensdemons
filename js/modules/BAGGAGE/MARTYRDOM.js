@@ -40,6 +40,8 @@ const MARTYRDOM = {
       MARTYRDOM._progress.increment([MARTYRDOMS[category_index]]);
       MARTYRDOM._spare_points -= p;
       MARTYRDOM.display._fill_menu();
+      // in case we buy fog
+      FOG.moveToChar();
     } else {
       alert(`Not enough martyrdom (required ${p}).`);
     }

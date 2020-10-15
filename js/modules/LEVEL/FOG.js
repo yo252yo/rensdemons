@@ -1,7 +1,7 @@
 
 const FOG = {
-  VIEWPORT_H: 400,
-  VIEWPORT_W: 400,
+  MIN_VIEWPORT: 350,
+  MAX_VIEWPORT: 700,
   MASK_WIDTH: 2*SCREEN.width(),
   MASK_HEIGHT: 2*SCREEN.height(),
 
@@ -46,18 +46,26 @@ const FOG = {
       FOG._stop("fog_right");
   },
 
+  viewport: function(){
+    return FOG.MIN_VIEWPORT + (FOG.MAX_VIEWPORT - FOG.MIN_VIEWPORT) * MARTYRDOM.effect(MARTYRDOMS.Vision);
+  },
+
   move: function(x, y){
-    document.getElementById("fog_top").style.top = y - FOG.VIEWPORT_H/2 - FOG.MASK_HEIGHT;
+    document.getElementById("fog_top").style.top = y - FOG.viewport()/2 - FOG.MASK_HEIGHT;
     document.getElementById("fog_top").style.left = x - FOG.MASK_WIDTH/2;
 
-    document.getElementById("fog_bot").style.top = y + FOG.VIEWPORT_H/2;
+    document.getElementById("fog_bot").style.top = y + FOG.viewport()/2;
     document.getElementById("fog_bot").style.left = x - FOG.MASK_WIDTH/2;
 
     document.getElementById("fog_left").style.top = y - FOG.MASK_HEIGHT/2;
-    document.getElementById("fog_left").style.left = x - FOG.VIEWPORT_W/2 - FOG.MASK_WIDTH;
+    document.getElementById("fog_left").style.left = x - FOG.viewport()/2 - FOG.MASK_WIDTH;
 
     document.getElementById("fog_right").style.top = y - FOG.MASK_HEIGHT/2;
-    document.getElementById("fog_right").style.left = x + FOG.VIEWPORT_W/2;
+    document.getElementById("fog_right").style.left = x + FOG.viewport()/2;
+  },
+
+  moveToChar: function(){
+    FOG.move(CHARACTER.get().x, CHARACTER.get().y);
   },
 
 }
