@@ -4,3 +4,5 @@ Redesign level:
 
 
 can i override the levelstates[current_level].last_saved_position to the save position when i save?
+
+Replace complicated override flow between currentlevel and levels tate by a line in the save function that starts by updating the current level state with char position before saving any object
