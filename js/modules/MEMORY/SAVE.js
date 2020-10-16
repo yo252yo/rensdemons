@@ -1,7 +1,9 @@
 
 // Modules part of the save, saved by users, they do not come back on page
 // reload.
-var _SAVED_MODULES = ["PALETTE", "DICTIONARY", "CURRENTLEVEL", "LEVELSTATES", "BATTLETREE", "ABILITIES", "INVENTORY", "MARTYRDOM"];
+
+// BE SUPER CAREFUL, CURRENTLEVEL must ALWAYs be AFTER LEVELSTATEs in this list because it overrides it with the current character position (so that we know where to place it). This is the order in which data is loaded.
+var _SAVED_MODULES = ["PALETTE", "DICTIONARY", "LEVELSTATES", "CURRENTLEVEL", "BATTLETREE", "ABILITIES", "INVENTORY", "MARTYRDOM"];
 
 class SaveFile {
   constructor() {

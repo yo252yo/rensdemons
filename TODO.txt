@@ -3,4 +3,4 @@ Redesign level:
 - Move corpse ?
 
 
-does it save after fight defeat??
+can i override the levelstates[current_level].last_saved_position to the save position when i save?

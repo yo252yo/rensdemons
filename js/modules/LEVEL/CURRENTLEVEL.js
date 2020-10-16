@@ -19,11 +19,15 @@ const CURRENTLEVEL = {
         char_x = CHARACTER.character.x;
         char_y = CHARACTER.character.y;
       }
-      return {
+      var s = {
         level_name: CURRENTLEVEL.level_name,
         destroyed_objects: CURRENTLEVEL.destroyed_objects,
         saved_character_position: [char_x, char_y],
       }
+
+      // failsafe attempts to diminish concurrency risk by overriding the levelstate to the last save point. Of course this fails if we already saved the levelstate
+      LEVELSTATES.register_from_save(s);
+      return s;
     },
 
     make_new: function(){

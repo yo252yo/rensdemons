@@ -32,11 +32,10 @@ const LEVELSTATES = {
   },
 
   register_from_save: function(save) {
-    var name = save.level_name;
-    CONSOLE.log.level("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
-    if (name) {
-      LEVELSTATES._states.set([name], save);
-     }
+    CONSOLE.log.level("Saved/loaded levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
+    if (save.level_name) {
+      LEVELSTATES._states.set([save.level_name], save);
+    }
   },
 
   get_save: function(level) {
