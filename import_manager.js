@@ -133,6 +133,7 @@ new Module("UTILS/STRING");
 IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
 IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
 IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
+new Class("Generation/Houses");
 
 
 new Class("Graphic/Color");
