@@ -57,15 +57,18 @@ class HG_Room {
       this.expand_diag();
     }
 
-    main_entrance() {
-      new S_Floor(this.x + 0.5*this.w - 25, this.y + 25, 50, 50);
+    main_entrance(outside) {
+      var f = new S_Floor(this.x + 0.5*this.w - 25, this.y + 25, 50, 50);
+      f.interaction = function(){
+        CURRENTLEVEL.setup(outside);
+      }
       return [this.x + 0.5*this.w - 15, this.y - 25];
     }
 }
 
 
 class HouseGenerator {
-    constructor(seed) {
+    constructor(seed, outside) {
       this.gen = new Generator(seed);
       this.MAX_ROOM_W = 500;
       this.MAX_ROOM_H = 500;
@@ -73,12 +76,13 @@ class HouseGenerator {
       this.MIN_ROOM_H = 100;
       this.x = 200;
       this.y = 1000;
+      this.outside = outside
     }
 
     build() {
       var main_hall = new HG_Room(this.gen, this.x, this.y);
       main_hall.expand();
-      return main_hall.main_entrance(); // entrance
+      return main_hall.main_entrance(this.outside); // entrance
     }
 
 }

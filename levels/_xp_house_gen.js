@@ -1,4 +1,12 @@
-var h = new HouseGenerator(Math.random());
-var c = h.build();
 
-CURRENTLEVEL.initialize_with_character(c[0], c[1]);
+ new S_Floor(0,3000,3000,3000);
+
+new S_House(300,300, 1);
+
+new S_House(600,300, 12);
+
+new S_House(300,700, 14);
+
+new S_House(600,700, 15);
+
+CURRENTLEVEL.initialize_with_character(100, 100);

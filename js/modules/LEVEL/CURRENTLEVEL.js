@@ -189,6 +189,7 @@ const CURRENTLEVEL = {
     IO.clear_io_queue();
     window.scrollTo(0,0);
     // Try to restore previous state.
+    LEVELSTATES.register_current();
     var save = LEVELSTATES.get_save(name);
     if (! save) {
       CONSOLE.log.setup(name + " (new)");
