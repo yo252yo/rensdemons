@@ -36,7 +36,7 @@ class Generator {
 
   get() { // result is in [0,1]
     var value = this._get_next().toString();
-    return "0." + this._reverse_string(value);
+    return parseFloat("0." + this._reverse_string(value));
   }
 
   _check_seeds() {

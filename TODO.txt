@@ -1,3 +1,8 @@
 Redesign level:
 - Trop denemis
 - Move corpse ?
+
+
+entering a house uses
+CURRENTLEVEL.setup("empty");
+which saves a shared state between all houses!!

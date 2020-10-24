@@ -9,6 +9,10 @@ class Import {
     }
 
     write_html(){
+      // We dont actually load things that end in _
+      if(this.src[this.src.length - 1] == "_"){
+        return;
+      }
       this.html = document.createElement("script");
       this.html.type = "text/javascript";
       this.html.src = this.src + ".js";

@@ -44,6 +44,7 @@ const FOG = {
       FOG._stop("fog_bot");
       FOG._stop("fog_left");
       FOG._stop("fog_right");
+      setTimeout(FOG.stop, 1000);
   },
 
   viewport: function(){

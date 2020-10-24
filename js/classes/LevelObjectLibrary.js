@@ -2,7 +2,7 @@
 // runtime: Rectangle, StaticSprite
 
 class S_Floor extends LevelObject {
-  constructor(x, y, w, h) {
+  constructor(x, y, w, h){
     var visual = new Rectangle(x,y,w,h, 'background');
     super(visual, x, y);
 
@@ -11,7 +11,7 @@ class S_Floor extends LevelObject {
     this.make_walkable();
   }
 
-  draw_hitbox(even_floors) {
+  draw_hitbox(even_floors){
     if(even_floors){
       super.draw_hitbox();
     }
@@ -19,13 +19,13 @@ class S_Floor extends LevelObject {
 }
 
 class S_Tree extends LevelObject {
-  constructor(x, y) {
+  constructor(x, y){
     var visual = new StaticSprite("assets/objects/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
   }
 
-  default_text() {
+  default_text(){
     new TextBannerRandom([
       "It's a tree.",
       "Lustrous leaves, bulky branches... yes, definitely a tree.",
@@ -34,7 +34,7 @@ class S_Tree extends LevelObject {
     ]);
   }
 
-  interaction() {
+  interaction(){
     if (this.hidden_in){
       this.hidden_in.place_at(this.visual_element.x, this.visual_element.y - 20);
       this.hidden_in.try_walk_by(-40, 30);
@@ -51,13 +51,13 @@ class S_Tree extends LevelObject {
 }
 
 class S_Column extends LevelObject {
-  constructor(x, y) {
+  constructor(x, y){
     var visual = new StaticSprite("assets/objects/column.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
   }
 
-  interaction() {
+  interaction(){
     new TextBannerRandom([
       "It's a column.",
       "Nothing but a column.",
@@ -67,23 +67,23 @@ class S_Column extends LevelObject {
 }
 
 class S_Statue extends LevelObject {
-  constructor(x, y) {
+  constructor(x, y){
     var visual = new StaticSprite("assets/objects/statue.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
   }
 
-  interaction() {  }
+  interaction(){  }
 }
 
 class S_SavePoint extends LevelObject {
-  constructor(x, y) {
+  constructor(x, y){
     var visual = new StaticSprite("assets/objects/savepoint.png", 'obj_dark');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,10);
   }
 
-  interaction() {
+  interaction(){
     new CenteredTextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
                   [
                     {"text": "Worship", "effect": function(){ SAVE.print.save_menu(); }},
@@ -93,32 +93,121 @@ class S_SavePoint extends LevelObject {
 }
 
 class S_House extends LevelObject {
-  constructor(x, y, seed) {
+  constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/house.png", 'obj_dark');
     super(visual, x, y);
     this.seed = seed;
     this.adjust_hitbox(0,0,175,200);
   }
 
-  character_can_enter() {
+  character_can_enter(){
     var dx = (CHARACTER.get().x + 15 - this.x) / 175;
     return (dx > 0.3 && dx < 0.7);
   }
 
-  enter() {
+  enter(){
     var lvl = CURRENTLEVEL.level_name;
-    CURRENTLEVEL.setup("empty");
+    CURRENTLEVEL.setup("house_" + this.seed + "_");
     var h = new HouseGenerator(this.seed, lvl);
     var c = h.build();
     CURRENTLEVEL.initialize_with_character(c[0], c[1]);
   }
 
-  interaction() {
+  interaction(){
     if (this.character_can_enter()){
       this.enter();
     } else {
       new TextBanner("It's a house, but this is not the entrance.");
     }
-
   }
+}
+
+class S_Bed extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/bed.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,32,60);
+  }
+  interaction(){  }
+}
+
+class S_Bucket extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/bucket.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,31,28);
+  }
+  interaction(){  }
+}
+
+class S_Cabinet extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/cabinet.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,31,48);
+  }
+  interaction(){  }
+}
+
+class S_Chair extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/chair.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,30,33);
+  }
+  interaction(){  }
+}
+
+class S_Hay extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/hay.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,64,66);
+  }
+  interaction(){  }
+}
+
+class S_Housefire extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/housefire.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,33,20);
+  }
+  interaction(){  }
+}
+
+class S_Jar extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/jar.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,32,20);
+  }
+  interaction(){  }
+}
+
+class S_Shelf extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/shelf.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,59,67);
+  }
+  interaction(){  }
+}
+
+class S_Stool extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/stool.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,25,28);
+  }
+  interaction(){  }
+}
+
+class S_Table extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/table.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,31,34);
+  }
+  interaction(){  }
 }

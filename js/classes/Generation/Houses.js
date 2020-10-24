@@ -11,6 +11,7 @@ class HG_Room {
       this.y = y;
       this.dimention(imposed_dimensions);
       this.draw();
+      this.decorate();
     }
 
     dimention(imposed_dimensions) {
@@ -26,8 +27,51 @@ class HG_Room {
       new S_Floor(this.x, this.y, this.w, this.h);
     }
 
+    decorate(){
+      var r = this.gen.get();
+      if (r < 0.3){
+        this.decorate_bedroom();
+      } else if (r < 0.6) {
+        this.decorate_kitchen();
+      } else{
+        this.decorate_random_room();
+      }
+    }
+
+    fill_top_wall(furniture, w){
+      var width = this.w - w;
+      var capacity = width / w;
+
+      var nb_furniture = Math.max(1, Math.floor(this.gen.get() * capacity-1));
+      console.log(nb_furniture + "furnitures");
+      for (var i = 0; i < nb_furniture; i++){
+        var r = this.gen.get();
+        var offset = (i + r) * (width/nb_furniture);
+
+        if (!this.is_top && Math.abs(offset - this.w / 2) < 50) { // leave the middle open for a hallway :/
+          console.log("canceled");
+          continue;
+        }
+        furniture(this.x + offset, this.y - this.h + 50);
+      }
+    }
+
+    decorate_bedroom(){ //70 px top
+      this.fill_top_wall(function (x,y){new S_Bed(x,y);}, 100);
+    }
+
+    decorate_kitchen(){
+      new S_Housefire(this.x + this.w /2, this.y - this.h/2);
+    }
+
+    //       , S_Bucket,S_Cabinet,S_Chair,S_Housefire, S_Jar, S_Shelf, S_Stool,  S_Table, S_Hay
+    decorate_random_room(){
+      new S_Jar(this.x + this.w /2, this.y - this.h/2);
+    }
+
     expand_top() {
        this.room_top = new HG_Room(this.gen, this.x, this.y - this.h - 25, [this.w, 0]);
+       this.room_top.is_top = true;
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
        new S_Floor(connection_x, this.y - this.h + 25, 50, 75);
     }
@@ -44,6 +88,7 @@ class HG_Room {
       var w = this.room_right.w;
       var h = this.room_top.h;
       var diag = new HG_Room(this.gen, x, y, [w, h]);
+      diag.is_top = true;
       var connection_left = [x, y - h/2];
       var connection_bot = [x + w/2, y];
 
