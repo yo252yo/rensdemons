@@ -52,19 +52,21 @@ class HG_Room {
           console.log("canceled");
           continue;
         }
-        furniture(this.x + offset, this.y - this.h + 50);
+        furniture(this.x + offset, this.y - this.h);
       }
     }
 
     decorate_bedroom(){ //70 px top
-      this.fill_top_wall(function (x,y){new S_Bed(x,y);}, 100);
+      this.fill_top_wall(function (x,y){new S_Bed(x,y + 50);}, 100);
     }
 
     decorate_kitchen(){
+      this.fill_top_wall(function (x,y){new S_Shelf(x,y + 20);}, 100);
+
       new S_Housefire(this.x + this.w /2, this.y - this.h/2);
     }
 
-    //       , S_Bucket,S_Cabinet,S_Chair,S_Housefire, S_Jar, S_Shelf, S_Stool,  S_Table, S_Hay
+    //       , S_Bucket,,S_Chair,S_Housefire, S_Jar, S_Cabinet, S_Stool,  S_Table, S_Hay
     decorate_random_room(){
       new S_Jar(this.x + this.w /2, this.y - this.h/2);
     }
