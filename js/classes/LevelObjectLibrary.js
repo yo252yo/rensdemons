@@ -211,3 +211,12 @@ class S_Table extends LevelObject {
   }
   interaction(){  }
 }
+
+class S_Chest extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/chest.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,30,34);
+  }
+  interaction(){  }
+}

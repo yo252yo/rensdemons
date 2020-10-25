@@ -5,5 +5,4 @@ Redesign level:
 
 all the houses objects dont have an interaction yet
 need people in Houses
-need to deocrate the inside of rooms
-need to decorate rnadom rooms
+make chair with table

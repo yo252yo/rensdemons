@@ -55,7 +55,7 @@ class HG_Room {
       for (var i = 0; i < nb_furniture; i++){
         var r = this.gen.get();
         // provisory position for hash of object
-        var f = furniture(this.x + i * this.w/nb_furniture + r * (this.w/nb_furniture), this.y - this.h + y_offset);
+        var f = furniture(this.x + i * this.w/nb_furniture, this.y - this.h + y_offset);
         var x_offset = i * this.w/nb_furniture + r * (this.w/nb_furniture - f.h_w);
 
         f.place_at(this.x + x_offset, this.y - this.h + y_offset);
@@ -67,23 +67,43 @@ class HG_Room {
       }
     }
 
+    fill_room(furniture, density){
+      var slot_size = [100, 100];
+      var h = this.h - 100;
+      var nb_slots = [Math.floor(this.w / slot_size[0]), Math.floor(h / slot_size[1])];
+      var slot_actual_size = [this.w / nb_slots[0], h / nb_slots[1]];
+      for(var i = 0; i < nb_slots[0]; i++) {
+      for(var j = 0; j < nb_slots[1]; j++) {
+          if (this.gen.get() < density){
+            continue;
+          }
+          var f = furniture(this.x + i * slot_actual_size[0], this.y - j * slot_actual_size[1]);
+          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
+          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
+          f.place_at(this.x + x, this.y - y);
+      }
+      }
+    }
+
     decorate_bedroom(){ //70 px top
       var top_wall_function = this._gen_furniture_function([S_Bed, S_Hay]);
       this.fill_top_wall(top_wall_function, 50, 50);
+      var fill_function = this._gen_furniture_function([S_Bed, S_Hay, S_Chest]);
+      this.fill_room(fill_function, 0.1);
     }
 
     decorate_kitchen(){
-      var top_wall_function = this._gen_furniture_function([S_Shelf, S_Bucket, S_Cabinet, S_Jar, S_Stool]);
+      var top_wall_function = this._gen_furniture_function([S_Shelf, S_Bucket, S_Cabinet, S_Jar, S_Stool, S_Chair]);
       this.fill_top_wall(top_wall_function, 60, 15);
-
-      new S_Housefire(this.x + this.w /2, this.y - this.h/2);
+      var fill_function = this._gen_furniture_function([S_Housefire, S_Table, S_Stool]);
+      this.fill_room(fill_function, 0.5);
     }
 
-    //       , ,S_Chair, S_Table,
     decorate_random_room(){
       var top_wall_function = this._gen_furniture_function([S_Statue]);
       this.fill_top_wall(top_wall_function, this.w, 15);
-      new S_Jar(this.x + this.w /2, this.y - this.h/2);
+      var fill_function = this._gen_furniture_function([S_Jar, S_Stool, S_Bucket, S_Chest]);
+      this.fill_room(fill_function, 0.2);
     }
 
     expand_top() {
