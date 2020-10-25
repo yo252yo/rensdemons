@@ -13,8 +13,12 @@ const RANDOM = {
     return Math.floor(Math.random() * limit);
   },
 
-  pick: function(arr){
-    var index = RANDOM.int(arr.length);
+  pick: function(arr, gen){
+    if (!gen){
+      var index = RANDOM.int(arr.length);
+    } else {
+      var index = Math.floor(gen.get() * arr.length);
+    }
     return arr[index];
   },
 

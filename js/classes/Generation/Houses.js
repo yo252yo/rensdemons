@@ -23,6 +23,14 @@ class HG_Room {
       if (!this.h)        this.h = _MIN_ROOM_H + (_MAX_ROOM_H - _MIN_ROOM_H) * this.gen.get();
     }
 
+    _gen_furniture_function(furnitures){
+      var g = this.gen;
+      return function(x,y) {
+        var furniture = RANDOM.pick(furnitures, g);
+        return new furniture(x, y);
+      }
+    }
+
     draw() {
       new S_Floor(this.x, this.y, this.w, this.h);
     }
@@ -38,36 +46,43 @@ class HG_Room {
       }
     }
 
-    fill_top_wall(furniture, w){
-      var width = this.w - w;
-      var capacity = width / w;
+    fill_top_wall(furniture, slot_width, y_offset){
+      var capacity = this.w / slot_width;
 
-      var nb_furniture = Math.max(1, Math.floor(this.gen.get() * capacity-1));
-      console.log(nb_furniture + "furnitures");
+      var nb_furniture = 1;
+      nb_furniture += Math.floor(this.gen.get() * Math.max(0, capacity-1));
+
       for (var i = 0; i < nb_furniture; i++){
         var r = this.gen.get();
-        var offset = (i + r) * (width/nb_furniture);
+        // provisory position for hash of object
+        var f = furniture(this.x + i * this.w/nb_furniture + r * (this.w/nb_furniture), this.y - this.h + y_offset);
+        var x_offset = i * this.w/nb_furniture + r * (this.w/nb_furniture - f.h_w);
 
-        if (!this.is_top && Math.abs(offset - this.w / 2) < 50) { // leave the middle open for a hallway :/
-          console.log("canceled");
-          continue;
+        f.place_at(this.x + x_offset, this.y - this.h + y_offset);
+        if (!this.is_top && (x_offset + f.h_w > this.w / 2 - 20 && x_offset < this.w / 2 + 20)) { // leave the middle open for a hallway :/
+          f.destroy();
+        } else if (x_offset > this.w - f.h_w) {
+          f.destroy();
         }
-        furniture(this.x + offset, this.y - this.h);
       }
     }
 
     decorate_bedroom(){ //70 px top
-      this.fill_top_wall(function (x,y){new S_Bed(x,y + 50);}, 100);
+      var top_wall_function = this._gen_furniture_function([S_Bed, S_Hay]);
+      this.fill_top_wall(top_wall_function, 50, 50);
     }
 
     decorate_kitchen(){
-      this.fill_top_wall(function (x,y){new S_Shelf(x,y + 20);}, 100);
+      var top_wall_function = this._gen_furniture_function([S_Shelf, S_Bucket, S_Cabinet, S_Jar, S_Stool]);
+      this.fill_top_wall(top_wall_function, 60, 15);
 
       new S_Housefire(this.x + this.w /2, this.y - this.h/2);
     }
 
-    //       , S_Bucket,,S_Chair,S_Housefire, S_Jar, S_Cabinet, S_Stool,  S_Table, S_Hay
+    //       , ,S_Chair, S_Table,
     decorate_random_room(){
+      var top_wall_function = this._gen_furniture_function([S_Statue]);
+      this.fill_top_wall(top_wall_function, this.w, 15);
       new S_Jar(this.x + this.w /2, this.y - this.h/2);
     }
 

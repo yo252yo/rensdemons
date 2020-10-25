@@ -3,6 +3,7 @@ Redesign level:
 - Move corpse ?
 
 
-entering a house uses
-CURRENTLEVEL.setup("empty");
-which saves a shared state between all houses!!
+all the houses objects dont have an interaction yet
+need people in Houses
+need to deocrate the inside of rooms
+need to decorate rnadom rooms

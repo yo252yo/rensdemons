@@ -14,9 +14,15 @@ class LevelObject {
           return;
         }
 
-        this.visual_element.place_at(x,y);
+        this.visual_element.place_at(x, y);
         this.walkable = false;
         CURRENTLEVEL.objects.index_object(this);
+    }
+
+    place_at(x,y){
+        this.x = x;
+        this.y = y;
+        this.visual_element.place_at(x, y);
     }
 
     hash() {
