@@ -73,15 +73,15 @@ class HG_Room {
       var nb_slots = [Math.floor(this.w / slot_size[0]), Math.floor(h / slot_size[1])];
       var slot_actual_size = [this.w / nb_slots[0], h / nb_slots[1]];
       for(var i = 0; i < nb_slots[0]; i++) {
-      for(var j = 0; j < nb_slots[1]; j++) {
-          if (this.gen.get() < density){
-            continue;
-          }
-          var f = furniture(this.x + i * slot_actual_size[0], this.y - j * slot_actual_size[1]);
-          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
-          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
-          f.place_at(this.x + x, this.y - y);
-      }
+        for(var j = 0; j < nb_slots[1]; j++) {
+            if (this.gen.get() > density){
+              continue;
+            }
+            var f = furniture(this.x + i * slot_actual_size[0], this.y - j * slot_actual_size[1]);
+            var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
+            var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
+            f.place_at(this.x + x, this.y - y);
+        }
       }
     }
 
@@ -102,7 +102,7 @@ class HG_Room {
     decorate_random_room(){
       var top_wall_function = this._gen_furniture_function([S_Statue]);
       this.fill_top_wall(top_wall_function, this.w, 15);
-      var fill_function = this._gen_furniture_function([S_Jar, S_Stool, S_Bucket, S_Chest]);
+      var fill_function = this._gen_furniture_function([S_Jar, S_Stool, S_SavePoint, S_Bucket, S_Chest]);
       this.fill_room(fill_function, 0.2);
     }
 

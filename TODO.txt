@@ -3,6 +3,7 @@ Redesign level:
 - Move corpse ?
 
 
-all the houses objects dont have an interaction yet
 need people in Houses
 make chair with table
+chests NEED to be tilted
+put random treasures

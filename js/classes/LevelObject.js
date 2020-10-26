@@ -133,4 +133,12 @@ class LevelObject {
       CURRENTLEVEL.objects.remove_object(this);
       delete this;
     }
+
+    text_interaction(texts){
+      this.text = RANDOM.pick(texts);
+      var f = function() {
+        new TextBanner(this.text);
+      }
+      return f;
+    }
 }

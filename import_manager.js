@@ -157,11 +157,12 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/CenteredImage");
 
 new Class("LevelObject");
-IMPORTS.classes['LevelObject'].child_class("LevelObjectLibrary");
 IMPORTS.classes['LevelObject'].child_class("EventLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
+IMPORTS.classes['LevelObject'].child_class("Objects/Buildings");
+IMPORTS.classes['LevelObject'].child_class("Objects/Interior");
 
 new Class("Sequence");
 
