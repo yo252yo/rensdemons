@@ -45,6 +45,7 @@ const ABILITIES = {
     AUDIO.effect.unlock();
     CONSOLE.log.abilities("Unlocked " + name);
     ABILITIES._abilities.set([name], true);
+    BATTLETREE.api.unlock_ability(name);
   },
 
 }

@@ -44,6 +44,15 @@ const BATTLETREE = {
       AUDIO.effect.unlock();
     },
 
+    unlock_ability: function(name){
+      for (var b in BATTLETREE._targets.get([])) {
+        var current = BATTLETREE._targets.get([b, name]);
+        if (current) {
+          var current = BATTLETREE._targets.set([b, name], BATTLETREE.NOT_TRIED);
+        }
+      }
+    },
+
     lock: function(battle, name) {
       BATTLETREE._targets.delete([battle, name]);
       CONSOLE.log.battletree("locked: [" + name + "] on " + battle);
@@ -177,6 +186,20 @@ const BATTLETREE = {
         score += BATTLETREE.score._score_destination(BATTLETREE._targets.get([battle,i]));
       }
       return score;
+    },
+
+    is_explored: function(battle) {
+      var score = 0;
+      var b = BATTLETREE._targets.get([battle]);
+      if (!b){
+        return false;
+      }
+      for (var i in b) {
+        if(BATTLETREE._targets.get([battle, i]) == BATTLETREE.NOT_TRIED) {
+          return false;
+        }
+      }
+      return true;
     },
 
     completion: function(battle) {
