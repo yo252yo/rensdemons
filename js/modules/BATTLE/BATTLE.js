@@ -82,17 +82,19 @@ const BATTLE = {
 
         if (action_object.outcome) {
           var outcome_description = description[description.length - 1];
-          description = description.slice(0, description.length-1);
           BATTLETREE.api.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
 
           switch (action_object.outcome) {
             case BATTLETREE.WIN:
+              description = description.slice(0, description.length-1);
               BATTLE.monster_actions.prepare_win(outcome_description);
               break;
             case BATTLETREE.LOSS:
+              description = description.slice(0, description.length-1);
               BATTLE.monster_actions.prepare_loss(outcome_description);
               break;
             case BATTLETREE.ESCAPE:
+              description = description.slice(0, description.length-1);
               BATTLE.monster_actions.prepare_escape(outcome_description);
               break;
           }
@@ -242,8 +244,11 @@ const BATTLE = {
         if(callback) {
           BATTLE.win_callback = callback;
         }
-
-        new Import("battles/" + name);
+        if (name.startsWith("objects/")){
+          BATTLEOBJECTSMANAGER.setup_battle(name.substring(8));
+        } else {
+          new Import("battles/" + name);
+        }
         CONSOLE.log.setup("battle " + name);
         DODGE.init();
       },

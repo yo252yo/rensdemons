@@ -6,4 +6,7 @@ Redesign level:
 need people in Houses
 make chair with table
 chests NEED to be tilted
-put random treasures
+put random treasures (i.e make battleobjects commands trigger some events sometimes.
+
+right now you can do the same actions on all tables. wouldnt it be better if each table had their own set of action? based on object.seed. mb we should only battle.add some commands, but then is "tree.is_explored useful?
+I think mb what we want to do is compute the set of actions based on the seed at the beginning of interact and depending whether or not its been explored we chose between battle mode or not

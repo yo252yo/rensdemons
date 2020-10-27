@@ -101,6 +101,7 @@ new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
+new Module("BATTLE/BATTLEOBJECTSMANAGER");
 new Module("BATTLE/PLAYER_ACTIONS");
 new Module("BATTLE/DODGE");
 
@@ -161,8 +162,9 @@ IMPORTS.classes['LevelObject'].child_class("EventLibrary");
 IMPORTS.classes['LevelObject'].child_class("MovingObject");
 IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
 IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
-IMPORTS.classes['LevelObject'].child_class("Objects/Buildings");
-IMPORTS.classes['LevelObject'].child_class("Objects/Interior");
+IMPORTS.classes['LevelObject'].child_class("BattleObject");
+IMPORTS.classes['BattleObject'].child_class("Objects/Buildings");
+IMPORTS.classes['BattleObject'].child_class("Objects/Interior");
 
 new Class("Sequence");
 
