@@ -10,7 +10,11 @@ const BATTLEOBJECTSMANAGER = {
 
     PLAYER_ACTIONS.escape("Turn away");
 
+    var special_command = BATTLEOBJECTSMANAGER.get_unique_interaction(object);
     for(var command in object.interactions){
+      if (command != special_command){
+        continue;
+      }
       PLAYER_ACTIONS.add({
         name: command,
         description: object.interactions[command],
@@ -22,7 +26,7 @@ const BATTLEOBJECTSMANAGER = {
     BATTLE.operations.start(object.description);
   },
 
-  getText: function(battle_object) {
+  getTextBox: function(battle_object) {
     var possibilities = [battle_object.description];
     var battle = "objects/" + battle_object.name;
     var b = BATTLETREE._targets.get([battle]);
@@ -37,20 +41,33 @@ const BATTLEOBJECTSMANAGER = {
     return possibilities[Math.floor(battle_object.seed * possibilities.length)];
   },
 
-  unlock_randomly: function(battle_object) {
+  get_unique_interaction: function(battle_object) {
     var commands = Object.keys(battle_object.interactions);
-    var unlocked = commands[Math.floor(battle_object.seed * commands.length)];
-    BATTLETREE.api.unlock("objects/" + battle_object.name, unlocked);
+    var interaction = commands[Math.floor(battle_object.seed * commands.length)];
+    return interaction;
+  },
+
+  has_explored_unique_interaction: function(battle_object) {
+    var battle = "objects/" + battle_object.name;
+    var interaction = BATTLEOBJECTSMANAGER.get_unique_interaction(battle_object);
+    var outcome = BATTLETREE._targets.get([battle, interaction]);
+
+    if(!outcome || outcome == BATTLETREE.NOT_TRIED || outcome == BATTLETREE.HIDDEN) {
+      BATTLETREE.api.unlock(battle, interaction);
+      return false;
+    } else {
+      return true;
+    }
   },
 
   interact: function(battle_object) {
     BATTLEOBJECTSMANAGER.current_battleobject = battle_object;
-    BATTLEOBJECTSMANAGER.unlock_randomly(battle_object);
+    var explored = BATTLEOBJECTSMANAGER.has_explored_unique_interaction(battle_object);
     var name = "objects/" + battle_object.name;
-    if (!BATTLETREE.score.is_explored(name)) {
+    if (!explored) {
       BATTLE.api.make(name);
     } else {
-      new TextBanner(BATTLEOBJECTSMANAGER.getText(battle_object));
+      new TextBanner(BATTLEOBJECTSMANAGER.getTextBox(battle_object));
     }
   },
 }
