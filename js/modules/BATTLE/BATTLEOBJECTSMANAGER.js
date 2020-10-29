@@ -3,7 +3,7 @@ const BATTLEOBJECTSMANAGER = {
 
   setup_battle: function(name){
     var object = BATTLEOBJECTSMANAGER.current_battleobject;
-    if (name != object.name){
+    if (name != object.name){ // we do a roundtrip to BATTLE for the whole battle setup
       CONSOLE.error("[BATTLEOBJECTSMANAGER] called with the wrong battleobject.");
     }
     new CenteredImage("assets/objects/" + name + ".png", 'background');

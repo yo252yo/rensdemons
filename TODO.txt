@@ -7,3 +7,6 @@ need people in Houses
 make chair with table
 chests NEED to be tilted
 put random treasures (i.e make battleobjects commands trigger some events sometimes.
+
+
+is it a problem that battleobject only has 1 choice in the battle? should i unlock two at once ?

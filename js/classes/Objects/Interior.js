@@ -29,6 +29,20 @@ class S_Statue extends LevelObject {
   }
 }
 
+class B_Statue extends BattleObject {
+  constructor(x, y){
+    super(x, y, "statue");
+    this.adjust_hitbox(10,0,20,15);
+
+    this.set_description("It's a statue of the Goddess. Blessed be her eternal soul.");
+
+    this.add_interaction("Prostrate", "You prostrate yourself in front of the statue of the Goddess.");
+    this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
+    this.add_interaction("Ponder", "A holy statue of the Goddess, like many others in this town.");
+    this.add_interaction("Contemplate", "An effigy of the protective Goddess. Its presence is a silent invitation for Her grace upon this place.");
+  }
+}
+
 class S_SavePoint extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/savepoint.png", 'obj_light');
@@ -62,6 +76,22 @@ class S_Bed extends LevelObject {
   }
 }
 
+class B_Bed extends BattleObject {
+  constructor(x, y){
+    super(x, y, "bed");
+    this.adjust_hitbox(0,0,32,60);
+
+    this.set_description("It's a regular bed to sleep in.");
+
+    this.add_interaction("Inspect", "This bed is made of linen covering a wooden frame. The thin matress is made of hay. It doesn't look too great...");
+    this.add_interaction("Resist", "This bed looks very comfortable. The thick wool beddings beckon you.");
+    this.add_interaction("Envy", "The pillow seems to be made with feathers. How were they able to afford such luxury?");
+    this.add_interaction("Nap", "The Goddess wants you to take a nap. It's not your bed, but it will do. You comply reluctantly. You can get a few minutes of sleep, and wake up barely more rested than before. Maybe even a bit more groggy.");
+    this.add_interaction("Sit", "You obey the voice of the Goddess inside you that urges you to sit on the bed. You sit for a while and look at your surroundings. It's pretty boring, so you stop.");
+    this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly.");
+  }
+}
+
 class S_Bucket extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/bucket.png", 'obj_light');
@@ -76,6 +106,22 @@ class S_Bucket extends LevelObject {
       "You impulsively cave to the urges the Goddess is imprinting on you, and put your hand in the bucket. You're wet now. Well done.",
       "Without a second thought, you grab the bucket and look inside. You don't know what you expected, it's just an empty bucket. Still, you can't shake the feeling that there should be something there...",
     ]);
+  }
+}
+
+class B_Bucket extends BattleObject {
+  constructor(x, y){
+    super(x, y, "bucket");
+    this.adjust_hitbox(0,0,31,28);
+
+    this.set_description("It's a wooden bucket.");
+    this.add_interaction("Examine", "A bucket full of fresh water. Someone must have brought it back from the well recently.");
+    this.add_interaction("Behold", "This bucket is empty...");
+    this.add_interaction("Wonder", "As you gaze at this bucket, you can't help but wonder if this is really the best place for a bucket... But on the other hand, why not?");
+    this.add_interaction("Thirst", "You suddenly realize you're pretty thirsty as you see water in this bucket. You wonder if you should ask for a sip... They probably wouldn't refuse... No, better hold it in.");
+    this.add_interaction("Drink", "Moved by the Will of the Goddess, you grab the bucket and drink all the water in it. The family is due for another trip to the well...");
+    this.add_interaction("Touch", "You impulsively cave to the urges the Goddess is imprinting on you, and put your hand in the bucket. You're wet now. Well done.");
+    this.add_interaction("Seize", "Without a second thought, you grab the bucket and look inside. You don't know what you expected, it's just an empty bucket. Still, you can't shake the feeling that there should be something there...");
   }
 }
 
@@ -96,6 +142,21 @@ class S_Cabinet extends LevelObject {
   }
 }
 
+class B_Cabinet extends BattleObject {
+  constructor(x, y){
+    super(x, y, "cabinet");
+    this.adjust_hitbox(0,0,31,48);
+
+    this.set_description("A wooden cabinet, probably storing clothes or tableware...");
+    this.add_interaction("Imagine", "The family stores their belonging in this cabinet. What kind of things are there? You're curious, but you don't want to intrude. You're invading their privacy enough as it is...");
+    this.add_interaction("Esteem", "Not everyone could afford a wooden cabinet with engravings of holy texts. This is surely a mark of wealth.");
+    this.add_interaction("Condemn", "This storage container looks pretty unsteady. The people here probably built it themselves. Better not touch it.");
+    this.add_interaction("Resist", "You try and resist the urge to open the cabinet and go through this family's possessions. Who would do such a thing?");
+    this.add_interaction("Violate", "You cannot help but opening the drawers of this cabinet. The Goddess is acting through you again. You rummage through foreign clothes and linens. Seriously, what good is that?");
+    this.add_interaction("Open", "Pushed by Her Divine Grace, you go open this little cabinet. It's full of tableware and plates. What were you hoping to find?");
+  }
+}
+
 class S_Chair extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/chair.png", 'obj_light');
@@ -108,6 +169,19 @@ class S_Chair extends LevelObject {
       "The Goddess compells you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.",
       "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?",
     ]);
+  }
+}
+
+class B_Chair extends BattleObject {
+  constructor(x, y){
+    super(x, y, "chair");
+    this.adjust_hitbox(0,0,30,33);
+
+    this.set_description("This is a chair.");
+    this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
+    this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
+    this.add_interaction("Sit", "The Goddess compells you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
+    this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
   }
 }
 
@@ -127,6 +201,20 @@ class S_Hay extends LevelObject {
   }
 }
 
+class B_Hay extends BattleObject {
+  constructor(x, y){
+    super(x, y, "hay");
+    this.adjust_hitbox(0,0,64,66);
+
+    this.set_description("A pile of hay.");
+    this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");
+    this.add_interaction("Empathize", "Any place can be a bed when you're tired enough. When monsters roam the lands, you cannot be too picky..");
+    this.add_interaction("Jump", "The Goddess urges you to jump in the hay. It's fun, but now you're covered in it.");
+    this.add_interaction("Sleep", "You get the feeling that the Goddess wants you to nap there. You try for a while, but it's so uncomfortable. You get back up, feeling that you've failed Her.");
+    this.add_interaction("Stare", "For some reason, it seems that the Goddess wants you to look at this haystack. Does She want you to count how many stems there are? Does She want you to find something in there? Surely She could not be this cruel... You try to chase the thought from your mind.");
+  }
+}
+
 class S_Housefire extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/housefire.png", 'obj_light');
@@ -140,6 +228,20 @@ class S_Housefire extends LevelObject {
       "Compelled by the Goddess, you grab a bit of the food that's slowly roasting on the fire and devour it. It may not have been yours to take, but the Will of the Goddess is absolute.",
       "You extend a hand towards the fire. It's warm. You get your hand closer and closer... Aouch! You burned yourself. Surely, you were not in control of yourself. It must have been the Goddess.",
     ]);
+  }
+}
+
+class B_Housefire extends BattleObject {
+  constructor(x, y){
+    super(x, y, "housefire");
+    this.adjust_hitbox(0,0,33,20);
+
+    this.set_description("This is a housefire.");
+    this.add_interaction("Appreciate", "The fire keeps the room warm and cooks the food. Two blessings in one.");
+    this.add_interaction("Yearn", "On the fire, a pot is slowly cooking. It's some sort of stew. Or a soup?");
+    this.add_interaction("Smell", "The smell of burning wood is filling up the room. It feels... nostalgic.");
+    this.add_interaction("Nab", "Compelled by the Goddess, you grab a bit of the food that's slowly roasting on the fire and devour it. It may not have been yours to take, but the Will of the Goddess is absolute.");
+    this.add_interaction("Probe", "You extend a hand towards the fire. It's warm. You get your hand closer and closer... Aouch! You burned yourself. Surely, you were not in control of yourself. It must have been the Goddess.");
   }
 }
 
@@ -158,6 +260,20 @@ class S_Jar extends LevelObject {
   }
 }
 
+class B_Jar extends BattleObject {
+  constructor(x, y){
+    super(x, y, "jar");
+    this.adjust_hitbox(0,0,32,20);
+
+    this.set_description("A beautiful pottery jar.");
+    this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic bevrage?");
+    this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
+    this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they?");
+    this.add_interaction("Break", 'As you watch this jar, you can hear the voice of the Goddess inside you. "Break it... Break it...". You resist it. For now...');
+    this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarassing. You try to put the pieced back together, hoping to do a decent enough job to not be found out right away.");
+  }
+}
+
 class S_Shelf extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/shelf.png", 'obj_light');
@@ -170,6 +286,19 @@ class S_Shelf extends LevelObject {
       "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.",
       "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shamefull. It's not easy being a Divine vessel.",
     ]);
+  }
+}
+
+class B_Shelf extends BattleObject {
+  constructor(x, y){
+    super(x, y, "shelf");
+    this.adjust_hitbox(0,0,59,67);
+
+    this.set_description("A wooden shelf of reasonable sturdiness.");
+    this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hords have put the village in.");
+    this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
+    this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
+    this.add_interaction("Mess up", "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shamefull. It's not easy being a Divine vessel.");
   }
 }
 
@@ -187,6 +316,18 @@ class S_Stool extends LevelObject {
   }
 }
 
+class B_Stool extends BattleObject {
+  constructor(x, y){
+    super(x, y, "stool");
+    this.adjust_hitbox(0,0,25,28);
+
+    this.set_description("A simple wooden stool.");
+    this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
+    this.add_interaction("Climb", "You cannot resist the urge to stand on the stool. Surely an act of the Goddess again...");
+    this.add_interaction("Sit", "Obeying your inner voice, you sit on this stool. Nothing happens. You stand back up. Thanks you, Goddess.");
+  }
+}
+
 class S_Table extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/table.png", 'obj_light');
@@ -201,6 +342,19 @@ class S_Table extends LevelObject {
   }
 }
 
+class B_Table extends BattleObject {
+  constructor(x, y){
+    super(x, y, "table");
+    this.adjust_hitbox(0,0,31,34);
+
+    this.set_description("This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.");
+    this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
+    this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you. This is so embarassing. You finally get out, and swear to never acknowledge this happened.");
+    this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
+  }
+}
+
+
 class S_Chest extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/chest.png", 'obj_light');
@@ -214,5 +368,20 @@ class S_Chest extends LevelObject {
       "You jump on the chest and open it in a wide motion divinely guided, but your enthousiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.",
       "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...",
     ]);
+  }
+}
+
+class B_Chest extends BattleObject {
+  constructor(x, y){
+    super(x, y, "chest");
+    this.adjust_hitbox(0,0,30,34);
+
+    this.set_description("A chest, doubtlessly holding the family's belongings.");
+    this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");
+    this.add_interaction("Withstand", "You know the Goddess wants you to open this chest and loot it, but you also know it would be pointless and impolite. You try to look away, and keep the thought away from your mind.");
+    this.add_interaction("Marvel", "Not only does this family have possessions, they have so much that they can even put some in a chest! It's nice to see that the everlasting war spared a few people.");
+    this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linnens that aren't yours. Nothing of interest here. You got nothing out of it but embarassment.");
+    this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthousiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
+    this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
   }
 }
