@@ -31,17 +31,29 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.destroyed_objects = [];
     },
 
+    _setup_level: function(name) {
+      var old_lvl = CURRENTLEVEL.level_name;
+      CURRENTLEVEL.level_name = name;
+      if (name.startsWith("house_")) {
+        var seed = name.split("_")[1];
+        var h = new HouseGenerator(seed, old_lvl);
+        var c = h.build();
+        CURRENTLEVEL.initialize_with_character(c[0], c[1]);
+      } else {
+        new Import("levels/" + name);
+      }
+    },
+
     _setup_from_object: function(save) {
       CURRENTLEVEL.system.clear();
       FOG.draw();
 
-      CURRENTLEVEL.level_name = save.level_name;
+      CURRENTLEVEL.factory._setup_level(save.level_name);
 
       if(save.destroyed_objects) {
         CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
       }
 
-      new Import("levels/" + save.level_name);
       AUDIO.music.stop();
       CONSOLE.log.setup(save.level_name + " (done)");
     },

@@ -86,23 +86,23 @@ class HG_Room {
     }
 
     decorate_bedroom(){ //70 px top
-      var top_wall_function = this._gen_furniture_function([S_Bed, S_Hay]);
+      var top_wall_function = this._gen_furniture_function([B_Bed, B_Hay]);
       this.fill_top_wall(top_wall_function, 50, 50);
-      var fill_function = this._gen_furniture_function([S_Bed, S_Hay, S_Chest]);
+      var fill_function = this._gen_furniture_function([B_Bed, B_Hay, B_Chest]);
       this.fill_room(fill_function, 0.1);
     }
 
     decorate_kitchen(){
-      var top_wall_function = this._gen_furniture_function([S_Shelf, S_Bucket, S_Cabinet, S_Jar, S_Stool, S_Chair]);
+      var top_wall_function = this._gen_furniture_function([B_Shelf, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair]);
       this.fill_top_wall(top_wall_function, 60, 15);
-      var fill_function = this._gen_furniture_function([S_Housefire, S_Table, S_Stool]);
+      var fill_function = this._gen_furniture_function([B_Housefire, B_Table, B_Stool]);
       this.fill_room(fill_function, 0.5);
     }
 
     decorate_random_room(){
-      var top_wall_function = this._gen_furniture_function([S_Statue]);
+      var top_wall_function = this._gen_furniture_function([B_Statue]);
       this.fill_top_wall(top_wall_function, this.w, 15);
-      var fill_function = this._gen_furniture_function([S_Jar, S_Stool, S_SavePoint, S_Bucket, S_Chest]);
+      var fill_function = this._gen_furniture_function([B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest]);
       this.fill_room(fill_function, 0.2);
     }
 

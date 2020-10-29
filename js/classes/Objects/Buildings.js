@@ -53,27 +53,19 @@ class S_House extends LevelObject {
     super(visual, x, y);
     this.seed = seed;
     this.adjust_hitbox(0,0,175,200);
+    this.default_text = this.text_interaction([
+      "It's a house, but this is not the entrance.",
+    ]);
   }
 
   character_can_enter(){
     var dx = (CHARACTER.get().x + 15 - this.x) / 175;
     return (dx > 0.3 && dx < 0.7);
   }
-
-  enter(){
-    var lvl = CURRENTLEVEL.level_name;
-    CURRENTLEVEL.setup("house_" + this.seed + "_");
-    var h = new HouseGenerator(this.seed, lvl);
-    var c = h.build();
-    CURRENTLEVEL.initialize_with_character(c[0], c[1]);
-    this.default_text = this.text_interaction([
-      "It's a house, but this is not the entrance.",
-    ]);
-  }
-
+  
   interaction(){
     if (this.character_can_enter()){
-      this.enter();
+      CURRENTLEVEL.setup("house_" + this.seed + "_");
     } else {
       this.default_text();
     }
