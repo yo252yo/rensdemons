@@ -31,3 +31,5 @@ should the LANGUAGE bits be generated from a pattern (or metapatern)?
 at the first boss, retry develops your ability, but loading the previous save forgets about your ability, which is a bit sad
 
 mb i shouldnt save at all LEVLESTATE for stuff like houses
+
+why does battletree have lists as leaves and not simply state?

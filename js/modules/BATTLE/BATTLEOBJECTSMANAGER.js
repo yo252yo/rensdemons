@@ -13,14 +13,14 @@ const BATTLEOBJECTSMANAGER = {
     var special_command0 = BATTLEOBJECTSMANAGER.get_unique_interaction(object, 0);
     var special_command1 = BATTLEOBJECTSMANAGER.get_unique_interaction(object, 1);
     for(var command in object.interactions){
-      if (command != special_command0 && command != special_command1){
-        continue;
-      }
       PLAYER_ACTIONS.add({
         name: command,
         description: object.interactions[command],
         outcome: BATTLETREE.ESCAPE,
       });
+      if (command != special_command0 && command != special_command1){
+        BATTLE.player_actions.remove(command);
+      }
     }
 
     BATTLE.monster_actions.add_textual(object.description);

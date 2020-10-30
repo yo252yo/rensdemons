@@ -1,4 +1,4 @@
-Redesign level:
+Redesign trial:
 - Trop denemis
 - Move corpse ?
 
@@ -7,9 +7,3 @@ need people in Houses
 make chair with table
 chests NEED to be tilted
 put random treasures (i.e make battleobjects commands trigger some events sometimes.
-
-
-
-
-since we dont generate all actions during objectbattle, the scoring always thinks we know them all
-> adds a locked state ? instead of DELETE... im not sure i like that though
