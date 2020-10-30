@@ -5,7 +5,8 @@ class BattleObject extends LevelObject {
       var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
       super(visual, x, y);
       this.name = name;
-      this.seed = (new Generator(x+y)).get();
+      var g = new Generator(x+y);
+      this.seeds = [g.get(), g.get()];
       this.interactions = {};
     }
 

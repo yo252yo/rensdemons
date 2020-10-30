@@ -8,9 +8,6 @@ make chair with table
 chests NEED to be tilted
 put random treasures (i.e make battleobjects commands trigger some events sometimes.
 
-
-is it a problem that battleobject only has 1 choice in the battle? should i unlock two at once ?
-
 since we dont generate all actions during objectbattle, the scoring always thinks we know them all
 
 we have both S_Stateu and B_statue i think we can use only the latter

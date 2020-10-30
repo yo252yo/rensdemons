@@ -10,15 +10,16 @@ const BATTLEOBJECTSMANAGER = {
 
     PLAYER_ACTIONS.escape("Turn away");
 
-    var special_command = BATTLEOBJECTSMANAGER.get_unique_interaction(object);
+    var special_command0 = BATTLEOBJECTSMANAGER.get_unique_interaction(object, 0);
+    var special_command1 = BATTLEOBJECTSMANAGER.get_unique_interaction(object, 1);
     for(var command in object.interactions){
-      if (command != special_command){
+      if (command != special_command0 && command != special_command1){
         continue;
       }
       PLAYER_ACTIONS.add({
         name: command,
         description: object.interactions[command],
-        outcome: BATTLETREE.NOTHING,
+        outcome: BATTLETREE.ESCAPE,
       });
     }
 
@@ -38,18 +39,18 @@ const BATTLEOBJECTSMANAGER = {
         }
       }
     }
-    return possibilities[Math.floor(battle_object.seed * possibilities.length)];
+    return possibilities[Math.floor(battle_object.seeds[0] * possibilities.length)];
   },
 
-  get_unique_interaction: function(battle_object) {
+  get_unique_interaction: function(battle_object, i) {
     var commands = Object.keys(battle_object.interactions);
-    var interaction = commands[Math.floor(battle_object.seed * commands.length)];
+    var interaction = commands[Math.floor(battle_object.seeds[i] * commands.length)];
     return interaction;
   },
 
-  has_explored_unique_interaction: function(battle_object) {
+  has_explored_unique_interaction: function(battle_object, i) {
     var battle = "objects/" + battle_object.name;
-    var interaction = BATTLEOBJECTSMANAGER.get_unique_interaction(battle_object);
+    var interaction = BATTLEOBJECTSMANAGER.get_unique_interaction(battle_object, i);
     var outcome = BATTLETREE._targets.get([battle, interaction]);
 
     if(!outcome || outcome == BATTLETREE.NOT_TRIED || outcome == BATTLETREE.HIDDEN) {
@@ -60,9 +61,15 @@ const BATTLEOBJECTSMANAGER = {
     }
   },
 
+  has_explored_unique_interactions: function(battle_object) {
+    var interaction1 = BATTLEOBJECTSMANAGER.has_explored_unique_interaction(battle_object, 0);
+    var interaction2 = BATTLEOBJECTSMANAGER.has_explored_unique_interaction(battle_object, 1);
+    return (interaction1 && interaction2);
+  },
+
   interact: function(battle_object) {
     BATTLEOBJECTSMANAGER.current_battleobject = battle_object;
-    var explored = BATTLEOBJECTSMANAGER.has_explored_unique_interaction(battle_object);
+    var explored = BATTLEOBJECTSMANAGER.has_explored_unique_interactions(battle_object);
     var name = "objects/" + battle_object.name;
     if (!explored) {
       BATTLE.api.make(name);
