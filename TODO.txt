@@ -10,4 +10,8 @@ put random treasures (i.e make battleobjects commands trigger some events someti
 
 since we dont generate all actions during objectbattle, the scoring always thinks we know them all
 
-we have both S_Stateu and B_statue i think we can use only the latter
+
+
+s_statue doesnt unlock "Speak" if you dont inspect the first (and its transformed into remember)
+
+does it rly work it i load instead of retry for basilisk

@@ -14,21 +14,6 @@ class S_Column extends LevelObject {
   }
 }
 
-class S_Statue extends LevelObject {
-  constructor(x, y){
-    var visual = new StaticSprite("assets/objects/statue.png", 'obj_light');
-    super(visual, x, y);
-    this.adjust_hitbox(10,0,20,15);
-    this.interaction = this.text_interaction([
-      "It's a statue of the Goddess. Blessed be her eternal soul.",
-      "You prostrate yourself in front of the statue of the Goddess.",
-      "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.",
-      "A holy statue of the Goddess, like many others in this town.",
-      "An effigy of the protective Goddess. Its presence is a silent invitation for Her grace upon this place.",
-    ]);
-  }
-}
-
 class B_Statue extends BattleObject {
   constructor(x, y){
     super(x, y, "statue");

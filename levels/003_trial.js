@@ -3,7 +3,7 @@ AUDIO.music.trial();
 
 
 var make_statue = function(x, y, position) {
-  var statue = new S_Statue(x, y);
+  var statue = new B_Statue(x, y);
   var is_new = ! ABILITIES.has_ability("_trial_visited_" + position);
   statue.interaction = function() {
     if(ABILITIES.has_ability("_trial_passed")){
