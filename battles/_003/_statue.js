@@ -77,6 +77,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: speak,
   description: ["You speak."],
+  unlock: true,
   function: function(){
     var answer = prompt("What will you say?");
     answer = answer.toLowerCase();
@@ -110,7 +111,6 @@ var make_riddle = function(order, riddle) {
     function: function() {
       if(order == "first") {
         BATTLETREE.api.unlock(battle, look_closer);
-        BATTLETREE.api.unlock(battle, speak);
       }
       stop_inspecting();
     }
