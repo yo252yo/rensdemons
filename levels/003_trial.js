@@ -41,7 +41,7 @@ new SB_event(1675, 1100, 'You find scratches on the wall. One child in the past 
 new SB_event(1275, 1400, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
 new SB_event(1200, 800, 'There\'s some sort of goo on the floor, but you cannot make out what it is. Best not to linger...', 50);
 new SB_event(1600, 650, 'You find a pile of shedded snake skins. Clearly you found the den of a reptile...');
-new SBattle(1575, 775, 'viper');
+new SBattle(1575, 775, 'critters/viper');
 new SB_event(2175, 275, 'You find absolutely nothing, it\'s a dead end. You start to feel pretty gloomy about your chances of survival...', 50);
 new SB_event(1875, 725, 'You hear a growling in your stomach. It kindly reminds you that time is ticking, and your hours may be counted...', 50);
 new SB_event(2125, 1450, 'Oh, is that a clue for the riddle? No, it\'s just a weirdly shaped dent in the wall.', 25);
@@ -100,43 +100,43 @@ new SE_small_treasure(2100, 1675, ITEM.Stone);
 new SE_small_treasure(2200, 1275, ITEM.Stone);
 
 
-new SBattle(1600, 1700, 'viper');
-new SBattle(2250, 1025, 'viper');
-new SBattle(2250, 1600, 'viper');
-new SBattle(1275, 1775, 'viper');
-new SBattle(1425, 350, 'viper');
-new SBattle(1575, 1125, 'viper');
-new SBattle(1775, 1025, 'viper');
-new SBattle(2025, 1575, 'viper');
-new SBattle(2175, 650, 'viper');
+new SBattle(1600, 1700, 'critters/viper');
+new SBattle(2250, 1025, 'critters/viper');
+new SBattle(2250, 1600, 'critters/viper');
+new SBattle(1275, 1775, 'critters/viper');
+new SBattle(1425, 350, 'critters/viper');
+new SBattle(1575, 1125, 'critters/viper');
+new SBattle(1775, 1025, 'critters/viper');
+new SBattle(2025, 1575, 'critters/viper');
+new SBattle(2175, 650, 'critters/viper');
 
-new SBattle(2325, 900, 'rodent');
-new SBattle(875, 1025, 'rodent');
-new SBattle(1575, 875, 'rodent');
-new SBattle(2025, 1025, 'rodent');
-new SBattle(1050, 1550, 'rodent');
-new SBattle(1125, 800, 'rodent');
-new SBattle(1900, 650, 'rodent');
+new SBattle(2325, 900, 'critters/rodent');
+new SBattle(875, 1025, 'critters/rodent');
+new SBattle(1575, 875, 'critters/rodent');
+new SBattle(2025, 1025, 'critters/rodent');
+new SBattle(1050, 1550, 'critters/rodent');
+new SBattle(1125, 800, 'critters/rodent');
+new SBattle(1900, 650, 'critters/rodent');
 
-new SBattle(1500, 275, 'arachnid');
-new SBattle(1375, 1025, 'arachnid');
-new SBattle(1800, 1775, 'arachnid');
-new SBattle(1050, 1100, 'arachnid');
-new SBattle(1325, 800, 'arachnid');
-new SBattle(1425, 1375, 'arachnid');
-new SBattle(2000, 1350, 'arachnid');
+new SBattle(1500, 275, 'critters/arachnid');
+new SBattle(1375, 1025, 'critters/arachnid');
+new SBattle(1800, 1775, 'critters/arachnid');
+new SBattle(1050, 1100, 'critters/arachnid');
+new SBattle(1325, 800, 'critters/arachnid');
+new SBattle(1425, 1375, 'critters/arachnid');
+new SBattle(2000, 1350, 'critters/arachnid');
 
-new SBattle(1725, 1250, 'cockroach');
-new SBattle(1375, 1550, 'cockroach');
-new SBattle(1000, 500, 'cockroach');
-new SBattle(2325, 675, 'cockroach');
-new SBattle(2125, 1325, 'cockroach');
-new SBattle(2050, 1725, 'cockroach');
-new SBattle(1900, 1100, 'cockroach');
-new SBattle(1875, 875, 'cockroach');
-new SBattle(1950, 350, 'cockroach');
-new SBattle(1400, 1150, 'cockroach');
-new SBattle(1050, 325, 'cockroach');
+new SBattle(1725, 1250, 'critters/cockroach');
+new SBattle(1375, 1550, 'critters/cockroach');
+new SBattle(1000, 500, 'critters/cockroach');
+new SBattle(2325, 675, 'critters/cockroach');
+new SBattle(2125, 1325, 'critters/cockroach');
+new SBattle(2050, 1725, 'critters/cockroach');
+new SBattle(1900, 1100, 'critters/cockroach');
+new SBattle(1875, 875, 'critters/cockroach');
+new SBattle(1950, 350, 'critters/cockroach');
+new SBattle(1400, 1150, 'critters/cockroach');
+new SBattle(1050, 325, 'critters/cockroach');
 
 
 var boss_callback = function() {

@@ -13,8 +13,3 @@ put random treasures (i.e make battleobjects commands trigger some events someti
 
 since we dont generate all actions during objectbattle, the scoring always thinks we know them all
 > adds a locked state ? instead of DELETE... im not sure i like that though
-
-
-
-
-monsters in subfolders for battles?
