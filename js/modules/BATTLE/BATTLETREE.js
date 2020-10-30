@@ -48,7 +48,7 @@ const BATTLETREE = {
       for (var b in BATTLETREE._targets.get([])) {
         var current = BATTLETREE._targets.get([b, name]);
         if (current) {
-          var current = BATTLETREE._targets.set([b, name], BATTLETREE.NOT_TRIED);
+          var current = BATTLETREE._targets.set([b, name], [BATTLETREE.NOT_TRIED]);
         }
       }
     },
