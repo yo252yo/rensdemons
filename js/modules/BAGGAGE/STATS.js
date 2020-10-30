@@ -1,4 +1,8 @@
 
+const STAT = {
+  Death: "death",
+}
+
 const STATS = {
   _stats: new FluidMap(),
 
@@ -18,9 +22,13 @@ const STATS = {
 
   record: {
     death: function() {
-      STATS._stats.increment(["death"]);
+      STATS._stats.increment([STAT.Death]);
       DISK.write("STATS");
     },
   },
+
+  get: function(key){
+    return STATS._stats.get([key]);
+  }
 
 }

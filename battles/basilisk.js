@@ -14,9 +14,6 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.LOSS,
   description: ["You try to go further back, but you trip and fall on the ground.",
                 "The basilisk takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground."],
-  extra_function: function(){
-    ABILITIES.unlock(ABILITY.Pray);
-  },
 });
 
 PLAYER_ACTIONS.add({
@@ -25,9 +22,6 @@ PLAYER_ACTIONS.add({
   description: ["You shout, terrified, in hope that someone around will help.",
                 "But nobody moves. Your voice echoes dreadfully through the maze of underground tunnels.",
                 "The basilisk is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness."],
-  extra_function: function(){
-    ABILITIES.unlock(ABILITY.Pray);
-  },
 });
 
 var swearLoyalty = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -44,6 +38,9 @@ PLAYER_ACTIONS.add({
   function: swearLoyalty,
 });
 
+if(STATS.get(STAT.Death) > 0){
+  ABILITIES.unlock(ABILITY.Pray);
+}
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

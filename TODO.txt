@@ -8,12 +8,13 @@ make chair with table
 chests NEED to be tilted
 put random treasures (i.e make battleobjects commands trigger some events sometimes.
 
+
+
+
 since we dont generate all actions during objectbattle, the scoring always thinks we know them all
 > adds a locked state ? instead of DELETE... im not sure i like that though
 
 
-i cant pray for basilisk if i load, only retry.
->> this needs to be from stats['death'] > 0, not battletree
 
 
 monsters in subfolders for battles?
