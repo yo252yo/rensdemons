@@ -5,5 +5,4 @@ Redesign trial:
 
 need people in Houses
 make chair with table
-chests NEED to be tilted
 put random treasures (i.e make battleobjects commands trigger some events sometimes.
