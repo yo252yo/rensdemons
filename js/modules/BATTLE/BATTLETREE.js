@@ -188,18 +188,14 @@ const BATTLETREE = {
       return score;
     },
 
-    is_explored: function(battle) {
-      var score = 0;
-      var b = BATTLETREE._targets.get([battle]);
-      if (!b){
+    is_explored: function(battle, command) {
+      var outcome = BATTLETREE._targets.get([battle, command]);
+
+      if(!outcome || outcome == BATTLETREE.NOT_TRIED || outcome == BATTLETREE.HIDDEN) {
         return false;
+      } else {
+        return true;
       }
-      for (var i in b) {
-        if(BATTLETREE._targets.get([battle, i]) == BATTLETREE.NOT_TRIED) {
-          return false;
-        }
-      }
-      return true;
     },
 
     completion: function(battle) {

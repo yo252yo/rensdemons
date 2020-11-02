@@ -21,4 +21,8 @@ class BattleObject extends LevelObject {
     interaction() {
       BATTLEOBJECTSMANAGER.interact(this);
     }
+
+    battle_name() {
+      return "objects/" + this.name;
+    }
 }
