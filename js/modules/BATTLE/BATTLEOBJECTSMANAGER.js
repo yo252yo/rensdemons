@@ -6,15 +6,7 @@ const BATTLEOBJECTSMANAGER = {
       if (BATTLETREE.score.is_explored(battle_object.battle_name(), command)){
         return function(){};
       } else {
-        return function(){};
-              /*
-
-              extra function
-              if(action_object.give_item) {
-                INVENTORY.increase(action_object.give_item);
-              }
-
-              */
+        return battle_object.get_special_effect(command);
       }
     },
 

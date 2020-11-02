@@ -57,6 +57,12 @@ const INVENTORY = {
     CONSOLE.log.item(name, quantity);
   },
 
+  increase_function: function(name, quantity) {
+    return function() {
+      INVENTORY.increase(name, quantity);
+    };
+  },
+
   decrease: function(name, quantity) {
     if(!quantity) {quantity = 1;}
     CONSOLE.log.item(name, -1 * quantity);
