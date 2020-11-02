@@ -5,4 +5,8 @@ Redesign trial:
 
 need people in Houses
 make chair with table
-put random treasures (i.e make battleobjects commands trigger some events sometimes.
+
+
+
+add more items, in particular in houses?
+add money?

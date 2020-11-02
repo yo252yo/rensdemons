@@ -42,7 +42,7 @@ const BATTLEOBJECTSMANAGER = {
   },
 
   interactions: {
-    get: function(battle_object, i) {
+    get: function(battle_object, i) { // could move to the object themselves if we want an object not to have variable numbers of options.
       var commands = Object.keys(battle_object.interactions);
       var interaction = commands[Math.floor(battle_object.seeds[i] * commands.length)];
       return interaction;
