@@ -2,8 +2,11 @@
 // runtime: Rectangle, StaticSprite
 
 class S_Floor extends LevelObject {
-  constructor(x, y, w, h){
-    var visual = new Rectangle(x,y,w,h, 'background');
+  constructor(x, y, w, h, color){
+    if (!color){
+      color = 'background';
+    }
+    var visual = new Rectangle(x,y,w,h, color);
     super(visual, x, y);
 
     this.visual_element.adjust_depth(-1);
@@ -62,7 +65,7 @@ class S_House extends LevelObject {
     var dx = (CHARACTER.get().x + 15 - this.x) / 175;
     return (dx > 0.3 && dx < 0.7);
   }
-  
+
   interaction(){
     if (this.character_can_enter()){
       CURRENTLEVEL.setup("house_" + this.seed + "_");

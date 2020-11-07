@@ -1,12 +1,11 @@
-Redesign trial:
-- Trop denemis
-- Move corpse ?
-
-
 need people in Houses
-make chair with table
-
+?make chair with table
 
 
 add more items, in particular in houses?
 add money?
+
+
+004_town
+_004/M_Priest
+reconnect with best friend
