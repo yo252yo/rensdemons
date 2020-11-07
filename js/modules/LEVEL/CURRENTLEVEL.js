@@ -2,7 +2,7 @@
 // use(manager.js)
 
 const CURRENTLEVEL = {
-  _MAX_CLICK_INTERACTION_DISTANCE: 70,
+  _MAX_CLICK_INTERACTION_DISTANCE: 20, // 20 isnt even enough to prevent grabbing through walls
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 2000,
 

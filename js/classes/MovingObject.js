@@ -75,7 +75,7 @@ class MovingObject extends LevelObject {
 
   gravity_center() {
     var center_x = this.x + this.width / 2;
-    var center_y = this.y - this.height / 2;
+    var center_y = this.y - this.height * 0.3;
     return [center_x, center_y];
   }
 
