@@ -12,4 +12,3 @@ reconnect with best friend
 
 
 objects spawn in front of house
-cannot exit hosue if you fought in it

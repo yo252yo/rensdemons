@@ -32,11 +32,13 @@ const CURRENTLEVEL = {
     },
 
     _setup_level: function(name) {
-      var old_lvl = CURRENTLEVEL.level_name;
+      if (! CURRENTLEVEL.level_name.startsWith("house_")) {
+        CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;
+      }
       CURRENTLEVEL.level_name = name;
       if (name.startsWith("house_")) {
         var seed = name.split("_")[1];
-        var h = new HouseGenerator(seed, old_lvl);
+        var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
         var c = h.build();
         CURRENTLEVEL.initialize_with_character(c[0], c[1]);
       } else {
