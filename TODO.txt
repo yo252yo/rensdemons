@@ -6,5 +6,7 @@ add more items, in particular in houses?
 add money?
 
 
-_004/M_Priest
 reconnect with best friend
+
+
+mb make it sop "wrong dictionary key" tries to fetch the default, so that alpha testers dont have to refresh the memory

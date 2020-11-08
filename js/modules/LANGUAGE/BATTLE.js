@@ -12,7 +12,7 @@ LANGUAGE.battle = {
   },
 
   escape: function() {
-    return RANDOM.pick([`You move away from this cruel scene.`,
+    return RANDOM.pick([`You move away from this scene.`,
                         `You go away and do not turn back.`,
                         `You escape from this encounter.`,
                         `You manage to make your way out of this situation.`]);
