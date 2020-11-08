@@ -9,4 +9,7 @@ add money?
 reconnect with best friend
 
 
-mb make it sop "wrong dictionary key" tries to fetch the default, so that alpha testers dont have to refresh the memory
+
+find names ofr town1 and town_2
+
+add shops and trainer

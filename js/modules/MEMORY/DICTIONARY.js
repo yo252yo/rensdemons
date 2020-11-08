@@ -2,35 +2,50 @@
 
 class DictionaryGenerator {
   make_new() {
-    DICTIONARY._DICTIONARY['sidekick_name'] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
-    DICTIONARY._DICTIONARY['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
-    DICTIONARY._DICTIONARY['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
-    DICTIONARY._DICTIONARY['child_friends_m1'] = 'Michael';
-    DICTIONARY._DICTIONARY['child_friends_m2'] = 'Nicholas';
-    DICTIONARY._DICTIONARY['child_friends_m3'] = 'Andrew';
-    DICTIONARY._DICTIONARY['child_friends_f1'] = 'Sarah';
-    DICTIONARY._DICTIONARY['child_friends_f2'] = 'Emily';
-    DICTIONARY._DICTIONARY['town_1_seed'] = Math.random();
-    DICTIONARY._DICTIONARY['town_1'] = "TOWN1";
-    DICTIONARY._DICTIONARY['town_2'] = "TOWN2";
+    var r = {};
+    r['sidekick_name'] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
+    r['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
+    r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
+    r['child_friends_m1'] = 'Michael';
+    r['child_friends_m2'] = 'Nicholas';
+    r['child_friends_m3'] = 'Andrew';
+    r['child_friends_f1'] = 'Sarah';
+    r['child_friends_f2'] = 'Emily';
+    r['town_1_seed'] = Math.random();
+    r['town_1'] = "TOWN1";
+    r['town_2'] = "TOWN2";
+    return r;
   };
 }
 
 const DICTIONARY = {
   _DICTIONARY: {},
 
+  fix_broken: function(key){
+    var v = (new DictionaryGenerator()).make_new();
+    if (v[key]){
+      DICTIONARY._DICTIONARY[key] = v[key];
+      CONSOLE.error("Successfully mitigated");
+  //    DISK.write("DICTIONARY");
+      return DICTIONARY._DICTIONARY[key];
+    } else {
+      CONSOLE.error("Cannot mitigate");
+      return "";
+    }
+  },
+
   get: function(key) {
     if (key in DICTIONARY._DICTIONARY){
       return DICTIONARY._DICTIONARY[key];
-    } else{
+    } else {
       CONSOLE.error("Wrong dictionary key: " + key);
-      return "";
+      return DICTIONARY.fix_broken(key);
     }
   },
 
   factory: {
     make_new: function() {
-      (new DictionaryGenerator()).make_new();
+      DICTIONARY._DICTIONARY = (new DictionaryGenerator()).make_new();
       DISK.write("DICTIONARY");
     },
 
