@@ -12,6 +12,7 @@ class HG_Room {
       this.dimention(imposed_dimensions);
       this.draw();
       this.decorate();
+      AUDIO.music.house();
     }
 
     dimention(imposed_dimensions) {

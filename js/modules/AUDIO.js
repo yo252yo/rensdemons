@@ -31,6 +31,8 @@ const AUDIO = {
     AUDIO._load_music('a tale about somewhere where the end of the story already occurs');
     AUDIO._load_music('un triste echo trop juste');
     AUDIO._load_music('ambiant inconvenient truth');
+    AUDIO._load_music('floating temple');
+    AUDIO._load_music('two live at musique tangeantes');
 
     AUDIO._MUSIC_PLAYER.loop = true;
     AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
@@ -99,6 +101,8 @@ const AUDIO = {
     trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
     gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
     temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
+    house: function() {           AUDIO._play_music('floating temple'); },
+    town: function() {            AUDIO._play_music('two live at musique tangeantes'); },
   },
 
   set_volume(type, percentage){

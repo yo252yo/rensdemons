@@ -1,3 +1,4 @@
+AUDIO.music.town();
 
 new S_Floor(100,1900,1800,1800);
 
