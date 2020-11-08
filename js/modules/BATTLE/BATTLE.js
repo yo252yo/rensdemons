@@ -21,7 +21,18 @@ const BATTLE = {
 
         (function(index){
           var f = function() {
-            var text = BATTLE._player_actions[index]();
+            // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).
+            var action = undefined;
+            if (BATTLE._player_actions[index]) {
+              action = BATTLE._player_actions[index];
+            } else {
+              for(var i in BATTLE._player_actions){
+                if (i.startsWith(index)){
+                  action = BATTLE._player_actions[i];
+                }
+              }
+            }
+            var text = action();
             // If I don't go through timeout, I think the event canceling blocks IO for the banner.
             if (text) {
               setTimeout(function(){

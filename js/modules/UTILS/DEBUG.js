@@ -77,7 +77,7 @@ const DEBUG = {
     DEBUG.allow_scroll();
     DEBUG.deactivate_scroll(); // This isnt great.
     DEBUG.display_all_trees();
-    FOG.stop();
+    setInterval(FOG.stop, 1000);
   },
 
 

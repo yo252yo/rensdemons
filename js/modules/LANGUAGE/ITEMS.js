@@ -41,10 +41,10 @@ LANGUAGE.actions[ITEM.Stick] = {
 
 LANGUAGE.actions[ITEM.Bone] = {
   usage: function(){
-    return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
+    return get_language(ITEM.Bone, [attack_pointy, attack_blunt]);
   },
   fail: function(){
-    return get_language(ITEM.Sword_wooden, [defend_dodge, defend_tank]);
+    return get_language(ITEM.Bone, [defend_dodge, defend_tank]);
   },
   win: function(){
     return `It's enough to get rid of the $$&ENEMY$. However, your makeshift weapon breaks in the process.`
@@ -53,10 +53,10 @@ LANGUAGE.actions[ITEM.Bone] = {
 
 LANGUAGE.actions[ITEM.Stone] = {
   usage: function(){
-    return get_language(ITEM.Sword_wooden, [attack_throw, attack_blunt]);
+    return get_language(ITEM.Stone, [attack_throw, attack_blunt]);
   },
   fail: function(){
-    return get_language(ITEM.Sword_wooden, [defend_dodge, defend_tank]);
+    return get_language(ITEM.Stone, [defend_dodge, defend_tank]);
   },
   win: function(){
     return `It's enough to rid you of it. You throw the dirty ` + ITEM.Stone + ` away.`;
