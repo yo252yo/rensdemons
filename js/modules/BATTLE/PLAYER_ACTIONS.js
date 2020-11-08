@@ -108,7 +108,6 @@ const PLAYER_ACTIONS = {
           name: name + " ".repeat(i),
           description: [LANGUAGE.actions.usage(name)],
           function: previous_function,
-          consume_item: consume_item,
         });
         previous_function = unlock_function;
     }
@@ -118,7 +117,6 @@ const PLAYER_ACTIONS = {
 // This is where unlock would go if needed:      unlock: true,
       description: [LANGUAGE.actions.usage(name)],
       function: previous_function,
-      consume_item: consume_item,
     });
   },
 
