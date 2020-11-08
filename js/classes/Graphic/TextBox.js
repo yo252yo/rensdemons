@@ -140,7 +140,8 @@ class TextBox extends TextElement {
         text = text.substr(end + 1);
 
         if(key == "&ENEMY"){
-          processed += STRING_UTILS.camel_case(BATTLE.current_battle);
+          var b = BATTLE.current_battle.split("/");
+          processed += STRING_UTILS.camel_case(b[b.length-1]);
         } else {
           processed += DICTIONARY.get(key);
         }
