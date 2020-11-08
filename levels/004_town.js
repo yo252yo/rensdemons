@@ -1,18 +1,35 @@
 
-new B_Table(275, 250);
-new B_Table(325, 250);
-new B_Table(375, 250);
-new B_Table(425, 250);
+new S_Floor(100,1900,1800,1800);
 
-new B_Table(275, 350);
-new B_Table(325, 350);
-new B_Table(375, 350);
-new B_Table(425, 350);
+new S_Church(900, 900);
 
-new S_Floor(50,1750,500,1700);
+CURRENTLEVEL.initialize_with_character(1000, 950);
+
+var seed = DICTIONARY.get("town_1_seed");
+
+var gen = new Generator(seed);
+
+var nb_tries = 3 + 100 * gen.get();
 
 
-new S_House(50, 1100, Math.random());
-new S_House(350, 1100, Math.random());
+function canBuild(x,y) {
+  var free = true;
+  x -= 5;
+  y -= 5;
+  free = free && CURRENTLEVEL.io.is_walkable(x,y);
+  free = free && CURRENTLEVEL.io.is_walkable(x+180,y-150);
+  free = free && CURRENTLEVEL.io.is_walkable(x+180,y);
+  free = free && CURRENTLEVEL.io.is_walkable(x,y-150);
+  free = free && CURRENTLEVEL.io.is_walkable(x+80,y-70);
 
-CURRENTLEVEL.initialize_with_character(350, 700);
+  return free;
+}
+
+for(var i = 0; i < nb_tries; i++) {
+  var x = 100 + gen.get() * 1550;
+  var y = 150 + gen.get() * 1600;
+
+  if (canBuild(x,y)) {
+    new S_House(x, y, gen.get());
+  }
+}

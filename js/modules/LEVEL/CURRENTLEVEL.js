@@ -2,7 +2,7 @@
 // use(manager.js)
 
 const CURRENTLEVEL = {
-  _MAX_CLICK_INTERACTION_DISTANCE: 20, // 20 isnt even enough to prevent grabbing through walls
+  _MAX_CLICK_INTERACTION_DISTANCE: 20,
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 2000,
 
@@ -82,6 +82,10 @@ const CURRENTLEVEL = {
     },
 
     select_interactible_at: function(x, y) {
+      return CURRENTLEVEL.io.select_at(x, y, true);
+    },
+
+    select_at: function(x, y, interactible) {
       var here = [];
 
       // could be optimized by ordering objects
@@ -90,6 +94,8 @@ const CURRENTLEVEL = {
           continue;
         }
         if (CURRENTLEVEL.level_objects[i].is_interactible && CURRENTLEVEL.level_objects[i].is_interactible(x,y)) {
+          here.push(CURRENTLEVEL.level_objects[i]);
+        } else if (!interactible && CURRENTLEVEL.level_objects[i].is_at_sprite(x,y)) {
           here.push(CURRENTLEVEL.level_objects[i]);
         }
       }
@@ -101,7 +107,7 @@ const CURRENTLEVEL = {
       } else { // if theres several objects we chose the one on top
         var max = here[0].get_depth();
         var argmax = here[0];
-        for (var int = 1; i < here.length; i ++) {
+        for (var i = 1; i < here.length; i ++) {
           if(here[i].get_depth() > max) {
             max = here[i].get_depth();
             argmax = here[i];

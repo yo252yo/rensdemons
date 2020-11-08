@@ -19,6 +19,10 @@ class S_Floor extends LevelObject {
       super.draw_hitbox();
     }
   }
+
+  get_depth() {
+    return -1;
+  }
 }
 
 class S_Tree extends LevelObject {
@@ -50,12 +54,21 @@ class S_Tree extends LevelObject {
   }
 }
 
+class S_building extends LevelObject {
+  constructor(x, y, seed){
+    var visual = new StaticSprite("assets/objects/building.png", 'obj_dark');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,170,140);
+  }
+}
+
 class S_House extends LevelObject {
   constructor(x, y, seed){
-    var visual = new StaticSprite("assets/objects/house.png", 'obj_dark');
+    new S_building(x, y-1);
+    var visual = new StaticSprite("assets/objects/house.png", 'obj_light');
     super(visual, x, y);
     this.seed = seed;
-    this.adjust_hitbox(0,0,175,200);
+//    this.adjust_hitbox(0,0,170,140);
     this.default_text = this.text_interaction([
       "It's a house, but this is not the entrance.",
     ]);
@@ -63,12 +76,39 @@ class S_House extends LevelObject {
 
   character_can_enter(){
     var dx = (CHARACTER.get().x + 15 - this.x) / 175;
-    return (dx > 0.3 && dx < 0.7);
+    var dy = (CHARACTER.get().y - this.y);
+    return (dx > 0.3 && dx < 0.7 && dy > 0);
   }
 
   interaction(){
     if (this.character_can_enter()){
       CURRENTLEVEL.setup("house_" + this.seed + "_");
+    } else {
+      this.default_text();
+    }
+  }
+}
+
+
+class S_Church extends LevelObject {
+  constructor(x, y, seed){
+    var visual = new StaticSprite("assets/objects/church.png", 'obj_dark');
+    super(visual, x, y);
+    this.adjust_hitbox(0,0,170,200);
+    this.default_text = this.text_interaction([
+      "It's a temple, but this is not the entrance.",
+    ]);
+  }
+
+  character_can_enter(){
+    var dx = (CHARACTER.get().x + 15 - this.x) / 175;
+    var dy = (CHARACTER.get().y - this.y);
+    return (dx > 0.3 && dx < 0.7 && dy > 0);
+  }
+
+  interaction(){
+    if (this.character_can_enter()){
+      CURRENTLEVEL.setup("004_trial_end");
     } else {
       this.default_text();
     }

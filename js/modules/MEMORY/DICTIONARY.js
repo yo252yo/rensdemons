@@ -10,6 +10,7 @@ class DictionaryGenerator {
     DICTIONARY._DICTIONARY['child_friends_m3'] = 'Andrew';
     DICTIONARY._DICTIONARY['child_friends_f1'] = 'Sarah';
     DICTIONARY._DICTIONARY['child_friends_f2'] = 'Emily';
+    DICTIONARY._DICTIONARY['town_1_seed'] = Math.random();
   };
 }
 

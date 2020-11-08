@@ -1,4 +1,5 @@
 AUDIO.music.temple();
+ABILITIES.unlock("_trial_passed"); // redundant
 
 new Snippet("decors/temple");
 
