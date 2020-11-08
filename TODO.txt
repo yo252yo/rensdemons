@@ -6,9 +6,5 @@ add more items, in particular in houses?
 add money?
 
 
-004_town
 _004/M_Priest
 reconnect with best friend
-
-
-objects spawn in front of house

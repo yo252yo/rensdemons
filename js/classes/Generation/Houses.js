@@ -80,7 +80,7 @@ class HG_Room {
             var f = furniture(this.x + i * slot_actual_size[0], this.y - j * slot_actual_size[1]);
             var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
             var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
-            f.place_at(this.x + x, this.y - y);
+            f.place_at(this.x + x, this.y - 50 - y);
         }
       }
     }
