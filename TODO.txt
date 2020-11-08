@@ -13,3 +13,6 @@ reconnect with best friend
 find names ofr town1 and town_2
 
 add shops and trainer
+
+
+now that battle names have categories, they cannot be used as is (the critter/roddent goes away)
