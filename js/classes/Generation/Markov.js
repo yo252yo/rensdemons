@@ -150,7 +150,11 @@ class Markov {
     var pattern_pos = pos - pattern_start;
 
     var mutating_part = word.substr(pattern_start, this.depth);
-    var mutated_part = mutating_part.substr(0, pattern_pos) + this._kernel_find_mutation(mutating_part, pattern_pos) +  mutating_part.substr(pattern_pos+1);
+    var mutation = this._kernel_find_mutation(mutating_part, pattern_pos);
+    if (!mutation || mutation == "undefined"){
+      mutation = mutating_part;
+    }
+    var mutated_part = mutating_part.substr(0, pattern_pos) + mutation +  mutating_part.substr(pattern_pos+1);
 
     var mutated = word.substr(0, pattern_start);
     mutated += mutated_part;
