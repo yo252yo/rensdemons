@@ -9,11 +9,20 @@ class S_event extends LevelObject {
     var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
     super(visual, x, y);
 
+    this.clicked = false;
     //this.visual_element.draw();
     this.adjust_hitbox(0,0,size,size);
   }
 
-  interaction() {}
+  real_interaction() {}
+
+  interaction(){
+    if(this.clicked){
+      return;
+    }
+    this.clicked = true;
+    this.real_interaction();
+  }
 }
 
 class SBattle extends S_event {
@@ -29,7 +38,7 @@ class SBattle extends S_event {
     };
   }
 
-  interaction() {
+  real_interaction() {
     BATTLE.api.make(this.battle, this.make_default_callback());
   }
 
@@ -39,19 +48,19 @@ class SBattle extends S_event {
 }
 
 class SB_rubble extends SBattle {
-  interaction() {
+  real_interaction() {
     BATTLE.api.make_rubble(this.battle, this.make_default_callback());
   }
 }
 
 class SB_treasure extends SBattle {
-  interaction() {
+  real_interaction() {
     BATTLE.api.make_treasure(this.battle, this.make_default_callback());
   }
 }
 
 class SB_event extends SBattle {
-  interaction() {
+  real_interaction() {
     BATTLE.api.make_event(this.battle, this.make_default_callback());
   }
 }
@@ -63,7 +72,7 @@ class SE_treasure extends S_event {
     this.quantity = quantity;
   }
 
-  interaction() {
+  real_interaction() {
     INVENTORY.increase(this.object, this.quantity);
     var self = this;
     TextBannerSequence.make([
