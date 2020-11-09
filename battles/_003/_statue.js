@@ -80,6 +80,7 @@ PLAYER_ACTIONS.add({
   unlock: true,
   function: function(){
     var answer = prompt("What will you say?");
+    if (!answer) { answer = ""; }
     answer = answer.toLowerCase();
     updateHint(answer);
     if(answer && answer == solution) {

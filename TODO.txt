@@ -16,3 +16,10 @@ add shops and trainer
 
 
 using a stone on the spider makes it disappear right away and not at the end
+
+
+if i click two times rly fas ton an event i can trigger it twice???
+
+
+
+"Hedilyndefined" ça fait très "undefined"
