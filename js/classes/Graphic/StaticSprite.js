@@ -43,3 +43,12 @@ class StaticSprite extends CanvasElement {
       this.html_canvas.style.zIndex = z;
     }
 }
+
+
+class FixedSprite extends StaticSprite {
+    constructor(path, color) {
+      super(path, color);
+      this.container.style.position = "fixed";
+    }
+
+}

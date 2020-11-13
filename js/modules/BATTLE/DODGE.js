@@ -38,6 +38,8 @@ const DODGE = {
   init: function() {
     DODGE.defense_angle = undefined;
     DODGE.attack_angle = undefined;
+    DODGE.sprite.defense = new FixedSprite("assets/interface/dodger.png", 'void');
+    DODGE.sprite.defense.hide();
 
     DODGE.sprite.background = HTML.div.make({
         w:"100%",
@@ -85,20 +87,18 @@ const DODGE = {
     },
 
     defense: function() {
-      DODGE.sprite.prompt.hide();
-
       var r = DODGE.sprite.prompt.width * 0.4; // radius of the circle we shoot on.
-      var attack_angle = DODGE.defense_angle * Math.PI * 2;
-      var x = r + r * Math.cos(attack_angle);
-      var y = r - r * Math.sin(attack_angle);
-      var radius = DODGE.sprite.prompt.width*0.3;
-      if(DODGE.sprite.defense){
-        DODGE.sprite.defense.destroy();
-      }
-      DODGE.sprite.defense = new CenteredImage("assets/interface/circle.png", 'void');
-      DODGE.sprite.defense.show();
-      HTML.canvas.draw_gradient_in(DODGE.sprite.defense.html_canvas, "void", x, y, radius);
+      var defense_angle = DODGE.defense_angle * Math.PI * 2;
+
+      // includes a cosmetic offset for the sprite
+      var x = -20 + DODGE.sprite.prompt.x + DODGE.sprite.prompt.width/2;
+      x += r * Math.cos(defense_angle);
+      var y = 20 + DODGE.sprite.prompt.y - DODGE.sprite.prompt.height/2;
+      y += -1 * r * Math.sin(defense_angle);
+
+      DODGE.sprite.defense.place_at(x, y, true);
       DODGE.sprite.defense.adjust_depth(100099); // The sprite is a level object and has the zindex of its y.
+      DODGE.sprite.defense.show();
     },
 
     resize_existing: function() {
@@ -195,7 +195,6 @@ const DODGE = {
     },
 
     react: function(){
-      DODGE.sprite.prompt.hide();
       DODGE.attack_angle = Math.random();
       DODGE.attack_target = Math.random();
       DODGE.draw.hit();
@@ -208,6 +207,7 @@ const DODGE = {
 
     hit: function(){
       IO.control.cede();
+      DODGE.sprite.prompt.hide();
       DODGE.draw.hit_confirm();
 
       var str = "attack at " + DODGE.attack_angle + " with amplitude " + DODGE.get_params.attack_amplitude() + " defending at " + DODGE.defense_angle;

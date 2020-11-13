@@ -1,10 +1,5 @@
 
-class CenteredImage extends StaticSprite {
-    constructor(path, color) {
-      super(path, color);
-      this.container.style.position = "fixed";
-    }
-
+class CenteredImage extends FixedSprite {
     draw() {
       super.draw();
 
