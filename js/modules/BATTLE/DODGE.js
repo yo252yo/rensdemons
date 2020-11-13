@@ -9,6 +9,7 @@ const DODGE = {
   },
   defense_angle: undefined,
   attack_angle: undefined,
+  saved_dimensions: {},
   _params: {
     attack_amplitude: 0.1, // Between 0 and 1
     warning_time_s: 1,
@@ -35,8 +36,6 @@ const DODGE = {
   },
 
   init: function() {
-    DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player');
-    DODGE.sprite.prompt.hide();
     DODGE.defense_angle = undefined;
     DODGE.attack_angle = undefined;
 
@@ -55,7 +54,9 @@ const DODGE = {
 
   draw: {
     prompt: function() {
+      DODGE.draw.resize_existing();
       DODGE.sprite.background.style.opacity = 0.8;
+      DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
       DODGE.sprite.prompt.adjust_depth(10098); // The sprite is a level object and has the zindex of its y.
       DODGE.sprite.prompt.show();
       IO.control.dodge();
@@ -99,10 +100,32 @@ const DODGE = {
       HTML.canvas.draw_gradient_in(DODGE.sprite.defense.html_canvas, "void", x, y, radius);
       DODGE.sprite.defense.adjust_depth(100099); // The sprite is a level object and has the zindex of its y.
     },
+
+    resize_existing: function() {
+      for (var l in CURRENTLEVEL.level_objects){
+        var object = CURRENTLEVEL.level_objects[l];
+        DODGE.saved_dimensions[object.hash()] = [object.visual_element.width, object.visual_element.height];
+        object.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100);
+        object.visual_element.adjust_dimensions(50,50);
+      }
+    },
+
+    restore_existing: function() {
+      for (var l in CURRENTLEVEL.level_objects){
+        var object = CURRENTLEVEL.level_objects[l];
+        console.log(object.hash());
+        var d = DODGE.saved_dimensions[object.hash()];
+        if (d){
+          object.visual_element.adjust_dimensions(d[0],d[1]);
+          object.place_at(SCREEN.width() / 2 - d[0] / 2, SCREEN.height() / 2); // hardcoded middle of the circle
+        }
+      }
+    },
   },
 
   outcome: {
     cleanup: function() {
+      DODGE.draw.restore_existing();
       DODGE.defense_angle = undefined;
       DODGE.attack_angle = undefined;
       if(DODGE.sprite.attacked){
