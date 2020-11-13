@@ -27,7 +27,8 @@ const SAVE = {
     },
 
     import: function(save){
-      return SAVE.slots = save;
+      // Make sure we dont keep a reference to a living object.
+      return SAVE.slots = JSON.parse(JSON.stringify(save));
     },
 
     make_new: function() {
