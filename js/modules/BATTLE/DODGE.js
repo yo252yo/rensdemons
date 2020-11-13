@@ -222,17 +222,16 @@ const DODGE = {
   },
 
   absorb_param: function(params, name) {
-    if(name[params]){
-      DODGE._params.name = params.name;
+    if(params[name]){
+      DODGE._params[name] = params[name];
     }
   },
 
   absorb_params: function(params) {
     DODGE.absorb_param(params, "attack_amplitude");
     DODGE.absorb_param(params, "warning_time_s");
-    DODGE.absorb_param(params, "attack_time_s");
+    DODGE.absorb_param(params, "react_time_s");
     DODGE.absorb_param(params, "time_variation");
-    DODGE.absorb_param(params, "amplitude_variation");
   },
 
   getCallback: function(params) {

@@ -165,6 +165,10 @@ const BATTLE = {
       );
     },
 
+    empty: function(){
+      BATTLE._monster_actions = [];
+    },
+
     make_unique: function (f) {
       BATTLE._monster_actions = [f];
     },

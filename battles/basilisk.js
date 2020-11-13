@@ -34,9 +34,23 @@ var swearLoyalty = PLAYER_ACTIONS.function.unlock_replacing_action({
 PLAYER_ACTIONS.add({
   name: ABILITY.Pray,
   description: ["You close your eyes and focus on your faith.",
-                "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\""],
+                "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\"",
+                "It may just be your imagination, but you have a feeling that something is different. Maybe the Goddess heeded your plea.<br />You get the vague impression that by picking the right position, you may yet dodge the next attack from the beast, and even survive it."],
   function: swearLoyalty,
+  extra_function: function(){
+
+    var attack = {
+      attack_amplitude: 0.4,
+      warning_time_s: 5.0,
+      react_time_s: 3.0,
+      time_variation: 0,
+    };
+    BATTLE.monster_actions.empty();
+    BATTLE.monster_actions.add_textual("The Basilisk straightens up, ready to pounce at you. Adrenaline rushes through your body. A cold shiver runs down your spine. You can hear your frantic heartbeat in your eardrums. Time seems to be slowing down for a moment.", attack);
+  }
 });
+
+
 
 if(STATS.get(STAT.Death) > 0){
   ABILITIES.unlock(ABILITY.Pray);
