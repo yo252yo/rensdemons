@@ -228,6 +228,7 @@ const DODGE = {
   },
 
   absorb_params: function(params) {
+    //todo mb i can absob everything by default through reflection ?
     DODGE.absorb_param(params, "attack_amplitude");
     DODGE.absorb_param(params, "warning_time_s");
     DODGE.absorb_param(params, "react_time_s");
