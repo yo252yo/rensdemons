@@ -25,6 +25,12 @@ class LevelObject {
         this.visual_element.place_at(x, y);
     }
 
+    shift(dx, dy) {
+      this.y += dy;
+      this.x += dx;
+      this.visual_element.shift(dx, dy);
+    }
+
     hash() {
       return this.constructor.name + "/" + this.original_x + "/" + this.original_y;
     }

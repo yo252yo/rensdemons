@@ -5,7 +5,6 @@ const DODGE = {
     prompt: undefined,
     defense: undefined,
     attacked: undefined,
-    background: undefined,
   },
   defense_angle: undefined,
   attack_angle: undefined,
@@ -40,24 +39,11 @@ const DODGE = {
     DODGE.attack_angle = undefined;
     DODGE.sprite.defense = new FixedSprite("assets/interface/dodger.png", 'void');
     DODGE.sprite.defense.hide();
-
-    DODGE.sprite.background = HTML.div.make({
-        w:"100%",
-        h:"100%",
-        top:0,
-        left:0,
-        z:10000,
-        background: "obj_dark",
-        position: "fixed",
-        opacity: 0.01,
-      });
-    CURRENTLEVEL.system.html().appendChild(DODGE.sprite.background);
   },
 
   draw: {
     prompt: function() {
       DODGE.draw.resize_existing();
-      DODGE.sprite.background.style.opacity = 0.8;
       DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
       DODGE.sprite.prompt.adjust_depth(10098); // The sprite is a level object and has the zindex of its y.
       DODGE.sprite.prompt.show();
@@ -73,6 +59,11 @@ const DODGE = {
       var y = mid - r * Math.sin(attack_angle);
       var gradius = multiplier * DODGE.sprite.prompt.width*(0.2 + DODGE.get_params.attack_amplitude() * 1.7);
       HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, color, x, y, gradius);
+
+      for (var l in DODGE.initial_sprites){
+        var object = DODGE.initial_sprites[l];
+        object.shift(40 * Math.cos(attack_angle), -40 * Math.sin(attack_angle));
+      }
     },
 
     hit: function(){
@@ -102,6 +93,7 @@ const DODGE = {
     },
 
     resize_existing: function() {
+      DODGE.initial_sprites = CURRENTLEVEL.level_objects.slice();
       for (var l in CURRENTLEVEL.level_objects){
         var object = CURRENTLEVEL.level_objects[l];
         DODGE.saved_dimensions[object.hash()] = [object.visual_element.width, object.visual_element.height];
@@ -111,9 +103,8 @@ const DODGE = {
     },
 
     restore_existing: function() {
-      for (var l in CURRENTLEVEL.level_objects){
-        var object = CURRENTLEVEL.level_objects[l];
-        console.log(object.hash());
+      for (var l in DODGE.initial_sprites){
+        var object = DODGE.initial_sprites[l];
         var d = DODGE.saved_dimensions[object.hash()];
         if (d){
           object.visual_element.adjust_dimensions(d[0],d[1]);
@@ -134,7 +125,6 @@ const DODGE = {
       if(DODGE.sprite.defense){
         DODGE.sprite.defense.hide();
       }
-      DODGE.sprite.background.style.opacity = 0;
     },
 
     compute: function (){
