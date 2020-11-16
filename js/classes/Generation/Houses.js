@@ -12,6 +12,7 @@ class HG_Room {
       this.dimention(imposed_dimensions);
       this.draw();
       this.decorate();
+      this.populate();
       AUDIO.music.house();
     }
 
@@ -36,6 +37,19 @@ class HG_Room {
       new S_Floor(this.x, this.y, this.w, this.h);
     }
 
+    populate(){
+      var nb_people = Math.max(0, this.gen.int(3));
+      for(var i = 0; i < nb_people; i++) {
+        var x = this.x + this.gen.get() * (this.w-50);
+        var y = 20 + this.y - this.gen.get() * (this.h-40);
+        if (CURRENTLEVEL.io.is_walkable(x+10,y)){
+          new M_Villager(x, y, this.gen.get());
+        } else {
+          console.log("abort foeatus");
+        }
+      }
+    }
+
     decorate(){
       var r = this.gen.get();
       if (r < 0.3){
@@ -51,7 +65,7 @@ class HG_Room {
       var capacity = this.w / slot_width;
 
       var nb_furniture = 1;
-      nb_furniture += Math.floor(this.gen.get() * Math.max(0, capacity-1));
+      nb_furniture += this.gen.int(Math.max(0, capacity-1));
 
       for (var i = 0; i < nb_furniture; i++){
         var r = this.gen.get();
@@ -145,7 +159,7 @@ class HG_Room {
       f.interaction = function(){
         CURRENTLEVEL.setup(outside);
       }
-      return [this.x + 0.5*this.w - 15, this.y - 25];
+      return [this.x + 0.5*this.w - 15, this.y + 5];
     }
 }
 
