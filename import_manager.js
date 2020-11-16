@@ -107,10 +107,10 @@ new Module("BATTLE/DODGE");
 
 
 new Module("IO/IO");
-IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
-IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
-IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
-IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
+  IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
+  IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
+  IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
+  IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/FOG");
@@ -118,55 +118,54 @@ new Module("GRAPHICS/PALETTE");
 new Module("AUDIO");
 
 new Module("UTILS/MAP");
-IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");
-IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/ABILITIES");
-IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/INVENTORY");
-IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/STATS");
-IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/MARTYRDOM");
-IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
+  IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/ABILITIES");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/INVENTORY");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/STATS");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/MARTYRDOM");
+  IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 
-IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
-IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
+  IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
+    IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
 
 const LANGUAGE = {};
-LANGUAGE.actions = {};
+  LANGUAGE.actions = {};
 new Module("LANGUAGE/BATTLE");
-IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
-IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
+  IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
+    IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
 
 new Module("UTILS/STRING");
-IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
-IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
-IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
+  IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
+    IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
+      IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
 new Class("Generation/Generator");
-IMPORTS.classes['Generation/Generator'].child_class("Generation/Houses");
+  IMPORTS.classes['Generation/Generator'].child_class("Generation/Houses");
 
 
 new Class("Graphic/Color");
 new Class("Graphic/VisualElement");
-IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
-IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextElement");
-IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextBox");
-IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
-IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/MenuScreen");
-IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextMenu");
-IMPORTS.classes['Graphic/TextMenu'].child_class("Graphic/TextMenuImplementations");
-
-IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
-IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
-IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
-IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/CenteredImage");
+  IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/Rectangle");
+  IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/TextElement");
+    IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextBox");
+      IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/TextBanner");
+      IMPORTS.classes['Graphic/TextBox'].child_class("Graphic/MenuScreen");
+    IMPORTS.classes['Graphic/TextElement'].child_class("Graphic/TextMenu");
+      IMPORTS.classes['Graphic/TextMenu'].child_class("Graphic/TextMenuImplementations");
+  IMPORTS.classes['Graphic/VisualElement'].child_class("Graphic/CanvasElement");
+    IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
+    IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
+      IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/CenteredImage");
 
 new Class("Objects/LevelObject");
-IMPORTS.classes['Objects/LevelObject'].child_class("Objects/EventObject");
-IMPORTS.classes['Objects/EventObject'].child_class("Objects/Library/Events");
-IMPORTS.classes['Objects/LevelObject'].child_class("Objects/MovingObject");
-IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/MovingObjects");
-IMPORTS.classes['Objects/MovingObject'].child_module("LEVEL/CHARACTER");
-IMPORTS.classes['Objects/LevelObject'].child_class("Objects/BattleObject");
-IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Buildings");
-IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Interior");
-IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Villagers");
+  IMPORTS.classes['Objects/LevelObject'].child_class("Objects/EventObject");
+    IMPORTS.classes['Objects/EventObject'].child_class("Objects/Library/Events");
+  IMPORTS.classes['Objects/LevelObject'].child_class("Objects/MovingObject");
+    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/MovingObjectsTemplates");
+    IMPORTS.classes['Objects/MovingObject'].child_module("LEVEL/CHARACTER");
+    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/Villagers");
+  IMPORTS.classes['Objects/LevelObject'].child_class("Objects/BattleObject");
+    IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Buildings");
+    IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Interior");
 
 new Class("Sequence");
 

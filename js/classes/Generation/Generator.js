@@ -39,6 +39,10 @@ class Generator {
     return parseFloat("0." + this._reverse_string(value));
   }
 
+  int(threshold){
+    return Math.floor(this.get() * threshold);
+  }
+
   _check_seeds() {
     var buckets = [0,0,0,0,0,0,0,0,0,0];
     for(var seed = 1; seed <10000; seed++){
