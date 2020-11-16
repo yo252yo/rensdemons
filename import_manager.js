@@ -157,14 +157,16 @@ IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/MovingSprite");
 IMPORTS.classes['Graphic/CanvasElement'].child_class("Graphic/StaticSprite");
 IMPORTS.classes['Graphic/StaticSprite'].child_class("Graphic/CenteredImage");
 
-new Class("LevelObject");
-IMPORTS.classes['LevelObject'].child_class("EventLibrary");
-IMPORTS.classes['LevelObject'].child_class("MovingObject");
-IMPORTS.classes['MovingObject'].child_class("MovingObjectLibrary");
-IMPORTS.classes['MovingObject'].child_module("LEVEL/CHARACTER");
-IMPORTS.classes['LevelObject'].child_class("BattleObject");
-IMPORTS.classes['BattleObject'].child_class("Objects/Buildings");
-IMPORTS.classes['BattleObject'].child_class("Objects/Interior");
+new Class("Objects/LevelObject");
+IMPORTS.classes['Objects/LevelObject'].child_class("Objects/EventObject");
+IMPORTS.classes['Objects/EventObject'].child_class("Objects/Library/Events");
+IMPORTS.classes['Objects/LevelObject'].child_class("Objects/MovingObject");
+IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/MovingObjects");
+IMPORTS.classes['Objects/MovingObject'].child_module("LEVEL/CHARACTER");
+IMPORTS.classes['Objects/LevelObject'].child_class("Objects/BattleObject");
+IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Buildings");
+IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Interior");
+IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Villagers");
 
 new Class("Sequence");
 
