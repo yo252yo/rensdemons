@@ -1,6 +1,6 @@
 AUDIO.music.town();
 
-var seed = Math.random();//DICTIONARY.get("town_1_seed");
+var seed = DICTIONARY.get("town_1_seed");
 var gen = new TownGenerator(seed, 1800, 1800);
 
 gen.build();
