@@ -55,8 +55,8 @@ class S_Tree extends LevelObject {
 }
 
 class S_building extends LevelObject {
-  constructor(x, y, seed){
-    var visual = new StaticSprite("assets/objects/building.png", 'obj_dark');
+  constructor(x, y, type){
+    var visual = new StaticSprite("assets/objects/" + type + ".png", 'obj_dark');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,140);
   }
@@ -64,7 +64,7 @@ class S_building extends LevelObject {
 
 class S_House extends LevelObject {
   constructor(x, y, seed){
-    new S_building(x, y-1);
+    new S_building(x, y-1, "building");
     var visual = new StaticSprite("assets/objects/house.png", 'obj_light');
     super(visual, x, y);
     this.seed = seed;
@@ -92,7 +92,8 @@ class S_House extends LevelObject {
 
 class S_Church extends LevelObject {
   constructor(x, y, seed){
-    var visual = new StaticSprite("assets/objects/church.png", 'obj_dark');
+    new S_building(x, y-1, "church");
+    var visual = new StaticSprite("assets/objects/church2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
     this.default_text = this.text_interaction([
