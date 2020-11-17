@@ -38,14 +38,12 @@ class HG_Room {
     }
 
     populate(){
-      var nb_people = Math.max(0, this.gen.int(3));
+      var nb_people = Math.max(0, this.gen.int(10) - 7);
       for(var i = 0; i < nb_people; i++) {
         var x = this.x + this.gen.get() * (this.w-50);
         var y = 20 + this.y - this.gen.get() * (this.h-40);
         if (CURRENTLEVEL.io.is_walkable(x+10,y)){
           new M_Villager(x, y, this.gen.get());
-        } else {
-          console.log("abort foeatus");
         }
       }
     }
