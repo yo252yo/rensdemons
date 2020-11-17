@@ -107,7 +107,7 @@ class B_Chair extends BattleObject {
 class B_Hay extends BattleObject {
   constructor(x, y){
     super(x, y, "hay");
-    this.adjust_hitbox(0,0,64,66);
+    this.adjust_hitbox(0,0,64,36);
 
     this.set_description("A pile of hay.");
     this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");

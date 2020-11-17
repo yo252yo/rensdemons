@@ -18,4 +18,3 @@ add shops and trainer
 better church
 make character able to turn when blocked by a wall?
 cant interact with ppl from above
-haystack hitbox is way too y tall
