@@ -120,6 +120,8 @@ class MovingObject extends LevelObject {
       this._shift(dx,dy);
       // we return false if we havent rly moved
       return (dx != 0) || (dy != 0);
+    } else {
+      this._shift(Math.sign(dx) * 0.001, Math.sign(dy) * 0.001);
     }
     return false;
   }
