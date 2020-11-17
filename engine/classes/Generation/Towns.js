@@ -29,12 +29,15 @@ class TownGenerator {
     }
 
     fill_houses() {
+      var house_w = 120;
+      var house_h = 150;
+
       //todo should be controled by a density
       var nb_tries = 3 + 100 * this.gen.get();
 
       for(var i = 0; i < nb_tries; i++) {
-        var x = this.margin + this.gen.get() * (this.w - 200);
-        var y = 50 + this.margin + this.gen.get() * (this.h - 200);
+        var x = this.margin + this.gen.get() * (this.w - house_w);
+        var y = 50 + this.margin + this.gen.get() * (this.h - (house_h-50));
 
         if (canBuild(x,y)) {
           new S_House(x, y, this.gen.get());

@@ -58,7 +58,7 @@ class S_building extends LevelObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/buildings/" + type + ".png", 'obj_dark');
     super(visual, x, y);
-    this.adjust_hitbox(0,0,170,140);
+    this.adjust_hitbox(0,0,120,90);
   }
 }
 
