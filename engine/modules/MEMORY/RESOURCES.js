@@ -47,11 +47,11 @@ const RESOURCES = {
     RESOURCES.get_img('assets/interface/circle.png');
     RESOURCES.get_img('assets/interface/cross.png');
     RESOURCES.get_img('assets/interface/dodger.png');
-    RESOURCES.get_img('assets/objects/column.png');
+    RESOURCES.get_img('assets/objects/interior/column.png');
     RESOURCES.get_img('assets/objects/event.png');
-    RESOURCES.get_img('assets/objects/savepoint.png');
-    RESOURCES.get_img('assets/objects/statue.png');
-    RESOURCES.get_img('assets/objects/tree.png');
+    RESOURCES.get_img('assets/objects/interior/savepoint.png');
+    RESOURCES.get_img('assets/objects/interior/statue.png');
+    RESOURCES.get_img('assets/objects/buildings/tree.png');
     RESOURCES.get_img('assets/screens/gameover_layer0.png')
     RESOURCES.get_img('assets/screens/gameover_layer1.png')
     RESOURCES.get_img('assets/screens/gameover_layer2.png')

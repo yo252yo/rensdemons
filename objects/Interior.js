@@ -3,7 +3,7 @@
 
 class S_Column extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/column.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/interior/column.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
     this.interaction = this.text_interaction([
@@ -16,7 +16,7 @@ class S_Column extends LevelObject {
 
 class B_Statue extends BattleObject {
   constructor(x, y){
-    super(x, y, "statue");
+    super(x, y, "interior/statue");
     this.adjust_hitbox(10,0,20,15);
 
     this.set_description("It's a statue of the Goddess. Blessed be her eternal soul.");
@@ -30,7 +30,7 @@ class B_Statue extends BattleObject {
 
 class S_SavePoint extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/savepoint.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,10);
   }
@@ -46,7 +46,7 @@ class S_SavePoint extends LevelObject {
 
 class B_Bed extends BattleObject {
   constructor(x, y){
-    super(x, y, "bed");
+    super(x, y, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
 
     this.set_description("It's a regular bed to sleep in.");
@@ -62,7 +62,7 @@ class B_Bed extends BattleObject {
 
 class B_Bucket extends BattleObject {
   constructor(x, y){
-    super(x, y, "bucket");
+    super(x, y, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
 
     this.set_description("It's a wooden bucket.");
@@ -78,7 +78,7 @@ class B_Bucket extends BattleObject {
 
 class B_Cabinet extends BattleObject {
   constructor(x, y){
-    super(x, y, "cabinet");
+    super(x, y, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
 
     this.set_description("A wooden cabinet, probably storing clothes or tableware...");
@@ -93,7 +93,7 @@ class B_Cabinet extends BattleObject {
 
 class B_Chair extends BattleObject {
   constructor(x, y){
-    super(x, y, "chair");
+    super(x, y, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
 
     this.set_description("This is a chair.");
@@ -106,7 +106,7 @@ class B_Chair extends BattleObject {
 
 class B_Hay extends BattleObject {
   constructor(x, y){
-    super(x, y, "hay");
+    super(x, y, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
 
     this.set_description("A pile of hay.");
@@ -120,7 +120,7 @@ class B_Hay extends BattleObject {
 
 class B_Housefire extends BattleObject {
   constructor(x, y){
-    super(x, y, "housefire");
+    super(x, y, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
 
     this.set_description("This is a housefire.");
@@ -134,7 +134,7 @@ class B_Housefire extends BattleObject {
 
 class B_Jar extends BattleObject {
   constructor(x, y){
-    super(x, y, "jar");
+    super(x, y, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
 
     this.set_description("A beautiful pottery jar.");
@@ -148,7 +148,7 @@ class B_Jar extends BattleObject {
 
 class B_Shelf extends BattleObject {
   constructor(x, y){
-    super(x, y, "shelf");
+    super(x, y, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
 
     this.set_description("A wooden shelf of reasonable sturdiness.");
@@ -161,7 +161,7 @@ class B_Shelf extends BattleObject {
 
 class B_Stool extends BattleObject {
   constructor(x, y){
-    super(x, y, "stool");
+    super(x, y, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
 
     this.set_description("A simple wooden stool.");
@@ -173,7 +173,7 @@ class B_Stool extends BattleObject {
 
 class B_Table extends BattleObject {
   constructor(x, y){
-    super(x, y, "table");
+    super(x, y, "interior/table");
     this.adjust_hitbox(0,0,31,34);
 
     this.set_description("This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.");
@@ -185,7 +185,7 @@ class B_Table extends BattleObject {
 
 class B_Chest extends BattleObject {
   constructor(x, y){
-    super(x, y, "chest");
+    super(x, y, "interior/chest");
     this.adjust_hitbox(0,0,50,24);
 
     this.set_description("A chest, doubtlessly holding the family's belongings.");

@@ -27,7 +27,7 @@ class S_Floor extends LevelObject {
 
 class S_Tree extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/tree.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/buildings/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
     this.default_text = this.text_interaction([
@@ -56,7 +56,7 @@ class S_Tree extends LevelObject {
 
 class S_building extends LevelObject {
   constructor(x, y, type){
-    var visual = new StaticSprite("assets/objects/" + type + ".png", 'obj_dark');
+    var visual = new StaticSprite("assets/objects/buildings/" + type + ".png", 'obj_dark');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,140);
   }
@@ -65,7 +65,7 @@ class S_building extends LevelObject {
 class S_House extends LevelObject {
   constructor(x, y, seed){
     new S_building(x, y-1, "building");
-    var visual = new StaticSprite("assets/objects/house.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/buildings/house.png", 'obj_light');
     super(visual, x, y);
     this.seed = seed;
 //    this.adjust_hitbox(0,0,170,140);
@@ -93,7 +93,7 @@ class S_House extends LevelObject {
 class S_Church extends LevelObject {
   constructor(x, y, seed){
     new S_building(x, y-1, "church");
-    var visual = new StaticSprite("assets/objects/church2.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
     this.default_text = this.text_interaction([
