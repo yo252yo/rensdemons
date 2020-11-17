@@ -16,5 +16,4 @@ add shops and trainer
 
 
 make character able to turn when blocked by a wall?
-cant interact with ppl from above
 cannot escape if you save ina  house!!
