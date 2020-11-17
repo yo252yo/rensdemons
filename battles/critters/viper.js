@@ -21,8 +21,8 @@ var throwbranch = "Throw branch";
 
 var attack = {
   attack_amplitude: 0.01, // Between 0 and 1
-  warning_time_s: 0.5,
-  react_time_s: 0.1,
+  warning_time_s: 1,
+  react_time_s: 0.3,
   time_variation: 0.01, // 1 = 100%
 };
 BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.", attack);
