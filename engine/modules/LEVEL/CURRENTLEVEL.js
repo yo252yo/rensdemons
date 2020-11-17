@@ -7,6 +7,7 @@ const CURRENTLEVEL = {
   _TRIGGER_COOLDOWN: 2000,
 
   level_name: "",
+  previous_lvl: "", // used to exit houses
   level_objects: [], // Would benefit from being smartly indexed.
   destroyed_objects: [],
   triggers: [],
@@ -23,6 +24,7 @@ const CURRENTLEVEL = {
         level_name: CURRENTLEVEL.level_name,
         destroyed_objects: CURRENTLEVEL.destroyed_objects,
         saved_character_position: [char_x, char_y],
+        previous_lvl: CURRENTLEVEL.previous_lvl,
       };
     },
 
@@ -32,7 +34,7 @@ const CURRENTLEVEL = {
     },
 
     _setup_level: function(name) {
-      if (! CURRENTLEVEL.level_name.startsWith("house_")) {
+      if (CURRENTLEVEL.level_name && !CURRENTLEVEL.level_name.startsWith("house_")) {
         CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;
       }
       CURRENTLEVEL.level_name = name;
@@ -50,11 +52,14 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.system.clear();
       FOG.draw();
 
-      CURRENTLEVEL.factory._setup_level(save.level_name);
-
       if(save.destroyed_objects) {
         CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
       }
+      if(save.previous_lvl) {
+        CURRENTLEVEL.previous_lvl = save.previous_lvl;
+      }
+
+      CURRENTLEVEL.factory._setup_level(save.level_name);
 
       AUDIO.music.stop();
       CONSOLE.log.setup(save.level_name + " (done)");

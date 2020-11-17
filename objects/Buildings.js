@@ -75,7 +75,7 @@ class S_House extends LevelObject {
   }
 
   character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 175;
+    var dx = (CHARACTER.get().x + 15 - this.x) / 165;
     var dy = (CHARACTER.get().y - this.y);
     return (dx > 0.3 && dx < 0.7 && dy > 0);
   }
