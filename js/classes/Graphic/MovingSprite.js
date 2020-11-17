@@ -115,3 +115,27 @@ class MovingSprite extends CanvasElement {
       this.html_canvas.style.zIndex = z;
     }
 }
+
+class CenteredMovingImage extends MovingSprite {
+
+    constructor(path, color, width, height) {
+      super(path, color, width, height);
+      this.container.style.position = "fixed";
+      this.place_at(SCREEN.width() / 2 - this.resource.width / 2, SCREEN.height() / 2);
+    }
+
+    shift(dx, dy) {
+      // using MovingSprite.shift performs weirdly, it does something to the canvas :x
+      CanvasElement.prototype.shift.call(this, dx, dy, true);
+    }
+
+    draw() {
+      super.draw();
+
+      if(! this.lvl_obj){
+        this.lvl_obj = new LevelObject(this, SCREEN.width() / 2 - this.resource.width / 2, SCREEN.height() / 2);
+      }
+    }
+
+
+}

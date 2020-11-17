@@ -343,6 +343,11 @@ const BATTLE = {
       BATTLE.api.make("_treasure", callback);
     },
 
+    make_conversation: function(name, payoff, callback){
+      BATTLE.pending_text = payoff;
+      BATTLE.api.make("_conversations/" + name, callback);
+    },
+
     make: function(name, callback, origin_level) {
       if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
       if (!callback) { callback = function(){}; }
