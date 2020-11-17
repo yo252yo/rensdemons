@@ -72,14 +72,14 @@ class Import {
 
 class Module extends Import {
   constructor(name, async) {
-    super("js/modules/" + name, async);
+    super("engine/modules/" + name, async);
     IMPORTS.modules[name] = this;
   }
 }
 
 class Class extends Import {
   constructor(name, async) {
-    super("js/classes/" + name, async);
+    super("engine/classes/" + name, async);
     IMPORTS.classes[name] = this;
   }
 }
