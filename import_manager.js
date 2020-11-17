@@ -59,6 +59,10 @@ class Import {
       return child;
     }
 
+    child_library(name){
+      return this.child_class("../../objects/" + name);
+    }
+
     child_module(name){
       var child = new Module(name, true);
       this.child_function(function() {child.write_html();});
@@ -159,14 +163,14 @@ new Class("Graphic/VisualElement");
 
 new Class("Objects/LevelObject");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/EventObject");
-    IMPORTS.classes['Objects/EventObject'].child_class("Objects/Library/Events");
+    IMPORTS.classes['Objects/EventObject'].child_library("Events");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/MovingObject");
-    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/MovingObjectsTemplates");
+    IMPORTS.classes['Objects/MovingObject'].child_library("MovingObjectsTemplates");
     IMPORTS.classes['Objects/MovingObject'].child_module("LEVEL/CHARACTER");
-    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/Library/Villagers");
+    IMPORTS.classes['Objects/MovingObject'].child_library("Villagers");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/BattleObject");
-    IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Buildings");
-    IMPORTS.classes['Objects/BattleObject'].child_class("Objects/Library/Interior");
+    IMPORTS.classes['Objects/BattleObject'].child_library("Buildings");
+    IMPORTS.classes['Objects/BattleObject'].child_library("Interior");
 
 new Class("Sequence");
 
