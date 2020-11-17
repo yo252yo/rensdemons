@@ -4,6 +4,7 @@ PLAYER_ACTIONS.escape("Avert eyes");
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 
+// get the sprite name from BATTLE.make_conversation
 var s = new CenteredMovingImage("assets/characters/" + BATTLE.pending_text + ".png", 'background', 32, 48);
 
 var attack = {

@@ -345,7 +345,7 @@ const BATTLE = {
 
     make_conversation: function(name, payoff, callback){
       BATTLE.pending_text = payoff;
-      BATTLE.api.make("_conversations/" + name, callback);
+      BATTLE.api.make("conversations/" + name, callback);
     },
 
     make: function(name, callback, origin_level) {

@@ -12,7 +12,7 @@ interactions.push(function() {
   ]);
 });
 interactions.push(function(sprite_nb) {
-  BATTLE.api.make_conversation("villager_0", "villager" + sprite_nb);
+  BATTLE.api.make_conversation("villager_type_0", "villager" + sprite_nb);
 });
 
 class M_Villager extends MovingObject {
