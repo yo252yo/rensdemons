@@ -7,3 +7,4 @@ ptet ca devrait etre une ability unlockable de pouvoir voir les monstres avant d
 
 
 save slots, inventory slots, equipment at once
+Find clues, enquêtes, riddles 

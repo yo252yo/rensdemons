@@ -1,10 +1,10 @@
 // ===================
-// =================== INITIALIZATION
+//hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/basilisk.png", 'background');
 
 // ===================
-// =================== ABILITIES CALLBACKS
+//hack ABILITIES CALLBACKS
 // ===================
 
 var swear_loyalty = "Swear loyalty";
@@ -57,12 +57,12 @@ if(STATS.get(STAT.Death) > 0){
 }
 
 // ===================
-// =================== DEFAULT MONSTER BEHAVIOR
+//hack DEFAULT MONSTER BEHAVIOR
 // ===================
 BATTLE.monster_actions.add_textual("The Basilisk hisses and spits.");
 BATTLE.monster_actions.add_textual("The Basilisk gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");
 
 // ===================
-// =================== START
+//hack START
 // ===================
 BATTLE.operations.start("A Beastly Basilisk Blitzed on your Body.");
