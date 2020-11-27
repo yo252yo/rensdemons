@@ -11,11 +11,11 @@ const BATTLE = {
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        i = i.trim();
         if (! BATTLETREE.api.is_unlocked(BATTLE.current_battle, i)) {
           continue;
         }
-        if(ITEM.isItem(i) && !(INVENTORY.has_object(i)>0)){ // check our stock
+
+        if(ITEM.isItem(i.trim()) && !(INVENTORY.has_object(i.trim())>0)){ // check our stock
           continue;
         }
 
@@ -343,8 +343,8 @@ const BATTLE = {
       BATTLE.api.make("_treasure", callback);
     },
 
-    make_conversation: function(name, payoff, callback){
-      BATTLE.pending_text = payoff;
+    make_conversation: function(name, payoff, seed, callback){
+      BATTLE.pending_text = [payoff, seed];
       BATTLE.api.make("conversations/" + name, callback);
     },
 

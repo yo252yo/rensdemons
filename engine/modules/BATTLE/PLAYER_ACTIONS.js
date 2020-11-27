@@ -92,9 +92,13 @@ const PLAYER_ACTIONS = {
     });
   },
 
+  _repeated_name: function(name, repetitions){
+    return name + " ".repeat(repetitions);
+  },
+
   _win_in_several_hits: function(name, nb_hits, consume_item) {
     var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
-      name: name + " ".repeat(nb_hits-1),
+      name: PLAYER_ACTIONS._repeated_name(name, nb_hits-1),
       description: [
         LANGUAGE.actions.usage(name),
         LANGUAGE.actions.win(name)
@@ -105,7 +109,7 @@ const PLAYER_ACTIONS = {
 
     for(var i=nb_hits-2; i>0; i--){
         var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
-          name: name + " ".repeat(i),
+          name: PLAYER_ACTIONS._repeated_name(name, i),
           description: [LANGUAGE.actions.usage(name)],
           function: previous_function,
         });
@@ -147,6 +151,26 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS._win_in_one_hit(name, consume_item);
     } else {
       PLAYER_ACTIONS._win_in_several_hits(name, nb_hits, consume_item);
+    }
+  },
+
+  mutually_exclusive_useless: function (original_name, descriptions, unlock) {
+    var selected = gen.int(descriptions.length);
+    for(var i in descriptions){
+      var name = PLAYER_ACTIONS._repeated_name(original_name, i);
+      var action = {
+        name: name,
+        outcome: BATTLETREE.NOTHING,
+        description: descriptions[i],
+      };
+      if (i == selected) {
+        action.unlock = unlock;
+        PLAYER_ACTIONS.add(action);
+      } else {
+        if(!BATTLETREE.score.is_explored(BATTLE.current_battle, name)){
+          PLAYER_ACTIONS.add(action);
+        }
+      }
     }
   },
 }

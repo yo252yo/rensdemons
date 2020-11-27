@@ -54,6 +54,7 @@ const BATTLETREE = {
     },
 
     lock: function(battle, name) {
+      // This could be simply setting HIDDEN, maybe
       BATTLETREE._targets.delete([battle, name]);
       CONSOLE.log.battletree("locked: [" + name + "] on " + battle);
     },
@@ -65,6 +66,12 @@ const BATTLETREE = {
         // check inventory and all ???
       BATTLETREE._targets.set([battle, name], [BATTLETREE.HIDDEN]);
       CONSOLE.log.battletree("unknown action discovered ([" + name + "])");
+    },
+
+    declare_all: function(battle, names){
+      for(var n in names){
+        BATTLETREE.api.declare(battle, names[n]);
+      }
     },
 
     develop: function(battle, name, destination) {
@@ -230,16 +237,16 @@ const BATTLETREE = {
 
       switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
-          return "<b>" + name + "</b>";
+          return "<b>" + name.trim() + "</b>";
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
-          return "<s>" + name + "</s>";
+          return "<s>" + name.trim() + "</s>";
         case BATTLETREE.HIDDEN:
         case BATTLETREE.NOT_TRIED:
-          return name;
+          return name.trim();
         default: // Leads somewhere else.
-          return "<i>" + name + "</i>";
+          return "<i>" + name.trim() + "</i>";
       }
     },
 

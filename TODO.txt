@@ -13,3 +13,13 @@ reconnect with best friend
 find names ofr town1 and town_2
 
 add shops and trainer
+
+Dodge and attack sound effect
+
+
+Skip a tutorial with Ren telling the priest shut up I know
+
+
+add postapo in intro
+
+PLAYER_ACTIONS need namespacing
