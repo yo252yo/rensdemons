@@ -43,6 +43,10 @@ class Generator {
     return Math.floor(this.get() * threshold);
   }
 
+  pick(array){
+    return RANDOM.pick(array, this);
+  }
+
   _check_seeds() {
     var buckets = [0,0,0,0,0,0,0,0,0,0];
     for(var seed = 1; seed <10000; seed++){

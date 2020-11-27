@@ -28,7 +28,7 @@ class HG_Room {
     _gen_furniture_function(furnitures){
       var g = this.gen;
       return function(x,y) {
-        var furniture = RANDOM.pick(furnitures, g);
+        var furniture = g.pick(furnitures);
         return new furniture(x, y);
       }
     }
