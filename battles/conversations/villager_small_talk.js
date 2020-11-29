@@ -3,8 +3,17 @@
 // ===================
 
 // get the sprite name from BATTLE.make_conversation
-var s = new CenteredMovingImage("assets/characters/" + BATTLE.pending_text[0] + ".png", 'background', 32, 48);
+var sprite = BATTLE.pending_text[0];
 var gen = new Generator(BATTLE.pending_text[1]);
+
+var s = new CenteredMovingImage("assets/characters/" + sprite + ".png", 'background', 32, 48);
+var name = "Villager";
+
+if (sprite == "villager2" || sprite == "villager3") {
+  name = gen.pick(DATASETS.male_names);
+} else {
+  name = gen.pick(DATASETS.female_names);
+}
 
 var unlocked_keys = [];
 var is_unlocked = function(key){
@@ -17,11 +26,14 @@ var is_unlocked = function(key){
 // ===================
 
 var weathers = [];
-weathers.push("A");
-weathers.push("B");
-weathers.push("C");
-weathers.push("D");
-
+weathers.push([ `${name}: "A"`, 
+                ".."]);
+weathers.push([ `${name}: "B"`, 
+                ".."]);
+weathers.push([ `${name}: "C"`, 
+                ".."]);
+weathers.push([ `${name}: "D"`, 
+                ".."]);
 PLAYER_ACTIONS.mutually_exclusive("Weather", weathers, is_unlocked(), BATTLETREE.NOTHING);
 
 // ===================

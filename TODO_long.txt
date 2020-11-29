@@ -33,3 +33,5 @@ at the first boss, retry develops your ability, but loading the previous save fo
 mb i shouldnt save at all LEVLESTATE for stuff like houses
 
 why does battletree have lists as leaves and not simply state?
+
+Reduce the size of Datasets, maybe we can even completely generate it from the markov model? though currently generation doesnt conclude
