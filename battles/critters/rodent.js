@@ -7,7 +7,7 @@ new CenteredImage("assets/battles/rodent.png", 'background');
 // =================== ABILITIES CALLBACKS
 // ===================
 
-PLAYER_ACTIONS.can_flee();
+PLAYER_ACTIONS.allow_flight();
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stick);

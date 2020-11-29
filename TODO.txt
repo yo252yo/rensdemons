@@ -19,5 +19,3 @@ Skip a tutorial with Ren telling the priest shut up I know
 
 
 add postapo in intro
-
-PLAYER_ACTIONS need namespacing

@@ -22,7 +22,7 @@ weathers.push("B");
 weathers.push("C");
 weathers.push("D");
 
-PLAYER_ACTIONS.mutually_exclusive_useless("Weather", weathers, is_unlocked());
+PLAYER_ACTIONS.mutually_exclusive("Weather", weathers, is_unlocked(), BATTLETREE.NOTHING);
 
 // ===================
 //hack NPC RESPONSES
