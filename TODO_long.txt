@@ -35,3 +35,7 @@ mb i shouldnt save at all LEVLESTATE for stuff like houses
 why does battletree have lists as leaves and not simply state?
 
 Reduce the size of Datasets, maybe we can even completely generate it from the markov model? though currently generation doesnt conclude
+
+Skip dodge phase at high level?
+
+More villager small talk?
