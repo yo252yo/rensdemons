@@ -150,6 +150,7 @@ const DODGE = {
   io:{
     pick_target: function (target){
       DODGE.defense_angle = target;
+      AUDIO.effect.dodge_place();
       DODGE.draw.defense();
     },
 
@@ -188,6 +189,7 @@ const DODGE = {
       DODGE.attack_angle = Math.random();
       DODGE.attack_target = Math.random();
       DODGE.draw.hit();
+      AUDIO.effect.dodge_attack();
 
       var react_time = DODGE.get_params.react_time_s() * 1000;
       var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * react_time;
@@ -199,6 +201,7 @@ const DODGE = {
       IO.control.cede();
       DODGE.sprite.prompt.hide();
       DODGE.draw.hit_confirm();
+      AUDIO.effect.dodge_attack();
 
       var str = "attack at " + DODGE.attack_angle + " with amplitude " + DODGE.get_params.attack_amplitude() + " defending at " + DODGE.defense_angle;
       if (DODGE.outcome.compute()){

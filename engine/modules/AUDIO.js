@@ -24,6 +24,8 @@ const AUDIO = {
     AUDIO._load_sound('footstep');
     AUDIO._load_sound('choice');
     AUDIO._load_sound('interaction');
+    AUDIO._load_sound('dodge_place');
+    AUDIO._load_sound('dodge_attack');
     AUDIO._load_music('the girl with the baseball bat');
     AUDIO._load_music('love planet');
     AUDIO._load_music('time for adventure 4 opening');
@@ -79,6 +81,8 @@ const AUDIO = {
     clickmove: function() {       AUDIO._play_sfx('clickmove'); },
     choice: function() {          AUDIO._play_sfx('choice'); },
     interaction: function() {     AUDIO._play_sfx('interaction'); },
+    dodge_place: function() {     AUDIO._play_sfx('dodge_place'); },
+    dodge_attack: function() {     AUDIO._play_sfx('dodge_attack'); },
     footstep: function(cooldown, key) {
       AUDIO._play_sfx('footstep', cooldown, key);
     },
