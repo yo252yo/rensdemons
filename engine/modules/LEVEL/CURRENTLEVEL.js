@@ -33,10 +33,17 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.destroyed_objects = [];
     },
 
+    _save_previous_level: function(name) {
+      if (!CURRENTLEVEL.level_name){ return; }
+      // Levels you shouldnt return to when you leave a place.
+      if (CURRENTLEVEL.level_name.startsWith("house_")) { return; }
+      if (CURRENTLEVEL.level_name == "gameover") { return; }
+
+      CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;
+    },
+
     _setup_level: function(name) {
-      if (CURRENTLEVEL.level_name && !CURRENTLEVEL.level_name.startsWith("house_")) {
-        CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;
-      }
+      CURRENTLEVEL.factory._save_previous_level();
       CURRENTLEVEL.level_name = name;
       if (name.startsWith("house_")) {
         var seed = name.split("_")[1];
