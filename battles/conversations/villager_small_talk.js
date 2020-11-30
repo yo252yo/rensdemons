@@ -17,7 +17,7 @@ if (sprite == "villager2" || sprite == "villager3") {
 
 var unlocked_keys = [];
 var is_unlocked = function(key){
-  var unlock_proba = 3 / 10; /* avg number of unlocked / total number of possibilities */
+  var unlock_proba = 3 / 16; /* avg number of unlocked / total number of possibilities */
   var p = gen.get();
   return p <= unlock_proba;
 }
@@ -31,7 +31,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item("Weather", [
+add_item(`"Weather"`, [
   [
     `${name}: "What a crazy weather we're having lately, right? If the rain keeps going on that way, the crops are sure to rot, and we'll have another famine on our hands..."`,
   ], [
@@ -43,7 +43,7 @@ add_item("Weather", [
   ],
   ]);
 
-add_item("War", [
+add_item(`"War"`, [
   [
     `${name}: "Won't the fights ever cease? One of these days, the monsters will breach our walls. I have nightmares about it every night."`,
   ], [
@@ -55,7 +55,7 @@ add_item("War", [
   ],
   ]);
 
-add_item("Crops", [
+add_item(`"Crops"`, [
   [
     `${name}: "I worry about food a lot. The years where we have enough to eat are rare. Not only do we need clement weather, but the raids can destroy monthes of hard work. The Goddess sure is hard on us."`,
   ], [
@@ -65,7 +65,7 @@ add_item("Crops", [
   ],
   ]);
 
-add_item("Hunt", [
+add_item(`"Hunt"`, [
   [
     `${name}: "I'm no hunter, but I wish them good luck. With all the raids, they're our main source of food, y'know."`,
   ], [
@@ -75,7 +75,7 @@ add_item("Hunt", [
   ],
   ]);
 
-add_item("Taxes", [
+add_item(`"Taxes"`, [
   [
     `${name}: "Look, I'm like anyone, of course I don't like paying, but that's something we have to do if we want the guard to protect us. With them monsters and all, someone has to protect the town. It's all worth it if you ask me."`,
   ], [
@@ -85,7 +85,7 @@ add_item("Taxes", [
   ],
   ]);
 
-add_item("King", [
+add_item(`"King"`, [
   [
     `${name}: "The King? Yea, he's allright. Sure this is no paradize, but what can he do except wait for the Goddess to send us a Promised Child?"`,
   ], [
@@ -95,7 +95,7 @@ add_item("King", [
   ],
   ]);
 
-add_item("Health", [
+add_item(`"Health"`, [
   [
     `${name}: "With the monsters raiding our crops, we barely have enough to eat. We're more often sick than not. It's fortunate that we have the Goddess to watch over us, because there isn't much else to give us hope down here..."`,
   ], [
@@ -105,7 +105,7 @@ add_item("Health", [
   ],
   ]);
 
-add_item("Children", [
+add_item(`"Children"`, [
   [
     `${name}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just hope my little ${gen.pick(DATASETS.male_names)} grows up to do us proud."`,
   ], [
@@ -117,7 +117,7 @@ add_item("Children", [
   ],
   ]);
 
-add_item("Promised Child", [
+add_item(`"Promised Child"`, [
   [
     `${name}: "The Promised Child can't come soon enough, I tell you. This town cannot survive much longer, I reckon. Then again my dad used to say the same thing. We're a town of survivors."`,
   ], [
@@ -130,7 +130,7 @@ add_item("Promised Child", [
   ],
   ]);
 
-add_item("Job", [
+add_item(`"Job"`, [
   [
     `${name}: "How sweet of you to ask. I'm a tanner. I get the skin from the animals that the hunters bring back, and I make all kind of clothes out of them. Do you like my jacket? Maybe I can make you one some day."`,
   ], [
@@ -144,7 +144,94 @@ add_item("Job", [
   ],
   ]);
 
-//todo: other potential topics: religion, rumours about others, games, errands, ancestors, this town, ren, complain about wife, news, other countries, sports, dreams/aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
+PLAYER_ACTIONS.add({
+  name: "Expose",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`Ren: "I know what you're doing."`,
+                `${name}: "What do you mean?"`,
+                `Ren: "You're just telling me platitudes to teach me about this place."`,
+                `${name}: "Yes, I'm just making conversation..."`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Dismiss",
+  outcome: BATTLETREE.LOSS,
+  unlock: is_unlocked(),
+  description: [`Ren: "Don't talk to me. I don't have time to talk to you. You're nobody. You don't matter. You're just a decoration."`,
+                `${name} is really stunned to be talked to that way. After a few seconds of shock, you can see the villager's face grow purple with rage.`,
+                `${name}: "What?! How dare you, you little scoundrel! I'll teach you some manners."`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Challenge",
+  outcome: BATTLETREE.WIN,
+  unlock: is_unlocked(),
+  description: [`Ren: "I know what you're going to say..."`,
+                `${name}: "Do you, now? How, pray tell!"`,
+                `Ren: "The Goddess told me."`,
+                `${name}: "Don't you dare use Her Holy name in vain!"`,
+                `Ren: "It's true. I'm the Promised Child. I can read your thoughts."`,
+                `${name}: "If you are the Promised Child, indeed you probably know. Is there anything left for me to teach you?"`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Worry",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`Ren: "Are you okay? You're always saying the same thing."`,
+                `${name}: "What?"`,
+                `Ren: "Every time I talk to you, you keep saying the same thing, over and over again. I think you may be crazy."`,
+                `${name}: "I think you may be the crazy one..."`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Claim",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`Ren: "Give me everything you have."`,
+                `${name} seems shocked and amused.`,
+                `${name}: "What?"`,
+                `Ren: "I'm the Promised Child! I'm entitled to your possessions!"`,
+                `${name}'s expression immediately changes.`,
+                `${name}: "I'm so sorry! Please forgive me! Praised be to you and the Goddess. You can have anything I have. It isn't much, though."`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Offer",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`Ren: "Do you have a quest for me?"`,
+                `${name}: "What?"`,
+                `Ren: "Do you have a quest for me? An errand I could run for you? The Goddess told me you might."`,
+                `${name}: "Hum, sorry, kid, I have nothing for you. Why do you even want to help a poor soul like me?"`,
+                `Ren: "It's training for my future fights! I'm doing all kinds of things to get stronger!"`,
+                `${name}: "Good luck!"`,
+              ],
+});
+
+/*todo more ideas:
+- doing something about repeated interaction ?
+  - I've been here and I know you
+- challenge triggers a riddle or unlocks Expose
+- your conversation is weird and unnatural
+- give me a quest!
+- give me directions!
+- they ask you to leave but you protest
+- How did you know the password/ their favorite food? goddess told me
+- more worshiping of you
+- topics: hospitality (what are you doing here, etc..., scolding you), religion, rumours about others, games, errands, ancestors, this town, ren, complain about wife, news, other countries, sports, dreams/aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
+
+https://elderscrolls.fandom.com/wiki/Generic_Dialogue_(Oblivion)
+http://conceptnet.io/c/en/people
+
+*/
+
 
 // ===================
 //hack NPC RESPONSES
@@ -160,8 +247,10 @@ BATTLE.monster_actions.add_textual(`You feel the weight of the social pressure t
 BATTLE.monster_actions.add_textual(`You struggle to find an interesting answer.`, attack);
 BATTLE.monster_actions.add_textual(`There's an awkward silence during which you don't know what to say.`, attack);
 BATTLE.monster_actions.add_textual(`${name} asks you an embarrassing question.`, attack);
+BATTLE.monster_actions.add_textual(`${name} scolds you. What are you doing here? Isn't there somewhere else you should be?`, attack);
 BATTLE.monster_actions.add_textual(`The villager mumbles some platitudes with a warm smile.`);
 BATTLE.monster_actions.add_textual(`${name} compliments your hair.`);
+BATTLE.monster_actions.add_textual(`${name} is impressed. You're so mature for your age. You really got the Goddess's blessings.`);
 
 
 // ===================

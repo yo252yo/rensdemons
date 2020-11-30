@@ -172,9 +172,7 @@ const PLAYER_ACTIONS = {
         action.unlock = unlock;
         PLAYER_ACTIONS.add(action);
       } else {
-        if(!BATTLETREE.score.is_explored(BATTLE.current_battle, name)){
-          PLAYER_ACTIONS.add(action);
-        }
+        BATTLETREE.api.declare_all(BATTLE.current_battle, name);
       }
     }
   },
