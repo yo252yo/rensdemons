@@ -17,7 +17,26 @@ class TownGenerator {
       this.gen = new Generator(seed);
       this.w = w;
       this.h = h;
-      this.margin = 100;
+      this.margin = 150;
+    }
+
+    make_border() {
+      var leaving = function(){
+        CURRENTLEVEL.setup("005_world");
+      }
+
+      // left
+      var border = new S_Floor(this.margin-50, this.margin + this.h + 50, 50, this.h + 100, 'obj_dark');
+      border.interaction = leaving;
+      // right
+      var border = new S_Floor(this.margin + this.w - 5, this.margin + this.h + 50, 50, this.h + 100, 'obj_dark');
+      border.interaction = leaving;
+      // top
+      var border = new S_Floor(this.margin-50, this.margin, this.w + 100, 50, 'obj_dark');
+      border.interaction = leaving;
+      // bot
+      var border = new S_Floor(this.margin-50, this.margin + this.h + 50, this.w + 100, 50, 'obj_dark');
+      border.interaction = leaving;
     }
 
     make_floor() {
@@ -48,6 +67,7 @@ class TownGenerator {
 
     build() {
       this.make_floor();
+      this.make_border()
       this.make_church();
       this.fill_houses();
     }
