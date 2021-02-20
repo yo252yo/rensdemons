@@ -153,7 +153,7 @@ class HG_Room {
     }
 
     main_entrance(outside) {
-      var f = new S_Floor(this.x + 0.5*this.w - 25, this.y + 25, 50, 25, 'obj_dark');
+      var f = new S_Floor(this.x + 0.5*this.w - 25, this.y + 25, 50, 35, 'obj_dark');
       f.interaction = function(){
         CURRENTLEVEL.setup(outside);
       }

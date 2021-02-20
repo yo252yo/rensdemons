@@ -26,16 +26,16 @@ class TownGenerator {
       }
 
       // left
-      var border = new S_Floor(this.margin-50, this.margin + this.h + 50, 50, this.h + 100, 'obj_dark');
+      var border = new S_Floor(this.margin-40, this.margin + this.h + 40, 50, this.h + 80, 'obj_dark');
       border.interaction = leaving;
       // right
-      var border = new S_Floor(this.margin + this.w - 5, this.margin + this.h + 50, 50, this.h + 100, 'obj_dark');
+      var border = new S_Floor(this.margin + this.w - 10, this.margin + this.h + 40, 50, this.h + 80, 'obj_dark');
       border.interaction = leaving;
       // top
-      var border = new S_Floor(this.margin-50, this.margin, this.w + 100, 50, 'obj_dark');
+      var border = new S_Floor(this.margin-40, this.margin + 10, this.w + 80, 50, 'obj_dark');
       border.interaction = leaving;
       // bot
-      var border = new S_Floor(this.margin-50, this.margin + this.h + 50, this.w + 100, 50, 'obj_dark');
+      var border = new S_Floor(this.margin-40, this.margin + this.h + 40, this.w + 80, 50, 'obj_dark');
       border.interaction = leaving;
     }
 
