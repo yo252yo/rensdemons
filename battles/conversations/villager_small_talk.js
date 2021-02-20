@@ -216,11 +216,9 @@ PLAYER_ACTIONS.add({
 });
 
 /*todo more ideas:
-- doing something about repeated interaction ?
   - I've been here and I know you
 - challenge triggers a riddle or unlocks Expose
 - your conversation is weird and unnatural
-- give me a quest!
 - give me directions!
 - they ask you to leave but you protest
 - How did you know the password/ their favorite food? goddess told me

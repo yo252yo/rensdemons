@@ -1,0 +1,13 @@
+Hero passes the trial
+Hero is joined by his Friend
+Hero leaves town_1
+Hero arrives at town_2 (north) for training?
+
+They challenge hero to get an artifact in dungeon1 to kill Maou
+
+
+Fight against Maou sergent
+
+Maou kills sidekick_name
+
+Fight againts Maou "but im not the true villain, there will be more/worse"

@@ -5,7 +5,7 @@ class Generator {
     this.original_seed = this.seed;
   }
 
-  _hash_seed(seed_source){
+  _hash_seed(seed_source) {
     seed_source = (seed_source * 2134073);
 
     seed_source = ((seed_source >> 16) ^ seed_source) * 295559667;
@@ -24,7 +24,7 @@ class Generator {
     return next;
   }
 
-  _reverse_string(s){
+  _reverse_string(s) {
     var r = "";
     for (var i = s.length-1; i >=0; i--){
       if(s[i] != "-" && s[i] != "."){
@@ -39,11 +39,11 @@ class Generator {
     return parseFloat("0." + this._reverse_string(value));
   }
 
-  int(threshold){
+  int(threshold) {
     return Math.floor(this.get() * threshold);
   }
 
-  pick(array){
+  pick(array) {
     return RANDOM.pick(array, this);
   }
 
