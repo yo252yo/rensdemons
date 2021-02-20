@@ -6,7 +6,7 @@ new CenteredImage("assets/battles/priest.png", 'background');
 PLAYER_ACTIONS.escape("Stop talking");
 
 PLAYER_ACTIONS.add({
-  name: "What happened?",
+  name: `"What happened?"`,
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: ["Ren: \"What just happened?\"",
@@ -22,7 +22,7 @@ PLAYER_ACTIONS.add({
 });
 
 PLAYER_ACTIONS.add({
-  name: "What next?",
+  name: `"What next?"`,
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: ["Ren: \"So... what happens next?\"",
@@ -76,6 +76,17 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.NOTHING,
   description: ["Ren: \"Can I at least travel with $$sidekick_name$?\"",
                 "Priest: \"If that is what your heart desires, it must be the will of the Goddess. Not only can you, but you must follow your instinct and travel with this friend of yours, for it is the voice of the Goddess who whispered you that idea, and She is never wrong.\"",
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Repudiate",
+  unlock: true,
+  outcome: BATTLETREE.LOSS,
+  description: ["Ren: \"Please say no more and leave me alone. You don't need to chaperon me. I know what I'm doing.\"",
+                "Priest: \"But... how?\"",
+                "Ren: \"I am the Promised Child, am I not? I have the blessing of the Goddess, and I need noone else. To even suggest the contrary is blasphemy.\"",
+                "Priest: \"You... you're right. Please forgive me. I need to repent.\"",
               ],
 });
 
