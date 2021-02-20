@@ -38,7 +38,7 @@ const DODGE = {
     DODGE.defense_angle = undefined;
     DODGE.attack_angle = undefined;
     DODGE.sprite.defense = new FixedSprite("assets/interface/dodger.png", 'void');
-    DODGE.sprite.defense.hide();
+    DODGE.sprite.defense.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100 + 10);
   },
 
   draw: {
