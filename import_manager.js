@@ -172,6 +172,7 @@ new Class("Objects/LevelObject");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/BattleObject");
     IMPORTS.classes['Objects/BattleObject'].child_library("Buildings");
     IMPORTS.classes['Objects/BattleObject'].child_library("Interior");
+    IMPORTS.classes['Objects/BattleObject'].child_library("Map");
 
 new Class("Sequence");
 

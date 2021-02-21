@@ -3,10 +3,15 @@
 
 
 class M_Character extends MovingObject {
-  constructor(x, y) {
+  constructor(x, y, size) {
     var width = 32;
     var height = 48;
     var visual = new MovingSprite("assets/characters/sora.png", 'player', width, height);
+    if (size) {
+      //visual.container.adjust_dimensions(size * width, size * height);
+      visual.html_canvas.style.width = (size * width) + "px";
+      visual.html_canvas.style.height = (size * height) + "px";
+    }
     super(visual, x, y, width, height);
   }
 }
@@ -17,8 +22,8 @@ const CHARACTER = {
   margin_top: 5,
   margin_bottom: 0,
 
-  initialize: function(x, y) {
-    CHARACTER.character = new M_Character(x, y);
+  initialize: function(x, y, size) {
+    CHARACTER.character = new M_Character(x, y, size);
     SCREEN.scroll_screen_to_character();
   },
 

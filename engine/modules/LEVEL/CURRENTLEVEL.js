@@ -269,13 +269,13 @@ const CURRENTLEVEL = {
     },
   },
 
-  initialize_with_character: function(x, y) {
+  initialize_with_character: function(x, y, size) {
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos && saved_pos[0] && saved_pos[1]) {
-      CHARACTER.initialize(saved_pos[0], saved_pos[1]);
+      CHARACTER.initialize(saved_pos[0], saved_pos[1], size);
       IO.control.character();
     } else {
-      CHARACTER.initialize(x,y);
+      CHARACTER.initialize(x, y, size);
       if (CURRENTLEVEL.start_function) {
         CURRENTLEVEL.start_function();
       } else {
