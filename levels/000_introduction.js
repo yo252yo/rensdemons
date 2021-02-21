@@ -57,9 +57,15 @@ var displayText = function() {
   TextBannerSequence.make([
     "During thousands of years, the kingdom of $$world_name$ had enjoyed peace and prosperity.",
     "Of course monarchs fell and rose, and the occasional war broke out, but not much truly threatened the life of its inhabitants.",
+    "With the mastery of magic, under the guidance of the Goddess, they developped into a society of abundance and happiness.",
+
+
     "This all changed one fateful day where the Demon Lord $$demon_lord$ appeared and started to spread its Armies of Darkness over $$world_name$.",
     "Where these evil legions originated, nobody really knew. They swept over the world with a savagery $$world_name$ had never known. The monstrous creatures butchered and raped anyone who stood in their way, destroying families and ravaging villages.",
     "It wasn't long before $$world_name$ fell in an age of darkness. People grew afraid of leaving their homes, and the royal armies could do little more than secure a few cities from the barbaric hords of demons.",
+
+    "Surviving day to day became all that humans could aspire to, and the wonders of the past were lost to time as many cities turned to abandonned ruins.",
+
     "Life was tough, and for many brief, but there was still hope to be found in $$world_name$. For in the darkest times, the light of the Goddess grew, and the Church brought to all the believers the promise of a better day.",
     "It was said that one day, a child would be born who would be the Vessel of the Goddess. This holy child would receive from Her Grace unfathomable powers, and through great perseverance and bravery they would slay the Demon Lord and its armies, liberating $$world_name$ from their cruelty and ushering the renewal of civilization.",
     "Needless to say that the Promised Child was eagerly awaited, and the Church of the Goddess had been searching for them for generations. But the wait would soon be coming to an end...",

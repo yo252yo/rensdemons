@@ -4,5 +4,3 @@ add money?
 reconnect with best friend
 
 add shops and trainer
-
-add postapo in intro
