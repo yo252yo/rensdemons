@@ -6,5 +6,3 @@ reconnect with best friend
 add shops and trainer
 
 add postapo in intro
-
-names on map move with the player

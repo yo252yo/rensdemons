@@ -30,8 +30,8 @@ _LETTER_SIZE = [char_width, char_height];
 //test_div.style.display="none";
 
 class TextBox extends TextElement {
-    constructor(x, y, w, h, padding) {
-        super(x,y,w,h, padding);
+    constructor(x, y, w, h, padding, anchored) {
+        super(x,y,w,h, padding, anchored);
 
         this.measure_letter_capability(w, h, padding);
         this.text_future_pages = "";
@@ -215,7 +215,7 @@ class TextBox extends TextElement {
 
 class TextBoxFitted extends TextBox {
   constructor(x, y, text) {
-      super(x - 15 * text.length / 2, y, 10+15*text.length, 40, 5);
+      super(x - 15 * text.length / 2, y, 10+15*text.length, 40, 5, true);
       this.change_text(text, true, false);
   }
 }

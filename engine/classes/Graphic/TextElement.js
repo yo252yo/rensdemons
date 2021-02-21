@@ -17,7 +17,7 @@ var TEXT_STYLE = function(div) {
 
 
 class TextElement extends VisualElement {
-    constructor(x, y, w, h, padding) {
+    constructor(x, y, w, h, padding, anchored) {
         super(x,y,w,h);
 
         if (!padding) {
@@ -28,7 +28,11 @@ class TextElement extends VisualElement {
 
         this.adjust_depth(_TEXT_ZINDEX);
 
-        this.container.style.position = "fixed";
+        if (anchored){
+          this.container.style.position = "absolute";          
+        } else {
+          this.container.style.position = "fixed";
+        }
 
         this.container.style.top = (y-h) + "px";
         this.container.style.left = x + "px";
