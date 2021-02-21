@@ -211,3 +211,11 @@ class TextBox extends TextElement {
       this.on_end_function = f;
     }
 }
+
+
+class TextBoxFitted extends TextBox {
+  constructor(x, y, text) {
+      super(x - 15 * text.length / 2, y, 10+15*text.length, 40, 5);
+      this.change_text(text, true, false);
+  }
+}

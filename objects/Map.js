@@ -7,7 +7,10 @@ class S_Town extends LevelObject {
     super(visual, x, y);
     this.adjust_hitbox(30,-5,140,130);
     this.destination = destination;
-    this.name = name;
+
+    var legend = new TextBoxFitted(x+80, y+40, name);
+    legend.adjust_depth(y-200);
+    legend.set_opacity(0.6);
   }
 
   interaction() {

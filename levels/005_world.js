@@ -9,5 +9,5 @@ gen.build();
 var g = gen.church_entrance();*/
 
 new S_Floor(50, 1050, 1000, 1000, 'obj_dark');
-new S_Town(250, 250, "004_town", "004_town");
+new S_Town(250, 250, "004_town", DICTIONARY.get("town_1"));
 CURRENTLEVEL.initialize_with_character(300, 300, 0.6);
