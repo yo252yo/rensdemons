@@ -39,6 +39,7 @@ const DODGE = {
     DODGE.attack_angle = undefined;
     DODGE.sprite.defense = new FixedSprite("assets/interface/dodger.png", 'void');
     DODGE.sprite.defense.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100 + 10);
+    DODGE.sprite.defense.hide();
   },
 
   draw: {
@@ -47,6 +48,7 @@ const DODGE = {
       DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
       DODGE.sprite.prompt.adjust_depth(10098); // The sprite is a level object and has the zindex of its y.
       DODGE.sprite.prompt.show();
+      DODGE.sprite.defense.show();
       IO.control.dodge();
     },
 
