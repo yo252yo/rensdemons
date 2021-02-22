@@ -4,3 +4,7 @@ add money?
 reconnect with best friend
 
 add shops and trainer
+
+bnattleitems only have 2 special actions unlocked at a time but what if they are contradictory? but i dont wanna lock it to be only 1 action :/
+
+maybe i should do a list of all items i expect in the game early on

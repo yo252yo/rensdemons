@@ -18,7 +18,7 @@ class BattleObject extends LevelObject {
       }
     }
 
-    get_special_effect(command){
+    get_special_effect(command) {
       if(command in this.special_effect){
         return this.special_effect[command];
       } else {
