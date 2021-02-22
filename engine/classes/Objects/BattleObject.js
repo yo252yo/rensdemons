@@ -1,7 +1,7 @@
 // runtime: LEVEL, CHARACTER
 
 class BattleObject extends LevelObject {
-    constructor(x, y, name) {
+    constructor(x, y, name, max_actions) {
       var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
       super(visual, x, y);
       this.name = name;
@@ -9,6 +9,10 @@ class BattleObject extends LevelObject {
       this.seeds = [g.get(), g.get()];
       this.interactions = {};
       this.special_effect = {};
+      this.max_actions = 2;
+      if (max_actions) {
+        this.max_actions = max_actions;
+      }
     }
 
     add_interaction(command, description, effect) { // this will be adapted to give things, like items or something

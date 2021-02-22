@@ -185,7 +185,7 @@ class B_Table extends BattleObject {
 
 class B_Chest extends BattleObject {
   constructor(x, y){
-    super(x, y, "interior/chest");
+    super(x, y, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
 
     this.set_description("A chest, doubtlessly holding the family's belongings.");

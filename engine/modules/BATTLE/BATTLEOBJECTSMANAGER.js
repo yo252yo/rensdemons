@@ -11,8 +11,7 @@ const BATTLEOBJECTSMANAGER = {
     },
 
     add_from_object: function(battle_object){
-      var special_command0 = BATTLEOBJECTSMANAGER.interactions.get(battle_object, 0);
-      var special_command1 = BATTLEOBJECTSMANAGER.interactions.get(battle_object, 1);
+      var special_commands = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
       for(var command in battle_object.interactions){
         PLAYER_ACTIONS.add({
           name: command,
@@ -20,7 +19,7 @@ const BATTLEOBJECTSMANAGER = {
           outcome: BATTLETREE.ESCAPE,
           extra_function: BATTLEOBJECTSMANAGER.battle.get_extra_function(battle_object, command),
         });
-        if (command != special_command0 && command != special_command1){
+        if (!special_commands.includes(command)){
           BATTLE.player_actions.remove(command);
         }
       }
@@ -42,15 +41,22 @@ const BATTLEOBJECTSMANAGER = {
   },
 
   interactions: {
+    get_all: function(battle_object) {
+      var commands = Object.keys(battle_object.interactions);
+      var result = [];
+      for (var i =0; i < battle_object.max_actions; i++){
+        result.push(commands[Math.floor(battle_object.seeds[i] * commands.length)]);
+      }
+      return result;
+    },
+
     get: function(battle_object, i) { // could move to the object themselves if we want an object not to have variable numbers of options.
       var commands = Object.keys(battle_object.interactions);
       var interaction = commands[Math.floor(battle_object.seeds[i] * commands.length)];
       return interaction;
     },
 
-    has_explored_action: function(battle_object, i) {
-      var interaction = BATTLEOBJECTSMANAGER.interactions.get(battle_object, i);
-
+    has_explored_action: function(battle_object, interaction) {
       if(!BATTLETREE.score.is_explored(battle_object.battle_name(), interaction)) {
         BATTLETREE.api.unlock(battle_object.battle_name(), interaction);
         return false;
@@ -60,9 +66,13 @@ const BATTLEOBJECTSMANAGER = {
     },
 
     has_explored: function(battle_object) {
-      var interaction1 = BATTLEOBJECTSMANAGER.interactions.has_explored_action(battle_object, 0);
-      var interaction2 = BATTLEOBJECTSMANAGER.interactions.has_explored_action(battle_object, 1);
-      return (interaction1 && interaction2);
+      var has_explored = true;
+      var actions = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
+      for(var i in actions){
+        var interaction1 = BATTLEOBJECTSMANAGER.interactions.has_explored_action(battle_object, actions[i]);
+        has_explored = has_explored & interaction1;
+      }
+      return has_explored;
     },
   },
 
