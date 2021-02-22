@@ -84,7 +84,11 @@ const MARTYRDOM = {
     _fill_menu: function(){
       if(!MARTYRDOM.menu){return;}
       var title = "<b>Martyrdom</b><hr/>";
-      title += "Unspent:" + "&psi;".repeat(MARTYRDOM._spare_points) + "<br />";
+      if (MARTYRDOM._spare_points > 0){
+        title += "Unspent:" + "&psi;".repeat(MARTYRDOM._spare_points) + "<br />";
+      } else {
+        title += "No spare martyrdom<br />";
+      }
       title += "Pray for better:";
       var options = [];
       for(var i in MARTYRDOMS){
