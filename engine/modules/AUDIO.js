@@ -35,6 +35,7 @@ const AUDIO = {
     AUDIO._load_music('ambiant inconvenient truth');
     AUDIO._load_music('floating temple');
     AUDIO._load_music('two live at musique tangeantes');
+    AUDIO._load_music('un desert');
 
     AUDIO._MUSIC_PLAYER.loop = true;
     AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
@@ -107,6 +108,7 @@ const AUDIO = {
     temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
     house: function() {           AUDIO._play_music('floating temple'); },
     town: function() {            AUDIO._play_music('two live at musique tangeantes'); },
+    map: function() {             AUDIO._play_music('un desert'); },
   },
 
   set_volume(type, percentage){
