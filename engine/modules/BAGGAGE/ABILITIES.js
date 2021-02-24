@@ -2,6 +2,22 @@ const ABILITY = {
   Flee: "Flee",
   CallHelp: "Call help",
   Pray: "Pray",
+
+  // Spells
+  Fireball: "Fireball",
+  // Ice_bolt: "Ice bolt",
+  // Thunder: "Thunder",
+  // Storm: "Storm",
+  // Charm: "Charm",
+  // Summon: "Summon",
+  // Intimidate: "Intimidate",
+  // Petrify: "Petrify",
+  // Poison: "Poison",
+  // Shrink: "Shrink",
+  // Blind: "Blind",
+  // Asphyxiate: "Asphyxiate",
+  // Earthquake: "Earthquake",
+  // Incinerate: "Incinerate",
 }
 
 
