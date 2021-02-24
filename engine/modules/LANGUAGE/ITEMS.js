@@ -82,6 +82,19 @@ LANGUAGE.actions[ITEM.Sword_wooden] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Sword_iron] = {
+  usage: function(){
+    return get_language(ITEM.Sword_iron, [attack_pointy, attack_blunt]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `You defeat the $$&ENEMY$ with a hit of your sword.`,
+      `After waving your sword in the air, you finally manage to slash your target. It falls on the ground, powerless.`,
+      `This blow from your trusty sword slays the $$&ENEMY$ for good.`
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Fang] = {
   usage: function(){
     var flair = [``, `It is still dripping with venom.`];
