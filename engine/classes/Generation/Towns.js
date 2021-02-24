@@ -22,7 +22,7 @@ class TownGenerator {
 
     make_border() {
       var leaving = function(){
-        CURRENTLEVEL.setup("005_world");
+        CURRENTLEVEL.setup("005_world_map");
       }
 
       // left

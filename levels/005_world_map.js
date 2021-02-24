@@ -11,7 +11,6 @@ var g = gen.church_entrance();*/
 new S_Floor(50, 2050, 1000, 2000, 'obj_dark');
 
 
-
 // do not keep, just a test
 new S_Town(550, 550, "004_town", DICTIONARY.get("town_2"), function() { return false;});
 

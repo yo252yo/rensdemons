@@ -46,6 +46,13 @@ const CURRENTLEVEL = {
     _setup_level: function(name) {
       CURRENTLEVEL.factory._save_previous_level();
       CURRENTLEVEL.level_name = name;
+
+      if(name.endsWith("map")){
+        document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
+      } else {
+        document.body.style.backgroundColor = PALETTE.color('void').code();
+      }
+
       if (name.startsWith("house_")) {
         var seed = name.split("_")[1];
         var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
