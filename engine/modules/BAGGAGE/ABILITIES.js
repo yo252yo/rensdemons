@@ -5,7 +5,7 @@ const ABILITY = {
 
   // Spells
   Fireball: "Fireball",
-  // Ice_bolt: "Ice bolt",
+  Ice_bolt: "Ice bolt",
   // Thunder: "Thunder",
   // Storm: "Storm",
   // Charm: "Charm",
