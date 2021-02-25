@@ -8,6 +8,8 @@ gen.build();
 
 var g = gen.church_entrance();*/
 
+INTERFACE.make_compass();
+
 new S_Floor(50, 2050, 1000, 2000, 'obj_dark');
 
 

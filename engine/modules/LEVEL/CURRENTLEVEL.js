@@ -48,8 +48,10 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_name = name;
 
       if(name.endsWith("map")){
+        FOG.recolor('obj_light');
         document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
       } else {
+        FOG.recolor('player');
         document.body.style.backgroundColor = PALETTE.color('void').code();
       }
 
@@ -289,6 +291,7 @@ const CURRENTLEVEL = {
         IO.control.character();
       }
     }
+    FOG.moveToChar();
   },
 
   add_trigger: function(key, f_condition, f_execute) {

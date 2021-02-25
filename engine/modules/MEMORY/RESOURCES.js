@@ -47,6 +47,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/interface/circle.png');
     RESOURCES.get_img('assets/interface/cross.png');
     RESOURCES.get_img('assets/interface/dodger.png');
+    RESOURCES.get_img('assets/interface/windrose.png');
     RESOURCES.get_img('assets/objects/interior/column.png');
     RESOURCES.get_img('assets/objects/event.png');
     RESOURCES.get_img('assets/objects/interior/savepoint.png');

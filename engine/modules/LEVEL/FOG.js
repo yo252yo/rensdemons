@@ -46,6 +46,14 @@ const FOG = {
       FOG._stop("fog_right");
   },
 
+  recolor: function(c){
+    var color = PALETTE.color(c).code();
+    document.getElementById("fog_top").style.background = color;
+    document.getElementById("fog_bot").style.background = color;
+    document.getElementById("fog_left").style.background = color;
+    document.getElementById("fog_right").style.background = color;
+  },
+
   viewport: function(){
     return FOG.MIN_VIEWPORT + (FOG.MAX_VIEWPORT - FOG.MIN_VIEWPORT) * MARTYRDOM.effect(MARTYRDOMS.Vision);
   },
@@ -62,6 +70,12 @@ const FOG = {
 
     document.getElementById("fog_right").style.top = y - FOG.MASK_HEIGHT/2;
     document.getElementById("fog_right").style.left = x + FOG.viewport()/2;
+
+    var adj = document.getElementById("fog_adjacent");
+    if (adj){
+      adj.style.top = y + FOG.viewport()/2 - adj.clientHeight/2;
+      adj.style.left = x - FOG.viewport()/2 - adj.clientWidth/2;
+    }
   },
 
   moveToChar: function(){
