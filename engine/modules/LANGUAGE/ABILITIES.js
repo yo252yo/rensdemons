@@ -87,3 +87,21 @@ LANGUAGE.actions[ABILITY.Ice_bolt] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Thunder] = {
+  usage: function(){
+    return cast_spell(ABILITY.Thunder) + RANDOM.pick([
+      `You confer with the spirits of nature and borrow their strength to form a powerful ray of energy.`,
+      `The air dries around you, and a crinkling noise can be heard, as a blinding strike of lightning hits the $$&ENEMY$.`,
+      `You summon your magical teachings and leverage the power of the thunder storms to smite your foe with a ray of light.`
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `A flash blinds you for a second. Then nothing remains of the $$&ENEMY$ but a pile of smoking ash.`,
+      `The $$&ENEMY$ shakes violently, moved by an unfathomable amount of energy, before falling dead on the ground.`,
+      `The lightning burns through the $$&ENEMY$ and detroys all life from it, rendering no more than an empty shell.`
+    ]);
+  },
+};
