@@ -121,6 +121,21 @@ LANGUAGE.actions[ITEM.Sword_legend] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Dagger] = {
+  usage: function(){
+    return get_language(ITEM.Dagger, [attack_pointy]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `You manage to get close enough to the $$&ENEMY$ to plant your dagger into it. You're close enough to feel it tremble as the last breath of life leaves it.`,
+      `You need to move carefully, but you finally get in range to slash your target with your weapon. You then withdraw in fear, wondering if it would be enough, but the $$&ENEMY$ falls on the ground, confirming your victory.`,
+      `In a last ditch effort, you throw the dagger at your enemy. Much to your surprise, it hits the $$&ENEMY$ and takes its life.`
+    ]);
+  },
+};
+
+
+
 
 
 LANGUAGE.actions[ITEM.Fang] = {
