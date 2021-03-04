@@ -37,7 +37,7 @@ class HG_Room {
       new S_Floor(this.x, this.y, this.w, this.h);
     }
 
-    populate(){
+    populate() {
       var nb_people = Math.max(0, this.gen.int(10) - 7);
       for(var i = 0; i < nb_people; i++) {
         var x = this.x + this.gen.get() * (this.w-50);
@@ -49,6 +49,9 @@ class HG_Room {
     }
 
     decorate(){
+      this.roomFiller = new Filler(this.gen);
+      this.roomFiller.set_zone(this.x, this.y, this.w,  this.h);
+
       var r = this.gen.get();
       if (r < 0.3){
         this.decorate_bedroom();
@@ -80,32 +83,28 @@ class HG_Room {
       }
     }
 
-    fill_room(furniture_function, density){
-      var roomFiller = new Filler(this.gen);
-      roomFiller.set_zone(this.x, this.y, this.w,  this.h);
-      roomFiller.set_object(100, 100, furniture_function);
-      roomFiller.fill_by_slots(density);
-    }
-
     decorate_bedroom(){ //70 px top
       var top_wall_function = this._gen_furniture_function([B_Bed, B_Hay]);
       this.fill_top_wall(top_wall_function, 50, 50);
-      var fill_function = this._gen_furniture_function([B_Bed, B_Hay, B_Chest]);
-      this.fill_room(fill_function, 0.1);
+
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Bed, B_Hay, B_Chest]));
+      this.roomFiller.fill_by_slots(0.1);
     }
 
     decorate_kitchen(){
       var top_wall_function = this._gen_furniture_function([B_Shelf, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair]);
       this.fill_top_wall(top_wall_function, 60, 15);
-      var fill_function = this._gen_furniture_function([B_Housefire, B_Table, B_Stool]);
-      this.fill_room(fill_function, 0.5);
+
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Housefire, B_Table, B_Stool]));
+      this.roomFiller.fill_by_slots(0.5);
     }
 
     decorate_random_room(){
       var top_wall_function = this._gen_furniture_function([B_Statue]);
       this.fill_top_wall(top_wall_function, this.w, 15);
-      var fill_function = this._gen_furniture_function([B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest]);
-      this.fill_room(fill_function, 0.2);
+
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest]));
+      this.roomFiller.fill_by_slots(0.2);
     }
 
     expand_top() {
