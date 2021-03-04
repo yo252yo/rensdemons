@@ -24,7 +24,8 @@ class SM_Town extends LevelObject {
 }
 
 class SM_Trees extends LevelObject {
-  constructor(x, y, gen){
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
@@ -49,7 +50,8 @@ class SM_Trees extends LevelObject {
 }
 
 class SM_Hills extends LevelObject {
-  constructor(x, y, gen){
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/hills0.png", 'obj_light');
@@ -74,7 +76,8 @@ class SM_Hills extends LevelObject {
 }
 
 class SM_Lake extends LevelObject {
-  constructor(x, y, gen){
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
@@ -97,7 +100,8 @@ class SM_Lake extends LevelObject {
 }
 
 class SM_Mountain extends LevelObject {
-  constructor(x, y, gen){
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');

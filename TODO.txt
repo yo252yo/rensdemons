@@ -8,3 +8,5 @@ add shops and trainer
 maybe i should do a list of all items i expect in the game early on
 
 add random trees and stuff to world map
+
+mountains spawn on cities :/
