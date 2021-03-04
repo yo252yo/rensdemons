@@ -12,9 +12,8 @@ class HG_Room {
       this.dimention(imposed_dimensions);
       this.draw();
 
-      // careful, the order of instruction below matters :(
       this.roomFiller = new Filler(this.gen);
-      this.roomFiller.set_zone(this.x, this.y, this.w,  this.h);
+      this.roomFiller.set_zone(this.x, this.y - 20, this.w,  this.h - 20);
       this.decorate();
       this.populate();
 
@@ -44,8 +43,7 @@ class HG_Room {
 
     populate() {
       this.roomFiller.set_tries(0, this.gen.int(10) - 7);
-      this.roomFiller.set_object(50, 40, function(x,y,g){ return new M_Villager(x, y, g); });
-      this.roomFiller.set_zone(this.x, this.y-20, this.w,  this.h-40);
+      this.roomFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(x, y, g); });
       this.roomFiller.fill_by_retry();
     }
 
