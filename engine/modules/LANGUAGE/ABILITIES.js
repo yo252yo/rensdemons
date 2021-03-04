@@ -105,3 +105,21 @@ LANGUAGE.actions[ABILITY.Thunder] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Storm] = {
+  usage: function(){
+    return cast_spell(ABILITY.Storm) + RANDOM.pick([
+      `You summon the spirits of the winds that start dancing around you. Pretty soon, it is hard to resist the power of their gust. You send them full force towards the $$&ENEMY$.`,
+      `You manipulate the air around you and concentrate it in powerful twisters that push back everything around you. By the time it reaches your target, the wind is so strong that you can barely hear anything else.`,
+      `You amplify the breeze you feel on your skin by imbuing it with your magical power. You turn it into a deadly whirlwind, whose pressure makes it hard to breathe even for you.`
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The force of the wind thursts the $$&ENEMY$ back. It cannot survive so powerful a shock.`,
+      `The $$&ENEMY$ is carried by the tornado, propelled in the air, before crashing to the ground in a loud cracking noise.`,
+      `The pressure of the air currents compress your target to incredible levels. You see it shrink under the magic force, before it falls on the ground, lifeless.`
+    ]);
+  },
+};

@@ -7,7 +7,7 @@ const ABILITY = {
   Fireball: "Fireball",
   Ice_bolt: "Ice bolt",
   Thunder: "Thunder",
-  // Storm: "Storm",
+  Storm: "Storm",
   // Charm: "Charm",
   // Summon: "Summon",
   // Intimidate: "Intimidate",
