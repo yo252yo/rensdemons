@@ -76,12 +76,40 @@ class Filler {
             continue;
           }
 
-          var f = this.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
+          // provisory position for hash of object
+          var obj = this.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
 
-          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
-          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
-          f.place_at(this.zone_x + x, this.zone_y - y - access_offset);
+          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - obj.h_w);
+          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - obj.h_h);
+          obj.place_at(this.zone_x + x, this.zone_y - y - access_offset);
       }
     }
   }
+
+  fill_line(clear_middle) {
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+
+    var capacity = this.zone_w / this.obj_w;
+    var nb_furniture = 1 + this.gen.int(Math.max(0, capacity-1));
+    var slot_size = this.zone_w/nb_furniture;
+
+    console.log(this.zone_y - this.zone_h + this.obj_h);
+    for (var i = 0; i < nb_furniture; i++){
+      var r = this.gen.get();
+
+      // provisory position for hash of object
+      var obj = this.obj_constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + this.obj_h);
+      var x_offset = i * slot_size + r * (slot_size - obj.h_w);
+
+      obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + this.obj_h);
+
+      // leave the middle open for a hallway :/
+      if (clear_middle && (x_offset + obj.h_w > this.zone_w / 2 - 20 && x_offset < this.zone_w / 2 + 20)) {
+        obj.destroy();
+      } else if (x_offset > this.zone_w - obj.h_w) {
+        obj.destroy();
+      }
+    }
+  }
+
 }
