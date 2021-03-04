@@ -17,7 +17,7 @@ test_div.style.height = "auto";
 test_div.style.width = "auto";
 test_div.style.position = "absolute";
 test_div.style.background = "red";
-test_div.style.zIndex = "100000";
+test_div.style.zIndex = "200000";
 test_div.style.whiteSpace = "nowrap";
 
 TEXT_STYLE(test_div);

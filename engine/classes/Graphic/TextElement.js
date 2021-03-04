@@ -1,7 +1,7 @@
 // use(VisualElement)
 // runtime PALETTE
 
-var _TEXT_ZINDEX = 10000;
+var _TEXT_ZINDEX = 20000;
 var _LETTER_SIZE = [];
 
 
@@ -29,7 +29,7 @@ class TextElement extends VisualElement {
         this.adjust_depth(_TEXT_ZINDEX);
 
         if (anchored){
-          this.container.style.position = "absolute";          
+          this.container.style.position = "absolute";
         } else {
           this.container.style.position = "fixed";
         }
