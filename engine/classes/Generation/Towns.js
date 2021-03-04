@@ -1,17 +1,4 @@
 
-function canBuild(x,y) {
-  var free = true;
-  x -= 5;
-  y -= 5;
-  free = free && CURRENTLEVEL.io.is_walkable(x,y);
-  free = free && CURRENTLEVEL.io.is_walkable(x+180,y-150);
-  free = free && CURRENTLEVEL.io.is_walkable(x+180,y);
-  free = free && CURRENTLEVEL.io.is_walkable(x,y-150);
-  free = free && CURRENTLEVEL.io.is_walkable(x+80,y-70);
-
-  return free;
-}
-
 class TownGenerator {
     constructor(seed, w, h) {
       this.gen = new Generator(seed);
@@ -47,29 +34,15 @@ class TownGenerator {
       new S_Church(this.margin + this.w / 2 - 50, this.margin + this.h / 2);
     }
 
-    fill_houses() {
-      var house_w = 120;
-      var house_h = 150;
-
-      //todo should be controled by a density
-      var nb_tries = 3 + 100 * this.gen.get();
-
-      for(var i = 0; i < nb_tries; i++) {
-        var x = this.margin + this.gen.get() * (this.w - house_w);
-        var y = 50 + this.margin + this.gen.get() * (this.h - (house_h-50));
-
-        if (canBuild(x,y)) {
-          new S_House(x, y, this.gen.get());
-        }
-      }
-
-    }
-
     build() {
       this.make_floor();
       this.make_border()
       this.make_church();
-      this.fill_houses();
+      var houseFiller = new Filler(this.gen);
+      houseFiller.set_zone(this.margin + 50, this.margin + this.h - 50, this.w - 100,  this.h - 100);
+      houseFiller.set_tries(5, 100);
+      houseFiller.set_object(120, 160, function(x,y,g){ new S_House(x, y, g); });
+      houseFiller.fill();
     }
 
     church_entrance(){

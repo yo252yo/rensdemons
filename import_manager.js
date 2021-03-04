@@ -145,6 +145,7 @@ new Module("UTILS/STRING");
 new Class("Generation/Generator");
   IMPORTS.classes['Generation/Generator'].child_class("Generation/Houses");
   IMPORTS.classes['Generation/Generator'].child_class("Generation/Towns");
+new Class("Generation/Filler");
 new Class("Generation/Datasets");
 
 
