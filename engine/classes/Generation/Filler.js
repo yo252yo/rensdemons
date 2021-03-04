@@ -46,8 +46,8 @@ class Filler {
   }
 
   fill_by_retry() {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor", "min_tries", "max_tries"]);
-    var nb_tries = this.min_tries + (this.max_tries - this.min_tries) * this.gen.get();
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    var nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
 
     for(var i = 0; i < nb_tries; i++) {
       var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
@@ -93,7 +93,6 @@ class Filler {
     var nb_furniture = 1 + this.gen.int(Math.max(0, capacity-1));
     var slot_size = this.zone_w/nb_furniture;
 
-    console.log(this.zone_y - this.zone_h + this.obj_h);
     for (var i = 0; i < nb_furniture; i++){
       var r = this.gen.get();
 

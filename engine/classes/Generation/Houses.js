@@ -11,8 +11,13 @@ class HG_Room {
       this.y = y;
       this.dimention(imposed_dimensions);
       this.draw();
+
+      // careful, the order of instruction below matters :(
+      this.roomFiller = new Filler(this.gen);
+      this.roomFiller.set_zone(this.x, this.y, this.w,  this.h);
       this.decorate();
       this.populate();
+
       AUDIO.music.house();
     }
 
@@ -38,20 +43,13 @@ class HG_Room {
     }
 
     populate() {
-      var nb_people = Math.max(0, this.gen.int(10) - 7);
-      for(var i = 0; i < nb_people; i++) {
-        var x = this.x + this.gen.get() * (this.w-50);
-        var y = 20 + this.y - this.gen.get() * (this.h-40);
-        if (CURRENTLEVEL.io.is_walkable(x+10,y)){
-          new M_Villager(x, y, this.gen.get());
-        }
-      }
+      this.roomFiller.set_tries(0, this.gen.int(10) - 7);
+      this.roomFiller.set_object(50, 40, function(x,y,g){ return new M_Villager(x, y, g); });
+      this.roomFiller.set_zone(this.x, this.y-20, this.w,  this.h-40);
+      this.roomFiller.fill_by_retry();
     }
 
     decorate(){
-      this.roomFiller = new Filler(this.gen);
-      this.roomFiller.set_zone(this.x, this.y, this.w,  this.h);
-
       var r = this.gen.get();
       if (r < 0.3){
         this.decorate_bedroom();
