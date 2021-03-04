@@ -108,6 +108,19 @@ LANGUAGE.actions[ITEM.Sword_great] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Sword_legend] = {
+  usage: function(){
+    return get_language(ITEM.Sword_legend, [attack_pointy, attack_blunt]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The air around you seems to tremble as you brandish your holy weapon. You can almost hear the Goddess' blessing as your arm slashes in front of you and reduces the $$&ENEMY$ to a pile of ash.`,
+      `A ray of holy light accompanies your blow. Through the holy powers imbued in your sword, the Goddess smites your enemy and reduces it to dust.`,
+      `The flurry of the sword is almost too fast to be seen. It looks as if a ray of light pierced your enemy. It disappears instantly.`
+    ]);
+  },
+};
+
 
 
 LANGUAGE.actions[ITEM.Fang] = {

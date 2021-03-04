@@ -13,8 +13,8 @@ const ITEM = {
   Sword_wooden: "Wooden Sword",
   Sword_iron: "Iron Sword",
   Sword_great: "Great Sword",
-  // Sword_legend: "Holy Sword",
-  //
+  Sword_legend: "Holy Sword",
+  
   // Staff_wooden: "Wooden Staff",
   // Staff_legend: "Holy Staff",
   //
