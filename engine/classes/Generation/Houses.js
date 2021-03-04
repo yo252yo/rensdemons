@@ -80,22 +80,11 @@ class HG_Room {
       }
     }
 
-    fill_room(furniture, density){
-      var slot_size = [100, 100];
-      var h = this.h - 100;
-      var nb_slots = [Math.floor(this.w / slot_size[0]), Math.floor(h / slot_size[1])];
-      var slot_actual_size = [this.w / nb_slots[0], h / nb_slots[1]];
-      for(var i = 0; i < nb_slots[0]; i++) {
-        for(var j = 0; j < nb_slots[1]; j++) {
-            if (this.gen.get() > density){
-              continue;
-            }
-            var f = furniture(this.x + i * slot_actual_size[0], this.y - j * slot_actual_size[1]);
-            var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
-            var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
-            f.place_at(this.x + x, this.y - 50 - y);
-        }
-      }
+    fill_room(furniture_function, density){
+      var roomFiller = new Filler(this.gen);
+      roomFiller.set_zone(this.x, this.y, this.w,  this.h);
+      roomFiller.set_object(100, 100, furniture_function);
+      roomFiller.fill_by_slots(density);
     }
 
     decorate_bedroom(){ //70 px top

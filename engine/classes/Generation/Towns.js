@@ -38,11 +38,12 @@ class TownGenerator {
       this.make_floor();
       this.make_border()
       this.make_church();
+
       var houseFiller = new Filler(this.gen);
       houseFiller.set_zone(this.margin + 50, this.margin + this.h - 50, this.w - 100,  this.h - 100);
       houseFiller.set_tries(5, 100);
-      houseFiller.set_object(120, 160, function(x,y,g){ new S_House(x, y, g); });
-      houseFiller.fill();
+      houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(x, y, g); });
+      houseFiller.fill_by_retry();
     }
 
     church_entrance(){

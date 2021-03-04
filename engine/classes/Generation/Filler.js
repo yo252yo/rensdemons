@@ -1,3 +1,5 @@
+// This expects obj_constructor to be (x,y,gen) => object
+
 
 class Filler {
   constructor(gen) {
@@ -23,16 +25,13 @@ class Filler {
     this.obj_constructor = obj_constructor;
   }
 
-  assess_params(){
-    if(! this.zone_x) { CONSOLE.error("Filler missing a zone_x"); }
-    if(! this.zone_y) { CONSOLE.error("Filler missing a zone_y"); }
-    if(! this.zone_w) { CONSOLE.error("Filler missing a zone_w"); }
-    if(! this.zone_h) { CONSOLE.error("Filler missing a zone_h"); }
-    if(! this.obj_w) { CONSOLE.error("Filler missing a obj_w"); }
-    if(! this.obj_h) { CONSOLE.error("Filler missing a obj_h"); }
-    if(! this.obj_constructor) { CONSOLE.error("Filler missing a obj_constructor"); }
-    if(! this.min_tries) { CONSOLE.error("Filler missing a min_tries"); }
-    if(! this.max_tries) { CONSOLE.error("Filler missing a max_tries"); }
+  _assess_params(params) {
+    for (var i of params){
+      if(! this[i]) {
+        CONSOLE.error("Filler missing a " + i);
+        CONSOLE.stack_trace();
+      }
+    }
   }
 
   _canBuild(x, y) {
@@ -46,8 +45,8 @@ class Filler {
     return true;
   }
 
-  fill() {
-    this.assess_params();
+  fill_by_retry() {
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor", "min_tries", "max_tries"]);
     var nb_tries = this.min_tries + (this.max_tries - this.min_tries) * this.gen.get();
 
     for(var i = 0; i < nb_tries; i++) {
@@ -56,6 +55,32 @@ class Filler {
 
       if (this._canBuild(x, y)) {
         this.obj_constructor(x, y, this.gen.get());
+      }
+    }
+  }
+
+  fill_by_slots(density) {
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    if (!density){
+      density = 1;
+    }
+    var access_offset = 50;
+    var w = this.zone_w;
+    var h = this.zone_h - this.obj_h;
+    var nb_slots = [Math.floor(w / this.obj_w), Math.floor(h / this.obj_h)];
+    var slot_actual_size = [w / nb_slots[0], h / nb_slots[1]];
+
+    for(var i = 0; i < nb_slots[0]; i++) {
+      for(var j = 0; j < nb_slots[1]; j++) {
+          if (this.gen.get() > density){
+            continue;
+          }
+
+          var f = this.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
+
+          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - f.h_w);
+          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - f.h_h);
+          f.place_at(this.zone_x + x, this.zone_y - y - access_offset);
       }
     }
   }
