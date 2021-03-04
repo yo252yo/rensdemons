@@ -95,6 +95,21 @@ LANGUAGE.actions[ITEM.Sword_iron] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Sword_great] = {
+  usage: function(){
+    return get_language(ITEM.Sword_great, [attack_pointy, attack_blunt]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `Your weapon slashes through the air in a blinding ray of light, before hitting the $$&ENEMY$ which perishes under the blow.`,
+      `There is a ringing as your sword cuts through the air before reaching its target. It cleanly slashes the $$&ENEMY$ in half.`,
+      `The blow hits hard when it lands, and leaves a deep cut on the $$&ENEMY$. The $$&ENEMY$ twitches, shocked, before giving its last breath.`
+    ]);
+  },
+};
+
+
+
 LANGUAGE.actions[ITEM.Fang] = {
   usage: function(){
     var flair = [``, `It is still dripping with venom.`];
