@@ -19,7 +19,7 @@ const ITEM = {
   // Staff_legend: "Holy Staff",
   //
   Dagger: "Dagger",
-  // Axe: "Axe",
+  Axe: "Axe",
   // War_hammer: "War Hammer",
   // Mace: "Mace",
   // Spear: "Spear",

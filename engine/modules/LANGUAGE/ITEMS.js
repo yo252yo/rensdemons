@@ -123,7 +123,7 @@ LANGUAGE.actions[ITEM.Sword_legend] = {
 
 LANGUAGE.actions[ITEM.Dagger] = {
   usage: function(){
-    return get_language(ITEM.Dagger, [attack_pointy]);
+    return get_language(ITEM.Dagger, [attack_pointy, attack_throw]);
   },
   win: function(){
     return RANDOM.pick([
@@ -134,8 +134,18 @@ LANGUAGE.actions[ITEM.Dagger] = {
   },
 };
 
-
-
+LANGUAGE.actions[ITEM.Axe] = {
+  usage: function(){
+    return get_language(ITEM.Axe, [attack_blunt]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `You slash the $$&ENEMY$ with your massive axe. The disjointed body parts hit the ground with a morbid sound.`,
+      `You shudder as you hear the metal of your blade tear through your target's body. The $$&ENEMY$ will not survive this.`,
+      `Your axe hits the $$&ENEMY$ with a fatal blow. The slashed lifeless body falls on the ground.`,
+    ]);
+  },
+};
 
 
 LANGUAGE.actions[ITEM.Fang] = {
