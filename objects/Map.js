@@ -5,11 +5,11 @@ class SM_Town extends LevelObject {
   constructor(x, y, destination, name, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/town.png", 'obj_light');
     super(visual, x, y);
-    this.adjust_hitbox(50,-5,120,130);
+    this.adjust_hitbox(50,-35,120,130);
     this.destination = destination;
     this.accessibility_function = accessibility_function;
 
-    var legend = new TextBoxFitted(x+80, y+40, name);
+    var legend = new TextBoxFitted(x+80, y, name);
     legend.adjust_depth(y-200);
     legend.set_opacity(0.6);
   }
@@ -30,13 +30,13 @@ class SM_Trees extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(50,0,65,60);
+        this.adjust_hitbox(30,0,65,60);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/trees1.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(50,0,55,60);
+        this.adjust_hitbox(30,0,55,60);
         break;
     }
     this.interaction = this.text_interaction([
@@ -82,13 +82,13 @@ class SM_Lake extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(20,0,280,150);
+        this.adjust_hitbox(0,20,280,150);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(20,0,180,100);
+        this.adjust_hitbox(0,20,180,100);
         break;
     }
     this.interaction = this.text_interaction([
@@ -106,7 +106,7 @@ class SM_Mountain extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(20,0,170,125);
+        this.adjust_hitbox(20,30,170,125);
         break;
 
       case 1:
