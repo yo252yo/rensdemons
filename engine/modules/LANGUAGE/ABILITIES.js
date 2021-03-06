@@ -123,3 +123,21 @@ LANGUAGE.actions[ABILITY.Storm] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Charm] = {
+  usage: function(){
+    return cast_spell(ABILITY.Charm) + RANDOM.pick([
+      `Through your mastery of magic, you probe the spirit of the $$&ENEMY$ and try to submit it to your control.`,
+      `You summon the forces of magic and use them to pressure your target's mind and enslave it to your command.`,
+      `You attempt to crush your target's will with your spell.`
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The possession enchantment was a success. The $$&ENEMY$ is at your mercy and does your bidding. There is no more threat.`,
+      `Your spirit completely controls the $$&ENEMY$, and it has no choice but to follow your order to leave you alone.`,
+      `The $$&ENEMY$ obeys your every command. You order it to go away, and it does.`,
+    ]);
+  },
+};
