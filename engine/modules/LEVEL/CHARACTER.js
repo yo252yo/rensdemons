@@ -11,6 +11,7 @@ class M_Character extends MovingObject {
       //visual.container.adjust_dimensions(size * width, size * height);
       visual.html_canvas.style.width = (size * width) + "px";
       visual.html_canvas.style.height = (size * height) + "px";
+      visual.html_canvas.style.top = (48-(size * height)) + "px";
     }
     super(visual, x, y, width, height);
   }

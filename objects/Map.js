@@ -30,13 +30,13 @@ class SM_Trees extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(30,0,65,60);
+        this.adjust_hitbox(30,0,65,80);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/trees1.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(30,0,55,60);
+        this.adjust_hitbox(30,0,55,80);
         break;
     }
     this.interaction = this.text_interaction([
@@ -65,6 +65,7 @@ class SM_Hills extends LevelObject {
         this.adjust_hitbox(0,0,200,100);
         break;
     }
+    visual.adjust_depth(1); // this is buggy TODO
     this.make_walkable();
     this.interaction = this.text_interaction([
       "This hill region takes quite a toll on your stamina. Maybe it would have been easier to walk around...",
@@ -82,13 +83,13 @@ class SM_Lake extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(0,20,280,150);
+        this.adjust_hitbox(0,0,280,150);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(0,20,180,100);
+        this.adjust_hitbox(0,0,200,100);
         break;
     }
     this.interaction = this.text_interaction([
@@ -106,13 +107,13 @@ class SM_Mountain extends LevelObject {
       case 0:
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(20,30,170,125);
+        this.adjust_hitbox(20,0,170,110);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/mountain1.png", 'obj_light');
         super(visual, x, y);
-        this.adjust_hitbox(20,0,270,125);
+        this.adjust_hitbox(20,0,270,140);
         break;
     }
     this.interaction = this.text_interaction([
