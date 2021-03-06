@@ -3,13 +3,8 @@ var last = 0;
 
 
 function g(){
+  DICTIONARY._DICTIONARY["world_map_seed"] = Math.random();
   CURRENTLEVEL.setup("005_world_map");
-/*
-  var gen = new TownGenerator(seed, 1800, 1800);
-
-  gen.build();*/
-
-
 
 
 // hills, lake, mountain

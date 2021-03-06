@@ -12,6 +12,7 @@ class DictionaryGenerator {
     r['child_friends_f1'] = 'Sarah';
     r['child_friends_f2'] = 'Emily';
     r['town_1_seed'] = Math.random();
+    r['world_map_seed'] = Math.random();
     r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg";
     r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8);
     return r;
