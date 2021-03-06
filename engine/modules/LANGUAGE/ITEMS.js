@@ -123,7 +123,7 @@ LANGUAGE.actions[ITEM.Sword_legend] = {
 
 LANGUAGE.actions[ITEM.Dagger] = {
   usage: function(){
-    return get_language(ITEM.Dagger, [attack_pointy, attack_throw]);
+    return get_language(ITEM.Dagger, [attack_pointy]);
   },
   win: function(){
     return RANDOM.pick([
