@@ -43,9 +43,9 @@ const ITEM = {
   },
 }
 
-const ITEM_ALCHEMY = [ITEM.Elixir_fire];
-const ITEM_WEAPON = [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Axe];
-const ITEM_TOOL = [ITEM.Dagger];
+const ITEM_ALCHEMY = ["Elixir_fire"];
+const ITEM_WEAPON = ["Sword_wooden", "Sword_iron", "Sword_great", "Sword_legend", "Axe"];
+const ITEM_TOOL = ["Dagger"];
 
 const INVENTORY = {
   _inventory: new FluidMap(),
@@ -65,23 +65,52 @@ const INVENTORY = {
   },
 
   display: {
+    _get_category_level: function(category){
+      var table = [];
+      switch (category){
+        case("Weapon"):
+          table = ITEM_WEAPON;
+          break;
+        case("Alchemy"):
+          table = ITEM_ALCHEMY;
+          break;
+        case("Tool"):
+          table = ITEM_TOOL;
+          break;
+        default:
+          return "";
+      }
+      var num = 0;
+      for(var i of table){
+        if (INVENTORY.has_object(i)) {
+          num ++
+        }
+      }
+      var mastery = num / table.length;
+      if (mastery > 0.9){ return "(veteran)"; }
+      if (mastery > 0.7){ return "(proficient)"; }
+      if (mastery > 0.5){ return "(adept)"; }
+      if (mastery > 0.3){ return "(initiate)"; }
+      if (mastery > 0){ return "(novice)"; }
+      return "(inept)";
+    },
+
     _fits_category: function (item, category){
       if (item[0] == "_" ) {
         return false;
       }
-      var name = ITEM[item];
       switch (category){
         case("Weapon"):
-          return ITEM_WEAPON.includes(name);
+          return ITEM_WEAPON.includes(item);
           break;
         case("Alchemy"):
-          return ITEM_ALCHEMY.includes(name);
+          return ITEM_ALCHEMY.includes(item);
           break;
         case("Tool"):
-          return ITEM_TOOL.includes(name);
+          return ITEM_TOOL.includes(item);
           break;
         default:
-          return !(ITEM_WEAPON.includes(name) || ITEM_ALCHEMY.includes(name) || ITEM_TOOL.includes(name));
+          return !(ITEM_WEAPON.includes(item) || ITEM_ALCHEMY.includes(item) || ITEM_TOOL.includes(item));
       }
       return true;
     },
@@ -108,13 +137,13 @@ const INVENTORY = {
 
 
     list: function() {
-      new CenteredTextMenu("INVENTORY<br /><br />Coins: " + INVENTORY.has_object(ITEM.Coin),
+      new CenteredTextMenu("INVENTORY<br /><br />Coins: " + (INVENTORY.has_object(ITEM.Coin) || 0),
                     [
                       {"text": "Bags", "effect": function(){ INVENTORY.display.category(); }},
                       TEXTMENU_EMPTYROW,
-                      {"text": "Way of the Weapon", "effect": function(){ INVENTORY.display.category("Weapon"); }},
-                      {"text": "Way of the Alchemy", "effect": function(){ INVENTORY.display.category("Alchemy"); }},
-                      {"text": "Way of the Tool", "effect": function(){ INVENTORY.display.category("Tool"); }},
+                      {"text": "Way of the Weapon " + INVENTORY.display._get_category_level("Weapon"), "effect": function(){ INVENTORY.display.category("Weapon"); }},
+                      {"text": "Way of the Alchemy " + INVENTORY.display._get_category_level("Alchemy"), "effect": function(){ INVENTORY.display.category("Alchemy"); }},
+                      {"text": "Way of the Tool " + INVENTORY.display._get_category_level("Tool"), "effect": function(){ INVENTORY.display.category("Tool"); }},
                       TEXTMENU_EMPTYROW,
                       {"text": "Back to game", "effect": "##CLOSE"}
                    ]);

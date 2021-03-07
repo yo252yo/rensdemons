@@ -29,8 +29,8 @@ const ABILITY = {
     // Circumvent: "Circumvent",
 }
 
-const ABILITY_ELEMENTS = [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm];
-const ABILITY_SPIRITS = [ABILITY.Charm];
+const ABILITY_ELEMENTS = ["Fireball", "Ice_bolt", "Thunder", "Storm"];
+const ABILITY_SPIRITS = ["Charm"];
 const ABILITY_DIPLOMAT = [];
 
 const ABILITIES = {
@@ -53,23 +53,52 @@ const ABILITIES = {
   },
 
   display: {
+    _get_category_level: function(category){
+      var table = [];
+      switch (category){
+        case("Element"):
+          table = ABILITY_ELEMENTS;
+          break;
+        case("Spirit"):
+          table = ABILITY_SPIRITS;
+          break;
+        case("Diplomat"):
+          table = ABILITY_DIPLOMAT;
+          break;
+        default:
+          return "";
+      }
+      var num = 0;
+      for(var i of table){
+        if (ABILITIES.has_ability(i)) {
+          num ++
+        }
+      }
+      var mastery = num / table.length;
+      if (mastery > 0.9){ return "(veteran)"; }
+      if (mastery > 0.7){ return "(proficient)"; }
+      if (mastery > 0.5){ return "(adept)"; }
+      if (mastery > 0.3){ return "(initiate)"; }
+      if (mastery > 0){ return "(novice)"; }
+      return "(inept)";
+    },
+
     _fits_category: function (item, category){
       if (item[0] == "_" ) {
         return false;
       }
-      var name = ABILITY[item];
       switch (category){
         case("Element"):
-          return ABILITY_ELEMENTS.includes(name);
+          return ABILITY_ELEMENTS.includes(item);
           break;
         case("Spirit"):
-          return ABILITY_SPIRITS.includes(name);
+          return ABILITY_SPIRITS.includes(item);
           break;
         case("Diplomat"):
-          return ABILITY_DIPLOMAT.includes(name);
+          return ABILITY_DIPLOMAT.includes(item);
           break;
         default:
-          return !(ABILITY_ELEMENTS.includes(name) || ABILITY_SPIRITS.includes(name) || ABILITY_DIPLOMAT.includes(name));
+          return !(ABILITY_ELEMENTS.includes(item) || ABILITY_SPIRITS.includes(item) || ABILITY_DIPLOMAT.includes(item));
       }
       return true;
     },
@@ -98,9 +127,9 @@ const ABILITIES = {
     list: function() {
       new CenteredTextMenu("ABILITIES",
                     [
-                      {"text": "Way of the Element", "effect": function(){ ABILITIES.display.category("Element"); }},
-                      {"text": "Way of the Spirit", "effect": function(){ ABILITIES.display.category("Spirit"); }},
-                      {"text": "Way of the Diplomat", "effect": function(){ ABILITIES.display.category("Diplomat"); }},
+                      {"text": "Way of the Element " + ABILITIES.display._get_category_level("Element"), "effect": function(){ ABILITIES.display.category("Element"); }},
+                      {"text": "Way of the Spirit " + ABILITIES.display._get_category_level("Spirit"), "effect": function(){ ABILITIES.display.category("Spirit"); }},
+                      {"text": "Way of the Diplomat " + ABILITIES.display._get_category_level("Diplomat"), "effect": function(){ ABILITIES.display.category("Diplomat"); }},
                       TEXTMENU_EMPTYROW,
                       {"text": "Others", "effect": function(){ ABILITIES.display.category(""); }},
                       TEXTMENU_EMPTYROW,

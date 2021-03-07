@@ -16,4 +16,9 @@ hills are fixed at the position where they are and the character appears behind 
 
 change color scheme doesnt change fog or map bg??
 
-add levels for each way (novice/expert)
+could map ability/inventory way with a dictionary key
+
+const ABILITY[ELEMENTS] = ["Fireball", "Ice_bolt", "Thunder", "Storm"];
+
+
+also factor commonalities between inventory and abilities
