@@ -5,32 +5,33 @@ const ITEM = {
   Fang: "Venomous Fang",
   Bone: "Sharp Bone",
 
-  Elixir_fire: "Fireball Elixir",
-
   Coin: "Coin",
 
-  // Industrial
-  Sword_wooden: "Wooden Sword",
-  Sword_iron: "Iron Sword",
-  Sword_great: "Great Sword",
-  Sword_legend: "Holy Sword",
+  // Way of the Alchemy
+    Elixir_fire: "Fireball Elixir",
+    // Staff_wooden: "Wooden Staff",
+    // Staff_legend: "Holy Staff",
+    // Wand: "Wand",
 
-  // Staff_wooden: "Wooden Staff",
-  // Staff_legend: "Holy Staff",
-  //
-  Dagger: "Dagger",
-  Axe: "Axe",
-  // War_hammer: "War Hammer",
-  // Mace: "Mace",
-  // Spear: "Spear",
-  // Wand: "Wand",
-  //
-  // Bow: "Bow",
-  // Arrow: "Arrow",
-  //
-  // Net: "Net",
-  // Shield: "Shield",
-  // Rope: "Rope",
+  // Way of the Weapon
+    Sword_wooden: "Wooden Sword",
+    Sword_iron: "Iron Sword",
+    Sword_great: "Great Sword",
+    Sword_legend: "Holy Sword",
+    // War_hammer: "War Hammer",
+    // Mace: "Mace",
+    // Spear: "Spear",
+    Axe: "Axe",
+    // Shield: "Shield",
+
+
+  // Way of the Tools
+    Dagger: "Dagger",
+    // Bow: "Bow",
+    // Arrow: "Arrow",
+    // Poison: "Poison darts",
+    // Net: "Net",
+    // Rope: "Rope",
 
   isItem: function(s){
     for (var i in ITEM){
@@ -41,6 +42,10 @@ const ITEM = {
     return false;
   },
 }
+
+const ITEM_ALCHEMY = [ITEM.Elixir_fire];
+const ITEM_WEAPON = [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Axe];
+const ITEM_TOOL = [ITEM.Dagger];
 
 const INVENTORY = {
   _inventory: new FluidMap(),
@@ -60,15 +65,54 @@ const INVENTORY = {
   },
 
   display: {
-    list: function() {
-      var html = "";
-      for (var i in INVENTORY._inventory.get("")){
-        if (i[0] != "_") {
-          html += i + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
-        }
+    _fits_category: function (item, category){
+      if (item[0] == "_" ) {
+        return false;
       }
+      var name = ITEM[item];
+      switch (category){
+        case("Weapon"):
+          return ITEM_WEAPON.includes(name);
+          break;
+        case("Alchemy"):
+          return ITEM_ALCHEMY.includes(name);
+          break;
+        case("Tool"):
+          return ITEM_TOOL.includes(name);
+          break;
+        default:
+          return !(ITEM_WEAPON.includes(name) || ITEM_ALCHEMY.includes(name) || ITEM_TOOL.includes(name));
+      }
+      return true;
+    },
 
-      new MenuScreen("<b>Inventory</b><hr/>" + html );
+    category: function(category) {
+        var html = "";
+        for (var i in INVENTORY._inventory.get("")){
+          if (INVENTORY.display._fits_category(i, category)) {
+            html += ITEM[i] + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
+          }
+        }
+        var title = "Bags";
+        if (category){
+          title = "Way of the " + category;
+        }
+
+        new MenuScreen("<b>" + title + "</b><hr/>" + html);
+    },
+
+
+    list: function() {
+      new CenteredTextMenu("INVENTORY<br /><br />Coins: " + INVENTORY.has_object(ITEM.Coin),
+                    [
+                      {"text": "Bags", "effect": function(){ INVENTORY.display.category(); }},
+                      TEXTMENU_EMPTYROW,
+                      {"text": "Way of the Weapon", "effect": function(){ INVENTORY.display.category("Weapon"); }},
+                      {"text": "Way of the Alchemy", "effect": function(){ INVENTORY.display.category("Alchemy"); }},
+                      {"text": "Way of the Tool", "effect": function(){ INVENTORY.display.category("Tool"); }},
+                      TEXTMENU_EMPTYROW,
+                      {"text": "Back", "effect": "##BACK"},
+                   ]);
     },
   },
 

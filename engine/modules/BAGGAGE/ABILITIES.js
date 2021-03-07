@@ -3,23 +3,35 @@ const ABILITY = {
   CallHelp: "Call help",
   Pray: "Pray",
 
-  // Spells
-  Fireball: "Fireball",
-  Ice_bolt: "Ice bolt",
-  Thunder: "Thunder",
-  Storm: "Storm",
-  Charm: "Charm",
-  // Summon: "Summon",
-  // Intimidate: "Intimidate",
-  // Petrify: "Petrify",
-  // Poison: "Poison",
-  // Shrink: "Shrink",
-  // Blind: "Blind",
-  // Asphyxiate: "Asphyxiate",
-  // Earthquake: "Earthquake",
-  // Incinerate: "Incinerate",
+  // Way of the Elements
+    Fireball: "Fireball",
+    Ice_bolt: "Ice bolt",
+    Thunder: "Thunder",
+    Storm: "Storm",
+    // Asphyxiate: "Asphyxiate",
+    // Earthquake: "Earthquake",
+    // Incinerate: "Incinerate",
+    // Summon: "Summon",
+
+  // Way of the Spirit
+    Charm: "Charm",
+    // Petrify: "Petrify",
+    // Poison: "Poison",
+    // Shrink: "Shrink",
+    // Blind: "Blind",
+    // Lull: "Lull",
+
+ // Way of the Diplomat
+    // Persuade: "Persuade",
+    // Intimidate: "Intimidate",
+    // Mystify: "Mystify",
+    // Sneak: "Sneak",
+    // Circumvent: "Circumvent",
 }
 
+const ABILITY_ELEMENTS = [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm];
+const ABILITY_SPIRITS = [ABILITY.Charm];
+const ABILITY_DIPLOMAT = [];
 
 const ABILITIES = {
   _abilities: new FluidMap(),
@@ -41,15 +53,54 @@ const ABILITIES = {
   },
 
   display: {
-    list: function() {
-      var html = "";
-      for (var i in ABILITIES._abilities.get("")){
-        if (i[0] != "_") {
-          html += i + "<br/>";
-        }
+    _fits_category: function (item, category){
+      if (item[0] == "_" ) {
+        return false;
       }
+      var name = ABILITY[item];
+      switch (category){
+        case("Element"):
+          return ABILITY_ELEMENTS.includes(name);
+          break;
+        case("Spirit"):
+          return ABILITY_SPIRITS.includes(name);
+          break;
+        case("Diplomat"):
+          return ABILITY_DIPLOMAT.includes(name);
+          break;
+        default:
+          return !(ABILITY_ELEMENTS.includes(name) || ABILITY_SPIRITS.includes(name) || ABILITY_DIPLOMAT.includes(name));
+      }
+      return true;
+    },
 
-      new MenuScreen("<b>Abilities</b><hr/>" + html );
+    category: function(category) {
+        var html = "";
+        for (var i in ABILITIES._abilities.get("")){
+          if (ABILITIES.display._fits_category(i, category)) {
+            html += ABILITY[i] + "<br/>";
+          }
+        }
+        var title = "";
+        if (category){
+          title = "Way of the " + category;
+        }
+
+        new MenuScreen("<b>" + title + "</b><hr/>" + html );
+    },
+
+
+    list: function() {
+      new CenteredTextMenu("ABILITIES",
+                    [
+                      {"text": "Way of the Element", "effect": function(){ ABILITIES.display.category("Element"); }},
+                      {"text": "Way of the Spirit", "effect": function(){ ABILITIES.display.category("Spirit"); }},
+                      {"text": "Way of the Diplomat", "effect": function(){ ABILITIES.display.category("Diplomat"); }},
+                      TEXTMENU_EMPTYROW,
+                      {"text": "Others", "effect": function(){ ABILITIES.display.category(""); }},
+                      TEXTMENU_EMPTYROW,
+                      {"text": "Back", "effect": "##BACK"},
+                   ]);
     },
   },
 

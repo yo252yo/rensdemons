@@ -15,7 +15,7 @@ const INTERFACE = {
       };
 
 
-      battles_options.push({"text": "", "effect": function(){}, "keep_open": true});
+      battles_options.push(TEXTMENU_EMPTYROW);
       battles_options.push({"text": "Back", "effect": "##BACK"});
 
       new CenteredTextMenu(`<b>Ren</b> - level ` + BATTLETREE.score.level() + ` (` + BATTLETREE.score.total_xp() + ` xp)`,
@@ -30,11 +30,11 @@ const INTERFACE = {
                       {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
                       {"text": "Martyrdom", "effect": function(){ MARTYRDOM.display.menu(); }},
-                      {"text": "", "effect": function(){}, "keep_open": true},
+                      TEXTMENU_EMPTYROW,
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
                       {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
-                      {"text": "", "effect": function(){}, "keep_open": true},
+                      TEXTMENU_EMPTYROW,
                       {"text": "Back to game", "effect": "##CLOSE"},
                    ]);
     },
@@ -60,7 +60,7 @@ const INTERFACE = {
                    `,
                     [
                       {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); }, "keep_open": true},
-                      {"text": "", "effect": function(){}, "keep_open": true},
+                      TEXTMENU_EMPTYROW,
                       {"text": "Back", "effect": "##BACK"}
                    ]);
     },
@@ -131,6 +131,6 @@ const INTERFACE = {
   make_compass: function() {
     var compass = new StaticSprite("assets/interface/windrose.png", 'player');
     compass.container.id="fog_adjacent";
-    compass.container.style.zIndex = 11000;    
+    compass.container.style.zIndex = 11000;
   }
 }

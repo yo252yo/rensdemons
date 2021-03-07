@@ -30,6 +30,8 @@ MenuChoiceExecutor.prototype._execute = function(task) {
 const _EXECUTOR = new MenuChoiceExecutor();
 
 
+var TEXTMENU_EMPTYROW = {"text": " ", "effect": function(){}, "keep_open": true};
+
 class TextMenu extends TextElement {
     constructor(title, options, x, y, w, h, padding) {
         super(x,y, w, h, padding);
@@ -85,8 +87,12 @@ class TextMenu extends TextElement {
           }(current_item, i));
 
           var html = "";
-          if (!this.options[i]["text"]){
+          if (!this.options[i]["text"] || this.options[i]["text"][0] == " "){
+             if (i == this.selected){
+              html += ".";
+             } else{
               html += "&nbsp;";
+            }
           } else if (i == this.selected){
               html += ">";
               selected_element = current_item;

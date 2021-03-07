@@ -12,3 +12,10 @@ customization: name choice?
 
 
 hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
+
+
+change color scheme doesnt change fog or map bg??
+
+let inventory final page go back instead of close (the centered menu)
+
+add levels for each way (novice/expert)
