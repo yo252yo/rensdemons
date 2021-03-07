@@ -98,7 +98,12 @@ const INVENTORY = {
           title = "Way of the " + category;
         }
 
-        new MenuScreen("<b>" + title + "</b><hr/>" + html);
+        new FullTextMenu("<b>" + title + "</b><hr/>" + html,
+                      [
+                       {"text": "Back to inventory", "effect": "##BACK"},
+                       TEXTMENU_EMPTYROW,
+                       {"text": "Back to game", "effect": "##CLOSE"}
+                     ]);
     },
 
 
@@ -111,7 +116,7 @@ const INVENTORY = {
                       {"text": "Way of the Alchemy", "effect": function(){ INVENTORY.display.category("Alchemy"); }},
                       {"text": "Way of the Tool", "effect": function(){ INVENTORY.display.category("Tool"); }},
                       TEXTMENU_EMPTYROW,
-                      {"text": "Back", "effect": "##BACK"},
+                      {"text": "Back to game", "effect": "##CLOSE"}
                    ]);
     },
   },

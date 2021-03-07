@@ -86,7 +86,12 @@ const ABILITIES = {
           title = "Way of the " + category;
         }
 
-        new MenuScreen("<b>" + title + "</b><hr/>" + html );
+        new FullTextMenu("<b>" + title + "</b><hr/>" + html,
+                      [
+                       {"text": "Back to abilities", "effect": "##BACK"},
+                       TEXTMENU_EMPTYROW,
+                       {"text": "Back to game", "effect": "##CLOSE"}
+                     ]);
     },
 
 
@@ -99,7 +104,7 @@ const ABILITIES = {
                       TEXTMENU_EMPTYROW,
                       {"text": "Others", "effect": function(){ ABILITIES.display.category(""); }},
                       TEXTMENU_EMPTYROW,
-                      {"text": "Back", "effect": "##BACK"},
+                      {"text": "Back to game", "effect": "##CLOSE"}
                    ]);
     },
   },
