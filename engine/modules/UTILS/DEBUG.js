@@ -64,6 +64,18 @@ const DEBUG = {
     document.body.style.overflow = "scroll";
   },
 
+  get_all_abilities: function() {
+    for(var i of Object.keys(ABILITY)){
+      ABILITIES.unlock(i);
+    }
+  },
+
+  get_all_items: function() {
+    for(var i of Object.keys(ITEM)){
+      INVENTORY.increase(i);
+    }
+  },
+
   all: function() {
     DEBUG.activate_builder();
     BUILDER.activate.alt_hallways();
@@ -77,6 +89,8 @@ const DEBUG = {
     DEBUG.allow_scroll();
     DEBUG.deactivate_scroll(); // This isnt great.
     DEBUG.display_all_trees();
+    DEBUG.get_all_abilities();
+    DEBUG.get_all_items();
     setInterval(FOG.stop, 1000);
   },
 
