@@ -43,12 +43,6 @@ const ITEM = {
   },
 }
 
-const INVENTORY_CLASSES = {
-  "Alchemy": ["Elixir_fire"],
-  "Weapon": ["Sword_wooden", "Sword_iron", "Sword_great", "Sword_legend", "Axe"],
-  "Tool": ["Dagger"],
-};
-
 
 const INVENTORY = {
   _inventory: new FluidMap(),
@@ -67,68 +61,17 @@ const INVENTORY = {
     },
   },
 
-  display: {
-    _get_category_level: function(category){
-      if(!category) { return "";}
-      var table = INVENTORY_CLASSES[category];
-      var num = 0;
-      for(var i of table){
-        if (INVENTORY.has_object(i)) {
-          num ++
-        }
-      }
-      return `(${LANGUAGE.proficiency(num / table.length)})`;
-    },
-
-    _fits_category: function (item, category){
-      if (item[0] == "_" ) {
-        return false;
-      }
-      if(!category){
-        return !(INVENTORY_CLASSES["Weapon"].includes(item) || INVENTORY_CLASSES["Alchemy"].includes(item) || INVENTORY_CLASSES["Tool"].includes(item));
-      }
-      return INVENTORY_CLASSES[category].includes(item);
-    },
-
-    category: function(category) {
-        var html = "";
-        for (var i in INVENTORY._inventory.get("")){
-          if (INVENTORY.display._fits_category(i, category)) {
-            html += ITEM[i] + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
-          }
-        }
-        var title = "Bags";
-        if (category){
-          title = "Way of the " + category;
-        }
-
-        new FullTextMenu("<b>" + title + "</b><hr/>" + html,
-                      [
-                       {"text": "Back to inventory", "effect": "##BACK"},
-                       TEXTMENU_EMPTYROW,
-                       {"text": "Back to game", "effect": "##CLOSE"}
-                     ]);
-    },
-
-    _list_item: function(name){
-        return {
-          "text": "Way of the " + name + " " + INVENTORY.display._get_category_level(name),
-          "effect": function(){ INVENTORY.display.category(name);
-           }};
-    },
-
-    list: function() {
-      new CenteredTextMenu("INVENTORY<br /><br />Coins: " + (INVENTORY.has_object(ITEM.Coin) || 0),
-                    [
-                      {"text": "Bags", "effect": function(){ INVENTORY.display.category(); }},
-                      TEXTMENU_EMPTYROW,
-                      INVENTORY.display._list_item("Weapon"),
-                      INVENTORY.display._list_item("Alchemy"),
-                      INVENTORY.display._list_item("Tool"),
-                      TEXTMENU_EMPTYROW,
-                      {"text": "Back to game", "effect": "##CLOSE"}
-                   ]);
-    },
+  display: function() {
+    new CenteredTextMenu("INVENTORY<br /><br />Coins: " + (INVENTORY.has_object(ITEM.Coin) || 0),
+                  [
+                    ARCHETYPES.inventory_list_item(),
+                    TEXTMENU_EMPTYROW,
+                    ARCHETYPES.inventory_list_item("Weapon"),
+                    ARCHETYPES.inventory_list_item("Alchemy"),
+                    ARCHETYPES.inventory_list_item("Tool"),
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Back to game", "effect": "##CLOSE"}
+                 ]);
   },
 
   has_object: function(name) {
