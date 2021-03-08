@@ -66,13 +66,16 @@ const DEBUG = {
 
   get_all_abilities: function() {
     for(var i of Object.keys(ABILITY)){
-      ABILITIES.unlock(i);
+      ABILITIES.unlock(ABILITY[i]);
     }
   },
 
   get_all_items: function() {
     for(var i of Object.keys(ITEM)){
-      INVENTORY.increase(i);
+      if (typeof ITEM[i] == "function"){
+        continue;
+      }
+      INVENTORY.increase(ITEM[i]);
     }
   },
 

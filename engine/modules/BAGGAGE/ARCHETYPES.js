@@ -1,19 +1,12 @@
 
-const ARCHETYPES_DETAIL = {
-  // Abilities
-  "Element": ["Fireball", "Ice_bolt", "Thunder", "Storm"],
-  "Spirit": ["Charm"],
-  "Diplomat": [],
-
-  // Inventory
-  "Alchemy": ["Elixir_fire"],
-  "Weapon": ["Sword_wooden", "Sword_iron", "Sword_great", "Sword_legend", "Axe"],
-  "Tool": ["Dagger"],
-};
-
 const ARCHETYPES = {
   TYPE_ABILITY: "ABILITY",
   TYPE_INVENTORY: "INVENTORY",
+
+  // They have to be computed at runtime because they depend on two different modules that I am not chaining
+  _archetypes: function(){
+    return Object.assign({}, ABILITIES_ARCHETYPES, ITEMS_ARCHETYPES);
+  },
 
   _proficiency_text: function(number) {
     if (number > 0.9){ return "veteran"; }
@@ -26,30 +19,31 @@ const ARCHETYPES = {
 
   _get_category_level: function(category){
     if(!category) { return "";}
-    var table = ARCHETYPES_DETAIL[category];
+    var table = ARCHETYPES._archetypes()[category];
     var num = 0;
     // suboptimal in computation but nice in code.
-    for(var i of table){
-      if (INVENTORY.has_object(i) || ABILITIES.has_ability(i)) {
-        num ++
+    for(var i in table){
+      if (INVENTORY.has_object(table[i]) || ABILITIES.has_ability(table[i])) {
+        num ++;
       }
     }
     return `(${ARCHETYPES._proficiency_text(num / table.length)})`;
   },
 
   _fits_category: function (item, category){
+    var archetypes = ARCHETYPES._archetypes();
     if (item[0] == "_" ) { // this is a secret item, never shown.
       return false;
     }
     if(!category){
-      for(var i in ARCHETYPES_DETAIL){
-        if(ARCHETYPES_DETAIL[i].includes(item)){
+      for(var i in archetypes){
+        if(archetypes[i].includes(item)){
           return false;
         }
-        return true;
       }
+      return true;
     }
-    return ARCHETYPES_DETAIL[category].includes(item);
+    return archetypes[category].includes(item);
   },
 
   _category: function(type, category) {
@@ -59,17 +53,17 @@ const ARCHETYPES = {
     if (type == ARCHETYPES.TYPE_INVENTORY) {
       title = "Bags";
 
-      for (var i in INVENTORY._inventory.get("")){
-        if (ARCHETYPES._fits_category(i, category)) {
-          html += ITEM[i] + " (" + INVENTORY._inventory.get([i]) + ")<br/>";
+      for (var item_name in INVENTORY.all_objects()){
+        if (ARCHETYPES._fits_category(item_name, category)) {
+          html += item_name + " (" + INVENTORY.has_object(item_name) + ")<br/>";
         }
       }
     } else if(type == ARCHETYPES.TYPE_ABILITY) {
       title = "Abilities";
 
-      for (var i in ABILITIES._abilities.get("")){ // returns the names not the codes
-        if (ARCHETYPES._fits_category(i, category)) {
-          html += ABILITY[i] + "<br/>";
+      for (var item_name in ABILITIES.all_abilities()){
+        if (ARCHETYPES._fits_category(item_name, category)) {
+          html += item_name + "<br/>";
         }
       }
     }

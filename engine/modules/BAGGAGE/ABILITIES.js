@@ -29,6 +29,12 @@ const ABILITY = {
     // Circumvent: "Circumvent",
 }
 
+ABILITIES_ARCHETYPES = {
+  "Element": [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm],
+  "Spirit": [ABILITY.Charm],
+  "Diplomat": [],
+};
+
 const ABILITIES = {
   _abilities: new FluidMap(),
 
@@ -63,6 +69,10 @@ const ABILITIES = {
 
   has_ability: function(name) {
     return ABILITIES._abilities.get([name]);
+  },
+
+  all_abilities: function() {
+    return ABILITIES._abilities.get("");
   },
 
   unlock: function(name) {

@@ -5,7 +5,7 @@ const ITEM = {
   Fang: "Venomous Fang",
   Bone: "Sharp Bone",
 
-  Coin: "Coin",
+  Coin: "_Coin",
 
   // Way of the Alchemy
     Elixir_fire: "Fireball Elixir",
@@ -43,6 +43,11 @@ const ITEM = {
   },
 }
 
+ITEMS_ARCHETYPES = {
+  "Alchemy": [ITEM.Elixir_fire],
+  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Axe],
+  "Tool": [ITEM.Dagger],
+};
 
 const INVENTORY = {
   _inventory: new FluidMap(),
@@ -76,6 +81,10 @@ const INVENTORY = {
 
   has_object: function(name) {
     return INVENTORY._inventory.get([name]);
+  },
+
+  all_objects: function(){
+    return INVENTORY._inventory.get("");
   },
 
   increase: function(name, quantity) {
