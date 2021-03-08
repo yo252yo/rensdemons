@@ -1,0 +1,65 @@
+Ren's Devils FAQ/Walkthrough
+Version 0.0, April 13, 2009
+By Ryl3
+
+===============================================================================
+-------------------------------------------------------------------------------
+                               TABLE OF CONTENTS
+-------------------------------------------------------------------------------
+===============================================================================
+
+1. Introduction ..................................... [0000]
+1.1. About the game ................................. [0100]
+1.2. Procedural generation .......................... [0200]
+
+2. Mechanics/controls ............................... [A000]
+2.1 Battle system ................................... [A100]
+2.2 Experience ...................................... [A200]
+2.3 Martyrdom ....................................... [A300]
+2.4 Character builds ................................ [A400]
+
+3. Walkthrough ...................................... [B000]
+3.1. Hide and seek .................................. [B100]
+3.2. The Trial ...................................... [B200]
+3.3. First town ..................................... [B300]
+
+4. Endings .......................................... [C000]
+5. Interpretations and analyses ..................... [D000]
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     1. INTRODUCTION                                   [0000]
+-------------------------------------------------------------------------------
+===============================================================================
+
+This is a guide to the game Ren's Devils by yo252yo. This is my first time writing a walkthrough, I hope I'll do good enough of a job to help those who need it.
+I wanted to write a guide for this little indie game because I felt that it was a pretty interesting project, but parts of it are pretty challenging. The ending, in particular, can be tricky to understand. With this guide, I hope that I can share my passion for this game, and make it accessible to everyone!
+I'll try to keep the spoilers to a minimum and properly tag them, but this is a text file describing all the contents of the game, so you'll have to do your part too ^^
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     1.1 ABOUT THE GAME                                [0100]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Ren's Devils is definitely a weird game. It's a web browser game (if you got it anywhere else, know that what you're getting is actually a web browser) that is kind of a mix between a traditional JRPG, a text-based adventure game (chose your own adventure) or a visual novel, maybe.
+TODO: more??
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     1.2 PROCEDURAL GENERATION                         [0200]
+-------------------------------------------------------------------------------
+===============================================================================
+
+The game has elements that are fixed and elements that are generated at each playthrough. For instance, the color palette you start with will be different for everyone, but the solution to the puzzles will be the same. Names are also procedurally generated, so I won't be able to use them here. I'll work it out somehow ^^
+I'll do my best to distinguish between the two in this guide. In general, the shared elements are the ones that are important for the progression and the story. The procedurally generated elements tend to be flavor/worldbuilding to make your playthrough unique, so we will not talk about them much. Just be aware that your experience can differ from mine in small ways.
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2. MECHANICS/CONTROLS                              [A000]
+-------------------------------------------------------------------------------
+===============================================================================
+
+You control one character of unspecified gender (though they can be accompanied).
+Controls are the ususal, WASD to move, SPACE or ENTER to interact, ESC to cancel...
+TODO: more??

@@ -22,3 +22,6 @@ const ABILITY[ELEMENTS] = ["Fireball", "Ice_bolt", "Thunder", "Storm"];
 
 
 also factor commonalities between inventory and abilities
+
+
+explicit the companions in the menu??
