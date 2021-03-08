@@ -54,3 +54,16 @@ LANGUAGE.actions.win = function(name) {
 LANGUAGE.actions.fail = function(name) {
   return LANGUAGE.actions._get(name, `fail`);
 };
+
+
+//------------------------------------------------------------------------------
+//Proficiency
+
+LANGUAGE.proficiency = function(number) {
+  if (number > 0.9){ return "veteran"; }
+  if (number > 0.7){ return "proficient"; }
+  if (number > 0.5){ return "adept"; }
+  if (number > 0.3){ return "initiate"; }
+  if (number > 0){ return "novice"; }
+  return "inept";
+}

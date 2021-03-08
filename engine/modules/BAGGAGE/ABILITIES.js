@@ -29,9 +29,11 @@ const ABILITY = {
     // Circumvent: "Circumvent",
 }
 
-const ABILITY_ELEMENTS = ["Fireball", "Ice_bolt", "Thunder", "Storm"];
-const ABILITY_SPIRITS = ["Charm"];
-const ABILITY_DIPLOMAT = [];
+const ABILITY_CLASSES = {
+  "Element": ["Fireball", "Ice_bolt", "Thunder", "Storm"],
+  "Spirit": ["Charm"],
+  "Diplomat": [],
+};
 
 const ABILITIES = {
   _abilities: new FluidMap(),
@@ -54,53 +56,26 @@ const ABILITIES = {
 
   display: {
     _get_category_level: function(category){
-      var table = [];
-      switch (category){
-        case("Element"):
-          table = ABILITY_ELEMENTS;
-          break;
-        case("Spirit"):
-          table = ABILITY_SPIRITS;
-          break;
-        case("Diplomat"):
-          table = ABILITY_DIPLOMAT;
-          break;
-        default:
-          return "";
-      }
+      if(!category) { return "";}
+      var table = ABILITY_CLASSES[category];
+
       var num = 0;
       for(var i of table){
         if (ABILITIES.has_ability(i)) {
           num ++
         }
       }
-      var mastery = num / table.length;
-      if (mastery > 0.9){ return "(veteran)"; }
-      if (mastery > 0.7){ return "(proficient)"; }
-      if (mastery > 0.5){ return "(adept)"; }
-      if (mastery > 0.3){ return "(initiate)"; }
-      if (mastery > 0){ return "(novice)"; }
-      return "(inept)";
+      return `(${LANGUAGE.proficiency(num / table.length)})`;
     },
 
     _fits_category: function (item, category){
       if (item[0] == "_" ) {
         return false;
       }
-      switch (category){
-        case("Element"):
-          return ABILITY_ELEMENTS.includes(item);
-          break;
-        case("Spirit"):
-          return ABILITY_SPIRITS.includes(item);
-          break;
-        case("Diplomat"):
-          return ABILITY_DIPLOMAT.includes(item);
-          break;
-        default:
-          return !(ABILITY_ELEMENTS.includes(item) || ABILITY_SPIRITS.includes(item) || ABILITY_DIPLOMAT.includes(item));
+      if(!category){
+        return !(ABILITY_CLASSES["Element"].includes(item) || ABILITY_CLASSES["Spirit"].includes(item) || ABILITY_CLASSES["Diplomat"].includes(item));
       }
-      return true;
+      return ABILITY_CLASSES[category].includes(item);
     },
 
     category: function(category) {
@@ -110,7 +85,7 @@ const ABILITIES = {
             html += ABILITY[i] + "<br/>";
           }
         }
-        var title = "";
+        var title = "Abilities";
         if (category){
           title = "Way of the " + category;
         }
@@ -123,15 +98,21 @@ const ABILITIES = {
                      ]);
     },
 
+    _list_item: function(name){
+        return {
+          "text": "Way of the " + name + " " + ABILITIES.display._get_category_level(name),
+          "effect": function(){ ABILITIES.display.category(name);
+           }};
+    },
 
     list: function() {
       new CenteredTextMenu("ABILITIES",
                     [
-                      {"text": "Way of the Element " + ABILITIES.display._get_category_level("Element"), "effect": function(){ ABILITIES.display.category("Element"); }},
-                      {"text": "Way of the Spirit " + ABILITIES.display._get_category_level("Spirit"), "effect": function(){ ABILITIES.display.category("Spirit"); }},
-                      {"text": "Way of the Diplomat " + ABILITIES.display._get_category_level("Diplomat"), "effect": function(){ ABILITIES.display.category("Diplomat"); }},
+                      ABILITIES.display._list_item("Element"),
+                      ABILITIES.display._list_item("Spirit"),
+                      ABILITIES.display._list_item("Diplomat"),
                       TEXTMENU_EMPTYROW,
-                      {"text": "Others", "effect": function(){ ABILITIES.display.category(""); }},
+                      {"text": "Others", "effect": function(){ ABILITIES.display.category(); }},
                       TEXTMENU_EMPTYROW,
                       {"text": "Back to game", "effect": "##CLOSE"}
                    ]);
