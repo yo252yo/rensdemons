@@ -30,6 +30,7 @@ const INTERFACE = {
                       {"text": "Abilities", "effect": function(){ ABILITIES.display.list(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display.list(); }},
                       {"text": "Martyrdom", "effect": function(){ MARTYRDOM.display.menu(); }},
+                      {"text": "Party", "effect": function(){ PARTY.display.menu(); }},
                       TEXTMENU_EMPTYROW,
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},

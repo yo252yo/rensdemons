@@ -127,6 +127,7 @@ new Module("UTILS/MAP");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/INVENTORY");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/STATS");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/MARTYRDOM");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/PARTY");
   IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 
   IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");

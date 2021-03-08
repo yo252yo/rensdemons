@@ -14,9 +14,10 @@ By Ryl3
 
 2. Mechanics/controls ............................... [A000]
 2.1 Battle system ................................... [A100]
-2.2 Experience ...................................... [A200]
-2.3 Martyrdom ....................................... [A300]
-2.4 Character builds ................................ [A400]
+2.2 Party ........................................... [A200]
+2.3 Experience ...................................... [A300]
+2.4 Martyrdom ....................................... [A400]
+2.5 Character builds ................................ [A500]
 
 3. Walkthrough ...................................... [B000]
 3.1. Hide and seek .................................. [B100]
@@ -60,6 +61,6 @@ I'll do my best to distinguish between the two in this guide. In general, the sh
 -------------------------------------------------------------------------------
 ===============================================================================
 
-You control one character of unspecified gender (though they can be accompanied).
 Controls are the ususal, WASD to move, SPACE or ENTER to interact, ESC to cancel...
 TODO: more??
+You control one character of unspecified gender (though they can be accompanied).
