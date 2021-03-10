@@ -35,8 +35,12 @@ const DICTIONARY = {
     }
   },
 
+  has: function(key){
+    return (key in DICTIONARY._DICTIONARY);
+  },
+
   get: function(key) {
-    if (key in DICTIONARY._DICTIONARY){
+    if (DICTIONARY.has(key)){
       return DICTIONARY._DICTIONARY[key];
     } else {
       CONSOLE.error("Wrong dictionary key: " + key);

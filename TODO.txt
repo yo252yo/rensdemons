@@ -10,10 +10,4 @@ maybe i should do a list of all items i expect in the game early on
 
 customization: name choice?
 
-
-hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
-
-
-change color scheme doesnt change fog or map bg??
-
 make companions able to act in battle

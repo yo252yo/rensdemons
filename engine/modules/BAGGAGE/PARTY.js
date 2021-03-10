@@ -18,6 +18,14 @@ const PARTY = {
   },
 
   display: {
+    _get_name: function(name) {
+      if(DICTIONARY.has(name)){
+        return DICTIONARY.get(name);
+      } else {
+        return name;
+      }
+    },
+
     character: function(name) {
       var content = "";
       switch (name) {
@@ -32,7 +40,7 @@ const PARTY = {
           content = "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
         default:
       }
-      new FullTextMenu("<b>" + name + "</b><hr/>" + content,
+      new FullTextMenu("<b>" + PARTY.display._get_name(name) + "</b><hr/>" + content,
                     [
                      {"text": "Back to party", "effect": "##BACK"},
                      TEXTMENU_EMPTYROW,
@@ -42,10 +50,10 @@ const PARTY = {
 
     menu: function() {
       var options = [
-        {"text": "You", "effect": function(){ PARTY.display.character("You"); }}
+        {"text": PARTY.display._get_name("You"), "effect": function(){ PARTY.display.character("You"); }}
       ];
       if (ABILITIES.has_ability("_trial_passed")) {
-        options.push({"text": "Goddess", "effect": function(){ PARTY.display.character("Goddess"); }});
+        options.push({"text": PARTY.display._get_name("Goddess"), "effect": function(){ PARTY.display.character("Goddess"); }});
       }
 
       options.push(TEXTMENU_EMPTYROW);

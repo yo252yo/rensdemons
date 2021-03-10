@@ -1,8 +1,10 @@
+hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
+change color scheme doesnt change fog or map bg??
+
+
 dont forget to do a proper title screen in particula for mobile
 
 https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
-
-proximity triggered fights?? traps??
 
 https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
