@@ -2,14 +2,14 @@ var usage = function(name) {
   return [`You ask ${name} for help!`];
 };
 
-LANGUAGE.actions["Goddess"] = {
+LANGUAGE.actions[PARTYMEMBERS.Sidekick] = {
   usage: function(){
-    return RANDOM.pick(usage("Goddess"));
+    return RANDOM.pick(usage(DICTIONARY.get(PARTYMEMBERS.Sidekick)));
   },
   fail: function(){
-    return "Goddess fails miserably and goes crying in a corner.";
+    return `${DICTIONARY.get(PARTYMEMBERS.Sidekick)} fails miserably and goes crying in a corner.`;
   },
   win: function(){
-    return "Goddess reks the $$&ENEMY$. Tis all.";
+    return `${DICTIONARY.get(PARTYMEMBERS.Sidekick)} reks the $$&ENEMY$. Tis all.`;
   },
 };
