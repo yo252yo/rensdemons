@@ -231,22 +231,27 @@ const BATTLETREE = {
 
   display: {
     stylize: function(name, battle){
+      var display_name = name.trim();
       if (battle == "_treasure") {
-        return name;
+        return display_name;
+      }
+      // Used for generated names like party members
+      if (DICTIONARY.has(name)) {
+        display_name = DICTIONARY.get(name);
       }
 
       switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
-          return "<b>" + name.trim() + "</b>";
+          return "<b>" + display_name + "</b>";
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
-          return "<s>" + name.trim() + "</s>";
+          return "<s>" + display_name + "</s>";
         case BATTLETREE.HIDDEN:
         case BATTLETREE.NOT_TRIED:
-          return name.trim();
+          return display_name;
         default: // Leads somewhere else.
-          return "<i>" + name.trim() + "</i>";
+          return "<i>" + display_name + "</i>";
       }
     },
 
