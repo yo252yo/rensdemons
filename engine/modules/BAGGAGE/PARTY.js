@@ -17,6 +17,22 @@ const PARTY = {
     },
   },
 
+  has_member: function(name) {
+    return PARTY._members.includes(name);
+  },
+
+  add: function(name) {
+    PARTY._members.push(name);
+    CONSOLE.log.party(name + " joined");
+  },
+
+  remove: function(name) {
+    PARTY._members = PARTY._members.filter(function(item) {
+        return item != name;
+    })
+    CONSOLE.log.party(name + " left");
+  },
+
   display: {
     _get_name: function(name) {
       if(DICTIONARY.has(name)){

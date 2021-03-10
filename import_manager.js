@@ -139,6 +139,7 @@ const LANGUAGE = {};
 new Module("LANGUAGE/BATTLE");
   IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
+  IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
 
 new Module("UTILS/STRING");
   IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");

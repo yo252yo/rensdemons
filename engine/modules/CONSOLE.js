@@ -86,5 +86,9 @@ const CONSOLE = {
       if (quantity > 0){ s = " +";}
       CONSOLE._sys_log("} Item stock modification: " + name + s + quantity, "Orange");
     },
+
+    party : function(operation){
+      CONSOLE._sys_log(")) Party: " + operation, "Brown");
+    },
   },
 };

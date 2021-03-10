@@ -142,7 +142,7 @@ const BATTLE = {
 
       if (action_object.unlock) {
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
-      } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name)){
+      } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name) || PARTY.has_member(action_object.name)){
         // Unlock base actions in our inventory
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
       }
