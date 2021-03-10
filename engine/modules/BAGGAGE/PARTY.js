@@ -1,3 +1,8 @@
+// Maps to dictionary keys
+const PARTYMEMBERS = {
+  Sidekick: "sidekick",
+};
+
 const PARTY = {
   _members: [],
 
@@ -54,6 +59,10 @@ const PARTY = {
           break;
         case "Goddess":
           content = "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
+          break;
+        case PARTYMEMBERS.Sidekick:
+          content = "Your childhood friend.";
+          break;
         default:
       }
       new FullTextMenu("<b>" + PARTY.display._get_name(name) + "</b><hr/>" + content,
@@ -70,6 +79,9 @@ const PARTY = {
       ];
       if (ABILITIES.has_ability("_trial_passed")) {
         options.push({"text": PARTY.display._get_name("Goddess"), "effect": function(){ PARTY.display.character("Goddess"); }});
+      }
+      for(var member of PARTY._members){
+        options.push({"text": PARTY.display._get_name(member), "effect": function(){ PARTY.display.character(member); }});
       }
 
       options.push(TEXTMENU_EMPTYROW);

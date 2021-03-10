@@ -11,3 +11,5 @@ customization: name choice?
 
 
 Aerith blurb in BAGGAGE/party, LANGUAGE/party
+
+in 004/_priest and 001_hideandseel $$sidekick is still used :/ should it be ${DICTIONARY.get(PARTYMEMBERS.Sidekick)}, rly??

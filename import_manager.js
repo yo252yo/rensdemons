@@ -128,7 +128,6 @@ new Module("UTILS/MAP");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/STATS");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/MARTYRDOM");
   IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
-new Module("BAGGAGE/PARTY");
 new Module("BAGGAGE/ARCHETYPES");
 
   IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
@@ -139,12 +138,13 @@ const LANGUAGE = {};
 new Module("LANGUAGE/BATTLE");
   IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
-  IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
 
-new Module("UTILS/STRING");
-  IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
-    IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
-      IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
+new Module("BAGGAGE/PARTY");
+  IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
+  IMPORTS.modules['BAGGAGE/PARTY'].child_module("UTILS/STRING");
+    IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
+      IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
+        IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
 new Class("Generation/Generator");
   IMPORTS.classes['Generation/Generator'].child_class("Generation/Houses");
   IMPORTS.classes['Generation/Generator'].child_class("Generation/Towns");
