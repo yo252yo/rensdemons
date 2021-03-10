@@ -74,7 +74,7 @@ PLAYER_ACTIONS.add({
   name: "Companion",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["Ren: \"Can I at least travel with $$sidekick_name$?\"",
+  description: ["Ren: \"Can I at least travel with $$sidekick$?\"",
                 "Priest: \"If that is what your heart desires, it must be the will of the Goddess. Not only can you, but you must follow your instinct and travel with this friend of yours, for it is the voice of the Goddess who whispered you that idea, and She is never wrong.\"",
               ],
 });
