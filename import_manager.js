@@ -180,6 +180,7 @@ new Class("Objects/LevelObject");
 
 new Class("Sequence");
 
+new Module("CREDITS");
 new Module("INTERFACE");
 
 window.onload = function() {
