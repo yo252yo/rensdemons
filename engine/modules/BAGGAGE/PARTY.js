@@ -6,6 +6,23 @@ const PARTYMEMBERS = {
 const PARTY = {
   _members: [],
 
+  description: function(name) {
+    switch (name) {
+      case "You":
+        if (ABILITIES.has_ability("_trial_passed")){
+          return "You are the The Promised Child. The Goddess chose you to bring salvation to the world of " + DICTIONARY.get("world_name") + " and its inhabitants.";
+        } else {
+          return "You are a child of " + DICTIONARY.get("town_1") + ". There does not seem to be anything special about you.";
+        }
+      case "Goddess":
+        return "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
+      case PARTYMEMBERS.Sidekick:
+        return "Your childhood friend.";
+      default:
+        return "";
+    }
+  },
+
   factory: {
     export: function() {
       return {
@@ -48,24 +65,7 @@ const PARTY = {
     },
 
     character: function(name) {
-      var content = "";
-      switch (name) {
-        case "You":
-          if (ABILITIES.has_ability("_trial_passed")){
-            content = "You are the The Promised Child. The Goddess chose you to bring salvation to the world of " + DICTIONARY.get("world_name") + " and its inhabitants.";
-          } else {
-            content = "You are a child of " + DICTIONARY.get("town_1") + ". There does not seem to be anything special about you.";
-          }
-          break;
-        case "Goddess":
-          content = "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
-          break;
-        case PARTYMEMBERS.Sidekick:
-          content = "Your childhood friend.";
-          break;
-        default:
-      }
-      new FullTextMenu("<b>" + PARTY.display._get_name(name) + "</b><hr/>" + content,
+      new FullTextMenu("<b>" + PARTY.display._get_name(name) + "</b><hr/>" + PARTY.description(name),
                     [
                      {"text": "Back to party", "effect": "##BACK"},
                      TEXTMENU_EMPTYROW,
