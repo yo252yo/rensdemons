@@ -28,7 +28,7 @@ class SE_treasure extends S_event {
     INVENTORY.increase(this.object, this.quantity);
     var self = this;
     TextBannerSequence.make([
-      "Ren found something on the ground. It's a " + self.object + ".",
+      "You found something on the ground. It's a " + self.object + ".",
     ], function(){self.destroy();})
   }
 

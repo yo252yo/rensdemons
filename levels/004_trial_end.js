@@ -49,10 +49,10 @@ make_priest(350, 550);
 
 CURRENTLEVEL.start_function = function(){
     TextBannerSequence.make([
-      "Ren just appears in the middle of the temple, in front of the Head Priest. For a few seconds, no one moves or says anything. The situation is so unexpected that all the witnesses need some time to make sense of what their eyes are reporting.",
+      "You just appear in the middle of the temple, in front of the Head Priest. For a few seconds, no one moves or says anything. The situation is so unexpected that all the witnesses need some time to make sense of what their eyes are reporting.",
       "And then, all at once, the atmosphere of disbelief exploded, and cheers errupted all around the room. Even the priests forgot their solemn demeanour for a while.",
       "Everyone in the room was very excited. Some were yelling, some were dancing, other were just too stunned to realize what had happened. For centuries, mankind had awaited this event. And now it was finally here. During their lifetime. In front of them. In their little town!",
-      "The euphoria lasted for a moment. Finally, the head priest turned towards Ren.",
+      "The euphoria lasted for a moment. Finally, the head priest turned towards $$Ren$.",
       "Priest: \"Come to me, Child. You have much to learn. Your journey is only beginning.\"",
     ], function(){ IO.control.character(); });
 

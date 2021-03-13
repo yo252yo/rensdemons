@@ -87,7 +87,7 @@ PLAYER_ACTIONS.add({
       BATTLE.monster_actions.prepare_win("As the words are uttered, a weird senstation engulfes your body. Nothing seems to have changed, no sound or flashing light. Yet, you've never been so sure that something had happened. Was it the fabric of the universe? Or was it only inside your head?");
       BATTLE.win_callback = function() {
         TextBannerSequence.make([
-          "Ren's surroundings were exactly the same. Yet, somehow, at that moment, Ren just knew that touching any of the statues would teleport him out of this maze."
+          "Your surroundings were exactly the same. Yet, somehow, at that moment, you just knew that touching any of the statues would teleport him out of this maze."
         ], function(){
           ABILITIES.unlock("_trial_passed");
         });

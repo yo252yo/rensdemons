@@ -51,8 +51,8 @@ make item sets (make chair with table)
 
 remove dashes from markov chain
 
-mb add sidekick to the party that follows you around, for emotional attachment
+mb add BestFriend to the party that follows you around, for emotional attachment
 
-add sidekick to random environemnt interactions but it needs to be conditioned on her beeing alive
+add BestFriend to random environemnt interactions but it needs to be conditioned on her beeing alive
 
 party state, thoughts, etc...

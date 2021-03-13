@@ -12,7 +12,7 @@ friend_go.add_TextBannerSequence([
   "Priest: \"Now, $$child_friends_m1$, if you would.\"",
 ]);
 friend_go.add_TextBannerSequence([
-  "$$child_friends_m1$: \"We all know how this goes... Ren, it was nice being friends with you.\""
+  "$$child_friends_m1$: \"We all know how this goes... $$Ren$, it was nice being friends with you.\""
 ]);
 friend_go.add_MoveObjectWalk(friend, 250, 600);
 friend_go.add_TextBannerSequence([
@@ -36,7 +36,7 @@ friend_go.add_TextBannerSequence([
   "Screams echo in the distance.",
 ]);
 friend_go.add_TextBannerSequence([
-  "Priest: \"Now, may Ren step forward.\"",
+  "Priest: \"Now, may $$Ren$ step forward.\"",
 ]);
 friend_go.add_function(function(ignored_callback) {
   friend.destroy();
@@ -63,7 +63,7 @@ var hp_menu = function () {
                 [
                   {"text": "Yes, sir", "effect": function(){
                     TextBannerSequence.make([
-                      "The head priest makes a pompous gesture, and a faint snapping sound can be heard. The floor tile under Ren's feet slide to uncover a hole. With a little push from the priest, Ren falls in.",
+                      "The head priest makes a pompous gesture, and a faint snapping sound can be heard. The floor tile under your feet slide to uncover a hole. With a little push from the priest, you falls in.",
                     ], function(){ CURRENTLEVEL.setup("003_trial"); });
                    }},
                   {"text": "Not yet", "effect": "##CLOSE"},

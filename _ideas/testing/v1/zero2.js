@@ -20,4 +20,4 @@ new M_Priest(750,250);
 new M_Priest(750,300);
 
 
-var t = new TextBanner("You are in " + DICTIONARY.get("world_name") + " and your best friend is " + DICTIONARY.get("sidekick"));
+var t = new TextBanner("You are in " + DICTIONARY.get("world_name") + " and your best friend is " + DICTIONARY.get("BestFriend"));

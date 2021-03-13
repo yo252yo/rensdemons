@@ -3,10 +3,10 @@ AUDIO.music.hideandseek();
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
-    "Ren: \"... 97\"",
-    "Ren: \"... 98\"",
-    "Ren: \"... 99\"",
-    "Ren: \"... 100! Ready or not, here I come!\"",
+    "$$Ren$: \"... 97\"",
+    "$$Ren$: \"... 98\"",
+    "$$Ren$: \"... 99\"",
+    "$$Ren$: \"... 100! Ready or not, here I come!\"",
   ], function(){ SAVE.autosave(); IO.control.character(); });
 };
 
@@ -69,9 +69,9 @@ new S_Tree(550,100);
 new S_Tree(560,460);
 
 child_in_tree(620, 280, "cfbf", new M_ChildF(), new TextBannerProgressive([
-    "You found your best friend $$sidekick$!",
-    "$$sidekick$: \"I knew you'd find me Ren!\"",
-    "$$sidekick$: \"Good luck for this afternoon, I'm sure you'll do great!\""
+    "You found your best friend $$BestFriend$!",
+    "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
+    "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
 
 new S_Tree(645,190);
@@ -110,7 +110,7 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 
   TextBannerSequence.make([
     "Priest: \"The time has come. Candidates for the Trial of the Second-Borns, please do follow us.\"",
-    "$$sidekick$: \"Good luck! Please be safe and come back!\"",
+    "$$BestFriend$: \"Good luck! Please be safe and come back!\"",
   ], function(){ IO.control.character(); });
 });
 

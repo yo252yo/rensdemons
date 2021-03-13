@@ -1,6 +1,7 @@
 // Maps to dictionary keys
 const PARTYMEMBERS = {
-  Sidekick: "sidekick",
+  Ren: "Ren",
+  BestFriend: "BestFriend",
 };
 
 const PARTY = {
@@ -16,7 +17,7 @@ const PARTY = {
         }
       case "Goddess":
         return "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
-      case PARTYMEMBERS.Sidekick:
+      case PARTYMEMBERS.BestFriend:
         return "Your childhood friend.";
       default:
         return "";

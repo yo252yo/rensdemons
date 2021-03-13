@@ -27,14 +27,14 @@ PLAYER_ACTIONS.add({
 var swearLoyalty = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: swear_loyalty,
   outcome: BATTLETREE.WIN,
-  description: ["Ren: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\"",
+  description: [$$Ren$: \"Goddess, If I make it, I pledge to serve You and do Your bidding. I'll be your arms and do whatever You demand. Just please let me live.\"",
                 "Suddenly, an eerie light basks the room. The basilisk grows stiff and stops moving. The creature is dead."],
 });
 
 PLAYER_ACTIONS.add({
   name: ABILITY.Pray,
   description: ["You close your eyes and focus on your faith.",
-                "Ren: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\"",
+                $$Ren$: \"Goddess, please, if there was ever a time to show Yourself to me, it would be now.\"",
                 "It may just be your imagination, but you have a feeling that something is different. Maybe the Goddess heeded your plea.<br />You get the vague impression that by picking the right position, you may yet dodge the next attack from the beast, and even survive it."],
   function: swearLoyalty,
   extra_function: function(){

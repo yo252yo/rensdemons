@@ -4,8 +4,9 @@ class DictionaryGenerator {
   make_new() {
     var r = {};
     // Character names
-    r[PARTYMEMBERS.Sidekick] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
-    
+    r[PARTYMEMBERS.Ren] = 'Ren';
+    r[PARTYMEMBERS.BestFriend] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
+
     r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
     r['child_friends_m1'] = 'Michael';
     r['child_friends_m2'] = 'Nicholas';

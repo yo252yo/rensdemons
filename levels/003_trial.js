@@ -109,7 +109,7 @@ var boss_callback = function() {
 
 var welcome_boss = new Sequence();
 welcome_boss.add_TextBannerSequence([
-  "The floor on which Ren lands is muddy and slimy. The atmosphere is heavy and damp. The stench of decomposition is overpowering. Ren barely has time to look around before a huge shape appears with a swooshing sound.",
+  "The floor on which you land is muddy and slimy. The atmosphere is heavy and damp. The stench of decomposition is overpowering. You barely have time to look around before a huge shape appears with a swooshing sound.",
 ]);
 welcome_boss.add_function(function(ignored_callback) {
   BATTLE.api.make("basilisk", boss_callback);
