@@ -70,6 +70,14 @@ const DEBUG = {
     }
   },
 
+  get_all_party: function() {
+    for(var i of Object.keys(PARTYMEMBERS)){
+      if (i != PARTYMEMBERS.Ren){
+        PARTY.add(i);
+      }
+    }
+  },
+
   get_all_items: function() {
     for(var i of Object.keys(ITEM)){
       if (typeof ITEM[i] == "function"){
@@ -94,6 +102,7 @@ const DEBUG = {
     DEBUG.display_all_trees();
     DEBUG.get_all_abilities();
     DEBUG.get_all_items();
+    DEBUG.get_all_party();
     setInterval(FOG.stop, 1000);
   },
 

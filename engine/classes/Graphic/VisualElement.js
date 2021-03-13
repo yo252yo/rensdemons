@@ -1,9 +1,12 @@
 // runtime: LEVEL
 
 class VisualElement {
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h, container) {
         this.container = HTML.div.make();
-        CURRENTLEVEL.system.html().appendChild(this.container);
+        if(!container){
+          container = CURRENTLEVEL.system.html();
+        }
+        container.appendChild(this.container);
 
         this.adjust_dimensions(w, h);
         this.place_at(x, y);

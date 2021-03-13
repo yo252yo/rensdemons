@@ -2,8 +2,8 @@
 // runtime: RESOURCES
 
 class StaticSprite extends CanvasElement {
-    constructor(path, color, width, height) {
-      super(color);
+    constructor(path, color, width, height, container) {
+      super(color, container);
       if(width && height) {
         this.width = width;
         this.height = height;

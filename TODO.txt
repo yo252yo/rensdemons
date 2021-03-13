@@ -10,3 +10,5 @@ maybe i should do a list of all items i expect in the game early on
 customization: name choice?
 
 Aerith blurb in BAGGAGE/party, LANGUAGE/party
+
+remove aerith gender!!

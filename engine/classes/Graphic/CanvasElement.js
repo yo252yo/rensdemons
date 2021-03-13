@@ -1,9 +1,9 @@
 // use(VisualElement)
 
 class CanvasElement extends VisualElement {
-    constructor(color) {
+    constructor(color, container) {
         // Canvas properties are measured at drawing time
-        super(0,0,0,0);
+        super(0,0,0,0, container);
         this.id = RANDOM.int(1000) + "/" + Date.now();
         this.color = color;
 

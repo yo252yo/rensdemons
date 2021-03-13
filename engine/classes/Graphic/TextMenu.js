@@ -69,6 +69,7 @@ class TextMenu extends TextElement {
       for (var i in this.options){
           var current_item = document.createElement('div');
           // Closure because weird loop behavior.
+          // please explicit the function and the call like var f = function
           (function(item, index){
             var pick = function() {IO.menu.pick(index); };
             // We have to be clever because we dont know which fucking event
