@@ -43,7 +43,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/characters/child_f.png');
     RESOURCES.get_img('assets/characters/child_m.png');
     RESOURCES.get_img('assets/characters/priest.png');
-    RESOURCES.get_img('assets/characters/sora.png');
+    RESOURCES.get_img('assets/characters/ren.png');
     RESOURCES.get_img('assets/interface/circle.png');
     RESOURCES.get_img('assets/interface/cross.png');
     RESOURCES.get_img('assets/interface/dodger.png');

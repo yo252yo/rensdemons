@@ -9,9 +9,10 @@ const CREDITS = {
    <a href="https://loyaltyfreakmusic.com/" target="_blank">loyaltyfreakmusic</a>
    <br />
 
-   <b>Characters models</b>:
-   <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a>
-   <br />
+    <b>Characters</b>:
+    <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a>,
+    <a href="http://eurs.blog65.fc2.com/" target="_blank">Closet</a>
+    <br />
 
    <b>Map art</b>:
    <a href="https://opengameart.org/users/melle" target="_blank">MELLE</a>,

@@ -6,7 +6,7 @@ class M_Character extends MovingObject {
   constructor(x, y, size) {
     var width = 32;
     var height = 48;
-    var visual = new MovingSprite("assets/characters/sora.png", 'player', width, height);
+    var visual = new MovingSprite("assets/characters/ren.png", 'player', width, height);
     if (size) {
       //visual.container.adjust_dimensions(size * width, size * height);
       visual.html_canvas.style.width = (size * width) + "px";
