@@ -6,6 +6,8 @@ class DictionaryGenerator {
     // Character names
     r[PARTYMEMBERS.Ren] = 'Ren';
     r[PARTYMEMBERS.BestFriend] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
+    r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5);
+    r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);
 
     r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
     r['child_friends_m1'] = 'Michael';

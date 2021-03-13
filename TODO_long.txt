@@ -26,6 +26,8 @@ save audio settings to disk!
 
 the treasure battler should probs be closed
 
+mb revamp party screen with icons
+
 i dont like how we store saved data as hidden abilities and items :P
 
 should the LANGUAGE bits be generated from a pattern (or metapatern)?
@@ -48,8 +50,6 @@ should we merge the actions in the experience menu if they have the same name?
 
 
 make item sets (make chair with table)
-
-remove dashes from markov chain
 
 mb add BestFriend to the party that follows you around, for emotional attachment
 
