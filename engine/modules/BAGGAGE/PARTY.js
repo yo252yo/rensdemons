@@ -1,7 +1,7 @@
 // Maps to dictionary keys
 const PARTYMEMBERS = {
   Ren: "Ren",
-  BestFriend: "BestFriend", // kind loving healer flower girl pure:Aerith
+  BestFriend: "BestFriend",
    // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
    // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
    // WiseOld: "WiseOld", //  wise old fool /  Scholar
@@ -24,14 +24,14 @@ const PARTY = {
     switch (name) {
       case "Ren":
         if (ABILITIES.has_ability("_trial_passed")){
-          return "You are the The Promised Child. The Goddess chose you to bring salvation to the world of " + DICTIONARY.get("world_name") + " and its inhabitants.";
+          return `You are a child of ${DICTIONARY.get("town_1")}. After succeeding in the Trial of the Second-Borns, you have learned that you are the The Promised Child. The Goddess chose you to bring salvation to the world of ${DICTIONARY.get("world_name")} and its inhabitants. You set out on a journey to strengthen yourself, in order to defeat the evil ${DICTIONARY.get("demon_lord")}.`;
         } else {
-          return "You are a child of " + DICTIONARY.get("town_1") + ". There does not seem to be anything special about you.";
+          return `You are a child of ${DICTIONARY.get("town_1")}. There does not seem to be anything special about you.`;
         }
       case "Goddess":
-        return "The Goddess is the guardian deity of " + DICTIONARY.get("world_name") + ". In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.";
+        return `The Goddess is the guardian deity of ${DICTIONARY.get("world_name")}. In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.`;
       case PARTYMEMBERS.BestFriend:
-        return "Your childhood friend.";
+        return `${DICTIONARY.get(PARTYMEMBERS.BestFriend)} grew up with you in the town of ${DICTIONARY.get("town_1")}. Since you were of similar age, and your families lived near each other, you spent most of your childhood together. As time passed, you watched ${DICTIONARY.get(PARTYMEMBERS.BestFriend)} grow into the most caring and thoughtful person, whose smile always spread joy to the people around.<br /><br />Soon, you were never seen without one another, and the term "best friend" is almost not enough to capture the complicity that tie you two together. It was pretty obvious that ${DICTIONARY.get(PARTYMEMBERS.BestFriend)} would support you until the end, and certainly not let you leave on your quest alone.`;
       default:
         return "Default";
     }
