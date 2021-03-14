@@ -1,3 +1,4 @@
+Finish: PARTY, ITEM, ABILITIES
 
 add money?
 
@@ -9,10 +10,7 @@ maybe i should do a list of all items i expect in the game early on
 
 customization: name choice?
 
-Aerith blurb in BAGGAGE/party, LANGUAGE/party
-remove aerith gender!!
-
-
+icons when people talk
 
 city themes:
 - mourning

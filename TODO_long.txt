@@ -24,6 +24,8 @@ menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls
 
 save audio settings to disk!
 
+did i fix word break in little textbox but not in CenteredTextMenu ??
+
 the treasure battler should probs be closed
 
 mb revamp party screen with icons

@@ -18,7 +18,7 @@ const INTERFACE = {
       battles_options.push(TEXTMENU_EMPTYROW);
       battles_options.push({"text": "Back", "effect": "##BACK"});
 
-      new CenteredTextMenu(`<b>$$Ren$</b> - level ` + BATTLETREE.score.level() + ` (` + BATTLETREE.score.total_xp() + ` xp)`,
+      new CenteredTextMenu(`<b>${DICTIONARY.get(PARTYMEMBERS.Ren)}</b> - level ` + BATTLETREE.score.level() + ` (` + BATTLETREE.score.total_xp() + ` xp)`,
         battles_options);
     },
 
