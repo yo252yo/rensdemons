@@ -6,8 +6,19 @@ class DictionaryGenerator {
     // Character names
     r[PARTYMEMBERS.Ren] = 'Ren';
     r[PARTYMEMBERS.BestFriend] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
-    r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5);
-    r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);
+    // r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5); // sasuke/seifer/Riku/squall/batman
+    // r[PARTYMEMBERS.StreetSmart] = MARKOV_MODELS.human_names.mutate("Han", 5); //hansolo / Quistis / aladdin
+    // r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);
+    // r[PARTYMEMBERS.RetiredProtector] = MARKOV_MODELS.human_names.mutate_n("Geralt", 5, 50); // snake/jhon wick
+    // r[PARTYMEMBERS.DumbMuscles] = MARKOV_MODELS.human_names.mutate_n("Zell", 5, 50); // wakka/barrett/nendou/joey yugui
+    // r[PARTYMEMBERS.SnobRich] = MARKOV_MODELS.human_names.mutate_n("Nanami", 5, 50); // Draco/Sanzenin/ouran/gatsby/nanami utena
+    // r[PARTYMEMBERS.SavageChild] = MARKOV_MODELS.human_names.mutate_n("Taiga", 5, 50); // ametoyuki/toradora/mowgli/mononoke
+    // r[PARTYMEMBERS.FemmeFatale] = MARKOV_MODELS.human_names.mutate_n("Lust", 3, 50); // lust/matahary
+    // r[PARTYMEMBERS.DisguisedPrincess] = MARKOV_MODELS.human_names.mutate_n("Sheik", 5, 50); //  sheik
+    // r[PARTYMEMBERS.UpbeatDojikko] = MARKOV_MODELS.human_names.mutate_n("Asahina", 5, 50); //  riku/yuffie/dojiko/asahina/phoebe
+    // r[PARTYMEMBERS.PreciousChild] = MARKOV_MODELS.human_names.mutate_n("Honey", 5, 50); // hope/genis/ed/hideyoshi/honey senpai
+    // r[PARTYMEMBERS.GeniusProdigy] = MARKOV_MODELS.human_names.mutate_n("Amadeus", 5, 50); //  hayate/killua/lelouch/near/ender/mozart/mathilda
+    // r[PARTYMEMBERS.TraitorFisher] = MARKOV_MODELS.human_names.mutate_n("Judes", 5, 50); //  traitor
 
     r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
     r['child_friends_m1'] = 'Michael';

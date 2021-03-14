@@ -2,20 +2,19 @@
 const PARTYMEMBERS = {
   Ren: "Ren",
   BestFriend: "BestFriend", // kind loving healer flower girl pure:Aerith
-
-  // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter: sasuke/seifer/Riku/squall/batman
-  // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy                       hansolo  Quistis/aladdin Beast master (falcon/horse)
-  // WiseOld: "WiseOld", //  wise old fool /  gandalf /   Scholar
-  // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector snake/geralt/ jhon wick,  tactitian
-  // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      wakka/barrett/nendou/joey yugui  brute force
-  // SnobRich: "SnobRich", //the snob/uptight rich merchant                                                  Draco/Sanzenin/ouran/gatsby banker
-  // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup                                             ametoyuki/toradora/mowgli/mononoke
-  // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale                                                     lust/matahary
-  // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi                                      sheik  herboriste/traps/poison
-  // UpbeatDojikko: "UpbeatDojikko", //  perky and upbeat airhead / mascot? /                                            riku/yuffie/dojiko/asahina/phoebe   necroman/occultist/paranormal/tarot
-  // PreciousChild: "PreciousChild", //shota / supporting innocent youth / precious kid                                hope/genis/ed
-  // GeniusProdigy: "GeniusProdigy", //child prodigy                                                                hayate/killua/lelouch/near/ender
-  // TraitorFisher: "TraitorFisher", //  traitor                                                                         atlas/fontaine/juda  fisherman/cook
+   // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+   // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
+   // WiseOld: "WiseOld", //  wise old fool /  Scholar
+   // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+   // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+   // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+   // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+   // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
+   // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
+   // UpbeatDojikko: "UpbeatDojikko", //  perky and upbeat airhead / mascot? /   necroman/occultist/paranormal/tarot
+   // PreciousChild: "PreciousChild", //shota / supporting innocent youth / precious kid
+   // GeniusProdigy: "GeniusProdigy", //child prodigy
+   // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
 };
 
 const PARTY = {
