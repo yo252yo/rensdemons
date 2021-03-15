@@ -215,7 +215,13 @@ class TextBox extends TextElement {
 
 class TextBoxFitted extends TextBox {
   constructor(x, y, text) {
-      super(x - 15 * text.length / 2, y, 10+15*text.length, 40, 5, true);
+      var t = text.split("<br />");
+      var l = t[0].length;
+      for(var line of t){
+        if (line.length > l){ l = line.length;}
+      }
+      super(x - 15 * l / 2, y, 10+15*l, 40 * t.length, 5, true);
       this.change_text(text, true, false);
+      this.html.style.textAlign = "center";
   }
 }
