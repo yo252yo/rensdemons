@@ -80,9 +80,7 @@ const PARTY = {
 
     character: function(name) {
       new FullTextMenu(`<b>` + PARTY.display._get_name(name) + `</b><hr/>
-                      <div style='float: left;width:300px;height:300px;position:relative;'>
-                        <div style='float: left;width:300px;height:300px;position:absolute;' id='character_portait_slot'>
-                        </div>
+                      <div style='float: left;width:300px;height:300px;position:relative;' id='character_portait_slot'>
                       </div>` + PARTY.description(name),
                     [
                      {"text": "Back to party", "effect": "##BACK"},

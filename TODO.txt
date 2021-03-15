@@ -6,11 +6,9 @@ reconnect with best friend
 
 add shops and trainer
 
-maybe i should do a list of all items i expect in the game early on
-
 customization: name choice?
 
-icons when people talk
+
 
 city themes:
 - mourning
@@ -31,3 +29,15 @@ city themes:
 - death cult
 - anger
 - guilt
+- duty
+
+overly careful/paranoid
+perseverance
+Worry
+change
+love
+hope
+
+scapegoat
+
+faith

@@ -36,6 +36,7 @@ class TextBox extends TextElement {
         this.measure_letter_capability(w, h, padding);
         this.text_future_pages = "";
         this.last_turned = (new Date()).getTime();
+        this.speaker = null;
 
         IO.control.dialog(this);
     }
@@ -156,8 +157,13 @@ class TextBox extends TextElement {
       var space = text.indexOf(" ");
       var period = text.indexOf(":");
       if (space == period + 1)  {
+        var speaker = text.substr(0, period);
+        if (this.speaker) {
+          this.speaker.destroy();
+        }
+        this.speaker = new SpeakerIcon(speaker);
         this.html.style.color = PALETTE.text_speaker_color().code();
-        this.pages[0] = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + text.substr(0, period + 1) + "</span>" +  text.substr(period + 1, text.length - period);
+        this.pages[0] = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + speaker + ":</span>" +  text.substr(period + 1, text.length - period);
       }
     }
 
@@ -192,6 +198,9 @@ class TextBox extends TextElement {
       }
 
       // Actually turns pages
+      if (this.speaker) {
+        this.speaker.destroy();
+      }
       this.last_turned = now;
       this.pages = this.pages.slice(1);
       this.html.innerHTML = "";
