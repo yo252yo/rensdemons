@@ -30,6 +30,8 @@ the treasure battler should probs be closed
 
 mb revamp party screen with icons
 
+different sound walking on map
+
 i dont like how we store saved data as hidden abilities and items :P
 
 should the LANGUAGE bits be generated from a pattern (or metapatern)?

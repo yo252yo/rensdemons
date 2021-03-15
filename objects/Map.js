@@ -9,7 +9,7 @@ class SM_Town extends LevelObject {
     this.destination = destination;
     this.accessibility_function = accessibility_function;
 
-    var legend = new TextBoxFitted(x+80, y, name);
+    var legend = new TextBoxFitted(x+80, y+15, name.toUpperCase() + "<br />City of ******");
     legend.adjust_depth(y-200);
     legend.set_opacity(0.6);
   }
