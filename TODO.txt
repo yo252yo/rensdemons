@@ -9,35 +9,25 @@ add shops and trainer
 customization: name choice?
 
 
+- HOPE: exposition?
+      > duty/perseverance/bravery/sacrifice
+- FEAR: zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia
+      > ? rules/faith/guilt
+- DENIAL: ignorance/delusion/lie/pretend
+      > cant see others?
+- INDULGENCE: debauchery/lust
+      > freedom, memories
+- ACCEPTANCE: death/praise
+      > death cult/scapegoat/acceptance
+
 
 city themes:
 - mourning
-- purity/sectarism
-- bravery/sacrifice
 - renouncement/grief/acceptance
-- ignorance/denial
-- pretend
 - epistemic confusion ??
-- cant see others
-- overindulge
-- rules
-- freedom
 - silence
-- Lie
-- memories
-- fear of starting
-- death cult
+- fear/fear of starting
 - anger
-- guilt
-- duty
-
-overly careful/paranoid
-perseverance
-Worry
-change
-love
-hope
-
-scapegoat
-
-faith
+- Worry
+- change
+- love
