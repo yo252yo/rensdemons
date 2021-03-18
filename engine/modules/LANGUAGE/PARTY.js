@@ -30,3 +30,26 @@ LANGUAGE.actions[PARTYMEMBERS.BestFriend] = {
     ]);
   },
 };
+
+
+LANGUAGE.actions[PARTYMEMBERS.PreciousChild] = {
+  usage: function(){
+    return summon_friend(DICTIONARY.get(PARTYMEMBERS.PreciousChild)) + RANDOM.pick([
+    `$$PreciousChild$ hides behind you, grabbing your arm, peeking shyly at the $$&ENEMY$.`,
+    `$$PreciousChild$ tiptoes forward towards the $$&ENEMY$. The child fidgets hesitantly while looking at his opponent.`,
+    `$$PreciousChild$ takes your hand, and together you approach the $$&ENEMY$.`,
+//    `$$PreciousChild$: Will you be my friend?`,
+    ]);
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ does not seem to notice $$PreciousChild$. Surely, if it did, it would react.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The innocent smile of $$PreciousChild$ seems to melt the heart of the $$&ENEMY$. It doesn't want to fight anymore.`,
+      `As soon as it sees $$PreciousChild$, the face of the $$&ENEMY$ lights up. `,
+    ]);
+  },
+};

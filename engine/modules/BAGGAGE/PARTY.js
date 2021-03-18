@@ -2,6 +2,8 @@
 const PARTYMEMBERS = {
   Ren: "Ren",
   BestFriend: "BestFriend",
+  PreciousChild: "PreciousChild",
+
    // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
    // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
    // WiseOld: "WiseOld", //  wise old fool /  Scholar
@@ -12,7 +14,6 @@ const PARTYMEMBERS = {
    // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
    // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
    // UpbeatDojikko: "UpbeatDojikko", //  perky and upbeat airhead / mascot? /   necroman/occultist/paranormal/tarot
-   // PreciousChild: "PreciousChild", //shota / supporting innocent youth / precious kid
    // GeniusProdigy: "GeniusProdigy", //child prodigy
    // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
 };
@@ -32,6 +33,8 @@ const PARTY = {
         return `The Goddess is the guardian deity of ${DICTIONARY.get("world_name")}. In Her infinite wisdom, She chose you as Her vessel to save the world from destruction. She is always with you, in your heart.`;
       case PARTYMEMBERS.BestFriend:
         return `${DICTIONARY.get(PARTYMEMBERS.BestFriend)} grew up with you in the town of ${DICTIONARY.get("town_1")}. Since you were of similar age, and your families lived near each other, you spent most of your childhood together. As time passed, you watched ${DICTIONARY.get(PARTYMEMBERS.BestFriend)} grow into the most caring and thoughtful person, whose smile always spread joy to the people around.<br /><br />Soon, you were never seen without one another, and the term "best friend" is almost not enough to capture the complicity that tie you two together. It was pretty obvious that ${DICTIONARY.get(PARTYMEMBERS.BestFriend)} would support you until the end, and certainly not let you leave on your quest alone.`;
+      case PARTYMEMBERS.PreciousChild:
+        return `${DICTIONARY.get(PARTYMEMBERS.PreciousChild)} is the younger brother of ${DICTIONARY.get(PARTYMEMBERS.BestFriend)}. You've spent a lot of time playing with him in ${DICTIONARY.get("town_1")}. You think of him as your little brother too. And since he's also a Second-Born, ${DICTIONARY.get(PARTYMEMBERS.PreciousChild)} really looks up to you. His admiration for you is no secret.<br /><br />${DICTIONARY.get(PARTYMEMBERS.PreciousChild)} always puts on a brave face, and is not afraid of standing his own ground, but nobody ever takes him seriously. He may think he's fierce, but people just find him adorable. His rebellious pout only manages to melt hearts. As a result, nobody can say no to him.`;
       default:
         return "Default";
     }

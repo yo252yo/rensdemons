@@ -100,9 +100,10 @@ new S_Tree(895,260);
 
 child_in_tree(930, 460, "cfm3", new M_ChildM(),
   new TextBannerProgressive([
-    "You found $$child_friends_m3$!",
-    "$$child_friends_m3$: \"Well done...\"",
-    "$$child_friends_m3$: \"Are you ready? It's about time!\"",
+    "You found $$PreciousChild$!",
+    function(){  PARTY.changeNickname(PARTYMEMBERS.PreciousChild); },
+    "$$PreciousChild$: \"Well done... You're so good at hide and seek, $$Ren$!\"",
+    "$$PreciousChild$: \"Are you ready? It's about time! Good luck!\"",
 ]));
 
 new S_Tree(950,185);
