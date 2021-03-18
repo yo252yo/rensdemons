@@ -3,7 +3,7 @@ var summon_friend = function(name) {
     `You ask ${name} for help!`,
     `You decide to let ${name} take care of the $$&ENEMY$.`,
     `You leave the floor to ${name}.`,
-  ]);
+  ]) + " ";
 };
 
 LANGUAGE.actions[PARTYMEMBERS.BestFriend] = {

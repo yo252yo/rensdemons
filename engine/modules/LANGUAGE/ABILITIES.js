@@ -4,7 +4,7 @@ var cast_spell = function(name){
     `You try to use your magic talents on the $$&ENEMY$.`,
     `You try to cast ${name} on the $$&ENEMY$.`,
     `Invoking the ethereal forces of magic, you attempt to use  ${name}.`
-  ]);
+  ]) + " ";
 };
 
 var fail_spell = function(){
