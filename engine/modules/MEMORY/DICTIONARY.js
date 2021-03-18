@@ -20,6 +20,9 @@ class DictionaryGenerator {
     // r[PARTYMEMBERS.GeniusProdigy] = MARKOV_MODELS.human_names.mutate_n("Amadeus", 5, 50); //  hayate/killua/lelouch/near/ender/mozart/mathilda
     // r[PARTYMEMBERS.TraitorFisher] = MARKOV_MODELS.human_names.mutate_n("Judes", 5, 50); //  traitor
 
+    for(var i in r) {
+      r["ORIGINAL_" + i] = r[i];
+    }
     r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
     r['child_friends_m1'] = 'Michael';
     r['child_friends_m2'] = 'Nicholas';
@@ -66,6 +69,12 @@ const DICTIONARY = {
       CONSOLE.error("Wrong dictionary key: " + key);
       return DICTIONARY.fix_broken(key);
     }
+  },
+
+  set: function(key, value) {
+    DICTIONARY._DICTIONARY[key] = value;
+    // dont save to disk, its in the save
+    //    DISK.write("DICTIONARY");
   },
 
   factory: {
