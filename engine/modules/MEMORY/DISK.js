@@ -22,7 +22,8 @@ const DISK = {
 
     _get: function(key) {
       if (DISK._CONTENT[key]){
-        return DISK._CONTENT[key];
+        // Make sure we dont manipulate the object in DISK
+        return JSON.parse(JSON.stringify(DISK._CONTENT[key]));
       } else {
         return undefined;
       }
