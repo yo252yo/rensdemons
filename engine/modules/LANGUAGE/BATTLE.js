@@ -36,10 +36,17 @@ LANGUAGE.actions.generic = {
 //Functions
 
 LANGUAGE.actions._get = function(name, type) {
+  var r;
   try{
-    return LANGUAGE.actions[name][type]();
+    r = LANGUAGE.actions[name][type]();
   } catch (e){
-    return LANGUAGE.actions[`generic`][type]();
+    r = LANGUAGE.actions[`generic`][type]();
+  }
+
+  if(typeof r == "string"){
+    return [r];
+  } else {
+    return r;
   }
 };
 

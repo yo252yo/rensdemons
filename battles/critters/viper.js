@@ -47,7 +47,7 @@ var lootfang_text = "In its fresh remains, you manage to extract one of its fang
 PLAYER_ACTIONS.add({
   name: ITEM.Bone,
   outcome: BATTLETREE.WIN,
-  description: [LANGUAGE.actions.usage(ITEM.Bone), lootfang_text],
+  description: LANGUAGE.actions.usage(ITEM.Bone).concat(lootfang_text),
   consume_item: ITEM.Bone,
   give_item: ITEM.Fang,
 });
@@ -55,7 +55,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: ITEM.Sword_wooden,
   outcome: BATTLETREE.WIN,
-  description: [LANGUAGE.actions.usage(ITEM.Sword_wooden), lootfang_text],
+  description: LANGUAGE.actions.usage(ITEM.Sword_wooden).concat(lootfang_text),
   give_item: ITEM.Fang,
 });
 

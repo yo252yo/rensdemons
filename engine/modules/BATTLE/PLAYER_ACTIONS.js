@@ -30,10 +30,8 @@ const PLAYER_ACTIONS = {
     win_in_several_hits: function(name, nb_hits, consume_item) {
       var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
         name: PLAYER_ACTIONS._internal.repeated_name(name, nb_hits-1),
-        description: [
-          LANGUAGE.actions.usage(name),
-          LANGUAGE.actions.win(name)
-        ],
+        description: LANGUAGE.actions.usage(name).concat(
+                     LANGUAGE.actions.win(name)),
         outcome: BATTLETREE.WIN,
         consume_item: consume_item,
       });
@@ -41,7 +39,7 @@ const PLAYER_ACTIONS = {
       for(var i=nb_hits-2; i>0; i--){
           var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
             name: PLAYER_ACTIONS._internal.repeated_name(name, i),
-            description: [LANGUAGE.actions.usage(name)],
+            description: LANGUAGE.actions.usage(name),
             function: previous_function,
           });
           previous_function = unlock_function;
@@ -50,7 +48,7 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: name,
     // This is where unlock would go if needed:      unlock: true,
-        description: [LANGUAGE.actions.usage(name)],
+        description: LANGUAGE.actions.usage(name),
         function: previous_function,
       });
     },
@@ -59,10 +57,8 @@ const PLAYER_ACTIONS = {
       var action_object = {
         name: name,
         outcome: BATTLETREE.WIN,
-        description: [
-          LANGUAGE.actions.usage(name),
-          LANGUAGE.actions.win(name)
-        ],
+        description: LANGUAGE.actions.usage(name).concat(
+                     LANGUAGE.actions.win(name)),
         consume_item: consume_item,
       };
       PLAYER_ACTIONS.add(action_object);
@@ -121,10 +117,8 @@ const PLAYER_ACTIONS = {
     PLAYER_ACTIONS.add({
       name: ABILITY.Flee,
       outcome: BATTLETREE.ESCAPE,
-      description: [
-        LANGUAGE.actions.usage(ABILITY.Flee),
-        LANGUAGE.actions.fail(ABILITY.Flee)
-      ],
+      description: LANGUAGE.actions.usage(ABILITY.Flee).concat(
+                   LANGUAGE.actions.fail(ABILITY.Flee)),
     });
   },
 
@@ -132,10 +126,8 @@ const PLAYER_ACTIONS = {
     PLAYER_ACTIONS.add({
       name: name,
       outcome: BATTLETREE.NOTHING,
-      description: [
-        LANGUAGE.actions.usage(name),
-        LANGUAGE.actions.fail(name)
-      ],
+      description: LANGUAGE.actions.usage(name).concat(
+                   LANGUAGE.actions.fail(name)),
     });
   },
 
