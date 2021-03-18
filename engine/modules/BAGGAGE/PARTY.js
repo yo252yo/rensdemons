@@ -69,16 +69,16 @@ const PARTY = {
     CONSOLE.log.party(name + " left");
   },
 
+  changeNickname: function(name) {
+    var trueName = PARTY.display._get_name(name);
+    var newName = prompt("Chose a nickname for " + trueName, trueName);
+
+    if (newName) {
+      DICTIONARY.set(name, newName);
+    }
+  },
+
   display: {
-    changeNickname: function(name) {
-      var trueName = PARTY.display._get_name(name);
-      var newName = prompt("Chose a nickname for " + trueName, trueName);
-
-      if (newName != null) {
-        DICTIONARY.set(name, newName);
-      }
-    },
-
     _get_name: function(name) {
       if(DICTIONARY.has(name)){
         return DICTIONARY.get(name);
@@ -100,7 +100,7 @@ const PARTY = {
                       <div style='float: left;width:300px;height:300px;position:relative;' id='character_portait_slot'>
                       </div>` + PARTY.description(name),
                     [
-                     {"text": "Change nickname", "effect": function(){ PARTY.display.changeNickname(name); }},
+                     {"text": "Change nickname", "effect": function(){ PARTY.changeNickname(name); }},
                      TEXTMENU_EMPTYROW,
                      {"text": "Back to party", "effect": "##BACK"},
                      TEXTMENU_EMPTYROW,
