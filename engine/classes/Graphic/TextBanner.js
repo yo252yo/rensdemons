@@ -64,7 +64,11 @@ class TextBannerProgressive {
   }
 
   progress() {
-    new TextBanner(this.lines[this.state]);
+    if (typeof this.lines[this.state] == "function") {
+      this.lines[this.state]();
+    } else {
+      new TextBanner(this.lines[this.state]);
+    }
     this.state = Math.min(this.state + 1, this.lines.length - 1);
   }
 }

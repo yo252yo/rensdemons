@@ -1,13 +1,19 @@
 AUDIO.music.hideandseek();
 
 CURRENTLEVEL.start_function = function() {
+  var callback = function(){
+    PARTY.changeNickname(PARTYMEMBERS.Ren);
+    TextBannerSequence.make([
+      "$$Ren$: \"... 97\"",
+      "$$Ren$: \"... 98\"",
+      "$$Ren$: \"... 99\"",
+      "$$Ren$: \"... 100! Ready or not, here I come!\"",
+    ], function(){ SAVE.autosave(); IO.control.character(); });
+  }
+
   TextBannerSequence.make([
     "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
-    "$$Ren$: \"... 97\"",
-    "$$Ren$: \"... 98\"",
-    "$$Ren$: \"... 99\"",
-    "$$Ren$: \"... 100! Ready or not, here I come!\"",
-  ], function(){ SAVE.autosave(); IO.control.character(); });
+  ], callback);
 };
 
 
@@ -69,7 +75,8 @@ new S_Tree(550,100);
 new S_Tree(560,460);
 
 child_in_tree(620, 280, "cfbf", new M_ChildF(), new TextBannerProgressive([
-    "You found your best friend $$BestFriend$!",
+    "You found your best friend, $$BestFriend$!",
+    function(){  PARTY.changeNickname(PARTYMEMBERS.BestFriend); },
     "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
     "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
