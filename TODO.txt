@@ -10,8 +10,6 @@ BestFriend sprite sucks
 
 trial start point is surrounded by rodents
 
-using character in battle attempts to consume a similarly named item
-
 
 - HOPE: exposition?
       > duty/perseverance/bravery/sacrifice

@@ -32,7 +32,7 @@ LANGUAGE.actions[PARTYMEMBERS.BestFriend] = {
     return RANDOM.pick([
       `You cannot believe your eyes, but somehow the murmur of $$BestFriend$ managed to win the $$&ENEMY$ over. Completely tamed, it is now harmless to you.`,
       `The soothing voice of $$BestFriend$ succeeds at removing the will to fight from the $$&ENEMY$.`,
-      `Perhaps something in the gentle demeanor of $$BestFriend$ melted the heart of the $$&ENEMY$. In any case, it backs away from the fight, leaving you free.`,
+      `Perhaps something in the gentle demeanor of $$BestFriend$ touched the heart of the $$&ENEMY$. In any case, it backs away from the fight, leaving you free.`,
     ]);
   },
 };
