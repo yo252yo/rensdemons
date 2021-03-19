@@ -184,6 +184,22 @@ LANGUAGE.actions[ITEM.Mace] = {
   },
 };
 
+LANGUAGE.actions[ITEM.War_hammer] = {
+  usage: function(){
+    return get_language(ITEM.War_hammer, [attack_blunt]);
+  },
+  fail: function(){
+    return get_language(ITEM.War_hammer, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The massive hammer, charged by the inertia of your arm, explodes the poor $$&ENEMY$ into little fragments that go flying around.`,
+      `You need an ample motion to wave the heavy weapon, but it is worth it when the strength of the shock propells the $$&ENEMY$ a few steps behind.`,
+      `You barely feel any resistance when your hammer hits its target, but you do hear the chilling sound of the $$&ENEMY$ being crushed by your blow.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Spear] = {
   usage: function(){
     return get_language(ITEM.Spear, [attack_pointy]);
