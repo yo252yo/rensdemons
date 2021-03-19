@@ -20,7 +20,7 @@ const ITEM = {
     Sword_legend: "Holy Sword",
     // War_hammer: "War Hammer",
     // Mace: "Mace",
-    // Spear: "Spear",
+    Spear: "Spear",
     Axe: "Axe",
     // Shield: "Shield",
 

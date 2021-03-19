@@ -68,6 +68,9 @@ LANGUAGE.actions[ITEM.Elixir_fire] = {
     var flair = [``, `It explodes on the ground, near the $$&ENEMY$.`];
     return get_language(ITEM.Elixir_fire, [attack_throw]) + RANDOM.pick(flair);
   },
+  fail: function(){
+    return get_language(ITEM.Elixir_fire, [defend_dodge]);
+  },
   win: function(){
     return `The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little.`;
   },
@@ -77,6 +80,9 @@ LANGUAGE.actions[ITEM.Sword_wooden] = {
   usage: function(){
     return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
   },
+  fail: function(){
+    return get_language(ITEM.Sword_wooden, [defend_dodge, defend_tank]);
+  },
   win: function(){
     return `It's pretty dull, but it's enough to get rid of the $$&ENEMY$.`;
   },
@@ -85,6 +91,9 @@ LANGUAGE.actions[ITEM.Sword_wooden] = {
 LANGUAGE.actions[ITEM.Sword_iron] = {
   usage: function(){
     return get_language(ITEM.Sword_iron, [attack_pointy, attack_blunt]);
+  },
+  fail: function(){
+    return get_language(ITEM.Sword_iron, [defend_dodge, defend_tank]);
   },
   win: function(){
     return RANDOM.pick([
@@ -99,6 +108,9 @@ LANGUAGE.actions[ITEM.Sword_great] = {
   usage: function(){
     return get_language(ITEM.Sword_great, [attack_pointy, attack_blunt]);
   },
+  fail: function(){
+    return get_language(ITEM.Sword_great, [defend_dodge, defend_tank]);
+  },
   win: function(){
     return RANDOM.pick([
       `Your weapon slashes through the air in a blinding ray of light, before hitting the $$&ENEMY$ which perishes under the blow.`,
@@ -111,6 +123,9 @@ LANGUAGE.actions[ITEM.Sword_great] = {
 LANGUAGE.actions[ITEM.Sword_legend] = {
   usage: function(){
     return get_language(ITEM.Sword_legend, [attack_pointy, attack_blunt]);
+  },
+  fail: function(){
+    return get_language(ITEM.Sword_legend, [defend_dodge, defend_tank]);
   },
   win: function(){
     return RANDOM.pick([
@@ -125,6 +140,9 @@ LANGUAGE.actions[ITEM.Dagger] = {
   usage: function(){
     return get_language(ITEM.Dagger, [attack_pointy]);
   },
+  fail: function(){
+    return get_language(ITEM.Dagger, [defend_dodge, defend_tank]);
+  },
   win: function(){
     return RANDOM.pick([
       `You manage to get close enough to the $$&ENEMY$ to plant your dagger into it. You're close enough to feel it tremble as the last breath of life leaves it.`,
@@ -138,6 +156,9 @@ LANGUAGE.actions[ITEM.Axe] = {
   usage: function(){
     return get_language(ITEM.Axe, [attack_blunt]);
   },
+  fail: function(){
+    return get_language(ITEM.Axe, [defend_dodge, defend_tank]);
+  },
   win: function(){
     return RANDOM.pick([
       `You slash the $$&ENEMY$ with your massive axe. The disjointed body parts hit the ground with a morbid sound.`,
@@ -147,11 +168,30 @@ LANGUAGE.actions[ITEM.Axe] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Spear] = {
+  usage: function(){
+    return get_language(ITEM.Spear, [attack_pointy]);
+  },
+  fail: function(){
+    return get_language(ITEM.Spear, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `Your spear goes right through the $$&ENEMY$, which falls dead in an instant.`,
+      `The spear pierces the air with a whistling sound before slashing through the $$&ENEMY$.`,
+      `The protection of the $$&ENEMY$ is no match for your spear which punctures it and leaves it lifeless.`,
+    ]);
+  },
+};
+
 
 LANGUAGE.actions[ITEM.Fang] = {
   usage: function(){
     var flair = [``, `It is still dripping with venom.`];
     return get_language(ITEM.Fang, [attack_pointy]) + RANDOM.pick(flair);
+  },
+  fail: function(){
+    return get_language(ITEM.Fang, [defend_dodge, defend_tank]);
   },
   win: function(){
     return `The $$&ENEMY$ convulses and then falls on the ground.`;
