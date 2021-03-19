@@ -8,7 +8,7 @@ const ABILITY = {
     Ice_bolt: "Ice bolt",
     Thunder: "Thunder",
     Storm: "Storm",
-    // Asphyxiate: "Asphyxiate",
+    Asphyxiate: "Asphyxiate",
     // Earthquake: "Earthquake",
     // Incinerate: "Incinerate",
     // Summon: "Summon",

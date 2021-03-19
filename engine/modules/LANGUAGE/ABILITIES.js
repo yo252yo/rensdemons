@@ -124,6 +124,24 @@ LANGUAGE.actions[ABILITY.Storm] = {
   },
 };
 
+LANGUAGE.actions[ABILITY.Asphyxiate] = {
+  usage: function(){
+    return cast_spell(ABILITY.Asphyxiate) + RANDOM.pick([
+      `You instruct the spirits of the air to avoid the $$&ENEMY$, leaving it unable to breathe.`,
+      `Focusing your mind, you chase the atmosphere away from the $$&ENEMY$.`,
+      `You manipulate the forces of magic to apply a strong pressure on the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ struggles to catch its breath. You see it twitch a little before falling lifeless on the ground.`,
+      `The $$&ENEMY$ is so crushed that it cannot take a single breath. It drops dead, gasping for air.`,
+      `The air around the $$&ENEMY$ wears thin. You can hear the wheezing sound of its breath as it falls unconscious.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ABILITY.Charm] = {
   usage: function(){
     return cast_spell(ABILITY.Charm) + RANDOM.pick([
