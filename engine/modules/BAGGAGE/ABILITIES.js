@@ -9,7 +9,7 @@ const ABILITY = {
     Thunder: "Thunder",
     Storm: "Storm",
     Asphyxiate: "Asphyxiate",
-    // Earthquake: "Earthquake",
+    Earthquake: "Earthquake",
     // Incinerate: "Incinerate",
     // Summon: "Summon",
 

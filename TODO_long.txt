@@ -28,6 +28,8 @@ did i fix word break in little textbox but not in CenteredTextMenu ??
 
 the treasure battler should probs be closed
 
+mb i need to make scroll work even without fog
+
 mb revamp party screen with icons
 
 different sound walking on map

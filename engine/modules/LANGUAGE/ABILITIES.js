@@ -124,6 +124,24 @@ LANGUAGE.actions[ABILITY.Storm] = {
   },
 };
 
+LANGUAGE.actions[ABILITY.Earthquake] = {
+  usage: function(){
+    return cast_spell(ABILITY.Earthquake) + RANDOM.pick([
+      `You summon telluric currents and redirects to them towards the $$&ENEMY$. The ground begins to tremble under it.`,
+      `You focus your attention on your feet and send magical shockwaves towards the $$&ENEMY$.`,
+      `You hear a tremor in the ground before feeling anything, as the spirits of the soil begin to answer your call.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The ground vibrations grow stronger and stronger, until the $$&ENEMY$ cannot stand anymore. When the tremor ceases, it seems stunned in place.`,
+      `The earth shakes around the $$&ENEMY$, and suddenly shatters in a loud crack. A rift forms under the $$&ENEMY$, and before soon it is falling to a neverending doom in the insides of the planet.`,
+      `The tremor of the ground seems to grow in strengh. The rumbling noise is deafening. It seems that under the strain, the $$&ENEMY$'s whole body collapses.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ABILITY.Asphyxiate] = {
   usage: function(){
     return cast_spell(ABILITY.Asphyxiate) + RANDOM.pick([
