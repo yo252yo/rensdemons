@@ -10,7 +10,7 @@ const ABILITY = {
     Storm: "Storm",
     Asphyxiate: "Asphyxiate",
     Earthquake: "Earthquake",
-    // Incinerate: "Incinerate",
+    Incinerate: "Incinerate",
     // Summon: "Summon",
 
   // Way of the Spirit

@@ -124,6 +124,24 @@ LANGUAGE.actions[ABILITY.Storm] = {
   },
 };
 
+LANGUAGE.actions[ABILITY.Asphyxiate] = {
+  usage: function(){
+    return cast_spell(ABILITY.Asphyxiate) + RANDOM.pick([
+      `You instruct the spirits of the air to avoid the $$&ENEMY$, leaving it unable to breathe.`,
+      `Focusing your mind, you chase the atmosphere away from the $$&ENEMY$.`,
+      `You manipulate the forces of magic to apply a strong pressure on the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ struggles to catch its breath. You see it twitch a little before falling lifeless on the ground.`,
+      `The $$&ENEMY$ is so crushed that it cannot take a single breath. It drops dead, gasping for air.`,
+      `The air around the $$&ENEMY$ wears thin. You can hear the wheezing sound of its breath as it falls unconscious.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ABILITY.Earthquake] = {
   usage: function(){
     return cast_spell(ABILITY.Earthquake) + RANDOM.pick([
@@ -142,20 +160,20 @@ LANGUAGE.actions[ABILITY.Earthquake] = {
   },
 };
 
-LANGUAGE.actions[ABILITY.Asphyxiate] = {
+LANGUAGE.actions[ABILITY.Incinerate] = {
   usage: function(){
-    return cast_spell(ABILITY.Asphyxiate) + RANDOM.pick([
-      `You instruct the spirits of the air to avoid the $$&ENEMY$, leaving it unable to breathe.`,
-      `Focusing your mind, you chase the atmosphere away from the $$&ENEMY$.`,
-      `You manipulate the forces of magic to apply a strong pressure on the $$&ENEMY$.`,
+    return cast_spell(ABILITY.Incinerate) + RANDOM.pick([
+      `Instead of summoning a fireball, you attempt to start a blaze directly inside the body of the $$&ENEMY$.`,
+      `You use your magic forces to manipulate the energy flow of the $$&ENEMY$, and attempt to derail it and set it ablaze.`,
+      `You focus your attention on the atoms that constitute the $$&ENEMY$. You try to increase their activity to raise the temperature.`,
     ]);
   },
   fail: fail_spell,
   win: function(){
     return RANDOM.pick([
-      `The $$&ENEMY$ struggles to catch its breath. You see it twitch a little before falling lifeless on the ground.`,
-      `The $$&ENEMY$ is so crushed that it cannot take a single breath. It drops dead, gasping for air.`,
-      `The air around the $$&ENEMY$ wears thin. You can hear the wheezing sound of its breath as it falls unconscious.`,
+      `Suddenly, the $$&ENEMY$ takes on fire from the inside. It emits an ungodly roar as its body gets consumed by the flames.`,
+      `The $$&ENEMY$ barely has time to break a sweat before turning all red, then black, and crumbling into ash.`,
+      `The $$&ENEMY$ becomes suddenly ablaze. Nothing seems to reduce the heat consuming it. You see the $$&ENEMY$ roll on the floor in a vain attempt to quiet the inferno, before passing out, contorted by pain.`,
     ]);
   },
 };
