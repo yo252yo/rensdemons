@@ -9,27 +9,3 @@ add shops and trainer
 BestFriend sprite sucks
 
 trial start point is surrounded by rodents
-
-
-- HOPE: exposition?
-      > duty/perseverance/bravery/sacrifice
-- FEAR: zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia
-      > ? rules/faith/guilt
-- DENIAL: ignorance/delusion/lie/pretend
-      > cant see others?
-- INDULGENCE: debauchery/lust
-      > freedom, memories
-- ACCEPTANCE: death/praise
-      > death cult/scapegoat/acceptance
-
-
-city themes:
-- mourning
-- renouncement/grief/acceptance
-- epistemic confusion ??
-- silence
-- fear/fear of starting
-- anger
-- Worry
-- change
-- love

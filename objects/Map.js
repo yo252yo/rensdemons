@@ -2,14 +2,33 @@
 // runtime: Rectangle, StaticSprite
 
 class SM_Town extends LevelObject {
-  constructor(x, y, destination, name, accessibility_function){
+  constructor(x, y, destination, code, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/town.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(50,-35,120,130);
     this.destination = destination;
     this.accessibility_function = accessibility_function;
 
-    var legend = new TextBoxFitted(x+80, y+15, name.toUpperCase() + "<br />City of ******");
+    var subtitle = "";
+    switch(code){
+      case "town_1":
+        subtitle = "<br />City of Hope";
+        break;
+      case "town_2":
+        subtitle = "<br />City of Fear";
+        break;
+      case "town_3":
+        subtitle = "<br />City of Denial";
+        break;
+      case "town_4":
+        subtitle = "<br />City of Indulgence";
+        break;
+      case "town_5":
+        subtitle = "<br />City of Acceptance";
+        break;
+    }
+
+    var legend = new TextBoxFitted(x+80, y+15, DICTIONARY.get(code).toUpperCase() + subtitle);
     legend.adjust_depth(y-200);
     legend.set_opacity(0.6);
   }

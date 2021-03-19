@@ -32,8 +32,16 @@ class DictionaryGenerator {
 
     // Geography names
     r['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
-    r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg";
-    r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8);
+    r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
+    // exposition/duty/perseverance/bravery/sacrifice
+    r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
+    // zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia  > ? rules/faith/guilt
+    r['town_3'] = MARKOV_MODELS.human_names.mutate("Columbia", 8); // denial
+    // ignorance/delusion/lie/pretend  > cant see others?
+    r['town_4'] = MARKOV_MODELS.human_names.mutate("Vegas", 8); // debauch
+    // debauchery/lust  > freedom, memories
+    r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance
+    // death/praise  > death cult/scapegoat/acceptance
 
     // Generation seeds
     r['town_1_seed'] = Math.random();
