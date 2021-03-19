@@ -168,6 +168,22 @@ LANGUAGE.actions[ITEM.Axe] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Mace] = {
+  usage: function(){
+    return get_language(ITEM.Mace, [attack_blunt]);
+  },
+  fail: function(){
+    return get_language(ITEM.Mace, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `Your mace smashes the $$&ENEMY$ with an awful crushing sound that resonates all around you.`,
+      `The blow from your mace sends the $$&ENEMY$ tumbling back. It will not recuperate from this shock.`,
+      `The mace is heavy and hard to manoeuvre, but it leaves a visible dent in the body of the $$&ENEMY$ which is rendered unable to fight.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Spear] = {
   usage: function(){
     return get_language(ITEM.Spear, [attack_pointy]);
