@@ -8,17 +8,30 @@ const BATTLE = {
   abilities_before: 0,
 
   turn_factory: {
+    _is_option_available: function (i){
+      if (! BATTLETREE.api.is_unlocked(BATTLE.current_battle, i)) {
+        return false;
+      }
+
+      var trimmed = i.trim();
+      if(ITEM.isItem(trimmed) && !(INVENTORY.has_object(trimmed)>0)){ // check our stock
+        return false;
+      }
+      // Special items requirements
+      if(trimmed == ITEM.Arrow){
+        if (!(INVENTORY.has_object(ITEM.Bow)>0)){
+          return false;
+        }
+      }
+      return true;
+    },
+
     player: function() {
       var options = [];
       for (var i in BATTLE._player_actions) {
-        if (! BATTLETREE.api.is_unlocked(BATTLE.current_battle, i)) {
+        if (! BATTLE.turn_factory._is_option_available(i)) {
           continue;
         }
-
-        if(ITEM.isItem(i.trim()) && !(INVENTORY.has_object(i.trim())>0)){ // check our stock
-          continue;
-        }
-
         (function(index){
           var f = function() {
             // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).

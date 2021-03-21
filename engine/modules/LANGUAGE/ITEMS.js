@@ -1,9 +1,11 @@
 var attack_blunt = function(name){
   return [`You try to hit the $$&ENEMY$ with your ${name}.`,
+          `You swing your ${name} in the direction of the $$&ENEMY$.`,
           `You attempt to strike the $$&ENEMY$ with the ${name}.`];
 };
 var attack_pointy = function(name){
   return [`You attemp to stab the $$&ENEMY$ with your ${name}.`,
+          `You jump forward, ${name} first, to pierce the $$&ENEMY$.`,
           `You wave the ${name} at the $$&ENEMY$.`];
 };
 var attack_throw = function(name){
@@ -13,11 +15,15 @@ var attack_throw = function(name){
 var defend_dodge = function(name){
   return [`The $$&ENEMY$ avoids your attack pretty easily.`,
           `The $$&ENEMY$ has no problem dodging.`,
+          `You $$&ENEMY$ dodges your ${name}.`,
+          `You $$&ENEMY$ jumps to the side, and your ${name} misses it.`,
+          `The $$&ENEMY$ just gets out of the way, and recovers its position.`,
           `This doesn't seem to hit the $$&ENEMY$.`];
 }
 var defend_tank = function(name){
   return [`The blow does not seem to hurt the $$&ENEMY$.`,
           `It doesn't seem very effective. The $$&ENEMY$ doesn't budge.`,
+          `The $$&ENEMY$ is hit, but it seems too painless for it to matter.`,
           `The $$&ENEMY$ is not affected by your attack.`,
           `The $$&ENEMY$ doesn't appear to notice your hit.`];
 }
@@ -212,6 +218,30 @@ LANGUAGE.actions[ITEM.Spear] = {
       `Your spear goes right through the $$&ENEMY$, which falls dead in an instant.`,
       `The spear pierces the air with a whistling sound before slashing through the $$&ENEMY$.`,
       `The protection of the $$&ENEMY$ is no match for your spear which punctures it and leaves it lifeless.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ITEM.Arrow] = {
+  usage: function(){
+    return RANDOM.pick([
+      `You take your bow and load an arrow.`,
+      `In a swift motion, you grab and load your bow.`,
+      `You get your bow.`,
+    ]) + " " + RANDOM.pick([
+      `You calmly take aim at the $$&ENEMY$.`,
+      `You draw slow breath to steady your aim, and close one eye to target the $$&ENEMY$.`,
+      `You try to focus your mind and aim for the weak points of the $$&ENEMY$.`,
+    ]);
+  },
+  fail: function(){
+    return get_language(ITEM.Arrow, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `Your arrow lands right into the $$&ENEMY$'s vital point. It drops dead on the spot.`,
+      `You manage to lodge your projectile on the most vulnerable part of the $$&ENEMY$'s body, taking it down with this last shot.`,
+      `Your arrow pierces through the $$&ENEMY$, and comes out the other side with a gush of blood.`,
     ]);
   },
 };

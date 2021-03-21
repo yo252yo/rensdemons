@@ -27,9 +27,9 @@ const ITEM = {
 
   // Way of the Tools
     Dagger: "Dagger",
-    // Bow: "Bow",
-    // Arrow: "Arrow",
-    // Poison: "Poison darts",
+    Bow: "Bow",
+    Arrow: "Arrow",
+    // Poison_darts: "Poison darts",
     // Net: "Net",
     // Rope: "Rope",
 
