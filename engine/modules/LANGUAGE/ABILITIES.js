@@ -11,6 +11,7 @@ var fail_spell = function(){
   return RANDOM.pick([`The spell fizzles out without any effect.`,
                       `It appears clear that this spell will not work this time.`,
                       `The $$&ENEMY$ seems unaffected by your spell.`,
+                      `The $$&ENEMY$ resists against your efforts without trouble.`,
                       `The $$&ENEMY$ is resilient to this spell. Nothing happens.`,
                       `Your spell has no effect.`]);
 };
@@ -247,6 +248,25 @@ LANGUAGE.actions[ABILITY.Poison] = {
       `The $$&ENEMY$ is taken by violent spasms that don't even stop when it falls lifeless on the ground.`,
       `Your magical senses perceive that the poison spreads through the $$&ENEMY$ before it begins shakind uncontrollably and pass out in agony.`,
       `The $$&ENEMY$ stumbles as strengh leaves its body, consumed by your venomous fluids. Soon, it is rendered inert.`,
+    ]);
+  },
+};
+
+
+LANGUAGE.actions[ABILITY.Shrink] = {
+  usage: function(){
+    return cast_spell(ABILITY.Shrink) + RANDOM.pick([
+      `You pull on the fabric of the universe in an attempt to compress the $$&ENEMY$ and squeeze it out of existence.`,
+      `Through magic, you apply an enormous pressure force on the $$&ENEMY$.`,
+      `You attempt to use your mastery of etheral forces to compress the space around the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `As you manipulate the very structure of space around the $$&ENEMY$, you see it getting smaller and smaller, until nothing is left but a small dot that vanishes away in a pop.`,
+      `The $$&ENEMY$'s body contorts in pain under the external pressure. It seems to collapse on itself until there's no sign left it ever existed.`,
+      `You can see the $$&ENEMY$'s body squeezed from all sides. It gets thiner, smaller... It becomes more and more like a spherical blob as it slowly turns into a single speck of dust that gets blown away by a breeze.`,
     ]);
   },
 };

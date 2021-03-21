@@ -17,7 +17,7 @@ const ABILITY = {
     Charm: "Charm",
     Petrify: "Petrify",
     Poison: "Poison",
-    // Shrink: "Shrink",
+    Shrink: "Shrink",
     // Blind: "Blind",
     // Lull: "Lull",
 
