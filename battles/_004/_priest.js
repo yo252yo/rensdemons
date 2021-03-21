@@ -27,6 +27,9 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.NOTHING,
   description: ["$$Ren$: \"So... what happens next?\"",
                 "Priest: \"You must prepare for the battle to come. Our little town of $$town_1$ doesn't have much to offer. You need to travel north, to $$town_2$. There, the priests at the cathedral will help you acquire what you'll need to save the world.\""],
+  extra_function: function() {
+    ABILITIES.unlock("_004_priest_asked");
+  },
 });
 
 PLAYER_ACTIONS.add({

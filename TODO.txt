@@ -2,8 +2,6 @@ Finish: PARTY, ITEM, ABILITIES
 
 add money?
 
-reconnect with best friend
-
 add shops and trainer
 
 BestFriend sprite sucks
