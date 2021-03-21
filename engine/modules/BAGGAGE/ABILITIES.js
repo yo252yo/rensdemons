@@ -11,7 +11,7 @@ const ABILITY = {
     Asphyxiate: "Asphyxiate",
     Earthquake: "Earthquake",
     Incinerate: "Incinerate",
-    // Summon: "Summon",
+    Summon: "Summon",
 
   // Way of the Spirit
     Charm: "Charm",

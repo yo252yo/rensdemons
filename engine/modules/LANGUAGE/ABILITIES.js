@@ -9,6 +9,7 @@ var cast_spell = function(name){
 
 var fail_spell = function(){
   return RANDOM.pick([`The spell fizzles out without any effect.`,
+                      `It appears clear that this spell will not work this time.`,
                       `The $$&ENEMY$ seems unaffected by your spell.`,
                       `The $$&ENEMY$ is resilient to this spell. Nothing happens.`,
                       `Your spell has no effect.`]);
@@ -174,6 +175,24 @@ LANGUAGE.actions[ABILITY.Incinerate] = {
       `Suddenly, the $$&ENEMY$ takes on fire from the inside. It emits an ungodly roar as its body gets consumed by the flames.`,
       `The $$&ENEMY$ barely has time to break a sweat before turning all red, then black, and crumbling into ash.`,
       `The $$&ENEMY$ becomes suddenly ablaze. Nothing seems to reduce the heat consuming it. You see the $$&ENEMY$ roll on the floor in a vain attempt to quiet the inferno, before passing out, contorted by pain.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ABILITY.Summon] = {
+  usage: function(){
+    return cast_spell(ABILITY.Summon) + RANDOM.pick([
+      `Armed with your magic training, you atune yourself with the forces of nature and call for their help.`,
+      `You send your mind in the ethereal realms, in the hope to find kindred spirits who may come to your rescue.`,
+      `You send a magic signal beckoning mythical creatures to come to you.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){ // fairy, griffin, cerberus, hydra
+    return RANDOM.pick([
+      `You hear a growl from afar, and soon the air trembles around you. Answering your call, a mighty dragon approaches at an incredible speed. Its wide obsidian scales shine as it dashes towards the $$&ENEMY$. It opens his maw, revealing a set of sharp pointy teeth, and grabs its prey in a swift motion. It then flies away as fast as it came.`,
+      `What seems like a ball of fire drops from the sky, but as it approaches you see a majestic phoenix spread its wing. It floats a few seconds above you, radiating sparks that crackle in the heated air. Suddenly, it opens its beak, and spouts a torrent of wildfire on the $$&ENEMY$. When the phoenix flipts its wing to take off, there's nothing but dust to be blown away.`,
+      `You hear the sound of hooves before you see the legendary animal coming towards you. The unicorn's immaculate mane is almost blinding. It rears up and neighs before dashing towards the $$&ENEMY$. As this incredible speed, it only takes a second before your foe is taken towards the horizon, impaled on the mythical horn.`,
     ]);
   },
 };
