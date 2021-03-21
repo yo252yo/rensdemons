@@ -214,3 +214,21 @@ LANGUAGE.actions[ABILITY.Charm] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Petrify] = {
+  usage: function(){
+    return cast_spell(ABILITY.Petrify) + RANDOM.pick([
+      `You call upon the forces of magic to manipulate the very matter in the body of the $$&ENEMY$, and order it to stop moving.`,
+      `You try to paralyze the $$&ENEMY$ by pressuring it with ethereal forces.`,
+      `You project magic forces onto the $$&ENEMY$ to prevent any motion.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ becomes stiff and lifeless as a statue. You can easily ignore it now.`,
+      `The petrified body of the $$&ENEMY$ falls on the ground as it's no longer able to maintain its balance.`,
+      `The $$&ENEMY$ seems to struggle for a bit, with an unnatural growl, before freezing completely in place.`,
+    ]);
+  },
+};

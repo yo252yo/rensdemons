@@ -15,7 +15,7 @@ const ABILITY = {
 
   // Way of the Spirit
     Charm: "Charm",
-    // Petrify: "Petrify",
+    Petrify: "Petrify",
     // Poison: "Poison",
     // Shrink: "Shrink",
     // Blind: "Blind",
