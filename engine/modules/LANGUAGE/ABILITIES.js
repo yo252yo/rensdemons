@@ -232,3 +232,21 @@ LANGUAGE.actions[ABILITY.Petrify] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Poison] = {
+  usage: function(){
+    return cast_spell(ABILITY.Poison) + RANDOM.pick([
+      `You try to use your arcanic knowledge of body energy to turn the $$&ENEMY$'s own flesh against itself.`,
+      `You focus your magical energy into turning the $$&ENEMY$'s bodily fluids into deadly poison.`,
+      `You try to inject magically a strong poison into the body of the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ is taken by violent spasms that don't even stop when it falls lifeless on the ground.`,
+      `Your magical senses perceive that the poison spreads through the $$&ENEMY$ before it begins shakind uncontrollably and pass out in agony.`,
+      `The $$&ENEMY$ stumbles as strengh leaves its body, consumed by your venomous fluids. Soon, it is rendered inert.`,
+    ]);
+  },
+};
