@@ -252,7 +252,6 @@ LANGUAGE.actions[ABILITY.Poison] = {
   },
 };
 
-
 LANGUAGE.actions[ABILITY.Shrink] = {
   usage: function(){
     return cast_spell(ABILITY.Shrink) + RANDOM.pick([
@@ -267,6 +266,24 @@ LANGUAGE.actions[ABILITY.Shrink] = {
       `As you manipulate the very structure of space around the $$&ENEMY$, you see it getting smaller and smaller, until nothing is left but a small dot that vanishes away in a pop.`,
       `The $$&ENEMY$'s body contorts in pain under the external pressure. It seems to collapse on itself until there's no sign left it ever existed.`,
       `You can see the $$&ENEMY$'s body squeezed from all sides. It gets thiner, smaller... It becomes more and more like a spherical blob as it slowly turns into a single speck of dust that gets blown away by a breeze.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ABILITY.Confusion] = {
+  usage: function(){
+    return cast_spell(ABILITY.Confusion) + RANDOM.pick([
+      `You call on the forces of magic to confuse the senses of the $$&ENEMY$ and render it unable to fight.`,
+      `You try to magically mess with the spirit of the $$&ENEMY$ to make it not see you.`,
+      `You send through the ether confusing pictures to the mind of the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ stumbles hesitantly. It searches the air in front, in a desperate attempt to attack you, but it's hopeless. You manage to get away safely.`,
+      `Without its senses, the $$&ENEMY$ cannot keep track of you when you move. You walk casually around it, watching it struggle against nothing.`,
+      `You take advantage of the confused senses of the $$&ENEMY$ to run past it.`,
     ]);
   },
 };

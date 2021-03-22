@@ -18,7 +18,7 @@ const ABILITY = {
     Petrify: "Petrify",
     Poison: "Poison",
     Shrink: "Shrink",
-    // Blind: "Blind",
+    Confusion: "Confusion",
     // Lull: "Lull",
 
  // Way of the Diplomat
