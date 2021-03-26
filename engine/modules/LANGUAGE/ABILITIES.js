@@ -313,3 +313,22 @@ LANGUAGE.actions[ABILITY.Persuade] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Intimidate] = {
+  usage: function(){
+    RANDOM.pick([
+      `You recall your training and start making a series of complex gestures and sounds that is supposed to impress your dominance over the $$&ENEMY$'s subconscious.`,
+      `Chosing your words carefully, you attempt to establish yourself as a strong presence through sheer display of rhetoric.`,
+      `You threaten the $$&ENEMY$ by exposing calmly and rationally how everything works in your favor for you to win this fight.`,
+      `You pick a vocabulary that is as slashing as elegant as you attempt to intimidate the $$&ENEMY$ through lyricality and rhymes.`,
+    ]);
+  },
+  fail: fail_ability,
+  win: function(){
+    return RANDOM.pick([
+      `Your words seem to have successfully frightened the $$&ENEMY$ who runs away in a panic.`,
+      `The $$&ENEMY$ loses composure as you progress in your routine. Soon, the $$&ENEMY$ starts to tremble with fear, and simply dashes away.`,
+      `Your charisma seems to work wonders on the $$&ENEMY$. It quickly gets so terrified that it stops opposing any resistance.`,
+    ]);
+  },
+};
