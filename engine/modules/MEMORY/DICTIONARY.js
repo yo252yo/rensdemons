@@ -7,6 +7,7 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.Ren] = 'Ren';
     r[PARTYMEMBERS.BestFriend] = MARKOV_MODELS.human_names.mutate("Aerith", 5);
     r[PARTYMEMBERS.PreciousChild] = MARKOV_MODELS.human_names.mutate("Honey", 5); // hope/genis/ed/hideyoshi/honey senpai
+    r[PARTYMEMBERS.UpbeatDojikko] = MARKOV_MODELS.human_names.mutate("Asahina", 5); //  riku/yuffie/dojiko/asahina/phoebe
 
     // r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5); // sasuke/seifer/Riku/squall/batman
     // r[PARTYMEMBERS.StreetSmart] = MARKOV_MODELS.human_names.mutate("Han", 5); //hansolo / Quistis / aladdin
@@ -17,7 +18,6 @@ class DictionaryGenerator {
     // r[PARTYMEMBERS.SavageChild] = MARKOV_MODELS.human_names.mutate("Taiga", 5); // ametoyuki/toradora/mowgli/mononoke
     // r[PARTYMEMBERS.FemmeFatale] = MARKOV_MODELS.human_names.mutate("Lust", 3); // lust/matahary
     // r[PARTYMEMBERS.DisguisedPrincess] = MARKOV_MODELS.human_names.mutate("Sheik", 5); //  sheik
-    // r[PARTYMEMBERS.UpbeatDojikko] = MARKOV_MODELS.human_names.mutate("Asahina", 5); //  riku/yuffie/dojiko/asahina/phoebe
     // r[PARTYMEMBERS.GeniusProdigy] = MARKOV_MODELS.human_names.mutate("Amadeus", 5); //  hayate/killua/lelouch/near/ender/mozart/mathilda
     // r[PARTYMEMBERS.TraitorFisher] = MARKOV_MODELS.human_names.mutate("Judes", 5); //  traitor
 
