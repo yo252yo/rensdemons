@@ -45,8 +45,8 @@ const ITEM = {
 
 ITEMS_ARCHETYPES = {
   "Alchemy": [ITEM.Elixir_fire],
-  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Axe],
-  "Tool": [ITEM.Dagger],
+  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Mace, ITEM.War_hammer, ITEM.Spear, ITEM.Axe],
+  "Tool": [ITEM.Dagger, ITEM.Bow, ITEM.Arrow],
 };
 
 const INVENTORY = {

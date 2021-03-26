@@ -1,4 +1,4 @@
-Finish: PARTY, ITEM, ABILITIES
+Finish: PARTY, ITEM, ABILITIES, dont forget archetypes
 
 add money?
 

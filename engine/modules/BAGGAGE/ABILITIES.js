@@ -30,8 +30,8 @@ const ABILITY = {
 }
 
 ABILITIES_ARCHETYPES = {
-  "Element": [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm],
-  "Spirit": [ABILITY.Charm],
+  "Element": [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm, ABILITY.Asphyxiate, ABILITY.Earthquake, ABILITY.Incinerate, ABILITY.Summon],
+  "Spirit": [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion],
   "Diplomat": [],
 };
 
