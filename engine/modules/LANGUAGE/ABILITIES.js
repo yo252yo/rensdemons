@@ -16,6 +16,14 @@ var fail_spell = function(){
                       `Your spell has no effect.`]);
 };
 
+var fail_ability = function(){
+  return RANDOM.pick([`Your attempt does not have any effect.`,
+                      `It appears clear that this technique will not work this time.`,
+                      `The $$&ENEMY$ seems unaffected by your attempt.`,
+                      `The $$&ENEMY$ resists against your efforts without trouble.`,
+                      `The $$&ENEMY$ is resilient to this technique. Nothing happens.`]);
+};
+
 
 
 LANGUAGE.actions[ABILITY.Pray] = {
@@ -284,6 +292,24 @@ LANGUAGE.actions[ABILITY.Confusion] = {
       `The $$&ENEMY$ stumbles hesitantly. It searches the air in front, in a desperate attempt to attack you, but it's hopeless. You manage to get away safely.`,
       `Without its senses, the $$&ENEMY$ cannot keep track of you when you move. You walk casually around it, watching it struggle against nothing.`,
       `You take advantage of the confused senses of the $$&ENEMY$ to run past it.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ABILITY.Persuade] = {
+  usage: function(){
+    RANDOM.pick([
+      `Using your training, you gather your best arguments to convince your opponent to give up.`,
+      `You look at the $$&ENEMY$ with determination and starts explaining why there is actually no need to fight.`,
+      `You brace yourself for a powerful speech. You start declaiming a series of to-the-point arguments illustrating the pointlessness of this battle.`,
+    ]);
+  },
+  fail: fail_ability,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ is somehow seemingly convinced. It gives up the fight.`,
+      `As it listens to your plead, the $$&ENEMY$ seems to comprehend and empathize with it. It seems that you found an amicable resolution.`,
+      `Against all odds, the $$&ENEMY$ seems to respond to your rhetoric and agree to your points. It stops opposing you.`,
     ]);
   },
 };
