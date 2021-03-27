@@ -216,8 +216,8 @@ LANGUAGE.actions[ITEM.War_hammer] = {
   win: function(){
     return RANDOM.pick([
       `The massive hammer, charged by the inertia of your arm, explodes the poor $$&ENEMY$ into little fragments that go flying around.`,
-      `You need an ample motion to wave the heavy weapon, but it is worth it when the strength of the shock propells the $$&ENEMY$ a few steps behind.`,
-      `You barely feel any resistance when your hammer hits its target, but you do hear the chilling sound of the $$&ENEMY$ being crushed by your blow.`,
+      `You need an ample motion to wave the heavy weapon, but it is worth it when the strength of the shock propells the $$&ENEMY$, or rather what's left of it, out of your way.`,
+      `You barely feel any resistance when your hammer hits its target, but you do hear the chilling sound of the $$&ENEMY$ being crushed by your blow. What remains is better left undescribed.`,
     ]);
   },
 };

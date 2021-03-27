@@ -1,40 +1,44 @@
 
 const ITEM = {
-  Stick: "Stick",
-  Stone: "Blunt Stone",
-  Fang: "Venomous Fang",
-  Bone: "Sharp Bone",
-
   Coin: "_Coin",
+  // Bags
 
   // Way of the Alchemy
     Elixir_fire: "Fire Elixir",
+    //Elixir_ice: "Ice Elixir",
     //Elixir_decay: "Decay Elixir", // acid
     //Elixir_chaos: "Chaos Elixir", // gravity
     //Elixir_vine: "Vine Elixir", // ensnare
-    // Staff_wooden: "Wooden Staff",
-    // Staff_legend: "Holy Staff", // teleport
-    // Wand: "Wand",
+    //Elixir_venom: "Venom Elixir", // gas
 
   // Way of the Weapon
+    Dagger: "Dagger",
     Sword_wooden: "Wooden Sword",
     Sword_iron: "Iron Sword",
     Sword_great: "Great Sword",
-    Sword_legend: "Holy Sword",
     Mace: "Mace",
-    War_hammer: "War Hammer",
     Spear: "Spear",
     Axe: "Axe",
     Shield: "Shield",
 
+  // Way of the Artifact
+    Sword_legend: "Holy Sword",
+    War_hammer: "Mighty War Hammer",
+    // Staff: "Legendary Staff", // teleport
+    // Wand: "Enchanted Wand",
 
   // Way of the Tools
-    Dagger: "Dagger",
+    // Tools
     Bow: "Bow",
     Arrow: "Arrow",
     // Poison_darts: "Poison darts",
     // Net: "Net",
     // Rope: "Rope",
+    // Loot
+    Stick: "Stick",
+    Stone: "Blunt Stone",
+    Fang: "Venomous Fang",
+    Bone: "Sharp Bone",
 
   isItem: function(s){
     for (var i in ITEM){
@@ -47,9 +51,10 @@ const ITEM = {
 }
 
 ITEMS_ARCHETYPES = {
-  "Alchemy": [ITEM.Elixir_fire],
-  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Mace, ITEM.War_hammer, ITEM.Spear, ITEM.Axe, ITEM.Shield],
-  "Tool": [ITEM.Dagger, ITEM.Bow, ITEM.Arrow],
+  "Alchemy":  [ITEM.Elixir_fire],
+  "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
+  "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone],
+  "Artifact": [ITEM.Sword_legend, ITEM.War_hammer],
 };
 
 const INVENTORY = {
@@ -74,9 +79,10 @@ const INVENTORY = {
                   [
                     ARCHETYPES.inventory_list_item(),
                     TEXTMENU_EMPTYROW,
+                    ARCHETYPES.inventory_list_item("Tool"),
                     ARCHETYPES.inventory_list_item("Weapon"),
                     ARCHETYPES.inventory_list_item("Alchemy"),
-                    ARCHETYPES.inventory_list_item("Tool"),
+                    ARCHETYPES.inventory_list_item("Artifact"),
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
