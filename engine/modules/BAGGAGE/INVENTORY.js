@@ -8,9 +8,12 @@ const ITEM = {
   Coin: "_Coin",
 
   // Way of the Alchemy
-    Elixir_fire: "Fireball Elixir",
+    Elixir_fire: "Fire Elixir",
+    //Elixir_decay: "Decay Elixir", // acid
+    //Elixir_chaos: "Chaos Elixir", // gravity
+    //Elixir_vine: "Vine Elixir", // ensnare
     // Staff_wooden: "Wooden Staff",
-    // Staff_legend: "Holy Staff",
+    // Staff_legend: "Holy Staff", // teleport
     // Wand: "Wand",
 
   // Way of the Weapon
