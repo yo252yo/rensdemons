@@ -174,6 +174,22 @@ LANGUAGE.actions[ITEM.Axe] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Shield] = {
+  usage: function(){
+    return get_language(ITEM.Shield, [attack_blunt]);
+  },
+  fail: function(){
+    return get_language(ITEM.Shield, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `You protect yourself from the blows of the $$&ENEMY$ with your trusty shield, as you dash towards it. You crash into the $$&ENEMY$ and push it to the ground.`,
+      `You slam your shield into the $$&ENEMY$ in a wide gesture. The smash makes a big noise and leaves the $$&ENEMY$ completely stunned.`,
+      `You hit the $$&ENEMY$ with your shield while parrying its attacks. It pushes your opponent back. The shock makes the $$&ENEMY$ lose its equilibrium, and then its consciousness.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Mace] = {
   usage: function(){
     return get_language(ITEM.Mace, [attack_blunt]);

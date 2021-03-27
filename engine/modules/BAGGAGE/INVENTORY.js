@@ -22,7 +22,7 @@ const ITEM = {
     War_hammer: "War Hammer",
     Spear: "Spear",
     Axe: "Axe",
-    // Shield: "Shield",
+    Shield: "Shield",
 
 
   // Way of the Tools
@@ -45,7 +45,7 @@ const ITEM = {
 
 ITEMS_ARCHETYPES = {
   "Alchemy": [ITEM.Elixir_fire],
-  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Mace, ITEM.War_hammer, ITEM.Spear, ITEM.Axe],
+  "Weapon": [ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Sword_legend, ITEM.Mace, ITEM.War_hammer, ITEM.Spear, ITEM.Axe, ITEM.Shield],
   "Tool": [ITEM.Dagger, ITEM.Bow, ITEM.Arrow],
 };
 

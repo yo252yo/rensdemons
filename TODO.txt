@@ -1,4 +1,8 @@
-Finish: PARTY, ITEM, ABILITIES, dont forget archetypes
+Finish: ITEM, ABILITIES, dont forget archetypes
+make some loot /o/
+
+
+dont forget to make party as we progress
 
 add money?
 
