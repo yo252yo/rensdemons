@@ -95,7 +95,7 @@ class S_House extends S_EnterableBuilding {
   }
 
   enter() {
-    CURRENTLEVEL.setup("house_" + this.seed + "_");
+    CURRENTLEVEL._setup.house(this.seed);
   }
 }
 
@@ -112,7 +112,7 @@ class S_Store extends S_EnterableBuilding {
 
   enter() {
     // TODO: change
-    CURRENTLEVEL.setup("house_" + this.seed + "_");
+    CURRENTLEVEL._setup.house(this.seed);
   }
 }
 

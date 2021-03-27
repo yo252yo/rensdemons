@@ -36,55 +36,16 @@ const CURRENTLEVEL = {
     _save_previous_level: function(name) {
       if (!CURRENTLEVEL.level_name){ return; }
       // Levels you shouldnt return to when you leave a place.
-      if (CURRENTLEVEL.level_name.startsWith("house_")) { return; }
+      if (CURRENTLEVEL.level_name.startsWith("$")) { return; }
       if (CURRENTLEVEL.level_name == "gameover" ||
           CURRENTLEVEL.level_name == "titlescreen") { return; }
 
       CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;
     },
 
-    _setup_level: function(name) {
-      CURRENTLEVEL.factory._save_previous_level();
-      CURRENTLEVEL.level_name = name;
-
-      if(name.endsWith("map")){
-        FOG.recolor('obj_light');
-        document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
-      } else {
-        FOG.recolor('player');
-        document.body.style.backgroundColor = PALETTE.color('void').code();
-      }
-
-      if (name.startsWith("house_")) {
-        var seed = name.split("_")[1];
-        var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
-        var c = h.build();
-        CURRENTLEVEL.initialize_with_character(c[0], c[1]);
-      } else {
-        new Import("levels/" + name);
-      }
-    },
-
-    _setup_from_object: function(save) {
-      CURRENTLEVEL.system.clear();
-      FOG.draw();
-
-      if(save.destroyed_objects) {
-        CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
-      }
-      if(save.previous_lvl) {
-        CURRENTLEVEL.previous_lvl = save.previous_lvl;
-      }
-
-      CURRENTLEVEL.factory._setup_level(save.level_name);
-
-      AUDIO.music.stop();
-      CONSOLE.log.setup(save.level_name + " (done)");
-    },
-
     import: function(save) {
       CONSOLE.log.setup(save.level_name + " (from save)");
-      CURRENTLEVEL.factory._setup_from_object(save);
+      CURRENTLEVEL._setup._setup_from_object(save);
     },
   },
 
@@ -234,6 +195,65 @@ const CURRENTLEVEL = {
 
   },
 
+  _setup: {
+    _setup_from_object: function(save) {
+      CURRENTLEVEL.system.clear();
+      AUDIO.music.stop();
+
+      if(save.destroyed_objects) {
+        CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
+      }
+      if(save.previous_lvl) {
+        CURRENTLEVEL.previous_lvl = save.previous_lvl;
+      }
+
+      CURRENTLEVEL.factory._save_previous_level();
+      CURRENTLEVEL._setup._setup_level(save.level_name);
+
+      CONSOLE.log.setup(save.level_name + " (done)");
+    },
+
+    _setup_level: function(name) {
+      FOG.draw();
+      CURRENTLEVEL.level_name = name;
+      CURRENTLEVEL._setup._setup_colors(name);
+
+      if (name.startsWith("$")) { // special levels (generated)
+        var actual_name = name.split("_")[0];
+        if(CURRENTLEVEL._setup["_decode_" + actual_name]){
+          CURRENTLEVEL._setup["_decode_" + actual_name](name);
+        } else {
+          CONSOLE.error(`Unable to load special level ${name}`);
+        }
+      } else {
+        new Import("levels/" + name);
+      }
+    },
+
+    _setup_colors: function(name) {
+      if(name.endsWith("map")){
+        FOG.recolor('obj_light');
+        document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
+      } else {
+        FOG.recolor('player');
+        document.body.style.backgroundColor = PALETTE.color('void').code();
+      }
+    },
+
+    _decode_$house: function(name){
+      var seed = name.split("_")[1];
+      var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
+      var c = h.build();
+      CURRENTLEVEL.initialize_with_character(c[0], c[1]);
+    },
+
+    house: function(seed) {
+      // We encode the seed in the level name to rebuild on save, keep state, etc...
+      CURRENTLEVEL.setup("$house_" + seed);
+    },
+  },
+
+
   setup: function(name) {
     IO.clear_io_queue();
     window.scrollTo(0,0);
@@ -242,10 +262,10 @@ const CURRENTLEVEL = {
     var save = LEVELSTATES.get_save(name);
     if (! save) {
       CONSOLE.log.setup(name + " (new)");
-      CURRENTLEVEL.factory._setup_from_object({level_name: name});
+      CURRENTLEVEL._setup._setup_from_object({level_name: name});
     } else {
       CONSOLE.log.setup(name + " (from previous state)");
-      CURRENTLEVEL.factory._setup_from_object(save);
+      CURRENTLEVEL._setup._setup_from_object(save);
     }
   },
 
