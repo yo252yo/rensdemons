@@ -8,7 +8,8 @@ const GENERATEDLEVELS = {
     },
 
     load: function(name) {
-      var seed = name.split("_")[1];
+      var decode = name.split("_");
+      var seed = decode[1];
       var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
       var c = h.build();
       CURRENTLEVEL.initialize_with_character(c[0], c[1]);

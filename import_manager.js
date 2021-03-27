@@ -147,8 +147,8 @@ new Module("BAGGAGE/PARTY");
       IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");
         IMPORTS.classes['Generation/MarkovModels'].child_module("MEMORY/DICTIONARY");
 new Class("Generation/Generator");
-  IMPORTS.classes['Generation/Generator'].child_class("Generation/Houses");
-  IMPORTS.classes['Generation/Generator'].child_class("Generation/Towns");
+  IMPORTS.classes['Generation/Generator'].child_class("Generation/HouseGenerator");
+  IMPORTS.classes['Generation/Generator'].child_class("Generation/TownGenerator");
 new Class("Generation/Filler");
 new Class("Generation/Datasets");
 
