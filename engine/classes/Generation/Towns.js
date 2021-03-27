@@ -1,10 +1,11 @@
 
 class TownGenerator {
-    constructor(seed, w, h) {
+    constructor(seed, w, h, make_town_specifics) {
       this.gen = new Generator(seed);
       this.w = w;
       this.h = h;
       this.margin = 150;
+      this.make_town_specifics = make_town_specifics;
     }
 
     make_border() {
@@ -55,8 +56,8 @@ class TownGenerator {
       this.make_floor();
       this.make_border();
 
-      // what about town specifics
       this.make_church();
+      this.make_town_specifics();
 
       this.make_store();
       this.make_houses();

@@ -1,7 +1,11 @@
 AUDIO.music.town();
 
 var seed = DICTIONARY.get("town_1_seed");
-var gen = new TownGenerator(seed, 1800, 1800);
+
+var make_town_specifics = function(){
+  // make the meeting with PreciousChild for instance
+}
+var gen = new TownGenerator(seed, 1800, 1800, make_town_specifics);
 
 gen.build();
 
@@ -52,9 +56,6 @@ CURRENTLEVEL.start_function = function() {
     `$$BestFriend$: "Stop thinking about it, it's not a matter up for discussion. I'm not taking no for an answer. I'm not leaving your side, period. So, should we go?"`,
   ], bf_join_party);
 };
-
-
-
 
 
 CURRENTLEVEL.initialize_with_character(g[0], g[1]);
