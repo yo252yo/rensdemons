@@ -62,16 +62,10 @@ class S_building extends LevelObject {
   }
 }
 
-class S_House extends LevelObject {
-  constructor(x, y, seed){
+class S_EnterableBuilding extends LevelObject {
+  constructor(visual, x, y) {
     new S_building(x, y-1, "building");
-    var visual = new StaticSprite("assets/objects/buildings/house.png", 'obj_light');
     super(visual, x, y);
-    this.seed = seed;
-//    this.adjust_hitbox(0,0,170,140);
-    this.default_text = this.text_interaction([
-      "It's a house, but this is not the entrance.",
-    ]);
   }
 
   character_can_enter(){
@@ -81,14 +75,46 @@ class S_House extends LevelObject {
   }
 
   interaction(){
-    if (this.character_can_enter()){
-      CURRENTLEVEL.setup("house_" + this.seed + "_");
-    } else {
-      this.default_text();
+    if (this.character_can_enter() && this.enter){
+      this.enter();
+    } else if (this.describe) {
+      this.describe();
     }
   }
 }
 
+class S_House extends S_EnterableBuilding {
+  constructor(x, y, seed) {
+    var visual = new StaticSprite("assets/objects/buildings/house.png", 'obj_light');
+    super(visual, x, y);
+    this.seed = seed;
+
+    this.describe = this.text_interaction([
+      "It's a house, but this is not the entrance.",
+    ]);
+  }
+
+  enter() {
+    CURRENTLEVEL.setup("house_" + this.seed + "_");
+  }
+}
+
+class S_Store extends S_EnterableBuilding {
+  constructor(x, y, seed) {
+    var visual = new StaticSprite("assets/objects/buildings/store.png", 'obj_light');
+    super(visual, x, y);
+    this.seed = seed;
+
+    this.describe = this.text_interaction([
+      "It's a store. You wonder what kind of goods they sell here. You're a bit excipted to find out.",
+    ]);
+  }
+
+  enter() {
+    // TODO: change
+    CURRENTLEVEL.setup("house_" + this.seed + "_");
+  }
+}
 
 class S_Church extends LevelObject {
   constructor(x, y, seed){

@@ -11,3 +11,6 @@ add shops and trainer
 BestFriend sprite sucks
 
 trial start point is surrounded by rodents, review trial paths
+
+
+todos in the town generator (plug in population and town specifics

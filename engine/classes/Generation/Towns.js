@@ -30,20 +30,37 @@ class TownGenerator {
       new S_Floor(this.margin, this.margin + this.h, this.w, this.h);
     }
 
-    make_church(){
+    make_church() {
       new S_Church(this.margin + this.w / 2 - 50, this.margin + this.h / 2);
     }
 
-    build() {
-      this.make_floor();
-      this.make_border()
-      this.make_church();
+    make_store() {
+      // TODO: move
+      new S_Store(this.margin + this.w / 2 - 50 - 200, this.margin + this.h / 2);
+    }
 
+    make_houses(){
       var houseFiller = new Filler(this.gen);
       houseFiller.set_zone(this.margin + 50, this.margin + this.h - 50, this.w - 100,  this.h - 100);
       houseFiller.set_tries(5, 100);
       houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(x, y, g); });
       houseFiller.fill_by_retry();
+    }
+
+    make_population(){
+      // TODO: do
+    }
+
+    build() {
+      this.make_floor();
+      this.make_border();
+
+      // what about town specifics
+      this.make_church();
+
+      this.make_store();
+      this.make_houses();
+      this.make_population();
     }
 
     church_entrance(){
