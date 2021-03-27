@@ -95,7 +95,7 @@ class S_House extends S_EnterableBuilding {
   }
 
   enter() {
-    CURRENTLEVEL._setup.house(this.seed);
+    GENERATEDLEVELS.house.setup(this.seed);
   }
 }
 
@@ -112,7 +112,7 @@ class S_Store extends S_EnterableBuilding {
 
   enter() {
     // TODO: change
-    CURRENTLEVEL._setup.house(this.seed);
+    GENERATEDLEVELS.house.setup(this.seed);
   }
 }
 

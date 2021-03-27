@@ -219,9 +219,9 @@ const CURRENTLEVEL = {
       CURRENTLEVEL._setup._setup_colors(name);
 
       if (name.startsWith("$")) { // special levels (generated)
-        var actual_name = name.split("_")[0];
-        if(CURRENTLEVEL._setup["_decode_" + actual_name]){
-          CURRENTLEVEL._setup["_decode_" + actual_name](name);
+        var actual_name = name.substring(1).split("_")[0];
+        if(GENERATEDLEVELS[actual_name]){
+          GENERATEDLEVELS[actual_name].load(name);
         } else {
           CONSOLE.error(`Unable to load special level ${name}`);
         }
@@ -238,18 +238,6 @@ const CURRENTLEVEL = {
         FOG.recolor('player');
         document.body.style.backgroundColor = PALETTE.color('void').code();
       }
-    },
-
-    _decode_$house: function(name){
-      var seed = name.split("_")[1];
-      var h = new HouseGenerator(seed, CURRENTLEVEL.previous_lvl);
-      var c = h.build();
-      CURRENTLEVEL.initialize_with_character(c[0], c[1]);
-    },
-
-    house: function(seed) {
-      // We encode the seed in the level name to rebuild on save, keep state, etc...
-      CURRENTLEVEL.setup("$house_" + seed);
     },
   },
 

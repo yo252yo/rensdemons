@@ -4,7 +4,7 @@ var last = 0;
 
 function g(){
   var seed = Math.random();
-  CURRENTLEVEL._setup.house(this.seed);
+  GENERATEDLEVELS.house.setup(this.seed);
   last = setTimeout(g, 4000);
 }
 g();
