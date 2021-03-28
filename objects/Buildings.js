@@ -107,7 +107,7 @@ class S_Store extends S_EnterableBuilding {
     this.seed = seed;
 
     this.describe = this.text_interaction([
-      `It's a ${this.type} store. You wonder what kind of goods they sell here. You're a bit excipted to find out.`,
+      `This place specializes in ${this.type}. You wonder what you could learn or purchase inside...`,
     ]);
   }
 

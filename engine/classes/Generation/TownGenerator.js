@@ -37,7 +37,8 @@ class TownGenerator {
 
     make_store() {
       // TODO: move
-      new S_Store("Weapon", this.margin + this.w / 2 - 50 - 200, this.margin + this.h / 2, this.gen.get());
+      new S_Store("Weapon", this.margin + this.w / 2 - 50 - 400, this.margin + this.h / 2, this.gen.get());
+      new S_Store("Element", this.margin + this.w / 2 - 50 - 200, this.margin + this.h / 2, this.gen.get());
     }
 
     make_houses(){

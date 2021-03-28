@@ -44,3 +44,15 @@ class M_Vendor extends M_Villager {
     SHOP.enter(this.type);
   }
 }
+
+class M_Trainer extends M_Villager {
+  constructor(x, y, seed, type) {
+    super(x,y,seed);
+    this.type = type;
+  }
+
+  interaction() {
+    this.face_character();
+    TRAINER.enter(this.type);
+  }
+}
