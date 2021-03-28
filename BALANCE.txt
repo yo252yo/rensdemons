@@ -1,0 +1,24 @@
+
+
+each action is 3xp (when discovered and when explored)
+
+trial is about 7*4 actions,
+=> up to 84 xp
+
+items is 11 * 5 actions
+=> up to 165 xp
+
+villager is 10 * 4 versions of each actions
+=> up to 120 xp
+
+
+so rn about 360 xp max
+
+Trial is
+7 Stone
+5 Bone
+4 Stick
+4 Elixir fire
+3 viper (ie. fang)
+
+so rn 155 coins max
