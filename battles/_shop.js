@@ -1,6 +1,6 @@
 
 // get the sprite name from BATTLE.make_conversation
-var sprite = BATTLE.pending_text[0];
+var sprite = SPECIALBATTLES._battle_extra_data[0];
 var s = new CenteredMovingImage("assets/characters/villager" + sprite + ".png", 'background', 32, 48);
 
 

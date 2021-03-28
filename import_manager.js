@@ -105,6 +105,7 @@ new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
 new Module("BATTLE/BATTLE");
+new Module("BATTLE/SPECIALBATTLES");
 new Module("BATTLE/BATTLEOBJECTSMANAGER");
 new Module("BATTLE/PLAYER_ACTIONS");
 new Module("BATTLE/DODGE");

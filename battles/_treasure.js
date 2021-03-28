@@ -16,10 +16,10 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: open,
   description: RANDOM.pick([
-    "You open the chest and get its content. It's a " + BATTLE.pending_text + ".",
+    "You open the chest and get its content. It's a " + SPECIALBATTLES._battle_extra_data + ".",
   ]),
   outcome: BATTLETREE.WIN,
-  give_item: BATTLE.pending_text,
+  give_item: SPECIALBATTLES._battle_extra_data,
 });
 
 PLAYER_ACTIONS.add({

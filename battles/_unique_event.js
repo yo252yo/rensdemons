@@ -17,4 +17,4 @@ PLAYER_ACTIONS.add({
   ]),
 });
 
-BATTLE.operations.start(BATTLE.pending_text);
+BATTLE.operations.start(SPECIALBATTLES._battle_extra_data);

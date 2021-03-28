@@ -10,15 +10,15 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.ESCAPE,
 });
 
-if (BATTLE.pending_text){
+if (SPECIALBATTLES._battle_extra_data){
   PLAYER_ACTIONS.add({
     name: dig,
     unlock: true,
     description: RANDOM.pick([
-      "You dig through the debris. After a while, you find something interesting. It's a " + BATTLE.pending_text + ".",
+      "You dig through the debris. After a while, you find something interesting. It's a " + SPECIALBATTLES._battle_extra_data + ".",
     ]),
     outcome: BATTLETREE.WIN,
-    give_item: BATTLE.pending_text,
+    give_item: SPECIALBATTLES._battle_extra_data,
   });
 } else{
   PLAYER_ACTIONS.add({

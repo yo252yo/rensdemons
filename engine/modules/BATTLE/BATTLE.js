@@ -341,26 +341,6 @@ const BATTLE = {
       return (BATTLE.current_battle != "");
     },
 
-    make_event: function(text, callback){
-      BATTLE.pending_text = text;
-      BATTLE.api.make("_unique_event", callback);
-    },
-
-    make_rubble: function(payoff, callback){
-      BATTLE.pending_text = payoff;
-      BATTLE.api.make("_rubble", callback);
-    },
-
-    make_treasure: function(payoff, callback){
-      BATTLE.pending_text = payoff;
-      BATTLE.api.make("_treasure", callback);
-    },
-
-    make_conversation: function(name, payoff, seed, callback){
-      BATTLE.pending_text = [payoff, seed];
-      BATTLE.api.make("conversations/" + name, callback);
-    },
-
     make: function(name, callback, origin_level) {
       if (!origin_level) { origin_level = CURRENTLEVEL.level_name; }
       if (!callback) { callback = function(){}; }

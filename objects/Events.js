@@ -1,19 +1,19 @@
 
 class SB_rubble extends SBattle {
   real_interaction() {
-    BATTLE.api.make_rubble(this.battle, this.make_default_callback());
+    SPECIALBATTLES.rubble(this.battle, this.make_default_callback());
   }
 }
 
 class SB_treasure extends SBattle {
   real_interaction() {
-    BATTLE.api.make_treasure(this.battle, this.make_default_callback());
+    SPECIALBATTLES.treasure(this.battle, this.make_default_callback());
   }
 }
 
 class SB_event extends SBattle {
   real_interaction() {
-    BATTLE.api.make_event(this.battle, this.make_default_callback());
+    SPECIALBATTLES.event(this.battle, this.make_default_callback());
   }
 }
 

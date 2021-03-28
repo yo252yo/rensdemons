@@ -12,7 +12,7 @@ interactions.push(function() {
   ]);
 });
 interactions.push(function(sprite_nb, seed) {
-  BATTLE.api.make_conversation("villager_small_talk", "villager" + sprite_nb, seed);
+  SPECIALBATTLES.conversation("villager_small_talk", "villager" + sprite_nb, seed);
 });
 
 class M_Villager extends MovingObject {
@@ -36,7 +36,6 @@ class M_Villager extends MovingObject {
 class M_Vendor extends M_Villager {
   interaction() {
     this.face_character();
-    BATTLE.pending_text = [this.sprite_nb];
-    BATTLE.api.make('_shop');
+    SPECIALBATTLES.shop(this.sprite_nb);
   }
 }

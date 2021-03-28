@@ -3,8 +3,8 @@
 // ===================
 
 // get the sprite name from BATTLE.make_conversation
-var sprite = BATTLE.pending_text[0];
-var gen = new Generator(BATTLE.pending_text[1]);
+var sprite = SPECIALBATTLES._battle_extra_data[0];
+var gen = new Generator(SPECIALBATTLES._battle_extra_data[1]);
 
 var s = new CenteredMovingImage("assets/characters/" + sprite + ".png", 'background', 32, 48);
 var name = "Villager";
