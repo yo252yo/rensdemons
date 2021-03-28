@@ -2,7 +2,7 @@ AUDIO.music.trial();
 
 //hack LAYOUT
 
-new Snippet("decors/maze");
+new Snippet("levels/decors/maze");
 
 // start
 new SBattle(1525, 1075, '_003/_bone_pile');

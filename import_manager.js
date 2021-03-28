@@ -86,7 +86,7 @@ class Class extends Import {
 
 class Snippet extends Import {
   constructor(name) {
-    super("snippets/" + name, false);
+    super(name, false);
   }
 }
 

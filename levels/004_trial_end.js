@@ -1,7 +1,7 @@
 AUDIO.music.temple();
 ABILITIES.unlock("_trial_passed"); // redundant
 
-new Snippet("decors/temple");
+new Snippet("levels/decors/temple");
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);

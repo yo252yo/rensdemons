@@ -1,6 +1,6 @@
 AUDIO.music.trial();
 
-new Snippet("decors/cave");
+new Snippet("levels/decors/cave");
 
 var boss_callback = function() {
   SAVE.autosave();
