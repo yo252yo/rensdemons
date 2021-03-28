@@ -32,3 +32,11 @@ class M_Villager extends MovingObject {
     this.interaction_(this.sprite_nb, this.seed);
   }
 }
+
+class M_Vendor extends M_Villager {
+  interaction() {
+    this.face_character();
+    BATTLE.pending_text = [this.sprite_nb];
+    BATTLE.api.make('_shop');
+  }
+}
