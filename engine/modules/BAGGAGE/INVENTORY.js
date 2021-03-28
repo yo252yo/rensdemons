@@ -74,8 +74,12 @@ const INVENTORY = {
     },
   },
 
+  cash: function(){
+    return INVENTORY.has_object(ITEM.Coin) || 0;
+  },
+
   display: function() {
-    new CenteredTextMenu("INVENTORY<br /><br />Coins: " + (INVENTORY.has_object(ITEM.Coin) || 0),
+    new CenteredTextMenu("INVENTORY<br /><br />Coins: " + (INVENTORY.cash() || 0),
                   [
                     ARCHETYPES.inventory_list_item(),
                     TEXTMENU_EMPTYROW,

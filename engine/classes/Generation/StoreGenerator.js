@@ -1,5 +1,3 @@
-
-
 class StoreGenerator {
     constructor(outside) {
       this.outside = outside;
@@ -23,5 +21,4 @@ class StoreGenerator {
       this.build_seller();
       return this.main_entrance();
     }
-
 }

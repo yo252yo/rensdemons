@@ -24,6 +24,14 @@ menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls
 
 save audio settings to disk!
 
+decorate stores
+
+sell several items at once
+
+
+
+give party members perks like store discounts
+
 did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ??
 
 the treasure battler should probs be closed

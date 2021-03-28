@@ -36,6 +36,6 @@ class M_Villager extends MovingObject {
 class M_Vendor extends M_Villager {
   interaction() {
     this.face_character();
-    SPECIALBATTLES.shop(this.sprite_nb);
+    SHOP.enter();
   }
 }

@@ -140,6 +140,7 @@ const LANGUAGE = {};
 new Module("LANGUAGE/BATTLE");
   IMPORTS.modules['BAGGAGE/ABILITIES'].child_module("LANGUAGE/ABILITIES");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("LANGUAGE/ITEMS");
+  IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("BAGGAGE/SHOP");
 
 new Module("BAGGAGE/PARTY");
   IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
