@@ -1,6 +1,7 @@
 
 const ITEM = {
   Coin: "_Coin",
+  XpToken: "_XpToken",
   // Bags
 
   // Way of the Alchemy

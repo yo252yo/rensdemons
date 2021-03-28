@@ -286,6 +286,7 @@ const BATTLE = {
       start: function(ending) {
         var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
         if(exp_won > 0) {
+           INVENTORY.increase(ITEM.XpToken, exp_won);
            var text = LANGUAGE.battle.xp() + " (" + ("*".repeat(Math.min(10,exp_won))) + ").";
            AUDIO.effect.levelup();
            TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});
