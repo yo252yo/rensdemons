@@ -56,6 +56,7 @@ const SHOP = {
         if (_SHOP_SELLONLY.includes(index)){
           continue;
         }
+        // Check assert on storetype
         (function(i){
           var text = `${i}: ${SHOP._prices.buy(i)} coins`;
           goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i); }, "keep_open": true});
@@ -103,7 +104,8 @@ const SHOP = {
     },
   },
 
-  enter: function() {
+  enter: function(type) {
+    SHOP._current_type = type;
     TextBannerSequence.make([RANDOM.pick([
       `The shopkeeper welcomes you with a smile.`,
       `Shopkeeper: "What can I do for you?"`,

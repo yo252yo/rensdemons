@@ -17,13 +17,16 @@ const GENERATEDLEVELS = {
   },
 
   store: {
-    setup: function() {
-      var name = "$store";
+    setup: function(type, seed) {
+      var name = "$store_" + type + "_" + seed;
       CURRENTLEVEL.setup(name);
     },
 
     load: function(name) {
-      var h = new StoreGenerator(CURRENTLEVEL.previous_lvl);
+      var decode = name.split("_");
+      var type = decode[1];
+      var seed = decode[2];
+      var h = new StoreGenerator(type, seed, CURRENTLEVEL.previous_lvl);
       var c = h.build();
       CURRENTLEVEL.initialize_with_character(c[0], c[1]);
     },

@@ -1,6 +1,8 @@
 class StoreGenerator {
-    constructor(outside) {
+    constructor(type, seed, outside) {
+      this.gen = new Generator(seed);
       this.outside = outside;
+      this.store_type = type;
     }
 
     main_entrance() {
@@ -13,7 +15,7 @@ class StoreGenerator {
     }
 
     build_seller() {
-      return new M_Vendor(250, 250, 0 /* seed */);
+      return new M_Vendor(250, 250, this.gen.get(), this.store_type);
     }
 
     build() {

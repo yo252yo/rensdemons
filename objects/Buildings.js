@@ -100,17 +100,19 @@ class S_House extends S_EnterableBuilding {
 }
 
 class S_Store extends S_EnterableBuilding {
-  constructor(x, y) {
+  constructor(type, x, y, seed) {
     var visual = new StaticSprite("assets/objects/buildings/store.png", 'obj_light');
     super(visual, x, y);
+    this.type = type;
+    this.seed = seed;
 
     this.describe = this.text_interaction([
-      "It's a store. You wonder what kind of goods they sell here. You're a bit excipted to find out.",
+      `It's a ${this.type} store. You wonder what kind of goods they sell here. You're a bit excipted to find out.`,
     ]);
   }
 
   enter() {
-    GENERATEDLEVELS.store.setup();
+    GENERATEDLEVELS.store.setup(this.type, this.seed);
   }
 }
 

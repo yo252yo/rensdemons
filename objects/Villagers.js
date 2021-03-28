@@ -34,8 +34,13 @@ class M_Villager extends MovingObject {
 }
 
 class M_Vendor extends M_Villager {
+  constructor(x, y, seed, type) {
+    super(x,y,seed);
+    this.type = type;
+  }
+
   interaction() {
     this.face_character();
-    SHOP.enter();
+    SHOP.enter(this.type);
   }
 }

@@ -17,3 +17,9 @@ todos in the town generator (plug in population and town specifics
 
 
 make different cities/populations/shops
+put all items in shop
+1. limit shop by archetypes (shop l49)
+2. make trainer
+
+
+should filler just pass gen to the constructor instead f calling gen.get
