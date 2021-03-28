@@ -31,7 +31,7 @@ const SHOP = {
         INVENTORY.decrease(ITEM.Coin, price);
       }
 
-      SHOP._current_menu.back();
+      SHOP._current_menu.close();
       SHOP._menu.buy();
     },
     sell: function(object){
@@ -40,7 +40,7 @@ const SHOP = {
         INVENTORY.increase(ITEM.Coin, SHOP._prices.sell(object));
       }
 
-      SHOP._current_menu.back();
+      SHOP._current_menu.close();
       SHOP._menu.sell();
     },
   },
@@ -60,7 +60,6 @@ const SHOP = {
       SHOP._current_menu = new CenteredTextMenu(merchant_text,
           goods.concat([
             TEXTMENU_EMPTYROW,
-            {"text": "On second thought...", "effect": "##BACK"},
             {"text": "Leave", "effect": "##CLOSE"},
          ])
        );
@@ -83,7 +82,6 @@ const SHOP = {
       SHOP._current_menu = new CenteredTextMenu(merchant_text,
           goods.concat([
             TEXTMENU_EMPTYROW,
-            {"text": "On second thought...", "effect": "##BACK"},
             {"text": "Leave", "effect": "##CLOSE"},
          ])
        );
