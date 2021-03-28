@@ -56,7 +56,9 @@ const SHOP = {
         if (_SHOP_SELLONLY.includes(index)){
           continue;
         }
-        // Check assert on storetype
+        if (!ARCHETYPES.get_items(SHOP._current_type).includes(index)){
+          continue;
+        }
         (function(i){
           var text = `${i}: ${SHOP._prices.buy(i)} coins`;
           goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i); }, "keep_open": true});

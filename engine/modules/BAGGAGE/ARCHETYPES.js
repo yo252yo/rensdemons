@@ -101,4 +101,15 @@ const ARCHETYPES = {
     return ARCHETYPES._list_item(ARCHETYPES.TYPE_INVENTORY, name);
   },
 
+  get_items: function(archetype_name){
+    if (ABILITIES_ARCHETYPES[archetype_name]){
+      return ABILITIES_ARCHETYPES[archetype_name];
+    }
+    if (ITEMS_ARCHETYPES[archetype_name]){
+      return ITEMS_ARCHETYPES[archetype_name];
+    }
+    CONSOLE.error("Requested wrong archetype name: " + archetype_name);
+    return [];
+  }
+
 }
