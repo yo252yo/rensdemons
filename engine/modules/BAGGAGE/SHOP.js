@@ -37,7 +37,7 @@ const SHOP = {
       SHOP._menu.buy();
     },
     sell: function(object){
-      if (INVENTORY.has_object(object)){
+      if (INVENTORY.count(object)){
         INVENTORY.decrease(object);
         INVENTORY.increase(ITEM.Coin, SHOP._prices.sell(object));
       }
@@ -82,7 +82,7 @@ const SHOP = {
           continue;
         }
         (function(i){
-          var text = `${i} (${INVENTORY.has_object(i)}): ${SHOP._prices.sell(i)} coins`;
+          var text = `${i} (${INVENTORY.count(i)}): ${SHOP._prices.sell(i)} coins`;
           goods.push({"text": text, "effect": function(){ SHOP._transaction.sell(i); }, "keep_open": true});
         }(index));
       }

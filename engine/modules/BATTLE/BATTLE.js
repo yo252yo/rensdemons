@@ -14,12 +14,12 @@ const BATTLE = {
       }
 
       var trimmed = i.trim();
-      if(ITEM.isItem(trimmed) && !(INVENTORY.has_object(trimmed)>0)){ // check our stock
+      if(ITEM.isItem(trimmed) && !(INVENTORY.count(trimmed)>0)){ // check our stock
         return false;
       }
       // Special items requirements
       if(trimmed == ITEM.Arrow){
-        if (!(INVENTORY.has_object(ITEM.Bow)>0)){
+        if (!(INVENTORY.count(ITEM.Bow)>0)){
           return false;
         }
       }
@@ -155,7 +155,7 @@ const BATTLE = {
 
       if (action_object.unlock) {
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
-      } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.has_object(action_object.name) || PARTY.has_member(action_object.name)){
+      } else if (ABILITIES.has_ability(action_object.name) || INVENTORY.count(action_object.name) || PARTY.has_member(action_object.name)){
         // Unlock base actions in our inventory
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
       }

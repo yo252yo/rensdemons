@@ -79,7 +79,7 @@ var make_statue = function(x, y, position) {
     } else if (is_new) {
       ABILITIES.unlock("_trial_visited_" + position);
       var next = "first";
-      switch(INVENTORY.has_object("_trial_statues")){
+      switch(INVENTORY.count("_trial_statues")){
         case 1:
           next = "second"; break;
         case 2:

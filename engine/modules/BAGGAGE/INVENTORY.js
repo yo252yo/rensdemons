@@ -76,7 +76,7 @@ const INVENTORY = {
   },
 
   cash: function(){
-    return INVENTORY.has_object(ITEM.Coin) || 0;
+    return INVENTORY.count(ITEM.Coin) || 0;
   },
 
   display: function() {
@@ -93,7 +93,7 @@ const INVENTORY = {
                  ]);
   },
 
-  has_object: function(name) {
+  count: function(name) {
     return INVENTORY._inventory.get([name]);
   },
 

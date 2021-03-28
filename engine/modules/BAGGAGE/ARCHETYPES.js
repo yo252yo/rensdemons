@@ -23,7 +23,7 @@ const ARCHETYPES = {
     var num = 0;
     // suboptimal in computation but nice in code.
     for(var i in table){
-      if (INVENTORY.has_object(table[i]) || ABILITIES.has_ability(table[i])) {
+      if (INVENTORY.count(table[i]) || ABILITIES.has_ability(table[i])) {
         num ++;
       }
     }
@@ -55,7 +55,7 @@ const ARCHETYPES = {
 
       for (var item_name in INVENTORY.all_objects()){
         if (ARCHETYPES._fits_category(item_name, category)) {
-          html += item_name + " (" + INVENTORY.has_object(item_name) + ")<br/>";
+          html += item_name + " (" + INVENTORY.count(item_name) + ")<br/>";
         }
       }
     } else if(type == ARCHETYPES.TYPE_ABILITY) {
