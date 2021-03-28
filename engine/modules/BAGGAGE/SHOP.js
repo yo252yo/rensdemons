@@ -11,6 +11,8 @@ _SHOP_PRICES[ITEM.Bone] = 5;
 _SHOP_PRICES[ITEM.Stick] = 2;
 _SHOP_PRICES[ITEM.Stone] = 1;
 
+_SHOP_SELLONLY = [ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone];
+
 const SHOP = {
   selling_discount: 0.5,
 
@@ -51,6 +53,9 @@ const SHOP = {
       var goods = [];
 
       for(var index in _SHOP_PRICES){
+        if (_SHOP_SELLONLY.includes(index)){
+          continue;
+        }
         (function(i){
           var text = `${i}: ${SHOP._prices.buy(i)} coins`;
           goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i); }, "keep_open": true});
