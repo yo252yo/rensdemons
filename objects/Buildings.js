@@ -100,10 +100,9 @@ class S_House extends S_EnterableBuilding {
 }
 
 class S_Store extends S_EnterableBuilding {
-  constructor(x, y, seed) {
+  constructor(x, y) {
     var visual = new StaticSprite("assets/objects/buildings/store.png", 'obj_light');
     super(visual, x, y);
-    this.seed = seed;
 
     this.describe = this.text_interaction([
       "It's a store. You wonder what kind of goods they sell here. You're a bit excipted to find out.",
@@ -111,8 +110,7 @@ class S_Store extends S_EnterableBuilding {
   }
 
   enter() {
-    // TODO: change
-    GENERATEDLEVELS.house.setup(this.seed);
+    GENERATEDLEVELS.store.setup();
   }
 }
 

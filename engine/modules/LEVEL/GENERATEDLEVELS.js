@@ -15,4 +15,17 @@ const GENERATEDLEVELS = {
       CURRENTLEVEL.initialize_with_character(c[0], c[1]);
     },
   },
+
+  store: {
+    setup: function() {
+      var name = "$store";
+      CURRENTLEVEL.setup(name);
+    },
+
+    load: function(name) {
+      var h = new StoreGenerator(CURRENTLEVEL.previous_lvl);
+      var c = h.build();
+      CURRENTLEVEL.initialize_with_character(c[0], c[1]);
+    },
+  },
 };
