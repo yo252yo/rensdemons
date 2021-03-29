@@ -19,7 +19,7 @@ const ABILITY = {
     Poison: "Poison",
     Shrink: "Shrink",
     Confusion: "Confusion",
-    // Lull: "Lull",
+    Lull: "Lull",
 
  // Way of the Diplomat
     Persuade: "Persuade",
@@ -31,7 +31,7 @@ const ABILITY = {
 
 ABILITIES_ARCHETYPES = {
   "Element":  [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm, ABILITY.Asphyxiate, ABILITY.Earthquake, ABILITY.Incinerate, ABILITY.Summon],
-  "Spirit":   [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion],
+  "Spirit":   [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion, ABILITY.Lull],
   "Diplomat": [ABILITY.Persuade, ABILITY.Intimidate],
 };
 

@@ -296,6 +296,24 @@ LANGUAGE.actions[ABILITY.Confusion] = {
   },
 };
 
+LANGUAGE.actions[ABILITY.Lull] = {
+  usage: function(){
+    return cast_spell(ABILITY.Lull) + RANDOM.pick([
+      `You call upon your mastery of ethereal arts to control the mind of the $$&ENEMY$ and to force it to fall asleep.`,
+      `You use your magic to instill in the $$&ENEMY$'s thoughts an urge to sleep.`,
+      `Through magic, you tamper with the perceptions of the $$&ENEMY$ in order to make its whole body feel sluggish and heavy.`,
+    ]);
+  },
+  fail: fail_spell,
+  win: function(){
+    return RANDOM.pick([
+      `It only takes a few seconds for the spell to work and put the $$&ENEMY$ in a deep sleep.`,
+      `The $$&ENEMY$'s motions get lethargic, and you can clearly see that even the smallest motion becomes an intense effort. Finally, the $$&ENEMY$ falls unconscious.`,
+      `You manage to trick the senses of the $$&ENEMY$ into a state of deep relaxation. The $$&ENEMY$ is lost in its transe, barely breathing, when you pass by it.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ABILITY.Persuade] = {
   usage: function(){
     RANDOM.pick([
