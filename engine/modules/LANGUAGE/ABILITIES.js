@@ -316,7 +316,7 @@ LANGUAGE.actions[ABILITY.Lull] = {
 
 LANGUAGE.actions[ABILITY.Persuade] = {
   usage: function(){
-    RANDOM.pick([
+    return RANDOM.pick([
       `Using your training, you gather your best arguments to convince your opponent to give up.`,
       `You look at the $$&ENEMY$ with determination and starts explaining why there is actually no need to fight.`,
       `You brace yourself for a powerful speech. You start declaiming a series of to-the-point arguments illustrating the pointlessness of this battle.`,
@@ -334,7 +334,7 @@ LANGUAGE.actions[ABILITY.Persuade] = {
 
 LANGUAGE.actions[ABILITY.Intimidate] = {
   usage: function(){
-    RANDOM.pick([
+    return RANDOM.pick([
       `You recall your training and start making a series of complex gestures and sounds that is supposed to impress your dominance over the $$&ENEMY$'s subconscious.`,
       `Chosing your words carefully, you attempt to establish yourself as a strong presence through sheer display of rhetoric.`,
       `You threaten the $$&ENEMY$ by exposing calmly and rationally how everything works in your favor for you to win this fight.`,
@@ -347,6 +347,24 @@ LANGUAGE.actions[ABILITY.Intimidate] = {
       `Your words seem to have successfully frightened the $$&ENEMY$ who runs away in a panic.`,
       `The $$&ENEMY$ loses composure as you progress in your routine. Soon, the $$&ENEMY$ starts to tremble with fear, and simply dashes away.`,
       `Your charisma seems to work wonders on the $$&ENEMY$. It quickly gets so terrified that it stops opposing any resistance.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ABILITY.Mystify] = {
+  usage: function(){
+    return RANDOM.pick([
+      `You decide to use the power of words to confuse your opponent.`,
+      `You step forward, ready to deliver a powerful speech that will surely leave a mark in the $$&ENEMY$'s memory.`,
+      `You brace yourself for a relentless tirade of escalating absurdities.`,
+    ]);
+  },
+  fail: fail_ability,
+  win: function(){
+    return RANDOM.pick([
+      `As sentences flow from you in a seemingly nonsensical stream, you can feel the sanity escape the poor $$&ENEMY$. Its mind is almost melting as it tries to follow your discourse through its logical inconsistencies. Soon, the $$&ENEMY$ falls on the ground. You really hope it wakes up some day.`,
+      `The $$&ENEMY$ tries its best to follow your trail of thoughts, but you expertly manoeuver it for optimal disorientation. When you're done, the $$&ENEMY$ is ready to believe everything and its opposite. You refrain from the urge to rope the poor $$&ENEMY$ in a juicy commercial scheme, and simply take advantage of the confusion to walk away.`,
+      `You're saying many words, but they're empty of meaning. You jump from one random concept to the next, making up exciting new buzz words and praising your own innovation as you go. The $$&ENEMY$ cannot resist this impromptue seminar for long, and runs away in disarray.`,
     ]);
   },
 };

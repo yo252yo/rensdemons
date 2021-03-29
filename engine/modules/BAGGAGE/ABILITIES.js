@@ -24,7 +24,7 @@ const ABILITY = {
  // Way of the Diplomat
     Persuade: "Persuade",
     Intimidate: "Intimidate",
-    // Mystify: "Mystify",
+    Mystify: "Mystify",
     // Sneak: "Sneak",
     // Circumvent: "Circumvent",
 }
@@ -32,7 +32,7 @@ const ABILITY = {
 ABILITIES_ARCHETYPES = {
   "Element":  [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm, ABILITY.Asphyxiate, ABILITY.Earthquake, ABILITY.Incinerate, ABILITY.Summon],
   "Spirit":   [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion, ABILITY.Lull],
-  "Diplomat": [ABILITY.Persuade, ABILITY.Intimidate],
+  "Diplomat": [ABILITY.Persuade, ABILITY.Intimidate, ABILITY.Mystify],
 };
 
 const ABILITIES = {
