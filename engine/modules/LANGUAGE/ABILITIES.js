@@ -368,3 +368,21 @@ LANGUAGE.actions[ABILITY.Mystify] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Sneak] = {
+  usage: function(){
+    return RANDOM.pick([
+      `Using your talent for stealth, you attempt to find a way past the $$&ENEMY$ to avoid the fight.`,
+      `You attempt to sneak past the $$&ENEMY$ to avoid the confrontation.`,
+      `You tiptoe in the shadows to move around the $$&ENEMY$ unnoticed.`,
+    ]);
+  },
+  fail: fail_ability,
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ did not seem to perceive you. You pass it by without a hitch.`,
+      `The $$&ENEMY$ seems confused as its target pretty much disappeared, but you're already far away in the distance.`,
+      `You crawl around the $$&ENEMY$ who doesn't notice a thing. Soon, you're out of danger.`,
+    ]);
+  },
+};
