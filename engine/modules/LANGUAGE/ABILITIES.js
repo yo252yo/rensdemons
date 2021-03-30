@@ -386,3 +386,21 @@ LANGUAGE.actions[ABILITY.Sneak] = {
     ]);
   },
 };
+
+LANGUAGE.actions[ABILITY.Circumvent] = {
+  usage: function(){
+    return RANDOM.pick([
+      `Your tactical knowledge tells you that there's no need to fight. Surely there must be a better way, and you can find it.`,
+      `You look around you for another path around the $$&ENEMY$. A small detour might be justified.`,
+      `You turn around and retrace your steps to find a path that is not blocked by the $$&ENEMY$.`,
+    ]);
+  },
+  fail: fail_ability,
+  win: function(){
+    return RANDOM.pick([
+      `You start to panic as you don't see a way out. But the $$&ENEMY$ seems to have picked up on your unwillingness to fight, and simply lets you through.`,
+      `Your peaceful cowardly demeanor convinced the $$&ENEMY$ that there is no need for this fight. It simply walks away and lets you through.`,
+      `With a little detour, you manage to find a way past the $$&ENEMY$ that avoids unnecessary confrontation.`,
+    ]);
+  },
+};
