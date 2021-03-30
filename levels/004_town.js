@@ -1,16 +1,9 @@
 AUDIO.music.town();
 
-var seed = DICTIONARY.get("town_1_seed");
 
-var make_town_specifics = function(){
-  // make the meeting with PreciousChild for instance
-}
-var gen = new TownGenerator(seed, 1800, 1800, make_town_specifics);
+new Snippet("levels/decors/town1");
 
-gen.build();
-
-var g = gen.church_entrance();
-
+var g =  [1050, 1100];
 var bf = new M_ChildF(g[0] + 50, g[1] + 10);
 
 var bf_join_party = function(){

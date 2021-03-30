@@ -25,6 +25,29 @@ class S_Floor extends LevelObject {
   }
 }
 
+class S_TownFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h);
+    
+    var leaving = function() {
+      CURRENTLEVEL.setup(outside);
+    }
+    var exit = 40;
+
+    var left_border = new S_Floor(x-exit, y+exit, exit+10, h+2*exit, 'obj_dark');
+    left_border.interaction = leaving;
+
+    var right_border = new S_Floor(x+w-10, y + exit, exit+10, h+2*exit, 'obj_dark');
+    right_border.interaction = leaving;
+
+    var top_border = new S_Floor(x-exit, y-h+10, w+2*exit, exit+10, 'obj_dark');
+    top_border.interaction = leaving;
+
+    var bot_border = new S_Floor(x-exit, y+exit, w+2*exit, exit+10, 'obj_dark');
+    bot_border.interaction = leaving;
+  }
+}
+
 class S_Tree extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/buildings/tree.png", 'obj_light');
