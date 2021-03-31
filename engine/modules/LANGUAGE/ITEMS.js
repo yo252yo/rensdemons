@@ -131,6 +131,29 @@ LANGUAGE.actions[ITEM.Elixir_decay] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Elixir_chaos] = {
+  usage: function(){
+    return get_language(ITEM.Elixir_chaos, [attack_throw]) + " " + get_elixir_flair();
+  },
+  fail: function(){
+    return get_language(ITEM.Elixir_chaos, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The bottle shatters near the $$&ENEMY$, unleashing what appears to be an black sphere.`,
+      `As soon as it broken, the fuzzy obsidian sphere that the bottle contained starts floating in the air in front of the $$&ENEMY$.`,
+      `The glass container explodes to reveals a dark orb that hovers near the $$&ENEMY$.`
+    ]) + " " + RANDOM.pick([
+      `The trembling body of darkness seems to suck up everything around it. The $$&ENEMY$ struggles, but eventually gives in to its unnatural gravitational pull.`,
+      `Turbulent currents animate the air around the mysterious object, slashing the $$&ENEMY$ and pulling it closer and closer to the dark anomaly.`,
+      `The mysterious black shape seems to engulf even light, and appears more dark than anything you've seen before. Its borders vascillate, and grow to capture the $$&ENEMY$.`,
+    ]) + " " + RANDOM.pick([
+      `Finally, in a pop, the black hole disappears out of existence, leaving no trace anything ever happened.`,
+      `The black hole simply vanishes, taking with it your former foe.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Sword_wooden] = {
   usage: function(){
     return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
