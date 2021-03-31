@@ -9,8 +9,8 @@ const ITEM = {
     Elixir_ice: "Ice Elixir",
     Elixir_decay: "Decay Elixir",
     Elixir_chaos: "Chaos Elixir",
-    Elixir_vine: "Vine Elixir", // ensnare
-    //Elixir_venom: "Venom Elixir", // gas
+    Elixir_vine: "Vine Elixir",
+    Elixir_venom: "Venom Elixir",
 
   // Way of the Weapon
     Dagger: "Dagger",
@@ -53,7 +53,7 @@ const ITEM = {
 }
 
 ITEMS_ARCHETYPES = {
-  "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine],
+  "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom],
   "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
   "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone],
   "Artifact": [ITEM.Sword_legend, ITEM.War_hammer],

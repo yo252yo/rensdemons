@@ -177,6 +177,29 @@ LANGUAGE.actions[ITEM.Elixir_vine] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Elixir_venom] = {
+  usage: function(){
+    return get_language(ITEM.Elixir_venom, [attack_throw]) + " " + get_elixir_flair();
+  },
+  fail: function(){
+    return get_language(ITEM.Elixir_venom, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The bottle shatters near the $$&ENEMY$, and the colored gas it contained spreads around the $$&ENEMY$.`,
+      `The gas contained in the bottle surrounds the $$&ENEMY$.`,
+      `The glass container explodes in a cloud of toxic fumes.`
+    ]) + " " + RANDOM.pick([
+      `The $$&ENEMY$'d body contorts in spasms as it breathes the poison.`,
+      `The poisonous smoke penetrates inside the $$&ENEMY$ and starts destroying its body.`,
+      `There is no choice left for the $$&ENEMY$ but to breathe in the poisonous gas.`,
+    ]) + " " + RANDOM.pick([
+      `The corpse of the $$&ENEMY$ is still convulsing when it touches the ground.`,
+      `The $$&ENEMY$ falls lifeless on the ground.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Sword_wooden] = {
   usage: function(){
     return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
