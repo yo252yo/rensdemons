@@ -26,7 +26,7 @@ const ITEM = {
     Sword_legend: "Holy Sword",
     War_hammer: "Mighty War Hammer",
     Staff: "Legendary Staff",
-    // Wand: "Enchanted Wand",
+    Wand: "Enchanted Wand",
 
   // Way of the Tools
     // Tools
@@ -56,7 +56,7 @@ ITEMS_ARCHETYPES = {
   "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom],
   "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
   "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone],
-  "Artifact": [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff],
+  "Artifact": [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand],
 };
 
 const INVENTORY = {

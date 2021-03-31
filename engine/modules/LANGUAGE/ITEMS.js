@@ -360,6 +360,26 @@ LANGUAGE.actions[ITEM.Staff] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Wand] = {
+  usage: function(){
+    return RANDOM.pick([
+      `You point your magic wand in the direction of the $$&ENEMY$. You can feel a burst of energy rising in your chest and pulsing through your arm to the legendary artifact.`,
+      `You take the enchanted wand and wave it towards the $$&ENEMY$. Its tip sparks up as your motion seems to rip the very fabric of the universe.`,
+      `You dramatically lift the enchanted wand above your head. You can almost feel the ethereal energies converging to the mythical rod. You then unleash its power by a swift gesture aimed at the $$&ENEMY$.`,
+    ]);
+  },
+  fail: function(){
+    return get_language(ITEM.Wand, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `An orb of pure energy stems out of the magic wood. It crepitates as it traverses the air at extreme speeds to finish its course right on the $$&ENEMY$. It is disintegrated on the spot.`,
+      `A ray of energy sprawls out of the enchanted wood. It cuts the air like lightning and lands with perfect precision on the $$&ENEMY$. It pierces through the body of your foe, which simply vanishes.`,
+      `The wand liberates a projectile of pure magic force that crashes into the $$&ENEMY$ who immediately explodes in a luminous burst of ethereal colors.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Spear] = {
   usage: function(){
     return get_language(ITEM.Spear, [attack_pointy]);
