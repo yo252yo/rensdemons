@@ -36,6 +36,10 @@ var get_language = function(name, functions){
   return RANDOM.pick(results);
 }
 
+var get_elixir_flair = function(){
+  return RANDOM.pick([``, `It explodes on the ground, near the $$&ENEMY$.`]);
+}
+
 LANGUAGE.actions[ITEM.Stick] = {
   usage: function(){
     return get_language(ITEM.Stick, [attack_pointy, attack_blunt]);
@@ -71,14 +75,36 @@ LANGUAGE.actions[ITEM.Stone] = {
 
 LANGUAGE.actions[ITEM.Elixir_fire] = {
   usage: function(){
-    var flair = [``, `It explodes on the ground, near the $$&ENEMY$.`];
-    return get_language(ITEM.Elixir_fire, [attack_throw]) + RANDOM.pick(flair);
+    return get_language(ITEM.Elixir_fire, [attack_throw]) + " " + get_elixir_flair();
   },
   fail: function(){
     return get_language(ITEM.Elixir_fire, [defend_dodge]);
   },
   win: function(){
     return `The glass bottle explodes and immediately turns into a ball of fire that roasts your face a little.`;
+  },
+};
+
+LANGUAGE.actions[ITEM.Elixir_ice] = {
+  usage: function(){
+    return get_language(ITEM.Elixir_ice, [attack_throw]) + " " + get_elixir_flair();
+  },
+  fail: function(){
+    return get_language(ITEM.Elixir_ice, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The bottle shatters near the $$&ENEMY$ and a mist spreads in the air.`,
+      `You see a unnatural chilling vapor escape the bottle.`,
+      `The glass container explodes and a shimmering fog expands out of it.`
+    ]) + " " + RANDOM.pick([
+      `It soon engulfes the $$&ENEMY$ and crystalizes around it.`,
+      `It's not long before the $$&ENEMY$ is entirely covered by the shiny gas. It imperceptibly turns into ice.`,
+      `The substance propagates its biting freeze, until the $$&ENEMY$ is covered by a thin layer of ice.`
+    ]) + " " + RANDOM.pick([
+      `The $$&ENEMY$ is no more than an statue of ice.`,
+      `A simple hit is enough to break your frozen opponent into a million tiny pieces.`,
+    ]);
   },
 };
 
