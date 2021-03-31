@@ -340,6 +340,26 @@ LANGUAGE.actions[ITEM.War_hammer] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Staff] = {
+  usage: function(){
+    return RANDOM.pick([
+      `You brandish your legendary staff, entrusting your fate to the generations of wise wizards who honed it before you, and theatrically hit the ground with it.`,
+      `You lift the enchanted staff in the air and spins it faster and faster. You can feel the ancestral powers living deep in the wood waking up.`,
+      `You feel the mighty staff shake with magical power within your firm grasp. You point it in the direction of the $$&ENEMY$.`,
+    ]);
+  },
+  fail: function(){
+    return get_language(ITEM.Staff, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `A huge flash of light blinds you, a thunderous crack deafens you. The fabric of reality itself seems to shake. The next time you look up, the $$&ENEMY$ has simply been wiped out of existence.`,
+      `A halo flashes around the legendary rod, and a similar light wraps up the $$&ENEMY$. A second later, the $$&ENEMY$ is simply gone, and there is no trace of it having ever existed.`,
+      `The legendary artifact jolts so strongly that you almost lose hold of it. There is a popping noise as the $$&ENEMY$ vanishes.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Spear] = {
   usage: function(){
     return get_language(ITEM.Spear, [attack_pointy]);
