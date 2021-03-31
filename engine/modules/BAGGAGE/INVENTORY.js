@@ -32,9 +32,9 @@ const ITEM = {
     // Tools
     Bow: "Bow",
     Arrow: "Arrow",
-    // Poison_darts: "Poison darts",
-    // Net: "Net",
-    // Rope: "Rope",
+    Poison_darts: "Poison darts",
+    Net: "Net",
+    Rope: "Rope",
 
     // Loot
     Stick: "Stick",
@@ -55,7 +55,7 @@ const ITEM = {
 ITEMS_ARCHETYPES = {
   "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom],
   "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
-  "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone],
+  "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone, ITEM.Poison_darts, ITEM.Net, ITEM.Rope],
   "Artifact": [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand],
 };
 

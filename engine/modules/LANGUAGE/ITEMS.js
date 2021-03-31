@@ -420,6 +420,53 @@ LANGUAGE.actions[ITEM.Arrow] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Poison_darts] = {
+  usage: function(){
+    return get_language(ITEM.Poison_darts, [attack_throw]);
+  },
+  fail: function(){
+    return get_language(ITEM.Poison_darts, [defend_dodge, defend_tank]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `Your dart lands on the $$&ENEMY$. The poison takes a few moments to propagate through its body, but before soon the $$&ENEMY$ is on the floor, lifeless.`,
+      `The needle scratches the $$&ENEMY$. It's enough for the poison to take effect. The $$&ENEMY$ is shaken by convulsions for a while, before falling dead on the ground.`,
+      `You manage to hit a soft spot in the $$&ENEMY$'s body. The blow is already a serious injury, but the poison finishes it off.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ITEM.Net] = {
+  usage: function(){
+    return get_language(ITEM.Net, [attack_throw]);
+  },
+  fail: function(){
+    return get_language(ITEM.Net, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ struggles for a bit, but it soon understands it cannot escape your net.`,
+      `The net lands on the $$&ENEMY$ and fully immobilizes it. There is no more threat.`,
+      `Your net captures the $$&ENEMY$. With each struggling motion, it only entangles itself more. Before long, the $$&ENEMY$ is unable to move.`,
+    ]);
+  },
+};
+
+LANGUAGE.actions[ITEM.Rope] = {
+  usage: function(){
+    return get_language(ITEM.Rope, [attack_throw]);
+  },
+  fail: function(){
+    return get_language(ITEM.Rope, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `You manage to capture the $$&ENEMY$ with your lasso. It struggles for a while, but you hold on and don't let it go.`,
+      `You expertly launch the rope toward the $$&ENEMY$'s limbs. It successfully entangles them. The $$&ENEMY$ stumbles and falls, and you take advantage of this to tie the rope and seal the deal.`,
+      `Your lariat manages to grab the $$&ENEMY$. With a jolt on the rope, you make it lose its footing. A few more expert gestures convert your rope into a permanent prison.`,
+    ]);
+  },
+};
 
 LANGUAGE.actions[ITEM.Fang] = {
   usage: function(){
