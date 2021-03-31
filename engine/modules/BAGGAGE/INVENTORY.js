@@ -9,7 +9,7 @@ const ITEM = {
     Elixir_ice: "Ice Elixir",
     Elixir_decay: "Decay Elixir",
     Elixir_chaos: "Chaos Elixir",
-    //Elixir_vine: "Vine Elixir", // ensnare
+    Elixir_vine: "Vine Elixir", // ensnare
     //Elixir_venom: "Venom Elixir", // gas
 
   // Way of the Weapon
@@ -35,6 +35,7 @@ const ITEM = {
     // Poison_darts: "Poison darts",
     // Net: "Net",
     // Rope: "Rope",
+
     // Loot
     Stick: "Stick",
     Stone: "Blunt Stone",
@@ -52,7 +53,7 @@ const ITEM = {
 }
 
 ITEMS_ARCHETYPES = {
-  "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos],
+  "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine],
   "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
   "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone],
   "Artifact": [ITEM.Sword_legend, ITEM.War_hammer],

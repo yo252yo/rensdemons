@@ -154,6 +154,29 @@ LANGUAGE.actions[ITEM.Elixir_chaos] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Elixir_vine] = {
+  usage: function(){
+    return get_language(ITEM.Elixir_vine, [attack_throw]) + " " + get_elixir_flair();
+  },
+  fail: function(){
+    return get_language(ITEM.Elixir_vine, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The bottle shatters near the $$&ENEMY$, and immediately roots start stemming out from it.`,
+      `The seeds contained in the bottle spread out around the $$&ENEMY$ and burgeon into roots.`,
+      `The glass container explodes spreading a cloud of seeds that fall on the ground and germinate into small plants.`
+    ]) + " " + RANDOM.pick([
+      `The vines grow at an incredible pace all around the $$&ENEMY$ and quickly ensnare it.`,
+      `Vines surround the $$&ENEMY$ and squeeze it into a deadly embrace.`,
+      `The vegetal grows in an instant, spreading its stems all over the $$&ENEMY$ whose struggle amounts to nothing.`,
+    ]) + " " + RANDOM.pick([
+      `The $$&ENEMY$ is left unable to move, forever frozen as a vegetal scultpure.`,
+      `There is now a tree where the $$&ENEMY$ used to be, and you can barely make out the features of your enemy in the shapes of its bark.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Sword_wooden] = {
   usage: function(){
     return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
