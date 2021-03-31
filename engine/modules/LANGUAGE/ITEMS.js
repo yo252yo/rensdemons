@@ -108,6 +108,29 @@ LANGUAGE.actions[ITEM.Elixir_ice] = {
   },
 };
 
+LANGUAGE.actions[ITEM.Elixir_decay] = {
+  usage: function(){
+    return get_language(ITEM.Elixir_decay, [attack_throw]) + " " + get_elixir_flair();
+  },
+  fail: function(){
+    return get_language(ITEM.Elixir_decay, [defend_dodge]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The bottle shatters near the $$&ENEMY$ and splashes its bubbly viscous content all over it.`,
+      `The bottle empties its content on the $$&ENEMY$.`,
+      `The glass container explodes and covers the $$&ENEMY$ of its liquid content.`
+    ]) + " " + RANDOM.pick([
+      `You see the body of the $$&ENEMY$ wither under the desctructive effect of the potion.`,
+      `The acid mixture burns through the $$&ENEMY$ and consumes its body.`,
+      `The unholy potion decomposes the body of the $$&ENEMY$, which starts to crumble before your eyes.`
+    ]) + " " + RANDOM.pick([
+      `Soon, the $$&ENEMY$ is nothing but a formless goo that you can just step over.`,
+      `All that remains of the disintegrated $$&ENEMY$ is a few traces on the ground.`,
+    ]);
+  },
+};
+
 LANGUAGE.actions[ITEM.Sword_wooden] = {
   usage: function(){
     return get_language(ITEM.Sword_wooden, [attack_pointy, attack_blunt]);
