@@ -36,11 +36,17 @@ const ITEM = {
     Net: "Net",
     Rope: "Rope",
 
-    // Loot
+    // Loot. IdeaS: spices, herbs, leather?
     Stick: "Stick",
     Stone: "Blunt Stone",
     Fang: "Venomous Fang",
     Bone: "Sharp Bone",
+    Scale: "Scale",
+    Feather: "Feather",
+    Flower: "Flower",
+    Linnens: "Linnens",
+    Berry: "Berry",
+    Mushroom: "Mushroom",
 
   isItem: function(s){
     for (var i in ITEM){
