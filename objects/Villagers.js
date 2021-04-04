@@ -15,16 +15,22 @@ interactions.push(function(sprite_nb, seed) {
   SPECIALBATTLES.conversation("villager_small_talk", "villager" + sprite_nb, seed);
 });
 
-class M_Villager extends MovingObject {
+class M_NPC extends MovingObject {
+  constructor(x, y, sprite) {
+    var visual = new MovingSprite("assets/characters/" + sprite + ".png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(7, 3, 20, 12);
+  }
+}
+
+class M_Villager extends M_NPC {
   constructor(x, y, seed) {
     var gen = new Generator(seed);
     var sprite_nb = gen.int(5);
-    var visual = new MovingSprite("assets/characters/villager" + sprite_nb + ".png", 'obj_dark', 32, 48);
-    super(visual, x, y, 32, 48);
+    super(x, y, "villager" + sprite_nb);
     this.seed = gen.get();
     this.interaction_ = interactions[gen.int(interactions.length)];
     this.sprite_nb = sprite_nb;
-    this.adjust_hitbox(7, 3, 20, 12);
   }
 
   interaction() {
