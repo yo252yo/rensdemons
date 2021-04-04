@@ -6,6 +6,8 @@ class StoreGenerator {
       this.outside = outside;
       this.store_type = type;
       this.store_threshold = threshold;
+
+      AUDIO.music.house();
     }
 
     main_entrance() {
