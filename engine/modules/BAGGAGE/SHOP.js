@@ -2,16 +2,42 @@
 
 var _SHOP_PRICES = {};
 
-_SHOP_PRICES[ITEM.Elixir_fire] = 25;
+_SHOP_PRICES[ITEM.Elixir_fire] = 20;
+_SHOP_PRICES[ITEM.Elixir_ice] = 50;
 
-_SHOP_PRICES[ITEM.Dagger] = 10;
+_SHOP_PRICES[ITEM.Elixir_vine] = 75;
+_SHOP_PRICES[ITEM.Elixir_venom] = 100;
+_SHOP_PRICES[ITEM.Elixir_decay] = 150;
+_SHOP_PRICES[ITEM.Elixir_chaos] = 200;
 
+_SHOP_PRICES[ITEM.Sword_wooden] = 20;
+_SHOP_PRICES[ITEM.Dagger] = 75;
+_SHOP_PRICES[ITEM.Mace] = 100;
+_SHOP_PRICES[ITEM.Shield] = 200;
+_SHOP_PRICES[ITEM.Spear] = 250;
+_SHOP_PRICES[ITEM.Sword_iron] = 500;
+_SHOP_PRICES[ITEM.Axe] = 500;
+_SHOP_PRICES[ITEM.Sword_great] = 1000;
+
+_SHOP_PRICES[ITEM.Arrow] = 5;
+_SHOP_PRICES[ITEM.Poison_darts] = 10;
+_SHOP_PRICES[ITEM.Rope] = 100;
+_SHOP_PRICES[ITEM.Bow] = 150;
+_SHOP_PRICES[ITEM.Net] = 200;
+
+_SHOP_PRICES[ITEM.Stone] = 1;
+_SHOP_PRICES[ITEM.Mushroom] = 1;
+_SHOP_PRICES[ITEM.Berry] = 2;
+_SHOP_PRICES[ITEM.Stick] = 2;
 _SHOP_PRICES[ITEM.Fang] = 5;
 _SHOP_PRICES[ITEM.Bone] = 5;
-_SHOP_PRICES[ITEM.Stick] = 2;
-_SHOP_PRICES[ITEM.Stone] = 1;
+_SHOP_PRICES[ITEM.Flower] = 5;
+_SHOP_PRICES[ITEM.Feather] = 10;
+_SHOP_PRICES[ITEM.Linnens] = 10;
+_SHOP_PRICES[ITEM.Scale] = 20;
 
-_SHOP_SELLONLY = [ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone];
+
+_SHOP_SELLONLY = [ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
 
 const SHOP = {
   selling_discount: 0.5,

@@ -7,20 +7,20 @@ const ITEM = {
   // Way of the Alchemy
     Elixir_fire: "Fire Elixir",
     Elixir_ice: "Ice Elixir",
-    Elixir_decay: "Decay Elixir",
-    Elixir_chaos: "Chaos Elixir",
     Elixir_vine: "Vine Elixir",
     Elixir_venom: "Venom Elixir",
+    Elixir_decay: "Decay Elixir",
+    Elixir_chaos: "Chaos Elixir",
 
   // Way of the Weapon
+  Sword_wooden: "Wooden Sword",
     Dagger: "Dagger",
-    Sword_wooden: "Wooden Sword",
-    Sword_iron: "Iron Sword",
-    Sword_great: "Great Sword",
     Mace: "Mace",
-    Spear: "Spear",
-    Axe: "Axe",
     Shield: "Shield",
+    Spear: "Spear",
+    Sword_iron: "Iron Sword",
+    Axe: "Axe",
+    Sword_great: "Great Sword",
 
   // Way of the Artifact
     Sword_legend: "Holy Sword",
@@ -30,23 +30,23 @@ const ITEM = {
 
   // Way of the Tools
     // Tools
-    Bow: "Bow",
     Arrow: "Arrow",
     Poison_darts: "Poison darts",
-    Net: "Net",
     Rope: "Rope",
+    Bow: "Bow",
+    Net: "Net",
 
     // Loot. IdeaS: spices, herbs, leather?
-    Stick: "Stick",
     Stone: "Blunt Stone",
+    Mushroom: "Mushroom",
+    Berry: "Berry",
+    Stick: "Stick",
     Fang: "Venomous Fang",
     Bone: "Sharp Bone",
-    Scale: "Scale",
-    Feather: "Feather",
     Flower: "Flower",
+    Feather: "Feather",
     Linnens: "Linnens",
-    Berry: "Berry",
-    Mushroom: "Mushroom",
+    Scale: "Scale",
 
   isItem: function(s){
     for (var i in ITEM){

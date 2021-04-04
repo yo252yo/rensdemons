@@ -14,12 +14,12 @@ const ABILITY = {
     Summon: "Summon",
 
   // Way of the Spirit
-    Charm: "Charm",
-    Petrify: "Petrify",
     Poison: "Poison",
     Shrink: "Shrink",
+    Petrify: "Petrify",
     Confusion: "Confusion",
     Lull: "Lull",
+    Charm: "Charm",
 
  // Way of the Diplomat
     Circumvent: "Circumvent",
