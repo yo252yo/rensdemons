@@ -24,6 +24,8 @@ menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls
 
 save audio settings to disk!
 
+dedicated sprites and audio themes for party members
+
 decorate stores
 
 sell several items at once
