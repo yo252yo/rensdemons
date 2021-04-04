@@ -30,6 +30,7 @@ decorate stores
 
 sell several items at once
 
+do i need unlock true in unlock_replacing_action
 
 
 give party members perks like store discounts

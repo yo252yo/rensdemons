@@ -15,3 +15,5 @@ make different cities/populations/shops
 should filler just pass gen to the constructor instead f calling gen.get
 
 add new decoration items
+
+make the villagrs speak in the town tone and populate town1

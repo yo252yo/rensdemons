@@ -13,7 +13,7 @@ const ITEM = {
     Elixir_chaos: "Chaos Elixir",
 
   // Way of the Weapon
-  Sword_wooden: "Wooden Sword",
+    Sword_wooden: "Wooden Sword",
     Dagger: "Dagger",
     Mace: "Mace",
     Shield: "Shield",
