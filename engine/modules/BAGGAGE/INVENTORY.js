@@ -101,7 +101,7 @@ const INVENTORY = {
   },
 
   count: function(name) {
-    return INVENTORY._inventory.get([name]);
+    return INVENTORY._inventory.get([name]) || 0;
   },
 
   all_objects: function(){

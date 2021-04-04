@@ -34,25 +34,27 @@ class M_Villager extends MovingObject {
 }
 
 class M_Vendor extends M_Villager {
-  constructor(x, y, seed, type) {
+  constructor(x, y, seed, type, threshold) {
     super(x,y,seed);
     this.type = type;
+    this.threshold = threshold;
   }
 
   interaction() {
     this.face_character();
-    SHOP.enter(this.type);
+    SHOP.enter(this.type, this.threshold);
   }
 }
 
 class M_Trainer extends M_Villager {
-  constructor(x, y, seed, type) {
+  constructor(x, y, seed, type, threshold) {
     super(x,y,seed);
     this.type = type;
+    this.threshold = threshold;
   }
 
   interaction() {
     this.face_character();
-    TRAINER.enter(this.type);
+    TRAINER.enter(this.type, this.threshold);
   }
 }

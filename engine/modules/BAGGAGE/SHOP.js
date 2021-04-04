@@ -85,6 +85,9 @@ const SHOP = {
         if (!ARCHETYPES.get_items(SHOP._current_type).includes(index)){
           continue;
         }
+        if (SHOP._current_threshold && SHOP._prices.buy(index) > SHOP._current_threshold){
+          continue;
+        }
         (function(i){
           var text = `${i}: ${SHOP._prices.buy(i)} coins`;
           goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i); }, "keep_open": true});
@@ -132,8 +135,9 @@ const SHOP = {
     },
   },
 
-  enter: function(type) {
+  enter: function(type, threshold) {
     SHOP._current_type = type;
+    SHOP._current_threshold = threshold;
     TextBannerSequence.make([RANDOM.pick([
       `The shopkeeper welcomes you with a smile.`,
       `Shopkeeper: "What can I do for you?"`,

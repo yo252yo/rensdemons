@@ -28,7 +28,7 @@ class S_Floor extends LevelObject {
 class S_TownFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
     super(x, y, w, h);
-    
+
     var leaving = function() {
       CURRENTLEVEL.setup(outside);
     }
@@ -123,11 +123,12 @@ class S_House extends S_EnterableBuilding {
 }
 
 class S_Store extends S_EnterableBuilding {
-  constructor(type, x, y, seed) {
+  constructor(type, threshold, x, y, seed) {
     var visual = new StaticSprite("assets/objects/buildings/store.png", 'obj_light');
     super(visual, x, y);
     this.type = type;
     this.seed = seed;
+    this.threshold = threshold;
 
     this.describe = this.text_interaction([
       `This place specializes in ${this.type}. You wonder what you could learn or purchase inside...`,
@@ -135,7 +136,7 @@ class S_Store extends S_EnterableBuilding {
   }
 
   enter() {
-    GENERATEDLEVELS.store.setup(this.type, this.seed);
+    GENERATEDLEVELS.store.setup(this.type, this.threshold, this.seed);
   }
 }
 

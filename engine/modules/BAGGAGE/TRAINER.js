@@ -45,6 +45,9 @@ const TRAINER = {
         if (!ARCHETYPES.get_items(TRAINER._current_type).includes(index)){
           continue;
         }
+        if (TRAINER._current_threshold && _TRAINER_PRICES[index] > TRAINER._current_threshold) {
+          continue;
+        }
         (function(i){
           var text = `${i}: ${_TRAINER_PRICES[i]} xp`;
           goods.push({"text": text, "effect": function(){ TRAINER._buy(i); }, "keep_open": true});
@@ -69,8 +72,9 @@ const TRAINER = {
     },
   },
 
-  enter: function(type) {
+  enter: function(type, threshold) {
     TRAINER._current_type = type;
+    TRAINER._current_threshold = threshold;
     TextBannerSequence.make([RANDOM.pick([
       `The trainer welcomes you with a smile.`,
       `Trainer: "What can I do for you?"`,
