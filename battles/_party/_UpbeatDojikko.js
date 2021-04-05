@@ -16,19 +16,57 @@ var pricelock = function(){
     BATTLETREE.api.lock(battle, "Read palm");
     BATTLETREE.api.lock(battle, "Read cards");
   }
+  // we dont need an unlock in an else clause because its always unlocked by _ask_reading
 }
+
+var _behind =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Ask about spirit",
+  unlock: true,
+  outcome: BATTLETREE.ESCAPE,
+  description: [`$$Ren$: "Is there something behind me?"`,
+                `$$UpbeatDojikko$: "Yes, it's the spirit of my granny, Josephine. She's always near me. I think she likes you."`,
+                `This is a bit too much for you to handle. You run away in a panic.`,
+  ],
+  extra_function: function(){
+    //
+  }
+});
+
+var _spirits =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Spirits",
+  unlock: true,
+  description: [`$$Ren$: "What spirits do you talk to?"`,
+                `$$UpbeatDojikko$: "The spirits of the departed who cannot move on. They tell me things, and I help guide them."`,
+                `$$Ren$: "So you can speak to the dead? It must be grim."`,
+                `$$UpbeatDojikko$: "Sometimes, yes. Not always. It's true that most of them have regrets or pains... But I keep them company, I talk to them, I cheer them up..."`,
+                `You're starting to feel uncomfortable. This lady has an unhealthy relationship with the spirit world. In fact, she constantly looks over your shoulder, as if exchanging glances with someone invisible standing behind you. Maybe you'd better make your escape quielty...`,
+  ],
+  function: _behind,
+});
 
 
 var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Read palm",
   unlock: true,
-  outcome: BATTLETREE.ESCAPE,
-  description: [
-    // TODO
+  description: [`$$Ren$: "What do you see in my hand?"`,
+                `You hold your hand to her. You feel the chilly touch of her cold fingers against your skin.`,
+                `She grabs your wrist to pull your hand closer, but in doing so the drags your arm on the table which knocks out one of her mystical looking grimoires. It falls on the ground, open at a page about 'starting your spiritual journey'.`,
+                `$$UpbeatDojikko$: "Oops... Sorry about that. It's ok, don't mind it. Let me see your hand."`,
+                `She goes back to staring at your skin. Something obviously catches her attention, because she doesn't move for a few minutes, only occasionally mumbling to herself or asking questions to an invisble presence.`,
+                `$$UpbeatDojikko$: "But what does this mean? I don't understand... Why?"`,
+                `After a while, she looks up, the face clouded by an expression of pain.`,
+                `$$UpbeatDojikko$: "I'm sorry, this has never happened before. I don't see anything. I cannot get a glance at your destiny. It's as if it's... not from this world."`,
+                `$$Ren$: "I guess I should have told you... I'm the Promised Child."`,
+                `$$UpbeatDojikko$: "Oh..."`,
+                `She says absently, as if not really comprehending the information. And then another time:`,
+                `$$UpbeatDojikko$: "Oh! That explains it. I certainly cannot peek into the mind of the Goddess. Neither me nor my friendly spirit helpers. We're not priests."`,
+                `$$Ren$: "I see, that makes sense. So there's nothing you can tell me about what is to come on my journey?"`,
+                `$$UpbeatDojikko$: "I'm afraid not. It's probably you who could tell me things about the future. You can speak to the Goddess, not just silly spirits..."`,
   ],
-  extra_function: function(){
+  function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
     pricelock();
+    _spirits("Read palm");
   }
 });
 
@@ -36,10 +74,33 @@ var _read_cards = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Read cards",
   unlock: true,
   outcome: BATTLETREE.ESCAPE,
-  description: [
-    // TODO
-
-  ],
+  description: [`$$Ren$: "Can you read my cards?"`,
+                `The fortune teller nods in silence. She takes your coins, and draws a wooden box from a fold in her velvety dress. She opens it to reveal a deck of cards, so worn out that you can barely make out the symbols on the back.`,
+                `$$UpbeatDojikko$: "Let us see."`,
+                `She places a hand on top of the deck, and closes her eyes. She starts muttering esoterical chants you cannot understand. It lasts for a few minutes, before she finally speaks in a language you can understand.`,
+                `$$UpbeatDojikko$: "Spirits, show us the way. Tell us the secrets of this child's destiny."`,
+                `With a trembling hand, she draws three cards and places them on the old wood table. You cannot decypher the eroded symbols on them, but the general tone seems pretty ominous, as confirmed by the puzzled expression on your host's face.`,
+                `$$Ren$: "Is it bad?"`,
+                `$$UpbeatDojikko$: "It's... not that simple. The first card is Death. It seems you and it go hand in hand. It seems to be an ever-looming presence in your life. But the weird thing is... it's in the 'beginning' quadrant. And it resonates with the Wheel of Fortune. It's as if... you can transcend it? And use it to birth new life? But you're stuck in the never-ending cycle of the wheel... My poor child, there's no end to your suffering. And with the Priestess in the 'dominant' quadrant, it's almost as if you embody the cycle of life by yourself. I've never quite seen such a thing."`,
+                `Seeing her confusion grow, you decide it's time to come clean.`,
+                `$$Ren$: "I think it's because... I'm the Promised Child."`,
+                `Her eyes widen at the reveal, but the surprise is quickly replaced by a thoughtful look.`,
+                `$$UpbeatDojikko$: "I see... Well, that certainly explains some things. I can clearly see the Goddess within you. But that makes this exercise very challenging. I've never done a reading for a holy being before..."`,
+                `$$Ren$: "I imagine... Does this mean my quest won't end well?"`,
+                `$$UpbeatDojikko$: "From what I see, it may be that your quest won't end at all. I'm sorry, these visions are very confused. It probably means that it's not decided yet. That it could go either way..."`,
+                `$$BestFriend$: "That's not very reassuring..."`,
+                `$$UpbeatDojikko$: "Don't worry too much, you have the Goddess on your side. The one thing that the cards tell me clearly is that death may be a constant in your life, but it will never take you."`,
+                `$$Ren$: "How could that be?"`,
+                `$$UpbeatDojikko$: "I'm sorry, that's as much as I can tell. The spirits are vague, and..."`,
+                `The seer body is shaken by a spasm, her eyes close and her head tilts back at a worrying angle.`,
+                `Suddenly, she lets out the biggest sneeze you've ever heard. Cards fly all over the room. She rushes to gather them, but in her haste, she pushes over a shelf that crumbles. Amulets and trinkets fall on the ground in a metallic cacophony.`,
+                `$$UpbeatDojikko$: "Oh my, I'm sorry."`,
+                `She starts gathering the fallen artifacts, but accidentally steps on her dress and ends up on the floor.`,
+                `$$UpbeatDojikko$: "Don't worry, that happens all the time."`,
+                `$$Ren$: "Are you sure?"`,
+                `$$BestFriend$: "Maybe we could help..."`,
+                `$$UpbeatDojikko$: "No, no. I'm fine. I'm used to it. I just need a little time to tidy everything. Just leave me alone for a bit, will you?"`,
+                ],
   extra_function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
     pricelock();
@@ -92,6 +153,9 @@ PLAYER_ACTIONS.add({
   unlock: true,
   description: [`$$Ren$: "Hello?"`,
                 `$$UpbeatDojikko$: "Hi! Are you lost? Can I help you?"`,
+                `She gets up from her seat, and the crystal ball that was on her lap falls on the ground and shatters in a thousand pieces.`,
+                `$$UpbeatDojikko$: "Pay no attention to this, it happens all the time."`,
+                `$$Ren$: "Huh... okay..."`,
                 ],
   function: function() {
     _withdraw("Say hello");
