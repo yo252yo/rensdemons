@@ -8,9 +8,6 @@ PLAYER_ACTIONS.escape("Leave");
 var battle = "_party/_UpbeatDojikko";
 var ud = DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko);
 
-
-//  PARTY.changeNickname(PARTYMEMBERS.UpbeatDojikko);
-
 var pricelock = function(){
   if(INVENTORY.cash() < 15) {
     BATTLETREE.api.lock(battle, "Read palm");
@@ -28,7 +25,7 @@ var _behind =  PLAYER_ACTIONS.function.unlock_replacing_action({
                 `This is a bit too much for you to handle. You run away in a panic.`,
   ],
   extra_function: function(){
-    //
+    STATS.record.flag("UpbeatDojikko_Spirit");
   }
 });
 
@@ -67,6 +64,7 @@ var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
     INVENTORY.decrease(ITEM.Coin, 15);
     pricelock();
     _spirits("Read palm");
+    STATS.record.flag("UpbeatDojikko_Book");
   }
 });
 
@@ -104,6 +102,7 @@ var _read_cards = PLAYER_ACTIONS.function.unlock_replacing_action({
   extra_function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
     pricelock();
+    STATS.record.flag("UpbeatDojikko_Cards");
   }
 });
 
@@ -158,11 +157,110 @@ PLAYER_ACTIONS.add({
                 `$$Ren$: "Huh... okay..."`,
                 ],
   function: function() {
+    STATS.record.flag("UpbeatDojikko_Fall");
     _withdraw("Say hello");
     _browse_wares("Say hello");
     _ask_reading("Say hello");
   },
 });
+
+var _ask_ghost = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Ask Josephine`,
+  unlock: true,
+  outcome: BATTLETREE.WIN,
+  description: [`$$Ren$: "It's not a game, I also have a special link with the spirits. Just ask Josephine, she'll tell you that this journey is the right thing to do."`,
+                `$$UpbeatDojikko$ looks stunned.`,
+                `$$UpbeatDojikko$: "How do you know about Josephine?"`,
+                `$$Ren$: "I'm the Promised Child, remember?"`,
+                `$$UpbeatDojikko$: "To think the Goddess would also let you see into the realms of the spirits... What a tremendous power. I've never met another seer before. I guess I could learn much in your company."`,
+                `$$Ren$: "Of course, ask Josephine, I tell you!"`,
+                `$$UpbeatDojikko$ looks over your shoulder.`,
+                `$$UpbeatDojikko$: "Is he right, nanny? Should I go?"`,
+                `You watch her listen to an answer you cannot hear.`,
+                `$$UpbeatDojikko$: "Very well, if you both say so, I will accompany the Promised Child on his quest."`,
+                "$$UpbeatDojikko$ joins your party!",
+                ],
+  extra_function: function(){
+    PARTY.changeNickname(PARTYMEMBERS.UpbeatDojikko);
+    PARTY.add(PARTYMEMBERS.UpbeatDojikko);
+  },
+});
+
+var _tarot = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Use tarot",
+  unlock: true,
+  description: [`$$Ren$: "Let me put it this way. Take out your tarot deck, and draw three cards for me. They will be the major arcana of Death, the Wheel of Fortune and the Priestess. This combination should be unusual enough to trigger your curiosity. Don't you want to know more?"`,
+                `$$UpbeatDojikko$: "What are you on about?"`,
+                `The fortune teller execute your instructions, growing more curious than skeptical. While she's doing her usual ritual, $$BestFriend$ whispers to you:`,
+                `$$BestFriend$: "Is that also the Goddess? Can She manipulate the cards? How do you know the right combination?"`,
+                `$$Ren$: "It's a bit complicated, I'm not sure I can explain..."`,
+                `As the cards are drawn, the shopkeeper finds the exact combination you predicted.`,
+                `$$UpbeatDojikko$: "It is indeed quite uncanny. I suppose this makes sense if you're the Promised Child. It does indeed hint of strange events. Maybe I should come and see them..."`,
+                `$$Ren$: "I think you'd find it interesting."`,
+                `$$UpbeatDojikko$: "What I find more interesting is how you dare play around with the spirit realm!"`,
+                ],
+  function: function() {
+    BATTLETREE.api.lock(battle, "Use tarot");
+    if(STATS.flag("UpbeatDojikko_Spirit")) {
+      _ask_ghost("Use tarot");
+    }
+  },
+});
+
+
+var _tease = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Bluff",
+  unlock: true,
+  description: [`$$Ren$: "I think you'll see a very special proposition if you look at my palm."`,
+                `The fortune teller is pretty suspicious. You have not convinced her yet.`,
+                `$$UpbeatDojikko$: "Are you trying to get a free reading out of me?"`,
+                `$$Ren$: "Just see what happens."`,
+                `You offer your arm to the shopkeeper. As she seizes it, she knocks off the table knocks out one of her mystical looking grimoires. You grin.`,
+                `$$UpbeatDojikko$: "What?"`,
+                `$$Ren$: "I didn't say you needed to look 'at' my palm."`,
+                `You nod in the direction of the book on the floor. It's open at the page 'starting your spiritual journey'.`,
+                `$$Ren$: "I'm about to embark on my spiritual journey, and I'm starting to think your talents with spirits could be a great help."`,
+                `The fortune teller is still frowning, having a tough time piecing together what is happening. $$BestFriend$ is also confused by the theatrics of your sudden proposal and your apparent power of book-manipulation.`,
+                `$$UpbeatDojikko$: "Did you do that?"`,
+                `Faced with your lack of answer, she continues:`,
+                `$$UpbeatDojikko$: "What's in it for me?"`,
+                ],
+  function: function() {
+    BATTLETREE.api.lock(battle, "Bluff");
+    BATTLETREE.api.lock(battle, "Apologize");
+    BATTLETREE.api.lock(battle, "Trade");
+    if(STATS.flag("UpbeatDojikko_Cards")) {
+      _tarot("Bluff");
+    }
+  },
+});
+
+PLAYER_ACTIONS.add({
+  name: "Warn",
+  description: [`$$Ren$: "Careful! don't get up!"`,
+                `$$UpbeatDojikko$: "W... What?"`,
+                `Startled by your sudden warning, the fortune teller predictably gets up, and the crystal ball that was on her lap falls on the ground and shatters.`,
+                `$$UpbeatDojikko$: "Pay no attention to this, it happens... How?"`,
+                `She's visibly intrigued by your foresight. Next to you, $$BestFriend$ is throwing you inquisitive looks. You simply shrug.`,
+                `$$Ren$: "I'm the Promised Child. The Goddess lets me see things."`,
+                `$$UpbeatDojikko$: "Are you? It's an honor to have you here. What can I do for you?"`,
+                ],
+  function: function() {
+    BATTLETREE.api.lock(battle, "Say hello");
+    _withdraw("Warn");
+    _browse_wares("Warn");
+
+    if(STATS.flag("UpbeatDojikko_Book")){
+      _tease("Warn");
+    }
+  },
+});
+
+if(STATS.flag("UpbeatDojikko_Fall")){
+  BATTLETREE.api.unlock(battle, "Warn");
+}
+
+
 
 // ===================
 // =================== START

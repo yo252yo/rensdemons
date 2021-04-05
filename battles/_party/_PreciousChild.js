@@ -25,6 +25,7 @@ var unlock_side_pc = PLAYER_ACTIONS.function.unlock_replacing_action({
     PARTY.add(PARTYMEMBERS.PreciousChild);
   },
 });
+
 var unlock_side_bf = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Side with ${bf}`,
   unlock: true,

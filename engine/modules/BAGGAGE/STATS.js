@@ -25,10 +25,19 @@ const STATS = {
       STATS._stats.increment([STAT.Death]);
       DISK.write("STATS");
     },
+
+    flag: function(text){
+      STATS._stats.increment(["FLAG_" + text]);
+      DISK.write("STATS");
+    },
   },
 
   get: function(key){
     return STATS._stats.get([key]);
-  }
+  },
+
+  flag: function(text){
+    return STATS._stats.get(["FLAG_" + text]);
+  },
 
 }
