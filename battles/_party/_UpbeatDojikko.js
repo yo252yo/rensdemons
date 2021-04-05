@@ -147,6 +147,22 @@ var _withdraw = PLAYER_ACTIONS.function.unlock_replacing_action({
                 ],
 });
 
+var _question = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Question",
+  unlock: true,
+  outcome: BATTLETREE.ESCAPE,
+  description: [`You cannot help but notice that the fortune-teller's gaze keeps shifting all around. Every few seconds, she turns her head in another direction, and nods or whispers something. You decide to enquire about this strange behavior.`,
+                `$$Ren$: "I'm sorry, but why are you always looking around?"`,
+                `$$UpbeatDojikko$: "I'm just talking to all my friends, are they bothering you?"`,
+                `You look around, but there's definitely nobody else there.`,
+                `$$Ren$: "Your friends?"`,
+                `$$UpbeatDojikko$: "Yes, my spirit friends. They keep me company and tell me things about the world of the departed."`,
+                `As if to illustrate, she waves with a smile at an empty space of air in the corner of the room. A moment later, she burst out laughing, as if responding to a joke you could not hear.`,
+                `$$UpbeatDojikko$: "Yes, you're right."`,
+                `Seeing her speak to herself like that is quite a creepy scene. Her demented actions contrast with her joyful demeanor. You finally cave, and, finding this atmosphere too unhealthy, make for a quick escape.`,
+                ],
+});
+
 PLAYER_ACTIONS.add({
   name: "Say hello",
   unlock: true,
@@ -161,6 +177,7 @@ PLAYER_ACTIONS.add({
     _withdraw("Say hello");
     _browse_wares("Say hello");
     _ask_reading("Say hello");
+    _question("Say hello");
   },
 });
 
@@ -249,6 +266,7 @@ PLAYER_ACTIONS.add({
     BATTLETREE.api.lock(battle, "Say hello");
     _withdraw("Warn");
     _browse_wares("Warn");
+    _question("Warn");
 
     if(STATS.flag("UpbeatDojikko_Book")){
       _tease("Warn");
