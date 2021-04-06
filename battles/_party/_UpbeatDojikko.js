@@ -173,6 +173,7 @@ PLAYER_ACTIONS.add({
                 `$$Ren$: "Huh... okay..."`,
                 ],
   function: function() {
+    BATTLETREE.api.lock(battle, "Warn");
     STATS.record.flag("UpbeatDojikko_Fall");
     _withdraw("Say hello");
     _browse_wares("Say hello");
