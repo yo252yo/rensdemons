@@ -8,10 +8,21 @@ PLAYER_ACTIONS.escape("Leave");
 var battle = "_party/_UpbeatDojikko";
 var ud = DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko);
 
+var askReading = "Ask reading";
+var sayHello = "Say hello";
+var askJosephine = "Ask Josephine";
+var useTarot = "Use tarot";
+var bluff = "Bluff";
+var warn = "Warn";
+var readPalm = "Read palm";
+var readCards = "Read cards";
+var trade = "Trade";
+var apologize = "Apologize";
+
 var pricelock = function(){
   if(INVENTORY.cash() < 15) {
-    BATTLETREE.api.lock(battle, "Read palm");
-    BATTLETREE.api.lock(battle, "Read cards");
+    BATTLETREE.api.lock(battle, readPalm);
+    BATTLETREE.api.lock(battle, readCards);
   }
   // we dont need an unlock in an else clause because its always unlocked by _ask_reading
 }
@@ -43,7 +54,7 @@ var _spirits =  PLAYER_ACTIONS.function.unlock_replacing_action({
 
 
 var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Read palm",
+  name: readPalm,
   unlock: true,
   description: [`$$Ren$: "What do you see in my hand?"`,
                 `You hold your hand to her. You feel the chilly touch of her cold fingers against your skin.`,
@@ -63,13 +74,13 @@ var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
     pricelock();
-    _spirits("Read palm");
+    _spirits(readPalm);
     STATS.record.flag("UpbeatDojikko_Book");
   }
 });
 
 var _read_cards = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Read cards",
+  name: readCards,
   unlock: true,
   outcome: BATTLETREE.ESCAPE,
   description: [`$$Ren$: "Can you read my cards?"`,
@@ -116,21 +127,21 @@ var _poor = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var _ask_reading = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Ask reading",
+  name: askReading,
   unlock: true,
   description: [`$$Ren$: "Actually, I'm about to embark on a long journey, and I was wondering if you could ask the spirits for advice about it."`,
                 `$$UpbeatDojikko$: "Oh, I see. A journey you say? Oh my, that's quite unusual. Yes, I suppose I could do that. I could read your palms, or I could read your cards. Since you're such a little cutie, I'll give you a discount. How about... 15 coins?"`,
                 ],
   function: function() {
-    _poor("Ask reading");
-    _read_palm("Ask reading");
-    _read_cards("Ask reading");
+    _poor(askReading);
+    _read_palm(askReading);
+    _read_cards(askReading);
     pricelock();
   },
 });
 
 var _browse_wares = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Trade",
+  name: trade,
   unlock: true,
   outcome: BATTLETREE.ESCAPE,
   description: [`$$Ren$: "I'm here to shop, can I look at your goods?"`,
@@ -139,7 +150,7 @@ var _browse_wares = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var _withdraw = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Apologize",
+  name: apologize,
   unlock: true,
   outcome: BATTLETREE.ESCAPE,
   description: [`$$Ren$: "Huh yeah, sorry, I kinda entered this shop by mistake."`,
@@ -164,7 +175,7 @@ var _question = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 PLAYER_ACTIONS.add({
-  name: "Say hello",
+  name: sayHello,
   unlock: true,
   description: [`$$Ren$: "Hello?"`,
                 `$$UpbeatDojikko$: "Hi! Are you lost? Can I help you?"`,
@@ -173,18 +184,18 @@ PLAYER_ACTIONS.add({
                 `$$Ren$: "Huh... okay..."`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, "Warn");
+    BATTLETREE.api.lock(battle, warn);
     STATS.record.flag("UpbeatDojikko_Fall");
-    _withdraw("Say hello");
-    _browse_wares("Say hello");
-    _ask_reading("Say hello");
-    _question("Say hello");
+    _withdraw(sayHello);
+    _browse_wares(sayHello);
+    _ask_reading(sayHello);
+    _question(sayHello);
   },
 });
 
-var _ask_ghost = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: `Ask Josephine`,
-  unlock: true,
+PLAYER_ACTIONS.add({
+  name: askJosephine,
+  replacing: useTarot,
   outcome: BATTLETREE.WIN,
   description: [`$$Ren$: "It's not a game, I also have a special link with the spirits. Just ask Josephine, she'll tell you that this journey is the right thing to do."`,
                 `$$UpbeatDojikko$ looks stunned.`,
@@ -203,10 +214,11 @@ var _ask_ghost = PLAYER_ACTIONS.function.unlock_replacing_action({
     PARTY.add(PARTYMEMBERS.UpbeatDojikko);
   },
 });
+BATTLETREE.api.lock(battle, askJosephine);
 
-var _tarot = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Use tarot",
-  unlock: true,
+PLAYER_ACTIONS.add({
+  name: useTarot,
+  replacing: bluff,
   description: [`$$Ren$: "Let me put it this way. Take out your tarot deck, and draw three cards for me. They will be the major arcana of Death, the Wheel of Fortune and the Priestess. This combination should be unusual enough to trigger your curiosity. Don't you want to know more?"`,
                 `$$UpbeatDojikko$: "What are you on about?"`,
                 `The fortune teller execute your instructions, growing more curious than skeptical. While she's doing her usual ritual, $$BestFriend$ whispers to you:`,
@@ -218,17 +230,17 @@ var _tarot = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `$$UpbeatDojikko$: "What I find more interesting is how you dare play around with the spirit realm!"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, "Use tarot");
+    BATTLETREE.api.lock(battle, useTarot);
     if(STATS.flag("UpbeatDojikko_Spirit")) {
-      _ask_ghost("Use tarot");
+      BATTLETREE.api.unlock(battle, askJosephine);
     }
   },
 });
+BATTLETREE.api.lock(battle, useTarot);
 
-
-var _tease = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Bluff",
-  unlock: true,
+PLAYER_ACTIONS.add({
+  name: bluff,
+  replacing: warn,
   description: [`$$Ren$: "I think you'll see a very special proposition if you look at my palm."`,
                 `The fortune teller is pretty suspicious. You have not convinced her yet.`,
                 `$$UpbeatDojikko$: "Are you trying to get a free reading out of me?"`,
@@ -244,17 +256,18 @@ var _tease = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `$$UpbeatDojikko$: "What's in it for me?"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, "Bluff");
-    BATTLETREE.api.lock(battle, "Apologize");
-    BATTLETREE.api.lock(battle, "Trade");
+    BATTLETREE.api.lock(battle, bluff);
+    BATTLETREE.api.lock(battle, apologize);
+    BATTLETREE.api.lock(battle, trade);
     if(STATS.flag("UpbeatDojikko_Cards")) {
-      _tarot("Bluff");
+      BATTLETREE.api.unlock(battle, useTarot);
     }
   },
 });
+BATTLETREE.api.lock(battle, bluff);
 
 PLAYER_ACTIONS.add({
-  name: "Warn",
+  name: warn,
   description: [`$$Ren$: "Careful! don't get up!"`,
                 `$$UpbeatDojikko$: "W... What?"`,
                 `Startled by your sudden warning, the fortune teller predictably gets up, and the crystal ball that was on her lap falls on the ground and shatters.`,
@@ -264,19 +277,21 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$: "Are you? It's an honor to have you here. What can I do for you?"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, "Say hello");
-    _withdraw("Warn");
-    _browse_wares("Warn");
-    _question("Warn");
+    BATTLETREE.api.lock(battle, sayHello);
+    _withdraw(warn);
+    _browse_wares(warn);
+    _question(warn);
+    _ask_reading(warn);
 
     if(STATS.flag("UpbeatDojikko_Book")){
-      _tease("Warn");
+      BATTLETREE.api.unlock(battle, bluff);
     }
   },
 });
+BATTLETREE.api.lock(battle, warn);
 
 if(STATS.flag("UpbeatDojikko_Fall")){
-  BATTLETREE.api.unlock(battle, "Warn");
+  BATTLETREE.api.unlock(battle, warn);
 }
 
 
