@@ -12,7 +12,7 @@ interactions.push(function() {
   ]);
 });
 interactions.push(function(sprite_nb, seed) {
-  SPECIALBATTLES.conversation("villager_small_talk", "villager" + sprite_nb, seed);
+  SPECIALBATTLES.villager("hope", "villager" + sprite_nb, seed);
 });
 
 class M_NPC extends MovingObject {
