@@ -33,43 +33,43 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: "What a crazy weather we're having lately, right? If the rain keeps going on that way, the crops are sure to rot, and we'll have another famine on our hands..."`,
+    `${name}: "What a crazy weather we're having lately, right? Only a few more days of rain and the crops will start rotting. It's not going to happen, though, the Goddess is with us. The sun will be back any day now."`,
   ], [
-    `${name}: "The winds from the east have been strong lately. Surely it's an omen of good beginnings."`,
+    `${name}: "The winds from the east have been strong lately and destroyed many crops. Winds from the east... It's an omen of good beginnings."`,
   ], [
-    `${name}: "I'm so glad to see a bit of sun today. It's been so cloudy lately. Praised be the Goddess for this blessed vision."`,
+    `${name}: "I'm so glad to see a bit of sun today. It's been so cloudy lately, I haven't been able to grow anything. Praised be the Goddess for this blessed vision."`,
   ], [
-    `${name}: "Could the Goddess bless us with a bit of sunlight? Life's hard enough as it is..."`,
+    `${name}: "This period of famine will pass! The Goddess is here above us. She'll bring us some sun any day, I'm sure!"`,
   ],
   ]);
 
 add_item(`"War"`, [
   [
-    `${name}: "Won't the fights ever cease? One of these days, the monsters will breach our walls. I have nightmares about it every night."`,
+    `${name}: "Sure, the fights never cease. Monsters gain ground every day. But they'll never breach our walls, the Goddess is watching over us."`,
   ], [
-    `${name}: "Day after day, the same threats. My parents fought in the war. My siblings fight in the war. My children will fight in the war. Is there no end to our suffering? When was the last time of peace? Who even remembers?"`,
+    `${name}: "Day after day, the same threats. My parents fought in the war. My siblings fight in the war. My children will fight in the war. When was the last time of peace? Who even remembers? That's how I'm sure we're close to a victory. It could be any day now."`,
   ], [
-    `${name}: "I cannot wait to go back out on the battlefield. I'll make the Goddess proud, and rid us of this scum."`,
+    `${name}: "We're fewer and fewer soldiers every day. I cannot wait to go back out on the battlefield. I'll make the Goddess proud, and rid us of this scum that killed my comrads."`,
   ], [
-    `It's a touchy subject. ${name} seems to fight back tears. Who knows what losses the war has caused already... The wound still seems fresh.`,
+    `${name}: "As a matter of fact, my brother died to those monsters last week. I'll take his place, avenge him, and bring us to victory."`,
   ],
   ]);
 
 add_item(`"Crops"`, [
   [
-    `${name}: "I worry about food a lot. The years where we have enough to eat are rare. Not only do we need clement weather, but the raids can destroy monthes of hard work. The Goddess sure is hard on us."`,
+    `${name}: "The years where we have enough to eat are rare. Not only do we need clement weather, but the raids can destroy monthes of hard work. This would be terrifying if the Goddess wasn't there to guarantee a better future."`,
   ], [
-    `${name}: "I've been trying to breed new varieties of wheat. Make them more resilient to the rain and suchlikes. I don't have much to show for it, but I'm keeping hope. These things take time."`,
+    `${name}: "I've been trying to breed new varieties of wheat. Make them more resilient to the rain and suchlikes. So far, all my attempts have failed, but I'm keeping hope. These things take time."`,
   ], [
-    `${name}: "We mostly live from our own crops, like many people in this town, but there's so little space we can farm within the city walls. And everything outside can be destroyed any day."`,
+    `${name}: "We mostly live from our own crops, like many people in this town. Anything outside the city walls can be destroyed any day. But fortunately, we have some space to farm in the city. It's tiny, but it can provide us days worth of food!"`,
   ],
   ]);
 
 add_item(`"Hunt"`, [
   [
-    `${name}: "I'm no hunter, but I wish them good luck. With all the raids, they're our main source of food, y'know."`,
+    `${name}: "I'm no hunter, but I wish them good luck. With all the raids, they're our main source of food, y'know. Most days they don't get much, but today will be different, I'm sure."`,
   ], [
-    `${name}: "Yep, I'm a hunter. I know I don't look the part, but I'm bringing game every day or so."`,
+    `${name}: "Yep, I'm a hunter. I know I don't look the part, but I'm bringing game every day or so. Well, I mean sometimes! Haven't been lucky in a while, though... but the tide will turn!"`,
   ], [
     `${name}: "The secret to being a hunter, kid, is to know the patterns of your preys. But even more than that, you gotta know about the monsters. That's why we hunt at dawn, when there's fewer of these bastards around."`,
   ],
@@ -79,9 +79,9 @@ add_item(`"Taxes"`, [
   [
     `${name}: "Look, I'm like anyone, of course I don't like paying, but that's something we have to do if we want the guard to protect us. With them monsters and all, someone has to protect the town. It's all worth it if you ask me."`,
   ], [
-    `${name}: "It's crazy what they take us! We can barely afford to eat as it is! I'd say the times are tough, but truth is I've never seen it any other way."`,
+    `${name}: "It's crazy what they take us! We can barely afford to eat as it is! I'd say the times are tough, but truth is I've never seen it any other way. It's an investment in the future, I say."`,
   ], [
-    `${name}: "I had a bit of coins on the side, I was working on a present for my Second Born, for her trial. But with the rise of taxes this year, I had to give it up. It's just as well, she's probably not the Promised Child anyway."`,
+    `${name}: "I had a bit of coins on the side, I was working on a present for my Second Born, for her trial. But with the rise of taxes this year, I had to give it up. It's just as well, I'm sure the Goddess will give me an even better gift!"`,
   ],
   ]);
 
@@ -89,7 +89,7 @@ add_item(`"King"`, [
   [
     `${name}: "The King? Yea, he's allright. Sure this is no paradize, but what can he do except wait for the Goddess to send us a Promised Child?"`,
   ], [
-    `${name}: "I ain't gonna badmouth royalty with a stranger. So I ain't gonna say nothing."`,
+    `${name}: "He hasn't done much for us. But I'm sure he has not forgotten us. He'll probably visit soon!"`,
   ], [
     `${name}: "He's a fine lad. I hope the Goddess helps him bring salvation to the lands."`,
   ],
@@ -97,17 +97,17 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: "With the monsters raiding our crops, we barely have enough to eat. We're more often sick than not. It's fortunate that we have the Goddess to watch over us, because there isn't much else to give us hope down here..."`,
+    `${name}: "With the monsters raiding our crops, we barely have enough to eat. We're more often sick than not. There isn't much to give us hope down here... So it's fortunate that we have the Goddess to watch over us..."`,
   ], [
-    `${name}: "We haven't had a plague this decade, I think. So I think it's going pretty well. Though no doubt the monsters will bring another soon..."`,
+    `${name}: "It's been months since the last plague the monster brought! It's going pretty well!"`,
   ], [
-    `${name}: "Three of my children did not make it past 1. Winters are too cold here, and crops are too rare. My Second Born was among them. What if he was the Promised Child? Will this misery continue forever?"`,
+    `${name}: "Three of my children did not make it past 1. Winters are too cold here, and crops are too rare. My Second Born was among them. I'm pretty sure he was not the Promised Child, the Goddess would not have taken him so soon. I can't wait for the day parents won't have to go through that!"`,
   ],
   ]);
 
 add_item(`"Children"`, [
   [
-    `${name}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just hope my little ${gen.pick(DATASETS.male_names)} grows up to do us proud."`,
+    `${name}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just know my little ${gen.pick(DATASETS.male_names)} grows up to do us proud."`,
   ], [
     `${name}: "I don't have one yet. I suppose I should get busy soon. I want many little ones to carry on my legacy. The Goddess permitting, of course!"`,
   ], [
@@ -119,11 +119,9 @@ add_item(`"Children"`, [
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: "The Promised Child can't come soon enough, I tell you. This town cannot survive much longer, I reckon. Then again my dad used to say the same thing. We're a town of survivors."`,
+    `${name}: "The Promised Child will be there soon, I tell you. This town cannot survive much longer. Then again my dad used to say the same thing. We're a town of survivors."`,
   ], [
-    `${name}: "You are the Promised Child? You must be joking. Oh, sweetie, I wish it were true. These are serious topics, don't make such cruel jokes."`,
-  ], [
-    `${name}: "I hear there's another trial going on today. I can't wait to know the results."`,
+    `${name}: "I hear there's another trial going on today. I can't wait to know the results. I'm sure they will be positive!"`,
   ], [
     `${name}: "Are you? Are you sure? Praised be the Goddess, can I touch you?"`,
     `Without waiting for your answer, ${name} puts a hand on your shoulder. In a weird holy transe, ${name} then falls on the ground and starts weeping tears of joy, muttering prayers to the Goddess.`

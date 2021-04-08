@@ -20,7 +20,11 @@ initialize_game @ DISK.js:58
 
 should i make a world map?
 
+should filler just pass gen to the constructor instead f calling gen.get
+
 menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
+
+add new decoration items
 
 save audio settings to disk!
 
