@@ -32,8 +32,7 @@ class DictionaryGenerator {
 
     // Geography names
     r['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
-    r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
-    // exposition/duty/perseverance/bravery/sacrifice
+    r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; 
     r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
     // zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia  > ? rules/faith/guilt
     r['town_3'] = MARKOV_MODELS.human_names.mutate("Columbia", 8); // denial
