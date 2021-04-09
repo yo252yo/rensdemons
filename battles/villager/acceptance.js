@@ -1,6 +1,6 @@
-// This is the City of Hope
-// exposition/duty/perseverance/bravery/sacrifice/patience
-// thigns are horrible, but we're keeping faith in a better tomorrow. despite all odds
+// This is the City of acceptance
+// death/praise  > death cult/scapegoat/acceptance
+// thigns are horrible, we welcome our death and rejoice in suffering
 
 
 // ===================

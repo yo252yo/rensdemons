@@ -1,6 +1,6 @@
-// This is the City of Hope
-// exposition/duty/perseverance/bravery/sacrifice/patience
-// thigns are horrible, but we're keeping faith in a better tomorrow. despite all odds
+// This is the City of Denial
+// ignorance/delusion/lie/pretend  > cant see others?
+// thigns are horrible in actuality, but we cannot see them so everything is amazing and this is the best possible world
 
 
 // ===================

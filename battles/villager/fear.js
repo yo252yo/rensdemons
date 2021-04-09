@@ -1,6 +1,6 @@
-// This is the City of Hope
-// exposition/duty/perseverance/bravery/sacrifice/patience
-// thigns are horrible, but we're keeping faith in a better tomorrow. despite all odds
+// This is the City of Fear
+// zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia  > ? rules/faith/guilt
+// thigns are horrible, it's probably your fault, you better to things the right way if you dont want to be shunned
 
 
 // ===================

@@ -1,7 +1,6 @@
-// This is the City of Hope
-// exposition/duty/perseverance/bravery/sacrifice/patience
-// thigns are horrible, but we're keeping faith in a better tomorrow. despite all odds
-
+// This is the City of Debauch
+// debauchery/lust  > freedom, memories
+// thigns are horrible, so we need to make the most of whatever little time we have
 
 // ===================
 //hack LOADING
