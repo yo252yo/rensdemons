@@ -126,6 +126,11 @@ PLAYER_ACTIONS.useless(ABILITY.Pray);
 //hack START
 // ===================
 var start_text = gen.pick([
-  ``,
+  `The villager jumps at you and passes an arm around your shoulder.`,
+  `The villager winks and comes very close to you.`,
+  `The villager grabs your arm and pulls you towards them.`,
+  `The person in front of you is visibly inebriated. They tumble on you and mumble an apology.`,
+  `${name}: "Yo! What's up?"`,
+  `${name}: "Hey! Come join the party!"`,
 ]);
 BATTLE.operations.start(start_text);

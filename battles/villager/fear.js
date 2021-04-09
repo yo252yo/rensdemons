@@ -127,6 +127,11 @@ PLAYER_ACTIONS.useless(ABILITY.Pray);
 //hack START
 // ===================
 var start_text = gen.pick([
-  ``,
+  `The villager looks at you suspiciously, their eyes silently asking what you want.`,
+  `The villager snappily asks you what you want.`,
+  `The villager notices straight away your unfamiliar face. They grumpily come to scold you.`,
+  `The person in front of you keeps darting suspicious glances at you and taking quick notes in a small black book.`,
+  `${name}: "Who are you and what are you doing here?"`,
+  `${name}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
 ]);
 BATTLE.operations.start(start_text);
