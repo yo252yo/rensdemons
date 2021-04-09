@@ -105,9 +105,15 @@ var attack = {
   react_time_s: 1.5,
   time_variation: 0.9, // 1 = 100%
 };
+BATTLE.monster_actions.add_textual(`You need to fight off the overbearing stranger who's coming a little too close.`, attack);
+BATTLE.monster_actions.add_textual(`You struggle to match ${name}'s levels of excitement.`, attack);
+BATTLE.monster_actions.add_textual(`You struggle to find an interesting answer.`, attack);
+BATTLE.monster_actions.add_textual(`You feel the weight of the social pressure to come up with interesting small talk.`, attack);
+BATTLE.monster_actions.add_textual(`${name} tries to share their drink with you, but you do your best to refuse.`, attack);
+BATTLE.monster_actions.add_textual(`${name} tries to make you eat something, but you think you should probably refuse.`, attack);
 
-BATTLE.monster_actions.add_textual(``, attack);
-BATTLE.monster_actions.add_textual(``);
+BATTLE.monster_actions.add_textual(`${name} high-fives you.`);
+BATTLE.monster_actions.add_textual(`${name} compliments you and says that apparently you're "their kind of people".`);
 
 // ===================
 //hack BASE ACTIONS

@@ -107,8 +107,14 @@ var attack = {
   time_variation: 0.4, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual(``, attack);
-BATTLE.monster_actions.add_textual(``);
+BATTLE.monster_actions.add_textual(`The constant cheerfullness of your conversation partner is a bit too much to handle.`, attack);
+BATTLE.monster_actions.add_textual(`You need to carefully craft your answer to not contradict ${name}'s weird inconsistent answer.`, attack);
+BATTLE.monster_actions.add_textual(`You try to tiptoe carefully around the truth to not break ${name}'s rosy bubble of optimism.`, attack);
+
+BATTLE.monster_actions.add_textual(`${name} smiles in silence. Their enthusiasm is almost contagious.`);
+BATTLE.monster_actions.add_textual(`You listen as ${name} rambles on about how great this city is.`);
+BATTLE.monster_actions.add_textual(`${name} goes on in pointless details about how great a day they're having.`);
+
 
 // ===================
 //hack BASE ACTIONS

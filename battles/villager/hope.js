@@ -107,8 +107,12 @@ add_item(`"Job"`, [
   time_variation: 0.5, // 1 = 100%
 };*/
 
-BATTLE.monster_actions.add_textual(``, attack);
-BATTLE.monster_actions.add_textual(``);
+BATTLE.monster_actions.add_textual(`${name} compliments your hair.`);
+BATTLE.monster_actions.add_textual(`${name} is impressed. You're so mature for your age. You really got the Goddess's blessings.`);
+BATTLE.monster_actions.add_textual(`The villager mumbles some platitudes with a warm smile.`);
+BATTLE.monster_actions.add_textual(`${name} blesses the Goddess for having allowed your meeting.`);
+BATTLE.monster_actions.add_textual(`${name} politely asks you questions about your day.`);
+BATTLE.monster_actions.add_textual(`${name} is holding on to your every word, eager to hear what you'll say next.`);
 
 // ===================
 //hack BASE ACTIONS

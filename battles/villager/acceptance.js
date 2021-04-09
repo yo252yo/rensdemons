@@ -107,8 +107,15 @@ var attack = {
   time_variation: 0.5, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual(``, attack);
-BATTLE.monster_actions.add_textual(``);
+BATTLE.monster_actions.add_textual(`There's an awkward silence during which you don't know what to say.`, attack);
+BATTLE.monster_actions.add_textual(`${name} is looking at you in silence.`, attack);
+BATTLE.monster_actions.add_textual(`You feel that the villager's gloominess is getting to you.`, attack);
+
+BATTLE.monster_actions.add_textual(`${name} stares at you with empty eyes.`);
+BATTLE.monster_actions.add_textual(`${name} stands still in front of you.`);
+BATTLE.monster_actions.add_textual(`${name} sighs.`);
+BATTLE.monster_actions.add_textual(`${name} simply waits for the conversation to go on.`);
+
 
 // ===================
 //hack BASE ACTIONS

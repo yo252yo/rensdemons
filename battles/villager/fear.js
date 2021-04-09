@@ -106,9 +106,14 @@ var attack = {
   react_time_s: 0.2,
   time_variation: 0.9, // 1 = 100%
 };
+BATTLE.monster_actions.add_textual(`The stranger stares at you judgmentally in silence.`, attack);
+BATTLE.monster_actions.add_textual(`The villager's glacial gaze ie pretty oppressive.`, attack);
+BATTLE.monster_actions.add_textual(`${name} scolds you. What are you doing here? Isn't there somewhere else you should be?`, attack);
+BATTLE.monster_actions.add_textual(`${name} doesn't seem convinced that you're telling the truth. They press you for more details.`, attack);
+BATTLE.monster_actions.add_textual(`You have to subject yourself to the relentless questioning of ${name}.`, attack);
+BATTLE.monster_actions.add_textual(`${name} asks for proof of your faith, but it seems that nothing you say will ever be good enough.`, attack);
+BATTLE.monster_actions.add_textual(`${name} asks you an embarrassing questions.`, attack);
 
-BATTLE.monster_actions.add_textual(``, attack);
-BATTLE.monster_actions.add_textual(``);
 
 // ===================
 //hack BASE ACTIONS
