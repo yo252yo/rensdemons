@@ -38,7 +38,13 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: ""`,
+    `${name}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`,
+  ],
+  [
+    `${name}: "It's such a shame that the Goddess has to punish all of us for the actions of a few bad apples..."`,
+  ],
+  [
+    `${name}: "If only people were more zealous, the Goddess wouldn't have to ruin the crops to punish them..."`,
   ],
 ]);
 

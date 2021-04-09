@@ -38,7 +38,13 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: ""`,
+    `${name}: "If the Goddess sent us these storms, it's surely that the wind is good for us. A human can survive on very little food, you know..."`,
+  ],
+  [
+    `${name}: "I don't look at the sky anymore, that way I'm never disappointed if it's not sunny!"`,
+  ],
+  [
+    `${name}: "You're looking at things the wrong way. What good is the sun, apart for the crops? What good are the crops, apart keeping us alive longer? And why would I want to be apart from the Goddess any longer than necessary?"`,
   ],
 ]);
 

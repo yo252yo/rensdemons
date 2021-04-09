@@ -38,7 +38,17 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: ""`,
+    `${name}: "Is there anything better than this great sunshine?"`,
+    `You are perplexed, as the sky is full of dark clouds.`,
+  ],
+  [
+    `${name}: "I love days of warm weather like this"`,
+    `$$Ren$: "But.. it's cold, and raining!"`,
+    `${name}: "Poor child, you're delusional. Your brain must be hurt from the tough circumstances you've lived through..."`,
+  ],
+  [
+    `${name}: "This is the perfect temperature for crops!"`,
+    `${name} points in a direction where you can see a few fruits on the ground. They are obviously smaller than they should have been, as if they didn't develop properly.`,
   ],
 ]);
 

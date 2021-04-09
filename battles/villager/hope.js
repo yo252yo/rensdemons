@@ -38,7 +38,16 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: ""`,
+    `${name}: "What a crazy weather we're having lately, right? Only a few more days of rain and the crops will start rotting. It's not going to happen, though, the Goddess is with us. The sun will be back any day now."`,
+  ],
+  [
+    `${name}: "The winds from the east have been strong lately and destroyed many crops. Winds from the east... It's an omen of good beginnings."`,
+  ],
+  [
+    `${name}: "I'm so glad to see a bit of sun today. It's been so cloudy lately, I haven't been able to grow anything. Praised be the Goddess for this blessed vision."`,
+  ],
+  [
+    `${name}: "This period of famine will pass soon! The Goddess is here above us. She'll bring us some sun any day, I'm sure!"`,
   ],
 ]);
 

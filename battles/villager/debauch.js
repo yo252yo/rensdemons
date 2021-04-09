@@ -37,7 +37,16 @@ var add_item = function(name, choices){
 
 add_item(`"Weather"`, [
   [
-    `${name}: ""`,
+    `${name}: "Don't really care about that. Interesting things happen at night, anyway."`,
+  ],
+  [
+    `${name}: "Who cares about what's going on in the sky? What matters is what we do here on earth!"`,
+  ],
+  [
+    `${name}: "The storms have become more frequent lately. They'll probably destroy this city soon, so we need to make the most of it before!"`,
+  ],
+  [
+    `${name}: "We hold a rain festival when it rains, and a sun festival when it doesn't! There's never a boring day! Sometimes we do even both in the same day!"`,
   ],
 ]);
 
