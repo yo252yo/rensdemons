@@ -131,13 +131,25 @@ add_item(`"Health"`, [
 
 add_item(`"Family"`, [
   [
-    `${name}: ""`,
+    `${name}: "I cut ties with my family. Their morals were too loose for my taste. I didn't want to be associated with this kind of people, and become part of the problem."`,
+  ],
+  [
+    `${name}: "When I meet someone right, and we have children together, we'll educate them properly. Moral standards have been going down lately, and the children are as bad as it gets. No wonder why we get divine punishments..."`,
+  ],
+  [
+    `${name}: "I want to start a family, I just haven't met the right person. It's important for me that my life partner is pure, you know. I wouldn't want to invite misfortune on our home. I need to chose carefully!"`,
   ],
 ]);
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: ""`,
+    `${name}: "The Pomised Child would have been here a long time ago if people were not so impure. The Goddess did not send us Her child because we're not worthy yet. We haven't prayed enough, it's that simple."`,
+  ],
+  [
+    `${name}: "I'm not sure the Promised Child is ever coming, to be honnest. There's so much sin everywhere. I don't know how such a dark environment can birth a holy child. We must repent!"`,
+  ],
+  [
+    `${name}: "I spend all my time praying the Goddess and asking Her to send Her Promised Child to save me. I'm sure She will find my devotion worthy."`,
   ],
 ]);
 

@@ -140,13 +140,26 @@ add_item(`"Health"`, [
 
 add_item(`"Family"`, [
   [
-    `${name}: ""`,
+    `${name}: "I haven't seen my children in a while... It's been a few years, actually. I'm sure they're fine, but I wonder where they went..."`,
+  ],
+  [
+    `${name}: "My parents retired in a farm when I was very young. Then my siblings joined them. I haven't seen any of them since. It must be a pretty nice, joyful farm. Maybe I'll go there too some day."`,
+  ],
+  [
+    `${name}: "Are you looking at my little girl? Isn't she the prettiest?"`,
+    `But there is noone else around...`,
   ],
 ]);
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: ""`,
+    `${name}: "Promised Children are great! We have a dozen in this village!"`,
+  ],
+  [
+    `${name}: "I've met the Promised Child once! It was a long time ago, it's probably not a child anymore."`,
+  ],
+  [
+    `${name}: "The Promised Child is a legend of the past! It's the person who defeated all the monsters and their leader, and ushered in this era of peace! We send our thanks every day to the Goddess and Her Promised Child, for giving us this great land!"`,
   ],
 ]);
 

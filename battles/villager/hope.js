@@ -128,13 +128,26 @@ add_item(`"Health"`, [
 
 add_item(`"Family"`, [
   [
-    `${name}: ""`,
+    `${name}: "My little one looks just like you. Or rather looked, I mean. It's okay, surely the Goddess will bless me with a new child soon!"`,
+  ],
+  [
+    `${name}: "I don't have children yet. I suppose I should get busy soon. I want many little ones to carry on my legacy and to fullfill the will of The Goddess. With Her blessing, of course!"`,
+  ],
+  [
+    `${name}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just know my little ${gen.pick(DATASETS.male_names)} will grow up to do us proud, under the eye of the Goddess."`,
   ],
 ]);
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: ""`,
+    `${name}: "The Promised Child will be there soon, I tell you. This town cannot survive much longer. Then again my dad used to say the same thing. We're a town of survivors."`,
+  ],
+  [
+    `${name}: "I hear there's another trial going on today. I can't wait to know the results. I'm sure today will be the day where the Promised Child finally appears!"`,
+  ],
+  [
+    `${name}: "Are you? Are you sure? Praised be the Goddess, can I touch you?"`,
+    `Without waiting for your answer, ${name} puts a hand on your shoulder. In a weird holy transe, ${name} then falls on the ground and starts weeping tears of joy, muttering prayers to the Goddess.`,
   ],
 ]);
 

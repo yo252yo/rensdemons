@@ -127,13 +127,25 @@ add_item(`"Health"`, [
 
 add_item(`"Family"`, [
   [
-    `${name}: ""`,
+    `${name}: "I don't want children. I can't bring myself to impose this worlf of suffering on others."`,
+  ],
+  [
+    `${name}: "Most of my family is already dead. My siblings are waiting for me with the Goddess. I can't wait for my turn to join them."`,
+  ],
+  [
+    `${name}: "My only child was stillborn. It's probably just as well, at least she didn't suffer. She might be the lucky one."`,
   ],
 ]);
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: ""`,
+    `${name}: "The Promised Child could come, or not. It doesn't matter. It's too late."`,
+  ],
+  [
+    `${name}: "I'm sure the Promised Child was born a long time ago and was killed by the monsters. Maybe there was even several Promised Children."`,
+  ],
+  [
+    `${name}: "I think it's pretty clear by now that the Promised Child is not coming. We've waited hundreds of years. Why would they come now?"`,
   ],
 ]);
 

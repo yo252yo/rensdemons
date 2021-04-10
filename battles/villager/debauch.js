@@ -129,13 +129,25 @@ add_item(`"Health"`, [
 
 add_item(`"Family"`, [
   [
-    `${name}: ""`,
+    `${name}: "Spend as much time as you can with your family! Cherish them! Don't you just love a big family meal!?"`,
+  ],
+  [
+    `${name}: "Have you come to play with my children? Sorry, they're off with their friends now, somewhere in the village. You can wait with me until they come back, if you want."`,
+  ],
+  [
+    `${name}: "Yes, I have a few children here and there. We don't have a strict model of family in this city, we're a community. Or if you look at it another way, we are one giant family!"`,
   ],
 ]);
 
 add_item(`"Promised Child"`, [
   [
-    `${name}: ""`,
+    `${name}: "The Promised Child has been found? Amazing! We must celebrate! Let's start planning the biggest party ever!"`,
+  ],
+  [
+    `${name}: "When the Promised Child gets there, we're going to throw a festival, and it'll be the biggest and grandest celebration anyone has ever thrown! We've been working on plans for decades, you know!"`,
+  ],
+  [
+    `${name}: "You know, it's only logical, the best thing we can do to help with the coming of the Promised Child is to make as many children as we can..."`,
   ],
 ]);
 
