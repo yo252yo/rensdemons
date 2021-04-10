@@ -68,7 +68,16 @@ add_item(`"Crops"`, [
 
 add_item(`"War"`, [
   [
-    `${name}: ""`,
+    `${name}: "What are you talking about? There's no war in this city."`,
+  ],
+  [
+    `${name}: "I, for one, have never seen any monster around here. I'm not sure what you're talking about."`,
+  ],
+  [
+    `${name}: "War? I've only ever known this period of peace and quiet."`,
+  ],
+  [
+    `${name}: "What country are you talking about? Yours? It sounds awful, I'm so glad to live here."`,
   ],
 ]);
 

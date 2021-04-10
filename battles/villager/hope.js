@@ -65,7 +65,16 @@ add_item(`"Crops"`, [
 
 add_item(`"War"`, [
   [
-    `${name}: ""`,
+    `${name}: "Sure, the fights never cease. Monsters gain ground every day. But they'll never breach our walls. Not again, not like those other times. The Goddess is watching over us."`,
+  ],
+  [
+    `${name}: "We're fewer and fewer soldiers every day. I cannot wait to go back out on the battlefield. I'll make the Goddess proud, and rid us of this scum that killed my comrads. No way I'll meet the same fate!"`,
+  ],
+  [
+    `${name}: "Day after day, the same threats. My parents fought in the war. My siblings fight in the war. My children will fight in the war. When was the last time of peace? Who even remembers? That's how I'm sure we're close to a victory. It could be any day now."`,
+  ],
+  [
+    `${name}: "As a matter of fact, my brother died to those monsters last week. I'm sure it was part of the Goddess' plan. I'll take his place, avenge him, and bring us to victory."`,
   ],
 ]);
 

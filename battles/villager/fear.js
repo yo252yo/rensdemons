@@ -65,7 +65,19 @@ add_item(`"Crops"`, [
 
 add_item(`"War"`, [
   [
-    `${name}: ""`,
+      `${name}: "Damn these monsters coming from who-knows-were to pillage and destroy our beloved lands!"`,
+  ],
+  [
+      `${name}: "Some say the monster invasion is punishment for our sins. Each monster is born from a sinner. I can't wait to get rid of all the scum so that only pure people remain and the problem will be solved once and for all!"`,
+  ],
+  [
+      `${name}: "I'm sure it's travellers like you who bring the monsters to our doors..."`,
+  ],
+  [
+      `${name}: "Things will only improve after we've thouroughly defeated all the outsiders in battle, and pushed them back where they come from. Or better yet, exterminate them!"`,
+  ],
+  [
+      `${name}: "The monsters won't cease attacking as long as there's impurity in our hearts. We must pray harder!"`,
   ],
 ]);
 

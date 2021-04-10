@@ -66,7 +66,16 @@ add_item(`"Crops"`, [
 
 add_item(`"War"`, [
   [
-    `${name}: ""`,
+    `${name}: "Yeah, war is raging, we probably won't hold on much longer, so why not enjoy ourselves?"`,
+  ],
+  [
+    `${name}: "Monsters could raid us any day now, come and have fun before it's too late!"`,
+  ],
+  [
+    `${name}: "My best mate was killed in a raid last week. We could be next. Forget about this stuff, let's make the most of the time we have!"`,
+  ],
+  [
+    `${name}: "Don't be a downer! Why do you have to bring heavy topics like that!"`,
   ],
 ]);
 

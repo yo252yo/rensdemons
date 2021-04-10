@@ -62,7 +62,18 @@ add_item(`"Crops"`, [
 
 add_item(`"War"`, [
   [
-    `${name}: ""`,
+    `${name}: "War will always be with us, it's simply the best way for us to go back to our Goddess."`,
+  ],
+  [
+    `${name}: "When monsters raid us next, I won't fight back. Death is the only relief from the fear of the next raid."`,
+  ],
+  [
+    `${name}: "We have less raids than other parts of the Kingdom because we send sacrifices to the monsters. It appeases their appetite."`,
+  ],
+  [
+    `${name}: "Best not think about it!"`,
+    `$$Ren$: "Shouldn't you prepare yourselves to defend?"`,
+    `${name}: "What's the use, we don't stand a chance. Best prepare ourselves for our inevitable demise."`,
   ],
 ]);
 
