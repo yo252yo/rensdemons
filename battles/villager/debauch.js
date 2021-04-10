@@ -93,7 +93,13 @@ add_item(`"Hunt"`, [
 
 add_item(`"Taxes"`, [
   [
-    `${name}: ""`,
+    `${name}: "Fuck taxes! I'm not gonna send money to the kingdom when it can be better spent elsewhere, and by elsewhere I mean here!"`,
+  ],
+  [
+    `${name}: "We don't really like taxes, here. Everyone does whatever they want with their money. No, what's really important is that everyone contributes to the potlucks and banquets!"`,
+  ],
+  [
+    `${name}: "I swear I was about to pay my taxes, but then I spent it all in wine instead."`,
   ],
 ]);
 

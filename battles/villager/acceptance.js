@@ -91,7 +91,13 @@ add_item(`"Hunt"`, [
 
 add_item(`"Taxes"`, [
   [
-    `${name}: ""`,
+    `${name}: "We don't pay taxes to the kingdom. What's the point, soon there won't be a kingdom left."`,
+  ],
+  [
+    `${name}: "Yes, I usually give all my money. I won't need it soon, anyway."`,
+  ],
+  [
+    `${name}: "Since I'm dying soon, I'm don't keep any money. So there's nothing to take from."`,
   ],
 ]);
 

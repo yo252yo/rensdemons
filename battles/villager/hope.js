@@ -92,7 +92,13 @@ add_item(`"Hunt"`, [
 
 add_item(`"Taxes"`, [
   [
-    `${name}: ""`,
+    `${name}: "Look, I'm like anyone, of course I don't like paying, but that's something we have to do if we want the guard to protect us. With them monsters and all, someone has to protect the town. It's all worth it if you ask me."`,
+  ],
+  [
+    `${name}: "It's crazy what they take us! We can barely afford to eat as it is! I'd say the times are tough, but truth is I've never seen it any other way. That's why it's important to contribute, for a better day. It's an investment in the future, I say."`,
+  ],
+  [
+    `${name}: "I had a bit of coins on the side, I was working on a present for my Second Born, for her trial. But with the rise of taxes this year, I had to give it up. It's just as well, I'm sure the Goddess will give her an even better gift!"`,
   ],
 ]);
 

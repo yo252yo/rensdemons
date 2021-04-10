@@ -95,7 +95,13 @@ add_item(`"Hunt"`, [
 
 add_item(`"Taxes"`, [
   [
-    `${name}: ""`,
+    `${name}: "Sure, I'll gladly pay my taxes, it's what allows the king to make our kingdom such a wonderful and safe place!"`,
+  ],
+  [
+    `${name}: "We barely pay any taxes, and in exchange we get protections and services from the kingdom. Talk about a good deal!"`,
+  ],
+  [
+    `${name}: "Pay taxes? To whom?"`,
   ],
 ]);
 

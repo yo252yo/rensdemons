@@ -95,7 +95,13 @@ add_item(`"Hunt"`, [
 
 add_item(`"Taxes"`, [
   [
-    `${name}: ""`,
+    `${name}: "I don't mind financing our war efforts. But I do mind when the money is spent in useless bails for unworthy people, or even worse, outsiders."`,
+  ],
+  [
+    `${name}: "I'm paying my dues. I'm not convinced that everyone else is doing the same. I'm pretty sure there's corruption somewhere. With the amount I've donated, we should have won the war by now!"`,
+  ],
+  [
+    `${name}: "I don't like paying taxes. You can't ever be sure that the money doesn't end up in the wrong pocket. Not everyone is an upstanding citizen like I am."`,
   ],
 ]);
 
