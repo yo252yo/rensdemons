@@ -119,7 +119,13 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: ""`,
+    `${name}: "We would be fine if it weren't for outsiders bringing plagues and diseases into this beautiful city."`,
+  ],
+  [
+    `${name}: "I'm taking great care of protecting myself. I almost never leave my house, so I don't run into diseases, and I pray the Goddess every hour, so that she protects me!"`,
+  ],
+  [
+    `${name}: "I spend most of my day cleaning my house. We wouldn't have plagues if everyone was as diligent as me. Those bad apples make it hard for the rest of honnest folk like me..."`,
   ],
 ]);
 

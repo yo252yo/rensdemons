@@ -116,7 +116,13 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: ""`,
+    `${name}: "It's been months since the last plague brought by the monsters! It's going pretty well! Let's hope this continues!"`,
+  ],
+  [
+    `${name}: "With the monsters raiding our crops, we barely have enough to eat. We're more often sick than not. It's fortunate that we have the Goddess to watch over us, otherwise things could be pretty bad..."`,
+  ],
+  [
+    `${name}: "My two first children did not make it past age 1. Winters are too cold, and crops too rare. But I'm expecting a third child. I'm sure this one will survive!"`,
   ],
 ]);
 

@@ -119,7 +119,22 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: ""`,
+    `${name}: "I'm in great shape! Everything is fine!"`,
+    `$$Ren$: "Are you sure? You look a bit pale... and... malnourished."`,
+    `${name}: "Of course I'm sure! Maybe you're the one in poor health, sounds to me like your eyesight is bad."`,
+  ],
+  [
+    `${name}: "My baby was born weak, and got very sick, but he recovered, and now he's in great shape!"`,
+    `$$Ren$: "Where is he, then?"`,
+    `${name}: "Oh, he's... somewhere... He's in great shape... In great shape..."`,
+    `The vacant gaze on ${name}'s face tells you it might be better to avoid the topic.`,
+  ],
+  [
+    `$$Ren$: "What happened to your arm?"`,
+    `${name}: "What are you talking about?"`,
+    `$$Ren$: "You're missing your left arm, is there a story behind it?"`,
+    `${name}: "No I'm not."`,
+    `You don't know how to react to this.`,
   ],
 ]);
 

@@ -117,7 +117,13 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: ""`,
+    `${name}: "There are some who say that too much drinking is bad for your health. But how can it be true if it feels so great?"`,
+  ],
+  [
+    `${name}: "I'll make the most of my body until it cannot withstand it anymore!"`,
+  ],
+  [
+    `${name}: "Diseases can kill you any day, you know. Nothing you can do about that. The only thing you can actually do is make sure you live a life worth living before that time comes!"`,
   ],
 ]);
 

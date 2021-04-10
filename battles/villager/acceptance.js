@@ -115,7 +115,13 @@ add_item(`"King"`, [
 
 add_item(`"Health"`, [
   [
-    `${name}: ""`,
+    `${name}: "Diseases are a blessing in disguise. Most often the pain is short and you die pretty fast."`,
+  ],
+  [
+    `${name}: "I don't fear diseases. I'm sure monsters will kill you before you get a chance to get sick."`,
+  ],
+  [
+    `${name}: "Health comes and goes, it's unavoidable. I'm not a big believer in hygiene. There's no use trying to avoid plagues, they'll get to you eventually."`,
   ],
 ]);
 
