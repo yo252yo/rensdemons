@@ -48,13 +48,19 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`"Crops"`, [
   [
-    `${name}: ""`,
+    `${name}: "I don't really need food, I'll eat while there is some, but I'll be glad to join the Goddess when She calls me back to Her."`,
+  ],
+  [
+    `${name}: "Wheat is the food of the body. Mine is already dead. Soon it will be nothing but dust. What matters is the food of the spirit."`,
+  ],
+  [
+    `${name}: "I don't mind famine. If we had food, we'd stay alive longer, and then we'd suffer for longer."`,
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`"War"`, [
   [
     `${name}: ""`,
   ],

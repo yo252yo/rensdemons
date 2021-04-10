@@ -1,6 +1,6 @@
 // This is the City of Fear
 // zeal/purity/sectarism/distrust/suspicion/obsession/zeal/exclusion/rejection/isolation/paranoia  > ? rules/faith/guilt
-// thigns are horrible, it's probably your fault, you better to things the right way if you dont want to be shunned
+// thigns are horrible, it's probably your fault, nobody prays enough, you better do things the right way if you dont want to be shunned
 
 
 // ===================
@@ -48,13 +48,22 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`"Crops"`, [
   [
-    `${name}: ""`,
+    `${name}: "We all have to ration ourselves pretty strictly to make sure that the food supplies last. We don't get a lot, with all the outsiders coming in, destroying our crops, stealing our supplies..."`,
+  ],
+  [
+    `${name}: "Are you here to steal my food? I've earned it fair and square. I'm not going to give it to outsiders like you."`,
+  ],
+  [
+    `${name}: "Why don't you farm your own crops before enquiring about honest folks like me? A lot of talking, not a lot of working... It's because of people like you that the Goddess has forsaken us!"`,
+  ],
+  [
+    `${name}: "We get really worse yields than we deserve. It's because people are not praying enough. I spend hours every day repenting, and I wish I could do more."`,
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`"War"`, [
   [
     `${name}: ""`,
   ],

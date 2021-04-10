@@ -50,13 +50,21 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`"Crops"`, [
   [
-    `${name}: ""`,
+    `${name}: "We have the best delicacies in the Kingdom! I mean it's just bread, but with enough wine it'll taste divine!"`,
+  ],
+  [
+    `${name}: "Damn, you missed the harvest festival by a few days! It's a celebration where we get all the crops we've just harvested, and eat them all until we get sick! It's wicked!"`,
+  ],
+  [
+    `${name}: "We don't really store crops, here. We just eat whatever the Goddess provides!"`,
+    `$$Ren$: "What about the future? The next cold season?"`,
+    `${name}: "Who knows if we'll survive until then. Let's enjoy what we have while we can!"`,
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`"War"`, [
   [
     `${name}: ""`,
   ],

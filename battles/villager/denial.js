@@ -52,13 +52,21 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`"Crops"`, [
   [
-    `${name}: ""`,
+    `${name}: "What do you mean reserves are slim? You must be misinformed, there's plenty of food in store!"`,
+  ],
+  [
+    `${name}: "Do you want to share my bread? It's a bit stale, but I've had worse..."`,
+    `$$Ren$: "Hum excuse me, sorry, I think this is a rock..."`,
+  ],[
+    `${name}: "Did you not see the lustrous fields all around our glorious city? We have plenty of food to spare!"`,
+    `$$Ren$: "Actually, all I saw were ravaged lands..."`,
+    `${name}: "That's odd... You probably came from a weird direction then, that must be it!"`,
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`"War"`, [
   [
     `${name}: ""`,
   ],

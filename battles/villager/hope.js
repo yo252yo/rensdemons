@@ -51,13 +51,19 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`"Crops"`, [
   [
-    `${name}: ""`,
+    `${name}: "We haven't had enough to eat for years. Not only do we need clement weather, but the raids can destroy monthes of hard work. This would be terrifying if the Goddess wasn't there to guarantee a better future soon."`,
+  ],
+  [
+    `${name}: "I've been trying to breed new varieties of wheat. Make them more resilient to the rain and suchlikes. So far, all my attempts have failed, but I'm keeping hope. These things take time."`,
+  ],
+  [
+    `${name}: "We mostly live from our own crops, like many people in this town. Anything outside the city walls can be destroyed any day. But fortunately, we have some space to farm in the city. It's tiny, but it can provide us several days worth of food!"`,
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`"War"`, [
   [
     `${name}: ""`,
   ],
