@@ -183,13 +183,25 @@ add_item(`"Rumors"`, [
 
 add_item(`"Dreams"`, [
   [
-    `${name}: ""`,
+    `${name}: "I hope I'm still there to witness the Promised Child's victory and our salvation!"`,
+  ],
+  [
+    `${name}: "I wish for our victory to come soon!"`,
+  ],
+  [
+    `${name}: "I don't wish, I trust. I know that the Goddess will bring me joy!"`,
   ],
 ]);
 
 add_item(`"Traditions"`, [
   [
-    `${name}: ""`,
+    `${name}: "We hold a weekly mass at the church where we all gather in prayer for a better tomorrow! You're welcome to join!"`,
+  ],
+  [
+    `${name}: "There's this festival, in the summer, where we each write what we want for the future on a piece of paper, and a mage sends them in the sky! I wish you could see it, it's so beautiful!"`,
+  ],
+  [
+    `${name}: "Our town's motto is 'never despair, keep moving forward'."`,
   ],
 ]);
 

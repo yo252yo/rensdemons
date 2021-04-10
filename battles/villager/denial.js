@@ -196,13 +196,25 @@ add_item(`"Rumors"`, [
 
 add_item(`"Dreams"`, [
   [
-    `${name}: ""`,
+    `${name}: "I just wish this bliss would continue."`,
+  ],
+  [
+    `${name}: "I don't think there's anything I'm missing right now!"`,
+  ],
+  [
+    `${name}: "I wish the whole world could be as perfect as this town!"`,
   ],
 ]);
 
 add_item(`"Traditions"`, [
   [
-    `${name}: ""`,
+    `${name}: "Every now and then we throw together a banquet with the whole town to rejoice on how well we're doing!"`,
+  ],
+  [
+    `${name}: "We have a custom in this city, which is never to tell anyone else what we think of them. It helps reduce the number of conflicts. Many people do live in their own little world, better not to break their bubble..."`,
+  ],
+  [
+    `${name}: "Our values are respect and courtesy. Mind you it's pretty easy to be respectful when nothing bad is happening and everyone is just happy."`,
   ],
 ]);
 

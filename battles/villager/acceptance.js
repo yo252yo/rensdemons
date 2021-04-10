@@ -178,13 +178,25 @@ add_item(`"Rumors"`, [
 
 add_item(`"Dreams"`, [
   [
-    `${name}: ""`,
+    `${name}: "My only wish is for my death to be painless."`,
+  ],
+  [
+    `${name}: "I just wish the pain would stop."`,
+  ],
+  [
+    `${name}: "I hope our sacrifice pleases the Goddess and spares us a bit from suffering."`,
   ],
 ]);
 
 add_item(`"Traditions"`, [
   [
-    `${name}: ""`,
+    `${name}: "Every month, we designate a sacrifice, who gets killed in front of the church as an offering to the Goddess. We hope it eases her anger, and lessens our punishment."`,
+  ],
+  [
+    `${name}: "We do regular sacrifices to the Goddess. We all want to give ourselves to Her, so we draw the lucky chosen at random. Only our blood willingly offered can appease the Goddess."`,
+  ],
+  [
+    `${name}: "No matter how many executions we do, the Goddess will not stop punishing her. I don't dare imagine how much worse things would be without our sacrifices."`,
   ],
 ]);
 

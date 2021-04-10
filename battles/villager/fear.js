@@ -187,13 +187,25 @@ add_item(`"Rumors"`, [
 
 add_item(`"Dreams"`, [
   [
-    `${name}: ""`,
+    `${name}: "I just wish that everybody was doing as much effort as me..."`,
+  ],
+  [
+    `${name}: "If only we could get rid of the invaders, life would be so much better..."`,
+  ],
+  [
+    `${name}: "I wish there were more hours in the day, so that I could pray the Goddess for longer!"`,
   ],
 ]);
 
 add_item(`"Traditions"`, [
   [
-    `${name}: ""`,
+    `${name}: "Every week, we hold a citizen tribunal, to confront our unworthy neighbours with their sins. It's for the good of all of us, we must be righteous if we are to survive."`,
+  ],
+  [
+    `${name}: "We have regular deliberations to decide who should we banish from the town. It's important to banish someone every month, it keeps the city pure, and the fear keeps people in check..."`,
+  ],
+  [
+    `${name}: "Despite our trials and banishments, the city is still full of sin. I say we need to be more strict, so that we finally stop attracting monsters."`,
   ],
 ]);
 

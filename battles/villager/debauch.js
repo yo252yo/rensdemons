@@ -180,13 +180,25 @@ add_item(`"Rumors"`, [
 
 add_item(`"Dreams"`, [
   [
-    `${name}: ""`,
+    `${name}: "I don't know, I'm simple, I just wish for good food, good drinks, and good company."`,
+  ],
+  [
+    `${name}: "Well, I could always use more money..."`,
+  ],
+  [
+    `${name}: "When I was a child, I tried the frutiest wine I've ever tasted... What I wouldn't give for another drop of this delicious wine!"`,
   ],
 ]);
 
 add_item(`"Traditions"`, [
   [
-    `${name}: ""`,
+    `${name}: "Every week we throw a big ball where every artist in town can demonstrate the new songs, dances or poems they came up with!"`,
+  ],
+  [
+    `${name}: "Every month a lot of villagers get together for a big or... wait, you're probably too young for me to tell you about that!"`,
+  ],
+  [
+    `${name}: "We have festivals for each big occasion! Seasons, great people, historical events, spirits of nature... We celebrate something every week or so!"`,
   ],
 ]);
 
