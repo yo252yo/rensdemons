@@ -127,7 +127,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Children"`, [
+add_item(`"Family"`, [
   [
     `${name}: ""`,
   ],
@@ -145,6 +145,35 @@ add_item(`"Job"`, [
   ],
 ]);
 
+add_item(`"Rumors"`, [
+  [
+    `${name}: ""`,
+  ],
+]);
+
+add_item(`"Dreams"`, [
+  [
+    `${name}: ""`,
+  ],
+]);
+
+add_item(`"Traditions"`, [
+  [
+    `${name}: ""`,
+  ],
+]);
+
+add_item(`"City"`, [
+  [
+    `${name}: ""`,
+  ],
+]);
+
+add_item(`"Religion"`, [
+  [
+    `${name}: ""`,
+  ],
+]);
 
 // ===================
 //hack NPC RESPONSES
