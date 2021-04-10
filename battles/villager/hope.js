@@ -153,13 +153,31 @@ add_item(`"Promised Child"`, [
 
 add_item(`"Job"`, [
   [
-    `${name}: ""`,
+    `${name}: "How sweet of you to ask. I'm a tanner. I get the skin from the animals that the hunters bring back, and I make all kind of clothes out of them. When they bring back something, that is. Do you like my jacket? Maybe I can make you one some day, the next time we get a great haul. It shouldn't be long!"`,
+  ],
+  [
+    `${name}: "I'm a butcher. I prepare meat from whatever the hunters bring. It's dirty, but without me nobody could eat! I'm preparing my tools for the next big hunt!"`,
+  ],
+  [
+    `${name}: "I'm the blacksmith. I make the weapons that our fine guards use to defend our town. And the tools our hunters use to bring us our food. As I get better, so will their efficiency!"`,
+  ],
+  [
+    `${name}: "Mason isn't an easy job. I made this house with my bare hands. And maybe yours, too. And many more to come!"`,
+  ],
+  [
+    `${name}: "With the forest all around, we will always need lumberjacks. Wood has so many uses, not the least of which is to warm us through the night."`,
   ],
 ]);
 
 add_item(`"Rumors"`, [
   [
-    `${name}: ""`,
+    `${name}: "I hear that the Goddess is going to send us help very soon!"`,
+  ],
+  [
+    `${name}: "Everyone is saying that the victory is near, and that the suffering is almost over!"`,
+  ],
+  [
+    `${name}: "Rumor has it that the Promised Child will be born soon! Finally, our savior is coming!"`,
   ],
 ]);
 

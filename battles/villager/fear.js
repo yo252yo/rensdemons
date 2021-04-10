@@ -155,13 +155,33 @@ add_item(`"Promised Child"`, [
 
 add_item(`"Job"`, [
   [
-    `${name}: ""`,
+    `${name}: "The world would be a much better place if everyone was doing their job as diligently as me!"`,
+    `$$Ren$: "Oh, what do you do?"`,
+    `${name}: "Nothing at the moment, I pray!"`,
+  ],
+  [
+    `${name}: "Most people in this city are devouts. They don't have a job per se, they dedicate their whole life to praying the Goddess and medidating, repenting and asking for forgiveness."`,
+  ],
+  [
+    `${name}: "I belong to the militia. We go through the town and make sure that public order is respected, and that people are acting in a proper and devout way. You might say that I'm the protector of the spiritual peace of this kingdom. So you better watch what you're doing, I'm keeping an eye on you, outsider."`,
+  ],
+  [
+    `${name}: "I work at the temple. We conduct random raids in the village, to punish the corrupt people who are at the root of our suffering. Once we finish getting rid of this scum, surely the Goddess will grant us peace and prosperity. You can see how important my job is."`,
   ],
 ]);
 
 add_item(`"Rumors"`, [
   [
-    `${name}: ""`,
+    `${name}: "I keep hearing that some people have settled in this city without deserving their place... I'm sure their laziness is attracting monsters upon us..."`,
+  ],
+  [
+    `${name}: "Rumor has it that there are people in this city that do not do their due dilligence and pray enough. I'm pretty sure this is true, and this is why the Goddess is punishing us."`,
+  ],
+  [
+    `${name}: "Rumors are plentiful in this city. Nobody is as perfect as me, everyone has dirty laundry. We're still far from a perfect world. If only people tried a little harder..."`,
+  ],
+  [
+    `${name}: "I'm sure that my neighbor is slacking off from prayer. I've heard many people confirming it..."`,
   ],
 ]);
 

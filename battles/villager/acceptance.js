@@ -151,13 +151,28 @@ add_item(`"Promised Child"`, [
 
 add_item(`"Job"`, [
   [
-    `${name}: ""`,
+    `${name}: "I have the priviledge to work on building tombs. It's an important responsibility. Our lives are transient, but our final rest will be eternal!"`,
+  ],
+  [
+    `${name}: "I offer council to prepare people for death. I organize sessions of prayers and meditations. I guess you could call me a guide for the spirits."`,
+  ],
+  [
+    `${name}: "I'm what you'd call the executioner, I guess. I'm in charge of picking the sacrifices, preparing them, and executing the ceremony at the altar. It's probably the most important job of all!"`,
+  ],
+  [
+    `${name}: "I don't have a job. I don't want to waste my time building things that are just going to be destroyed or disappear."`,
   ],
 ]);
 
 add_item(`"Rumors"`, [
   [
-    `${name}: ""`,
+    `${name}: "I hear there will be a raid soon. Many will die. I hope my turn comes."`,
+  ],
+  [
+    `${name}: "Many here are saying that the Goddess has abandonned us. I can't tell if it's true, but it sure looks like it."`,
+  ],
+  [
+    `${name}: "People around here keep saying that the grave is a better place than this wretched world. I'm not sure if I believe them, but if things keep piling up, I might..."`,
   ],
 ]);
 

@@ -136,7 +136,7 @@ add_item(`"Family"`, [
   ],
   [
     `${name}: "Yes, I have a few children here and there. We don't have a strict model of family in this city, we're a community. Or if you look at it another way, we are one giant family!"`,
-  ],
+    ],
 ]);
 
 add_item(`"Promised Child"`, [
@@ -153,13 +153,28 @@ add_item(`"Promised Child"`, [
 
 add_item(`"Job"`, [
   [
-    `${name}: ""`,
+    `${name}: "Life is too short to waste it on a job!"`,
+  ],
+  [
+    `${name}: "Jobs only serve to limit your potential and trap you in a mold. Here, we do whatever we feel like."`,
+  ],
+  [
+    `${name}: "In this city, we're all a bit poet, cook or musician. Dancer one day, painter the next... Follow your heart, surely that's what the Goddess wants!"`,
+  ],
+  [
+    `${name}: "We don't have masons or blacksmiths, so there's less and less buildings and tools we can use, but we all share what's left!"`,
   ],
 ]);
 
 add_item(`"Rumors"`, [
   [
-    `${name}: ""`,
+    `${name}: "I hear the end of the world will be in three days, and we're gonna have a huge feast just before!"`,
+  ],
+  [
+    `${name}: "Rumor has it that there's a party tomorrow at  ${gen.pick(DATASETS.male_names)}'s place. Very exclusive event. You didn't hear it from me."`,
+  ],
+  [
+    `${name}: "Everyone is talking about that new kind of wine that a trader brought us last week. I wonder if there is any left..."`,
   ],
 ]);
 

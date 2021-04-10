@@ -165,13 +165,32 @@ add_item(`"Promised Child"`, [
 
 add_item(`"Job"`, [
   [
-    `${name}: ""`,
+    `${name}: "I'm the best tanner this land has ever seen! I bend leather to my will!"`,
+    `$$Ren$: "Why are you not wearing any, then?"`,
+    `${name}: "Hum just a dry spell, haven't had a job in a while..."`,
+  ],
+  [
+    `${name}: "Yes, you're not dreaming, it is me, ${name}, the mighty blacksmith. I guess my reputation preceeds me. But if you must, you can have a look at my latest creation."`,
+    `Saying that, ${name} holds you a tiny dagger. It looks more like a kitchen knife, and the blade is so blunt that you cannot imagine it hurting anyone.`,
+  ],
+  [
+    `${name}: "I'm a hunter, but I'm sure you can tell, because I keep trophies of all the beasts I've slain!"`,
+    `But looking around, there is no such trophy to be found.`,
+  ],
+  [
+    `${name}: "As butcher, my work depends on whatever the hunters are able to bring. They haven't brought anything in days, but it's just as well, it allows me to work on my passion, poetry. Funny how life works out perfectly sometimes, isn't it?"`,
   ],
 ]);
 
 add_item(`"Rumors"`, [
   [
-    `${name}: ""`,
+    `${name}: "I hear that an emissary from a faraway land arrived in our city recently, and called it the 'greatest city he had ever seen'."`,
+  ],
+  [
+    `${name}: "There isn't a lot of gossip in our town. People just share facts, and everyone agrees."`,
+  ],
+  [
+    `${name}: "Rumor has it people are thinking about me for the post of new mayor of the town! I hope I can do a good job and keep this town great!"`,
   ],
 ]);
 
