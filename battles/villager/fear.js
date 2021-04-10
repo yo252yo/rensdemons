@@ -211,13 +211,28 @@ add_item(`"Traditions"`, [
 
 add_item(`"City"`, [
   [
-    `${name}: ""`,
+    `${name}: "Welcome to the best city in the world! We probably have faults, but we're very devoted to getting rid of them as soon as we notice."`,
+  ],
+  [
+    `${name}: "Welcome to the best city in the world! We work very hard at keeping it pure and weeding out the unwanted elements."`,
+  ],
+  [
+    `${name}: "Things are horrible, it's the fault of outsiders like you and lowlives who are not devoted enough to the Goddess. You better do things the right way if you want to stay here."`,
+  ],
+  [
+    `${name}: "Here, we value purity and devotion!"`,
   ],
 ]);
 
 add_item(`"Religion"`, [
   [
-    `${name}: ""`,
+    `${name}: "Praise be to the Goddess for keeping us righteous!"`,
+  ],
+  [
+    `${name}: "We pray zealously to show that we are worthy and to keep the bad away from us."`,
+  ],
+  [
+    `${name}: "Religion is the only way to purity which will keep the monsters at bay."`,
   ],
 ]);
 

@@ -220,13 +220,28 @@ add_item(`"Traditions"`, [
 
 add_item(`"City"`, [
   [
-    `${name}: ""`,
+    `${name}: "Welcome to the best city in the world! There is no problems here, you can be happy!"`,
+  ],
+  [
+    `${name}: "Welcome to the best city in the world, everything is great here. Every day is a little slice of heaven."`,
+  ],
+  [
+    `${name}: "This city is simply the best possible city. I cannot imagine anything better than this."`,
+  ],
+  [
+    `${name}: "Here, we value peace. Please don't bring about trouble by spreading lies and hurting people."`,
   ],
 ]);
 
 add_item(`"Religion"`, [
   [
-    `${name}: ""`,
+    `${name}: "Praise be to the Goddess for giving us such a perfect land!"`,
+  ],
+  [
+    `${name}: "We pray so that the Goddess always shields us from experiencing pain!"`,
+  ],
+  [
+    `${name}: "Religion is our way to give thanks for the blessings we have gotten."`,
   ],
 ]);
 

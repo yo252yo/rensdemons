@@ -207,13 +207,28 @@ add_item(`"Traditions"`, [
 
 add_item(`"City"`, [
   [
-    `${name}: ""`,
+    `${name}: "Welcome to the best city in the world! Well it may not be yet, but we're working hard on it."`,
+  ],
+  [
+    `${name}: "Welcome to the best city in the world! It may not be the greatest, but none other has such hardworking people!"`,
+  ],
+  [
+    `${name}: "Things are pretty tough, but we're keeping faith and working hard for a better tomorrow!"`,
+  ],
+  [
+    `${name}: "Here, we value faith and honor, which are the pillars of the hard work we're doing to leave the world better than we found it."`,
   ],
 ]);
 
 add_item(`"Religion"`, [
   [
-    `${name}: ""`,
+    `${name}: "Praise be to the Goddess for giving us a better tomorrow!"`,
+  ],
+  [
+    `${name}: "We pray so that the Goddess helps us to victory and a peaceful future!"`,
+  ],
+  [
+    `${name}: "Religion is the light that guides us to a bright destiny!"`,
   ],
 ]);
 

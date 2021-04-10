@@ -204,13 +204,28 @@ add_item(`"Traditions"`, [
 
 add_item(`"City"`, [
   [
-    `${name}: ""`,
+    `${name}: "Welcome to the best city in the world! We know how to have fun and live a good life, here!"`,
+  ],
+  [
+    `${name}: "Welcome to the best city in the world! We know how fragile life is, so we enjoy every day to the fullest!"`,
+  ],
+  [
+    `${name}: "Things are horrible, so we need to make the most of whatever little time we have left on this world!"`,
+  ],
+  [
+    `${name}: "Here, we value pleasure. That's all we have in our fleeting lives."`,
   ],
 ]);
 
 add_item(`"Religion"`, [
   [
-    `${name}: ""`,
+    `${name}: "Praise be to the Goddess for giving us such pleasant experiences!"`,
+  ],
+  [
+    `${name}: "We pray so the Goddess gives us more food and drinks!"`,
+  ],
+  [
+    `${name}: "Religion? It's a good subject of inspiration for art, a great way to transcend our mortal senses."`,
   ],
 ]);
 

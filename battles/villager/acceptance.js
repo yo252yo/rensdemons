@@ -202,13 +202,28 @@ add_item(`"Traditions"`, [
 
 add_item(`"City"`, [
   [
-    `${name}: ""`,
+    `${name}: "Welcome to the best city in the world! The only place with the courage to look at reality in the face!"`,
+  ],
+  [
+    `${name}: "Welcome to the best city in the world, where we know how wretched our kind is. We try very hard to atone and to appease the anger of the Goddess by making sacrifices."`,
+  ],
+  [
+    `${name}: "Things are horrible, the only sensible thing to do is to accept our inevitable death and learn to love our suffering."`,
+  ],
+  [
+    `${name}: "Here, we value wisdom and knowledge. Once you know your fate, you must accept it."`,
   ],
 ]);
 
 add_item(`"Religion"`, [
   [
-    `${name}: ""`,
+    `${name}: "Praise be to the Goddess and may She forgive us and lessen Her punishment!"`,
+  ],
+  [
+    `${name}: "We pray, offer blood and lives, so that the Goddess may forgive us and ease our pain!"`,
+  ],
+  [
+    `${name}: "Religion is the only way to forgiveness which will keep our punishment bearable."`,
   ],
 ]);
 
