@@ -83,7 +83,13 @@ add_item(`"War"`, [
 
 add_item(`"Hunt"`, [
   [
-    `${name}: ""`,
+    `${name}: "Hunting is pretty easy in these parts. Animals just come to us!"`,
+  ],
+  [
+    `${name}: "Don't you just love taking a little stroll in the woods and hunt whatever comes your way?"`,
+  ],
+  [
+    `${name}: "That's a common misconception, hunting doesn't actually hurt the animals, you know."`,
   ],
 ]);
 

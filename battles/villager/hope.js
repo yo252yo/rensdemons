@@ -80,7 +80,13 @@ add_item(`"War"`, [
 
 add_item(`"Hunt"`, [
   [
-    `${name}: ""`,
+    `${name}: "I'm no hunter, but I wish them good luck. With all the raids, they're our main source of food, y'know. Most days they don't get much, but today will be different, I'm sure."`,
+  ],
+  [
+    `${name}: "Yep, I'm a hunter. I know I don't look the part, but I'm bringing game every day or so. Well, I mean sometimes! Haven't been lucky in a while, though... but the tide will turn!"`,
+  ],
+  [
+    `${name}: "Our hunters haven't brought back much game lately. But they are very good, they know the patterns of the preys, and of the monsters. Bounty is bound to increase again!"`,
   ],
 ]);
 

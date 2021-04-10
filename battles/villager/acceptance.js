@@ -79,7 +79,13 @@ add_item(`"War"`, [
 
 add_item(`"Hunt"`, [
   [
-    `${name}: ""`,
+    `${name}: "Yes, we do hunt most of our food. It's a very spiritual moment between the hunter and their prey. We'll all be united in death, sometime."`,
+  ],
+  [
+    `${name}: "I like to hunt and to take other animals' lives. It's good practice for when I'll have to take my own."`,
+  ],
+  [
+    `${name}: "What's the point in hunting? Why take innocent lives to prolong ours, since we are doomed anyway."`,
   ],
 ]);
 

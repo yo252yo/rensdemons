@@ -81,7 +81,13 @@ add_item(`"War"`, [
 
 add_item(`"Hunt"`, [
   [
-    `${name}: ""`,
+    `${name}: "There's nothing tastier than a roasted boar! Make sure to try it the next chance you get!"`,
+  ],
+  [
+    `${name}: "Yes, I sometimes hunt. I'm pretty good. I can tell how tasty the prey is going to be just by looking at it."`,
+  ],
+  [
+    `${name}: "Praised be to hunter, I tell you. They are the backbone of this community! They bring us so much good food! We have a big banquet after every hunt!"`,
   ],
 ]);
 

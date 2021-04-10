@@ -83,7 +83,13 @@ add_item(`"War"`, [
 
 add_item(`"Hunt"`, [
   [
-    `${name}: ""`,
+    `${name}: "Our hunters are the best there is! I just hope they are careful and don't bring dangers to our town by getting followed!"`,
+  ],
+  [
+    `${name}: "Truth be told, we almost never hunt. Leaving the town is way too risky."`,
+  ],
+  [
+    `${name}: "I don't trust those hunter folks. They just galavant willy-nilly outside the village. Who knows what kind of stuff happens there..."`,
   ],
 ]);
 
