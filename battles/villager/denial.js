@@ -107,7 +107,13 @@ add_item(`"Taxes"`, [
 
 add_item(`"King"`, [
   [
-    `${name}: ""`,
+    `${name}: "All hail our mighty king, the glorious and perfect leader of this great nation!"`,
+  ],
+  [
+    `${name}: "He is doing such an outstanding job! It's thanks to him that we're so prosperous! I can't imagine a better king."`,
+  ],
+  [
+    `${name}: "You know what, I don't think he exists. Never seen him in person, and things have always been just fine."`,
   ],
 ]);
 

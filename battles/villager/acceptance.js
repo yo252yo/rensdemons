@@ -103,7 +103,13 @@ add_item(`"Taxes"`, [
 
 add_item(`"King"`, [
   [
-    `${name}: ""`,
+    `${name}: "He owns us. I'll follow his orders and do whatever I can to contribute, even if it's a lost cause!"`,
+  ],
+  [
+    `${name}: "Poor lad, thrown in charge of this mess and tasked with an impossible quest. It's a lost battle, and yet he has to fight... I tell you, wouldn't want to be him..."`,
+  ],
+  [
+    `${name}: "Sometimes I dream about his death. Surely after he's gone we can all officially give up, and this whole suffering will end."`,
   ],
 ]);
 

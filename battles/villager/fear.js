@@ -107,7 +107,13 @@ add_item(`"Taxes"`, [
 
 add_item(`"King"`, [
   [
-    `${name}: ""`,
+    `${name}: "He's too weak, we need someone stronger to weed out the bad elements of this kingdom, and to kick the intruders out!"`,
+  ],
+  [
+    `${name}: "If I was king, I wouldn't have let things get this bad."`,
+  ],
+  [
+    `${name}: "Yes, I support the king. I'm not one of those troublemakers causing chaos in our fine kingdom."`,
   ],
 ]);
 

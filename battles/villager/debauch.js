@@ -105,7 +105,13 @@ add_item(`"Taxes"`, [
 
 add_item(`"King"`, [
   [
-    `${name}: ""`,
+    `${name}: "Never seen him, though we keep sending him invitations to our festivals! Why should I care?"`,
+  ],
+  [
+    `${name}: "He's so beautiful! A bit old, but experience can be a good thing, if you know what I mean. You can tell by his look that he's been through a lot. He can surely teach me a thing or two."`,
+  ],
+  [
+    `${name}: "I hear he gives the most extravagant parties! What wouldn't I give for an invite to the luxury of the royal palace!"`,
   ],
 ]);
 

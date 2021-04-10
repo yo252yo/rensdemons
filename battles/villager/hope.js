@@ -104,7 +104,13 @@ add_item(`"Taxes"`, [
 
 add_item(`"King"`, [
   [
-    `${name}: ""`,
+    `${name}: "Leading the kingdom in our desperate times is such a tough task. Thankfully the Goddess is here to help him, and I'm sure that with Her guidance he will lead us to success!"`,
+  ],
+  [
+    `${name}: "The King? Yea, he's allright. Sure this is no paradize, but what can he do except wait for the Goddess to send us a Promised Child?"`,
+  ],
+  [
+    `${name}: "He hasn't done much for us. Haven't heard of him in years. But I'm sure he has not forgotten us. He'll probably visit soon!"`,
   ],
 ]);
 
