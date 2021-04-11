@@ -1,6 +1,17 @@
 // use(Object)
 // runtime: Rectangle, StaticSprite
 
+
+const CITIES = {
+  hope: "hope",
+  fear: "fear",
+  debauch: "debauch",
+  denial: "denial",
+  acceptance: "acceptance",
+}
+
+
+
 class S_Floor extends LevelObject {
   constructor(x, y, w, h, color){
     if (!color){
