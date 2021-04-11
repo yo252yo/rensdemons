@@ -18,7 +18,7 @@ s.enter = function() {
 var houseFiller = new Filler(gen);
 houseFiller.set_zone(75, 975, 950,  975);
 houseFiller.set_tries(5, 70);
-houseFiller.set_object(120, 160, function(x,y,g){ return new S_House("hope", x, y, g); });
+houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(CITIES.hope, x, y, g); });
 houseFiller.fill_by_retry();
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
@@ -28,3 +28,10 @@ if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
     BATTLE.api.make('_party/_PreciousChild');
    };
 }
+
+
+var villagerFiller = new Filler(gen);
+villagerFiller.set_zone(75, 975, 1000, 975);
+villagerFiller.set_tries(3, 20);//this.gen.int(10) - 7
+villagerFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(CITIES.hope, x, y, g); });
+villagerFiller.fill_by_retry();

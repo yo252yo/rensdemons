@@ -44,7 +44,8 @@ class HG_Room {
 
     populate() {
       this.roomFiller.set_tries(0, this.gen.int(10) - 7);
-      this.roomFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(x, y, g); });
+      var type = this.type;
+      this.roomFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(type, x, y, g); });
       this.roomFiller.fill_by_retry();
     }
 

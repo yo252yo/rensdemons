@@ -18,15 +18,17 @@ _restore_previous_state @ DISK.js:43
 initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
-should i make a world map?
-
 should filler just pass gen to the constructor instead f calling gen.get
 
 menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
 
 if theres a guy behind a house interaction interacts with the house (most prominent object)
 
+make experience menu multi tiered
+
 sounds atmosphere for each town, each villager, each party member
+
+put escape actions at the bottom of actions lists
 
 add new decoration items
 
