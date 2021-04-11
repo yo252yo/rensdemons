@@ -18,7 +18,7 @@ s.enter = function() {
 var houseFiller = new Filler(gen);
 houseFiller.set_zone(75, 975, 950,  975);
 houseFiller.set_tries(5, 70);
-houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(x, y, g); });
+houseFiller.set_object(120, 160, function(x,y,g){ return new S_House("hope", x, y, g); });
 houseFiller.fill_by_retry();
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){

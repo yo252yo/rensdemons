@@ -107,10 +107,11 @@ class S_EnterableBuilding extends LevelObject {
 }
 
 class S_House extends S_EnterableBuilding {
-  constructor(x, y, seed) {
+  constructor(type, x, y, seed) {
     var visual = new StaticSprite("assets/objects/buildings/house.png", 'obj_light');
     super(visual, x, y);
     this.seed = seed;
+    this.type = type;
 
     this.describe = this.text_interaction([
       "It's a house, but this is not the entrance.",
@@ -118,7 +119,7 @@ class S_House extends S_EnterableBuilding {
   }
 
   enter() {
-    GENERATEDLEVELS.house.setup(this.seed);
+    GENERATEDLEVELS.house.setup(this.type, this.seed);
   }
 }
 

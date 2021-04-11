@@ -5,7 +5,8 @@ var _MIN_ROOM_W = 100;
 var _MIN_ROOM_H = 100;
 
 class HG_Room {
-    constructor(gen, x, y, imposed_dimensions) {
+    constructor(type, gen, x, y, imposed_dimensions) {
+      this.type = type;
       this.gen = gen;
       this.x = x;
       this.y = y;
@@ -83,14 +84,14 @@ class HG_Room {
     }
 
     expand_top() {
-       this.room_top = new HG_Room(this.gen, this.x, this.y - this.h - 25, [this.w, 0]);
+       this.room_top = new HG_Room(this.type, this.gen, this.x, this.y - this.h - 25, [this.w, 0]);
        this.room_top.is_top = true;
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
        new S_Floor(connection_x, this.y - this.h + 25, 50, 75);
     }
 
     expand_right() {
-       this.room_right = new HG_Room(this.gen, this.x + this.w + 25, this.y, [0, this.h]);
+       this.room_right = new HG_Room(this.type, this.gen, this.x + this.w + 25, this.y, [0, this.h]);
        var connection_y = this.y - Math.min(this.room_right.h, this.h)/2 + 25;
        new S_Floor(this.x + this.w - 25, connection_y, 75, 50);
     }
@@ -100,7 +101,7 @@ class HG_Room {
       var y = this.room_top.y;
       var w = this.room_right.w;
       var h = this.room_top.h;
-      var diag = new HG_Room(this.gen, x, y, [w, h]);
+      var diag = new HG_Room(this.type, this.gen, x, y, [w, h]);
       diag.is_top = true;
       var connection_left = [x, y - h/2];
       var connection_bot = [x + w/2, y];
@@ -126,8 +127,9 @@ class HG_Room {
 
 
 class HouseGenerator {
-    constructor(seed, outside) {
+    constructor(type, seed, outside) {
       this.gen = new Generator(seed);
+      this.type = type;
       this.MAX_ROOM_W = 500;
       this.MAX_ROOM_H = 500;
       this.MIN_ROOM_W = 100;
@@ -138,7 +140,7 @@ class HouseGenerator {
     }
 
     build() {
-      var main_hall = new HG_Room(this.gen, this.x, this.y);
+      var main_hall = new HG_Room(this.type, this.gen, this.x, this.y);
       main_hall.expand();
       return main_hall.main_entrance(this.outside); // entrance
     }

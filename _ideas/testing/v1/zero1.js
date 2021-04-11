@@ -16,7 +16,7 @@ new S_Tree(150,130);
 new S_Tree(290,160);
 new S_Tree(240,380);
 
-new S_House(160,350);
+new S_House("", 160,350);
 new S_Floor(10,2050,2000,2000);
 
 
