@@ -164,7 +164,7 @@ const PLAYER_ACTIONS = {
         action.unlock = unlock;
         PLAYER_ACTIONS.add(action);
       } else {
-        BATTLETREE.api.declare_all(BATTLE.current_battle, name);
+        BATTLETREE.api.declare(BATTLE.current_battle, name);
       }
     }
   },
