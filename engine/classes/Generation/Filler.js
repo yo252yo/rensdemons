@@ -18,6 +18,10 @@ class Filler {
     this.max_tries = max_tries;
   }
 
+  set_guaranteed(guaranteed_products) {
+    this.guaranteed_products = guaranteed_products;
+  }
+
   set_object(w, h, obj_constructor) {
     this.obj_w = w;
     this.obj_h = h;
@@ -47,15 +51,26 @@ class Filler {
 
   fill_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
-    var nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
+    var nb_tries = 100000;
+    var nb_desired_products = this.guaranteed_products;
 
-    for(var i = 0; i < nb_tries; i++) {
+    if (!this.guaranteed_products){
+      nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
+      nb_desired_products = 100000;
+    }
+
+    var i = 0;
+    var nb_placed = 0;
+    while (i < nb_tries && nb_placed < nb_desired_products) {
       var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
 
       if (this._canBuild(x, y)) {
         this.obj_constructor(x, y, this.gen.get());
+        nb_placed ++;
       }
+
+      i++;
     }
   }
 
