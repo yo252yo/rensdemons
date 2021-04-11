@@ -6,13 +6,14 @@ INTERFACE.make_compass();
 new S_Floor(50, 2050, 1000, 2000, 'obj_dark');
 
 // First make the towns
-new SM_Town(250, 1750, "004_town", "town_1");
+new SM_Town(250, 1750, "004_town1", "town_1");
+new SM_Town(550, 550, "006_town2", "town_2");
+
 
 // do not keep, just a test
-new SM_Town(550, 550, "004_town", "town_2", function() { return false;});
-new SM_Town(750, 750, "004_town", "town_3", function() { return false;});
-new SM_Town(950, 950, "004_town", "town_4", function() { return false;});
-new SM_Town(1150, 1150, "004_town", "town_5", function() { return false;});
+new SM_Town(750, 750, "004_town1", "town_3", function() { return false;});
+new SM_Town(950, 950, "004_town1", "town_4", function() { return false;});
+new SM_Town(1150, 1150, "004_town1", "town_5", function() { return false;});
 
 var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
