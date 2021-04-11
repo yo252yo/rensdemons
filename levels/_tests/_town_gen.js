@@ -6,9 +6,9 @@ function g(){
   var seed = Math.random();
   CURRENTLEVEL.setup("");
 
-  var gen = new TownGenerator(seed, 1800, 1800);
+  DICTIONARY.set("town_1_seed", seed);
+  new Snippet("levels/decors/town1");
 
-  gen.build();
   last = setTimeout(g, 2000);
 }
 g();
