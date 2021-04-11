@@ -26,6 +26,8 @@ menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls
 
 add new decoration items
 
+add rens parent sendoff before trial?
+
 save audio settings to disk!
 
 dedicated sprites and audio themes for party members
