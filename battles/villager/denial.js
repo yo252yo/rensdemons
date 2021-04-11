@@ -36,7 +36,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item(`"Weather"`, [
+add_item(`Weather`, [
   [
     `${name}: "Is there anything better than this great sunshine?"`,
     `You are perplexed, as the sky is full of dark clouds.`,
@@ -52,7 +52,7 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`Crops`, [
   [
     `${name}: "What do you mean reserves are slim? You must be misinformed, there's plenty of food in store!"`,
   ],
@@ -66,7 +66,7 @@ add_item(`"Crops"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`War`, [
   [
     `${name}: "What are you talking about? There's no war in this city."`,
   ],
@@ -81,7 +81,7 @@ add_item(`"War"`, [
   ],
 ]);
 
-add_item(`"Hunt"`, [
+add_item(`Hunt`, [
   [
     `${name}: "Hunting is pretty easy in these parts. Animals just come to us!"`,
   ],
@@ -93,7 +93,7 @@ add_item(`"Hunt"`, [
   ],
 ]);
 
-add_item(`"Taxes"`, [
+add_item(`Taxes`, [
   [
     `${name}: "Sure, I'll gladly pay my taxes, it's what allows the king to make our kingdom such a wonderful and safe place!"`,
   ],
@@ -105,7 +105,7 @@ add_item(`"Taxes"`, [
   ],
 ]);
 
-add_item(`"King"`, [
+add_item(`King`, [
   [
     `${name}: "All hail our mighty king, the glorious and perfect leader of this great nation!"`,
   ],
@@ -117,7 +117,7 @@ add_item(`"King"`, [
   ],
 ]);
 
-add_item(`"Health"`, [
+add_item(`Health`, [
   [
     `${name}: "I'm in great shape! Everything is fine!"`,
     `$$Ren$: "Are you sure? You look a bit pale... and... malnourished."`,
@@ -138,7 +138,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Family"`, [
+add_item(`Family`, [
   [
     `${name}: "I haven't seen my children in a while... It's been a few years, actually. I'm sure they're fine, but I wonder where they went..."`,
   ],
@@ -151,7 +151,7 @@ add_item(`"Family"`, [
   ],
 ]);
 
-add_item(`"Promised Child"`, [
+add_item(`Promised Child`, [
   [
     `${name}: "Promised Children are great! We have a dozen in this village!"`,
   ],
@@ -163,7 +163,7 @@ add_item(`"Promised Child"`, [
   ],
 ]);
 
-add_item(`"Job"`, [
+add_item(`Job`, [
   [
     `${name}: "I'm the best tanner this land has ever seen! I bend leather to my will!"`,
     `$$Ren$: "Why are you not wearing any, then?"`,
@@ -182,7 +182,7 @@ add_item(`"Job"`, [
   ],
 ]);
 
-add_item(`"Rumors"`, [
+add_item(`Rumors`, [
   [
     `${name}: "I hear that an emissary from a faraway land arrived in our city recently, and called it the 'greatest city he had ever seen'."`,
   ],
@@ -194,7 +194,7 @@ add_item(`"Rumors"`, [
   ],
 ]);
 
-add_item(`"Dreams"`, [
+add_item(`Dreams`, [
   [
     `${name}: "I just wish this bliss would continue."`,
   ],
@@ -206,7 +206,7 @@ add_item(`"Dreams"`, [
   ],
 ]);
 
-add_item(`"Traditions"`, [
+add_item(`Traditions`, [
   [
     `${name}: "Every now and then we throw together a banquet with the whole town to rejoice on how well we're doing!"`,
   ],
@@ -218,7 +218,7 @@ add_item(`"Traditions"`, [
   ],
 ]);
 
-add_item(`"City"`, [
+add_item(`City`, [
   [
     `${name}: "Welcome to the best city in the world! There is no problems here, you can be happy!"`,
   ],
@@ -233,7 +233,7 @@ add_item(`"City"`, [
   ],
 ]);
 
-add_item(`"Religion"`, [
+add_item(`Religion`, [
   [
     `${name}: "Praise be to the Goddess for giving us such a perfect land!"`,
   ],

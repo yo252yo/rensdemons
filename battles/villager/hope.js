@@ -36,7 +36,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item(`"Weather"`, [
+add_item(`Weather`, [
   [
     `${name}: "What a crazy weather we're having lately, right? Only a few more days of rain and the crops will start rotting. It's not going to happen, though, the Goddess is with us. The sun will be back any day now."`,
   ],
@@ -51,7 +51,7 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`Crops`, [
   [
     `${name}: "We haven't had enough to eat for years. Not only do we need clement weather, but the raids can destroy monthes of hard work. This would be terrifying if the Goddess wasn't there to guarantee a better future soon."`,
   ],
@@ -63,7 +63,7 @@ add_item(`"Crops"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`War`, [
   [
     `${name}: "Sure, the fights never cease. Monsters gain ground every day. But they'll never breach our walls. Not again, not like those other times. The Goddess is watching over us."`,
   ],
@@ -78,7 +78,7 @@ add_item(`"War"`, [
   ],
 ]);
 
-add_item(`"Hunt"`, [
+add_item(`Hunt`, [
   [
     `${name}: "I'm no hunter, but I wish them good luck. With all the raids, they're our main source of food, y'know. Most days they don't get much, but today will be different, I'm sure."`,
   ],
@@ -90,7 +90,7 @@ add_item(`"Hunt"`, [
   ],
 ]);
 
-add_item(`"Taxes"`, [
+add_item(`Taxes`, [
   [
     `${name}: "Look, I'm like anyone, of course I don't like paying, but that's something we have to do if we want the guard to protect us. With them monsters and all, someone has to protect the town. It's all worth it if you ask me."`,
   ],
@@ -102,7 +102,7 @@ add_item(`"Taxes"`, [
   ],
 ]);
 
-add_item(`"King"`, [
+add_item(`King`, [
   [
     `${name}: "Leading the kingdom in our desperate times is such a tough task. Thankfully the Goddess is here to help him, and I'm sure that with Her guidance he will lead us to success!"`,
   ],
@@ -114,7 +114,7 @@ add_item(`"King"`, [
   ],
 ]);
 
-add_item(`"Health"`, [
+add_item(`Health`, [
   [
     `${name}: "It's been months since the last plague brought by the monsters! It's going pretty well! Let's hope this continues!"`,
   ],
@@ -126,7 +126,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Family"`, [
+add_item(`Family`, [
   [
     `${name}: "My little one looks just like you. Or rather looked, I mean. It's okay, surely the Goddess will bless me with a new child soon!"`,
   ],
@@ -138,7 +138,7 @@ add_item(`"Family"`, [
   ],
 ]);
 
-add_item(`"Promised Child"`, [
+add_item(`Promised Child`, [
   [
     `${name}: "The Promised Child will be there soon, I tell you. This town cannot survive much longer. Then again my dad used to say the same thing. We're a town of survivors."`,
   ],
@@ -151,7 +151,7 @@ add_item(`"Promised Child"`, [
   ],
 ]);
 
-add_item(`"Job"`, [
+add_item(`Job`, [
   [
     `${name}: "How sweet of you to ask. I'm a tanner. I get the skin from the animals that the hunters bring back, and I make all kind of clothes out of them. When they bring back something, that is. Do you like my jacket? Maybe I can make you one some day, the next time we get a great haul. It shouldn't be long!"`,
   ],
@@ -169,7 +169,7 @@ add_item(`"Job"`, [
   ],
 ]);
 
-add_item(`"Rumors"`, [
+add_item(`Rumors`, [
   [
     `${name}: "I hear that the Goddess is going to send us help very soon!"`,
   ],
@@ -181,7 +181,7 @@ add_item(`"Rumors"`, [
   ],
 ]);
 
-add_item(`"Dreams"`, [
+add_item(`Dreams`, [
   [
     `${name}: "I hope I'm still there to witness the Promised Child's victory and our salvation!"`,
   ],
@@ -193,7 +193,7 @@ add_item(`"Dreams"`, [
   ],
 ]);
 
-add_item(`"Traditions"`, [
+add_item(`Traditions`, [
   [
     `${name}: "We hold a weekly mass at the church where we all gather in prayer for a better tomorrow! You're welcome to join!"`,
   ],
@@ -205,7 +205,7 @@ add_item(`"Traditions"`, [
   ],
 ]);
 
-add_item(`"City"`, [
+add_item(`City`, [
   [
     `${name}: "Welcome to the best city in the world! Well it may not be yet, but we're working hard on it."`,
   ],
@@ -220,7 +220,7 @@ add_item(`"City"`, [
   ],
 ]);
 
-add_item(`"Religion"`, [
+add_item(`Religion`, [
   [
     `${name}: "Praise be to the Goddess for giving us a better tomorrow!"`,
   ],

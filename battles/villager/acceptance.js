@@ -36,7 +36,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item(`"Weather"`, [
+add_item(`Weather`, [
   [
     `${name}: "If the Goddess sent us these storms, it's surely that the wind is good for us. A human can survive on very little food, you know..."`,
   ],
@@ -48,7 +48,7 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`Crops`, [
   [
     `${name}: "I don't really need food, I'll eat while there is some, but I'll be glad to join the Goddess when She calls me back to Her."`,
   ],
@@ -60,7 +60,7 @@ add_item(`"Crops"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`War`, [
   [
     `${name}: "War will always be with us, it's simply the best way for us to go back to our Goddess."`,
   ],
@@ -77,7 +77,7 @@ add_item(`"War"`, [
   ],
 ]);
 
-add_item(`"Hunt"`, [
+add_item(`Hunt`, [
   [
     `${name}: "Yes, we do hunt most of our food. It's a very spiritual moment between the hunter and their prey. We'll all be united in death, sometime."`,
   ],
@@ -89,7 +89,7 @@ add_item(`"Hunt"`, [
   ],
 ]);
 
-add_item(`"Taxes"`, [
+add_item(`Taxes`, [
   [
     `${name}: "We don't pay taxes to the kingdom. What's the point, soon there won't be a kingdom left."`,
   ],
@@ -101,7 +101,7 @@ add_item(`"Taxes"`, [
   ],
 ]);
 
-add_item(`"King"`, [
+add_item(`King`, [
   [
     `${name}: "He owns us. I'll follow his orders and do whatever I can to contribute, even if it's a lost cause!"`,
   ],
@@ -113,7 +113,7 @@ add_item(`"King"`, [
   ],
 ]);
 
-add_item(`"Health"`, [
+add_item(`Health`, [
   [
     `${name}: "Diseases are a blessing in disguise. Most often the pain is short and you die pretty fast."`,
   ],
@@ -125,7 +125,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Family"`, [
+add_item(`Family`, [
   [
     `${name}: "I don't want children. I can't bring myself to impose this worlf of suffering on others."`,
   ],
@@ -137,7 +137,7 @@ add_item(`"Family"`, [
   ],
 ]);
 
-add_item(`"Promised Child"`, [
+add_item(`Promised Child`, [
   [
     `${name}: "The Promised Child could come, or not. It doesn't matter. It's too late."`,
   ],
@@ -149,7 +149,7 @@ add_item(`"Promised Child"`, [
   ],
 ]);
 
-add_item(`"Job"`, [
+add_item(`Job`, [
   [
     `${name}: "I have the priviledge to work on building tombs. It's an important responsibility. Our lives are transient, but our final rest will be eternal!"`,
   ],
@@ -164,7 +164,7 @@ add_item(`"Job"`, [
   ],
 ]);
 
-add_item(`"Rumors"`, [
+add_item(`Rumors`, [
   [
     `${name}: "I hear there will be a raid soon. Many will die. I hope my turn comes."`,
   ],
@@ -176,7 +176,7 @@ add_item(`"Rumors"`, [
   ],
 ]);
 
-add_item(`"Dreams"`, [
+add_item(`Dreams`, [
   [
     `${name}: "My only wish is for my death to be painless."`,
   ],
@@ -188,7 +188,7 @@ add_item(`"Dreams"`, [
   ],
 ]);
 
-add_item(`"Traditions"`, [
+add_item(`Traditions`, [
   [
     `${name}: "Every month, we designate a sacrifice, who gets killed in front of the church as an offering to the Goddess. We hope it eases her anger, and lessens our punishment."`,
   ],
@@ -200,7 +200,7 @@ add_item(`"Traditions"`, [
   ],
 ]);
 
-add_item(`"City"`, [
+add_item(`City`, [
   [
     `${name}: "Welcome to the best city in the world! The only place with the courage to look at reality in the face!"`,
   ],
@@ -215,7 +215,7 @@ add_item(`"City"`, [
   ],
 ]);
 
-add_item(`"Religion"`, [
+add_item(`Religion`, [
   [
     `${name}: "Praise be to the Goddess and may She forgive us and lessen Her punishment!"`,
   ],

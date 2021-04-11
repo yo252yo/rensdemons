@@ -35,7 +35,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item(`"Weather"`, [
+add_item(`Weather`, [
   [
     `${name}: "Don't really care about that. Interesting things happen at night, anyway."`,
   ],
@@ -50,7 +50,7 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`Crops`, [
   [
     `${name}: "We have the best delicacies in the Kingdom! I mean it's just bread, but with enough wine it'll taste divine!"`,
   ],
@@ -64,7 +64,7 @@ add_item(`"Crops"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`War`, [
   [
     `${name}: "Yeah, war is raging, we probably won't hold on much longer, so why not enjoy ourselves?"`,
   ],
@@ -79,7 +79,7 @@ add_item(`"War"`, [
   ],
 ]);
 
-add_item(`"Hunt"`, [
+add_item(`Hunt`, [
   [
     `${name}: "There's nothing tastier than a roasted boar! Make sure to try it the next chance you get!"`,
   ],
@@ -91,7 +91,7 @@ add_item(`"Hunt"`, [
   ],
 ]);
 
-add_item(`"Taxes"`, [
+add_item(`Taxes`, [
   [
     `${name}: "Fuck taxes! I'm not gonna send money to the kingdom when it can be better spent elsewhere, and by elsewhere I mean here!"`,
   ],
@@ -103,7 +103,7 @@ add_item(`"Taxes"`, [
   ],
 ]);
 
-add_item(`"King"`, [
+add_item(`King`, [
   [
     `${name}: "Never seen him, though we keep sending him invitations to our festivals! Why should I care?"`,
   ],
@@ -115,7 +115,7 @@ add_item(`"King"`, [
   ],
 ]);
 
-add_item(`"Health"`, [
+add_item(`Health`, [
   [
     `${name}: "There are some who say that too much drinking is bad for your health. But how can it be true if it feels so great?"`,
   ],
@@ -127,7 +127,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Family"`, [
+add_item(`Family`, [
   [
     `${name}: "Spend as much time as you can with your family! Cherish them! Don't you just love a big family meal!?"`,
   ],
@@ -139,7 +139,7 @@ add_item(`"Family"`, [
     ],
 ]);
 
-add_item(`"Promised Child"`, [
+add_item(`Promised Child`, [
   [
     `${name}: "The Promised Child has been found? Amazing! We must celebrate! Let's start planning the biggest party ever!"`,
   ],
@@ -151,7 +151,7 @@ add_item(`"Promised Child"`, [
   ],
 ]);
 
-add_item(`"Job"`, [
+add_item(`Job`, [
   [
     `${name}: "Life is too short to waste it on a job!"`,
   ],
@@ -166,7 +166,7 @@ add_item(`"Job"`, [
   ],
 ]);
 
-add_item(`"Rumors"`, [
+add_item(`Rumors`, [
   [
     `${name}: "I hear the end of the world will be in three days, and we're gonna have a huge feast just before!"`,
   ],
@@ -178,7 +178,7 @@ add_item(`"Rumors"`, [
   ],
 ]);
 
-add_item(`"Dreams"`, [
+add_item(`Dreams`, [
   [
     `${name}: "I don't know, I'm simple, I just wish for good food, good drinks, and good company."`,
   ],
@@ -190,7 +190,7 @@ add_item(`"Dreams"`, [
   ],
 ]);
 
-add_item(`"Traditions"`, [
+add_item(`Traditions`, [
   [
     `${name}: "Every week we throw a big ball where every artist in town can demonstrate the new songs, dances or poems they came up with!"`,
   ],
@@ -202,7 +202,7 @@ add_item(`"Traditions"`, [
   ],
 ]);
 
-add_item(`"City"`, [
+add_item(`City`, [
   [
     `${name}: "Welcome to the best city in the world! We know how to have fun and live a good life, here!"`,
   ],
@@ -217,7 +217,7 @@ add_item(`"City"`, [
   ],
 ]);
 
-add_item(`"Religion"`, [
+add_item(`Religion`, [
   [
     `${name}: "Praise be to the Goddess for giving us such pleasant experiences!"`,
   ],

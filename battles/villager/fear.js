@@ -36,7 +36,7 @@ var add_item = function(name, choices){
 // ===================
 
 
-add_item(`"Weather"`, [
+add_item(`Weather`, [
   [
     `${name}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`,
   ],
@@ -48,7 +48,7 @@ add_item(`"Weather"`, [
   ],
 ]);
 
-add_item(`"Crops"`, [
+add_item(`Crops`, [
   [
     `${name}: "We all have to ration ourselves pretty strictly to make sure that the food supplies last. We don't get a lot, with all the outsiders coming in, destroying our crops, stealing our supplies..."`,
   ],
@@ -63,7 +63,7 @@ add_item(`"Crops"`, [
   ],
 ]);
 
-add_item(`"War"`, [
+add_item(`War`, [
   [
       `${name}: "Damn these monsters coming from who-knows-were to pillage and destroy our beloved lands!"`,
   ],
@@ -81,7 +81,7 @@ add_item(`"War"`, [
   ],
 ]);
 
-add_item(`"Hunt"`, [
+add_item(`Hunt`, [
   [
     `${name}: "Our hunters are the best there is! I just hope they are careful and don't bring dangers to our town by getting followed!"`,
   ],
@@ -93,7 +93,7 @@ add_item(`"Hunt"`, [
   ],
 ]);
 
-add_item(`"Taxes"`, [
+add_item(`Taxes`, [
   [
     `${name}: "I don't mind financing our war efforts. But I do mind when the money is spent in useless bails for unworthy people, or even worse, outsiders."`,
   ],
@@ -105,7 +105,7 @@ add_item(`"Taxes"`, [
   ],
 ]);
 
-add_item(`"King"`, [
+add_item(`King`, [
   [
     `${name}: "He's too weak, we need someone stronger to weed out the bad elements of this kingdom, and to kick the intruders out!"`,
   ],
@@ -117,7 +117,7 @@ add_item(`"King"`, [
   ],
 ]);
 
-add_item(`"Health"`, [
+add_item(`Health`, [
   [
     `${name}: "We would be fine if it weren't for outsiders bringing plagues and diseases into this beautiful city."`,
   ],
@@ -129,7 +129,7 @@ add_item(`"Health"`, [
   ],
 ]);
 
-add_item(`"Family"`, [
+add_item(`Family`, [
   [
     `${name}: "I cut ties with my family. Their morals were too loose for my taste. I didn't want to be associated with this kind of people, and become part of the problem."`,
   ],
@@ -141,7 +141,7 @@ add_item(`"Family"`, [
   ],
 ]);
 
-add_item(`"Promised Child"`, [
+add_item(`Promised Child`, [
   [
     `${name}: "The Pomised Child would have been here a long time ago if people were not so impure. The Goddess did not send us Her child because we're not worthy yet. We haven't prayed enough, it's that simple."`,
   ],
@@ -153,7 +153,7 @@ add_item(`"Promised Child"`, [
   ],
 ]);
 
-add_item(`"Job"`, [
+add_item(`Job`, [
   [
     `${name}: "The world would be a much better place if everyone was doing their job as diligently as me!"`,
     `$$Ren$: "Oh, what do you do?"`,
@@ -170,7 +170,7 @@ add_item(`"Job"`, [
   ],
 ]);
 
-add_item(`"Rumors"`, [
+add_item(`Rumors`, [
   [
     `${name}: "I keep hearing that some people have settled in this city without deserving their place... I'm sure their laziness is attracting monsters upon us..."`,
   ],
@@ -185,7 +185,7 @@ add_item(`"Rumors"`, [
   ],
 ]);
 
-add_item(`"Dreams"`, [
+add_item(`Dreams`, [
   [
     `${name}: "I just wish that everybody was doing as much effort as me..."`,
   ],
@@ -197,7 +197,7 @@ add_item(`"Dreams"`, [
   ],
 ]);
 
-add_item(`"Traditions"`, [
+add_item(`Traditions`, [
   [
     `${name}: "Every week, we hold a citizen tribunal, to confront our unworthy neighbours with their sins. It's for the good of all of us, we must be righteous if we are to survive."`,
   ],
@@ -209,7 +209,7 @@ add_item(`"Traditions"`, [
   ],
 ]);
 
-add_item(`"City"`, [
+add_item(`City`, [
   [
     `${name}: "Welcome to the best city in the world! We probably have faults, but we're very devoted to getting rid of them as soon as we notice."`,
   ],
@@ -224,7 +224,7 @@ add_item(`"City"`, [
   ],
 ]);
 
-add_item(`"Religion"`, [
+add_item(`Religion`, [
   [
     `${name}: "Praise be to the Goddess for keeping us righteous!"`,
   ],
