@@ -6,17 +6,41 @@ const PARTYMEMBERS = {
   UpbeatDojikko: "UpbeatDojikko",
 
    // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+   // town5 acceptance
+
    // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
+   // extra forest nearby ?
+
    // WiseOld: "WiseOld", //  wise old fool /  Scholar
+   // town_2 fear
+
    // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+   // town_2 fear
+
    // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+   // mountain cave?
+
    // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+   // town4 debauch
+
+
    // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+   // forest dungeon?
+
    // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
+   // town4 debauch
+
    // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
+   // town5 acceptance
+
    // GeniusProdigy: "GeniusProdigy", //child prodigy
+   // ruins, doing an expedition?
+
    // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+   // lake?
+
 };
+
 
 const PARTY = {
   _members: [],

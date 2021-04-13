@@ -35,11 +35,15 @@ class DictionaryGenerator {
     r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
     r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
     r['town_3'] = MARKOV_MODELS.human_names.mutate("Columbia", 8); // denial
-    r['town_4'] = MARKOV_MODELS.human_names.mutate("Vegas", 8); // debauch
-    r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance
+    r['town_4'] = MARKOV_MODELS.human_names.mutate("Vegas", 8); // debauch, optional
+    r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance, optional
 
     // Generation seeds
     r['town_1_seed'] = Math.random();
+    r['town_2_seed'] = Math.random();
+    r['town_3_seed'] = Math.random();
+    r['town_4_seed'] = Math.random();
+    r['town_5_seed'] = Math.random();
     r['world_map_seed'] = Math.random();
     return r;
   };

@@ -1,9 +1,7 @@
 AUDIO.music.town();
 
-
 new Snippet("levels/decors/town1");
 
-new S_Church(450, 400);
 var g =  [525, 425];
 var bf = new M_ChildF(g[0] + 50, g[1] + 10);
 

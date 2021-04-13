@@ -6,8 +6,8 @@ function g(){
   var seed = Math.random();
   CURRENTLEVEL.setup("");
 
-  DICTIONARY.set("town_1_seed", seed);
-  new Snippet("levels/decors/town1");
+  DICTIONARY.set("town_5_seed", seed);
+  new Snippet("levels/decors/town5");
 
   last = setTimeout(g, 2000);
 }

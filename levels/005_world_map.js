@@ -11,9 +11,9 @@ new SM_Town(550, 550, "006_town2", "town_2");
 
 
 // do not keep, just a test
-new SM_Town(750, 750, "004_town1", "town_3", function() { return false;});
-new SM_Town(950, 950, "004_town1", "town_4", function() { return false;});
-new SM_Town(1150, 1150, "004_town1", "town_5", function() { return false;});
+new SM_Town(750, 750, "_town3", "town_3", function() { return true || false;});
+new SM_Town(950, 950, "_town4", "town_4", function() { return true || false;});
+new SM_Town(1150, 1150, "_town5", "town_5", function() { return true || false;});
 
 var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
