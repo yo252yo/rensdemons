@@ -111,7 +111,7 @@ class M_Villager extends M_NPC {
 
 class M_Vendor extends M_Villager {
   constructor(x, y, seed, type, threshold) {
-    super(x,y,seed);
+    super("", x,y,seed);
     this.type = type;
     this.threshold = threshold;
   }
@@ -124,7 +124,7 @@ class M_Vendor extends M_Villager {
 
 class M_Trainer extends M_Villager {
   constructor(x, y, seed, type, threshold) {
-    super(x,y,seed);
+    super("", x,y,seed);
     this.type = type;
     this.threshold = threshold;
   }
