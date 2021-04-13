@@ -6,8 +6,8 @@ new S_TownFloor(50, 1050, 1000, 1000, "005_world_map");
 
 new S_Church(450, 400);
 
-new S_Store("Weapon", 200, 700, 175, gen.get());
-new S_Store("Tool", 100, 850, 225, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 700, 175, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100, 850, 225, gen.get());
 
 var s = new S_Store("Occult", 0, 150, 950, gen.get());
 s.enter = function() {

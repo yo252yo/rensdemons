@@ -58,12 +58,18 @@ const ITEM = {
   },
 }
 
-ITEMS_ARCHETYPES = {
-  "Alchemy":  [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom],
-  "Weapon":   [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield],
-  "Tool":     [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone, ITEM.Poison_darts, ITEM.Net, ITEM.Rope],
-  "Artifact": [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand],
-};
+const ITEMS_ARCHETYPES_NAMES = {
+  Alchemy: "Alchemy",
+  Weapon: "Weapon",
+  Tool: "Tool",
+  Artifact: "Artifact",
+}
+
+ITEMS_ARCHETYPES = {};
+ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Alchemy] = [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom];
+ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Weapon] = [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield];
+ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool] = [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone, ITEM.Poison_darts, ITEM.Net, ITEM.Rope];
+ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact] = [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand];
 
 const INVENTORY = {
   _inventory: new FluidMap(),
@@ -91,10 +97,10 @@ const INVENTORY = {
                   [
                     ARCHETYPES.inventory_list_item(),
                     TEXTMENU_EMPTYROW,
-                    ARCHETYPES.inventory_list_item("Tool"),
-                    ARCHETYPES.inventory_list_item("Weapon"),
-                    ARCHETYPES.inventory_list_item("Alchemy"),
-                    ARCHETYPES.inventory_list_item("Artifact"),
+                    ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Tool),
+                    ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Weapon),
+                    ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Alchemy),
+                    ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Artifact),
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);

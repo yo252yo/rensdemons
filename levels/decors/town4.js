@@ -6,8 +6,8 @@ new S_TownFloor(50, 1050, 2000, 1000, "005_world_map");
 
 new S_Church(950, 300);
 
-new S_Store("Weapon", 500, 100, 1000, gen.get());
-new S_Store("Alchemy", 10000, 1825, 900, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 100, 1000, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 10000, 1825, 900, gen.get());
 
 
 var houseFiller = new Filler(gen);

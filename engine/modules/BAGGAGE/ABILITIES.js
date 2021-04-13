@@ -29,11 +29,17 @@ const ABILITY = {
     Mystify: "Mystify",
 }
 
-ABILITIES_ARCHETYPES = {
-  "Element":  [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm, ABILITY.Asphyxiate, ABILITY.Earthquake, ABILITY.Incinerate, ABILITY.Summon],
-  "Spirit":   [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion, ABILITY.Lull],
-  "Diplomat": [ABILITY.Persuade, ABILITY.Intimidate, ABILITY.Mystify, ABILITY.Sneak, ABILITY.Circumvent],
-};
+const ABILITIES_ARCHETYPES_NAMES = {
+  Element: "Element",
+  Spirit: "Spirit",
+  Diplomat: "Diplomat",
+}
+
+ABILITIES_ARCHETYPES = {};
+ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Element] = [ABILITY.Fireball, ABILITY.Ice_bolt, ABILITY.Thunder, ABILITY.Storm, ABILITY.Asphyxiate, ABILITY.Earthquake, ABILITY.Incinerate, ABILITY.Summon];
+ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Spirit] = [ABILITY.Charm, ABILITY.Petrify, ABILITY.Poison, ABILITY.Shrink, ABILITY.Confusion, ABILITY.Lull];
+ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Diplomat] = [ABILITY.Persuade, ABILITY.Intimidate, ABILITY.Mystify, ABILITY.Sneak, ABILITY.Circumvent];
+
 
 const ABILITIES = {
   _abilities: new FluidMap(),
