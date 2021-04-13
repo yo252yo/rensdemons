@@ -63,9 +63,9 @@ const ABILITIES = {
   display: function() {
     new CenteredTextMenu("ABILITIES",
                   [
-                    ARCHETYPES.ability_list_item("Element"),
-                    ARCHETYPES.ability_list_item("Spirit"),
-                    ARCHETYPES.ability_list_item("Diplomat"),
+                    ARCHETYPES.ability_list_item(ABILITIES_ARCHETYPES_NAMES.Element),
+                    ARCHETYPES.ability_list_item(ABILITIES_ARCHETYPES_NAMES.Spirit),
+                    ARCHETYPES.ability_list_item(ABILITIES_ARCHETYPES_NAMES.Diplomat),
                     TEXTMENU_EMPTYROW,
                     ARCHETYPES.ability_list_item(),
                     TEXTMENU_EMPTYROW,
