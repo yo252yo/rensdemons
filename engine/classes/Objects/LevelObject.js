@@ -65,6 +65,11 @@ class LevelObject {
       html_rectangle.style.border = "3px dotted DarkGrey";
       html_rectangle.style.margin = "-3px";
       html_rectangle.style.zIndex = "30000";
+      if (this.constructor.name == "SBattle"){
+        html_rectangle.style.backgroundColor = "#FF000055";
+      } else if (this.constructor.name == "SE_small_treasure"){
+        html_rectangle.style.backgroundColor = "#0000FF55";
+      }
 
       var label = HTML.div.make({w: 200, top: this.h_h/3, h:35});
       label.innerHTML = this.debug_name();
