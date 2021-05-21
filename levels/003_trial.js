@@ -11,7 +11,7 @@ new SE_small_treasure(1675, 950, ITEM.Stone);
 new SBattle(1375, 950, '_003/_first_friend_death');
 
 new SBattle(1450, 1025, 'critters/rodent');
-new SBattle(1575, 900, 'critters/rodent');
+new SBattle(1575, 900, 'critters/viper');
 new SBattle(1750, 1025, 'critters/rodent');
 new SBattle(1575, 1175, 'critters/arachnid');
 
@@ -55,7 +55,7 @@ new SE_small_treasure(2175, 900, ITEM.Stick);
 new SBattle(1525, 1400, 'critters/cockroach');
 new SBattle(1050, 575, 'critters/cockroach');
 
-new SBattle(2250, 1325, 'critters/viper');
+new SBattle(2250, 1325, 'critters/rodent');
 
 new SB_event(1200, 650, 'A thought occurs to you: Who built this place? Was it designed to be a chamber for the Trial, or did the Church simply used what was there? You feel a chill down your spine as you imagine how many people before you roamed these dark hallways...');
 new SB_event(2025, 1550, 'You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...', 25);

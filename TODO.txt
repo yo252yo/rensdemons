@@ -3,5 +3,3 @@ find title
 make some loot /o/
 
 dont forget to make party as we progress
-
-trial start point is surrounded by rodents, review trial paths
