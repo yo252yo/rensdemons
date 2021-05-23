@@ -1,5 +1,9 @@
 find title
 
-make some loot /o/
 
 dont forget to make party as we progress
+
+
+- story (so far 006 town2)
+- optional dungeons in world map
+- optional events in world map
