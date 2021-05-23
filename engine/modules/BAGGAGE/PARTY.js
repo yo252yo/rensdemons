@@ -4,12 +4,10 @@ const PARTYMEMBERS = {
   BestFriend: "BestFriend",
   PreciousChild: "PreciousChild",
   UpbeatDojikko: "UpbeatDojikko",
+  StreetSmart: "StreetSmart",
 
    // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
    // town5 acceptance
-
-   // StreetSmart: "StreetSmart", // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
-   // extra forest nearby ?
 
    // WiseOld: "WiseOld", //  wise old fool /  Scholar
    // town_2 fear
@@ -64,7 +62,9 @@ const PARTY = {
       case PARTYMEMBERS.UpbeatDojikko:
         return `${DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko)} is a fortune teller living in ${DICTIONARY.get("town_1")}. She has a way with the spirits, who let her peek into the fabric of time to reveal the things to come. In fact, she would probably know all the secrets of the universe by now, if only she wasn't such an airhead.<br /><br />
                 ${DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko)} was very young when she lost her father to the monsters of ${DICTIONARY.get("demon_lord")}'s army, but not so young that she could remain oblivious to how this loss destroyed her mother's soul. She swore to always spread joy and happiness around her, to bring back the light in her mother's life. It's not often that she pauses to wonder if anything darker is hiding behind her warm smile, her upbeat demeanor and her legendary clumsiness.`;
-
+      case PARTYMEMBERS.StreetSmart:
+        return `${DICTIONARY.get(PARTYMEMBERS.StreetSmart)} is a beastmaster you encountered in a forest near ${DICTIONARY.get("town_1")}. Behind his innocent face hides a sly and calculating brain. Any means is good for him to reach his goals. Fortunately, his big heart means that he aims for nothing besides the happiness of those he cares about.<br /><br />
+                The war simply did not allow him the luxury to abide by the law. Very young, he had to resort to thievery to save his family from starvation. Growing up, he discovered in himself a talent that granted him a more stable life: he was very gifted with animals. Since then, he's become a pillar of the underworld of the kingdom, from poaching to trafficking or even beast fights. Yet, he has not completely given up hope for a better world...`;
       default:
         return "";
     }
