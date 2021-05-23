@@ -17,6 +17,26 @@ new SM_Town(1450, 2500, "_town5", "town_5", function() { return false;}); // opt
 // Procedurally generated elements:
 var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
+
+// Special elements
+var hanFiller = new Filler(gen);
+hanFiller.set_zone(100, 1950, 600, 600);
+hanFiller.set_guaranteed(1);
+var hanTree = function(x,y,g){
+  var t = new SM_Trees(x, y, g);
+  t.interaction = function(){CURRENTLEVEL.setup("005_han_grove");}
+  return t;
+}
+hanFiller.set_object(100, 100, hanTree);
+hanFiller.fill_by_retry();
+
+
+
+
+
+
+
+// The base map elements
 var mapFiller = new Filler(gen);
 mapFiller.set_zone(50, 2550, 3000, 2500);
 
