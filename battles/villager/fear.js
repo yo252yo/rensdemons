@@ -244,7 +244,7 @@ var attack = {
   attack_amplitude: 0.05, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 0.2,
-  time_variation: 0.9, // 1 = 100%
+  time_variation: 0.8, // 1 = 100%
 };
 BATTLE.monster_actions.add_textual(`The stranger stares at you judgmentally in silence.`, attack);
 BATTLE.monster_actions.add_textual(`The villager's glacial gaze ie pretty oppressive.`, attack);
