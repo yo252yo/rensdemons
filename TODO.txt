@@ -1,9 +1,8 @@
 find title
 
 
-dont forget to make party as we progress
-
-
 - story (so far 006 town2)
 - optional dungeons in world map
+- monsters in world map
 - optional events in world map
+- all party members

@@ -8,18 +8,17 @@ new S_Floor(50, 2550, 3000, 2500, 'obj_dark');
 // First make the towns
 new SM_Town(250, 1750, "004_town1", "town_1");
 new SM_Town(850, 550, "006_town2", "town_2");
-
-
-// do not keep, just a test
+// to do
 new SM_Town(2300, 1275, "_town3", "town_3", function() { return false;});
 new SM_Town(2725, 300, "_town4", "town_4", function() { return false;}); // optional
 new SM_Town(1450, 2500, "_town5", "town_5", function() { return false;}); // optional
 
+
+// Procedurally generated elements:
 var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
 var mapFiller = new Filler(gen);
 mapFiller.set_zone(50, 2550, 3000, 2500);
-
 
 // could be non uniform
 for(var i = 0; i < 3; i++) {
