@@ -13,10 +13,21 @@ PLAYER_ACTIONS.add({
               ],
   outcome: BATTLETREE.ESCAPE,
   extra_function: function() {
+    STATS.record.flag("StreetSmart_mugged");
     INVENTORY.decrease(ITEM.Coin, g);
+    INVENTORY.increase("_streetSmart_mugged_amount", g);
   },
 });
 
+PLAYER_ACTIONS.add({
+  name: "Scream",
+  unlock: true,
+  description: [`You barely have time to open your mouth before the thief slits your throat. The last thing you see is a glimmer of pain and regret in his eyes.`],
+  outcome: BATTLETREE.LOSS,
+  extra_function: function(){
+    STATS.record.flag("StreetSmart_mugged");
+  },
+});
 
 // ===================
 // =================== START

@@ -9,6 +9,7 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.PreciousChild] = MARKOV_MODELS.human_names.mutate("Honey", 5); // hope/genis/ed/hideyoshi/honey senpai
     r[PARTYMEMBERS.UpbeatDojikko] = MARKOV_MODELS.human_names.mutate("Asahina", 5); //  riku/yuffie/dojiko/asahina/phoebe
     r[PARTYMEMBERS.StreetSmart] = MARKOV_MODELS.human_names.mutate("Han", 5); //hansolo / Quistis / aladdin
+    r['han_dog'] = MARKOV_MODELS.human_names.mutate("Pachiko", 3);
 
     // r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5); // sasuke/seifer/Riku/squall/batman
     // r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);

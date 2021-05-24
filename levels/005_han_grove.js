@@ -17,10 +17,6 @@ new S_TownFloor(50, 550, 500, 500, "005_world_map");
 var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
 
-var startBattle = function(){
-  BATTLE.api.make('_party/_StreetSmart');
-}
-
 var nap = function() {
   TextBannerSequence.make([
     "You let yourself go and dive into a welcome rest.",
@@ -28,16 +24,42 @@ var nap = function() {
     "...",
     "You feel an unusual presence next to you. And a weird noise. Are those... footsteps, approaching?",
     "You barely have time to open your eyes before finding yourself with a dagger against your neck.",
-  ], startBattle);
+  ], function(){
+    BATTLE.api.make('_party/_StreetSmart');
+  });
+}
+
+var trap = function() {
+  TextBannerSequence.make([
+    "You struggle to not fall asleep, but you keep your mind focused on your goal. Pretty soon, you feel the presence of your assaillant.",
+  ], function(){
+    BATTLE.api.make('_party/_StreetSmart2');
+  });
+}
+
+var rest = function() {
+  TextBannerSequence.make([
+    "You all have a good rest. You feel refreshed, ready to go on the road again!",
+  ], function(){
+    CURRENTLEVEL.setup("005_world_map");
+  });
+}
+
+var rest_options = [
+  {"text": "Fight it and get up!", "effect": "##CLOSE"},
+];
+
+if (PARTY.has_member(PARTYMEMBERS.StreetSmart)) {
+  rest_options.push({"text": "Nap carefully, keep watch in turns.", "effect": rest});
+} else if(STATS.flag("StreetSmart_mugged")) {
+  rest_options.push({"text": "Nap carefully, keep watch in turns.", "effect": rest});
+  rest_options.push({"text": "Pretend to nap to trap thieves.", "effect": trap});
+} else {
+  rest_options.push({"text": "Embrace it and take a nap.", "effect": nap});
 }
 
 var rest_menu = function () {
-  new CenteredTextMenu("What do you do?",
-                [
-                  {"text": "Embrace it and take a nap.", "effect": nap},
-                  {"text": "Fight it and get up!", "effect": "##CLOSE"},
-               ]
-             );
+  new CenteredTextMenu("What do you do?", rest_options);
 }
 
 var makeTree = function(x,y,g){
