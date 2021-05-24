@@ -26,8 +26,8 @@ const STATS = {
       DISK.write("STATS");
     },
 
-    flag: function(text){
-      STATS._stats.increment(["FLAG_" + text]);
+    flag: function(text, value){
+      STATS._stats.increment(["FLAG_" + text], value);
       DISK.write("STATS");
     },
   },
