@@ -9,10 +9,13 @@ window.onload = function() {
   setTimeout(DEBUG.all, 750);
   var lvl = (new URL(window.location.href)).searchParams.get("lvl");
   var save = (new URL(window.location.href)).searchParams.get("s");
+  var battle = (new URL(window.location.href)).searchParams.get("battle");
   if(lvl){
     CURRENTLEVEL.setup(lvl);
   } else if(save) {
     SAVE.load(save);
+  } else if(battle) {
+    BATTLE.api.make(battle);
   } else {
     SAVE.load(1);
   }
