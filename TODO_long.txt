@@ -27,6 +27,7 @@ if theres a guy behind a house interaction interacts with the house (most promin
 make experience menu multi tiered
 
 sounds atmosphere for each town, each villager, each party member
+sprite for each party member
 
 put escape actions at the bottom of actions lists
 

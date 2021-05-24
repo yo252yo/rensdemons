@@ -1,8 +1,6 @@
 find title
 
 
-should language be in module or root???
-
 be careful, write in present and second person
 
 
