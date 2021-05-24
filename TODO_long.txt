@@ -80,6 +80,8 @@ should we merge the actions in the experience menu if they have the same name?
 
 hans dog somewhere
 
+better keyboard controls for dodge
+
 make item sets (make chair with table)
 
 mb add BestFriend to the party that follows you around, for emotional attachment

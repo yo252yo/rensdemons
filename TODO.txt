@@ -1,6 +1,6 @@
 find title
 
-can the rename for dojiko and han be at the end of description in callback ??
+can the rename for dojiko and han (extra_function) be at the end of description as callback ?? its a bit messy here
 
 
 be careful, write in present and second person
@@ -11,8 +11,3 @@ be careful, write in present and second person
 - monsters in world map
 - optional events in world map
 - all party members: unlock and description in party.js, attacks in languge, name in dictionary, encounter
-
-
-HAN: attacks in languge,  encounter
-  // the rogue with the heart of gold / pirate / treasure hunter   /The Smart/street wise Guy     Beast master (falcon/horse)
-  // he's all "whats in it for me" at first but ends up being won over when Ren taps into his resentment for the status quo. "are you just gonna serve the rich and increase their powers?":

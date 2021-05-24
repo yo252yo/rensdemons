@@ -16,9 +16,9 @@ LANGUAGE.actions[PARTYMEMBERS.BestFriend] = {
     ]);
 
     var dialog = RANDOM.pick([
-      `$$BestFriend$: If you wouldn't mind letting us through, please?`,
-      `$$BestFriend$: There's really no need for us to fight!`,
-      `$$BestFriend$: Must violence always be the answer?`]);
+      `$$BestFriend$: "If you wouldn't mind letting us through, please?"`,
+      `$$BestFriend$: "There's really no need for us to fight!"`,
+      `$$BestFriend$: "Must violence always be the answer?"`]);
     return [text, dialog];
   },
   fail: function(){
@@ -46,9 +46,9 @@ LANGUAGE.actions[PARTYMEMBERS.PreciousChild] = {
       `$$PreciousChild$ cheers at the $$&ENEMY$ with a brimming smile.`]);
 
     var dialog = RANDOM.pick([
-      `$$PreciousChild$: Will you be my friend?`,
-      `$$PreciousChild$: Please stop being a bad guy.`,
-      `$$PreciousChild$: I will protect my friends!`]);
+      `$$PreciousChild$: "Will you be my friend?"`,
+      `$$PreciousChild$: "Please stop being a bad guy."`,
+      `$$PreciousChild$: "I will protect my friends!"`]);
     return [text, dialog];
   },
   fail: function(){
@@ -75,9 +75,9 @@ LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
       `$$UpbeatDojikko$ closes her eyes and enters a state of transe to communicate with the spirit world. Her body begins to shake, producing a tingling noise from the jewelry she's wearing. She shakes so much that she falls on the ground. She crawls back on all fours.`]);
 
     var dialog = RANDOM.pick([
-      `$$UpbeatDojikko$: My little spirit friends are calling, why won't you play with them?`,
-      `$$UpbeatDojikko$: Let me turn your frown upside down!`,
-      `$$UpbeatDojikko$: You know, the afterlife can be a lot of fun too!`]);
+      `$$UpbeatDojikko$: "My little spirit friends are calling, why won't you play with them?"`,
+      `$$UpbeatDojikko$: "Let me turn your frown upside down!"`,
+      `$$UpbeatDojikko$: "You know, the afterlife can be a lot of fun too!"`]);
     return [text, dialog];
   },
   fail: function(){
@@ -92,6 +92,35 @@ LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
       `$$UpbeatDojikko$ tells the $$&ENEMY$ about the details of its future. The depiction is scaringly accurate, and the $$&ENEMY$ screams to cover her predictions as she describes in gruesome details its future death. The $$&ENEMY$ would rather flee than hearing this.`,
       `$$UpbeatDojikko$ reveals to the $$&ENEMY$ what the spirits showed her. It includes many embarassing secrets. The $$&ENEMY$ yells in a panic, begging her to stop, before running away.`,
       `$$UpbeatDojikko$ shares with the $$&ENEMY$ her vision of a close friend or relative that the $$&ENEMY$ lost a long time ago. The scene gets surreal as the $$&ENEMY$ starts weeping, crying out for their departed acquaintance. `,
+    ]);
+  },
+};
+
+LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.StreetSmart)) + RANDOM.pick([
+      `$$StreetSmart$ makes a grand entrance, as usual. He looks at the $$&ENEMY$ mockingly and taunts with a sly smile:`,
+      `You need to be very convincing to persuade $$StreetSmart$ to help. Finally, after promising him a large share of the booty, he deigns come to your rescue.`,
+      `Moved by the promise of a bribe, $$StreetSmart$ accepts to help. He looks around, gauging the terrain for his beasts, and then begins to work his talent.`]);
+
+    var dialog = RANDOM.pick([
+      `$$StreetSmart$: "Did someone call for the best?"`,
+      `$$StreetSmart$: "I'll show you why they call me 'King of Beasts'!"`,
+      `$$StreetSmart$: "Let's make this quick, my time is precious and you're not worth it."`]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `$$StreetSmart$ whistles, calling a vulture which dives on the $$&ENEMY$. Sadly, the $$&ENEMY$ dodges it, and the bird flies off in the distance without having been of any help.`,
+      `$$StreetSmart$ snaps his fingers, but nothing happens. He explains majestically that this is not supposed to happen, this is not how it usually goes, and that he didn't really want to do anything anyway.`,
+      `$$StreetSmart$ takes a look at the $$&ENEMY$, and goes back to the rear, explaining that it's not his problem and that you really shouldn't bother him for nothing.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$StreetSmart$ whistles, and out of nowhere a few falcons speed through the air in a wooshing sound. They dives on the $$&ENEMY$ claws first. The sharpness and the velocity lacerate the $$&ENEMY$ which falls on the ground, but the birds adopt a wide trajectory and come back again and again to beat the $$&ENEMY$ to a pulp in a flurry of beak and claws.`,
+      `$$StreetSmart$ moves his lips, as if to make a sound, but it does not seem perceptible to your hear. It reaches its target, though, since you begin to hear a loud rumbling sound coming towards you. Before long, it appears clearly that it's the stomping of an enormous enraged boar that charges mercilessly towards the $$&ENEMY$. Not only is the $$&ENEMY$ projected backwards by the shock of the impact, but the beast continues its course and tramples its defenseless prey.`,
+      `$$StreetSmart$ opens one of the pockets of his leather coat, and takes out a menacing snake. Its colorful skin suggests that you'd better stay away, but there's nothing for you to do since the expert guidance of $$StreetSmart$ leads the predator directly to the $$&ENEMY$. It slithers, dodging any attack against it, and jumps on the $$&ENEMY$, burrowing its venomous fangs deep into its prey. But the snake does not stop there: it rolls itself around the $$&ENEMY$, blocking any move and slightly choking it until the poison takes full effect.`,
     ]);
   },
 };
