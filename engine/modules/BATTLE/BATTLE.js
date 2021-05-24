@@ -79,10 +79,16 @@ const BATTLE = {
     },
 
     monster: function(text, dodge_difficulty) {
+      var array = text;
+      if (!Array.isArray(text)){
+        array = [text];
+      }
+
       if (!dodge_difficulty){
-        TextBannerSequence.make([text], BATTLE.turn_factory.player);
+        TextBannerSequence.make(array, BATTLE.turn_factory.player);
       } else {
-        TextBannerSequence.make([text + "<br />" +  LANGUAGE.battle.dodge()], DODGE.getCallback(dodge_difficulty));
+        array.push(LANGUAGE.battle.dodge());
+        TextBannerSequence.make(array, DODGE.getCallback(dodge_difficulty));
       }
     },
   },
