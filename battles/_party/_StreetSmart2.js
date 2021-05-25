@@ -13,7 +13,7 @@ var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({
     `The thief pauses to think for a while.`,
     `$$StreetSmart$: "It does seem that she speaks to you, whatever that means. I've always relied on my wits instead of some godly magic, but I have to admit that so far, it hasn't brought me my dog back."`,
     `He hesitates for a second, before declaring:`,
-    `$$StreetSmart$: "I guess... I guess I can stick around with you, kid. It's not like I have somewhere I need to be, I can do my business on the road. Travelling is actually pretty good for trading. I'll see where this superstitious fairytale takes you, and if it can really help me find $$han_dog$."`,
+    `$$StreetSmart$: "I guess... I guess I can stick around with you, kid. I respect your honesty and your guts. It's not like I have somewhere I need to be, I can do my business on the road. Travelling is actually pretty good for trading. I'll see where this superstitious fairytale takes you, and if it can really help me find $$han_dog$."`,
     "$$StreetSmart$ joins your party!",
     `$$Ren$: "I promise I'll do my best! But please stop calling me kid, we are barely a few years apart."`,
     `$$StreetSmart$: "No can do, kid. We might be a few years apart, but you still have so much to learn about life. Here, have your money back."`,
