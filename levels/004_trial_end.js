@@ -3,6 +3,13 @@ ABILITIES.unlock("_trial_passed"); // redundant
 
 new Snippet("levels/decors/temple");
 
+if(ABILITIES.has_ability("_trial_passed")){
+  var f = new S_Floor(250,775,100,35, 'obj_dark');
+  f.interaction = function(){
+    CURRENTLEVEL.setup("004_town1");
+  }
+}
+
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
   priest.interaction = function() {

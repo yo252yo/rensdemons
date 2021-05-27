@@ -4,7 +4,7 @@ var gen = new Generator(seed);
 
 new S_TownFloor(50, 1050, 1000, 1000, "005_world_map");
 
-new S_Church(450, 400);
+new S_Church(450, 400, "004_trial_end");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 700, 175, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100, 850, 225, gen.get());

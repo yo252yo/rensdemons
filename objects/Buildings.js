@@ -153,11 +153,13 @@ class S_Store extends S_EnterableBuilding {
 }
 
 class S_Church extends LevelObject {
-  constructor(x, y, seed){
+  constructor(x, y, inside_lvl){
     new S_building(x, y-1, "church");
     var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
+    this.inside = inside_lvl;
+
     this.default_text = this.text_interaction([
       "It's a temple, but this is not the entrance.",
     ]);
@@ -170,8 +172,8 @@ class S_Church extends LevelObject {
   }
 
   interaction(){
-    if (this.character_can_enter()){
-      CURRENTLEVEL.setup("004_trial_end");
+    if (this.inside && this.character_can_enter()){
+      CURRENTLEVEL.setup(this.inside);
     } else {
       this.default_text();
     }

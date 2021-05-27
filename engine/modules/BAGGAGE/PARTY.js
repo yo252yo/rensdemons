@@ -6,27 +6,39 @@ const PARTYMEMBERS = {
   UpbeatDojikko: "UpbeatDojikko",
   StreetSmart: "StreetSmart",
 
-   // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
-   // town5 acceptance
+  // WiseOld: "WiseOld", //  wise old fool /  Scholar
+  // town_2 fear
 
-   // WiseOld: "WiseOld", //  wise old fool /  Scholar
-   // town_2 fear
 
-   // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-   // town_2 fear
+  // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+  // lake?
 
-   // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-   // mountain cave?
-
-   // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
-   // town4 debauch
+// RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+// town_2 fear
 
 
    // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
    // forest dungeon?
 
+
+
+// DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+// mountain cave?
+
+
+
+   // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+   // town4 debauch
+
+
+
+
+
    // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
    // town4 debauch
+
+  // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+  // town5 acceptance
 
    // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
    // town5 acceptance
@@ -34,8 +46,6 @@ const PARTYMEMBERS = {
    // GeniusProdigy: "GeniusProdigy", //child prodigy
    // ruins, doing an expedition?
 
-   // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
-   // lake?
 
 };
 
