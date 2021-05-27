@@ -117,17 +117,19 @@ const BATTLE = {
           switch (action_object.outcome) {
             case BATTLETREE.WIN:
               description = description.slice(0, description.length-1);
-              BATTLE.monster_actions.prepare_win(outcome_description);
+              BATTLE.monster_actions.prepare_win(outcome_description, action_object.extra_function);
               break;
             case BATTLETREE.LOSS:
               description = description.slice(0, description.length-1);
-              BATTLE.monster_actions.prepare_loss(outcome_description);
+              BATTLE.monster_actions.prepare_loss(outcome_description, action_object.extra_function);
               break;
             case BATTLETREE.ESCAPE:
               description = description.slice(0, description.length-1);
-              BATTLE.monster_actions.prepare_escape(outcome_description);
+              BATTLE.monster_actions.prepare_escape(outcome_description, action_object.extra_function);
               break;
           }
+        } else if(action_object.extra_function) {
+          action_object.extra_function();
         }
 
 
@@ -141,9 +143,6 @@ const BATTLE = {
         }
         if(action_object.give_item) {
           INVENTORY.increase(action_object.give_item);
-        }
-        if(action_object.extra_function) {
-          action_object.extra_function();
         }
         return description;
       };
@@ -192,25 +191,34 @@ const BATTLE = {
       BATTLE._monster_actions = [f];
     },
 
-    prepare_loss: function (doom){
+    prepare_loss: function (doom, extra_function){
       BATTLE.monster_actions.make_unique(
         function() {
+          if (extra_function){
+            extra_function();
+          }
           TextBannerSequence.make([doom], BATTLE.operations.lose);
         }
       );
     },
 
-    prepare_escape: function (doom){
+    prepare_escape: function (doom, extra_function){
       BATTLE.monster_actions.make_unique(
         function() {
+          if (extra_function){
+            extra_function();
+          }
           TextBannerSequence.make([doom], BATTLE.operations.escape);
         }
       );
     },
 
-    prepare_win: function (text){
+    prepare_win: function (text, extra_function){
       BATTLE.monster_actions.make_unique(
         function() {
+          if (extra_function){
+            extra_function();
+          }
           TextBannerSequence.make([text], BATTLE.operations.win);
         }
       );

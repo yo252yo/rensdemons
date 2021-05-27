@@ -73,6 +73,7 @@ var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
+    INVENTORY.increase(ITEM.Coin, 15);
     pricelock();
     _spirits(readPalm);
     STATS.record.flag("UpbeatDojikko_Book");
@@ -112,6 +113,7 @@ var _read_cards = PLAYER_ACTIONS.function.unlock_replacing_action({
                 ],
   extra_function: function(){
     INVENTORY.decrease(ITEM.Coin, 15);
+    INVENTORY.increase(ITEM.Coin, 15);
     pricelock();
     STATS.record.flag("UpbeatDojikko_Cards");
   }
@@ -208,6 +210,7 @@ PLAYER_ACTIONS.add({
                 `You watch her listen to an answer you cannot hear.`,
                 `$$UpbeatDojikko$: "Very well, if you both say so, I will accompany the Promised Child on his quest."`,
                 "$$UpbeatDojikko$ joins your party!",
+                `$$UpbeatDojikko$: "Let's go! I'll take my spirit friends along!"`,
                 ],
   extra_function: function(){
     PARTY.changeNickname(PARTYMEMBERS.UpbeatDojikko);

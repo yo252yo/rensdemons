@@ -1,6 +1,5 @@
 find title
 
-can the rename for dojiko and han (extra_function) be at the end of description as callback ?? its a bit messy here
 
 
 be careful, write in present and second person
