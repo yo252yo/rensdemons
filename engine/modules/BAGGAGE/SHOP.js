@@ -127,7 +127,7 @@ const SHOP = {
     main: function() {
       SHOP._current_menu = new CenteredTextMenu("What do you want to do?",
           [
-            {"text": "Buy", "effect": function(){ SHOP._menu.buy(); }},
+            {"text": "Buy (Way of the " + SHOP._current_type + ")", "effect": function(){ SHOP._menu.buy(); }},
             {"text": "Sell", "effect": function(){ SHOP._menu.sell(); }},
             {"text": "Leave", "effect": "##CLOSE"},
          ]

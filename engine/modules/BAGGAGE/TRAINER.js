@@ -35,7 +35,7 @@ const TRAINER = {
 
   _menu: {
     buy: function(){
-      var merchant_text = `I can teach you the following skills, if you got enough experience in your journey. It looks like you have ${INVENTORY.count(ITEM.XpToken)} to spare.`;
+      var merchant_text = `I can teach you the following skills in the way of the ${TRAINER._current_type}, if you got enough experience in your journey. It looks like you have ${INVENTORY.count(ITEM.XpToken)} to spare.`;
       var goods = [];
 
       for(var index in _TRAINER_PRICES){
@@ -65,7 +65,7 @@ const TRAINER = {
     main: function() {
       TRAINER._current_menu = new CenteredTextMenu("What do you want to do?",
           [
-            {"text": "Train", "effect": function(){ TRAINER._menu.buy(); }},
+            {"text": "Learn the way of the " + TRAINER._current_type, "effect": function(){ TRAINER._menu.buy(); }},
             {"text": "Leave", "effect": "##CLOSE"},
          ]
        );
@@ -78,7 +78,7 @@ const TRAINER = {
     TextBannerSequence.make([RANDOM.pick([
       `The trainer welcomes you with a smile.`,
       `Trainer: "What can I do for you?"`,
-      `Trainer: "Welcome to my workshop, how may I help you?"`,
+      `Trainer: "I can teach you a lot of things. Where should I start?"`,
     ])], TRAINER._menu.main);
   },
 }
