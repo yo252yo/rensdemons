@@ -27,7 +27,7 @@ class SpeakerIcon extends TextElement {
       }
       var div = document.getElementById("portrait_div");
       var v = new LayeredImage("assets/portraits_large/" + image_key + "_$.png", 300, 300, div);
-      v.shift(-100, -100);
+      v.shift(-80, -75);
       v.adjust_depth(10000);
     }
   }
