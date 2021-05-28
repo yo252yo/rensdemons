@@ -8,17 +8,20 @@ f.interaction = function(){
 }
 
 var wiseOldFool = new M_Priest(500, 125);
+
 wiseOldFool.interaction = function() {
   this.face_character();
-  TextBannerSequence.make([
-    `Odd old elder: \"You're the Promised Child, aren't you? I've been studying all my life to assist you, like my mentor before me, and his before him!\"`,
-    `Odd old elder: \"But patience and preparation are key to success! Your quest is no small one! I won't let you go until you've completed your training!\"`,
-  ], function(){
-    new CenteredTextMenu("What will you do?", [
-      {"text": "Trust the odd elder", "effect": function(){ BATTLE.api.make('_party/_WiseOldFool'); }},
-      {"text": "Walk away", "effect": "##CLOSE"},
-     ]);
-  });
+  if (PARTY.has_member(PARTYMEMBERS.WiseOld)){
+    TextBannerSequence.make([
+      `$$WiseOld$: "I am yours to command."`,
+    ]);
+  } else if (INVENTORY.count("_wiseOldTraining") == 1) {
+    BATTLE.api.make('_party/_WiseOldBody');
+  } else if (INVENTORY.count("_wiseOldTraining") == 2) {
+    BATTLE.api.make('_party/_WiseOldMind');
+  } else {
+    BATTLE.api.make('_party/_WiseOldHeart');
+  }
 }
 
 var hp = new M_Priest(300, 675);
