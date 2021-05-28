@@ -14,7 +14,10 @@ wiseOldFool.interaction = function() {
     `Odd old elder: \"You're the Promised Child, aren't you? I've been studying all my life to assist you, like my mentor before me, and his before him!\"`,
     `Odd old elder: \"But patience and preparation are key to success! Your quest is no small one! I won't let you go until you've completed your training!\"`,
   ], function(){
-    BATTLE.api.make('_party/_WiseOldFool');
+    new CenteredTextMenu("What will you do?", [
+      {"text": "Trust the odd elder", "effect": function(){ BATTLE.api.make('_party/_WiseOldFool'); }},
+      {"text": "Walk away", "effect": "##CLOSE"},
+     ]);
   });
 }
 
