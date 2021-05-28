@@ -1,8 +1,16 @@
 find title
 
 
-do everything wise old fool
+
+
+
+
+
+
+wise old fool
 old guy: does he keep testing you?
+- attacks in languge,
+- encounter+battle
 
 queue next bit of the quest with a flag for cities 2 and 3
 
@@ -14,4 +22,10 @@ be careful, write in present and second person
 - optional dungeons in world map
 - monsters in world map
 - optional events in world map
-- all party members: unlock and description in party.js, attacks in languge, name in dictionary, encounter
+
+
+- all party members:
+  unlock and description in party.js,
+  attacks in languge,
+  name in dictionary,
+  encounter+battle

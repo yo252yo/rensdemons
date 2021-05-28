@@ -5,10 +5,7 @@ const PARTYMEMBERS = {
   PreciousChild: "PreciousChild",
   UpbeatDojikko: "UpbeatDojikko",
   StreetSmart: "StreetSmart",
-
-  // WiseOld: "WiseOld", //  wise old fool /  Scholar
-  // town_2 fear
-
+  WiseOld: "WiseOld",
 
   // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
   // lake?
@@ -75,6 +72,9 @@ const PARTY = {
       case PARTYMEMBERS.StreetSmart:
         return `${DICTIONARY.get(PARTYMEMBERS.StreetSmart)} is a beastmaster you encountered in a forest near ${DICTIONARY.get("town_1")}. Behind his innocent face hides a sly and calculating brain. Any means is good for him to reach his goals. Fortunately, his big heart means that he aims for nothing besides the happiness of those he cares about.<br /><br />
                 The war simply did not allow him the luxury to abide by the law. Very young, he had to resort to thievery to save his family from starvation. Growing up, he discovered in himself a talent that granted him a more stable life: he was very gifted with animals. Since then, he's become a pillar of the underworld of the kingdom, from poaching to trafficking or even beast fights. Yet, he has not completely given up hope for a better world, or to find ${DICTIONARY.get('han_dog')}, his lost companion...`;
+      case PARTYMEMBERS.WiseOld:
+        return `All Churches in the kingdom have been waiting for the Promised Child, but the Church of ${DICTIONARY.get("town_2")} is home of the Tutor, a priest with the priviledge to dedicate their whole life to learning and studying in order to support the Promised Child in due time. This is ${DICTIONARY.get(PARTYMEMBERS.WiseOld)}'s position. Usually, the Tutor passes the torch to their apprentice at a younger age, but ${DICTIONARY.get(PARTYMEMBERS.WiseOld)} was determined to remain in function in spite of his age. Maybe he figured out in some way that he would encounter the Promised Child.<br /><br />
+                Years of solitude in libraries have turned him into quite a peculiar character, and people tend to get uncomfortable faced with his eccentricity. But nobody would question his dedication to his duties: if he gave his approval and joined the Promised Child, it must mean that the Child is ready for the challenges ahead.`;
       default:
         return "";
     }

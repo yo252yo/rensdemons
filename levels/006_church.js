@@ -23,6 +23,7 @@ hp.interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     `Priest: "Please, make yourself at home. Our wisdom is yours."`,
+    // TODO
   ]);
 }
 
@@ -35,7 +36,7 @@ CURRENTLEVEL.start_function = function(){
     TextBannerSequence.make([
       `When you enter the immaculate building, you're immediately greeted by a hooded figure.`,
       `Priest: "Welcome, child! We were expecting you! I hope your travel from $$town_1$ went peacefully, though I have no doubt that the Goddess made sure it was so."`,
-      `Priest: "You'll see, our beautiful city of $$town_2$ has much more to offer! We are no match for the capital, but we can help you a long way!"`,
+      `Priest: "You'll see, our beautiful city of $$town_2$ has much more to offer! We may not be the best in the kingdom, but we can help you a long way!"`,
       `Priest: "Everyone in this building is fully devoted to you! We'll give you anything you require, just ask! Some of us can teach you magic: we are knowledgeable in the ways of the Element and the ways of the Spirit."`,
       `Priest: "But most importantly, I can tell you where to find the power to defeat $$demon_lord$. Come and see me when you're ready to learn."`,
       `$$BestFriend$: "Well, that sounds promising!"`,
