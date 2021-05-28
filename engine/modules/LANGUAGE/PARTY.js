@@ -89,12 +89,13 @@ LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
   },
   win: function(){
     return RANDOM.pick([
-      `$$UpbeatDojikko$ tells the $$&ENEMY$ about the details of its future. The depiction is scaringly accurate, and the $$&ENEMY$ screams to cover her predictions as she describes in gruesome details its future death. The $$&ENEMY$ would rather flee than hearing this.`,
+      `$$UpbeatDojikko$ tells the $$&ENEMY$ about the details of its future. The depiction is scaringly accurate, and the $$&ENEMY$ screams to cover her predictions as she describes in gruesome details its upcoming death. The $$&ENEMY$ would rather flee than hearing this.`,
       `$$UpbeatDojikko$ reveals to the $$&ENEMY$ what the spirits showed her. It includes many embarassing secrets. The $$&ENEMY$ yells in a panic, begging her to stop, before running away.`,
       `$$UpbeatDojikko$ shares with the $$&ENEMY$ her vision of a close friend or relative that the $$&ENEMY$ lost a long time ago. The scene gets surreal as the $$&ENEMY$ starts weeping, crying out for their departed acquaintance. `,
     ]);
   },
 };
+
 
 LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
   usage: function(){
@@ -121,6 +122,46 @@ LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
       `$$StreetSmart$ whistles, and out of nowhere a few falcons speed through the air in a wooshing sound. They dives on the $$&ENEMY$ claws first. The sharpness and the velocity lacerate the $$&ENEMY$ which falls on the ground, but the birds adopt a wide trajectory and come back again and again to beat the $$&ENEMY$ to a pulp in a flurry of beak and claws.`,
       `$$StreetSmart$ moves his lips, as if to make a sound, but it does not seem perceptible to your hear. It reaches its target, though, since you begin to hear a loud rumbling sound coming towards you. Before long, it appears clearly that it's the stomping of an enormous enraged boar that charges mercilessly towards the $$&ENEMY$. Not only is the $$&ENEMY$ projected backwards by the shock of the impact, but the beast continues its course and tramples its defenseless prey.`,
       `$$StreetSmart$ opens one of the pockets of his leather coat, and takes out a menacing snake. Its colorful skin suggests that you'd better stay away, but there's nothing for you to do since the expert guidance of $$StreetSmart$ leads the predator directly to the $$&ENEMY$. It slithers, dodging any attack against it, and jumps on the $$&ENEMY$, burrowing its venomous fangs deep into its prey. But the snake does not stop there: it rolls itself around the $$&ENEMY$, blocking any move and slightly choking it until the poison takes full effect.`,
+    ]);
+  },
+};
+
+
+LANGUAGE.actions[PARTYMEMBERS.WiseOld] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.WiseOld)) + RANDOM.pick([
+      `$$WiseOld$ gets up painfully and walk slowly towards the $$&ENEMY$. After a moment of reflexion, he says solemnly:`,
+      `As usual, $$WiseOld$ struggles to make his way to the $$&ENEMY$ with his slow, elderly pace. The $$&ENEMY$ watches patiently, perplexed.`,
+      `$$WiseOld$ closes his eyes and bows his head, as if entering a meditative transe. By some miracle, the $$&ENEMY$ does not react right away.`,
+    ]);
+
+    var dialog = RANDOM.pick([
+      `$$WiseOld$: "The farmer has to look through the rain to see the rainbow."`,
+      `$$WiseOld$: "Life is not about waiting for the storm to pass. It's about learning to dance in the rain."`,
+      `$$WiseOld$: "A journey of a thousand mountains begins with a single step."`,
+      `$$WiseOld$: "A bird does not sing because it has an answer. It sings because it has a song."`,
+      `$$WiseOld$: "Experience is a comb which nature gives us when we are bald."`,
+      `$$WiseOld$: "The flower in a bouquet whithers, and never grows again."`,
+      `$$WiseOld$: "The harvest moon is brightest every festival homesickness multiplies."`,
+      `$$WiseOld$: "A hord of horses will never manage to chase down a spoken word."`,
+      `$$WiseOld$: "If you do not enter the tiger’s den, how will you get the tiger cub?"`,
+      `$$WiseOld$: "The only truly binding shackles are the ones you put on yourself."`,
+      `$$WiseOld$: "There is no such thing as a fool except for the lost soul foolish enough to think they are a fool."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The wise words of $$WiseOld$ do not touch the $$&ENEMY$. It's as if the $$&ENEMY$ doesn't care at all!`,
+      `Whatever the desired effect was, it appears that it wasn't reached, as the $$&ENEMY$ adopts once again a menacing posture.`,
+      `The $$&ENEMY$ completely ignores $$WiseOld$. Before long, it is ready to attack again.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The wisdom of $$WiseOld$ goes straight to the $$&ENEMY$'s heart. The $$&ENEMY$ has a new understanding of life, and questions everything they have done so far. Enraptured, the $$&ENEMY$ walks away towards a better tomorrow.`,
+      `The words resonate within the $$&ENEMY$ and completely change the way it thinks. The $$&ENEMY$'s mind is completely blown, it has finally seen the light. The $$&ENEMY$ simply sits there, motionless, in total awe and beatitude. It appears it has reached complete enlightenement, and is completely detached from all earthly sensations.`,
+      `The $$&ENEMY$ ponders on the phrase of the wise man. It soon appears that the $$&ENEMY$ is deep in self-reflexion, reevaluating their own life in light of this pearl of wisdom. Clearly, $$WiseOld$ gave it a lot to think about, and the $$&ENEMY$ is now deep into a meditative transe, pondering all the implications of the newfound insight. Needless to say that all will to fight has left it.`,
     ]);
   },
 };
