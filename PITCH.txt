@@ -1,0 +1,23 @@
+Hook: Saving and reloading after a failure is as natural as breathing for gamers, but what happens to the world around you when you do?
+
+Reunites with long gone fan favorite features of RPGs, like travelling on the world map or renaming your characters.
+
+
+
+
+
+
+
+
+
+
+The project I'd like to submit is a JRPG called "Ren's Demons" that I would situate in the middle of Undertale, Dangan Ronpa V3 and Nier Automata. Here's a spoiler-full gist in the interest of concision:
+
+It's an exploration of the nature of videogames following a very classic journey of a character called Ren who is chosen by the Goddess to protect the world from the invasion of demons.
+
+The Goddess serves as a stand-in for the player, raising questions about die-and-retry (this classic game mechanic provides the character with information that they are not supposed to have, from the point of view of NPCs) or responsibility (the player is in-fine the cause of the main character quest, and therefore their suffering). This is heightened by the ending: after a couple of plot twist, the player realizes that they are the ultimate source of this suffering, as monsters keep coming until the player gives up (happy end) or tweaks the source code to make characters happy (true end).
+
+It's an in-browser game, because I want to leverage the possibility of the medium: console logging can offer insight into NPC's thoughts, who are endlessly reborn for the player's entertainment in a "Truman Show"-like atmosphere, while my own javascript engine will allow the character to literally see and modify the source code of their own world.
+To carry the player until this "concept" ending, I want to offer an interesting original experience on the way, carried by procedural generation of a tri-color graphic palette and a narrative-based literary combat system.
+
+I'm working on this in my spare time, right now I have a little demo hosted at https://yo252yo.com/rd/index.html that displays the basics of the narrative combat system and the die-and-retry mechanic. I'd say most of the engine is done but most of the writing remains to do.
