@@ -27,6 +27,7 @@ wiseOldFool.interaction = function() {
 var hp = new M_Priest(300, 675);
 hp.interaction = function() {
   this.face_character();
+  ABILITIES.unlock("_town2_visited");
   TextBannerSequence.make([
     `Priest: "Please, make yourself at home. Our wisdom is yours."`,
     // TODO

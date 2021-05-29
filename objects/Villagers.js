@@ -11,7 +11,7 @@ var get_villager_shorthand = function(type, seed, indoors, gen) {
   if(type == CITIES.acceptance){
     return undefined;
   }
-  if(type == CITIES.debauch){
+  if(type == CITIES.indulgence){
     excuses.push(make_banner_function(`The villager just blows you a kiss.`));
     excuses.push(make_banner_function(`The villager winks at you, a little bit too salaciously for your taste.`));
     excuses.push(make_banner_function(`Villager: "Hello cutie, having fun?"`));

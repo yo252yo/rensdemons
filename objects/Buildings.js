@@ -5,7 +5,7 @@
 const CITIES = {
   hope: "hope",
   fear: "fear",
-  debauch: "debauch",
+  indulgence: "indulgence",
   denial: "denial",
   acceptance: "acceptance",
 }

@@ -5,6 +5,8 @@ queue next bit of the quest with a flag for cities 2 and 3
 
 be careful, write in present and second person
 
+churches/trainers in other cities
+
 
 - story (so far 006 town2)
 - optional dungeons in world map
