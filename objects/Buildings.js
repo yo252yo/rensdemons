@@ -143,7 +143,7 @@ class S_Store extends S_EnterableBuilding {
     this.threshold = threshold;
 
     this.describe = this.text_interaction([
-      `This place specializes in ${this.type}. You wonder what you could learn or purchase inside...`,
+      `This place specializes in the way of the ${this.type}. You wonder what you could learn or purchase inside...`,
     ]);
   }
 

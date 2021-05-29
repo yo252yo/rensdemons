@@ -10,8 +10,8 @@ new SM_Town(250, 1750, "004_town1", "town_1");
 new SM_Town(850, 550, "006_town2", "town_2");
 // to do
 new SM_Town(2300, 1275, "_town3", "town_3", function() { return false;});
-new SM_Town(2725, 300, "_town4", "town_4", function() { return ABILITIES.has_ability("_town2_visited");}); // optional
-new SM_Town(1450, 2500, "_town5", "town_5", function() { return ABILITIES.has_ability("_town2_visited");}); // optional
+new SM_Town(2725, 300, "007_town4", "town_4", function() { return ABILITIES.has_ability("_town2_visited");}); // optional
+new SM_Town(1450, 2500, "007_town5", "town_5", function() { return ABILITIES.has_ability("_town2_visited");}); // optional
 
 
 // Procedurally generated elements:
