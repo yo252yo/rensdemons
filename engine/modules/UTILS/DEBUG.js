@@ -104,6 +104,8 @@ const DEBUG = {
     DEBUG.get_all_items();
     DEBUG.get_all_party();
     setInterval(FOG.stop, 1000);
+
+    ABILITIES.unlock("_town2_visited");
   },
 
 
