@@ -2,10 +2,13 @@ find title
 
 queue next bit of the quest with a flag for cities 2 and 3
 
-
 be careful, write in present and second person
 
 churches/trainers/intro text in other cities
+
+should we meet the king?
+add royal castle
+
 
 
 - story (so far 006 town2)
