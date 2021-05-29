@@ -190,7 +190,7 @@ add_item(`Dreams`, [
 
 add_item(`Traditions`, [
   [
-    `${name}: "Every month, we designate a sacrifice, who gets killed in front of the church as an offering to the Goddess. We hope it eases her anger, and lessens our punishment."`,
+    `${name}: "Every month, we designate a sacrifice, who gets killed in the church as an offering to the Goddess. We hope it eases her anger, and lessens our punishment."`,
   ],
   [
     `${name}: "We do regular sacrifices to the Goddess. We all want to give ourselves to Her, so we draw the lucky chosen at random. Only our blood willingly offered can appease the Goddess."`,
