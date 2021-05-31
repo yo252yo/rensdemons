@@ -4,7 +4,8 @@ be careful, write in present and second person
 
 
 should we meet the king?
-add royal castle
+
+
 
 
 
@@ -19,3 +20,31 @@ add royal castle
   attacks in languge,
   name in dictionary,
   encounter+battle
+
+
+
+
+Music themes:
+r[PARTYMEMBERS.PreciousChild]
+r[PARTYMEMBERS.UpbeatDojikko]
+r[PARTYMEMBERS.StreetSmart]
+r[PARTYMEMBERS.WiseOld]
+r[PARTYMEMBERS.TorturedSoul]
+r[PARTYMEMBERS.RetiredProtector]
+r[PARTYMEMBERS.DumbMuscles]
+r[PARTYMEMBERS.SnobRich]
+r[PARTYMEMBERS.SavageChild]
+r[PARTYMEMBERS.FemmeFatale]
+r[PARTYMEMBERS.DisguisedPrincess]
+r[PARTYMEMBERS.GeniusProdigy]
+r[PARTYMEMBERS.TraitorFisher]
+
+
+r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
+r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
+r['town_3'] = MARKOV_MODELS.human_names.mutate("Columbia", 8); // denial
+r['town_4'] = MARKOV_MODELS.human_names.mutate("Vegas", 8); // debauch, optional
+r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance, optional
+
+current town theme fits acceptance best
+realismo visceral fits well too

@@ -154,7 +154,8 @@ class S_Store extends S_EnterableBuilding {
 
 class S_Church extends LevelObject {
   constructor(x, y, inside_lvl){
-    new S_building(x, y-1, "church");
+    var base = new S_building(x, y-1, "church");
+    base.make_walkable();
     var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
@@ -178,4 +179,22 @@ class S_Church extends LevelObject {
       this.default_text();
     }
   }
+}
+
+class S_Castle extends LevelObject {
+  constructor(x, y, inside_lvl){
+    var base = new S_building(x, y-1, "castle");
+    base.make_walkable();
+    var visual = new StaticSprite("assets/objects/buildings/castle2.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(10,0,460,300);
+
+    this.default_text = this.text_interaction([
+      "It's the royal castle.",
+    ]);
+  }
+  interaction(){
+    this.default_text();
+  }
+
 }

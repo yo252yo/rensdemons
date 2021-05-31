@@ -6,6 +6,8 @@ new S_TownFloor(50, 1550, 1500, 1500, "005_world_map");
 
 new S_Church(700, 750, "006_church2");
 
+new S_Castle(75, 425);
+
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 1200, 300, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 1225, 1225, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 425, 850, gen.get());
