@@ -2,6 +2,7 @@
 // =================== INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/child_m.png", 'background');
+AUDIO.music.characters.PreciousChild();
 
 PLAYER_ACTIONS.escape("Stop talking");
 

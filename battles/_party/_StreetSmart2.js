@@ -3,6 +3,8 @@
 // ===================
 new CenteredImage("assets/battles/villager0.png", 'background');
 
+AUDIO.music.characters.StreetSmart();
+
 var battle = "_party/_StreetSmart2";
 
 var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({

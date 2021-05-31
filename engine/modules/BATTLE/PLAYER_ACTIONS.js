@@ -23,6 +23,14 @@ class ActionObject {
 
 const PLAYER_ACTIONS = {
   _internal: {
+    trigger_music: function(name){
+      for(var i in PARTYMEMBERS){
+        if(PARTYMEMBERS[i] == name){
+          AUDIO.music.characters[i]();
+        }
+      }
+    },
+
     repeated_name: function(name, repetitions){
       return name + " ".repeat(repetitions);
     },
@@ -34,6 +42,9 @@ const PLAYER_ACTIONS = {
                      LANGUAGE.actions.win(name)),
         outcome: BATTLETREE.WIN,
         consume_item: consume_item,
+        function:function(){
+          PLAYER_ACTIONS._internal.trigger_music(name);
+        }
       });
 
       for(var i=nb_hits-2; i>0; i--){
@@ -49,7 +60,7 @@ const PLAYER_ACTIONS = {
         name: name,
     // This is where unlock would go if needed:      unlock: true,
         description: LANGUAGE.actions.usage(name),
-        function: previous_function,
+        function: previous_function
       });
     },
 
@@ -60,6 +71,9 @@ const PLAYER_ACTIONS = {
         description: LANGUAGE.actions.usage(name).concat(
                      LANGUAGE.actions.win(name)),
         consume_item: consume_item,
+        function:function(){
+          PLAYER_ACTIONS._internal.trigger_music(name);
+        }
       };
       PLAYER_ACTIONS.add(action_object);
     },

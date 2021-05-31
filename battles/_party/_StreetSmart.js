@@ -2,6 +2,7 @@
 // =================== INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/villager0.png", 'background');
+AUDIO.music.characters.StreetSmart();
 
 var g = INVENTORY.cash();
 

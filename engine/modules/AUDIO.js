@@ -108,11 +108,19 @@ const AUDIO = {
     temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
     house: function() {           AUDIO._play_music('floating temple'); },
 
-    town_hope: function() {       AUDIO._play_music('realismovisceral'); },
-    town_denial: function() {     AUDIO._play_music('tinajero'); },
-    town_acceptance: function() { AUDIO._play_music('two live at musique tangeantes'); },
-    town_debauch: function() {    AUDIO._play_music('debaucheddance'); },
-    town_fear: function() {       AUDIO._play_music('lacrobate'); },
+    town: {
+      hope: function() {       AUDIO._play_music('realismovisceral'); },
+      denial: function() {     AUDIO._play_music('tinajero'); },
+      acceptance: function() { AUDIO._play_music('two live at musique tangeantes'); },
+      debauch: function() {    AUDIO._play_music('debaucheddance'); },
+      fear: function() {       AUDIO._play_music('lacrobate'); },
+    },
+    characters:{
+      StreetSmart: function() { AUDIO._play_music('lastenergy'); },
+      UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); },
+      PreciousChild: function() { AUDIO._play_music('hop'); },
+      BestFriend: function() { AUDIO._play_music('tolose'); },
+    },
 
     map: function() {             AUDIO._play_music('un desert'); },
   },
