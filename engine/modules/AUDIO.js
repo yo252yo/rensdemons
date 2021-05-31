@@ -107,7 +107,13 @@ const AUDIO = {
     gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
     temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
     house: function() {           AUDIO._play_music('floating temple'); },
-    town: function() {            AUDIO._play_music('two live at musique tangeantes'); },
+
+    town_hope: function() {       AUDIO._play_music('realismovisceral'); },
+    town_denial: function() {     AUDIO._play_music('tinajero'); },
+    town_acceptance: function() { AUDIO._play_music('two live at musique tangeantes'); },
+    town_debauch: function() {    AUDIO._play_music('debaucheddance'); },
+    town_fear: function() {       AUDIO._play_music('lacrobate'); },
+
     map: function() {             AUDIO._play_music('un desert'); },
   },
 

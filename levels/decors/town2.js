@@ -1,3 +1,4 @@
+AUDIO.music.town_fear();
 
 var seed = DICTIONARY.get("town_2_seed");
 var gen = new Generator(seed);

@@ -1,5 +1,3 @@
-AUDIO.music.town();
-
 new Snippet("levels/decors/town1");
 
 var g =  [525, 425];

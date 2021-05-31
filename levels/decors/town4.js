@@ -1,3 +1,4 @@
+AUDIO.music.town_debauch();
 
 var seed = DICTIONARY.get("town_4_seed");
 var gen = new Generator(seed);

@@ -1,3 +1,4 @@
+AUDIO.music.town_acceptance();
 
 var seed = DICTIONARY.get("town_5_seed");
 var gen = new Generator(seed);

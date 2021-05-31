@@ -1,5 +1,3 @@
-AUDIO.music.town();
-
 new Snippet("levels/decors/town4");
 
 CURRENTLEVEL.start_function = function() {

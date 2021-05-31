@@ -23,28 +23,19 @@ should we meet the king?
 
 
 
-
-Music themes:
-r[PARTYMEMBERS.PreciousChild]
-r[PARTYMEMBERS.UpbeatDojikko]
-r[PARTYMEMBERS.StreetSmart]
-r[PARTYMEMBERS.WiseOld]
-r[PARTYMEMBERS.TorturedSoul]
-r[PARTYMEMBERS.RetiredProtector]
-r[PARTYMEMBERS.DumbMuscles]
-r[PARTYMEMBERS.SnobRich]
-r[PARTYMEMBERS.SavageChild]
-r[PARTYMEMBERS.FemmeFatale]
-r[PARTYMEMBERS.DisguisedPrincess]
-r[PARTYMEMBERS.GeniusProdigy]
-r[PARTYMEMBERS.TraitorFisher]
+TorturedSoul
+RetiredProtector > call of the coyote?
+DumbMuscles
+SnobRich
+SavageChild
+FemmeFatale
+DisguisedPrincess > moins de flic?
+GeniusProdigy > shy
+TraitorFisher
 
 
-r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
-r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
-r['town_3'] = MARKOV_MODELS.human_names.mutate("Columbia", 8); // denial
-r['town_4'] = MARKOV_MODELS.human_names.mutate("Vegas", 8); // debauch, optional
-r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance, optional
-
-current town theme fits acceptance best
-realismo visceral fits well too
+BestFriend > childooh?
+PreciousChild > hop?
+UpbeatDojikko > fouler lhorizon?? play the mandolin? moins de flic?
+StreetSmart > last energy of the day?
+WiseOld

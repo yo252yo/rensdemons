@@ -1,3 +1,4 @@
+AUDIO.music.temple();
 
 new S_Floor(50,750,500,700);
 

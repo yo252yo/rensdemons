@@ -1,5 +1,3 @@
-AUDIO.music.temple();
-
 new Snippet("levels/decors/temple");
 
 var friend = new M_ChildM(250, 720);

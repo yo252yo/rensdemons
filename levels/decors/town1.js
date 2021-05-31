@@ -1,3 +1,4 @@
+AUDIO.music.town_hope();
 
 var seed = DICTIONARY.get("town_1_seed");
 var gen = new Generator(seed);
