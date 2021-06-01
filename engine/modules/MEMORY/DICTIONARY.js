@@ -1,4 +1,7 @@
 
+function camel(name){
+  return name[0].toUpperCase() + name.substr(1).toLowerCase();
+}
 
 class DictionaryGenerator {
   make_new() {
@@ -32,6 +35,10 @@ class DictionaryGenerator {
     r['child_friends_f2'] = 'Emily';
 
     // Geography names
+    r['forest_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['sea_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['mountain_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+
     r['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
     r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope
     r['town_2'] = MARKOV_MODELS.human_names.mutate("Midgar", 8); // fear
