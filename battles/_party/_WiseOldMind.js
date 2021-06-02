@@ -1,4 +1,4 @@
-new CenteredImage("assets/battles/priest.png", 'background');
+new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
 PLAYER_ACTIONS.escape("Give up");
 

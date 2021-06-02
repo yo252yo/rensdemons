@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/basilisk.png", 'background');
+new CenteredImage("assets/battles/trial/basilisk.png", 'background');
 
 // ===================
 //hack ABILITIES CALLBACKS

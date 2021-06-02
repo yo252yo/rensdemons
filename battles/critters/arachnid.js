@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/arachnid.png", 'background');
+new CenteredImage("assets/battles/trial/arachnid.png", 'background');
 
 // ===================
 // =================== ABILITIES CALLBACKS

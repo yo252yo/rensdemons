@@ -1,5 +1,5 @@
 
-new CenteredImage("assets/battles/statue.png", 'background');
+new CenteredImage("assets/battles/trial/statue.png", 'background');
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 

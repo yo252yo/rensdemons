@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/child_m.png", 'background');
+new CenteredImage("assets/battles/civilians/child_m.png", 'background');
 
 PLAYER_ACTIONS.escape("Run away");
 PLAYER_ACTIONS.escape("Avert eyes");

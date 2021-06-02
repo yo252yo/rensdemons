@@ -32,13 +32,13 @@ const RESOURCES = {
 
   preload: function(){
     RESOURCES.get_img('assets/battles/arachnid.png');
-    RESOURCES.get_img('assets/battles/basilisk.png');
+    RESOURCES.get_img('assets/battles/trial/basilisk.png');
     RESOURCES.get_img('assets/battles/bat.png');
-    RESOURCES.get_img('assets/battles/child_m.png');
+    RESOURCES.get_img('assets/battles/civilians/child_m.png');
     RESOURCES.get_img('assets/battles/cockroach.png');
     RESOURCES.get_img('assets/battles/rodent.png');
     RESOURCES.get_img('assets/battles/slime.png');
-    RESOURCES.get_img('assets/battles/statue.png');
+    RESOURCES.get_img('assets/battles/trial/statue.png');
     RESOURCES.get_img('assets/battles/viper.png');
     RESOURCES.get_img('assets/characters/child_f.png');
     RESOURCES.get_img('assets/characters/child_m.png');

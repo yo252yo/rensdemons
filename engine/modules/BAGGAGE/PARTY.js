@@ -26,7 +26,7 @@ const PARTYMEMBERS = {
   // town5 acceptance
 
    // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
-   // town5 acceptance
+   // mb in town2 if you save it or if you rescue the survivors
 
 
 

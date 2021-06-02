@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/viper.png", 'background');
+new CenteredImage("assets/battles/trial/viper.png", 'background');
 
 // ===================
 // =================== ABILITIES CALLBACKS
