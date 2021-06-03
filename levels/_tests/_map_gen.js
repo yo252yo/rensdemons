@@ -4,7 +4,7 @@ var last = 0;
 
 function g(){
   DICTIONARY._DICTIONARY["world_map_seed"] = Math.random();
-  CURRENTLEVEL.setup("005_world_map");
+  CURRENTLEVEL.setup("010_world_map");
 
 
 // hills, lake, mountain

@@ -2,7 +2,7 @@ AUDIO.music.town.denial();
 
 var seed = DICTIONARY.get("town_3_seed");
 var gen = new Generator(seed);
-new S_TownFloor(50, 2050, 2000, 2000, "005_world_map");
+new S_TownFloor(50, 2050, 2000, 2000, "010_world_map");
 
 new S_Church(950, 1050, TODO);
 

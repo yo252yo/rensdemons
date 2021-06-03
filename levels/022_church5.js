@@ -2,7 +2,7 @@ new Snippet("levels/decors/temple");
 
 var f = new S_Floor(250,775,100,35, 'obj_dark');
 f.interaction = function(){
-  CURRENTLEVEL.setup("007_town5");
+  CURRENTLEVEL.setup("022_town5");
 }
 
 var make_priest = function (x, y) {

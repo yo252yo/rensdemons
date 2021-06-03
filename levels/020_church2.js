@@ -2,7 +2,7 @@ new Snippet("levels/decors/temple");
 
 var f = new S_Floor(250,775,100,35, 'obj_dark');
 f.interaction = function(){
-  CURRENTLEVEL.setup("006_town2");
+  CURRENTLEVEL.setup("020_town2");
 }
 
 var wiseOldFool = new M_Priest(500, 125);

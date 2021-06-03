@@ -11,7 +11,7 @@ CURRENTLEVEL.start_function = function() {
   ], callback);
 };
 
-new S_TownFloor(50, 550, 500, 500, "005_world_map");
+new S_TownFloor(50, 550, 500, 500, "010_world_map");
 
 
 var seed = DICTIONARY.get("world_map_seed");
@@ -41,7 +41,7 @@ var rest = function() {
   TextBannerSequence.make([
     "You all have a good rest. You feel refreshed, ready to go on the road again!",
   ], function(){
-    CURRENTLEVEL.setup("005_world_map");
+    CURRENTLEVEL.setup("010_world_map");
   });
 }
 

@@ -3,9 +3,9 @@ AUDIO.music.town.fear();
 var seed = DICTIONARY.get("town_2_seed");
 var gen = new Generator(seed);
 
-new S_TownFloor(50, 1550, 1500, 1500, "005_world_map");
+new S_TownFloor(50, 1550, 1500, 1500, "010_world_map");
 
-new S_Church(700, 750, "006_church2");
+new S_Church(700, 750, "020_church2");
 
 new S_Castle(75, 425);
 
