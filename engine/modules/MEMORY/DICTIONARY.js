@@ -35,9 +35,13 @@ class DictionaryGenerator {
     r['child_friends_f2'] = 'Emily';
 
     // Geography names
-    r['forest_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
-    r['sea_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
-    r['mountain_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['mushroom_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['trees_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['squid_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['harpies_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['sirens_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['hawk_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
+    r['slimes_adj'] = camel(RANDOM.pick(DATASETS.propaganda_adjectives));
 
     r['world_name'] = MARKOV_MODELS.human_names.mutate("Hyrule", 8);
     r['town_1'] = MARKOV_MODELS.human_names.mutate("Pallet", 8) + "burg"; // hope

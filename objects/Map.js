@@ -4,7 +4,6 @@
 class MapObject extends LevelObject {
   constructor(visual, x, y, label, destination, accessibility_function) {
     super(visual, x, y);
-    console.log(label);
 
     if (label) {
       var legend = new TextBoxFitted(x+80, y+15, label);
@@ -79,6 +78,44 @@ class SM_Trees extends MapObject {
         "This grove is ideal to take a quick rest in the middle of your journey. The road ahead is still long!",
         "You stop for a while in this little grove. Among the trees, you send a prayer to the Goddess. May She protect you on your journey.",
         "The wind rustling the leaves of the trees lulls you, and you end up taking a well deserved nap in this little vegetal haven.",
+      ], gen);
+    }
+  }
+}
+
+class SM_Forest extends MapObject {
+  constructor(x, y, label, destination, accessibility_function){
+    var visual = new StaticSprite("assets/objects/map/forest.png", 'obj_light');
+    super(visual, x, y, label, destination, accessibility_function);
+    this.adjust_hitbox(30,-10,285,220);
+  }
+}
+
+class SM_Cave extends MapObject {
+  constructor(x, y, label, destination, accessibility_function){
+    var visual = new StaticSprite("assets/objects/map/cave.png", 'obj_light');
+    super(visual, x, y, label, destination, accessibility_function);
+    this.adjust_hitbox(30,-10,50,30);
+  }
+}
+
+class SM_Crevasse extends MapObject {
+  constructor(x, y, label, destination, accessibility_function){
+    var visual = new StaticSprite("assets/objects/map/crevasse.png", 'obj_light');
+    super(visual, x, y, label, destination, accessibility_function);
+    this.adjust_hitbox(30,-10,155,50);
+  }
+}
+
+class SM_Vulcano extends MapObject {
+  constructor(x, y, label, destination, accessibility_function){
+    var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
+    super(visual, x, y, label, destination, accessibility_function);
+    this.adjust_hitbox(30,-10,270,200);
+
+    if(!destination){
+      this.interaction = this.text_interaction([
+        "A big forest blocks your path."
       ], gen);
     }
   }
