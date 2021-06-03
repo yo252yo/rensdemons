@@ -142,7 +142,7 @@ class SM_Hills extends MapObject {
         this.adjust_hitbox(0,0,200,100);
         break;
     }
-    visual.adjust_depth(1); // this is buggy TODO
+    visual.adjust_depth(1); // this is buggy
     this.make_walkable();
     if(!destination){
       this.interaction = this.text_interaction([

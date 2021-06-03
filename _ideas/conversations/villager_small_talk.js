@@ -215,7 +215,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-/*todo more ideas:
+/* more ideas:
   - I've been here and I know you
 - challenge triggers a riddle or unlocks Expose
 - your conversation is weird and unnatural

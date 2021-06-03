@@ -107,7 +107,6 @@ const PALETTE = {
 
   factory: {
     make_new: function() {
-      // TODO: at some point i want to pick random instead
       PALETTE.generate.pick_harmonized_palette();
       DISK.write("PALETTE");
       INTERFACE.color_interface();
