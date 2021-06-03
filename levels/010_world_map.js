@@ -7,7 +7,7 @@ var seed = DICTIONARY.get("world_map_seed");
 var gen = new Generator(seed);
 
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
-var todo = function() { return false;};
+var LaterInStory = function() { return false;};
 
 // Zones
 
@@ -43,17 +43,16 @@ FHardMain.set_zone(1075+50, h-25, w-1050-50, h-1050-25);
 // First make the towns
 new SM_Town(250, 1750, "005_town1", "town_1");
 new SM_Town(850, 550, "020_town2", "town_2");
-// to do
-new SM_Town(2300, 1275, "_town3", "town_3", todo);
+new SM_Town(2300, 1275, "030_town3", "town_3", LaterInStory);
 new SM_Town(2725, 300, "021_town4", "town_4", after_t2); // optional
 new SM_Town(1450, 2500, "022_town5", "town_5", after_t2); // optional
 
 // Scenario elements
-new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "todo", after_t2);
-new SM_Lake(250, 200, gen, `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "todo", after_t2);
-new SM_Mountain(1300, 1025, gen, `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "todo", after_t2);
-new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "todo", todo);
-new SM_Vulcano(2650, 1800, `Maw of Hell`, "todo", todo);
+new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
+new SM_Lake(250, 200, gen, `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
+new SM_Mountain(1300, 1025, gen, `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
+new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "032_fissure", LaterInStory);
+new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
 
 FEasyS.set_guaranteed(1);
@@ -65,38 +64,30 @@ FEasyS.fill_by_retry();
 
 FHardSW.set_guaranteed(1);
 FHardSW.set_object(300, 250, function(x,y,g){
-  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "todo");
+  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees");
 });
 FHardSW.fill_by_retry();
 
 
 FHardNE.set_guaranteed(1);
 FHardNE.set_object(250, 150, function(x,y,g){
-  return new SM_Lake(x, y, g, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "todo");
+  return new SM_Lake(x, y, g, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens");
 });
 FHardNE.fill_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(250, 150, function(x,y,g){
-  return new SM_Mountain(x, y, g, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "todo");
+  return new SM_Mountain(x, y, g, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks");
 });
 FHardMain.fill_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(100, 50, function(x,y,g){
-  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "todo");
+  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes");
 });
 FHardMain.fill_by_retry();
-/*
 
-
-FHardMain
-new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("forest_adj")} Mushrooms`, "todo", after_t2);
-new SM_Lake(250, 200, gen, `Waters of the<br />${DICTIONARY.get("sea_adj")} Squids`, "todo", after_t2);
-new SM_Mountain(1300, 1025, gen, `Peaks of the<br />${DICTIONARY.get("mountain_adj")} Harpies`, "todo", after_t2);
-//new SM_Cave(1675, 350, `Forest of the<br />${DICTIONARY.get("forest_adj")} Mushrooms`, "todo", after_t2);
-*/
 
 
 // could be non uniform

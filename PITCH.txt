@@ -1,6 +1,11 @@
 Hook: Saving and reloading after a failure is as natural as breathing for gamers, but what happens to the world around you when you do?
 
-Reunites with long gone fan favorite features of RPGs, like travelling on the world map or renaming your characters.
+Reunites with long gone fan favorite features of RPGs, like
+- travelling on the world map
+- lots of optional depth and secrets to discover
+- renaming your characters
+With new and innovative narrative battle system
+
 
 
 
