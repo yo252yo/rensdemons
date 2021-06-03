@@ -7,36 +7,25 @@ const PARTYMEMBERS = {
   StreetSmart: "StreetSmart",
   WiseOld: "WiseOld",
 
-
-  // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-  // town_2 fear
-
-   // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
-   // town4 debauch
-
-   // FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
-   // town4 debauch
-
-  // TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
-  // town5 acceptance
-
-   // DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
-   // mb in town2 if you save it or if you rescue the survivors
-
-
-
-    // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-    // extra forest dungeon?
-
-    // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-    // extra  cave?
-
-   // GeniusProdigy: "GeniusProdigy", //child prodigy
-   // extra mountain ruins, doing an expedition?
-
-    // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
-    // extra lake
-
+//todo:
+  SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+ // town4 debauch
+  FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
+ // town4 debauch
+ TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+// town5 acceptance
+  RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+  // town5 fear
+  DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
+ // mb in town2 if you save it or if you rescue the survivors
+   SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+  // extra forest dungeon?
+   DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+  // extra  cave?
+  GeniusProdigy: "GeniusProdigy", //child prodigy
+ // extra mountain ruins, doing an expedition?
+   TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+  // extra lake
 };
 
 
