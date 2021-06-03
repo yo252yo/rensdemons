@@ -7,14 +7,9 @@ const PARTYMEMBERS = {
   StreetSmart: "StreetSmart",
   WiseOld: "WiseOld",
 
-  // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
-  // lake?
 
   // RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
   // town_2 fear
-
-
-
 
    // SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
    // town4 debauch
@@ -31,14 +26,16 @@ const PARTYMEMBERS = {
 
 
     // SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-    // forest dungeon?
+    // extra forest dungeon?
 
     // DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-    // mountain cave?
+    // extra  cave?
 
    // GeniusProdigy: "GeniusProdigy", //child prodigy
-   // ruins, doing an expedition?
+   // extra mountain ruins, doing an expedition?
 
+    // TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+    // extra lake
 
 };
 
