@@ -1,4 +1,4 @@
-AUDIO.music.trial();
+AUDIO.music.levels.trial();
 
 //hack LAYOUT
 

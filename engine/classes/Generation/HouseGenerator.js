@@ -18,7 +18,7 @@ class HG_Room {
       this.decorate();
       this.populate();
 
-      AUDIO.music.house();
+      AUDIO.music.levels.house();
     }
 
     dimention(imposed_dimensions) {

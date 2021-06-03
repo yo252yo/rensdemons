@@ -7,7 +7,7 @@ class StoreGenerator {
       this.store_type = type;
       this.store_threshold = threshold;
 
-      AUDIO.music.house();
+      AUDIO.music.levels.house();
     }
 
     main_entrance() {

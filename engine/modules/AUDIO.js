@@ -99,14 +99,14 @@ const AUDIO = {
       AUDIO._MUSIC_PLAYER.pause();
     },
 
-    battle: function() {          AUDIO._play_music('the girl with the baseball bat'); },
-    titlescreen: function() {     AUDIO._play_music('time for adventure 4 opening'); },
-    introduction: function() {    AUDIO._play_music('love planet'); },
-    hideandseek: function() {     AUDIO._play_music('champ de tournesol'); },
-    trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
-    gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
-    temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
-    house: function() {           AUDIO._play_music('floating temple'); },
+    interface:{
+      battle: function() {          AUDIO._play_music('the girl with the baseball bat'); },
+      titlescreen: function() {     AUDIO._play_music('time for adventure 4 opening'); },
+      introduction: function() {    AUDIO._play_music('love planet'); },
+      gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
+      map: function() {             AUDIO._play_music('un desert'); },
+      // boss battle music??
+    },
 
     town: {
       hope: function() {       AUDIO._play_music('realismovisceral'); },
@@ -115,14 +115,44 @@ const AUDIO = {
       debauch: function() {    AUDIO._play_music('debaucheddance'); },
       fear: function() {       AUDIO._play_music('lacrobate'); },
     },
+    // todo:
+    // > im on a boat?
     characters:{
       StreetSmart: function() { AUDIO._play_music('lastenergy'); },
       UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); },
       PreciousChild: function() { AUDIO._play_music('hop'); },
       BestFriend: function() { AUDIO._play_music('tolose'); },
+
+      WiseOld: function() { console.log("todo") }, // oiseau ? space MTV?
+      SnobRich: function() { console.log("todo") },
+      FemmeFatale: function() { console.log("todo") },
+      TorturedSoul: function() { console.log("todo") },
+      RetiredProtector: function() { console.log("todo") }, // call of the coyote?
+      DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
+      SavageChild: function() { console.log("todo") }, // GetReady?
+      DumbMuscles: function() { console.log("todo") },
+      GeniusProdigy: function() { console.log("todo") }, // shy
+      TraitorFisher: function() { console.log("todo") },
     },
 
-    map: function() {             AUDIO._play_music('un desert'); },
+    levels: {
+      hideandseek: function() {     AUDIO._play_music('champ de tournesol'); },
+      trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
+      temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
+      house: function() {           AUDIO._play_music('floating temple'); },
+
+      sirens: function() { console.log("todo") },
+      trees: function() { console.log("todo") },
+      hawks: function() { console.log("todo") },
+      mushrooms: function() { console.log("todo") },
+      squids: function() { console.log("todo") },
+      harpies: function() { console.log("todo") },
+      hellsmaw: function() { console.log("todo") },
+      fissure: function() { console.log("todo") },
+      pandemonium: function() { console.log("todo") },
+      heaven: function() { console.log("todo") },
+
+    },
   },
 
   set_volume(type, percentage){

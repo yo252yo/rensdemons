@@ -1,4 +1,4 @@
-AUDIO.music.temple();
+AUDIO.music.levels.temple();
 
 new S_Floor(50,750,500,700);
 

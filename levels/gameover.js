@@ -1,4 +1,4 @@
-AUDIO.music.gameover();
+AUDIO.music.interface.gameover();
 
 
 var s0 = new LevelObject(new StaticSprite("assets/screens/gameover_layer0.png", 'player'), 0, SCREEN.height());

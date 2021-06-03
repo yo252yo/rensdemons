@@ -10,26 +10,8 @@ should we meet the king?
 - monsters in world map
 - optional events in world map
 
-
 - all party members:
   unlock and description in party.js,
   attacks in languge,
   name in dictionary,
   encounter+battle
-
-
-
-Audio:
-
-TorturedSoul
-RetiredProtector > call of the coyote?
-DumbMuscles
-SnobRich
-SavageChild > GetReady?
-FemmeFatale
-DisguisedPrincess > moins de flic?
-GeniusProdigy > shy
-TraitorFisher
-WiseOld: oiseau ? space MTV?
-
-> im on a boat?

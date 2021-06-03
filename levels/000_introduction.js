@@ -1,4 +1,4 @@
-AUDIO.music.introduction();
+AUDIO.music.interface.introduction();
 
 SAVE.make_new_game(); // In case we come here with ability tree or states...
 

@@ -1,5 +1,5 @@
 
-AUDIO.music.map();
+AUDIO.music.interface.map();
 
 INTERFACE.make_compass();
 

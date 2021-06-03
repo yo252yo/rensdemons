@@ -1,4 +1,4 @@
-AUDIO.music.titlescreen();
+AUDIO.music.interface.titlescreen();
 
 var s0 = new LevelObject(new StaticSprite("assets/screens/title_layer0.png", 'player'), 0, SCREEN.height());
 var s1 = new LevelObject(new StaticSprite("assets/screens/title_layer1.png", 'background'), 0, SCREEN.height());

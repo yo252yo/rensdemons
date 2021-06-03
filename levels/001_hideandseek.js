@@ -1,4 +1,4 @@
-AUDIO.music.hideandseek();
+AUDIO.music.levels.hideandseek();
 
 CURRENTLEVEL.start_function = function() {
   var callback = function(){
