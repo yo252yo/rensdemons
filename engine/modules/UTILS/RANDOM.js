@@ -22,6 +22,17 @@ const RANDOM = {
     return arr[index];
   },
 
+  grab: function(arr, gen){
+    if (!gen){
+      var index = RANDOM.int(arr.length);
+    } else {
+      var index = Math.floor(gen.get() * arr.length);
+    }
+    var r = arr[index];
+    arr.splice(index,1);
+    return r;
+  },
+
   pick_in_weighted_array: function(arr){
     var total = 0;
     for (var i in arr) {
