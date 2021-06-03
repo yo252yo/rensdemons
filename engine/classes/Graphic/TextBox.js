@@ -229,6 +229,7 @@ class TextBoxFitted extends TextBox {
       for(var line of t){
         if (line.length > l){ l = line.length;}
       }
+      // Try to center on x!
       super(x - 15 * l / 2, y, 10+15*l, 40 * t.length, 5, true);
       this.change_text(text, true, false);
       this.html.style.textAlign = "center";

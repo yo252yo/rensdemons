@@ -6,9 +6,9 @@ class MapObject extends LevelObject {
     super(visual, x, y);
 
     if (label) {
-      var legend = new TextBoxFitted(x+80, y+15, label);
-      legend.adjust_depth(y-200);
-      legend.set_opacity(0.6);
+      this.legend = new TextBoxFitted(x, y+40, label);
+      this.legend.adjust_depth(y-200);
+      this.legend.set_opacity(0.6);
     }
 
     this.destination = destination;
@@ -51,6 +51,7 @@ class SM_Town extends MapObject {
 
     super(visual, x, y, label, destination, accessibility_function);
 
+    if(this.legend) this.legend.shift(80);
     this.adjust_hitbox(50,-35,120,130);
   }
 }
@@ -88,6 +89,7 @@ class SM_Forest extends MapObject {
     var visual = new StaticSprite("assets/objects/map/forest.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,285,220);
+    if(this.legend) this.legend.shift(150);
   }
 }
 
@@ -96,6 +98,7 @@ class SM_Cave extends MapObject {
     var visual = new StaticSprite("assets/objects/map/cave.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,50,30);
+    if(this.legend) this.legend.shift(20,10);
   }
 }
 
@@ -104,6 +107,7 @@ class SM_Crevasse extends MapObject {
     var visual = new StaticSprite("assets/objects/map/crevasse.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,155,50);
+    if(this.legend) this.legend.shift(80);
   }
 }
 
@@ -112,6 +116,7 @@ class SM_Vulcano extends MapObject {
     var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,270,200);
+    if(this.legend) this.legend.shift(150);
 
     if(!destination){
       this.interaction = this.text_interaction([
@@ -158,12 +163,14 @@ class SM_Lake extends MapObject {
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,280,150);
+        if(this.legend) this.legend.shift(140);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,200,100);
+        if(this.legend) this.legend.shift(100);
         break;
     }
     if(!destination){
@@ -184,12 +191,14 @@ class SM_Mountain extends MapObject {
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,170,110);
+        if(this.legend) this.legend.shift(100);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/mountain1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,270,140);
+        if(this.legend) this.legend.shift(150);
         break;
     }
     if(!destination){
