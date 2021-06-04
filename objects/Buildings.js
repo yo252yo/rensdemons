@@ -13,7 +13,7 @@ const CITIES = {
 
 
 class S_Floor extends LevelObject {
-  constructor(x, y, w, h, color){
+  constructor(x, y, w, h, color, destination){
     if (!color){
       color = 'background';
     }
@@ -23,6 +23,11 @@ class S_Floor extends LevelObject {
     this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
     this.make_walkable();
+    if (destination){
+      this.interaction = function() {
+        CURRENTLEVEL.setup(destination);
+      }
+    }
   }
 
   draw_hitbox(even_floors){
@@ -40,22 +45,13 @@ class S_TownFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
     super(x, y, w, h);
 
-    var leaving = function() {
-      CURRENTLEVEL.setup(outside);
-    }
     var exit = 40;
 
-    var left_border = new S_Floor(x-exit, y+exit, exit+10, h+2*exit, 'obj_dark');
-    left_border.interaction = leaving;
+    var left_border = new S_Floor(x-exit, y+exit, exit+10, h+2*exit, 'obj_dark', outside);
+    var right_border = new S_Floor(x+w-10, y + exit, exit+10, h+2*exit, 'obj_dark', outside);
+    var top_border = new S_Floor(x-exit, y-h+10, w+2*exit, exit+10, 'obj_dark', outside);
+    var bot_border = new S_Floor(x-exit, y+exit, w+2*exit, exit+10, 'obj_dark', outside);
 
-    var right_border = new S_Floor(x+w-10, y + exit, exit+10, h+2*exit, 'obj_dark');
-    right_border.interaction = leaving;
-
-    var top_border = new S_Floor(x-exit, y-h+10, w+2*exit, exit+10, 'obj_dark');
-    top_border.interaction = leaving;
-
-    var bot_border = new S_Floor(x-exit, y+exit, w+2*exit, exit+10, 'obj_dark');
-    bot_border.interaction = leaving;
   }
 }
 

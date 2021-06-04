@@ -1,10 +1,6 @@
 console.log("todo")
 
-var f = new S_Floor(900,2500,200,75, 'obj_dark');
-
-f.interaction = function(){
-  CURRENTLEVEL.setup("010_world_map");
-}
+var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
 new S_Floor(950,2450,100,500);
 new S_Floor(625,2000,750,50);

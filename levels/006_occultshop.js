@@ -21,9 +21,6 @@ shopkeep.interaction = function(){
   }
 }
 
-var entrance = new S_Floor(335, 525, 50, 35, 'obj_dark');
-entrance.interaction = function(){
-  CURRENTLEVEL.setup("005_town1");
-}
+var entrance = new S_Floor(335, 525, 50, 35, 'obj_dark', '005_town1');
 
 CURRENTLEVEL.initialize_with_character(350, 505);

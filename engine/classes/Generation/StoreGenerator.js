@@ -11,11 +11,7 @@ class StoreGenerator {
     }
 
     main_entrance() {
-      var f = new S_Floor(335, 525, 50, 35, 'obj_dark');
-      var outside = this.outside;
-      f.interaction = function(){
-        CURRENTLEVEL.setup(outside);
-      }
+      var f = new S_Floor(335, 525, 50, 35, 'obj_dark', this.outside);
       return  [350, 505];
     }
 
