@@ -5,12 +5,11 @@ be careful, write in present and second person
 should we meet the king?
 
 
-- story
-- dungeons (todo levels)
+- story: dungeons (todo levels)
 - monsters in world map
 - optional events in world map
-
-- all party members:
+- optional dungeons
+- optional party members:
   unlock and description in party.js,
   attacks in languge,
   name in dictionary,
