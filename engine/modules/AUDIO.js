@@ -116,23 +116,23 @@ const AUDIO = {
       fear: function() {       AUDIO._play_music('lacrobate'); },
     },
     // todo:
-    // > im on a boat?
     characters:{
       StreetSmart: function() { AUDIO._play_music('lastenergy'); },
       UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); },
       PreciousChild: function() { AUDIO._play_music('hop'); },
       BestFriend: function() { AUDIO._play_music('tolose'); },
+      GeniusProdigy: function() { AUDIO._play_music('shy'); },
 
-      WiseOld: function() { console.log("todo") }, // oiseau ? space MTV?
-      SnobRich: function() { console.log("todo") },
-      FemmeFatale: function() { console.log("todo") },
+// > im on a boat? groove all together / god made of soap
+      WiseOld: function() { console.log("todo") }, // @hotline-gouv / space MTV?
+      SnobRich: function() { console.log("todo") }, // moins de flic? humoresk by dvorak
+      FemmeFatale: function() { console.log("todo") }, // sexy time
       TorturedSoul: function() { console.log("todo") },
-      RetiredProtector: function() { console.log("todo") }, // call of the coyote?
+      RetiredProtector: function() { console.log("todo") }, // rosee?
       DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
       SavageChild: function() { console.log("todo") }, // GetReady?
-      DumbMuscles: function() { console.log("todo") },
-      GeniusProdigy: function() { console.log("todo") }, // shy
-      TraitorFisher: function() { console.log("todo") },
+      DumbMuscles: function() { console.log("todo") },// call of the coyote?
+      TraitorFisher: function() { console.log("todo") }, // surfing?
     },
 
     levels: {

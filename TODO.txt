@@ -4,7 +4,7 @@ be careful, write in present and second person
 
 should we meet the king?
 
-
+- pick audios
 - story: dungeons (todo levels)
 - monsters in world map
 - optional events in world map
