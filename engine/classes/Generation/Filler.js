@@ -49,7 +49,18 @@ class Filler {
     return true;
   }
 
-  fill_by_retry() {
+  _intersectWalk(x, y) {
+    for(var i = -0.1; i <= 1.1; i += 0.2){
+      for(var j = -0.1; j <= 1.1; j += 0.2){
+        if(CURRENTLEVEL.io.is_walkable(x + this.obj_w * i, y - this.obj_h * j)){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  fill_by_retry(decor) {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
     var nb_tries = 100000;
     var nb_desired_products = this.guaranteed_products;
@@ -65,7 +76,7 @@ class Filler {
       var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
 
-      if (this._canBuild(x, y)) {
+      if (decor? !this._intersectWalk(x, y) : this._canBuild(x, y)) {
         this.obj_constructor(x, y, this.gen.get());
         nb_placed ++;
       }
