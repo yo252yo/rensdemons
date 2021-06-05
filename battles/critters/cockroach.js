@@ -16,6 +16,9 @@ PLAYER_ACTIONS.useless(ITEM.Bone);
 PLAYER_ACTIONS.win(ITEM.Fang, 2, true);
 PLAYER_ACTIONS.win(ITEM.Stone, 3, true);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
+
+
 
 // ===================
 // =================== DEFAULT MONSTER BEHAVIOR

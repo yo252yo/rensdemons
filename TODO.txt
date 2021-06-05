@@ -10,7 +10,6 @@ should we meet the king?
 - optional events in world map
 - optional dungeons
 - optional party members:
-  unlock and description in party.js,
+  description in party.js,
   attacks in languge,
-  name in dictionary,
   encounter+battle
