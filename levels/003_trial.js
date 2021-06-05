@@ -10,10 +10,10 @@ new SE_small_treasure(1675, 950, ITEM.Stone);
 
 new SBattle(1375, 950, '_003/_first_friend_death');
 
-new SBattle(1450, 1025, 'critters/rodent');
-new SBattle(1575, 900, 'critters/viper');
-new SBattle(1750, 1025, 'critters/rodent');
-new SBattle(1575, 1175, 'critters/arachnid');
+new SBattle(1450, 1025, 'trial/rodent');
+new SBattle(1575, 900, 'trial/viper');
+new SBattle(1750, 1025, 'trial/rodent');
+new SBattle(1575, 1175, 'trial/arachnid');
 
 // round of loot
 new SE_small_treasure(1750, 950, ITEM.Stone);
@@ -26,14 +26,14 @@ new SE_small_treasure(1750, 1100, ITEM.Stone);
 new SE_small_treasure(2050, 1025, ITEM.Stone);
 
 // main path
-new SBattle(1350, 775, 'critters/arachnid');
-new SBattle(1950, 350, 'critters/cockroach');
-new SBattle(1500, 375, 'critters/rodent');
-new SBattle(2300, 875, 'critters/arachnid');
-new SBattle(900, 1025, 'critters/viper');
-new SBattle(1225, 1475, 'critters/rodent');
-new SBattle(1675, 1700, 'critters/viper');
-new SBattle(2250, 1625, 'critters/cockroach');
+new SBattle(1350, 775, 'trial/arachnid');
+new SBattle(1950, 350, 'trial/cockroach');
+new SBattle(1500, 375, 'trial/rodent');
+new SBattle(2300, 875, 'trial/arachnid');
+new SBattle(900, 1025, 'trial/viper');
+new SBattle(1225, 1475, 'trial/rodent');
+new SBattle(1675, 1700, 'trial/viper');
+new SBattle(2250, 1625, 'trial/cockroach');
 
 // treasures
 new SB_rubble(1275, 1400, ITEM.Elixir_fire);
@@ -52,10 +52,10 @@ new SE_small_treasure(1575, 775, ITEM.Bone);
 
 new SE_small_treasure(2175, 900, ITEM.Stick);
 
-new SBattle(1525, 1400, 'critters/cockroach');
-new SBattle(1050, 575, 'critters/cockroach');
+new SBattle(1525, 1400, 'trial/cockroach');
+new SBattle(1050, 575, 'trial/cockroach');
 
-new SBattle(2250, 1325, 'critters/rodent');
+new SBattle(2250, 1325, 'trial/rodent');
 
 new SB_event(1200, 650, 'A thought occurs to you: Who built this place? Was it designed to be a chamber for the Trial, or did the Church simply used what was there? You feel a chill down your spine as you imagine how many people before you roamed these dark hallways...');
 new SB_event(2025, 1550, 'You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...', 25);
