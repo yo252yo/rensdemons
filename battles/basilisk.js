@@ -9,6 +9,10 @@ new CenteredImage("assets/battles/trial/basilisk.png", 'background');
 
 var swear_loyalty = "Swear loyalty";
 
+if(STATS.get(STAT.Death) > 0){
+  ABILITIES.unlock(ABILITY.Pray);
+}
+
 PLAYER_ACTIONS.add({
   name: ABILITY.Flee,
   outcome: BATTLETREE.LOSS,
@@ -52,9 +56,6 @@ PLAYER_ACTIONS.add({
 
 
 
-if(STATS.get(STAT.Death) > 0){
-  ABILITIES.unlock(ABILITY.Pray);
-}
 
 // ===================
 //hack DEFAULT MONSTER BEHAVIOR
