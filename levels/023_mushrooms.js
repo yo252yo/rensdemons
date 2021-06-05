@@ -1,3 +1,5 @@
+AUDIO.music.levels.mushrooms();
+
 var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
 new S_Floor(950,2450,100,500);
@@ -48,10 +50,22 @@ var gen = new Generator(1);
 // could improve load by making these cosmetics and not level items
 var treeFiller = new Filler(gen);
 treeFiller.set_zone(150,2475,2100,1475);
-treeFiller.set_tries(400, 400);
+treeFiller.set_tries(200, 200);
 treeFiller.set_object(30, 10, function(x,y,g){ return new S_Tree(x, y); });
 treeFiller.fill_by_retry(true);
 
 new S_SavePoint(975, 2050);
+
+//Ancient Armament Advisor
+
+
+CURRENTLEVEL.start_function = function() {
+  TextBannerSequence.make([
+  `You stand before the forest that the priest mentioned. It doesn't seem very dangerous, but you can tell that the lustrous vegetation becomes very dense quite fast, promising to make navigation a real challenge. Only a small trail seems walkable in the middle of the tangled mess of bushes.`,
+  `$$BestFriend$: "What are we even looking for?"`,
+  `$$Ren$: "Not sure... Some sort of irregularity? Things that could be ancient ruins, burrowed under the vegetation?"`,
+  `$$BestFriend$: "That's going to be tough..."`,
+  ], IO.control.character);
+};
 
 CURRENTLEVEL.initialize_with_character(1000, 2425);

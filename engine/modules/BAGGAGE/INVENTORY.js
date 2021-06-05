@@ -47,6 +47,7 @@ const ITEM = {
     Feather: "Feather",
     Linnens: "Linnens",
     Scale: "Scale",
+    AncientRubbles: "Ancient Rubbles",
 
   isItem: function(s){
     for (var i in ITEM){

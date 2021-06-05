@@ -131,7 +131,7 @@ const AUDIO = {
       RetiredProtector: function() { console.log("todo") }, // rosee?
       DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
       SavageChild: function() { console.log("todo") }, // GetReady?
-      DumbMuscles: function() { console.log("todo") },// call of the coyote?
+      DumbMuscles: function() { console.log("todo") },
       TraitorFisher: function() { console.log("todo") }, // surfing?
     },
 
@@ -143,8 +143,8 @@ const AUDIO = {
 
       sirens: function() { console.log("todo") },
       trees: function() { console.log("todo") },
-      hawks: function() { console.log("todo") },
-      mushrooms: function() { console.log("todo") },
+      hawks: function() { AUDIO._play_music("callofthecoyote") },
+      mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
       squids: function() { console.log("todo") },
       harpies: function() { console.log("todo") },
       hellsmaw: function() { console.log("todo") },

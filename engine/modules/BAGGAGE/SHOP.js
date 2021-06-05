@@ -34,6 +34,7 @@ _SHOP_PRICES[ITEM.Bone] = 5;
 _SHOP_PRICES[ITEM.Flower] = 5;
 _SHOP_PRICES[ITEM.Feather] = 10;
 _SHOP_PRICES[ITEM.Linnens] = 10;
+_SHOP_PRICES[ITEM.AncientRubbles] = 10;
 _SHOP_PRICES[ITEM.Scale] = 20;
 
 

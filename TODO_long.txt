@@ -24,6 +24,8 @@ _restore_previous_state @ DISK.js:43
 initialize_game @ DISK.js:58
 (anonymous) @ startup.js:3
 
+better decor for mushroom forest
+
 should filler just pass gen to the constructor instead f calling gen.get
 
 menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
@@ -95,3 +97,5 @@ mb add BestFriend to the party that follows you around, for emotional attachment
 add BestFriend to random environemnt interactions but it needs to be conditioned on her beeing alive
 
 party state, thoughts, etc...
+
+sometimes steps fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found.
