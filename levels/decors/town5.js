@@ -1,7 +1,6 @@
 AUDIO.music.town.acceptance();
 
-var seed = DICTIONARY.get("town_5_seed");
-var gen = new Generator(seed);
+var gen = new Generator(DICTIONARY.get("town_5_seed"));
 
 new S_TownFloor(50, 1550, 1000, 1500, "010_world_map");
 

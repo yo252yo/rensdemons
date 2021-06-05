@@ -14,8 +14,7 @@ CURRENTLEVEL.start_function = function() {
 new S_TownFloor(50, 550, 500, 500, "010_world_map");
 
 
-var seed = DICTIONARY.get("world_map_seed");
-var gen = new Generator(seed);
+var gen = new Generator(DICTIONARY.get("world_map_seed"));
 
 var nap = function() {
   TextBannerSequence.make([

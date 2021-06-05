@@ -46,6 +46,8 @@ new S_Floor(100,1150,300,50);
 new S_Floor(375,1400,325,50);
 
 // use actual seed
+var gen = new Generator(DICTIONARY.get("dungeons_seed"));
+
 var gen = new Generator(1);
 // could improve load by making these cosmetics and not level items
 var treeFiller = new Filler(gen);

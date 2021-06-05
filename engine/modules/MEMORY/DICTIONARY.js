@@ -57,6 +57,7 @@ class DictionaryGenerator {
     r['town_4_seed'] = Math.random();
     r['town_5_seed'] = Math.random();
     r['world_map_seed'] = Math.random();
+    r['dungeons_seed'] = Math.random();
     return r;
   };
 }
