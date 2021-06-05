@@ -45,10 +45,8 @@ new S_Floor(200,1700,50,600);
 new S_Floor(100,1150,300,50);
 new S_Floor(375,1400,325,50);
 
-// use actual seed
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
-var gen = new Generator(1);
 // could improve load by making these cosmetics and not level items
 var treeFiller = new Filler(gen);
 treeFiller.set_zone(150,2475,2100,1475);
@@ -58,8 +56,8 @@ treeFiller.fill_by_retry(true);
 
 new S_SavePoint(975, 2050);
 
-//Ancient Armament Advisor
-
+new SBattle(1075, 1425, '_023/_loot');
+new SBattle(1125, 1375, '_023/_boss');
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

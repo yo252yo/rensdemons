@@ -127,12 +127,22 @@ const PLAYER_ACTIONS = {
     });
   },
 
-  allow_flight: function() {
+  allow_flight: function(unnamed) {
+    if(!unnamed){
+      description = LANGUAGE.actions.usage(ABILITY.Flee).concat(
+                    LANGUAGE.actions.fail(ABILITY.Flee));
+    } else {
+      description = RANDOM.pick([
+        "You turn away, not doing anything for now.",
+        "All things considered, you'd rather not take any chance here.",
+        "You make your way back to your path.",
+      ]);
+    }
+
     PLAYER_ACTIONS.add({
       name: ABILITY.Flee,
       outcome: BATTLETREE.ESCAPE,
-      description: LANGUAGE.actions.usage(ABILITY.Flee).concat(
-                   LANGUAGE.actions.fail(ABILITY.Flee)),
+      description: description,
     });
   },
 
@@ -142,6 +152,17 @@ const PLAYER_ACTIONS = {
       outcome: BATTLETREE.NOTHING,
       description: LANGUAGE.actions.usage(name).concat(
                    LANGUAGE.actions.fail(name)),
+    });
+  },
+
+  lose: function(name, description) {
+    if (!description){
+      description = LANGUAGE.actions.usage(name).concat(LANGUAGE.actions.fail(name));
+    }
+    PLAYER_ACTIONS.add({
+      name: name,
+      outcome: BATTLETREE.LOSS,
+      description: description,
     });
   },
 

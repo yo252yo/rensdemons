@@ -1,12 +1,5 @@
 
-PLAYER_ACTIONS.add({
-  name: ABILITY.Flee,
-  outcome: BATTLETREE.WIN,
-  description: RANDOM.pick([
-    "You turn away, trying to put this memory behind you.",
-    "You make your way back to your path.",
-  ]),
-});
+PLAYER_ACTIONS.allow_flight(true);
 
 PLAYER_ACTIONS.add({
   name: ABILITY.Pray,

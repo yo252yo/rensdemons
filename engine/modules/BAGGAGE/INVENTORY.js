@@ -49,6 +49,11 @@ const ITEM = {
     Scale: "Scale",
     AncientRubbles: "Ancient Rubbles",
 
+    // Story
+    AncientArmamentAdvisor: "Ancient Armament Advisor",
+    AncientArmamentArmature: "Ancient Armament Armature",
+    AncientArmamentAmmunition: "Ancient Armament Ammunition",
+
   isItem: function(s){
     for (var i in ITEM){
       if(ITEM[i] == s){

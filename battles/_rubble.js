@@ -1,14 +1,7 @@
 
 var dig = "Dig";
 
-PLAYER_ACTIONS.add({
-  name: ABILITY.Flee,
-  description: RANDOM.pick([
-    "You turn away, not doing anything for now.",
-    "You think that the chance to find something good in this is not worth the effort.",
-  ]),
-  outcome: BATTLETREE.ESCAPE,
-});
+PLAYER_ACTIONS.allow_flight(true);
 
 if (SPECIALBATTLES._battle_extra_data){
   PLAYER_ACTIONS.add({
