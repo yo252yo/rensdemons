@@ -8,4 +8,3 @@ if(loading_div){
 }
 
 DISK.initialize_game();
-CURRENTLEVEL.setup("titlescreen");

@@ -79,6 +79,18 @@ const INTERFACE = {
                {"text": "Back", "effect": "##BACK"}
             ]);
     },
+
+    data_menu: function() {
+      var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(DISK._CONTENT));
+      new CenteredTextMenu(`
+           All game data (save files, settings, etc...) is saved in your <b>web browser</b>.<br /><br />
+           If you want to share it between different devices, different browsers, or to save before you reset your browser, you can use this menu to <b>download all data to your hard drive</b>.<br /><br />
+           Download your data by clicking <a href="data:${data}" download="rens_demons.json">[HERE]</a><br />
+           Upload downloaded data: <input type="file" id="fileInput" onChange="DISK.restore_from_file()" />
+           `, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+    },
   },
 
   _click_marker_end: function () {
