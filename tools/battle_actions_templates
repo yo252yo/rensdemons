@@ -1,0 +1,81 @@
+
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
+PLAYER_ACTIONS.useless(ITEM.Bone);
+
+
+
+PLAYER_ACTIONS.win(ABILITY.Fireball, 1);
+PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 1);
+PLAYER_ACTIONS.win(ABILITY.Thunder, 1);
+PLAYER_ACTIONS.win(ABILITY.Storm, 1);
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);
+PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);
+PLAYER_ACTIONS.win(ABILITY.Incinerate, 1);
+PLAYER_ACTIONS.win(ABILITY.Summon, 1);
+
+PLAYER_ACTIONS.win(ABILITY.Poison, 1);
+PLAYER_ACTIONS.win(ABILITY.Shrink, 1);
+PLAYER_ACTIONS.win(ABILITY.Petrify, 1);
+PLAYER_ACTIONS.win(ABILITY.Confusion, 1);
+PLAYER_ACTIONS.win(ABILITY.Lull, 1);
+PLAYER_ACTIONS.win(ABILITY.Charm, 1);
+
+PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);
+PLAYER_ACTIONS.win(ABILITY.Sneak, 1);
+PLAYER_ACTIONS.win(ABILITY.Persuade, 1);
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);
+PLAYER_ACTIONS.win(ABILITY.Mystify, 1);
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);
+
+PLAYER_ACTIONS.win(ITEM.Sword_wooden, 1);
+PLAYER_ACTIONS.win(ITEM.Dagger, 1);
+PLAYER_ACTIONS.win(ITEM.Mace, 1);
+PLAYER_ACTIONS.win(ITEM.Shield, 1);
+PLAYER_ACTIONS.win(ITEM.Spear, 1);
+PLAYER_ACTIONS.win(ITEM.Sword_iron, 1);
+PLAYER_ACTIONS.win(ITEM.Axe, 1);
+PLAYER_ACTIONS.win(ITEM.Sword_great, 1);
+
+PLAYER_ACTIONS.win(ITEM.Sword_legend, 1);
+PLAYER_ACTIONS.win(ITEM.War_hammer, 1);
+PLAYER_ACTIONS.win(ITEM.Staff, 1);
+PLAYER_ACTIONS.win(ITEM.Wand, 1);
+
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 1, true);
+PLAYER_ACTIONS.win(ITEM.Arrow, 1, true);
+PLAYER_ACTIONS.win(ITEM.Rope, 1);
+PLAYER_ACTIONS.win(ITEM.Net, 1);
+
+PLAYER_ACTIONS.win(ITEM.Stone, 1, true);
+PLAYER_ACTIONS.win(ITEM.Mushroom, 1, true);
+PLAYER_ACTIONS.win(ITEM.Berry, 1, true);
+PLAYER_ACTIONS.win(ITEM.Stick, 1, true);
+PLAYER_ACTIONS.win(ITEM.Fang, 1, true);
+PLAYER_ACTIONS.win(ITEM.Bone, 1, true);
+PLAYER_ACTIONS.win(ITEM.Flower, 1, true);
+PLAYER_ACTIONS.win(ITEM.Feather, 1, true);
+PLAYER_ACTIONS.win(ITEM.Linnens, 1, true);
+PLAYER_ACTIONS.win(ITEM.Scale, 1, true);
+PLAYER_ACTIONS.win(ITEM.AncientRubbles, 1, true);
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
+PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
+PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
+PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);

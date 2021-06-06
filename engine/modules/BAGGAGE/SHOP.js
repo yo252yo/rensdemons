@@ -4,7 +4,6 @@ var _SHOP_PRICES = {};
 
 _SHOP_PRICES[ITEM.Elixir_fire] = 20;
 _SHOP_PRICES[ITEM.Elixir_ice] = 50;
-
 _SHOP_PRICES[ITEM.Elixir_vine] = 75;
 _SHOP_PRICES[ITEM.Elixir_venom] = 100;
 _SHOP_PRICES[ITEM.Elixir_decay] = 150;
