@@ -108,4 +108,26 @@ FMap.set_tries(10, 40);
 FMap.set_object(200, 100, function(x,y,g){ return new SM_Hills(x, y, g);});
 FMap.fill_by_retry();
 
+
+
+var easyEvents = [
+  function(x,y,g){ return new SBattle(x, y, 'forests/morel', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/truffle', 25, 'obj_light')},
+//  new SB_rubble(x, y, ITEM.Elixir_fire),
+//  new SE_small_treasure(x, y, ITEM.Stone),
+//  new SB_event(x, y, '...'),
+];
+
+FEasyS.set_guaranteed();
+FEasyS.set_tries(10, 20);
+FEasyS.set_event(easyEvents);
+FEasyS.fill_by_retry();
+
+FEasyN.set_guaranteed();
+FEasyN.set_tries(30, 50);
+FEasyN.set_event(easyEvents);
+FEasyN.fill_by_retry();
+
+
+
 CURRENTLEVEL.initialize_with_character(280, 1760, 0.6);

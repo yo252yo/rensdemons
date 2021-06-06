@@ -2,11 +2,14 @@
 // runtime: Rectangle, StaticSprite
 
 class S_event extends LevelObject {
-  constructor(x, y, size) {
+  constructor(x, y, size, color) {
     if (!size){
       size = 50;
     }
-    var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
+    if(!color){
+      color = 'obj_dark';
+    }
+    var visual = new StaticSprite("assets/objects/event.png", color, size, size);
     super(visual, x, y);
 
     this.clicked = false;
@@ -26,8 +29,8 @@ class S_event extends LevelObject {
 }
 
 class SBattle extends S_event {
-  constructor(x, y, battle, size) {
-    super(x, y, size);
+  constructor(x, y, battle, size, color) {
+    super(x, y, size, color);
     this.battle = battle;
   }
 
