@@ -13,6 +13,10 @@ class Filler {
     this.zone_h = h;
   }
 
+  set_zone_from_floor(floor) {
+    this.set_zone(floor.x, floor.y, floor.w, floor.h);
+  }
+
   set_tries(min_tries, max_tries) {
     this.min_tries = min_tries;
     this.max_tries = max_tries;

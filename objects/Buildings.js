@@ -19,6 +19,10 @@ class S_Floor extends LevelObject {
     }
     var visual = new Rectangle(x,y,w,h, color);
     super(visual, x, y);
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
 
     this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
