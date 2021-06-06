@@ -111,8 +111,11 @@ FMap.fill_by_retry();
 
 
 var easyEvents = [
-  function(x,y,g){ return new SBattle(x, y, 'forests/morel', 25, 'obj_light')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/truffle', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'world/ghost', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'world/goblin', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'world/mummy', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'world/skeleton', 25, 'obj_light')},
+  function(x,y,g){ return new SBattle(x, y, 'world/wraith', 25, 'obj_light')},
 //  new SB_rubble(x, y, ITEM.Elixir_fire),
 //  new SE_small_treasure(x, y, ITEM.Stone),
 //  new SB_event(x, y, '...'),

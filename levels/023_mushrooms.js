@@ -65,7 +65,12 @@ filler.fill_by_retry(true);
 
 filler.set_tries(1, 3);
 filler.set_event([
+  function(x,y,g){ return new SBattle(x, y, 'forests/boar')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/flower')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/fox')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/mandragora')},
   function(x,y,g){ return new SBattle(x, y, 'forests/morel')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/squirrel')},
   function(x,y,g){ return new SBattle(x, y, 'forests/truffle')},
 //  new SB_rubble(x, y, ITEM.Elixir_fire),
 //  new SE_small_treasure(x, y, ITEM.Stone),
