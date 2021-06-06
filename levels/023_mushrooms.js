@@ -52,7 +52,7 @@ new S_Floor(1100,1400,50,50);
 new S_SavePoint(975, 2050);
 
 new SBattle(1075, 1425, '_023/_loot');
-new SBattle(1125, 1375, '_023/_boss');
+new SBattle(1125, 1375, 'forests/fungus');
 
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
@@ -63,16 +63,19 @@ filler.set_tries(200, 200);
 filler.set_object(30, 10, function(x,y,g){ return new S_Tree(x, y); });
 filler.fill_by_retry(true);
 
-
 filler.set_tries(1, 3);
-filler.set_object(10, 10, function(x,y,g){ return new SBattle(x, y, 'trial/rodent'); });
+filler.set_event([
+  function(x,y,g){ return new SBattle(x, y, 'forests/morel')},
+  function(x,y,g){ return new SBattle(x, y, 'forests/truffle')},
+//  new SB_rubble(x, y, ITEM.Elixir_fire),
+//  new SE_small_treasure(x, y, ITEM.Stone),
+//  new SB_event(x, y, '...'),
+]);
 
 for(var f of hallways) {
   filler.set_zone_from_floor(f);
   filler.fill_by_retry();
 }
-
-
 
 
 

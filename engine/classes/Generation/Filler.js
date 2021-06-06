@@ -33,6 +33,16 @@ class Filler {
     this.obj_constructor = obj_constructor;
   }
 
+  set_event(events) {
+    this.obj_w = 10;
+    this.obj_h = 10;
+
+    this.obj_constructor = function(x,y,gen) {
+      var f = RANDOM.pick(events);
+      f(x,y,gen);
+    };
+  }
+
   _assess_params(params) {
     for (var i of params){
       if(! this[i]) {
