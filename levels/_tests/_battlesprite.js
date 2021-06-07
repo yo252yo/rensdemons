@@ -3,19 +3,17 @@ var last = 0;
 
 
 var battle_names = [
-  'assets/battles/forests/blob.png',
-  'assets/battles/forests/boar.png',
-  'assets/battles/forests/flower.png',
-  'assets/battles/forests/fox.png',
-  'assets/battles/forests/mandragora.png',
-  'assets/battles/forests/mantis.png',
-  'assets/battles/forests/mushroom_1.png',
-  'assets/battles/forests/mushroom_2.png',
-  'assets/battles/forests/mushroom_boss.png',
-  'assets/battles/forests/nymph.png',
-  'assets/battles/forests/squirrel.png',
-  'assets/battles/forests/tree.png',
-  'assets/battles/forests/trunk.png',
+  'assets/battles/waters/anemone.png',
+  'assets/battles/waters/anglerjelly.png',
+  'assets/battles/waters/crab.png',
+  'assets/battles/waters/jellyfish.png',
+  'assets/battles/waters/octopus.png',
+  'assets/battles/waters/squid.png',
+  'assets/battles/waters/whale.png',
+  'assets/battles/waters/Nxp2_devil-mermaid_b.png',
+  'assets/battles/waters/Nxp2_grell-mage_c.png',
+  'assets/battles/waters/Nxp2_lamia.png',
+  'assets/battles/waters/Nxp2_serpent.png',
 ];
 
 var i = 0;
