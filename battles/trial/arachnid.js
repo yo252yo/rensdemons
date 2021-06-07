@@ -34,4 +34,4 @@ BATTLE.monster_actions.add_textual("The Arachnid's many legs burrow in your fore
 // ===================
 // =================== START
 // ===================
-BATTLE.operations.start("An Aversive Arachnid Appeared on your Arm.");
+BATTLE.operations.start("An Aversive Arachnid Appears on your Arm.");

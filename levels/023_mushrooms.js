@@ -3,7 +3,6 @@ AUDIO.music.levels.mushrooms();
 var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
 var hallways = [
-  new S_Floor(950,2450,100,500),
   new S_Floor(625,2000,750,50),
   new S_Floor(625,2250,50,525),
   new S_Floor(1325,2150,50,600),
@@ -46,6 +45,7 @@ var hallways = [
   new S_Floor(375,1400,325,50),
 ];
 
+new S_Floor(950,2450,100,500);
 new S_Floor(1100,1375,125,50);
 new S_Floor(1100,1400,50,50);
 

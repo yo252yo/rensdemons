@@ -37,4 +37,4 @@ BATTLE.monster_actions.add_textual("The Cockroach runs around in circles.", atta
 // ===================
 // =================== START
 // ===================
-BATTLE.operations.start("A Crass Cockroach Crawled Creepily.");
+BATTLE.operations.start("A Crass Cockroach Crawls Creepily.");

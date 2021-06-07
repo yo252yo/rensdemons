@@ -63,4 +63,4 @@ PLAYER_ACTIONS.add({
 // ===================
 // =================== START
 // ===================
-BATTLE.operations.start("A Vicious Viper Ventured into View.");
+BATTLE.operations.start("A Vicious Viper Ventures into View.");
