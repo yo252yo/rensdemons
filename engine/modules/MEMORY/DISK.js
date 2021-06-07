@@ -79,7 +79,6 @@ const DISK = {
     initialize_game: function() {
       DISK.initialize._load_storage();
       DISK.initialize._restore_previous_state();
-      CURRENTLEVEL.setup("titlescreen");
     },
 
     hard_reset: function() {
@@ -121,6 +120,7 @@ THIS WILL REPLACE THE CURRENT STATE OF THE GAME WHICH ARE the adventures of ${DI
             DISK._CONTENT = parsed;
             DISK._record_to_storage();
             DISK.initialize_game();
+            CURRENTLEVEL.setup("titlescreen");
           }
         } catch {
           alert("This file has the wrong format or may be corrupted.");
