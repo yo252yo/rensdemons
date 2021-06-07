@@ -143,10 +143,10 @@ const AUDIO = {
 
       sirens: function() { console.log("todo") },
       trees: function() { console.log("todo") },
-      hawks: function() { AUDIO._play_music("callofthecoyote") },
+      hawks: function() { console.log("todo") },
       mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
       squids: function() { console.log("todo") },
-      harpies: function() { console.log("todo") },
+      harpies: function() { AUDIO._play_music("callofthecoyote") },
       hellsmaw: function() { console.log("todo") },
       fissure: function() { console.log("todo") },
       pandemonium: function() { console.log("todo") },
