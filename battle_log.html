@@ -1,13 +1,18 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 <script src="import_manager.js"></script>
 <script>
 //var battle_names = ["trial/arachnid", "trial/cockroach", "trial/rodent", "trial/viper"];
-var battle_names = ["world/ghost", "world/goblin", "world/mummy", "world/skeleton"];
+var battle_names = [
+  "forests/boar", "forests/flower", "forests/fox", "forests/fungus", "forests/mandragora", "forests/morel", "forests/squirrel", "forests/truffle",
+  "mountains/chimera",  "mountains/dragon",  "mountains/emu",  "mountains/harpy",  "mountains/manticore",
+  "world/ghost", "world/goblin", "world/mummy", "world/skeleton",
+];
 
 var draw_table = function (){
-  document.getElementById("page").innerHTML = "";
+  document.getElementById("level").innerHTML = "";
   var t = "<table border=1><tr><td></td>";
 
   for (var b in battle_names){
@@ -60,7 +65,7 @@ var draw_table = function (){
 
 
   t += "</tr></table>";
-  document.getElementById("page").innerHTML = t;
+  document.getElementById("level").innerHTML = t;
 }
 
 var battles = [];
@@ -95,7 +100,7 @@ window.onload = function() {
 </script>
 <link rel="stylesheet" href="style.css">
 </head>
-<body style="margin:0px;padding:0px;width:10000px;height:10000px;">
+<body style="margin:0px;padding:0px;width:10000px;height:10000px;overflow:scroll;">
 <div id="page" style="width:100%;height:100%;">
   <div id="IFE_escape_menu_button" style="margin:5px;font-size: 14px; font-family:monospace; border: 5px outset black; position:fixed;width:25px;height:25px;z-index:10000;top:0px;left:0px;" onClick="IO.interface._try_special_key_actions('escape');">...</div>
   <canvas width="25px" height="25px" style="visibility:hidden;position:absolute;width:25px;height:25px;z-index:10000;" id="IME_click_confirmation_cross" draggable="false"></canvas>
