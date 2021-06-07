@@ -67,8 +67,10 @@ const DICTIONARY = {
 
   fix_broken: function(key){
     var v = (new DictionaryGenerator()).make_new();
-    if (v[key]){
-      DICTIONARY._DICTIONARY[key] = v[key];
+    for(var k in v){
+      DICTIONARY._DICTIONARY[k] = v[k];
+    }
+    if (DICTIONARY._DICTIONARY[key]){
       CONSOLE.error("Successfully mitigated");
   //    DISK.write("DICTIONARY");
       return DICTIONARY._DICTIONARY[key];
