@@ -2,6 +2,7 @@
 
 var _SHOP_PRICES = {};
 
+_SHOP_PRICES[ITEM.BreathingPotion] = 10;
 _SHOP_PRICES[ITEM.Elixir_fire] = 20;
 _SHOP_PRICES[ITEM.Elixir_ice] = 50;
 _SHOP_PRICES[ITEM.Elixir_vine] = 75;
@@ -28,6 +29,7 @@ _SHOP_PRICES[ITEM.Stone] = 1;
 _SHOP_PRICES[ITEM.Mushroom] = 1;
 _SHOP_PRICES[ITEM.Berry] = 2;
 _SHOP_PRICES[ITEM.Stick] = 2;
+_SHOP_PRICES[ITEM.Seashell] = 2;
 _SHOP_PRICES[ITEM.Fang] = 5;
 _SHOP_PRICES[ITEM.Bone] = 5;
 _SHOP_PRICES[ITEM.Flower] = 5;

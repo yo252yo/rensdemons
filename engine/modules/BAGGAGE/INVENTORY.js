@@ -48,8 +48,10 @@ const ITEM = {
     Linnens: "Linnens",
     Scale: "Scale",
     AncientRubbles: "Ancient Rubbles",
+    Seashell: "Seashell",
 
     // Story
+    BreathingPotion: "Breathing Potion",
     AncientArmamentAdvisor: "Ancient Armament Advisor",
     AncientArmamentArmature: "Ancient Armament Armature",
     AncientArmamentAmmunition: "Ancient Armament Ammunition",

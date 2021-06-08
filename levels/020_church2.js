@@ -40,8 +40,8 @@ var explanations = function() {
     `$$BestFriend$: "So we're supposed to just relax and wait until the Goddess talks to $$Ren$?"`,
     `Priest: "No, impertinent child! You cannot put demands on Her Holy Wisdom. I've told you about our ancestors for a reason. Our powers are no match for $$demon_lord$, but perhaps theirs could be, in the rightful hands of the servants of the Goddess. Furthermore, if we knew more about the circumstances of $$demon_lord$'s coming, we could maybe find a way to banish him..."`,
     `Priest: "Of course I would never be so presumptuous as to give orders to the Promised Child. But what I advise you is to look for the secrets of our ancestors. There are ruins of their grand civilization, but we haven't been able to explore them because they are swarming with monsters. But that should not be a problem for the Promised Child."`,
-    `Priest: "In the north west, you'll find the Waters of the $$sea_adj$ Squids."`,
-    `Priest: "In the south east, there is the Peaks of the $$mountain_adj$ Harpies."`,
+    `Priest: "In the north west, you'll find the Waters of the $$sea_adj$ Squids. We're sure there's some ancient secrets drowned in, but make sure you buy breathing potions at the alchemist before!"`,
+    `Priest: "In the south east, there is the Peaks of the $$mountain_adj$ Harpies. There used to be some sort of refuge there, but it's been overtaken by monsters."`,
     `Priest: "And finally, east of here, the Forest of the $$forest_adj$ Mushrooms is surely worth exploring too."`,
     `Priest: "Now go forth, Promised Child! Rid our beautiful lands of the scum that invaded it, and make $$world_name$ prosperous again!"`,
   ]);
