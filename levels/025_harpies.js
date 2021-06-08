@@ -55,6 +55,9 @@ new S_Floor(300,1750,25,125);
 new S_Floor(300,1650,100,25);
 new S_Floor(375,1650,75,75);
 
+// door
+new S_Floor(850,1250,50,25, 'obj_dark', '010_world_map');
+
 
 console.log("todo Ancient Armament Ammunition");
 
