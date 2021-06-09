@@ -55,6 +55,15 @@ new S_Floor(300,1750,25,125);
 new S_Floor(300,1650,100,25);
 new S_Floor(375,1650,75,75);
 
+// extra 3
+new S_Floor(325,2275,200,25);
+new S_Floor(325,2275,25,100);
+new S_Floor(325,2200,75,25);
+new S_Floor(375,2200,25,75);
+new S_Floor(300,2150,100,25);
+new S_Floor(300,2150,25,100);
+new S_Floor(300,2100,75,75);
+
 // door
 new S_Floor(850,1250,50,25, 'obj_dark', '010_world_map');
 
@@ -63,7 +72,9 @@ console.log("todo Ancient Armament Ammunition");
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
-  `...`
+    `You stand in front of a tall mountain. There is a sort of path climbing up towards the summit. Up there, mythical creatures fly around the peak, cutting through the clouds and letting out screeching cries that chill you to the bone.`,
+    `$$BestFriend$: "Is there really an ancient refuge here?"`,
+    `$$Ren$: "I suppose we'll have to find out."`,
   ], IO.control.character);
 };
 

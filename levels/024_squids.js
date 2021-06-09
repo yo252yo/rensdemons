@@ -69,12 +69,14 @@ var potion = function(){
   }
   if (INVENTORY.count(ITEM.BreathingPotion) > 0){
     TextBannerSequence.make([
+      `The lake in front of you seems swarming with dangerous creatures. You can see them come and go under the dark surface of the water.`,
       `$$BestFriend$: "So we're supposed to dive in and find... what?"`,
       `$$Ren$: "Some sort of ancient relic, I assume."`,
       `$$BestFriend$: "Let's go! Do you have the breathing potion?"`,
     ], dive);
   } else {
     TextBannerSequence.make([
+      `The lake in front of you seems swarming with dangerous creatures. You can see them come and go under the dark surface of the water.`,
       `$$BestFriend$: "So we're supposed to dive in and find... what?"`,
       `$$Ren$: "Some sort of ancient relic, I assume."`,
       `$$BestFriend$: "Let's go! Do you have the breathing potion?"`,
