@@ -1,3 +1,5 @@
+AUDIO.music.levels.squids();
+
 var access = "_squid_access";
 
 
