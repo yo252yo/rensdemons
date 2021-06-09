@@ -53,15 +53,15 @@ new S_Floor(375,1850,25,125);
 new S_Floor(300,1750,100,25);
 new S_Floor(300,1750,25,125);
 new S_Floor(300,1650,100,25);
-new S_Floor(375,1650,75,75);
+new S_Floor(375,1675,75,75);
 
 // extra 3
 new S_Floor(325,2275,200,25);
 new S_Floor(325,2275,25,100);
 new S_Floor(325,2200,75,25);
 new S_Floor(375,2200,25,75);
-new S_Floor(300,2150,100,25);
-new S_Floor(300,2150,25,100);
+new S_Floor(325,2150,75,25);
+new S_Floor(325,2150,25,100);
 new S_Floor(300,2100,75,75);
 
 // door
