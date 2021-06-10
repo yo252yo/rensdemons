@@ -78,7 +78,7 @@ filler.set_event([
 //  new SB_rubble(x, y, ITEM.Elixir_fire),
 //  new SE_small_treasure(x, y, ITEM.Stone),
 //  new SB_event(x, y, '...'),
-]);
+], 10);
 
 for(var f of hallways) {
   filler.set_zone_from_floor(f);

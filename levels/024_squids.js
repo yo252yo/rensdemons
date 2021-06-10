@@ -4,16 +4,6 @@ var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 var access = "_squid_access";
 
 
-var leave = function(){
-  CURRENTLEVEL.setup('010_world_map');
-  INVENTORY.decrease(access);
-}
-var f1 = new S_Floor(900,2525,200,125, 'obj_dark');
-var f2 = new S_Floor(950,2650,100,200, 'obj_dark');
-
-f1.interaction = leave;
-f2.interaction = leave;
-
 new S_Floor(375,2400,1275,875);
 new S_Floor(275,2475,200,175);
 new S_Floor(425,2575,500,200);
@@ -29,12 +19,13 @@ new S_Floor(875,2575,100,75);
 
 var decorFiller = new Filler(gen);
 decorFiller.set_zone(150,2600,1725,1300);
-decorFiller.set_tries(3, 6);
+
+decorFiller.set_tries(5, 10);
 decorFiller.set_object(100, 50, function(x,y,g){ return new S_AlgaeWall(x, y); });
 decorFiller.fill_by_retry();
+
+decorFiller.set_tries(7, 15);
 decorFiller.set_object(50, 50, function(x,y,g){ return new S_Coral(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Planks(x, y); });
 decorFiller.fill_by_retry();
 
 decorFiller.set_tries(5, 20);
@@ -46,23 +37,32 @@ decorFiller.set_object(50, 50, function(x,y,g){ return new S_Seashellpointy(x, y
 decorFiller.fill_by_retry();
 decorFiller.set_object(50, 50, function(x,y,g){ return new S_Waterplants(x, y); });
 decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Algae(x, y); });
-decorFiller.fill_by_retry();
 
 
 
 
 
+// Do the exit after the decor so that decor doesnt spawn on it
+
+var leave = function(){
+  CURRENTLEVEL.setup('010_world_map');
+  INVENTORY.decrease(access);
+}
+var f1 = new S_Floor(900,2525,200,125, 'obj_dark');
+var f2 = new S_Floor(950,2650,100,200, 'obj_dark');
+
+f1.interaction = leave;
+f2.interaction = leave;
+
+new S_Floor(375,2425,1275,50);
 
 
-console.log("todo Ancient Armament Armature");
 
 
-var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 var filler = new Filler(gen);
 filler.set_zone(150,2475,2100,1475);
 
-filler.set_tries(40, 100);
+filler.set_tries(50, 100);
 filler.set_event([
   function(x,y,g){ return new SBattle(x, y, 'waters/anemone')},
   function(x,y,g){ return new SBattle(x, y, 'waters/crab')},
@@ -98,7 +98,7 @@ var potion = function(){
     IO.control.character();
     return;
   }
-  if (INVENTORY.count(ITEM.BreathingPotion) > -10){ // TODO
+  if (INVENTORY.count(ITEM.BreathingPotion) > 0){
     TextBannerSequence.make([
       `The lake in front of you seems swarming with dangerous creatures. You can see them come and go under the dark surface of the water.`,
       `$$BestFriend$: "So we're supposed to dive in and find... what?"`,

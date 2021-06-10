@@ -198,17 +198,6 @@ class S_Castle extends LevelObject {
   }
 }
 
-
-class S_Algae extends SimpleObject {
-  constructor(x, y){
-    super(x, y, "nature/algae");
-    this.adjust_hitbox(10,0,30,15);
-    this.default_text = this.text_interaction([
-      "...",
-    ]);
-  }
-}
-
 class S_AlgaeWall extends SimpleObject {
   constructor(x, y){
     super(x, y, "nature/algaewall");
@@ -222,7 +211,7 @@ class S_AlgaeWall extends SimpleObject {
 class S_Anemone extends SimpleObject {
   constructor(x, y){
     super(x, y, "nature/anemone");
-    this.adjust_hitbox(0,0,10,10);
+    this.adjust_hitbox(0,0,20,20);
     this.default_text = this.text_interaction([
       "...",
     ]);
@@ -263,16 +252,6 @@ class S_Waterplants extends SimpleObject {
   constructor(x, y){
     super(x, y, "nature/waterplants");
     this.adjust_hitbox(0,0,40,20);
-    this.default_text = this.text_interaction([
-      "...",
-    ]);
-  }
-}
-
-class S_Planks extends SimpleObject {
-  constructor(x, y){
-    super(x, y, "nature/planks");
-    this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "...",
     ]);
