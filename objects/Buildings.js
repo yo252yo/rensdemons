@@ -258,10 +258,50 @@ class S_Waterplants extends SimpleObject {
   }
 }
 
-class S_Vine extends SimpleObject {
+class S_PlantSmall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/vine");
-    this.adjust_hitbox(0,0,50,25);
+    super(x, y, "nature/plantsmall");
+    this.adjust_hitbox(0,0,30,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_PlantFlowers extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/plantflowers");
+    this.adjust_hitbox(0,0,40,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Shroomgiant extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/shroomgiant");
+    this.adjust_hitbox(40,0,20,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Shroomsmall extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/shroomsmall");
+    this.adjust_hitbox(0,0,30,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Shroomtall extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/shroomtall");
+    this.adjust_hitbox(20,0,20,20);
     this.default_text = this.text_interaction([
       "...",
     ]);
