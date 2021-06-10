@@ -144,10 +144,14 @@ const AUDIO = {
       sirens: function() { console.log("todo") },
       trees: function() { console.log("todo") },
       hawks: function() { console.log("todo") },
+      slimes: function() { console.log("todo") },
+
       mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
-      squids: function() { console.log("todo") },
+      squids: function() { console.log("todo") }, // static shoes
       harpies: function() { AUDIO._play_music("callofthecoyote") },
+
       hellsmaw: function() { console.log("todo") },
+      hell: function() { console.log("todo") },
       fissure: function() { console.log("todo") },
       pandemonium: function() { console.log("todo") },
       heaven: function() { console.log("todo") },

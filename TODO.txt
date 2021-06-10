@@ -6,6 +6,16 @@ should we meet the king?
 
 - pick audios
 - story: dungeons (todo levels)
+
+> harpies lvls: content + deco + new encounters
+> squid lvls: content + deco + new encounters
+> mushroom lvl: new encounters
+> world: new encounters
+> all monsters battle attributes
+> fast travel after getting artifact?
+> react after gathering 3 artifacts
+
+
 - monsters in world map
 - optional events in world map
 - optional dungeons

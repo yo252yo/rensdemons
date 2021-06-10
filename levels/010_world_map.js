@@ -63,27 +63,27 @@ FEasyS.fill_by_retry();
 
 FHardSW.set_guaranteed(1);
 FHardSW.set_object(300, 250, function(x,y,g){
-  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees");
+  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", LaterInStory);
 });
 FHardSW.fill_by_retry();
 
 
 FHardNE.set_guaranteed(1);
 FHardNE.set_object(250, 150, function(x,y,g){
-  return new SM_Lake(x, y, g, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens");
+  return new SM_Lake(x, y, g, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
 });
 FHardNE.fill_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(250, 150, function(x,y,g){
-  return new SM_Mountain(x, y, g, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks");
+  return new SM_Mountain(x, y, g, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
 });
 FHardMain.fill_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(100, 50, function(x,y,g){
-  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes");
+  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", LaterInStory);
 });
 FHardMain.fill_by_retry();
 
