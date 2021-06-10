@@ -1,4 +1,5 @@
 AUDIO.music.levels.squids();
+var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
 var access = "_squid_access";
 
@@ -24,6 +25,34 @@ new S_Floor(1575,2025,300,400);
 
 new S_Floor(1025,2625,250,125);
 new S_Floor(875,2575,100,75);
+
+
+var decorFiller = new Filler(gen);
+decorFiller.set_zone(150,2600,1725,1300);
+decorFiller.set_tries(3, 6);
+decorFiller.set_object(100, 50, function(x,y,g){ return new S_AlgaeWall(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Coral(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Planks(x, y); });
+decorFiller.fill_by_retry();
+
+decorFiller.set_tries(5, 20);
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Anemone(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Seashell(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Seashellpointy(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Waterplants(x, y); });
+decorFiller.fill_by_retry();
+decorFiller.set_object(50, 50, function(x,y,g){ return new S_Algae(x, y); });
+decorFiller.fill_by_retry();
+
+
+
+
+
 
 
 console.log("todo Ancient Armament Armature");
@@ -69,7 +98,7 @@ var potion = function(){
     IO.control.character();
     return;
   }
-  if (INVENTORY.count(ITEM.BreathingPotion) > 0){
+  if (INVENTORY.count(ITEM.BreathingPotion) > -10){ // TODO
     TextBannerSequence.make([
       `The lake in front of you seems swarming with dangerous creatures. You can see them come and go under the dark surface of the water.`,
       `$$BestFriend$: "So we're supposed to dive in and find... what?"`,

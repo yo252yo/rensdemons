@@ -196,5 +196,95 @@ class S_Castle extends LevelObject {
   interaction(){
     this.default_text();
   }
+}
 
+
+class S_Algae extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/algae");
+    this.adjust_hitbox(10,0,30,15);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_AlgaeWall extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/algaewall");
+    this.adjust_hitbox(20,0,110,25);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Anemone extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/anemone");
+    this.adjust_hitbox(0,0,10,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Coral extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/coral");
+    this.adjust_hitbox(0,0,50,25);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Seashell extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/seashell");
+    this.adjust_hitbox(10,0,20,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Seashellpointy extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/seashellpointy");
+    this.adjust_hitbox(10,0,20,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Waterplants extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/waterplants");
+    this.adjust_hitbox(0,0,40,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Planks extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/planks");
+    this.adjust_hitbox(10,0,20,10);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Vine extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/vine");
+    this.adjust_hitbox(0,0,50,25);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
 }

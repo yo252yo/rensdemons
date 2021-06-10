@@ -93,7 +93,7 @@ const DEBUG = {
     BUILDER.activate.shift_brush();
 
     DEBUG.log_mouse_positions();
-    DEBUG.draw_grid();
+    //DEBUG.draw_grid();
     //DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();

@@ -153,3 +153,16 @@ class LevelObject {
       return f;
     }
 }
+
+class SimpleObject extends LevelObject {
+  constructor(x, y, name) {
+    var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+    super(visual, x, y);
+  }
+
+  interaction(){
+    if (this.default_text) {
+      this.default_text();
+    }
+  }
+}

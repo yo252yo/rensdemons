@@ -1,4 +1,5 @@
 AUDIO.music.levels.mushrooms();
+var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
 var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
@@ -54,7 +55,6 @@ new S_SavePoint(975, 2050);
 new SBattle(1075, 1425, '_023/_loot');
 new SBattle(1125, 1375, 'forests/fungus');
 
-var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
 // could improve load by making these cosmetics and not level items
 var filler = new Filler(gen);
