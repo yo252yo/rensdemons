@@ -7,9 +7,9 @@ function g(){
   CURRENTLEVEL.setup("");
 
   DICTIONARY.set("dungeons_seed", seed);
-  new Snippet("levels/024_squids");
+  new Snippet("levels/023_mushrooms");
 
-  last = setTimeout(g, 2000);
+  last = setTimeout(g, 5000);
 }
 g();
 

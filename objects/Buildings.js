@@ -266,15 +266,9 @@ class S_PlantSmall extends SimpleObject {
       "...",
     ]);
   }
-}
-
-class S_PlantFlowers extends SimpleObject {
-  constructor(x, y){
-    super(x, y, "nature/plantflowers");
-    this.adjust_hitbox(0,0,40,10);
-    this.default_text = this.text_interaction([
-      "...",
-    ]);
+  
+  is_walkable(){
+    return true;
   }
 }
 
@@ -295,6 +289,10 @@ class S_Shroomsmall extends SimpleObject {
     this.default_text = this.text_interaction([
       "...",
     ]);
+  }
+
+  is_walkable(){
+    return true;
   }
 }
 

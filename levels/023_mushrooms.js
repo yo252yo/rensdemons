@@ -57,16 +57,38 @@ new SBattle(1125, 1375, 'forests/fungus');
 
 
 // could improve load by making these cosmetics and not level items
+var noTreeZone = new S_Floor(1075,1475,100,175);
+
 var filler = new Filler(gen);
 filler.set_zone(150,2475,2100,1475);
-filler.set_tries(200, 200);
+filler.set_tries(100, 100);
 filler.set_object(30, 10, function(x,y,g){ return new S_Tree(x, y); });
-
-var noTreeZone = new S_Floor(1075,1475,100,175);
 filler.fill_by_retry(true);
+filler.set_tries(75, 75);
+filler.set_object(100, 100, function(x,y,g){ return new S_Shroomgiant(x, y); });
+filler.fill_by_retry(true);
+filler.set_tries(25, 25);
+filler.set_object(20, 75, function(x,y,g){ return new S_Shroomtall(x, y); });
+filler.fill_by_retry(true);
+
+
 noTreeZone.destroy();
 
-filler.set_tries(1, 3);
+filler.set_tries(1, 1);
+for(var f of hallways) {
+  filler.set_zone_from_floor(f);
+  var r = gen.get();
+  if (r < 0.2){
+    filler.set_object(20, 20, function(x,y,g){ return new S_PlantSmall(x, y); });
+    filler.fill_by_retry();
+  } else if (r < 0.4){
+    filler.set_object(20, 20, function(x,y,g){ return new S_Shroomsmall(x, y); });
+    filler.fill_by_retry();
+  }
+}
+
+
+filler.set_tries(0, 2);
 filler.set_event([
   function(x,y,g){ return new SBattle(x, y, 'forests/boar')},
   function(x,y,g){ return new SBattle(x, y, 'forests/flower')},
@@ -84,6 +106,8 @@ for(var f of hallways) {
   filler.set_zone_from_floor(f);
   filler.fill_by_retry();
 }
+
+
 
 
 CURRENTLEVEL.start_function = function() {
