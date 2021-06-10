@@ -23,3 +23,6 @@ should we meet the king?
   description in party.js,
   attacks in languge,
   encounter+battle
+
+
+should we do a cemetary?

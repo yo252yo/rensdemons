@@ -123,7 +123,7 @@ const AUDIO = {
       BestFriend: function() { AUDIO._play_music('tolose'); },
       GeniusProdigy: function() { AUDIO._play_music('shy'); },
 
-// > im on a boat? groove all together / god made of soap
+// > im on a boat? groove all together / god made of soap // hug convoy
       WiseOld: function() { console.log("todo") }, // @hotline-gouv / space MTV?
       SnobRich: function() { console.log("todo") }, // moins de flic? humoresk by dvorak
       FemmeFatale: function() { console.log("todo") }, // sexy time
@@ -147,7 +147,7 @@ const AUDIO = {
       slimes: function() { console.log("todo") },
 
       mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
-      squids: function() { console.log("todo") }, // static shoes
+      squids: function() { console.log("todo") }, // static shoes, four?
       harpies: function() { AUDIO._play_music("callofthecoyote") },
 
       hellsmaw: function() { console.log("todo") },
