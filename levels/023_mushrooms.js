@@ -52,7 +52,8 @@ new S_Floor(1100,1400,50,50);
 new S_SavePoint(975, 2050);
 
 new SBattle(1075, 1425, '_023/_loot');
-new SBattle(1125, 1375, 'forests/fungus');
+var s = new SBattle(1125, 1375, 'forests/fungus');
+s.adjust_hitbox(-25,-25,75,75);
 
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
@@ -84,6 +85,7 @@ for(var f of hallways) {
 
 
 
+s.adjust_hitbox(0,0,25,25);
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
