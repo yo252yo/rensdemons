@@ -52,8 +52,7 @@ new S_Floor(1100,1400,50,50);
 new S_SavePoint(975, 2050);
 
 new SBattle(1075, 1425, '_023/_loot');
-var s = new SBattle(1125, 1375, 'forests/fungus');
-s.adjust_hitbox(-25,-25,75,75);
+new SBattle(1125, 1375, 'forests/fungus');
 
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
@@ -62,7 +61,10 @@ var filler = new Filler(gen);
 filler.set_zone(150,2475,2100,1475);
 filler.set_tries(200, 200);
 filler.set_object(30, 10, function(x,y,g){ return new S_Tree(x, y); });
+
+var noTreeZone = new S_Floor(1075,1475,100,175);
 filler.fill_by_retry(true);
+noTreeZone.destroy();
 
 filler.set_tries(1, 3);
 filler.set_event([
@@ -83,9 +85,6 @@ for(var f of hallways) {
   filler.fill_by_retry();
 }
 
-
-
-s.adjust_hitbox(0,0,25,25);
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

@@ -14,6 +14,7 @@ class M_Character extends MovingObject {
       visual.html_canvas.style.top = (48-(size * height)) + "px";
     }
     super(visual, x, y, width, height);
+    this.is_walkable = true; // Allows to spawn things intersecting its hitbox.
   }
 }
 
