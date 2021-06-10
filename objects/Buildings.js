@@ -61,7 +61,7 @@ class S_TownFloor extends S_Floor {
 
 class S_Tree extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/buildings/tree.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/nature/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
     this.default_text = this.text_interaction([

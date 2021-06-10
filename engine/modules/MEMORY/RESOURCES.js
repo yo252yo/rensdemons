@@ -52,7 +52,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/objects/event.png');
     RESOURCES.get_img('assets/objects/interior/savepoint.png');
     RESOURCES.get_img('assets/objects/interior/statue.png');
-    RESOURCES.get_img('assets/objects/buildings/tree.png');
+    RESOURCES.get_img('assets/objects/nature/tree.png');
     RESOURCES.get_img('assets/screens/gameover_layer0.png')
     RESOURCES.get_img('assets/screens/gameover_layer1.png')
     RESOURCES.get_img('assets/screens/gameover_layer2.png')
