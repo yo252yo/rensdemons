@@ -104,7 +104,7 @@ const AUDIO = {
       titlescreen: function() {     AUDIO._play_music('time for adventure 4 opening'); },
       introduction: function() {    AUDIO._play_music('love planet'); },
       gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
-      map: function() {             AUDIO._play_music('un desert'); },
+      map: function() {             AUDIO._play_music('un desert'); }, // or foulerlhorizon???
       // boss battle music??
     },
 
@@ -118,21 +118,28 @@ const AUDIO = {
     // todo:
     characters:{
       StreetSmart: function() { AUDIO._play_music('lastenergy'); },
-      UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); },
-      PreciousChild: function() { AUDIO._play_music('hop'); },
-      BestFriend: function() { AUDIO._play_music('tolose'); },
-      GeniusProdigy: function() { AUDIO._play_music('shy'); },
+      WiseOld: function() { AUDIO._play_music("spacemtv") },
+      FemmeFatale: function() { AUDIO._play_music("sexytime") },
+      PreciousChild: function() { AUDIO._play_music('shy'); },
 
-// > im on a boat? groove all together / god made of soap // hug convoy
-      WiseOld: function() { console.log("todo") }, // @hotline-gouv / space MTV?
+
+      GeniusProdigy: function() { AUDIO._play_music('hugconvoy'); },
+      BestFriend: function() { AUDIO._play_music('godmadeofsoap'); },
+      // rm tolose
+
+
+      UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); }, // bof, impala??
+
       SnobRich: function() { console.log("todo") }, // moins de flic? humoresk by dvorak
-      FemmeFatale: function() { console.log("todo") }, // sexy time
-      TorturedSoul: function() { console.log("todo") },
-      RetiredProtector: function() { console.log("todo") }, // rosee?
-      DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
-      SavageChild: function() { console.log("todo") }, // GetReady?
+
+      TorturedSoul: function() { console.log("todo") }, // extrametal?
+      RetiredProtector: function() { console.log("todo") }, // cest toi sur?
       DumbMuscles: function() { console.log("todo") },
+
       TraitorFisher: function() { console.log("todo") }, // surfing?
+      DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
+
+      SavageChild: function() { console.log("todo") }, // GetReady?
     },
 
     levels: {
@@ -147,7 +154,7 @@ const AUDIO = {
       slimes: function() { console.log("todo") },
 
       mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
-      squids: function() { console.log("todo") }, // static shoes, four?
+      squids: function() { AUDIO._play_music("ihatehimsomuch"); }, // static shoes, four?
       harpies: function() { AUDIO._play_music("callofthecoyote") },
 
       hellsmaw: function() { console.log("todo") },
