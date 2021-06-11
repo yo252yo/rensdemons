@@ -315,3 +315,68 @@ class S_Planks extends SimpleObject {
     ]);
   }
 }
+
+class S_Pebbles extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/pebbles");
+    this.adjust_hitbox(10,0,20,15);
+    this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+
+  is_walkable(){
+    return true;
+  }
+}
+
+class S_RocksHuge extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/rockshuge");
+    this.adjust_hitbox(10,0,130,50);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Rocks1 extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/rocks1");
+    this.adjust_hitbox(20,0,50,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Rocks2 extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/rocks2");
+    this.adjust_hitbox(10,0,40,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Rocks3 extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/rocks3");
+    this.adjust_hitbox(0,0,40,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Rocks4 extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/rocks4");
+    this.adjust_hitbox(0,0,30,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}

@@ -1,4 +1,5 @@
 AUDIO.music.levels.harpies();
+var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
 var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
@@ -68,7 +69,91 @@ new S_Floor(300,2100,75,75);
 new S_Floor(850,1250,50,25, 'obj_dark', '025_harpies2');
 
 
-console.log("todo Ancient Armament Ammunition");
+
+var filler = new Filler(gen);
+filler.set_zone(250,2475,1350,1300);
+filler.set_tries(20, 20);
+filler.set_object(150, 50, function(x,y,g){ return new S_RocksHuge(x, y); });
+filler.set_tries(10, 10);
+filler.fill_by_retry(true);
+filler.set_object(50, 20, function(x,y,g){ return new S_Rocks1(x, y); });
+filler.fill_by_retry(true);
+filler.set_object(50, 20, function(x,y,g){ return new S_Rocks2(x, y); });
+filler.fill_by_retry(true);
+filler.set_object(50, 20, function(x,y,g){ return new S_Rocks3(x, y); });
+filler.fill_by_retry(true);
+filler.set_object(50, 20, function(x,y,g){ return new S_Rocks4(x, y); });
+filler.fill_by_retry(true);
+
+
+
+filler.set_tries(50, 100);
+filler.set_event([
+  function(x,y,g){ return new SBattle(x, y, 'mountains/chimera')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/emu')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/harpy')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/manticore')},
+//  new SB_rubble(x, y, ITEM.Elixir_fire),
+//  new SE_small_treasure(x, y, ITEM.Stone),
+//  new SB_event(x, y, '...'),
+], 5);
+
+filler.fill_by_retry();
+filler.set_tries(5, 10);
+
+filler.set_zone(300,2275,575,175);
+filler.fill_by_retry();
+filler.set_zone(1300,1475,175,250);
+filler.fill_by_retry();
+filler.set_zone(250,1975,150,375);
+filler.fill_by_retry();
+
+
+
+filler.set_tries(1, 1);
+var chose_decor = function() {
+  var f =RANDOM.pick([
+    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks1(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks2(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks3(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks4(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Pebbles(x, y); })},
+  ], gen);
+  f();
+};
+
+for (var i=0; i<2; i++){
+  chose_decor();
+  filler.set_zone(975,2425,275,200);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(1250,2400,250,275);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(1350,2125,125,350);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(1325,1775,200,250);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(1175,2025,150,475);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(575,2025,600,100);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(450,2075,125,200);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(400,1425,175,150);
+  filler.fill_by_retry();
+  chose_decor();
+  filler.set_zone(650,1750,100,75);
+  filler.fill_by_retry();
+}
+
+
+
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

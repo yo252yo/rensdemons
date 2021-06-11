@@ -1,4 +1,9 @@
 hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
+pebbles hide the sprite when walked on
+> mb things should have an option to be indexed by the top
+
+
+
 change color scheme doesnt change fog or map bg??
 
 
@@ -40,6 +45,7 @@ sprite for each party member
 put escape actions at the bottom of actions lists
 
 add new decoration items
+
 
 add rens parent sendoff before trial?
 
