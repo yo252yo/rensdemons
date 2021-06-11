@@ -266,7 +266,7 @@ class S_PlantSmall extends SimpleObject {
       "...",
     ]);
   }
-  
+
   is_walkable(){
     return true;
   }
@@ -300,6 +300,16 @@ class S_Shroomtall extends SimpleObject {
   constructor(x, y){
     super(x, y, "nature/shroomtall");
     this.adjust_hitbox(20,0,20,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Planks extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "nature/planks");
+    this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "...",
     ]);

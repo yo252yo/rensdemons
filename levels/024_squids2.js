@@ -29,14 +29,16 @@ new S_Floor(1725,425,125,100);
 
 var filler = new Filler(gen);
 filler.set_zone(625,925,1200,650);
-filler.set_tries(5, 20);
+filler.set_tries(5, 17);
 filler.set_object(50, 50, function(x,y,g){ return new S_Seashell(x, y); });
 filler.fill_by_retry();
 filler.set_object(50, 50, function(x,y,g){ return new S_Seashellpointy(x, y); });
 filler.fill_by_retry();
+filler.set_object(50, 50, function(x,y,g){ return new S_Planks(x, y); });
+filler.fill_by_retry();
 
 
-filler.set_tries(25, 50);
+filler.set_tries(20, 40);
 filler.set_event([
 //  new SB_rubble(x, y, ITEM.Elixir_fire),
 //  new SE_small_treasure(x, y, ITEM.Stone),
