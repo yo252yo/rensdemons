@@ -7,9 +7,9 @@ should we meet the king?
 - pick audios
 - story: dungeons (todo levels)
 
-> harpies lvls: content + deco + new encounters
-> squid lvls: content + deco text!! + new encounters
-> mushroom lvl: new encounters +  deco text
+> harpies lvls: content + deco + text encounters
+> squid lvls: content + deco text!! + text encounters
+> mushroom lvl: text encounters +  deco text
 > world: new encounters
 > all monsters battle attributes
 > fast travel after getting artifact?

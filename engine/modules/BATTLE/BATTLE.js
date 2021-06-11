@@ -2,6 +2,7 @@
 const BATTLE = {
   _player_actions: [],
   _monster_actions: [],
+  loot: [],
   current_battle: "",
   origin_level: undefined,
   win_callback: undefined,
@@ -249,6 +250,10 @@ const BATTLE = {
     win: function(text) {
       BATTLE.builder.teardown.start(BATTLE.builder.teardown.win);
     },
+
+    add_loot: function (item, weight){
+      BATTLE.loot[item] = weight;
+    },
   },
 
   builder: {
@@ -257,6 +262,7 @@ const BATTLE = {
       BATTLE._monster_actions = [];
       BATTLE.win_callback = undefined;
       BATTLE.current_battle = "";
+      BATTLE.loot = [];
     },
 
     setup: {
@@ -298,12 +304,25 @@ const BATTLE = {
 
     teardown: {
       start: function(ending) {
+        var text = [];
+        if(Object.keys(BATTLE.loot).length > 0) {
+          var loot = RANDOM.pick_in_weighted_array(BATTLE.loot);
+          console.log(loot);
+          if (loot){
+            text.push(LANGUAGE.battle.loot(loot));
+            INVENTORY.increase(loot);
+          }
+        }
+
         var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
         if(exp_won > 0) {
            INVENTORY.increase(ITEM.XpToken, exp_won);
-           var text = LANGUAGE.battle.xp() + " (" + ("*".repeat(Math.min(10,exp_won))) + ").";
+           text.push(LANGUAGE.battle.xp() + " (" + ("*".repeat(Math.min(10,exp_won))) + ").");
            AUDIO.effect.levelup();
-           TextBannerSequence.make([text], function() {BATTLE.builder.teardown.start_teardown(ending);});
+        }
+
+        if (text.length> 0){
+           TextBannerSequence.make(text, function() {BATTLE.builder.teardown.start_teardown(ending);});
         } else {
           BATTLE.builder.teardown.start_teardown(ending);
         }

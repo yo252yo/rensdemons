@@ -11,6 +11,10 @@ LANGUAGE.battle = {
     return `All things considered, you still learned a lot through this encounter`;
   },
 
+  loot: function(loot) {
+    return `You manage to salvage a ${loot} from your defeated foe.`;
+  },
+
   escape: function() {
     return RANDOM.pick([`You move away from this scene.`,
                         `You go away and do not turn back.`,
