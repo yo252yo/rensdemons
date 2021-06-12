@@ -131,8 +131,10 @@ var easyEvents = [
   function(x,y,g){ return new SBattle(x, y, 'world/mummy', 25, 'obj_light')},
   function(x,y,g){ return new SBattle(x, y, 'world/skeleton', 25, 'obj_light')},
   function(x,y,g){ return new SBattle(x, y, 'world/wraith', 25, 'obj_light')},
+  // treasures:
 //  new SB_rubble(x, y, ITEM.Elixir_fire),
 //  new SE_small_treasure(x, y, ITEM.Stone),
+// text battles:
 //  new SB_event(x, y, '...'),
 ];
 

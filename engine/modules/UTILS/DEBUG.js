@@ -100,7 +100,6 @@ const DEBUG = {
 
     DEBUG.log_mouse_positions();
     //DEBUG.draw_grid();
-    //DEBUG.draw_hitboxes();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
     DEBUG.allow_scroll();
@@ -113,6 +112,7 @@ const DEBUG = {
 
 
     setInterval(FOG.stop, 1000);
+    setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
   },
