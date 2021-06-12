@@ -63,7 +63,7 @@ new S_Floor(1100,1400,50,50);
 
 new S_SavePoint(975, 2050);
 
-new SBattle(1075, 1425, '_023/_loot');
+new SBattle(1075, 1425, '_02/_loot_forest');
 new SBattle(1125, 1375, 'forests/fungus');
 
 // ===================

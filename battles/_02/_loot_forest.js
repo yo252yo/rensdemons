@@ -33,7 +33,8 @@ PLAYER_ACTIONS.add({
   name: "Examine",
   unlock: true,
   description: "Watching carefully, you can distinguish some sort of worn out book tied in the middle of the vegetation. Time has not been kind to it, and it seems to be on the brink of disintegration.",
-  extra_function: function(){
+  outcome: BATTLETREE.NOTHING,
+  function: function(){
     ABILITIES.unlock("Dig carefully");
   }
 });

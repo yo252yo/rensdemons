@@ -72,7 +72,10 @@ new S_Floor(300,2100,75,75);
 // door
 new S_Floor(850,1250,50,25, 'obj_dark', '025_harpies2');
 
-
+// story
+new SBattle(325, 2075, '_02/_wrong_skeleton');
+new SBattle(400, 1650, '_02/_right_skeleton');
+new SBattle(1475, 1275, '_02/_wrong_skeleton');
 
 // ===================
 //hack GENERATED ELEMENTS (decor)

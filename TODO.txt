@@ -1,7 +1,6 @@
 decide title
 
-be careful, write in present and second person
-
+be careful, write in present and second person, also dont make things spawn on doors
 
 
 should we meet the king?
@@ -9,7 +8,7 @@ should we meet the king?
 - pick audios
 - story: dungeons (todo levels)
 
-> harpies lvls: deco text + text encounters + story event
+> harpies lvls: deco text + text encounters + story event (door key)
 > squid lvls: deco text + text encounters
 > mushroom lvl: text encounters + deco text
 > world: text encounters
