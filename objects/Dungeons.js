@@ -201,3 +201,33 @@ class S_Rocks4 extends SimpleObject {
     ]);
   }
 }
+
+class S_Web extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "ruins/web");
+    this.adjust_hitbox(0,0,100,40);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_WebLarge extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "ruins/weblarge");
+    this.adjust_hitbox(0,0,190,30);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+class S_Bocals extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "ruins/bocals");
+    this.adjust_hitbox(0,0,30,20);
+    this.default_text = this.text_interaction([
+      "...",
+    ]);
+  }
+}

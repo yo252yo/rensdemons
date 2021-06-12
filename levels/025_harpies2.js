@@ -58,10 +58,22 @@ bed(575,875,150,150);
 bed(1025,700,150,150);
 bed(575,700,150,150);
 
+new S_WebLarge(775, 575);
 
 // ===================
 //hack GENERATED ELEMENTS
 // ===================
+
+
+var filler = new Filler(gen);
+filler.set_zone(550,1250,650,725);
+filler.set_tries(20, 20);
+filler.set_object(120, 60, function(x,y,g){ return new S_Web(x, y); });
+filler.fill_by_retry();
+//filler.set_tries(10, 10);
+filler.set_object(40, 25, function(x,y,g){ return new S_Bocals(x, y); });
+filler.fill_by_retry();
+
 // ===================
 //hack TEMPORARY ELEMENTS
 // ===================
