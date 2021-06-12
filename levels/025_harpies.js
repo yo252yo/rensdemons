@@ -91,6 +91,7 @@ door.interaction = function() {
 }
 
 // story
+new SBattle(1015, 1450, 'mountains/dragon');
 new SBattle(325, 2075, '_02/_wrong_skeleton');
 new SBattle(400, 1650, '_02/_right_skeleton');
 new SBattle(1475, 1275, '_02/_wrong_skeleton');
@@ -102,7 +103,7 @@ new SBattle(1475, 1275, '_02/_wrong_skeleton');
 var filler = new Filler(gen);
 filler.set_zone(250,2475,1350,1300);
 filler.set_tries(20, 20);
-filler.set_object(150, 50, function(x,y,g){ return new S_RocksHuge(x, y); });
+filler.set_object(175, 50, function(x,y,g){ return new S_RocksHuge(x, y); });
 filler.fill_by_retry(true);
 filler.set_tries(10, 10);
 filler.set_object(50, 20, function(x,y,g){ return new S_Rocks1(x, y); });

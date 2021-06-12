@@ -183,6 +183,7 @@ var rocks = [
   "Some of those peaks have edges sharp enough to cut you pretty deep. You try your best to keep your footing without touching them.",
   "You can see the mark of the elements on these rocks. They were there long before you, and will remain there long after...",
   "Rocks!",
+  "Rocks, more rocks... Everywhere you look, all you can see...",
 ];
 
 class S_RocksHuge extends SimpleObject {
