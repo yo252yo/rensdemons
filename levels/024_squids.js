@@ -10,7 +10,6 @@ var access = "_squid_access";
 //hack FIXED ELEMENTS (floors)
 // ===================
 
-
 new S_Floor(375,2400,1275,875);
 new S_Floor(275,2475,200,175);
 new S_Floor(425,2575,500,200);
@@ -22,6 +21,9 @@ new S_Floor(1575,2025,300,400);
 
 new S_Floor(1025,2625,250,125);
 new S_Floor(875,2575,100,75);
+
+
+new SBattle(450, 1700, 'waters/whale');
 
 // ===================
 //hack GENERATED ELEMENTS (decor)
@@ -79,7 +81,6 @@ filler.fill_by_retry();
 //hack FINISHING ELEMENTS (exit)
 // ===================
 // Do the exit after the decor so that decor doesnt spawn on it
-
 var leave = function(){
   CURRENTLEVEL.setup('010_world_map');
   INVENTORY.decrease(access);
@@ -91,8 +92,6 @@ f1.interaction = leave;
 f2.interaction = leave;
 
 new S_Floor(375,2425,1275,50);
-
-
 
 
 // ===================

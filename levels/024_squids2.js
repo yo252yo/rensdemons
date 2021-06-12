@@ -32,6 +32,8 @@ new S_Floor(1450,900,275,50);
 new S_Floor(1675,900,100,575);
 new S_Floor(1725,425,125,100);
 
+// Maybe we should make a bigger deal out of this ???
+new SB_rubble(950, 675, ITEM.AncientArmamentArmature);
 
 // ===================
 //hack GENERATED ELEMENTS (decor)

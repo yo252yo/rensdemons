@@ -12,7 +12,7 @@ PLAYER_ACTIONS.allow_flight();
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-
+// end = not defeat, but TP to 024_squids2
 
 // ===================
 //hack START
