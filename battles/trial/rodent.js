@@ -1,13 +1,12 @@
 // ===================
-// =================== INITIALIZATION
+//hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/trial/rodent.png", 'background');
-
-// ===================
-// =================== ABILITIES CALLBACKS
-// ===================
-
 PLAYER_ACTIONS.allow_flight();
+
+// ===================
+//hack PLAYER CABAILITIES
+// ===================
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stick);
@@ -18,7 +17,7 @@ PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 PLAYER_ACTIONS.win(ITEM.Bone, 1, true);
 
 // ===================
-// =================== DEFAULT MONSTER BEHAVIOR
+//hack MONSTER BEHAVIOR
 // ===================
 var attack = {
   attack_amplitude: 0.1, // Between 0 and 1
@@ -32,6 +31,6 @@ BATTLE.monster_actions.add_textual("The Rodent scratches around, like it's looki
 BATTLE.monster_actions.add_textual("The Rodent shakes its whiskers. Maybe it's calling for help.", attack);
 
 // ===================
-// =================== START
+//hack START
 // ===================
 BATTLE.operations.start("A Repulsive Rodent Rushes to your Rear.");

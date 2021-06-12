@@ -1,13 +1,12 @@
 // ===================
-// =================== INITIALIZATION
+//hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/trial/viper.png", 'background');
-
-// ===================
-// =================== ABILITIES CALLBACKS
-// ===================
-
 PLAYER_ACTIONS.allow_flight();
+
+// ===================
+//hack PLAYER CABAILITIES
+// ===================
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stone);
@@ -15,7 +14,7 @@ PLAYER_ACTIONS.useless(ITEM.Stone);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 
 // ===================
-// =================== DEFAULT MONSTER BEHAVIOR
+//hack MONSTER BEHAVIOR
 // ===================
 var throwbranch = "Throw branch";
 
@@ -59,8 +58,7 @@ PLAYER_ACTIONS.add({
   give_item: ITEM.Fang,
 });
 
-
 // ===================
-// =================== START
+//hack START
 // ===================
 BATTLE.operations.start("A Vicious Viper Ventures into View.");

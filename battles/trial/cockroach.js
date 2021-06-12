@@ -1,13 +1,12 @@
 // ===================
-// =================== INITIALIZATION
+//hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/trial/cockroach.png", 'background');
-
-// ===================
-// =================== ABILITIES CALLBACKS
-// ===================
-
 PLAYER_ACTIONS.allow_flight();
+
+// ===================
+//hack PLAYER CABAILITIES
+// ===================
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stick);
@@ -21,7 +20,7 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 
 
 // ===================
-// =================== DEFAULT MONSTER BEHAVIOR
+//hack MONSTER BEHAVIOR
 // ===================
 var attack = {
   attack_amplitude: 0.05, // Between 0 and 1
@@ -35,6 +34,6 @@ BATTLE.monster_actions.add_textual("The Cockroach emits small chirping sound.", 
 BATTLE.monster_actions.add_textual("The Cockroach runs around in circles.", attack);
 
 // ===================
-// =================== START
+//hack START
 // ===================
 BATTLE.operations.start("A Crass Cockroach Crawls Creepily.");

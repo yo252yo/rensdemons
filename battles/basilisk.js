@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/trial/basilisk.png", 'background');
 
 // ===================
-//hack ABILITIES CALLBACKS
+//hack PLAYER CABAILITIES
 // ===================
 
 var swear_loyalty = "Swear loyalty";
@@ -58,7 +58,7 @@ PLAYER_ACTIONS.add({
 
 
 // ===================
-//hack DEFAULT MONSTER BEHAVIOR
+//hack MONSTER BEHAVIOR
 // ===================
 BATTLE.monster_actions.add_textual("The Basilisk hisses and spits.");
 BATTLE.monster_actions.add_textual("The Basilisk gets ever closer, snapping its jaw, showing all too clearly its giant fangs.");

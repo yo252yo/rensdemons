@@ -1,13 +1,13 @@
 // ===================
-// =================== INITIALIZATION
+//hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/trial/arachnid.png", 'background');
-
-// ===================
-// =================== ABILITIES CALLBACKS
-// ===================
-
 PLAYER_ACTIONS.allow_flight();
+
+// ===================
+//hack PLAYER CABAILITIES
+// ===================
+
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stick);
@@ -17,9 +17,12 @@ PLAYER_ACTIONS.win(ITEM.Stone, 2, true);
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 1);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 
+
 // ===================
-// =================== DEFAULT MONSTER BEHAVIOR
+//hack MONSTER BEHAVIOR
 // ===================
+
+
 var attack = {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 3.0,
@@ -32,6 +35,6 @@ BATTLE.monster_actions.add_textual("The Arachnid bites you. Nothing too serious.
 BATTLE.monster_actions.add_textual("The Arachnid's many legs burrow in your forearm. There's no dislodging their hooks.", attack);
 
 // ===================
-// =================== START
+//hack START
 // ===================
 BATTLE.operations.start("An Aversive Arachnid Appears on your Arm.");

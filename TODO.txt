@@ -19,8 +19,6 @@ should we meet the king?
 > react after gathering 3 artifacts
 
 
-ALWAYS DO THE EDCOR BEFORE ENCOUNTERS OTHERWISE THEDECOR MOVES WHEN ENCOUNTERS DISAPPEAR :/
-
 - monsters in world map
 - optional events in world map
 - optional dungeons
