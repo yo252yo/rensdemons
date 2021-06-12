@@ -107,7 +107,11 @@ const PALETTE = {
 
   factory: {
     make_new: function() {
-      PALETTE.generate.pick_harmonized_palette();
+      if(STATS.get(STAT.Death) > 10){
+        PALETTE.generate.pick_harmonized_palette();
+      } else {
+        PALETTE.generate.pick_random_palette();
+      }
       DISK.write("PALETTE");
       INTERFACE.color_interface();
     },
