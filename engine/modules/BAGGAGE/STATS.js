@@ -21,8 +21,8 @@ const STATS = {
   },
 
   record: {
-    death: function() {
-      STATS._stats.increment([STAT.Death]);
+    death: function(v) {
+      STATS._stats.increment([STAT.Death], v);
       DISK.write("STATS");
     },
 

@@ -87,6 +87,12 @@ const DEBUG = {
     }
   },
 
+  reroll_seeds: function(){
+    DICTIONARY.factory.make_new();
+    STATS.record.death(11); // to get non harmonized palette.
+    PALETTE.factory.make_new();
+  },
+
   all: function() {
     DEBUG.activate_builder();
     BUILDER.activate.alt_hallways();
@@ -103,6 +109,9 @@ const DEBUG = {
     DEBUG.get_all_abilities();
     DEBUG.get_all_items();
     DEBUG.get_all_party();
+    DEBUG.reroll_seeds();
+
+
     setInterval(FOG.stop, 1000);
 
     ABILITIES.unlock("_town2_visited");
