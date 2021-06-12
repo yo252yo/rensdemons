@@ -1,7 +1,14 @@
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
 var access = "_squid_access";
+
+// ===================
+//hack FIXED ELEMENTS (floors)
+// ===================
 
 
 new S_Floor(375,2400,1275,875);
@@ -16,6 +23,9 @@ new S_Floor(1575,2025,300,400);
 new S_Floor(1025,2625,250,125);
 new S_Floor(875,2575,100,75);
 
+// ===================
+//hack GENERATED ELEMENTS (decor)
+// ===================
 
 var decorFiller = new Filler(gen);
 decorFiller.set_zone(150,2600,1725,1300);
@@ -42,22 +52,9 @@ decorFiller.fill_by_retry();
 
 
 
-// Do the exit after the decor so that decor doesnt spawn on it
-
-var leave = function(){
-  CURRENTLEVEL.setup('010_world_map');
-  INVENTORY.decrease(access);
-}
-var f1 = new S_Floor(900,2525,200,125, 'obj_dark');
-var f2 = new S_Floor(950,2650,100,200, 'obj_dark');
-
-f1.interaction = leave;
-f2.interaction = leave;
-
-new S_Floor(375,2425,1275,50);
-
-
-
+// ===================
+//hack TEMPORARY ELEMENTS (encounters)
+// ===================
 
 var filler = new Filler(gen);
 filler.set_zone(150,2475,2100,1475);
@@ -78,6 +75,29 @@ filler.fill_by_retry();
 
 
 
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+// Do the exit after the decor so that decor doesnt spawn on it
+
+var leave = function(){
+  CURRENTLEVEL.setup('010_world_map');
+  INVENTORY.decrease(access);
+}
+var f1 = new S_Floor(900,2525,200,125, 'obj_dark');
+var f2 = new S_Floor(950,2650,100,200, 'obj_dark');
+
+f1.interaction = leave;
+f2.interaction = leave;
+
+new S_Floor(375,2425,1275,50);
+
+
+
+
+// ===================
+//hack START
+// ===================
 
 var dive = function(){
   new CenteredTextMenu("Drink a breathing potion?", [

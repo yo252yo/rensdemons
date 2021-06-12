@@ -1,7 +1,12 @@
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.harpies();
+var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
-
-new S_Floor(850,1250,50,50, 'obj_dark', '025_harpies');
+// ===================
+//hack FIXED ELEMENTS (floors)
+// ===================
 
 // room
 new S_Floor(750,1225,250,675);
@@ -28,7 +33,9 @@ new S_Floor(700,825,75,50);
 new S_Floor(700,1000,75,50);
 new S_Floor(700,1175,75,50);
 
-
+// ===================
+//hack FIXED ELEMENTS (decor)
+// ===================
 
 var bed = function (x, y) {
   var b = new B_Bed(x+50,y-95);
@@ -52,7 +59,25 @@ bed(1025,700,150,150);
 bed(575,700,150,150);
 
 
+// ===================
+//hack GENERATED ELEMENTS
+// ===================
+// ===================
+//hack TEMPORARY ELEMENTS
+// ===================
+
+
+
 console.log("todo Ancient Armament Ammunition");
 
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+
+new S_Floor(850,1250,50,50, 'obj_dark', '025_harpies');
+
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.initialize_with_character(850, 1225);

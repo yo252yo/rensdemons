@@ -1,14 +1,16 @@
-
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.interface.map();
-
 INTERFACE.make_compass();
-
 var gen = new Generator(DICTIONARY.get("world_map_seed"));
 
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
-// Zones
+// ===================
+//hack FIXED ELEMENTS (zones)
+// ===================
 
 var h = 2550;
 var w = 2950;
@@ -38,6 +40,9 @@ FHardMain.set_zone(1075+50, h-25, w-1050-50, h-1050-25);
 //FHardMain.draw_for_debug('#FF0000')
 
 
+// ===================
+//hack FIXED ELEMENTS (story)
+// ===================
 
 // First make the towns
 new SM_Town(250, 1750, "005_town1", "town_1");
@@ -53,6 +58,9 @@ new SM_Mountain(1300, 1025, gen, `Peaks of the<br />${DICTIONARY.get("harpies_ad
 new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "032_fissure", LaterInStory);
 new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
+// ===================
+//hack GENERATED ELEMENTS (new places)
+// ===================
 
 FEasyS.set_guaranteed(1);
 FEasyS.set_object(100, 100, function(x,y,g){
@@ -88,6 +96,9 @@ FHardMain.set_object(100, 50, function(x,y,g){
 FHardMain.fill_by_retry();
 
 
+// ===================
+//hack GENERATED ELEMENTS (decor)
+// ===================
 
 // could be non uniform
 for(var i = 0; i < 3; i++) {
@@ -108,6 +119,10 @@ FMap.set_tries(10, 40);
 FMap.set_object(200, 100, function(x,y,g){ return new SM_Hills(x, y, g);});
 FMap.fill_by_retry();
 
+
+// ===================
+//hack TEMPORARY ELEMENTS (encounters)
+// ===================
 
 
 var easyEvents = [
@@ -132,5 +147,9 @@ FEasyN.set_event(easyEvents);
 FEasyN.fill_by_retry();
 
 
+
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.initialize_with_character(280, 1760, 0.6);

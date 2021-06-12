@@ -1,5 +1,12 @@
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
+
+// ===================
+//hack FIXED ELEMENTS (floors)
+// ===================
 
 new S_Floor(75,375,625,50);
 new S_Floor(650,700,350,375);
@@ -26,6 +33,10 @@ new S_Floor(1675,900,100,575);
 new S_Floor(1725,425,125,100);
 
 
+// ===================
+//hack GENERATED ELEMENTS (decor)
+// ===================
+
 
 var filler = new Filler(gen);
 filler.set_zone(625,925,1200,650);
@@ -37,6 +48,9 @@ filler.fill_by_retry();
 filler.set_object(50, 50, function(x,y,g){ return new S_Planks(x, y); });
 filler.fill_by_retry();
 
+// ===================
+//hack TEMPORARY ELEMENTS (encounters)
+// ===================
 
 filler.set_tries(20, 40);
 filler.set_event([
@@ -47,7 +61,15 @@ filler.set_event([
 filler.fill_by_retry();
 
 
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+
 new S_Floor(1800,425,75,100, 'obj_dark', '024_squids');
+
+// ===================
+//hack START
+// ===================
 
 
 CURRENTLEVEL.initialize_with_character(100, 350);

@@ -1,5 +1,12 @@
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
+
+// ===================
+//hack FIXED ELEMENTS (floors)
+// ===================
 
 var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
 
@@ -50,11 +57,18 @@ new S_Floor(950,2450,100,500);
 new S_Floor(1100,1375,125,50);
 new S_Floor(1100,1400,50,50);
 
+// ===================
+//hack FIXED ELEMENTS (decor)
+// ===================
+
 new S_SavePoint(975, 2050);
 
 new SBattle(1075, 1425, '_023/_loot');
 new SBattle(1125, 1375, 'forests/fungus');
 
+// ===================
+//hack GENERATED ELEMENTS (decor)
+// ===================
 
 // could improve load by making these cosmetics and not level items
 var noTreeZone = new S_Floor(1075,1475,100,175);
@@ -88,6 +102,10 @@ for(var f of hallways) {
 }
 
 
+// ===================
+//hack TEMPORARY ELEMENTS (encounters)
+// ===================
+
 filler.set_tries(0, 2);
 filler.set_event([
   function(x,y,g){ return new SBattle(x, y, 'forests/boar')},
@@ -108,6 +126,10 @@ for(var f of hallways) {
 }
 
 
+
+// ===================
+//hack START
+// ===================
 
 
 CURRENTLEVEL.start_function = function() {

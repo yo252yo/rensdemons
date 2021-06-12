@@ -1,8 +1,12 @@
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("dungeons_seed"));
 
-var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
-
+// ===================
+//hack FIXED ELEMENTS (floors)
+// ===================
 
 // main
 new S_Floor(950,2450,100,175);
@@ -70,6 +74,10 @@ new S_Floor(850,1250,50,25, 'obj_dark', '025_harpies2');
 
 
 
+// ===================
+//hack GENERATED ELEMENTS (decor)
+// ===================
+
 var filler = new Filler(gen);
 filler.set_zone(250,2475,1350,1300);
 filler.set_tries(20, 20);
@@ -84,31 +92,6 @@ filler.set_object(50, 20, function(x,y,g){ return new S_Rocks3(x, y); });
 filler.fill_by_retry(true);
 filler.set_object(50, 20, function(x,y,g){ return new S_Rocks4(x, y); });
 filler.fill_by_retry(true);
-
-
-
-filler.set_tries(50, 100);
-filler.set_event([
-  function(x,y,g){ return new SBattle(x, y, 'mountains/chimera')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/emu')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/harpy')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/manticore')},
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-//  new SB_event(x, y, '...'),
-], 5);
-
-filler.fill_by_retry();
-filler.set_tries(5, 10);
-
-filler.set_zone(300,2275,575,175);
-filler.fill_by_retry();
-filler.set_zone(1300,1475,175,250);
-filler.fill_by_retry();
-filler.set_zone(250,1975,150,375);
-filler.fill_by_retry();
-
-
 
 filler.set_tries(1, 1);
 var chose_decor = function() {
@@ -152,8 +135,42 @@ for (var i=0; i<2; i++){
   filler.fill_by_retry();
 }
 
+// ===================
+//hack TEMPORARY ELEMENTS (encounters)
+// ===================
 
+filler.set_zone(250,2475,1350,1300);
+filler.set_tries(50, 100);
+filler.set_event([
+  function(x,y,g){ return new SBattle(x, y, 'mountains/chimera')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/emu')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/harpy')},
+  function(x,y,g){ return new SBattle(x, y, 'mountains/manticore')},
+//  new SB_rubble(x, y, ITEM.Elixir_fire),
+//  new SE_small_treasure(x, y, ITEM.Stone),
+//  new SB_event(x, y, '...'),
+], 5);
 
+filler.fill_by_retry();
+filler.set_tries(3, 10);
+filler.set_zone(1300,1475,175,250);
+filler.fill_by_retry();
+filler.set_zone(250,1975,150,375);
+filler.fill_by_retry();
+
+filler.set_tries(10, 20);
+filler.set_zone(300,2275,575,175);
+filler.fill_by_retry();
+
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+
+var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
+
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
