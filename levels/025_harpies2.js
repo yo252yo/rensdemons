@@ -60,13 +60,15 @@ bed(575,700,150,150);
 
 new S_WebLarge(775, 575);
 
+
+new SB_rubble(950, 650, ITEM.AncientArmamentAmmunition);
+
 // ===================
 //hack GENERATED ELEMENTS
 // ===================
 
-
 var filler = new Filler(gen);
-filler.set_zone(550,1250,650,725);
+filler.set_zone(550,1200,650,675);
 filler.set_tries(20, 20);
 filler.set_object(120, 60, function(x,y,g){ return new S_Web(x, y); });
 filler.fill_by_retry();
@@ -79,8 +81,13 @@ filler.fill_by_retry();
 // ===================
 
 
-
-console.log("todo Ancient Armament Ammunition");
+filler.set_tries(10, 20);
+filler.set_event([
+//  new SB_rubble(x, y, ITEM.Elixir_fire),
+//  new SE_small_treasure(x, y, ITEM.Stone),
+  function(x,y,g){ return new SB_event(x, y, '...');},
+], 10);
+filler.fill_by_retry();
 
 // ===================
 //hack FINISHING ELEMENTS (exit)
