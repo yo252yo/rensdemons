@@ -8,7 +8,7 @@ should we meet the king?
 - pick audios
 - story: dungeons (todo levels)
 
-> harpies lvls: deco text + text encounters + story event (door key)
+> harpies lvls: deco text + text encounters
 > squid lvls: deco text + text encounters
 > mushroom lvl: text encounters + deco text
 > world: text encounters

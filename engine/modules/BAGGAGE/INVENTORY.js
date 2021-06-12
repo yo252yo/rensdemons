@@ -55,6 +55,7 @@ const ITEM = {
     AncientArmamentAdvisor: "Ancient Armament Advisor",
     AncientArmamentArmature: "Ancient Armament Armature",
     AncientArmamentAmmunition: "Ancient Armament Ammunition",
+    ShelterKey: "Shelter Key",
 
   isItem: function(s){
     for (var i in ITEM){

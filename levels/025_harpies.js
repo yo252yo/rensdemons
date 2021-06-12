@@ -70,7 +70,25 @@ new S_Floor(325,2150,25,100);
 new S_Floor(300,2100,75,75);
 
 // door
-new S_Floor(850,1250,50,25, 'obj_dark', '025_harpies2');
+var door = new S_Floor(850,1250,50,25, 'obj_dark');
+door.interaction = function() {
+  if(INVENTORY.count(ITEM.ShelterKey) > 0){
+    TextBannerSequence.make([
+      `There is a heavy metal door in the facade of the rock. You open it with the key you found on the unfortunate skeleton, happy to see it fit.`,
+    ], function() {CURRENTLEVEL.setup("025_harpies2"); });
+  } else {
+    TextBannerSequence.make([
+      `You're almost at the summit of the mountain. There is a heavy metal door in the facade of the rock.`,
+      `$$Ren$: "Now what?"`,
+      `$$BestFriend$: "Look at the size of this thing... Whatever's inside must be very well protected. I bet that's where we'll find our relic!"`,
+      `$$Ren$: "Ok but how do we get in?"`,
+      `$$BestFriend$: "Hmmm look, there's a keyhole. It has a very weird shape, though. No way we can lockpick our way out of this."`,
+      `$$Ren$: "Maybe we can look around."`,
+      `$$BestFriend$: "I doubt they'd just leave the key at the front..."`,
+      `$$Ren$: "I don't know, there must be another way in, a clue, anything!"`,
+    ]);
+  }
+}
 
 // story
 new SBattle(325, 2075, '_02/_wrong_skeleton');
