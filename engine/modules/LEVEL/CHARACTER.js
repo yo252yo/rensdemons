@@ -15,10 +15,6 @@ class M_Character extends MovingObject {
     }
     super(visual, x, y, width, height);
   }
-
-  is_walkable(){
-    return true;// Allows to spawn things intersecting its hitbox.
-  }
 }
 
 const CHARACTER = {

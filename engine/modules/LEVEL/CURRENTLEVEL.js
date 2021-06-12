@@ -115,17 +115,20 @@ const CURRENTLEVEL = {
       var walkable = false;
 
       // could be optimized by ordering objects
-      for(var i in CURRENTLEVEL.level_objects) {
-        if (!CURRENTLEVEL.level_objects[i]){
+      for(var object of CURRENTLEVEL.level_objects) {
+        if (!object){
           continue;
         }
-        if (CURRENTLEVEL.level_objects[i] == initiator) {
+        if(object.constructor.name == "M_Character"){
           continue;
         }
-        if (! CURRENTLEVEL.level_objects[i].is_walkable) {
+        if (object == initiator) {
           continue;
         }
-        var t = CURRENTLEVEL.level_objects[i].is_walkable(x,y);
+        if (! object.is_walkable) {
+          continue;
+        }
+        var t = object.is_walkable(x,y);
         if (t == -1) {
           return false;
         } else if (t == 1) {

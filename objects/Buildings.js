@@ -265,10 +265,7 @@ class S_PlantSmall extends SimpleObject {
     this.default_text = this.text_interaction([
       "...",
     ]);
-  }
-
-  is_walkable(){
-    return true;
+    this.walkable = true;
   }
 }
 
@@ -289,10 +286,7 @@ class S_Shroomsmall extends SimpleObject {
     this.default_text = this.text_interaction([
       "...",
     ]);
-  }
-
-  is_walkable(){
-    return true;
+    this.walkable = true;
   }
 }
 
@@ -324,10 +318,7 @@ class S_Pebbles extends SimpleObject {
     this.default_text = this.text_interaction([
       "...",
     ]);
-  }
-
-  is_walkable(){
-    return true;
+    this.walkable = true;
   }
 }
 
