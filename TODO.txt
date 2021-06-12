@@ -2,13 +2,17 @@ decide title
 
 be careful, write in present and second person
 
+
+MUSHROOM AND HARPIES i can move everywhere, is there a hidden floor ???
+
 should we meet the king?
 
 - pick audios
 - story: dungeons (todo levels)
 
-> harpies lvls: content + deco + text encounters
-> squid lvls: content + deco text!! + text encounters
+> harpies2 : webs ?
+> harpies lvls: content + deco text + text encounters + story event
+> squid lvls: content + deco text + text encounters + story event
 > mushroom lvl: text encounters +  deco text
 > world: new encounters
 > all monsters battle attributes
