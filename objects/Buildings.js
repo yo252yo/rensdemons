@@ -61,7 +61,7 @@ class S_TownFloor extends S_Floor {
 
 class S_Tree extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/nature/tree.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(20,0,20,15);
     this.default_text = this.text_interaction([
@@ -200,7 +200,7 @@ class S_Castle extends LevelObject {
 
 class S_AlgaeWall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/algaewall");
+    super(x, y, "water/algaewall");
     this.adjust_hitbox(20,0,110,25);
     this.default_text = this.text_interaction([
       "...",
@@ -210,7 +210,7 @@ class S_AlgaeWall extends SimpleObject {
 
 class S_Anemone extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/anemone");
+    super(x, y, "water/anemone");
     this.adjust_hitbox(0,0,20,20);
     this.default_text = this.text_interaction([
       "...",
@@ -220,7 +220,7 @@ class S_Anemone extends SimpleObject {
 
 class S_Coral extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/coral");
+    super(x, y, "water/coral");
     this.adjust_hitbox(0,0,50,25);
     this.default_text = this.text_interaction([
       "...",
@@ -230,7 +230,7 @@ class S_Coral extends SimpleObject {
 
 class S_Seashell extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/seashell");
+    super(x, y, "water/seashell");
     this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "...",
@@ -240,7 +240,7 @@ class S_Seashell extends SimpleObject {
 
 class S_Seashellpointy extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/seashellpointy");
+    super(x, y, "water/seashellpointy");
     this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "...",
@@ -250,7 +250,7 @@ class S_Seashellpointy extends SimpleObject {
 
 class S_Waterplants extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/waterplants");
+    super(x, y, "water/waterplants");
     this.adjust_hitbox(0,0,40,20);
     this.default_text = this.text_interaction([
       "...",
@@ -260,7 +260,7 @@ class S_Waterplants extends SimpleObject {
 
 class S_PlantSmall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/plantsmall");
+    super(x, y, "forest/plantsmall");
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "...",
@@ -271,7 +271,7 @@ class S_PlantSmall extends SimpleObject {
 
 class S_Shroomgiant extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/shroomgiant");
+    super(x, y, "forest/shroomgiant");
     this.adjust_hitbox(40,0,20,20);
     this.default_text = this.text_interaction([
       "...",
@@ -281,7 +281,7 @@ class S_Shroomgiant extends SimpleObject {
 
 class S_Shroomsmall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/shroomsmall");
+    super(x, y, "forest/shroomsmall");
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "...",
@@ -292,7 +292,7 @@ class S_Shroomsmall extends SimpleObject {
 
 class S_Shroomtall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/shroomtall");
+    super(x, y, "forest/shroomtall");
     this.adjust_hitbox(20,0,20,20);
     this.default_text = this.text_interaction([
       "...",
@@ -302,7 +302,7 @@ class S_Shroomtall extends SimpleObject {
 
 class S_Planks extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/planks");
+    super(x, y, "water/planks");
     this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "...",
@@ -312,7 +312,7 @@ class S_Planks extends SimpleObject {
 
 class S_Pebbles extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/pebbles");
+    super(x, y, "mountain/pebbles");
     this.adjust_hitbox(10,0,20,15);
     this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.default_text = this.text_interaction([
@@ -324,7 +324,7 @@ class S_Pebbles extends SimpleObject {
 
 class S_RocksHuge extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/rockshuge");
+    super(x, y, "mountain/rockshuge");
     this.adjust_hitbox(10,0,130,50);
     this.default_text = this.text_interaction([
       "...",
@@ -334,7 +334,7 @@ class S_RocksHuge extends SimpleObject {
 
 class S_Rocks1 extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/rocks1");
+    super(x, y, "mountain/rocks1");
     this.adjust_hitbox(20,0,50,20);
     this.default_text = this.text_interaction([
       "...",
@@ -344,7 +344,7 @@ class S_Rocks1 extends SimpleObject {
 
 class S_Rocks2 extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/rocks2");
+    super(x, y, "mountain/rocks2");
     this.adjust_hitbox(10,0,40,20);
     this.default_text = this.text_interaction([
       "...",
@@ -354,7 +354,7 @@ class S_Rocks2 extends SimpleObject {
 
 class S_Rocks3 extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/rocks3");
+    super(x, y, "mountain/rocks3");
     this.adjust_hitbox(0,0,40,20);
     this.default_text = this.text_interaction([
       "...",
@@ -364,7 +364,7 @@ class S_Rocks3 extends SimpleObject {
 
 class S_Rocks4 extends SimpleObject {
   constructor(x, y){
-    super(x, y, "nature/rocks4");
+    super(x, y, "mountain/rocks4");
     this.adjust_hitbox(0,0,30,20);
     this.default_text = this.text_interaction([
       "...",

@@ -100,31 +100,31 @@ const AUDIO = {
     },
 
     interface:{
-      battle: function() {          AUDIO._play_music('the girl with the baseball bat'); },
-      titlescreen: function() {     AUDIO._play_music('time for adventure 4 opening'); },
-      introduction: function() {    AUDIO._play_music('love planet'); },
-      gameover: function() {        AUDIO._play_music('un triste echo trop juste'); },
-      map: function() {             AUDIO._play_music('un desert'); }, // or foulerlhorizon???
+      battle: function() {          AUDIO._play_music('interface/the girl with the baseball bat'); },
+      titlescreen: function() {     AUDIO._play_music('interface/time for adventure 4 opening'); },
+      introduction: function() {    AUDIO._play_music('interface/love planet'); },
+      gameover: function() {        AUDIO._play_music('interface/un triste echo trop juste'); },
+      map: function() {             AUDIO._play_music('interface/un desert'); }, // or foulerlhorizon???
       // boss battle music??
     },
 
-    town: {
-      hope: function() {       AUDIO._play_music('realismovisceral'); },
-      denial: function() {     AUDIO._play_music('tinajero'); },
-      acceptance: function() { AUDIO._play_music('two live at musique tangeantes'); },
-      debauch: function() {    AUDIO._play_music('debaucheddance'); },
-      fear: function() {       AUDIO._play_music('lacrobate'); },
+    town: { // strings, ambiant
+      hope: function() {       AUDIO._play_music('town/realismovisceral'); },
+      denial: function() {     AUDIO._play_music('town/tinajero'); },
+      acceptance: function() { AUDIO._play_music('town/two live at musique tangeantes'); },
+      debauch: function() {    AUDIO._play_music('town/debaucheddance'); },
+      fear: function() {       AUDIO._play_music('town/lacrobate'); },
     },
     // todo:
-    characters:{
-      StreetSmart: function() { AUDIO._play_music('lastenergy'); },
-      WiseOld: function() { AUDIO._play_music("spacemtv") },
-      FemmeFatale: function() { AUDIO._play_music("sexytime") },
-      PreciousChild: function() { AUDIO._play_music('shy'); },
+    characters:{ // chiptune, weird
+      StreetSmart: function() { AUDIO._play_music('chara/lastenergy'); },
+      WiseOld: function() { AUDIO._play_music("chara/spacemtv") },
+      FemmeFatale: function() { AUDIO._play_music("chara/sexytime") },
+      PreciousChild: function() { AUDIO._play_music('chara/shy'); },
 
 
-      GeniusProdigy: function() { AUDIO._play_music('hugconvoy'); },
-      BestFriend: function() { AUDIO._play_music('godmadeofsoap'); },
+      GeniusProdigy: function() { AUDIO._play_music('chara/hugconvoy'); },
+      BestFriend: function() { AUDIO._play_music('chara/godmadeofsoap'); },
       // rm tolose
 
 
@@ -143,19 +143,19 @@ const AUDIO = {
     },
 
     levels: {
-      hideandseek: function() {     AUDIO._play_music('champ de tournesol'); },
-      trial: function() {           AUDIO._play_music('a tale about somewhere where the end of the story already occurs'); },
-      temple: function() {          AUDIO._play_music('ambiant inconvenient truth'); },
-      house: function() {           AUDIO._play_music('floating temple'); },
+      hideandseek: function() {     AUDIO._play_music('level/champ de tournesol'); },
+      trial: function() {           AUDIO._play_music('level/a tale about somewhere where the end of the story already occurs'); },
+      temple: function() {          AUDIO._play_music('level/ambiant inconvenient truth'); },
+      house: function() {           AUDIO._play_music('level/floating temple'); },
 
       sirens: function() { console.log("todo") },
       trees: function() { console.log("todo") },
       hawks: function() { console.log("todo") },
       slimes: function() { console.log("todo") },
 
-      mushrooms: function() { AUDIO._play_music("jeudelaconversation") },
-      squids: function() { AUDIO._play_music("ihatehimsomuch"); }, // static shoes, four?
-      harpies: function() { AUDIO._play_music("callofthecoyote") },
+      mushrooms: function() { AUDIO._play_music("level/jeudelaconversation") },
+      squids: function() { AUDIO._play_music("level/ihatehimsomuch"); }, // static shoes, four?
+      harpies: function() { AUDIO._play_music("level/callofthecoyote") },
 
       hellsmaw: function() { console.log("todo") },
       hell: function() { console.log("todo") },
