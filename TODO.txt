@@ -5,10 +5,14 @@ be careful, write in present and second person, also dont make things spawn on d
 
 should we meet the king?
 
+
+YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
+ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
+
 - pick audios
 - story: dungeons (todo levels)
 
- text encounters: harpies lvls, squid lvls, mushroom lvl, world
+ text encounters: harpies lvls, squid lvls, mushroom lvl, world:
  addevent_battle(name, weight);
  addevent_rubble(item, weight);
  addevent_treasure(item, weight, count);
@@ -28,9 +32,6 @@ should we meet the king?
   attacks in languge,
   encounter+battle
 
-
-  YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
-  ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
 
 
 should we do a cemetary?
