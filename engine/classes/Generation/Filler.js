@@ -80,20 +80,26 @@ class Filler {
   }
 
   addevent_rubble(item, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
     this.add_event(function(x,y,g){
-        new SB_rubble(x, y, item);
+        new SB_rubble(x, y, item, size, color);
       }, weight);
   }
 
-  addevent_treasure(item, weight) {
+  addevent_treasure(item, weight, quantity) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
     this.add_event(function(x,y,g){
-        new SE_small_treasure(x, y, item);
+        new SE_treasure(x, y, item, quantity, size, color);
       }, weight);
   }
 
   addevent_text(text, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
     this.add_event(function(x,y,g){
-        new SB_event(x, y, text);
+        new SB_event(x, y, text, size, color);
       }, weight);
   }
 

@@ -18,8 +18,11 @@ class SB_event extends SBattle {
 }
 
 class SE_treasure extends S_event {
-  constructor(x, y, object, quantity, size) {
-    super(x, y, size);
+  constructor(x, y, object, quantity, size, color) {
+    if (!quantity){
+      quantity = 1;
+    }
+    super(x, y, size, color);
     this.object = object;
     this.quantity = quantity;
   }

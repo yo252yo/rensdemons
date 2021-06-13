@@ -9,6 +9,10 @@ should we meet the king?
 - story: dungeons (todo levels)
 
  text encounters: harpies lvls, squid lvls, mushroom lvl, world
+ addevent_battle(name, weight);
+ addevent_rubble(item, weight);
+ addevent_treasure(item, weight, count);
+ addevent_text(text, weight);
 
 
 > all monsters battle attributes
@@ -28,7 +32,5 @@ should we meet the king?
   YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
   ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
 
-  OTHER TYPES OF EVENT DON HAVE SIZE AND COLOR IN CONSTRUCTOR FOR WORLD MAP I THINK
-  on world map we want the event to actually be small but on the other maps we want the hitbox only to be small
 
 should we do a cemetary?
