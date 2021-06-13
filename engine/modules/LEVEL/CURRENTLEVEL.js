@@ -219,7 +219,7 @@ const CURRENTLEVEL = {
     _setup_level: function(name) {
       FOG.draw();
       CURRENTLEVEL.level_name = name;
-      CURRENTLEVEL._setup._setup_colors(name);
+      CURRENTLEVEL._setup._setup_colors();
 
       if (name.startsWith("$")) { // special levels (generated)
         var actual_name = name.substring(1).split("_")[0];
@@ -233,17 +233,15 @@ const CURRENTLEVEL = {
       }
     },
 
-    _setup_colors: function(name) {
-      if(name.endsWith("map")){
-        FOG.recolor('obj_light');
-        document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
-      } else {
-        FOG.recolor('player');
-        document.body.style.backgroundColor = PALETTE.color('void').code();
-      }
+    _setup_colors: function() {
+      FOG.recolor(PALETTE.fog_color());
+      document.body.style.backgroundColor = PALETTE.body_color().code();
     },
   },
 
+  is_map(){
+    return CURRENTLEVEL.level_name.endsWith("map")
+  },
 
   setup: function(name) {
     IO.clear_io_queue();

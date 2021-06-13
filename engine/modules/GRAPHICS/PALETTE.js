@@ -3,6 +3,34 @@
 const PALETTE = {
   _COLORS: {},
 
+  fog_color: function(){
+    if(CURRENTLEVEL.is_map()){
+      return PALETTE.color('obj_light');
+    } else {
+      return PALETTE.color('player');
+    }
+  },
+
+  body_color: function(){
+    if(CURRENTLEVEL.is_map()){
+      return PALETTE.color('obj_dark');
+    } else {
+      return PALETTE.color('void');
+    }
+  },
+
+  background_color: function(){
+    if(CURRENTLEVEL.is_map()){
+      return ('obj_light');
+    } else {
+      return ('obj_dark');
+    }
+  },
+
+  color_for_battle: function() {
+    document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
+  },
+
   battle_menu_background: function() {
     var base = PALETTE.color('player');
   //  return base.hoffset(0.6);
@@ -99,10 +127,6 @@ const PALETTE = {
       } else {
         return def;
       }
-  },
-
-  color_for_battle: function() {
-    document.body.style.backgroundColor = PALETTE.color('obj_dark').code();
   },
 
   factory: {

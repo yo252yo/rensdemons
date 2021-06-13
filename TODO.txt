@@ -3,9 +3,6 @@ be careful, write in present and second person, also dont make things spawn on d
 should we meet the king?
 
 
-
-ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
-
 - pick audios
 - story: dungeons (todo levels)
 

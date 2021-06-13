@@ -279,7 +279,7 @@ const BATTLE = {
 
       animation: function () {
           var pos = LEVELSTATES.get_position(BATTLE.origin_level);
-          var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: 'obj_dark'});
+          var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: PALETTE.background_color()});
           html_rectangle.classList.add("expanding_div");
           html_rectangle.style.position = "fixed";
           CURRENTLEVEL.system.html().appendChild(html_rectangle);
@@ -339,7 +339,7 @@ const BATTLE = {
 
       animation: function () {
           var pos = LEVELSTATES.get_position(BATTLE.origin_level);
-          var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: 'obj_dark'});
+          var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: PALETTE.background_color()});
           html_rectangle.classList.add("collapsing_div");
           html_rectangle.style.position = "fixed";
           CURRENTLEVEL.system.html().appendChild(html_rectangle);

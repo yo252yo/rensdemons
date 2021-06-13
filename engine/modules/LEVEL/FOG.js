@@ -47,7 +47,7 @@ const FOG = {
   },
 
   recolor: function(c){
-    var color = PALETTE.color(c).code();
+    var color = c.code();
     document.getElementById("fog_top").style.background = color;
     document.getElementById("fog_bot").style.background = color;
     document.getElementById("fog_left").style.background = color;

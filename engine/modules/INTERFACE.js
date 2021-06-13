@@ -128,7 +128,7 @@ const INTERFACE = {
   },
 
   color_interface: function() {
-    document.body.style.backgroundColor = PALETTE.color('void').code();
+    document.body.style.backgroundColor = PALETTE.body_color().code();
     INTERFACE.draw.escape_button();
     INTERFACE.draw.click_marker();
     CURRENTLEVEL.system.redraw();
