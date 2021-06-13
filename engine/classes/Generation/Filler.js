@@ -41,7 +41,7 @@ class Filler {
     this.obj_h = s;
 
     this.obj_constructor = function(x,y,gen) {
-      var f = RANDOM.pick(events);
+      var f = RANDOM.pick(events, gen);
       f(x,y,gen);
     };
   }
@@ -94,7 +94,7 @@ class Filler {
       var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
 
       if (decor? !this._intersectWalk(x, y) : this._canBuild(x, y)) {
-        this.obj_constructor(x, y, this.gen.get());
+        this.obj_constructor(x, y, this.gen);
         nb_placed ++;
       }
 

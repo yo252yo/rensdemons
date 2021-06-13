@@ -64,7 +64,7 @@ new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
 FEasyS.set_guaranteed(1);
 FEasyS.set_object(100, 100, function(x,y,g){
-  return new SM_Trees(x, y, g, "", "011_han_grove");
+  return new SM_Trees(x, y, g.get(), "", "011_han_grove");
 });
 FEasyS.fill_by_retry();
 
@@ -78,14 +78,14 @@ FHardSW.fill_by_retry();
 
 FHardNE.set_guaranteed(1);
 FHardNE.set_object(250, 150, function(x,y,g){
-  return new SM_Lake(x, y, g, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
+  return new SM_Lake(x, y, g.get(), `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
 });
 FHardNE.fill_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(250, 150, function(x,y,g){
-  return new SM_Mountain(x, y, g, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
+  return new SM_Mountain(x, y, g.get(), `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
 });
 FHardMain.fill_by_retry();
 
@@ -103,20 +103,20 @@ FHardMain.fill_by_retry();
 // could be non uniform
 for(var i = 0; i < 3; i++) {
   FMap.set_tries(3, 25);
-  FMap.set_object(100, 100, function(x,y,g){ return new SM_Trees(x, y, g);});
+  FMap.set_object(100, 100, function(x,y,g){ return new SM_Trees(x, y, g.get());});
   FMap.fill_by_retry();
 
   FMap.set_tries(3, 15);
-  FMap.set_object(300, 200, function(x,y,g){ return new SM_Lake(x, y, g);});
+  FMap.set_object(300, 200, function(x,y,g){ return new SM_Lake(x, y, g.get());});
   FMap.fill_by_retry();
 
   FMap.set_tries(3, 15);
-  FMap.set_object(300, 150, function(x,y,g){ return new SM_Mountain(x, y, g);});
+  FMap.set_object(300, 150, function(x,y,g){ return new SM_Mountain(x, y, g.get());});
   FMap.fill_by_retry();
 }
 // Place hills after as they are walkable
 FMap.set_tries(10, 40);
-FMap.set_object(200, 100, function(x,y,g){ return new SM_Hills(x, y, g);});
+FMap.set_object(200, 100, function(x,y,g){ return new SM_Hills(x, y, g.get());});
 FMap.fill_by_retry();
 
 

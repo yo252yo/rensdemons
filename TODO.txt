@@ -9,7 +9,7 @@ should we meet the king?
 - story: dungeons (todo levels)
 
  text encounters: harpies lvls, squid lvls, mushroom lvl, world
- 
+
 
 > all monsters battle attributes
 > fast travel after getting artifact?
@@ -24,5 +24,8 @@ should we meet the king?
   attacks in languge,
   encounter+battle
 
+
+  YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
+  ANIMATION START BATTLE ON WORLDMAP IS SHIT
 
 should we do a cemetary?
