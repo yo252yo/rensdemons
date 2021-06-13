@@ -240,10 +240,12 @@ const BATTLE = {
     },
 
     lose: function() {
+      BATTLE.loot = [];
       BATTLE.builder.teardown.start(BATTLE.builder.teardown.loss);
     },
 
     escape: function() {
+      BATTLE.loot = [];
       BATTLE.builder.teardown.start(BATTLE.builder.teardown.escape);
     },
 

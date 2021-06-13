@@ -1,12 +1,9 @@
 decide title
-
 be careful, write in present and second person, also dont make things spawn on doors
-
-
 should we meet the king?
 
 
-YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
+
 ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
 
 - pick audios
