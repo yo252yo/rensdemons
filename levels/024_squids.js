@@ -131,7 +131,7 @@ var potion = function(){
       `$$Ren$: "Some sort of ancient relic, I assume."`,
       `$$BestFriend$: "Let's go! Do you have the breathing potion?"`,
       `$$Ren$: "Hmmm... I think we don't have any."`,
-      `$$BestFriend$: "Well then let's go back to town and get some, how else are we suposed to explore a lake?"`,
+      `$$BestFriend$: "Well then let's go back to town and get some, how else are we supposed to explore a lake?"`,
     ], function() {CURRENTLEVEL.setup("010_world_map"); });
   }
 }

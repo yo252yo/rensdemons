@@ -51,7 +51,7 @@ class B_Bed extends BattleObject {
 
     this.set_description("It's a regular bed to sleep in.");
 
-    this.add_interaction("Inspect", "This bed is made of linen covering a wooden frame. The thin matress is made of hay. It doesn't look too great...");
+    this.add_interaction("Inspect", "This bed is made of linen covering a wooden frame. The thin mattress is made of hay. It doesn't look too great...");
     this.add_interaction("Resist", "This bed looks very comfortable. The thick wool beddings beckon you.");
     this.add_interaction("Envy", "The pillow seems to be made with feathers. How were they able to afford such luxury?");
     this.add_interaction("Nap", "The Goddess wants you to take a nap. It's not your bed, but it will do. You comply reluctantly. You can get a few minutes of sleep, and wake up barely more rested than before. Maybe even a bit more groggy.");
@@ -99,7 +99,7 @@ class B_Chair extends BattleObject {
     this.set_description("This is a chair.");
     this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
-    this.add_interaction("Sit", "The Goddess compells you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
+    this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
     this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
   }
 }
@@ -138,11 +138,11 @@ class B_Jar extends BattleObject {
     this.adjust_hitbox(0,0,32,20);
 
     this.set_description("A beautiful pottery jar.");
-    this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic bevrage?");
+    this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
     this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
     this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they?");
     this.add_interaction("Break", 'As you watch this jar, you can hear the voice of the Goddess inside you. "Break it... Break it...". You resist it. For now...');
-    this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarassing. You try to put the pieced back together, hoping to do a decent enough job to not be found out right away.");
+    this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarrassing. You try to put the pieced back together, hoping to do a decent enough job to not be found out right away.");
   }
 }
 
@@ -152,10 +152,10 @@ class B_Shelf extends BattleObject {
     this.adjust_hitbox(0,0,59,67);
 
     this.set_description("A wooden shelf of reasonable sturdiness.");
-    this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hords have put the village in.");
+    this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hordes have put the village in.");
     this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
     this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
-    this.add_interaction("Mess up", "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shamefull. It's not easy being a Divine vessel.");
+    this.add_interaction("Mess up", "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shameful. It's not easy being a Divine vessel.");
   }
 }
 
@@ -178,7 +178,7 @@ class B_Table extends BattleObject {
 
     this.set_description("This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.");
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
-    this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you. This is so embarassing. You finally get out, and swear to never acknowledge this happened.");
+    this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you. This is so embarrassing. You finally get out, and swear to never acknowledge this happened.");
     this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
   }
 }
@@ -192,8 +192,8 @@ class B_Chest extends BattleObject {
     this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");
     this.add_interaction("Withstand", "You know the Goddess wants you to open this chest and loot it, but you also know it would be pointless and impolite. You try to look away, and keep the thought away from your mind.");
     this.add_interaction("Marvel", "Not only does this family have possessions, they have so much that they can even put some in a chest! It's nice to see that the everlasting war spared a few people.");
-    this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linnens that aren't yours. Nothing of interest here. You got nothing out of it but embarassment.");
-    this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthousiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
+    this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linens that aren't yours. Nothing of interest here. You got nothing out of it but embarrassment.");
+    this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthusiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
     this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
     this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden));
   }

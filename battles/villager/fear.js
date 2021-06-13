@@ -71,10 +71,10 @@ add_item(`War`, [
       `${name}: "Some say the monster invasion is punishment for our sins. Each monster is born from a sinner. I can't wait to get rid of all the scum so that only pure people remain and the problem will be solved once and for all!"`,
   ],
   [
-      `${name}: "I'm sure it's travellers like you who bring the monsters to our doors..."`,
+      `${name}: "I'm sure it's travelers like you who bring the monsters to our doors..."`,
   ],
   [
-      `${name}: "Things will only improve after we've thouroughly defeated all the outsiders in battle, and pushed them back where they come from. Or better yet, exterminate them!"`,
+      `${name}: "Things will only improve after we've thoroughly defeated all the outsiders in battle, and pushed them back where they come from. Or better yet, exterminate them!"`,
   ],
   [
       `${name}: "The monsters won't cease attacking as long as there's impurity in our hearts. We must pray harder!"`,
@@ -89,7 +89,7 @@ add_item(`Hunt`, [
     `${name}: "Truth be told, we almost never hunt. Leaving the town is way too risky."`,
   ],
   [
-    `${name}: "I don't trust those hunter folks. They just galavant willy-nilly outside the village. Who knows what kind of stuff happens there..."`,
+    `${name}: "I don't trust those hunter folks. They just galivant willy-nilly outside the village. Who knows what kind of stuff happens there..."`,
   ],
 ]);
 
@@ -125,7 +125,7 @@ add_item(`Health`, [
     `${name}: "I'm taking great care of protecting myself. I almost never leave my house, so I don't run into diseases, and I pray the Goddess every hour, so that she protects me!"`,
   ],
   [
-    `${name}: "I spend most of my day cleaning my house. We wouldn't have plagues if everyone was as diligent as me. Those bad apples make it hard for the rest of honnest folk like me..."`,
+    `${name}: "I spend most of my day cleaning my house. We wouldn't have plagues if everyone was as diligent as me. Those bad apples make it hard for the rest of honest folk like me..."`,
   ],
 ]);
 
@@ -143,10 +143,10 @@ add_item(`Family`, [
 
 add_item(`Promised Child`, [
   [
-    `${name}: "The Pomised Child would have been here a long time ago if people were not so impure. The Goddess did not send us Her child because we're not worthy yet. We haven't prayed enough, it's that simple."`,
+    `${name}: "The Promised Child would have been here a long time ago if people were not so impure. The Goddess did not send us Her child because we're not worthy yet. We haven't prayed enough, it's that simple."`,
   ],
   [
-    `${name}: "I'm not sure the Promised Child is ever coming, to be honnest. There's so much sin everywhere. I don't know how such a dark environment can birth a holy child. We must repent!"`,
+    `${name}: "I'm not sure the Promised Child is ever coming, to be honest. There's so much sin everywhere. I don't know how such a dark environment can birth a holy child. We must repent!"`,
   ],
   [
     `${name}: "I spend all my time praying the Goddess and asking Her to send Her Promised Child to save me. I'm sure She will find my devotion worthy."`,
@@ -160,7 +160,7 @@ add_item(`Job`, [
     `${name}: "Nothing at the moment, I pray!"`,
   ],
   [
-    `${name}: "Most people in this city are devouts. They don't have a job per se, they dedicate their whole life to praying the Goddess and medidating, repenting and asking for forgiveness."`,
+    `${name}: "Most people in this city are devotes. They don't have a job per se, they dedicate their whole life to praying the Goddess and mediating, repenting and asking for forgiveness."`,
   ],
   [
     `${name}: "I belong to the militia. We go through the town and make sure that public order is respected, and that people are acting in a proper and devout way. You might say that I'm the protector of the spiritual peace of this kingdom. So you better watch what you're doing, I'm keeping an eye on you, outsider."`,
@@ -175,7 +175,7 @@ add_item(`Rumors`, [
     `${name}: "I keep hearing that some people have settled in this city without deserving their place... I'm sure their laziness is attracting monsters upon us..."`,
   ],
   [
-    `${name}: "Rumor has it that there are people in this city that do not do their due dilligence and pray enough. I'm pretty sure this is true, and this is why the Goddess is punishing us."`,
+    `${name}: "Rumor has it that there are people in this city that do not do their due diligence and pray enough. I'm pretty sure this is true, and this is why the Goddess is punishing us."`,
   ],
   [
     `${name}: "Rumors are plentiful in this city. Nobody is as perfect as me, everyone has dirty laundry. We're still far from a perfect world. If only people tried a little harder..."`,
@@ -199,7 +199,7 @@ add_item(`Dreams`, [
 
 add_item(`Traditions`, [
   [
-    `${name}: "Every week, we hold a citizen tribunal, to confront our unworthy neighbours with their sins. It's for the good of all of us, we must be righteous if we are to survive."`,
+    `${name}: "Every week, we hold a citizen tribunal, to confront our unworthy neighbors with their sins. It's for the good of all of us, we must be righteous if we are to survive."`,
   ],
   [
     `${name}: "We have regular deliberations to decide who should we banish from the town. It's important to banish someone every month, it keeps the city pure, and the fear keeps people in check..."`,
@@ -247,7 +247,7 @@ var attack = {
   time_variation: 0.8, // 1 = 100%
 };
 BATTLE.monster_actions.add_textual(`The stranger stares at you judgmentally in silence.`, attack);
-BATTLE.monster_actions.add_textual(`The villager's glacial gaze ie pretty oppressive.`, attack);
+BATTLE.monster_actions.add_textual(`The villager's glacial gaze is pretty oppressive.`, attack);
 BATTLE.monster_actions.add_textual(`${name} scolds you. What are you doing here? Isn't there somewhere else you should be?`, attack);
 BATTLE.monster_actions.add_textual(`${name} doesn't seem convinced that you're telling the truth. They press you for more details.`, attack);
 BATTLE.monster_actions.add_textual(`You have to subject yourself to the relentless questioning of ${name}.`, attack);

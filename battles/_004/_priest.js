@@ -88,7 +88,7 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.LOSS,
   description: ["$$Ren$: \"Please say no more and leave me alone. You don't need to chaperon me. I know what I'm doing.\"",
                 "Priest: \"But... how?\"",
-                "$$Ren$: \"I am the Promised Child, am I not? I have the blessing of the Goddess, and I need noone else. To even suggest the contrary is blasphemy.\"",
+                "$$Ren$: \"I am the Promised Child, am I not? I have the blessing of the Goddess, and I need no-one else. To even suggest the contrary is blasphemy.\"",
                 "Priest: \"You... you're right. Please forgive me. I need to repent.\"",
               ],
 });

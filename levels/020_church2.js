@@ -25,7 +25,7 @@ var explanations = function() {
     `Priest: "As the Promised Child, I will now share with you secrets that have been kept strictly within the highest officials of the Church of $$town_2$."`,
     `Priest: "Everybody knows that the world of $$world_name$ has been under relentless torment from the evil armies of $$demon_lord$ for centuries, now. But few know the full story of how it happened, and what was before."`,
     `$$BestFriend$: "Wasn't there just peace?"`,
-    `Priest: "Yes, but peace brings prosperity and development. It seems that our ancestors, free from the colonization of demons, had built a society far more powerfull and sophisticated than we can ever imagine from this period of suffering and ignorance."`,
+    `Priest: "Yes, but peace brings prosperity and development. It seems that our ancestors, free from the colonization of demons, had built a society far more powerful and sophisticated than we can ever imagine from this period of suffering and ignorance."`,
     `Priest: "Sadly, even we don't know a lot about it. Most places, people and documents were wiped out when the armies of $$demon_lord$ raided $$world_name$. Not much is left besides rumors passed down by word of mouth over generations."`,
     `Priest: "We can only speculate how far their powers extended. We think they had complete mastery over nature, that magic was everywhere in the kingdom, that life was easy, happy and plentiful."`,
     `Priest: "Some of us think that it made our ancestors lazy, other think that it made them too drunk on their own hubris. In any case, when $$demon_lord$ arrived, they were not ready. In less than a few days, civilization was reduced to a few surviving tribes who rebuilt villages any way they could. Our ancestors. The ones the Goddess could protect."`,
@@ -71,7 +71,7 @@ CURRENTLEVEL.start_function = function(){
       `Priest: "Everyone in this building is fully devoted to you! We'll give you anything you require, just ask! Some of us can teach you magic: we are knowledgeable in the ways of the Element and the ways of the Spirit."`,
       `$$BestFriend$: "Well, that sounds promising!"`,
       `$$Ren$: "To me, it sounds scary!"`,
-      `Priest: "Most importantly, I can tell you where to find the power to defeat $$demon_lord$. Come and see me when you're ready to learn. But... these are very sensitive informations... Maybe it's best we speak alone?"`,
+      `Priest: "Most importantly, I can tell you where to find the power to defeat $$demon_lord$. Come and see me when you're ready to learn. But... this is very sensitive information... Maybe it's best we speak alone?"`,
       `$$Ren$: "I'll just tell $$BestFriend$ everything right after, you may as well talk now."`,
       `Priest: "Very well."`,
     ], function(){ IO.control.character(); });

@@ -127,7 +127,7 @@ add_item(`Health`, [
 
 add_item(`Family`, [
   [
-    `${name}: "I don't want children. I can't bring myself to impose this worlf of suffering on others."`,
+    `${name}: "I don't want children. I can't bring myself to impose this world of suffering on others."`,
   ],
   [
     `${name}: "Most of my family is already dead. My siblings are waiting for me with the Goddess. I can't wait for my turn to join them."`,
@@ -151,7 +151,7 @@ add_item(`Promised Child`, [
 
 add_item(`Job`, [
   [
-    `${name}: "I have the priviledge to work on building tombs. It's an important responsibility. Our lives are transient, but our final rest will be eternal!"`,
+    `${name}: "I have the privilege to work on building tombs. It's an important responsibility. Our lives are transient, but our final rest will be eternal!"`,
   ],
   [
     `${name}: "I offer council to prepare people for death. I organize sessions of prayers and meditations. I guess you could call me a guide for the spirits."`,
@@ -169,7 +169,7 @@ add_item(`Rumors`, [
     `${name}: "I hear there will be a raid soon. Many will die. I hope my turn comes."`,
   ],
   [
-    `${name}: "Many here are saying that the Goddess has abandonned us. I can't tell if it's true, but it sure looks like it."`,
+    `${name}: "Many here are saying that the Goddess has abandoned us. I can't tell if it's true, but it sure looks like it."`,
   ],
   [
     `${name}: "People around here keep saying that the grave is a better place than this wretched world. I'm not sure if I believe them, but if things keep piling up, I might..."`,

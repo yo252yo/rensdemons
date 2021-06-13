@@ -98,7 +98,7 @@ LANGUAGE.actions[ITEM.Elixir_ice] = {
       `You see a unnatural chilling vapor escape the bottle.`,
       `The glass container explodes and a shimmering fog expands out of it.`
     ]) + " " + RANDOM.pick([
-      `It soon engulfes the $$&ENEMY$ and crystalizes around it.`,
+      `It soon engulfs the $$&ENEMY$ and crystalizes around it.`,
       `It's not long before the $$&ENEMY$ is entirely covered by the shiny gas. It imperceptibly turns into ice.`,
       `The substance propagates its biting freeze, until the $$&ENEMY$ is covered by a thin layer of ice.`
     ]) + " " + RANDOM.pick([
@@ -121,7 +121,7 @@ LANGUAGE.actions[ITEM.Elixir_decay] = {
       `The bottle empties its content on the $$&ENEMY$.`,
       `The glass container explodes and covers the $$&ENEMY$ of its liquid content.`
     ]) + " " + RANDOM.pick([
-      `You see the body of the $$&ENEMY$ wither under the desctructive effect of the potion.`,
+      `You see the body of the $$&ENEMY$ wither under the destructive effect of the potion.`,
       `The acid mixture burns through the $$&ENEMY$ and consumes its body.`,
       `The unholy potion decomposes the body of the $$&ENEMY$, which starts to crumble before your eyes.`
     ]) + " " + RANDOM.pick([
@@ -146,7 +146,7 @@ LANGUAGE.actions[ITEM.Elixir_chaos] = {
     ]) + " " + RANDOM.pick([
       `The trembling body of darkness seems to suck up everything around it. The $$&ENEMY$ struggles, but eventually gives in to its unnatural gravitational pull.`,
       `Turbulent currents animate the air around the mysterious object, slashing the $$&ENEMY$ and pulling it closer and closer to the dark anomaly.`,
-      `The mysterious black shape seems to engulf even light, and appears more dark than anything you've seen before. Its borders vascillate, and grow to capture the $$&ENEMY$.`,
+      `The mysterious black shape seems to engulf even light, and appears more dark than anything you've seen before. Its borders vacillate, and grow to capture the $$&ENEMY$.`,
     ]) + " " + RANDOM.pick([
       `Finally, in a pop, the black hole disappears out of existence, leaving no trace anything ever happened.`,
       `The black hole simply vanishes, taking with it your former foe.`,
@@ -171,7 +171,7 @@ LANGUAGE.actions[ITEM.Elixir_vine] = {
       `Vines surround the $$&ENEMY$ and squeeze it into a deadly embrace.`,
       `The vegetal grows in an instant, spreading its stems all over the $$&ENEMY$ whose struggle amounts to nothing.`,
     ]) + " " + RANDOM.pick([
-      `The $$&ENEMY$ is left unable to move, forever frozen as a vegetal scultpure.`,
+      `The $$&ENEMY$ is left unable to move, forever frozen as a vegetal sculpture.`,
       `There is now a tree where the $$&ENEMY$ used to be, and you can barely make out the features of your enemy in the shapes of its bark.`,
     ]);
   },
@@ -190,7 +190,7 @@ LANGUAGE.actions[ITEM.Elixir_venom] = {
       `The gas contained in the bottle surrounds the $$&ENEMY$.`,
       `The glass container explodes in a cloud of toxic fumes.`
     ]) + " " + RANDOM.pick([
-      `The $$&ENEMY$'d body contorts in spasms as it breathes the poison.`,
+      `The $$&ENEMY$'s body contorts in spasms as it breathes the poison.`,
       `The poisonous smoke penetrates inside the $$&ENEMY$ and starts destroying its body.`,
       `There is no choice left for the $$&ENEMY$ but to breathe in the poisonous gas.`,
     ]) + " " + RANDOM.pick([
@@ -319,7 +319,7 @@ LANGUAGE.actions[ITEM.Mace] = {
     return RANDOM.pick([
       `Your mace smashes the $$&ENEMY$ with an awful crushing sound that resonates all around you.`,
       `The blow from your mace sends the $$&ENEMY$ tumbling back. It will not recuperate from this shock.`,
-      `The mace is heavy and hard to manoeuvre, but it leaves a visible dent in the body of the $$&ENEMY$ which is rendered unable to fight.`,
+      `The mace is heavy and hard to maneuver, but it leaves a visible dent in the body of the $$&ENEMY$ which is rendered unable to fight.`,
     ]);
   },
 };
@@ -334,7 +334,7 @@ LANGUAGE.actions[ITEM.War_hammer] = {
   win: function(){
     return RANDOM.pick([
       `The massive hammer, charged by the inertia of your arm, explodes the poor $$&ENEMY$ into little fragments that go flying around.`,
-      `You need an ample motion to wave the heavy weapon, but it is worth it when the strength of the shock propells the $$&ENEMY$, or rather what's left of it, out of your way.`,
+      `You need an ample motion to wave the heavy weapon, but it is worth it when the strength of the shock propels the $$&ENEMY$, or rather what's left of it, out of your way.`,
       `You barely feel any resistance when your hammer hits its target, but you do hear the chilling sound of the $$&ENEMY$ being crushed by your blow. What remains is better left undescribed.`,
     ]);
   },

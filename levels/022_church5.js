@@ -10,7 +10,7 @@ var make_priest = function (x, y) {
     new TextBannerRandom([
       "Priest: \"The Sacrifice is our most important ritual, so we spend most of our time preparing for it. There's not much to do, but it needs to be perfect.\"",
       "Priest: \"The people are usually eager to serve in the Sacrifice. We need to enforce a strict limit on the rate, or there wouldn't be anybody left in this town.\"",
-      "Priest: \"May the Goddess accept our offering and have mercy on us. Though I guess it is presomptuous to think that our actions could influence Her.\"",
+      "Priest: \"May the Goddess accept our offering and have mercy on us. Though I guess it is presumptuous to think that our actions could influence Her.\"",
       "Priest: \"I wish it were my turn...\"",
       "Priest: \"The Sacrifice is important, because it gives us all something to look forward to. One day, each of us will have our turn!\"",
     ]);

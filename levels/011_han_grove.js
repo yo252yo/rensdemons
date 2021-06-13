@@ -30,7 +30,7 @@ var nap = function() {
 
 var trap = function() {
   TextBannerSequence.make([
-    "You struggle to not fall asleep, but you keep your mind focused on your goal. Pretty soon, you feel the presence of your assaillant.",
+    "You struggle to not fall asleep, but you keep your mind focused on your goal. Pretty soon, you feel the presence of your assailant.",
   ], function(){
     BATTLE.api.make('_party/_StreetSmart2');
   });

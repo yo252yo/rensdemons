@@ -83,7 +83,7 @@ PLAYER_ACTIONS.add({
                 `${name}: "What? Who do you think you are? Didn't your parents teach you some manners?"`,
                 `$$Ren$: "I'm the Promised Child! I'm entitled to your possessions!"`,
                 `${name}'s expression immediately changes.`,
-                `${name}: "I'm so sorry! Please forgive me! Praised be to you and the Goddess. Help yourself to my posessions. You can have anything I have. It isn't much, though."`,
+                `${name}: "I'm so sorry! Please forgive me! Praised be to you and the Goddess. Help yourself to my possessions. You can have anything I have. It isn't much, though."`,
               ],
 });
 

@@ -58,8 +58,8 @@ class S_Coral extends SimpleObject {
     this.adjust_hitbox(0,0,50,25);
     this.default_text = this.text_interaction([
       "This coral stands proudly as a refuge to thousands of tiny fishes swarming around it.",
-      "You can't help but be impressed by the coloful reflections emanating from the porous coral structure.",
-      "You are taklen aback by the beauty of the mysterious natural arabesques drawn by the coral.",
+      "You can't help but be impressed by the colorful reflections emanating from the porous coral structure.",
+      "You are taken aback by the beauty of the mysterious natural arabesques drawn by the coral.",
     ]);
   }
 }
@@ -94,7 +94,7 @@ class S_Waterplants extends SimpleObject {
     this.adjust_hitbox(0,0,40,20);
     this.default_text = this.text_interaction([
       "The underwater plants waver with water currents. Their dance is hypnotic.",
-      "The algea wave slowly under the water currents. They bathe the scene by a faint fluorescent glow.",
+      "The algae wave slowly under the water currents. They bathe the scene by a faint fluorescent glow.",
       "The colorful algae seem to beckon you, but you know that if you get too close you might get tangled.",
     ]);
   }
@@ -130,7 +130,7 @@ class S_Shroomsmall extends SimpleObject {
     super(x, y, "forest/shroomsmall");
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
-      "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourrishing or deadly. Better stay away.",
+      "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
       "There are countless mushrooms like these everywhere you look, under trees and bushes.",
       "The little mushrooms seem pretty innocuous. Hard to believe they're related to much bigger threats.",
     ]);
@@ -243,7 +243,7 @@ class S_WebLarge extends SimpleObject {
     super(x, y, "ruins/weblarge");
     this.adjust_hitbox(0,0,190,30);
     this.default_text = this.text_interaction([
-      "The back of the room is littered with metalic debris covered by a huge layer of spider web.",
+      "The back of the room is littered with metallic debris covered by a huge layer of spider web.",
       "The wall is covered by cobwebs, you can barely distinguish it behind.",
       "The metallic wall is hidden behind several layers of spider webs. Nobody has been here in centuries.",
     ]);
@@ -256,7 +256,7 @@ class S_Bocals extends SimpleObject {
     this.adjust_hitbox(0,0,30,20);
     this.default_text = this.text_interaction([
       "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
-      "This probably used to hold some sort of sustainance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
+      "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
       "The content of this container have been sealed for centuries. You cannot imagine the smell that might arise if you were to open them.",
     ]);
   }

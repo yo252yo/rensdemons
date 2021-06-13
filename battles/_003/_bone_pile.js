@@ -13,4 +13,4 @@ PLAYER_ACTIONS.add({
   give_item: ITEM.Bone,
 });
 
-BATTLE.operations.start("You find a pile of bones on the ground. They are blackened by years in this prison. You have no doubt that they are remanents of your unlucky predecessors.");
+BATTLE.operations.start("You find a pile of bones on the ground. They are blackened by years in this prison. You have no doubt that they are remnants of your unlucky predecessors.");

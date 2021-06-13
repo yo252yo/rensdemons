@@ -45,7 +45,7 @@ const ITEM = {
     Bone: "Sharp Bone",
     Flower: "Flower",
     Feather: "Feather",
-    Linnens: "Linnens",
+    Linnens: "Linens",
     Scale: "Scale",
     AncientRubbles: "Ancient Rubbles",
     Seashell: "Seashell",

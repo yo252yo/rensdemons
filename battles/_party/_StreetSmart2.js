@@ -159,7 +159,7 @@ var unlock_talk_help = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$Ren$: "You don't have to live like this! I can help you!"`,
     `The thief bursts out laughing.`,
-    `$$StreetSmart$: "You've got some nerves, judging me like that. Sorry, I like my life as it is. Maybe save your charity and Goddess nonesense for people who need good stories!"`,
+    `$$StreetSmart$: "You've got some nerves, judging me like that. Sorry, I like my life as it is. Maybe save your charity and Goddess nonsense for people who need good stories!"`,
     `No sooner has he finished talking that he quickly salutes you and turns away.`,
   ],
   outcome: BATTLETREE.ESCAPE,
@@ -279,7 +279,7 @@ if(INVENTORY.cash() > 1){
   PLAYER_ACTIONS.add({
     name: "Offer money",
     unlock: true,
-    description: [`You want to use money to lure the thief, but as you dig in your pockets you realize that you don't have any. Your assaillant notices your movements, though, and, realizing you're awake, runs away swiftly.`],
+    description: [`You want to use money to lure the thief, but as you dig in your pockets you realize that you don't have any. Your assailant notices your movements, though, and, realizing you're awake, runs away swiftly.`],
     outcome: BATTLETREE.WIN,
   });
 }
@@ -311,5 +311,5 @@ PLAYER_ACTIONS.add({
 // ===================
 
 BATTLE.operations.start([
-  "The thief approaches carefully. With his skills, he would be almost impossible to detect if you didn't already know he was coming. But this time, you have the initative advantage.",
+  "The thief approaches carefully. With his skills, he would be almost impossible to detect if you didn't already know he was coming. But this time, you have the initiative advantage.",
 ]);

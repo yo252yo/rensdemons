@@ -84,7 +84,7 @@ PLAYER_ACTIONS.add({
     answer = answer.toLowerCase();
     updateHint(answer);
     if(answer && answer == solution) {
-      BATTLE.monster_actions.prepare_win("As the words are uttered, a weird senstation engulfes your body. Nothing seems to have changed, no sound or flashing light. Yet, you've never been so sure that something had happened. Was it the fabric of the universe? Or was it only inside your head?");
+      BATTLE.monster_actions.prepare_win("As the words are uttered, a weird sensation engulfs your body. Nothing seems to have changed, no sound or flashing light. Yet, you've never been so sure that something had happened. Was it the fabric of the universe? Or was it only inside your head?");
       BATTLE.win_callback = function() {
         TextBannerSequence.make([
           "Your surroundings are exactly the same. Yet, somehow, at that moment, you just know that touching any of the statues would teleport you out of this maze."

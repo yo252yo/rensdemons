@@ -22,7 +22,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: "Dig",
   unlock: true,
-  description: "You dig around the roots. Your fingers encounter some sort of books, but the centuries and elements have left it very frail. Your innatentive grip finishes to destroy it to dust. It must have been important, because you will continue to err in the forest for days without ever finding the ancient artifact.",
+  description: "You dig around the roots. Your fingers encounter some sort of books, but the centuries and elements have left it very frail. Your inattentive grip finishes to destroy it to dust. It must have been important, because you will continue to err in the forest for days without ever finding the ancient artifact.",
   outcome: BATTLETREE.LOSS,
   extra_function: function(){
     ABILITIES.unlock("Dig carefully");

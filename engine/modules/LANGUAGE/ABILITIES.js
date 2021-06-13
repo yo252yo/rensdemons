@@ -111,7 +111,7 @@ LANGUAGE.actions[ABILITY.Thunder] = {
     return RANDOM.pick([
       `A flash blinds you for a second. Then nothing remains of the $$&ENEMY$ but a pile of smoking ash.`,
       `The $$&ENEMY$ shakes violently, moved by an unfathomable amount of energy, before falling dead on the ground.`,
-      `The lightning burns through the $$&ENEMY$ and detroys all life from it, rendering no more than an empty shell.`
+      `The lightning burns through the $$&ENEMY$ and destroys all life from it, rendering no more than an empty shell.`
     ]);
   },
 };
@@ -127,7 +127,7 @@ LANGUAGE.actions[ABILITY.Storm] = {
   fail: fail_spell,
   win: function(){
     return RANDOM.pick([
-      `The force of the wind thursts the $$&ENEMY$ back. It cannot survive so powerful a shock.`,
+      `The force of the wind thrusts the $$&ENEMY$ back. It cannot survive so powerful a shock.`,
       `The $$&ENEMY$ is carried by the tornado, propelled in the air, before crashing to the ground in a loud cracking noise.`,
       `The pressure of the air currents compress your target to incredible levels. You see it shrink under the magic force, before it falls on the ground, lifeless.`
     ]);
@@ -164,8 +164,8 @@ LANGUAGE.actions[ABILITY.Earthquake] = {
   win: function(){
     return RANDOM.pick([
       `The ground vibrations grow stronger and stronger, until the $$&ENEMY$ cannot stand anymore. When the tremor ceases, it seems stunned in place.`,
-      `The earth shakes around the $$&ENEMY$, and suddenly shatters in a loud crack. A rift forms under the $$&ENEMY$, and before soon it is falling to a neverending doom in the insides of the planet.`,
-      `The tremor of the ground seems to grow in strengh. The rumbling noise is deafening. It seems that under the strain, the $$&ENEMY$'s whole body collapses.`,
+      `The earth shakes around the $$&ENEMY$, and suddenly shatters in a loud crack. A rift forms under the $$&ENEMY$, and before soon it is falling to a never-ending doom in the insides of the planet.`,
+      `The tremor of the ground seems to grow in strength. The rumbling noise is deafening. It seems that under the strain, the $$&ENEMY$'s whole body collapses.`,
     ]);
   },
 };
@@ -191,7 +191,7 @@ LANGUAGE.actions[ABILITY.Incinerate] = {
 LANGUAGE.actions[ABILITY.Summon] = {
   usage: function(){
     return cast_spell(ABILITY.Summon) + RANDOM.pick([
-      `Armed with your magic training, you atune yourself with the forces of nature and call for their help.`,
+      `Armed with your magic training, you attune yourself with the forces of nature and call for their help.`,
       `You send your mind in the ethereal realms, in the hope to find kindred spirits who may come to your rescue.`,
       `You send a magic signal beckoning mythical creatures to come to you.`,
     ]);
@@ -200,7 +200,7 @@ LANGUAGE.actions[ABILITY.Summon] = {
   win: function(){ // fairy, griffin, cerberus, hydra
     return RANDOM.pick([
       `You hear a growl from afar, and soon the air trembles around you. Answering your call, a mighty dragon approaches at an incredible speed. Its wide obsidian scales shine as it dashes towards the $$&ENEMY$. It opens his maw, revealing a set of sharp pointy teeth, and grabs its prey in a swift motion. It then flies away as fast as it came.`,
-      `What seems like a ball of fire drops from the sky, but as it approaches you see a majestic phoenix spread its wing. It floats a few seconds above you, radiating sparks that crackle in the heated air. Suddenly, it opens its beak, and spouts a torrent of wildfire on the $$&ENEMY$. When the phoenix flipts its wing to take off, there's nothing but dust to be blown away.`,
+      `What seems like a ball of fire drops from the sky, but as it approaches you see a majestic phoenix spread its wing. It floats a few seconds above you, radiating sparks that crackle in the heated air. Suddenly, it opens its beak, and spouts a torrent of wildfire on the $$&ENEMY$. When the phoenix flaps its wing to take off, there's nothing but dust to be blown away.`,
       `You hear the sound of hooves before you see the legendary animal coming towards you. The unicorn's immaculate mane is almost blinding. It rears up and neighs before dashing towards the $$&ENEMY$. As this incredible speed, it only takes a second before your foe is taken towards the horizon, impaled on the mythical horn.`,
     ]);
   },
@@ -254,8 +254,8 @@ LANGUAGE.actions[ABILITY.Poison] = {
   win: function(){
     return RANDOM.pick([
       `The $$&ENEMY$ is taken by violent spasms that don't even stop when it falls lifeless on the ground.`,
-      `Your magical senses perceive that the poison spreads through the $$&ENEMY$ before it begins shakind uncontrollably and pass out in agony.`,
-      `The $$&ENEMY$ stumbles as strengh leaves its body, consumed by your venomous fluids. Soon, it is rendered inert.`,
+      `Your magical senses perceive that the poison spreads through the $$&ENEMY$ before it begins shaking uncontrollably and pass out in agony.`,
+      `The $$&ENEMY$ stumbles as strength leaves its body, consumed by your venomous fluids. Soon, it is rendered inert.`,
     ]);
   },
 };
@@ -265,7 +265,7 @@ LANGUAGE.actions[ABILITY.Shrink] = {
     return cast_spell(ABILITY.Shrink) + RANDOM.pick([
       `You pull on the fabric of the universe in an attempt to compress the $$&ENEMY$ and squeeze it out of existence.`,
       `Through magic, you apply an enormous pressure force on the $$&ENEMY$.`,
-      `You attempt to use your mastery of etheral forces to compress the space around the $$&ENEMY$.`,
+      `You attempt to use your mastery of ethereal forces to compress the space around the $$&ENEMY$.`,
     ]);
   },
   fail: fail_spell,
@@ -273,7 +273,7 @@ LANGUAGE.actions[ABILITY.Shrink] = {
     return RANDOM.pick([
       `As you manipulate the very structure of space around the $$&ENEMY$, you see it getting smaller and smaller, until nothing is left but a small dot that vanishes away in a pop.`,
       `The $$&ENEMY$'s body contorts in pain under the external pressure. It seems to collapse on itself until there's no sign left it ever existed.`,
-      `You can see the $$&ENEMY$'s body squeezed from all sides. It gets thiner, smaller... It becomes more and more like a spherical blob as it slowly turns into a single speck of dust that gets blown away by a breeze.`,
+      `You can see the $$&ENEMY$'s body squeezed from all sides. It gets thinner, smaller... It becomes more and more like a spherical blob as it slowly turns into a single speck of dust that gets blown away by a breeze.`,
     ]);
   },
 };
@@ -309,7 +309,7 @@ LANGUAGE.actions[ABILITY.Lull] = {
     return RANDOM.pick([
       `It only takes a few seconds for the spell to work and put the $$&ENEMY$ in a deep sleep.`,
       `The $$&ENEMY$'s motions get lethargic, and you can clearly see that even the smallest motion becomes an intense effort. Finally, the $$&ENEMY$ falls unconscious.`,
-      `You manage to trick the senses of the $$&ENEMY$ into a state of deep relaxation. The $$&ENEMY$ is lost in its transe, barely breathing, when you pass by it.`,
+      `You manage to trick the senses of the $$&ENEMY$ into a state of deep relaxation. The $$&ENEMY$ is lost in its trance, barely breathing, when you pass by it.`,
     ]);
   },
 };
@@ -336,9 +336,9 @@ LANGUAGE.actions[ABILITY.Intimidate] = {
   usage: function(){
     return RANDOM.pick([
       `You recall your training and start making a series of complex gestures and sounds that is supposed to impress your dominance over the $$&ENEMY$'s subconscious.`,
-      `Chosing your words carefully, you attempt to establish yourself as a strong presence through sheer display of rhetoric.`,
+      `Choosing your words carefully, you attempt to establish yourself as a strong presence through sheer display of rhetoric.`,
       `You threaten the $$&ENEMY$ by exposing calmly and rationally how everything works in your favor for you to win this fight.`,
-      `You pick a vocabulary that is as slashing as elegant as you attempt to intimidate the $$&ENEMY$ through lyricality and rhymes.`,
+      `You pick a vocabulary that is as slashing as elegant as you attempt to intimidate the $$&ENEMY$ through lyricallity and rhymes.`,
     ]);
   },
   fail: fail_ability,
@@ -363,8 +363,8 @@ LANGUAGE.actions[ABILITY.Mystify] = {
   win: function(){
     return RANDOM.pick([
       `As sentences flow from you in a seemingly nonsensical stream, you can feel the sanity escape the poor $$&ENEMY$. Its mind is almost melting as it tries to follow your discourse through its logical inconsistencies. Soon, the $$&ENEMY$ falls on the ground. You really hope it wakes up some day.`,
-      `The $$&ENEMY$ tries its best to follow your trail of thoughts, but you expertly manoeuver it for optimal disorientation. When you're done, the $$&ENEMY$ is ready to believe everything and its opposite. You refrain from the urge to rope the poor $$&ENEMY$ in a juicy commercial scheme, and simply take advantage of the confusion to walk away.`,
-      `You're saying many words, but they're empty of meaning. You jump from one random concept to the next, making up exciting new buzz words and praising your own innovation as you go. The $$&ENEMY$ cannot resist this impromptue seminar for long, and runs away in disarray.`,
+      `The $$&ENEMY$ tries its best to follow your trail of thoughts, but you expertly maneuver it for optimal disorientation. When you're done, the $$&ENEMY$ is ready to believe everything and its opposite. You refrain from the urge to rope the poor $$&ENEMY$ in a juicy commercial scheme, and simply take advantage of the confusion to walk away.`,
+      `You're saying many words, but they're empty of meaning. You jump from one random concept to the next, making up exciting new buzz words and praising your own innovation as you go. The $$&ENEMY$ cannot resist this impromptu seminar for long, and runs away in disarray.`,
     ]);
   },
 };

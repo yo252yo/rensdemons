@@ -147,7 +147,7 @@ add_item(`Family`, [
   ],
   [
     `${name}: "Are you looking at my little girl? Isn't she the prettiest?"`,
-    `But there is noone else around...`,
+    `But there is no-one else around...`,
   ],
 ]);
 
@@ -170,7 +170,7 @@ add_item(`Job`, [
     `${name}: "Hum just a dry spell, haven't had a job in a while..."`,
   ],
   [
-    `${name}: "Yes, you're not dreaming, it is me, ${name}, the mighty blacksmith. I guess my reputation preceeds me. But if you must, you can have a look at my latest creation."`,
+    `${name}: "Yes, you're not dreaming, it is me, ${name}, the mighty blacksmith. I guess my reputation precedes me. But if you must, you can have a look at my latest creation."`,
     `Saying that, ${name} holds you a tiny dagger. It looks more like a kitchen knife, and the blade is so blunt that you cannot imagine it hurting anyone.`,
   ],
   [
@@ -256,7 +256,7 @@ var attack = {
   time_variation: 0.4, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual(`The constant cheerfullness of your conversation partner is a bit too much to handle.`, attack);
+BATTLE.monster_actions.add_textual(`The constant cheerfulness of your conversation partner is a bit too much to handle.`, attack);
 BATTLE.monster_actions.add_textual(`You need to carefully craft your answer to not contradict ${name}'s weird inconsistent answer.`, attack);
 BATTLE.monster_actions.add_textual(`You try to tiptoe carefully around the truth to not break ${name}'s rosy bubble of optimism.`, attack);
 

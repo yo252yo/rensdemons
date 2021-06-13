@@ -61,6 +61,6 @@ I'll do my best to distinguish between the two in this guide. In general, the sh
 -------------------------------------------------------------------------------
 ===============================================================================
 
-Controls are the ususal, WASD to move, SPACE or ENTER to interact, ESC to cancel...
+Controls are the usual, WASD to move, SPACE or ENTER to interact, ESC to cancel...
 TODO: more??
 You control one character of unspecified gender (though they can be accompanied).

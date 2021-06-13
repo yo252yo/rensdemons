@@ -186,7 +186,7 @@ add_item(`Dreams`, [
     `${name}: "Well, I could always use more money..."`,
   ],
   [
-    `${name}: "When I was a child, I tried the frutiest wine I've ever tasted... What I wouldn't give for another drop of this delicious wine!"`,
+    `${name}: "When I was a child, I tried the fruitiest wine I've ever tasted... What I wouldn't give for another drop of this delicious wine!"`,
   ],
 ]);
 

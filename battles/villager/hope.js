@@ -53,10 +53,10 @@ add_item(`Weather`, [
 
 add_item(`Crops`, [
   [
-    `${name}: "We haven't had enough to eat for years. Not only do we need clement weather, but the raids can destroy monthes of hard work. This would be terrifying if the Goddess wasn't there to guarantee a better future soon."`,
+    `${name}: "We haven't had enough to eat for years. Not only do we need clement weather, but the raids can destroy months of hard work. This would be terrifying if the Goddess wasn't there to guarantee a better future soon."`,
   ],
   [
-    `${name}: "I've been trying to breed new varieties of wheat. Make them more resilient to the rain and suchlikes. So far, all my attempts have failed, but I'm keeping hope. These things take time."`,
+    `${name}: "I've been trying to breed new varieties of wheat. Make them more resilient to the rain and suchlike. So far, all my attempts have failed, but I'm keeping hope. These things take time."`,
   ],
   [
     `${name}: "We mostly live from our own crops, like many people in this town. Anything outside the city walls can be destroyed any day. But fortunately, we have some space to farm in the city. It's tiny, but it can provide us several days worth of food!"`,
@@ -68,7 +68,7 @@ add_item(`War`, [
     `${name}: "Sure, the fights never cease. Monsters gain ground every day. But they'll never breach our walls. Not again, not like those other times. The Goddess is watching over us."`,
   ],
   [
-    `${name}: "We're fewer and fewer soldiers every day. I cannot wait to go back out on the battlefield. I'll make the Goddess proud, and rid us of this scum that killed my comrads. No way I'll meet the same fate!"`,
+    `${name}: "We're fewer and fewer soldiers every day. I cannot wait to go back out on the battlefield. I'll make the Goddess proud, and rid us of this scum that killed my comrades. No way I'll meet the same fate!"`,
   ],
   [
     `${name}: "Day after day, the same threats. My parents fought in the war. My siblings fight in the war. My children will fight in the war. When was the last time of peace? Who even remembers? That's how I'm sure we're close to a victory. It could be any day now."`,
@@ -107,7 +107,7 @@ add_item(`King`, [
     `${name}: "Leading the kingdom in our desperate times is such a tough task. Thankfully the Goddess is here to help him, and I'm sure that with Her guidance he will lead us to success!"`,
   ],
   [
-    `${name}: "The King? Yea, he's allright. Sure this is no paradize, but what can he do except wait for the Goddess to send us a Promised Child?"`,
+    `${name}: "The King? Yea, he's alright. Sure this is no paradise, but what can he do except wait for the Goddess to send us a Promised Child?"`,
   ],
   [
     `${name}: "He hasn't done much for us. Haven't heard of him in years. But I'm sure he has not forgotten us. He'll probably visit soon!"`,
@@ -131,7 +131,7 @@ add_item(`Family`, [
     `${name}: "My little one looks just like you. Or rather looked, I mean. It's okay, surely the Goddess will bless me with a new child soon!"`,
   ],
   [
-    `${name}: "I don't have children yet. I suppose I should get busy soon. I want many little ones to carry on my legacy and to fullfill the will of The Goddess. With Her blessing, of course!"`,
+    `${name}: "I don't have children yet. I suppose I should get busy soon. I want many little ones to carry on my legacy and to fulfill the will of The Goddess. With Her blessing, of course!"`,
   ],
   [
     `${name}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just know my little ${gen.pick(DATASETS.male_names)} will grow up to do us proud, under the eye of the Goddess."`,
@@ -147,7 +147,7 @@ add_item(`Promised Child`, [
   ],
   [
     `${name}: "Are you? Are you sure? Praised be the Goddess, can I touch you?"`,
-    `Without waiting for your answer, ${name} puts a hand on your shoulder. In a weird holy transe, ${name} then falls on the ground and starts weeping tears of joy, muttering prayers to the Goddess.`,
+    `Without waiting for your answer, ${name} puts a hand on your shoulder. In a weird holy trance, ${name} then falls on the ground and starts weeping tears of joy, muttering prayers to the Goddess.`,
   ],
 ]);
 

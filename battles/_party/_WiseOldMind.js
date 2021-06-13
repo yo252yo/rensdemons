@@ -46,7 +46,7 @@ var functions_dictionary = {
   "Nobody": {
     question: "Exactly. Never forget: thoughts and emotions exist. You are not them, nor are they you. You don't own them, nor do they own you. They are just passing through you. But wait, who are you?",
     function: function() {
-      make_quiz_answers("Nobody", [DICTIONARY.get(PARTYMEMBERS.Ren), "A soul controlling a puppet", "Me ", "An otherwordly being", "An illusion"]);
+      make_quiz_answers("Nobody", [DICTIONARY.get(PARTYMEMBERS.Ren), "A soul controlling a puppet", "Me ", "An otherworldly being", "An illusion"]);
     }
   },
   "An illusion": {

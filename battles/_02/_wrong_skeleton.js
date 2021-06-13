@@ -18,4 +18,4 @@ PLAYER_ACTIONS.add({
   give_item: ITEM.Bone,
 });
 
-BATTLE.operations.start("You find the remains of a long forgotten traveller. The time of their demise is long past. All that remains are bones, scattered by scavenger beasts, and a few torn pieces of cloth.");
+BATTLE.operations.start("You find the remains of a long forgotten traveler. The time of their demise is long past. All that remains are bones, scattered by scavenger beasts, and a few torn pieces of cloth.");

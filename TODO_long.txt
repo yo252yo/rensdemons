@@ -110,3 +110,5 @@ sometimes steps fail with testing.html:1 Uncaught (in promise) DOMException: Fai
 assets battle civilians suck, also theres some sprites in assets/battle that are not used
 mb redo buildings + characters with whtdragon/MV assets ?
 credit gfroad sumnmoning circle or replace ti with rpgmaker
+
+shop, trainer, player_action have a bit of language text, DISK?

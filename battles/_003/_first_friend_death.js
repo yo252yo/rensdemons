@@ -101,7 +101,7 @@ var unlock_pray = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: pray,
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["If the people can do such horrible things, surely the Goddess, in her Allmighty glory, is better than that.",
+  description: ["If the people can do such horrible things, surely the Goddess, in her Almighty glory, is better than that.",
                 "You close your eyes and repeat prayers, hoping for a miracle.",
                 "But nothing happens. Long minutes pass without anything but the groans of pain of the dying child."],
 });

@@ -8,7 +8,7 @@ CURRENTLEVEL.start_function = function() {
     `Something else feels peculiar, but you can't put your finger on it until $$BestFriend$ articulates it for you.`,
     `$$BestFriend$: "This city is so big, but it's weird, there's almost nobody in the streets..."`,
     `Indeed, the place looks like a ghost town. Not only are passerby pretty rare, there is also none of the usual signs of life you'd expect on the roads: trails, mud, steps, the occasional lost item... It looks as if nobody ever steps foot outside.`,
-    `This only makes the ambient silence weigh even more. You would almost consider this town abandonned if it weren't for its impeccable maintenance and the occasional glance you exchange with inhabitants peeking at you from their homes, protecte behind heavy curtains.`,
+    `This only makes the ambient silence weigh even more. You would almost consider this town abandoned if it weren't for its impeccable maintenance and the occasional glance you exchange with inhabitants peeking at you from their homes, protected behind heavy curtains.`,
     `$$Ren$: "You're right, this is a weird place..."`,
     `$$BestFriend$: "I don't really like it..."`,
     `$$Ren$: "We don't have to stay long... Let's head for the church and see what kind of training they have for me!"`,

@@ -25,7 +25,7 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.LOSS,
   description: ["You shout, terrified, in hope that someone around will help.",
                 "But nobody moves. Your voice echoes dreadfully through the maze of underground tunnels.",
-                "The basilisk is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coarsing through your veins like a burning liquid before you lose consciousness."],
+                "The basilisk is upset by your voice. You angered it. It jumps at you and burrows his fangs in your arm. You can almost feel the poison coursing through your veins like a burning liquid before you lose consciousness."],
 });
 
 var swearLoyalty = PLAYER_ACTIONS.function.unlock_replacing_action({
