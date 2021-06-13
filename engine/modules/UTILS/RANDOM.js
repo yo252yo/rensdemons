@@ -33,13 +33,18 @@ const RANDOM = {
     return r;
   },
 
-  pick_in_weighted_array: function(arr){
+  pick_in_weighted_array: function(arr, gen){
     var total = 0;
     for (var i in arr) {
       total += arr[i];
     }
 
-    var index = RANDOM.float(total);
+    if (!gen){
+      var index = RANDOM.float(total);
+    } else {
+      var index = (gen.get() * total);
+    }
+    
     for (var i in arr) {
       index -= arr[i];
       if (index <= 0) {

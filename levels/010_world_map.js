@@ -124,30 +124,22 @@ FMap.fill_by_retry();
 //hack TEMPORARY ELEMENTS (encounters)
 // ===================
 
+var FEasyMonsters = new Filler(gen);
 
-var easyEvents = [
-  function(x,y,g){ return new SBattle(x, y, 'world/ghost', 25, 'obj_light')},
-  function(x,y,g){ return new SBattle(x, y, 'world/goblin', 25, 'obj_light')},
-  function(x,y,g){ return new SBattle(x, y, 'world/mummy', 25, 'obj_light')},
-  function(x,y,g){ return new SBattle(x, y, 'world/skeleton', 25, 'obj_light')},
-  function(x,y,g){ return new SBattle(x, y, 'world/wraith', 25, 'obj_light')},
-  // treasures:
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-// text battles:
-//  new SB_event(x, y, '...'),
-];
+FEasyMonsters.set_event(25, 25, 'obj_light');
+FEasyMonsters.addevent_battle('world/ghost', 1);
+FEasyMonsters.addevent_battle('world/goblin', 1);
+FEasyMonsters.addevent_battle('world/mummy', 1);
+FEasyMonsters.addevent_battle('world/skeleton', 1);
+FEasyMonsters.addevent_battle('world/wraith', 1);
 
-FEasyS.set_guaranteed();
-FEasyS.set_tries(10, 20);
-FEasyS.set_event(easyEvents);
-FEasyS.fill_by_retry();
+FEasyMonsters.set_zone_from_filler(FEasyS);
+FEasyMonsters.set_tries(10, 20);
+FEasyMonsters.fill_by_retry();
 
-FEasyN.set_guaranteed();
-FEasyN.set_tries(30, 50);
-FEasyN.set_event(easyEvents);
-FEasyN.fill_by_retry();
-
+FEasyMonsters.set_zone_from_filler(FEasyN);
+FEasyMonsters.set_tries(30, 50);
+FEasyMonsters.fill_by_retry();
 
 
 // ===================

@@ -106,19 +106,15 @@ for(var f of hallways) {
 //hack TEMPORARY ELEMENTS (encounters)
 // ===================
 
+filler.set_event(10);
 filler.set_tries(0, 2);
-filler.set_event([
-  function(x,y,g){ return new SBattle(x, y, 'forests/boar')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/flower')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/fox')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/mandragora')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/morel')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/squirrel')},
-  function(x,y,g){ return new SBattle(x, y, 'forests/truffle')},
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-//  new SB_event(x, y, '...'),
-], 10);
+filler.addevent_battle('forests/boar', 1);
+filler.addevent_battle('forests/flower', 1);
+filler.addevent_battle('forests/fox', 1);
+filler.addevent_battle('forests/mandragora', 1);
+filler.addevent_battle('forests/morel', 1);
+filler.addevent_battle('forests/squirrel', 1);
+filler.addevent_battle('forests/truffle', 1);
 
 for(var f of hallways) {
   filler.set_zone_from_floor(f);

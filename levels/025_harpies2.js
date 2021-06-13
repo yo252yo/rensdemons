@@ -80,13 +80,9 @@ filler.fill_by_retry();
 //hack TEMPORARY ELEMENTS
 // ===================
 
-
+filler.set_event(10);
+filler.addevent_text('..');
 filler.set_tries(10, 20);
-filler.set_event([
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-  function(x,y,g){ return new SB_event(x, y, '...');},
-], 10);
 filler.fill_by_retry();
 
 // ===================

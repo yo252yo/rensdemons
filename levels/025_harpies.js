@@ -161,22 +161,21 @@ for (var i=0; i<2; i++){
 //hack TEMPORARY ELEMENTS (encounters)
 // ===================
 
+filler.set_event(5);
+
+filler.addevent_battle('mountains/chimera', 1);
+filler.addevent_battle('mountains/emu', 1);
+filler.addevent_battle('mountains/harpy', 1);
+filler.addevent_battle('mountains/manticore', 1);
+
 filler.set_zone(250,2475,1350,1300);
 filler.set_tries(50, 100);
-filler.set_event([
-  function(x,y,g){ return new SBattle(x, y, 'mountains/chimera')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/emu')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/harpy')},
-  function(x,y,g){ return new SBattle(x, y, 'mountains/manticore')},
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-//  new SB_event(x, y, '...'),
-], 5);
-
 filler.fill_by_retry();
+
 filler.set_tries(3, 10);
 filler.set_zone(1300,1475,175,250);
 filler.fill_by_retry();
+
 filler.set_zone(250,1975,150,375);
 filler.fill_by_retry();
 

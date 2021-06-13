@@ -4,7 +4,12 @@
 class Filler {
   constructor(gen) {
     this.gen = gen;
+    this.events = [];
   }
+
+  // ===================
+  //hack Parametrize
+  // ===================
 
   set_zone(x, y, w, h) {
     this.zone_x = x;
@@ -15,6 +20,10 @@ class Filler {
 
   set_zone_from_floor(floor) {
     this.set_zone(floor.x, floor.y, floor.w, floor.h);
+  }
+
+  set_zone_from_filler(filler) {
+    this.set_zone(filler.zone_x, filler.zone_y, filler.zone_w, filler.zone_h);
   }
 
   set_tries(min_tries, max_tries) {
@@ -33,18 +42,68 @@ class Filler {
     this.obj_constructor = obj_constructor;
   }
 
-  set_event(events, s) {
-    if(!s){
-      s = 50;
-    }
-    this.obj_w = s;
-    this.obj_h = s;
+  // ===================
+  //hack Events/encounters
+  // ===================
 
-    this.obj_constructor = function(x,y,gen) {
-      var f = RANDOM.pick(events, gen);
-      f(x,y,gen);
-    };
+  set_event(hitbox_size, resize_event, recolor_event) {
+    if(!hitbox_size){
+      hitbox_size = 50;
+    }
+    this.obj_w = hitbox_size;
+    this.obj_h = hitbox_size;
+    this.resize_event = resize_event;
+    this.recolor_event = recolor_event;
+    this.obj_constructor = this.event_obj_constructor;
   }
+
+  event_obj_constructor(x,y,gen) {
+    var array = {};
+    for (var i in this.events){
+      array[i] = this.events[i].w;
+    }
+    var index = RANDOM.pick_in_weighted_array(array, gen);
+    var f = this.events[index].f;
+    return f(x,y,gen);
+  }
+
+  add_event(event_function, weight) {
+    this.events.push({f: event_function, w: weight});
+  }
+
+  addevent_battle(name, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this.add_event(function(x,y,g){
+        return new SBattle(x, y, name, size, color);
+      }, weight);
+  }
+
+  addevent_rubble(item, weight) {
+    this.add_event(function(x,y,g){
+        new SB_rubble(x, y, item);
+      }, weight);
+  }
+
+  addevent_treasure(item, weight) {
+    this.add_event(function(x,y,g){
+        new SE_small_treasure(x, y, item);
+      }, weight);
+  }
+
+  addevent_text(text, weight) {
+    this.add_event(function(x,y,g){
+        new SB_event(x, y, text);
+      }, weight);
+  }
+
+  clear_events() {
+    this.events = [];
+  }
+
+  // ===================
+  //hack Utilities
+  // ===================
 
   _assess_params(params) {
     for (var i of params){
@@ -76,6 +135,10 @@ class Filler {
     }
     return false;
   }
+
+  // ===================
+  //hack Fillers
+  // ===================
 
   fill_by_retry(decor) {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);

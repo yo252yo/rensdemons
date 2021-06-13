@@ -60,21 +60,17 @@ decorFiller.fill_by_retry();
 
 var filler = new Filler(gen);
 filler.set_zone(150,2475,2100,1475);
+filler.set_event();
+
+filler.addevent_battle('waters/anemone', 1);
+filler.addevent_battle('waters/crab', 1);
+filler.addevent_battle('waters/anglerjelly', 1);
+filler.addevent_battle('waters/jellyfish', 1);
+filler.addevent_battle('waters/octopus', 1);
+filler.addevent_battle('waters/squid', 1);
 
 filler.set_tries(50, 100);
-filler.set_event([
-  function(x,y,g){ return new SBattle(x, y, 'waters/anemone')},
-  function(x,y,g){ return new SBattle(x, y, 'waters/crab')},
-  function(x,y,g){ return new SBattle(x, y, 'waters/anglerjelly')},
-  function(x,y,g){ return new SBattle(x, y, 'waters/jellyfish')},
-  function(x,y,g){ return new SBattle(x, y, 'waters/octopus')},
-  function(x,y,g){ return new SBattle(x, y, 'waters/squid')},
-//  new SB_rubble(x, y, ITEM.Elixir_fire),
-//  new SE_small_treasure(x, y, ITEM.Stone),
-//  new SB_event(x, y, '...'),
-]);
 filler.fill_by_retry();
-
 
 
 // ===================

@@ -26,6 +26,9 @@ should we meet the king?
 
 
   YOU STILL GET LOOT WHEN RUNNING AWAY!!!!
-  ANIMATION START BATTLE ON WORLDMAP IS SHIT
+  ANIMATION START BATTLE ON WORLDMAP IS SHIT, needs a better lock mechanism also  to not double trigger
+
+  OTHER TYPES OF EVENT DON HAVE SIZE AND COLOR IN CONSTRUCTOR FOR WORLD MAP I THINK
+  on world map we want the event to actually be small but on the other maps we want the hitbox only to be small
 
 should we do a cemetary?
