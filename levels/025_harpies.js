@@ -85,7 +85,7 @@ door.interaction = function() {
       `$$BestFriend$: "Hmmm look, there's a keyhole. It has a very weird shape, though. No way we can lockpick our way out of this."`,
       `$$Ren$: "Maybe we can look around."`,
       `$$BestFriend$: "I doubt they'd just leave the key at the front..."`,
-      `$$Ren$: "I don't know, there must be another way in, a clue, anything!"`,
+      `$$Ren$: "I don't know, there must be another way in, a clue, anything! The Goddess is telling me so!"`,
     ]);
   }
 }

@@ -4,16 +4,22 @@ should we meet the king?
 
 
 - pick audios
-- story: dungeons (todo levels)
 
- text encounters: harpies lvls, squid lvls, mushroom lvl, world:
+
+ special encounters: harpies lvls, squid lvls, mushroom lvl, world:
  addevent_battle(name, weight);
  addevent_rubble(item, weight);
  addevent_treasure(item, weight, count);
  addevent_text(text, weight);
 
+> all monsters
+-  battle attributes
+- attacks
 
-> all monsters battle attributes
+
+
+
+
 > fast travel after getting artifact?
 > react after gathering 3 artifacts
 
