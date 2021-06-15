@@ -68,6 +68,9 @@ class Filler {
   }
 
   add_event(event_function, weight) {
+    if (!weight){
+      weight = 1;
+    }
     this.events.push({f: event_function, w: weight});
   }
 

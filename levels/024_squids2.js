@@ -55,7 +55,22 @@ filler.fill_by_retry();
 // ===================
 
 filler.set_event(10);
-filler.addevent_text('..');
+
+
+filler.addevent_rubble(ITEM.Shield, 0.05);
+filler.addevent_rubble(ITEM.Elixir_vine, 0.05);
+filler.addevent_rubble(ITEM.Sword_wooden, 0.1);
+filler.addevent_rubble(ITEM.Bone);
+filler.addevent_treasure(ITEM.Scale);
+filler.addevent_treasure(ITEM.Seashell);
+filler.addevent_treasure(ITEM.AncientRubbles);
+filler.addevent_treasure(ITEM.Net, 0.1);
+
+filler.addevent_text('You find a pile of goo that surely used to be other living creatures. You shudder at the thought that it may be the fate that awaits you.');
+filler.addevent_text('The stench and humidity is unbearable. The floor under your feet is gooey and unsteady. You progress with difficulty.');
+filler.addevent_text('You notice a dull pain in your feet. When you take a look, you notice that there is thin layer of thick liquid everywhere around you. It is weakening the leather of your shoes and slowly burning your skin underneath. It\'s taking a very long time, but things will surely get worse if you don\'t find a way out fast.');
+filler.addevent_text('Trinkets and bits of human-made objects lie around you on the exposed flesh. It gives you hope that you can find something interesting around here.');
+
 filler.set_tries(20, 40);
 filler.fill_by_retry();
 

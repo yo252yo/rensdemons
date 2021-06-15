@@ -6,7 +6,7 @@ should we meet the king?
 - pick audios
 
 
- special encounters: harpies lvls, squid lvls, mushroom lvl, world:
+ special encounters: harpies lvl, squid lvl, mushroom lvl, world:
  addevent_battle(name, weight);
  addevent_rubble(item, weight);
  addevent_treasure(item, weight, count);
@@ -31,6 +31,9 @@ should we meet the king?
   description in party.js,
   attacks in languge,
   encounter+battle
+
+
+  could the random text events provide XP by being like itembattles ?
 
 
 
