@@ -125,23 +125,23 @@ FMap.fill_by_retry();
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
-FEasyEvents.addevent_battle('world/ghost', 2);
-FEasyEvents.addevent_battle('world/goblin', 2);
-FEasyEvents.addevent_battle('world/mummy', 2);
-FEasyEvents.addevent_battle('world/skeleton', 2);
-FEasyEvents.addevent_battle('world/wraith', 2);
-FEasyEvents.addevent_rubble(ITEM.Poison_darts, 0.05);
-FEasyEvents.addevent_rubble(ITEM.Dagger, 0.05);
-FEasyEvents.addevent_rubble(ITEM.Elixir_ice, 0.05);
-FEasyEvents.addevent_rubble(ITEM.Linnens, 0.2);
-FEasyEvents.addevent_groundItem(ITEM.Bone, 0.2);
-FEasyEvents.addevent_groundItem(ITEM.Stone, 0.2);
-FEasyEvents.addevent_groundItem(ITEM.Berry, 0.2);
+FEasyEvents.battle('world/ghost', 2);
+FEasyEvents.battle('world/goblin', 2);
+FEasyEvents.battle('world/mummy', 2);
+FEasyEvents.battle('world/skeleton', 2);
+FEasyEvents.battle('world/wraith', 2);
+FEasyEvents.battleRubble(ITEM.Poison_darts, 0.05);
+FEasyEvents.battleRubble(ITEM.Dagger, 0.05);
+FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.05);
+FEasyEvents.battleRubble(ITEM.Linnens, 0.2);
+FEasyEvents.groundItem(ITEM.Bone, 0.2);
+FEasyEvents.groundItem(ITEM.Stone, 0.2);
+FEasyEvents.groundItem(ITEM.Berry, 0.2);
 
-FEasyEvents.addevent_text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
-FEasyEvents.addevent_text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
-FEasyEvents.addevent_text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
-FEasyEvents.addevent_text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
+FEasyEvents.battleText(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
+FEasyEvents.battleText(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
+FEasyEvents.battleText(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
+FEasyEvents.battleText(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
 
 FEasyEvents.set_zone_from_filler(FEasyS);
 FEasyEvents.set_tries(10, 20);

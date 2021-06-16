@@ -108,23 +108,23 @@ for(var f of hallways) {
 
 var events = new EventFiller(filler, 10);
 events.set_tries(0, 2);
-events.addevent_battle('forests/boar');
-events.addevent_battle('forests/flower');
-events.addevent_battle('forests/fox');
-events.addevent_battle('forests/mandragora');
-events.addevent_battle('forests/squirrel');
-events.addevent_battle('forests/morel',3);
-events.addevent_battle('forests/truffle',3);
-events.addevent_groundItem(ITEM.Stick, 0.5);
-events.addevent_groundItem(ITEM.Berry, 0.5);
-events.addevent_groundItem(ITEM.Flower, 0.5);
-events.addevent_groundItem(ITEM.Mushroom);
-events.addevent_rubble(ITEM.AncientRubbles, 0.5);
+events.battle('forests/boar');
+events.battle('forests/flower');
+events.battle('forests/fox');
+events.battle('forests/mandragora');
+events.battle('forests/squirrel');
+events.battle('forests/morel',3);
+events.battle('forests/truffle',3);
+events.groundItem(ITEM.Stick, 0.5);
+events.groundItem(ITEM.Berry, 0.5);
+events.groundItem(ITEM.Flower, 0.5);
+events.groundItem(ITEM.Mushroom);
+events.battleRubble(ITEM.AncientRubbles, 0.5);
 
-events.addevent_text('You do not see many creatures around you in these woods, but you do hear scratching and cracklings all around you. The feeling of there being something nearby watching you that you cannot pinpoint is especially nerve-wracking.');
-events.addevent_text('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');
-events.addevent_text('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
-events.addevent_text('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
+events.battleText('You do not see many creatures around you in these woods, but you do hear scratching and cracklings all around you. The feeling of there being something nearby watching you that you cannot pinpoint is especially nerve-wracking.');
+events.battleText('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');
+events.battleText('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
+events.battleText('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
 
 for(var f of hallways) {
   events.set_zone_from_floor(f);

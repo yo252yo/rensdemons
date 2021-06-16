@@ -197,7 +197,7 @@ class EventFiller extends Filler {
     this.events.push({f: event_function, w: weight});
   }
 
-  addevent_battle(name, weight) {
+  battle(name, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this._add_event(function(x,y,g){
@@ -205,7 +205,7 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  addevent_rubble(item, weight) {
+  battleRubble(item, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this._add_event(function(x,y,g){
@@ -213,7 +213,7 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  addevent_groundItem(item, weight, quantity) {
+  groundItem(item, weight, quantity) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this._add_event(function(x,y,g){
@@ -221,7 +221,7 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  addevent_text(text, weight) {
+  battleText(text, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this._add_event(function(x,y,g){
