@@ -70,8 +70,8 @@ filler.addevent_battle('waters/octopus');
 filler.addevent_battle('waters/squid');
 filler.addevent_rubble(ITEM.AncientRubbles, 0.5);
 filler.addevent_rubble(ITEM.Scale, 0.3);
-filler.addevent_treasure(ITEM.Seashell);
-filler.addevent_treasure(ITEM.Stone, 0.1);
+filler.addevent_groundItem(ITEM.Seashell);
+filler.addevent_groundItem(ITEM.Stone, 0.1);
 
 filler.addevent_text(`The water is very cold. It was hard to bear at first, but you're finally getting used to it. You hope $$BestFriend$ handles it well, but you don't want to say anything to keep the topic off everyone's mind.`);
 filler.addevent_text(`There is a lot of fishing swimming all around you. Most of them are even above you, like weird birds, since you're at the very bottom of the lake. But you cannot look at any too closely, since they seem to run away from you every time you approach.`);

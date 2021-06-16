@@ -115,10 +115,10 @@ filler.addevent_battle('forests/mandragora');
 filler.addevent_battle('forests/squirrel');
 filler.addevent_battle('forests/morel',3);
 filler.addevent_battle('forests/truffle',3);
-filler.addevent_treasure(ITEM.Stick, 0.5);
-filler.addevent_treasure(ITEM.Berry, 0.5);
-filler.addevent_treasure(ITEM.Flower, 0.5);
-filler.addevent_treasure(ITEM.Mushroom);
+filler.addevent_groundItem(ITEM.Stick, 0.5);
+filler.addevent_groundItem(ITEM.Berry, 0.5);
+filler.addevent_groundItem(ITEM.Flower, 0.5);
+filler.addevent_groundItem(ITEM.Mushroom);
 filler.addevent_rubble(ITEM.AncientRubbles, 0.5);
 
 filler.addevent_text('You do not see many creatures around you in these woods, but you do hear scratching and cracklings all around you. The feeling of there being something nearby watching you that you cannot pinpoint is especially nerve-wracking.');

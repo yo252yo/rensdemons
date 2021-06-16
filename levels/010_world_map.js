@@ -136,9 +136,9 @@ FEasyMonsters.addevent_rubble(ITEM.Poison_darts, 0.05);
 FEasyMonsters.addevent_rubble(ITEM.Dagger, 0.05);
 FEasyMonsters.addevent_rubble(ITEM.Elixir_ice, 0.05);
 FEasyMonsters.addevent_rubble(ITEM.Linnens, 0.2);
-FEasyMonsters.addevent_treasure(ITEM.Bone, 0.2);
-FEasyMonsters.addevent_treasure(ITEM.Stone, 0.2);
-FEasyMonsters.addevent_treasure(ITEM.Berry, 0.2);
+FEasyMonsters.addevent_groundItem(ITEM.Bone, 0.2);
+FEasyMonsters.addevent_groundItem(ITEM.Stone, 0.2);
+FEasyMonsters.addevent_groundItem(ITEM.Berry, 0.2);
 
 FEasyMonsters.addevent_text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyMonsters.addevent_text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);

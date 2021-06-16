@@ -6,7 +6,7 @@ new Snippet("levels/decors/maze");
 
 // start
 new SBattle(1525, 1075, '_003/_bone_pile');
-new SE_small_treasure(1675, 950, ITEM.Stone);
+new SE_small_groundItem(1675, 950, ITEM.Stone);
 
 new SBattle(1375, 950, '_003/_first_friend_death');
 
@@ -16,14 +16,14 @@ new SBattle(1750, 1025, 'trial/rodent');
 new SBattle(1575, 1175, 'trial/arachnid');
 
 // round of loot
-new SE_small_treasure(1750, 950, ITEM.Stone);
-new SE_small_treasure(1200, 1050, ITEM.Bone);
+new SE_small_groundItem(1750, 950, ITEM.Stone);
+new SE_small_groundItem(1200, 1050, ITEM.Bone);
 new SB_rubble(1425, 1150, ITEM.Stick);
-new SE_small_treasure(1500, 1475, ITEM.Stick);
+new SE_small_groundItem(1500, 1475, ITEM.Stick);
 new SB_rubble(1800, 1175, ITEM.Stick);
 new SB_rubble(1725, 1250, ITEM.Bone);
-new SE_small_treasure(1750, 1100, ITEM.Stone);
-new SE_small_treasure(2050, 1025, ITEM.Stone);
+new SE_small_groundItem(1750, 1100, ITEM.Stone);
+new SE_small_groundItem(2050, 1025, ITEM.Stone);
 
 // main path
 new SBattle(1350, 775, 'trial/arachnid');
@@ -42,15 +42,15 @@ new SB_rubble(2250, 425, ITEM.Elixir_fire);
 new SB_rubble(900, 1475, ITEM.Elixir_fire);
 
 // extras
-new SE_small_treasure(900, 1250, ITEM.Stone);
-new SE_small_treasure(2175, 275, ITEM.Stone);
-new SE_small_treasure(1075, 1550, ITEM.Stone);
+new SE_small_groundItem(900, 1250, ITEM.Stone);
+new SE_small_groundItem(2175, 275, ITEM.Stone);
+new SE_small_groundItem(1075, 1550, ITEM.Stone);
 
 new SB_rubble(1275, 1775, ITEM.Bone);
 new SB_rubble(1725, 1550, ITEM.Bone);
-new SE_small_treasure(1575, 775, ITEM.Bone);
+new SE_small_groundItem(1575, 775, ITEM.Bone);
 
-new SE_small_treasure(2175, 900, ITEM.Stick);
+new SE_small_groundItem(2175, 900, ITEM.Stick);
 
 new SBattle(1525, 1400, 'trial/cockroach');
 new SBattle(1050, 575, 'trial/cockroach');

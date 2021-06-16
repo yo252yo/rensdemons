@@ -17,7 +17,7 @@ class SB_event extends SBattle {
   }
 }
 
-class SE_treasure extends S_event {
+class SE_groundItem extends S_event {
   constructor(x, y, object, quantity, size, color) {
     if (!quantity){
       quantity = 1;
@@ -40,7 +40,7 @@ class SE_treasure extends S_event {
   }
 }
 
-class SE_small_treasure extends SE_treasure {
+class SE_small_groundItem extends SE_groundItem {
   constructor(x, y, object) {
     super(x, y, object, 1, 25);
   }

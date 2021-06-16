@@ -90,11 +90,11 @@ class Filler {
       }, weight);
   }
 
-  addevent_treasure(item, weight, quantity) {
+  addevent_groundItem(item, weight, quantity) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this.add_event(function(x,y,g){
-        new SE_treasure(x, y, item, quantity, size, color);
+        new SE_groundItem(x, y, item, quantity, size, color);
       }, weight);
   }
 

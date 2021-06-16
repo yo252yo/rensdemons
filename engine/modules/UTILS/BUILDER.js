@@ -122,7 +122,7 @@ const BUILDER = {
     },
 
     flooritem: function(name){
-      BUILDER._BRUSH = "new SE_small_treasure($x, $y, " + name + ");";
+      BUILDER._BRUSH = "new SE_small_groundItem($x, $y, " + name + ");";
     },
   },
 

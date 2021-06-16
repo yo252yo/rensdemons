@@ -61,10 +61,10 @@ filler.addevent_rubble(ITEM.Shield, 0.05);
 filler.addevent_rubble(ITEM.Elixir_vine, 0.05);
 filler.addevent_rubble(ITEM.Sword_wooden, 0.1);
 filler.addevent_rubble(ITEM.Bone);
-filler.addevent_treasure(ITEM.Scale);
-filler.addevent_treasure(ITEM.Seashell);
-filler.addevent_treasure(ITEM.AncientRubbles);
-filler.addevent_treasure(ITEM.Net, 0.1);
+filler.addevent_groundItem(ITEM.Scale);
+filler.addevent_groundItem(ITEM.Seashell);
+filler.addevent_groundItem(ITEM.AncientRubbles);
+filler.addevent_groundItem(ITEM.Net, 0.1);
 
 filler.addevent_text('You find a pile of goo that surely used to be other living creatures. You shudder at the thought that it may be the fate that awaits you.');
 filler.addevent_text('The stench and humidity is unbearable. The floor under your feet is gooey and unsteady. You progress with difficulty.');
