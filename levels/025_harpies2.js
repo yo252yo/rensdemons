@@ -80,20 +80,20 @@ filler.fill_by_retry();
 //hack TEMPORARY ELEMENTS
 // ===================
 
-filler.set_event(10);
+var events = new EventFiller(filler, 10);
 
-filler.addevent_rubble(ITEM.Dagger, 0.05);
-filler.addevent_rubble(ITEM.ShelterKey, 0.1);
-filler.addevent_rubble(ITEM.Linnens, 0.2);
-filler.addevent_groundItem(ITEM.AncientRubbles, 2);
-filler.addevent_groundItem(ITEM.Stone, 0.1);
-filler.addevent_text("You find a heap of metallic debris on the floor. You cannot tell what they used to be, but it has long since been broken into many pieces. One thing is for sure, it was carefully crafted, with a precision and a skill that has vanished from this world.");
-filler.addevent_text("You cannot help but notice the total absence of human corpse or signs of life in this shelter. It looks like the poor souls for whom it was destined never made it on time...");
-filler.addevent_text("The dim light that follows you from the door is barely enough to light up the place. The air is dusty and suffocating. Clearly this room has not been visited in a while.");
-filler.addevent_text("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
+events.addevent_rubble(ITEM.Dagger, 0.05);
+events.addevent_rubble(ITEM.ShelterKey, 0.1);
+events.addevent_rubble(ITEM.Linnens, 0.2);
+events.addevent_groundItem(ITEM.AncientRubbles, 2);
+events.addevent_groundItem(ITEM.Stone, 0.1);
+events.addevent_text("You find a heap of metallic debris on the floor. You cannot tell what they used to be, but it has long since been broken into many pieces. One thing is for sure, it was carefully crafted, with a precision and a skill that has vanished from this world.");
+events.addevent_text("You cannot help but notice the total absence of human corpse or signs of life in this shelter. It looks like the poor souls for whom it was destined never made it on time...");
+events.addevent_text("The dim light that follows you from the door is barely enough to light up the place. The air is dusty and suffocating. Clearly this room has not been visited in a while.");
+events.addevent_text("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
 
-filler.set_tries(10, 20);
-filler.fill_by_retry();
+events.set_tries(10, 20);
+events.fill_by_retry();
 
 // ===================
 //hack FINISHING ELEMENTS (exit)

@@ -43,74 +43,6 @@ class Filler {
   }
 
   // ===================
-  //hack Events/encounters
-  // ===================
-
-  set_event(hitbox_size, resize_event, recolor_event) {
-    if(!hitbox_size){
-      hitbox_size = 50;
-    }
-    this.obj_w = hitbox_size;
-    this.obj_h = hitbox_size;
-    this.resize_event = resize_event;
-    this.recolor_event = recolor_event;
-    this.obj_constructor = this.event_obj_constructor;
-  }
-
-  event_obj_constructor(x,y,gen) {
-    var array = {};
-    for (var i in this.events){
-      array[i] = this.events[i].w;
-    }
-    var index = RANDOM.pick_in_weighted_array(array, gen);
-    var f = this.events[index].f;
-    return f(x,y,gen);
-  }
-
-  add_event(event_function, weight) {
-    if (!weight){
-      weight = 1;
-    }
-    this.events.push({f: event_function, w: weight});
-  }
-
-  addevent_battle(name, weight) {
-    var size = this.resize_event;
-    var color = this.recolor_event;
-    this.add_event(function(x,y,g){
-        return new SBattle(x, y, name, size, color);
-      }, weight);
-  }
-
-  addevent_rubble(item, weight) {
-    var size = this.resize_event;
-    var color = this.recolor_event;
-    this.add_event(function(x,y,g){
-        new SB_rubble(x, y, item, size, color);
-      }, weight);
-  }
-
-  addevent_groundItem(item, weight, quantity) {
-    var size = this.resize_event;
-    var color = this.recolor_event;
-    this.add_event(function(x,y,g){
-        new SE_groundItem(x, y, item, quantity, size, color);
-      }, weight);
-  }
-
-  addevent_text(text, weight) {
-    var size = this.resize_event;
-    var color = this.recolor_event;
-    this.add_event(function(x,y,g){
-        new SB_event(x, y, text, size, color);
-      }, weight);
-  }
-
-  clear_events() {
-    this.events = [];
-  }
-
-  // ===================
   //hack Utilities
   // ===================
 
@@ -228,6 +160,77 @@ class Filler {
 
   draw_for_debug(color) {
     new S_Floor(this.zone_x, this.zone_y, this.zone_w, this.zone_h, color);
+  }
+}
+
+
+class EventFiller extends Filler {
+  constructor(filler, hitbox_size, resize_event, recolor_event) {
+    super();
+    Object.assign(this, filler);
+    this.events = [];
+
+    if(!hitbox_size){
+      hitbox_size = 50;
+    }
+    this.obj_w = hitbox_size;
+    this.obj_h = hitbox_size;
+    this.resize_event = resize_event;
+    this.recolor_event = recolor_event;
+    this.obj_constructor = this._event_obj_constructor;
+  }
+
+  _event_obj_constructor(x,y,gen) {
+    var array = {};
+    for (var i in this.events){
+      array[i] = this.events[i].w;
+    }
+    var index = RANDOM.pick_in_weighted_array(array, gen);
+    var f = this.events[index].f;
+    return f(x,y,gen);
+  }
+
+  _add_event(event_function, weight) {
+    if (!weight){
+      weight = 1;
+    }
+    this.events.push({f: event_function, w: weight});
+  }
+
+  addevent_battle(name, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this._add_event(function(x,y,g){
+        return new SBattle(x, y, name, size, color);
+      }, weight);
+  }
+
+  addevent_rubble(item, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this._add_event(function(x,y,g){
+        new SB_rubble(x, y, item, size, color);
+      }, weight);
+  }
+
+  addevent_groundItem(item, weight, quantity) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this._add_event(function(x,y,g){
+        new SE_groundItem(x, y, item, quantity, size, color);
+      }, weight);
+  }
+
+  addevent_text(text, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this._add_event(function(x,y,g){
+        new SB_event(x, y, text, size, color);
+      }, weight);
+  }
+
+  clear() {
+    this.events = [];
   }
 
 }
