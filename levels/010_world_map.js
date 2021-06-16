@@ -125,11 +125,11 @@ FMap.fill_by_retry();
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
-FEasyEvents.battle('world/ghost', 2);
-FEasyEvents.battle('world/goblin', 2);
-FEasyEvents.battle('world/mummy', 2);
-FEasyEvents.battle('world/skeleton', 2);
-FEasyEvents.battle('world/wraith', 2);
+FEasyEvents.battle('world/ghost', 1.7);
+FEasyEvents.battle('world/goblin', 1.7);
+FEasyEvents.battle('world/mummy', 1.7);
+FEasyEvents.battle('world/skeleton', 1.7);
+FEasyEvents.battle('world/wraith', 1.7);
 FEasyEvents.battleRubble(ITEM.Poison_darts, 0.05);
 FEasyEvents.battleRubble(ITEM.Dagger, 0.05);
 FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.05);
