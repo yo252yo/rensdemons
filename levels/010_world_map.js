@@ -127,11 +127,26 @@ FMap.fill_by_retry();
 var FEasyMonsters = new Filler(gen);
 
 FEasyMonsters.set_event(25, 25, 'obj_light');
-FEasyMonsters.addevent_battle('world/ghost', 1);
-FEasyMonsters.addevent_battle('world/goblin', 1);
-FEasyMonsters.addevent_battle('world/mummy', 1);
-FEasyMonsters.addevent_battle('world/skeleton', 1);
-FEasyMonsters.addevent_battle('world/wraith', 1);
+FEasyMonsters.addevent_battle('world/ghost', 2);
+FEasyMonsters.addevent_battle('world/goblin', 2);
+FEasyMonsters.addevent_battle('world/mummy', 2);
+FEasyMonsters.addevent_battle('world/skeleton', 2);
+FEasyMonsters.addevent_battle('world/wraith', 2);
+FEasyMonsters.addevent_rubble(ITEM.Poison_darts, 0.05);
+FEasyMonsters.addevent_rubble(ITEM.Dagger, 0.05);
+FEasyMonsters.addevent_rubble(ITEM.Elixir_ice, 0.05);
+FEasyMonsters.addevent_rubble(ITEM.Linnens, 0.2);
+FEasyMonsters.addevent_treasure(ITEM.Bone, 0.2);
+FEasyMonsters.addevent_treasure(ITEM.Stone, 0.2);
+FEasyMonsters.addevent_treasure(ITEM.Berry, 0.2);
+
+FEasyMonsters.addevent_text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
+FEasyMonsters.addevent_text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
+FEasyMonsters.addevent_text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
+FEasyMonsters.addevent_text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
+
+
+
 
 FEasyMonsters.set_zone_from_filler(FEasyS);
 FEasyMonsters.set_tries(10, 20);

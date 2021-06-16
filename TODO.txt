@@ -5,19 +5,14 @@ should we meet the king?
 
 - pick audios
 
-
- special encounters: harpies lvl, squid lvl, mushroom lvl, world:
- addevent_battle(name, weight);
- addevent_rubble(item, weight);
- addevent_treasure(item, weight, count);
- addevent_text(text, weight);
-
 > all monsters
 -  battle attributes
 - attacks
 
 
+RENAME TREASURE TO FLOOR ITEM
 
+make eventtext not a battle but add a couple of itembattles in environment ? (like grove, mushroom, rock ??)
 
 
 > fast travel after getting artifact?

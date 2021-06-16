@@ -163,10 +163,20 @@ for (var i=0; i<2; i++){
 
 filler.set_event(5);
 
-filler.addevent_battle('mountains/chimera', 1);
+filler.addevent_battle('mountains/harpy', 3);
+filler.addevent_battle('mountains/chimera', 2);
+filler.addevent_battle('mountains/manticore', 2);
 filler.addevent_battle('mountains/emu', 1);
-filler.addevent_battle('mountains/harpy', 1);
-filler.addevent_battle('mountains/manticore', 1);
+filler.addevent_treasure(ITEM.Feather, 0.7);
+filler.addevent_treasure(ITEM.Stone, 0.5);
+filler.addevent_rubble(ITEM.Arrow, 0.1);
+filler.addevent_rubble(ITEM.Bone, 0.1);
+filler.addevent_rubble(ITEM.AncientRubbles, 0.1);
+filler.addevent_text('The path is thin, the climb is steep. You feel sweat running down your forehead and your back as you struggle to continue your path.');
+filler.addevent_text('$$BestFriend$ slips on a bunch of small rocks, but you notice it in time to extend a helping hand. You both manage to stay on your feet and watch the little rocks bounce back and forth until they reach the ground far behind you.',10);
+filler.addevent_text('The peaks in front of you seem to be piercing through the skies. You can distinguish, close to the highest point, a shining spot in the facade of the rock. Seems like a door. It\'s probably your goal!');
+filler.addevent_text('You find a few bones that belong to an adventurer less lucky than you. Were they part of your distant ancestors who built a shelter here? Or a more recent wanderer trying to seize the treasures of the past?');
+
 
 filler.set_zone(250,2475,1350,1300);
 filler.set_tries(50, 100);
