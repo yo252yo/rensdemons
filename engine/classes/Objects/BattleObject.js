@@ -17,6 +17,7 @@ class BattleObject extends LevelObject {
       this.interactions = {};
       this.special_effect = {};
       this.max_actions = 2;
+      this.is_event = is_event;
       if (max_actions) {
         this.max_actions = max_actions;
       }
@@ -46,6 +47,9 @@ class BattleObject extends LevelObject {
 
     interaction() {
       BATTLEOBJECTSMANAGER.interact(this);
+      if (this.is_event){
+        this.destroy();
+      }
     }
 
     battle_name() {
