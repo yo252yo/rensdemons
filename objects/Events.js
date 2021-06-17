@@ -11,9 +11,17 @@ class SB_treasure extends SBattle {
   }
 }
 
-class SB_event extends SBattle {
+class SE_event extends S_event {
+  constructor(x, y, text) {
+    super(x, y);
+    this.text = text;
+  }
+
   real_interaction() {
-    SPECIALBATTLES.event(this.battle, this.make_default_callback());
+  var self = this;
+  TextBannerSequence.make([
+    this.text,
+  ], function(){self.destroy();});
   }
 }
 
@@ -32,7 +40,7 @@ class SE_groundItem extends S_event {
     var self = this;
     TextBannerSequence.make([
       "You found something on the ground. It's a " + self.object + ".",
-    ], function(){self.destroy();})
+    ], function(){self.destroy();});
   }
 
   debug_name() {

@@ -57,16 +57,16 @@ new SBattle(1050, 575, 'trial/cockroach');
 
 new SBattle(2250, 1325, 'trial/rodent');
 
-new SB_event(1200, 650, 'A thought occurs to you: Who built this place? Was it designed to be a chamber for the Trial, or did the Church simply used what was there? You feel a chill down your spine as you imagine how many people before you roamed these dark hallways...');
-new SB_event(2025, 1550, 'You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...', 25);
-new SB_event(1125, 350, 'Oh, is that a clue to help you escape? No, it\'s just a weirdly shaped dent in the wall.', 25);
-new SB_event(2325, 1775, 'You hear an ominous sound somewhere in the dark corridors. You wait for a few moments, but nothing happens. Was it just your imagination?', 25);
-new SB_event(1850, 1400, 'You hear a growling in your stomach. It kindly reminds you that time is ticking, and your hours may be counted...', 50);
-new SB_event(1725, 425, 'You find a pile of shredded snake skins. Clearly you found the den of a reptile...');
-new SB_event(2200, 575, 'You find a sword on the ground! Oh, wait... no, it\'s just a useless piece of rock.');
-new SB_event(2100, 1250, 'You\'re starting to lose hope to ever see the light of day again. Why must the Goddess torture you so? Wouldn\'t a quick end be more merciful?');
-new SB_event(1425, 575, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
-new SB_event(1200, 275, 'You find absolutely nothing, it\'s a dead end. You start to feel pretty gloomy about your chances of survival...', 50);
+new SE_event(1200, 650, 'A thought occurs to you: Who built this place? Was it designed to be a chamber for the Trial, or did the Church simply used what was there? You feel a chill down your spine as you imagine how many people before you roamed these dark hallways...');
+new SE_event(2025, 1550, 'You find scratches on the wall. One child in the past tried to climb this wall. Did they want to dig a tunnel up? Were they trying to escape something crawling on the ground? You shiver thinking about it...', 25);
+new SE_event(1125, 350, 'Oh, is that a clue to help you escape? No, it\'s just a weirdly shaped dent in the wall.', 25);
+new SE_event(2325, 1775, 'You hear an ominous sound somewhere in the dark corridors. You wait for a few moments, but nothing happens. Was it just your imagination?', 25);
+new SE_event(1850, 1400, 'You hear a growling in your stomach. It kindly reminds you that time is ticking, and your hours may be counted...', 50);
+new SE_event(1725, 425, 'You find a pile of shredded snake skins. Clearly you found the den of a reptile...');
+new SE_event(2200, 575, 'You find a sword on the ground! Oh, wait... no, it\'s just a useless piece of rock.');
+new SE_event(2100, 1250, 'You\'re starting to lose hope to ever see the light of day again. Why must the Goddess torture you so? Wouldn\'t a quick end be more merciful?');
+new SE_event(1425, 575, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
+new SE_event(1200, 275, 'You find absolutely nothing, it\'s a dead end. You start to feel pretty gloomy about your chances of survival...', 50);
 
 
 //hack STATUES

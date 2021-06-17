@@ -10,9 +10,8 @@ should we meet the king?
 - attacks
 
 
-RENAME TREASURE TO FLOOR ITEM
+make itembattles in all nature (trial, world, 3 dungeons)
 
-make eventtext not a battle but add a couple of itembattles in environment ? (like grove, mushroom, rock ??)
 
 
 > fast travel after getting artifact?

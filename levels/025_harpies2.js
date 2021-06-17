@@ -87,10 +87,10 @@ events.battleRubble(ITEM.ShelterKey, 0.1);
 events.battleRubble(ITEM.Linnens, 0.2);
 events.groundItem(ITEM.AncientRubbles, 2);
 events.groundItem(ITEM.Stone, 0.1);
-events.battleText("You find a heap of metallic debris on the floor. You cannot tell what they used to be, but it has long since been broken into many pieces. One thing is for sure, it was carefully crafted, with a precision and a skill that has vanished from this world.");
-events.battleText("You cannot help but notice the total absence of human corpse or signs of life in this shelter. It looks like the poor souls for whom it was destined never made it on time...");
-events.battleText("The dim light that follows you from the door is barely enough to light up the place. The air is dusty and suffocating. Clearly this room has not been visited in a while.");
-events.battleText("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
+events.text("You find a heap of metallic debris on the floor. You cannot tell what they used to be, but it has long since been broken into many pieces. One thing is for sure, it was carefully crafted, with a precision and a skill that has vanished from this world.");
+events.text("You cannot help but notice the total absence of human corpse or signs of life in this shelter. It looks like the poor souls for whom it was destined never made it on time...");
+events.text("The dim light that follows you from the door is barely enough to light up the place. The air is dusty and suffocating. Clearly this room has not been visited in a while.");
+events.text("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
 
 events.set_tries(10, 20);
 events.fill_by_retry();

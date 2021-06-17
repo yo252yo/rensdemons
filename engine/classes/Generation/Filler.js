@@ -221,11 +221,11 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  battleText(text, weight) {
+  text(text, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this._add_event(function(x,y,g){
-        new SB_event(x, y, text, size, color);
+        new SE_event(x, y, text, size, color);
       }, weight);
   }
 
