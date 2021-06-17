@@ -229,6 +229,16 @@ class EventFiller extends Filler {
       }, weight);
   }
 
+  byConstructor(constructorName, weight) {
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this._add_event(function(x,y,g){
+        // This is gross and dangerous ofc
+        // and even a bit redundant with the normal filler :/
+        eval (`new ${constructorName}(${x}, ${y}, ${color}, ${size});`);
+      }, weight);
+  }
+
   clear() {
     this.events = [];
   }

@@ -1,8 +1,15 @@
 // runtime: LEVEL, CHARACTER
 
 class BattleObject extends LevelObject {
-    constructor(x, y, name, max_actions) {
-      var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+    constructor(x, y, name, max_actions, color, size, is_event) {
+      if (is_event){
+        size = size ? size: 50;
+        color = color ? color: 'obj_dark';
+        var visual = new StaticSprite("assets/objects/event.png", 'obj_dark', size, size);
+      } else {
+        color = color ? color: 'obj_light';
+        var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+      }
       super(visual, x, y);
       this.name = name;
       var g = new Generator(x+y);
@@ -12,6 +19,9 @@ class BattleObject extends LevelObject {
       this.max_actions = 2;
       if (max_actions) {
         this.max_actions = max_actions;
+      }
+      if(is_event){
+        this.adjust_hitbox(0, 0, size, size);
       }
     }
 

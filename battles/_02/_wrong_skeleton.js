@@ -1,4 +1,6 @@
 
+new CenteredImage("assets/objects/ruins/skeleton.png", 'background');
+
 PLAYER_ACTIONS.allow_flight(true);
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.escape("Avert eyes");
