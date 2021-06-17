@@ -265,35 +265,53 @@ class S_Bocals extends SimpleObject {
 class B_Pebbles extends BattleObject {
   constructor(x, y, color, size){
     super(x, y, "mountain/pebbles", 2, color, size, true);
+
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     //this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
 //    this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
   //  this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
   // 4-6
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
   }
 }
 
 class B_Plants extends BattleObject {
   constructor(x, y, color, size){
     super(x, y, "forest/plantsmall", 2, color, size, true);
+
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     //this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
 //    this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
   //  this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
   // 4-6
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
   }
 }
 
 class B_Seashell extends BattleObject {
   constructor(x, y, color, size){
     super(x, y, "water/seashell", 2, color, size, true);
+
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     //this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
 //    this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
   //  this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
   // 4-6
   }
 }
@@ -301,11 +319,17 @@ class B_Seashell extends BattleObject {
 class B_Skeleton extends BattleObject {
   constructor(x, y, color, size){
     super(x, y, "ruins/skeleton", 2, color, size, true);
+
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     //this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
 //    this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless. But Her ways are mysterious.");
   //  this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
   // 4-6
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
+  this.add_interaction("", "");
   }
 }

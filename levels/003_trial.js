@@ -68,6 +68,8 @@ new SE_event(2100, 1250, 'You\'re starting to lose hope to ever see the light of
 new SE_event(1425, 575, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
 new SE_event(1200, 275, 'You find absolutely nothing, it\'s a dead end. You start to feel pretty gloomy about your chances of survival...', 50);
 
+new B_Skeleton(1275, 1250);
+new B_Pebbles(1875, 725);
 
 //hack STATUES
 var make_statue = function(x, y, position) {
