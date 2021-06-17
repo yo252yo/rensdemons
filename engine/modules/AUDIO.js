@@ -108,38 +108,29 @@ const AUDIO = {
       // boss battle music??
     },
 
+    characters:{ // chiptune, weird
+      StreetSmart: function() { AUDIO._play_music('chara/lastenergy'); },
+      WiseOld: function() { AUDIO._play_music("chara/spacemtv") },
+      FemmeFatale: function() { AUDIO._play_music("chara/sexytime") },
+      PreciousChild: function() { AUDIO._play_music('chara/shy'); },
+      GeniusProdigy: function() { AUDIO._play_music('chara/hugconvoy'); },
+      BestFriend: function() { AUDIO._play_music('chara/godmadeofsoap'); },
+      RetiredProtector: function() { AUDIO._play_music("chara/cestsurtoiquecavalemieux") },
+      DumbMuscles: function() { AUDIO._play_music("chara/groovealltogether") },
+      UpbeatDojikko: function() { AUDIO._play_music('chara/impalacamaro'); },
+      TorturedSoul: function() { AUDIO._play_music("chara/extrametal") },
+      SnobRich: function() { AUDIO._play_music("chara/moinsdeflicsplusdechiens") },
+      TraitorFisher: function() { AUDIO._play_music("chara/surfing") },
+      DisguisedPrincess: function() { AUDIO._play_music("chara/road3chill") },
+      SavageChild: function() { AUDIO._play_music("chara/getready") },
+    },
+
     town: { // strings, ambiant
       hope: function() {       AUDIO._play_music('town/realismovisceral'); },
       denial: function() {     AUDIO._play_music('town/tinajero'); },
       acceptance: function() { AUDIO._play_music('town/two live at musique tangeantes'); },
       debauch: function() {    AUDIO._play_music('town/debaucheddance'); },
       fear: function() {       AUDIO._play_music('town/lacrobate'); },
-    },
-    // todo:
-    characters:{ // chiptune, weird
-      StreetSmart: function() { AUDIO._play_music('chara/lastenergy'); },
-      WiseOld: function() { AUDIO._play_music("chara/spacemtv") },
-      FemmeFatale: function() { AUDIO._play_music("chara/sexytime") },
-      PreciousChild: function() { AUDIO._play_music('chara/shy'); },
-
-
-      GeniusProdigy: function() { AUDIO._play_music('chara/hugconvoy'); },
-      BestFriend: function() { AUDIO._play_music('chara/godmadeofsoap'); },
-      // rm tolose
-
-
-      UpbeatDojikko: function() { AUDIO._play_music('foulerlhorizon'); }, // bof, impala??
-
-      SnobRich: function() { console.log("todo") }, // moins de flic? humoresk by dvorak
-
-      TorturedSoul: function() { console.log("todo") }, // extrametal?
-      RetiredProtector: function() { console.log("todo") }, // cest toi sur?
-      DumbMuscles: function() { console.log("todo") },
-
-      TraitorFisher: function() { console.log("todo") }, // surfing?
-      DisguisedPrincess: function() { console.log("todo") }, // moins de flic?
-
-      SavageChild: function() { console.log("todo") }, // GetReady?
     },
 
     levels: {
@@ -158,7 +149,7 @@ const AUDIO = {
       harpies: function() { AUDIO._play_music("level/callofthecoyote") },
 
       hellsmaw: function() { console.log("todo") },
-      hell: function() { console.log("todo") },
+      hell: function() { console.log("todo") }, // sensual melancholia?
       fissure: function() { console.log("todo") },
       pandemonium: function() { console.log("todo") },
       heaven: function() { console.log("todo") },
