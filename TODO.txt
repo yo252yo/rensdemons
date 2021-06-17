@@ -6,29 +6,20 @@ should we meet the king?
 - pick audios
 
 > all monsters
--  battle attributes
+- battle attributes
 - attacks
 
 
-make itembattles in all nature (trial, world, 3 dungeons)
-add a few more actions for rubble
-
-
+- rest of the story
 > fast travel after getting artifact?
 > react after gathering 3 artifacts
-
-
-- monsters in world map
+> story, city destroyed, etc...
 - optional events in world map
 - optional dungeons
 - optional party members:
-  description in party.js,
-  attacks in languge,
-  encounter+battle
-
-
-  could the random text events provide XP by being like itembattles ?
-
+>  description in party.js,
+>  attacks in languge,
+>  encounter+battle
 
 
 should we do a cemetary?

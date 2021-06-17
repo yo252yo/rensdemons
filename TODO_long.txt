@@ -116,3 +116,7 @@ shop, trainer, player_action have a bit of language text, DISK?
 spam space bar in battle makes the option menu reappear on fight
 
 palette has functions that return objects, strings and functinos that just outright change the colors
+
+add a few more actions for rubble
+
+more itembattles for dungeons and world

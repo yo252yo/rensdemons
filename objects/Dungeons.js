@@ -66,7 +66,7 @@ class S_Coral extends SimpleObject {
 
 class S_Seashell extends SimpleObject {
   constructor(x, y){
-    super(x, y, "water/seashell");
+    super(x, y, "exterior/seashell");
     this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "This seashell still has an inhabitant.",
@@ -78,7 +78,7 @@ class S_Seashell extends SimpleObject {
 
 class S_Seashellpointy extends SimpleObject {
   constructor(x, y){
-    super(x, y, "water/seashellpointy");
+    super(x, y, "exterior/seashellpointy");
     this.adjust_hitbox(10,0,20,10);
     this.default_text = this.text_interaction([
       "This shell is without a doubt a refuge for a hermit crab.",
@@ -102,7 +102,7 @@ class S_Waterplants extends SimpleObject {
 
 class S_PlantSmall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "forest/plantsmall");
+    super(x, y, "exterior/plant");
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "You can easily step over this little bush.",
@@ -164,7 +164,7 @@ class S_Planks extends SimpleObject {
 
 class S_Pebbles extends SimpleObject {
   constructor(x, y){
-    super(x, y, "mountain/pebbles");
+    super(x, y, "exterior/pebbles");
     this.adjust_hitbox(10,0,20,15);
     this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.default_text = this.text_interaction([
@@ -264,7 +264,7 @@ class S_Bocals extends SimpleObject {
 
 class B_Pebbles extends BattleObject {
   constructor(x, y, color, size){
-    super(x, y, "mountain/pebbles", 2, color, size, true);
+    super(x, y, "exterior/pebbles", 2, color, size, true);
 
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
@@ -282,7 +282,7 @@ class B_Pebbles extends BattleObject {
 
 class B_Plants extends BattleObject {
   constructor(x, y, color, size){
-    super(x, y, "forest/plantsmall", 2, color, size, true);
+    super(x, y, "exterior/plant", 2, color, size, true);
 
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
@@ -300,7 +300,7 @@ class B_Plants extends BattleObject {
 
 class B_Seashell extends BattleObject {
   constructor(x, y, color, size){
-    super(x, y, "water/seashell", 2, color, size, true);
+    super(x, y, "exterior/seashell", 2, color, size, true);
 
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
@@ -318,7 +318,7 @@ class B_Seashell extends BattleObject {
 
 class B_Skeleton extends BattleObject {
   constructor(x, y, color, size){
-    super(x, y, "ruins/skeleton", 2, color, size, true);
+    super(x, y, "exterior/skeleton", 2, color, size, true);
 
     this.set_description("There are pebbles on the ground.");
   //  this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
