@@ -17,25 +17,47 @@ const AUDIO = {
   },
 
   init: function (){
-    AUDIO._load_sound('lvlup');
-    AUDIO._load_sound('unlock');
-    AUDIO._load_sound('clickmove');
-    AUDIO._load_sound('page');
-    AUDIO._load_sound('footstep');
     AUDIO._load_sound('choice');
-    AUDIO._load_sound('interaction');
-    AUDIO._load_sound('dodge_place');
+    AUDIO._load_sound('clickmove');
     AUDIO._load_sound('dodge_attack');
-    AUDIO._load_music('the girl with the baseball bat');
-    AUDIO._load_music('love planet');
-    AUDIO._load_music('time for adventure 4 opening');
-    AUDIO._load_music('champ de tournesol');
-    AUDIO._load_music('a tale about somewhere where the end of the story already occurs');
-    AUDIO._load_music('un triste echo trop juste');
-    AUDIO._load_music('ambiant inconvenient truth');
-    AUDIO._load_music('floating temple');
-    AUDIO._load_music('two live at musique tangeantes');
-    AUDIO._load_music('un desert');
+    AUDIO._load_sound('dodge_place');
+    AUDIO._load_sound('footstep');
+    AUDIO._load_sound('interaction');
+    AUDIO._load_sound('lvlup');
+    AUDIO._load_sound('page');
+    AUDIO._load_sound('unlock');
+    
+    AUDIO._load_music('chara/cestsurtoiquecavalemieux');
+    AUDIO._load_music('chara/extrametal');
+    AUDIO._load_music('chara/getready');
+    AUDIO._load_music('chara/godmadeofsoap');
+    AUDIO._load_music('chara/groovealltogether');
+    AUDIO._load_music('chara/hugconvoy');
+    AUDIO._load_music('chara/impalacamaro');
+    AUDIO._load_music('chara/lastenergy');
+    AUDIO._load_music('chara/moinsdeflicsplusdechiens');
+    AUDIO._load_music('chara/road3chill');
+    AUDIO._load_music('chara/sexytime');
+    AUDIO._load_music('chara/shy');
+    AUDIO._load_music('chara/spacemtv');
+    AUDIO._load_music('chara/surfing');
+    AUDIO._load_music('interface/love planet');
+    AUDIO._load_music('interface/the girl with the baseball bat');
+    AUDIO._load_music('interface/time for adventure 4 opening');
+    AUDIO._load_music('interface/un desert');
+    AUDIO._load_music('interface/un triste echo trop juste');
+    AUDIO._load_music('level/a tale about somewhere where the end of the story already occurs');
+    AUDIO._load_music('level/ambiant inconvenient truth');
+    AUDIO._load_music('level/callofthecoyote');
+    AUDIO._load_music('level/champ de tournesol');
+    AUDIO._load_music('level/floating temple');
+    AUDIO._load_music('level/ihatehimsomuch');
+    AUDIO._load_music('level/jeudelaconversation');
+    AUDIO._load_music('town/debaucheddance');
+    AUDIO._load_music('town/lacrobate');
+    AUDIO._load_music('town/realismovisceral');
+    AUDIO._load_music('town/tinajero');
+    AUDIO._load_music('town/two live at musique tangeantes');
 
     AUDIO._MUSIC_PLAYER.loop = true;
     AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
