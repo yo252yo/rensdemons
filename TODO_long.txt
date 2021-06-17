@@ -120,3 +120,5 @@ palette has functions that return objects, strings and functinos that just outri
 add a few more actions for rubble
 
 more itembattles for dungeons and world
+
+also serve a zip DL of the game mb

@@ -3,7 +3,7 @@ be careful, write in present and second person, also dont make things spawn on d
 should we meet the king?
 
 
-- pick audios
+- pick audios and refresh buffered media list
 
 > all monsters
 - battle attributes
