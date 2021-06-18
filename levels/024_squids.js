@@ -118,6 +118,14 @@ var dive = function(){
    ]);
 }
 
+var alreadyEaten = function() { return INVENTORY.count("_eaten_by_whale") > 0; };
+CURRENTLEVEL.add_trigger("foundAllChildren", alreadyEaten, function() {
+  INVENTORY.decrease("_eaten_by_whale");
+  CURRENTLEVEL.setup("024_squids2");
+});
+
+
+
 CURRENTLEVEL.initialize_with_character(1000, 2425);
 var potion = function(){
   if (INVENTORY.count(access)){

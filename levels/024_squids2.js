@@ -41,7 +41,7 @@ new SB_rubble(950, 675, ITEM.AncientArmamentArmature);
 
 
 var filler = new Filler(gen);
-filler.set_zone(625,925,1200,650);
+filler.set_zone(625,925,1175,650);
 filler.set_tries(5, 17);
 filler.set_object(50, 50, function(x,y,g){ return new S_Seashell(x, y); });
 filler.fill_by_retry();
@@ -98,6 +98,5 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-
 CURRENTLEVEL.initialize_with_character(100, 350);
-IO.control.character();
+CHARACTER.character.place_at(100,350);
