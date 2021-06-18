@@ -120,7 +120,7 @@ var dive = function(){
 }
 
 var alreadyEaten = function() { return INVENTORY.count("_eaten_by_whale") > 0; };
-CURRENTLEVEL.add_trigger("foundAllChildren", alreadyEaten, function() {
+CURRENTLEVEL.add_trigger("alreadyEaten", alreadyEaten, function() {
   INVENTORY.decrease("_eaten_by_whale");
   CURRENTLEVEL.setup("024_squids2");
 });
