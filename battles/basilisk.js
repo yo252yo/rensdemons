@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/trial/basilisk.png", 'background');
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 var swear_loyalty = "Swear loyalty";

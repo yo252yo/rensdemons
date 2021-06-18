@@ -9,7 +9,7 @@ BATTLE.operations.add_loot("", 4);
 
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 

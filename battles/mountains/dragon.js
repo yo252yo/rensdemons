@@ -7,7 +7,7 @@ PLAYER_ACTIONS.allow_flight();
 BATTLE.operations.add_loot(ITEM.Scale, 1);
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 

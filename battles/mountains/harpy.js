@@ -19,7 +19,7 @@ BATTLE.operations.add_loot(ITEM.Feather, 1);
 BATTLE.operations.add_loot("", 2);
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 

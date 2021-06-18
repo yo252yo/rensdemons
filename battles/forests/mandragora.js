@@ -5,7 +5,7 @@ new CenteredImage("assets/battles/forests/mandragora.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);

@@ -8,7 +8,7 @@ BATTLE.operations.add_loot(ITEM.Linnens, 1);
 BATTLE.operations.add_loot("", 9);
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 

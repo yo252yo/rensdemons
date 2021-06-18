@@ -9,7 +9,7 @@ BATTLE.operations.add_loot(ITEM.Sword_wooden, 1);
 BATTLE.operations.add_loot("", 14);
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 

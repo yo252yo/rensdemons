@@ -8,7 +8,7 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);

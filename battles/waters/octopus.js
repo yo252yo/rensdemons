@@ -5,7 +5,7 @@ new CenteredImage("assets/battles/waters/octopus.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================
-//hack PLAYER CABAILITIES
+//hack PLAYER CAPABILITIES
 // ===================
 
 
