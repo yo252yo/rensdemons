@@ -122,3 +122,5 @@ add a few more actions for rubble
 more itembattles for dungeons and world
 
 also serve a zip DL of the game mb
+
+do not record position/lvl state inside the whale, else you arrive by the back when you come back :/
