@@ -26,7 +26,7 @@ BATTLE.monster_actions.add_textual("...", attack);
 
 PLAYER_ACTIONS.add({
   name: "Feed",
-  outcome: BATTLETREE.ESCAPE, // BATTLETREE.WIN destroys the whale
+  outcome: BATTLETREE.WIN,
   unlock: true,
   description: ["Empowered by the Goddess, you decide to end the confrontation in a surprising way. You trust your luck and throw yourself recklessly in the mouth of the animal. The Goddess must be watching over you, because you manage to avoid the giant teeth and land safely on the tongue of the animal."],
   extra_function: function(){
