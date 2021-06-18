@@ -11,20 +11,21 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 //hack PLAYER CABAILITIES
 // ===================
 
+PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
 var attack = {
-  attack_amplitude: 0.1, // Between 0 and 1
-  warning_time_s: 2,
-  react_time_s: 1,
-  time_variation: 0.5, // 1 = 100%
+  attack_amplitude: 0.8, // Between 0 and 1
+  warning_time_s: 1.0,
+  react_time_s: 1.3,
+  time_variation: 0.3, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
+BATTLE.monster_actions.add_textual("The Fungus takes a step towards you. The ground shakes under the weight of its huge bulky legs. It raises one again to stomp and crush you.", attack);
+BATTLE.monster_actions.add_textual("The Fungus slams one of its huge appendages like an arm. It's bigger than you and aimed right at you, crushing the vegetation around and everything on its path.", attack);
+BATTLE.monster_actions.add_textual("The Fungus seems to be aiming at using its huge mass to crush you. You see it vacillate towards you, uprooting the nearby trees on the way.", attack);
 
 
 
