@@ -3,7 +3,7 @@ const MARTYRDOMS = {
   Movement: "walking speed",
   Vision: "sight range",
 
-  Foresight: "enemy attack foresight",
+  Foresight: "preparation time",
   Reflex: "dodge speed",
   Elusiveness: "dodge precision",
 }

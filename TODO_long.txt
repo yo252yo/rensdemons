@@ -107,6 +107,8 @@ party state, thoughts, etc...
 sometimes steps fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found.
 
 
+map elements and dungeons decors could also be battleobjects
+
 assets battle civilians suck, also theres some sprites in assets/battle that are not used
 mb redo buildings + characters with whtdragon/MV assets ?
 credit gfroad sumnmoning circle or replace ti with rpgmaker
