@@ -12,8 +12,8 @@ class SB_treasure extends SBattle {
 }
 
 class SE_event extends S_event {
-  constructor(x, y, text) {
-    super(x, y);
+  constructor(x, y, text, size, color) {
+    super(x, y, size, color);
     this.text = text;
   }
 
