@@ -12,6 +12,7 @@ BATTLE.operations.add_loot("", 14);
 //hack PLAYER CAPABILITIES
 // ===================
 
+PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 
 // ===================
@@ -19,14 +20,14 @@ BATTLE.operations.add_loot("", 14);
 // ===================
 var attack = {
   attack_amplitude: 0.1, // Between 0 and 1
-  warning_time_s: 2,
-  react_time_s: 1,
-  time_variation: 0.5, // 1 = 100%
+  warning_time_s: 0.9,
+  react_time_s: 0.9,
+  time_variation: 0.3, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
+BATTLE.monster_actions.add_textual("The skeleton hits you with its sword.", attack);
+BATTLE.monster_actions.add_textual("The skeleton is quite skilled with its weapon, alternating between feints and hits.", attack);
+BATTLE.monster_actions.add_textual("The skeleton swings its sword at you, while the rattling of the bones unsettles you.", attack);
 
 
 
