@@ -4,7 +4,7 @@ class BattleObject extends LevelObject {
     constructor(x, y, name, max_actions, color, size, is_event) {
       if (is_event){
         size = size ? size: 50;
-        color = color ? color: 'obj_dark';
+        color = (color && color != "undefined") ? color: 'obj_dark';
         var visual = new StaticSprite("assets/objects/event.png", color, size, size);
       } else {
         color = color ? color: 'obj_light';
