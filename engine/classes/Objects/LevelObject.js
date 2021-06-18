@@ -36,7 +36,11 @@ class LevelObject {
     }
 
     debug_name() {
-      return this.hash();
+      var name = this.constructor.name;
+      if (this.battle){
+        name += `(${this.battle})`;
+      }
+      return name + "/" + Math.floor(this.original_x) + "/" + Math.floor(this.original_y);
     }
 
     get_visual() {
