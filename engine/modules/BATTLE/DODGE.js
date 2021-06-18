@@ -127,6 +127,7 @@ const DODGE = {
       if(DODGE.sprite.defense){
         DODGE.sprite.defense.hide();
       }
+      IO.control.cede();
     },
 
     compute: function (){
@@ -151,12 +152,14 @@ const DODGE = {
 
   io:{
     pick_target: function (target){
+      if (!DODGE.accepting_input){  return; }
       DODGE.defense_angle = target;
       AUDIO.effect.dodge_place();
       DODGE.draw.defense();
     },
 
     raw_click: function (x,y){
+      if (!DODGE.accepting_input){  return; }
       var window_x = x - window.scrollX;
       var window_y = y - window.scrollY;
       var rect = DODGE.sprite.prompt.container.getBoundingClientRect();
@@ -184,6 +187,7 @@ const DODGE = {
       var warning_time = DODGE.get_params.warning_time_s() * 1000;
       var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * warning_time;
       warning_time = Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
+      DODGE.accepting_input = true;
       setTimeout(DODGE.events.react, warning_time);
     },
 
@@ -200,7 +204,7 @@ const DODGE = {
     },
 
     hit: function(){
-      IO.control.cede();
+      DODGE.accepting_input = false;
       DODGE.sprite.prompt.hide();
       DODGE.draw.hit_confirm();
       AUDIO.effect.dodge_attack();
