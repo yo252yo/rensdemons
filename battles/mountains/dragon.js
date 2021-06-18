@@ -10,20 +10,21 @@ BATTLE.operations.add_loot(ITEM.Scale, 1);
 //hack PLAYER CAPABILITIES
 // ===================
 
+PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
 var attack = {
-  attack_amplitude: 0.1, // Between 0 and 1
-  warning_time_s: 2,
-  react_time_s: 1,
-  time_variation: 0.5, // 1 = 100%
+  attack_amplitude: 0.7, // Between 0 and 1
+  warning_time_s: 0.7,
+  react_time_s: 0.7,
+  time_variation: 0.6, // 1 = 100%
 };
 
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
-BATTLE.monster_actions.add_textual("...", attack);
+BATTLE.monster_actions.add_textual("The Dragon towers over you high in the air. It looks at you and you can see the judgement and anger in its ancestral eyes. It spits a torrent of fire in your direction.", attack);
+BATTLE.monster_actions.add_textual("The Dragon flies over the scene gracefully. Its scales reflect the sunlight. Suddenly, it breathes out a huge stormy cloud that evolves towards you.", attack);
+BATTLE.monster_actions.add_textual("The Dragon slithers fluidly in the wind. Its mystical dance controls the elements, and a tornado starts to form around you.", attack);
 
 
 // ===================
