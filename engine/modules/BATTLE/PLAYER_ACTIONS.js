@@ -226,9 +226,9 @@ const PLAYER_ACTIONS = {
   },
 
 
-  kill_with_any_party_member: function(){
+  kill_with_any_party_member: function(hits){
     for(var i in PARTYMEMBERS){
-      PLAYER_ACTIONS.win(i, 1);
+      PLAYER_ACTIONS.win(i, hits);
     }
   },
 }

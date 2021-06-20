@@ -41,7 +41,6 @@ PLAYER_ACTIONS.win(ABILITY.Summon, 1);                    // 2500 ELEM
 PLAYER_ACTIONS.win(ABILITY.Mystify, 1);                   // 2500 DIPL
 PLAYER_ACTIONS.win(ABILITY.Charm, 1);                     // 2500 SPIR
 
-
 PLAYER_ACTIONS.win(ITEM.Sword_legend, 1);
 PLAYER_ACTIONS.win(ITEM.War_hammer, 1);
 PLAYER_ACTIONS.win(ITEM.Staff, 1);

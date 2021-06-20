@@ -11,7 +11,33 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(1000);
 
-PLAYER_ACTIONS.kill_with_any_party_member();
+PLAYER_ACTIONS.kill_with_any_party_member(2);
+
+PLAYER_ACTIONS.win(ABILITY.Fireball, 7);                  // 25   ELEM
+PLAYER_ACTIONS.useless(ABILITY.Thunder, 1);                   // 75   ELEM
+PLAYER_ACTIONS.win(ABILITY.Earthquake, 2);                // 500  ELEM
+
+PLAYER_ACTIONS.useless(ABILITY.Poison, 1);                    // 34   SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 7);                   // 150  SPIR
+PLAYER_ACTIONS.win(ABILITY.Confusion, 2);                 // 500  SPIR
+
+PLAYER_ACTIONS.win(ABILITY.Circumvent, 7);                // 50   DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 5);                  // 250  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Intimidate, 2);                // 500  DIPL
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 7, true);            // 20   ALCH
+PLAYER_ACTIONS.useless(ITEM.Elixir_venom, 1, true);           // 100  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 4, true);           // 150  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 2, true);           // 200  ALCH
+
+PLAYER_ACTIONS.win(ITEM.Mace, 6);                         // 100  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 5);                       // 200  WEAP
+PLAYER_ACTIONS.useless(ITEM.Sword_iron, 1);                   // 500  WEAP
+PLAYER_ACTIONS.win(ITEM.Axe, 2);                          // 600  WEAP
+
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 7, true);           // 10   TOOL
+PLAYER_ACTIONS.useless(ITEM.Arrow, 7, true);                  // 5    TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 2);                          // 200  TOOL
 
 // ===================
 //hack MONSTER BEHAVIOR
