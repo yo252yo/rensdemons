@@ -16,6 +16,30 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.BestFriend);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 
+PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
+PLAYER_ACTIONS.useless(ABILITY.Asphyxiate, 1);                // 500  ELEM
+
+PLAYER_ACTIONS.win(ABILITY.Poison, 2);                    // 75   SPIR
+PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 150  SPIR
+PLAYER_ACTIONS.useless(ABILITY.Petrify, 1);                   // 300  SPIR
+
+PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 100  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Sneak, 1);                     // 200  DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 20   ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
+PLAYER_ACTIONS.useless(ITEM.Elixir_vine, 1, true);            // 75   ALCH
+
+PLAYER_ACTIONS.win(ITEM.Dagger, 4);                       // 75   WEAP
+PLAYER_ACTIONS.useless(ITEM.Mace, 1);                         // 100  WEAP
+PLAYER_ACTIONS.win(ITEM.Spear, 2);                        // 250  WEAP
+
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 3, true);           // 10   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 2, true);                  // 5    TOOL
+PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

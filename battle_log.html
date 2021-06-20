@@ -13,7 +13,7 @@ var battle_names = [
 
 var draw_table = function (){
   document.getElementById("level").innerHTML = "";
-  var t = "<table border=1><tr><td style='background:white;'></td>";
+  var t = "<table border=1><tr><td style='background:white;'></td><td style='background:white;'></td>";
 
   for (var b in battle_names){
     t += "<td style='background:white;'>" + battle_names[b] + "</td>";
@@ -21,6 +21,7 @@ var draw_table = function (){
 
   for (var a in ABILITY){
     t += "</tr><tr><td style='background:white;'>" + a + "</td>";
+    t += "<td style='background:white;'>" + Math.floor(TRAINER.get_prices()[ABILITY[a]]/2) + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
       if (!v) {
@@ -34,6 +35,7 @@ var draw_table = function (){
   }
   for (var a in ITEM){
     t += "</tr><tr><td style='background:white;'>" + a + "</td>";
+    t += "<td style='background:white;'>" + SHOP.get_prices()[ITEM[a]] + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ITEM[a]]);
       if (!v) {
@@ -45,21 +47,9 @@ var draw_table = function (){
       }
     }
   }
-  for (var a in ABILITY){
-    t += "</tr><tr><td style='background:white;'>" + a + "</td>";
-    for (var b in battle_names){
-      var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
-      if (!v) {
-        t += "<td style='background:black;'>" + v + "</td>";
-      } else if(v == "-"){
-        t += "<td style='background:darkgrey;'>" + v + "</td>";
-      } else {
-        t += "<td style='background:white;'>" + v + "</td>";
-      }
-    }
-  }
   for (var a in PARTYMEMBERS){
     t += "</tr><tr><td style='background:white;'>" + a + "</td>";
+    t += "<td style='background:white;'></td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], PARTYMEMBERS[a]]);
       if (!v) {
@@ -73,6 +63,7 @@ var draw_table = function (){
   }
   t += "</tr><tr>";
   t += "</tr><tr><td style='background:white;'>#ATTACKS</td>";
+  t += "<td style='background:white;'></td>";
   for (var b in battle_names){
     var seen = [];
     var v = "";

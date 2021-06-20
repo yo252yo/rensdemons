@@ -20,6 +20,30 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.FemmeFatale);
 
+PLAYER_ACTIONS.win(ABILITY.Fireball, 3);                  // 50   ELEM
+PLAYER_ACTIONS.useless(ABILITY.Thunder, 2);                   // 150  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
+
+PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
+PLAYER_ACTIONS.useless(ABILITY.Shrink, 1);                    // 150  SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
+
+PLAYER_ACTIONS.useless(ABILITY.Circumvent, 1);                // 100  DIPL
+PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 200  DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);            // 20   ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
+PLAYER_ACTIONS.useless(ITEM.Elixir_venom, 1, true);           // 100  ALCH
+
+PLAYER_ACTIONS.useless(ITEM.Dagger, 1);                       // 75   WEAP
+PLAYER_ACTIONS.win(ITEM.Mace, 1);                         // 100  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 1);                       // 200  WEAP
+
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 10   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 4, true);                  // 5    TOOL
+PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
