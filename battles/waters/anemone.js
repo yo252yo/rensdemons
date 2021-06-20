@@ -17,6 +17,7 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
+PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
 PLAYER_ACTIONS.useless(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
@@ -28,7 +29,7 @@ PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 100  DIPL
 PLAYER_ACTIONS.useless(ABILITY.Sneak, 1);                     // 200  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 20   ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);            // 20   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
 PLAYER_ACTIONS.useless(ITEM.Elixir_vine, 1, true);            // 75   ALCH
 

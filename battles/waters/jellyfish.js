@@ -16,7 +16,7 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.DisguisedPrincess);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 5);                  // 50   ELEM
-PLAYER_ACTIONS.useless(ABILITY.Thunder, 1);                   // 150  ELEM
+PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR

@@ -17,6 +17,7 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.TorturedSoul);
 
 PLAYER_ACTIONS.useless(ABILITY.Fireball, 1);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 4);                  // 100  ELEM
+PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
 
 PLAYER_ACTIONS.useless(ABILITY.Poison, 1);                    // 75   SPIR

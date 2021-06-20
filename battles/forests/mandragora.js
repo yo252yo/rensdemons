@@ -21,10 +21,10 @@ PLAYER_ACTIONS.useless(ABILITY.Thunder, 1);                   // 150  ELEM
 
 PLAYER_ACTIONS.useless(ABILITY.Poison, 1);                    // 75   SPIR
 PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 150  SPIR
-PLAYER_ACTIONS.win(ABILITY.Petrify, 2);                   // 300  SPIR
+PLAYER_ACTIONS.useless(ABILITY.Petrify, 2);                   // 300  SPIR
 
 PLAYER_ACTIONS.useless(ABILITY.Circumvent, 1);                // 100  DIPL
-PLAYER_ACTIONS.win(ABILITY.Sneak, 4);                     // 200  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Sneak, 4);                     // 200  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 20   ALCH
@@ -37,7 +37,7 @@ PLAYER_ACTIONS.useless(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.useless(ITEM.Poison_darts, 1, true);           // 10   TOOL
 PLAYER_ACTIONS.win(ITEM.Arrow, 3, true);                  // 5    TOOL
-PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
+PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
 
 // ===================
 //hack MONSTER BEHAVIOR

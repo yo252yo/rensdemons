@@ -17,17 +17,17 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.StreetSmart);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
 
-PLAYER_ACTIONS.useless(ABILITY.Fireball, 1);                  // 50   ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
+PLAYER_ACTIONS.win(ABILITY.Fireball, 3);                  // 50   ELEM
+PLAYER_ACTIONS.useless(ABILITY.Storm, 2);                     // 200  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 75   SPIR
+PLAYER_ACTIONS.useless(ABILITY.Poison, 3);                    // 75   SPIR
 PLAYER_ACTIONS.useless(ABILITY.Shrink, 1);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
 
 PLAYER_ACTIONS.useless(ABILITY.Circumvent, 1);                // 100  DIPL
 PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 200  DIPL
-PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.useless(ITEM.Elixir_vine, 1, true);            // 75   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);           // 100  ALCH
@@ -37,7 +37,7 @@ PLAYER_ACTIONS.useless(ITEM.Sword_wooden, 1);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 75   WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 5, true);           // 10   TOOL
+PLAYER_ACTIONS.useless(ITEM.Poison_darts, 5, true);           // 10   TOOL
 PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 5    TOOL
 PLAYER_ACTIONS.useless(ITEM.Net, 1);                          // 200  TOOL
 

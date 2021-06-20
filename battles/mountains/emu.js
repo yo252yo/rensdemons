@@ -27,11 +27,11 @@ PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 100  ELEM
 PLAYER_ACTIONS.useless(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
-PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 150  SPIR
+PLAYER_ACTIONS.useless(ABILITY.Shrink, 2);                    // 150  SPIR
 PLAYER_ACTIONS.useless(ABILITY.Petrify, 1);                   // 300  SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 5);                // 100  DIPL
-PLAYER_ACTIONS.win(ABILITY.Sneak, 3);                     // 200  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Sneak, 3);                     // 200  DIPL
 PLAYER_ACTIONS.useless(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);            // 20   ALCH
@@ -42,7 +42,7 @@ PLAYER_ACTIONS.win(ITEM.Sword_wooden, 3);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 2);                       // 75   WEAP
 PLAYER_ACTIONS.useless(ITEM.Spear, 1);                        // 250  WEAP
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 3, true);           // 10   TOOL
+PLAYER_ACTIONS.useless(ITEM.Poison_darts, 3, true);           // 10   TOOL
 PLAYER_ACTIONS.win(ITEM.Arrow, 2, true);                  // 5    TOOL
 PLAYER_ACTIONS.useless(ITEM.Net, 1);                          // 200  TOOL
 
