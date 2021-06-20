@@ -3,27 +3,27 @@
 
 
 
-PLAYER_ACTIONS.win(ABILITY.Fireball, 1);                  // 50   ELEM
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 1);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Thunder, 1);                   // 150  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 200  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
-PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);                // 1000 ELEM
-PLAYER_ACTIONS.win(ABILITY.Incinerate, 1);                // 2000 ELEM
-PLAYER_ACTIONS.win(ABILITY.Summon, 1);                    // 5000 ELEM
+PLAYER_ACTIONS.win(ABILITY.Fireball, 1);                  // 25   ELEM
+PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 1);                  // 50   ELEM
+PLAYER_ACTIONS.win(ABILITY.Thunder, 1);                   // 75   ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 100  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 250  ELEM
+PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);                // 500  ELEM
+PLAYER_ACTIONS.win(ABILITY.Incinerate, 1);                // 1000 ELEM
+PLAYER_ACTIONS.win(ABILITY.Summon, 1);                    // 2500 ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 1);                    // 75   SPIR
-PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                    // 150  SPIR
-PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
-PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 1000 SPIR
-PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 3000 SPIR
-PLAYER_ACTIONS.win(ABILITY.Charm, 1);                     // 5000 SPIR
+PLAYER_ACTIONS.win(ABILITY.Poison, 1);                    // 34   SPIR
+PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                    // 75   SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 150  SPIR
+PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 500  SPIR
+PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 1500 SPIR
+PLAYER_ACTIONS.win(ABILITY.Charm, 1);                     // 2500 SPIR
 
-PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 100  DIPL
-PLAYER_ACTIONS.win(ABILITY.Sneak, 1);                     // 200  DIPL
-PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
-PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 1000 DIPL
-PLAYER_ACTIONS.win(ABILITY.Mystify, 1);                   // 5000 DIPL
+PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 50   DIPL
+PLAYER_ACTIONS.win(ABILITY.Sneak, 1);                     // 100  DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 250  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 500  DIPL
+PLAYER_ACTIONS.win(ABILITY.Mystify, 1);                   // 2500 DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);            // 20   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
