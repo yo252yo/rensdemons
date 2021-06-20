@@ -11,6 +11,8 @@ BATTLE.operations.add_loot(ITEM.Scale, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(1000);
 
+PLAYER_ACTIONS.kill_with_any_party_member();
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

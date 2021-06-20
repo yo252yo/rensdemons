@@ -11,7 +11,16 @@ BATTLE.operations.add_loot("", 14);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(500);
+PLAYER_ACTIONS.kill_with_anything_over(300);
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
+
 
 
 // ===================

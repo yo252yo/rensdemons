@@ -26,8 +26,8 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 200  ALCH
 PLAYER_ACTIONS.win(ITEM.Shield, 1);                       // 200  WEAP
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
-
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
+
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 1);                   // 500  WEAP

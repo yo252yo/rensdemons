@@ -8,6 +8,20 @@ PLAYER_ACTIONS.allow_flight();
 //hack PLAYER CAPABILITIES
 // ===================
 
+PLAYER_ACTIONS.useless(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.PreciousChild);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.StreetSmart);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.WiseOld);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.TorturedSoul);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.DisguisedPrincess);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 
 // ===================
 //hack MONSTER BEHAVIOR
@@ -25,7 +39,7 @@ BATTLE.monster_actions.add_textual("The Whale emits a loud and deep cry that see
 
 PLAYER_ACTIONS.add({
   name: "Feed",
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.useless,
   unlock: true,
   description: ["Empowered by the Goddess, you decide to end the confrontation in a surprising way. You trust your luck and throw yourself recklessly in the mouth of the animal. The Goddess must be watching over you, because you manage to avoid the giant teeth and land safely on the tongue of the animal."],
   extra_function: function(){

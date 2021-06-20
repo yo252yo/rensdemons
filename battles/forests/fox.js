@@ -11,9 +11,14 @@ BATTLE.operations.add_loot("", 4);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-
 PLAYER_ACTIONS.kill_with_anything_over(300);
 
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
+PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.DisguisedPrincess);
 
 // ===================
 //hack MONSTER BEHAVIOR

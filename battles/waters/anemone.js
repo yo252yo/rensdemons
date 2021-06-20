@@ -7,7 +7,14 @@ PLAYER_ACTIONS.allow_flight();
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(500);
+PLAYER_ACTIONS.kill_with_anything_over(300);
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 
 // ===================
 //hack MONSTER BEHAVIOR

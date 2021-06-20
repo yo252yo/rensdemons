@@ -7,7 +7,14 @@ PLAYER_ACTIONS.allow_flight();
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(500);
+PLAYER_ACTIONS.kill_with_anything_over(300);
+
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
 
 // ===================
 //hack MONSTER BEHAVIOR

@@ -207,7 +207,7 @@ const PLAYER_ACTIONS = {
   kill_with_anything_over: function(threshold){
     var prices = TRAINER.get_prices();
     for (var i in prices){
-      if(prices[i] >= threshold) {
+      if(prices[i] >= 2*threshold) {
         PLAYER_ACTIONS.win(i, 1);
       }
     }

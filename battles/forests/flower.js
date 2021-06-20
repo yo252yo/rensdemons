@@ -12,6 +12,11 @@ BATTLE.operations.add_loot(ITEM.Flower, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(500);
 
+PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
 
 // ===================
 //hack MONSTER BEHAVIOR

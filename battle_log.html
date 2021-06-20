@@ -13,40 +13,66 @@ var battle_names = [
 
 var draw_table = function (){
   document.getElementById("level").innerHTML = "";
-  var t = "<table border=1><tr><td></td>";
+  var t = "<table border=1><tr><td style='background:white;'></td>";
 
   for (var b in battle_names){
-    t += "<td>" + battle_names[b] + "</td>";
+    t += "<td style='background:white;'>" + battle_names[b] + "</td>";
   }
 
   for (var a in ABILITY){
-    t += "</tr><tr><td>" + a + "</td>";
+    t += "</tr><tr><td style='background:white;'>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
       if (!v) {
         t += "<td style='background:black;'>" + v + "</td>";
       } else if(v == "-"){
-        t += "<td style='background:grey;'>" + v + "</td>";
+        t += "<td style='background:darkgrey;'>" + v + "</td>";
       } else {
-        t += "<td>" + v + "</td>";
+        t += "<td style='background:white;'>" + v + "</td>";
       }
     }
   }
   for (var a in ITEM){
-    t += "</tr><tr><td>" + a + "</td>";
+    t += "</tr><tr><td style='background:white;'>" + a + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ITEM[a]]);
       if (!v) {
         t += "<td style='background:black;'>" + v + "</td>";
       } else if(v == "-"){
-        t += "<td style='background:grey;'>" + v + "</td>";
+        t += "<td style='background:darkgrey;'>" + v + "</td>";
       } else {
-        t += "<td>" + v + "</td>";
+        t += "<td style='background:white;'>" + v + "</td>";
+      }
+    }
+  }
+  for (var a in ABILITY){
+    t += "</tr><tr><td style='background:white;'>" + a + "</td>";
+    for (var b in battle_names){
+      var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
+      if (!v) {
+        t += "<td style='background:black;'>" + v + "</td>";
+      } else if(v == "-"){
+        t += "<td style='background:darkgrey;'>" + v + "</td>";
+      } else {
+        t += "<td style='background:white;'>" + v + "</td>";
+      }
+    }
+  }
+  for (var a in PARTYMEMBERS){
+    t += "</tr><tr><td style='background:white;'>" + a + "</td>";
+    for (var b in battle_names){
+      var v = DEBUG.battle_log.get([battle_names[b], PARTYMEMBERS[a]]);
+      if (!v) {
+        t += "<td style='background:black;'>" + v + "</td>";
+      } else if(v == "-"){
+        t += "<td style='background:darkgrey;'>" + v + "</td>";
+      } else {
+        t += "<td style='background:white;'>" + v + "</td>";
       }
     }
   }
   t += "</tr><tr>";
-  t += "</tr><tr><td>#ATTACKS</td>";
+  t += "</tr><tr><td style='background:white;'>#ATTACKS</td>";
   for (var b in battle_names){
     var seen = [];
     var v = "";
@@ -59,7 +85,7 @@ var draw_table = function (){
         v += "<br />";
       }
     }
-    t += "<td style='font-size: 8pt;width: 20px;'>" + v + "</td>";
+    t += "<td style='font-size: 8pt;width: 100px;'>" + v + "</td>";
   }
 
 

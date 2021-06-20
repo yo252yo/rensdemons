@@ -12,6 +12,17 @@ BATTLE.operations.add_loot("", 2);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(500);
 
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
+PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.StreetSmart);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.UpbeatDojikko);
+
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

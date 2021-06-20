@@ -9,8 +9,13 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(500);
+PLAYER_ACTIONS.kill_with_anything_over(300);
 
+PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.PreciousChild);
 
 // ===================
 //hack MONSTER BEHAVIOR

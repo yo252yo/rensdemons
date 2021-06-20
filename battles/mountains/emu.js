@@ -10,7 +10,17 @@ BATTLE.operations.add_loot("", 2);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(500);
+PLAYER_ACTIONS.kill_with_anything_over(300);
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
+PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
+
+PLAYER_ACTIONS.useless(PARTYMEMBERS.TorturedSoul);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.PreciousChild);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
+PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
 
 // ===================
 //hack MONSTER BEHAVIOR
