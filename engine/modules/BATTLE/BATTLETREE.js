@@ -236,8 +236,8 @@ const BATTLETREE = {
         return display_name;
       }
       // Used for generated names like party members
-      if (DICTIONARY.has(name)) {
-        display_name = DICTIONARY.get(name);
+      if (DICTIONARY.has(display_name)) {
+        display_name = DICTIONARY.get(display_name);
       }
 
       switch (BATTLETREE.get.outcome(battle, name)) {
