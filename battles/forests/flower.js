@@ -63,5 +63,3 @@ BATTLE.monster_actions.add_textual("The Flower's scent reaches your nose, and yo
 // ===================
 
 BATTLE.operations.start("A Flesh-eating Flower wants to Feed on your Face.");
-
-.useles

@@ -66,5 +66,3 @@ BATTLE.monster_actions.add_textual("The Crab crawls towards you and pinches your
 // ===================
 
 BATTLE.operations.start("A Cruel Crab Creeps Closer.");
-
-.useles

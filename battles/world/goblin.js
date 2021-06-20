@@ -64,5 +64,3 @@ BATTLE.monster_actions.add_textual("The Goblin waves its bouquet around while mu
 //hack START
 // ===================
 BATTLE.operations.start("A Grumpy Goblin Grasps some Grass.");
-
-.useles

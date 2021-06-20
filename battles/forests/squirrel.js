@@ -63,5 +63,3 @@ BATTLE.monster_actions.add_textual("The Squirrel jumps on your face and scratche
 //hack START
 // ===================
 BATTLE.operations.start("A Savage Squirrel Springs on Stage.");
-
-.useles

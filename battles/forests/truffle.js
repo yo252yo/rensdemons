@@ -61,5 +61,3 @@ BATTLE.monster_actions.add_textual("The Truffle fills the air with venomous part
 //hack START
 // ===================
 BATTLE.operations.start("A Terrible Truffle Threatens you Toxically.");
-
-.useles

@@ -64,5 +64,3 @@ BATTLE.monster_actions.add_textual("The Chimera grabs on to your arm and tries t
 // ===================
 
 BATTLE.operations.start("A Cawing Chimera Charges Claws ahead.");
-
-.useles

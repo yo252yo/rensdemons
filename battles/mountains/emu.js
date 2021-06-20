@@ -66,5 +66,3 @@ BATTLE.monster_actions.add_textual("The Emu looks pretty upset, shaking its head
 //hack START
 // ===================
 BATTLE.operations.start("An Enraged Emu Encroaches on your Ensemble.");
-
-.useles

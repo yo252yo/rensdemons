@@ -61,5 +61,3 @@ BATTLE.monster_actions.add_textual("The Octopus grabs you with its many arms and
 //hack START
 // ===================
 BATTLE.operations.start("An Oppressive Octopus Obstruct the Ocean.");
-
-.useles

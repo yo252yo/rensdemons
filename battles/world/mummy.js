@@ -63,5 +63,3 @@ BATTLE.monster_actions.add_textual("The Mummy hits you with a slow but powerful 
 //hack START
 // ===================
 BATTLE.operations.start("A Meandering Mummy Moans Mournfully.");
-
-.useles

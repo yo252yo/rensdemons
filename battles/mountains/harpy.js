@@ -66,5 +66,3 @@ BATTLE.monster_actions.add_textual("The Harpy emits a series of howls that pierc
 // ===================
 
 BATTLE.operations.start("A Hurling Harpy Harasses the Heroes.");
-
-.useles
