@@ -23,26 +23,28 @@ PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
 PLAYER_ACTIONS.useless(PARTYMEMBERS.TraitorFisher);
 
-PLAYER_ACTIONS.useless(ABILITY.Storm, 1);                     // 200  ELEM
-PLAYER_ACTIONS.useless(ABILITY.Sneak, 1);                     // 200  DIPL
+
+PLAYER_ACTIONS.useless(ITEM.Elixir_decay, 1, true);           // 150  ALCH
+PLAYER_ACTIONS.useless(ABILITY.Petrify, 1);                   // 150  SPIR
 PLAYER_ACTIONS.useless(ITEM.Elixir_chaos, 1, true);           // 200  ALCH
-PLAYER_ACTIONS.useless(ITEM.Shield, 1);                       // 200  WEAP
 PLAYER_ACTIONS.useless(ITEM.Net, 1);                          // 200  TOOL
+PLAYER_ACTIONS.useless(ITEM.Shield, 1);                       // 200  WEAP
+PLAYER_ACTIONS.useless(ABILITY.Asphyxiate, 1);                // 250  ELEM
 PLAYER_ACTIONS.useless(ITEM.Spear, 1);                        // 250  WEAP
-PLAYER_ACTIONS.useless(ABILITY.Petrify, 1);                   // 300  SPIR
-PLAYER_ACTIONS.useless(ABILITY.Asphyxiate, 1);                // 500  ELEM
-PLAYER_ACTIONS.useless(ABILITY.Persuade, 1);                  // 500  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Persuade, 1);                  // 250  DIPL
+PLAYER_ACTIONS.useless(ABILITY.Earthquake, 1);                // 500  ELEM
+PLAYER_ACTIONS.useless(ABILITY.Confusion, 1);                 // 500  SPIR
+PLAYER_ACTIONS.useless(ABILITY.Intimidate, 1);                // 500  DIPL
 PLAYER_ACTIONS.useless(ITEM.Sword_iron, 1);                   // 500  WEAP
 PLAYER_ACTIONS.useless(ITEM.Axe, 1);                          // 600  WEAP
-PLAYER_ACTIONS.useless(ABILITY.Earthquake, 1);                // 1000 ELEM
-PLAYER_ACTIONS.useless(ABILITY.Confusion, 1);                 // 1000 SPIR
-PLAYER_ACTIONS.useless(ABILITY.Intimidate, 1);                // 1000 DIPL
+PLAYER_ACTIONS.useless(ABILITY.Incinerate, 1);                // 1000 ELEM
 PLAYER_ACTIONS.useless(ITEM.Sword_great, 1);                  // 1000 WEAP
-PLAYER_ACTIONS.useless(ABILITY.Incinerate, 1);                // 2000 ELEM
-PLAYER_ACTIONS.useless(ABILITY.Lull, 1);                      // 3000 SPIR
-PLAYER_ACTIONS.useless(ABILITY.Summon, 1);                    // 5000 ELEM
-PLAYER_ACTIONS.useless(ABILITY.Charm, 1);                     // 5000 SPIR
-PLAYER_ACTIONS.useless(ABILITY.Mystify, 1);                   // 5000 DIPL
+PLAYER_ACTIONS.useless(ABILITY.Lull, 1);                      // 1500 SPIR
+PLAYER_ACTIONS.useless(ABILITY.Summon, 1);                    // 2500 ELEM
+PLAYER_ACTIONS.useless(ABILITY.Mystify, 1);                   // 2500 DIPL
+PLAYER_ACTIONS.useless(ABILITY.Charm, 1);                     // 2500 SPIR
+
+
 PLAYER_ACTIONS.useless(ITEM.Sword_legend, 1);
 PLAYER_ACTIONS.useless(ITEM.War_hammer, 1);
 PLAYER_ACTIONS.useless(ITEM.Staff, 1);
