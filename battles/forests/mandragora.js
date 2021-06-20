@@ -7,7 +7,7 @@ PLAYER_ACTIONS.allow_flight();
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
+PLAYER_ACTIONS.kill_with_anything_over(500);
 
 // ===================
 //hack MONSTER BEHAVIOR

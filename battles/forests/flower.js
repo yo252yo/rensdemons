@@ -10,7 +10,7 @@ BATTLE.operations.add_loot(ITEM.Flower, 1);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
+PLAYER_ACTIONS.kill_with_anything_over(500);
 
 
 // ===================
