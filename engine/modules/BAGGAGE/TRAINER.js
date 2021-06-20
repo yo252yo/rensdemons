@@ -81,4 +81,8 @@ const TRAINER = {
       `Trainer: "I can teach you a lot of things. Where should I start?"`,
     ])], TRAINER._menu.main);
   },
+
+  get_prices: function(){
+    return _TRAINER_PRICES;
+  }
 }

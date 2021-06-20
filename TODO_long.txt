@@ -124,3 +124,5 @@ add a few more actions for rubble
 more itembattles for dungeons and world
 
 also serve a zip DL of the game mb
+
+randomize order of possible options in battle

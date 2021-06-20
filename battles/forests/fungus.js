@@ -10,8 +10,8 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
+PLAYER_ACTIONS.kill_with_anything_over(1000);
 
-PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================
 //hack MONSTER BEHAVIOR

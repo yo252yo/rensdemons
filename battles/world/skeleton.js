@@ -11,8 +11,7 @@ BATTLE.operations.add_loot("", 14);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-
-PLAYER_ACTIONS.useless(ABILITY.Pray);
+PLAYER_ACTIONS.kill_with_anything_over(300);
 
 
 // ===================

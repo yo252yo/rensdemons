@@ -10,8 +10,7 @@ BATTLE.operations.add_loot("", 9);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-
-PLAYER_ACTIONS.useless(ABILITY.Pray);
+PLAYER_ACTIONS.kill_with_anything_over(300);
 
 // ===================
 //hack MONSTER BEHAVIOR

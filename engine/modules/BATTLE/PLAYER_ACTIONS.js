@@ -203,4 +203,32 @@ const PLAYER_ACTIONS = {
       }
     }
   },
+
+  kill_with_anything_over: function(threshold){
+    var prices = TRAINER.get_prices();
+    for (var i in prices){
+      if(prices[i] >= threshold) {
+        PLAYER_ACTIONS.win(i, 1);
+      }
+    }
+
+    var prices = SHOP.get_prices();
+    for (var i in prices){
+      if(prices[i] >= threshold) {
+        PLAYER_ACTIONS.win(i, 1);
+      }
+    }
+
+    var artifacts = ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact];
+    for(var i of artifacts){
+      PLAYER_ACTIONS.win(i, 1);
+    }
+  },
+
+
+  kill_with_any_party_member: function(){
+    for(var i in PARTYMEMBERS){
+      PLAYER_ACTIONS.win(i, 1);
+    }
+  },
 }

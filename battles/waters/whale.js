@@ -8,7 +8,6 @@ PLAYER_ACTIONS.allow_flight();
 //hack PLAYER CAPABILITIES
 // ===================
 
-PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================
 //hack MONSTER BEHAVIOR

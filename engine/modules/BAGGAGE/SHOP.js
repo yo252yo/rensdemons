@@ -146,4 +146,8 @@ const SHOP = {
       `Shopkeeper: "Welcome to my little shop, how may I help you?"`,
     ])], SHOP._menu.main);
   },
+
+  get_prices: function(){
+    return _SHOP_PRICES;
+  },
 }
