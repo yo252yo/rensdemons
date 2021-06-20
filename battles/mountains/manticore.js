@@ -67,4 +67,4 @@ BATTLE.monster_actions.add_textual("The Manticore's venomous stinger darts towar
 
 BATTLE.operations.start("A Mythical Manticore Marches on the Mountain.");
 
-//todo
+.useles

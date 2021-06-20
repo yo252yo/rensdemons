@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Ghost charges through you. It feels as i
 // ===================
 BATTLE.operations.start("A Ghastly Ghost Glows Gloomily.");
 
-//todo
+.useles

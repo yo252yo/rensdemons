@@ -65,4 +65,4 @@ BATTLE.monster_actions.add_textual("The Fox bites you. Its sharp teeth and power
 
 BATTLE.operations.start("A Frisky Fox Feints Flight.");
 
-//todo
+.useles

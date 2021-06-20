@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Anemone spits balls of a venomous goo.",
 // ===================
 BATTLE.operations.start("An Angry Anemone Articulates its Appendage.");
 
-//todo
+.useles

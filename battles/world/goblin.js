@@ -65,4 +65,4 @@ BATTLE.monster_actions.add_textual("The Goblin waves its bouquet around while mu
 // ===================
 BATTLE.operations.start("A Grumpy Goblin Grasps some Grass.");
 
-//todo
+.useles

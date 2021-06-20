@@ -64,4 +64,4 @@ BATTLE.monster_actions.add_textual("The Mummy hits you with a slow but powerful 
 // ===================
 BATTLE.operations.start("A Meandering Mummy Moans Mournfully.");
 
-//todo
+.useles

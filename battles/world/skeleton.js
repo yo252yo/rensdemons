@@ -69,4 +69,4 @@ BATTLE.monster_actions.add_textual("The skeleton swings its sword at you, while 
 BATTLE.operations.start("A Snorty Skeleton Seizes its Sword.");
 
 
-//todo
+.useles

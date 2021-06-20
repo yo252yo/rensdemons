@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Squid overwhelms you with a barrage of h
 // ===================
 BATTLE.operations.start("A Slithering Squid Swam to Smother you.");
 
-//todo
+.useles

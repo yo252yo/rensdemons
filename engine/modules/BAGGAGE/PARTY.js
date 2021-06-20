@@ -7,7 +7,7 @@ const PARTYMEMBERS = {
   StreetSmart: "StreetSmart",
   WiseOld: "WiseOld",
 
-//todo:
+// todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
  // town4 debauch
   FemmeFatale: "FemmeFatale", // prostitute/ femme fatale

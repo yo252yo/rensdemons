@@ -60,6 +60,3 @@ BATTLE.monster_actions.add_textual("The Fungus seems to be aiming at using its h
 // ===================
 
 BATTLE.operations.start("A Feral Fungus Frightens you with its Force.");
-
-
-//todo: BOSS

@@ -59,4 +59,4 @@ BATTLE.monster_actions.add_textual("The Jellyfish swims all around you energetic
 // ===================
 BATTLE.operations.start("A Judgemental Jellyfish Jiggles Joyfully.");
 
-//todo
+.useles

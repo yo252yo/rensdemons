@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Wraith speaks with a deep voice, though 
 // ===================
 BATTLE.operations.start("A Wayward Wraith Wails its Woe.");
 
-//todo
+.useles

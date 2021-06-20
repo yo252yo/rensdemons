@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Anglerjelly seems pretty innocuous. It b
 // ===================
 BATTLE.operations.start("An Attentive Anglerjelly Aims at Attracting you.");
 
-//todo
+.useles

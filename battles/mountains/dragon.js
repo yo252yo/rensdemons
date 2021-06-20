@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Dragon slithers fluidly in the wind. Its
 // ===================
 BATTLE.operations.start("A Dominating Dragon Descends with a Deafening roar.");
 
-//todo,
+.useles,

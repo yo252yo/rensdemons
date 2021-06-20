@@ -65,4 +65,4 @@ BATTLE.monster_actions.add_textual("The Boar exhales strongly. It seems enraged.
 
 BATTLE.operations.start("A Brazen Boar Braces for Battle.");
 
-//todo
+.useles

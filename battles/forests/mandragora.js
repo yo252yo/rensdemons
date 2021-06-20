@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Mandragora tries to immobilize you by wr
 // ===================
 BATTLE.operations.start("A Malicious Mandragora Manifests its Monstrosity.");
 
-//todo
+.useles
