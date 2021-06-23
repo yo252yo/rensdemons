@@ -85,7 +85,7 @@ const MARTYRDOM = {
       if(!MARTYRDOM.menu){return;}
       var title = "<b>Martyrdom</b><hr/>";
       if (MARTYRDOM._spare_points > 0){
-        title += "Unspent:" + "&psi;".repeat(MARTYRDOM._spare_points) + "<br />";
+        title += "Unspent: " + MARTYRDOM._spare_points + "<br />";
       } else {
         title += "No spare martyrdom<br />";
       }

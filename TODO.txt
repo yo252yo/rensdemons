@@ -29,8 +29,6 @@ vilalger>war is in bold, does it end by space??? oyeah theres different versions
 
 old wise man success when i dodged only once :/
 
-martyrdom counter is unreadable :x
-
 
 
 BATTLE.js:115 Uncaught TypeError: Cannot read property 'length' of undefined
