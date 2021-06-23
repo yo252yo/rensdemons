@@ -4,6 +4,7 @@
 new CenteredImage("assets/battles/mountains/manticore.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+BATTLE.operations.add_loot(ITEM.Meat, 0.1);
 BATTLE.operations.add_loot(ITEM.Feather, 1);
 BATTLE.operations.add_loot("", 1);
 

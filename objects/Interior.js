@@ -131,6 +131,7 @@ class B_Housefire extends BattleObject {
     this.add_interaction("Smell", "The smell of burning wood is filling up the room. It feels... nostalgic.");
     this.add_interaction("Nab", "Compelled by the Goddess, you grab a bit of the food that's slowly roasting on the fire and devour it. It may not have been yours to take, but the Will of the Goddess is absolute.");
     this.add_interaction("Probe", "You extend a hand towards the fire. It's warm. You get your hand closer and closer... Aouch! You burned yourself. Surely, you were not in control of yourself. It must have been the Goddess. $$BestFriend$ smirks, happy to see you get what you deserve.");
+    this.add_interaction("Commandeer", "As Promised Child, you are entitled to the food of this household. $$BestFriend$ might not have realized that yet. But there is nothing your friend can do to stop you from grabbing what is cooking for yourself.", INVENTORY.increase_function(ITEM.Meat));
   }
 }
 

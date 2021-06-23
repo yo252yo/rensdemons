@@ -4,6 +4,7 @@
 new CenteredImage("assets/battles/forests/squirrel.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Berry, 1);
 BATTLE.operations.add_loot("", 3);
 

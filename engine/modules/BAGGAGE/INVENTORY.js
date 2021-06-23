@@ -49,6 +49,7 @@ const ITEM = {
     Scale: "Scale",
     AncientRubbles: "Ancient Rubbles",
     Seashell: "Seashell",
+    Meat: "Meat",
 
     // Story
     BreathingPotion: "Breathing Potion",

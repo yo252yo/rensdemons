@@ -33,6 +33,7 @@ _SHOP_PRICES[ITEM.Seashell] = 6;
 _SHOP_PRICES[ITEM.Fang] = 10;
 _SHOP_PRICES[ITEM.Bone] = 10;
 _SHOP_PRICES[ITEM.Flower] = 10;
+_SHOP_PRICES[ITEM.Meat] = 10;
 _SHOP_PRICES[ITEM.Feather] = 20;
 _SHOP_PRICES[ITEM.Linnens] = 20;
 _SHOP_PRICES[ITEM.AncientRubbles] = 20;
