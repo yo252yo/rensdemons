@@ -28,8 +28,6 @@ setTimeout(function(){
 new CenteredTextMenu("",
               [
                 {"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction"); }},
-                {"text": "$ALPHA$_ go to new content", "effect": function(){ CURRENTLEVEL.setup("002_trialinstruction"); }},
-                {"text": "$ALPHA$_ CLEAN MEMORY", "effect": function(){ DISK.hard_reset(); }, "keep_open": true},
                 {"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } },
                 {"text": "Download/upload game data", "effect": function(){ INTERFACE.display.data_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},

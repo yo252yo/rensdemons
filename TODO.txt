@@ -19,3 +19,6 @@ highlight current repeated attack
 
 
 should we do a cemetary?
+
+
+FOG and SCREEN seem to have a poorly defined dependency
