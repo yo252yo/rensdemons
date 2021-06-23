@@ -280,7 +280,7 @@ const CURRENTLEVEL = {
 
     cleanup_dead: function(){
       for (var o of CURRENTLEVEL.level_objects){
-        if (CURRENTLEVEL.destroyed_objects.includes(o.hash())){
+        if (o && o.hash && o.hash() && CURRENTLEVEL.destroyed_objects.includes(o.hash())){
           o.destroy();
         }
       }
