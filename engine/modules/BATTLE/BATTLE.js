@@ -311,7 +311,9 @@ const BATTLE = {
           var loot = RANDOM.pick_in_weighted_array(BATTLE.loot);
           console.log(loot);
           if (loot){
-            text.push(LANGUAGE.battle.loot(loot));
+            if(!loot.startsWith("_")) {
+              text.push(LANGUAGE.battle.loot(loot));
+            }
             INVENTORY.increase(loot);
           }
         }

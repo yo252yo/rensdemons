@@ -1,13 +1,13 @@
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
 PLAYER_ACTIONS.escape("Leave");
+BATTLE.operations.add_loot("_wiseOldTraining", 1);
 
 LANGUAGE.actions["Endure"] = {
   usage: function(){
     return "You do nothing.";
   },
   win: function(){
-    INVENTORY.increase("_wiseOldTraining", 1);
     return `$$WiseOld$: "Good, very good. It seems that your body is sound too! We only need to proof your mind!"`;
   },
 };
