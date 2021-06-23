@@ -13,7 +13,7 @@ const IO_MENU = {
     if (KEYS_UTIL.is_ok(key)) {
       IO._menu.confirm_select();
     }
-    if (KEYS_UTIL.is_esc(key)) {
+    if (KEYS_UTIL.is_cancel(key)) {
       IO._menu.try_escape();
     }
   },

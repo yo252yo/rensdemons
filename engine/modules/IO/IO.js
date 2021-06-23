@@ -27,12 +27,18 @@ const KEYS_UTIL = {
   is_esc: function(key) {
     return key === 'escape' || key === 27;
   },
+  is_backspace: function(key) {
+    return key === 'backspace' || key === 8;
+  },
   is_enter: function(key) {
     return key === 'enter' || key === 13;
   },
 
   is_ok: function(key) {
-    return KEYS_UTIL.is_space(key);
+    return KEYS_UTIL.is_space(key) || KEYS_UTIL.is_enter(key);
+  },
+  is_cancel: function(key) {
+    return KEYS_UTIL.is_esc(key) || KEYS_UTIL.is_backspace(key);
   },
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
