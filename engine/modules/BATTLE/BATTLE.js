@@ -6,7 +6,7 @@ const BATTLE = {
   current_battle: "",
   origin_level: undefined,
   win_callback: undefined,
-  abilities_before: 0,
+  abilities_score_before: 0,
 
   turn_factory: {
     _is_option_available: function (i){
@@ -65,18 +65,21 @@ const BATTLE = {
       // Order the battle menu options.
       var options_winning = [];
       var options_unknown = [];
-      var options_others = [];
+      var options_started = [];
+      var options_losing = [];
       for (var i in options){
           var o = options[i];
           if(o.text.startsWith("<b>")){
             options_winning.push(o);
-          } else if (o.text.startsWith("<i>") || !(o.text.startsWith("<"))){
-            options_unknown.push(o);
+          } else if (o.text.startsWith("<i>")){
+            options_started.push(o);
+          } else if (o.text.startsWith("<s>")){
+            options_losing.push(o);
           } else {
-            options_others.push(o);
+            options_unknown.push(o);
           }
       }
-      new BattleMenu("", options_winning.concat(options_unknown).concat(options_others));
+      new BattleMenu("", options_winning.concat(options_started).concat(options_unknown).concat(options_losing));
     },
 
     monster: function(text, dodge_difficulty) {
@@ -271,7 +274,7 @@ const BATTLE = {
       start: function(name, callback) {
         BATTLE.builder.clear();
         IO.control.cede();
-        BATTLE.abilities_before = BATTLETREE.score.score_battle(name);
+        BATTLE.abilities_score_before = BATTLETREE.score.score_battle(name);
         BATTLE.builder.setup.animation();
         AUDIO.music.interface.battle();
         setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
@@ -318,7 +321,7 @@ const BATTLE = {
           }
         }
 
-        var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_before;
+        var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_score_before;
         if(exp_won > 0) {
            INVENTORY.increase(ITEM.XpToken, exp_won);
            text.push(LANGUAGE.battle.xp() + " (" + ("*".repeat(Math.min(10,exp_won))) + ").");

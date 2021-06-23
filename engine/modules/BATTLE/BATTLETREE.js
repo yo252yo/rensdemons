@@ -249,9 +249,6 @@ const BATTLETREE = {
           return "<s>" + display_name + "</s>";
         case BATTLETREE.HIDDEN:
         case BATTLETREE.NOT_TRIED:
-          if(name.endsWith(" ")){ // This is a repeated action we're exploring
-            return "<b>" + display_name + "</b>";
-          }
           return display_name;
         default: // Leads somewhere else.
           return "<i>" + display_name + "</i>";
