@@ -22,6 +22,7 @@ new S_Floor(1575,2025,300,400);
 new S_Floor(1025,2625,250,125);
 new S_Floor(875,2575,100,75);
 
+new S_SavePoint(1000, 2375);
 
 var whale = new SBattle(450, 1700, 'waters/whale');
 whale.make_default_callback = function(){return function(){};};

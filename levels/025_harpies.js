@@ -29,6 +29,8 @@ new S_Floor(1025,1675,25,350);
 new S_Floor(850,1350,200,25);
 new S_Floor(825,1400,100,150);
 
+new S_SavePoint(975, 2350);
+new S_SavePoint(850, 1375);
 
 // shortcut
 new S_Floor(975,2250,25,125);
