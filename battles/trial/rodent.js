@@ -4,6 +4,9 @@
 new CenteredImage("assets/battles/trial/rodent.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+BATTLE.operations.add_loot(ITEM.Bone, 1);
+BATTLE.operations.add_loot("", 1);
+
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================

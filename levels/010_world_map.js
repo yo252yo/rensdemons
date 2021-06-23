@@ -130,13 +130,13 @@ FEasyEvents.battle('world/goblin', 1.7);
 FEasyEvents.battle('world/mummy', 1.7);
 FEasyEvents.battle('world/skeleton', 1.7);
 FEasyEvents.battle('world/wraith', 1.7);
-FEasyEvents.battleRubble(ITEM.Poison_darts, 0.05);
-FEasyEvents.battleRubble(ITEM.Dagger, 0.05);
-FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.05);
-FEasyEvents.battleRubble(ITEM.Linnens, 0.2);
-FEasyEvents.groundItem(ITEM.Bone, 0.2);
-FEasyEvents.groundItem(ITEM.Stone, 0.2);
-FEasyEvents.groundItem(ITEM.Berry, 0.2);
+FEasyEvents.battleRubble(ITEM.Poison_darts, 0.1);
+FEasyEvents.battleRubble(ITEM.Dagger, 0.1);
+FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.1);
+FEasyEvents.battleRubble(ITEM.Linnens, 0.7);
+FEasyEvents.groundItem(ITEM.Bone, 0.7);
+FEasyEvents.groundItem(ITEM.Stone, 0.7);
+FEasyEvents.groundItem(ITEM.Berry, 0.7);
 FEasyEvents.byConstructor("B_Pebbles", 0.5);
 FEasyEvents.byConstructor("B_Plants", 0.5);
 FEasyEvents.byConstructor("B_Skeleton", 1);
@@ -147,11 +147,11 @@ FEasyEvents.text(`There is a vast area where the grass turns to bare charred gro
 FEasyEvents.text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
 
 FEasyEvents.set_zone_from_filler(FEasyS);
-FEasyEvents.set_tries(10, 20);
+FEasyEvents.set_tries(10, 25);
 FEasyEvents.fill_by_retry();
 
 FEasyEvents.set_zone_from_filler(FEasyN);
-FEasyEvents.set_tries(30, 50);
+FEasyEvents.set_tries(30, 60);
 FEasyEvents.fill_by_retry();
 
 

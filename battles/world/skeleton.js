@@ -6,7 +6,7 @@ PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Bone, 5);
 BATTLE.operations.add_loot(ITEM.Sword_wooden, 1);
-BATTLE.operations.add_loot("", 14);
+BATTLE.operations.add_loot("", 4);
 
 // ===================
 //hack PLAYER CAPABILITIES

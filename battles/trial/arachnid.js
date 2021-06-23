@@ -13,7 +13,7 @@ PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stick);
 PLAYER_ACTIONS.useless(ITEM.Bone);
 
-PLAYER_ACTIONS.win(ITEM.Stone, 2, true);
+PLAYER_ACTIONS.win(ITEM.Stone, 2);
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 1);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 

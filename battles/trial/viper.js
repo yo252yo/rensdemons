@@ -4,10 +4,12 @@
 new CenteredImage("assets/battles/trial/viper.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+BATTLE.operations.add_loot(ITEM.Fang, 1);
+BATTLE.operations.add_loot("", 1);
+
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 PLAYER_ACTIONS.useless(ITEM.Stone);
 
