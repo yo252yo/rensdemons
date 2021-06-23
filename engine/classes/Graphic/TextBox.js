@@ -208,7 +208,9 @@ class TextBox extends TextElement {
       if (this.pages.length == 0) {
         IO.control.cede();
         if (this.on_end_function){
-          this.on_end_function();
+          var f = this.on_end_function;
+          this.on_end_function = undefined;
+          f();
         }
         this.destroy();
       } else {
