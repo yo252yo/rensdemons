@@ -101,6 +101,8 @@ new Module("CONSOLE");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
 new Module("GRAPHICS/SCREEN");
+  IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
+
 new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
 new Module("MEMORY/SAVE");
@@ -119,7 +121,6 @@ new Module("IO/IO");
 
 new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/GENERATEDLEVELS");
-new Module("LEVEL/FOG");
 new Module("GRAPHICS/PALETTE");
 new Module("AUDIO");
 
