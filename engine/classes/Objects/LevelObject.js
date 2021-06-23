@@ -9,11 +9,6 @@ class LevelObject {
         this.original_y = y;
         this.visual_element = sprite;
 
-        if (CURRENTLEVEL.objects.should_hide(this.hash())){
-          this.visual_element.destroy();
-          return;
-        }
-
         this.visual_element.place_at(x, y);
         this.walkable = false;
         CURRENTLEVEL.objects.index_object(this);

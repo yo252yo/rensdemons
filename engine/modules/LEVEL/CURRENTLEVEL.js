@@ -278,16 +278,17 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.system.redraw();
     },
 
-    should_hide: function(hash) {
-      for (var i in CURRENTLEVEL.destroyed_objects){
-        if (CURRENTLEVEL.destroyed_objects[i] == hash){
-          return true;
+    cleanup_dead: function(){
+      for (var o of CURRENTLEVEL.level_objects){
+        if (CURRENTLEVEL.destroyed_objects.includes(o.hash())){
+          o.destroy();
         }
       }
-    },
+    }
   },
 
   initialize_with_character: function(x, y, size) {
+    CURRENTLEVEL.objects.cleanup_dead();
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos && saved_pos[0] && saved_pos[1]) {
       CHARACTER.initialize(saved_pos[0], saved_pos[1], size);
