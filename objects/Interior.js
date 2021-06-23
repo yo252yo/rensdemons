@@ -56,7 +56,7 @@ class B_Bed extends BattleObject {
     this.add_interaction("Envy", "The pillow seems to be made with feathers. How were they able to afford such luxury?");
     this.add_interaction("Nap", "The Goddess wants you to take a nap. It's not your bed, but it will do. You comply reluctantly. You can get a few minutes of sleep, and wake up barely more rested than before. Maybe even a bit more groggy.");
     this.add_interaction("Sit", "You obey the voice of the Goddess inside you that urges you to sit on the bed. You sit for a while and look at your surroundings. It's pretty boring, so you stop.");
-    this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly, while $$BestFriend$ looks at you bewildered, between shock and consternation.");
+    this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly, while $$BestFriend$ looks at you bewildered, between shock and consternation. At least you got some linnens out of the whole ordeal...", INVENTORY.increase_function(ITEM.Linnens));
   }
 }
 
@@ -86,7 +86,7 @@ class B_Cabinet extends BattleObject {
     this.add_interaction("Esteem", "Not everyone could afford a wooden cabinet with engravings of holy texts. This is surely a mark of wealth.");
     this.add_interaction("Condemn", "This storage container looks pretty unsteady. The people here probably built it themselves. Better not touch it.");
     this.add_interaction("Resist", "You try and resist the urge to open the cabinet and go through this family's possessions. Who would do such a thing?");
-    this.add_interaction("Violate", "You cannot help but opening the drawers of this cabinet. $$BestFriend$ is outraged and tries to stop you, but nothing can be done. The Goddess is acting through you again. You rummage through foreign clothes and linens. Seriously, what good is that?");
+    this.add_interaction("Violate", "You cannot help but opening the drawers of this cabinet. $$BestFriend$ is outraged and tries to stop you, but nothing can be done. The Goddess is acting through you again. You rummage through foreign clothes and linens. Seriously, what good is that? You still take some anyway, you never know...", INVENTORY.increase_function(ITEM.Linnens));
     this.add_interaction("Open", "Pushed by Her Divine Grace, you go open this little cabinet. It's full of tableware and plates. What were you hoping to find?");
   }
 }
@@ -156,6 +156,7 @@ class B_Shelf extends BattleObject {
     this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
     this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
     this.add_interaction("Mess up", "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shameful. It's not easy being a Divine vessel.");
+    this.add_interaction("Pillage", "As soon as you feel like nobody is watching you, in a quick gesture, you grab something at random from the shelf and put it in your pocket. It turns out to be some medicinal herbs.", INVENTORY.increase_function(ITEM.Flower));
   }
 }
 

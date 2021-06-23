@@ -101,6 +101,22 @@ PLAYER_ACTIONS.add({
 });
 
 PLAYER_ACTIONS.add({
+  name: "Beg",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "Excuse me, could you spare a bit of change for me?"`,
+                `${name}: "I'm sorry kid, we are all struggling... I barely have enough to feed myself. If I had to give money to every starving child..."`,
+                `$$Ren$: "I understand, but see, I am the Promised Child, and I'm working on ending all of this! If you could help a bit, I promise it will be put to good use."`,
+                `${name}: "I suppose that there is no better cause than helping the Promised Child. Well, here, take what I have. It's not much, but I hope it helps."`,
+                `$$Ren$: "Thank you! Your sacrifice won't be forgotten!"`,
+                `You receive 10 Coins.`,
+              ],
+  extra_function: function(){
+    INVENTORY.increase_function(ITEM.Coin, 10);
+  }
+});
+
+PLAYER_ACTIONS.add({
   name: "Remind",
   outcome: BATTLETREE.NOTHING,
   unlock: is_unlocked(),
