@@ -28,19 +28,3 @@ need a lot more money
 vilalger>war is in bold, does it end by space??? oyeah theres different versions :/
 
 old wise man success when i dodged only once :/
-
-
-
-BATTLE.js:115 Uncaught TypeError: Cannot read property 'length' of undefined
-    at result (BATTLE.js:115)
-    at f (BATTLE.js:49)
-    at f (TextMenu.js:163)
-    at TextMenu.js:25
-    at MenuChoiceExecutor._execute (TextMenu.js:27)
-    at MenuChoiceExecutor.synchronize (TextMenu.js:16)
-    at BattleMenu.execute (TextMenu.js:167)
-    at BattleMenu.pick (TextMenu.js:135)
-    at Object.pick (IO_MENU.js:22)
-    at Object.pick (IO.js:283)
-
-    on right_-skeleton

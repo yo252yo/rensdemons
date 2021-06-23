@@ -16,7 +16,7 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: "Search",
   unlock: true,
-  description_: "You search through the bones for anything useful. In the middle of the dust and bones, you find a little shiny object. It's a key, probably for the shelter!",
+  description: "You search through the bones for anything useful. In the middle of the dust and bones, you find a little shiny object. It's a key, probably for the shelter!",
   outcome: BATTLETREE.WIN,
   give_item: ITEM.ShelterKey,
 });
