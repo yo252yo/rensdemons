@@ -80,7 +80,6 @@ const BATTLE = {
           }
       }
       RANDOM.shuffle(options_winning);
-      RANDOM.shuffle(options_started);
       RANDOM.shuffle(options_unknown);
       new BattleMenu("", options_winning.concat(options_started).concat(options_unknown).concat(options_losing));
     },
