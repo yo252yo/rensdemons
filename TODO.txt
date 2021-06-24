@@ -35,7 +35,7 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
 >> stop saving state for special levels where nothing disappears
 >> !! it saves failed essays of the filler i think
 >> share more seed
-
+>> also properly alert by catching exception!
 
 
 
