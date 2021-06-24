@@ -44,7 +44,7 @@ const RANDOM = {
     } else {
       var index = (gen.get() * total);
     }
-    
+
     for (var i in arr) {
       index -= arr[i];
       if (index <= 0) {
@@ -53,4 +53,13 @@ const RANDOM = {
     }
     return i; // Should not happen, though
   },
+
+  shuffle: function(array){
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+  }
 }

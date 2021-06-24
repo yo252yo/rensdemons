@@ -1,11 +1,10 @@
-hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
-pebbles hide the sprite when walked on
-> mb things should have an option to be indexed by the top
 
-
+HILL SPRITE:
+  hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded.
+  pebbles hide the sprite when walked on
+  > mb things should have an option to be indexed by the top
 
 change color scheme doesnt change fog or map bg??
-
 
 dont forget to do a proper title screen in particula for mobile
 
@@ -17,19 +16,7 @@ i think edge doesnt like functions starting by _ esp nested in namespaces
 
 DODGE.absorb_params
 
-todo more ideas in villager
-
 better memory management?
-
-async errors: Uncaught ReferenceError: DICTIONARY is not defined
-    at Object._restore_previous_state (DISK.js:43)
-    at Object.initialize_game (DISK.js:58)
-    at startup.js:3
-_restore_previous_state @ DISK.js:43
-initialize_game @ DISK.js:58
-(anonymous) @ startup.js:3
-
-better decor for mushroom forest
 
 should filler just pass gen to the constructor instead f calling gen.get
 
@@ -39,26 +26,17 @@ if theres a guy behind a house interaction interacts with the house (most promin
 
 make experience menu multi tiered
 
-sounds atmosphere for each town, each villager, each party member
 sprite for each party member
 
-put escape actions at the bottom of actions lists
-
 add new decoration items
-
 
 add rens parent sendoff before trial?
 
 save audio settings to disk!
 
-dedicated sprites and audio themes for party members
-
 decorate stores
 
 sell several items at once
-
-do i need unlock true in unlock_replacing_action
-
 
 give party members perks like store discounts
 
@@ -76,8 +54,6 @@ i dont like how we store saved data as hidden abilities and items :P
 
 should the LANGUAGE bits be generated from a pattern (or metapatern)?
 
-at the first boss, retry develops your ability, but loading the previous save forgets about your ability, which is a bit sad
-
 mb i shouldnt save at all LEVLESTATE for stuff like houses
 
 why does battletree have lists as leaves and not simply state?
@@ -88,26 +64,19 @@ Skip dodge phase at high level?
 
 Get less weird list of names??
 
-More villager small talk? More objects in house, and diversity within objects?
+More villager small talk? More objects in house, and diversity within objects? theres ideas in todos in villager
 
 should we merge the actions in the experience menu if they have the same name?
 
 hans dog somewhere
 
-better keyboard controls for dodge
-
 make item sets (make chair with table)
 
 mb add BestFriend to the party that follows you around, for emotional attachment
 
-add BestFriend to random environemnt interactions but it needs to be conditioned on her beeing alive
-
 party state, thoughts, etc...
 
-sometimes steps fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found.
-
-
-map elements and dungeons decors could also be battleobjects
+sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found.
 
 assets battle civilians suck, also theres some sprites in assets/battle that are not used
 mb redo buildings + characters with whtdragon/MV assets ?
@@ -119,12 +88,12 @@ spam space bar in battle makes the option menu reappear on fight
 
 palette has functions that return objects, strings and functinos that just outright change the colors
 
-add a few more actions for rubble
+add a few more actions for rubble treasures
+
+map elements and dungeons decors could also be battleobjects
 
 more itembattles for dungeons and world
 
 also serve a zip DL of the game mb
-
-randomize order of possible options in battle
 
 didnt find a solution to highlight the actions that one started exploring, they conflict with the other actions with trailing spaces "  " (PLAYER_ACTIONS.internal name) like battleitems. maybe we could make prefixes and postfixes trailing spaces? thats a bit gross tho
