@@ -158,6 +158,15 @@ const DODGE = {
       DODGE.draw.defense();
     },
 
+    move_target: function (target){
+      if (!DODGE.accepting_input){  return; }
+      DODGE.defense_angle += target;
+      if (DODGE.defense_angle < 0) {
+        DODGE.defense_angle += 1;
+      }
+      DODGE.draw.defense();
+    },
+
     raw_click: function (x,y){
       if (!DODGE.accepting_input){  return; }
       var window_x = x - window.scrollX;
