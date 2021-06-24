@@ -30,7 +30,11 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
     at MenuChoiceExecutor._execute (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:27:5)
     at MenuChoiceExecutor.synchronize (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:16:11)
     at CenteredTextMenu.execute (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:167:17)
-
+> change save to save to disk
+>> therefore change the whole save disk offline
+>> stop saving state for special levels where nothing disappears
+>> !! it saves failed essays of the filler i think
+>> share more seed
 
 
 
