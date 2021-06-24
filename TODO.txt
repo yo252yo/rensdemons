@@ -1,6 +1,51 @@
-decide title
-be careful, write in present and second person, also dont make things spawn on doors
-should we meet the king?
+
+lvl scales too fast with xp
+
+1xp for text event
+
+tool vs loot clarification (what can i sell??)
+
+clrl we should lower prices especially consumables
+
+make bosses harder (4 ally)
+
+forbid fire elixir for debris in treasure loot
+
+clearly highlight the currently explored option
+didnt find a solution to highlight the actions that one started exploring, they conflict with the other actions with trailing spaces "  " (PLAYER_ACTIONS.internal name) like battleitems. maybe we could make prefixes and postfixes trailing spaces? thats a bit gross tho
+
+only lose one arrow trotal not one per shot
+
+CANNOT BUY BREATHING POTION!~
+
+
+Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the value of 'rd_state' exceeded the quota.
+    at Object._record_to_storage (https://yo252yo.com/rd/engine/modules/MEMORY/DISK.js:11:20)
+    at Object._set (https://yo252yo.com/rd/engine/modules/MEMORY/DISK.js:20:14)
+    at Object.write (https://yo252yo.com/rd/engine/modules/MEMORY/DISK.js:76:12)
+    at Object.save (https://yo252yo.com/rd/engine/modules/MEMORY/SAVE.js:65:10)
+    at effect (https://yo252yo.com/rd/engine/modules/MEMORY/SAVE.js:112:71)
+    at f (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:163:11)
+    at https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:25:5
+    at MenuChoiceExecutor._execute (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:27:5)
+    at MenuChoiceExecutor.synchronize (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:16:11)
+    at CenteredTextMenu.execute (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:167:17)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -17,3 +62,10 @@ should we meet the king?
 
 
 should we do a cemetary?
+
+
+
+
+decide title
+be careful, write in present and second person, also dont make things spawn on doors
+should we meet the king?

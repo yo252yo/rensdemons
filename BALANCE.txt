@@ -1,6 +1,5 @@
-
+THEORY:
 47 base items/abilities + 14 team members
-
 each action is 3xp (when discovered and when explored)
 
 trial is about 7*4 actions,
@@ -13,35 +12,11 @@ villager is 10 * 4 versions of each actions
 => up to 120 xp
 
 
-
-
 so rn about 360 xp max
 
-Trial is
-7 Stone
-5 Bone
-4 Stick
-4 Elixir fire
-3 viper (ie. fang)
-
-so rn 155 coins max
 
 
-
-
-
-
-
-at the end of trial i have
-----------------------------
-1 stick 2 bones 1 elixir fire (17g)
-99xp
-4 martyrdom
-enter in addition to space
------------------------------
-
-
-after moving a little bit around:
-194xp
-1 stick 3 bones 1 elixir fire (19g)
-6 martyrdom
+PRACTICE:
+After trial: 92xp, 31 coins
+After town2: 211xp, 39 coins but i have a dagger
+My first dungeon got me 150xp, 100 gold
