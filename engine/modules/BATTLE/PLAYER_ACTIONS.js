@@ -51,6 +51,7 @@ const PLAYER_ACTIONS = {
           var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
             name: PLAYER_ACTIONS._internal.repeated_name(name, i),
             description: LANGUAGE.actions.usage(name),
+            consume_item: consume_item,
             function: previous_function,
           });
           previous_function = unlock_function;
@@ -60,6 +61,7 @@ const PLAYER_ACTIONS = {
         name: name,
     // This is where unlock would go if needed:      unlock: true,
         description: LANGUAGE.actions.usage(name),
+        consume_item: consume_item,
         function: previous_function
       });
     },
