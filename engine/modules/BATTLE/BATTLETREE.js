@@ -5,12 +5,12 @@
 const BATTLETREE = {
   _targets: new FluidMap(),
 
-  LOSS: "#LOSS",
-  WIN: "#WIN",
-  HIDDEN: "#HIDDEN",
-  NOT_TRIED: "#NOT_TRIED",
-  NOTHING: "#NOTHING",
-  ESCAPE: "#ESCAPE",
+  LOSS: 1,
+  WIN: 2,
+  HIDDEN: 3,
+  NOT_TRIED: 4,
+  NOTHING: 5,
+  ESCAPE: 6,
 
   factory: {
     export: function() {
