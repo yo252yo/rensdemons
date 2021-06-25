@@ -34,7 +34,6 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
     at CenteredTextMenu.execute (https://yo252yo.com/rd/engine/classes/Graphic/TextMenu.js:167:17)
 > change save to save to disk
 >> therefore change the whole save disk offline
->> share more seed
 
 
 

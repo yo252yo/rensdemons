@@ -56,6 +56,8 @@ should the LANGUAGE bits be generated from a pattern (or metapatern)?
 
 mb i shouldnt save at all LEVLESTATE for stuff like houses
 
+could make most think in dictionary depend from a single seed by making markov use deterministic generator
+
 why does battletree have lists as leaves and not simply state?
 
 Reduce the size of Datasets, maybe we can even completely generate it from the markov model? though currently generation doesnt conclude
