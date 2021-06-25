@@ -61,7 +61,7 @@ bed(575,700,150,150);
 new S_WebLarge(775, 575);
 
 
-new SB_rubble(950, 650, ITEM.AncientArmamentAmmunition);
+new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 
 // ===================
 //hack GENERATED ELEMENTS
