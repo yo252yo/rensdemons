@@ -48,7 +48,7 @@ const CONSOLE = {
         bar.innerHTML += "|";
       }
       if (logs){
-        logs.innerHTML += "<br />>> Loaded " + name.substr(10);
+        logs.innerHTML += "<br />>> Loaded " + name.substr(15);
       }
     },
 

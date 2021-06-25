@@ -113,11 +113,6 @@ new Module("BATTLE/PLAYER_ACTIONS");
 new Module("BATTLE/DODGE");
 
 
-new Module("IO/IO");
-  IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
-  IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
-  IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
-  IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/GENERATEDLEVELS");
@@ -135,6 +130,11 @@ new Module("BAGGAGE/ARCHETYPES");
 
   IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
     IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
+      IMPORTS.modules['UTILS/DEBUG'].child_module("IO/IO");
+        IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
+        IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
+        IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
+        IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 const LANGUAGE = {};
   LANGUAGE.actions = {};

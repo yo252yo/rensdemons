@@ -18,9 +18,6 @@ only lose one arrow trotal not one per shot
 
 CANNOT BUY BREATHING POTION!~
 
-IO needs to depend on debug
-
-
 
 
 
