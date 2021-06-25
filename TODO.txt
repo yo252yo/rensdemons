@@ -35,7 +35,6 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
 > change save to save to disk
 >> therefore change the whole save disk offline
 >> share more seed
->> also properly alert by catching exception!
 
 
 

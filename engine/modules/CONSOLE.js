@@ -17,10 +17,13 @@ const CONSOLE = {
     CONSOLE._sys_log(t, color);
   },
 
-  error: function(t, with_trace) {
+  error: function(t, with_trace, with_alert) {
     CONSOLE._sys_log(t, "Red", "font-weight:bold;");
     if(with_trace){
       CONSOLE.stack_trace();
+    }
+    if(with_alert){
+      alert(t);
     }
   },
 

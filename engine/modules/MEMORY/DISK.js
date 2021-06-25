@@ -8,7 +8,12 @@ const DISK = {
     _CONTENT: {},
 
     _record_to_storage: function() {
-      localStorage.setItem('rd_state', JSON.stringify(DISK._CONTENT));
+      try{
+        localStorage.setItem('rd_state', JSON.stringify(DISK._CONTENT));
+      } catch (e) {
+        CONSOLE.error("It appears that the space allocated on disk for the game has reached a limit. No progress can be saved anymore.", false, true);
+      }
+
     },
 
     _set: function(key, value) {
