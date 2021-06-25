@@ -7,7 +7,7 @@ function g(){
   CURRENTLEVEL.setup("");
 
   DICTIONARY.set("world_seed", seed);
-  new Snippet("levels/023_mushrooms");
+  new Snippet("levels/025_harpies");
 
   last = setTimeout(g, 5000);
 }
