@@ -97,5 +97,3 @@ more itembattles for dungeons and world
 also serve a zip DL of the game mb
 
 map texts are shit on firefox
-
-didnt find a solution to highlight the actions that one started exploring, they conflict with the other actions with trailing spaces "  " (PLAYER_ACTIONS.internal name) like battleitems. maybe we could make prefixes and postfixes trailing spaces? thats a bit gross tho

@@ -36,8 +36,7 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
 >> !! it saves failed essays of the filler i think
 >> share more seed
 >> also properly alert by catching exception!
-
-
+>> https://developer.mozilla.org/en-US/docs/Web/API/FileSystem
 
 
 
