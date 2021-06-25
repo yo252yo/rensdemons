@@ -7,6 +7,12 @@ var _DISK_MODULES = ["PALETTE", "DICTIONARY", "STATS", "SAVE"];
 const DISK = {
     _CONTENT: {},
 
+    _get_empty: function(){
+      return {
+        "#DISK_STATE_IDENTIFIER": (new Date()).getTime(),
+      };
+    },
+
     _record_to_storage: function() {
       try{
         localStorage.setItem('rd_state', JSON.stringify(DISK._CONTENT));
@@ -18,7 +24,7 @@ const DISK = {
 
     _set: function(key, value) {
         if (! DISK._CONTENT){
-            DISK._CONTENT = {};
+            DISK._CONTENT = DISK._get_empty();
         }
         DISK._CONTENT[key] = value;
         CONSOLE.log.disk(key + "->" + value);
@@ -67,7 +73,7 @@ const DISK = {
       _load_storage: function() {
         DISK._CONTENT = JSON.parse(localStorage.getItem('rd_state'));
         if (! DISK._CONTENT){
-            DISK._CONTENT = {};
+            DISK._CONTENT = DISK._get_empty();
         }
       },
     },
@@ -87,7 +93,7 @@ const DISK = {
     },
 
     hard_reset: function() {
-        DISK._CONTENT = {};
+        DISK._CONTENT = DISK._get_empty();
         DISK._record_to_storage();
     },
 
