@@ -18,6 +18,8 @@ only lose one arrow trotal not one per shot
 
 CANNOT BUY BREATHING POTION!~
 
+IO needs to depend on debug
+
 
 Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the value of 'rd_state' exceeded the quota.
     at Object._record_to_storage (https://yo252yo.com/rd/engine/modules/MEMORY/DISK.js:11:20)
@@ -33,12 +35,8 @@ Uncaught DOMException: Failed to execute 'setItem' on 'Storage': Setting the val
 > change save to save to disk
 >> therefore change the whole save disk offline
 >> stop saving state for special levels where nothing disappears
->> !! it saves failed essays of the filler i think
 >> share more seed
 >> also properly alert by catching exception!
->> https://developer.mozilla.org/en-US/docs/Web/API/FileSystem
-
-
 
 
 

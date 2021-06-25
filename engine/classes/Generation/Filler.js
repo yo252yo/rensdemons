@@ -151,9 +151,9 @@ class Filler {
 
       // leave the middle open for a hallway :/
       if (clear_middle && (x_offset + obj.h_w > this.zone_w / 2 - 20 && x_offset < this.zone_w / 2 + 20)) {
-        obj.destroy();
+        obj.destroy(true);
       } else if (x_offset > this.zone_w - obj.h_w) {
-        obj.destroy();
+        obj.destroy(true);
       }
     }
   }

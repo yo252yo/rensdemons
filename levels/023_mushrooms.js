@@ -86,7 +86,7 @@ filler.set_object(20, 75, function(x,y,g){ return new S_Shroomtall(x, y); });
 filler.fill_by_retry(true);
 
 
-noTreeZone.destroy();
+noTreeZone.destroy(true);
 
 filler.set_tries(1, 1);
 for(var f of hallways) {
