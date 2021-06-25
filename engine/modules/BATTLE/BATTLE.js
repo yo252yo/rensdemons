@@ -6,6 +6,7 @@ const BATTLE = {
   current_battle: "",
   origin_level: undefined,
   win_callback: undefined,
+  _last_action: undefined,
   abilities_score_before: 0,
 
   turn_factory: {
@@ -46,6 +47,10 @@ const BATTLE = {
                 }
               }
             }
+            BATTLE._last_action = index.trim();
+            if (DICTIONARY.has(BATTLE._last_action)){
+              BATTLE._last_action = DICTIONARY.get(BATTLE._last_action);
+            }
             var text = action();
             // If I don't go through timeout, I think the event canceling blocks IO for the banner.
             if (text) {
@@ -62,14 +67,19 @@ const BATTLE = {
         })(i);
       }
 
+//BATTLE._last_action
       // Order the battle menu options.
+      var options_pursue = [];
       var options_winning = [];
       var options_unknown = [];
       var options_started = [];
       var options_losing = [];
       for (var i in options){
           var o = options[i];
-          if(o.text.startsWith("<b>")){
+          if(o.text.includes(BATTLE._last_action)){
+            o.text = "<b>" + o.text + "</b>";
+            options_pursue.push(o);
+          } else if(o.text.startsWith("<b>")){
             options_winning.push(o);
           } else if (o.text.startsWith("<i>")){
             options_started.push(o);
@@ -81,7 +91,7 @@ const BATTLE = {
       }
       RANDOM.shuffle(options_winning);
       RANDOM.shuffle(options_unknown);
-      new BattleMenu("", options_winning.concat(options_started).concat(options_unknown).concat(options_losing));
+      new BattleMenu("", options_pursue.concat(options_winning).concat(options_started).concat(options_unknown).concat(options_losing));
     },
 
     monster: function(text, dodge_difficulty) {
@@ -270,6 +280,7 @@ const BATTLE = {
       BATTLE.win_callback = undefined;
       BATTLE.current_battle = "";
       BATTLE.loot = [];
+      BATTLE._last_action = undefined;
     },
 
     setup: {
