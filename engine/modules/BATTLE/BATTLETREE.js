@@ -223,9 +223,9 @@ const BATTLETREE = {
     level: function() {
       var xp = BATTLETREE.score.total_xp();
       if (xp < 100){
-        return 1 + Math.floor(xp / 5);
+        return 1 + Math.floor(xp / 20);
       }
-      return Math.floor(Math.log(xp) * 10) - 26;
+      return Math.floor(Math.log(xp) * 10) - 41;
     },
   },
 
