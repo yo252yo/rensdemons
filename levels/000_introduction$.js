@@ -51,7 +51,7 @@ RESOURCES.onload(base_resource, function() {
  });
 
 var nextPage = function(){
-  setTimeout(function(){ CURRENTLEVEL.setup("001_hideandseek&"); }, 1500);
+  setTimeout(function(){ CURRENTLEVEL.setup("001_hideandseek$"); }, 1500);
 }
 var displayText = function() {
   TextBannerSequence.make([

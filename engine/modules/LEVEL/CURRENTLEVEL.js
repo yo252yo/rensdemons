@@ -37,7 +37,7 @@ const CURRENTLEVEL = {
       if (!CURRENTLEVEL.level_name){ return; }
       // Levels you shouldnt return to when you leave a place.
       if (CURRENTLEVEL.level_name.startsWith("$")) { return; }
-      if (CURRENTLEVEL.level_name == "gameover&" ||
+      if (CURRENTLEVEL.level_name == "gameover$" ||
           CURRENTLEVEL.level_name == "titlescreen") { return; }
 
       CURRENTLEVEL.previous_lvl = CURRENTLEVEL.level_name;

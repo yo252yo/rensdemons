@@ -27,9 +27,8 @@ setTimeout(function(){
 
 new CenteredTextMenu("",
               [
-                {"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction&"); }},
+                {"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }},
                 {"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } },
-                {"text": "Download/upload game data", "effect": function(){ INTERFACE.display.data_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                 {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
                 {"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }},

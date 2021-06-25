@@ -358,7 +358,7 @@ const BATTLE = {
       },
 
       loss: function() {
-        CURRENTLEVEL.setup("gameover&");
+        CURRENTLEVEL.setup("gameover$");
       },
 
       escape: function() {
