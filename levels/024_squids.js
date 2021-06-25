@@ -2,7 +2,7 @@
 //hack INITIALIZATION
 // ===================
 AUDIO.music.levels.squids();
-var gen = new Generator(DICTIONARY.get("dungeons_seed"));
+var gen = new Generator(DICTIONARY.get("world_seed")*12);
 
 var access = "_squid_access";
 

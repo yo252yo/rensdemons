@@ -1,6 +1,6 @@
 AUDIO.music.town.fear();
 
-var gen = new Generator(DICTIONARY.get("town_2_seed"));
+var gen = new Generator(DICTIONARY.get("world_seed")*3);
 
 new S_TownFloor(50, 1550, 1500, 1500, "010_world_map");
 

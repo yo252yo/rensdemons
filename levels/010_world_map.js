@@ -3,7 +3,7 @@
 // ===================
 AUDIO.music.interface.map();
 INTERFACE.make_compass();
-var gen = new Generator(DICTIONARY.get("world_map_seed"));
+var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};

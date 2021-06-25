@@ -2,7 +2,7 @@
 //hack INITIALIZATION
 // ===================
 AUDIO.music.levels.harpies();
-var gen = new Generator(DICTIONARY.get("dungeons_seed"));
+var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
 //hack FIXED ELEMENTS (floors)

@@ -6,7 +6,7 @@ function g(){
   var seed = Math.random();
   CURRENTLEVEL.setup("");
 
-  DICTIONARY.set("dungeons_seed", seed);
+  DICTIONARY.set("world_seed", seed);
   new Snippet("levels/023_mushrooms");
 
   last = setTimeout(g, 5000);

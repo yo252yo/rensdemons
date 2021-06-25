@@ -51,13 +51,7 @@ class DictionaryGenerator {
     r['town_5'] = MARKOV_MODELS.human_names.mutate("Capitol", 8); // acceptance, optional
 
     // Generation seeds
-    r['town_1_seed'] = Math.random();
-    r['town_2_seed'] = Math.random();
-    r['town_3_seed'] = Math.random();
-    r['town_4_seed'] = Math.random();
-    r['town_5_seed'] = Math.random();
-    r['world_map_seed'] = Math.random();
-    r['dungeons_seed'] = Math.random();
+    r['world_seed'] = Math.random();
     return r;
   };
 }
