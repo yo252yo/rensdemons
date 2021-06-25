@@ -78,7 +78,7 @@ const ITEMS_ARCHETYPES_NAMES = {
 ITEMS_ARCHETYPES = {};
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Alchemy] = [ITEM.Elixir_fire, ITEM.Elixir_ice, ITEM.Elixir_decay, ITEM.Elixir_chaos, ITEM.Elixir_vine, ITEM.Elixir_venom];
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Weapon] = [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield];
-ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool] = [ITEM.Bow, ITEM.Arrow, ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone, ITEM.Poison_darts, ITEM.Net, ITEM.Rope];
+ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool] = [ITEM.Bow, ITEM.Arrow, ITEM.Poison_darts, ITEM.Net, ITEM.Rope]; // , ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact] = [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand];
 
 const INVENTORY = {

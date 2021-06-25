@@ -2,25 +2,25 @@
 
 var _SHOP_PRICES = {};
 
-_SHOP_PRICES[ITEM.BreathingPotion] = 10;
-_SHOP_PRICES[ITEM.Elixir_fire] = 20;
-_SHOP_PRICES[ITEM.Elixir_ice] = 50;
-_SHOP_PRICES[ITEM.Elixir_vine] = 75;
-_SHOP_PRICES[ITEM.Elixir_venom] = 100;
-_SHOP_PRICES[ITEM.Elixir_decay] = 150;
-_SHOP_PRICES[ITEM.Elixir_chaos] = 200;
+_SHOP_PRICES[ITEM.BreathingPotion] = 5;
+_SHOP_PRICES[ITEM.Elixir_fire] = 10;
+_SHOP_PRICES[ITEM.Elixir_ice] = 20;
+_SHOP_PRICES[ITEM.Elixir_vine] = 30;
+_SHOP_PRICES[ITEM.Elixir_venom] = 40;
+_SHOP_PRICES[ITEM.Elixir_decay] = 50;
+_SHOP_PRICES[ITEM.Elixir_chaos] = 75;
 
 _SHOP_PRICES[ITEM.Sword_wooden] = 20;
-_SHOP_PRICES[ITEM.Dagger] = 75;
-_SHOP_PRICES[ITEM.Mace] = 100;
+_SHOP_PRICES[ITEM.Dagger] = 50;
+_SHOP_PRICES[ITEM.Mace] = 75;
 _SHOP_PRICES[ITEM.Shield] = 200;
 _SHOP_PRICES[ITEM.Spear] = 250;
 _SHOP_PRICES[ITEM.Sword_iron] = 500;
 _SHOP_PRICES[ITEM.Axe] = 600;
 _SHOP_PRICES[ITEM.Sword_great] = 1000;
 
-_SHOP_PRICES[ITEM.Arrow] = 5;
-_SHOP_PRICES[ITEM.Poison_darts] = 10;
+_SHOP_PRICES[ITEM.Arrow] = 2;
+_SHOP_PRICES[ITEM.Poison_darts] = 5;
 _SHOP_PRICES[ITEM.Rope] = 100;
 _SHOP_PRICES[ITEM.Bow] = 150;
 _SHOP_PRICES[ITEM.Net] = 200;

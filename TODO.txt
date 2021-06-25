@@ -1,7 +1,4 @@
 
-tool vs loot clarification (what can i sell??)
-
-clrl we should lower prices especially consumables
 
 clearly highlight the currently explored option
 didnt find a solution to highlight the actions that one started exploring, they conflict with the other actions with trailing spaces "  " (PLAYER_ACTIONS.internal name) like battleitems. maybe we could make prefixes and postfixes trailing spaces? thats a bit gross tho
