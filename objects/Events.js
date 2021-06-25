@@ -21,7 +21,10 @@ class SE_event extends S_event {
   var self = this;
   TextBannerSequence.make([
     this.text,
-  ], function(){self.destroy();});
+  ], function(){
+    self.destroy();
+    INVENTORY.increase(ITEM.XpToken);
+  });
   }
 }
 
