@@ -91,30 +91,22 @@ const SAVE = {
   },
 
   print: {
-    _menu_from_slots: function(effect, start){
-      if (start == undefined){ start = 0; }
-      var result = [];
-      for(var i = start; i < SAVE.slots.length; i++){
-        var slot = SAVE.slots[i];
-        (function (f, index) {
-          var callback = function() { f(index); };
-          result.push({"text": slot.key, "effect": callback});
-        })(effect, i);
-      }
-      result.push({"text": "Back", "effect": "##BACK"});
-
-      return result;
-    },
-
     save_menu: function() {
-      var slots = [];
-      if (SAVE.slots.length < 4){
-        slots.push({"text": "New save", "effect": function(){ SAVE.save(); }})
-      }
+      new CenteredTextMenu("Save?", [
+        {"text": "Overwrite AUTOSAVE", "effect": function() { SAVE.save(0); }},
+        {"text": "New save file", "effect": function() {
+          SAVE.save(1);
 
-      new CenteredTextMenu("Save in slot?",
-                    slots.concat(SAVE.print._menu_from_slots(function(i){ SAVE.save(i);}, 1))
-                 );
+          var bl = new Blob([JSON.stringify(DISK._CONTENT)], {type: "text/plain"});
+          var a_download = document.createElement("a");
+          a_download.href = URL.createObjectURL(bl);
+          a_download.download = `rens_demons_${(new Date()).toLocaleString()}.json`;
+          a_download.hidden = true;
+          document.body.appendChild(a_download);
+          a_download.click();
+        }},
+        {"text": "Back", "effect": "##BACK"}
+      ]);
       return true;
     },
 
@@ -123,9 +115,15 @@ const SAVE = {
     },
 
     load_menu: function() {
-      new CenteredTextMenu("Load from slot?",
-                    SAVE.print._menu_from_slots(function(i){ return SAVE.load(i);})
-                  );
+      var options = [];
+      if (SAVE.slots[0]){
+        options.push({"text": "Load AUTOSAVE", "effect": function() { SAVE.load(0); }});
+      }
+      options.push({"text": "Back", "effect": "##BACK"});
+
+      new CenteredTextMenu(`Load past game<br />
+        Load file: <input type="file" id="fileInput" onChange="DISK.restore_from_file()" />
+        `, options);
     },
   },
 
