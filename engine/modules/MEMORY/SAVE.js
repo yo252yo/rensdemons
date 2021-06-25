@@ -107,10 +107,13 @@ const SAVE = {
     },
 
     save_menu: function() {
+      var slots = [];
+      if (SAVE.slots.length < 4){
+        slots.push({"text": "New save", "effect": function(){ SAVE.save(); }})
+      }
+
       new CenteredTextMenu("Save in slot?",
-                    [
-                      {"text": "New save", "effect": function(){ SAVE.save(); }},
-                   ].concat(SAVE.print._menu_from_slots(function(i){ SAVE.save(i);}, 1))
+                    slots.concat(SAVE.print._menu_from_slots(function(i){ SAVE.save(i);}, 1))
                  );
       return true;
     },
