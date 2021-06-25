@@ -275,7 +275,9 @@ const CURRENTLEVEL = {
           CURRENTLEVEL.level_objects[i] = null;
         }
       }
-      CURRENTLEVEL.destroyed_objects.push(object.hash());
+      if(!CURRENTLEVEL.destroyed_objects.includes(object.hash())){
+        CURRENTLEVEL.destroyed_objects.push(object.hash());
+      }
       CURRENTLEVEL.system.redraw();
     },
 

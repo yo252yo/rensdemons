@@ -33,7 +33,7 @@ const LEVELSTATES = {
 
   register_from_save: function(save) {
     CONSOLE.log.level("Saved/loaded levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
-    if (save.level_name) {
+    if (save.level_name && !save.level_name.startsWith("$")) { // Do not save generated level states
       LEVELSTATES._states.set([save.level_name], save);
     }
   },
