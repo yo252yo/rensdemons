@@ -35,7 +35,7 @@ var make_priest = function (x, y) {
     TextBannerSequence.make([
       "Priest: \"Thank you for coming, Second Born. Your trial is about to begin.\"",
       "Priest: \"Please come with us to the temple for further instructions.\"",
-    ], function(){ CURRENTLEVEL.setup("002_trialinstruction"); });
+    ], function(){ CURRENTLEVEL.setup("002_trialinstruction&"); });
    };
   priest.try_walk_by(-50, 60);
 }
