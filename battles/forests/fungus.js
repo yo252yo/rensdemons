@@ -11,7 +11,7 @@ BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(1000);
 
-PLAYER_ACTIONS.kill_with_any_party_member(2);
+PLAYER_ACTIONS.kill_with_any_party_member(4);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 7);                  // 25   ELEM
 PLAYER_ACTIONS.useless(ABILITY.Thunder, 1);                   // 75   ELEM

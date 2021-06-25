@@ -11,7 +11,7 @@ BATTLE.operations.add_loot(ITEM.Scale, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(1000);
 
-PLAYER_ACTIONS.kill_with_any_party_member(2);
+PLAYER_ACTIONS.kill_with_any_party_member(4);
 
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 7);                   // 75   ELEM
