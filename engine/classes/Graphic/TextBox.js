@@ -14,6 +14,7 @@ test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
 test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a<br />";
 test_div.innerHTML+="Lorem Ipsum is simply dummy text of the printing a";
 test_div.style.height = "auto";
+test_div.id = "test_txt_div";
 test_div.style.width = "auto";
 test_div.style.position = "absolute";
 test_div.style.background = "red";
@@ -227,12 +228,14 @@ class TextBox extends TextElement {
 class TextBoxFitted extends TextBox {
   constructor(x, y, text) {
       var t = text.split("<br />");
-      var l = t[0].length;
+      var max_l = t[0].length;
       for(var line of t){
-        if (line.length > l){ l = line.length;}
+        if (line.length > max_l){ max_l = line.length;}
       }
       // Try to center on x!
-      super(x - 15 * l / 2, y, 10+15*l, 40 * t.length, 5, true);
+      super(x - _LETTER_SIZE[0] * max_l / 2, y,
+            20 + _LETTER_SIZE[0] * max_l, 20 + _LETTER_SIZE[1] * t.length,
+            5, true);
       this.change_text(text, true, false);
       this.html.style.textAlign = "center";
   }
