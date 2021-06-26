@@ -191,7 +191,6 @@ const CURRENTLEVEL = {
       }
       CURRENTLEVEL.system.html().innerHTML = "";
       CURRENTLEVEL.level_objects = [];
-      CURRENTLEVEL.destroyed_objects = [];
       CURRENTLEVEL.triggers = {};
       CURRENTLEVEL.start_function = null;
       CHARACTER.clear();
@@ -206,6 +205,8 @@ const CURRENTLEVEL = {
 
       if(save.destroyed_objects) {
         CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
+      } else {
+        CURRENTLEVEL.destroyed_objects = [];
       }
       if(save.previous_lvl) {
         CURRENTLEVEL.previous_lvl = save.previous_lvl;
