@@ -1,4 +1,5 @@
 
+its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 
 
 - rest of the story
