@@ -369,15 +369,15 @@ const BATTLE = {
       },
 
       loss: function() {
-        CURRENTLEVEL.setup("gameover$");
+        CURRENTLEVEL.setup("gameover$", true);
       },
 
       escape: function() {
-        CURRENTLEVEL.setup(BATTLE.origin_level);
+        CURRENTLEVEL.setup(BATTLE.origin_level, true);
       },
 
       win: function() {
-        CURRENTLEVEL.setup(BATTLE.origin_level);
+        CURRENTLEVEL.setup(BATTLE.origin_level, true);
 
         if (BATTLE.win_callback){
           setTimeout(BATTLE.win_callback, 200);

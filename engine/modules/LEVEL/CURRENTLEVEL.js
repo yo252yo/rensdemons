@@ -245,7 +245,13 @@ const CURRENTLEVEL = {
     return CURRENTLEVEL.level_name.endsWith("map")
   },
 
-  setup: function(name) {
+  setup: function(name, keep_position) {
+    if(keep_position && CHARACTER.character) {
+      CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y];
+    } else if (!keep_position) {
+      CURRENTLEVEL._recover_position = undefined;
+    }
+
     IO.clear_io_queue();
     window.scrollTo(0,0);
     // Try to restore previous state.
@@ -297,7 +303,11 @@ const CURRENTLEVEL = {
     if (saved_pos && saved_pos[0] && saved_pos[1]) {
       CHARACTER.initialize(saved_pos[0], saved_pos[1], size);
       IO.control.character();
-    } else {
+    } else if (CURRENTLEVEL._recover_position) {
+      CHARACTER.initialize(CURRENTLEVEL._recover_position[0], CURRENTLEVEL._recover_position[1], size);
+      CURRENTLEVEL._recover_position = undefined;
+      IO.control.character();
+    } else { // everything is here!!!!!! mb we can have special handling for battle
       CHARACTER.initialize(x, y, size);
       if (CURRENTLEVEL.start_function) {
         CURRENTLEVEL.start_function();
