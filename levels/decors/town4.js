@@ -21,5 +21,5 @@ houseFiller.fill_by_retry();
 var villagerFiller = new Filler(gen);
 villagerFiller.set_zone(75, 1025, 1950, 950);
 villagerFiller.set_tries(35, 120);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(CITIES.indulgence, x, y, g); });
+villagerFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(CITIES.indulgence, x, y, g.get()); });
 villagerFiller.fill_by_retry();
