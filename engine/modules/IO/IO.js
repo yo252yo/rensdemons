@@ -1,13 +1,13 @@
 // runtime: LEVEL, SCREEN
 const KEYS_UTIL = {
   is_up: function(key) {
-    return key === 'w' || key === 87 || key === 'arrowup' || key === 38;
+    return key === 'z' || key === 87 || key === 'w' || key === 90 || key === 'arrowup' || key === 38;
   },
   is_down: function(key) {
     return key === 's' || key === 83 || key === 'arrowdown' || key === 40;
   },
   is_left: function(key) {
-    return key === 'a' || key === 65 || key === 'arrowleft' || key === 37;
+    return key === 'q' || key === 65 || key === 'a' || key === 81 || key === 'arrowleft' || key === 37;
   },
   is_right: function(key) {
     return key === 'd' || key === 68 || key === 'arrowright' || key === 39;
