@@ -154,10 +154,10 @@ class TextBox extends TextElement {
 
     process_for_dialog() {
       var text = this.pages[0];
-
       var space = text.indexOf(" ");
       var period = text.indexOf(":");
-      if (space == period + 1)  {
+      var linebreak = text.indexOf("<");
+      if (space == period + 1 || linebreak == period + 1)  {
         var speaker = text.substr(0, period);
         if (this.speaker) {
           this.speaker.destroy();
