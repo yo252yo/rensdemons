@@ -66,7 +66,7 @@ BATTLE.monster_actions.add_textual("The Whale emits a loud and deep cry that see
 
 PLAYER_ACTIONS.add({
   name: "Feed",
-  outcome: BATTLETREE.useless,
+  outcome: BATTLETREE.ESCAPE,
   unlock: true,
   description: ["Empowered by the Goddess, you decide to end the confrontation in a surprising way. You trust your luck and throw yourself recklessly in the mouth of the animal. The Goddess must be watching over you, because you manage to avoid the giant teeth and land safely on the tongue of the animal."],
   extra_function: function(){
