@@ -99,4 +99,3 @@ CURRENTLEVEL.start_function = function() {
 };
 
 CURRENTLEVEL.initialize_with_character(100, 350);
-CHARACTER.character.place_at(100,350);

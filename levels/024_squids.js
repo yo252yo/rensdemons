@@ -122,6 +122,7 @@ var dive = function(){
 
 var alreadyEaten = function() { return INVENTORY.count("_eaten_by_whale") > 0; };
 CURRENTLEVEL.add_trigger("alreadyEaten", alreadyEaten, function() {
+  LEVELSTATES._states.get(["024_squids2"]).saved_character_position = [100, 350];
   INVENTORY.decrease("_eaten_by_whale", INVENTORY.count("_eaten_by_whale"));
   CURRENTLEVEL.setup("024_squids2");
 });
