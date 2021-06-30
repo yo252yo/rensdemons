@@ -35,7 +35,7 @@ const TRAINER = {
 
   _menu: {
     buy: function(){
-      var merchant_text = `I can teach you the following skills in the way of the ${TRAINER._current_type}, if you got enough experience in your journey. It looks like you have ${INVENTORY.count(ITEM.XpToken)} to spare.`;
+      var merchant_text = `I can teach you the way of the ${TRAINER._current_type}, if you got enough experience in your journey (you have ${INVENTORY.count(ITEM.XpToken)}).`;
       var goods = [];
 
       for(var index in _TRAINER_PRICES){
