@@ -149,4 +149,5 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
+SAVE.autosave();
 CURRENTLEVEL.initialize_with_character(1000, 2425);

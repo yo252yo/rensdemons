@@ -115,7 +115,7 @@ const DISK = {
           var parsed = JSON.parse(reader.result);
           var key;
           for (var i in parsed) {
-            if(i == "#MASTER_KEY") {
+            if(i == "#DISK_STATE_IDENTIFIER") {
               key = parsed[i];
             } else if(!_DISK_MODULES.includes(i)){
               CONSOLE.error("This file has the wrong format or may be corrupted.", false, true);

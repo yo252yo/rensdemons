@@ -112,6 +112,7 @@ var dive = function(){
     {"text": "Yes", "effect": function() {
       INVENTORY.decrease(ITEM.BreathingPotion);
       INVENTORY.increase(access);
+      SAVE.autosave();
       IO.control.character();
     }},
     {"text": "No", "effect": function() {
