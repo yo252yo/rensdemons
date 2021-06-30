@@ -17,6 +17,7 @@ its a pain to pass around the generator everywhere, and i get confused between g
 should we do a cemetary?
 
 
+facebook webkit cant download saves
 
 
 decide title
