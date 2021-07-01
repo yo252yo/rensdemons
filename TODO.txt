@@ -17,9 +17,6 @@ its a pain to pass around the generator everywhere, and i get confused between g
 should we do a cemetary?
 
 
-facebook webkit cant download saves
-
-
 decide title
 be careful, write in present and second person, also dont make things spawn on doors
 should we meet the king?
