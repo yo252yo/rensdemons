@@ -92,19 +92,14 @@ const SAVE = {
 
   print: {
     save_menu: function() {
+      SAVE.save(1); // abusive but we need to be sure we're ready
+      var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(DISK._CONTENT));
+
+
       new CenteredTextMenu("Save?", [
         {"text": "Overwrite AUTOSAVE", "effect": function() { SAVE.save(0); }},
-        {"text": "New save file", "effect": function() {
-          SAVE.save(1);
-
-          var bl = new Blob([JSON.stringify(DISK._CONTENT)], {type: "text/plain"});
-          var a_download = document.createElement("a");
-          a_download.href = URL.createObjectURL(bl);
-          a_download.download = `rens_demons_${(new Date()).toLocaleString()}.json`;
-          a_download.hidden = true;
-          document.body.appendChild(a_download);
-          a_download.click();
-        }},
+        {"text": `<a href="data:${data}" style="text-decoration:none;" download="rens_demons_${(new Date()).toLocaleString()}.json">Download new save file</a>`,
+          "effect": function() {CONSOLE.log.save("Save file downloaded"); }, "keep_open": true},
         {"text": "Back", "effect": "##BACK"}
       ]);
       return true;
