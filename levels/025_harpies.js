@@ -131,7 +131,7 @@ var chose_decor = function() {
 
 for (var i=0; i<2; i++){
   chose_decor();
-  filler.set_zone(975,2425,275,200);
+  filler.set_zone(975,2400,275,175);
   filler.fill_by_retry();
   chose_decor();
   filler.set_zone(1250,2400,250,275);
