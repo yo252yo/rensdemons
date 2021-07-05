@@ -11,7 +11,7 @@ new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100, 850, 225, gen.get());
 
 var s = new S_Store("Occult", 0, 150, 950, gen.get());
 s.enter = function() {
-  CURRENTLEVEL.setup("006_occultshop&");
+  CURRENTLEVEL.setup("006_occultshop$");
 };
 
 var houseFiller = new Filler(gen);
