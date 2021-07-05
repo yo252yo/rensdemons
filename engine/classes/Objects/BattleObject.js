@@ -8,7 +8,7 @@ class BattleObject extends LevelObject {
         var visual = new StaticSprite("assets/objects/event.png", color, size, size);
       } else {
         color = color ? color: 'obj_light';
-        var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+        var visual = new StaticSprite("assets/objects/" + name + ".png", color);
       }
       super(visual, x, y);
       this.name = name;
