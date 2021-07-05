@@ -271,7 +271,7 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_objects.push(object);
     },
 
-    remove_object: function(object) {
+    remove_object: function(object, stillborn) {
       for (var i in CURRENTLEVEL.level_objects){
         var candidate = CURRENTLEVEL.level_objects[i];
         if (candidate && candidate.hash() == object.hash()){
@@ -282,7 +282,7 @@ const CURRENTLEVEL = {
           CURRENTLEVEL.level_objects[i] = null;
         }
       }
-      if(!CURRENTLEVEL.destroyed_objects.includes(object.hash())){
+      if(!stillborn && !CURRENTLEVEL.destroyed_objects.includes(object.hash())){
         CURRENTLEVEL.destroyed_objects.push(object.hash());
       }
       CURRENTLEVEL.system.redraw();

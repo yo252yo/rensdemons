@@ -142,9 +142,7 @@ class LevelObject {
       if (this.visual_element){
         this.visual_element.destroy();
       }
-      if (!stillborn){
-        CURRENTLEVEL.objects.remove_object(this);
-      }
+      CURRENTLEVEL.objects.remove_object(this, stillborn);
       delete this;
     }
 
