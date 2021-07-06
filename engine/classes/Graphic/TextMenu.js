@@ -84,6 +84,8 @@ class TextMenu extends TextElement {
 
           item.addEventListener('mousedown', pick);
           item.addEventListener('click', pick);
+          item.addEventListener('ontouchstart', pick);
+
           item.addEventListener('mousemove', select);
           }(current_item, i));
 

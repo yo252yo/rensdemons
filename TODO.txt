@@ -20,3 +20,10 @@ should we do a cemetary?
 decide title
 be careful, write in present and second person, also dont make things spawn on doors
 should we meet the king?
+
+
+hide and seek shorter
+less loud effects by default_text
+
+
+menus dont work on ios  https://appetize.io/demo?device=iphone6s&scale=75&orientation=portrait&osVersion=13.7
