@@ -26,4 +26,5 @@ hide and seek shorter
 less loud effects by default_text
 
 
-menus dont work on ios  https://appetize.io/demo?device=iphone6s&scale=75&orientation=portrait&osVersion=13.7
+menus dont work on ios
+ https://appetize.io/demo?device=iphone6s&scale=75&orientation=portrait&osVersion=13.7
