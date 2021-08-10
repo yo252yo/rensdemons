@@ -25,9 +25,15 @@ setTimeout(function(){
   adapt_sprite(s2, 2);
 }, 500);
 
+var startLevel = "demo/town";
+if (window.location.href.includes("ren") && !window.location.href.includes("trial")){
+  startLevel = "000_introduction$";
+}
+
+
 new CenteredTextMenu("",
               [
-                {"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }},
+                {"text": "New game", "effect": function(){ CURRENTLEVEL.setup(startLevel); }},
                 {"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } },
                 {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                 {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},

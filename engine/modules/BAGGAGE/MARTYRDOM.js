@@ -30,8 +30,9 @@ const MARTYRDOM = {
     },
   },
 
-  death: function() {
-    MARTYRDOM._spare_points ++;
+  death: function(inc) {
+    if(!inc) {inc = 1;}
+    MARTYRDOM._spare_points += inc;
   },
 
   purchase: function(category_index) {
