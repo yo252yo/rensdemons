@@ -2,7 +2,7 @@ AUDIO.music.town.hope();
 
 var gen = new Generator(DICTIONARY.get("world_seed")*2);
 
-new S_TownFloor(50, 650, 600, 600, "demo/world");
+new S_TownFloor(50, 650, 600, 600, "demo/world_map");
 new S_Church(450, 500, "demo/church");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 70, 200, gen.get());
