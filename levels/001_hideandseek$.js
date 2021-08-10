@@ -40,10 +40,9 @@ var make_priest = function (x, y) {
   priest.try_walk_by(-50, 60);
 }
 
-new S_Floor(50,550,1000,500);
+new S_Floor(50,400,600,350);
 
 new S_Tree(110,270);
-new S_Tree(135,470);
 
 child_in_tree(150, 130, "cff1", new M_ChildF(),
   new TextBannerProgressive([
@@ -54,13 +53,7 @@ child_in_tree(150, 130, "cff1", new M_ChildF(),
 
 new S_Tree(240,380);
 
-child_in_tree(265, 500, "cfm2", new M_ChildM(), new TextBannerProgressive([
-    "It was not easy, but you finally spotted $$child_friends_m2$!",
-    "$$child_friends_m2$: \"Hmpf\""
-]));
-
 new S_Tree(290,160);
-new S_Tree(370,420);
 
 child_in_tree(400, 250, "cfm1", new M_ChildM(), new TextBannerProgressive([
     "You found $$child_friends_m1$!",
@@ -70,22 +63,16 @@ child_in_tree(400, 250, "cfm1", new M_ChildM(), new TextBannerProgressive([
 ]));
 
 new S_Tree(470,300);
-new S_Tree(480,495);
 new S_Tree(550,100);
-new S_Tree(560,460);
 
-child_in_tree(620, 280, "cfbf", new M_ChildF(), new TextBannerProgressive([
+child_in_tree(420, 120, "cfbf", new M_ChildF(), new TextBannerProgressive([
     "You found your best friend, $$BestFriend$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.BestFriend); },
     "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
     "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
 
-new S_Tree(645,190);
-new S_Tree(730,400);
-new S_Tree(735,150);
-
-child_in_tree(790, 490, "cff2", new M_ChildF(),
+child_in_tree(370,380, "cff2", new M_ChildF(),
   new TextBannerProgressive([
     "You found $$child_friends_f2$! It wasn't too hard, she's really bad at hiding. She can't stay too long without moving.",
     "$$child_friends_f2$: \"Finally, I was dying over there!\"",
@@ -95,10 +82,7 @@ child_in_tree(790, 490, "cff2", new M_ChildF(),
     "$$child_friends_f2$: \"Sorry...\"",
 ]));
 
-new S_Tree(800,250);
-new S_Tree(895,260);
-
-child_in_tree(930, 460, "cfm3", new M_ChildM(),
+child_in_tree(250, 280, "cfm3", new M_ChildM(),
   new TextBannerProgressive([
     "You found $$PreciousChild$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.PreciousChild); },
@@ -106,15 +90,14 @@ child_in_tree(930, 460, "cfm3", new M_ChildM(),
     "$$PreciousChild$: \"Are you ready? It's about time! Good luck!\"",
 ]));
 
-new S_Tree(950,185);
 
 
 
-var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 6; };
+var foundAll = function() { return Object.keys(CHILDREN_FOUND).length == 5; };
 CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
-  make_priest(1030,300);
-  make_priest(1030,250);
-  make_priest(1030,350);
+  make_priest(630,200);
+  make_priest(630,150);
+  make_priest(630,250);
 
   TextBannerSequence.make([
     "Priest: \"The time has come. Candidates for the Trial of the Second-Borns, please do follow us.\"",
