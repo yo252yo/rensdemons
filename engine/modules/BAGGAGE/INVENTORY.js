@@ -146,4 +146,10 @@ const INVENTORY = {
     }
   },
 
+  has_ancient_armament: function(){
+    return (INVENTORY.count(ITEM.AncientArmamentAdvisor) > 0) &&
+    (INVENTORY.count(ITEM.AncientArmamentArmature) > 0) &&
+    (INVENTORY.count(ITEM.AncientArmamentAmmunition) > 0);
+  }
+
 }
