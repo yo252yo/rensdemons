@@ -3,7 +3,7 @@ AUDIO.music.interface.map();
 INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
-SAVE.autosave();
+
 
 var h = 600;
 var w = 600;
@@ -67,3 +67,4 @@ FEasyEvents.fill_by_retry();
 
 
 CURRENTLEVEL.initialize_with_character(300, 250, 0.6);
+SAVE.autosave();

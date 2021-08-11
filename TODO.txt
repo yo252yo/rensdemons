@@ -1,14 +1,8 @@
 
-demo version hon hon:
-
-- ending: dungeon + twist
-
-
 
 CAREFUL dont autosave when the character isnt placed
 
-
-
+check that decor is placed before fights even the ones that are static/fixed
 
 
 

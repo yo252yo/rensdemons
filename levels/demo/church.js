@@ -17,6 +17,7 @@ if (! ABILITIES.has_ability("_demo_killed")){
   var hp = new M_Priest(300, 475);
   hp.interaction = function() {
     this.face_character();
+    SAVE.autosave();
     new CenteredTextMenu("Talk to the Priest?",
                   [
                     {"text": "Yes", "effect": talk},
@@ -65,6 +66,6 @@ CURRENTLEVEL.add_trigger("suicide", function(){ return ABILITIES.has_ability("_d
 
 
 
-SAVE.autosave();
+
 
 CURRENTLEVEL.initialize_with_character(275, 750);
