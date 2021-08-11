@@ -13,6 +13,7 @@ var unlock_stab1 = PLAYER_ACTIONS.function.unlock_replacing_action({
               ],
   extra_function: function() {
     ABILITIES.unlock("_demo_died");
+    STATS.record.flag("_demo_died");
   },
 });
 

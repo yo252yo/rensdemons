@@ -10,8 +10,26 @@ new S_Floor(50, h, w, h-50, 'obj_dark');
 new SM_Town(300, 400, "demo/town", "town_1");
 
 
+var brave = function() {
+  if(STATS.flag("_demo_died")){
+    new CenteredTextMenu("Will you break the most important rule of this world?",
+                  [
+                    {"text": "Yes", "effect": function(){ CURRENTLEVEL.setup("demo/mountain"); }},
+                    {"text": "No", "effect": "##CLOSE"},
+                 ]
+               );
+ }
+}
+
+var m = new SM_Mountain(450, 200, gen.get(), `Holy mountain`);
+m.interaction = function() {
+  TextBannerSequence.make(
+    ["This is the holy mountain where the gods protecting $$town_1$ reside. No mortal is allowed to enter."]
+    , brave);
+}
+
 var FMap = new Filler(gen);
-FMap.set_zone(50, h, w, h);
+FMap.set_zone(50, h, w, h-50);
 FMap.set_tries(3, 10);
 FMap.set_object(100, 100, function(x,y,g){ return new SM_Trees(x, y, g.get());});
 FMap.fill_by_retry();

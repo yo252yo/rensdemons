@@ -1,4 +1,20 @@
 
+demo version hon hon:
+
+- ending: dungeon + twist
+- self awareness with priest chat when you know whats up (allow save scum)
+
+
+
+
+
+
+
+
+
+
+
+
 its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 
 
