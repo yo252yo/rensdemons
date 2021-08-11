@@ -2,10 +2,10 @@
 demo version hon hon:
 
 - ending: dungeon + twist
-- self awareness with priest chat when you know whats up (allow save scum)
 
 
 
+CAREFUL dont autosave when the character isnt placed
 
 
 
