@@ -8,8 +8,11 @@ window.onload = function() {
   DISK.initialize_game();
   var lvl = (new URL(window.location.href)).searchParams.get("lvl");
   var save = (new URL(window.location.href)).searchParams.get("s");
+  var battle = (new URL(window.location.href)).searchParams.get("battle");
   if(lvl){
     CURRENTLEVEL.setup(lvl);
+  } else if(battle) {
+    BATTLE.api.make(battle);
   } else if(save) {
     SAVE.load(save);
   } else {
