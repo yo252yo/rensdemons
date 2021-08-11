@@ -3,6 +3,8 @@ AUDIO.music.interface.map();
 INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
+SAVE.autosave();
+
 var h = 600;
 var w = 600;
 new S_Floor(50, h, w, h-50, 'obj_dark');

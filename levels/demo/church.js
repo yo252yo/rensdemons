@@ -43,5 +43,6 @@ CURRENTLEVEL.add_trigger("suicide", function(){ return ABILITIES.has_ability("_d
 
 
 
+SAVE.autosave();
 
 CURRENTLEVEL.initialize_with_character(275, 750);
