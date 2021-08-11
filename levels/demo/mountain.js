@@ -16,10 +16,7 @@ new S_Floor(825,1400,100,150);
 
 var f = new S_Floor(375,1425,50,125, 'obj_dark', 'demo/world_map');
 
-var door = new S_Floor(850,1250,50,25, 'obj_dark');
-door.interaction = function() {
-  CURRENTLEVEL.setup("demo/cavern");
-}
+var door = new S_Floor(850,1250,50,25, 'obj_dark', 'demo/cavern');
 
 
 
