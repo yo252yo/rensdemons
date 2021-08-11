@@ -47,7 +47,11 @@ var getLogs = function (){
 
 var man = function(){
   updatelog("Displaying manual page");
-  window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
+  if(window.navigator.onLine) {
+    window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
+  } else {
+    window.open("levels/demo/man.md");
+  }
 }
 
 var win = function(){
