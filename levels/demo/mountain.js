@@ -2,6 +2,10 @@
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*13);
 
+var win = function(){
+  CURRENTLEVEL.setup("demo/end");
+}
+
 
 new S_Floor(400,1450,200,175);
 new S_Floor(550,1375,175,50);

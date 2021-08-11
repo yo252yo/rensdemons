@@ -7,7 +7,7 @@ var turnoff =  `Shutting down...`;
 var log = HTML.div.make({w:"100%", h:"100%", z:10000});
 log.style.color = PALETTE.color("background").code();
 log.innerHTML = "";
-log.style.visibily = "hidden";
+log.style.visibility = "hidden";
 CURRENTLEVEL.system.html().appendChild(log);
 
 var execute = function(){
@@ -45,6 +45,14 @@ var getLogs = function (){
 }
 
 
+var man = function(){
+  updatelog("Displaying manual page");
+  alert("man");
+}
+
+var win = function(){
+  CURRENTLEVEL.setup("demo/end");
+}
 
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -56,6 +64,7 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
     IO.key_interceptor.deactivate();
   }
 });
+
 var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Hide console",
   unlock: true,
@@ -63,6 +72,14 @@ var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
     updatelog("Hiding console log");
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
+  }
+});
+
+var unlock_man = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "MANual page",
+  unlock: true,
+  function: function () {
+    man();
   }
 });
 
@@ -77,10 +94,6 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
     IO.key_interceptor.activate();
   }
 });
-
-
-
-
 
 
 PLAYER_ACTIONS.add({
@@ -100,6 +113,7 @@ PLAYER_ACTIONS.add({
     unlock_terminal_show("Retry");
     unlock_terminal_hide("Retry");
     unlock_exit("Retry");
+    unlock_man("Retry");
   }
 });
 
