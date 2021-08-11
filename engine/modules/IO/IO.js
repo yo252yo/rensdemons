@@ -185,6 +185,21 @@ const IO = {
     },
   },
 
+  key_interceptor: {
+    activate: function() {
+      document.addEventListener('keydown', IO.handlers.onKeyDown);
+      document.addEventListener('keyup', IO.handlers.onKeyUp);
+    },
+
+    deactivate: function() {
+      document.removeEventListener('keydown', IO.handlers.onKeyDown);
+      document.removeEventListener('keyup', IO.handlers.onKeyUp);
+    },
+  },
+
+
+
+
   // Global events handlers
   handlers: {
 
@@ -298,8 +313,7 @@ const IO = {
 
 // Events listeners
 
-document.addEventListener('keydown', IO.handlers.onKeyDown);
-document.addEventListener('keyup', IO.handlers.onKeyUp);
+IO.key_interceptor.activate();
 
 window.addEventListener('scroll', IO.handlers.onScroll, { passive: false });
 window.addEventListener('resize', IO.handlers.onScroll, { passive: false});
