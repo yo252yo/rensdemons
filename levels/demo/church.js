@@ -13,32 +13,54 @@ var talk = function() {
   });
 }
 
-var hp = new M_Priest(300, 475);
-hp.interaction = function() {
-  this.face_character();
-  new CenteredTextMenu("Talk to the Priest?",
-                [
-                  {"text": "Yes", "effect": talk},
-                  {"text": "No", "effect": "##CLOSE"},
-               ]
-             );
+if (! ABILITIES.has_ability("_demo_killed")){
+  var hp = new M_Priest(300, 475);
+  hp.interaction = function() {
+    this.face_character();
+    new CenteredTextMenu("Talk to the Priest?",
+                  [
+                    {"text": "Yes", "effect": talk},
+                    {"text": "No", "effect": "##CLOSE"},
+                 ]
+               );
+  }
+} else {
+  var hp = new M_Priest(300, 475);
+  hp.interaction = function() {
+    this.face_character();
+    TextBannerSequence.make([
+      `The corpse of the holy man lies at your feet. Your murder did not solve anything. There is no going back, now. No way to go back to your peaceful life you loved so much. There is only one escape. And it could even save the village.`,
+    ], function() {
+      new CenteredTextMenu("Will you stab yourself?",
+                    [
+                      {"text": "Yes", "effect": function(){ ABILITIES.unlock("_demo_died"); }},
+                      {"text": "No", "effect": "##CLOSE"},
+                   ]
+                 );
+    });
+  }
 }
 
 
 
 CURRENTLEVEL.add_trigger("suicide", function(){ return ABILITIES.has_ability("_demo_died"); }, function() {
-  DICTIONARY.factory.make_new();
-  PALETTE.factory.make_new();
+  TextBannerSequence.make([
+    `As life leaves your frail body, you take comfort in the fact that your village and family will be protected by your altruistic sacrifice.`,
+  ], function() {
+    DICTIONARY.factory.make_new();
+    PALETTE.factory.make_new();
 
-  ABILITIES._abilities.delete(["_demo_died"]);
-  LEVELSTATES._states.delete(["demo/town"]);
-  LEVELSTATES._states.delete(["demo/world"]);
-  LEVELSTATES._states.delete(["demo/church"]);
+    ABILITIES._abilities.delete(["_demo_died"]);
+    ABILITIES._abilities.delete(["_demo_killed"]);
+    LEVELSTATES._states.delete(["demo/town"]);
+    LEVELSTATES._states.delete(["demo/world"]);
+    LEVELSTATES._states.delete(["demo/church"]);
 
-  var newren = MARKOV_MODELS.human_names.mutate("Ren", 20);
-  DICTIONARY.set("Ren", newren);
-  DICTIONARY.set("ORIGINAL_Ren", newren);
-  CURRENTLEVEL.setup("demo/town");
+    var newren = MARKOV_MODELS.human_names.mutate("Ren", 20);
+    DICTIONARY.set("Ren", newren);
+    DICTIONARY.set("ORIGINAL_Ren", newren);
+    CURRENTLEVEL.setup("demo/town");
+  });
 });
 
 

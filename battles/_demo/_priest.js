@@ -87,8 +87,35 @@ PLAYER_ACTIONS.add({
 });
 
 
+PLAYER_ACTIONS.add({
+  name: "Confront",
+  outcome: BATTLETREE.LOSS,
+  description: ["$$Ren$: \"Tell me, how many children have you killed like that?\"",
+                "The priest is startled.",
+                "Priest: \"How... how can you know?\"",
+                "$$Ren$: \"How I know is not important. Let's just say that I have knowledge of things beyond this world... Answer my question.\"",
+                "The attitude of the priest changes. He answers you, approaching steadily.",
+                "Priest: \"Alas... too many. So few remain innocent when they learn the truth of this world. They don't understand that they're condemning their loved ones. But that's the price of innocence. The blood needs to be given freely, the devotion needs to be sincere. And since you've lost yours, all I can do is to dispose of you.\"",
+                "He assaults you. You put on a good fight, but this man has years of experience in controlling rebellious children. Your young years are no match for the brute strength of an adult body. Before long, he is done with you. He drags and throws your body in a hidden hole at the back of the temple. Life leaves your body when it hurts a gooey mush of many, many tiny corpses.",
+              ],
+});
+
+
+PLAYER_ACTIONS.add({
+  name: "Ambush",
+  outcome: BATTLETREE.WIN,
+  description: ["You know what to expect. Before the priest notices anything, you use surprise to your advantage and jump on him. He's too startled to react, and your little hands manage to grab the old man's neck. You squeeze as hard as you can, holding with all your will while the holy man swears and jolts in every direction.",
+                "After a while, though, the resistance stops, and he falls, lifeless, on the ground.",
+              ],
+  extra_function: function() {
+    ABILITIES.unlock("_demo_killed");
+  },
+});
+
 if(STATS.flag("_demo_died")){
   BATTLETREE.api.unlock("_demo/_priest", "Volunteer");
+  BATTLETREE.api.unlock("_demo/_priest", "Confront");
+  BATTLETREE.api.unlock("_demo/_priest", "Ambush");
 }
 
 // ===================
