@@ -26,6 +26,12 @@ setTimeout(function(){
 
 var displayText = function() {
   TextBannerSequence.make([
+    "The game engine has been modified and has been rid of suffering. Thank you for your help.",
+    "The monsters that were destroying the world and threatening cities have been eliminated to prevent further suffering.",
+    "All people of the villages, especially children, have been eliminated to prevent further suffering.",
+    "All life forms, animals and plants, have been eliminated to prevent further suffering.",
+    "Thanks.",
+    " ",
     "CONGRATULATIONS for ending the cycle of child sacrifices by beating this demo of Ren's devils, and thanks a lot for playing!!!",
     "If you have access to this, I guess you know who to send all your thoughts, comments and impressions to. Especially bug reports. Your victory gives you priority treatment ;)",
     "Remember that the full version (under development) will be a complete game, with a few similar mechanics and items but a completely different story and meaning! I hope this demo gets you excited for it and eager to play the real thing!",
