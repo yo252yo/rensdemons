@@ -47,7 +47,7 @@ var getLogs = function (){
 
 var man = function(){
   updatelog("Displaying manual page");
-  alert("man");
+  window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
 }
 
 var win = function(){
