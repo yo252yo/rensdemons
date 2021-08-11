@@ -27,6 +27,16 @@ var unlock_stab2 = PLAYER_ACTIONS.function.unlock_replacing_action({
                 "As he says this, he casually stabs you, as if he had done this to countless other children before."],
 });
 
+var unlock_flee = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Walk away",
+  unlock: true,
+  outcome: BATTLETREE.LOSS,
+  description: ["You turn around, pannicked. Your heart is pounding heavily. You start running towards the exit but the priest grabs you by the arm.",
+                `Priest: "What do you think you're doing? Your refusal makes you worthless, but I can't have you run around and spreading dangerous lies about the church."`,
+                "As he says this, he casually stabs you. You fall on the ground in a puddle of your own blood. You can hear the annoyed priest mumble complaints while he fetches some cleaning equipment. As you draw your last breath, you can't help but wonder what would have happened if you had known what to expect when you walked in the temple..."],
+});
+
+
 PLAYER_ACTIONS.add({
   name: "Enquire",
   description: [
@@ -42,6 +52,7 @@ PLAYER_ACTIONS.add({
   function: function() {
     unlock_stab1("Enquire");
     unlock_stab2("Enquire");
+    unlock_flee("Enquire");
   },
 });
 
@@ -60,6 +71,25 @@ PLAYER_ACTIONS.add({
                 "Priest: \"Such a shame... What a waste.\""
               ],
 });
+
+PLAYER_ACTIONS.add({
+  name: "Volunteer",
+  outcome: BATTLETREE.WIN,
+  description: ["You know what to expect. Resigned, you hold your hand towards the priest.",
+                "$$Ren$: \"Give it to me. Let's get this over with.\"",
+                "The priest smiles, happy to witness your good will. He hands you a knife, and without hesitation, you stab yourself as deep as your child muscles will allow.",
+                "It hurts less than you thought it would.",
+              ],
+  extra_function: function() {
+    ABILITIES.unlock("_demo_died");
+    STATS.record.flag("_demo_died");
+  },
+});
+
+
+if(STATS.flag("_demo_died")){
+  BATTLETREE.api.unlock("_demo/_priest", "Volunteer");
+}
 
 // ===================
 // =================== START
