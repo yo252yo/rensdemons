@@ -14,12 +14,9 @@ class SpeakerIcon extends TextElement {
 
     make_portrait(name) {
       var image_key;
-      // Name comes from the text, it is therefore a full name, not a key
-      // For now, only party members have icons
-      for(var i in PARTYMEMBERS){
-        if(DICTIONARY.get(i) == name){
-          image_key = i;
-        }
+      name = name.replaceAll("$","");
+      if (name in PARTYMEMBERS){ // For now, only party members have icons
+          image_key = name;
       }
       if (! image_key) {
         this.destroy();

@@ -6,8 +6,6 @@ dodge when you dont click gets the position from the previous round\
 click cd of menu prevents dodge ????
 - dodge screen feels empty
 
-* if you have the name of another character it changes your picture
-
 
 
 

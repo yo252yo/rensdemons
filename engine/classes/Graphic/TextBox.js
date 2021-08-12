@@ -152,8 +152,7 @@ class TextBox extends TextElement {
       return processed;
     }
 
-    process_for_dialog() {
-      var text = this.pages[0];
+    process_speaker_icon(text) { // this is before dictionary resolution
       var space = text.indexOf(" ");
       var period = text.indexOf(":");
       var linebreak = text.indexOf("<");
@@ -163,6 +162,16 @@ class TextBox extends TextElement {
           this.speaker.destroy();
         }
         this.speaker = new SpeakerIcon(speaker);
+      }
+    }
+
+    process_for_dialog() {
+      var text = this.pages[0];
+      var space = text.indexOf(" ");
+      var period = text.indexOf(":");
+      var linebreak = text.indexOf("<");
+      if (space == period + 1 || linebreak == period + 1)  {
+        var speaker = text.substr(0, period);
         this.html.style.color = PALETTE.text_speaker_color().code();
         this.pages[0] = "<span style=\"color:" + PALETTE.text_color().code() + ";\">" + speaker + ":</span>" +  text.substr(period + 1, text.length - period);
       }
@@ -172,9 +181,10 @@ class TextBox extends TextElement {
       if (skip_processing){
         this.pages = [text];
       } else {
+        this.process_speaker_icon(text);
         text = this.fill_words_from_dictionary(text);
         this.pages = this.cut_to_pages(text);
-        this.process_for_dialog(text);
+        this.process_for_dialog();
       }
 
       this.clear_html();
