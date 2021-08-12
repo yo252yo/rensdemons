@@ -32,7 +32,7 @@ var unlock_stab2 = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var unlock_flee = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Walk away",
+  name: "Flee",
   unlock: true,
   outcome: BATTLETREE.LOSS,
   description: ["You turn around, pannicked. Your heart is pounding heavily. You start running towards the exit but the priest grabs you by the arm.",
@@ -40,6 +40,13 @@ var unlock_flee = PLAYER_ACTIONS.function.unlock_replacing_action({
                 "As he says this, he casually stabs you. You fall on the ground in a puddle of your own blood. You can hear the annoyed priest mumble complaints while he fetches some cleaning equipment. As you draw your last breath, you can't help but wonder what would have happened if you had known what to expect when you walked in the temple..."],
 });
 
+
+var unlock_help = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: ABILITY.CallHelp,
+  outcome: BATTLETREE.NOTHING,
+  description: ["You shout, terrified, in hope that someone around will help.",
+                "But nobody moves. Your voice echoes dreadfully through the solemn cathedral."],
+});
 
 PLAYER_ACTIONS.add({
   name: "Enquire",
@@ -57,18 +64,14 @@ PLAYER_ACTIONS.add({
     unlock_stab1("Enquire");
     unlock_stab2("Enquire");
     unlock_flee("Enquire");
+    unlock_help("Enquire");
+    BATTLETREE.api.lock("_demo/_priest", "Ambush");
   },
 });
 
-PLAYER_ACTIONS.add({
-  name: ABILITY.CallHelp,
-  outcome: BATTLETREE.NOTHING,
-  description: ["You shout, terrified, in hope that someone around will help.",
-                "But nobody moves. Your voice echoes dreadfully through the solemn cathedral."],
-});
 
 PLAYER_ACTIONS.add({
-  name: ABILITY.Flee,
+  name: "Walk away",
   outcome: BATTLETREE.LOSS,
   description: ["You try to go further back, but you trip and fall on the ground.",
                 "The priest sighs at your reaction, takes a knife from under his robes, and stabs you repeatedly.",
