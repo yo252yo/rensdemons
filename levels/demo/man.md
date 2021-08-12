@@ -25,56 +25,57 @@ Fortunately, this engine has a built-in solution to destroy all the demons and t
 
 The code is organized in modules (global singletons), here are a few example commands:
 
+|                                               |                                   |
+|-----------------------------------------------|-----------------------------------|
 | **INVENTORY**                                 |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `INVENTORY.increase(ITEM.Coin, 100);`         | Give yourself items               |
-
+|                                               |                                   |
+|                                               |                                   |
 | **ABILITY**                                   |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `ABILITIES.unlock(ABILITIES.Fireball);`       | Unlock abilities                  |
-
+|                                               |                                   |
+|                                               |                                   |
 | **MARTYRDOM**                                 |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `MARTYRDOM.death(100);`                       | More martyrdom points             |
-
+|                                               |                                   |
+|                                               |                                   |
 | **PARTY**                                     |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `PARTY.add(PARTYMEMBERS.BestFriend);`         | Add people to the party           |
-
+|                                               |                                   |
+|                                               |                                   |
 | **FOG**                                       |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `FOG.stop();`                                 | Removes the fog                   |
-
+|                                               |                                   |
+|                                               |                                   |
 | **CHARACTER**                                 |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `CHARACTER.initialize(x, y);`                 | Puts character at position (x,y)  |
-
+|                                               |                                   |
+|                                               |                                   |
 | **CURRENTLEVEL**                              |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `CURRENTLEVEL.setup("demo/church");`          | Change level                      |
-
+|                                               |                                   |
+|                                               |                                   |
 | **BATTLE**                                    |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `BATTLE.api.make('_demo/_priest');`           | Start battle                      |
-
+|                                               |                                   |
+|                                               |                                   |
 | **PALETTE**                                   |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `PALETTE.factory.make_new();`                 | Change color scheme               |
 | `PALETTE.generate.pick_harmonized_palette();` | Change color scheme (harmonized)  |
 | `PALETTE.generate.pick_random_palette();`     | Change color scheme (random)      |
-
+|                                               |                                   |
+|                                               |                                   |
 | **DEBUG**                                     |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `DEBUG.draw_grid();`                          | Draws a grid                      |
 | `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
 | `DEBUG.allow_scroll();`                       | Allow browser scroll              |
 | `DEBUG.run_faster();`                         | Increase movement speed           |
 | `DEBUG.get_all_abilities();`                  | Change color scheme (random)      |
 | `DEBUG.get_all_items();`                      | Change color scheme (random)      |
-
+|                                               |                                   |
 | **SPAWNING**                                  |                                   |
-|-----------------------------------------------|-----------------------------------|
 | `new S_Floor(375,1425,50,125);`               | New 50x125 floor at 375x1425      |
 | `new S_SavePoint(225, 175);`                  | New save point at 225x175         |
 | `new SBattle(100, 100, 'world/mummy');`       | New battle mystery object         |
 | `new SE_event(20, 275, 'You find nothing');`  | New event mystery object          |
+|                                               |                                   |
