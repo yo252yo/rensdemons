@@ -1,8 +1,5 @@
 
-* some items mention aerith
-
 * DODGE:
-dodge when you dont click gets the position from the previous round\
 click cd of menu prevents dodge ????
 - dodge screen feels empty
 

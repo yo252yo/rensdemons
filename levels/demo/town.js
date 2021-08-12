@@ -46,4 +46,7 @@ CURRENTLEVEL.start_function = function() {
   ], change_nickname);
 };
 
+DICTIONARY.set("BestFriend", "a villager");
+DICTIONARY.set("ORIGINAL_BestFriend", "a villager");
+
 CURRENTLEVEL.initialize_with_character(600, 600);

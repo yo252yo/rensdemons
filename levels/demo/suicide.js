@@ -11,6 +11,8 @@ LEVELSTATES._states.delete(["demo/church"]);
 var newren = MARKOV_MODELS.human_names.mutate("Ren", 20);
 DICTIONARY.set("Ren", newren);
 DICTIONARY.set("ORIGINAL_Ren", newren);
+DICTIONARY.set("BestFriend", "a villager");
+DICTIONARY.set("ORIGINAL_BestFriend", "a villager");
 
 var evolve = function() {
   FOG.stop();
