@@ -24,7 +24,7 @@ var lookat = function(){
 
 var turnon = function(){
   TextBannerSequence.make([
-    `As soon as your finger touches the glass, the humming grows louder, and the glass becomes imbued with a light glow. In an instant, shapes start forming on the lit surface. First, you see a wheel spinning slowly. Then it fades away to make place to some text in a box on a flat colored background.`,
+    `As soon as your finger touches the glass, the humming grows louder, and the glass becomes imbued with a light glow. In an instant, shapes start forming on the lit surface. First, you see a wheel spinning slowly. Then it fades away to display the silhouette of a child in front of an altar on a flat colored background. You distinguish some text in a box.`,
   ], lookat);
 }
 
