@@ -23,7 +23,6 @@ var defend_dodge = function(name){
 var defend_tank = function(name){
   return [`The blow does not seem to hurt the $$&ENEMY$.`,
           `It doesn't seem very effective. The $$&ENEMY$ doesn't budge.`,
-          `The $$&ENEMY$ is hit, but it seems too painless for it to matter.`,
           `The $$&ENEMY$ is not affected by your attack.`,
           `The $$&ENEMY$ doesn't appear to notice your hit.`];
 }

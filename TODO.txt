@@ -1,18 +1,19 @@
 
+* some items mention aerith
 
-some items mention aerith
-dodge tutorial for priest
-dodge when you dont click gets the position from the previous round
-pretty repetition on skeleton harmonized
+* DODGE:
+dodge when you dont click gets the position from the previous round\
 click cd of menu prevents dodge ????
-https breakage ???
-feedback in muli hit that work, review feedback "resistant"
-dodge screen feels empty
-try repro fireball doesnt get crossed when useless
+- dodge screen feels empty
+
+* if you have the name of another character it changes your picture
+
+
 
 
 NO REPRO:
-- reset the church
+- during his demo playthrough M would respawn in the middle of the church every time he enters
+- during his demo playthrough M fireball doesnt get crossed when useless
 
 CHECK WITH M:
 - textures
@@ -20,17 +21,14 @@ CHECK WITH M:
 
 -----------------
 
-real game when you enter harpie peak youre spawned on wrong location
+- real game when you enter harpie peak youre spawned on wrong location
 
---------------
+- textures for floor
 
-textures for floor
-
-CAREFUL dont autosave when the character isnt placed
-
-check that decor is placed before fights even the ones that are static/fixed
+- check that decor is placed before fights even the ones that are static/fixed (can be done as we add textures)
 
 
+- CAREFUL dont autosave when the character isnt placed! Mb safeguard this by autosaving with a 1s delay or smthing
 
 
 

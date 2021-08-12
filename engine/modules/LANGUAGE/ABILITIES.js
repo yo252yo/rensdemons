@@ -8,16 +8,15 @@ var cast_spell = function(name){
 };
 
 var fail_spell = function(){
-  return RANDOM.pick([`The spell fizzles out without any effect.`,
-                      `It appears clear that this spell will not work this time.`,
+  return RANDOM.pick([`It appears clear that this spell will not work this time.`,
                       `The $$&ENEMY$ seems unaffected by your spell.`,
                       `The $$&ENEMY$ resists against your efforts without trouble.`,
                       `The $$&ENEMY$ is resilient to this spell. Nothing happens.`,
-                      `Your spell has no effect.`]);
+                      `Your spell has no effect on this enemy.`]);
 };
 
 var fail_ability = function(){
-  return RANDOM.pick([`Your attempt does not have any effect.`,
+  return RANDOM.pick([`Your attempt does not have any effect on this enemy.`,
                       `It appears clear that this technique will not work this time.`,
                       `The $$&ENEMY$ seems unaffected by your attempt.`,
                       `The $$&ENEMY$ resists against your efforts without trouble.`,

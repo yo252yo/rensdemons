@@ -1,3 +1,5 @@
+var several_hit_feedback = [`It's clearly effective, but you can tell that one hit is not enough to bring down your enemy. You're going to need more!`];
+
 class ActionObject {
   constructor(copy) {
     if(!copy) {copy = {}; }
@@ -50,7 +52,7 @@ const PLAYER_ACTIONS = {
       for(var i=nb_hits-2; i>0; i--){
           var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
             name: PLAYER_ACTIONS._internal.repeated_name(name, i),
-            description: LANGUAGE.actions.usage(name),
+            description: LANGUAGE.actions.usage(name).concat(several_hit_feedback),
             consume_item: consume_item,
             function: previous_function,
           });
@@ -60,7 +62,7 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS.add({
         name: name,
     // This is where unlock would go if needed:      unlock: true,
-        description: LANGUAGE.actions.usage(name),
+        description: LANGUAGE.actions.usage(name).concat(several_hit_feedback),
         consume_item: consume_item,
         function: previous_function
       });
