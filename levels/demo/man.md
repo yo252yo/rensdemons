@@ -27,36 +27,36 @@ The code is organized in modules (global singletons), here are a few example com
 
 |                                               |                                   |
 |-----------------------------------------------|-----------------------------------|
-| INVENTORY                                     |                                   |
+| **INVENTORY**                                 |                                   |
 | `INVENTORY.increase(ITEM.Coin, 100);`         | Give yourself items               |
 |                                               |                                   |
-| ABILITY                                       |                                   |
+| **ABILITY**                                   |                                   |
 | `ABILITIES.unlock(ABILITIES.Fireball);`       | Unlock abilities                  |
 |                                               |                                   |
-| MARTYRDOM                                     |                                   |
+| **MARTYRDOM**                                 |                                   |
 | `MARTYRDOM.death(100);`                       | More martyrdom points             |
 |                                               |                                   |
-| PARTY                                         |                                   |
+| **PARTY**                                     |                                   |
 | `PARTY.add(PARTYMEMBERS.BestFriend);`         | Add people to the party           |
 |                                               |                                   |
-| FOG                                           |                                   |
+| **FOG**                                       |                                   |
 | `FOG.stop();`                                 | Removes the fog                   |
 |                                               |                                   |
-| CHARACTER                                     |                                   |
+| **CHARACTER**                                 |                                   |
 | `CHARACTER.initialize(x, y);`                 | Puts character at position (x,y)  |
 |                                               |                                   |
-| CURRENTLEVEL                                  |                                   |
+| **CURRENTLEVEL**                              |                                   |
 | `CURRENTLEVEL.setup("demo/church");`          | Change level                      |
 |                                               |                                   |
-| BATTLE                                        |                                   |
+| **BATTLE**                                    |                                   |
 | `BATTLE.api.make('_demo/_priest');`           | Start battle                      |
 |                                               |                                   |
-| PALETTE                                       |                                   |
+| **PALETTE**                                   |                                   |
 | `PALETTE.factory.make_new();`                 | Change color scheme               |
 | `PALETTE.generate.pick_harmonized_palette();` | Change color scheme (harmonized)  |
 | `PALETTE.generate.pick_random_palette();`     | Change color scheme (random)      |
 |                                               |                                   |
-| DEBUG                                         |                                   |
+| **DEBUG**                                     |                                   |
 | `DEBUG.draw_grid();`                          | Draws a grid                      |
 | `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
 | `DEBUG.allow_scroll();`                       | Allow browser scroll              |
@@ -64,7 +64,7 @@ The code is organized in modules (global singletons), here are a few example com
 | `DEBUG.get_all_abilities();`                  | Change color scheme (random)      |
 | `DEBUG.get_all_items();`                      | Change color scheme (random)      |
 |                                               |                                   |
-| SPAWNING                                      |                                   |
+| **SPAWNING**                                  |                                   |
 | `new S_Floor(375,1425,50,125);`               | New 50x125 floor at 375x1425      |
 | `new S_SavePoint(225, 175);`                  | New save point at 225x175         |
 | `new SBattle(100, 100, 'world/mummy');`       | New battle mystery object         |
