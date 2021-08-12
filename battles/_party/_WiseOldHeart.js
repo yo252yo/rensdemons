@@ -1,6 +1,7 @@
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
 PLAYER_ACTIONS.escape("Leave");
+AUDIO.music.characters.WiseOld();
 
 var final_desc = [
   `As you offer a helping hand, you're surprised to see the beggar refuse it. He snaps his fingers and a magic aura surrounds him. In a few seconds, his clothes are tidied up and the smell is gone. He adjusts his glasses and turns to you.`,

@@ -1,6 +1,7 @@
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
 PLAYER_ACTIONS.escape("Give up");
+AUDIO.music.characters.WiseOld();
 
 var battle = "_party/_WiseOldMind";
 var wrong_answer = [`$$WiseOld$: "Sadly, this is not the answer we are looking for."`];
