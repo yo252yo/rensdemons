@@ -23,13 +23,13 @@ class TextBanner extends TextBox {
     }
   }
 
-  constructor(text) {
+  constructor(text, instant) {
       var d = TextBanner.getDimensions();
 
       super(d.left,d.top+d.height, d.width, d.height, d.padding);
 
       if (text) {
-        this.change_text(text);
+        this.change_text(text, instant);
       }
   }
 }

@@ -1,14 +1,4 @@
 
-* DODGE:
-click cd of menu prevents dodge ????
-- dodge screen feels empty
-
-NO REPRO:
-- during his demo playthrough M would respawn in the middle of the church every time he enters
-- during his demo playthrough M fireball doesnt get crossed when useless
-
------------------
-
 - real game when you enter harpie peak youre spawned on wrong location
 
 - textures for floor

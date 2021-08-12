@@ -103,7 +103,6 @@ const BATTLE = {
       if (!dodge_difficulty){
         TextBannerSequence.make(array, BATTLE.turn_factory.player);
       } else {
-        array.push(LANGUAGE.battle.dodge());
         TextBannerSequence.make(array, DODGE.getCallback(dodge_difficulty));
       }
     },

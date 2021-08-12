@@ -16,3 +16,6 @@ zindex was sometimes broken on mobile
 some events dont disappear as they should
 
 animation at the end of clue is weird (blink screen)
+
+- during his demo playthrough M would respawn in the middle of the church every time he enters
+- during his demo playthrough M fireball doesnt get crossed when useless

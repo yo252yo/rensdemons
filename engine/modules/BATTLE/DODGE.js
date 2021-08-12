@@ -5,6 +5,7 @@ const DODGE = {
     prompt: undefined,
     defense: undefined,
     attacked: undefined,
+    text: undefined,
   },
   defense_angle: undefined,
   attack_angle: undefined,
@@ -52,6 +53,7 @@ const DODGE = {
       DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
       DODGE.sprite.prompt.adjust_depth(10098); // The sprite is a level object and has the zindex of its y.
       DODGE.center_sprite();
+      DODGE.sprite.text = new TextBanner("Pick a position to dodge your opponent's assault.", true);
       DODGE.sprite.prompt.show();
       DODGE.sprite.defense.show();
       IO.control.dodge();
@@ -131,6 +133,9 @@ const DODGE = {
       }
       if(DODGE.sprite.defense){
         DODGE.sprite.defense.hide();
+      }
+      if (DODGE.sprite.text){
+        DODGE.sprite.text.destroy();
       }
       IO.control.cede();
     },
