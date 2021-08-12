@@ -13,7 +13,12 @@ DICTIONARY.set("Ren", newren);
 DICTIONARY.set("ORIGINAL_Ren", newren);
 
 var evolve = function() {
-  CURRENTLEVEL.setup("demo/town");
+  FOG.stop();
+
+  TextBannerSequence.make([
+    "In another time, in another place...",
+  ], function() { CURRENTLEVEL.setup("demo/town") });
 }
 
 setTimeout(evolve, 1000);
+FOG.stop();
