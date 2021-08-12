@@ -1,7 +1,7 @@
 // use(VisualElement)
 
 class Rectangle extends VisualElement {
-    constructor(x, y, w, h, color) {
+    constructor(x, y, w, h, color, texture) {
         super(x,y,w,h);
 
         this.html_rectangle = HTML.div.make({w:"100%", h:"100%", z:-1});
@@ -10,6 +10,9 @@ class Rectangle extends VisualElement {
         this.container.style.zIndex = -1;
 //        this.container.style.padding = "0px 100px 100px 0px";
 
+        if(texture){
+          this.html_rectangle.style.backgroundImage= `url(${texture})`;
+        }
         this.draw();
         this.container.appendChild(this.html_rectangle);
     }

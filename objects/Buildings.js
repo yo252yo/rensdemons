@@ -13,18 +13,16 @@ const CITIES = {
 
 
 class S_Floor extends LevelObject {
-  constructor(x, y, w, h, color, destination){
+  constructor(x, y, w, h, color, destination, texture){
     if (!color){
       color = 'background';
     }
-    var visual = new Rectangle(x,y,w,h, color);
+    var visual = new Rectangle(x,y,w,h, color, texture);
     super(visual, x, y);
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-
-    //visual.html_rectangle.style.backgroundImage= `url("assets/patterns/wood.png")`;
 
     this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
@@ -47,9 +45,10 @@ class S_Floor extends LevelObject {
   }
 }
 
+
 class S_TownFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
-    super(x, y, w, h);
+    super(x, y, w, h, undefined, undefined, "assets/patterns/town.png");
 
     var exit = 40;
 
