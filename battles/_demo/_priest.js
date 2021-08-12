@@ -35,7 +35,7 @@ var unlock_flee = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Flee",
   unlock: true,
   outcome: BATTLETREE.LOSS,
-  description: ["You turn around, pannicked. Your heart is pounding heavily. You start running towards the exit but the priest grabs you by the arm.",
+  description: ["You turn around, panicked. Your heart is pounding heavily. You start running towards the exit but the priest grabs you by the arm.",
                 `Priest: "What do you think you're doing? Your refusal makes you worthless, but I can't have you run around and spreading dangerous lies about the church."`,
                 "As he says this, he casually stabs you. You fall on the ground in a puddle of your own blood. You can hear the annoyed priest mumble complaints while he fetches some cleaning equipment. As you draw your last breath, you can't help but wonder what would have happened if you had known what to expect when you walked in the temple..."],
 });
@@ -66,6 +66,7 @@ PLAYER_ACTIONS.add({
     unlock_flee("Enquire");
     unlock_help("Enquire");
     BATTLETREE.api.lock("_demo/_priest", "Ambush");
+    STATS.record.flag("_demo_died");
   },
 });
 
@@ -89,7 +90,6 @@ PLAYER_ACTIONS.add({
               ],
   extra_function: function() {
     ABILITIES.unlock("_demo_died");
-    STATS.record.flag("_demo_died");
   },
 });
 
@@ -124,6 +124,14 @@ if(STATS.flag("_demo_died")){
   BATTLETREE.api.unlock("_demo/_priest", "Confront");
   BATTLETREE.api.unlock("_demo/_priest", "Ambush");
 }
+
+var attack = {
+  attack_amplitude: 0.4,
+  warning_time_s: 5.0,
+  react_time_s: 3.0,
+  time_variation: 0,
+};
+BATTLE.monster_actions.add_textual("The priest tries to grab you. Adrenaline rushes through your body. You can hear your frantic heartbeat in your eardrums. Time seems to be slowing down for a moment. You need to dodge out of his way.", attack);
 
 // ===================
 // =================== START
