@@ -8,19 +8,20 @@ var datedString = function(s){
   return (new Date()).toLocaleTimeString() + ": " + s;
 }
 
-var log = HTML.div.make({w:"100%", h:"50%", z:10000, margin: 10});
+var log = HTML.div.make({w:"100%", h:"55%", z:10000, margin: 10});
 log.style.color = PALETTE.color("background").code();
-log.innerHTML = "<strong>[RENS DEMONS ENGINE] @ JS CONSOLE</strong><hr />";
+log.innerHTML = "<strong>[RENS DEMONS] @ JS CONSOLE</strong><br/>";
 log.style.visibility = "hidden";
 CURRENTLEVEL.system.html().appendChild(log);
 
 var logcontent = document.createElement("textarea");
 logcontent.style.position = "relative";
-logcontent.style.height = "40%";
+logcontent.style.height = "47%";
 logcontent.style.width = "80%";
 logcontent.style.margin = "10px";
 logcontent.style.fontSize = "large";
 logcontent.style.background = "black";
+logcontent.style.border = "1px white solid";
 logcontent.style.color = "white";
 logcontent.readOnly = true;
 log.appendChild(logcontent);
@@ -65,7 +66,7 @@ var getLogs = function (){
   for (var log in CONSOLE.logs){
    l.push(CONSOLE.logs[log]);
  }
- return l.join("\n");
+ return l.slice(l.length-1000).join("\n");
 }
 
 

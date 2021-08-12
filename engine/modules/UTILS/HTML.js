@@ -63,8 +63,14 @@ const HTML = {
         if(options.position) {
           div.style.position = options.position;
         }
+        if(options.margin) {
+          div.style.margin = HTML._get_dimension_value(options.margin);
+        }
         if(options.opacity) {
           div.style.opacity = options.opacity;
+        }
+        if(options.overflow) {
+          div.style.overflow = options.overflow;
         }
         if(options.w) {
           div.style.width = HTML._get_dimension_value(options.w);
