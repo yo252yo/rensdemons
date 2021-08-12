@@ -42,7 +42,7 @@ FMap.fill_by_retry();
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
 FEasyEvents.battle('world/ghost', 1.7);
-FEasyEvents.battle('forest/flower', 1.7);
+FEasyEvents.battle('forests/flower', 1.7);
 FEasyEvents.battle('world/mummy', 1.7);
 FEasyEvents.battle('mountains/harpy', 1.7);
 FEasyEvents.battle('world/wraith', 1.7);
