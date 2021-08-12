@@ -19,7 +19,7 @@ In order to beat the demo, you need to **break this cycle**. One option is of co
 
 Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one at the top of the mountain, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
 
-`win();`
+`win()`
 
 ## DOCUMENTATION
 
