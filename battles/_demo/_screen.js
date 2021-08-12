@@ -4,6 +4,8 @@
 var battle = "_demo/_screen";
 var turnoff =  `Shutting down...`;
 
+AUDIO.music.interface.boss();
+
 var datedString = function(s){
   return (new Date()).toLocaleTimeString() + ": " + s;
 }

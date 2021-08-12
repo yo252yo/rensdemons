@@ -26,7 +26,7 @@ const AUDIO = {
     AUDIO._load_sound('lvlup');
     AUDIO._load_sound('page');
     AUDIO._load_sound('unlock');
-    
+
     AUDIO._load_music('chara/cestsurtoiquecavalemieux');
     AUDIO._load_music('chara/extrametal');
     AUDIO._load_music('chara/getready');
@@ -42,9 +42,10 @@ const AUDIO = {
     AUDIO._load_music('chara/spacemtv');
     AUDIO._load_music('chara/surfing');
     AUDIO._load_music('interface/love planet');
-    AUDIO._load_music('interface/the girl with the baseball bat');
     AUDIO._load_music('interface/time for adventure 4 opening');
     AUDIO._load_music('interface/un desert');
+    AUDIO._load_music('interface/im in the not a club');
+    AUDIO._load_music('interface/you need to dodge that spell');
     AUDIO._load_music('interface/un triste echo trop juste');
     AUDIO._load_music('level/a tale about somewhere where the end of the story already occurs');
     AUDIO._load_music('level/ambiant inconvenient truth');
@@ -122,7 +123,8 @@ const AUDIO = {
     },
 
     interface:{
-      battle: function() {          AUDIO._play_music('interface/the girl with the baseball bat'); },
+      battle: function() {          AUDIO._play_music('interface/im in the not a club'); },
+      boss: function() {          AUDIO._play_music('interface/you need to dodge that spell'); },
       titlescreen: function() {     AUDIO._play_music('interface/time for adventure 4 opening'); },
       introduction: function() {    AUDIO._play_music('interface/love planet'); },
       gameover: function() {        AUDIO._play_music('interface/un triste echo trop juste'); },

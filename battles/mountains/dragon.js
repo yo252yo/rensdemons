@@ -4,6 +4,8 @@
 new CenteredImage("assets/battles/mountains/dragon.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+AUDIO.music.interface.boss();
+
 BATTLE.operations.add_loot(ITEM.Scale, 1);
 
 // ===================

@@ -4,6 +4,8 @@
 new CenteredImage("assets/battles/waters/whale.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+AUDIO.music.interface.boss();
+
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================

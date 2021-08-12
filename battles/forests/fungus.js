@@ -4,6 +4,8 @@
 new CenteredImage("assets/battles/forests/mushroom_boss.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
+AUDIO.music.interface.boss();
+
 BATTLE.operations.add_loot(ITEM.Mushroom, 1);
 
 // ===================

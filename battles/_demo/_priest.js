@@ -3,6 +3,8 @@
 // ===================
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
+AUDIO.music.interface.boss();
+
 var win = function(){
   CURRENTLEVEL.setup("demo/end");
 }
