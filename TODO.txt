@@ -6,16 +6,9 @@ dodge when you dont click gets the position from the previous round\
 click cd of menu prevents dodge ????
 - dodge screen feels empty
 
-
-
-
 NO REPRO:
 - during his demo playthrough M would respawn in the middle of the church every time he enters
 - during his demo playthrough M fireball doesnt get crossed when useless
-
-CHECK WITH M:
-- textures
-- refresh frequency
 
 -----------------
 

@@ -12,5 +12,6 @@ var displayText = function() {
   ], function() { CURRENTLEVEL.setup("demo/end0") });
 }
 
+PALETTE.factory.make_new();
 setTimeout(displayText, 1000);
 FOG.stop();

@@ -61,8 +61,6 @@ The code is organized in modules (global singletons), here are a few example com
 |                                               |                                   |
 | **PALETTE**                                   |                                   |
 | `PALETTE.factory.make_new();`                 | Change color scheme               |
-| `PALETTE.generate.pick_harmonized_palette();` | Change color scheme (harmonized)  |
-| `PALETTE.generate.pick_random_palette();`     | Change color scheme (random)      |
 |                                               |                                   |
 |                                               |                                   |
 | **DEBUG**                                     |                                   |
