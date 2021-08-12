@@ -24,7 +24,7 @@ class S_Floor extends LevelObject {
     this.w = w;
     this.h = h;
 
-    visual.html_rectangle.style.backgroundImage= `url("assets/patterns/wood.png")`;
+    //visual.html_rectangle.style.backgroundImage= `url("assets/patterns/wood.png")`;
 
     this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
