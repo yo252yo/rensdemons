@@ -6,8 +6,6 @@ var win = function(){
   CURRENTLEVEL.setup("demo/end");
 }
 
-
-
 var talk = function() {
   TextBannerSequence.make([
     `$$Ren$: "Hello, father. I am ready for the ritual."`,
@@ -47,24 +45,11 @@ if (! ABILITIES.has_ability("_demo_killed")){
 }
 
 
-
 CURRENTLEVEL.add_trigger("suicide", function(){ return ABILITIES.has_ability("_demo_died"); }, function() {
   TextBannerSequence.make([
     `As life leaves your frail body, you take comfort in the fact that your village and family will be protected by your altruistic sacrifice.`,
   ], function() {
-    DICTIONARY.factory.make_new();
-    PALETTE.factory.make_new();
-
-    ABILITIES._abilities.delete(["_demo_died"]);
-    ABILITIES._abilities.delete(["_demo_killed"]);
-    LEVELSTATES._states.delete(["demo/town"]);
-    LEVELSTATES._states.delete(["demo/world"]);
-    LEVELSTATES._states.delete(["demo/church"]);
-
-    var newren = MARKOV_MODELS.human_names.mutate("Ren", 20);
-    DICTIONARY.set("Ren", newren);
-    DICTIONARY.set("ORIGINAL_Ren", newren);
-    CURRENTLEVEL.setup("demo/town");
+    CURRENTLEVEL.setup("demo/suicide");
   });
 });
 
