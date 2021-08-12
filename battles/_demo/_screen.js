@@ -4,36 +4,60 @@
 var battle = "_demo/_screen";
 var turnoff =  `Shutting down...`;
 
-var log = HTML.div.make({w:"100%", h:"100%", z:10000});
+var datedString = function(s){
+  return (new Date()).toLocaleTimeString() + ": " + s;
+}
+
+var log = HTML.div.make({w:"100%", h:"50%", z:10000, margin: 10});
 log.style.color = PALETTE.color("background").code();
-log.innerHTML = "";
+log.innerHTML = "<strong>[RENS DEMONS ENGINE] @ JS CONSOLE</strong><hr />";
 log.style.visibility = "hidden";
 CURRENTLEVEL.system.html().appendChild(log);
+
+var logcontent = document.createElement("textarea");
+logcontent.style.position = "relative";
+logcontent.style.height = "40%";
+logcontent.style.width = "80%";
+logcontent.style.margin = "10px";
+logcontent.style.fontSize = "large";
+logcontent.style.background = "black";
+logcontent.style.color = "white";
+logcontent.readOnly = true;
+log.appendChild(logcontent);
+
+var logform = HTML.div.make({position:"relative"});
+log.appendChild(logform);
+logform.innerHTML = `
+  <form action='javascript:execute()'>
+  &gt; <input type="text" id='terminal_entry' style="margin:10px;width:70%;color:white;background:black;" placeholder="TYPE COMMAND" />
+  <input type="submit" value="EXECUTE" /></form>
+`;
 
 var execute = function(){
   var content = document.getElementById('terminal_entry').value;
   try {
     var result = eval(content);
   } catch(e){
-    var result = e;
+    var result = e.toString();
   }
-  if (typeof result === 'object'){
+  if(result == {}) {
+    result = "[INVALID INPUT]";
+  } else if (typeof result == 'object'){
     result = "[OBJECT]" + JSON.stringify(result);
   }
 
-  updatelog(content);
+  updatelog(datedString("> " + content));
   updatelog(result);
   document.getElementById('terminal_entry').value = "";
+  return false;
 }
 
 var updatelog = function (msg){
   if(msg) {
     CONSOLE.log.level(msg);
   }
-  log.innerHTML =  `<strong>[RENS DEMONS ENGINE] @ JAVASCRIPT CONSOLE</strong><br /><form onsubmit='execute()'>
-  <input type="text" id='terminal_entry' style="margin:10px;width:70%" />
-  <input type="submit" /></form>
-  <br />` + getLogs();
+  logcontent.innerHTML = getLogs();
+  logcontent.scrollTop = logcontent.scrollHeight;
 }
 
 var getLogs = function (){
@@ -41,18 +65,22 @@ var getLogs = function (){
   for (var log in CONSOLE.logs){
    l.push(CONSOLE.logs[log]);
  }
- return l.reverse().join("<br />");
+ return l.join("\n");
 }
 
 
-var man = function(){
-  updatelog("Displaying manual page");
+var man = function() {
+  updatelog(datedString("Opening manual page"));
   if(window.navigator.onLine) {
     window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
   } else {
     window.open("levels/demo/man.md");
   }
 }
+var help = man;
+var h = man;
+var hint = man;
+var manual = man;
 
 var win = function(){
   CURRENTLEVEL.setup("demo/end");
@@ -63,7 +91,13 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Display console",
   unlock: true,
   function: function (){
-    updatelog("Displaying console log");
+    updatelog(datedString("Displaying console log"));
+    updatelog(datedString("Connection to the simulation established."));
+    updatelog("#################################");
+    updatelog("#   UNIVERSE ENGINE gOd-S 1.0   #");
+    updatelog("#  AWAITING USER INPUT COMMAND  #");
+    updatelog("#     TYPE help() FOR HELP      #");
+    updatelog("#################################");
     log.style.visibility = "visible";
     IO.key_interceptor.deactivate();
   }
@@ -73,7 +107,7 @@ var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Hide console",
   unlock: true,
   function: function (){
-    updatelog("Hiding console log");
+    updatelog(datedString("Hiding console log"));
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
@@ -93,7 +127,7 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   outcome: BATTLETREE.ESCAPE,
   description: turnoff,
   extra_function: function (){
-    updatelog("Exiting terminal");
+    updatelog(datedString("Exiting terminal"));
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
