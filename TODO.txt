@@ -1,16 +1,17 @@
 
-- real game when you enter harpie peak youre spawned on wrong location
 
+--------------------------
+REAL GAME CHANGES:
+
+GO OVER EVERYTHING:
 - textures for floor
-
 - check that decor is placed before fights even the ones that are static/fixed (can be done as we add textures)
-
-
 - CAREFUL dont autosave when the character isnt placed! Mb safeguard this by autosaving with a 1s delay or smthing
 
 
+- when you enter harpie peak youre spawned on wrong location
 
-
+--------------------------
 its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 
 

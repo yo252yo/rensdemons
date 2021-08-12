@@ -7,15 +7,15 @@ var win = function(){
 }
 
 
-new S_Floor(400,1450,200,175);
-new S_Floor(550,1375,175,50);
-new S_Floor(675,1725,50,400);
-new S_Floor(625,1775,150,125);
-new S_Floor(725,1725,350,50);
-new S_Floor(1000,1775,75,150);
-new S_Floor(1025,1675,25,350);
-new S_Floor(850,1350,200,25);
-new S_Floor(825,1400,100,150);
+new S_SandFloor(400,1450,200,175);
+new S_SandFloor(550,1375,175,50);
+new S_SandFloor(675,1725,50,400);
+new S_SandFloor(625,1775,150,125);
+new S_SandFloor(725,1725,350,50);
+new S_SandFloor(1000,1775,75,150);
+new S_SandFloor(1025,1675,25,350);
+new S_SandFloor(850,1350,200,25);
+new S_SandFloor(825,1400,100,150);
 
 
 var f = new S_Floor(375,1425,50,125, 'obj_dark', 'demo/world_map');
