@@ -4,7 +4,7 @@
 const CURRENTLEVEL = {
   _MAX_CLICK_INTERACTION_DISTANCE: 20,
   _FACE_INTERACTION_DISTANCE: 20,
-  _TRIGGER_COOLDOWN: 2000,
+  _TRIGGER_COOLDOWN: 200,
 
   level_name: "",
   previous_lvl: "", // used to exit houses

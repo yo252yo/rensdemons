@@ -1,15 +1,12 @@
 
 
 some items mention aerith
-refresh frequency for events
 dodge tutorial for priest
 dodge when you dont click gets the position from the previous round
 pretty repetition on skeleton harmonized
 click cd of menu prevents dodge ????
 https breakage ???
 feedback in muli hit that work, review feedback "resistant"
-mak win more explicit in man
-refresh rate of keyboard event
 dodge screen feels empty
 try repro fireball doesnt get crossed when useless
 
@@ -17,10 +14,9 @@ try repro fireball doesnt get crossed when useless
 NO REPRO:
 - reset the church
 
-
-
-
-
+CHECK WITH M:
+- textures
+- refresh frequency
 
 -----------------
 

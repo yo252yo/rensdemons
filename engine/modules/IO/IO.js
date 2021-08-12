@@ -77,7 +77,7 @@ const IO = {
   _PRESSED_KEYS: [],
   _PREVIOUS_SYSTEMS: [],
   _ACTIVE_SYSTEM: null,
-  _CONTINUOUS_KEY_PRESS_TIC: 50,
+  _CONTINUOUS_KEY_PRESS_TIC: 30,
 
 
   // Manage the lock and stack.
