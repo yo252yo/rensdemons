@@ -30,7 +30,7 @@ var brave = function() {
 var m = new SM_Mountain(450, 200, gen.get(), `Holy mountain`);
 m.interaction = function() {
   TextBannerSequence.make(
-    ["This is the holy mountain where the gods protecting $$town_1$ reside. No mortal is allowed to enter."]
+    ["This is the holy mountain where the Goddess protecting $$town_1$ reside. No mortal is allowed to enter."]
     , brave);
 }
 

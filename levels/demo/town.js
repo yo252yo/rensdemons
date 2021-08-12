@@ -41,7 +41,7 @@ CURRENTLEVEL.start_function = function() {
   MARTYRDOM.death(10);
   TextBannerSequence.make([
     `This is the town of $$town_1$, where you have lived your whole life. It's one of the last remaining cities in a world at the mercy of the forces of evil. It's not very big, but you feel like it's brimming with new things to discover every day!`,
-    `Fortunately, your life has not been too hard: everybody loves you, because you're the Promised Child, a child chosen by the gods to finally bring peace to the village.`,
+    `Fortunately, your life has not been too hard: everybody loves you, because you're the Promised Child, a child chosen by the Goddess to finally bring peace to the village.`,
     `Everyone knows your name, it's synonymous with hope for a better future. Your name is...`,
   ], change_nickname);
 };

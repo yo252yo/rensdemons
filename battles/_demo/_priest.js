@@ -45,9 +45,9 @@ PLAYER_ACTIONS.add({
   name: "Enquire",
   description: [
     `$$Ren$: "So, Father, how can I be of service? How can a little child save the town?"`,
-    `Priest: "Well, it's pretty simple, really. A child cannot fight the forces of evil. Humans cannot fight the forces of evil. Only Gods can help us."`,
+    `Priest: "Well, it's pretty simple, really. A child cannot fight the forces of evil. Humans cannot fight the forces of evil. Only the Goddess can help us."`,
     `$$Ren$: "What does that have to do with me?"`,
-    `Priest: "You don't see it yet? For their help, for keeping us safe, the Gods require compensation. There is a price to pay."`,
+    `Priest: "You don't see it yet? For their help, for keeping us safe, the Goddess requires compensation. There is a price to pay."`,
     `You almost ask the burning question in your mind, but you already know the answer. A chill runs down your spine as the words of the priest confirm your suspicions.`,
     `Priest: "The price is the blood of the innocent, freely offered."`,
     `He holds you a knife.`,

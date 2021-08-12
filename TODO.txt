@@ -1,5 +1,4 @@
 add save point at start of mountain
-remove gods only keep goddess in demo
 some items mention aerith
 run away after knife not before?
 can we smooth the transition between stories ?
@@ -18,8 +17,6 @@ pretty repetition on skeleton harmonized
 
 click cd of menu prevents dodge ????
 
-forest/flower breeaks
-
 https breakage ???
 
 put houses a bit above
@@ -32,14 +29,9 @@ refresh rate of keyboard event
 
 dodge screen feels empty
 
-
 try repro fireball doesnt get crossed when useless
 
-
-
-
-There's a silhouette of a boy on 4he screen
-
+make the destruction screen at the end a standalone screen
 
 
 

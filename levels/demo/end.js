@@ -30,6 +30,7 @@ var displayText = function() {
     "The monsters that were destroying the world and threatening cities have been eliminated to prevent further suffering.",
     "All people of the villages, especially children, have been eliminated to prevent further suffering.",
     "All life forms, animals and plants, have been eliminated to prevent further suffering.",
+    "The Goddess has been eliminated to prevent further suffering.",
     "Thanks.",
     " ",
     "CONGRATULATIONS for ending the cycle of child sacrifices by beating this demo of Ren's devils, and thanks a lot for playing!!!",
