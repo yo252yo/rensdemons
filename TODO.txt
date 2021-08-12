@@ -31,9 +31,6 @@ dodge screen feels empty
 
 try repro fireball doesnt get crossed when useless
 
-make the destruction screen at the end a standalone screen
-
-
 
 
 
