@@ -22,7 +22,7 @@ var f = new S_Floor(375,1425,50,125, 'obj_dark', 'demo/world_map');
 
 var door = new S_Floor(850,1250,50,25, 'obj_dark', 'demo/cavern');
 
-
+new S_SavePoint(500, 1375);
 
 var filler = new Filler(gen);
 filler.set_zone(425,1875,750,700);

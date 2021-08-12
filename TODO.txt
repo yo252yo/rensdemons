@@ -1,8 +1,7 @@
-add save point at start of mountain
+
+
 some items mention aerith
-run away after knife not before?
 refresh frequency for events
-no ambush after talk
 dodge tutorial for priest
 dodge when you dont click gets the position from the previous round
 pretty repetition on skeleton harmonized
