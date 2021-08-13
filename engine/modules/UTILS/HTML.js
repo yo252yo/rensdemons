@@ -98,4 +98,8 @@ const HTML = {
     },
   },
 
+  snapToGrid(x,y){
+    return [Math.round(x/25)*25, Math.round(y/25)*25];
+  },
+
 }

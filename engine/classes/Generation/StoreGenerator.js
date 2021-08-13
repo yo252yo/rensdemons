@@ -26,7 +26,7 @@ class StoreGenerator {
     }
 
     build() {
-      new S_Floor(200, 500, 300, 300);
+      new S_WoodFloor(200, 500, 300, 300);
       this.build_seller();
       return this.main_entrance();
     }

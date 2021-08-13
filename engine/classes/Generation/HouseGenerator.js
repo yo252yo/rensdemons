@@ -88,13 +88,15 @@ class HG_Room {
        this.room_top = new HG_Room(this.type, this.gen, this.x, this.y - this.h - 25, [this.w, 0]);
        this.room_top.is_top = true;
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
-       new S_WoodFloor(connection_x, this.y - this.h + 25, 50, 75);
+       var c = HTML.snapToGrid(connection_x, this.y - this.h + 25);
+       new S_WoodFloor(c[0], c[1], 50, 75);
     }
 
     expand_right() {
        this.room_right = new HG_Room(this.type, this.gen, this.x + this.w + 25, this.y, [0, this.h]);
        var connection_y = this.y - Math.min(this.room_right.h, this.h)/2 + 25;
-       new S_WoodFloor(this.x + this.w - 25, connection_y, 75, 50);
+       var c = HTML.snapToGrid(this.x + this.w - 25, connection_y);
+       new S_WoodFloor(c[0], c[1], 75, 50);
     }
 
     expand_diag() {
@@ -104,11 +106,11 @@ class HG_Room {
       var h = this.room_top.h;
       var diag = new HG_Room(this.type, this.gen, x, y, [w, h]);
       diag.is_top = true;
-      var connection_left = [x, y - h/2];
-      var connection_bot = [x + w/2, y];
+      var connection_left = HTML.snapToGrid(x-50, y - h/2+25);
+      var connection_bot = HTML.snapToGrid(x + w/2-25, y+50);
 
-      new S_WoodFloor(connection_left[0]-50, connection_left[1]+25, 75, 50);
-      new S_WoodFloor(connection_bot[0]-25, connection_bot[1]+50, 50, 75);
+      new S_WoodFloor(connection_left[0], connection_left[1], 75, 50);
+      new S_WoodFloor(connection_bot[0], connection_bot[1], 50, 75);
     }
 
     expand() {

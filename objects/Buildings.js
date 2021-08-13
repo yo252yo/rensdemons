@@ -53,6 +53,7 @@ class S_SandFloor extends S_Floor {
 
 class S_WoodFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
+    console.log(w);
     super(x, y, w, h, undefined, undefined, "assets/patterns/wood.png");
   }
 }
