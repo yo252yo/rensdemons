@@ -18,7 +18,7 @@ new SM_Town(300, 400, "demo/town", "town_1");
 
 var brave = function() {
   if(STATS.flag("_demo_died")){
-    new CenteredTextMenu("Will you break the most important rule of this world?",
+    new CenteredTextMenu("Will you break the rule?",
                   [
                     {"text": "Yes", "effect": function(){ CURRENTLEVEL.setup("demo/mountain"); }},
                     {"text": "No", "effect": "##CLOSE"},
@@ -30,7 +30,7 @@ var brave = function() {
 var m = new SM_Mountain(450, 200, gen.get(), `Holy mountain`);
 m.interaction = function() {
   TextBannerSequence.make(
-    ["This is the holy mountain where the Goddess protecting $$town_1$ reside. No mortal is allowed to enter."]
+    ["This is the holy mountain where the Goddess protecting $$town_1$ reside.", "You are not supposed to go there."]
     , brave);
 }
 
