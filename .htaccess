@@ -1,4 +1,4 @@
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ "http://www.yoannbourse.com" [L,QSA]
+RewriteRule ^(.*)$ "index.html" [L,QSA]
