@@ -26,20 +26,29 @@ setTimeout(function(){
   adapt_sprite(s2, 2);
 }, 500);
 
-var startLevel = "000_introduction$";
+
+
+var options = [];
 var title = "";
 if (isTrial){
-  startLevel = "demo/town";
-  title = "This is a demo version of the upcoming RPG Ren's Devils by yo252yo (WIP).<br /> It is a self-contained story that has nothing to do with the events of the actual game, but it shares some of the mechanics, design and atmosphere to give you a taste of what to expect.";
+  document.title = "Ren's DEMO";
+  title = "Demo version of the upcoming RPG Ren's Devils by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a totally self-contained different story (i.e. no spoil).";
+  options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("demo/town"); }});
+} else {
+  options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }});
 }
 
-new CenteredTextMenu(title,
-              [
-                {"text": "New game", "effect": function(){ CURRENTLEVEL.setup(startLevel); }},
-                {"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } },
-                {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
-                {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
-                {"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }},
-             ]);
+options.push({"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } });
+options.push({"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }});
+options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
 
- FOG.stop();
+if (isTrial) {
+  options.push({"text": "Updates on full version", "keep_open": true,"effect": function(){ window.open("https://www.twitter.com/yo252yo"); }});
+} else{
+  options.push({"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }});
+  options.push({"text": "Ren's DEMO", "effect": function(){ CURRENTLEVEL.setup("demo/town"); }} )
+}
+
+new CenteredTextMenu(title, options);
+
+FOG.stop();

@@ -3,7 +3,7 @@ const CREDITS = {
    <h3>Game by</h3>
    <a href="http://yo252yo.wordpress.com/" target="_blank">yo252yo</a>
 
-   <h3>Assets credits</h3>
+   <h3>Assets</h3>
 
    <b>Music</b>:
    <a href="https://loyaltyfreakmusic.com/" target="_blank">loyaltyfreakmusic</a>
