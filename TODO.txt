@@ -1,5 +1,47 @@
 
 
+limit keys to skip dial
+Mobile skip dial by button tap not screen tap
+
+IPhone max resolution
+Js safari la caméra ce centre pas au debut
+Et ça saccade de batard
+
+
+aggrandir hitbox de sortie des batiments
+
+mettre temps de jeu sur l'ecran titre de demo
+
+1 action par object
+
+better dialog for xp, explaining where it comes from (discover/explore)
+
+popup you purchased something
+
+adapter le nombre d'options en combat au nombre total d'actions dispo, si on a peu d'abilities tu les display tous sinon tu display que un peu
+
+le dialogue de fuite sous entendent que lenemi part
+
+mettre une icone autosave
+
+highlight l'option selectionnere en battle
+
+mb one more hit has special dialog
+
+Loot un peu plus, en particulier le premier encounter
+
+Display price in martyrdom menu
+Display martyrdom point message
+
+Shorthand for text you read a lot so you dont have to read too much (spells, etc)
+
+Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
+
+Escape in battle should sometimes not be crossed and should always be at the bottom
+mb not escape on all objet
+turn away = flee
+
+
 --------------------------
 REAL GAME CHANGES:
 

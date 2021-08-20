@@ -24,6 +24,8 @@ menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls
 
 if theres a guy behind a house interaction interacts with the house (most prominent object)
 
+non rectangular hitboxes
+
 make experience menu multi tiered
 
 sprite for each party member
