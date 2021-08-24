@@ -8,42 +8,6 @@ var _RUNNING_BONUS = 1.8;
 
 class MovingObject extends LevelObject {
 
-  static auto_walk(moving_object) {
-    if (!moving_object || !moving_object.sprite || ! moving_object.is_walking()) {
-      return;
-    }
-    if (moving_object.is_at(moving_object.destination_x, moving_object.destination_y)) {
-        if(moving_object.walk_callback){
-          moving_object.walk_callback();
-        }
-        moving_object.stop_autowalk();
-        return;
-    }
-
-    var dx = moving_object.destination_x - moving_object.x;
-    var dy = moving_object.destination_y - moving_object.y;
-
-    var coef = moving_object._movement_increment() / Math.sqrt(dx * dx + dy * dy);
-    if (coef < 1) {
-      dx = Math.floor(dx * coef);
-      dy = Math.floor(dy * coef);
-    }
-
-    if (moving_object._try_walk_by_pixels(dx, dy)) {
-      setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
-      return;
-    } else if (moving_object._try_walk_by_pixels(dx, 0)) {
-      setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
-      return;
-    } else if (moving_object._try_walk_by_pixels(0, dy)) {
-      setTimeout(function() { MovingObject.auto_walk(moving_object); }, _AUTO_WALK_TICK);
-      return;
-    } else {
-      moving_object.stop_autowalk();
-      return;
-    }
-  }
-
   static try_make_walk_to(moving_object, x, y, callback) {
       return moving_object.try_walk_to(x,y, callback);
   }
@@ -99,10 +63,53 @@ class MovingObject extends LevelObject {
      return this.destination_x  != -1 || this.destination_y != -1;
   }
 
+  auto_walk_tick () {
+    if (this.is_at(this.destination_x, this.destination_y)) {
+        if(this.walk_callback){
+          this.walk_callback();
+        }
+        this.stop_autowalk();
+        return;
+    }
+
+    var dx = this.destination_x - this.x;
+    var dy = this.destination_y - this.y;
+
+    var coef = this._movement_increment() / Math.sqrt(dx * dx + dy * dy);
+    if (coef < 1) {
+      dx = Math.floor(dx * coef);
+      dy = Math.floor(dy * coef);
+    }
+
+    if (this._try_walk_by_pixels(dx, dy)) {
+      return true;
+    } else if (this._try_walk_by_pixels(dx, 0)) {
+      return true;
+    } else if (this._try_walk_by_pixels(0, dy)) {
+      return true;
+    } else {
+      this.stop_autowalk();
+      return;
+    }
+  }
+
+  start_auto_walk() {
+    if (!this || !this.sprite || ! this.is_walking()) {
+      return;
+    }
+    var self = this;
+    this.walk_interval = setInterval(function(){
+      self.auto_walk_tick();
+    }, _AUTO_WALK_TICK);
+  }
+
   stop_autowalk() {
-      this.destination_x = -1;
-      this.destination_y = -1;
-      delete this.walk_callback;
+    this.destination_x = -1;
+    this.destination_y = -1;
+    if(this.walk_interval){
+      clearInterval(this.walk_interval);
+    }
+    delete this.walk_callback;
   }
 
   change_speed(new_speed) {
@@ -156,7 +163,7 @@ class MovingObject extends LevelObject {
     this.walk_callback = callback;
 
     if (!currently_moving) {
-      MovingObject.auto_walk(this);
+      this.start_auto_walk();
     }
   }
 
@@ -166,7 +173,7 @@ class MovingObject extends LevelObject {
     this.destination_y = this.y + dy;
 
     if (!currently_moving) {
-      MovingObject.auto_walk(this);
+      this.start_auto_walk();
     }
   }
 
