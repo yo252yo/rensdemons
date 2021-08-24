@@ -6,6 +6,7 @@ Mobile skip dial by button tap not screen tap
 IPhone max resolution
 Js safari la caméra ce centre pas au debut
 Et ça saccade de batard
+>CURRENTLEVEL.triggers and IO._CONTINUOUS_KEY_PRESS_TIC are using timeouts
 
 
 aggrandir hitbox de sortie des batiments
