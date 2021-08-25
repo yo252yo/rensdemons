@@ -1,4 +1,4 @@
-Ren's Devils FAQ/Walkthrough
+Ren's Demons FAQ/Walkthrough
 Version 0.0, April 13, 2009
 By Ryl3
 
@@ -34,7 +34,7 @@ By Ryl3
 -------------------------------------------------------------------------------
 ===============================================================================
 
-This is a guide to the game Ren's Devils by yo252yo. This is my first time writing a walkthrough, I hope I'll do good enough of a job to help those who need it.
+This is a guide to the game Ren's Demons by yo252yo. This is my first time writing a walkthrough, I hope I'll do good enough of a job to help those who need it.
 I wanted to write a guide for this little indie game because I felt that it was a pretty interesting project, but parts of it are pretty challenging. The ending, in particular, can be tricky to understand. With this guide, I hope that I can share my passion for this game, and make it accessible to everyone!
 I'll try to keep the spoilers to a minimum and properly tag them, but this is a text file describing all the contents of the game, so you'll have to do your part too ^^
 
@@ -44,7 +44,7 @@ I'll try to keep the spoilers to a minimum and properly tag them, but this is a 
 -------------------------------------------------------------------------------
 ===============================================================================
 
-Ren's Devils is definitely a weird game. It's a web browser game (if you got it anywhere else, know that what you're getting is actually a web browser) that is kind of a mix between a traditional JRPG, a text-based adventure game (chose your own adventure) or a visual novel, maybe.
+Ren's Demons is definitely a weird game. It's a web browser game (if you got it anywhere else, know that what you're getting is actually a web browser) that is kind of a mix between a traditional JRPG, a text-based adventure game (chose your own adventure) or a visual novel, maybe.
 TODO: more??
 
 ===============================================================================

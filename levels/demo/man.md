@@ -1,19 +1,19 @@
-# Ren's Devils engine manual
+# Ren's Demons engine manual
 
-- [Ren's Devils engine manual](#ren-s-devils-engine-manual)
+- [Ren's Demons engine manual](#ren-s-demons-engine-manual)
   * [ABOUT](#ABOUT)
   * [WINNING THE DEMO](#WINNING-THE-DEMO)
   * [ENGINE DOCUMENTATION](#ENGINE-DOCUMENTATION)
 
 ## ABOUT
 
-Ren's Devils is an upcoming game written in a custom js game engine for any computer/phone that runs a webbrowser. Its engine is accessible to anyone from the js console, or its code on github.
+Ren's Demons is an upcoming game written in a custom js game engine for any computer/phone that runs a webbrowser. Its engine is accessible to anyone from the js console, or its code on github.
 
 In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo**.
 
 ## WINNING THE DEMO
 
-In the demo of Ren's Devils, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities.
+In the demo of Ren's Demons, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities.
 
 In order to beat the demo, you need to **break this cycle**. One option is of course to close the game and move away, but it's not very satisfactory, is it :)
 

@@ -32,7 +32,7 @@ var options = [];
 var title = "";
 if (isTrial){
   document.title = "Ren's DEMO";
-  title = "Demo version of the upcoming RPG Ren's Devils by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).";
+  title = "Demo version of the upcoming RPG Ren's Demons by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).";
   options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("demo/town"); }});
 } else {
   options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }});
