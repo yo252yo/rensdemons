@@ -4,8 +4,6 @@ Mobile skip dial by button tap not screen tap
 
 aggrandir hitbox de sortie des batiments
 
-mettre temps de jeu sur l'ecran titre de demo
-
 1 action par object
 
 better dialog for xp, explaining where it comes from (discover/explore)
@@ -24,9 +22,6 @@ mb one more hit has special dialog
 
 Loot un peu plus, en particulier le premier encounter
 
-Display price in martyrdom menu
-Display martyrdom point message
-
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
 
 Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
@@ -34,6 +29,10 @@ Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme ch
 Escape in battle should sometimes not be crossed and should always be at the bottom
 mb not escape on all objet
 turn away = flee
+
+
+
+
 
 
 --------------------------

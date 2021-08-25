@@ -39,7 +39,8 @@ var flavortext = RANDOM.pick(
   "This is not how it's supposed to be.",
   "There's another way.",
   "Your quest goes on."]);
-new CenteredTextMenu("<i>"+flavortext+"</i>", options);
+new CenteredTextMenu("<i>"+flavortext+"</i><br />Reap the fruits of your misfortune in the Martyrdom menu.", options);
+
 
 STATS.record.death();
 MARTYRDOM.death();

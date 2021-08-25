@@ -44,7 +44,7 @@ const MARTYRDOM = {
       // in case we buy fog
       FOG.moveToChar();
     } else {
-      alert(`Not enough martyrdom (required ${p}).`);
+      alert(`Not enough martyrdom`);
     }
   },
 
@@ -67,6 +67,7 @@ const MARTYRDOM = {
 
     price: function(category_index) {
       var ladder = [2, 4, 8, 15, 30, 50, 75, 100];
+      console.log(category_index);
       var n = MARTYRDOM._get.lvl(MARTYRDOMS[category_index]);
       if(n <= 7){
         return ladder[n];
@@ -79,18 +80,18 @@ const MARTYRDOM = {
   display: {
     _category: function(category_index){
       var category = MARTYRDOMS[category_index];
-      return `${category} (${MARTYRDOM._get.lvl(category)})`;
+      return `${category} ${MARTYRDOM._get.lvl(category)} (${MARTYRDOM._get.price(category_index)}X)`;
     },
 
     _fill_menu: function(){
       if(!MARTYRDOM.menu){return;}
       var title = "<b>Martyrdom</b><hr/>";
       if (MARTYRDOM._spare_points > 0){
-        title += "Unspent: " + MARTYRDOM._spare_points + "<br />";
+        title += "Unspent: " + MARTYRDOM._spare_points + "X<br />";
       } else {
         title += "No spare martyrdom<br />";
       }
-      title += "Pray for better:";
+      title += "Pray for better...";
       var options = [];
       for(var i in MARTYRDOMS){
         (function (index){
