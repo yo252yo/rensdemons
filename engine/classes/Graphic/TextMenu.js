@@ -67,6 +67,9 @@ class TextMenu extends TextElement {
       this.html_menu.innerHTML = "";
       var selected_element = null;
       for (var i in this.options){
+          if(! this.options[i]){ // Some rows may be deleted, see BATTLE.js for example
+            continue;
+          }
           var current_item = document.createElement('div');
           // Closure because weird loop behavior.
           // please explicit the function and the call like var f = function

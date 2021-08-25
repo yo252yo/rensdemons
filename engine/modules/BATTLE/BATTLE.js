@@ -28,47 +28,7 @@ const BATTLE = {
       return true;
     },
 
-    player: function() {
-      var options = [];
-      for (var i in BATTLE._player_actions) {
-        if (! BATTLE.turn_factory._is_option_available(i)) {
-          continue;
-        }
-        (function(index){
-          var f = function() {
-            // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).
-            var action = undefined;
-            if (BATTLE._player_actions[index]) {
-              action = BATTLE._player_actions[index];
-            } else {
-              for(var i in BATTLE._player_actions){
-                if (i.startsWith(index)){
-                  action = BATTLE._player_actions[i];
-                }
-              }
-            }
-            BATTLE._last_action = index.trim();
-            if (DICTIONARY.has(BATTLE._last_action)){
-              BATTLE._last_action = DICTIONARY.get(BATTLE._last_action);
-            }
-            var text = action();
-            // If I don't go through timeout, I think the event canceling blocks IO for the banner.
-            if (text) {
-              setTimeout(function(){
-                TextBannerSequence.make(text, BATTLE.operations.play_monster);
-              }, 200);
-            } else {
-              setTimeout( BATTLE.operations.play_monster, 200);
-            }
-            return true;
-          };
-          var menu_entry = BATTLETREE.display.stylize(index, BATTLE.current_battle);
-          options.push({"text": menu_entry, "effect": f});
-        })(i);
-      }
-
-//BATTLE._last_action
-      // Order the battle menu options.
+    _order_player_actions: function(options){
       var options_pursue = [];
       var options_winning = [];
       var options_unknown = [];
@@ -92,9 +52,74 @@ const BATTLE = {
             options_unknown.push(o);
           }
       }
+
       RANDOM.shuffle(options_winning);
       RANDOM.shuffle(options_unknown);
-      new BattleMenu("", options_pursue.concat(options_winning).concat(options_started).concat(options_unknown).concat(options_losing).concat(options_flight));
+
+      // Only keep 3 losing unknown actions
+      var useless_options_unknown = 0;
+      for (var i in options_unknown){
+        var b = BATTLE._player_actions[options_unknown[i].text];
+        if(!b){ // text has been modified by dictionary
+          b = BATTLE._player_actions[options_unknown[i].index];
+        }
+        if (b && b.outcome){ // outcome null is most often win in several hits
+          if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
+            useless_options_unknown ++;
+            if (useless_options_unknown > 3){
+              options_unknown[i] = undefined;
+            }
+          }
+        }
+      }
+
+      var result = options_pursue.concat(options_winning).concat(options_started).concat(options_unknown);
+      if (options.length <= 10) {
+        result = result.concat(options_losing);
+      }
+      return result.concat(options_flight);
+    },
+
+    player: function() {
+      var options = [];
+      for (var i in BATTLE._player_actions) {
+        if (! BATTLE.turn_factory._is_option_available(i)) {
+          continue;
+        }
+        (function(index){
+          var f = function() {
+            // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).
+            var action = undefined;
+            if (BATTLE._player_actions[index]) {
+              action = BATTLE.player_actions._make_player_action(BATTLE._player_actions[index]);
+            } else {
+              for(var i in BATTLE._player_actions){
+                if (i.startsWith(index)){
+                  action =  BATTLE.player_actions._make_player_action(BATTLE._player_actions[i]);
+                }
+              }
+            }
+            BATTLE._last_action = index.trim();
+            if (DICTIONARY.has(BATTLE._last_action)){
+              BATTLE._last_action = DICTIONARY.get(BATTLE._last_action);
+            }
+            var text = action();
+            // If I don't go through timeout, I think the event canceling blocks IO for the banner.
+            if (text) {
+              setTimeout(function(){
+                TextBannerSequence.make(text, BATTLE.operations.play_monster);
+              }, 200);
+            } else {
+              setTimeout( BATTLE.operations.play_monster, 200);
+            }
+            return true;
+          };
+          var menu_entry = BATTLETREE.display.stylize(index, BATTLE.current_battle);
+          options.push({"index": index, "text": menu_entry, "effect": f});
+        })(i);
+      }
+
+      new BattleMenu("", BATTLE.turn_factory._order_player_actions(options));
     },
 
     monster: function(text, dodge_difficulty) {
@@ -168,7 +193,7 @@ const BATTLE = {
     },
 
     add: function(action_object) {
-      BATTLE._player_actions[action_object.name] = BATTLE.player_actions._make_player_action(action_object);
+      BATTLE._player_actions[action_object.name] = action_object;//BATTLE.player_actions._make_player_action(action_object);
 
       if (action_object.replacing) {
         BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
