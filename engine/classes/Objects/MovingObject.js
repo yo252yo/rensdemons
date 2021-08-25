@@ -3,7 +3,7 @@
 
 var _BASE_WALKING_INCREMENT = 5;
 var _IS_AT_PRECISION = 5.1;
-var _AUTO_WALK_TICK = 50; // 30 is better
+var _AUTO_WALK_TICK = 30;
 var _RUNNING_BONUS = 1.8;
 
 class MovingObject extends LevelObject {
