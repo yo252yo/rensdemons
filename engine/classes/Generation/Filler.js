@@ -56,10 +56,9 @@ class Filler {
   }
 
   _canBuild(x, y) {
-    var grain = 20;
-    for(var i = -1 * grain; i <= this.obj_w + grain; i += grain){
-      for(var j = -1 * grain; j <= this.obj_h + grain; j += grain){
-        if(!CURRENTLEVEL.io.is_walkable(x + i, y - j)){
+    for(var i = -0.1; i <= 1.1; i += 0.2){
+      for(var j = -0.1; j <= 1.1; j += 0.2){
+        if(!CURRENTLEVEL.io.is_walkable(x + this.obj_w * i, y - this.obj_h * j)){
           return false;
         }
       }
