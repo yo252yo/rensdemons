@@ -53,7 +53,6 @@ class S_SandFloor extends S_Floor {
 
 class S_WoodFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
-    console.log(w);
     super(x, y, w, h, undefined, undefined, "assets/patterns/wood.png");
   }
 }
@@ -68,7 +67,6 @@ class S_TownFloor extends S_Floor {
     var right_border = new S_Floor(x+w-10, y + exit, exit+10, h+2*exit, 'obj_dark', outside);
     var top_border = new S_Floor(x-exit, y-h+10, w+2*exit, exit+10, 'obj_dark', outside);
     var bot_border = new S_Floor(x-exit, y+exit, w+2*exit, exit+10, 'obj_dark', outside);
-
   }
 }
 
