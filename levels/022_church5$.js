@@ -33,7 +33,7 @@ v.interaction = function() {
   ]);
 };
 
-new M_Trainer(100, 300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 500);
-new M_Trainer(475, 150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 1000);
+new M_Trainer(100, 300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
+new M_Trainer(475, 150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
 
 CURRENTLEVEL.initialize_with_character(275, 750);

@@ -59,8 +59,8 @@ hp.interaction = function() {
 }
 
 
-new M_Trainer(100, 650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 500);
-new M_Trainer(450, 650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 500);
+new M_Trainer(100, 650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 750);
+new M_Trainer(450, 650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
 
 
 CURRENTLEVEL.start_function = function(){

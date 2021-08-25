@@ -8,8 +8,8 @@ new S_Church(950, 300, "021_church4$");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 100, 1000, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 10000, 1825, 900, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 1000, 1200, 375, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 1000, 1500, 600, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 1200, 375, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 1500, 600, gen.get());
 
 
 var houseFiller = new Filler(gen);

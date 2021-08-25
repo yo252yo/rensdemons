@@ -215,7 +215,7 @@ const PLAYER_ACTIONS = {
   kill_with_anything_over: function(threshold){
     var prices = TRAINER.get_prices();
     for (var i in prices){
-      if(prices[i] >= 2*threshold) {
+      if(prices[i] >= TRAINER.xp_to_gold_multiplier * threshold) {
         PLAYER_ACTIONS.win(i, 1);
       } else {
         PLAYER_ACTIONS.useless(i);
@@ -234,7 +234,7 @@ const PLAYER_ACTIONS = {
         PLAYER_ACTIONS.useless(i);
       }
     }
-    
+
     for(var i in PARTYMEMBERS){
       PLAYER_ACTIONS.useless(i);
     }

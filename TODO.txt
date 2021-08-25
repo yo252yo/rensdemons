@@ -2,28 +2,16 @@ NEW INTERFACE:
 - Mobile skip dial by button tap not screen tap
 - mettre une icone autosave
 
-
 limit keys to skip dial (ctrl/alt)
-
 
 better dialog for xp, explaining where it comes from (discover/explore)
 
-
-
-review money vs xp, increase ?
-
-
-
-
 Loot un peu plus, en particulier le premier encounter
-
 
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
 
-
 Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
 > turn ppl into battleobjects? ??
-
 
 2 action par object
 BATTLEOBJECT add ignore is a random option

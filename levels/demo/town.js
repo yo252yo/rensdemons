@@ -11,8 +11,8 @@ new S_Church(450, 500, "demo/church");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 70, 150, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 220, 150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 300, 370, 150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 300, 520, 150, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 370, 150, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 500, 520, 150, gen.get());
 
 var houseFiller = new Filler(gen);
 houseFiller.set_zone(75, 625, 550, 550);
