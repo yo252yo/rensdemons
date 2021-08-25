@@ -56,7 +56,7 @@ LANGUAGE.actions[ABILITY.Flee] = {
     return RANDOM.pick([
       `In a stroke of luck, you manage to escape.`,
       `The $$&ENEMY$ chases you for a bit, but you manage to escape.`,
-      `As you turn around, the $$&ENEMY$ loses interest and runs off in the distance.`,
+      `As you turn around, the $$&ENEMY$ loses interest and lets you run off in the distance.`,
     ]);
   },
 };

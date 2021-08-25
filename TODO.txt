@@ -8,8 +8,6 @@ better dialog for xp, explaining where it comes from (discover/explore)
 
 adapter le nombre d'options en combat au nombre total d'actions dispo, si on a peu d'abilities tu les display tous sinon tu display que un peu
 
-le dialogue de fuite sous entendent que lenemi part
-
 mettre une icone autosave
 
 highlight l'option selectionnere en battle
