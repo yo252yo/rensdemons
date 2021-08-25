@@ -89,21 +89,23 @@ class TextMenu extends TextElement {
           item.addEventListener('mousemove', select);
           }(current_item, i));
 
-          var html = "";
+          var prefix = "";
+          var suffix = "";
           if (!this.options[i]["text"] || this.options[i]["text"][0] == " "){
              if (i == this.selected){
-              html += ".";
+              prefix += ".";
              } else{
-              html += "&nbsp;";
+              prefix += "&nbsp;";
             }
           } else if (i == this.selected){
-              html += ">";
+              prefix += "<span class='highlighted'>>";
+              suffix += "<</span>";
               selected_element = current_item;
           } else {
-              html += "_";
+              prefix += "_";
           }
 
-          current_item.innerHTML = html + this.options[i]["text"];
+          current_item.innerHTML = prefix + this.options[i]["text"] + suffix;
           this.html_menu.appendChild(current_item);
       }
       return selected_element;

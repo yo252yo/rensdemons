@@ -22,6 +22,11 @@ body {
   z-index:1000;
 }
 
+.highlighted {
+  background-color: #FFFFFF33;
+  border: 1px dotted;
+}
+
 @keyframes expand {
   0%   {width: 1px; height: 1px;}
   100% {left:0px; top:0px; width: 100%; height: 100%; }
