@@ -41,6 +41,7 @@ const MARTYRDOM = {
       MARTYRDOM._progress.increment([MARTYRDOMS[category_index]]);
       MARTYRDOM._spare_points -= p;
       MARTYRDOM.display._fill_menu();
+      alert("Acquired " + MARTYRDOMS[category_index]);
       // in case we buy fog
       FOG.moveToChar();
     } else {

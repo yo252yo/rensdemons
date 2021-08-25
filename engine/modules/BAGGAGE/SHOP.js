@@ -60,8 +60,8 @@ const SHOP = {
       if (INVENTORY.cash() >= price){
         INVENTORY.increase(object);
         INVENTORY.decrease(ITEM.Coin, price);
+        alert("Purchased " + object);
       }
-
       SHOP._current_menu.close();
       SHOP._menu.buy();
     },

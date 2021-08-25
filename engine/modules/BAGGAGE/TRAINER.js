@@ -25,6 +25,7 @@ _TRAINER_PRICES[ABILITY.Mystify] = 5000;
 const TRAINER = {
   _buy: function(ability){
     if (INVENTORY.count(ITEM.XpToken) >= _TRAINER_PRICES[ability]){
+      alert("Learned " + ability);
       ABILITIES.unlock(ability);
       INVENTORY.decrease(ITEM.XpToken, _TRAINER_PRICES[ability]);
     }
