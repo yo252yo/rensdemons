@@ -268,7 +268,6 @@ BATTLE.monster_actions.add_textual(`${name} goes on in pointless details about h
 // ===================
 //hack BASE ACTIONS
 // ===================
-BATTLETREE.api.declare_all(BATTLE.current_battle, escapes);
 PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 

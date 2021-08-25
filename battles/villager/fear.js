@@ -258,7 +258,6 @@ BATTLE.monster_actions.add_textual(`${name} asks you an embarrassing questions.`
 // ===================
 //hack BASE ACTIONS
 // ===================
-BATTLETREE.api.declare_all(BATTLE.current_battle, escapes);
 PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 
