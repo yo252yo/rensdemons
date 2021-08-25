@@ -17,6 +17,14 @@ LANGUAGE.battle = {
                         `You escape from this encounter.`,
                         `You manage to make your way out of this situation.`]);
   },
+
+  several_hit_feedback: function (){
+    return [`It's clearly effective, but you can tell that one hit is not enough to bring down your enemy. You're going to need more!`];
+  },
+
+  last_hit_feedback: function (){
+    return [`You're almost there! Just one more hit!`];
+  },
 };
 
 LANGUAGE.actions.generic = {
