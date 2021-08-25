@@ -2,8 +2,6 @@
 limit keys to skip dial
 Mobile skip dial by button tap not screen tap
 
-aggrandir hitbox de sortie des batiments
-
 1 action par object
 
 better dialog for xp, explaining where it comes from (discover/explore)

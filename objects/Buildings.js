@@ -59,7 +59,17 @@ class S_WoodFloor extends S_Floor {
 
 class S_ExitFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
-    super(x, y, w, h, 'obj_dark', outside);
+    super(x, y, w, h, 'obj_dark', outside, "assets/patterns/exit.png");
+  }
+
+  is_interactible(x,y) {
+    var margin = 15;
+    if (x >= this.x - margin && x <= this.x + this.w + margin) {
+      if (y >= this.y - this.h - margin && y <= this.y + margin) {
+        return true;
+      }
+    }
+    return false;
   }
 }
 
