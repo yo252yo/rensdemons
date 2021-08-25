@@ -4,7 +4,6 @@ var s0 = new LevelObject(new StaticSprite("assets/screens/title_layer0.png", 'pl
 var s1 = new LevelObject(new StaticSprite("assets/screens/title_layer1.png", 'background'), 0, SCREEN.height());
 var s2 = new LevelObject(new StaticSprite("assets/screens/title_layer2.png", 'obj_light'), 0, SCREEN.height());
 
-var isTrial = !(window.location.href.includes("ren") && !window.location.href.includes("trial"));
 
 function adapt_sprite(s, depth) {
   s.visual_element.container.style.top = "0px";
@@ -30,19 +29,17 @@ setTimeout(function(){
 
 var options = [];
 var title = "";
-if (isTrial){
+if (INTERFACE.is_trial()) {
   document.title = "Ren's DEMO";
   title = "Demo version of the upcoming RPG Ren's Demons by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).";
-  options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("demo/town"); }});
-} else {
-  options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }});
 }
 
+options.push({"text": "New game", "effect": function(){ INTERFACE.start_game() }});
 options.push({"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } });
 options.push({"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }});
 options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
 
-if (isTrial) {
+if (INTERFACE.is_trial()) {
   options.push({"text": "Updates on full version", "keep_open": true,"effect": function(){ window.open("https://www.twitter.com/yo252yo"); }});
 } else{
   options.push({"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }});

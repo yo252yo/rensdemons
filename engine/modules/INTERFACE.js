@@ -126,5 +126,17 @@ const INTERFACE = {
     var compass = new StaticSprite("assets/interface/windrose.png", 'player');
     compass.container.id="fog_adjacent";
     compass.container.style.zIndex = 11000;
-  }
+  },
+
+  is_trial: function(){
+    return !(window.location.href.includes("ren") && !window.location.href.includes("trial"));
+  },
+
+  start_game: function(){
+    if (INTERFACE.is_trial()){
+      CURRENTLEVEL.setup("demo/town");
+    } else {
+      CURRENTLEVEL.setup("000_introduction$");
+    }
+  },
 }

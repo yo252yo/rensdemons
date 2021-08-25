@@ -32,7 +32,7 @@ if (BATTLE.api.can_reload()) {
   options.push({"text": "Retry event", "effect": function(){ BATTLE.api.reload(); }});
 }
 options.push({"text": "Load", "effect": function(){ SAVE.print.load_menu(); }});
-options.push({"text": "New game", "effect": function(){ CURRENTLEVEL.setup("000_introduction$"); }});
+options.push({"text": "New game", "effect": function(){ INTERFACE.start_game(); }});
 
 var flavortext = RANDOM.pick(
   ["This is not how you die.",
