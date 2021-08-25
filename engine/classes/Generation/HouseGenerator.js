@@ -120,7 +120,7 @@ class HG_Room {
     }
 
     main_entrance(outside) {
-      var f = new S_Floor(this.x + 0.5*this.w - 25, this.y + 25, 50, 35, 'obj_dark', outside);
+      var f = new S_ExitFloor(this.x + 0.5*this.w - 25, this.y + 25, 50, 35, outside);
       return [this.x + 0.5*this.w - 15, this.y + 5];
     }
 }

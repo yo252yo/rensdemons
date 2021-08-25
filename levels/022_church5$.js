@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_Floor(250,775,100,35, 'obj_dark', '022_town5');
+var f = new S_ExitFloor(250,775,100,35, '022_town5');
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);

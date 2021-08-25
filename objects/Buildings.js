@@ -57,16 +57,22 @@ class S_WoodFloor extends S_Floor {
   }
 }
 
+class S_ExitFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h, 'obj_dark', outside);
+  }
+}
+
 class S_TownFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
     super(x, y, w, h, undefined, undefined, "assets/patterns/town.png");
 
     var exit = 40;
 
-    var left_border = new S_Floor(x-exit, y+exit, exit+10, h+2*exit, 'obj_dark', outside);
-    var right_border = new S_Floor(x+w-10, y + exit, exit+10, h+2*exit, 'obj_dark', outside);
-    var top_border = new S_Floor(x-exit, y-h+10, w+2*exit, exit+10, 'obj_dark', outside);
-    var bot_border = new S_Floor(x-exit, y+exit, w+2*exit, exit+10, 'obj_dark', outside);
+    var left_border = new S_ExitFloor(x-exit, y+exit, exit+10, h+2*exit, outside);
+    var right_border = new S_ExitFloor(x+w-10, y + exit, exit+10, h+2*exit, outside);
+    var top_border = new S_ExitFloor(x-exit, y-h+10, w+2*exit, exit+10, outside);
+    var bot_border = new S_ExitFloor(x-exit, y+exit, w+2*exit, exit+10, outside);
   }
 }
 

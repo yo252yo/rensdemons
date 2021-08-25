@@ -80,7 +80,7 @@ events.fill_by_retry();
 //hack FINISHING ELEMENTS (exit)
 // ===================
 
-new S_Floor(1800,425,75,100, 'obj_dark', '024_squids');
+new S_ExitFloor(1800,425,75,100, '024_squids');
 
 // ===================
 //hack START

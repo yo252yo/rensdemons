@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_Floor(250,775,100,35, 'obj_dark', '020_town2');
+var f = new S_ExitFloor(250,775,100,35, '020_town2');
 
 var wiseOldFool = new M_Priest(500, 125);
 

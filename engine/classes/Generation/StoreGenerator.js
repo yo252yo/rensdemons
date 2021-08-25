@@ -11,7 +11,7 @@ class StoreGenerator {
     }
 
     main_entrance() {
-      var f = new S_Floor(335, 525, 50, 35, 'obj_dark', this.outside);
+      var f = new S_ExitFloor(335, 525, 50, 35, this.outside);
       return  [350, 505];
     }
 

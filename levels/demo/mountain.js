@@ -18,9 +18,9 @@ new S_SandFloor(850,1350,200,25);
 new S_SandFloor(825,1400,100,150);
 
 
-var f = new S_Floor(375,1425,50,125, 'obj_dark', 'demo/world_map');
+var f = new S_ExitFloor(375,1425,50,125, 'demo/world_map');
 
-var door = new S_Floor(850,1250,50,25, 'obj_dark', 'demo/cavern');
+var door = new S_ExitFloor(850,1250,50,25, 'demo/cavern');
 
 new S_SavePoint(500, 1375);
 

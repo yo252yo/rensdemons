@@ -72,7 +72,7 @@ new S_Floor(325,2150,25,100);
 new S_Floor(300,2100,75,75);
 
 // door
-var door = new S_Floor(850,1250,50,25, 'obj_dark');
+var door = new S_ExitFloor(850,1250,50,25);
 door.interaction = function() {
   if(INVENTORY.count(ITEM.ShelterKey) > 0){
     TextBannerSequence.make([
@@ -201,7 +201,7 @@ events.fill_by_retry();
 //hack FINISHING ELEMENTS (exit)
 // ===================
 
-var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
+var f = new S_ExitFloor(900,2500,200,75, '010_world_map');
 
 // ===================
 //hack START

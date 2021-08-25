@@ -99,7 +99,7 @@ events.fill_by_retry();
 //hack FINISHING ELEMENTS (exit)
 // ===================
 
-new S_Floor(850,1250,50,50, 'obj_dark', '025_harpies');
+new S_ExitFloor(850,1250,50,50, '025_harpies');
 
 // ===================
 //hack START

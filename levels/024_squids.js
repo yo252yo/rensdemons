@@ -94,8 +94,8 @@ var leave = function(){
   CURRENTLEVEL.setup('010_world_map');
   INVENTORY.decrease(access);
 }
-var f1 = new S_Floor(900,2525,200,125, 'obj_dark');
-var f2 = new S_Floor(950,2650,100,200, 'obj_dark');
+var f1 = new S_ExitFloor(900,2525,200,125);
+var f2 = new S_ExitFloor(950,2650,100,200);
 
 f1.interaction = leave;
 f2.interaction = leave;

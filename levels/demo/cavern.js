@@ -48,7 +48,7 @@ computer.interaction = function(){
 
 
 new S_Floor(50,450,400,400);
-new S_Floor(150,475,200,50, 'obj_dark', 'demo/mountain');
+new S_ExitFloor(150,475,200,50, 'demo/mountain');
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

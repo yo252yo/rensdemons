@@ -8,7 +8,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*10);
 //hack FIXED ELEMENTS (floors)
 // ===================
 
-var f = new S_Floor(900,2500,200,75, 'obj_dark', '010_world_map');
+var f = new S_ExitFloor(900,2500,200,75, '010_world_map');
 
 var hallways = [
   new S_Floor(625,2000,750,50),

@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_Floor(250,775,100,35, 'obj_dark', 'demo/town');
+var f = new S_ExitFloor(250,775,100,35, 'demo/town');
 
 var win = function(){
   CURRENTLEVEL.setup("demo/end");

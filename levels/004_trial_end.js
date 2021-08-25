@@ -2,7 +2,7 @@ ABILITIES.unlock("_trial_passed"); // redundant
 
 new Snippet("levels/decors/temple");
 
-new S_Floor(250,775,100,35, 'obj_dark', '005_town1');
+new S_ExitFloor(250,775,100,35, '005_town1');
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
