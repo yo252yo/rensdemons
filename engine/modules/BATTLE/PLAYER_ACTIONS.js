@@ -217,6 +217,8 @@ const PLAYER_ACTIONS = {
     for (var i in prices){
       if(prices[i] >= 2*threshold) {
         PLAYER_ACTIONS.win(i, 1);
+      } else {
+        PLAYER_ACTIONS.useless(i);
       }
     }
 
@@ -224,10 +226,20 @@ const PLAYER_ACTIONS = {
     for (var i in prices){
       if(prices[i] >= threshold) {
         PLAYER_ACTIONS.win(i, 1);
+      } else if(
+        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
+        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
+        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Tool).includes(i)
+      ) {
+        PLAYER_ACTIONS.useless(i);
       }
     }
+    
+    for(var i in PARTYMEMBERS){
+      PLAYER_ACTIONS.useless(i);
+    }
 
-    var artifacts = ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact];
+    var artifacts = ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Artifact);
     for(var i of artifacts){
       PLAYER_ACTIONS.win(i, 1);
     }

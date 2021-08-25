@@ -12,31 +12,23 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 
-PLAYER_ACTIONS.useless(PARTYMEMBERS.DisguisedPrincess);
-PLAYER_ACTIONS.useless(PARTYMEMBERS.DumbMuscles);
-
 PLAYER_ACTIONS.win(ABILITY.Fireball, 5);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
-PLAYER_ACTIONS.useless(ABILITY.Shrink, 1);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 4);                // 100  DIPL
-PLAYER_ACTIONS.useless(ABILITY.Sneak, 1);                     // 200  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
-PLAYER_ACTIONS.useless(ITEM.Elixir_venom, 1, true);           // 100  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 150  ALCH
 
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 4);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 75   WEAP
-PLAYER_ACTIONS.useless(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Arrow, 6, true);                  // 5    TOOL
-PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 // ===================

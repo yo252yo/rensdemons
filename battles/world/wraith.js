@@ -13,32 +13,22 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 
-PLAYER_ACTIONS.useless(PARTYMEMBERS.TorturedSoul);
-PLAYER_ACTIONS.useless(PARTYMEMBERS.RetiredProtector);
-PLAYER_ACTIONS.useless(PARTYMEMBERS.StreetSmart);
-
-PLAYER_ACTIONS.useless(ABILITY.Fireball, 1);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
-PLAYER_ACTIONS.useless(ABILITY.Shrink, 1);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 4);                   // 300  SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 100  DIPL
-PLAYER_ACTIONS.useless(ABILITY.Sneak, 1);                     // 200  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
-PLAYER_ACTIONS.useless(ITEM.Elixir_ice, 1, true);             // 50   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);           // 100  ALCH
 
-PLAYER_ACTIONS.useless(ITEM.Sword_wooden, 1);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 4);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 10   TOOL
-PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 // ===================

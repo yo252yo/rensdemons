@@ -15,32 +15,20 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
 PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
 
-PLAYER_ACTIONS.useless(PARTYMEMBERS.UpbeatDojikko);
-PLAYER_ACTIONS.useless(PARTYMEMBERS.GeniusProdigy);
-
 PLAYER_ACTIONS.win(ABILITY.Fireball, 3);                  // 50   ELEM
-PLAYER_ACTIONS.useless(ABILITY.Thunder, 1);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
-PLAYER_ACTIONS.useless(ABILITY.Poison, 4);                    // 75   SPIR
 PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 150  SPIR
-PLAYER_ACTIONS.useless(ABILITY.Petrify, 1);                   // 300  SPIR
 
-PLAYER_ACTIONS.useless(ABILITY.Circumvent, 1);                // 100  DIPL
 PLAYER_ACTIONS.win(ABILITY.Sneak, 3);                     // 200  DIPL
-PLAYER_ACTIONS.useless(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 20   ALCH
-PLAYER_ACTIONS.useless(ITEM.Elixir_venom, 1, true);           // 100  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 150  ALCH
 
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 6);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 75   WEAP
-PLAYER_ACTIONS.useless(ITEM.Shield, 1);                       // 200  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Arrow, 2, true);                  // 5    TOOL
-PLAYER_ACTIONS.useless(ITEM.Rope, 1);                         // 100  TOOL
-PLAYER_ACTIONS.useless(ITEM.Net, 1);                          // 200  TOOL
 
 // ===================
 //hack MONSTER BEHAVIOR
