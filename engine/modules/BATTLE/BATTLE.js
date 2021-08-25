@@ -74,9 +74,12 @@ const BATTLE = {
       var options_unknown = [];
       var options_started = [];
       var options_losing = [];
+      var options_flight = [];
       for (var i in options){
           var o = options[i];
-          if(o.text.includes(BATTLE._last_action)){
+          if(o.text.includes(ABILITY.Escape)){
+            options_flight.push(o);
+          } else if(o.text.includes(BATTLE._last_action)){
             o.text = "<b>" + o.text + "</b>";
             options_pursue.push(o);
           } else if(o.text.startsWith("<b>")){
@@ -91,7 +94,7 @@ const BATTLE = {
       }
       RANDOM.shuffle(options_winning);
       RANDOM.shuffle(options_unknown);
-      new BattleMenu("", options_pursue.concat(options_winning).concat(options_started).concat(options_unknown).concat(options_losing));
+      new BattleMenu("", options_pursue.concat(options_winning).concat(options_started).concat(options_unknown).concat(options_losing).concat(options_flight));
     },
 
     monster: function(text, dodge_difficulty) {
