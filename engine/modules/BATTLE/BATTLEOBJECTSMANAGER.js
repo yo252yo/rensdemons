@@ -32,8 +32,6 @@ const BATTLEOBJECTSMANAGER = {
     }
     new CenteredImage("assets/objects/" + name + ".png", 'background');
 
-    PLAYER_ACTIONS.escape("Turn away");
-
     BATTLEOBJECTSMANAGER.battle.add_from_object(BATTLEOBJECTSMANAGER.buffer);
 
     BATTLE.monster_actions.add_textual(BATTLEOBJECTSMANAGER.buffer.description);

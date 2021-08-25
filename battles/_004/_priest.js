@@ -3,7 +3,7 @@
 // ===================
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
-PLAYER_ACTIONS.escape("Stop talking");
+PLAYER_ACTIONS.escape();
 
 PLAYER_ACTIONS.add({
   name: `"What happened?"`,

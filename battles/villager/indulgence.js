@@ -251,14 +251,8 @@ BATTLE.monster_actions.add_textual(`${name} compliments you and says that appare
 // ===================
 //hack BASE ACTIONS
 // ===================
-var escapes = [
-  "End conversation",
-  "Bid farewell",
-  "Say goodbye",
-  "Run away"
-];
 BATTLETREE.api.declare_all(BATTLE.current_battle, escapes);
-PLAYER_ACTIONS.escape(gen.pick(escapes));
+PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================

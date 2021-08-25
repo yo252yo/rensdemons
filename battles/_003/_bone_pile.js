@@ -1,5 +1,5 @@
 
-PLAYER_ACTIONS.escape("Run away");
+PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.escape("Avert eyes");
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);

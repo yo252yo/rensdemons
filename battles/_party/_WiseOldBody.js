@@ -1,6 +1,6 @@
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
-PLAYER_ACTIONS.escape("Leave");
+PLAYER_ACTIONS.escape();
 BATTLE.operations.add_loot("_wiseOldTraining", 1);
 AUDIO.music.characters.WiseOld();
 

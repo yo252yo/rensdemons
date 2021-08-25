@@ -44,7 +44,7 @@ LANGUAGE.actions[ABILITY.Pray] = {
   },
 };
 
-LANGUAGE.actions[ABILITY.Flee] = {
+LANGUAGE.actions[ABILITY.Escape] = {
   usage: function(){
     return RANDOM.pick([
       `You try to run away.`,

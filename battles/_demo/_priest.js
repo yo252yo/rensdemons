@@ -33,8 +33,8 @@ var unlock_stab2 = PLAYER_ACTIONS.function.unlock_replacing_action({
                 "As he says this, he casually stabs you, as if he had done this to countless other children before."],
 });
 
-var unlock_flee = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Flee",
+var unlock_escape = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: ABILITY.Escape,
   unlock: true,
   outcome: BATTLETREE.LOSS,
   description: ["You turn around, panicked. Your heart is pounding heavily. You start running towards the exit but the priest grabs you by the arm.",
@@ -65,7 +65,7 @@ PLAYER_ACTIONS.add({
   function: function() {
     unlock_stab1("Enquire");
     unlock_stab2("Enquire");
-    unlock_flee("Enquire");
+    unlock_escape("Enquire");
     unlock_help("Enquire");
     BATTLETREE.api.lock("_demo/_priest", "Ambush");
     STATS.record.flag("_demo_died");

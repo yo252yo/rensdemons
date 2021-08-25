@@ -253,14 +253,8 @@ BATTLE.monster_actions.add_textual(`${name} is holding on to your every word, ea
 // ===================
 //hack BASE ACTIONS
 // ===================
-var escapes = [
-  "End conversation",
-  "Bid farewell",
-  "Say goodbye",
-  "Run away"
-];
 BATTLETREE.api.declare_all(BATTLE.current_battle, escapes);
-PLAYER_ACTIONS.escape(gen.pick(escapes));
+PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 
 // ===================

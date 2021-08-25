@@ -123,6 +123,9 @@ const PLAYER_ACTIONS = {
   },
 
   escape: function(name) {
+    if(!name) {
+      name = ABILITY.Escape;
+    }
     PLAYER_ACTIONS.add({
       name: name,
       unlock: true,
@@ -134,8 +137,8 @@ const PLAYER_ACTIONS = {
 
   allow_flight: function(unnamed) {
     if(!unnamed){
-      description = LANGUAGE.actions.usage(ABILITY.Flee).concat(
-                    LANGUAGE.actions.fail(ABILITY.Flee));
+      description = LANGUAGE.actions.usage(ABILITY.Escape).concat(
+                    LANGUAGE.actions.fail(ABILITY.Escape));
     } else {
       description = RANDOM.pick([
         "You turn away, not doing anything for now.",
@@ -145,7 +148,7 @@ const PLAYER_ACTIONS = {
     }
 
     PLAYER_ACTIONS.add({
-      name: ABILITY.Flee,
+      name: ABILITY.Escape,
       outcome: BATTLETREE.ESCAPE,
       description: description,
     });

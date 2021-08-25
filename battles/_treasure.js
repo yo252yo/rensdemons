@@ -4,7 +4,7 @@ new CenteredImage("assets/battles/treasure.png", 'background');
 var open = "Open";
 
 PLAYER_ACTIONS.add({
-  name: ABILITY.Flee,
+  name: ABILITY.Escape,
   description: RANDOM.pick([
     "You turn away, not taking the treasure for now.",
     "You move away from the chest without touching its content.",

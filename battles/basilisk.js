@@ -14,7 +14,7 @@ if(STATS.get(STAT.Death) > 0){
 }
 
 PLAYER_ACTIONS.add({
-  name: ABILITY.Flee,
+  name: ABILITY.Escape,
   outcome: BATTLETREE.LOSS,
   description: ["You try to go further back, but you trip and fall on the ground.",
                 "The basilisk takes advantage of your weakness. It jumps at you and burrows its fangs in your neck. You barely have time to scream before your body falls lifeless on the cold ground."],

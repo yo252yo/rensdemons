@@ -1,5 +1,5 @@
 const ABILITY = {
-  Flee: "Flee",
+  Escape: "Escape",
   CallHelp: "Call help",
   Pray: "Pray",
 
@@ -55,7 +55,7 @@ const ABILITIES = {
 
     make_new: function() {
       ABILITIES._abilities = new FluidMap();
-      ABILITIES._abilities.set([ABILITY.Flee], true);
+      ABILITIES._abilities.set([ABILITY.Escape], true);
       ABILITIES._abilities.set([ABILITY.CallHelp], true);
     },
   },

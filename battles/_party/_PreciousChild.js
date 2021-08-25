@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/civilians/child_m.png", 'background');
 AUDIO.music.characters.PreciousChild();
 
-PLAYER_ACTIONS.escape("Stop talking");
+PLAYER_ACTIONS.escape();
 
 var bf = DICTIONARY.get(PARTYMEMBERS.BestFriend);
 

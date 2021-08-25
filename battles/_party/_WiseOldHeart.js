@@ -1,6 +1,6 @@
 new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
-PLAYER_ACTIONS.escape("Leave");
+PLAYER_ACTIONS.escape();
 AUDIO.music.characters.WiseOld();
 
 var final_desc = [

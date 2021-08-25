@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/civilians/villager2.png", 'background');
 AUDIO.music.characters.UpbeatDojikko();
 
-PLAYER_ACTIONS.escape("Leave");
+PLAYER_ACTIONS.escape();
 
 var battle = "_party/_UpbeatDojikko";
 var ud = DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko);
