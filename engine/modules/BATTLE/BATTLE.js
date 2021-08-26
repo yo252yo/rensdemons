@@ -58,7 +58,7 @@ const BATTLE = {
 
       // Only keep 3 losing unknown actions
       var useless_options_unknown = 0;
-      for (var i in options_unknown){
+      for (var i = options_unknown.length - 1; i >=0; i--){
         var b = BATTLE._player_actions[options_unknown[i].text];
         if(!b){ // text has been modified by dictionary
           b = BATTLE._player_actions[options_unknown[i].index];
@@ -67,7 +67,8 @@ const BATTLE = {
           if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
             useless_options_unknown ++;
             if (useless_options_unknown > 3){
-              options_unknown[i] = undefined;
+              console.log(options_unknown[i]);
+              options_unknown.splice(i, 1);
             }
           }
         }

@@ -1,7 +1,6 @@
 convert all souls to objects
 rename villager metabattle?
 
-adding undefined options to textmenu is breaking keyboard navigation
 
 --------------------------
 REAL GAME CHANGES:
