@@ -4,7 +4,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*4);
 
 new S_TownFloor(50, 2050, 2000, 2000, "010_world_map");
 
-new S_Church(950, 1050, TODO);
+new S_Church(950, 1050, "TODO");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 100000, 225, 350, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100000, 1600, 525, gen.get());
