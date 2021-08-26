@@ -11,7 +11,7 @@ const BATTLEOBJECTSMANAGER = {
       }
     },
 
-    add_from_object: function(battle_object){
+    add_commands_from_object: function(battle_object){
       var special_commands = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
 
       for(var command in battle_object.interactions){
@@ -35,15 +35,22 @@ const BATTLEOBJECTSMANAGER = {
   },
 
   setup_battle: function(name) {
-    if (name != BATTLEOBJECTSMANAGER.buffer.name){ // we do a roundtrip to BATTLE for the whole battle setup
+    var battleobject = BATTLEOBJECTSMANAGER.buffer;
+    if (name != battleobject.name){ // we do a roundtrip to BATTLE for the whole battle setup
       CONSOLE.error("[BATTLEOBJECTSMANAGER] called with the wrong battleobject.");
     }
-    new CenteredImage("assets/" + BATTLEOBJECTSMANAGER.buffer.battle_sprite_name + ".png", 'background');
+    new CenteredImage("assets/" + battleobject.battle_sprite_name + ".png", 'background');
 
-    BATTLEOBJECTSMANAGER.battle.add_from_object(BATTLEOBJECTSMANAGER.buffer);
+    BATTLEOBJECTSMANAGER.battle.add_commands_from_object(battleobject);
 
-    BATTLE.monster_actions.add_textual(BATTLEOBJECTSMANAGER.buffer.description);
-    BATTLE.operations.start(BATTLEOBJECTSMANAGER.buffer.description);
+    if (!battleobject.enemy_actions){
+      BATTLE.monster_actions.add_textual(battleobject.description);
+    } else {
+      for(var e of battleobject.enemy_actions){
+        BATTLE.monster_actions.add_textual(e.text, e.attack);
+      }
+    }
+    BATTLE.operations.start(battleobject.description);
   },
 
   interactions: {

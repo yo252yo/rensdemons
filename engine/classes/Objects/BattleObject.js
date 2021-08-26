@@ -10,6 +10,7 @@ class BattleObject extends LevelObject {
       this.special_effect = {};
       this.max_actions = 2;
       this.seeds = [];
+      this.enemy_actions = [];
       if (max_actions) {
         this.max_actions = max_actions;
       }
@@ -27,6 +28,10 @@ class BattleObject extends LevelObject {
       if(effect) {
         this.special_effect[command] = effect;
       }
+    }
+
+    add_enemy_action(text, attack) {
+      this.enemy_actions.push({text: text, attack: attack});
     }
 
     get_special_effect(command) {
