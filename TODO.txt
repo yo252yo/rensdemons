@@ -1,4 +1,5 @@
-convert all souls to objects
+
+
 rename villager metabattle?
 
 

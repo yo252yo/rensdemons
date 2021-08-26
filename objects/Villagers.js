@@ -419,24 +419,101 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
     this.add_interaction("Religion", `${this.vname}: "We pray so that the Goddess helps us to victory and a peaceful future!"`);
     this.add_interaction("Religion", `${this.vname}: "Religion is the light that guides us to a bright destiny!"`);
   }
-//TODO
+
   setup_indulgence() {
     var attack = {
-      attack_amplitude: 0.05, // Between 0 and 1
-      warning_time_s: 0.2,
-      react_time_s: 0.2,
-      time_variation: 0.8, // 1 = 100%
+      attack_amplitude: 0.4, // Between 0 and 1
+      warning_time_s: 0.5,
+      react_time_s: 1.5,
+      time_variation: 0.9, // 1 = 100%
     };
-    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+    this.add_enemy_action(`You need to fight off the overbearing stranger who's coming a little too close.`, attack);
+    this.add_enemy_action(`You struggle to match ${this.vname}'s levels of excitement.`, attack);
+    this.add_enemy_action(`You struggle to find an interesting answer.`, attack);
+    this.add_enemy_action(`You feel the weight of the social pressure to come up with interesting small talk.`, attack);
+    this.add_enemy_action(`${this.vname} tries to share their drink with you, but you do your best to refuse.`, attack);
+    this.add_enemy_action(`${this.vname} tries to make you eat something, but you think you should probably refuse.`, attack);
+
+    this.add_enemy_action(`${this.vname} high-fives you.`);
+    this.add_enemy_action(`${this.vname} compliments you and says that apparently you're "their kind of people".`);
 
 
     var start_text = gen.pick([
-      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+      `The villager jumps at you and passes an arm around your shoulder.`,
+      `The villager winks and comes very close to you.`,
+      `The villager grabs your arm and pulls you towards them.`,
+      `The person in front of you is visibly inebriated. They tumble on you and mumble an apology.`,
+      `${this.vname}: "Yo! What's up?"`,
+      `${this.vname}: "Hey! Come join the party!"`,
     ]);
     this.set_description(start_text);
 
 
-    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+    this.add_interaction("Weather", `${this.vname}: "Don't really care about that. Interesting things happen at night, anyway."`);
+    this.add_interaction("Weather", `${this.vname}: "Who cares about what's going on in the sky? What matters is what we do here on earth!"`);
+    this.add_interaction("Weather", `${this.vname}: "The storms have become more frequent lately. They'll probably destroy this city soon, so we need to make the most of it before!"`);
+    this.add_interaction("Weather", `${this.vname}: "We hold a rain festival when it rains, and a sun festival when it doesn't! There's never a boring day! Sometimes we do even both in the same day!"`);
+
+    this.add_interaction("Crops", `${this.vname}: "We have the best delicacies in the Kingdom! I mean it's just bread, but with enough wine it'll taste divine!"`);
+    this.add_interaction("Crops", `${this.vname}: "Damn, you missed the harvest festival by a few days! It's a celebration where we get all the crops we've just harvested, and eat them all until we get sick! It's wicked!"`);
+    this.add_interaction("Crops", [`${this.vname}: "We don't really store crops, here. We just eat whatever the Goddess provides!"`,
+                                   `$$Ren$: "What about the future? The next cold season?"`,
+                                   `${this.vname}: "Who knows if we'll survive until then. Let's enjoy what we have while we can!"`]);
+
+    this.add_interaction("War", `${this.vname}: "Yeah, war is raging, we probably won't hold on much longer, so why not enjoy ourselves?"`);
+    this.add_interaction("War", `${this.vname}: "Monsters could raid us any day now, come and have fun before it's too late!"`);
+    this.add_interaction("War", `${this.vname}: "My best mate was killed in a raid last week. We could be next. Forget about this stuff, let's make the most of the time we have!"`);
+    this.add_interaction("War", `${this.vname}: "Don't be a downer! Why do you have to bring heavy topics like that!"`);
+
+    this.add_interaction("Hunt", `${this.vname}: "There's nothing tastier than a roasted boar! Make sure to try it the next chance you get!"`);
+    this.add_interaction("Hunt", `${this.vname}: "Yes, I sometimes hunt. I'm pretty good. I can tell how tasty the prey is going to be just by looking at it."`);
+    this.add_interaction("Hunt", `${this.vname}: "Praised be to hunter, I tell you. They are the backbone of this community! They bring us so much good food! We have a big banquet after every hunt!"`);
+
+    this.add_interaction("Taxes", `${this.vname}: "Fuck taxes! I'm not gonna send money to the kingdom when it can be better spent elsewhere, and by elsewhere I mean here!"`);
+    this.add_interaction("Taxes", `${this.vname}: "We don't really like taxes, here. Everyone does whatever they want with their money. No, what's really important is that everyone contributes to the potlucks and banquets!"`);
+    this.add_interaction("Taxes", `${this.vname}: "I swear I was about to pay my taxes, but then I spent it all in wine instead."`);
+
+    this.add_interaction("King", `${this.vname}: "Never seen him, though we keep sending him invitations to our festivals! Why should I care?"`);
+    this.add_interaction("King", `${this.vname}: "He's so beautiful! A bit old, but experience can be a good thing, if you know what I mean. You can tell by his look that he's been through a lot. He can surely teach me a thing or two."`);
+    this.add_interaction("King", `${this.vname}: "I hear he gives the most extravagant parties! What wouldn't I give for an invite to the luxury of the royal palace!"`);
+
+    this.add_interaction("Health", `${this.vname}: "There are some who say that too much drinking is bad for your health. But how can it be true if it feels so great?"`);
+    this.add_interaction("Health", `${this.vname}: "I'll make the most of my body until it cannot withstand it anymore!"`);
+    this.add_interaction("Health", `${this.vname}: "Diseases can kill you any day, you know. Nothing you can do about that. The only thing you can actually do is make sure you live a life worth living before that time comes!"`);
+
+    this.add_interaction("Family", `${this.vname}: "Spend as much time as you can with your family! Cherish them! Don't you just love a big family meal!?"`);
+    this.add_interaction("Family", `${this.vname}: "Have you come to play with my children? Sorry, they're off with their friends now, somewhere in the village. You can wait with me until they come back, if you want."`);
+    this.add_interaction("Family", `${this.vname}: "Yes, I have a few children here and there. We don't have a strict model of family in this city, we're a community. Or if you look at it another way, we are one giant family!"`);
+
+    this.add_interaction("Promised Child", `${this.vname}: "The Promised Child has been found? Amazing! We must celebrate! Let's start planning the biggest party ever!"`);
+    this.add_interaction("Promised Child", `${this.vname}: "When the Promised Child gets there, we're going to throw a festival, and it'll be the biggest and grandest celebration anyone has ever thrown! We've been working on plans for decades, you know!"`);
+    this.add_interaction("Promised Child", `${this.vname}: "You know, it's only logical, the best thing we can do to help with the coming of the Promised Child is to make as many children as we can..."`);
+
+    this.add_interaction("Job", `${this.vname}: "Life is too short to waste it on a job!"`);
+    this.add_interaction("Job", `${this.vname}: "Jobs only serve to limit your potential and trap you in a mold. Here, we do whatever we feel like."`);
+    this.add_interaction("Job", `${this.vname}: "In this city, we're all a bit poet, cook or musician. Dancer one day, painter the next... Follow your heart, surely that's what the Goddess wants!"`);
+    this.add_interaction("Job", `${this.vname}: "We don't have masons or blacksmiths, so there's less and less buildings and tools we can use, but we all share what's left!"`);
+
+    this.add_interaction("Rumors", `${this.vname}: "I hear the end of the world will be in three days, and we're gonna have a huge feast just before!"`);
+    this.add_interaction("Rumors", `${this.vname}: "Rumor has it that there's a party tomorrow at  ${gen.pick(DATASETS.male_names)}'s place. Very exclusive event. You didn't hear it from me."`);
+    this.add_interaction("Rumors", `${this.vname}: "Everyone is talking about that new kind of wine that a trader brought us last week. I wonder if there is any left..."`);
+
+    this.add_interaction("Dreams", `${this.vname}: "I don't know, I'm simple, I just wish for good food, good drinks, and good company."`);
+    this.add_interaction("Dreams", `${this.vname}: "Well, I could always use more money..."`);
+    this.add_interaction("Dreams", `${this.vname}: "When I was a child, I tried the fruitiest wine I've ever tasted... What I wouldn't give for another drop of this delicious wine!"`);
+
+    this.add_interaction("Traditions", `${this.vname}: "Every week we throw a big ball where every artist in town can demonstrate the new songs, dances or poems they came up with!"`);
+    this.add_interaction("Traditions", `${this.vname}: "Every month a lot of villagers get together for a big or... wait, you're probably too young for me to tell you about that!"`);
+    this.add_interaction("Traditions", `${this.vname}: "We have festivals for each big occasion! Seasons, great people, historical events, spirits of nature... We celebrate something every week or so!"`);
+
+    this.add_interaction("City", `${this.vname}: "Welcome to the best city in the world! We know how to have fun and live a good life, here!"`);
+    this.add_interaction("City", `${this.vname}: "Welcome to the best city in the world! We know how fragile life is, so we enjoy every day to the fullest!"`);
+    this.add_interaction("City", `${this.vname}: "Things are horrible, so we need to make the most of whatever little time we have left on this world!"`);
+    this.add_interaction("City", `${this.vname}: "Here, we value pleasure. That's all we have in our fleeting lives."`);
+
+    this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us such pleasant experiences!"`);
+    this.add_interaction("Religion", `${this.vname}: "We pray so the Goddess gives us more food and drinks!"`);
+    this.add_interaction("Religion", `${this.vname}: "Religion? It's a good subject of inspiration for art, a great way to transcend our mortal senses."`);
   }
 
 }
