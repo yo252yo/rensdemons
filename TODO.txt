@@ -4,8 +4,6 @@ NEW INTERFACE:
 
 limit keys to skip dial (ctrl/alt)
 
-better dialog for xp, explaining where it comes from (discover/explore)
-
 Loot un peu plus, en particulier le premier encounter
 
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
@@ -15,6 +13,8 @@ Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme ch
 
 2 action par object
 BATTLEOBJECT add ignore is a random option
+
+allowing everything allows unwanted objects: breathing potion, bow
 
 
 

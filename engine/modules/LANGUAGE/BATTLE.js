@@ -3,8 +3,15 @@ LANGUAGE.battle = {
     return `You failed to dodge the incoming attack.`;
   },
 
-  xp: function() {
-    return `All things considered, you still learned a lot through this encounter`;
+  xp: function(before, after) {
+    var r = "Through this encounter, you learned more about the fabric of reality (" + (after.xp  - before.xp ) + " xp). ";
+    if (after.unseen > before.unseen){
+      r += "You discovered " + (after.unseen  - before.unseen ) + " new threads. ";
+    }
+    if (after.explored > before.explored){
+      r += "You explored " + (after.explored  - before.explored ) + " threads. ";
+    }
+    return r;
   },
 
   loot: function(loot) {

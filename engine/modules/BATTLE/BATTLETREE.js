@@ -188,11 +188,18 @@ const BATTLETREE = {
         return 0;
       }
 
-      var score = 0;
+      var score = 0, unseen = 0, explored = 0;
       for (var i in BATTLETREE._targets.get([battle])) {
-        score += BATTLETREE.score._score_destination(BATTLETREE._targets.get([battle,i]));
+        var s = BATTLETREE.score._score_destination(BATTLETREE._targets.get([battle,i]));
+        score += s;
+        if (s == 1){
+          unseen++;
+        } else if (s == 3) {
+          explored++;
+        }
       }
-      return score;
+      var r = {xp: score, unseen:unseen, explored:explored};
+      return r;
     },
 
     is_explored: function(battle, command) {
@@ -207,14 +214,14 @@ const BATTLETREE = {
 
     completion: function(battle) {
       var actions = BATTLETREE._targets.length([battle]);
-      var result = BATTLETREE.score.score_battle(battle) / (3*actions);
+      var result = BATTLETREE.score.score_battle(battle).xp / (3*actions);
       return Math.floor(result * 1000) / 10;
     },
 
     total_xp: function() {
       var score = 0;
       for (var i in BATTLETREE._targets.get([])) {
-        score += BATTLETREE.score.score_battle(i);
+        score += BATTLETREE.score.score_battle(i).xp;
       }
       return score;
     },

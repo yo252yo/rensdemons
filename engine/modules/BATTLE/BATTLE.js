@@ -7,7 +7,7 @@ const BATTLE = {
   origin_level: undefined,
   win_callback: undefined,
   _last_action: undefined,
-  abilities_score_before: 0,
+  abilities_score_before: {},
 
   turn_factory: {
     _is_option_available: function (i){
@@ -352,7 +352,6 @@ const BATTLE = {
         var text = [];
         if(Object.keys(BATTLE.loot).length > 0) {
           var loot = RANDOM.pick_in_weighted_array(BATTLE.loot);
-          console.log(loot);
           if (loot){
             if(!loot.startsWith("_")) {
               text.push(LANGUAGE.battle.loot(loot));
@@ -361,10 +360,11 @@ const BATTLE = {
           }
         }
 
-        var exp_won = BATTLETREE.score.score_battle(BATTLE.current_battle) - BATTLE.abilities_score_before;
+        var after = BATTLETREE.score.score_battle(BATTLE.current_battle);
+        var exp_won = after.xp - BATTLE.abilities_score_before.xp;
         if(exp_won > 0) {
            INVENTORY.increase(ITEM.XpToken, exp_won);
-           text.push(LANGUAGE.battle.xp() + " (" + ("*".repeat(Math.min(10,exp_won))) + ").");
+           text.push(LANGUAGE.battle.xp(BATTLE.abilities_score_before, after));
            AUDIO.effect.levelup();
         }
 
