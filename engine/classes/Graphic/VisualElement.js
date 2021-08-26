@@ -86,4 +86,25 @@ class VisualElement {
       }
       delete this;
     }
+
+    distance_to_character() {
+      var c = CHARACTER.get().gravity_center();
+
+      var x = c[0];
+      if (c[0] < this.x) {
+        x = this.x;
+      } else if (c[0] > this.x + this.width) {
+        x = this.x + this.width;
+      }
+
+      var y = c[1];
+      if (c[1] < this.y - this.height) {
+        y = this.y - this.height;
+      } else if (c[1] > this.y) {
+        y = this.y;
+      }
+
+      var d = Math.sqrt(Math.pow(c[0] - x, 2) + Math.pow(c[1] - y, 2));
+      return d;
+    }
 }
