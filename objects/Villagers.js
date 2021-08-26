@@ -27,24 +27,100 @@ class VillagerSoul extends SoulBattleObject {
         break;
     }
   }
-//TODO
+
   setup_acceptance() {
     var attack = {
-      attack_amplitude: 0.05, // Between 0 and 1
-      warning_time_s: 0.2,
-      react_time_s: 0.2,
-      time_variation: 0.8, // 1 = 100%
+      attack_amplitude: 0.1, // Between 0 and 1
+      warning_time_s: 2,
+      react_time_s: 1,
+      time_variation: 0.5, // 1 = 100%
     };
-    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+
+    this.add_enemy_action(`There's an awkward silence during which you don't know what to say.`, attack);
+    this.add_enemy_action(`${this.vname} is looking at you in silence.`, attack);
+    this.add_enemy_action(`You feel that the villager's gloominess is getting to you.`, attack);
+
+    this.add_enemy_action(`${this.vname} stares at you with empty eyes.`);
+    this.add_enemy_action(`${this.vname} stands still in front of you.`);
+    this.add_enemy_action(`${this.vname} sighs.`);
+    this.add_enemy_action(`${this.vname} simply waits for the conversation to go on.`);
 
 
     var start_text = gen.pick([
-      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+      `The villager salutes you with a monotonous voice.`,
+      `The villager barely raises an eyebrow noticing you.`,
+      `The villager doesn't react to your presence.`,
+      `The person in front of you is barely moving. If it weren't for their breathing, you might think they were a statue.`,
+      `${this.vname}: "Hi!"`,
+      `${this.vname}: "Hi! We're glad your path lead you here. We hope you'll share our peace!"`,
     ]);
     this.set_description(start_text);
 
 
-    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+    this.add_interaction("Weather",`${this.vname}: "If the Goddess sent us these storms, it's surely that the wind is good for us. A human can survive on very little food, you know..."`);
+    this.add_interaction("Weather",`${this.vname}: "I don't look at the sky anymore, that way I'm never disappointed if it's not sunny!"`);
+    this.add_interaction("Weather",`${this.vname}: "You're looking at things the wrong way. What good is the sun, apart for the crops? What good are the crops, apart keeping us alive longer? And why would I want to be apart from the Goddess any longer than necessary?"`);
+
+    this.add_interaction("Crops",`${this.vname}: "I don't really need food, I'll eat while there is some, but I'll be glad to join the Goddess when She calls me back to Her."`);
+    this.add_interaction("Crops",`${this.vname}: "Wheat is the food of the body. Mine is already dead. Soon it will be nothing but dust. What matters is the food of the spirit."`);
+    this.add_interaction("Crops",`${this.vname}: "I don't mind famine. If we had food, we'd stay alive longer, and then we'd suffer for longer."`);
+
+    this.add_interaction("War",`${this.vname}: "War will always be with us, it's simply the best way for us to go back to our Goddess."`);
+    this.add_interaction("War",`${this.vname}: "When monsters raid us next, I won't fight back. Death is the only relief from the fear of the next raid."`);
+    this.add_interaction("War",`${this.vname}: "We have less raids than other parts of the Kingdom because we send sacrifices to the monsters. It appeases their appetite."`);
+    this.add_interaction("War", [`${this.vname}: "Best not think about it!"`,
+                                `$$Ren$: "Shouldn't you prepare yourselves to defend?"`,
+                                `${this.vname}: "What's the use, we don't stand a chance. Best prepare ourselves for our inevitable demise."`]);
+
+    this.add_interaction("Hunt",`${this.vname}: "Yes, we do hunt most of our food. It's a very spiritual moment between the hunter and their prey. We'll all be united in death, sometime."`);
+    this.add_interaction("Hunt",`${this.vname}: "I like to hunt and to take other animals' lives. It's good practice for when I'll have to take my own."`);
+    this.add_interaction("Hunt",`${this.vname}: "What's the point in hunting? Why take innocent lives to prolong ours, since we are doomed anyway."`);
+
+    this.add_interaction("Taxes",`${this.vname}: "We don't pay taxes to the kingdom. What's the point, soon there won't be a kingdom left."`);
+    this.add_interaction("Taxes",`${this.vname}: "Yes, I usually give all my money. I won't need it soon, anyway."`);
+    this.add_interaction("Taxes",`${this.vname}: "Since I'm dying soon, I'm don't keep any money. So there's nothing to take from."`);
+
+    this.add_interaction("King",`${this.vname}: "He owns us. I'll follow his orders and do whatever I can to contribute, even if it's a lost cause!"`);
+    this.add_interaction("King",`${this.vname}: "Poor lad, thrown in charge of this mess and tasked with an impossible quest. It's a lost battle, and yet he has to fight... I tell you, wouldn't want to be him..."`);
+    this.add_interaction("King",`${this.vname}: "Sometimes I dream about his death. Surely after he's gone we can all officially give up, and this whole suffering will end."`);
+
+    this.add_interaction("Health",`${this.vname}: "Diseases are a blessing in disguise. Most often the pain is short and you die pretty fast."`);
+    this.add_interaction("Health",`${this.vname}: "I don't fear diseases. I'm sure monsters will kill you before you get a chance to get sick."`);
+    this.add_interaction("Health",`${this.vname}: "Health comes and goes, it's unavoidable. I'm not a big believer in hygiene. There's no use trying to avoid plagues, they'll get to you eventually."`);
+
+    this.add_interaction("Family",`${this.vname}: "I don't want children. I can't bring myself to impose this world of suffering on others."`);
+    this.add_interaction("Family",`${this.vname}: "Most of my family is already dead. My siblings are waiting for me with the Goddess. I can't wait for my turn to join them."`);
+    this.add_interaction("Family",`${this.vname}: "My only child was stillborn. It's probably just as well, at least she didn't suffer. She might be the lucky one."`);
+
+    this.add_interaction("Promised Child",`${this.vname}: "The Promised Child could come, or not. It doesn't matter. It's too late."`);
+    this.add_interaction("Promised Child",`${this.vname}: "I'm sure the Promised Child was born a long time ago and was killed by the monsters. Maybe there was even several Promised Children."`);
+    this.add_interaction("Promised Child",`${this.vname}: "I think it's pretty clear by now that the Promised Child is not coming. We've waited hundreds of years. Why would they come now?"`);
+
+    this.add_interaction("Job",`${this.vname}: "I have the privilege to work on building tombs. It's an important responsibility. Our lives are transient, but our final rest will be eternal!"`);
+    this.add_interaction("Job",`${this.vname}: "I offer council to prepare people for death. I organize sessions of prayers and meditations. I guess you could call me a guide for the spirits."`);
+    this.add_interaction("Job",`${this.vname}: "I'm what you'd call the executioner, I guess. I'm in charge of picking the sacrifices, preparing them, and executing the ceremony at the altar. It's probably the most important job of all!"`);
+    this.add_interaction("Job",`${this.vname}: "I don't have a job. I don't want to waste my time building things that are just going to be destroyed or disappear."`);
+
+    this.add_interaction("Rumors",`${this.vname}: "I hear there will be a raid soon. Many will die. I hope my turn comes."`);
+    this.add_interaction("Rumors",`${this.vname}: "Many here are saying that the Goddess has abandoned us. I can't tell if it's true, but it sure looks like it."`);
+    this.add_interaction("Rumors",`${this.vname}: "People around here keep saying that the grave is a better place than this wretched world. I'm not sure if I believe them, but if things keep piling up, I might..."`);
+
+    this.add_interaction("Dreams",`${this.vname}: "My only wish is for my death to be painless."`);
+    this.add_interaction("Dreams",`${this.vname}: "I just wish the pain would stop."`);
+    this.add_interaction("Dreams",`${this.vname}: "I hope our sacrifice pleases the Goddess and spares us a bit from suffering."`);
+
+    this.add_interaction("Traditions",`${this.vname}: "Every month, we designate a sacrifice, who gets killed in the church as an offering to the Goddess. We hope it eases her anger, and lessens our punishment."`);
+    this.add_interaction("Traditions",`${this.vname}: "We do regular sacrifices to the Goddess. We all want to give ourselves to Her, so we draw the lucky chosen at random. Only our blood willingly offered can appease the Goddess."`);
+    this.add_interaction("Traditions",`${this.vname}: "No matter how many executions we do, the Goddess will not stop punishing her. I don't dare imagine how much worse things would be without our sacrifices."`);
+
+    this.add_interaction("City",`${this.vname}: "Welcome to the best city in the world! The only place with the courage to look at reality in the face!"`);
+    this.add_interaction("City",`${this.vname}: "Welcome to the best city in the world, where we know how wretched our kind is. We try very hard to atone and to appease the anger of the Goddess by making sacrifices."`);
+    this.add_interaction("City",`${this.vname}: "Things are horrible, the only sensible thing to do is to accept our inevitable death and learn to love our suffering."`);
+    this.add_interaction("City",`${this.vname}: "Here, we value wisdom and knowledge. Once you know your fate, you must accept it."`);
+
+    this.add_interaction("Religion",`${this.vname}: "Praise be to the Goddess and may She forgive us and lessen Her punishment!"`);
+    this.add_interaction("Religion",`${this.vname}: "We pray, offer blood and lives, so that the Goddess may forgive us and ease our pain!"`);
+    this.add_interaction("Religion",`${this.vname}: "Religion is the only way to forgiveness which will keep our punishment bearable."`);
   }
 //TODO
   setup_denial() {
