@@ -352,11 +352,16 @@ const BATTLE = {
         var text = [];
         if(Object.keys(BATTLE.loot).length > 0) {
           var loot = RANDOM.pick_in_weighted_array(BATTLE.loot);
+          if(!loot && INVENTORY.count("_looted_items") < 5) {
+            // bonus at the beginning ^^
+            loot = RANDOM.pick_in_weighted_array(BATTLE.loot);
+          }
           if (loot){
             if(!loot.startsWith("_")) {
               text.push(LANGUAGE.battle.loot(loot));
             }
             INVENTORY.increase(loot);
+            INVENTORY.increase("_looted_items");
           }
         }
 

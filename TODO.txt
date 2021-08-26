@@ -2,8 +2,6 @@ NEW INTERFACE:
 - Mobile skip dial by button tap not screen tap
 - mettre une icone autosave
 
-Loot un peu plus, en particulier le premier encounter
-
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
 
 Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
