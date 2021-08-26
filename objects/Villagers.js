@@ -4,7 +4,7 @@ var make_banner_function = function(text){
   };
 }
 
-var get_villager_shorthand = function(type, seed, indoors, gen) {
+var get_rejection_soul = function(type, seed, indoors, gen) {
   var excuses = [];
   var threshold = 0.05;
 
@@ -59,28 +59,38 @@ var get_villager_shorthand = function(type, seed, indoors, gen) {
   }
 
   if(seed < threshold) {
-    return RANDOM.pick(excuses, gen);
+    return {interaction: RANDOM.pick(excuses, gen)};
   }
   return undefined;
 }
 
-var get_villager_interaction = function(type, gen, indoors) {
-  var seed = gen.get();
-  if (seed < 0.05){
-    // Special meta battle
-    return function(sprite_nb, seed) {
-      SPECIALBATTLES.villager("villagers", "villager" + sprite_nb, seed);
-    };
+var get_meta_soul = function() {
+  return {
+  interaction: function(sprite_nb, seed) {
+    SPECIALBATTLES.villager("villagers", "villager" + sprite_nb, seed);
   }
-  // Rejection
-  var rejection = get_villager_shorthand(type, seed, indoors, gen);
-  if (rejection){
-    return rejection;
-  }
-  // Default villager battle
-  return function(sprite_nb, seed) {
-    SPECIALBATTLES.villager(type, "villager" + sprite_nb, seed);
   };
+}
+
+
+var get_villager_soul = function(type, gen, indoors) {
+  var seed = gen.get();
+  if (seed < 0.03) {
+    return get_meta_soul();
+  }
+
+  var rejection_soul = get_rejection_soul(type, seed, indoors, gen);
+  if (rejection_soul){
+    return rejection_soul;
+  }
+
+
+  // Default villager battle
+  // this should be changed to a BattleObject soul!
+  //return new B_Statue(-1000, -1000);
+  return {interaction: function(sprite_nb, seed) {
+    SPECIALBATTLES.villager(type, "villager" + sprite_nb, seed);
+  }};
 }
 
 
@@ -99,13 +109,12 @@ class M_Villager extends M_NPC {
     super(x, y, "villager" + sprite_nb);
     this.seed = gen.get();
     this.sprite_nb = sprite_nb;
-
-    this.interaction_ = get_villager_interaction(type, gen, indoors);
+    this.soul = get_villager_soul(type, gen, indoors);
   }
 
   interaction() {
     this.face_character();
-    this.interaction_(this.sprite_nb, this.seed);
+    this.soul.interaction(this.sprite_nb, this.seed);
   }
 }
 

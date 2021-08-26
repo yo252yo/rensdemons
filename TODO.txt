@@ -1,7 +1,5 @@
-Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
-> turn ppl into battleobjects? ??
-> can battleobject just not show explored options?
-
+> battleobject suport mutual exclusive
+> make souls as battleobjects
 
 
 
