@@ -10,22 +10,60 @@ class VillagerSoul extends SoulBattleObject {
     }
 
     switch(type){
-      case "hope":
-        this.setup_fear();//TODO
+      case "acceptance":
+        this.setup_acceptance();
+        break;
+      case "denial":
+        this.setup_denial();
         break;
       case "fear":
         this.setup_fear();
         break;
-      case "denial":
-        this.setup_fear();//TODO
-        break;
-      case "acceptance":
-        this.setup_fear();//TODO
+      case "hope":
+        this.setup_hope();
         break;
       case "indulgence":
-        this.setup_fear();//TODO
+        this.setup_indulgence();
         break;
     }
+  }
+//TODO
+  setup_acceptance() {
+    var attack = {
+      attack_amplitude: 0.05, // Between 0 and 1
+      warning_time_s: 0.2,
+      react_time_s: 0.2,
+      time_variation: 0.8, // 1 = 100%
+    };
+    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+
+
+    var start_text = gen.pick([
+      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+    ]);
+    this.set_description(start_text);
+
+
+    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+  }
+//TODO
+  setup_denial() {
+    var attack = {
+      attack_amplitude: 0.05, // Between 0 and 1
+      warning_time_s: 0.2,
+      react_time_s: 0.2,
+      time_variation: 0.8, // 1 = 100%
+    };
+    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+
+
+    var start_text = gen.pick([
+      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+    ]);
+    this.set_description(start_text);
+
+
+    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
   }
 
   setup_fear() {
@@ -125,7 +163,44 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "We pray zealously to show that we are worthy and to keep the bad away from us."`);
     this.add_interaction("Religion", `${this.vname}: "Religion is the only way to purity which will keep the monsters at bay."`);
   }
+//TODO
+  setup_hope() {
+    var attack = {
+      attack_amplitude: 0.05, // Between 0 and 1
+      warning_time_s: 0.2,
+      react_time_s: 0.2,
+      time_variation: 0.8, // 1 = 100%
+    };
+    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
 
+
+    var start_text = gen.pick([
+      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+    ]);
+    this.set_description(start_text);
+
+
+    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+  }
+//TODO
+  setup_indulgence() {
+    var attack = {
+      attack_amplitude: 0.05, // Between 0 and 1
+      warning_time_s: 0.2,
+      react_time_s: 0.2,
+      time_variation: 0.8, // 1 = 100%
+    };
+    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+
+
+    var start_text = gen.pick([
+      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+    ]);
+    this.set_description(start_text);
+
+
+    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+  }
 
 }
 
