@@ -22,6 +22,18 @@ class MapObject extends LevelObject {
       CURRENTLEVEL.setup(this.destination);
     }
   }
+
+  is_interactible(x, y) {
+    return (
+      this.is_at_sprite(x,y) ||
+      (this.legend && this.legend.is_at(x,y))
+    );
+  }
+  
+  distance_to_character(){
+    return Math.min(super.distance_to_character(), this.legend.distance_to_character());
+  }
+
 }
 
 

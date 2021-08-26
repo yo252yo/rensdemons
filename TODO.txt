@@ -4,9 +4,6 @@ Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme ch
 
 
 
-can we make things not spawn on label ???
-
-
 
 --------------------------
 REAL GAME CHANGES:
