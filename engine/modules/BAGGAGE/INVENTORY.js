@@ -80,6 +80,8 @@ ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Alchemy] = [ITEM.BreathingPotion, ITEM.E
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Weapon] = [ITEM.Dagger, ITEM.Sword_wooden, ITEM.Sword_iron, ITEM.Sword_great, ITEM.Mace, ITEM.Spear, ITEM.Axe, ITEM.Shield];
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool] = [ITEM.Bow, ITEM.Arrow, ITEM.Poison_darts, ITEM.Net, ITEM.Rope]; // , ITEM.Stick, ITEM.Stone, ITEM.Fang, ITEM.Bone
 ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact] = [ITEM.Sword_legend, ITEM.War_hammer, ITEM.Staff, ITEM.Wand];
+ITEMS_NOT_BATTLE = [ITEM.Bow, ITEM.BreathingPotion];
+
 
 const INVENTORY = {
   _inventory: new FluidMap(),

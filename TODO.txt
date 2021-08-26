@@ -12,8 +12,6 @@ Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme ch
 2 action par object
 BATTLEOBJECT add ignore is a random option
 
-allowing everything allows unwanted objects: breathing potion, bow
-
 
 
 --------------------------

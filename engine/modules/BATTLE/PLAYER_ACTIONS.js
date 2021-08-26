@@ -226,6 +226,8 @@ const PLAYER_ACTIONS = {
     for (var i in prices){
       if(prices[i] >= threshold) {
         PLAYER_ACTIONS.win(i, 1);
+      } else if(ITEMS_NOT_BATTLE.includes(i)) {
+        continue;
       } else if(
         ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
         ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
