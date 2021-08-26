@@ -87,12 +87,12 @@ class Filler {
 
   fill_by_retry(decor) {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
-    var nb_tries = 100000;
+    var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
 
     if (!this.guaranteed_products){
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
-      nb_desired_products = 100000;
+      nb_desired_products = 10000;
     }
 
     var i = 0;
