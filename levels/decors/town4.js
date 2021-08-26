@@ -15,7 +15,7 @@ new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 1500, 600, gen.get());
 var houseFiller = new Filler(gen);
 houseFiller.set_zone(75, 1025, 1950, 950);
 houseFiller.set_tries(5, 60);
-houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(CITIES.indulgence, x, y, g); });
+houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(CITIES.indulgence, x, y, g.get()); });
 houseFiller.fill_by_retry();
 
 var villagerFiller = new Filler(gen);
