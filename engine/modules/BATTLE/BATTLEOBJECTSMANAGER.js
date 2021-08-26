@@ -45,7 +45,6 @@ const BATTLEOBJECTSMANAGER = {
       var result = [];
       for (var i =0; i < battle_object.max_actions; i++){
         var candidate = commands[Math.floor(battle_object.seeds[i] * commands.length)];
-        console.log(candidate + "|");
         var duplicate = false;
         for(var r of result){
           if (r.trim() == candidate.trim()){
