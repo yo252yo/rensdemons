@@ -115,7 +115,12 @@ const BATTLEOBJECTSMANAGER = {
       }
     }
     var text = possibilities[Math.floor(battle_object.seeds[0] * possibilities.length)];
-    new TextBanner(text);
+
+    var array = text;
+    if (!Array.isArray(text)){
+      array = [text];
+    }
+    TextBannerSequence.make(array);
   },
 
   interact: function(battle_object) {
