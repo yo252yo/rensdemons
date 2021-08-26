@@ -24,6 +24,7 @@ class BattleObject extends LevelObject {
       if(is_event){
         this.adjust_hitbox(0, 0, size, size);
       }
+      this.add_interaction("Ignore", "You move away without looking back.");
     }
 
     add_interaction(command, description, effect) { // this will be adapted to give things, like items or something

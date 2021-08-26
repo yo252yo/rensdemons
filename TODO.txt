@@ -2,10 +2,7 @@ Shorthand for text you read a lot so you dont have to read too much (spells, etc
 
 Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme chose
 > turn ppl into battleobjects? ??
-
-2 action par object
-BATTLEOBJECT add ignore is a random option
-
+> can battleobject just not show explored options?
 
 
 --------------------------
