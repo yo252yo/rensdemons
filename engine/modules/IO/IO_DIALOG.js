@@ -10,6 +10,8 @@ const IO_DIALOG = {
   },
 
   onPressKey: function(key) {
-    IO.dialog.turn_page();
+    if (KEYS_UTIL.is_ok(key)) {
+      IO.dialog.turn_page();
+    }    
   },
 }

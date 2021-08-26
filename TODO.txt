@@ -2,8 +2,6 @@ NEW INTERFACE:
 - Mobile skip dial by button tap not screen tap
 - mettre une icone autosave
 
-limit keys to skip dial (ctrl/alt)
-
 Loot un peu plus, en particulier le premier encounter
 
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
