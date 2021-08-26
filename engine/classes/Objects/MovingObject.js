@@ -64,6 +64,11 @@ class MovingObject extends LevelObject {
   }
 
   auto_walk_tick () {
+    if (!this || !this.sprite || ! this.is_walking()) {
+      this.stop_autowalk();
+      return;
+    }
+
     if (this.is_at(this.destination_x, this.destination_y)) {
         if(this.walk_callback){
           this.walk_callback();
@@ -94,9 +99,6 @@ class MovingObject extends LevelObject {
   }
 
   start_auto_walk() {
-    if (!this || !this.sprite || ! this.is_walking()) {
-      return;
-    }
     var self = this;
     this.walk_interval = setInterval(function(){
       self.auto_walk_tick();
