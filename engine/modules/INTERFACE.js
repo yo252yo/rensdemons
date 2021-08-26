@@ -139,4 +139,12 @@ const INTERFACE = {
       CURRENTLEVEL.setup("000_introduction$");
     }
   },
+
+  autosave_notif: function(){
+    var t = new TextElement(50,100,250,50);
+    t.html.style.textAlign = "center";
+    t.write("AUTOSAVING...");
+
+    setTimeout(function(){t.destroy();}, 1000);
+  },
 }

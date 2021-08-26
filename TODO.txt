@@ -1,6 +1,5 @@
 NEW INTERFACE:
 - Mobile skip dial by button tap not screen tap
-- mettre une icone autosave
 
 Shorthand for text you read a lot so you dont have to read too much (spells, etc)
 

@@ -85,4 +85,8 @@ class TextElement extends VisualElement {
       }
       setTimeout(f, 100);
     }
+
+    write(html){
+      this.html.innerHTML = html;
+    }
 }

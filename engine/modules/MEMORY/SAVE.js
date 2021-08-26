@@ -124,6 +124,7 @@ const SAVE = {
 
   autosave: function(){
     SAVE.save(0);
+    INTERFACE.autosave_notif();
   },
 
 };
