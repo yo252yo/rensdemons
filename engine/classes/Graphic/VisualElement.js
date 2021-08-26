@@ -35,27 +35,31 @@ class VisualElement {
       this.refresh_position();
     }
 
-    refresh_position() {
+    refresh_position(oldY) {
       // visual elements are indexed at their bottom left corner
       this.container.style.top = (this.y - this.height) + "px";
       this.container.style.left = this.x + "px";
-      this.container.style.zIndex = parseInt(this.y);
+      if (this.container.style.zIndex == oldY){
+        this.container.style.zIndex = parseInt(this.y);
+      }
     }
 
     place_at(x, y) {
+      var oldY = this.y;
       this.y = parseInt(y);
       this.x = parseInt(x);
-      this.refresh_position();
+      this.refresh_position(oldY);
     }
 
     shift(dx, dy) {
+      var oldY = this.y;
       if(dy){
         this.y += dy;
       }
       if(dx){
         this.x += dx;
       }
-      this.refresh_position();
+      this.refresh_position(oldY);
     }
 
     adjust_depth(z) {
