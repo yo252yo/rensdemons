@@ -35,11 +35,21 @@ const PLAYER_ACTIONS = {
       return name + " ".repeat(repetitions);
     },
 
+    _shorten_if_explored(name, description){
+      if(name in PARTYMEMBERS){
+        return description; // summons always have full text
+      }
+      if (BATTLETREE.score.is_explored(BATTLE.current_battle, name)){
+        return []; // abridging what we already know
+      }
+      return description;
+    },
+
     win_in_several_hits: function(name, nb_hits, consume_item) {
+      var usage_descript = PLAYER_ACTIONS._internal._shorten_if_explored(name, LANGUAGE.actions.usage(name));
       var previous_function = PLAYER_ACTIONS.function.unlock_replacing_action({
         name: PLAYER_ACTIONS._internal.repeated_name(name, nb_hits-1),
-        description: LANGUAGE.actions.usage(name).concat(
-                     LANGUAGE.actions.win(name)),
+        description: usage_descript.concat(LANGUAGE.actions.win(name)),
         outcome: BATTLETREE.WIN,
         consume_item: consume_item,
         function:function(){
@@ -49,32 +59,37 @@ const PLAYER_ACTIONS = {
 
       for(var i=nb_hits-2; i>0; i--){
         var feedback = LANGUAGE.battle.last_hit_feedback();
+        var description = PLAYER_ACTIONS._internal._shorten_if_explored(name,
+           LANGUAGE.actions.usage(name).concat(feedback));
 
-          var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
-            name: PLAYER_ACTIONS._internal.repeated_name(name, i),
-            description: LANGUAGE.actions.usage(name).concat(feedback),
-            consume_item: consume_item,
-            function: previous_function,
-          });
-          previous_function = unlock_function;
-          feedback = LANGUAGE.battle.several_hit_feedback(); // feedback for everything but the first
+        var unlock_function = PLAYER_ACTIONS.function.unlock_replacing_action({
+          name: PLAYER_ACTIONS._internal.repeated_name(name, i),
+          description: description,
+          consume_item: consume_item,
+          function: previous_function,
+        });
+        previous_function = unlock_function;
+        feedback = LANGUAGE.battle.several_hit_feedback(); // feedback for everything but the first
       }
 
+      var description = PLAYER_ACTIONS._internal._shorten_if_explored(name,
+        LANGUAGE.actions.usage(name).concat(LANGUAGE.battle.several_hit_feedback())
+      );
       PLAYER_ACTIONS.add({
         name: name,
     // This is where unlock would go if needed:      unlock: true,
-        description: LANGUAGE.actions.usage(name).concat(LANGUAGE.battle.several_hit_feedback()),
+        description: description,
         consume_item: consume_item,
         function: previous_function
       });
     },
 
     win_in_one_hit: function(name, consume_item) {
+      var usage_descript = PLAYER_ACTIONS._internal._shorten_if_explored(name, LANGUAGE.actions.usage(name));
       var action_object = {
         name: name,
         outcome: BATTLETREE.WIN,
-        description: LANGUAGE.actions.usage(name).concat(
-                     LANGUAGE.actions.win(name)),
+        description: usage_descript.concat(LANGUAGE.actions.win(name)),
         consume_item: consume_item,
         function:function(){
           PLAYER_ACTIONS._internal.trigger_music(name);
