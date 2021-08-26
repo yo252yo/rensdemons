@@ -29,8 +29,11 @@ class MapObject extends LevelObject {
       (this.legend && this.legend.is_at(x,y))
     );
   }
-  
+
   distance_to_character(){
+    if(!this.legend){
+      return super.distance_to_character();
+    }
     return Math.min(super.distance_to_character(), this.legend.distance_to_character());
   }
 

@@ -3,9 +3,6 @@ rename villager metabattle?
 
 adding undefined options to textmenu is breaking keyboard navigation
 
-Map.js : 34 cannot read property distance_to_character of undefined SM_Lake.distance_to_character
-
-
 --------------------------
 REAL GAME CHANGES:
 
