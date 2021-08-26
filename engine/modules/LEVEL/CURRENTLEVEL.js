@@ -88,7 +88,7 @@ const CURRENTLEVEL = {
       if (here.length == 0) {
         return undefined;
       } else if (here.length == 1) {
-        return here[0]
+        return here[0];
       } else { // if theres several objects we chose the one on top
         var max = here[0].get_depth();
         var argmax = here[0];
