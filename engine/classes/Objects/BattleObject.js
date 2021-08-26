@@ -13,13 +13,16 @@ class BattleObject extends LevelObject {
       super(visual, x, y);
       this.name = name;
       var g = new Generator(x+y);
-      this.seeds = [g.get(), g.get()];
       this.interactions = {};
       this.special_effect = {};
       this.max_actions = 2;
       this.is_event = is_event;
+      this.seeds = [];
       if (max_actions) {
         this.max_actions = max_actions;
+      }
+      for(var i = 0; i< this.max_actions; i++){
+        this.seeds.push(g.get());
       }
       if(is_event){
         this.adjust_hitbox(0, 0, size, size);
@@ -28,6 +31,9 @@ class BattleObject extends LevelObject {
     }
 
     add_interaction(command, description, effect) { // this will be adapted to give things, like items or something
+      while (this.interactions[command]){
+        command = command + " ";
+      }
       this.interactions[command] = description;
       if(effect) {
         this.special_effect[command] = effect;

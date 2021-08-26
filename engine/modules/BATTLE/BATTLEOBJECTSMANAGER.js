@@ -44,7 +44,18 @@ const BATTLEOBJECTSMANAGER = {
       var commands = Object.keys(battle_object.interactions);
       var result = [];
       for (var i =0; i < battle_object.max_actions; i++){
-        result.push(commands[Math.floor(battle_object.seeds[i] * commands.length)]);
+        var candidate = commands[Math.floor(battle_object.seeds[i] * commands.length)];
+        console.log(candidate + "|");
+        var duplicate = false;
+        for(var r of result){
+          if (r.trim() == candidate.trim()){
+            duplicate = true; // mutual exclusivity
+            break;
+          }
+        }
+        if (!duplicate){
+          result.push(candidate);
+        }
       }
       return result;
     },
