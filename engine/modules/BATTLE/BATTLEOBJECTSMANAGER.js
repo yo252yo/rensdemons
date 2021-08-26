@@ -13,11 +13,18 @@ const BATTLEOBJECTSMANAGER = {
 
     add_from_object: function(battle_object){
       var special_commands = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
+
       for(var command in battle_object.interactions){
+        var outcome = BATTLETREE.ESCAPE;
+
+        if(battle_object.lastingBattle && command != ABILITY.Escape){
+          outcome = BATTLETREE.NOTHING;
+        }
+
         PLAYER_ACTIONS.add({
           name: command,
           description: battle_object.interactions[command],
-          outcome: BATTLETREE.ESCAPE,
+          outcome: outcome,
           extra_function: BATTLEOBJECTSMANAGER.battle.get_extra_function(battle_object, command),
         });
         if (!special_commands.includes(command)){
@@ -55,6 +62,9 @@ const BATTLEOBJECTSMANAGER = {
         if (!duplicate){
           result.push(candidate);
         }
+      }
+      if(battle_object.lastingBattle){
+        result.push(ABILITY.Escape);
       }
       return result;
     },

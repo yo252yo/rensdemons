@@ -1,7 +1,6 @@
 // runtime: LEVEL, CHARACTER
 
 class BattleObject extends LevelObject {
-//    constructor(x, y, name, max_actions, color, size, is_event) {
     constructor(x, y, name, max_actions, battle_sprite_name, world_sprite) {
       super(world_sprite, x, y);
       this.name = name;
@@ -17,7 +16,7 @@ class BattleObject extends LevelObject {
       for(var i = 0; i< this.max_actions; i++){
         this.seeds.push(g.get());
       }
-      this.add_interaction("Ignore", "You move away without looking back.");
+      this.add_interaction(ABILITY.Escape, "You move away without looking back.");
     }
 
     add_interaction(command, description, effect) { // this will be adapted to give things, like items or something
@@ -70,5 +69,13 @@ class ItemBattleObject extends BattleObject {
     constructor(x, y, name, max_actions) {
       var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
       super(x, y, name, max_actions, "objects/" + name, visual);
+    }
+}
+
+class SoulBattleObject extends BattleObject {
+    constructor(x, y, name, spritenb) {
+      var visual = new VisualElement(0,0,0,0);
+      super(x, y, name, 4, "battles/civilians/villager" + spritenb, visual);
+      this.lastingBattle = true;
     }
 }
