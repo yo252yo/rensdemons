@@ -587,14 +587,14 @@ var get_rejection_soul = function(type, seed, indoors, gen) {
 
 var get_meta_soul = function(seed, sprite_nb) {
   return {interaction: function() {
-    SPECIALBATTLES.villager("villagers", "villager" + sprite_nb, seed);
+    SPECIALBATTLES.characters("villagers", "villager" + sprite_nb, seed);
   }};
 }
 
 
 var get_villager_soul = function(type, gen, indoors, sprite_nb) {
   var seed = gen.get();
-  if (seed < 0.03) {
+  if (seed < 10.03) {
     return get_meta_soul(seed, sprite_nb);
   }
 

@@ -12,9 +12,9 @@ const SPECIALBATTLES = {
     BATTLE.api.make("_treasure", callback);
   },
 
-  villager: function(name, payoff, seed, callback){
+  characters: function(name, payoff, seed, callback){
     SPECIALBATTLES._battle_extra_data = [payoff, seed];
-    BATTLE.api.make("villager/" + name, callback);
+    BATTLE.api.make("characters/" + name, callback);
   },
 
   shop: function(sprite_nb){
