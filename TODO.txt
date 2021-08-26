@@ -4,8 +4,7 @@ Si tu as deja parle a un humain c’est bizarre qu’un autre te dise la meme ch
 
 
 
-hitbox are on sprite, hitbox of village on map is too big
-
+can we make things not spawn on label ???
 
 
 

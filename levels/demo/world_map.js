@@ -70,5 +70,5 @@ FEasyEvents.fill_by_retry();
 
 
 
-CURRENTLEVEL.initialize_with_character(300, 250, 0.6);
+CURRENTLEVEL.initialize_with_character(300, 200, 0.6);
 SAVE.autosave();
