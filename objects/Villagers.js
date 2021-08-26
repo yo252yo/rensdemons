@@ -4,9 +4,9 @@ class VillagerSoul extends SoulBattleObject {
     super(salt * -1000, salt * -1000, "villagers/" + type, sprite_nb);
 
     if (sprite_nb == 2 || sprite_nb == 3) {
-      this.vname = gen.pick(DATASETS.male_names);
-    } else {
       this.vname = gen.pick(DATASETS.female_names);
+    } else {
+      this.vname = gen.pick(DATASETS.male_names);
     }
 
     switch(type){
@@ -122,24 +122,117 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion",`${this.vname}: "We pray, offer blood and lives, so that the Goddess may forgive us and ease our pain!"`);
     this.add_interaction("Religion",`${this.vname}: "Religion is the only way to forgiveness which will keep our punishment bearable."`);
   }
-//TODO
+
   setup_denial() {
     var attack = {
-      attack_amplitude: 0.05, // Between 0 and 1
-      warning_time_s: 0.2,
-      react_time_s: 0.2,
-      time_variation: 0.8, // 1 = 100%
+      attack_amplitude: 0.5, // Between 0 and 1
+      warning_time_s: 1,
+      react_time_s: 1,
+      time_variation: 0.4, // 1 = 100%
     };
-    this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
+    this.add_enemy_action(`The constant cheerfulness of your conversation partner is a bit too much to handle.`, attack);
+    this.add_enemy_action(`You need to carefully craft your answer to not contradict ${this.vname}'s weird inconsistent answer.`, attack);
+    this.add_enemy_action(`You try to tiptoe carefully around the truth to not break ${this.vname}'s rosy bubble of optimism.`, attack);
+
+    this.add_enemy_action(`${this.vname} smiles in silence. Their enthusiasm is almost contagious.`);
+    this.add_enemy_action(`You listen as ${this.vname} rambles on about how great this city is.`);
+    this.add_enemy_action(`${this.vname} goes on in pointless details about how great a day they're having.`);
 
 
     var start_text = gen.pick([
-      `${this.vname}: "I haven't seen you around here before. We don't really like strangers in this town..."`,
+      `The villager politely greets you.`,
+      `The villager greets you with open arms and a friendly face.`,
+      `The villager doesn't seem to notice you. They are startled when you speak.`,
+      `The person in front of you is smiling in spite of what seems to be a pretty deep fresh wound on their arm.`,
+      `${this.vname}: "Hello! Isn't it a beautiful day?"`,
+      `${this.vname}: "Hello! Welcome to the best city on this world!"`,
     ]);
     this.set_description(start_text);
 
 
-    this.add_interaction("Weather", `${this.vname}: "Yes, the weather has been dreadful. It's obvious, since we share the sky with lowlives heretics, we must also share their punition..."`);
+    this.add_interaction("Weather", [`${this.vname}: "Is there anything better than this great sunshine?"`,
+                                    `You are perplexed, as the sky is full of dark clouds.`]);
+    this.add_interaction("Weather", [`${this.vname}: "I love days of warm weather like this"`,
+                                    `$$Ren$: "But.. it's cold, and raining!"`,
+                                    `${this.vname}: "Poor child, you're delusional. Your brain must be hurt from the tough circumstances you've lived through..."`]);
+    this.add_interaction("Weather", [`${this.vname}: "This is the perfect temperature for crops!"`,
+                                    `${this.vname} points in a direction where you can see a few fruits on the ground. They are obviously smaller than they should have been, as if they didn't develop properly.`]);
+
+    this.add_interaction("Crops", `${this.vname}: "What do you mean reserves are slim? You must be misinformed, there's plenty of food in store!"`);
+    this.add_interaction("Crops", [`${this.vname}: "Do you want to share my bread? It's a bit stale, but I've had worse..."`,
+                                  `$$Ren$: "Hum excuse me, sorry, I think this is a rock..."`]);
+    this.add_interaction("Crops", [`${this.vname}: "Did you not see the lustrous fields all around our glorious city? We have plenty of food to spare!"`,
+                                  `$$Ren$: "Actually, all I saw were ravaged lands..."`,
+                                  `${this.vname}: "That's odd... You probably came from a weird direction then, that must be it!"`]);
+
+    this.add_interaction("War", `${this.vname}: "What are you talking about? There's no war in this city."`);
+    this.add_interaction("War", `${this.vname}: "I, for one, have never seen any monster around here. I'm not sure what you're talking about."`);
+    this.add_interaction("War", `${this.vname}: "War? I've only ever known this period of peace and quiet."`);
+    this.add_interaction("War", `${this.vname}: "What country are you talking about? Yours? It sounds awful, I'm so glad to live here."`);
+
+    this.add_interaction("Hunt", `${this.vname}: "Hunting is pretty easy in these parts. Animals just come to us!"`);
+    this.add_interaction("Hunt", `${this.vname}: "Don't you just love taking a little stroll in the woods and hunt whatever comes your way?"`);
+    this.add_interaction("Hunt", `${this.vname}: "That's a common misconception, hunting doesn't actually hurt the animals, you know."`);
+
+    this.add_interaction("Taxes", `${this.vname}: "Sure, I'll gladly pay my taxes, it's what allows the king to make our kingdom such a wonderful and safe place!"`);
+    this.add_interaction("Taxes", `${this.vname}: "We barely pay any taxes, and in exchange we get protections and services from the kingdom. Talk about a good deal!"`);
+    this.add_interaction("Taxes", `${this.vname}: "Pay taxes? To whom?"`);
+
+    this.add_interaction("King", `${this.vname}: "All hail our mighty king, the glorious and perfect leader of this great nation!"`);
+    this.add_interaction("King", `${this.vname}: "He is doing such an outstanding job! It's thanks to him that we're so prosperous! I can't imagine a better king."`);
+    this.add_interaction("King", `${this.vname}: "You know what, I don't think he exists. Never seen him in person, and things have always been just fine."`);
+
+    this.add_interaction("Health", [`${this.vname}: "I'm in great shape! Everything is fine!"`,
+                                    `$$Ren$: "Are you sure? You look a bit pale... and... malnourished."`,
+                                    `${this.vname}: "Of course I'm sure! Maybe you're the one in poor health, sounds to me like your eyesight is bad."`]);
+    this.add_interaction("Health", [`${this.vname}: "My baby was born weak, and got very sick, but he recovered, and now he's in great shape!"`,
+                                    `$$Ren$: "Where is he, then?"`,
+                                    `${this.vname}: "Oh, he's... somewhere... He's in great shape... In great shape..."`,
+                                    `The vacant gaze on ${this.vname}'s face tells you it might be better to avoid the topic.`]);
+    this.add_interaction("Health", [`$$Ren$: "What happened to your arm?"`,
+                                    `${this.vname}: "What are you talking about?"`,
+                                    `$$Ren$: "You're missing your left arm, is there a story behind it?"`,
+                                    `${this.vname}: "No I'm not."`,
+                                    `You don't know how to react to this.`]);
+
+    this.add_interaction("Family", `${this.vname}: "I haven't seen my children in a while... It's been a few years, actually. I'm sure they're fine, but I wonder where they went..."`);
+    this.add_interaction("Family", `${this.vname}: "My parents retired in a farm when I was very young. Then my siblings joined them. I haven't seen any of them since. It must be a pretty nice, joyful farm. Maybe I'll go there too some day."`);
+    this.add_interaction("Family", [`${this.vname}: "Are you looking at my little girl? Isn't she the prettiest?"`,
+                                    `But there is no-one else around...`]);
+
+    this.add_interaction("Promised Child", `${this.vname}: "Promised Children are great! We have a dozen in this village!"`);
+    this.add_interaction("Promised Child", `${this.vname}: "I've met the Promised Child once! It was a long time ago, it's probably not a child anymore."`);
+    this.add_interaction("Promised Child", `${this.vname}: "The Promised Child is a legend of the past! It's the person who defeated all the monsters and their leader, and ushered in this era of peace! We send our thanks every day to the Goddess and Her Promised Child, for giving us this great land!"`);
+
+    this.add_interaction("Job", [`${this.vname}: "I'm the best tanner this land has ever seen! I bend leather to my will!"`,
+                                `$$Ren$: "Why are you not wearing any, then?"`,
+                                `${this.vname}: "Hum just a dry spell, haven't had a job in a while..."`]);
+    this.add_interaction("Job", [`${this.vname}: "Yes, you're not dreaming, it is me, ${this.vname}, the mighty blacksmith. I guess my reputation precedes me. But if you must, you can have a look at my latest creation."`,
+                                `Saying that, ${this.vname} holds you a tiny dagger. It looks more like a kitchen knife, and the blade is so blunt that you cannot imagine it hurting anyone.`]);
+    this.add_interaction("Job", [`${this.vname}: "I'm a hunter, but I'm sure you can tell, because I keep trophies of all the beasts I've slain!"`,
+                                `But looking around, there is no such trophy to be found.`]);
+    this.add_interaction("Job", `${this.vname}: "As butcher, my work depends on whatever the hunters are able to bring. They haven't brought anything in days, but it's just as well, it allows me to work on my passion, poetry. Funny how life works out perfectly sometimes, isn't it?"`);
+
+    this.add_interaction("Rumors", `${this.vname}: "I hear that an emissary from a faraway land arrived in our city recently, and called it the 'greatest city he had ever seen'."`);
+    this.add_interaction("Rumors", `${this.vname}: "There isn't a lot of gossip in our town. People just share facts, and everyone agrees."`);
+    this.add_interaction("Rumors", `${this.vname}: "Rumor has it people are thinking about me for the post of new mayor of the town! I hope I can do a good job and keep this town great!"`);
+
+    this.add_interaction("Dreams", `${this.vname}: "I just wish this bliss would continue."`);
+    this.add_interaction("Dreams", `${this.vname}: "I don't think there's anything I'm missing right now!"`);
+    this.add_interaction("Dreams", `${this.vname}: "I wish the whole world could be as perfect as this town!"`);
+
+    this.add_interaction("Traditions", `${this.vname}: "Every now and then we throw together a banquet with the whole town to rejoice on how well we're doing!"`);
+    this.add_interaction("Traditions", `${this.vname}: "We have a custom in this city, which is never to tell anyone else what we think of them. It helps reduce the number of conflicts. Many people do live in their own little world, better not to break their bubble..."`);
+    this.add_interaction("Traditions", `${this.vname}: "Our values are respect and courtesy. Mind you it's pretty easy to be respectful when nothing bad is happening and everyone is just happy."`);
+
+    this.add_interaction("City", `${this.vname}: "Welcome to the best city in the world! There is no problems here, you can be happy!"`);
+    this.add_interaction("City", `${this.vname}: "Welcome to the best city in the world, everything is great here. Every day is a little slice of heaven."`);
+    this.add_interaction("City", `${this.vname}: "This city is simply the best possible city. I cannot imagine anything better than this."`);
+    this.add_interaction("City", `${this.vname}: "Here, we value peace. Please don't bring about trouble by spreading lies and hurting people."`);
+
+    this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us such a perfect land!"`);
+    this.add_interaction("Religion", `${this.vname}: "We pray so that the Goddess always shields us from experiencing pain!"`);
+this.add_interaction("Religion", `${this.vname}: "Religion is our way to give thanks for the blessings we have gotten."`);
   }
 
   setup_fear() {
