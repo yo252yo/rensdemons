@@ -56,9 +56,12 @@ class Filler {
   }
 
   _canBuild(x, y) {
-    for(var i = -0.1; i <= 1.1; i += 0.2){
-      for(var j = -0.1; j <= 1.1; j += 0.2){
-        if(!CURRENTLEVEL.io.is_walkable(x + this.obj_w * i, y - this.obj_h * j)){
+    for(var i = -0.2; i <= 1.05; i += 0.25){
+      for(var j = -0.05; j <= 1.2; j += 0.25){
+        var xx = Math.max(1, x + this.obj_w * i);
+        var yy = Math.max(1, y - this.obj_h * j);
+        var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
+        if (elem || !CURRENTLEVEL.io.is_walkable(xx, yy)){
           return false;
         }
       }
