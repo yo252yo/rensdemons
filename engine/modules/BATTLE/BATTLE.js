@@ -74,7 +74,7 @@ const BATTLE = {
       }
 
       var result = options_pursue.concat(options_winning).concat(options_started).concat(options_unknown);
-      if (options.length <= 10) {
+      if (options.length <= 10 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
         result = result.concat(options_losing);
       }
       return result.concat(options_flight);

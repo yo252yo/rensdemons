@@ -54,6 +54,6 @@ class BattleObject extends LevelObject {
     }
 
     battle_name() {
-      return "objects/" + this.name;
+      return BATTLEOBJECTSMANAGER.prefix + this.name;
     }
 }

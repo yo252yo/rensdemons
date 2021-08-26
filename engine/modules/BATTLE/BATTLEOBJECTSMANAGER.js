@@ -1,5 +1,6 @@
 const BATTLEOBJECTSMANAGER = {
   buffer: undefined,
+  prefix: "objects/",
 
   battle: {
     get_extra_function: function(battle_object, command) {
