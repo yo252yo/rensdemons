@@ -337,7 +337,7 @@ const BATTLE = {
         if(callback) {
           BATTLE.win_callback = callback;
         }
-        if (name.startsWith("objects/")){
+        if (name.startsWith(BATTLEOBJECTSMANAGER.prefix)){
           BATTLEOBJECTSMANAGER.setup_battle(name.substring(8));
         } else {
           new Import("battles/" + name);
