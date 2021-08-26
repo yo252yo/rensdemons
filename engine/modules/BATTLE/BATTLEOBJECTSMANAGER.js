@@ -31,7 +31,7 @@ const BATTLEOBJECTSMANAGER = {
     if (name != BATTLEOBJECTSMANAGER.buffer.name){ // we do a roundtrip to BATTLE for the whole battle setup
       CONSOLE.error("[BATTLEOBJECTSMANAGER] called with the wrong battleobject.");
     }
-    new CenteredImage("assets/objects/" + name + ".png", 'background');
+    new CenteredImage("assets/" + BATTLEOBJECTSMANAGER.buffer.battle_sprite_name + ".png", 'background');
 
     BATTLEOBJECTSMANAGER.battle.add_from_object(BATTLEOBJECTSMANAGER.buffer);
 

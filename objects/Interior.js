@@ -14,7 +14,7 @@ class S_Column extends LevelObject {
   }
 }
 
-class B_Statue extends BattleObject {
+class B_Statue extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/statue");
     this.adjust_hitbox(10,0,20,15);
@@ -45,7 +45,7 @@ class S_SavePoint extends LevelObject {
   }
 }
 
-class B_Bed extends BattleObject {
+class B_Bed extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
@@ -61,7 +61,7 @@ class B_Bed extends BattleObject {
   }
 }
 
-class B_Bucket extends BattleObject {
+class B_Bucket extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
@@ -77,7 +77,7 @@ class B_Bucket extends BattleObject {
   }
 }
 
-class B_Cabinet extends BattleObject {
+class B_Cabinet extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
@@ -92,7 +92,7 @@ class B_Cabinet extends BattleObject {
   }
 }
 
-class B_Chair extends BattleObject {
+class B_Chair extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
@@ -106,7 +106,7 @@ class B_Chair extends BattleObject {
   }
 }
 
-class B_Hay extends BattleObject {
+class B_Hay extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
@@ -120,7 +120,7 @@ class B_Hay extends BattleObject {
   }
 }
 
-class B_Housefire extends BattleObject {
+class B_Housefire extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
@@ -135,7 +135,7 @@ class B_Housefire extends BattleObject {
   }
 }
 
-class B_Jar extends BattleObject {
+class B_Jar extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
@@ -149,7 +149,7 @@ class B_Jar extends BattleObject {
   }
 }
 
-class B_Shelf extends BattleObject {
+class B_Shelf extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
@@ -163,7 +163,7 @@ class B_Shelf extends BattleObject {
   }
 }
 
-class B_Stool extends BattleObject {
+class B_Stool extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
@@ -176,7 +176,7 @@ class B_Stool extends BattleObject {
   }
 }
 
-class B_Table extends BattleObject {
+class B_Table extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/table");
     this.adjust_hitbox(0,0,31,34);
@@ -189,7 +189,7 @@ class B_Table extends BattleObject {
   }
 }
 
-class B_Chest extends BattleObject {
+class B_Chest extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);

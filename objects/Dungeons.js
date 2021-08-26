@@ -262,9 +262,9 @@ class S_Bocals extends SimpleObject {
   }
 }
 
-class B_Pebbles extends BattleObject {
+class B_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/pebbles", 2, color, size, true);
+    super(x, y, "exterior/pebbles", color, size);
 
     this.set_description("There are pebbles on the ground.");
     this.add_interaction("Play", "You flick around a few spherical rocks with $$BestFriend$. The one who pushes the other's pebbles outside of the game area wins. Of course, you win!");
@@ -278,9 +278,9 @@ class B_Pebbles extends BattleObject {
   }
 }
 
-class B_Plants extends BattleObject {
+class B_Plants extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/plant", 2, color, size, true);
+    super(x, y, "exterior/plant", color, size);
 
     this.set_description("You find yourself near a little green plant.");
     this.add_interaction("Pluck", "You harvest a leaf from the small plant. It's very green, but serves no purpose whatsoever. Did you imagine it would trigger something? Why did you do that?");
@@ -293,9 +293,9 @@ class B_Plants extends BattleObject {
   }
 }
 
-class B_Seashell extends BattleObject {
+class B_Seashell extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/seashell", 2, color, size, true);
+    super(x, y, "exterior/seashell", color, size);
 
     this.set_description("There's a seashell on your way.");
     this.add_interaction("Listen", "You bring the seashell to your ear. It is said that you can hear the sea, but since you're already underwater, it changes nothing for you.");
@@ -309,9 +309,9 @@ class B_Seashell extends BattleObject {
 
 
 // NO BEST FRIEND!
-class B_Skeleton extends BattleObject {
+class B_Skeleton extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/skeleton", 2, color, size, true);
+    super(x, y, "exterior/skeleton", color, size);
 
     this.set_description("You discover what appears to be a human skeleton.");
     this.add_interaction("Plunder", "You look around for any valuables that might be up for the taking after the demise of their previous owner. Sadly, there doesn't seem to be anything eager to be adopted by your benevolent care.");

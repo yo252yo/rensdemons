@@ -1,31 +1,21 @@
 // runtime: LEVEL, CHARACTER
 
 class BattleObject extends LevelObject {
-    constructor(x, y, name, max_actions, color, size, is_event) {
-      if (is_event){
-        size = size ? size: 50;
-        color = (color && color != "undefined") ? color: 'obj_dark';
-        var visual = new StaticSprite("assets/objects/event.png", color, size, size);
-      } else {
-        color = color ? color: 'obj_light';
-        var visual = new StaticSprite("assets/objects/" + name + ".png", color);
-      }
-      super(visual, x, y);
+//    constructor(x, y, name, max_actions, color, size, is_event) {
+    constructor(x, y, name, max_actions, battle_sprite_name, world_sprite) {
+      super(world_sprite, x, y);
       this.name = name;
+      this.battle_sprite_name = battle_sprite_name;
       var g = new Generator(x+y);
       this.interactions = {};
       this.special_effect = {};
       this.max_actions = 2;
-      this.is_event = is_event;
       this.seeds = [];
       if (max_actions) {
         this.max_actions = max_actions;
       }
       for(var i = 0; i< this.max_actions; i++){
         this.seeds.push(g.get());
-      }
-      if(is_event){
-        this.adjust_hitbox(0, 0, size, size);
       }
       this.add_interaction("Ignore", "You move away without looking back.");
     }
@@ -54,12 +44,31 @@ class BattleObject extends LevelObject {
 
     interaction() {
       BATTLEOBJECTSMANAGER.interact(this);
-      if (this.is_event){
-        this.destroy();
-      }
     }
 
     battle_name() {
       return BATTLEOBJECTSMANAGER.prefix + this.name;
+    }
+}
+
+class EventBattleObject extends BattleObject {
+    constructor(x, y, name, color, size) {
+      size = size ? size: 50;
+      color = (color && color != "undefined") ? color: 'obj_dark';
+      var visual = new StaticSprite("assets/objects/event.png", color, size, size);
+      super(x, y, name, 2, "objects/" + name, visual);
+      this.adjust_hitbox(0, 0, size, size);
+    }
+
+    interaction() {
+      super.interaction();
+      this.destroy();
+    }
+}
+
+class ItemBattleObject extends BattleObject {
+    constructor(x, y, name, max_actions) {
+      var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+      super(x, y, name, max_actions, "objects/" + name, visual);
     }
 }
