@@ -594,7 +594,7 @@ var get_meta_soul = function(seed, sprite_nb) {
 
 var get_villager_soul = function(type, gen, indoors, sprite_nb) {
   var seed = gen.get();
-  if (seed < 10.03) {
+  if (seed < 0.03) {
     return get_meta_soul(seed, sprite_nb);
   }
 
