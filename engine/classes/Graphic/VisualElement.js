@@ -39,7 +39,7 @@ class VisualElement {
       // visual elements are indexed at their bottom left corner
       this.container.style.top = (this.y - this.height) + "px";
       this.container.style.left = this.x + "px";
-      if (this.container.style.zIndex == oldY){
+      if (Math.abs(this.container.style.zIndex - oldY) < 10){
         this.container.style.zIndex = parseInt(this.y);
       }
     }
