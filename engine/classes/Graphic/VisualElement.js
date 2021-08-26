@@ -49,8 +49,12 @@ class VisualElement {
     }
 
     shift(dx, dy) {
-      this.y += dy;
-      this.x += dx;
+      if(dy){
+        this.y += dy;
+      }
+      if(dx){
+        this.x += dx;
+      }
       this.refresh_position();
     }
 
