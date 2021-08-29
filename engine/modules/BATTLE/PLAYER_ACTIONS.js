@@ -57,8 +57,8 @@ const PLAYER_ACTIONS = {
         }
       });
 
+      var feedback = LANGUAGE.battle.last_hit_feedback();
       for(var i=nb_hits-2; i>0; i--){
-        var feedback = LANGUAGE.battle.last_hit_feedback();
         var description = PLAYER_ACTIONS._internal._shorten_if_explored(name,
            LANGUAGE.actions.usage(name).concat(feedback));
 
