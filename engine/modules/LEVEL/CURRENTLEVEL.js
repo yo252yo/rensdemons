@@ -62,7 +62,7 @@ const CURRENTLEVEL = {
         }
       }
 
-      INTERFACE.click_marker(x,y);
+      INTERFACE.click_marker(x,y, is_hold);
       CHARACTER.get().try_walk_to(x, y);
     },
 

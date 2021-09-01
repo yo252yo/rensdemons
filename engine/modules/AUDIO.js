@@ -102,7 +102,9 @@ const AUDIO = {
   effect: {
     levelup: function() {         AUDIO._play_sfx('lvlup'); },
     unlock: function() {          AUDIO._play_sfx('unlock'); },
-    clickmove: function() {       AUDIO._play_sfx('clickmove'); },
+    clickmove: function(is_hold) {
+       AUDIO._play_sfx('clickmove', is_hold ? 2000 : 100, 'clickmove'+ is_hold);
+    },
     choice: function() {          AUDIO._play_sfx('choice'); },
     interaction: function() {     AUDIO._play_sfx('interaction'); },
     dodge_place: function() {     AUDIO._play_sfx('dodge_place'); },

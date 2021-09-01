@@ -87,12 +87,12 @@ const INTERFACE = {
   },
 
   // should this be in IO ?
-  click_marker: function(x,y) {
+  click_marker: function(x,y, is_hold) {
     var element = document.getElementById("IME_click_confirmation_cross");
     element.style.left = x-12;
     element.style.top = y-12;
     element.style.visibility = "visible";
-    AUDIO.effect.clickmove();
+    AUDIO.effect.clickmove(is_hold);
 
     if(INTERFACE._previous_timeout){
       clearTimeout(INTERFACE._previous_timeout);
