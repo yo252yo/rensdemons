@@ -79,10 +79,10 @@ class S_TownFloor extends S_Floor {
 
     var exit = 40;
 
-    var left_border = new S_ExitFloor(x-exit, y+exit, exit+10, h+2*exit, outside);
-    var right_border = new S_ExitFloor(x+w-10, y + exit, exit+10, h+2*exit, outside);
-    var top_border = new S_ExitFloor(x-exit, y-h+10, w+2*exit, exit+10, outside);
-    var bot_border = new S_ExitFloor(x-exit, y+exit, w+2*exit, exit+10, outside);
+    var left_border = new S_ExitFloor(x-exit, y-h/2+h/8, exit+10, 2*h/8, outside);
+    var right_border = new S_ExitFloor(x+w-10, y-h/2+h/8, exit+10, 2*h/8, outside);
+    var top_border = new S_ExitFloor(x+w/2-w/8, y-h+10, 2*w/8, exit+10, outside);
+    var bot_border = new S_ExitFloor(x+w/2-w/8, y+exit, 2*w/8, exit+10, outside);
   }
 }
 
