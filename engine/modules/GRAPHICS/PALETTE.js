@@ -54,9 +54,9 @@ const PALETTE = {
   text_background: function() {
     var base = PALETTE.color('obj_dark');
     if (PALETTE.color('obj_dark').is_dark()) {
-      return base.hoffset(-0.3);
+      return base.hoffset(-0.4);
     } else{
-      return base.hoffset(0.3); // i dont think this happens in regular mode
+      return base.hoffset(0.4); // i dont think this happens in regular mode
     }
   },
 
@@ -72,9 +72,9 @@ const PALETTE = {
   text_speaker_color: function() {
     var base =  PALETTE.text_color();
     if (base.is_dark()) {
-      return base.hoffset(0.4);
+      return base.hoffset(0.3);
     } else{
-      return base.hoffset(-0.4);
+      return base.hoffset(-0.3);
     }
   },
 
