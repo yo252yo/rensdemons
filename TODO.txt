@@ -39,11 +39,3 @@ GO OVER EVERYTHING:
 >  description in party.js,
 >  attacks in languge,
 >  encounter+battle
-
-
-should we do a cemetary?
-
-
-decide title
-be careful, write in present and second person, also dont make things spawn on doors
-should we meet the king?

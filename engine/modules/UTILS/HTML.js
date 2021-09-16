@@ -22,6 +22,17 @@ const HTML = {
       canvas.getContext('2d').fillRect(x-r, y-r, 2*r, 2*r);
     },
 
+    draw_circle_in: function(canvas, color, r, from, to){
+      canvas.getContext('2d').globalCompositeOperation = 'source-in';
+      canvas.getContext('2d').fillStyle = PALETTE.color_code_with_default(color, color);
+
+      canvas.getContext('2d').beginPath();
+      canvas.getContext('2d').moveTo(r,r);
+      canvas.getContext('2d').arc(r, r, r, Math.PI * 2 - to, Math.PI * 2 - from);
+      canvas.getContext('2d').closePath();
+      canvas.getContext('2d').fill();
+    },
+
     draw: function(canvas, path, color){
       var ressource = RESOURCES.get_img(path);
       RESOURCES.onload(ressource, function() {

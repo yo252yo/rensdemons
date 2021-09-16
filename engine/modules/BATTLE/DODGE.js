@@ -59,31 +59,40 @@ const DODGE = {
       IO.control.dodge();
     },
 
-    raw_hit: function (color, multiplier) {
-      if (! multiplier) { multiplier = 1; }
+    rough_hit: function () {
       var mid = DODGE.sprite.prompt.width / 2;
       var r = mid * 0.7; // radius of the circle we shoot on.
       var attack_angle = DODGE.attack_angle * Math.PI * 2;
       var x = mid + r * Math.cos(attack_angle);
       var y = mid - r * Math.sin(attack_angle);
-      var gradius = multiplier * DODGE.sprite.prompt.width*(0.2 + DODGE.get_params.attack_amplitude() * 1.7);
-      HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, color, x, y, gradius);
+      var gradius = DODGE.sprite.prompt.width*(0.2 + DODGE.get_params.attack_amplitude() * 1.7);
+      HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, "background", x, y, gradius);
 
       for (var l in DODGE.initial_sprites){
         var object = DODGE.initial_sprites[l];
-        object.shift(40 * Math.cos(attack_angle), -40 * Math.sin(attack_angle));
+        // we need to animate this for duane
+        object.shift(0.5 * mid * Math.cos(attack_angle), -0.5 * mid * Math.sin(attack_angle));
       }
+    },
+
+    precise_hit: function (color) {
+      var mid = DODGE.sprite.prompt.width / 2;
+
+      var from =  Math.PI * 2 * (DODGE.attack_angle - DODGE.get_params.attack_amplitude() / 2);
+      var to =  Math.PI * 2 * (DODGE.attack_angle + DODGE.get_params.attack_amplitude() / 2);
+
+      HTML.canvas.draw_circle_in(DODGE.sprite.attacked.html_canvas, "background", mid, from, to);
     },
 
     hit: function(){
       DODGE.sprite.attacked = new CenteredImage("assets/interface/circle.png", 'obj_light');
-      DODGE.draw.raw_hit("background", 1.5);
+      DODGE.draw.rough_hit();
       DODGE.sprite.attacked.show();
       DODGE.sprite.attacked.adjust_depth(10100); // The sprite is a level object and has the zindex of its y.
     },
 
     hit_confirm: function(){
-      DODGE.draw.raw_hit(PALETTE.text_color().code(), 0.7);
+      DODGE.draw.precise_hit();
     },
 
     defense: function() {
@@ -213,6 +222,7 @@ const DODGE = {
     react: function(){
       DODGE.attack_angle = Math.random();
       DODGE.attack_target = Math.random();
+      DODGE.sprite.prompt.hide();
       DODGE.draw.hit();
       AUDIO.effect.dodge_attack();
 
@@ -224,7 +234,6 @@ const DODGE = {
 
     hit: function(){
       DODGE.accepting_input = false;
-      DODGE.sprite.prompt.hide();
       DODGE.draw.hit_confirm();
       AUDIO.effect.dodge_attack();
 
