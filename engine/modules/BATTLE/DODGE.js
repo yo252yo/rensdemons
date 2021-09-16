@@ -33,6 +33,18 @@ const DODGE = {
     time_variation: function() {
       return DODGE._params.time_variation;
     },
+
+    actual_react_time_ms: function(){
+      var react_time = DODGE.get_params.react_time_s() * 1000;
+      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * react_time;
+      return Math.max (DODGE.MIN_TIMEOUT, react_time + rand_teak);
+    },
+
+    actual_warning_time_ms: function(){
+      var warning_time = DODGE.get_params.warning_time_s() * 1000;
+      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * warning_time;
+      return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
+    },
   },
 
   center_sprite: function(){
@@ -59,6 +71,26 @@ const DODGE = {
       IO.control.dodge();
     },
 
+    advance_battler: function(){
+      var animation_frames = 30;
+      var attack_angle = DODGE.attack_angle * Math.PI * 2;
+      var d = 0.5 * 0.5 * DODGE.sprite.prompt.width / animation_frames;
+      for (var l in DODGE.initial_sprites){
+        var object = DODGE.initial_sprites[l];
+        object.shift(d * Math.cos(attack_angle), - d * Math.sin(attack_angle));
+      }
+      DODGE.battler_steps ++;
+
+      if (DODGE.battler_steps < animation_frames){
+        setTimeout(DODGE.draw.advance_battler, DODGE.get_params.actual_react_time_ms()/animation_frames);
+      }
+    },
+
+    move_battler: function(){
+      DODGE.battler_steps = 0;
+      DODGE.draw.advance_battler();
+    },
+
     rough_hit: function () {
       var mid = DODGE.sprite.prompt.width / 2;
       var r = mid * 0.7; // radius of the circle we shoot on.
@@ -67,12 +99,7 @@ const DODGE = {
       var y = mid - r * Math.sin(attack_angle);
       var gradius = DODGE.sprite.prompt.width*(0.2 + DODGE.get_params.attack_amplitude() * 1.7);
       HTML.canvas.draw_gradient_in(DODGE.sprite.attacked.html_canvas, "background", x, y, gradius);
-
-      for (var l in DODGE.initial_sprites){
-        var object = DODGE.initial_sprites[l];
-        // we need to animate this for duane
-        object.shift(0.5 * mid * Math.cos(attack_angle), -0.5 * mid * Math.sin(attack_angle));
-      }
+      DODGE.draw.move_battler();
     },
 
     precise_hit: function (color) {
@@ -212,11 +239,8 @@ const DODGE = {
   events:{
     prompt: function(){
       DODGE.draw.prompt();
-      var warning_time = DODGE.get_params.warning_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * warning_time;
-      warning_time = Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
       DODGE.accepting_input = true;
-      setTimeout(DODGE.events.react, warning_time);
+      setTimeout(DODGE.events.react, DODGE.get_params.actual_warning_time_ms());
     },
 
     react: function(){
@@ -226,10 +250,7 @@ const DODGE = {
       DODGE.draw.hit();
       AUDIO.effect.dodge_attack();
 
-      var react_time = DODGE.get_params.react_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * react_time;
-      react_time = Math.max (DODGE.MIN_TIMEOUT, react_time + rand_teak);
-      setTimeout(DODGE.events.hit, react_time);
+      setTimeout(DODGE.events.hit, DODGE.get_params.actual_react_time_ms());
     },
 
     hit: function(){
