@@ -1,10 +1,22 @@
 
+- dodge minigame better feedback on attack zone
+dodge game isnt clear that its in two phases, make it clearer with real enemi animation
 
+- make sure the character with FOW is always centered
 
+- E Z as interaction keys
+
+- when you interact with someone/something, and wish to interact again, you need to move away and back rather than just pressing Enter again. (remember direction)
+
+- firefox bloque les popup par defaut!
+
+- Add self aware messages mb you need to farm when you cant win a battle
+
+- less loud effects by default
+
+- its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 
 --------------------------
-REAL GAME CHANGES:
-
 GO OVER EVERYTHING:
 - textures for floor
 - check that decor is placed before fights even the ones that are static/fixed (can be done as we add textures)
@@ -15,7 +27,6 @@ GO OVER EVERYTHING:
 - when you enter harpie peak youre spawned on wrong location
 
 --------------------------
-its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 
 
 - rest of the story
@@ -36,7 +47,3 @@ should we do a cemetary?
 decide title
 be careful, write in present and second person, also dont make things spawn on doors
 should we meet the king?
-
-
-hide and seek shorter
-less loud effects by default_text
