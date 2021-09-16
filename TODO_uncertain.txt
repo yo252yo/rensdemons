@@ -19,3 +19,5 @@ animation at the end of clue is weird (blink screen)
 
 - during his demo playthrough M would respawn in the middle of the church every time he enters
 - during his demo playthrough M fireball doesnt get crossed when useless
+
+be careful, write in present and second person, also dont make things spawn on doors
