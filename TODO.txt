@@ -1,7 +1,4 @@
 
-- dodge minigame better feedback on attack zone
-dodge game isnt clear that its in two phases, make it clearer with real enemi animation
-
 - make sure the character with FOW is always centered
 
 - E Z as interaction keys
