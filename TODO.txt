@@ -1,13 +1,9 @@
 
 - make sure the character with FOW is always centered
 
-- E Z as interaction keys
-
 - when you interact with someone/something, and wish to interact again, you need to move away and back rather than just pressing Enter again. (remember direction)
 
 - Add self aware messages mb you need to farm when you cant win a battle
-
-- less loud effects by default
 
 - its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
 

@@ -5,7 +5,7 @@ const AUDIO = {
   _CURRENT_EFFECTS: {},
 
   VOLUME: {
-    SFX: 0.8,
+    SFX: 0.7,
     MUSIC: 0.3,
   },
 
