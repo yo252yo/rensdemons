@@ -54,7 +54,7 @@ new SM_Town(1450, 2500, "022_town5", "town_5", after_t2); // optional
 // Scenario elements
 new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
 new SM_Lake(250, 200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
-new SM_Mountain(1300, 1025, gen, `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
+new SM_Mountain(1300, 1025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
 new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "032_fissure", LaterInStory);
 new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
