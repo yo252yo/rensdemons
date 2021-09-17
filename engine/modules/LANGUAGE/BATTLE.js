@@ -25,6 +25,15 @@ LANGUAGE.battle = {
                         `You manage to make your way out of this situation.`]);
   },
 
+  foresight: function() {
+    return [
+      `$$BestFriend$: "Leave it to me!"`,
+      `$$Ren$: "Stop! No good can come of it. All we can do is run and come back when we're stronger!"`,
+      `$$BestFriend$: "But we haven't tried anything yet! How do you know there's nothing we can do? The Goddess?"`,
+      `You nod, and drag $$BestFriend$ by the hand away from the battle.`,
+    ];
+  },
+
   several_hit_feedback: function (){
     return [`It's clearly effective, but you can tell that one hit is not enough to bring down your enemy. You're going to need more!`];
   },

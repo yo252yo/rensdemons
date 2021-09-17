@@ -37,7 +37,7 @@ const BATTLE = {
       var options_flight = [];
       for (var i in options){
           var o = options[i];
-          if(o.text.includes(ABILITY.Escape)){
+          if(o.text.includes(ABILITY.Escape) || o.text.includes(ABILITY.Foresight)){
             options_flight.push(o);
           } else if(o.text.includes(BATTLE._last_action)){
             o.text = "<b>" + o.text + "</b>";
@@ -58,6 +58,7 @@ const BATTLE = {
 
       // Only keep 3 losing unknown actions
       var useless_options_unknown = 0;
+      var winning_options_unknown = 0;
       for (var i = options_unknown.length - 1; i >=0; i--){
         var b = BATTLE._player_actions[options_unknown[i].text];
         if(!b){ // text has been modified by dictionary
@@ -69,8 +70,16 @@ const BATTLE = {
             if (useless_options_unknown > 3){
               options_unknown.splice(i, 1);
             }
+          } else {
+            winning_options_unknown ++;
           }
         }
+      }
+
+      if(winning_options_unknown > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
+        options_flight = options_flight.filter(function(e){
+            return e.index != ABILITY.Foresight;
+        });
       }
 
       var result = options_pursue.concat(options_winning).concat(options_started).concat(options_unknown);

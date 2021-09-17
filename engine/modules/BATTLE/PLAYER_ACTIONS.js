@@ -260,6 +260,13 @@ const PLAYER_ACTIONS = {
     for(var i of artifacts){
       PLAYER_ACTIONS.win(i, 1);
     }
+
+    PLAYER_ACTIONS.add({ // Removed by default if there is a winning outcome, see BATTLe.js
+      name: ABILITY.Foresight,
+      unlock: true,
+      description: LANGUAGE.battle.foresight(),
+      outcome: BATTLETREE.ESCAPE,
+    });
   },
 
 

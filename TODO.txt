@@ -3,7 +3,7 @@
 
 - when you interact with someone/something, and wish to interact again, you need to move away and back rather than just pressing Enter again. (remember direction)
 
-- Add self aware messages mb you need to farm when you cant win a battle
+- dont let them put spaces in nicknames
 
 
 

@@ -1,5 +1,6 @@
 const ABILITY = {
   Escape: "Escape",
+  Foresight: "Foresight",
   CallHelp: "Call help",
   Pray: "Pray",
 
