@@ -33,12 +33,21 @@ const KEYS_UTIL = {
   is_enter: function(key) {
     return key === 'enter' || key === 13;
   },
+  is_e: function(key) {
+    return key === 'e' || key === 69;
+  },
+  is_z: function(key) {
+    return key === 'z' || key === 90;
+  },
+  is_x: function(key) {
+    return key === 'x' || key === 88;
+  },
 
   is_ok: function(key) {
-    return KEYS_UTIL.is_space(key) || KEYS_UTIL.is_enter(key);
+    return KEYS_UTIL.is_space(key) || KEYS_UTIL.is_enter(key) || KEYS_UTIL.is_e(key) || KEYS_UTIL.is_z(key) ;
   },
   is_cancel: function(key) {
-    return KEYS_UTIL.is_esc(key) || KEYS_UTIL.is_backspace(key);
+    return KEYS_UTIL.is_esc(key) || KEYS_UTIL.is_backspace(key) || KEYS_UTIL.is_x(key) ;
   },
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
@@ -101,7 +110,7 @@ const IO = {
     },
 
     _try_special_key_actions: function(key) {
-      if (KEYS_UTIL.is_esc(key) && IO.interface._can_open_escape_menu()){
+      if (KEYS_UTIL.is_cancel(key) && IO.interface._can_open_escape_menu()){
         INTERFACE.display.escape_menu();
         return true;
       }
