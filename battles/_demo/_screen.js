@@ -74,10 +74,15 @@ var getLogs = function (){
 
 var man = function() {
   updatelog(datedString("Opening manual page"));
+  var w;
   if(window.navigator.onLine) {
-    window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
+    w = window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
   } else {
-    window.open("levels/demo/man.md");
+    w = window.open("levels/demo/man.md");
+  }
+  if(!w || w.closed || typeof w.closed=='undefined')
+  {
+    updatelog("Error opening manual page, check for blocked popups or navigate to https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
   }
 }
 var help = man;
