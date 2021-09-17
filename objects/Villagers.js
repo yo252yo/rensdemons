@@ -1,12 +1,13 @@
 
 class VillagerSoul extends SoulBattleObject {
-  constructor(type, sprite_nb, salt){
-    super(salt * -1000, salt * -1000, "villagers/" + type, sprite_nb);
+  constructor(type, sprite_nb, seed){
+    super(seed * -1000, seed * -1000, "villagers/" + type, sprite_nb);
+    this.gen = new Generator(seed);
 
     if (sprite_nb == 2 || sprite_nb == 3) {
-      this.vname = gen.pick(DATASETS.female_names);
+      this.vname = this.gen.pick(DATASETS.female_names);
     } else {
-      this.vname = gen.pick(DATASETS.male_names);
+      this.vname = this.gen.pick(DATASETS.male_names);
     }
 
     switch(type){
@@ -46,7 +47,7 @@ class VillagerSoul extends SoulBattleObject {
     this.add_enemy_action(`${this.vname} simply waits for the conversation to go on.`);
 
 
-    var start_text = gen.pick([
+    var start_text = this.gen.pick([
       `The villager salutes you with a monotonous voice.`,
       `The villager barely raises an eyebrow noticing you.`,
       `The villager doesn't react to your presence.`,
@@ -139,7 +140,7 @@ class VillagerSoul extends SoulBattleObject {
     this.add_enemy_action(`${this.vname} goes on in pointless details about how great a day they're having.`);
 
 
-    var start_text = gen.pick([
+    var start_text = this.gen.pick([
       `The villager politely greets you.`,
       `The villager greets you with open arms and a friendly face.`,
       `The villager doesn't seem to notice you. They are startled when you speak.`,
@@ -232,7 +233,7 @@ class VillagerSoul extends SoulBattleObject {
 
     this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us such a perfect land!"`);
     this.add_interaction("Religion", `${this.vname}: "We pray so that the Goddess always shields us from experiencing pain!"`);
-this.add_interaction("Religion", `${this.vname}: "Religion is our way to give thanks for the blessings we have gotten."`);
+    this.add_interaction("Religion", `${this.vname}: "Religion is our way to give thanks for the blessings we have gotten."`);
   }
 
   setup_fear() {
@@ -251,7 +252,7 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
     this.add_enemy_action(`${this.vname} asks you an embarrassing questions.`, attack);
 
 
-    var start_text = gen.pick([
+    var start_text = this.gen.pick([
       `The villager looks at you suspiciously, their eyes silently asking what you want.`,
       `The villager snappily asks you what you want.`,
       `The villager notices straight away your unfamiliar face. They grumpily come to scold you.`,
@@ -342,7 +343,7 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
     this.add_enemy_action(`${this.vname} is holding on to your every word, eager to hear what you'll say next.`);
 
 
-    var start_text = gen.pick([
+    var start_text = this.gen.pick([
       `The villager is interested in talking to you and greets you with a big smile.`,
       `This villager starts the conversation with a warm greeting.`,
       `The villager waves at you, you feel like you should answer.`,
@@ -385,7 +386,7 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
 
     this.add_interaction("Family", `${this.vname}: "My little one looks just like you. Or rather looked, I mean. It's okay, surely the Goddess will bless me with a new child soon!"`);
     this.add_interaction("Family", `${this.vname}: "I don't have children yet. I suppose I should get busy soon. I want many little ones to carry on my legacy and to fulfill the will of The Goddess. With Her blessing, of course!"`);
-    this.add_interaction("Family", `${this.vname}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just know my little ${gen.pick(DATASETS.male_names)} will grow up to do us proud, under the eye of the Goddess."`);
+    this.add_interaction("Family", `${this.vname}: "Between infant mortality and the Second Born trial, I haven't much to call a child. I just know my little ${this.gen.pick(DATASETS.male_names)} will grow up to do us proud, under the eye of the Goddess."`);
 
     this.add_interaction("Promised Child", `${this.vname}: "The Promised Child will be there soon, I tell you. This town cannot survive much longer. Then again my dad used to say the same thing. We're a town of survivors."`);
     this.add_interaction("Promised Child", `${this.vname}: "I hear there's another trial going on today. I can't wait to know the results. I'm sure today will be the day where the Promised Child finally appears!"`);
@@ -438,7 +439,7 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
     this.add_enemy_action(`${this.vname} compliments you and says that apparently you're "their kind of people".`);
 
 
-    var start_text = gen.pick([
+    var start_text = this.gen.pick([
       `The villager jumps at you and passes an arm around your shoulder.`,
       `The villager winks and comes very close to you.`,
       `The villager grabs your arm and pulls you towards them.`,
@@ -495,7 +496,7 @@ this.add_interaction("Religion", `${this.vname}: "Religion is our way to give th
     this.add_interaction("Job", `${this.vname}: "We don't have masons or blacksmiths, so there's less and less buildings and tools we can use, but we all share what's left!"`);
 
     this.add_interaction("Rumors", `${this.vname}: "I hear the end of the world will be in three days, and we're gonna have a huge feast just before!"`);
-    this.add_interaction("Rumors", `${this.vname}: "Rumor has it that there's a party tomorrow at  ${gen.pick(DATASETS.male_names)}'s place. Very exclusive event. You didn't hear it from me."`);
+    this.add_interaction("Rumors", `${this.vname}: "Rumor has it that there's a party tomorrow at ${this.gen.pick(DATASETS.male_names)}'s place. Very exclusive event. You didn't hear it from me."`);
     this.add_interaction("Rumors", `${this.vname}: "Everyone is talking about that new kind of wine that a trader brought us last week. I wonder if there is any left..."`);
 
     this.add_interaction("Dreams", `${this.vname}: "I don't know, I'm simple, I just wish for good food, good drinks, and good company."`);
@@ -525,7 +526,7 @@ var make_banner_function = function(text){
   };
 }
 
-var get_rejection_soul = function(type, seed, indoors, gen) {
+var get_rejection_soul = function(type, seed, indoors, seed) {
   var excuses = [];
   var threshold = 0.05;
 
@@ -580,7 +581,7 @@ var get_rejection_soul = function(type, seed, indoors, gen) {
   }
 
   if(seed < threshold) {
-    return {interaction: RANDOM.pick(excuses, gen)};
+    return {interaction: RANDOM.pick(excuses, new Generator(seed))};
   }
   return undefined;
 }
@@ -592,13 +593,12 @@ var get_meta_soul = function(seed, sprite_nb) {
 }
 
 
-var get_villager_soul = function(type, gen, indoors, sprite_nb) {
-  var seed = gen.get();
+var get_villager_soul = function(type, seed, indoors, sprite_nb) {
   if (seed < 0.03) {
     return get_meta_soul(seed, sprite_nb);
   }
 
-  var rejection_soul = get_rejection_soul(type, seed, indoors, gen);
+  var rejection_soul = get_rejection_soul(type, seed, indoors, seed);
   if (rejection_soul){
     return rejection_soul;
   }
@@ -620,9 +620,9 @@ class M_Villager extends M_NPC {
     var gen = new Generator(seed);
     var sprite_nb = gen.int(5);
     super(x, y, "villager" + sprite_nb);
-    this.seed = gen.get();
+    this.seed = seed;
     this.sprite_nb = sprite_nb;
-    this.soul = get_villager_soul(type, gen, indoors, sprite_nb);
+    this.soul = get_villager_soul(type, this.seed, indoors, sprite_nb);
   }
 
   interaction() {

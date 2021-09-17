@@ -18,8 +18,6 @@ DODGE.absorb_params
 
 better memory management?
 
-should filler just pass gen to the constructor instead f calling gen.get
-
 menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
 
 if theres a guy behind a house interaction interacts with the house (most prominent object)

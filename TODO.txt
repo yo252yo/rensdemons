@@ -5,7 +5,10 @@
 
 - Add self aware messages mb you need to farm when you cant win a battle
 
-- its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
+
+its a pain to pass around the generator everywhere, and i get confused between generator and seed, maybe i should call smthing like DICTIONARY.get_generator()
+should filler just pass gen to the constructor instead f calling gen.get
+
 
 --------------------------
 GO OVER EVERYTHING:

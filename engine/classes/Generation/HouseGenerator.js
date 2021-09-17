@@ -5,9 +5,9 @@ var _MIN_ROOM_W = 100;
 var _MIN_ROOM_H = 100;
 
 class HG_Room {
-    constructor(type, gen, x, y, imposed_dimensions) {
+    constructor(type, seed, x, y, imposed_dimensions) {
       this.type = type;
-      this.gen = gen;
+      this.gen = new Generator(seed);
       this.x = x;
       this.y = y;
       this.dimention(imposed_dimensions);
@@ -85,7 +85,7 @@ class HG_Room {
     }
 
     expand_top() {
-       this.room_top = new HG_Room(this.type, this.gen, this.x, this.y - this.h - 25, [this.w, 0]);
+       this.room_top = new HG_Room(this.type, this.gen.get(), this.x, this.y - this.h - 25, [this.w, 0]);
        this.room_top.is_top = true;
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
        var c = HTML.snapToGrid(connection_x, this.y - this.h + 25);
@@ -93,7 +93,7 @@ class HG_Room {
     }
 
     expand_right() {
-       this.room_right = new HG_Room(this.type, this.gen, this.x + this.w + 25, this.y, [0, this.h]);
+       this.room_right = new HG_Room(this.type, this.gen.get(), this.x + this.w + 25, this.y, [0, this.h]);
        var connection_y = this.y - Math.min(this.room_right.h, this.h)/2 + 25;
        var c = HTML.snapToGrid(this.x + this.w - 25, connection_y);
        new S_WoodFloor(c[0], c[1], 75, 50);
@@ -104,7 +104,7 @@ class HG_Room {
       var y = this.room_top.y;
       var w = this.room_right.w;
       var h = this.room_top.h;
-      var diag = new HG_Room(this.type, this.gen, x, y, [w, h]);
+      var diag = new HG_Room(this.type, this.gen.get(), x, y, [w, h]);
       diag.is_top = true;
       var connection_left = HTML.snapToGrid(x-50, y - h/2+25);
       var connection_bot = HTML.snapToGrid(x + w/2-25, y+50);
@@ -140,7 +140,7 @@ class HouseGenerator {
     }
 
     build() {
-      var main_hall = new HG_Room(this.type, this.gen, this.x, this.y);
+      var main_hall = new HG_Room(this.type, this.gen.get(), this.x, this.y);
       main_hall.expand();
       return main_hall.main_entrance(this.outside); // entrance
     }

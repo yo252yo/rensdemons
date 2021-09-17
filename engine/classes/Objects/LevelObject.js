@@ -129,7 +129,8 @@ class LevelObject {
       delete this;
     }
 
-    text_interaction(texts, gen){
+    text_interaction(texts, seed){
+      var gen = new Generator(seed);
       this.text = RANDOM.pick(texts, gen);
       var f = function() {
         new TextBanner(this.text);

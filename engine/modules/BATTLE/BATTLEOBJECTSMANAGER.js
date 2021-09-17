@@ -105,13 +105,11 @@ const BATTLEOBJECTSMANAGER = {
   textBoxInteraction: function(battle_object) {
     var possibilities = [battle_object.description];
     var battle = battle_object.battle_name();
-    var b = BATTLETREE._targets.get([battle]);
 
-    for (var i in b) {
-      if(BATTLETREE._targets.get([battle, i]) != BATTLETREE.NOT_TRIED && BATTLETREE._targets.get([battle, i]) != BATTLETREE.HIDDEN) {
-        if (battle_object.interactions[i]){
-          possibilities.push(battle_object.interactions[i]);
-        }
+    var commands = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
+    for (var i = 0; i < commands.length; i++){
+      if (commands[i] != ABILITY.Escape){
+        possibilities.push(battle_object.interactions[commands[i]]);
       }
     }
     var text = possibilities[Math.floor(battle_object.seeds[0] * possibilities.length)];

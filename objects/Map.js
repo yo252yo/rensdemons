@@ -94,7 +94,7 @@ class SM_Trees extends MapObject {
         "This grove is ideal to take a quick rest in the middle of your journey. The road ahead is still long!",
         "You stop for a while in this little grove. Among the trees, you send a prayer to the Goddess. May She protect you on your journey.",
         "The wind rustling the leaves of the trees lulls you, and you end up taking a well deserved nap in this little vegetal haven.",
-      ], gen);
+      ], seed);
     }
   }
 }
@@ -135,8 +135,8 @@ class SM_Vulcano extends MapObject {
 
     if(!destination){
       this.interaction = this.text_interaction([
-        "A big forest blocks your path."
-      ], gen);
+        "A big vulcano blocks your path."
+      ]);
     }
   }
 }
@@ -166,7 +166,7 @@ class SM_Hills extends MapObject {
         "From the top of this small hill, you get a much better view of the surroundings. The world sees much bigger than you ever thought it would be.",
         "The hills block the horizon and make it hard to see what's behind.",
         "A few hills break the monotony of the flat fields.",
-      ], gen);
+      ], seed);
     }
   }
 }
@@ -194,7 +194,7 @@ class SM_Lake extends MapObject {
         "The sun shimmers on the surface of this great lake. You take advantage of the clear water for a well deserved bath.",
         "The winds in the plains make little ripples on the surface of the lake. You remain for a while mesmerized by their dancing patterns.",
         "You find a freshwater lake. It's time to refill your water supplies, and to wash whatever may need it!",
-      ], gen);
+      ], seed);
     }
   }
 }
@@ -222,7 +222,7 @@ class SM_Mountain extends MapObject {
         "The tall peaks seem to puncture the skies.",
         "These mountains are way too tall to climb. You can see snow on their tops. You wonder if it's everlasting...",
         "Crossing these mountains would take a long time, and a lot of effort. Better to avoid it.",
-      ], gen);
+      ], seed);
     }
   }
 }
