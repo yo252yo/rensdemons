@@ -12,14 +12,14 @@ new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 1200, 375, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 1500, 600, gen.get());
 
 
-var houseFiller = new Filler(gen);
+var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(75, 1025, 1950, 950);
 houseFiller.set_tries(5, 60);
-houseFiller.set_object(120, 160, function(x,y,g){ return new S_House(CITIES.indulgence, x, y, g.get()); });
+houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.indulgence, x, y, seed); });
 houseFiller.fill_by_retry();
 
-var villagerFiller = new Filler(gen);
+var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(75, 1025, 1950, 950);
 villagerFiller.set_tries(35, 120);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,g){ return new M_Villager(CITIES.indulgence, x, y, g.get()); });
+villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.indulgence, x, y, seed); });
 villagerFiller.fill_by_retry();

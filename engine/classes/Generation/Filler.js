@@ -1,9 +1,9 @@
-// This expects obj_constructor to be (x,y,gen) => object
+// This expects obj_constructor to be (x,y,seed) => object
 
 
 class Filler {
-  constructor(gen) {
-    this.gen = gen;
+  constructor(seed) {
+    this.gen = new Generator(seed);
     this.events = [];
   }
 
@@ -38,7 +38,7 @@ class Filler {
   set_object(w, h, obj_constructor) {
     this.obj_w = w;
     this.obj_h = h;
-    // constructor expectx arguments (x,y,gen)
+    // constructor expectx arguments (x,y,seed)
     this.obj_constructor = obj_constructor;
   }
 
@@ -102,7 +102,7 @@ class Filler {
       var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
 
       if (decor? (!this._intersectWalk(x, y)) : this._canBuild(x, y)) {
-        this.obj_constructor(x, y, this.gen);
+        this.obj_constructor(x, y, this.gen.get());
         nb_placed ++;
       }
 
@@ -184,14 +184,15 @@ class EventFiller extends Filler {
     this.obj_constructor = this._event_obj_constructor;
   }
 
-  _event_obj_constructor(x,y,gen) {
+  _event_obj_constructor(x,y,seed) {
+    var gen = new Generator(seed);
     var array = {};
     for (var i in this.events){
       array[i] = this.events[i].w;
     }
     var index = RANDOM.pick_in_weighted_array(array, gen);
     var f = this.events[index].f;
-    return f(x,y,gen);
+    return f(x,y,seed);
   }
 
   _add_event(event_function, weight) {
@@ -204,7 +205,7 @@ class EventFiller extends Filler {
   battle(name, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,g){
+    this._add_event(function(x,y,seed){
         return new SBattle(x, y, name, size, color);
       }, weight);
   }
@@ -212,7 +213,7 @@ class EventFiller extends Filler {
   battleRubble(item, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,g){
+    this._add_event(function(x,y,seed){
         new SB_rubble(x, y, item, size, color);
       }, weight);
   }
@@ -220,7 +221,7 @@ class EventFiller extends Filler {
   groundItem(item, weight, quantity) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,g){
+    this._add_event(function(x,y,seed){
         new SE_groundItem(x, y, item, quantity, size, color);
       }, weight);
   }
@@ -228,7 +229,7 @@ class EventFiller extends Filler {
   text(text, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,g){
+    this._add_event(function(x,y,seed){
         new SE_event(x, y, text, size, color);
       }, weight);
   }
@@ -236,7 +237,7 @@ class EventFiller extends Filler {
   byConstructor(constructorName, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,g){
+    this._add_event(function(x,y,seed){
         // This is gross and dangerous ofc
         // and even a bit redundant with the normal filler :/
         eval (`new ${constructorName}(${x}, ${y}, "${color}", ${size});`);

@@ -24,18 +24,18 @@ var door = new S_ExitFloor(850,1250,50,25, 'demo/cavern');
 
 new S_SavePoint(500, 1375);
 
-var filler = new Filler(gen);
+var filler = new Filler(gen.get());
 filler.set_zone(425,1875,750,700);
 filler.set_tries(3, 10);
-filler.set_object(175, 50, function(x,y,g){ return new S_RocksHuge(x, y); });
+filler.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks1(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks2(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks3(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks4(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
 filler.fill_by_retry(true);
 
 

@@ -102,29 +102,29 @@ new SBattle(1475, 1275, '_02/_wrong_skeleton');
 //hack GENERATED ELEMENTS (decor)
 // ===================
 
-var filler = new Filler(gen);
+var filler = new Filler(gen.get());
 filler.set_zone(250,2475,1350,1300);
 filler.set_tries(20, 20);
-filler.set_object(175, 50, function(x,y,g){ return new S_RocksHuge(x, y); });
+filler.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
 filler.fill_by_retry(true);
 filler.set_tries(10, 10);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks1(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks2(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks3(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
 filler.fill_by_retry(true);
-filler.set_object(50, 20, function(x,y,g){ return new S_Rocks4(x, y); });
+filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
 filler.fill_by_retry(true);
 
 filler.set_tries(1, 1);
 var chose_decor = function() {
   var f =RANDOM.pick([
-    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks1(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks2(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks3(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Rocks4(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,g){ return new S_Pebbles(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks1(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks2(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks3(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks4(x, y); })},
+    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Pebbles(x, y); })},
   ], gen);
   f();
 };

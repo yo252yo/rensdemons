@@ -61,8 +61,8 @@ var rest_menu = function () {
   new CenteredTextMenu("What do you do?", rest_options);
 }
 
-var makeTree = function(x,y,g){
-  var t = new S_Tree(x, y, g);
+var makeTree = function(x,y,seed){
+  var t = new S_Tree(x, y, seed);
   t.interaction = function(){
     TextBannerSequence.make([
       `You lay your bag on the ground and rest your back against the old bark. $$BestFriend$ takes place right next to you. The gentle wind caresses your cheeks as you silently wonder what the road ahead holds in store for you.`,
@@ -72,7 +72,7 @@ var makeTree = function(x,y,g){
   return t;
 }
 
-var treeFiller = new Filler(gen);
+var treeFiller = new Filler(gen.get());
 treeFiller.set_zone(50, 500, 500, 450);
 treeFiller.set_tries(4, 15);
 treeFiller.set_object(100, 100, makeTree);

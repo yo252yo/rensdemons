@@ -67,13 +67,13 @@ new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 //hack GENERATED ELEMENTS
 // ===================
 
-var filler = new Filler(gen);
+var filler = new Filler(gen.get());
 filler.set_zone(550,1200,650,675);
 filler.set_tries(20, 20);
-filler.set_object(120, 60, function(x,y,g){ return new S_Web(x, y); });
+filler.set_object(120, 60, function(x,y,seed){ return new S_Web(x, y); });
 filler.fill_by_retry();
 //filler.set_tries(10, 10);
-filler.set_object(40, 25, function(x,y,g){ return new S_Bocals(x, y); });
+filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
 filler.fill_by_retry();
 
 // ===================

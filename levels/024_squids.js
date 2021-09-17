@@ -31,25 +31,25 @@ whale.make_default_callback = function(){return function(){};};
 //hack GENERATED ELEMENTS (decor)
 // ===================
 
-var decorFiller = new Filler(gen);
+var decorFiller = new Filler(gen.get());
 decorFiller.set_zone(150,2600,1725,1300);
 
 decorFiller.set_tries(5, 10);
-decorFiller.set_object(100, 50, function(x,y,g){ return new S_AlgaeWall(x, y); });
+decorFiller.set_object(100, 50, function(x,y,seed){ return new S_AlgaeWall(x, y); });
 decorFiller.fill_by_retry();
 
 decorFiller.set_tries(7, 15);
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Coral(x, y); });
+decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Coral(x, y); });
 decorFiller.fill_by_retry();
 
 decorFiller.set_tries(5, 20);
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Anemone(x, y); });
+decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Anemone(x, y); });
 decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Seashell(x, y); });
+decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
 decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Seashellpointy(x, y); });
+decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Seashellpointy(x, y); });
 decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,g){ return new S_Waterplants(x, y); });
+decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Waterplants(x, y); });
 decorFiller.fill_by_retry();
 
 

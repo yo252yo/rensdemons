@@ -40,14 +40,14 @@ new SE_groundItem(950, 675, ITEM.AncientArmamentArmature);
 // ===================
 
 
-var filler = new Filler(gen);
+var filler = new Filler(gen.get());
 filler.set_zone(625,925,1175,650);
 filler.set_tries(5, 17);
-filler.set_object(50, 50, function(x,y,g){ return new S_Seashell(x, y); });
+filler.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
 filler.fill_by_retry();
-filler.set_object(50, 50, function(x,y,g){ return new S_Seashellpointy(x, y); });
+filler.set_object(50, 50, function(x,y,seed){ return new S_Seashellpointy(x, y); });
 filler.fill_by_retry();
-filler.set_object(50, 50, function(x,y,g){ return new S_Planks(x, y); });
+filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
 filler.fill_by_retry();
 
 // ===================

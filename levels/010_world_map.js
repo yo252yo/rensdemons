@@ -16,26 +16,26 @@ var h = 2550;
 var w = 2950;
 new S_Floor(50, h, w, h-50, 'obj_dark');
 
-var FMap = new Filler(gen);
+var FMap = new Filler(gen.get());
 FMap.set_zone(75, h-25, w-50, h-100);
 //FMap.draw_for_debug('#FFFFFF')
 
 // Easy zone:
-var FEasyN = new Filler(gen);
+var FEasyN = new Filler(gen.get());
 FEasyN.set_zone(75, 1050, 2050, 975);
 //FEasyN.draw_for_debug('#0000FF')
-var FEasyS = new Filler(gen);
+var FEasyS = new Filler(gen.get());
 FEasyS.set_zone(75, 1950, 1050, 1950 - 1050);
 //FEasyS.draw_for_debug('#00FF00')
 
 // Hard zone:
-var FHardSW = new Filler(gen);
+var FHardSW = new Filler(gen.get());
 FHardSW.set_zone(75,h-25,1050,h-1950-25);
 //FHardSW.draw_for_debug('#FFFF00')
-var FHardNE = new Filler(gen);
+var FHardNE = new Filler(gen.get());
 FHardNE.set_zone(2075+50, 1050, w-2050-50, 975);
 //FHardNE.draw_for_debug('#FF00FF')
-var FHardMain = new Filler(gen);
+var FHardMain = new Filler(gen.get());
 FHardMain.set_zone(1075+50, h-25, w-1050-50, h-1050-25);
 //FHardMain.draw_for_debug('#FF0000')
 
@@ -63,34 +63,34 @@ new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 // ===================
 
 FEasyS.set_guaranteed(1);
-FEasyS.set_object(100, 100, function(x,y,g){
-  return new SM_Trees(x, y, g.get(), "", "011_han_grove");
+FEasyS.set_object(100, 100, function(x,y,seed){
+  return new SM_Trees(x, y, seed, "", "011_han_grove");
 });
 FEasyS.fill_by_retry();
 
 
 FHardSW.set_guaranteed(1);
-FHardSW.set_object(300, 250, function(x,y,g){
+FHardSW.set_object(300, 250, function(x,y,seed){
   return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", LaterInStory);
 });
 FHardSW.fill_by_retry();
 
 
 FHardNE.set_guaranteed(1);
-FHardNE.set_object(250, 150, function(x,y,g){
-  return new SM_Lake(x, y, g.get(), `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
+FHardNE.set_object(250, 150, function(x,y,seed){
+  return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
 });
 FHardNE.fill_by_retry();
 
 
 FHardMain.set_guaranteed(1);
-FHardMain.set_object(250, 150, function(x,y,g){
-  return new SM_Mountain(x, y, g.get(), `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
+FHardMain.set_object(250, 150, function(x,y,seed){
+  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
 });
 FHardMain.fill_by_retry();
 
 FHardMain.set_guaranteed(1);
-FHardMain.set_object(100, 50, function(x,y,g){
+FHardMain.set_object(100, 50, function(x,y,seed){
   return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", LaterInStory);
 });
 FHardMain.fill_by_retry();
@@ -103,20 +103,20 @@ FHardMain.fill_by_retry();
 // could be non uniform
 for(var i = 0; i < 3; i++) {
   FMap.set_tries(3, 25);
-  FMap.set_object(100, 100, function(x,y,g){ return new SM_Trees(x, y, g.get());});
+  FMap.set_object(100, 100, function(x,y,seed){ return new SM_Trees(x, y, seed);});
   FMap.fill_by_retry();
 
   FMap.set_tries(3, 15);
-  FMap.set_object(300, 200, function(x,y,g){ return new SM_Lake(x, y, g.get());});
+  FMap.set_object(300, 200, function(x,y,seed){ return new SM_Lake(x, y, seed);});
   FMap.fill_by_retry();
 
   FMap.set_tries(3, 15);
-  FMap.set_object(300, 150, function(x,y,g){ return new SM_Mountain(x, y, g.get());});
+  FMap.set_object(300, 150, function(x,y,seed){ return new SM_Mountain(x, y, seed);});
   FMap.fill_by_retry();
 }
 // Place hills after as they are walkable
 FMap.set_tries(10, 40);
-FMap.set_object(200, 100, function(x,y,g){ return new SM_Hills(x, y, g.get());});
+FMap.set_object(200, 100, function(x,y,seed){ return new SM_Hills(x, y, seed);});
 FMap.fill_by_retry();
 
 
