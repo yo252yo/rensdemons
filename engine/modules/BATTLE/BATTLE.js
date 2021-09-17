@@ -67,7 +67,6 @@ const BATTLE = {
           if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
             useless_options_unknown ++;
             if (useless_options_unknown > 3){
-              console.log(options_unknown[i]);
               options_unknown.splice(i, 1);
             }
           }
