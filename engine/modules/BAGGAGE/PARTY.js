@@ -99,7 +99,7 @@ const PARTY = {
     var newName = prompt("Chose a nickname for " + trueName, trueName);
 
     if (newName) {
-      DICTIONARY.set(name, newName);
+      DICTIONARY.set(name, newName.replaceAll(' ',''));
     }
   },
 
