@@ -94,4 +94,10 @@ class FluidMap {
       return 0;
     }
   }
+
+  merge(map){
+    for(var i in map._map){
+      this._map[i] = map._map[i];
+    }
+  }
 }

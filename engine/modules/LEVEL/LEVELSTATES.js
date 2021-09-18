@@ -14,7 +14,9 @@ const LEVELSTATES = {
     },
 
     import: function(save) {
+      var c = LEVELSTATES._states;
       LEVELSTATES._states = new FluidMap(save);
+      LEVELSTATES._states.merge(c);
     },
   },
 
