@@ -15,15 +15,16 @@ const CURRENTLEVEL = {
 
   factory: {
     export: function(){
-      var char_x, char_y;
+      var char_x, char_y, char_a;
       if (CHARACTER.character){
         char_x = CHARACTER.character.x;
         char_y = CHARACTER.character.y;
+        char_a = CHARACTER.facing_direction();
       }
       return {
         level_name: CURRENTLEVEL.level_name,
         destroyed_objects: CURRENTLEVEL.destroyed_objects,
-        saved_character_position: [char_x, char_y],
+        saved_character_position: [char_x, char_y, char_a],
         previous_lvl: CURRENTLEVEL.previous_lvl,
       };
     },
@@ -247,7 +248,7 @@ const CURRENTLEVEL = {
 
   setup: function(name, keep_position) {
     if(keep_position && CHARACTER.character) {
-      CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y];
+      CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y, CHARACTER.facing_direction()];
     } else if (!keep_position) {
       CURRENTLEVEL._recover_position = undefined;
     }
@@ -301,10 +302,10 @@ const CURRENTLEVEL = {
     CURRENTLEVEL.objects.cleanup_dead();
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
     if (saved_pos && saved_pos[0] && saved_pos[1]) {
-      CHARACTER.initialize(saved_pos[0], saved_pos[1], size);
+      CHARACTER.initialize(saved_pos[0], saved_pos[1], size, saved_pos[2]);
       IO.control.character();
     } else if (CURRENTLEVEL._recover_position) {
-      CHARACTER.initialize(CURRENTLEVEL._recover_position[0], CURRENTLEVEL._recover_position[1], size);
+      CHARACTER.initialize(CURRENTLEVEL._recover_position[0], CURRENTLEVEL._recover_position[1], size, CURRENTLEVEL._recover_position[2]);
       CURRENTLEVEL._recover_position = undefined;
       IO.control.character();
     } else { // everything is here!!!!!! mb we can have special handling for battle
