@@ -19,23 +19,6 @@ new S_MudFloor(1050,1400,600,350);
 //hack TEMPORARY FIXED ELEMENTS (objects)
 // ===================
 
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    PARTY.changeNickname(PARTYMEMBERS.Ren);
-    TextBannerSequence.make([
-      "$$Ren$: \"... 97\"",
-      "$$Ren$: \"... 98\"",
-      "$$Ren$: \"... 99\"",
-      "$$Ren$: \"... 100! Ready or not, here I come!\"",
-    ], function(){ SAVE.autosave(); IO.control.character(); });
-  }
-
-  TextBannerSequence.make([
-    "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
-  ], callback);
-};
-
-
 var CHILDREN_FOUND = {};
 
 var child_in_tree = function (x, y, name, child, dialog) {
@@ -136,5 +119,21 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 // ===================
 //hack START
 // ===================
+
+CURRENTLEVEL.start_function = function() {
+  var callback = function(){
+    PARTY.changeNickname(PARTYMEMBERS.Ren);
+    TextBannerSequence.make([
+      "$$Ren$: \"... 97\"",
+      "$$Ren$: \"... 98\"",
+      "$$Ren$: \"... 99\"",
+      "$$Ren$: \"... 100! Ready or not, here I come!\"",
+    ], function(){ SAVE.autosave(); IO.control.character(); });
+  }
+
+  TextBannerSequence.make([
+    "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
+  ], callback);
+};
 
 CURRENTLEVEL.initialize_with_character(1150, 1300);

@@ -1,4 +1,19 @@
+
+// ===================
+//hack INITIALIZATION
+// ===================
+// ===================
+//hack PREMANENT FIXED ELEMENTS (floors)
+// ===================
+
 new Snippet("levels/decors/temple");
+
+// ===================
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+// ===================
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
 
 var friend = new M_ChildM(1250, 1720);
 var friend_go = new Sequence();
@@ -100,6 +115,14 @@ make_priest(1350, 1550);
   ])
  };
 
-
- CURRENTLEVEL.start_function = function(){friend_go.call()};
- CURRENTLEVEL.initialize_with_character(1350, 1700);
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+// ===================
+//hack START
+// ===================
+CURRENTLEVEL.start_function = function(){friend_go.call()};
+CURRENTLEVEL.initialize_with_character(1350, 1700);
