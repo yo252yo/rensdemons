@@ -2,17 +2,32 @@
 GO OVER EVERYTHING:
 - shift everything by 1k pixels
 - textures for floor
-- check order: (that decor is placed before fights even the ones that are static/fixed (can be done as we add textures)
-decor (walkable zones) > static fights > filler fights > init > autosave
+- order:
 
+// ===================
 //hack INITIALIZATION
+// ===================
+// ===================
 //hack PREMANENT FIXED ELEMENTS (floors)
-//hack PREMANENT GENERATED ELEMENTS (decor)
+// ===================
+// ===================
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+// ===================
 //hack TEMPORARY FIXED ELEMENTS (objects)
-//hack TEMPORARY GENERATED ELEMENTS (encounters)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+// ===================
 //hack FINISHING ELEMENTS (exit)
+// ===================
+// ===================
 //hack START
+// ===================
+// ===================
 //hack AUTOSAVE
+// ===================
 
 - 010 worldmap armament trigger event repeats every time i exit a battle in debug mode
 - when you enter harpie peak youre spawned on wrong location < fixed with autosave??

@@ -57,6 +57,19 @@ class S_WoodFloor extends S_Floor {
   }
 }
 
+
+class S_LushFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h, undefined, undefined, "assets/patterns/lush.png");
+  }
+}
+
+class S_MudFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h, undefined, undefined, "assets/patterns/mud.png");
+  }
+}
+
 class S_ExitFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
     super(x, y, w, h, 'obj_dark', outside, "assets/patterns/exit.png");
