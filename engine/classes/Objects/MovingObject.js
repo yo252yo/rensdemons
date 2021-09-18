@@ -56,7 +56,7 @@ class MovingObject extends LevelObject {
   }
 
   facing_direction() {
-    return this.sprite.facing_direction();
+    return this.sprite ? this.sprite.facing_direction() : undefined;
   }
 
   is_walking() {

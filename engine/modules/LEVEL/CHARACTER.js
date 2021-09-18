@@ -22,14 +22,23 @@ const CHARACTER = {
   margin_right: 20,
   margin_top: 5,
   margin_bottom: 0,
+  last_faced_direction: undefined,
 
-  initialize: function(x, y, size) {
+  initialize: function(x, y, size, direction) {
     CHARACTER.character = new M_Character(x, y, size);
+    if (direction) {
+      CHARACTER.character.visual_element.face(direction);
+      CHARACTER.character.visual_element.draw();
+    }
     SCREEN.scroll_screen_to_character();
   },
 
   clear: function () {
     if (CHARACTER.character) {
+       // in battles the character object remains but not the sprite (direction)
+      if (CHARACTER.character.facing_direction()){
+        CHARACTER.last_faced_direction = CHARACTER.character.facing_direction();
+      }
       CHARACTER.character.sprite = undefined;
     }
   },
@@ -41,6 +50,14 @@ const CHARACTER = {
   redraw: function() {
     if (CHARACTER.character && CHARACTER.character.visual_element){
       CHARACTER.character.visual_element.draw();
+    }
+  },
+
+  facing_direction: function(){
+    if (CHARACTER.character.facing_direction()){
+      return CHARACTER.character.facing_direction();
+    } else {
+      return CHARACTER.last_faced_direction;
     }
   },
 };
