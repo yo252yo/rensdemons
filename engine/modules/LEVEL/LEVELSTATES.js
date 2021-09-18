@@ -29,13 +29,13 @@ const LEVELSTATES = {
     }
   },
 
-  register_current: function() {
-    LEVELSTATES.register_from_save(CURRENTLEVEL.factory.export());
+  register_current: function(forced) {
+    LEVELSTATES.register_from_save(CURRENTLEVEL.factory.export(), forced);
   },
 
-  register_from_save: function(save) {
+  register_from_save: function(save, forced) {
     CONSOLE.log.level("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
-    if (save.level_name && !save.level_name.startsWith("$") && !save.level_name.endsWith("$")) {
+    if (forced || (save.level_name && !save.level_name.startsWith("$") && !save.level_name.endsWith("$"))) {
       // Do not save generated level states
       LEVELSTATES._states.set([save.level_name], save);
     }

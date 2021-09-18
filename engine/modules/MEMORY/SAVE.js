@@ -48,7 +48,7 @@ const SAVE = {
   },
 
   save: function(index) {
-    LEVELSTATES.register_current();
+    LEVELSTATES.register_current(true);
     var key = (new Date()).toLocaleString();
 
     if (index == undefined) {
