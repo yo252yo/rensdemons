@@ -45,11 +45,6 @@ class S_Floor extends LevelObject {
   }
 }
 
-class S_SandFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/sand.png");
-  }
-}
 
 class S_WoodFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
@@ -57,6 +52,11 @@ class S_WoodFloor extends S_Floor {
   }
 }
 
+class S_SandFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h, undefined, undefined, "assets/patterns/sand.png");
+  }
+}
 
 class S_LushFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
@@ -67,6 +67,12 @@ class S_LushFloor extends S_Floor {
 class S_MudFloor extends S_Floor {
   constructor(x, y, w, h, outside) {
     super(x, y, w, h, undefined, undefined, "assets/patterns/mud.png");
+  }
+}
+
+class S_TilingFloor extends S_Floor {
+  constructor(x, y, w, h, outside) {
+    super(x, y, w, h, undefined, undefined, "assets/patterns/tiling.png");
   }
 }
 
