@@ -181,3 +181,4 @@ CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament,
 // ===================
 
 CURRENTLEVEL.initialize_with_character(280, 1760, 0.6);
+SAVE.autosave();

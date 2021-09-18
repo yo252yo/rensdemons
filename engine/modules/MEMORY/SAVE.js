@@ -123,6 +123,10 @@ const SAVE = {
   },
 
   autosave: function(){
+    if(!CHARACTER.character){
+        CONSOLE.error("Autosave attempt when character is not available", true);
+        return;
+    }
     SAVE.save(0);
     INTERFACE.autosave_notif();
   },
