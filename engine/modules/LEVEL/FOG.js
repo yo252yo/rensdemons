@@ -30,6 +30,7 @@ const FOG = {
     CURRENTLEVEL.system.html().appendChild(HTML.div.make(border_right));
 
     FOG.move(0,0);
+    FOG._stopped = false;
   },
 
   _stop: function(name){
@@ -44,6 +45,7 @@ const FOG = {
       FOG._stop("fog_bot");
       FOG._stop("fog_left");
       FOG._stop("fog_right");
+      FOG._stopped = true;
   },
 
   recolor: function(c){
@@ -79,7 +81,9 @@ const FOG = {
   },
 
   moveToChar: function(){
-    FOG.move(CHARACTER.get().x, CHARACTER.get().y);
+    if (! FOG._stopped) {
+      FOG.move(CHARACTER.get().x, CHARACTER.get().y);
+    }
   },
 
 }

@@ -103,7 +103,7 @@ const DEBUG = {
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
     DEBUG.allow_scroll();
-    DEBUG.deactivate_scroll(); // This isnt great.
+  //  DEBUG.deactivate_scroll(); // This isnt great.
     DEBUG.display_all_trees();
     DEBUG.get_all_abilities();
     DEBUG.get_all_items();
