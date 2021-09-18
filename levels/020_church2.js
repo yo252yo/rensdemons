@@ -1,8 +1,8 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_ExitFloor(250,775,100,35, '020_town2');
+var f = new S_ExitFloor(1250,1775,100,35, '020_town2');
 
-var wiseOldFool = new M_Priest(500, 125);
+var wiseOldFool = new M_Priest(1500, 1125);
 
 wiseOldFool.interaction = function() {
   this.face_character();
@@ -47,7 +47,7 @@ var explanations = function() {
   ]);
 }
 
-var hp = new M_Priest(300, 675);
+var hp = new M_Priest(1300, 1675);
 hp.interaction = function() {
   this.face_character();
   new CenteredTextMenu("Hear the Priest's explanations?",
@@ -59,8 +59,8 @@ hp.interaction = function() {
 }
 
 
-new M_Trainer(100, 650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 750);
-new M_Trainer(450, 650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
+new M_Trainer(1100, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 750);
+new M_Trainer(1450, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
 
 
 CURRENTLEVEL.start_function = function(){
@@ -77,4 +77,4 @@ CURRENTLEVEL.start_function = function(){
     ], function(){ IO.control.character(); });
 };
 
-CURRENTLEVEL.initialize_with_character(275, 750);
+CURRENTLEVEL.initialize_with_character(1275, 1750);

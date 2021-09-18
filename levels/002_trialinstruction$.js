@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var friend = new M_ChildM(250, 720);
+var friend = new M_ChildM(1250, 1720);
 var friend_go = new Sequence();
 friend_go.add_TextBannerSequence([
   "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
@@ -12,11 +12,11 @@ friend_go.add_TextBannerSequence([
 friend_go.add_TextBannerSequence([
   "$$child_friends_m1$: \"We all know how this goes... $$Ren$, it was nice being friends with you.\""
 ]);
-friend_go.add_MoveObjectWalk(friend, 250, 600);
+friend_go.add_MoveObjectWalk(friend, 1250, 1600);
 friend_go.add_TextBannerSequence([
   "$$child_friends_m1$: \"Wait... \"",
 ]);
-friend_go.add_MoveObjectWalk(friend, 250, 630);
+friend_go.add_MoveObjectWalk(friend, 1250, 1630);
 friend_go.add_TextBannerSequence([
   "$$child_friends_m1$: \"I... I don't want to go... I don't want to die yet!\"",
   "Priest: \"My child, you might live.\"",
@@ -29,7 +29,7 @@ friend_go.add_function(function(callback) {
   friend.change_speed(0.5);
   callback();
 });
-friend_go.add_MoveObjectWalk(friend, 250, 50);
+friend_go.add_MoveObjectWalk(friend, 1250, 1050);
 friend_go.add_TextBannerSequence([
   "Screams echo in the distance.",
 ]);
@@ -69,7 +69,7 @@ var hp_menu = function () {
              );
 }
 
-var hp = make_priest(275, 100);
+var hp = make_priest(1275, 1100);
 hp.interaction = function() {
   this.face_character();
   TextBannerSequence.make([
@@ -77,23 +77,23 @@ hp.interaction = function() {
   ], hp_menu);
 }
 
-make_priest(200, 550);
-make_priest(275, 550);
-make_priest(350, 550);
+make_priest(1200, 1550);
+make_priest(1275, 1550);
+make_priest(1350, 1550);
 
-(new M_ChildM(150, 670)).interaction = function() {
+(new M_ChildM(1150, 1670)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "The child is just weeping in silence."
   ])
  };
-(new M_ChildF(180, 710)).interaction = function() {
+(new M_ChildF(1180, 1710)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "$$child_friends_f1$: \"You go ahead, I wanna watch your Trial. But you'll fail and I'll succeed, that's for sure!\""
   ])
  };
-(new M_ChildF(280, 710)).interaction = function() {
+(new M_ChildF(1280, 1710)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "Girl: \"I'm scared... so scared... why did I have to be a Second-Born! I wish big brother were never here! No! I wish big brother were the Promised Child... Mommy...\""
@@ -102,4 +102,4 @@ make_priest(350, 550);
 
 
  CURRENTLEVEL.start_function = function(){friend_go.call()};
- CURRENTLEVEL.initialize_with_character(350, 700);
+ CURRENTLEVEL.initialize_with_character(1350, 1700);

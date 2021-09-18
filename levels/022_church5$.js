@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_ExitFloor(250,775,100,35, '022_town5');
+var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
@@ -18,13 +18,13 @@ var make_priest = function (x, y) {
  return priest;
 }
 
-make_priest(225, 375);
-make_priest(200, 450);
-make_priest(275, 525);
-make_priest(350, 450);
-make_priest(325, 375);
+make_priest(1225, 1375);
+make_priest(1200, 1450);
+make_priest(1275, 1525);
+make_priest(1350, 1450);
+make_priest(1325, 1375);
 
-var v = new M_Villager(CITIES.acceptance, 275, 450);
+var v = new M_Villager(CITIES.acceptance, 1275, 1450);
 v.interaction = function() {
   this.face_character();
   TextBannerSequence.make([
@@ -33,7 +33,7 @@ v.interaction = function() {
   ]);
 };
 
-new M_Trainer(100, 300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
-new M_Trainer(475, 150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
+new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
+new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
 
-CURRENTLEVEL.initialize_with_character(275, 750);
+CURRENTLEVEL.initialize_with_character(1275, 1750);

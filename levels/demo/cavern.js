@@ -39,7 +39,7 @@ var approach = function(){
 }
 
 
-var computer = new S_SavePoint(225, 175);
+var computer = new S_SavePoint(1225, 1175);
 computer.interaction = function(){
   TextBannerSequence.make([
     `This altar is a bit different from the ones you've seen back in town. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
@@ -47,8 +47,8 @@ computer.interaction = function(){
 }
 
 
-new S_Floor(50,450,400,400);
-new S_ExitFloor(150,475,200,50, 'demo/mountain');
+new S_Floor(1050,1450,400,400);
+new S_ExitFloor(1150,1475,200,50, 'demo/mountain');
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
@@ -57,4 +57,4 @@ CURRENTLEVEL.start_function = function() {
 };
 
 
-CURRENTLEVEL.initialize_with_character(250, 400);
+CURRENTLEVEL.initialize_with_character(1250, 1400);

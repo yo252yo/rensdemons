@@ -6,23 +6,23 @@ var win = function(){
 
 var gen = new Generator(DICTIONARY.get("world_seed")*2);
 
-new S_TownFloor(50, 650, 600, 600, "demo/world_map");
-new S_Church(450, 500, "demo/church");
+new S_TownFloor(1050, 1650, 600, 600, "demo/world_map");
+new S_Church(1450, 1500, "demo/church");
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 70, 150, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 220, 150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 370, 150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 500, 520, 150, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1070, 1150, gen.get());
+new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 1220, 1150, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 1370, 1150, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 500, 1520, 1150, gen.get());
 
 var houseFiller = new Filler(gen.get());
-houseFiller.set_zone(75, 625, 550, 550);
+houseFiller.set_zone(1075, 1625, 550, 550);
 houseFiller.set_tries(10, 100);
 houseFiller.set_guaranteed(2);
 houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); });
 houseFiller.fill_by_retry();
 
 var villagerFiller = new Filler(gen.get());
-villagerFiller.set_zone(75, 625, 550, 550);
+villagerFiller.set_zone(1075, 1625, 550, 550);
 villagerFiller.set_tries(2, 40);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
 villagerFiller.fill_by_retry();
@@ -49,4 +49,4 @@ CURRENTLEVEL.start_function = function() {
 DICTIONARY.set("BestFriend", "a villager");
 DICTIONARY.set("ORIGINAL_BestFriend", "a villager");
 
-CURRENTLEVEL.initialize_with_character(600, 600);
+CURRENTLEVEL.initialize_with_character(1600, 1600);

@@ -11,9 +11,9 @@ var win = function(){
 
 var h = 600;
 var w = 600;
-new S_Floor(50, h, w, h-50, 'obj_dark');
+new S_Floor(1050, 1000+h, w, h-50, 'obj_dark');
 
-new SM_Town(300, 400, "demo/town", "town_1");
+new SM_Town(1300, 1400, "demo/town", "town_1");
 
 
 var brave = function() {
@@ -27,7 +27,7 @@ var brave = function() {
  }
 }
 
-var m = new SM_Mountain(450, 200, gen.get(), `Holy mountain`);
+var m = new SM_Mountain(1450, 1200, gen.get(), `Holy mountain`);
 m.interaction = function() {
   TextBannerSequence.make(
     ["This is the holy mountain where the Goddess protecting $$town_1$ reside.", "You are not supposed to go there."]
@@ -35,7 +35,7 @@ m.interaction = function() {
 }
 
 var FMap = new Filler(gen.get());
-FMap.set_zone(50, h, w, h-50);
+FMap.set_zone(1050, 1000+h, w, h-50);
 FMap.set_tries(3, 10);
 FMap.set_object(100, 100, function(x,y,seed){ return new SM_Trees(x, y, seed);});
 FMap.fill_by_retry();
@@ -70,5 +70,5 @@ FEasyEvents.fill_by_retry();
 
 
 
-CURRENTLEVEL.initialize_with_character(300, 400, 0.6);
+CURRENTLEVEL.initialize_with_character(1300, 1400, 0.6);
 SAVE.autosave();

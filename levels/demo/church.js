@@ -1,6 +1,6 @@
 new Snippet("levels/decors/temple");
 
-var f = new S_ExitFloor(250,775,100,35, 'demo/town');
+var f = new S_ExitFloor(1250,1775,100,35, 'demo/town');
 
 var win = function(){
   CURRENTLEVEL.setup("demo/end");
@@ -16,7 +16,7 @@ var talk = function() {
 }
 
 if (! ABILITIES.has_ability("_demo_killed")){
-  var hp = new M_Priest(300, 475);
+  var hp = new M_Priest(1300, 1475);
   hp.interaction = function() {
     this.face_character();
     SAVE.autosave();
@@ -28,7 +28,7 @@ if (! ABILITIES.has_ability("_demo_killed")){
                );
   }
 } else {
-  var hp = new M_Priest(300, 475);
+  var hp = new M_Priest(1300, 1475);
   hp.interaction = function() {
     this.face_character();
     TextBannerSequence.make([
@@ -57,4 +57,4 @@ CURRENTLEVEL.add_trigger("suicide", function(){ return ABILITIES.has_ability("_d
 
 
 
-CURRENTLEVEL.initialize_with_character(275, 750);
+CURRENTLEVEL.initialize_with_character(1275, 1750);

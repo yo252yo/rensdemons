@@ -2,7 +2,7 @@ ABILITIES.unlock("_trial_passed"); // redundant
 
 new Snippet("levels/decors/temple");
 
-new S_ExitFloor(250,775,100,35, '005_town1');
+new S_ExitFloor(1250,1775,100,35, '005_town1');
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
@@ -20,28 +20,28 @@ var make_priest = function (x, y) {
  return priest;
 }
 
-var hp = make_priest(275, 100);
+var hp = make_priest(1275, 1100);
 hp.interaction = function() {
     BATTLE.api.make('_004/_priest');
 };
-make_priest(200, 550);
-make_priest(275, 550);
-make_priest(350, 550);
+make_priest(1200, 1550);
+make_priest(1275, 1550);
+make_priest(1350, 1550);
 
 
-(new M_ChildM(150, 670)).interaction = function() {
+(new M_ChildM(1150, 1670)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "After this unlikely escape from a certain death, this child is overwhelmed by emotion. He's too stunned to talk, and simply weeps of joy."
   ])
  };
-(new M_ChildF(180, 710)).interaction = function() {
+(new M_ChildF(1180, 1710)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "$$child_friends_f1$: \"I... I wasn't lying before. I could have done it too. Don't get too cocky because you're a god or something now.\""
   ])
  };
-(new M_ChildF(280, 710)).interaction = function() {
+(new M_ChildF(1280, 1710)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "Girl: \"You... you saved me! Thank you! Thank you! And now you'll save us all!\""
@@ -58,4 +58,4 @@ CURRENTLEVEL.start_function = function(){
     ], function(){ IO.control.character(); });
 
 };
-CURRENTLEVEL.initialize_with_character(275, 150);
+CURRENTLEVEL.initialize_with_character(1275, 1150);
