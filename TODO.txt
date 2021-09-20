@@ -1,6 +1,4 @@
 
-- 010 worldmap armament trigger event repeats every time i exit a battle in debug mode
-
 - tiling pattern is uneven (ie glitches house/hallway)
 
 
