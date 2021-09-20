@@ -8,7 +8,6 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
-
 // ===================
 //hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
@@ -16,44 +15,44 @@ var LaterInStory = function() { return false;};
 //hack zones
 var h = 2550;
 var w = 2950;
-new S_Floor(50, h, w, h-50, 'obj_dark');
+new S_Floor(1050, 1000+h, w, h-50, 'obj_dark');
 
 var FMap = new Filler(gen.get());
-FMap.set_zone(75, h-25, w-50, h-100);
+FMap.set_zone(1075, 1000+h-25, w-50, h-100);
 //FMap.draw_for_debug('#FFFFFF')
 
 // Easy zone:
 var FEasyN = new Filler(gen.get());
-FEasyN.set_zone(75, 1050, 2050, 975);
+FEasyN.set_zone(1075, 2050, 2050, 975);
 //FEasyN.draw_for_debug('#0000FF')
 var FEasyS = new Filler(gen.get());
-FEasyS.set_zone(75, 1950, 1050, 1950 - 1050);
+FEasyS.set_zone(1075, 2950, 1050, 1950 - 1050);
 //FEasyS.draw_for_debug('#00FF00')
 
 // Hard zone:
 var FHardSW = new Filler(gen.get());
-FHardSW.set_zone(75,h-25,1050,h-1950-25);
+FHardSW.set_zone(1075,1000+h-25,1050,h-1950-25);
 //FHardSW.draw_for_debug('#FFFF00')
 var FHardNE = new Filler(gen.get());
-FHardNE.set_zone(2075+50, 1050, w-2050-50, 975);
+FHardNE.set_zone(3075+50, 2050, w-2050-50, 975);
 //FHardNE.draw_for_debug('#FF00FF')
 var FHardMain = new Filler(gen.get());
-FHardMain.set_zone(1075+50, h-25, w-1050-50, h-1050-25);
+FHardMain.set_zone(2075+50, 1000+h-25, w-1050-50, h-1050-25);
 //FHardMain.draw_for_debug('#FF0000')
 
 
 //hack places
-new SM_Town(250, 1750, "005_town1", "town_1");
-new SM_Town(850, 550, "020_town2", "town_2");
-new SM_Town(2300, 1275, "030_town3", "town_3", LaterInStory);
-new SM_Town(2725, 300, "021_town4", "town_4", after_t2); // optional
-new SM_Town(1450, 2500, "022_town5", "town_5", after_t2); // optional
+new SM_Town(1250, 2750, "005_town1", "town_1");
+new SM_Town(1850, 1550, "020_town2", "town_2");
+new SM_Town(3300, 2275, "030_town3", "town_3", LaterInStory);
+new SM_Town(3725, 1300, "021_town4", "town_4", after_t2); // optional
+new SM_Town(2450, 3500, "022_town5", "town_5", after_t2); // optional
 
-new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
-new SM_Lake(250, 200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
-new SM_Mountain(1300, 1025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
-new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "032_fissure", LaterInStory);
-new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
+new SM_Forest(2675, 1350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
+new SM_Lake(1250, 1200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
+new SM_Mountain(2300, 2025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
+new SM_Crevasse(2700, 3025, `Forgotten Fissure`, "032_fissure", LaterInStory);
+new SM_Vulcano(3650, 2800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
 
 // ===================
@@ -174,5 +173,5 @@ CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament,
 });
 
 
-CURRENTLEVEL.initialize_with_character(280, 1760, 0.6);
+CURRENTLEVEL.initialize_with_character(1280, 2760, 0.6);
 SAVE.autosave();
