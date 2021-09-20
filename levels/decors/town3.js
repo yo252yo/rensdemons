@@ -6,7 +6,8 @@ AUDIO.music.town.denial();
 var gen = new Generator(DICTIONARY.get("world_seed")*4);
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
+//hack 2. EXIT
 // ===================
 
 new S_TownFloor(1050, 3050, 2000, 2000, "010_world_map");

@@ -5,7 +5,7 @@ AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("world_seed")*10);
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 var hallways = [
@@ -54,6 +54,10 @@ var hallways = [
 new S_LushFloor(1950,2450,100,500);
 new S_LushFloor(2100,1375,125,50);
 new S_LushFloor(2100,1400,50,50);
+
+// ===================
+//hack 2. EXIT
+// ===================
 
 var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 

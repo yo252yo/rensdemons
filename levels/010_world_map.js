@@ -9,7 +9,7 @@ var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 var h = 2550;

@@ -6,7 +6,8 @@ AUDIO.music.levels.hideandseek();
 var gen = new Generator(DICTIONARY.get("world_seed")*8);
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
+//hack 2. EXIT
 // ===================
 
 new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");

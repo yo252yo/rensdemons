@@ -7,7 +7,7 @@ AUDIO.music.levels.hideandseek();
 
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 new S_MudFloor(1050,1400,600,350);

@@ -7,7 +7,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*12);
 var access = "_squid_access";
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 
@@ -24,7 +24,10 @@ new S_SandFloor(2025,2625,250,125);
 new S_SandFloor(1875,2575,100,75);
 
 
-// Do the exit after the decor so that decor doesnt spawn on it
+// ===================
+//hack 2. EXIT
+// ===================
+
 var leave = function(){
   CURRENTLEVEL.setup('010_world_map');
   INVENTORY.decrease(access);

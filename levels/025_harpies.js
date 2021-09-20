@@ -6,7 +6,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*13);
 
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 // main
@@ -70,6 +70,9 @@ new S_MudFloor(1325,2150,25,100);
 new S_MudFloor(1300,2100,75,75);
 
 
+// ===================
+//hack 2. EXIT
+// ===================
 
 var door = new S_ExitFloor(1850,1250,50,25);
 door.interaction = function() {

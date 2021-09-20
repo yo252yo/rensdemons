@@ -3,9 +3,14 @@
 // ===================
 AUDIO.music.levels.house();
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 new S_WoodFloor(1200, 1500, 300, 300);
+
+
+// ===================
+//hack 2. EXIT
+// ===================
 
 var entrance = new S_ExitFloor(1335, 1525, 50, 35, '005_town1');
 

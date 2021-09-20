@@ -5,7 +5,7 @@ AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 // room
@@ -33,6 +33,9 @@ new S_Floor(700,825,75,50);
 new S_Floor(700,1000,75,50);
 new S_Floor(700,1175,75,50);
 
+// ===================
+//hack 2. EXIT
+// ===================
 
 new S_ExitFloor(850,1250,50,50, '025_harpies');
 

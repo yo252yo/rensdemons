@@ -4,7 +4,8 @@
 // ===================
 ABILITIES.unlock("_trial_passed"); // redundant
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
+//hack 2. EXIT
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
@@ -53,7 +54,7 @@ make_priest(1350, 1550);
     "Girl: \"You... you saved me! Thank you! Thank you! And now you'll save us all!\""
   ])
  };
- 
+
 // ===================
 //hack 6. START/INIT
 // ===================

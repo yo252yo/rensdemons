@@ -5,7 +5,7 @@ AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*11);
 
 // ===================
-//hack 1. FLOORS -> EXITS
+//hack 1. FLOORS
 // ===================
 
 new S_SandFloor(1075,1375,625,50);
@@ -32,6 +32,9 @@ new S_SandFloor(2450,1900,275,50);
 new S_SandFloor(2675,1900,100,575);
 new S_SandFloor(2725,1425,125,100);
 
+// ===================
+//hack 2. EXIT
+// ===================
 
 new S_ExitFloor(2800,1425,75,100, '024_squids');
 
