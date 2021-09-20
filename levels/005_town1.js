@@ -1,6 +1,17 @@
+
+// ===================
+//hack INITIALIZATION
+//hack PREMANENT FIXED ELEMENTS (floors)
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+
 new Snippet("levels/decors/town1");
 
-var g =  [525, 425];
+// ===================
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+
+var g =  [1525, 1425];
 var bf = new M_ChildF(g[0] + 50, g[1] + 10);
 
 var bf_join_party = function(){
@@ -9,6 +20,16 @@ var bf_join_party = function(){
     "$$BestFriend$ joins your party!",
   ], function(){ bf.destroy(); IO.control.character(); });
 };
+
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.start_function = function() {
   var infoSource = "The Goddess herself";

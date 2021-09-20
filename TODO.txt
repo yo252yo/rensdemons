@@ -1,5 +1,8 @@
 
 GO OVER EVERYTHING:
+
+>> shops and houses
+
 - shift everything by 1k pixels
 - textures for floor
 - order:
