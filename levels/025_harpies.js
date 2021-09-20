@@ -97,14 +97,14 @@ door.interaction = function() {
 var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_SavePoint(1975, 2350);
 new S_SavePoint(1850, 1375);
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -165,7 +165,7 @@ for (var i=0; i<2; i++){
 }
 
 // ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 new SBattle(2015, 1450, 'mountains/dragon');
@@ -174,7 +174,7 @@ new SBattle(1400, 1650, '_02/_right_skeleton');
 new SBattle(2475, 1275, '_02/_wrong_skeleton');
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 5);
@@ -213,7 +213,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {
@@ -227,6 +227,6 @@ CURRENTLEVEL.start_function = function() {
 CURRENTLEVEL.initialize_with_character(2000, 2425);
 
 // ===================
-//hack 7. AUTOSAVE
+//hack 8. AUTOSAVE
 // ===================
 SAVE.autosave();

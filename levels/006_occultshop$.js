@@ -15,7 +15,7 @@ new S_WoodFloor(1200, 1500, 300, 300);
 var entrance = new S_ExitFloor(1335, 1525, 50, 35, '005_town1');
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new S_SavePoint(1425, 1475);
 new S_SavePoint(1225, 1475);
@@ -36,7 +36,7 @@ shopkeep.interaction = function(){
 }
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.initialize_with_character(1350, 1505);

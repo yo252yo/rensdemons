@@ -13,7 +13,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*4);
 new S_TownFloor(1050, 3050, 2000, 2000, "010_world_map");
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new S_Church(1950, 2050, "TODO");
 
@@ -22,7 +22,7 @@ new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100000, 2600, 1525, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100000, 2350, 2675, gen.get());
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var houseFiller = new Filler(gen.get());

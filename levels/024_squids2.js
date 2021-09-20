@@ -39,14 +39,14 @@ new S_SandFloor(2725,1425,125,100);
 new S_ExitFloor(2800,1425,75,100, '024_squids');
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 // Maybe we should make a bigger deal out of this ???
 new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -60,7 +60,7 @@ filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 10);
@@ -86,7 +86,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

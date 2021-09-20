@@ -40,7 +40,7 @@ new S_Floor(700,1175,75,50);
 new S_ExitFloor(850,1250,50,50, '025_harpies');
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var bed = function (x, y) {
@@ -70,7 +70,7 @@ new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -83,7 +83,7 @@ filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 
@@ -104,7 +104,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

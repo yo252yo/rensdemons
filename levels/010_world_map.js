@@ -41,7 +41,7 @@ FHardMain.set_zone(2075+50, 1000+h-25, w-1050-50, h-1050-25);
 
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new SM_Town(1250, 2750, "005_town1", "town_1");
@@ -58,7 +58,7 @@ new SM_Vulcano(3650, 2800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 //hack landmarks
@@ -117,10 +117,7 @@ FMap.set_object(200, 100, function(x,y,seed){ return new SM_Hills(x, y, seed);})
 FMap.fill_by_retry();
 
 // ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
@@ -155,7 +152,7 @@ FEasyEvents.fill_by_retry();
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament, function() {
@@ -173,4 +170,8 @@ CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament,
 
 
 CURRENTLEVEL.initialize_with_character(1280, 2760, 0.6);
+
+// ===================
+//hack 8. AUTOSAVE
+// ===================
 SAVE.autosave();

@@ -12,7 +12,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*2);
 new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_Church(1450, 1400, "004_trial_end");
@@ -27,7 +27,7 @@ s.enter = function() {
 
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var houseFiller = new Filler(gen.get());
@@ -44,7 +44,7 @@ villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITI
 villagerFiller.fill_by_retry();
 
 // ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){

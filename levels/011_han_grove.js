@@ -13,7 +13,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*8);
 new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var nap = function() {
@@ -79,7 +79,7 @@ treeFiller.set_object(100, 100, makeTree);
 treeFiller.fill_by_retry();
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 CURRENTLEVEL.start_function = function() {
   var callback = function(){

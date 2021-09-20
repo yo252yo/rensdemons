@@ -6,12 +6,12 @@ AUDIO.music.levels.trial();
 
 // ===================
 //hack 1. FLOORS
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/maze");
 
 // ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 // start
@@ -115,7 +115,7 @@ make_statue(1585, 2850, "southern");
 make_statue(830, 2025, "western");
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 var boss_callback = function() {

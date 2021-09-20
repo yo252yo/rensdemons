@@ -13,7 +13,7 @@ AUDIO.music.levels.hideandseek();
 new S_MudFloor(1050,1400,600,350);
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var CHILDREN_FOUND = {};
@@ -103,7 +103,7 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

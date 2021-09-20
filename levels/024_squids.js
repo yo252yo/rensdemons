@@ -42,7 +42,7 @@ new S_SandFloor(1375,2425,1275,50);
 
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new S_SavePoint(2000, 2375);
 
@@ -50,7 +50,7 @@ var whale = new SBattle(1450, 1700, 'waters/whale');
 whale.make_default_callback = function(){return function(){};};
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var decorFiller = new Filler(gen.get());
@@ -75,7 +75,7 @@ decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Waterplants(x, y
 decorFiller.fill_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(decorFiller);
@@ -105,7 +105,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 var dive = function(){

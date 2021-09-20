@@ -6,7 +6,7 @@ ABILITIES.unlock("_trial_passed"); // redundant
 // ===================
 //hack 1. FLOORS
 //hack 2. EXIT
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
 new S_ExitFloor(1250,1775,100,35, '005_town1');
@@ -56,7 +56,7 @@ make_priest(1350, 1550);
  };
 
 // ===================
-//hack 6. START/INIT
+//hack 7. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function(){

@@ -11,7 +11,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*5);
 new S_TownFloor(1050, 2050, 2000, 1000, "010_world_map");
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new S_Church(1950, 1300, "021_church4$");
 
@@ -21,7 +21,7 @@ new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 2200, 1375, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 1600, gen.get());
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var houseFiller = new Filler(gen.get());
