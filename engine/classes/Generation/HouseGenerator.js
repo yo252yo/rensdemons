@@ -134,8 +134,8 @@ class HouseGenerator {
       this.MAX_ROOM_H = 500;
       this.MIN_ROOM_W = 100;
       this.MIN_ROOM_H = 100;
-      this.x = 200;
-      this.y = 1000;
+      this.x = 1200;
+      this.y = 2000;
       this.outside = outside
     }
 
