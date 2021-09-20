@@ -4,8 +4,9 @@
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*13);
 
+
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
 // main
@@ -67,6 +68,34 @@ new S_MudFloor(1375,2200,25,75);
 new S_MudFloor(1325,2150,75,25);
 new S_MudFloor(1325,2150,25,100);
 new S_MudFloor(1300,2100,75,75);
+
+
+
+var door = new S_ExitFloor(1850,1250,50,25);
+door.interaction = function() {
+  if(INVENTORY.count(ITEM.ShelterKey) > 0){
+    TextBannerSequence.make([
+      `There is a heavy metal door in the facade of the rock. You open it with the key you found on the unfortunate skeleton, happy to see it fit.`,
+    ], function() {CURRENTLEVEL.setup("025_harpies2"); });
+  } else {
+    TextBannerSequence.make([
+      `You're almost at the summit of the mountain. There is a heavy metal door in the facade of the rock.`,
+      `$$Ren$: "Now what?"`,
+      `$$BestFriend$: "Look at the size of this thing... Whatever's inside must be very well protected. I bet that's where we'll find our relic!"`,
+      `$$Ren$: "Ok but how do we get in?"`,
+      `$$BestFriend$: "Hmmm look, there's a keyhole. It has a very weird shape, though. No way we can lockpick our way out of this."`,
+      `$$Ren$: "Maybe we can look around."`,
+      `$$BestFriend$: "I doubt they'd just leave the key at the front..."`,
+      `$$Ren$: "I don't know, there must be another way in, a clue, anything! The Goddess is telling me so!"`,
+    ]);
+  }
+}
+
+var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
+
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
 
 new S_SavePoint(1975, 2350);
 new S_SavePoint(1850, 1375);
@@ -179,31 +208,6 @@ events.set_tries(10, 20);
 events.set_zone(1300,2275,575,175);
 events.fill_by_retry();
 
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-
-var door = new S_ExitFloor(1850,1250,50,25);
-door.interaction = function() {
-  if(INVENTORY.count(ITEM.ShelterKey) > 0){
-    TextBannerSequence.make([
-      `There is a heavy metal door in the facade of the rock. You open it with the key you found on the unfortunate skeleton, happy to see it fit.`,
-    ], function() {CURRENTLEVEL.setup("025_harpies2"); });
-  } else {
-    TextBannerSequence.make([
-      `You're almost at the summit of the mountain. There is a heavy metal door in the facade of the rock.`,
-      `$$Ren$: "Now what?"`,
-      `$$BestFriend$: "Look at the size of this thing... Whatever's inside must be very well protected. I bet that's where we'll find our relic!"`,
-      `$$Ren$: "Ok but how do we get in?"`,
-      `$$BestFriend$: "Hmmm look, there's a keyhole. It has a very weird shape, though. No way we can lockpick our way out of this."`,
-      `$$Ren$: "Maybe we can look around."`,
-      `$$BestFriend$: "I doubt they'd just leave the key at the front..."`,
-      `$$Ren$: "I don't know, there must be another way in, a clue, anything! The Goddess is telling me so!"`,
-    ]);
-  }
-}
-
-var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
 //hack 6. START/INIT

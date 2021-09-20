@@ -5,7 +5,7 @@ AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
 // room
@@ -33,7 +33,12 @@ new S_Floor(700,825,75,50);
 new S_Floor(700,1000,75,50);
 new S_Floor(700,1175,75,50);
 
-//hack decor
+
+new S_ExitFloor(850,1250,50,50, '025_harpies');
+
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
 
 var bed = function (x, y) {
   var b = new B_Bed(x+50,y-95);
@@ -75,9 +80,6 @@ filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
@@ -97,11 +99,6 @@ events.text("Crafting a cave this size is quite an accomplishment. You wonder wh
 events.set_tries(10, 20);
 events.fill_by_retry();
 
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-
-new S_ExitFloor(850,1250,50,50, '025_harpies');
 
 // ===================
 //hack 6. START/INIT

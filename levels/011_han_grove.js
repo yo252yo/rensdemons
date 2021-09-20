@@ -6,13 +6,13 @@ AUDIO.music.levels.hideandseek();
 var gen = new Generator(DICTIONARY.get("world_seed")*8);
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
 new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var nap = function() {

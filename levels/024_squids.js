@@ -5,9 +5,11 @@ AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*12);
 
 var access = "_squid_access";
+
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
+
 
 new S_SandFloor(1375,2400,1275,875);
 new S_SandFloor(1275,2475,200,175);
@@ -21,6 +23,24 @@ new S_SandFloor(2575,2025,300,400);
 new S_SandFloor(2025,2625,250,125);
 new S_SandFloor(1875,2575,100,75);
 
+
+// Do the exit after the decor so that decor doesnt spawn on it
+var leave = function(){
+  CURRENTLEVEL.setup('010_world_map');
+  INVENTORY.decrease(access);
+}
+var f1 = new S_ExitFloor(1900,2525,200,125);
+var f2 = new S_ExitFloor(1950,2650,100,200);
+
+f1.interaction = leave;
+f2.interaction = leave;
+
+new S_SandFloor(1375,2425,1275,50);
+
+
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
 new S_SavePoint(2000, 2375);
 
 var whale = new SBattle(1450, 1700, 'waters/whale');
@@ -51,13 +71,6 @@ decorFiller.fill_by_retry();
 decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Waterplants(x, y); });
 decorFiller.fill_by_retry();
 
-
-
-
-
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 // ===================
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
@@ -86,23 +99,6 @@ events.byConstructor("B_Skeleton", 1);
 
 events.set_tries(75, 120);
 events.fill_by_retry();
-
-
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-// Do the exit after the decor so that decor doesnt spawn on it
-var leave = function(){
-  CURRENTLEVEL.setup('010_world_map');
-  INVENTORY.decrease(access);
-}
-var f1 = new S_ExitFloor(1900,2525,200,125);
-var f2 = new S_ExitFloor(1950,2650,100,200);
-
-f1.interaction = leave;
-f2.interaction = leave;
-
-new S_SandFloor(1375,2425,1275,50);
 
 
 // ===================

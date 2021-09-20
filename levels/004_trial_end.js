@@ -4,15 +4,10 @@
 // ===================
 ABILITIES.unlock("_trial_passed"); // redundant
 // ===================
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
-// ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 new S_ExitFloor(1250,1775,100,35, '005_town1');
 
 var make_priest = function (x, y) {
@@ -58,12 +53,7 @@ make_priest(1350, 1550);
     "Girl: \"You... you saved me! Thank you! Thank you! And now you'll save us all!\""
   ])
  };
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
+ 
 // ===================
 //hack 6. START/INIT
 // ===================

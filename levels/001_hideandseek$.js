@@ -5,18 +5,15 @@
 
 AUDIO.music.levels.hideandseek();
 
+
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
 new S_MudFloor(1050,1400,600,350);
 
 // ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var CHILDREN_FOUND = {};
@@ -103,17 +100,6 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
     "$$BestFriend$: \"Good luck! Please be safe and come back!\"",
   ], function(){ IO.control.character(); });
 });
-
-
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-
-
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-
 
 
 // ===================

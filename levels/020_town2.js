@@ -1,21 +1,13 @@
 
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 //hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 new Snippet("levels/decors/town2");
 
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
 // ===================
 //hack 6. START/INIT
 // ===================

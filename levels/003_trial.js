@@ -3,13 +3,13 @@
 //hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.trial();
+
 // ===================
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/maze");
-// ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
+
 // ===================
 //hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
@@ -115,17 +115,9 @@ make_statue(1585, 2850, "southern");
 make_statue(830, 2025, "western");
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-
-// ===================
 //hack 6. START/INIT
 // ===================
 
-//hack beginning event
 var boss_callback = function() {
   SAVE.autosave();
   IO.control.character();

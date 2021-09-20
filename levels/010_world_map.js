@@ -9,10 +9,9 @@ var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
-//hack zones
 var h = 2550;
 var w = 2950;
 new S_Floor(1050, 1000+h, w, h-50, 'obj_dark');
@@ -41,7 +40,10 @@ FHardMain.set_zone(2075+50, 1000+h-25, w-1050-50, h-1050-25);
 //FHardMain.draw_for_debug('#FF0000')
 
 
-//hack places
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
+
 new SM_Town(1250, 2750, "005_town1", "town_1");
 new SM_Town(1850, 1550, "020_town2", "town_2");
 new SM_Town(3300, 2275, "030_town3", "town_3", LaterInStory);
@@ -152,9 +154,6 @@ FEasyEvents.set_tries(30, 60);
 FEasyEvents.fill_by_retry();
 
 
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
 // ===================
 //hack 6. START/INIT
 // ===================

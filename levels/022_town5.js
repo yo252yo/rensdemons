@@ -1,6 +1,7 @@
 
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 //hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================

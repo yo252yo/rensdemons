@@ -5,7 +5,7 @@ AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("world_seed")*10);
 
 // ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 1. FLOORS -> EXITS
 // ===================
 
 var hallways = [
@@ -55,11 +55,13 @@ new S_LushFloor(1950,2450,100,500);
 new S_LushFloor(2100,1375,125,50);
 new S_LushFloor(2100,1400,50,50);
 
+var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
+
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
 
 new S_SavePoint(1975, 2050);
-
-new SBattle(2075, 1425, '_02/_loot_forest');
-new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
 //hack 3. PERMANENT FILLER ELEMENTS (decoration)
@@ -99,6 +101,10 @@ for(var f of hallways) {
 // ===================
 //hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
+
+new SBattle(2075, 1425, '_02/_loot_forest');
+new SBattle(2125, 1375, 'forests/fungus');
+
 // ===================
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
@@ -130,11 +136,6 @@ for(var f of hallways) {
   events.fill_by_retry();
 }
 
-
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
 //hack 6. START/INIT

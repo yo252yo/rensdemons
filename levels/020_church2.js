@@ -1,19 +1,15 @@
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
 
+var f = new S_ExitFloor(1250,1775,100,35, '020_town2');
+
 new M_Trainer(1100, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 750);
 new M_Trainer(1450, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
 
-// ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 var wiseOldFool = new M_Priest(1500, 1125);
 
 wiseOldFool.interaction = function() {
@@ -69,14 +65,6 @@ hp.interaction = function() {
                ]
              );
 }
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-var f = new S_ExitFloor(1250,1775,100,35, '020_town2');
-
 
 // ===================
 //hack 6. START/INIT

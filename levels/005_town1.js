@@ -1,15 +1,14 @@
 
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 //hack 3. PERMANENT FILLER ELEMENTS (decoration)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 new Snippet("levels/decors/town1");
 
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 
 var g =  [1525, 1425];
 var bf = new M_ChildF(g[0] + 50, g[1] + 10);
@@ -21,12 +20,6 @@ var bf_join_party = function(){
   ], function(){ bf.destroy(); IO.control.character(); });
 };
 
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
 // ===================
 //hack 6. START/INIT
 // ===================

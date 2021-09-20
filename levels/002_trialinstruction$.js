@@ -1,17 +1,11 @@
 
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new Snippet("levels/decors/temple");
-
-// ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 
 var friend = new M_ChildM(1250, 1720);
 var friend_go = new Sequence();
@@ -113,12 +107,6 @@ make_priest(1350, 1550);
   ])
  };
 
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
 // ===================
 //hack 6. START/INIT
 // ===================

@@ -3,11 +3,10 @@
 // ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*11);
-// ===================
-//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
-// ===================
 
-
+// ===================
+//hack 1. FLOORS -> EXITS
+// ===================
 
 new S_SandFloor(1075,1375,625,50);
 new S_SandFloor(1650,1700,350,375);
@@ -33,13 +32,19 @@ new S_SandFloor(2450,1900,275,50);
 new S_SandFloor(2675,1900,100,575);
 new S_SandFloor(2725,1425,125,100);
 
+
+new S_ExitFloor(2800,1425,75,100, '024_squids');
+
+// ===================
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
+
 // Maybe we should make a bigger deal out of this ???
 new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 
 // ===================
 //hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
-
 
 var filler = new Filler(gen.get());
 filler.set_zone(1625,1925,1175,650);
@@ -51,9 +56,6 @@ filler.fill_by_retry();
 filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
 filler.fill_by_retry();
 
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 // ===================
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
@@ -79,12 +81,6 @@ events.byConstructor("B_Seashell", 1);
 events.set_tries(20, 40);
 events.fill_by_retry();
 
-
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-
-new S_ExitFloor(2800,1425,75,100, '024_squids');
 
 // ===================
 //hack 6. START/INIT

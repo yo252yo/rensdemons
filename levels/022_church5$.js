@@ -1,8 +1,11 @@
 // ===================
 //hack 0. INITIALIZATION
+//hack 1. FLOORS -> EXITS
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
+
+var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 
 new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
 new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
@@ -37,23 +40,8 @@ v.interaction = function() {
     "Martyr: \"We're a little early, but I'm just so eager to serve my community. I know that things will remain bad, but maybe I can help make them a little bit better.\"",
   ]);
 };
-
-// ===================
-//hack 3. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-// ===================
-//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-// ===================
-//hack 1. FLOORS -> EXITS
-// ===================
-var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 // ===================
 //hack 6. START/INIT
 // ===================
-
 
 CURRENTLEVEL.initialize_with_character(1275, 1750);
