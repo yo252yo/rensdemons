@@ -1,5 +1,15 @@
+
+// ===================
+//hack INITIALIZATION
+//hack PREMANENT FIXED ELEMENTS (floors)
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+
 new Snippet("levels/decors/town4");
 
+// ===================
+//hack START
+// ===================
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     `As you enter $$town_4$, you're immediately assaulted by a flood of sensations. The streets are filled with people, in spite of the late hour. They are bathed in the lights of colorful lanterns hung at the facade of the houses. The building themselves are pretty colorful too, though no care was given to the paint job which looks obviously rushed, unfinished, and very uneven between different walls. A complete lack of coordination makes for a true chaos of hues.`,
@@ -14,4 +24,4 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(100, 100);
+CURRENTLEVEL.initialize_with_character(1100, 1100);
