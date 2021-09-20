@@ -3,7 +3,7 @@ class S_Tree extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
     super(visual, x, y);
-    this.adjust_hitbox(20,0,20,15);
+    this.adjust_hitbox(25,0,20,15);
     this.default_text = this.text_interaction([
       "It's a tree.",
       "Lustrous leaves, bulky branches... yes, definitely a tree.",
