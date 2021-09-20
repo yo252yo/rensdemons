@@ -1,6 +1,11 @@
+// ===================
+//hack INITIALIZATION
+//hack PREMANENT FIXED ELEMENTS (floors)
+// ===================
 new Snippet("levels/decors/temple");
 
-var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
+new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
+new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);
@@ -33,7 +38,22 @@ v.interaction = function() {
   ]);
 };
 
-new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
-new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
+// ===================
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+// ===================
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
+// ===================
+//hack START
+// ===================
+
 
 CURRENTLEVEL.initialize_with_character(1275, 1750);

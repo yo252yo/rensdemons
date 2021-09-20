@@ -1,8 +1,6 @@
 
 // ===================
 //hack INITIALIZATION
-// ===================
-// ===================
 //hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
 
