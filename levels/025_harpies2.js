@@ -5,7 +5,7 @@ AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
-//hack FIXED ELEMENTS (floors)
+//hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
 
 // room
@@ -33,9 +33,7 @@ new S_Floor(700,825,75,50);
 new S_Floor(700,1000,75,50);
 new S_Floor(700,1175,75,50);
 
-// ===================
-//hack FIXED ELEMENTS (decor)
-// ===================
+//hack decor
 
 var bed = function (x, y) {
   var b = new B_Bed(x+50,y-95);
@@ -60,11 +58,11 @@ bed(575,700,150,150);
 
 new S_WebLarge(775, 575);
 
-
 new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 
+
 // ===================
-//hack GENERATED ELEMENTS
+//hack PREMANENT FILLER ELEMENTS (decor)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -77,8 +75,12 @@ filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack TEMPORARY ELEMENTS
+//hack TEMPORARY FIXED ELEMENTS (objects)
 // ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+
 
 var events = new EventFiller(filler, 10);
 
