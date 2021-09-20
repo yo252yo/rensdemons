@@ -7,33 +7,40 @@ GO OVER EVERYTHING:
 - textures for floor
 - order:
 
+
+what of exit? we must not spawn interactibles but also not spawn decor!!
+
+filler special handling for exit!
+
+
 // ===================
-//hack INITIALIZATION
-// ===================
-// ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
-// ===================
-// ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
-// ===================
-// ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 0. INITIALIZATION
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 // ===================
-//hack START
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack AUTOSAVE
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+// ===================
+// ===================
+//hack 1. FLOORS/EXITS
+// ===================
+// ===================
+//hack 6. START/INIT
+// ===================
+// ===================
+//hack 7. AUTOSAVE
 // ===================
 
 - 010 worldmap armament trigger event repeats every time i exit a battle in debug mode
 - when you enter harpie peak youre spawned on wrong location < fixed with autosave??
+- world limit
 
 --------------------------
 
