@@ -1,20 +1,19 @@
+
+// ===================
+//hack INITIALIZATION
+// ===================
 AUDIO.music.levels.hideandseek();
-
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    SAVE.autosave();
-    IO.control.character();
-  }
-  TextBannerSequence.make([
-    "You arrive at a small grove. The lush trees provide a welcome shelter from the elements. Any of them would be a great place for a nap.",
-    `$$BestFriend$: "How about a little break?"`,
-  ], callback);
-};
-
-new S_TownFloor(50, 550, 500, 500, "010_world_map");
-
-
 var gen = new Generator(DICTIONARY.get("world_seed")*8);
+
+// ===================
+//hack PREMANENT FIXED ELEMENTS (floors)
+// ===================
+
+new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
+
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
 
 var nap = function() {
   TextBannerSequence.make([
@@ -73,9 +72,23 @@ var makeTree = function(x,y,seed){
 }
 
 var treeFiller = new Filler(gen.get());
-treeFiller.set_zone(50, 500, 500, 450);
+treeFiller.set_zone(1050, 1500, 500, 450);
 treeFiller.set_tries(4, 15);
 treeFiller.set_object(100, 100, makeTree);
 treeFiller.fill_by_retry();
 
-CURRENTLEVEL.initialize_with_character(50, 520);
+// ===================
+//hack START
+// ===================
+CURRENTLEVEL.start_function = function() {
+  var callback = function(){
+    SAVE.autosave();
+    IO.control.character();
+  }
+  TextBannerSequence.make([
+    "You arrive at a small grove. The lush trees provide a welcome shelter from the elements. Any of them would be a great place for a nap.",
+    `$$BestFriend$: "How about a little break?"`,
+  ], callback);
+};
+
+CURRENTLEVEL.initialize_with_character(1050, 1520);

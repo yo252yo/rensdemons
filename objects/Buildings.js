@@ -93,8 +93,11 @@ class S_ExitFloor extends S_Floor {
 }
 
 class S_TownFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/town.png");
+  constructor(x, y, w, h, outside, pattern) {
+    if (!pattern){
+      pattern = "assets/patterns/town.png";
+    }
+    super(x, y, w, h, undefined, undefined, pattern);
 
     var exit = 40;
 
