@@ -111,7 +111,7 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 
 

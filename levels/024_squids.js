@@ -89,7 +89,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 // Do the exit after the decor so that decor doesnt spawn on it
 var leave = function(){

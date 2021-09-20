@@ -48,7 +48,7 @@ v.interaction = function() {
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 // ===================

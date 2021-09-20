@@ -35,7 +35,7 @@ shopkeep.interaction = function(){
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 var entrance = new S_ExitFloor(1335, 1525, 50, 35, '005_town1');
 

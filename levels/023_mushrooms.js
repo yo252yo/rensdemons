@@ -132,7 +132,7 @@ for(var f of hallways) {
 
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 

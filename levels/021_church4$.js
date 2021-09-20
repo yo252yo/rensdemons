@@ -13,7 +13,7 @@ new Snippet("levels/decors/temple");
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 var f = new S_ExitFloor(1250,1775,100,35, '021_town4');
 // ===================

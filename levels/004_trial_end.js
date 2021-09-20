@@ -62,7 +62,7 @@ make_priest(1350, 1550);
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 // ===================
 //hack 6. START/INIT

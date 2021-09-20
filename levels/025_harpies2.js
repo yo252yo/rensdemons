@@ -98,7 +98,7 @@ events.set_tries(10, 20);
 events.fill_by_retry();
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 
 new S_ExitFloor(850,1250,50,50, '025_harpies');

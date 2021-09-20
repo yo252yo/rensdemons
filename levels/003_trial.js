@@ -118,7 +118,7 @@ make_statue(830, 2025, "western");
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 
 // ===================

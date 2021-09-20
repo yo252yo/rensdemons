@@ -153,7 +153,7 @@ FEasyEvents.fill_by_retry();
 
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 // ===================
 //hack 6. START/INIT

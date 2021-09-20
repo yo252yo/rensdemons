@@ -180,7 +180,7 @@ events.set_zone(1300,2275,575,175);
 events.fill_by_retry();
 
 // ===================
-//hack 1. FLOORS/EXITS
+//hack 1. FLOORS -> EXITS
 // ===================
 
 var door = new S_ExitFloor(1850,1250,50,25);
