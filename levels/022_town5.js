@@ -1,5 +1,15 @@
+
+// ===================
+//hack INITIALIZATION
+//hack PREMANENT FIXED ELEMENTS (floors)
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+
 new Snippet("levels/decors/town5");
 
+// ===================
+//hack START
+// ===================
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
   `The atmosphere of $$town_5$ is eerily calm. It's nothing like the oppressive, watchful silence from $$town_2$. There are people in the streets, life is going on. But it seems to be moving at a slower pace. People are sluggish, their faces are inexpressive. Nobody is making any sound.`,
@@ -9,4 +19,4 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(100, 100);
+CURRENTLEVEL.initialize_with_character(1100, 1100);
