@@ -3,6 +3,7 @@ var _MAX_ROOM_W = 500;
 var _MAX_ROOM_H = 500;
 var _MIN_ROOM_W = 100;
 var _MIN_ROOM_H = 100;
+var _HOUSE_ELEM_BLOCK = 12.5;
 
 class HG_Room {
     constructor(type, seed, x, y, imposed_dimensions) {
@@ -28,6 +29,9 @@ class HG_Room {
 
       if (!this.w)        this.w = _MIN_ROOM_W + (_MAX_ROOM_W - _MIN_ROOM_W) * this.gen.get();
       if (!this.h)        this.h = _MIN_ROOM_H + (_MAX_ROOM_H - _MIN_ROOM_H) * this.gen.get();
+
+      this.w = _HOUSE_ELEM_BLOCK * Math.round(this.w / _HOUSE_ELEM_BLOCK);
+      this.h = _HOUSE_ELEM_BLOCK * Math.round(this.h / _HOUSE_ELEM_BLOCK);
     }
 
     _gen_furniture_function(furnitures){
