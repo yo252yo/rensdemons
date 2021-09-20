@@ -1,4 +1,24 @@
+
+// ===================
+//hack INITIALIZATION
+//hack PREMANENT FIXED ELEMENTS (floors)
+//hack PREMANENT FILLER ELEMENTS (decor)
+// ===================
+
 new Snippet("levels/decors/town2");
+
+// ===================
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
+// ===================
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
@@ -15,4 +35,4 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(750, 1550);
+CURRENTLEVEL.initialize_with_character(1750, 2550);
