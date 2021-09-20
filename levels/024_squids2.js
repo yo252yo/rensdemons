@@ -3,45 +3,46 @@
 // ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*11);
-
 // ===================
-//hack FIXED ELEMENTS (floors)
+//hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
 
-new S_Floor(75,375,625,50);
-new S_Floor(650,700,350,375);
-new S_Floor(1050,850,275,525);
-new S_Floor(950,375,150,50);
-new S_Floor(1275,375,225,50);
-new S_Floor(1450,450,50,125);
-new S_Floor(1350,450,150,50);
-new S_Floor(1350,525,50,125);
-new S_Floor(1350,525,225,50);
-new S_Floor(1525,525,50,200);
-new S_Floor(1525,375,125,50);
-new S_Floor(1600,675,50,350);
-new S_Floor(1525,675,125,50);
-new S_Floor(1525,675,50,125);
-new S_Floor(1450,600,125,50);
-new S_Floor(1450,750,50,200);
-new S_Floor(1450,750,200,50);
-new S_Floor(1600,825,50,125);
-new S_Floor(1450,825,200,50);
-new S_Floor(1450,900,50,125);
-new S_Floor(1450,900,275,50);
-new S_Floor(1675,900,100,575);
-new S_Floor(1725,425,125,100);
+
+
+new S_SandFloor(1075,1375,625,50);
+new S_SandFloor(1650,1700,350,375);
+new S_SandFloor(2050,1850,275,525);
+new S_SandFloor(1950,1375,150,50);
+new S_SandFloor(2275,1375,225,50);
+new S_SandFloor(2450,1450,50,125);
+new S_SandFloor(2350,1450,150,50);
+new S_SandFloor(2350,1525,50,125);
+new S_SandFloor(2350,1525,225,50);
+new S_SandFloor(2525,1525,50,200);
+new S_SandFloor(2525,1375,125,50);
+new S_SandFloor(2600,1675,50,350);
+new S_SandFloor(2525,1675,125,50);
+new S_SandFloor(2525,1675,50,125);
+new S_SandFloor(2450,1600,125,50);
+new S_SandFloor(2450,1750,50,200);
+new S_SandFloor(2450,1750,200,50);
+new S_SandFloor(2600,1825,50,125);
+new S_SandFloor(2450,1825,200,50);
+new S_SandFloor(2450,1900,50,125);
+new S_SandFloor(2450,1900,275,50);
+new S_SandFloor(2675,1900,100,575);
+new S_SandFloor(2725,1425,125,100);
 
 // Maybe we should make a bigger deal out of this ???
-new SE_groundItem(950, 675, ITEM.AncientArmamentArmature);
+new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 
 // ===================
-//hack GENERATED ELEMENTS (decor)
+//hack PREMANENT FILLER ELEMENTS (decor)
 // ===================
 
 
 var filler = new Filler(gen.get());
-filler.set_zone(625,925,1175,650);
+filler.set_zone(1625,1925,1175,650);
 filler.set_tries(5, 17);
 filler.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
 filler.fill_by_retry();
@@ -51,7 +52,10 @@ filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack TEMPORARY ELEMENTS (encounters)
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 10);
@@ -80,7 +84,7 @@ events.fill_by_retry();
 //hack FINISHING ELEMENTS (exit)
 // ===================
 
-new S_ExitFloor(1800,425,75,100, '024_squids');
+new S_ExitFloor(2800,1425,75,100, '024_squids');
 
 // ===================
 //hack START
@@ -98,4 +102,4 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(100, 350);
+CURRENTLEVEL.initialize_with_character(1100, 1350);

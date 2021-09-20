@@ -5,34 +5,33 @@ AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*12);
 
 var access = "_squid_access";
-
 // ===================
-//hack FIXED ELEMENTS (floors)
+//hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
 
-new S_Floor(375,2400,1275,875);
-new S_Floor(275,2475,200,175);
-new S_Floor(425,2575,500,200);
-new S_Floor(200,2350,200,275);
-new S_Floor(250,2125,200,500);
-new S_Floor(575,1675,775,300);
-new S_Floor(1075,2550,475,175);
-new S_Floor(1575,2025,300,400);
+new S_SandFloor(1375,2400,1275,875);
+new S_SandFloor(1275,2475,200,175);
+new S_SandFloor(1425,2575,500,200);
+new S_SandFloor(1200,2350,200,275);
+new S_SandFloor(1250,2125,200,500);
+new S_SandFloor(1575,1675,775,300);
+new S_SandFloor(2075,2550,475,175);
+new S_SandFloor(2575,2025,300,400);
 
-new S_Floor(1025,2625,250,125);
-new S_Floor(875,2575,100,75);
+new S_SandFloor(2025,2625,250,125);
+new S_SandFloor(1875,2575,100,75);
 
-new S_SavePoint(1000, 2375);
+new S_SavePoint(2000, 2375);
 
-var whale = new SBattle(450, 1700, 'waters/whale');
+var whale = new SBattle(1450, 1700, 'waters/whale');
 whale.make_default_callback = function(){return function(){};};
 
 // ===================
-//hack GENERATED ELEMENTS (decor)
+//hack PREMANENT FILLER ELEMENTS (decor)
 // ===================
 
 var decorFiller = new Filler(gen.get());
-decorFiller.set_zone(150,2600,1725,1300);
+decorFiller.set_zone(1150,2600,1725,1300);
 
 decorFiller.set_tries(5, 10);
 decorFiller.set_object(100, 50, function(x,y,seed){ return new S_AlgaeWall(x, y); });
@@ -57,11 +56,14 @@ decorFiller.fill_by_retry();
 
 
 // ===================
-//hack TEMPORARY ELEMENTS (encounters)
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(decorFiller);
-events.set_zone(150,2475,2100,1475);
+events.set_zone(1150,2475,2100,1475);
 
 events.battle('waters/anemone', 0.5);
 events.battle('waters/crab', 0.5);
@@ -82,7 +84,7 @@ events.text(`You can be underwater thanks to the potion, but it doesn't prevent 
 events.byConstructor("B_Seashell", 2);
 events.byConstructor("B_Skeleton", 1);
 
-events.set_tries(50, 100);
+events.set_tries(75, 120);
 events.fill_by_retry();
 
 
@@ -94,13 +96,13 @@ var leave = function(){
   CURRENTLEVEL.setup('010_world_map');
   INVENTORY.decrease(access);
 }
-var f1 = new S_ExitFloor(900,2525,200,125);
-var f2 = new S_ExitFloor(950,2650,100,200);
+var f1 = new S_ExitFloor(1900,2525,200,125);
+var f2 = new S_ExitFloor(1950,2650,100,200);
 
 f1.interaction = leave;
 f2.interaction = leave;
 
-new S_Floor(375,2425,1275,50);
+new S_SandFloor(1375,2425,1275,50);
 
 
 // ===================
@@ -125,15 +127,13 @@ var alreadyEaten = function() { return INVENTORY.count("_eaten_by_whale") > 0; }
 CURRENTLEVEL.add_trigger("alreadyEaten", alreadyEaten, function() {
   var state = LEVELSTATES._states.get(["024_squids2"]);
   if(state){
-    state.saved_character_position = [100, 350];
+    state.saved_character_position = [1100, 1350];
   }
   INVENTORY.decrease("_eaten_by_whale", INVENTORY.count("_eaten_by_whale"));
   CURRENTLEVEL.setup("024_squids2");
 });
 
-
-
-CURRENTLEVEL.initialize_with_character(1000, 2425);
+CURRENTLEVEL.initialize_with_character(2000, 2425);
 var potion = function(){
   if (INVENTORY.count(access)){
     IO.control.character();
