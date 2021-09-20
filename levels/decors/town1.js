@@ -3,14 +3,16 @@
 //hack 0. INITIALIZATION
 // ===================
 AUDIO.music.town.hope();
+var gen = new Generator(DICTIONARY.get("world_seed")*2);
+
+// ===================
+//hack 1. FLOORS -> EXITS
+// ===================
+new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
 
 // ===================
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-
-var gen = new Generator(DICTIONARY.get("world_seed")*2);
-
-new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
 
 new S_Church(1450, 1400, "004_trial_end");
 

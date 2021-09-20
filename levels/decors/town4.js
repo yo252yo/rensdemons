@@ -2,15 +2,16 @@
 //hack 0. INITIALIZATION
 // ===================
 AUDIO.music.town.debauch();
-
 var gen = new Generator(DICTIONARY.get("world_seed")*5);
+
+// ===================
+//hack 1. FLOORS -> EXITS
+// ===================
+new S_TownFloor(1050, 2050, 2000, 1000, "010_world_map");
 
 // ===================
 //hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-
-new S_TownFloor(1050, 2050, 2000, 1000, "010_world_map");
-
 new S_Church(1950, 1300, "021_church4$");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 1100, 2000, gen.get());
