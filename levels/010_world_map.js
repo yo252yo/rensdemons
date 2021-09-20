@@ -8,10 +8,12 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
+
 // ===================
-//hack FIXED ELEMENTS (zones)
+//hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
 
+//hack zones
 var h = 2550;
 var w = 2950;
 new S_Floor(50, h, w, h-50, 'obj_dark');
@@ -40,28 +42,25 @@ FHardMain.set_zone(1075+50, h-25, w-1050-50, h-1050-25);
 //FHardMain.draw_for_debug('#FF0000')
 
 
-// ===================
-//hack FIXED ELEMENTS (story)
-// ===================
-
-// First make the towns
+//hack places
 new SM_Town(250, 1750, "005_town1", "town_1");
 new SM_Town(850, 550, "020_town2", "town_2");
 new SM_Town(2300, 1275, "030_town3", "town_3", LaterInStory);
 new SM_Town(2725, 300, "021_town4", "town_4", after_t2); // optional
 new SM_Town(1450, 2500, "022_town5", "town_5", after_t2); // optional
 
-// Scenario elements
 new SM_Forest(1675, 350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
 new SM_Lake(250, 200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
 new SM_Mountain(1300, 1025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
 new SM_Crevasse(1700, 2025, `Forgotten Fissure`, "032_fissure", LaterInStory);
 new SM_Vulcano(2650, 1800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
+
 // ===================
-//hack GENERATED ELEMENTS (new places)
+//hack PREMANENT FILLER ELEMENTS (decor)
 // ===================
 
+//hack landmarks
 FEasyS.set_guaranteed(1);
 FEasyS.set_object(100, 100, function(x,y,seed){
   return new SM_Trees(x, y, seed, "", "011_han_grove");
@@ -96,10 +95,7 @@ FHardMain.set_object(100, 50, function(x,y,seed){
 FHardMain.fill_by_retry();
 
 
-// ===================
-//hack GENERATED ELEMENTS (decor)
-// ===================
-
+//hack decor
 // could be non uniform
 for(var i = 0; i < 3; i++) {
   FMap.set_tries(3, 25);
@@ -119,9 +115,11 @@ FMap.set_tries(10, 40);
 FMap.set_object(200, 100, function(x,y,seed){ return new SM_Hills(x, y, seed);});
 FMap.fill_by_retry();
 
-
 // ===================
-//hack TEMPORARY ELEMENTS (encounters)
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
@@ -155,13 +153,12 @@ FEasyEvents.set_tries(30, 60);
 FEasyEvents.fill_by_retry();
 
 
-
-
-
 // ===================
-//hack EVENTS
+//hack FINISHING ELEMENTS (exit)
 // ===================
-
+// ===================
+//hack START
+// ===================
 
 CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament, function() {
 
@@ -176,9 +173,6 @@ CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament,
   ], function(){ IO.control.character(); });
 });
 
-// ===================
-//hack START
-// ===================
 
 CURRENTLEVEL.initialize_with_character(280, 1760, 0.6);
 SAVE.autosave();
