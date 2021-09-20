@@ -225,8 +225,3 @@ CURRENTLEVEL.start_function = function() {
 };
 
 CURRENTLEVEL.initialize_with_character(2000, 2425);
-
-// ===================
-//hack 8. AUTOSAVE
-// ===================
-SAVE.autosave();
