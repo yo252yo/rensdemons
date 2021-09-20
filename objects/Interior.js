@@ -33,7 +33,7 @@ class S_SavePoint extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
     super(visual, x, y);
-    this.adjust_hitbox(5,-5,40,10);
+    this.adjust_hitbox(5,-5,40,20);
   }
 
   interaction(){

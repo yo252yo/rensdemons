@@ -1,7 +1,6 @@
 
 - 010 worldmap armament trigger event repeats every time i exit a battle in debug mode
-- when you enter harpie peak youre spawned on wrong location < fixed with autosave??
-- world limit
+
 - tiling pattern is uneven (ie glitches house/hallway)
 
 
