@@ -1,14 +1,14 @@
 
 // ===================
-//hack INITIALIZATION
-//hack PREMANENT FIXED ELEMENTS (floors)
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 0. INITIALIZATION
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 new Snippet("levels/decors/town4");
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([

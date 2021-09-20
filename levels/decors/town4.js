@@ -1,12 +1,12 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.town.debauch();
 
 var gen = new Generator(DICTIONARY.get("world_seed")*5);
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_TownFloor(1050, 2050, 2000, 1000, "010_world_map");
@@ -19,7 +19,7 @@ new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 2200, 1375, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 1600, gen.get());
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var houseFiller = new Filler(gen.get());

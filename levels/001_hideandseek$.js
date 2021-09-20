@@ -1,22 +1,22 @@
 
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 
 AUDIO.music.levels.hideandseek();
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_MudFloor(1050,1400,600,350);
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 var CHILDREN_FOUND = {};
@@ -106,18 +106,18 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 
 
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 
 
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

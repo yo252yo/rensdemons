@@ -1,9 +1,9 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.house();
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new S_WoodFloor(1200, 1500, 300, 300);
 
@@ -17,10 +17,10 @@ new B_Table(1325, 1325);
 
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 var shopkeep = new M_NPC(1325, 1275, "villager2");
 shopkeep.interaction = function(){
@@ -32,15 +32,15 @@ shopkeep.interaction = function(){
   }
 }
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 var entrance = new S_ExitFloor(1335, 1525, 50, 35, '005_town1');
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.initialize_with_character(1350, 1505);

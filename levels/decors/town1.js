@@ -1,11 +1,11 @@
 
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.town.hope();
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var gen = new Generator(DICTIONARY.get("world_seed")*2);
@@ -24,7 +24,7 @@ s.enter = function() {
 
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var houseFiller = new Filler(gen.get());

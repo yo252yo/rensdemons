@@ -1,18 +1,18 @@
 
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.hideandseek();
 var gen = new Generator(DICTIONARY.get("world_seed")*8);
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
 
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var nap = function() {
@@ -78,7 +78,7 @@ treeFiller.set_object(100, 100, makeTree);
 treeFiller.fill_by_retry();
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 CURRENTLEVEL.start_function = function() {
   var callback = function(){

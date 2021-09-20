@@ -1,17 +1,17 @@
 
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.trial();
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/maze");
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 // start
@@ -115,14 +115,14 @@ make_statue(1585, 2850, "southern");
 make_statue(830, 2025, "western");
 
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 //hack beginning event

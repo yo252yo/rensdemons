@@ -1,6 +1,6 @@
 // ===================
-//hack INITIALIZATION
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 0. INITIALIZATION
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
 
@@ -39,20 +39,20 @@ v.interaction = function() {
 };
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 

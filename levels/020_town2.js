@@ -1,23 +1,23 @@
 
 // ===================
-//hack INITIALIZATION
-//hack PREMANENT FIXED ELEMENTS (floors)
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 0. INITIALIZATION
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 new Snippet("levels/decors/town2");
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

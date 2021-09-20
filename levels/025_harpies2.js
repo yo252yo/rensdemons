@@ -1,11 +1,11 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 // room
@@ -62,7 +62,7 @@ new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -75,10 +75,10 @@ filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
 filler.fill_by_retry();
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 
@@ -98,13 +98,13 @@ events.set_tries(10, 20);
 events.fill_by_retry();
 
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 
 new S_ExitFloor(850,1250,50,50, '025_harpies');
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {

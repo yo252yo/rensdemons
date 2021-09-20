@@ -1,11 +1,11 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("world_seed")*10);
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 var hallways = [
@@ -62,7 +62,7 @@ new SBattle(2075, 1425, '_02/_loot_forest');
 new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 // could improve load by making these cosmetics and not level items
@@ -97,10 +97,10 @@ for(var f of hallways) {
 }
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 10);
@@ -132,12 +132,12 @@ for(var f of hallways) {
 
 
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function() {
@@ -152,6 +152,6 @@ CURRENTLEVEL.start_function = function() {
 CURRENTLEVEL.initialize_with_character(2000, 2425);
 
 // ===================
-//hack AUTOSAVE
+//hack 7. AUTOSAVE
 // ===================
 SAVE.autosave();

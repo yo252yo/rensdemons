@@ -1,12 +1,12 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*12);
 
 var access = "_squid_access";
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 new S_SandFloor(1375,2400,1275,875);
@@ -27,7 +27,7 @@ var whale = new SBattle(1450, 1700, 'waters/whale');
 whale.make_default_callback = function(){return function(){};};
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 var decorFiller = new Filler(gen.get());
@@ -56,10 +56,10 @@ decorFiller.fill_by_retry();
 
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(decorFiller);
@@ -89,7 +89,7 @@ events.fill_by_retry();
 
 
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 // Do the exit after the decor so that decor doesnt spawn on it
 var leave = function(){
@@ -106,7 +106,7 @@ new S_SandFloor(1375,2425,1275,50);
 
 
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 var dive = function(){

@@ -1,5 +1,5 @@
 // ===================
-//hack INITIALIZATION
+//hack 0. INITIALIZATION
 // ===================
 AUDIO.music.interface.map();
 INTERFACE.make_compass();
@@ -9,7 +9,7 @@ var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var LaterInStory = function() { return false;};
 
 // ===================
-//hack PREMANENT FIXED ELEMENTS (floors)
+//hack 2. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 //hack zones
@@ -56,7 +56,7 @@ new SM_Vulcano(3650, 2800, `Maw of Hell`, "031_hellsmaw", LaterInStory);
 
 
 // ===================
-//hack PREMANENT FILLER ELEMENTS (decor)
+//hack 3. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
 //hack landmarks
@@ -115,10 +115,10 @@ FMap.set_object(200, 100, function(x,y,seed){ return new SM_Hills(x, y, seed);})
 FMap.fill_by_retry();
 
 // ===================
-//hack TEMPORARY FIXED ELEMENTS (objects)
+//hack 4. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 // ===================
-//hack TEMPORARY FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
@@ -153,10 +153,10 @@ FEasyEvents.fill_by_retry();
 
 
 // ===================
-//hack FINISHING ELEMENTS (exit)
+//hack 1. FLOORS/EXITS
 // ===================
 // ===================
-//hack START
+//hack 6. START/INIT
 // ===================
 
 CURRENTLEVEL.add_trigger("foundAncientArmament", INVENTORY.has_ancient_armament, function() {
