@@ -5,76 +5,71 @@ AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("world_seed")*10);
 
 // ===================
-//hack FIXED ELEMENTS (floors)
+//hack PREMANENT FIXED ELEMENTS (floors)
 // ===================
-
-var f = new S_ExitFloor(900,2500,200,75, '010_world_map');
 
 var hallways = [
-  new S_Floor(625,2000,750,50),
-  new S_Floor(625,2250,50,525),
-  new S_Floor(1325,2150,50,600),
-  new S_Floor(975,1975,50,375),
-  new S_Floor(1175,1600,475,50),
-  new S_Floor(1150,2150,400,50),
-  new S_Floor(1500,2350,50,425),
-  new S_Floor(1500,2350,300,50),
-  new S_Floor(1750,2500,50,325),
-  new S_Floor(1750,2500,300,50),
-  new S_Floor(1750,2225,200,50),
-  new S_Floor(1500,1975,525,50),
-  new S_Floor(1975,2075,50,350),
-  new S_Floor(1975,2075,275,50),
-  new S_Floor(1975,1775,250,50),
-  new S_Floor(1600,1725,50,400),
-  new S_Floor(1600,1725,225,50),
-  new S_Floor(1600,1375,375,50),
-  new S_Floor(1925,1525,50,400),
-  new S_Floor(1925,1525,275,50),
-  new S_Floor(475,2250,200,50),
-  new S_Floor(475,2375,50,275),
-  new S_Floor(250,2150,275,50),
-  new S_Floor(250,2275,50,300),
-  new S_Floor(400,1775,275,50),
-  new S_Floor(400,1950,50,425),
-  new S_Floor(200,1575,250,50),
-  new S_Floor(1800,1175,350,50),
-  new S_Floor(1175,1675,50,325),
-  new S_Floor(1200,1375,225,50),
-  new S_Floor(1375,1450,50,325),
-  new S_Floor(1275,1175,275,50),
-  new S_Floor(775,1650,325,50),
-  new S_Floor(775,1750,50,650),
-  new S_Floor(525,1150,475,50),
-  new S_Floor(525,1400,50,450),
-  new S_Floor(525,1400,50,450),
-  new S_Floor(200,1700,50,600),
-  new S_Floor(100,1150,300,50),
-  new S_Floor(375,1400,325,50),
+  new S_LushFloor(1625,2000,750,50),
+  new S_LushFloor(1625,2250,50,525),
+  new S_LushFloor(2325,2150,50,600),
+  new S_LushFloor(1975,1975,50,375),
+  new S_LushFloor(2175,1600,475,50),
+  new S_LushFloor(2150,2150,400,50),
+  new S_LushFloor(2500,2350,50,425),
+  new S_LushFloor(2500,2350,300,50),
+  new S_LushFloor(2750,2500,50,325),
+  new S_LushFloor(2750,2500,300,50),
+  new S_LushFloor(2750,2225,200,50),
+  new S_LushFloor(2500,1975,525,50),
+  new S_LushFloor(2975,2075,50,350),
+  new S_LushFloor(2975,2075,275,50),
+  new S_LushFloor(2975,1775,250,50),
+  new S_LushFloor(2600,1725,50,400),
+  new S_LushFloor(2600,1725,225,50),
+  new S_LushFloor(2600,1375,375,50),
+  new S_LushFloor(2925,1525,50,400),
+  new S_LushFloor(2925,1525,275,50),
+  new S_LushFloor(1475,2250,200,50),
+  new S_LushFloor(1475,2375,50,275),
+  new S_LushFloor(1250,2150,275,50),
+  new S_LushFloor(1250,2275,50,300),
+  new S_LushFloor(1400,1775,275,50),
+  new S_LushFloor(1400,1950,50,425),
+  new S_LushFloor(1200,1575,250,50),
+  new S_LushFloor(2800,1175,350,50),
+  new S_LushFloor(2175,1675,50,325),
+  new S_LushFloor(2200,1375,225,50),
+  new S_LushFloor(2375,1450,50,325),
+  new S_LushFloor(2275,1175,275,50),
+  new S_LushFloor(1775,1650,325,50),
+  new S_LushFloor(1775,1750,50,650),
+  new S_LushFloor(1525,1150,475,50),
+  new S_LushFloor(1525,1400,50,450),
+  new S_LushFloor(1525,1400,50,450),
+  new S_LushFloor(1200,1700,50,600),
+  new S_LushFloor(1100,1150,300,50),
+  new S_LushFloor(1375,1400,325,50),
 ];
 
-new S_Floor(950,2450,100,500);
-new S_Floor(1100,1375,125,50);
-new S_Floor(1100,1400,50,50);
+new S_LushFloor(1950,2450,100,500);
+new S_LushFloor(2100,1375,125,50);
+new S_LushFloor(2100,1400,50,50);
+
+
+new S_SavePoint(1975, 2050);
+
+new SBattle(2075, 1425, '_02/_loot_forest');
+new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
-//hack FIXED ELEMENTS (decor)
-// ===================
-
-new S_SavePoint(975, 2050);
-
-new SBattle(1075, 1425, '_02/_loot_forest');
-new SBattle(1125, 1375, 'forests/fungus');
-
-// ===================
-//hack GENERATED ELEMENTS (decor)
+//hack PREMANENT FILLER ELEMENTS (decor)
 // ===================
 
 // could improve load by making these cosmetics and not level items
-var noTreeZone = new S_Floor(1075,1475,100,175);
+var noTreeZone = new S_LushFloor(2075,1475,100,175);
 
 var filler = new Filler(gen.get());
-filler.set_zone(150,2475,2100,1475);
+filler.set_zone(1150,2475,2100,1475);
 filler.set_tries(100, 100);
 filler.set_object(30, 10, function(x,y,seed){ return new S_Tree(x, y); });
 filler.fill_by_retry(true);
@@ -88,7 +83,7 @@ filler.fill_by_retry(true);
 
 noTreeZone.destroy(true);
 
-filler.set_tries(1, 1);
+filler.set_tries(1, 2);
 for(var f of hallways) {
   filler.set_zone_from_floor(f);
   var r = gen.get();
@@ -101,13 +96,15 @@ for(var f of hallways) {
   }
 }
 
-
 // ===================
-//hack TEMPORARY ELEMENTS (encounters)
+//hack TEMPORARY FIXED ELEMENTS (objects)
+// ===================
+// ===================
+//hack TEMPORARY FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 10);
-events.set_tries(0, 2);
+events.set_tries(0, 3);
 events.battle('forests/boar');
 events.battle('forests/flower');
 events.battle('forests/fox');
@@ -134,11 +131,14 @@ for(var f of hallways) {
 }
 
 
+// ===================
+//hack FINISHING ELEMENTS (exit)
+// ===================
+var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
 //hack START
 // ===================
-
 
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
@@ -149,5 +149,9 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(1000, 2425);
+CURRENTLEVEL.initialize_with_character(2000, 2425);
+
+// ===================
+//hack AUTOSAVE
+// ===================
 SAVE.autosave();
