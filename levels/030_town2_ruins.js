@@ -32,16 +32,6 @@ houseFiller.set_tries(15, 100);
 houseFiller.set_object(120, 160, function(x,y,seed){ obj.push(new S_House(CITIES.fear, x, y, seed)); });
 houseFiller.fill_by_retry();
 
-for(var o of obj) {
-  var x = o.x;
-  var y = o.y;
-  if (o.h_w) {
-    x += o.h_w / 2;
-    y += o.h_h / 2;
-  }
-  o.destroy();
-  new S_RubbleLarge(x, y);
-}
 
 //hack reset generator (i.e. new content)
 
@@ -53,10 +43,21 @@ rubbleFiller.set_tries(20, 40);
 rubbleFiller.set_object(30, 30, function(x,y,seed){ return new S_Rubble(x, y); });
 rubbleFiller.fill_by_retry();
 
-
+rubbleFiller.set_tries(20, 40);
 rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.mourning, x, y, seed); });
 rubbleFiller.fill_by_retry();
 
+
+for(var o of obj) {
+  var x = o.x;
+  var y = o.y;
+  if (o.h_w) {
+    x += o.h_w / 2;
+    y += o.h_h / 2;
+  }
+  o.destroy();
+  new S_RubbleLarge(x, y);
+}
 // ===================
 //hack 7. START/INIT
 // ===================
