@@ -1,9 +1,14 @@
-
+> fast travel out after getting artifact
+> path to save town2
+> dialog with king: go to town3, rescue survivors ??
 
 - rest of the story
-> fast travel after getting artifact?
-> react after gathering 3 artifacts
-> story, city destroyed, etc...
+
+
+
+
+
+----------------------------------------
 - optional events in world map
 - optional dungeons
 - optional party members:
