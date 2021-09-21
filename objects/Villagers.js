@@ -11,20 +11,23 @@ class VillagerSoul extends SoulBattleObject {
     }
 
     switch(type){
-      case "acceptance":
+      case CITIES.acceptance:
         this.setup_acceptance();
         break;
-      case "denial":
+      case CITIES.denial:
         this.setup_denial();
         break;
-      case "fear":
+      case CITIES.fear:
         this.setup_fear();
         break;
-      case "hope":
+      case CITIES.hope:
         this.setup_hope();
         break;
-      case "indulgence":
+      case CITIES.indulgence:
         this.setup_indulgence();
+        break;
+      case CITIES.mourning:
+        this.setup_mourning();
         break;
     }
   }
@@ -517,6 +520,49 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "Religion? It's a good subject of inspiration for art, a great way to transcend our mortal senses."`);
   }
 
+
+  setup_mourning() {
+    this.add_enemy_action(`The stranger lets out a profound sigh, as if life was escaping their body.`);
+    this.add_enemy_action(`The villager is shaking, still under shock from the past events.`);
+    this.add_enemy_action(`The villager's face is distorted by anger and sadness.`);
+    this.add_enemy_action(`${this.vname} sheds a silent tear. Who knows what is going through their mind...`);
+    this.add_enemy_action(`${this.vname} starts crying loudly.`);
+    this.add_enemy_action(`${this.vname} stayed silent, but you could feel in their eyes a storm of emotions.`);
+
+    var start_text = this.gen.pick([
+      `The villager looks extremely sad, but seems to respond when you wave at them.`,
+      `The villager salutes you, and for a moment you can see in their eyes the weight of the loss they just went through.`,
+      `${this.vname}: "What do you want?"`,
+    ]);
+    this.set_description(start_text);
+
+  this.add_interaction("Cause", `${this.vname}: "I'm sure it was the fault of the government! They were too relaxed, letting too many people in, of course it was bound to bring problems!"`);
+  this.add_interaction("Cause", `${this.vname}: "I knew it! I knew it! I told them we didn't pray enough! I told them we were not pure enough! It's all our fault!"`);
+
+  this.add_interaction("Promised Child", `${this.vname}: "It's your fault, isn't it? You're not one of us!"`);
+  this.add_interaction("Promised Child", `${this.vname}: "We were fine before you came along! Curse you! We should never have let an outsider in!"`);
+
+  this.add_interaction("Events", `${this.vname}: "The hordes of $$demon_lord$ raided the city. The royal army was there, but they were powerless faced by the swarm of demons..."`);
+  this.add_interaction("Events", `${this.vname}: "It was pure destruction... They didn't seem to have any goal in mind, just tearing down buildings and killing people randomly. It was pure chaos."`);
+  this.add_interaction("Events", `${this.vname}: "I was so scared... So sure that I would not make it. At any second, any of them could have found me..."`);
+
+  this.add_interaction("Demons", `${this.vname}: "It was horrible... The monsters were plowing through our soldiers and our buildings as if they were nothing! I was so scared!"`);
+  this.add_interaction("Demons", `${this.vname}: "There were so many demons... I survived by hiding in a cave, there was no end to their ranks. We can't compete..."`);
+  this.add_interaction("Demons", `${this.vname}: "A single one of them can destroy a whole battalion. Iron armor is like paper to them."`);
+
+  this.add_interaction("Victims", `${this.vname}: "So many people died! There was blood everywhere!"`);
+  this.add_interaction("Victims", `${this.vname}: "They took my children! My babies! Please! Help!"`);;
+  this.add_interaction("Victims", `${this.vname}: "Most of the townsfolks died... Only by waiting out and hiding did we have any chance of surviving the assault."`);
+
+  this.add_interaction("Future", `${this.vname}: "What are we going to do now? Where are we going to live?"`);
+  this.add_interaction("Future", `${this.vname}: "We must repent! We must repent! We need to bring back our purity!"`);
+  this.add_interaction("Future", `${this.vname}: "It's the end for this town... And probably for us too... Our supplies were ransacked. We may have escaped the battle, but we won't survive its aftermath."`);
+  this.add_interaction("Future", `As only answer, ${this.vname} let out a wail of despair.`);
+
+
+  }
+
+
 }
 
 
@@ -578,6 +624,12 @@ var get_rejection_soul = function(type, seed, indoors, seed) {
       excuses.push(make_banner_function(`The villager seems busy doing their own things.`));
       threshold = 0.1;
     }
+  }
+  if(type == CITIES.mourning){
+    excuses.push(make_banner_function(`The villager cries in silence. You can see their body shaken by the sobs. Better not disturb them.`));
+    excuses.push(make_banner_function(`As you try to attract their attention, the villager does not bulge. They stay standing without motion. Their empty gaze sends a shiver down your spine. It's as if their soul is gone...`));
+    excuses.push(make_banner_function(`The villager shouts hysterically. They have obviously lost their mind. As you get close, they start yelling at you a barely intelligible mumble of insults.`));
+    threshold = 0.1;
   }
 
   if(seed < threshold) {

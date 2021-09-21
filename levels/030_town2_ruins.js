@@ -54,7 +54,7 @@ rubbleFiller.set_object(30, 30, function(x,y,seed){ return new S_Rubble(x, y); }
 rubbleFiller.fill_by_retry();
 
 
-rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.fear, x, y, seed); });
+rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.mourning, x, y, seed); });
 rubbleFiller.fill_by_retry();
 
 // ===================

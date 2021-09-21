@@ -5,6 +5,7 @@
 const CITIES = {
   hope: "hope",
   fear: "fear",
+  mourning: "mourning",
   indulgence: "indulgence",
   denial: "denial",
   acceptance: "acceptance",
@@ -226,7 +227,7 @@ class S_Castle extends LevelObject {
       "It's the royal castle.",
     ]);
   }
-  
+
   interaction(){
     this.default_text();
   }
