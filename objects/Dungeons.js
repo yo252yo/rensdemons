@@ -262,6 +262,25 @@ class S_Bocals extends SimpleObject {
   }
 }
 
+class S_Rubble extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "ruins/rubble");
+    this.adjust_hitbox(0,0,30,10);
+    this.default_text = this.text_interaction([
+      "A pile of rubble, scraps of stone and wood...",
+    ]);
+  }
+}
+
+class S_RubbleLarge extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "ruins/rubblelarge");
+    this.adjust_hitbox(0,0,60,30);
+    this.default_text = this.text_interaction([
+      "This messy pile of bricks is all that remains of a former construction...",
+    ]);
+  }
+}
 class B_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
     super(x, y, "exterior/pebbles", color, size);

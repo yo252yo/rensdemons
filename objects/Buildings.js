@@ -118,8 +118,9 @@ class S_building extends LevelObject {
 
 class S_EnterableBuilding extends LevelObject {
   constructor(visual, x, y) {
-    new S_building(x, y-1, "building");
+    var base = new S_building(x, y-1, "building");
     super(visual, x, y);
+    this.base = base;
   }
 
   character_can_enter(){
@@ -134,6 +135,11 @@ class S_EnterableBuilding extends LevelObject {
     } else if (this.describe) {
       this.describe();
     }
+  }
+
+  destroy() {
+    this.base.destroy();
+    super.destroy();
   }
 }
 
@@ -180,6 +186,7 @@ class S_Church extends LevelObject {
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
     this.inside = inside_lvl;
+    this.base = base;
 
     this.default_text = this.text_interaction([
       "It's a temple, but this is not the entrance.",
@@ -199,6 +206,11 @@ class S_Church extends LevelObject {
       this.default_text();
     }
   }
+
+  destroy() {
+    this.base.destroy();
+    super.destroy();
+  }
 }
 
 class S_Castle extends LevelObject {
@@ -208,12 +220,19 @@ class S_Castle extends LevelObject {
     var visual = new StaticSprite("assets/objects/buildings/castle2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,460,300);
+    this.base = base;
 
     this.default_text = this.text_interaction([
       "It's the royal castle.",
     ]);
   }
+  
   interaction(){
     this.default_text();
+  }
+
+  destroy() {
+    this.base.destroy();
+    super.destroy();
   }
 }
