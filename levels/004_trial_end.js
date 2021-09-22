@@ -26,14 +26,14 @@ var make_priest = function (x, y) {
  };
  return priest;
 }
+make_priest(1200, 1550);
+make_priest(1275, 1550);
+make_priest(1350, 1550);
 
 var hp = make_priest(1275, 1100);
 hp.interaction = function() {
     BATTLE.api.make('_004/_priest');
 };
-make_priest(1200, 1550);
-make_priest(1275, 1550);
-make_priest(1350, 1550);
 
 
 (new M_ChildM(1150, 1670)).interaction = function() {
