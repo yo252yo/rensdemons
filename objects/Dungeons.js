@@ -4,6 +4,7 @@ class S_Tree extends LevelObject {
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(25,0,20,15);
+    this.specify_sprite_size(77,73);
     this.default_text = this.text_interaction([
       "It's a tree.",
       "Lustrous leaves, bulky branches... yes, definitely a tree.",
@@ -32,6 +33,7 @@ class S_AlgaeWall extends SimpleObject {
   constructor(x, y){
     super(x, y, "water/algaewall");
     this.adjust_hitbox(20,0,110,25);
+    this.specify_sprite_size(143,101);
     this.default_text = this.text_interaction([
       "These green aquatic plants intertwine in an impassible wall.",
       "You're faced with underwater vines tangled in an inextricable mess.",
@@ -44,6 +46,7 @@ class S_Anemone extends SimpleObject {
   constructor(x, y){
     super(x, y, "water/anemone");
     this.adjust_hitbox(0,0,20,20);
+    this.specify_sprite_size(30,44);
     this.default_text = this.text_interaction([
       "The little tentacles around the mouth of the anemone seem to be fondling the water in search of food.",
       "You watch the mouth of the purple anemone open and close with the currents.",
@@ -56,6 +59,7 @@ class S_Coral extends SimpleObject {
   constructor(x, y){
     super(x, y, "water/coral");
     this.adjust_hitbox(0,0,50,25);
+    this.specify_sprite_size(49,49);
     this.default_text = this.text_interaction([
       "This coral stands proudly as a refuge to thousands of tiny fishes swarming around it.",
       "You can't help but be impressed by the colorful reflections emanating from the porous coral structure.",
@@ -66,8 +70,9 @@ class S_Coral extends SimpleObject {
 
 class S_Seashell extends SimpleObject {
   constructor(x, y){
-    super(x, y, "exterior/seashell");
+    super(x, y, "water/seashell");
     this.adjust_hitbox(10,0,20,10);
+    this.specify_sprite_size(27,22);
     this.default_text = this.text_interaction([
       "This seashell still has an inhabitant.",
       "The floor is littered with shells like this. Most of them are still alive and well.",
@@ -78,8 +83,9 @@ class S_Seashell extends SimpleObject {
 
 class S_Seashellpointy extends SimpleObject {
   constructor(x, y){
-    super(x, y, "exterior/seashellpointy");
+    super(x, y, "water/seashellpointy");
     this.adjust_hitbox(10,0,20,10);
+    this.specify_sprite_size(24,25);
     this.default_text = this.text_interaction([
       "This shell is without a doubt a refuge for a hermit crab.",
       "You must be careful not to step on these, as they are quite pointy.",
@@ -92,6 +98,7 @@ class S_Waterplants extends SimpleObject {
   constructor(x, y){
     super(x, y, "water/waterplants");
     this.adjust_hitbox(0,0,40,20);
+    this.specify_sprite_size(47,50);
     this.default_text = this.text_interaction([
       "The underwater plants waver with water currents. Their dance is hypnotic.",
       "The algae wave slowly under the water currents. They bathe the scene by a faint fluorescent glow.",
@@ -103,6 +110,7 @@ class S_Waterplants extends SimpleObject {
 class S_PlantSmall extends SimpleObject {
   constructor(x, y){
     super(x, y, "exterior/plant");
+    this.specify_sprite_size(29,24);
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "You can easily step over this little bush.",
@@ -116,6 +124,7 @@ class S_PlantSmall extends SimpleObject {
 class S_Shroomgiant extends SimpleObject {
   constructor(x, y){
     super(x, y, "forest/shroomgiant");
+    this.specify_sprite_size(104,113);
     this.adjust_hitbox(40,0,20,20);
     this.default_text = this.text_interaction([
       "This giant mushroom casts a wide shadow over the surroundings.",
@@ -128,6 +137,7 @@ class S_Shroomgiant extends SimpleObject {
 class S_Shroomsmall extends SimpleObject {
   constructor(x, y){
     super(x, y, "forest/shroomsmall");
+    this.specify_sprite_size(29,24);
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
@@ -141,6 +151,7 @@ class S_Shroomsmall extends SimpleObject {
 class S_Shroomtall extends SimpleObject {
   constructor(x, y){
     super(x, y, "forest/shroomtall");
+    this.specify_sprite_size(57,92);
     this.adjust_hitbox(20,0,20,20);
     this.default_text = this.text_interaction([
       "The trunk of this mushroom extends vertically even higher than the surrounding trees.",
@@ -154,6 +165,7 @@ class S_Planks extends SimpleObject {
   constructor(x, y){
     super(x, y, "water/planks");
     this.adjust_hitbox(10,0,20,10);
+    this.specify_sprite_size(31,32);
     this.default_text = this.text_interaction([
       "These planks are all that remains of a long lost ship. There's definitely traces of the past here.",
       "You wonder where these planks come from, and what else from human civilization made its way there.",
@@ -166,6 +178,7 @@ class S_Pebbles extends SimpleObject {
   constructor(x, y){
     super(x, y, "exterior/pebbles");
     this.adjust_hitbox(10,0,20,15);
+    this.specify_sprite_size(40,47);
     this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.default_text = this.text_interaction([
       "Of course, little rocks are everywhere. You need to be very careful not to trip on them.",
@@ -190,6 +203,7 @@ class S_RocksHuge extends SimpleObject {
   constructor(x, y){
     super(x, y, "mountain/rockshuge");
     this.adjust_hitbox(10,0,130,50);
+    this.specify_sprite_size(157,171);
     this.default_text = this.text_interaction(rocks);
   }
 }
@@ -198,6 +212,7 @@ class S_Rocks1 extends SimpleObject {
   constructor(x, y){
     super(x, y, "mountain/rocks1");
     this.adjust_hitbox(20,0,50,20);
+    this.specify_sprite_size(79,54);
     this.default_text = this.text_interaction(rocks);
   }
 }
@@ -206,6 +221,7 @@ class S_Rocks2 extends SimpleObject {
   constructor(x, y){
     super(x, y, "mountain/rocks2");
     this.adjust_hitbox(10,0,40,20);
+    this.specify_sprite_size(57,69);
     this.default_text = this.text_interaction(rocks);
   }
 }
@@ -214,6 +230,7 @@ class S_Rocks3 extends SimpleObject {
   constructor(x, y){
     super(x, y, "mountain/rocks3");
     this.adjust_hitbox(0,0,40,20);
+    this.specify_sprite_size(50,50);
     this.default_text = this.text_interaction(rocks);
   }
 }
@@ -222,6 +239,7 @@ class S_Rocks4 extends SimpleObject {
   constructor(x, y){
     super(x, y, "mountain/rocks4");
     this.adjust_hitbox(0,0,30,20);
+    this.specify_sprite_size(30,59);
     this.default_text = this.text_interaction(rocks);
   }
 }
@@ -230,6 +248,7 @@ class S_Web extends SimpleObject {
   constructor(x, y){
     super(x, y, "ruins/web");
     this.adjust_hitbox(0,0,100,40);
+    this.specify_sprite_size(102,154);
     this.default_text = this.text_interaction([
       "Giant spider webs fall down the ceiling. This place hasn't been visited in a long time...",
       "There's a lot of spider webs and dust, demonstrating how little this place has been used. Some of them coalesce in giant webs coming down the ceiling.",
@@ -242,6 +261,7 @@ class S_WebLarge extends SimpleObject {
   constructor(x, y){
     super(x, y, "ruins/weblarge");
     this.adjust_hitbox(0,0,190,30);
+    this.specify_sprite_size(204,101);
     this.default_text = this.text_interaction([
       "The back of the room is littered with metallic debris covered by a huge layer of spider web.",
       "The wall is covered by cobwebs, you can barely distinguish it behind.",
@@ -254,6 +274,7 @@ class S_Bocals extends SimpleObject {
   constructor(x, y){
     super(x, y, "ruins/bocals");
     this.adjust_hitbox(0,0,30,20);
+    this.specify_sprite_size(43,40);
     this.default_text = this.text_interaction([
       "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
       "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
@@ -266,6 +287,7 @@ class S_Rubble extends SimpleObject {
   constructor(x, y){
     super(x, y, "ruins/rubble");
     this.adjust_hitbox(0,0,30,10);
+    this.specify_sprite_size(29, 29);
     this.default_text = this.text_interaction([
       "A pile of rubble, scraps of stone and wood...",
     ]);
@@ -275,6 +297,7 @@ class S_Rubble extends SimpleObject {
 class S_RubbleLarge extends SimpleObject {
   constructor(x, y){
     super(x, y, "ruins/rubblelarge");
+    this.specify_sprite_size(63,63);
     this.adjust_hitbox(0,0,60,30);
     this.default_text = this.text_interaction([
       "This messy pile of bricks is all that remains of a former construction...",
@@ -314,7 +337,7 @@ class B_Plants extends EventBattleObject {
 
 class B_Seashell extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/seashell", color, size);
+    super(x, y, "water/seashell", color, size);
 
     this.set_description("There's a seashell on your way.");
     this.add_interaction("Listen", "You bring the seashell to your ear. It is said that you can hear the sea, but since you're already underwater, it changes nothing for you.");

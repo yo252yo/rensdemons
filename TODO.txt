@@ -15,7 +15,7 @@
 
 
 
-
+can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling??
 
 
 ---------------------------------------- BACKSIDE CONTENT:

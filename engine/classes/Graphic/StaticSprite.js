@@ -42,6 +42,11 @@ class StaticSprite extends CanvasElement {
       super.adjust_depth(z);
       this.html_canvas.style.zIndex = z;
     }
+
+    specify_sprite_size(w,h){ // For filler objects we need to preload w and h to avoid race conditions with image loading
+        this.width = w;
+        this.height = h;
+    }
 }
 
 

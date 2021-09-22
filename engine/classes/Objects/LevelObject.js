@@ -137,6 +137,13 @@ class LevelObject {
       }
       return f;
     }
+
+    specify_sprite_size(w,h) {
+      if (this.visual_element.specify_sprite_size) {
+        this.visual_element.specify_sprite_size(w,h);
+      }
+      // else it probably doesnt even need it
+    }
 }
 
 class SimpleObject extends LevelObject {

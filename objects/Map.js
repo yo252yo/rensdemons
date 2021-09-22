@@ -68,6 +68,7 @@ class SM_Town extends MapObject {
 
     if(this.legend) this.legend.shift(60);
     this.adjust_hitbox(20,-40,120,110);
+    this.specify_sprite_size(150,170);
   }
 }
 
@@ -79,12 +80,14 @@ class SM_Trees extends MapObject {
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,65,80);
+        this.specify_sprite_size(100, 100);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/trees1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,55,80);
+        this.specify_sprite_size(85, 100);
         break;
     }
     if(!destination){
@@ -104,6 +107,7 @@ class SM_Forest extends MapObject {
     var visual = new StaticSprite("assets/objects/map/forest.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(15,0,285,220);
+    this.specify_sprite_size(310,245);
     if(this.legend) this.legend.shift(140);
   }
 }
@@ -113,6 +117,7 @@ class SM_Cave extends MapObject {
     var visual = new StaticSprite("assets/objects/map/cave.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(0,-10,50,30);
+    this.specify_sprite_size(75,50);
     if(this.legend) this.legend.shift(20,10);
   }
 }
@@ -122,6 +127,7 @@ class SM_Crevasse extends MapObject {
     var visual = new StaticSprite("assets/objects/map/crevasse.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(20,0,155,50);
+    this.specify_sprite_size(180,55);
     if(this.legend) this.legend.shift(80);
   }
 }
@@ -131,6 +137,7 @@ class SM_Vulcano extends MapObject {
     var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,270,200);
+    this.specify_sprite_size(315,266);
     if(this.legend) this.legend.shift(150);
 
     if(!destination){
@@ -149,12 +156,14 @@ class SM_Hills extends MapObject {
         var visual = new StaticSprite("assets/objects/map/hills0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,200,100);
+        this.specify_sprite_size(180,80);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/hills1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,200,100);
+        this.specify_sprite_size(190,125);
         break;
     }
 //    visual.adjust_depth(1); // this is buggy
@@ -179,6 +188,7 @@ class SM_Lake extends MapObject {
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,270,150);
+        this.specify_sprite_size(280,155);
         if(this.legend) this.legend.shift(130);
         break;
 
@@ -186,6 +196,7 @@ class SM_Lake extends MapObject {
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,190,90);
+        this.specify_sprite_size(180,90);
         if(this.legend) this.legend.shift(70);
         break;
     }
@@ -207,6 +218,7 @@ class SM_Mountain extends MapObject {
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(10,0,140,90);
+        this.specify_sprite_size(165,130);
         if(this.legend) this.legend.shift(70);
         break;
 
@@ -214,6 +226,7 @@ class SM_Mountain extends MapObject {
         var visual = new StaticSprite("assets/objects/map/mountain1.png", 'obj_light');
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,-5,240,120);
+        this.specify_sprite_size(260,155);
         if(this.legend) this.legend.shift(110);
         break;
     }

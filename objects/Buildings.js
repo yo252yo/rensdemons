@@ -122,6 +122,7 @@ class S_EnterableBuilding extends LevelObject {
     var base = new S_building(x, y-1, "building");
     super(visual, x, y);
     this.base = base;
+    this.specify_sprite_size(120, 157);
   }
 
   character_can_enter(){
@@ -186,6 +187,7 @@ class S_Church extends LevelObject {
     var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(0,0,170,200);
+    this.specify_sprite_size(166, 347);
     this.inside = inside_lvl;
     this.base = base;
 
@@ -221,6 +223,7 @@ class S_Castle extends LevelObject {
     var visual = new StaticSprite("assets/objects/buildings/castle2.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,460,300);
+    this.specify_sprite_size(485, 432);
     this.base = base;
 
     this.default_text = this.text_interaction([

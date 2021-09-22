@@ -18,6 +18,7 @@ class B_Statue extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/statue");
     this.adjust_hitbox(10,0,20,15);
+    this.specify_sprite_size(32,64);
 
     this.set_description("It's a statue of the Goddess. Blessed be her eternal soul.");
 
@@ -34,6 +35,7 @@ class S_SavePoint extends LevelObject {
     var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,20);
+    this.specify_sprite_size(50,50);
   }
 
   interaction(){
@@ -49,6 +51,7 @@ class B_Bed extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
+    this.specify_sprite_size(32,75);
 
     this.set_description("It's a regular bed to sleep in.");
 
@@ -65,6 +68,7 @@ class B_Bucket extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
+    this.specify_sprite_size(31,28);
 
     this.set_description("It's a wooden bucket.");
     this.add_interaction("Examine", "A bucket full of fresh water. Someone must have brought it back from the well recently.");
@@ -81,6 +85,7 @@ class B_Cabinet extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
+    this.specify_sprite_size(31,48);
 
     this.set_description("A wooden cabinet, probably storing clothes or tableware...");
     this.add_interaction("Imagine", "The family stores their belonging in this cabinet. What kind of things are there? You're curious, but you don't want to intrude. You're invading their privacy enough as it is...");
@@ -96,6 +101,7 @@ class B_Chair extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
+    this.specify_sprite_size(30,33);
 
     this.set_description("This is a chair.");
     this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
@@ -110,6 +116,7 @@ class B_Hay extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
+    this.specify_sprite_size(64,66);
 
     this.set_description("A pile of hay.");
     this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");
@@ -124,6 +131,7 @@ class B_Housefire extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
+    this.specify_sprite_size(33,33);
 
     this.set_description("This is a housefire.");
     this.add_interaction("Appreciate", "The fire keeps the room warm and cooks the food. Two blessings in one.");
@@ -139,6 +147,7 @@ class B_Jar extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
+    this.specify_sprite_size(32,35);
 
     this.set_description("A beautiful pottery jar.");
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
@@ -153,6 +162,7 @@ class B_Shelf extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
+    this.specify_sprite_size(59,67);
 
     this.set_description("A wooden shelf of reasonable sturdiness.");
     this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hordes have put the village in.");
@@ -167,6 +177,7 @@ class B_Stool extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
+    this.specify_sprite_size(25,28);
 
     this.set_description("A simple wooden stool.");
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
@@ -180,6 +191,7 @@ class B_Table extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/table");
     this.adjust_hitbox(0,0,31,34);
+    this.specify_sprite_size(31,34);
 
     this.set_description("This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.");
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
@@ -193,6 +205,7 @@ class B_Chest extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
+    this.specify_sprite_size(50,45);
 
     this.set_description("A chest, doubtlessly holding the family's belongings.");
     this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");

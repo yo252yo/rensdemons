@@ -101,7 +101,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/objects/buildings/store.png');
     RESOURCES.get_img('assets/objects/exterior/pebbles.png');
     RESOURCES.get_img('assets/objects/exterior/plant.png');
-    RESOURCES.get_img('assets/objects/exterior/seashell.png');
+    RESOURCES.get_img('assets/objects/water/seashell.png');
     RESOURCES.get_img('assets/objects/exterior/skeleton.png');
     RESOURCES.get_img('assets/objects/forest/shroomgiant.png');
     RESOURCES.get_img('assets/objects/forest/shroomsmall.png');
