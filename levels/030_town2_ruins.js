@@ -63,6 +63,7 @@ for(var o of obj) {
 // ===================
 
 CURRENTLEVEL.start_function = function() {
+  STATS.record.flag("town2_ruin_seen");
   TextBannerSequence.make([
     `When you approach $$town_2$, it is beyond recognition. Most buildings have been burnt to the ground. Mounts of blackened stone and wood are all that remain from the capital. Smoke still rises from some of the rubble.`,
     `The royal castle did not get a better fate. Only a slightly bigger pile of debris is there to attest that this was once the center of a human kingdom.`,

@@ -56,16 +56,52 @@ var explanations = function() {
   ]);
 }
 
+var warning = function() {
+  ABILITIES.unlock("_town2_saved");
+  TextBannerSequence.make([
+    `$$Ren$: "Father, I have something important to tell you. $$demon_lord$ will attack this city shortly. You must get everyone ready to defend the city or this assault will be so strong that the capital won't hold."`,
+    `$$BestFriend$ looks at you with an expression of surprised. Clearly the abilities and foresight of the Promised Child are still hard to comprehend. But the priest seems to accept it right away without any question.`,
+    `Priest: "I see. Thanks a lot, my child. I'll see to it that the strongest defenses are put in place and the highest level of alert is maintained for the next few days. You can go in peace, we won't be surprised."`,
+  ]);
+}
+
+var warningRepeat = function() {
+  TextBannerSequence.make([
+    `Priest: "I see. Thanks a lot, my child. I'll see to it that the strongest defenses are put in place and the highest level of alert is maintained for the next few days. You can go in peace, we won't be surprised."`,
+  ]);
+}
+
+var sitrep = function() {
+  TextBannerSequence.make([
+    `Priest: "It's hardly a surprise, but you were right! The forces of $$demon_lord$ launched a coordinated assault a few hours after you last were here. If it weren't for you, we would have been completely taken by storm. But thanks to your divine foresight, our defenses held off the enemy. Blessed be the Goddess for her incredible help!"`,
+  ]);
+}
+
 var hp = new M_Priest(1300, 1675);
 hp.interaction = function() {
   this.face_character();
-  new CenteredTextMenu("Hear the Priest's explanations?",
-                [
-                  {"text": "Yes", "effect": explanations},
-                  {"text": "No", "effect": "##CLOSE"},
-               ]
-             );
+  var options = [
+    {"text": "Hear explanation", "effect": explanations},
+  ];
+  if (INVENTORY.has_ancient_armament()){
+    options.push({"text": "Situation report", "effect": sitrep});
+
+  } else if(STATS.flag("town2_ruin_seen")){
+    if (!ABILITIES.has_ability("_town2_saved")){
+      options.push({"text": "Warn priest", "effect": warning});
+    } else {
+      options.push({"text": "Warn priest", "effect": warningRepeat});
+    }
+  }
+
+  options.push({"text": "Leave", "effect": "##CLOSE"});
+
+  new CenteredTextMenu("Talk to the High Priest?", options);
 }
+
+
+
+
 
 // ===================
 //hack 7. START/INIT

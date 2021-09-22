@@ -6,7 +6,6 @@ INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
 var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
-var after_armament = function() { return INVENTORY.has_ancient_armament};
 var LaterInStory = function() { return false;};
 
 // ===================
@@ -47,10 +46,10 @@ FHardMain.set_zone(2075+50, 1000+h-25, w-1050-50, h-1050-25);
 // ===================
 
 new SM_Town(1250, 2750, "005_town1", "town_1");
-if (!after_armament()){
-  new SM_Town(1850, 1550, "020_town2", "town_2");
-} else {
+if (INVENTORY.has_ancient_armament() && !ABILITIES.has_ability("_town2_saved")){
   new SM_Town(1850, 1550, "030_town2_ruins", "town_2");
+} else {
+  new SM_Town(1850, 1550, "020_town2", "town_2");
 }
 new SM_Town(3300, 2275, "030_town3", "town_3", LaterInStory);
 new SM_Town(3725, 1300, "021_town4", "town_4", after_t2); // optional
