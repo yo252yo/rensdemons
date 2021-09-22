@@ -126,6 +126,17 @@ houseFiller.set_object(120, 160, function(x,y,seed){ obj.push(new S_House(CITIES
 houseFiller.fill_by_retry();
 
 
+for(var o of obj) {
+  var x = o.x;
+  var y = o.y;
+  if (o.h_w) {
+    x += o.h_w / 2;
+    y += o.h_h / 2;
+  }
+  o.destroy();
+  new S_RubbleLarge(x, y);
+}
+
 //hack reset generator (i.e. new content)
 
 var gen = new Generator(gen.get());
@@ -141,16 +152,6 @@ rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES
 rubbleFiller.fill_by_retry();
 
 
-for(var o of obj) {
-  var x = o.x;
-  var y = o.y;
-  if (o.h_w) {
-    x += o.h_w / 2;
-    y += o.h_h / 2;
-  }
-  o.destroy();
-  new S_RubbleLarge(x, y);
-}
 // ===================
 //hack 7. START/INIT
 // ===================

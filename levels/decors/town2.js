@@ -27,7 +27,7 @@ new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get());
 
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 1475, 1450);
-houseFiller.set_tries(15, 100);
+houseFiller.set_tries(20, 100);
 houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.fear, x, y, seed); });
 houseFiller.fill_by_retry();
 
