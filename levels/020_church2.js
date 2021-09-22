@@ -96,7 +96,7 @@ var armament = function() {
       `Priest: "This is most interesting. I can only decipher some fragments of this book, but if what I understand is correct, this is a weapon of incredible power. Our ancestors were truly fearsome! It's a wonder how $$demon_lord$ was able to overtake them..."`,
       `You shudder. If people so strong were wiped out, how could you even hold a stand against the armies of demons. Your eyes crosses the gaze of $$BestFriend$ and you can see the same uncertainty. But you decide that it would be better to not show it to the adults.`,
       `$$Ren$: "I see... How does it work?"`,
-      `Priest: "It's actually quite simple. That's what truly impresses me. They managed to harness such power in such an easy form. Anyway, as I was saying, it's dead simple. You put this little marble in this tube, that's how you load the ammunition. Then you point the towards your target, and press here."`,
+      `Priest: "It's actually quite simple. That's what truly impresses me. They managed to harness such power in such an accessible form. Anyway, as I was saying, it's dead simple. You put this little marble in this tube, that's how you load the ammunition. Then you point the towards your target, and press here."`,
       `He demonstrates an example while talking.`,
       `$$Ren$: "And then?"`,
       `Priest: "That's it. Your target will be gone."`,
