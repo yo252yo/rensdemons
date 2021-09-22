@@ -1,16 +1,28 @@
-> fast travel out after getting artifact
-> dialog with king: go to town3, rescue survivors ??
+> dialog with king: go to town3 for both town2 and town2ruins
 
-- rest of the story
+- rest of the story:
+- town3 and hard map
+- hellmaw + bossfight
+- fissure
+- hell
+- pandemonium
+- heaven
 
 
 
 
 
-----------------------------------------
-- optional events in world map
-- optional dungeons
-- optional party members:
+
+
+---------------------------------------- BACKSIDE CONTENT:
+- walkthrough
+- NPC thoughts, review ideas
+
+---------------------------------------- OPTIONAL CONTENT:
+- events in world map
+- dungeons
+- town2 survivors rescue!
+- party members:
 >  description in party.js,
 >  attacks in languge,
 >  encounter+battle

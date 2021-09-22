@@ -101,3 +101,5 @@ also serve a zip DL of the game mb
 The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
 
 decide title
+
+> fast travel out of dungeons after getting artifact? hard becasue the respawn point in levels is the last visited point

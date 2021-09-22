@@ -80,18 +80,20 @@ var sitrep = function() {
 var hp = new M_Priest(1300, 1675);
 hp.interaction = function() {
   this.face_character();
-  var options = [
-    {"text": "Hear explanation", "effect": explanations},
-  ];
+  var options = [];
   if (INVENTORY.has_ancient_armament()){
     options.push({"text": "Situation report", "effect": sitrep});
+  } else {
+    options.push({"text": "Hear explanation", "effect": explanations});
 
-  } else if(STATS.flag("town2_ruin_seen")){
-    if (!ABILITIES.has_ability("_town2_saved")){
-      options.push({"text": "Warn priest", "effect": warning});
-    } else {
-      options.push({"text": "Warn priest", "effect": warningRepeat});
+    if(STATS.flag("town2_ruin_seen")){
+      if (!ABILITIES.has_ability("_town2_saved")){
+        options.push({"text": "Warn priest", "effect": warning});
+      } else {
+        options.push({"text": "Warn priest", "effect": warningRepeat});
+      }
     }
+
   }
 
   options.push({"text": "Leave", "effect": "##CLOSE"});
