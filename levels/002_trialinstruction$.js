@@ -80,7 +80,7 @@ var hp = make_priest(1275, 1100);
 hp.interaction = function() {
   this.face_character();
   TextBannerSequence.make([
-    "Head-Priest: \"The task that awaits you is a perilous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Goddess' power?\""
+    "Priest: \"The task that awaits you is a perilous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Goddess' power?\""
   ], hp_menu);
 }
 
