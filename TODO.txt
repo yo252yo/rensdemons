@@ -1,4 +1,9 @@
-> dialog with king: go to town3 for both town2 and town2ruins
+TIER 2 monsters:
+- base add_interaction
+- balance: loot, attack, defense
+
+
+
 
 - rest of the story:
 - town3 (esp intro, check church)
