@@ -159,6 +159,19 @@ FEasyEvents.set_tries(30, 60);
 FEasyEvents.fill_by_retry();
 
 
+/*hard:
+
+arsonist
+blackknight
+bruiser
+butcher
+djinn
+grizzly
+mammoth
+vadhaka
+
+*/
+
 // ===================
 //hack 7. START/INIT
 // ===================
