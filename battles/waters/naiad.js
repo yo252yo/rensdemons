@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/forests/naiad.png", 'background');
+new CenteredImage("assets/battles/waters/naiad.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 /*T2 WIP
