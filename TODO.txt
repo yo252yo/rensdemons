@@ -2,6 +2,9 @@ TIER 2 monsters:
 - base add_interaction
 - balance: loot, attack, defense
 
+bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/lizard
+- boss music!
+
 
 
 
