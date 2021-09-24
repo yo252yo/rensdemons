@@ -8,34 +8,41 @@ BATTLE.operations.add_loot(ITEM.Meat, 1);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot(ITEM.Fur, 0.3);
 
-/*T2 W
-BATTLE.operations.add_loot(ITEM.Meat, 0.5);
-BATTLE.operations.add_loot(ITEM.Bone, 1);
-BATTLE.operations.add_loot("", 2);
 
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
-PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.kill_with_anything_over(700);
 
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
+PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 33  DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 250  DIPL
 
-PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
-
-PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
-
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 2, true);             // 50   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
-
-PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Axe, 2);                          // 600  WEAP
 
-PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-*/
+PLAYER_ACTIONS.win(ABILITY.Fireball, 3);                  // 10  ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 166  ELEM
+
+PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
+PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                    // 66  SPIR
+
+PLAYER_ACTIONS.win(ITEM.Rope, 2);                         // 100  TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOO
+
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 50  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH
+
+
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
+PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
+
+
+
+
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

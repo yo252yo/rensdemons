@@ -7,34 +7,38 @@ PLAYER_ACTIONS.allow_flight();
 BATTLE.operations.add_loot(ITEM.Feather, 1);
 BATTLE.operations.add_loot("", 2);
 
-/*T2 W
-BATTLE.operations.add_loot(ITEM.Meat, 0.5);
-BATTLE.operations.add_loot(ITEM.Bone, 1);
-BATTLE.operations.add_loot("", 2);
 
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
+PLAYER_ACTIONS.kill_with_anything_over(700);
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
-PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
+PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 83  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
+PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 50  WEAP
+PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
 
-PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
+PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 250  ELEM
 
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 2, true);             // 50   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
+PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
+PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
-PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Arrow, 3, true);                  // 2   TOOL
+PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
 
-PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-*/
+PLAYER_ACTIONS.win(ITEM.Elixir_venom, 2, true);           // 40  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 50  ALCH
+
+
+PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
+
+
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
