@@ -36,8 +36,11 @@ _SHOP_PRICES[ITEM.Flower] = 10;
 _SHOP_PRICES[ITEM.Meat] = 10;
 _SHOP_PRICES[ITEM.Feather] = 20;
 _SHOP_PRICES[ITEM.Linnens] = 20;
+_SHOP_PRICES[ITEM.Goo] = 20;
 _SHOP_PRICES[ITEM.AncientRubbles] = 20;
+_SHOP_PRICES[ITEM.Fur] = 30;
 _SHOP_PRICES[ITEM.Scale] = 40;
+
 
 
 _SHOP_SELLONLY = [ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];

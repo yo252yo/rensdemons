@@ -1,6 +1,4 @@
 TIER 2 monsters:
-- loot,
-- attack,
 - defense
 
 bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/lizard

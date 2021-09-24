@@ -4,7 +4,10 @@
 new CenteredImage("assets/battles/forests/trunk.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-/*T2 WI
+BATTLE.operations.add_loot(ITEM.Stick, 1.5);
+BATTLE.operations.add_loot("", 0.5);
+
+/*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);

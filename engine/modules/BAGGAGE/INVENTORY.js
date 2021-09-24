@@ -49,6 +49,8 @@ const ITEM = {
     Scale: "Scale",
     AncientRubbles: "Ancient Rubbles",
     Seashell: "Seashell",
+    Goo: "Enchanted Goo",
+    Fur: "Fur",
     Meat: "Meat",
 
     // Story

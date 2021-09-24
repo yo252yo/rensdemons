@@ -4,7 +4,10 @@
 new CenteredImage("assets/battles/world_hard/bruiser.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-/*T2 WI
+BATTLE.operations.add_loot(ITEM.Mace, 0.1);
+BATTLE.operations.add_loot("", 2);
+
+/*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);

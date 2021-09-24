@@ -5,8 +5,14 @@ new CenteredImage("assets/battles/caves/lizard.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
+BATTLE.operations.add_loot(ITEM.Stone, 1);
+BATTLE.operations.add_loot(ITEM.Meat, 1);
+
+
+
+
 PLAYER_ACTIONS.kill_with_any_party_member(4);
-/*T2 WI
+/*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);

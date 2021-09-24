@@ -4,7 +4,12 @@
 new CenteredImage("assets/battles/waters/naiad.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-/*T2 WI
+BATTLE.operations.add_loot(ITEM.Stick, 0.5);
+BATTLE.operations.add_loot(ITEM.Meat, 0.5);
+BATTLE.operations.add_loot(ITEM.Seashell, 1);
+BATTLE.operations.add_loot("", 1);
+
+/*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);

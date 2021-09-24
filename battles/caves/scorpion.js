@@ -4,7 +4,11 @@
 new CenteredImage("assets/battles/caves/scorpion.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-/*T2 WI
+BATTLE.operations.add_loot(ITEM.Poison_darts, 0.5);
+BATTLE.operations.add_loot(ITEM.Scale, 1);
+BATTLE.operations.add_loot("", 1);
+
+/*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);
