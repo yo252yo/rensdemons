@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/caves/slime.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-BATTLE.operations.add_loot(ITEM.Bone, 1);
+BATTLE.operations.add_loot(ITEM.Goo, 1);
 /*T2 W
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
