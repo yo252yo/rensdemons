@@ -3,8 +3,10 @@
 // ===================
 new CenteredImage("assets/battles/caves/rhino.png", 'background');
 PLAYER_ACTIONS.allow_flight();
+AUDIO.music.interface.boss();
 
-/*T2 WIP
+PLAYER_ACTIONS.kill_with_any_party_member(5);
+/*T2 WI
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);
@@ -31,16 +33,16 @@ PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-
+*/
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
 var attack = {
-  attack_amplitude: 0.3, // Between 0 and 1
-  warning_time_s: 0.2,
-  react_time_s: 1.5,
+  attack_amplitude: 0.85, // Between 0 and 1
+  warning_time_s: 0.8,
+  react_time_s: 0.8,
   time_variation: 0.2, // 1 = 100%
-};*/
+};
 
 BATTLE.monster_actions.add_textual("The Rhino stomps the ground with a heavy paw. The whole cavern trembles around. Sharp rocks and stalactites fall from the ceiling in a flurry of projectiles.", attack);
 BATTLE.monster_actions.add_textual("The Rhino charges at you. With each step, the floor shakes under its massive weight. The rocks on its back shine slightly in the darkness.", attack);

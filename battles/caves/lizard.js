@@ -3,8 +3,10 @@
 // ===================
 new CenteredImage("assets/battles/caves/lizard.png", 'background');
 PLAYER_ACTIONS.allow_flight();
+AUDIO.music.interface.boss();
 
-/*T2 WIP
+PLAYER_ACTIONS.kill_with_any_party_member(4);
+/*T2 WI
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);
@@ -32,15 +34,16 @@ PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
 
+*/
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
 var attack = {
-  attack_amplitude: 0.3, // Between 0 and 1
-  warning_time_s: 0.2,
-  react_time_s: 1.5,
-  time_variation: 0.2, // 1 = 100%
-};*/
+  attack_amplitude: 0.7, // Between 0 and 1
+  warning_time_s: 0.6,
+  react_time_s: 0.3,
+  time_variation: 0.8, // 1 = 100%
+};
 
 BATTLE.monster_actions.add_textual("The Lizard flails its enormous tail, wiping up masses of rocks all around and even yanking some from the walls of the cave. They all get thrown towards you at incredible speed.", attack);
 BATTLE.monster_actions.add_textual("The Lizard slides and crawls to the ceiling of the cavern, above you. With an agility that you wouldn't expect from its size, it then immediately jumps on you, maw opened, trying to squish you under its colossal body.", attack);
