@@ -10,36 +10,34 @@ BATTLE.operations.add_loot(ITEM.Elixir_vine, 0.1);
 
 
 
-
-PLAYER_ACTIONS.kill_with_any_party_member(5);
-/*T2 W
-BATTLE.operations.add_loot(ITEM.Meat, 0.5);
-BATTLE.operations.add_loot(ITEM.Bone, 1);
-BATTLE.operations.add_loot("", 2);
-
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
+PLAYER_ACTIONS.kill_with_anything_over(2000);
+PLAYER_ACTIONS.kill_with_any_party_member(5);
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
-PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
+PLAYER_ACTIONS.win(ABILITY.Persuade, 7);                  // 250  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 3);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
+PLAYER_ACTIONS.win(ITEM.Mace, 8);                         // 75  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 6);                       // 200  WEAP
+PLAYER_ACTIONS.win(ITEM.Sword_great, 3);                  // 1000 WEAP
 
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 2, true);             // 50   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
+PLAYER_ACTIONS.win(ABILITY.Thunder, 6);                   // 83  ELEM
+PLAYER_ACTIONS.win(ABILITY.Incinerate, 3);                // 1000 ELEM
 
-PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
-PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
+PLAYER_ACTIONS.win(ABILITY.Shrink, 7);                    // 66  SPIR
+PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 1600 SPIR
 
-PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-*/
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 10, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 5);                          // 200  TOOL
+
+PLAYER_ACTIONS.win(ITEM.Elixir_ice, 7, true);             // 20  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 5, true);           // 50  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 3, true);           // 75  ALCH
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
