@@ -26,15 +26,21 @@ My first dungeon got me 150xp, 100 gold
 
 MONSTERS:
 T1:
+PLAYER_ACTIONS.kill_with_anything_over(300);
+
 time [1.5-1.8]
 amplitude [0.1-0.5] (mostly 0.3)
 variation [0.05-0.9] (mostly 0.3)
 
 
 T2:
+PLAYER_ACTIONS.kill_with_anything_over(700);
 time [1.0-1.5]
 amplitude [0.2-0.6] (mostly 0.4)
 variation [0.1-0.95] (mostly 0.4)
+
+T3:
+PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 
 
@@ -43,11 +49,20 @@ variation [0.1-0.95] (mostly 0.4)
 
 BOSSES:
 T1:
+PLAYER_ACTIONS.kill_with_anything_over(1000);
+PLAYER_ACTIONS.kill_with_any_party_member(3);
 time [1.5-2.5]
 amplitude [0.7-0.85]
 variation [0.1-0.6]
 
 T2:
+PLAYER_ACTIONS.kill_with_anything_over(2000);
+PLAYER_ACTIONS.kill_with_any_party_member(5);
 time [0.5-1.5]
 amplitude [0.75-0.9]
 variation [0.4-0.8]
+
+
+T3:
+PLAYER_ACTIONS.kill_with_anything_over(10000); //ie. nothing, only specified interaction work
+PLAYER_ACTIONS.kill_with_any_party_member(7);
