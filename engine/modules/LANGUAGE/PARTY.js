@@ -144,7 +144,7 @@ LANGUAGE.actions[PARTYMEMBERS.WiseOld] = {
       `$$WiseOld$: "The flower in a bouquet whither, and never grows again."`,
       `$$WiseOld$: "The harvest moon is brightest every festival homesickness multiplies."`,
       `$$WiseOld$: "A horde of horses will never manage to chase down a spoken word."`,
-      `$$WiseOld$: "If you do not enter the tiger’s den, how will you get the tiger cub?"`,
+      `$$WiseOld$: "If you do not enter the tiger's den, how will you get the tiger cub?"`,
       `$$WiseOld$: "The only truly binding shackles are the ones you put on yourself."`,
       `$$WiseOld$: "There is no such thing as a fool except for the lost soul foolish enough to think they are a fool."`,
     ]);
