@@ -19,11 +19,11 @@ const DODGE = {
 
   get_params: {
     attack_amplitude: function() {
-      return DODGE._params.attack_amplitude / (1+10*MARTYRDOM.effect(MARTYRDOMS.Elusiveness));
+      return DODGE._params.attack_amplitude / (1+9*MARTYRDOM.effect(MARTYRDOMS.Elusiveness));
     },
 
     warning_time_s: function() {
-      return DODGE._params.warning_time_s * (1+3*MARTYRDOM.effect(MARTYRDOMS.Foresight))  + 3 * MARTYRDOM.effect(MARTYRDOMS.Foresight);
+      return DODGE._params.warning_time_s * (1+4*MARTYRDOM.effect(MARTYRDOMS.Foresight))  + 3 * MARTYRDOM.effect(MARTYRDOMS.Foresight);
     },
 
     react_time_s: function() {

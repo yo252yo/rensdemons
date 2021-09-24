@@ -1,6 +1,7 @@
 TIER 2 monsters:
-- base add_interaction
-- balance: loot, attack, defense
+- loot,
+- attack,
+- defense
 
 bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/lizard
 - boss music!
@@ -24,6 +25,11 @@ bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/l
 
 
 can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling??
+
+martyrdom notification
+dodge display a precise cross for the player
+
+
 
 
 ---------------------------------------- BACKSIDE CONTENT:
