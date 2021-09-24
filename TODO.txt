@@ -1,9 +1,9 @@
-TIER 2 monsters:
-- defense
+Review overall balance (spreadsheet)
+martyrdom notification
+dodge display a precise cross for the player
 
-bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/lizard
-- boss music!
 
+can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
 
 
@@ -22,10 +22,7 @@ bosses: forests/blob, mountains/phoenix, waters/serpent, caves/rhino and caves/l
 
 
 
-can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling??
 
-martyrdom notification
-dodge display a precise cross for the player
 
 
 

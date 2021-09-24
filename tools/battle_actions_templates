@@ -48,13 +48,6 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH
 
 
 
-
-
-
-PLAYER_ACTIONS.win(ITEM.Sword_legend, 1);
-PLAYER_ACTIONS.win(ITEM.War_hammer, 1);
-PLAYER_ACTIONS.win(ITEM.Staff, 1);
-PLAYER_ACTIONS.win(ITEM.Wand, 1);
 PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
 PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
@@ -69,3 +62,11 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
+
+
+
+
+PLAYER_ACTIONS.win(ITEM.Sword_legend, 1);
+PLAYER_ACTIONS.win(ITEM.War_hammer, 1);
+PLAYER_ACTIONS.win(ITEM.Staff, 1);
+PLAYER_ACTIONS.win(ITEM.Wand, 1);

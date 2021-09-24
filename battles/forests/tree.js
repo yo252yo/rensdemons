@@ -9,34 +9,37 @@ BATTLE.operations.add_loot(ITEM.Berry, 0.5);
 BATTLE.operations.add_loot(ITEM.Stick, 1.5);
 BATTLE.operations.add_loot("", 0.5);
 
-/*T2 W
-BATTLE.operations.add_loot(ITEM.Meat, 0.5);
-BATTLE.operations.add_loot(ITEM.Bone, 1);
-BATTLE.operations.add_loot("", 2);
 
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-PLAYER_ACTIONS.kill_with_anything_over(300);
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
+PLAYER_ACTIONS.kill_with_anything_over(700);
+
+PLAYER_ACTIONS.win(ABILITY.Persuade, 2);                  // 250  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
+
+PLAYER_ACTIONS.win(ITEM.Mace, 3);                         // 75  WEAP
+PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
+
+PLAYER_ACTIONS.win(ABILITY.Fireball, 2);                  // 10  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 250  ELEM
+
+PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 66  SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 2);                   // 166  SPIR
+
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);            // 10  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 50  ALCH
+
+
 PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
+PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
-
-PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
-
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 2, true);             // 50   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
-
-PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
-PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
-
-PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-*/
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
