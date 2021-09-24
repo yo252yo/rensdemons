@@ -4,7 +4,7 @@
 new CenteredImage("assets/battles/waters/mermaid.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
-/*T2 WIP
+/*T2 WI
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot("", 2);
@@ -31,16 +31,16 @@ PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
-
+*/
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
 var attack = {
-  attack_amplitude: 0.3, // Between 0 and 1
-  warning_time_s: 0.2,
-  react_time_s: 1.5,
-  time_variation: 0.2, // 1 = 100%
-};*/
+  attack_amplitude: 0.4, // Between 0 and 1
+  warning_time_s: 0.5,
+  react_time_s: 0.7,
+  time_variation: 0.4, // 1 = 100%
+};
 
 BATTLE.monster_actions.add_textual("The Mermaid winks at you and beckons you into her treacherous arms.", attack);
 BATTLE.monster_actions.add_textual("The Mermaid sings a song that lulls your defenses.", attack);

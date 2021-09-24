@@ -20,3 +20,34 @@ PRACTICE:
 After trial: 92xp, 31 coins
 After town2: 211xp, 39 coins but i have a dagger
 My first dungeon got me 150xp, 100 gold
+
+
+
+
+MONSTERS:
+T1:
+time [1.5-1.8]
+amplitude [0.1-0.5] (mostly 0.3)
+variation [0.05-0.9] (mostly 0.3)
+
+
+T2:
+time [1.0-1.5]
+amplitude [0.2-0.6] (mostly 0.4)
+variation [0.1-0.95] (mostly 0.4)
+
+
+
+
+
+
+BOSSES:
+T1:
+time [1.5-2.5]
+amplitude [0.7-0.85]
+variation [0.1-0.6]
+
+T2:
+time [0.5-1.5]
+amplitude [0.75-0.9]
+variation [0.4-0.8]
