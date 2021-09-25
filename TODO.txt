@@ -1,7 +1,59 @@
-Review overall balance (spreadsheet)
+* make more difficult:
+arrow (A LOT), dart (A LITTLE),
+elixir_fire,
+fireball
+poison
+circumvent
+Sword_wooden
+
+* make more powerful:
+net,
+elixir chaos, elixir decay,
+storm, asphixia
+petrify
+persuade
+shield, spear, sword iron
+
+more efficient weapon and elements
+
+* separate:
+arrow dagger
+arrow elixir ice
+rope shrink
+dagger elixir ice
+mace elixir vine
+elixir fire/fireball
+asphixiate circumvent
+axe swordiron
+Earthquake swordiron
+confusion swordiron
+Intimidate swordiron
+confusion intimidate
+earthquake intimidate
+axe intimidate
+lull swordgreat
+lull incinerate
+incinerate swordgreat
+axe earthquake
+
+GeniusProdigy PreciousChild
+FemmeFatale TraitorFisher
+DisguisedPrincess SavageChild
+
+
+
+
+
+
+
+
+
+
+
+
 martyrdom notification
 dodge display a precise cross for the player
-
+review battlers sizes (300pxz = big)
 
 can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
