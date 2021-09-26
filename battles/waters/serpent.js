@@ -23,7 +23,7 @@ PLAYER_ACTIONS.win(ITEM.Spear, 7);                        // 250  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 5);                   // 500  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_great, 3);                  // 1000 WEAP
 
-PLAYER_ACTIONS.win(ABILITY.Earthquake, 5);                // 666  ELEM
+PLAYER_ACTIONS.win(ABILITY.Earthquake, 4);                // 666  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 4);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Shrink, 7);                    // 66  SPIR

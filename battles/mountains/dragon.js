@@ -28,7 +28,7 @@ PLAYER_ACTIONS.win(ITEM.Elixir_vine, 6, true);            // 75   ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 4, true);           // 100  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 2, true);           // 200  ALCH
 
-PLAYER_ACTIONS.win(ITEM.Spear, 6);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Spear, 4);                        // 250  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 4);                   // 500  WEAP
 PLAYER_ACTIONS.win(ITEM.Axe, 3);                          // 600  WEAP
 

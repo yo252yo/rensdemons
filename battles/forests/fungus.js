@@ -28,7 +28,7 @@ PLAYER_ACTIONS.win(ITEM.Elixir_decay, 4, true);           // 150  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 2, true);           // 200  ALCH
 
 PLAYER_ACTIONS.win(ITEM.Mace, 6);                         // 100  WEAP
-PLAYER_ACTIONS.win(ITEM.Shield, 5);                       // 200  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 4);                       // 200  WEAP
 PLAYER_ACTIONS.win(ITEM.Axe, 2);                          // 600  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Poison_darts, 7, true);           // 10   TOOL

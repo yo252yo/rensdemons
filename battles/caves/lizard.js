@@ -20,11 +20,11 @@ PLAYER_ACTIONS.win(ABILITY.Sneak, 9);                     // 83  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 4);                  // 250  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Dagger, 8);                       // 50  WEAP
-PLAYER_ACTIONS.win(ITEM.Spear, 6);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Spear, 5);                        // 250  WEAP
 PLAYER_ACTIONS.win(ITEM.Axe, 3);                          // 600  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 7);                   // 83  ELEM
-PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 5);                // 250  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 4);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Confusion, 6);                 // 666  SPIR
 PLAYER_ACTIONS.win(ABILITY.Lull, 2);                      // 1600 SPIR

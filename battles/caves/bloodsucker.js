@@ -20,7 +20,7 @@ PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 50  WEAP
 PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
 
-PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 166  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR

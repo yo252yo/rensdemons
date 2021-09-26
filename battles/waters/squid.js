@@ -14,12 +14,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 4);                  // 100  ELEM
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 300  SPIR
 
-PLAYER_ACTIONS.win(ABILITY.Persuade, 2); 
+PLAYER_ACTIONS.win(ABILITY.Persuade, 2);
 PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 200  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);            // 75   ALCH
