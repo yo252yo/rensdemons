@@ -11,7 +11,6 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
-PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
@@ -28,7 +27,7 @@ PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);           // 100  ALCH
 PLAYER_ACTIONS.win(ITEM.Mace, 4);                         // 100  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 4);                        // 250  WEAP
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 10   TOOL
+PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 // ===================

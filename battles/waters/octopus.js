@@ -11,7 +11,7 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
-PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 5);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 150  ELEM

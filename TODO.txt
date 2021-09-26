@@ -10,7 +10,6 @@ shield, spear, sword iron
 arrow dagger
 arrow elixir ice
 rope shrink
-dagger elixir ice
 mace elixir vine
 axe swordiron
 Earthquake swordiron
@@ -24,30 +23,12 @@ lull incinerate
 incinerate swordgreat
 axe earthquake
 
-GeniusProdigy PreciousChild
-FemmeFatale TraitorFisher
-DisguisedPrincess SavageChild
-
-
-diversify:
-squirrel/anemone
-crab/trunk
-chimera/anglerjelly
-mandragora/jellyfish
-mandragora/morel
-mummy/truffle
-wraith/fox
 
 
 
 
 
 Actually do dodge orientation thing
-
-
-
-
-
 martyrdom notification
 dodge display a precise cross for the player
 review battlers sizes (300pxz = big)

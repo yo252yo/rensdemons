@@ -20,7 +20,7 @@ PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 20   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);             // 50   ALCH
 
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 4);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 75   WEAP
