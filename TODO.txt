@@ -1,20 +1,10 @@
-* make more difficult:
+* less powerful:
 arrow (A LOT), dart (A LITTLE),
-elixir_fire,
-fireball
-poison
-circumvent
 Sword_wooden
-
-* make more powerful:
+* make more powerful: weapons, elements
 net,
-elixir chaos, elixir decay,
-storm, asphixia
-petrify
-persuade
 shield, spear, sword iron
 
-more efficient weapon and elements
 
 * separate:
 arrow dagger
@@ -22,8 +12,6 @@ arrow elixir ice
 rope shrink
 dagger elixir ice
 mace elixir vine
-elixir fire/fireball
-asphixiate circumvent
 axe swordiron
 Earthquake swordiron
 confusion swordiron
@@ -42,23 +30,13 @@ DisguisedPrincess SavageChild
 
 
 diversify:
-bosses
-mandragora/emu
-scorpion/emu
-pterosaur/bat
-pterosaur/fungus
-pterosaur/dragon
 squirrel/anemone
 crab/trunk
 chimera/anglerjelly
 mandragora/jellyfish
 mandragora/morel
-mermaid/flower
-squid/fox
-ghost/pterosaur
 mummy/truffle
 wraith/fox
-wraith/squid
 
 
 

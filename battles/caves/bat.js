@@ -31,7 +31,7 @@ PLAYER_ACTIONS.win(ABILITY.Petrify, 2);                   // 166  SPIR
 PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
-PLAYER_ACTIONS.win(ITEM.Elixir_fire, 3, true);            // 10  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 2, true);
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);           // 40  ALCH
 
 

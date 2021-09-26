@@ -23,7 +23,7 @@ PLAYER_ACTIONS.win(ABILITY.Sneak, 1);                     // 83  DIPL
 PLAYER_ACTIONS.win(ITEM.Shield, 2);                       // 200  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 1);                   // 500  WEAP
 
-PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 10  ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 2);                  // 10  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 166  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 25  SPIR

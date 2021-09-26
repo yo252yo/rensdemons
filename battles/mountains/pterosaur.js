@@ -23,7 +23,7 @@ PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
 PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 83  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 2);
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
 PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
