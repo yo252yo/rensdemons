@@ -23,7 +23,7 @@ PLAYER_ACTIONS.win(ITEM.Shield, 2);                       // 200  WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 50  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
+PLAYER_ACTIONS.win(ABILITY.Earthquake, 2);                     // 166  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR

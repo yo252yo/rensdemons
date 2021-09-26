@@ -21,7 +21,7 @@ PLAYER_ACTIONS.win(ITEM.Dagger, 4);                       // 50  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 1);                   // 500  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 83  ELEM
-PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);                // 666  ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 1);                // 666  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR

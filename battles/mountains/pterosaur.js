@@ -18,13 +18,13 @@ PLAYER_ACTIONS.win(ABILITY.Sneak, 3);                     // 83  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 2);                  // 250  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 2);                   // 500  WEAP
-PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
+PLAYER_ACTIONS.win(ITEM.Spear, 1);                          // 600  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 83  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Petrify, 2);
-PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
+PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                 // 666  SPIR
 
 PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL

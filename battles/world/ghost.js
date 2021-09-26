@@ -16,7 +16,7 @@ PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 100  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 200  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 75   SPIR
-PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                    // 150  SPIR
+PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                    // 150  SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL

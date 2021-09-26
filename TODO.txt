@@ -8,19 +8,11 @@ shield, spear, sword iron
 * separate:
 arrow dagger
 
-axe swordiron
-Earthquake swordiron
-confusion swordiron
-Intimidate swordiron
-
 confusion intimidate
 earthquake intimidate
 axe intimidate
 axe earthquake
 
-lull swordgreat
-incinerate swordgreat
-lull incinerate
 
 
 
