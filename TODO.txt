@@ -41,11 +41,30 @@ FemmeFatale TraitorFisher
 DisguisedPrincess SavageChild
 
 
+diversify:
+bosses
+mandragora/emu
+scorpion/emu
+pterosaur/bat
+pterosaur/fungus
+pterosaur/dragon
+squirrel/anemone
+crab/trunk
+chimera/anglerjelly
+mandragora/jellyfish
+mandragora/morel
+mermaid/flower
+squid/fox
+ghost/pterosaur
+mummy/truffle
+wraith/fox
+wraith/squid
 
 
 
 
 
+Actually do dodge orientation thing
 
 
 
