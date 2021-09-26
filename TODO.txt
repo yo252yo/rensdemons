@@ -1,7 +1,6 @@
 Tier 3 monsters
 
 
-Actually do dodge orientation preference thing (taking seed + name)
 martyrdom notification
 dodge display a precise cross for the player
 review battlers sizes (300pxz = big)

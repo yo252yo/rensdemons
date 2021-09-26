@@ -45,6 +45,19 @@ const DODGE = {
       var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * warning_time;
       return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
     },
+
+    get_attack_angle: function(){
+      var g = new Generator(BATTLE.current_battle + "" + DICTIONARY.get("world_seed"));
+      var center = g.get();
+
+      var motion = Math.random() - 0.5;
+
+      // favored zone
+      if (Math.random() < 0.5 - 0.5 * DODGE.get_params.time_variation()){
+        motion *= 0.3;
+      }
+      return (center + motion + 1) % 1;
+    },
   },
 
   center_sprite: function(){
@@ -244,7 +257,8 @@ const DODGE = {
     },
 
     react: function(){
-      DODGE.attack_angle = Math.random();
+      DODGE.attack_angle = DODGE.get_params.get_attack_angle();
+
       DODGE.attack_target = Math.random();
       DODGE.sprite.prompt.hide();
       DODGE.draw.hit();
