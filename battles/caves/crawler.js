@@ -25,8 +25,8 @@ PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);                // 666  ELEM
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 166  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Arrow, 4, true);                  // 2   TOOL
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 6, true);           // 5   TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 3, true);             // 20  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH

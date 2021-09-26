@@ -27,7 +27,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 2);                // 250  ELEM
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 2   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 56, true);                  // 2   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 4, true);            // 10  ALCH

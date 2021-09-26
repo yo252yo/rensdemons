@@ -28,7 +28,7 @@ PLAYER_ACTIONS.win(ABILITY.Thunder, 1);                   // 83  ELEM
 PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 66  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 2);                   // 166  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 6, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 2, true);

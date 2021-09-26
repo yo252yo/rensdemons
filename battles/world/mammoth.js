@@ -28,7 +28,7 @@ PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                    // 66  SPIR
 
 PLAYER_ACTIONS.win(ITEM.Rope, 2);                         // 100  TOOL
-PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 2   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 8, true);                  // 2   TOOL
 
 
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 50  ALCH

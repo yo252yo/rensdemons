@@ -1,11 +1,7 @@
-* less powerful:
-arrow (A LOT), dart (A LITTLE),
-Sword_wooden
 
-
-* make more powerful: weapons, elements
-net,
-shield, spear, sword iron
+* make more powerful:
+weapons, elements
+shield, spear
 
 
 

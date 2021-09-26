@@ -26,7 +26,7 @@ PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
 PLAYER_ACTIONS.win(ABILITY.Petrify, 2);
 PLAYER_ACTIONS.win(ABILITY.Shrink, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 4, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 6, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 3, true);           // 40  ALCH

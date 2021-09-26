@@ -29,7 +29,7 @@ PLAYER_ACTIONS.win(ABILITY.Storm, 4);                     // 166  ELEM
 PLAYER_ACTIONS.win(ABILITY.Petrify, 7);                   // 166  SPIR
 PLAYER_ACTIONS.win(ABILITY.Lull, 2);                      // 1600 SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 9, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 11, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 6);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 9, true);             // 20  ALCH

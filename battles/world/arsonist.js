@@ -18,7 +18,7 @@ PLAYER_ACTIONS.kill_with_anything_over(700);
 PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
 PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Sword_wooden, 2);                 // 20  WEAP
+PLAYER_ACTIONS.win(ITEM.Sword_iron, 2);                 // 20  WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 50  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 1);                   // 83  ELEM
@@ -27,7 +27,7 @@ PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 3, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 5, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 3, true);           // 40  ALCH

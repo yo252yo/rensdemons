@@ -29,7 +29,7 @@ PLAYER_ACTIONS.win(ABILITY.Confusion, 4);                 // 666  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 7);                   // 166  SPIR
 
 PLAYER_ACTIONS.win(ITEM.Rope, 8);                         // 100  TOOL
-PLAYER_ACTIONS.win(ITEM.Net, 4);                          // 200  TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 3);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 8, true);             // 20  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 7, true);           // 40  ALCH

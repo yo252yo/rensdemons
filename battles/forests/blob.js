@@ -31,8 +31,8 @@ PLAYER_ACTIONS.win(ABILITY.Incinerate, 3);                // 1000 ELEM
 PLAYER_ACTIONS.win(ABILITY.Shrink, 7);                    // 66  SPIR
 PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 1600 SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 10, true);           // 5   TOOL
-PLAYER_ACTIONS.win(ITEM.Net, 5);                          // 200  TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 12, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 4);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 7, true);             // 20  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 5, true);           // 50  ALCH

@@ -29,7 +29,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 5);                // 250  ELEM
 PLAYER_ACTIONS.win(ABILITY.Confusion, 6);                 // 666  SPIR
 PLAYER_ACTIONS.win(ABILITY.Lull, 2);                      // 1600 SPIR
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 10, true);           // 5   TOOL
+PLAYER_ACTIONS.win(ITEM.Poison_darts, 12, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Rope, 7);                         // 100  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_vine, 9, true);            // 30  ALCH

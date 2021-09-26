@@ -27,7 +27,7 @@ PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 50  ELEM
 PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 66  SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 2);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Arrow, 4, true);                  // 2   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 2   TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 2, true);            // 10  ALCH

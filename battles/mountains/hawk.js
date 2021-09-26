@@ -29,7 +29,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 250  ELEM
 PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 66  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 1);                   // 166  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Arrow, 4, true);                  // 2   TOOL
+PLAYER_ACTIONS.win(ITEM.Arrow, 6, true);                  // 2   TOOL
 PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 2, true);             // 20  ALCH
