@@ -25,7 +25,7 @@ PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 5);                // 100  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);
-PLAYER_ACTIONS.win(ITEM.Elixir_ice, 1, true);             // 50   ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true); 
 
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 3);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 2);                       // 75   WEAP

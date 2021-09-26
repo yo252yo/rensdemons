@@ -29,7 +29,7 @@ PLAYER_ACTIONS.win(ITEM.Poison_darts, 5, true);           // 5   TOOL
 PLAYER_ACTIONS.win(ITEM.Rope, 2);                         // 100  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 50  ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);           // 75  ALCH
 
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);

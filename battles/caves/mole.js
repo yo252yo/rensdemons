@@ -31,7 +31,7 @@ PLAYER_ACTIONS.win(ITEM.Rope, 2);                         // 100  TOOL
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_ice, 3, true);             // 20  ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_vine, 2, true);            // 30  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 2, true);            // 30  ALCH
 
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);

@@ -5,23 +5,23 @@ Sword_wooden
 net,
 shield, spear, sword iron
 
-
 * separate:
 arrow dagger
-arrow elixir ice
-rope shrink
-mace elixir vine
+
 axe swordiron
 Earthquake swordiron
 confusion swordiron
 Intimidate swordiron
+
 confusion intimidate
 earthquake intimidate
 axe intimidate
-lull swordgreat
-lull incinerate
-incinerate swordgreat
 axe earthquake
+
+lull swordgreat
+incinerate swordgreat
+lull incinerate
+
 
 
 

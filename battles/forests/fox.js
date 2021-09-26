@@ -21,7 +21,7 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 6);                    // 75   SPIR
+PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 75   SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
 
