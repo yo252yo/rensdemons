@@ -131,7 +131,7 @@ var attack = {
   attack_amplitude: 0.4,
   warning_time_s: 5.0,
   react_time_s: 3.0,
-  time_variation: 0,
+  variability: 0,
 };
 BATTLE.monster_actions.add_textual("The priest tries to grab you. Adrenaline rushes through your body. You can hear your frantic heartbeat in your eardrums. Time seems to be slowing down for a moment. You need to dodge out of his way.", attack);
 

@@ -44,7 +44,7 @@ var attack = {
   attack_amplitude: 0.7, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.3,
-  time_variation: 0.8, // 1 = 100%
+  variability: 0.8, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Lizard flails its enormous tail, wiping up masses of rocks all around and even yanking some from the walls of the cave. They all get thrown towards you at incredible speed.", attack);

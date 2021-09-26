@@ -47,7 +47,7 @@ var attack = {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.6,
-  time_variation: 0.8, // 1 = 100%
+  variability: 0.8, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Nymph extends her vines towards you and tries to ensnare you.", attack);

@@ -45,7 +45,7 @@ var attack = {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.4,
-  time_variation: 0.95, // 1 = 100%
+  variability: 0.95, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Vadhaka drowns you under hits from her many arms.", attack);

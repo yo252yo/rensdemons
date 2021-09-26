@@ -39,7 +39,7 @@ var attack = {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.8,
-  time_variation: 0.5, // 1 = 100%
+  variability: 0.5, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Octopus stretches its many arms towards you.", attack);

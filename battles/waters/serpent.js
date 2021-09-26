@@ -44,7 +44,7 @@ var attack = {
   attack_amplitude: 0.7, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 0.8,
-  time_variation: 0.4, // 1 = 100%
+  variability: 0.4, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Serpent swims in a circle, first slowly, then with increasing speed. Soon, a huge wormhole opens up in the middle of the water, sucking up everything in its surroundings.", attack);

@@ -27,7 +27,7 @@ var attack = {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 3.0,
   react_time_s: 0.5,
-  time_variation: 0.4, // 1 = 100%
+  variability: 0.4, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Arachnid crawls up your arm. The unsettling sensation of its fur against your skin makes you panic.", attack);

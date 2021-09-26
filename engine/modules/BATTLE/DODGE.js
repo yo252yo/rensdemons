@@ -14,7 +14,7 @@ const DODGE = {
     attack_amplitude: 0.1, // Between 0 and 1
     warning_time_s: 1,
     react_time_s: 0.5,
-    time_variation: 0.1, // 1 = 100%
+    variability: 0.1, // 1 = 100%
   },
 
   get_params: {
@@ -30,19 +30,19 @@ const DODGE = {
       return DODGE._params.react_time_s * (1+1*MARTYRDOM.effect(MARTYRDOMS.Reflex)) + 1 * MARTYRDOM.effect(MARTYRDOMS.Reflex);
     },
 
-    time_variation: function() {
-      return DODGE._params.time_variation;
+    variability: function() {
+      return DODGE._params.variability;
     },
 
     actual_react_time_ms: function(){
       var react_time = DODGE.get_params.react_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * react_time;
+      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * react_time;
       return Math.max (DODGE.MIN_TIMEOUT, react_time + rand_teak);
     },
 
     actual_warning_time_ms: function(){
       var warning_time = DODGE.get_params.warning_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.time_variation() * warning_time;
+      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * warning_time;
       return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
     },
 
@@ -53,7 +53,7 @@ const DODGE = {
       var motion = Math.random() - 0.5;
 
       // favored zone
-      if (Math.random() < 0.5 - 0.5 * DODGE.get_params.time_variation()){
+      if (Math.random() < 0.5 - 0.5 * DODGE.get_params.variability()){
         motion *= 0.3;
       }
       return (center + motion + 1) % 1;
@@ -294,7 +294,7 @@ const DODGE = {
     DODGE.absorb_param(params, "attack_amplitude");
     DODGE.absorb_param(params, "warning_time_s");
     DODGE.absorb_param(params, "react_time_s");
-    DODGE.absorb_param(params, "time_variation");
+    DODGE.absorb_param(params, "variability");
   },
 
   getCallback: function(params) {

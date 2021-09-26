@@ -43,7 +43,7 @@ var attack = {
   attack_amplitude: 0.7, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 0.7,
-  time_variation: 0.6, // 1 = 100%
+  variability: 0.6, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Dragon towers over you high in the air. It looks at you and you can see the judgement and anger in its ancestral eyes. It spits a torrent of fire in your direction.", attack);

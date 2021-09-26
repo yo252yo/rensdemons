@@ -47,7 +47,7 @@ var attack = {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 1.1,
   react_time_s: 0.3,
-  time_variation: 0.4, // 1 = 100%
+  variability: 0.4, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Crawler blends in with the rocks around. You cannot see it in the shadows until it's already on you.", attack);

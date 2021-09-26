@@ -43,7 +43,7 @@ var attack = {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.3,
-  time_variation: 0.6, // 1 = 100%
+  variability: 0.6, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Phoenix opens its beak wide and lets out a single note. It seems that the air around you withers and contracts under the mysterious melancholy of its ethereal timbre, making it hard to breathe.", attack);

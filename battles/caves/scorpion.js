@@ -49,7 +49,7 @@ var attack = {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.4,
-  time_variation: 0.6, // 1 = 100%
+  variability: 0.6, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Scorpion crawls up your leg and attempts to sting you.", attack);

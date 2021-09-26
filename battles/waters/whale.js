@@ -24,7 +24,7 @@ var attack = {
   attack_amplitude: 0.85, // Between 0 and 1
   warning_time_s: 1,
   react_time_s: 1.6,
-  time_variation: 0.1, // 1 = 100%
+  variability: 0.1, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Whale moves slowly but surely in your direction, mouth wide open. It is so huge that it occupies almost all of your field of view. Escaping its implacable march is going to be tough.", attack);

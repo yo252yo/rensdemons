@@ -44,7 +44,7 @@ var attack = {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 1,
-  time_variation: 0.5, // 1 = 100%
+  variability: 0.5, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Chimera charges towards you in the air, claws first.", attack);

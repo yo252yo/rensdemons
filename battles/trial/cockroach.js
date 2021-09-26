@@ -25,7 +25,7 @@ var attack = {
   attack_amplitude: 0.05, // Between 0 and 1
   warning_time_s: 2.0,
   react_time_s: 1.0,
-  time_variation: 0.1, // 1 = 100%
+  variability: 0.1, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Cockroach runs between your legs.", attack);

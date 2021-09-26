@@ -41,7 +41,7 @@ var attack = {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 1.0,
   react_time_s: 0.4,
-  time_variation: 0.4, // 1 = 100%
+  variability: 0.4, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Harpy emits a loud shriek that seems to pierce your ears and melt you brain.", attack);

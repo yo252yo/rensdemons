@@ -40,7 +40,7 @@ var attack = {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 1.5,
-  time_variation: 0.05, // 1 = 100%
+  variability: 0.05, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Mummy seizes your neck and starts choking you.", attack);

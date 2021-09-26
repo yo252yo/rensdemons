@@ -47,7 +47,7 @@ PLAYER_ACTIONS.add({
       attack_amplitude: 0.4,
       warning_time_s: 5.0,
       react_time_s: 3.0,
-      time_variation: 0,
+      variability: 0,
     };
     BATTLE.monster_actions.empty();
     BATTLE.monster_actions.add_textual("The Basilisk straightens up, ready to pounce at you. Adrenaline rushes through your body. A cold shiver runs down your spine. You can hear your frantic heartbeat in your eardrums. Time seems to be slowing down for a moment.", attack);

@@ -37,7 +37,7 @@ class VillagerSoul extends SoulBattleObject {
       attack_amplitude: 0.1, // Between 0 and 1
       warning_time_s: 2,
       react_time_s: 1,
-      time_variation: 0.5, // 1 = 100%
+      variability: 0.5, // 1 = 100%
     };
 
     this.add_enemy_action(`There's an awkward silence during which you don't know what to say.`, attack);
@@ -132,7 +132,7 @@ class VillagerSoul extends SoulBattleObject {
       attack_amplitude: 0.5, // Between 0 and 1
       warning_time_s: 1,
       react_time_s: 1,
-      time_variation: 0.4, // 1 = 100%
+      variability: 0.4, // 1 = 100%
     };
     this.add_enemy_action(`The constant cheerfulness of your conversation partner is a bit too much to handle.`, attack);
     this.add_enemy_action(`You need to carefully craft your answer to not contradict ${this.vname}'s weird inconsistent answer.`, attack);
@@ -244,7 +244,7 @@ class VillagerSoul extends SoulBattleObject {
       attack_amplitude: 0.05, // Between 0 and 1
       warning_time_s: 0.2,
       react_time_s: 0.2,
-      time_variation: 0.8, // 1 = 100%
+      variability: 0.8, // 1 = 100%
     };
     this.add_enemy_action(`The stranger stares at you judgmentally in silence.`, attack);
     this.add_enemy_action(`The villager's glacial gaze is pretty oppressive.`, attack);
@@ -429,7 +429,7 @@ class VillagerSoul extends SoulBattleObject {
       attack_amplitude: 0.4, // Between 0 and 1
       warning_time_s: 0.5,
       react_time_s: 1.5,
-      time_variation: 0.9, // 1 = 100%
+      variability: 0.9, // 1 = 100%
     };
     this.add_enemy_action(`You need to fight off the overbearing stranger who's coming a little too close.`, attack);
     this.add_enemy_action(`You struggle to match ${this.vname}'s levels of excitement.`, attack);

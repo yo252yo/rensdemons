@@ -27,7 +27,7 @@ var attack = {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 1.3,
-  time_variation: 0.4, // 1 = 100%
+  variability: 0.4, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Rodent takes a bite off your leg. It strings. You hope it won't get infected.", attack);

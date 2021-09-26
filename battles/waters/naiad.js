@@ -49,7 +49,7 @@ var attack = {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 0.5,
-  time_variation: 0.2, // 1 = 100%
+  variability: 0.2, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Naiad slaps you with her tentacles.", attack);

@@ -37,7 +37,7 @@ var attack = {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 1.3,
-  time_variation: 0.2, // 1 = 100%
+  variability: 0.2, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Wraith howls at the sky, and the air around trembles.", attack);

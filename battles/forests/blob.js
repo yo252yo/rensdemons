@@ -45,7 +45,7 @@ var attack = {
   attack_amplitude: 0.9, // Between 0 and 1
   warning_time_s: 0.1,
   react_time_s: 1.2,
-  time_variation: 0.5, // 1 = 100%
+  variability: 0.5, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Blob's gelatinous body deforms and slides towards you. At this rate, it won't be long before you're engulfed in the green goo.", attack);

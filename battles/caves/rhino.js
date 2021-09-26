@@ -43,7 +43,7 @@ var attack = {
   attack_amplitude: 0.85, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.8,
-  time_variation: 0.2, // 1 = 100%
+  variability: 0.2, // 1 = 100%
 };
 
 BATTLE.monster_actions.add_textual("The Rhino stomps the ground with a heavy paw. The whole cavern trembles around. Sharp rocks and stalactites fall from the ceiling in a flurry of projectiles.", attack);
