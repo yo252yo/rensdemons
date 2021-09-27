@@ -128,7 +128,7 @@ welcome_boss.add_TextBannerSequence([
   "The floor on which you land is muddy and slimy. The atmosphere is heavy and damp. The stench of decomposition is overpowering. You barely have time to look around before a huge shape appears with a swooshing sound.",
 ]);
 welcome_boss.add_function(function(ignored_callback) {
-  BATTLE.api.make("basilisk", boss_callback);
+  BATTLE.api.make("trial/basilisk", boss_callback);
 });
 
 CURRENTLEVEL.start_function =  function(){welcome_boss.call()};
