@@ -33,6 +33,18 @@ const HTML = {
       canvas.getContext('2d').fill();
     },
 
+
+    draw_line_in: function(canvas, color, fromx, fromy, tox, toy){
+      canvas.getContext('2d').globalCompositeOperation = 'source-over';
+      canvas.getContext('2d').strokeStyle = PALETTE.color_code_with_default(color, color);
+
+      canvas.getContext('2d').lineWidth = 1;
+      canvas.getContext('2d').beginPath();
+      canvas.getContext('2d').moveTo(fromx, fromy);
+      canvas.getContext('2d').lineTo(tox, toy);
+      canvas.getContext('2d').stroke();
+    },
+
     draw: function(canvas, path, color){
       var ressource = RESOURCES.get_img(path);
       RESOURCES.onload(ressource, function() {

@@ -120,8 +120,14 @@ const DODGE = {
 
       var from =  Math.PI * 2 * (DODGE.attack_angle - DODGE.get_params.attack_amplitude() / 2);
       var to =  Math.PI * 2 * (DODGE.attack_angle + DODGE.get_params.attack_amplitude() / 2);
-
       HTML.canvas.draw_circle_in(DODGE.sprite.attacked.html_canvas, "background", mid, from, to);
+
+      var defense_angle = DODGE.defense_angle * Math.PI * 2;
+      var x = mid * (1 + Math.cos(defense_angle));
+      var y = mid * (1 - Math.sin(defense_angle));
+      HTML.canvas.draw_line_in(DODGE.sprite.attacked.html_canvas, "void", mid, mid, x, y);
+
+
     },
 
     hit: function(){
@@ -140,7 +146,7 @@ const DODGE = {
       var defense_angle = DODGE.defense_angle * Math.PI * 2;
 
       // includes a cosmetic offset for the sprite
-      var x = -20 + DODGE.sprite.prompt.x + DODGE.sprite.prompt.width/2;
+      var x = -15 + DODGE.sprite.prompt.x + DODGE.sprite.prompt.width/2;
       x += r * Math.cos(defense_angle);
       var y = 20 + DODGE.sprite.prompt.y - DODGE.sprite.prompt.height/2;
       y += -1 * r * Math.sin(defense_angle);

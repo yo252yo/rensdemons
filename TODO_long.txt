@@ -103,3 +103,5 @@ The character encoding of the HTML document was not declared. The document will 
 decide title
 
 > fast travel out of dungeons after getting artifact? hard becasue the respawn point in levels is the last visited point
+
+can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
