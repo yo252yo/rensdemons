@@ -3,7 +3,7 @@ Tier 3 monsters
 why is basilisk simply at the root of fight lol
 martyrdom notification
 dodge display a precise cross for the player
-review battlers sizes (300pxz = big)
+
 
 can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
