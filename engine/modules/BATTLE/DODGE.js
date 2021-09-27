@@ -166,7 +166,8 @@ const DODGE = {
         var d = DODGE.saved_dimensions[object.hash()];
         if (d){
           object.visual_element.adjust_dimensions(d[0],d[1]);
-          object.place_at(SCREEN.width() / 2 - d[0] / 2, SCREEN.height() / 2); // hardcoded middle of the circle
+
+          object.place_at(SCREEN.width() / 2 - d[0] / 2, Math.max(SCREEN.height() / 2, d[1])); // hardcoded middle of the circle
         }
       }
     },
