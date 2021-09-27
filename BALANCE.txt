@@ -66,5 +66,5 @@ variation [0.4-0.8]
 
 
 T3:
-PLAYER_ACTIONS.kill_with_anything_over(10000); //ie. nothing, only specified interaction work except artifacts (TOCHECK)
+PLAYER_ACTIONS.kill_with_anything_over(10000); // only artifacts
 PLAYER_ACTIONS.kill_with_any_party_member(7);

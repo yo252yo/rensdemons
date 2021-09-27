@@ -22,9 +22,10 @@ BATTLE.operations.add_loot("", 2);
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
-/*TODO T3 base
-PLAYER_ACTIONS.kill_with_anything_over(700);
-*/
+PLAYER_ACTIONS.kill_with_anything_over(10000); // only artifacts
+PLAYER_ACTIONS.kill_with_any_party_member(7);
+
+
 
 /*TODO T3 defense
 PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
