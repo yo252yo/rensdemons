@@ -1,6 +1,6 @@
 Tier 3 monsters
 
-
+why is basilisk simply at the root of fight lol
 martyrdom notification
 dodge display a precise cross for the player
 review battlers sizes (300pxz = big)
