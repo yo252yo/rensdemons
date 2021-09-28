@@ -56,14 +56,11 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
+BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can answer its riddle. You think about it for a while, but it's above your level.", attack);
+BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can outrun it. You raise to the challenge, but it is just much faster.", attack);
+BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can win a stare contest. You fight valiantly but its spirit is stronger.", attack);
 
-
-*/
 
 // ===================
 //hack START

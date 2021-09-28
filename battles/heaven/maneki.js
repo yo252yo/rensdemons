@@ -56,13 +56,12 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+
+BATTLE.monster_actions.add_textual("The Maneki challenges you to a game of luck. Most outcomes will have you suffer, but there's a one in a million chance you might get extremely rich!", attack);
+BATTLE.monster_actions.add_textual("The Maneki makes a bet with you. Heads, it becomes your ally. Tails, you suffer.", attack);
+BATTLE.monster_actions.add_textual("The Maneki proposes a gamble. You think you see the flaw in the bargain and you have a winning strategy, so you accept. You were wrong.", attack);
 
 
-*/
 // ===================
 //hack START
 // ===================
