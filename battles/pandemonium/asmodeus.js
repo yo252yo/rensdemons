@@ -56,9 +56,10 @@ var attack = {
 };
 */
 
-BATTLE.monster_actions.add_textual("Asmodeus projects the whole universe in your brain. You can see yourself growing smaller than the smallest conceivable speck in an abyss of void. You are nothing.", attack);
-BATTLE.monster_actions.add_textual("Asmodeus isolates you from the real world by dimming your senses. You are nowhere.", attack);
-BATTLE.monster_actions.add_textual("Asmodeus awakens the memories of all the bad things you did without meaning to, highlighting your lack of mastery over the world. How can you expect to amount to anything?", attack);
+BATTLE.monster_actions.add_textual("The Asmodeus projects the whole universe in your brain. You can see yourself growing smaller than the smallest conceivable speck in an abyss of void. You are nothing.", attack);
+BATTLE.monster_actions.add_textual("The Asmodeus isolates you from the real world by dimming your senses. You are nowhere.", attack);
+BATTLE.monster_actions.add_textual("The Asmodeus awakens the memories of all the bad things you did without meaning to, highlighting your lack of mastery over the world. How can you expect to amount to anything?", attack);
+BATTLE.monster_actions.add_textual("The Asmodeus reminds you that you will never be able to see other people's mind. You're bound to interact with them through the distortion of language. They'll never know you. You are alone.", attack);
 
 
 // ===================

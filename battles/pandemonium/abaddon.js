@@ -56,9 +56,9 @@ var attack = {
 };
 */
 
-BATTLE.monster_actions.add_textual("Abaddon fills your mind with your worst phobias and fears. You wuss.", attack);
-BATTLE.monster_actions.add_textual("Abaddon digs deep in your mind and awakens the most embarrassing and cringy memories. You keep failing.", attack);
-BATTLE.monster_actions.add_textual("Abaddon reminds you of all your sad and painful moments of your life. You keep losing what you care about.", attack);
+BATTLE.monster_actions.add_textual("The Abaddon fills your mind with your worst phobias and fears. You wuss.", attack);
+BATTLE.monster_actions.add_textual("The Abaddon digs deep in your mind and awakens the most embarrassing and cringy memories. You keep failing.", attack);
+BATTLE.monster_actions.add_textual("The Abaddon reminds you of all your sad and painful moments of your life. You keep losing what you care about.", attack);
 
 
 
