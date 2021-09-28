@@ -57,14 +57,12 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+BATTLE.monster_actions.add_textual("The Seraph suggests you to take it easy. Nobody believes in you.", attack);
+BATTLE.monster_actions.add_textual("The Seraph patronizingly reminds you that it's ok to ask for help. It's not your fault you're bad.", attack);
+BATTLE.monster_actions.add_textual("The Seraph excuses your failures in a condescending tone. You did only what you could, which is not much.", attack);
 
 
 
-*/
 // ===================
 //hack START
 // ===================

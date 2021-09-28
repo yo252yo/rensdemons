@@ -56,11 +56,9 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-*/
+BATTLE.monster_actions.add_textual("Asmodeus projects the whole universe in your brain. You can see yourself growing smaller than the smallest conceivable speck in an abyss of void. You are nothing.", attack);
+BATTLE.monster_actions.add_textual("Asmodeus isolates you from the real world by dimming your senses. You are nowhere.", attack);
+BATTLE.monster_actions.add_textual("Asmodeus awakens the memories of all the bad things you did without meaning to, highlighting your lack of mastery over the world. How can you expect to amount to anything?", attack);
 
 
 // ===================

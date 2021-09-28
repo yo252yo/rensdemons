@@ -56,16 +56,14 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-
+BATTLE.monster_actions.add_textual("The Belial threatens to spread false rumors about you. Nobody will trust you.", attack);
+BATTLE.monster_actions.add_textual("The Belial blackmails you by threatening the people you love. Wouldn't want anything bad to happen to them, would you?", attack);
+BATTLE.monster_actions.add_textual("The Belial denies your existence until you do what it wants. The onus is on you.", attack);
 
 
 // ===================
 //hack START
 // ===================
-*/
+
 
 BATTLE.operations.start("A Bestial Belial Banishes you Brutally.");

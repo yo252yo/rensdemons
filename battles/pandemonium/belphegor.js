@@ -56,10 +56,9 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+BATTLE.monster_actions.add_textual("The Belphegor reminds you that life has no objective meaning and your existence is futile. Nothing matters.", attack);
+BATTLE.monster_actions.add_textual("The Belphegor fills your mind with the conviction that you do not matter and nothing you can do will have any effect in the grand scheme of things. You are powerless.", attack);
+BATTLE.monster_actions.add_textual("The Belphegor's influence on your brain plunges you in an abyss of depression. You become acutely aware how insignificant any of your actions are. How can you even dream of changing anything?", attack);
 
 
 
@@ -67,5 +66,4 @@ BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around y
 //hack START
 // ===================
 
-*/
 BATTLE.operations.start("A Barbaric Belphegor Besmirches you with Babble.");

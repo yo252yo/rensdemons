@@ -56,11 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-*/
+BATTLE.monster_actions.add_textual("Abaddon fills your mind with your worst phobias and fears. You wuss.", attack);
+BATTLE.monster_actions.add_textual("Abaddon digs deep in your mind and awakens the most embarrassing and cringy memories. You keep failing.", attack);
+BATTLE.monster_actions.add_textual("Abaddon reminds you of all your sad and painful moments of your life. You keep losing what you care about.", attack);
+
 
 
 // ===================

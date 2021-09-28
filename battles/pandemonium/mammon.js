@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/ifrit.png", 'background');
+new CenteredImage("assets/battles/pandemonium/mammon.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 
@@ -56,12 +56,9 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-
-*/
+BATTLE.monster_actions.add_textual("The Mammon tortures you by reminding you of everything you've ever wanted but could never have. You keep being disappointed.", attack);
+BATTLE.monster_actions.add_textual("The Mammon makes you acutely aware that no matter what you do you will never be satisfied with what you have. You'll always want something more. You're doomed to remain lacking.", attack);
+BATTLE.monster_actions.add_textual("The Mammon reminds you of all the things you held dear and have lost, or worst, forgotten. Everything is replaceable, even you.", attack);
 
 // ===================
 //hack START

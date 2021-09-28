@@ -56,13 +56,11 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+BATTLE.monster_actions.add_textual("The Titan claims that you did something horrible. They're so persuasive that you begin to believe it yourself.", attack);
+BATTLE.monster_actions.add_textual("The Titan insists that they saw you do a heinous act, and they have proof. It's impossible, or is it?", attack);
+BATTLE.monster_actions.add_textual("The Titan informs you that a thing you thought was innocuous had terrible repercussions. And it's all your fault.", attack);
 
 
-*/
 
 // ===================
 //hack START

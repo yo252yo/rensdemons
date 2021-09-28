@@ -56,14 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+BATTLE.monster_actions.add_textual("The Valkyrie tells you to just be yourself. As long as you fit in with expectations, of course...", attack);
+BATTLE.monster_actions.add_textual("The Valkyrie tells you to express yourself. As long as they agree with what you are saying, of course...", attack);
+BATTLE.monster_actions.add_textual("The Valkyrie tells you to do what you want. As long as it coincides with what they want, of course...", attack);
 
-
-
-*/
 // ===================
 //hack START
 // ===================

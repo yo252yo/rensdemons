@@ -56,13 +56,9 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-
-*/
-
+BATTLE.monster_actions.add_textual("Azazel projects in your mind the voices of everyone you care about listing the worst things they think about you. Nobody likes you.", attack);
+BATTLE.monster_actions.add_textual("Azazel erases you from the memories of everyone you have known, plunging you in an abyss of loneliness. Nobody things about you.", attack);
+BATTLE.monster_actions.add_textual("Azazel postulates you that nobody really loves you. Everyone is using you, tolerating you or just pretending. You matter to nobody.", attack);
 
 // ===================
 //hack START

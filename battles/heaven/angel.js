@@ -56,11 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-*/
+BATTLE.monster_actions.add_textual("The Angel congratulates you for making it this far considering your lack of abilities. They're just saying that for you!", attack);
+BATTLE.monster_actions.add_textual("The Angel snarks mockingly at you, sapping your confidence. They're just trying to help you grow!", attack);
+BATTLE.monster_actions.add_textual("The Angel recounts your past experiences, criticizing and ridiculing them. They're trying to help you!", attack);
+
 
 
 // ===================
