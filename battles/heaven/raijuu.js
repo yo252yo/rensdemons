@@ -56,12 +56,11 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
-*/
+BATTLE.monster_actions.add_textual("The Raijuu doesn't do anything. It's simply pulsating light that you can almost feel go through your body. This can't be good.", attack);
+BATTLE.monster_actions.add_textual("The Raijuu is not moving. The air is cracking around it. Who knows what its proximity is doing to your flesh...", attack);
+BATTLE.monster_actions.add_textual("The Raijuu is static. Its light aura permeates your every cell, irradiating you to your core.", attack);
+
 
 // ===================
 //hack START

@@ -1,9 +1,8 @@
 Tier 3 monsters
 TODO T3 loots
-
 TODO T3 defense
-TODO T3 attack
-/*WIP1
+TODO T3 attack stats
+
 
 bosses text!!!
 

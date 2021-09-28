@@ -56,13 +56,11 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
+BATTLE.monster_actions.add_textual("The Eyeball stares at the depths of your mind.", attack);
+BATTLE.monster_actions.add_textual("The Eyeball relentless gaze pierces through your soul.", attack);
+BATTLE.monster_actions.add_textual("The Eyeball maintains its cold judging glance that seems to see clearly even what you're thinking.", attack);
 
-*/
 
 // ===================
 //hack START

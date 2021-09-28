@@ -56,14 +56,12 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+
+BATTLE.monster_actions.add_textual("The Serpentine undulates lusciously her magnificent body, mesmerizing you with her charms.", attack);
+BATTLE.monster_actions.add_textual("The Serpentine winks and blows you a kiss, beckoning you to come closer.", attack);
+BATTLE.monster_actions.add_textual("The Serpentine makes indecent gestures in your direction, which does not fail to destabilize you.", attack);
 
 
-
-*/
 // ===================
 //hack START
 // ===================

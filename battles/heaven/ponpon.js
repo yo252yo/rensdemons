@@ -56,13 +56,11 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
+BATTLE.monster_actions.add_textual("The Ponpon looks at you with big adorable eyes. Your heart melts.", attack);
+BATTLE.monster_actions.add_textual("The Ponpon wiggles its cute fluff. It squeezes your heart.", attack);
+BATTLE.monster_actions.add_textual("The Ponpon flies around making chirpy noises. The cuteness is too strong to handle.", attack);
 
-*/
 
 // ===================
 //hack START
