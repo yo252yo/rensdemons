@@ -55,13 +55,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
-
-*/
+BATTLE.monster_actions.add_textual("The Toad skin shifts between bright colors. Suddenly, it adopts a hue that cannot exist. Your mind breaks down.", attack);
+BATTLE.monster_actions.add_textual("The Toad starts jumping around. The trajectory of the jumps is impossible in three dimensions. Your mind breaks down.", attack);
+BATTLE.monster_actions.add_textual("The Toad croaks first normaly, but then switch to frequencies that cannot exist. Your brain is filled with impossible sounds. Your mind breaks down.", attack);
 
 // ===================
 //hack START

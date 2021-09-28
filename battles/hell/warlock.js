@@ -56,14 +56,12 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+
+BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt the fabric of time itself.", attack);
+BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt your ego. Everything that makes you you seems to dissolve.", attack);
+BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt the reality around you. Dimensions seem to erode and compress.", attack);
 
 
-
-*/
 // ===================
 //hack START
 // ===================
