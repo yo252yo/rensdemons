@@ -56,13 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
-
-*/
+BATTLE.monster_actions.add_textual("The Hecatoncheir extends its gooey tentacles deep into your soul and starts to tear apart your very being.", attack);
+BATTLE.monster_actions.add_textual("The Hecatoncheir whips your spirit with its slimy appendages.", attack);
+BATTLE.monster_actions.add_textual("The Hecatoncheir smothers your personality with its uncountable oozy arms.", attack);
 
 // ===================
 //hack START

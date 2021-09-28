@@ -56,12 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
-*/
+BATTLE.monster_actions.add_textual("The Satyr sends you a powerful curse that tricks you into believing you are a character from a story.", attack);
+BATTLE.monster_actions.add_textual("The Satyr places a hex on you that makes you forget who you are, and even the very fact that you are.", attack);
+BATTLE.monster_actions.add_textual("The Satyr curses you, and renders you unable to think.", attack);
 
 
 // ===================
