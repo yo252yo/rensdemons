@@ -57,16 +57,16 @@ var attack = {
 };
 */
 
-/*TODO T3 text
+/*WIP1
 BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
 BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
 BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
 
 
+*/
 // ===================
 //hack START
 // ===================
 
-BATTLE.operations.start("An Ambitious Arsonist Aims at setting you Ablaze.");
-*/
+BATTLE.operations.start("A Smug Seraph Shames your Soul.");
