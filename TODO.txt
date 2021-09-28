@@ -4,6 +4,10 @@ TODO T3 loots
 TODO T3 defense
 TODO T3 attack
 /*WIP1
+
+bosses text!!!
+
+
 + balance
 
 
