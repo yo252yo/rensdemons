@@ -3,7 +3,7 @@ TODO T3 loots
 
 TODO T3 defense
 TODO T3 attack
-TODO T3 text
+/*WIP1
 + balance
 
 
