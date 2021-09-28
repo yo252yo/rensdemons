@@ -58,4 +58,4 @@ BATTLE.monster_actions.add_textual("The Djinn dives towards you at an incredible
 //hack START
 // ===================
 
-BATTLE.operations.start("A Defiant Djinn Drifts in an eerie Dance.");
+BATTLE.operations.start("A Deviant Djinn Drifts in an eerie Dance.");
