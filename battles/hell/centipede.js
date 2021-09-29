@@ -56,13 +56,10 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
 
-
-*/
+BATTLE.monster_actions.add_textual("The Centipede folds your three dimensional reality into lower dimensions, crushing you in the process.", attack);
+BATTLE.monster_actions.add_textual("The Centipede devour the fabric of reality.", attack);
+BATTLE.monster_actions.add_textual("The Centipede doesn't seem to move a muscle from the outside, but it is actually knitting dimensional threads to erase your existence from the universe.", attack);
 
 // ===================
 //hack START

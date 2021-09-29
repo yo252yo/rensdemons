@@ -60,6 +60,7 @@ var attack = {
 BATTLE.monster_actions.add_textual("The Satyr sends you a powerful curse that tricks you into believing you are a character from a story.", attack);
 BATTLE.monster_actions.add_textual("The Satyr places a hex on you that makes you forget who you are, and even the very fact that you are.", attack);
 BATTLE.monster_actions.add_textual("The Satyr curses you, and renders you unable to think.", attack);
+BATTLE.monster_actions.add_textual("The Satyr casts on you a powerful spell that convinces you that you are in a dream.", attack);
 
 
 // ===================

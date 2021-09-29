@@ -56,14 +56,13 @@ var attack = {
 };
 */
 
-/*WIP1
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
+
+BATTLE.monster_actions.add_textual("The Devilfly resounding buzz grows louder until it takes the place of all sounds in the unverse and crushes your spirit under its overwhelming omnipresence.", attack);
+BATTLE.monster_actions.add_textual("The Devilfly's macabre buzzing imprints on your mind that everything is either dead or dying. There is nothing but walking corpses, flesh in decay.", attack);
+BATTLE.monster_actions.add_textual("The Devilfly's hypnotic noise slowly turns your own brain against itself. It fills your mind with the hallucination that you're full of critters crawling inside you, making you want to rip your own skin.", attack);
 
 
 
-*/
 // ===================
 //hack START
 // ===================
