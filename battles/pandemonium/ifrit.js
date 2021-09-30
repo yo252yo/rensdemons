@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.7, // Between 0 and 1
+  warning_time_s: 0.3,
+  react_time_s: 0.4,
+  variability: 0.9, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("The Ifrit sends you a mental picture of the eyes of a loved one the moment you disappointed them. They trusted you.", attack);
 BATTLE.monster_actions.add_textual("The Ifrit sends you a mental picture of the eyes of a loved one the moment they realized that you were a different person that they thought. They don't know you anymore.", attack);

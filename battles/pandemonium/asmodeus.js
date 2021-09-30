@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.7, // Between 0 and 1
+  warning_time_s: 0.3,
+  react_time_s: 0.5,
+  variability: 0.5, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("The Asmodeus projects the whole universe in your brain. You can see yourself growing smaller than the smallest conceivable speck in an abyss of void. You are nothing.", attack);
 BATTLE.monster_actions.add_textual("The Asmodeus isolates you from the real world by dimming your senses. You are nowhere.", attack);

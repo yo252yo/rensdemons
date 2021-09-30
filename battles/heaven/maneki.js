@@ -47,14 +47,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
   attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  warning_time_s: 0.4,
+  react_time_s: 0.4,
+  variability: 0.99, // 1 = 100%
 };
-*/
 
 
 BATTLE.monster_actions.add_textual("The Maneki challenges you to a game of luck. Most outcomes will have you suffer, but there's a one in a million chance you might get extremely rich!", attack);

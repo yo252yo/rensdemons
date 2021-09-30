@@ -47,14 +47,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
   attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  warning_time_s: 0.6,
+  react_time_s: 0.2,
+  variability: 0.5, // 1 = 100%
 };
-*/
 
 BATTLE.monster_actions.add_textual("The Azazel projects in your mind the voices of everyone you care about listing the worst things they think about you. Nobody likes you.", attack);
 BATTLE.monster_actions.add_textual("The Azazel erases you from the memories of everyone you have known, plunging you in an abyss of loneliness. Nobody things about you.", attack);

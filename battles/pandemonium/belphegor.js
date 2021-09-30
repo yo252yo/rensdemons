@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.65, // Between 0 and 1
+  warning_time_s: 0.2,
+  react_time_s: 0.5,
+  variability: 0.9, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("The Belphegor reminds you that life has no objective meaning and your existence is futile. Nothing matters.", attack);
 BATTLE.monster_actions.add_textual("The Belphegor fills your mind with the conviction that you do not matter and nothing you can do will have any effect in the grand scheme of things. You are powerless.", attack);

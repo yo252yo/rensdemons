@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
+  attack_amplitude: 0.4, // Between 0 and 1
+  warning_time_s: 0.2,
   react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  variability: 0.9, // 1 = 100%
 };
-*/
+
 
 
 BATTLE.monster_actions.add_textual("The Satyr sends you a powerful curse that tricks you into believing you are a character from a story.", attack);

@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.8, // Between 0 and 1
+  warning_time_s: 0.4,
+  react_time_s: 0.4,
+  variability: 0.6, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("The Angel congratulates you for making it this far considering your lack of abilities. They're just saying that for you!", attack);
 BATTLE.monster_actions.add_textual("The Angel snarks mockingly at you, sapping your confidence. They're just trying to help you grow!", attack);

@@ -47,15 +47,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
-var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
-};
-*/
 
+var attack = {
+  attack_amplitude: 0.3, // Between 0 and 1
+  warning_time_s: 0.1,
+  react_time_s: 0.4,
+  variability: 0.7, // 1 = 100%
+};
 
 BATTLE.monster_actions.add_textual("The Raijuu doesn't do anything. It's simply pulsating light that you can almost feel go through your body. This can't be good.", attack);
 BATTLE.monster_actions.add_textual("The Raijuu is not moving. The air is cracking around it. Who knows what its proximity is doing to your flesh...", attack);

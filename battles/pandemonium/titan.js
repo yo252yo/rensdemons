@@ -47,14 +47,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
+
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.8, // Between 0 and 1
+  warning_time_s: 0.2,
+  react_time_s: 0.8,
+  variability: 0.3, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("The Titan claims that you did something horrible. They're so persuasive that you begin to believe it yourself.", attack);
 BATTLE.monster_actions.add_textual("The Titan insists that they saw you do a heinous act, and they have proof. It's impossible, or is it?", attack);
