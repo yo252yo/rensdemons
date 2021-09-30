@@ -3,6 +3,7 @@
 // ===================
 new CenteredImage("assets/battles/pandemonium/beelzebub.png", 'background');
 PLAYER_ACTIONS.allow_flight();
+AUDIO.music.interface.boss();
 
 // ! !!! bossfight
 
@@ -58,14 +59,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-/*TODO T3 attack
 var attack = {
-  attack_amplitude: 0.5, // Between 0 and 1
-  warning_time_s: 0.8,
-  react_time_s: 0.6,
-  variability: 0.4, // 1 = 100%
+  attack_amplitude: 0.9, // Between 0 and 1
+  warning_time_s: 0.1,
+  react_time_s: 0.5,
+  variability: 0.95, // 1 = 100%
 };
-*/
+
 
 BATTLE.monster_actions.add_textual("WIP BOSS START TEXT.", attack);
 

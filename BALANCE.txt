@@ -42,6 +42,9 @@ variation [0.1-0.95] (mostly 0.4)
 T3:
 PLAYER_ACTIONS.kill_with_anything_over(1500);
 weakest spell/category ineficient
+time [0.5-1.0]
+amplitude [0.3-0.8] (mostly 0.6)
+variation [0.2-0.95] (mostly 0.6)
 
 
 
@@ -68,3 +71,6 @@ variation [0.4-0.8]
 T3:
 PLAYER_ACTIONS.kill_with_anything_over(10000); // only artifacts
 PLAYER_ACTIONS.kill_with_any_party_member(7);
+time [0.3-0.6]
+amplitude [0.85-0.95]
+variation [0.7-0.95]

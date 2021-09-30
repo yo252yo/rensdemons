@@ -10,7 +10,7 @@ bosses text!!! "WIP BOSS START TEXT."
 + balance
 
 
-martyrdom notification
+martyrdom notification > merge two types of time martyrdom cause its confusing ?? add enemy knowledge mb to reduce variability
 
 
 
