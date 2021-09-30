@@ -23,7 +23,7 @@ const DODGE = {
     },
 
     warning_time_s: function() {
-      return DODGE._params.warning_time_s * (1+1*MARTYRDOM.effect(MARTYRDOMS.Foresight))  + 1 * MARTYRDOM.effect(MARTYRDOMS.Foresight);
+      return DODGE._params.warning_time_s * (1+1*MARTYRDOM.effect(MARTYRDOMS.Reflex))  + 1 * MARTYRDOM.effect(MARTYRDOMS.Reflex);
     },
 
     react_time_s: function() {
@@ -31,7 +31,7 @@ const DODGE = {
     },
 
     variability: function() {
-      return DODGE._params.variability;
+      return DODGE._params.variability * (1 - MARTYRDOM.effect(MARTYRDOMS.Foresight));
     },
 
     actual_react_time_ms: function(){
@@ -53,7 +53,7 @@ const DODGE = {
       var motion = Math.random() - 0.5;
 
       // favored zone
-      if (Math.random() < 0.5 - 0.5 * DODGE.get_params.variability()){
+      if (Math.random() < 0.5 - 0.5 * DODGE.get_params.variability() + 0.3 * MARTYRDOM.effect(MARTYRDOMS.Foresight)){
         motion *= 0.3;
       }
       return (center + motion + 1) % 1;
