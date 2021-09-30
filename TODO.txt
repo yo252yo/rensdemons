@@ -1,5 +1,3 @@
-Tier 3 monsters
-TODO T3 loots
 TODO T3 defense
 
 

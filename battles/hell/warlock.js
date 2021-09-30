@@ -5,10 +5,12 @@ new CenteredImage("assets/battles/hell/warlock.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 
-/*TODO T3 loots
 BATTLE.operations.add_loot(ITEM.Elixir_fire, 0.5);
-BATTLE.operations.add_loot("", 2);
-*/
+BATTLE.operations.add_loot(ITEM.Elixir_ice, 0.5);
+BATTLE.operations.add_loot(ITEM.Elixir_vine, 0.5);
+BATTLE.operations.add_loot(ITEM.Elixir_venom, 0.5);
+BATTLE.operations.add_loot(ITEM.Elixir_decay, 0.5);
+BATTLE.operations.add_loot(ITEM.Elixir_chaos, 0.5);
 
 
 // ===================

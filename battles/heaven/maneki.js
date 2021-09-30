@@ -5,10 +5,11 @@ new CenteredImage("assets/battles/heaven/maneki.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 
-/*TODO T3 loots
-BATTLE.operations.add_loot(ITEM.Elixir_fire, 0.5);
-BATTLE.operations.add_loot("", 2);
-*/
+BATTLE.operations.add_loot(ITEM.Coin, 10);
+BATTLE.operations.add_loot(ITEM.Sword_legend, 0.1);
+BATTLE.operations.add_loot(ITEM.War_hammer, 0.1);
+BATTLE.operations.add_loot(ITEM.Staff, 0.1);
+BATTLE.operations.add_loot(ITEM.Wand, 0.1);
 
 
 // ===================

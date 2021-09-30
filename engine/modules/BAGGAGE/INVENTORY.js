@@ -52,6 +52,7 @@ const ITEM = {
     Goo: "Enchanted Goo",
     Fur: "Fur",
     Meat: "Meat",
+    Eye: "Eye",
 
     // Story
     BreathingPotion: "Breathing Potion",

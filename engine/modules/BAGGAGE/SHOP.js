@@ -40,6 +40,7 @@ _SHOP_PRICES[ITEM.Goo] = 20;
 _SHOP_PRICES[ITEM.AncientRubbles] = 20;
 _SHOP_PRICES[ITEM.Fur] = 30;
 _SHOP_PRICES[ITEM.Scale] = 40;
+_SHOP_PRICES[ITEM.Eye] = 50;
 
 
 

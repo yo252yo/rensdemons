@@ -5,20 +5,6 @@ new CenteredImage("assets/battles/pandemonium/maou.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
-// ! !!! bossfight
-
-
-
-
-
-
-
-
-/*TODO T3 loots
-BATTLE.operations.add_loot(ITEM.Elixir_fire, 0.5);
-BATTLE.operations.add_loot("", 2);
-*/
-
 
 // ===================
 //hack PLAYER CAPABILITIES

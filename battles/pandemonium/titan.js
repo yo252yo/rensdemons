@@ -5,11 +5,7 @@ new CenteredImage("assets/battles/pandemonium/titan.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 
-/*TODO T3 loots
-BATTLE.operations.add_loot(ITEM.Elixir_fire, 0.5);
-BATTLE.operations.add_loot("", 2);
-*/
-
+BATTLE.operations.add_loot(ITEM.Sword_iron, 1);
 
 // ===================
 //hack PLAYER CAPABILITIES
