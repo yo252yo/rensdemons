@@ -14,6 +14,7 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
 PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
+PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM

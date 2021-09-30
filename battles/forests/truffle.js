@@ -13,6 +13,7 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
+PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM

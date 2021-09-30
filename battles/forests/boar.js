@@ -17,6 +17,7 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM

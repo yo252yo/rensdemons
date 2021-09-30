@@ -11,6 +11,7 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 3);                  // 100  ELEM
