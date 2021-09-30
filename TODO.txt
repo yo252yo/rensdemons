@@ -1,13 +1,5 @@
-TODO T3 defense
-
-
-
+final balance
 bosses text!!! "WIP BOSS START TEXT."
-
-
-+ balance
-
-
 martyrdom notification
 
 

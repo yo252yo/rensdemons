@@ -12,32 +12,20 @@ BATTLE.operations.add_loot(ITEM.Elixir_chaos, 1);
 // ===================
 PLAYER_ACTIONS.kill_with_anything_over(1500);
 
-/*TODO T3 defense
-PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
-PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Sword_iron, 2);                 // 20  WEAP
-PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 50  WEAP
+PLAYER_ACTIONS.win(ABILITY.Sneak, 5);                     // 83  DIPL
 
-PLAYER_ACTIONS.win(ABILITY.Thunder, 1);                   // 83  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 166  ELEM
+PLAYER_ACTIONS.win(ITEM.Dagger, 4);                       // 50  WEAP
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 25  SPIR
-PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 3);                // 250  ELEM
 
-PLAYER_ACTIONS.win(ITEM.Poison_darts, 5, true);           // 5   TOOL
-PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
+PLAYER_ACTIONS.win(ABILITY.Petrify, 3);                   // 166  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Elixir_venom, 3, true);           // 40  ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH
+PLAYER_ACTIONS.win(ITEM.Rope, 4);                         // 100  TOOL
 
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 5, true);           // 50  ALCH
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
-PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
-*/
-
-
 
 
 // ===================
