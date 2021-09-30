@@ -4,7 +4,7 @@ TODO T3 defense
 TODO T3 attack stats
 
 
-bosses text!!!
+bosses text!!! "WIP BOSS START TEXT."
 
 
 + balance

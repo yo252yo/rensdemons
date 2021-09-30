@@ -66,13 +66,7 @@ var attack = {
 };
 */
 
-/*TODO T3 text
-BATTLE.monster_actions.add_textual("The Arsonist waves its incandescent torch in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist hits you with a ball of fire.", attack);
-BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around you.", attack);
-*/
-
-
+BATTLE.monster_actions.add_textual("WIP BOSS START TEXT.", attack);
 // ===================
 //hack START
 // ===================
