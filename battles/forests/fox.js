@@ -28,8 +28,8 @@ PLAYER_ACTIONS.win(ABILITY.Circumvent, 3);                // 100  DIPL
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 1, true);           // 100  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 200  ALCH
 
-PLAYER_ACTIONS.win(ITEM.Shield, 1);                       // 200  WEAP
-PLAYER_ACTIONS.win(ITEM.Spear, 2);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 1);
+PLAYER_ACTIONS.win(ITEM.Sword_wooden, 6);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 

@@ -35,7 +35,7 @@ PLAYER_ACTIONS.win(ITEM.Elixir_vine, 3, true);            // 30  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 2, true);           // 50  ALCH
 
 
-PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
+PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 

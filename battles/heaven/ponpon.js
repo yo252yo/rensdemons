@@ -12,7 +12,7 @@ BATTLE.operations.add_loot(ITEM.Fur, 1);
 PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 
-PLAYER_ACTIONS.win(ABILITY.Sneak, 5);                     // 83  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
 

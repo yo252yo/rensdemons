@@ -17,8 +17,8 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 
-PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 150  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 2);                     // 200  ELEM
+PLAYER_ACTIONS.win(ABILITY.Thunder, 3);
+PLAYER_ACTIONS.win(ABILITY.Fireball, 2);                     // 200  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Shrink, 3);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 2);                   // 300  SPIR

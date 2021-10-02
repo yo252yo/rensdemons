@@ -21,12 +21,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 5);                  // 100  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Petrify, 3);                   // 300  SPIR
+PLAYER_ACTIONS.win(ABILITY.Poison, 2);                    // 75   SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 5);                // 100  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);             // 50   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 150  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_vine, 1, true);           // 150  ALCH
 
 PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 75   WEAP
 PLAYER_ACTIONS.win(ITEM.Axe, 2);                        // 250  WEAP

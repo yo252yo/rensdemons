@@ -14,8 +14,7 @@ BATTLE.operations.add_loot(ITEM.Scale, 1);
 PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 
-
-PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
+PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Sword_great, 1);                  // 1000 WEAP
 
@@ -23,7 +22,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 3);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Confusion, 2);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
+PLAYER_ACTIONS.win(ITEM.Net, 3);                     // 100  TOOL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 4, true);           // 50  ALCH
 

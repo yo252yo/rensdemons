@@ -14,7 +14,7 @@ BATTLE.operations.add_loot(ITEM.Elixir_decay, 1);
 PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 
-PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
+PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 3);                   // 500  WEAP
 

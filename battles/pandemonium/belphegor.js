@@ -22,7 +22,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 2);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Net, 3);                          // 200  TOOL
+PLAYER_ACTIONS.win(ITEM.Rope, 3);      
 
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 6, true);           // 40  ALCH
 

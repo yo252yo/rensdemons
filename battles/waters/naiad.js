@@ -36,8 +36,8 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 75  ALCH
 
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
-PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
+PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
 
 
 

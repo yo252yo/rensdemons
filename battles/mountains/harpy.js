@@ -19,8 +19,7 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 1);                // 500  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Poison, 2);                    // 75   SPIR
-PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 150  SPIR
+PLAYER_ACTIONS.win(ABILITY.Petrify, 3);                   // 300  SPIR
 
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 1);                // 100  DIPL
 PLAYER_ACTIONS.win(ABILITY.Sneak, 1);                     // 200  DIPL

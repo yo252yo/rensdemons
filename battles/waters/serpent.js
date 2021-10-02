@@ -20,7 +20,7 @@ PLAYER_ACTIONS.win(ABILITY.Persuade, 6);                  // 250  DIPL
 PLAYER_ACTIONS.win(ABILITY.Sneak, 8);                     // 83  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Spear, 7);                        // 250  WEAP
-PLAYER_ACTIONS.win(ITEM.Sword_iron, 5);                   // 500  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 5); 
 PLAYER_ACTIONS.win(ITEM.Sword_great, 3);                  // 1000 WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Earthquake, 4);                // 666  ELEM
