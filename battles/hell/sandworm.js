@@ -21,7 +21,7 @@ PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Earthquake, 1);                // 666  ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 1600 SPIR
+PLAYER_ACTIONS.win(ABILITY.Lull, 3);                      // 1600 SPIR
 
 PLAYER_ACTIONS.win(ITEM.Arrow, 9, true);           // 5   TOOL
 

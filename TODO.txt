@@ -1,51 +1,14 @@
-final balance
 bosses text!!! "WIP BOSS START TEXT."
 martyrdom notification
 
 
+axe/incinerate/swordgreat
+(earthquake/intimidate)
 
-
-
-
-
-decorellate:
-great sword/Incinerate
-axe/Earthquake
-iron sword/Earthquake
-iron sword/Intimidate
-iron sword/confusion
-circumvent/Poison
-axe/Sword_iron
-
-
-DisguisedPrincess/SavageChild
-GeniusProdigy/BestFriend
-
-lieutenant/fungus
-
-
-squrel/truffle
-chimera/fox
-harpy/bloodsucker
-fox/octopus
-manticore/ghost
-chimera/skeleton
-wraith/fox
-arsonist/valkyrie
-blooduscker/serpentine
-serpentine/knight
-
-asmodeus/cherub
-belphegor/serpentine
-belphegot/sandworm
-azazel/sandworm
-belial/centipede
-
-extra:
-asmodeus/devilfly
-valkyrie/serpentine
-serpentine/belial
-eyeball/ifrit
+mandragora/mummy/octopus
+satyr/azazel
+centipede/belial
+ponpon/hellhound
 
 
 

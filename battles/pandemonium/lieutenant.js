@@ -27,7 +27,7 @@ PLAYER_ACTIONS.win(ABILITY.Incinerate, 4);                // 1000 ELEM
 PLAYER_ACTIONS.win(ABILITY.Summon, 2);                    // 2500 ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Confusion, 5);                 // 666  SPIR
-PLAYER_ACTIONS.win(ABILITY.Lull, 3);                      // 1600 SPIR
+PLAYER_ACTIONS.win(ABILITY.Lull, 4);                      // 1600 SPIR
 PLAYER_ACTIONS.win(ABILITY.Charm, 2);                     // 2500 SPIR
 
 PLAYER_ACTIONS.win(ITEM.Net, 6);                          // 200  TOOL

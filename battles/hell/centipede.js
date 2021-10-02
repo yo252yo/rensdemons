@@ -20,7 +20,7 @@ PLAYER_ACTIONS.win(ITEM.Spear, 2);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Incinerate, 1);                // 1000 ELEM
 
-PLAYER_ACTIONS.win(ABILITY.Lull, 1);                      // 1600 SPIR
+PLAYER_ACTIONS.win(ABILITY.Lull, 3);                      // 1600 SPIR
 
 PLAYER_ACTIONS.win(ITEM.Rope, 5);                         // 100  TOOL
 
