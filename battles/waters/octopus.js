@@ -23,7 +23,7 @@ PLAYER_ACTIONS.win(ABILITY.Sneak, 3);                     // 200  DIPL
 PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 3, true);            // 20   ALCH
-PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 200  ALCH
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 150  ALCH
 
 PLAYER_ACTIONS.win(ITEM.Dagger, 6);                       // 75   WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 1);                        // 250  WEAP

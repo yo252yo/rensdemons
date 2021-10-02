@@ -2,14 +2,6 @@ bosses text!!! "WIP BOSS START TEXT."
 martyrdom notification
 
 
-axe/incinerate/swordgreat
-(earthquake/intimidate)
-
-mandragora/mummy/octopus
-satyr/azazel
-centipede/belial
-ponpon/hellhound
-
 
 
 

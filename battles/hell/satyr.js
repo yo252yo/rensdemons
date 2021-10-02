@@ -17,7 +17,7 @@ PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 PLAYER_ACTIONS.win(ABILITY.Persuade, 3);                  // 250  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Sword_great, 2);                  // 1000 WEAP
+PLAYER_ACTIONS.win(ITEM.Spear, 2);                    // 1000 WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 3);                // 250  ELEM
 

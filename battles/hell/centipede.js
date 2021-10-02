@@ -16,7 +16,7 @@ PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 83  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Spear, 2);                        // 250  WEAP
+PLAYER_ACTIONS.win(ITEM.Sword_great, 2); 
 
 PLAYER_ACTIONS.win(ABILITY.Incinerate, 1);                // 1000 ELEM
 

@@ -15,8 +15,8 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 
-PLAYER_ACTIONS.win(ABILITY.Fireball, 5);                  // 50   ELEM
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 3);                  // 100  ELEM
+PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 3);                 // 100  ELEM
+PLAYER_ACTIONS.win(ABILITY.Storm, 1);                        // 100  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Shrink, 2);                    // 150  SPIR
 PLAYER_ACTIONS.win(ABILITY.Petrify, 4);                   // 300  SPIR

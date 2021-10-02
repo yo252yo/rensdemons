@@ -12,8 +12,8 @@ PLAYER_ACTIONS.kill_with_anything_over(300);
 PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
 PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 
-PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 100  ELEM
-PLAYER_ACTIONS.win(ABILITY.Storm, 1);                     // 200  ELEM
+PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);
+PLAYER_ACTIONS.win(ABILITY.Fireball, 5);              // 200  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 3);                    // 75   SPIR
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                    // 150  SPIR

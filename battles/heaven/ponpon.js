@@ -14,7 +14,7 @@ PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Axe, 1);                          // 600  WEAP
+PLAYER_ACTIONS.win(ITEM.Shield, 2);                       // 200  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 166  ELEM
 
