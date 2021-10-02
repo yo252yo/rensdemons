@@ -5,22 +5,6 @@ martyrdom notification
 
 
 
-buff: weapons?
-
-axe/spear a bit shield in hell and heaven
-
-pand:7.6
-hell:7.7
-heaven: 8.2
-cave: 16.8
-world:18
-water: 19
-mountain: 18.7
-forest: 18.2
-
-
-
-
 
 
 
