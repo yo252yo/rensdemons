@@ -16,7 +16,7 @@ PLAYER_ACTIONS.kill_with_anything_over(700);
 PLAYER_ACTIONS.win(ABILITY.Sneak, 2);                     // 83  DIPL
 PLAYER_ACTIONS.win(ABILITY.Intimidate, 1);                // 666  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Dagger, 2);                       // 50  WEAP
+PLAYER_ACTIONS.win(ITEM.Dagger, 3);                       // 50  WEAP
 PLAYER_ACTIONS.win(ITEM.Sword_iron, 1);                 // 20  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Thunder, 2);                   // 83  ELEM

@@ -10,6 +10,7 @@ PLAYER_ACTIONS.allow_flight();
 PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
+PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 
 PLAYER_ACTIONS.win(ABILITY.Fireball, 5);                  // 50   ELEM

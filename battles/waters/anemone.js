@@ -10,9 +10,9 @@ PLAYER_ACTIONS.allow_flight();
 PLAYER_ACTIONS.kill_with_anything_over(300);
 
 PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
+PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 
-PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Thunder, 3);                   // 150  ELEM
 PLAYER_ACTIONS.win(ABILITY.Storm, 3);                     // 200  ELEM
 

@@ -27,7 +27,7 @@ PLAYER_ACTIONS.win(ABILITY.Persuade, 1);                  // 500  DIPL
 PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);           // 150  ALCH
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);           // 200  ALCH
 
-PLAYER_ACTIONS.win(ITEM.Dagger, 4);                       // 75   WEAP
+PLAYER_ACTIONS.win(ITEM.Sword_wooden, 4);                       // 75   WEAP
 PLAYER_ACTIONS.win(ITEM.Spear, 3);                        // 250  WEAP
 
 PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 5    TOOL

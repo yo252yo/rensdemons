@@ -5,6 +5,70 @@ martyrdom notification
 
 
 
+buff: weapons?
+
+axe/spear a bit shield in hell and heaven
+
+pand:7.6
+hell:7.7
+heaven: 8.2
+cave: 16.8
+world:18
+water: 19
+mountain: 18.7
+forest: 18.2
+
+
+
+
+
+
+
+decorellate:
+great sword/Incinerate
+axe/Earthquake
+iron sword/Earthquake
+iron sword/Intimidate
+iron sword/confusion
+circumvent/Poison
+axe/Sword_iron
+
+
+DisguisedPrincess/SavageChild
+GeniusProdigy/BestFriend
+
+lieutenant/fungus
+
+
+squrel/truffle
+chimera/fox
+harpy/bloodsucker
+fox/octopus
+manticore/ghost
+chimera/skeleton
+wraith/fox
+arsonist/valkyrie
+blooduscker/serpentine
+serpentine/knight
+
+asmodeus/cherub
+belphegor/serpentine
+belphegot/sandworm
+azazel/sandworm
+belial/centipede
+
+extra:
+asmodeus/devilfly
+valkyrie/serpentine
+serpentine/belial
+eyeball/ifrit
+
+
+
+
+
+
+
 
 - rest of the story:
 - town3 (esp intro, check church)

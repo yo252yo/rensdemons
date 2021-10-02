@@ -17,7 +17,7 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 
-PLAYER_ACTIONS.win(ABILITY.Fireball, 4);                  // 50   ELEM
+PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 3);                  // 50   ELEM
 PLAYER_ACTIONS.win(ABILITY.Ice_bolt, 2);                  // 100  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
@@ -25,7 +25,7 @@ PLAYER_ACTIONS.win(ABILITY.Poison, 4);                    // 75   SPIR
 PLAYER_ACTIONS.win(ABILITY.Circumvent, 5);                // 100  DIPL
 
 PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 1, true);
-PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true); 
+PLAYER_ACTIONS.win(ITEM.Elixir_decay, 1, true);
 
 PLAYER_ACTIONS.win(ITEM.Sword_wooden, 3);                 // 20   WEAP
 PLAYER_ACTIONS.win(ITEM.Dagger, 2);                       // 75   WEAP

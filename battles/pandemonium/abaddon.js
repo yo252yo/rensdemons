@@ -15,7 +15,7 @@ PLAYER_ACTIONS.kill_with_anything_over(1500);
 
 PLAYER_ACTIONS.win(ABILITY.Sneak, 5);                     // 83  DIPL
 
-PLAYER_ACTIONS.win(ITEM.Dagger, 4);                       // 50  WEAP
+PLAYER_ACTIONS.win(ITEM.Dagger, 5);                       // 50  WEAP
 
 PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 3);                // 250  ELEM
 
