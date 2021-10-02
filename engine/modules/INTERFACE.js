@@ -121,6 +121,12 @@ const INTERFACE = {
       escape_button.style.background = PALETTE.text_background().code();
       escape_button.style.borderColor = PALETTE.text_border().code();
       escape_button.style.color = PALETTE.text_color().code();
+
+      var m = "&nbsp;" + INTERFACE.text._martyrdom_notif();
+      if (m == "&nbsp;"){
+        m = "...";
+      }
+      escape_button.innerHTML = m;
     },
 
     click_marker: function() {
