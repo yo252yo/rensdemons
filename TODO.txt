@@ -1,18 +1,11 @@
-bosses text!!! "WIP BOSS START TEXT."
-martyrdom notification
-
-
-
-
-
-
-
 
 
 - rest of the story:
 - town3 (esp intro, check church)
 - hard part of map
 - hellmaw + bossfight
+bosses text!!! "WIP BOSS START TEXT."
+
 
 - fissure
 

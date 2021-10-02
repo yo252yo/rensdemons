@@ -3,7 +3,7 @@ const INTERFACE = {
 
   text:{
     _martyrdom_notif: function() {
-      if (MARTYRDOM._spare_points > 0) {
+      if (MARTYRDOM.display.notif()) {
         return "<span style='color:red;font-weight:bold;'>*</span>";
       } else{
         return "";
