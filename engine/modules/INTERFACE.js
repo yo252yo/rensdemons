@@ -1,6 +1,20 @@
 const INTERFACE = {
   CROSS_CURSOR_DISPLAY_TIME: 200,
 
+  text:{
+    _martyrdom_notif: function() {
+      if (MARTYRDOM._spare_points > 0) {
+        return "<span style='color:red;font-weight:bold;'>*</span>";
+      } else{
+        return "";
+      }
+    },
+
+    martyrdom: function() {
+      return "Martyrdom" + INTERFACE.text._martyrdom_notif();
+    },
+  },
+
   display: {
     experience_menu: function() {
       var battles = BATTLETREE.get.all_battles();
@@ -29,7 +43,7 @@ const INTERFACE = {
                       {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
                       {"text": "Abilities", "effect": function(){ ABILITIES.display(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display(); }},
-                      {"text": "Martyrdom", "effect": function(){ MARTYRDOM.display.menu(); }},
+                      {"text": INTERFACE.text.martyrdom(), "effect": function(){ MARTYRDOM.display.menu(); }},
                       {"text": "Party", "effect": function(){ PARTY.display.menu(); }},
                       TEXTMENU_EMPTYROW,
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
