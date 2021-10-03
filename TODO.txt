@@ -1,21 +1,8 @@
 
-town3 church inside
 
-
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 2350, 2675, gen.get());
-
-
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 100000, 2350, 2675, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 2000, 2350, 2675, gen.get());
-
-
-worldhard: new battles like B_Skeleton
-text encounters
 
 
 - rest of the story:
-- town3 (esp intro, check church)
-- hard part of map
 - hellmaw + bossfight
 bosses text!!! "WIP BOSS START TEXT."
 
@@ -44,6 +31,7 @@ bosses text!!! "WIP BOSS START TEXT."
 - dungeons
 - town2 survivors rescue!
 - more furniture ^^ (city specific ??)
+- more battle encounters
 - party members:
 >  description in party.js,
 >  attacks in languge,
