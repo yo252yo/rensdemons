@@ -17,7 +17,7 @@ new S_Church(1950, 1300, "021_church4$");
 
 new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 1100, 2000, gen.get());
 new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 10000, 2825, 1900, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 2200, 1375, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 100000, 2200, 1375, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 1600, gen.get());
 
 // ===================

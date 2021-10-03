@@ -8,8 +8,8 @@ new Snippet("levels/decors/temple");
 
 var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
 
-new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
-new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
+new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
+new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 100000);
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y);

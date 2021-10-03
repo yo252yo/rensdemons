@@ -9,7 +9,7 @@ new Snippet("levels/decors/temple");
 var f = new S_ExitFloor(1250,1775,100,35, '020_town2');
 
 new M_Trainer(1100, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Element, 750);
-new M_Trainer(1450, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
+new M_Trainer(1450, 1650, 1, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
 
 var wiseOldFool = new M_Priest(1500, 1125);
 
@@ -151,7 +151,7 @@ CURRENTLEVEL.start_function = function(){
       `When you enter the immaculate building, you're immediately greeted by a hooded figure.`,
       `Priest: "Welcome, child! We were expecting you! I hope your travel from $$town_1$ went peacefully, though I have no doubt that the Goddess made sure it was so."`,
       `Priest: "You'll see, our beautiful city of $$town_2$ has much more to offer! We may not be the best in the kingdom, but we can help you a long way!"`,
-      `Priest: "Everyone in this building is fully devoted to you! We'll give you anything you require, just ask! Some of us can teach you magic: we are knowledgeable in the ways of the Element and the ways of the Spirit."`,
+      `Priest: "Everyone in this building is fully devoted to you! We'll give you anything you require, just ask! Some of us can teach you magic: we are knowledgeable in the ways of the Element and the ways of the Diplomat."`,
       `$$BestFriend$: "Well, that sounds promising!"`,
       `$$Ren$: "To me, it sounds scary!"`,
       `Priest: "Most importantly, I can tell you where to find the power to defeat $$demon_lord$. Come and see me when you're ready to learn. But... this is very sensitive information... Maybe it's best we speak alone?"`,

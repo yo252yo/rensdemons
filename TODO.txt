@@ -1,4 +1,13 @@
 
+town3 church inside
+
+
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000, 2350, 2675, gen.get());
+
+
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 100000, 2350, 2675, gen.get());
+new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 2000, 2350, 2675, gen.get());
+
 
 worldhard: new battles like B_Skeleton
 text encounters
