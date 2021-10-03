@@ -134,6 +134,7 @@ FEasyEvents.battle('world/goblin', 1.7);
 FEasyEvents.battle('world/mummy', 1.7);
 FEasyEvents.battle('world/skeleton', 1.7);
 FEasyEvents.battle('world/wraith', 1.7);
+
 FEasyEvents.battleRubble(ITEM.Poison_darts, 0.1);
 FEasyEvents.battleRubble(ITEM.Dagger, 0.1);
 FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.1);
@@ -142,9 +143,12 @@ FEasyEvents.groundItem(ITEM.Bone, 0.6);
 FEasyEvents.groundItem(ITEM.Stone, 0.6);
 FEasyEvents.groundItem(ITEM.Berry, 0.6);
 FEasyEvents.groundItem(ITEM.Mushroom, 0.6);
+
 FEasyEvents.byConstructor("B_Pebbles", 0.5);
 FEasyEvents.byConstructor("B_Plants", 0.5);
 FEasyEvents.byConstructor("B_Skeleton", 1);
+FEasyEvents.battle('world/ruins', 1);
+
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
 FEasyEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
@@ -182,16 +186,16 @@ FHardEvents.groundItem(ITEM.Feather, 0.7);
 FHardEvents.groundItem(ITEM.Flower, 0.7);
 FHardEvents.groundItem(ITEM.Bone, 0.7);
 
+FHardEvents.byConstructor("B_Skeleton", 2.5);
+FHardEvents.battle('world/traveler', 2);
+FHardEvents.battle('world/ruins', 1);
 
-FHardEvents.byConstructor("B_Skeleton", 1);
+FHardEvents.text(`You stop your progression: you can see in the distance a pack of feral beasts. As you observe them carefully, you notice that they seem to be tearing to shreds the corpses of a few innocent travelers, throwing around the meat as if making a game out of it. Their fur is drenched in the blood of their unfortunate victims. Crouched on the floor, your heart beating fast, you wait for them to finish their meal, praying that you don't get noticed.`);
+FHardEvents.text(`The sound of metal alerts you of the movement of enemy troops in the distance. You barely have time to find shelter in a bush. A group of several heavily armored demons are patrolling the steppes at a fast pace. The sun makes the dark metal of their foreign armor shine softly.`);
+FHardEvents.text(`You see a fellow human on the distance. As soon as he notices you, he immediately adopts a battle stance. In these wild lands, noone can be trusted. To demonstrate your good faith, you decide to keep the distance and move away from the poor fellow. It will probably be a while after you're out of sight for him to let his guard down.`);
+FHardEvents.text(`You arrive in a desolate area. The grass has been completely burnt to ashes. The ground is blackened and arid. Broken bones are shattered all over. You silently make your way through, trying not to imagine the horrible things that took place here.`);
+FHardEvents.text(`In the middle of a puddle of old blood that has long since dried up, you see a magnificent red flower blooming. It feels your heart with determination. There is hope and beauty in this world, and it can prevail over the destruction.`);
 
-/*
-
-FHardEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
-FHardEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
-FHardEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
-FHardEvents.text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
-*/
 
 FHardEvents.set_zone_from_filler(FHardSW);
 FHardEvents.set_tries(8, 20);
