@@ -138,13 +138,13 @@ FEasyEvents.battleRubble(ITEM.Poison_darts, 0.1);
 FEasyEvents.battleRubble(ITEM.Dagger, 0.1);
 FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.1);
 FEasyEvents.battleRubble(ITEM.Linnens, 0.7);
-FEasyEvents.groundItem(ITEM.Bone, 0.8);
-FEasyEvents.groundItem(ITEM.Stone, 0.8);
-FEasyEvents.groundItem(ITEM.Berry, 0.8);
+FEasyEvents.groundItem(ITEM.Bone, 0.6);
+FEasyEvents.groundItem(ITEM.Stone, 0.6);
+FEasyEvents.groundItem(ITEM.Berry, 0.6);
+FEasyEvents.groundItem(ITEM.Mushroom, 0.6);
 FEasyEvents.byConstructor("B_Pebbles", 0.5);
 FEasyEvents.byConstructor("B_Plants", 0.5);
 FEasyEvents.byConstructor("B_Skeleton", 1);
-
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
 FEasyEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
@@ -159,18 +159,53 @@ FEasyEvents.set_tries(30, 60);
 FEasyEvents.fill_by_retry();
 
 
-/*hard:
 
-arsonist
-blackknight
-bruiser
-butcher
-djinn
-grizzly
-mammoth
-vadhaka
+var FHardEvents = new EventFiller(FMap, 25, 25, 'obj_light');
+FHardEvents.battle('world/arsonist', 2);
+FHardEvents.battle('world/bruiser', 2);
+FHardEvents.battle('world/butcher', 2);
+FHardEvents.battle('world/djinn', 2);
+FHardEvents.battle('world/grizzly', 2);
+FHardEvents.battle('world/knight', 2);
+FHardEvents.battle('world/mammoth', 2);
+FHardEvents.battle('world/vadhaka', 2);
 
+
+FHardEvents.battleRubble(ITEM.Arrow, 0.3);
+FHardEvents.battleRubble(ITEM.Mace, 0.1);
+FHardEvents.battleRubble(ITEM.Shield, 0.05);
+FHardEvents.battleRubble(ITEM.Elixir_vine, 0.1);
+FHardEvents.battleRubble(ITEM.Elixir_venom, 0.05);
+FEasyEvents.battleRubble(ITEM.Stone, 0.2);
+FHardEvents.groundItem(ITEM.AncientRubbles, 0.7);
+FHardEvents.groundItem(ITEM.Feather, 0.7);
+FHardEvents.groundItem(ITEM.Flower, 0.7);
+FHardEvents.groundItem(ITEM.Bone, 0.7);
+
+
+FHardEvents.byConstructor("B_Skeleton", 1);
+
+/*
+
+FHardEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
+FHardEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
+FHardEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
+FHardEvents.text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
 */
+
+FHardEvents.set_zone_from_filler(FHardSW);
+FHardEvents.set_tries(8, 20);
+FHardEvents.fill_by_retry();
+
+FHardEvents.set_zone_from_filler(FHardNE);
+FHardEvents.set_tries(10, 40);
+FHardEvents.fill_by_retry();
+
+
+FHardEvents.set_zone_from_filler(FHardMain);
+FHardEvents.set_tries(60, 100);
+FHardEvents.fill_by_retry();
+
 
 // ===================
 //hack 7. START/INIT

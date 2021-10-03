@@ -1,5 +1,9 @@
 
 
+worldhard: new battles like B_Skeleton
+text encounters
+
+
 - rest of the story:
 - town3 (esp intro, check church)
 - hard part of map
