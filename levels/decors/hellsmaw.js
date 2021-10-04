@@ -61,16 +61,16 @@ decor.fill_by_retry(true);
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-events.battle('world/arsonist', 3);
-events.battle('world/djinn', 3);
-events.battle('world/knight', 3);
-events.battle('world/vadhaka', 3);
+events.battle('world/arsonist', 2.5);
+events.battle('world/djinn', 2.5);
+events.battle('world/knight', 2.5);
+events.battle('world/vadhaka', 2.5);
 
-events.battle('hell/devilfly', 3);
-events.battle('hell/sandworm', 3);
-events.battle('hell/serpentine', 3);
-events.battle('hell/toad', 3);
-events.battle('hell/warlock', 3);
+events.battle('hell/devilfly', 2.5);
+events.battle('hell/sandworm', 2.5);
+events.battle('hell/serpentine', 2.5);
+events.battle('hell/toad', 2.5);
+events.battle('hell/warlock', 2.5);
 
 events.groundItem(ITEM.Bone);
 events.groundItem(ITEM.Stone);
@@ -82,6 +82,11 @@ events.battleRubble(ITEM.Elixir_chaos, 0.1);
 events.byConstructor("B_Skeleton");
 
 events.text(`You cross an especially thick portion of fog. The stench is unbearable. You can't help but cough from the abrasive effect on your throat.`);
+events.text(`Violent shrieks echo in the valley. You and $$BestFriend$ exchange a worried glance, wondering what kind of inhuman creature can make such ungodly noises.`);
+events.text(`You've been climbing for hours. Each step is a bit more painful than the previous one. You're starting to worry that you'll never make it out of this hazy maze...`);
+events.text(`You find gigantic footsteps in the ground. Whatever monster left this trail, it would no doubt easily crush your skull. You hope that the Goddess will not abandon you...`);
+events.text(`Your ascension is tiresome, your surroundings are scary. You try to take comfort in the fact that the final fight approaches, and your quest is almost over. But an intuition sent by the Goddess gives you the unpleasant hunch that things might not be so simple...`);
+events.text(`You're starting to wonder if this rocky desolate inferno really has an exit. Fortunately, the Goddess fills your heart with certainty that however dire the trial may seem, there is necessarily a way forward.`);
 
 events.set_tries(40, 60);
 events.fill_by_retry();
