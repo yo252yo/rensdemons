@@ -17,21 +17,21 @@ bosses text!!! "WIP BOSS START TEXT."
 
 
 
-
+hellsmaw: decor different from harpie? mb shared with hell?
 
 
 
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
-- NPC thoughts, review ideas
+- NPC thoughts
+- review ideas
 
 ---------------------------------------- OPTIONAL CONTENT:
-- events in world map
 - dungeons
 - town2 survivors rescue!
 - more furniture ^^ (city specific ??)
-- more battle encounters
+- more battle encounters (world map ruins, hellsmaw skeleton)
 - party members:
 >  description in party.js,
 >  attacks in languge,
