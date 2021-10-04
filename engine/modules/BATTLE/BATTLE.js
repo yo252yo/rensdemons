@@ -35,9 +35,10 @@ const BATTLE = {
       var options_started = [];
       var options_losing = [];
       var options_flight = [];
+      console.log(options);
       for (var i in options){
           var o = options[i];
-          if(o.text.includes(ABILITY.Escape) || o.text.includes(ABILITY.Foresight)){
+          if(ABILITIES.is_special_flight_option(o.text)){
             options_flight.push(o);
           } else if(o.text.includes(BATTLE._last_action)){
             o.text = "<b>" + o.text + "</b>";
@@ -76,6 +77,7 @@ const BATTLE = {
         }
       }
 
+      // meta blurb when you cant win
       if(winning_options_unknown > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
         options_flight = options_flight.filter(function(e){
             return e.index != ABILITY.Foresight;

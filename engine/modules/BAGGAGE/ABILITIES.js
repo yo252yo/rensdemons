@@ -3,6 +3,7 @@ const ABILITY = {
   Foresight: "Foresight",
   CallHelp: "Call help",
   Pray: "Pray",
+  Feed: "Feed",
 
   // Way of the Elements
     Fireball: "Fireball",
@@ -72,6 +73,10 @@ const ABILITIES = {
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
+  },
+
+  is_special_flight_option: function(name){
+    return name.includes(ABILITY.Escape) || name.includes(ABILITY.Foresight) || name.includes("Feed");
   },
 
   has_ability: function(name) {
