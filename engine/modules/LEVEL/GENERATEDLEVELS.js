@@ -3,7 +3,7 @@
 const GENERATEDLEVELS = {
   house: {
     setup: function(type, seed) {
-      var name = "$house_" + type + "_" +seed;
+      var name = CURRENTLEVEL.GERERATED_LEVEL_PREFIX + "house_" + type + "_" +seed;
       CURRENTLEVEL.setup(name);
     },
 
@@ -19,7 +19,7 @@ const GENERATEDLEVELS = {
 
   store: {
     setup: function(type, threshold, seed) {
-      var name = "$store_" + type + "_" + threshold + "_" + seed;
+      var name = CURRENTLEVEL.GERERATED_LEVEL_PREFIX + "store_" + type + "_" + threshold + "_" + seed;
       CURRENTLEVEL.setup(name);
     },
 

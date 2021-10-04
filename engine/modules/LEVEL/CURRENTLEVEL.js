@@ -1,10 +1,14 @@
 // runtime (CHARACTER, CONSOLE)
 // use(manager.js)
 
+
 const CURRENTLEVEL = {
   _MAX_CLICK_INTERACTION_DISTANCE: 20,
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 200,
+  SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR : '@',
+  GERERATED_LEVEL_PREFIX : '$',
+  UNSAVED_LEVEL_SUFFIX : '$',
 
   level_name: "",
   previous_lvl: "", // used to exit houses
@@ -37,7 +41,7 @@ const CURRENTLEVEL = {
     _save_previous_level: function(name) {
       if (!CURRENTLEVEL.level_name){ return; }
       // Levels you shouldnt return to when you leave a place.
-      if (CURRENTLEVEL.level_name.startsWith("$")) { return; }
+      if (CURRENTLEVEL.level_name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX)) { return; }
       if (CURRENTLEVEL.level_name == "gameover$" ||
           CURRENTLEVEL.level_name == "titlescreen") { return; }
 
@@ -224,7 +228,7 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_name = name;
       CURRENTLEVEL._setup._setup_colors();
 
-      if (name.startsWith("$")) { // special levels (generated)
+      if (name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX)) { // special levels (generated)
         var actual_name = name.substring(1).split("_")[0];
         if(GENERATEDLEVELS[actual_name]){
           GENERATEDLEVELS[actual_name].load(name);
@@ -232,7 +236,7 @@ const CURRENTLEVEL = {
           CONSOLE.error(`Unable to load special level ${name}`);
         }
       } else {
-        new Import("levels/" + name);
+        new Import("levels/" + name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR)[0]);
       }
     },
 
