@@ -14,7 +14,7 @@ const CITIES = {
 
 
 class S_Floor extends LevelObject {
-  constructor(x, y, w, h, color, destination, texture){
+  constructor(x, y, w, h, color, texture){
     if (!color){
       color = 'background';
     }
@@ -28,11 +28,6 @@ class S_Floor extends LevelObject {
     this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
     this.make_walkable();
-    if (destination){
-      this.interaction = function() {
-        CURRENTLEVEL.setup(destination);
-      }
-    }
   }
 
   draw_hitbox(even_floors){
@@ -48,38 +43,44 @@ class S_Floor extends LevelObject {
 
 
 class S_WoodFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/wood.png");
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/wood.png");
   }
 }
 
 class S_SandFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/sand.png");
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/sand.png");
   }
 }
 
 class S_LushFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/lush.png");
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/lush.png");
   }
 }
 
 class S_MudFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/mud.png");
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/mud.png");
   }
 }
 
 class S_TilingFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, undefined, undefined, "assets/patterns/tiling.png");
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/tiling.png");
   }
 }
 
 class S_ExitFloor extends S_Floor {
-  constructor(x, y, w, h, outside) {
-    super(x, y, w, h, 'obj_dark', outside, "assets/patterns/exit.png");
+  constructor(x, y, w, h, outside, force_new_position) {
+    super(x, y, w, h, 'obj_dark', "assets/patterns/exit.png", force_new_position);
+
+    if (outside){
+      this.interaction = function() {
+        CURRENTLEVEL.setup(outside, false, force_new_position);
+      }
+    }
   }
 
   is_interactible(x,y) {
@@ -98,7 +99,7 @@ class S_TownFloor extends S_Floor {
     if (!pattern){
       pattern = "assets/patterns/town.png";
     }
-    super(x, y, w, h, undefined, undefined, pattern);
+    super(x, y, w, h, undefined, pattern);
 
     var exit = 40;
 

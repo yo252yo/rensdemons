@@ -52,6 +52,14 @@ const CURRENTLEVEL = {
       CONSOLE.log.setup(save.level_name + " (from save)");
       CURRENTLEVEL._setup._setup_from_object(save);
     },
+
+    make_save: function(level_name, previous_position){
+      var s = {level_name: level_name};
+      if(previous_position){
+        s.saved_character_position = previous_position;
+      }
+      return s;
+    },
   },
 
   io: {
@@ -250,11 +258,20 @@ const CURRENTLEVEL = {
     return CURRENTLEVEL.level_name.endsWith("map")
   },
 
-  setup: function(name, keep_position) {
+  setup: function(name, keep_position, overwrite_start_position) {
     if(keep_position && CHARACTER.character) {
       CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y, CHARACTER.facing_direction()];
     } else if (!keep_position) {
       CURRENTLEVEL._recover_position = undefined;
+    }
+
+    if(overwrite_start_position) {
+      var state = LEVELSTATES._states.get([name]);
+      if(state){
+        state.saved_character_position = overwrite_start_position;
+      } else {
+        LEVELSTATES._states.set([name], CURRENTLEVEL.factory.make_save(name, overwrite_start_position));
+      }
     }
 
     IO.clear_io_queue();
@@ -264,7 +281,7 @@ const CURRENTLEVEL = {
     var save = LEVELSTATES.get_save(name);
     if (! save) {
       CONSOLE.log.setup(name + " (new)");
-      CURRENTLEVEL._setup._setup_from_object({level_name: name});
+      CURRENTLEVEL._setup._setup_from_object(CURRENTLEVEL.factory.make_save(name));
     } else {
       CONSOLE.log.setup(name + " (from previous state)");
       CURRENTLEVEL._setup._setup_from_object(save);

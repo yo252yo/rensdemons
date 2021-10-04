@@ -1,10 +1,15 @@
 
 
 
-CAREFUL MY IDEA FOR HELLSMAW BREAKS THE ASUMPTION THAT WE ENTER AND EXIT BY THE SAME PLACE
+whale feed disappear on second try because its an escape ption?
+
 
 
 BATTLEOBJECTS GIVEYOU TEXT VERSION THAT MIGHT NOT BE PART OF THEIR BATTK TEXT
+
+
+DECOR HITBOX SOMETIMES ENCROACHES IN EXIT FLOORS
+
 
 
 - rest of the story:
@@ -41,3 +46,4 @@ hellsmaw: decor different from harpie? mb shared with hell?
 >  description in party.js,
 >  attacks in languge,
 >  encounter+battle
+- artifact have special sound effects

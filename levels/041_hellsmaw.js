@@ -31,7 +31,7 @@ if(hellsmawpart == 1){
   new S_MudFloor(2275,2050,75,225);
 
   new S_ExitFloor(1950,2525,125,50, '010_world_map');
-  new S_ExitFloor(1750,1925,50,50, '041_hellsmaw@2');
+  new S_ExitFloor(1750,1925,50,50, '041_hellsmaw@2', [1950, 1950]);
   new S_ExitFloor(2275,1850,75,50, '041_hellsmaw@3');
 
   new S_SavePoint(1900,2450,50,50);
