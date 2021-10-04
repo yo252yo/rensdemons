@@ -126,7 +126,7 @@ const AUDIO = {
 
     interface:{
       battle: function() {          AUDIO._play_music('interface/im in the not a club'); },
-      boss: function() {          AUDIO._play_music('interface/you need to dodge that spell'); },
+      boss: function() {            AUDIO._play_music('interface/you need to dodge that spell'); },
       titlescreen: function() {     AUDIO._play_music('interface/time for adventure 4 opening'); },
       introduction: function() {    AUDIO._play_music('interface/love planet'); },
       gameover: function() {        AUDIO._play_music('interface/un triste echo trop juste'); },
@@ -170,15 +170,15 @@ const AUDIO = {
       hawks: function() { console.log("todo") },
       slimes: function() { console.log("todo") },
 
-      mushrooms: function() { AUDIO._play_music("level/jeudelaconversation") },
+      mushrooms: function() { AUDIO._play_music("level/jeudelaconversation"); },
       squids: function() { AUDIO._play_music("level/ihatehimsomuch"); }, // static shoes, four?
-      harpies: function() { AUDIO._play_music("level/callofthecoyote") },
+      harpies: function() { AUDIO._play_music("level/callofthecoyote"); },
 
-      hellsmaw: function() { console.log("todo") },
-      hell: function() { console.log("todo") }, // sensual melancholia?
-      fissure: function() { console.log("todo") },
-      pandemonium: function() { console.log("todo") },
-      heaven: function() { console.log("todo") },
+      hellsmaw: function() { AUDIO._play_music("level/frozen jungle"); },
+      hell: function() { AUDIO._play_music("level/sensual melancholia"); }, 
+      fissure: function() {  AUDIO._play_music("level/la pire nausee n'est pas ici"); },
+      pandemonium: function() { AUDIO._play_music("level/top me"); },
+      heaven: function() {  AUDIO._play_music("level/a moment of calm"); },
 
     },
   },
