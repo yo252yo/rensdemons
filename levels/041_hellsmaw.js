@@ -51,38 +51,6 @@ filler.fill_by_retry(true);
 
 
 
-
-
-
-
-
-
-filler.set_tries(1, 1);
-var chose_decor = function() {
-  var f =RANDOM.pick([
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks1(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks2(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks3(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks4(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Pebbles(x, y); })},
-  ], gen);
-  f();
-};
-
-for (var i=0; i<50; i++){
-  chose_decor();
-  filler.fill_by_retry();
-}
-
-
-
-
-
-
-
-
-
-
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
