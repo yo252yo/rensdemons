@@ -59,8 +59,8 @@ filler.fill_by_retry(true);
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(filler, 5);
-events.set_zone(1725,2500,625,675);
+var events = new EventFiller(filler, 1);
+events.set_zone(1725,2400,625,575);
 
 
 events.battle('world/arsonist', 3);
@@ -85,7 +85,7 @@ events.byConstructor("B_Skeleton");
 
 events.text(`You cross an especially thick portion of fog. The stench is unbearable. You can't help but cough from the abrasive effect on your throat.`);
 
-events.set_tries(40, 50);
+events.set_tries(40, 60);
 events.fill_by_retry();
 
 
