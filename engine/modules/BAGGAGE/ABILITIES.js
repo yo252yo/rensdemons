@@ -76,7 +76,7 @@ const ABILITIES = {
   },
 
   is_special_flight_option: function(name){
-    return name.includes(ABILITY.Escape) || name.includes(ABILITY.Foresight) || name.includes("Feed");
+    return name.includes(ABILITY.Escape) || name.includes(ABILITY.Foresight) || name.includes(ABILITY.Feed);
   },
 
   has_ability: function(name) {
