@@ -21,6 +21,8 @@ var events = new EventFiller(decor, 1);
 //hack 2. EXIT
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
+var summitExit = '041_hellsmaw@8';// changes later
+
 if(hellsmawpart == 1){
   new S_MudFloor(1875,2500,275,200);
 
@@ -31,8 +33,8 @@ if(hellsmawpart == 1){
   new S_MudFloor(2275,2050,75,225);
 
   new S_ExitFloor(1950,2525,125,50, '010_world_map');
-  new S_ExitFloor(1750,1925,50,50, '041_hellsmaw@2', [1950, 1950]);
-  new S_ExitFloor(2275,1850,75,50, '041_hellsmaw@3');
+  new S_ExitFloor(1750,1925,50,50, '041_hellsmaw@2', [2000, 2500]);
+  new S_ExitFloor(2275,1850,75,50, '041_hellsmaw@3', [2000, 2500]);
 
   new S_SavePoint(1900,2450,50,50);
 
@@ -46,15 +48,170 @@ else if(hellsmawpart == 2){
   new S_MudFloor(1950,1875,225,50);
   new S_MudFloor(1950,2125,450,50);
   new S_MudFloor(2350,2125,50,150);
+  new S_MudFloor(2200,2225,50,275);
+  new S_MudFloor(2200,2250,175,50);
 
-  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw');
-  new S_ExitFloor(1725,2125,50,50, '041_hellsmaw@4');
-  new S_ExitFloor(2150,1875,50,50, '041_hellsmaw@5');
-  new S_ExitFloor(2350,2000,50,50, '041_hellsmaw@3');
-
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw', [1775,1950]);
+  new S_ExitFloor(1725,2125,50,50, '041_hellsmaw@5', [2000, 2500]);
+  new S_ExitFloor(2150,1875,50,50, '041_hellsmaw@6', [2000, 2500]);
+  new S_ExitFloor(2350,2000,50,50, '041_hellsmaw@4', [2000, 2500]);
 
   decor.set_zone(1500,2700,1100,1000);
   events.set_zone(1750,2472,650,675);
+}
+else if(hellsmawpart == 3){
+  new S_MudFloor(1950,2475,75,300);
+  new S_MudFloor(1850,2300,125,50);
+  new S_MudFloor(1950,2200,225,50);
+  new S_MudFloor(2125,2200,50,150);
+  new S_MudFloor(1950,2175,50,200);
+  new S_MudFloor(1800,2025,200,50);
+
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw', [2300,1850]);
+  new S_ExitFloor(1825,2300,50,50, '041_hellsmaw@4', [2525,2475]);
+  new S_ExitFloor(2125,2075,50,50, '041_hellsmaw@7', [2000, 2500]);
+
+  decor.set_zone(1625,2700,725,875);
+  events.set_zone(1775,2450,425,500);
+} else if(hellsmawpart == 4){
+  new S_MudFloor(1975,2500,625,50);
+  new S_MudFloor(2125,2650,300,325);
+
+  new S_ExitFloor(2550,2500,75,50, '041_hellsmaw@3', [1850,2275]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [2375,2025]);
+
+  decor.set_zone(1775,2775,1000,575);
+  events.set_zone(2000,2675,575,375);
+} else if(hellsmawpart == 5){
+  new S_MudFloor(1750,2500,250,50);
+  new S_MudFloor(1650,2575,200,200);
+  new S_MudFloor(1550,2225,200,50);
+  new S_MudFloor(1700,2750,75,575);
+  new S_MudFloor(1700,2750,225,50);
+
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [1775,2100]);
+
+  decor.set_zone(1450,2850,700,775);
+  events.set_zone(1525,2775,425,625);
+} else if(hellsmawpart == 6){
+  new S_MudFloor(1950,2475,75,700);
+  new S_MudFloor(1600,2125,725,75);
+  new S_MudFloor(1925,2150,125,125);
+
+  new S_ExitFloor(1575,2125,50,75, '041_hellsmaw@10', [2000, 2500]);
+  new S_ExitFloor(1950,1800,75,50, '041_hellsmaw@9', [2000, 2500]);
+  new S_ExitFloor(2300,2125,50,75, '041_hellsmaw@8', [2000, 2500]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [2175,1850]);
+
+  decor.set_zone(1425,2625,1125,1025);
+  events.set_zone(1650,2425,600,575);
+} else if(hellsmawpart == 7){
+  new S_MudFloor(1950,2475,75,700);
+  new S_MudFloor(1675,2175,300,50);
+  new S_MudFloor(1675,2175,50,150);
+  new S_MudFloor(1675,2050,100,50);
+  new S_MudFloor(1725,2050,50,150);
+  new S_MudFloor(1500,1950,275,50);
+  new S_MudFloor(1725,1950,150,50);
+  new S_MudFloor(1825,1950,50,375);
+
+  new S_ExitFloor(1475,1950,50,50, '041_hellsmaw@8', [2600,2300]);
+  new S_ExitFloor(1950,1800,75,50, '041_hellsmaw@11', [2000, 2500]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@3', [2150,2050]);
+
+  decor.set_zone(1350,2650,900,1200);
+  events.set_zone(1575,2425,475,875);
+} else if(hellsmawpart == 8){
+  new S_MudFloor(1950,2475,75,175);
+  new S_MudFloor(1950,2325,650,50);
+  new S_MudFloor(2175,2350,175,175);
+  new S_MudFloor(2225,2200,50,250);
+  new S_MudFloor(2075,1975,200,50);
+  new S_MudFloor(2075,1975,50,175);
+  new S_MudFloor(2075,1850,375,50);
+
+  new S_ExitFloor(2425,1850,50,50, '041_hellsmaw@12', [1800,2150]);
+  new S_ExitFloor(2575,2325,50,50, '041_hellsmaw@7', [1500,1925]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@6', [2325,2100]);
+
+  new S_SavePoint(2275,2250);
+
+  decor.set_zone(1800,2625,950,950);
+  events.set_zone(1925,2425,625,575);
+} else if(hellsmawpart == 9){
+  new S_MudFloor(1950,2475,75,225);
+
+  new S_MudFloor(1950,2275,325,50);
+  new S_MudFloor(2225,2350,50,125);
+  new S_MudFloor(2225,2350,175,50);
+  new S_MudFloor(2350,2350,50,275);
+  new S_MudFloor(2100,2125,300,75);
+  new S_MudFloor(2100,2100,50,150);
+  new S_MudFloor(2100,1975,150,50);
+  new S_MudFloor(2200,1975,50,150);
+  new S_MudFloor(1975,1875,275,50);
+  new S_MudFloor(1975,1875,50,300);
+  new S_MudFloor(1850,1625,175,50);
+  new S_MudFloor(1850,1625,50,150);
+  new S_MudFloor(2200,1875,325,50);
+  new S_MudFloor(2475,1875,50,400);
+
+  new S_ExitFloor(1850,1500,50,50, '041_hellsmaw@10', [2550,2000]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@6', [1975,1775]);
+
+  decor.set_zone(1775,2650,875,1325);
+  events.set_zone(1850,2425,700,975);
+} else if(hellsmawpart == 10){
+  new S_MudFloor(1950,2475,75,175);
+  new S_MudFloor(1825,2350,200,50);
+  new S_MudFloor(1800,2475,50,350);
+  new S_MudFloor(1650,2475,200,50);
+  new S_MudFloor(1800,2175,400,50);
+  new S_MudFloor(2150,2175,175,200);
+  new S_MudFloor(2275,2025,275,50);
+  new S_MudFloor(2200,2000,50,175);
+  new S_MudFloor(2100,1875,150,50);
+
+  new S_ExitFloor(2525,2025,50,50, '041_hellsmaw@9', [1875,1475]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@6', [1600,2100]);
+
+  decor.set_zone(1525,2550,1150,875);
+  events.set_zone(1625,2500,925,700);
+} else if(hellsmawpart == 11){
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@7', [1975,1775]);
+
+  new S_MudFloor(1950,2475,75,250);
+  new S_MudFloor(1950,2250,225,50);
+  new S_MudFloor(2125,2250,50,275);
+  new S_MudFloor(2125,2025,250,50);
+  new S_MudFloor(2350,2050,200,200);
+  new S_MudFloor(1950,2225,75,175);
+  new S_MudFloor(1725,2100,300,50);
+
+  decor.set_zone(1625,2550,1000,825);
+  events.set_zone(1700,2500,875,700);
+} else if(hellsmawpart == 12){
+  new S_MudFloor(1950,2475,75,625);
+  new S_MudFloor(1800,2275,350,275);
+
+  new S_ExitFloor(1775,2175,50,100, summitExit, [2450,1825]);
+  new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@13', [2000, 2500]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@13', [1975, 1900]);
+
+  decor.set_zone(1600,2650,700,1000);
+  events.set_zone(01,01,300,300);
+} else if(hellsmawpart == 13){
+  new S_MudFloor(1950,2475,75,625);
+  new S_MudFloor(1800,2275,350,275);
+
+  new S_ExitFloor(1775,2175,50,100, summitExit, [2450,1825]);
+  new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@12', [2000, 2500]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
+
+  decor.set_zone(1600,2650,700,1000);
+  events.set_zone(01,01,300,300);
+} else {
+  CONSOLE.error("Requested unimplemented hellsmawpart: " + hellsmawpart);
 }
 
 
@@ -62,7 +219,7 @@ else if(hellsmawpart == 2){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-decor.set_tries(3, 10);
+decor.set_tries(2, 10);
 decor.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
 decor.fill_by_retry(true);
 decor.set_tries(1, 5);
@@ -84,24 +241,28 @@ decor.fill_by_retry(true);
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-events.battle('world/arsonist', 2.5);
-events.battle('world/djinn', 2.5);
-events.battle('world/knight', 2.5);
-events.battle('world/vadhaka', 2.5);
+events.battle('world/arsonist', 2);
+events.battle('world/djinn', 2);
+events.battle('world/knight', 2);
+events.battle('world/vadhaka', 2);
 
-events.battle('hell/devilfly', 2.5);
-events.battle('hell/sandworm', 2.5);
-events.battle('hell/serpentine', 2.5);
-events.battle('hell/toad', 2.5);
-events.battle('hell/warlock', 2.5);
+events.battle('hell/devilfly', 2);
+events.battle('hell/sandworm', 2);
+events.battle('hell/serpentine', 2);
+events.battle('hell/toad', 2);
+events.battle('hell/warlock', 2);
 
-events.groundItem(ITEM.Bone);
-events.groundItem(ITEM.Stone);
+events.groundItem(ITEM.Bone, 1.2);
+events.groundItem(ITEM.Stone, 1.2);
+events.groundItem(ITEM.Goo);
 events.battleRubble(ITEM.Arrow);
+events.battleRubble(ITEM.Rope);
 events.battleRubble(ITEM.Spear, 0.1);
 events.battleRubble(ITEM.Shield, 0.1);
 events.battleRubble(ITEM.Elixir_decay, 0.1);
 events.battleRubble(ITEM.Elixir_chaos, 0.1);
+events.battleRubble(ITEM.Elixir_venom, 0.2);
+events.battleRubble(ITEM.Elixir_vine, 0.2);
 events.byConstructor("B_Skeleton");
 
 events.text(`You cross an especially thick portion of fog. The stench is unbearable. You can't help but cough from the abrasive effect on your throat.`);
@@ -111,7 +272,7 @@ events.text(`You find gigantic footsteps in the ground. Whatever monster left th
 events.text(`Your ascension is tiresome, your surroundings are scary. You try to take comfort in the fact that the final fight approaches, and your quest is almost over. But an intuition sent by the Goddess gives you the unpleasant hunch that things might not be so simple...`);
 events.text(`You're starting to wonder if this rocky desolate inferno really has an exit. Fortunately, the Goddess fills your heart with certainty that however dire the trial may seem, there is necessarily a way forward.`);
 
-events.set_tries(40, 60);
+events.set_tries(25, 60);
 events.fill_by_retry();
 
 
