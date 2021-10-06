@@ -286,6 +286,64 @@ if(hellsmawpart == 1){
       `The track you can climb is thin and unreliable. Pretty soon, it forks into different paths shrouded in fog that crawl up the sharp facade. You pray that the Goddess leads you to the right one...`,
     ], IO.control.character);
   };
+} else if(hellsmawpart == 4){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `You arrive on an island in the middle of a little lake of lava. The boiling liquid warms up the atmosphere to a point that makes it hard to breathe.`,
+      `$$BestFriend$: "Let's not linger, ok?"`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 5){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `The path in front of you has been blocked by rocks piled up in a landslide.`,
+      `$$Ren$: "Looks like we can't go this way..."`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 6){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+    `$$BestFriend$: "How long have we been here? This place is a hellish maze..."`,
+    `$$Ren$: "I don't know anymore... Everything looks the same... It feels like we're not making progress..."`,
+    `$$BestFriend$: "The evil magic of this place is getting to us... We cannot give up and let them win!"`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 7){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `$$BestFriend$: "Let's take a little break, please."`,
+      `You agree. You share a small meal and drink plenty of water to gather forces for the climb to come. But this is not a very restful stop: you can't help but staying on your guard, not relaxing your mind for even a second...`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 8){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `$$BestFriend$: "I can't take it anymore! How much longer is this going to be?"`,
+      `$$Ren$: "Look, an altar! Surely it's the Goddess' way to tell us we're very close to our goal! We better pray!"`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 10){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `You keep making your way on the thin track among cascades of abrasive fog. You can tell that next to you, the floor gives in into a huge cliff. You cannot even see the bottom.`,
+      `$$Ren$: "Let's be very careful, we won't surive this fall..."`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 12){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `You arrive at what appears to be the summit. In front of you, the ground caves in, forming a crater where the fog is so thick that you cannot see the ground.`,
+      `$$BestFriend$: "I guess this is it..."`,
+    ], IO.control.character);
+  };
+} else if(hellsmawpart == 13){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `$$BestFriend$: "Wait a minute, this place looks a lot like where we've just been..."`,
+      `$$Ren$: "We're at the very core of the demon kingdom. It is the concentration of all their evil power. That must be playing tricks on us..."`,
+      `$$BestFriend$: "That must be it... But I feel like something is different in the air... Something has changed, but I can't pinpoint what..."`,
+    ], IO.control.character);
+  };
 }
 
 // ===================

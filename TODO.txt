@@ -3,13 +3,13 @@
 
 BATTLEOBJECTS GIVEYOU TEXT VERSION THAT MIGHT NOT BE PART OF THEIR BATTK TEXT
 DECOR HITBOX SOMETIMES ENCROACHES IN EXIT FLOORS
-
-finish hellsmaw
-
+SAVEDPOS in levelstate means that startfunction will not trigger!!!
+dont reset audio if twice same audio
+hellsmaw 12 and 13 have different decor
 
 
 - rest of the story:
-- hellmaw + bossfight
+- hellmaw bossfight
 bosses text!!! "WIP BOSS START TEXT."
 
 
