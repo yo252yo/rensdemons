@@ -272,7 +272,7 @@ events.text(`You find gigantic footsteps in the ground. Whatever monster left th
 events.text(`Your ascension is tiresome, your surroundings are scary. You try to take comfort in the fact that the final fight approaches, and your quest is almost over. But an intuition sent by the Goddess gives you the unpleasant hunch that things might not be so simple...`);
 events.text(`You're starting to wonder if this rocky desolate inferno really has an exit. Fortunately, the Goddess fills your heart with certainty that however dire the trial may seem, there is necessarily a way forward.`);
 
-events.set_tries(25, 60);
+events.set_tries(20, 60);
 events.fill_by_retry();
 
 
