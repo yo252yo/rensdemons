@@ -9,6 +9,7 @@ const DODGE = {
   },
   defense_angle: undefined,
   attack_angle: undefined,
+  challenge_level: 0.5,
   saved_dimensions: {},
   _params: {
     attack_amplitude: 0.1, // Between 0 and 1
@@ -17,9 +18,19 @@ const DODGE = {
     variability: 0.1, // 1 = 100%
   },
 
+  set_challenge: function(value){
+    DODGE.challenge_level = value / 100;
+  },
+
   get_params: {
+    challenge_modifier: function() {
+      return 0.01 + DODGE.challenge_level/0.5;
+    },
+
     attack_amplitude: function() {
-      return DODGE._params.attack_amplitude / (1+6*MARTYRDOM.effect(MARTYRDOMS.Elusiveness));
+      var amplitude =  DODGE._params.attack_amplitude / (1+6*MARTYRDOM.effect(MARTYRDOMS.Elusiveness));
+
+      return Math.min (0.99, amplitude * DODGE.get_params.challenge_modifier());
     },
 
     warning_time_s: function() {
@@ -36,14 +47,19 @@ const DODGE = {
 
     actual_react_time_ms: function(){
       var react_time = DODGE.get_params.react_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * react_time;
-      return Math.max (DODGE.MIN_TIMEOUT, react_time + rand_teak);
+      var rand_tweak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * react_time;
+      var challenge_tweak = (1 - DODGE.get_params.challenge_modifier()) * (0.99 * react_time);
+      if(challenge_tweak > 0){ challenge_tweak *= 5; }
+
+      return Math.max (DODGE.MIN_TIMEOUT, react_time + rand_tweak + challenge_tweak);
     },
 
     actual_warning_time_ms: function(){
       var warning_time = DODGE.get_params.warning_time_s() * 1000;
-      var rand_teak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * warning_time;
-      return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_teak);
+      var rand_tweak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * warning_time;
+      var challenge_tweak = (1 - DODGE.get_params.challenge_modifier()) * (0.99 * warning_time);
+
+      return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_tweak + challenge_tweak);
     },
 
     get_attack_angle: function(){

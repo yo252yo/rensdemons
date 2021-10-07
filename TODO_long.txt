@@ -34,7 +34,6 @@ add new decoration items
 
 add rens parent sendoff before trial?
 
-save audio settings to disk!
 
 decorate stores
 

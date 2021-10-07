@@ -183,7 +183,7 @@ const AUDIO = {
     },
   },
 
-  set_volume(type, percentage){
+  set_volume(type, percentage) {
     AUDIO.VOLUME[type] = percentage / 100;
     if(type == "MUSIC") {
       AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;

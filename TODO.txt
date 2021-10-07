@@ -5,6 +5,10 @@ BATTLEOBJECTS GIVEYOU TEXT VERSION THAT MIGHT NOT BE PART OF THEIR BATTK TEXT
 
 DECOR HITBOX SOMETIMES ENCROACHES IN EXIT FLOORS
 
+save audio && battle dodge settings to disk! palette ???
+
+
+
 
 
 - rest of the story:
