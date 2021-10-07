@@ -1,12 +1,9 @@
 
-
-
-BATTLEOBJECTS GIVEYOU TEXT VERSION THAT MIGHT NOT BE PART OF THEIR BATTK TEXT
-> copy village rlogic
-
 save audio && battle dodge settings to disk!
 > new SETTINGS module like dictionary
 
+
+after my tweaks the battle start animation doesnt start in the right place
 
 
 
