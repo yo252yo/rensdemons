@@ -110,14 +110,16 @@ new Module("BATTLE/BATTLE");
 new Module("BATTLE/SPECIALBATTLES");
 new Module("BATTLE/BATTLEOBJECTSMANAGER");
 new Module("BATTLE/PLAYER_ACTIONS");
-new Module("BATTLE/DODGE");
 
 
 
 new Module("LEVEL/CURRENTLEVEL");
 new Module("LEVEL/GENERATEDLEVELS");
 new Module("GRAPHICS/PALETTE");
-new Module("AUDIO");
+
+new Module("MEMORY/SETTINGS");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/DODGE");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("AUDIO");
 
 new Module("UTILS/MAP");
   IMPORTS.modules['UTILS/MAP'].child_module("BATTLE/BATTLETREE");

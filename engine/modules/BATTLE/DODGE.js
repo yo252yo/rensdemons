@@ -9,7 +9,6 @@ const DODGE = {
   },
   defense_angle: undefined,
   attack_angle: undefined,
-  challenge_level: 0.5,
   saved_dimensions: {},
   _params: {
     attack_amplitude: 0.1, // Between 0 and 1
@@ -18,13 +17,9 @@ const DODGE = {
     variability: 0.1, // 1 = 100%
   },
 
-  set_challenge: function(value){
-    DODGE.challenge_level = value / 100;
-  },
-
   get_params: {
     challenge_modifier: function() {
-      return 0.01 + DODGE.challenge_level/0.5;
+      return 0.01 + SETTINGS.get("challenge_level")/0.5;
     },
 
     attack_amplitude: function() {

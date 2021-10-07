@@ -2,7 +2,7 @@
 // Modules saved on disk, they come back when you refresh as is, they're shared
 // between saves, and are stored explicitely by DISK.write.
 // It's the stuff we need on the title screen (and intro).
-var _DISK_MODULES = ["PALETTE", "DICTIONARY", "STATS", "SAVE"];
+var _DISK_MODULES = ["PALETTE", "DICTIONARY", "STATS", "SAVE", "SETTINGS"];
 
 const DISK = {
     _CONTENT: {},

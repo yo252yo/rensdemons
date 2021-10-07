@@ -1,9 +1,4 @@
 
-save audio && battle dodge settings to disk!
-> new SETTINGS module like dictionary
-
-
-
 - rest of the story:
 - hellmaw bossfight
 bosses text!!! "WIP BOSS START TEXT."

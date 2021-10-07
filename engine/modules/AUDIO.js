@@ -4,11 +4,6 @@ const AUDIO = {
   _MUSIC_PLAYER: new Audio(),
   _CURRENT_EFFECTS: {},
 
-  VOLUME: {
-    SFX: 0.7,
-    MUSIC: 0.3,
-  },
-
   _load_sound: function (track){
     AUDIO._TRACKS[track] = new Audio('assets/sounds/' + track + '.wav');
   },
@@ -61,7 +56,7 @@ const AUDIO = {
     AUDIO._load_music('town/two live at musique tangeantes');
 
     AUDIO._MUSIC_PLAYER.loop = true;
-    AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
+    AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
   },
 
   _play_buffered: function(track){
@@ -75,7 +70,7 @@ const AUDIO = {
   },
 
   _play_music: function(track){
-    AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
+    AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
     AUDIO._start_music();
   },
@@ -94,7 +89,7 @@ const AUDIO = {
 
     var audio = new Audio('assets/sounds/' + track + '.wav');
     AUDIO._CURRENT_EFFECTS[key] = audio;
-    audio.volume = AUDIO.VOLUME.SFX;
+    audio.volume = SETTINGS.get('volume_sfx');
     audio.play();
     setTimeout(function(){ AUDIO._free_sfx_slot(key); }, cooldown);
   },
@@ -175,7 +170,7 @@ const AUDIO = {
       harpies: function() { AUDIO._play_music("level/callofthecoyote"); },
 
       hellsmaw: function() { AUDIO._play_music("level/frozen jungle"); },
-      hell: function() { AUDIO._play_music("level/sensual melancholia"); }, 
+      hell: function() { AUDIO._play_music("level/sensual melancholia"); },
       fissure: function() {  AUDIO._play_music("level/la pire nausee n'est pas ici"); },
       pandemonium: function() { AUDIO._play_music("level/top me"); },
       heaven: function() {  AUDIO._play_music("level/a moment of calm"); },
@@ -184,9 +179,9 @@ const AUDIO = {
   },
 
   set_volume(type, percentage) {
-    AUDIO.VOLUME[type] = percentage / 100;
-    if(type == "MUSIC") {
-      AUDIO._MUSIC_PLAYER.volume = AUDIO.VOLUME.MUSIC;
+    SETTINGS.set(type, percentage);
+    if(type == "volume_music") {
+      AUDIO._MUSIC_PLAYER.volume = percentage;
 
     }
   },

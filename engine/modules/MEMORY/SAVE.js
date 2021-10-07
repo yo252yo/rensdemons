@@ -2,7 +2,7 @@
 // Modules part of the save, saved by users, they do not come back on page
 // reload.
 
-var _SAVED_MODULES = ["PALETTE", "DICTIONARY", "LEVELSTATES", "CURRENTLEVEL", "BATTLETREE", "ABILITIES", "INVENTORY", "MARTYRDOM", "PARTY"];
+var _SAVED_MODULES = ["PALETTE", "DICTIONARY", "LEVELSTATES", "CURRENTLEVEL", "BATTLETREE", "ABILITIES", "INVENTORY", "MARTYRDOM", "PARTY", "SETTINGS"];
 
 class SaveFile {
   constructor() {
