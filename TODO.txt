@@ -3,10 +3,6 @@ save audio && battle dodge settings to disk!
 > new SETTINGS module like dictionary
 
 
-after my tweaks the battle start animation doesnt start in the right place
-
-
-
 
 - rest of the story:
 - hellmaw bossfight

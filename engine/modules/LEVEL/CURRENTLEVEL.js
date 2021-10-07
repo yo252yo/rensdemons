@@ -264,7 +264,7 @@ const CURRENTLEVEL = {
 
   setup: function(name, keep_position) {
     if(keep_position && CHARACTER.character) {
-      if (keep_position == true){
+      if (keep_position == true){ // save character position through a game over screen etc...
         CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y, CHARACTER.facing_direction()];
       } else {
         CURRENTLEVEL._recover_position = keep_position;
