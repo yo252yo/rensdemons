@@ -319,22 +319,17 @@ const CURRENTLEVEL = {
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
 
     if (CURRENTLEVEL._recover_position) {// usually, after a battle in unsaved level
-      console.log("FORCED");
       CHARACTER.initialize(CURRENTLEVEL._recover_position[0], CURRENTLEVEL._recover_position[1], size, CURRENTLEVEL._recover_position[2]);
       CURRENTLEVEL._recover_position = undefined;
     } else if(saved_pos){
-      console.log("SAVED");
       CHARACTER.initialize(saved_pos[0], saved_pos[1], size, saved_pos[2]);
     } else { // everything is here!!!!!! mb we can have special handling for battle
-      console.log("DEFAULT");
       CHARACTER.initialize(x, y, size);
     }
 
     if (CURRENTLEVEL.start_function && !saved_pos) {
-      console.log("STARTF");
       CURRENTLEVEL.start_function();
     } else {
-      console.log("CHARF");
       IO.control.character();
     }
 
