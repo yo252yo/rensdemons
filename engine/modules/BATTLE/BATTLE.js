@@ -35,7 +35,7 @@ const BATTLE = {
       var options_started = [];
       var options_losing = [];
       var options_flight = [];
-      console.log(options);
+      
       for (var i in options){
           var o = options[i];
           if(ABILITIES.is_special_flight_option(o.text)){
