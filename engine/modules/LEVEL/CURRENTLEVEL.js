@@ -105,7 +105,11 @@ const CURRENTLEVEL = {
       } else { // if theres several objects we chose the one on top
         var max = here[0].get_depth();
         var argmax = here[0];
-        for (var i = 1; i < here.length; i ++) {
+        for (var i = 0; i < here.length; i ++) {
+          if(here[i].hash().startsWith("S_ExitFloor")){
+            return here[i];
+          }
+
           if(here[i].get_depth() > max) {
             max = here[i].get_depth();
             argmax = here[i];

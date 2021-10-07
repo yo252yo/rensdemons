@@ -2,10 +2,10 @@
 
 
 BATTLEOBJECTS GIVEYOU TEXT VERSION THAT MIGHT NOT BE PART OF THEIR BATTK TEXT
+> copy village rlogic
 
-DECOR HITBOX SOMETIMES ENCROACHES IN EXIT FLOORS
-
-save audio && battle dodge settings to disk! palette ???
+save audio && battle dodge settings to disk!
+> new SETTINGS module like dictionary
 
 
 
