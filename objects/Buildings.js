@@ -78,7 +78,7 @@ class S_ExitFloor extends S_Floor {
 
     if (outside){
       this.interaction = function() {
-        CURRENTLEVEL.setup(outside, false, force_new_position);
+        CURRENTLEVEL.setup(outside, force_new_position);
       }
     }
   }

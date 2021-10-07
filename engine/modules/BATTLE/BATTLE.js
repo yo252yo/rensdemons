@@ -35,7 +35,7 @@ const BATTLE = {
       var options_started = [];
       var options_losing = [];
       var options_flight = [];
-      
+
       for (var i in options){
           var o = options[i];
           if(ABILITIES.is_special_flight_option(o.text)){
@@ -332,7 +332,7 @@ const BATTLE = {
       },
 
       animation: function () {
-          var pos = LEVELSTATES.get_position(BATTLE.origin_level);
+          var pos = LEVELSTATES.get_position(BATTLE.origin_level) || [0, 0];
           var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: PALETTE.background_color()});
           html_rectangle.classList.add("expanding_div");
           html_rectangle.style.position = "fixed";
@@ -399,7 +399,7 @@ const BATTLE = {
       },
 
       animation: function () {
-          var pos = LEVELSTATES.get_position(BATTLE.origin_level);
+          var pos = LEVELSTATES.get_position(BATTLE.origin_level) || [0, 0];
           var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: PALETTE.background_color()});
           html_rectangle.classList.add("collapsing_div");
           html_rectangle.style.position = "fixed";

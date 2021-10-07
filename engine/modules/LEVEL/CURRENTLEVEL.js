@@ -258,20 +258,15 @@ const CURRENTLEVEL = {
     return CURRENTLEVEL.level_name.endsWith("map")
   },
 
-  setup: function(name, keep_position, overwrite_start_position) {
+  setup: function(name, keep_position) {
     if(keep_position && CHARACTER.character) {
-      CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y, CHARACTER.facing_direction()];
+      if (keep_position == true){
+        CURRENTLEVEL._recover_position = [CHARACTER.character.x, CHARACTER.character.y, CHARACTER.facing_direction()];
+      } else {
+        CURRENTLEVEL._recover_position = keep_position;
+      }
     } else if (!keep_position) {
       CURRENTLEVEL._recover_position = undefined;
-    }
-
-    if(overwrite_start_position) {
-      var state = LEVELSTATES._states.get([name]);
-      if(state){
-        state.saved_character_position = overwrite_start_position;
-      } else {
-        LEVELSTATES._states.set([name], CURRENTLEVEL.factory.make_save(name, overwrite_start_position));
-      }
     }
 
     IO.clear_io_queue();
@@ -322,21 +317,27 @@ const CURRENTLEVEL = {
   initialize_with_character: function(x, y, size) {
     CURRENTLEVEL.objects.cleanup_dead();
     var saved_pos = LEVELSTATES.get_position(CURRENTLEVEL.level_name);
-    if (saved_pos && saved_pos[0] && saved_pos[1]) {
-      CHARACTER.initialize(saved_pos[0], saved_pos[1], size, saved_pos[2]);
-      IO.control.character();
-    } else if (CURRENTLEVEL._recover_position) {
+
+    if (CURRENTLEVEL._recover_position) {// usually, after a battle in unsaved level
+      console.log("FORCED");
       CHARACTER.initialize(CURRENTLEVEL._recover_position[0], CURRENTLEVEL._recover_position[1], size, CURRENTLEVEL._recover_position[2]);
       CURRENTLEVEL._recover_position = undefined;
-      IO.control.character();
+    } else if(saved_pos){
+      console.log("SAVED");
+      CHARACTER.initialize(saved_pos[0], saved_pos[1], size, saved_pos[2]);
     } else { // everything is here!!!!!! mb we can have special handling for battle
+      console.log("DEFAULT");
       CHARACTER.initialize(x, y, size);
-      if (CURRENTLEVEL.start_function) {
-        CURRENTLEVEL.start_function();
-      } else {
-        IO.control.character();
-      }
     }
+
+    if (CURRENTLEVEL.start_function && !saved_pos) {
+      console.log("STARTF");
+      CURRENTLEVEL.start_function();
+    } else {
+      console.log("CHARF");
+      IO.control.character();
+    }
+
     FOG.moveToChar();
   },
 

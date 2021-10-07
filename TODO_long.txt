@@ -24,6 +24,8 @@ if theres a guy behind a house interaction interacts with the house (most promin
 
 non rectangular hitboxes
 
+dont reset audio if twice same audio? but new lvl clears audio by default ofc so idk....
+
 make experience menu multi tiered
 
 sprite for each party member

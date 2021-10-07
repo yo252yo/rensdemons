@@ -25,7 +25,7 @@ const LEVELSTATES = {
     if (saved) {
       return saved.saved_character_position;
     } else {
-      return [undefined, undefined, undefined];
+      return false;
     }
   },
 
