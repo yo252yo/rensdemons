@@ -59,7 +59,7 @@ var functions_dictionary = {
   "As can be": {
     question: "Well... I think that's a wise enough answer.",
     function: function() {
-      unlock_hire();
+      unlock_hire("As can be");
       BATTLETREE.api.lock(battle, "Give up");
     }
   },

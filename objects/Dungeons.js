@@ -371,8 +371,17 @@ class S_Beelzebub extends SimpleObject {
     super(x, y, "dungeons/beelzebub");
     this.specify_sprite_size(173,264);
     this.adjust_hitbox(50,10,100,100);
+
     this.interaction = function(){
-      BATTLE.api.make("pandemonium/lieutenant");
+      if (ABILITIES.has_ability("_lieutenant_confronted")){
+        TextBannerSequence.make([
+          `$$demon_lieutenant$: "I'll spare you this time. I have pity for you. You brought me some amusement, and I am weary of this war. But if I ever see you here again, or if you attempt to pass through to go to hell, I will have to kill you."`,
+          `$$Ren$: "So... What now?"`,
+          `$$BestFriend$: "I heard that west of here is the Forgotten Fissure, one of the oldest ruins from the time of the ancestors that we haven't checked out yet. Maybe we'll find an answer there?"`
+        ]);
+      } else {
+        BATTLE.api.make("pandemonium/_lieutenant_first_encounter");
+      }
     }
   }
 }

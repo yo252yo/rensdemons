@@ -29,6 +29,7 @@ class DictionaryGenerator {
       r["ORIGINAL_" + i] = r[i];
     }
     r['demon_lord'] = MARKOV_MODELS.human_names.mutate("Bowser", 12);
+    r['demon_lieutenant'] = MARKOV_MODELS.human_names.mutate("beelzebub", 5);
     r['child_friends_m1'] = 'Michael';
     r['child_friends_f1'] = 'Sarah';
     r['child_friends_f2'] = 'Emily';
