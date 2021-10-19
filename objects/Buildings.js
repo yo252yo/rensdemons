@@ -127,9 +127,9 @@ class S_EnterableBuilding extends LevelObject {
   }
 
   character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 165;
+    var dx = (CHARACTER.get().x + 15 - this.x);
     var dy = (CHARACTER.get().y - this.y);
-    return (dx > 0.3 && dx < 0.7 && dy > 0);
+    return (dx > 40 && dx < 80 && dy > 0);
   }
 
   interaction(){
