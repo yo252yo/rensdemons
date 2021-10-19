@@ -147,8 +147,8 @@ class LevelObject {
 }
 
 class SimpleObject extends LevelObject {
-  constructor(x, y, name) {
-    var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+  constructor(x, y, name, color) {
+    var visual = new StaticSprite("assets/objects/" + name + ".png", color ? color:'obj_light');
     super(visual, x, y);
   }
 
