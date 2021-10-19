@@ -22,6 +22,7 @@ TextBannerSequence.make([
     "Priest: \"Oooh I see! You kids have an amazing imagination! Well have fun on your quest! You can certainly train with our masters! This unprecedented era of peace allowed them to perfect their craft, I'm sure you'll learn a lot!\"",
     "The priest winks at you. You exchange a worried glance with your best friend. You come to the unspoken understanding that it's better not to insist.",
     "$$BestFriend$: \"Thank you, sir.\"",
+    "It looks like the help you can get in $$town_3$ is limited. You'll have to figure out the way to the Maw of Hell on your own. It shouldn't be too far from here, in the south east...",
   ]);
 };
 
