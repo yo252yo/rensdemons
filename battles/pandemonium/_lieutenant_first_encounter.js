@@ -66,7 +66,7 @@ var unlock_lesson = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "Our lesson?"`,
-    `$$demon_lieutenant$: "You foolish humans, your arrogance is blinding you to the obvious! Your ignorance defies understanding! How is it not all you think about? How dare you keep playing with your little inventions and turn a blind eye to the truth staring you in the face?"`,
+    `$$demon_lieutenant$: "You foolish humans, your arrogance is blinding you to the obvious! Your ignorance defies understanding! How is it not all you think about? How dare you keep playing with your little inventions and turn a blind eye to the truth staring you in the face? You're so obsessed with your little selves, that's all you seem to care about!"`,
     `$$demon_lieutenant$'s amusement was slowly turning into rage.`,
     `$$demon_lieutenant$: "Did you never wonder what happened back then? Why $$demon_lord$ came to cleanse $$world_name$?"`,
   ],
@@ -78,6 +78,7 @@ var unlock_lesson = PLAYER_ACTIONS.function.unlock_replacing_action({
     fake_answer("Lesson", "he's evil");
     fake_answer("Lesson", "he's mad");
     fake_answer("Lesson", "he's violent");
+    fake_answer("Lesson", "he enjoys it");
     unlock_ourfault("Lesson");
   }
 });
