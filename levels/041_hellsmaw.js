@@ -208,6 +208,8 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@12', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
 
+  new S_Beelzebub(1900, 2200);
+
   decor.set_zone(1600,2650,700,1000);
   events.set_zone(01,01,300,300);
 } else {
@@ -332,7 +334,7 @@ if(hellsmawpart == 1){
 } else if(hellsmawpart == 12){
   CURRENTLEVEL.start_function = function() {
     TextBannerSequence.make([
-      `You arrive at what appears to be the summit. In front of you, the ground caves in, forming a crater where the fog is so thick that you cannot see the ground.`,
+      `You arrive at what appears to be the summit. In front of you, the ground caves in, forming a crater where the fog is so thick that you cannot see the ground. All around, columns of lava suddenly raise up and explode, projecting flurries of molten droplets in every direction.`,
       `$$BestFriend$: "I guess this is it..."`,
     ], IO.control.character);
   };
@@ -342,6 +344,10 @@ if(hellsmawpart == 1){
       `$$BestFriend$: "Wait a minute, this place looks a lot like where we've just been..."`,
       `$$Ren$: "We're at the very core of the demon kingdom. It is the concentration of all their evil power. That must be playing tricks on us..."`,
       `$$BestFriend$: "That must be it... But I feel like something is different in the air... Something has changed, but I can't pinpoint what..."`,
+      `The crater you find yourself in is indeed eerily similar to the one you just left. The whirlwinds of black fog and lava surrounding you continue their disorienting dance. Yet, a major difference shakes you to your very core.`,
+      `In the middle of the pit stands a beast bigger than any building you've ever seen. His humanoid shape is draped in flames. The crackled skin covering his muscular body marries crimson and black, like charred flesh. Two huge horns adorn a face that displays permanent anger. His red eyes shine through the clouds of smoke.`,
+      `$$BestFriend$: "Is that... $$demon_lord$?"`,
+      `$$Ren$: "Who else? Let's use our weapon before he notices us!"`,
     ], IO.control.character);
   };
 }

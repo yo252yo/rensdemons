@@ -365,3 +365,14 @@ class B_Skeleton extends EventBattleObject {
     this.add_interaction("Study", "You look at the different bones and how they fit together, shuddering at the thought that something very similar is present inside of you.");
   }
 }
+
+class S_Beelzebub extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "dungeons/beelzebub");
+    this.specify_sprite_size(173,264);
+    this.adjust_hitbox(50,10,100,100);
+    this.interaction = function(){
+      BATTLE.api.make("pandemonium/lieutenant");
+    }
+  }
+}
