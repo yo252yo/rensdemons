@@ -12,10 +12,20 @@ class SpeakerIcon extends TextElement {
       this.make_portrait(name);
     }
 
+    is_supported_speaker(name){
+      if(name in PARTYMEMBERS){
+        return true;
+      }
+      if(name == "demon_lieutenant" || name == "demon_lord" || name == "Priest"){
+        return true;
+      }
+      return false;
+    }
+
     make_portrait(name) {
       var image_key;
       name = name.replaceAll("$","");
-      if (name in PARTYMEMBERS){ // For now, only party members have icons
+      if (this.is_supported_speaker(name)){ // For now, only party members have icons
           image_key = name;
       }
       if (! image_key) {
