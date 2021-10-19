@@ -228,7 +228,7 @@ const PLAYER_ACTIONS = {
   },
 
   kill_with_anything_over: function(threshold){
-    var prices = TRAINER.get_prices();
+    var prices = TRAINER.get_raw_prices();
     for (var i in prices){
       if(prices[i] >= TRAINER.xp_to_gold_multiplier * threshold) {
         PLAYER_ACTIONS.win(i, 1);
@@ -237,7 +237,7 @@ const PLAYER_ACTIONS = {
       }
     }
 
-    var prices = SHOP.get_prices();
+    var prices = SHOP.get_raw_prices();
     for (var i in prices){
       if(prices[i] >= threshold) {
         PLAYER_ACTIONS.win(i, 1);

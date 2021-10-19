@@ -50,11 +50,12 @@ const SHOP = {
   selling_discount: 0.5,
 
   _prices: {
+
     buy: function(object){
-      return _SHOP_PRICES[object];
+      return Math.round(_SHOP_PRICES[object] * (1 - 0.4 * MARTYRDOM.effect(MARTYRDOMS.Negociation)));
     },
     sell: function(object){
-      return Math.ceil(SHOP.selling_discount*_SHOP_PRICES[object]);
+      return Math.ceil(SHOP.selling_discount*_SHOP_PRICES[object] * (1 + 3 * MARTYRDOM.effect(MARTYRDOMS.Negociation)));
     },
   },
 
@@ -152,7 +153,7 @@ const SHOP = {
     ])], SHOP._menu.main);
   },
 
-  get_prices: function(){
+  get_raw_prices: function(){
     return _SHOP_PRICES;
   },
 }

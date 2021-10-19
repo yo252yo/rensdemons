@@ -97,7 +97,7 @@ var draw_table = function (){
 
   for (var a in ABILITY){
     t += "</tr><tr><td style='background:white;'>" + a + "</td>";
-    t += "<td style='background:white;'>" + Math.floor(TRAINER.get_prices()[ABILITY[a]]/TRAINER.xp_to_gold_multiplier) + "</td>";
+    t += "<td style='background:white;'>" + Math.floor(TRAINER.get_raw_prices()[ABILITY[a]]/TRAINER.xp_to_gold_multiplier) + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ABILITY[a]]);
       if (!v) {
@@ -111,7 +111,7 @@ var draw_table = function (){
   }
   for (var a in ITEM){
     t += "</tr><tr><td style='background:white;'>" + a + "</td>";
-    t += "<td style='background:white;'>" + SHOP.get_prices()[ITEM[a]] + "</td>";
+    t += "<td style='background:white;'>" + SHOP.get_raw_prices()[ITEM[a]] + "</td>";
     for (var b in battle_names){
       var v = DEBUG.battle_log.get([battle_names[b], ITEM[a]]);
       if (!v) {

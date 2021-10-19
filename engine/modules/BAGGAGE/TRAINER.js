@@ -24,12 +24,16 @@ _TRAINER_PRICES[ABILITY.Mystify] = 7500;
 
 const TRAINER = {
   xp_to_gold_multiplier: 3,
-  
+
+  _price: function(ability){
+    return Math.round(_TRAINER_PRICES[ability] * (1 - 0.6 * MARTYRDOM.effect(MARTYRDOMS.Learning)));
+  },
+
   _buy: function(ability){
-    if (INVENTORY.count(ITEM.XpToken) >= _TRAINER_PRICES[ability]){
+    if (INVENTORY.count(ITEM.XpToken) >= TRAINER._price(ability)){
       alert("Learned " + ability);
       ABILITIES.unlock(ability);
-      INVENTORY.decrease(ITEM.XpToken, _TRAINER_PRICES[ability]);
+      INVENTORY.decrease(ITEM.XpToken, TRAINER._price(ability));
     }
 
     TRAINER._current_menu.close();
@@ -52,7 +56,7 @@ const TRAINER = {
           continue;
         }
         (function(i){
-          var text = `${i}: ${_TRAINER_PRICES[i]} xp`;
+          var text = `${i}: ${TRAINER._price(i)} xp`;
           goods.push({"text": text, "effect": function(){ TRAINER._buy(i); }, "keep_open": true});
         }(index));
       }
@@ -85,7 +89,7 @@ const TRAINER = {
     ])], TRAINER._menu.main);
   },
 
-  get_prices: function(){
+  get_raw_prices: function(){
     return _TRAINER_PRICES;
   }
 }
