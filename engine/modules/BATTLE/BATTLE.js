@@ -399,7 +399,7 @@ const BATTLE = {
       },
 
       animation: function () {
-          var pos = LEVELSTATES.get_position(BATTLE.origin_level) || CURRENTLEVEL._recover_position || [CHARACTER.character.x, CHARACTER.character.y];
+          var pos = LEVELSTATES.get_position(BATTLE.origin_level) || CURRENTLEVEL._recover_position || (CHARACTER.character?[CHARACTER.character.x, CHARACTER.character.y] : [undefined, undefined])
           var html_rectangle = HTML.div.make({left:pos[0] - window.scrollX, top:pos[1] - window.scrollY, background: PALETTE.background_color()});
           html_rectangle.classList.add("collapsing_div");
           html_rectangle.style.position = "fixed";
