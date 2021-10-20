@@ -26,13 +26,38 @@ new S_ExitFloor(1380,2290,20,60, "042_fissure");
 new S_ExitFloor(1360,2370,20,100, "042_fissure");
 new S_ExitFloor(1380,2425,20,80, "042_fissure");
 
-new S_ExitFloor(1100,2550,200,50); // left leg
-new S_ExitFloor(1450,2550,200,50); // right leg
+var riddle = function(text, answer, destination){
+  var ask = function(){
+    var reply = prompt("What will you say?");
+    if (!reply) { reply = ""; }
+    reply = reply.toLowerCase();
+    if(reply == answer){
+      CURRENTLEVEL.setup(destination);
+    } else {
+      TextBannerSequence.make(["Nothing happens."]);
+    }
+  }
+  return function() {
+    TextBannerSequence.make([
+      `A heavy metal door stands before you. Runes and pictograms indicate that it expects you to speak out loud a password. Surprisingly, a part of the text is in a language you can decipher:`,
+      text
+    ], ask);
+  };
+}
 
-new S_ExitFloor(975,1775,50,200); // left arm
-new S_ExitFloor(1725,1775,50,200); // right arm
+var left_leg = new S_ExitFloor(1100,2550,200,50);
+left_leg.interaction = riddle("What is most important, the only center of everything, the foundation for all experience?", "me", "042_4_fissure_left_leg");
+var right_leg = new S_ExitFloor(1450,2550,200,50);
+right_leg.interaction = riddle("What is holy among all things, to be cherished and revered?", "myself", "042_3_fissure_right_leg");
 
-new S_ExitFloor(1300,1525,150,50); // head
+
+var left_arm = new S_ExitFloor(975,1775,50,200);
+left_arm.interaction = riddle("What is Man entitled dominion over?", "everything", "042_2_fissure_left_arm");
+var right_arm = new S_ExitFloor(1725,1775,50,200);
+right_arm.interaction = riddle("What is grander than Man?", "nothing", "042_1_fissure_right_arm");
+
+var head = new S_ExitFloor(1300,1525,150,50);
+head.interaction = riddle("What is the Goddess?","dead","042_5_fissure_head");
 
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
