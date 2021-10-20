@@ -3,11 +3,11 @@ AUDIO.music.levels.fissure();
 
 new S_TownFloor(1050, 1550, 750, 750, "010_world_map", "assets/patterns/mud.png");
 
-new S_ExitFloor(1400,1125,20,200, "042_fissure2");
-new S_ExitFloor(1400,1025,35,75, "042_fissure2");
-new S_ExitFloor(1380,1200,20,125, "042_fissure2");
-new S_ExitFloor(1360,1325,20,175, "042_fissure2");
-new S_ExitFloor(1380,1425,20,150, "042_fissure2");
+new S_ExitFloor(1400,1125,20,200, "042_fissure_trunk");
+new S_ExitFloor(1400,1025,35,75, "042_fissure_trunk");
+new S_ExitFloor(1380,1200,20,125, "042_fissure_trunk");
+new S_ExitFloor(1360,1325,20,175, "042_fissure_trunk");
+new S_ExitFloor(1380,1425,20,150, "042_fissure_trunk");
 
 
 CURRENTLEVEL.start_function = function() {
