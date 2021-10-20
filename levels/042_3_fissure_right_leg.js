@@ -19,6 +19,12 @@ new S_ExitFloor(1250,1600,325,50, "042_fissure_trunk");
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
+var prophecy = function() {
+  TextBannerSequence.make(["You find a column on which some text is inscribed in a variety of different languages. You soon find a fragment you can read.",
+                           "All hail, all behold, the center of everything<br />The one most important who founds all experience<br />Never shall I ever stop worshipping ME"]);
+}
+var t = new S_event(1725, 2575);
+t.interaction = prophecy;
 
 
 // ===================

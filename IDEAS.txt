@@ -19,6 +19,7 @@ tropes:
 talk to an objective and exit, go close to the border
 go to the door
 go to the next area and come back
+Foresee a betrayal
 traps: poison the drink you know the guard will use, etc....
 talk to one character
 gods know everythng

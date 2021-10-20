@@ -19,6 +19,12 @@ new S_ExitFloor(1250,1600,325,50, "042_fissure_trunk");
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
+var prophecy = function() {
+  TextBannerSequence.make(["You find a column on which some text is inscribed in a variety of different languages. You soon find a fragment you can read.",
+                           "Pity be to her soul and to her hollow ways<br />For Individuals have no need for a guide<br />Killed by the Human Pride to emancipate Us<br />Long live our glorious Selves, the false goddess is DEAD"]);
+}
+var t = new S_event(1100, 2575);
+t.interaction = prophecy;
 
 
 // ===================

@@ -19,7 +19,7 @@ new S_ExitFloor(1225,2525,175,50, "042_fissure_trunk");
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-
+new SBattle(1275, 2250, 'caves/rhino', 100);
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)

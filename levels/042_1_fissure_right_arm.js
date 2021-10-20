@@ -28,6 +28,13 @@ new S_ExitFloor(1075,1775,50,200, "042_fissure_trunk");
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
+var prophecy = function() {
+  TextBannerSequence.make(["You find a column on which some text is inscribed in a variety of different languages. You soon find a fragment you can read.",
+                           "Man alone bathed in the light of Intelligence<br />So it is His duty to spread Enlightenment<br />Thus He is entitled to dominion over EVERYTHING"]);
+}
+var t = new S_event(1325, 2850);
+t.interaction = prophecy;
+
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)

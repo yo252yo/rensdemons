@@ -28,6 +28,13 @@ new S_ExitFloor(1500,1775,50,200, "042_fissure_trunk");
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
+var prophecy = function() {
+  TextBannerSequence.make(["You find a column on which some text is inscribed in a variety of different languages. You soon find a fragment you can read.",
+                           "Holy among all things, Precious above all else<br />MYSELF must be center of all my attentions<br />To be cherished, revered and heralded supreme"]);
+}
+var t = new S_event(1325, 2850);
+t.interaction = prophecy;
+
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)

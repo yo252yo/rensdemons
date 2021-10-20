@@ -63,6 +63,14 @@ head.interaction = riddle("What is the Goddess?","dead","042_5_fissure_head");
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
+var prophecy = function() {
+  TextBannerSequence.make(["You find a column on which some text is inscribed in a variety of different languages. You soon find a fragment you can read.",
+                           "We build this shrine to the glory of Man<br />To preserve his Spirit through eternity<br />For NOTHING is grander than Man"]);
+}
+var t1 = new S_event(1475, 1750);
+var t2 = new S_event(1225, 1750);
+t1.interaction = prophecy;
+t2.interaction = prophecy;
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
