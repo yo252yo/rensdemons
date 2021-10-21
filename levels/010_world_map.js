@@ -5,8 +5,8 @@ AUDIO.music.interface.map();
 INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
-var after_t2 = function() { return ABILITIES.has_ability("_town2_visited");};
-var after_t3 = function() { return ABILITIES.has_ability("_town3_prompted");};
+var after_going_to_town2 = function() { return ABILITIES.has_ability("_town2_visited");};
+var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("_town3_prompted") || STATS.flag("StoryOfTheAncients");};
 
 var LaterInStory = function() { return false;};
 
@@ -53,16 +53,16 @@ if (INVENTORY.has_ancient_armament() && !ABILITIES.has_ability("_town2_saved")){
 } else {
   new SM_Town(1850, 1550, "020_town2", "town_2");
 }
-new SM_Town(3300, 2275, "040_town3", "town_3", after_t3);
+new SM_Town(3300, 2275, "040_town3", "town_3", after_town2_sends_you_to_town3);
 
-new SM_Town(3725, 1300, "021_town4", "town_4", after_t2); // optional
-new SM_Town(2450, 3500, "022_town5", "town_5", after_t2); // optional
+new SM_Town(3725, 1300, "021_town4", "town_4", after_going_to_town2); // optional
+new SM_Town(2450, 3500, "022_town5", "town_5", after_going_to_town2); // optional
 
-new SM_Forest(2675, 1350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_t2);
-new SM_Lake(1250, 1200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_t2);
-new SM_Mountain(2300, 2025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_t2);
-new SM_Vulcano(3650, 2800, `Maw of Hell`, "041_hellsmaw", after_t3);
-new SM_Crevasse(2700, 3025, `Forgotten Fissure`, "042_fissure", after_t3);
+new SM_Forest(2675, 1350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_going_to_town2);
+new SM_Lake(1250, 1200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_going_to_town2);
+new SM_Mountain(2300, 2025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_going_to_town2);
+new SM_Vulcano(3650, 2800, `Maw of Hell`, "041_hellsmaw", after_town2_sends_you_to_town3);
+new SM_Crevasse(2700, 3025, `Forgotten Fissure`, "042_fissure", after_town2_sends_you_to_town3);
 
 
 // ===================

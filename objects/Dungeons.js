@@ -373,14 +373,27 @@ class S_Beelzebub extends SimpleObject {
     this.adjust_hitbox(50,10,100,100);
 
     this.interaction = function(){
-      if (ABILITIES.has_ability("_lieutenant_confronted")){
-        TextBannerSequence.make([
-          `$$demon_lieutenant$: "I'll spare you this time. I have pity for you. You brought me some amusement, and I am weary of this war. But if I ever see you here again, or if you attempt to pass through to go to hell, I will have to kill you."`,
-          `$$Ren$: "So... What now?"`,
-          `$$BestFriend$: "I heard that west of here is the Forgotten Fissure, one of the oldest ruins from the time of the ancestors that we haven't checked out yet. Maybe we'll find an answer there?"`
-        ]);
+      if(STATS.flag("StoryOfTheAncients")) {
+        if(ABILITIES.has_ability("_lieutenant_confronted")) {
+          BATTLE.api.make("pandemonium/lieutenant");
+        } else if(INVENTORY.has_ancient_armament()) {
+          new CenteredTextMenu("What will you use?", [
+            {"text": "The ancient artifact", "effect": function() {  BATTLE.api.make("pandemonium/_lieutenant_first_encounter"); }},
+            {"text": "Your faith", "effect": function() { BATTLE.api.make("pandemonium/lieutenant"); }},
+          ]);
+        } else {
+          BATTLE.api.make("pandemonium/lieutenant");
+        }
       } else {
-        BATTLE.api.make("pandemonium/_lieutenant_first_encounter");
+        if (ABILITIES.has_ability("_lieutenant_confronted")){
+          TextBannerSequence.make([
+            `$$demon_lieutenant$: "I'll spare you this time. I have pity for you. You brought me some amusement, and I am weary of this war. But if I ever see you here again, or if you attempt to pass through to go to hell, I will have to kill you."`,
+            `$$Ren$: "So... What now?"`,
+            `$$BestFriend$: "I heard that west of here is the Forgotten Fissure, one of the oldest ruins from the time of the ancestors that we haven't checked out yet. Maybe we'll find an answer there?"`
+          ]);
+        } else {
+          BATTLE.api.make("pandemonium/_lieutenant_first_encounter");
+        }
       }
     }
   }
