@@ -72,6 +72,8 @@ var t2 = new S_event(1225, 1750);
 t1.interaction = prophecy;
 t2.interaction = prophecy;
 
+new S_SavePoint(1350, 2075);
+
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
