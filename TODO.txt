@@ -1,15 +1,12 @@
 
 - deco fissure/hellsmaw
 - fissure flavor events and text
-- fissure ending! getting insight!
-
-
-
-
 
 
 
 - 2nd lieutenant fight ("WIP BOSS START TEXT.")
+/*  if(STATS.flag("StoryOfTheAncients")){*/
+
 - hellsmaw 12 and 13 have different decor
 - hell
 - pandemonium
@@ -19,9 +16,6 @@
 should we rly limit to 3 choices when its inquiries, like _004/_priest?
 
 music loop
-
-
-
 
 
 
