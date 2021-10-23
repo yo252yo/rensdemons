@@ -2,8 +2,6 @@
 - deco fissure/hellsmaw
 - fissure flavor events and text
 
-
-
 - 2nd lieutenant fight ("WIP BOSS START TEXT.") + end of fight
 
 - hellsmaw 12 and 13 have different decor

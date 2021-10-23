@@ -112,7 +112,7 @@ const DEBUG = {
 
 
     setInterval(FOG.stop, 1000);
-    setTimeout(DEBUG.draw_hitboxes, 1000);
+    //setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
   },
