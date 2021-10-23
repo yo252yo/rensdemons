@@ -304,6 +304,7 @@ class S_RubbleLarge extends SimpleObject {
     ]);
   }
 }
+
 class B_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
     super(x, y, "exterior/pebbles", color, size);
@@ -396,5 +397,62 @@ class S_Beelzebub extends SimpleObject {
         }
       }
     }
+  }
+}
+
+
+
+
+
+class S_Column extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "cave/column");
+    this.adjust_hitbox(0,0,40,30);
+    this.specify_sprite_size(47,131);
+    this.default_text = this.text_interaction([
+      "A massive column of rock holds the ceilling of the cave above your head.",
+      "A large natural pillar reaches all the way to the cavern's top.",
+      "The cavern is pretty large and needs to be supported by several such rock stone.",
+    ]);
+  }
+}
+
+class S_CristalBig extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "cave/cristalbig");
+    this.adjust_hitbox(10,0,30,30);
+    this.specify_sprite_size(54,96);
+    this.default_text = this.text_interaction([
+      "A large transparent rock lies in front of you. Through it, you can see the world in a azure teint.",
+      "You find a massive ruby-like stone which reflects the pale surrounding glow with a bright red glare.",
+      "This spiky stone shines brightly in a yellow hue and casts a powerful light on its surroundings.",
+    ]);
+  }
+}
+
+class S_CristalSmall extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "cave/cristalsmall");
+    this.adjust_hitbox(10,0,35,20);
+    this.specify_sprite_size(57,48);
+    this.default_text = this.text_interaction([
+      "This prismatic cristal deflects the light into a rainbow of a thousand shimmering hues.",
+      "You find a rock that time has polished into a very smooth emerald surface.",
+      "The translucent surface of this stone is marbled with darker lines which no doubt carry the trace of its history...",
+    ]);
+  }
+}
+
+class S_CristalTiny extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "cave/cristaltiny");
+    this.adjust_hitbox(10,0,30,30);
+    this.specify_sprite_size(47, 45);
+    this.default_text = this.text_interaction([
+      "Tiny specks of luminous gravel surround you.",
+      "The floor is littered with shimmering cristals that cast a vague glow on your feet.",
+      "Little colored pebbles cast a diffuse multicolored light.",
+    ]);
+    this.walkable = true;
   }
 }
