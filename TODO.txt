@@ -1,3 +1,10 @@
+new filler type for most deco??
+im seeing overlapping deco spawn in unwalkable spots, is this on purpose?
+
+
+
+
+
 
 - deco fissure/hellsmaw
 - fissure flavor events and text
@@ -14,7 +21,7 @@ should we rly limit to 3 choices when its inquiries, like _004/_priest?
 
 music loop
 
-
+check walking on small sprites
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough

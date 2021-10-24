@@ -168,44 +168,60 @@ class Filler {
 }
 
 
-class EventFiller extends Filler {
-  constructor(filler, hitbox_size, resize_event, recolor_event) {
+class MutliFiller extends Filler {
+  constructor(filler, obj_w, obj_h) {
     super();
     Object.assign(this, filler);
-    this.events = [];
+    this.constructors = [];
 
-    if(!hitbox_size){
-      hitbox_size = 50;
-    }
-    this.obj_w = hitbox_size;
-    this.obj_h = hitbox_size;
-    this.resize_event = resize_event;
-    this.recolor_event = recolor_event;
-    this.obj_constructor = this._event_obj_constructor;
+    this.obj_w = obj_w;
+    this.obj_h = obj_h;
+    this.obj_constructor = this._constructor_constructor;
   }
 
-  _event_obj_constructor(x,y,seed) {
+  _constructor_constructor(x,y,seed) {
     var gen = new Generator(seed);
     var array = {};
-    for (var i in this.events){
-      array[i] = this.events[i].w;
+    for (var i in this.constructors){
+      array[i] = this.constructors[i].w;
     }
     var index = RANDOM.pick_in_weighted_array(array, gen);
-    var f = this.events[index].f;
+    var f = this.constructors[index].f;
+    console.log(f);
+    console.log(x);
+
     return f(x,y,seed);
   }
 
-  _add_event(event_function, weight) {
+  add_constructor(constructor_function, weight) {
     if (!weight){
       weight = 1;
     }
-    this.events.push({f: event_function, w: weight});
+    this.constructors.push({f: constructor_function, w: weight});
+  }
+
+  clear() {
+    this.constructors = [];
+  }
+}
+
+
+class EventFiller extends MutliFiller {
+  constructor(filler, hitbox_size, resize_event, recolor_event) {
+    if(!hitbox_size){
+      hitbox_size = 50;
+    }
+
+    super(filler, hitbox_size, hitbox_size);
+
+    this.resize_event = resize_event;
+    this.recolor_event = recolor_event;
   }
 
   battle(name, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,seed){
+    this.add_constructor(function(x,y,seed){
         return new SBattle(x, y, name, size, color);
       }, weight);
   }
@@ -213,7 +229,7 @@ class EventFiller extends Filler {
   battleRubble(item, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,seed){
+    this.add_constructor(function(x,y,seed){
         new SB_rubble(x, y, item, size, color);
       }, weight);
   }
@@ -221,7 +237,7 @@ class EventFiller extends Filler {
   groundItem(item, weight, quantity) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,seed){
+    this.add_constructor(function(x,y,seed){
         new SE_groundItem(x, y, item, quantity, size, color);
       }, weight);
   }
@@ -229,7 +245,7 @@ class EventFiller extends Filler {
   text(text, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,seed){
+    this.add_constructor(function(x,y,seed){
         new SE_event(x, y, text, size, color);
       }, weight);
   }
@@ -237,15 +253,10 @@ class EventFiller extends Filler {
   byConstructor(constructorName, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
-    this._add_event(function(x,y,seed){
+    this.add_constructor(function(x,y,seed){
         // This is gross and dangerous ofc
         // and even a bit redundant with the normal filler :/
         eval (`new ${constructorName}(${x}, ${y}, "${color}", ${size});`);
       }, weight);
   }
-
-  clear() {
-    this.events = [];
-  }
-
 }
