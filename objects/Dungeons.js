@@ -404,7 +404,7 @@ class S_Beelzebub extends SimpleObject {
 
 
 
-class S_Column extends SimpleObject {
+class S_RockColumn extends SimpleObject {
   constructor(x, y){
     super(x, y, "cave/column");
     this.adjust_hitbox(0,0,40,30);
