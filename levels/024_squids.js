@@ -53,26 +53,20 @@ whale.make_default_callback = function(){return function(){};};
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var decorFiller = new Filler(gen.get());
+var f = new Filler(gen.get());
+var decorFiller = new MultiFiller(f, 50, 50);
 decorFiller.set_zone(1150,2600,1725,1300);
 
-decorFiller.set_tries(5, 10);
-decorFiller.set_object(100, 50, function(x,y,seed){ return new S_AlgaeWall(x, y); });
+
+decorFiller.add_constructor( function(x,y,seed){ return new S_AlgaeWall(x, y); }, 1, 100, 50);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Coral(x, y); }, 3);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Anemone(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Seashell(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Seashellpointy(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Waterplants(x, y); }, 2);
+decorFiller.set_tries(80, 100);
 decorFiller.fill_by_retry();
 
-decorFiller.set_tries(7, 15);
-decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Coral(x, y); });
-decorFiller.fill_by_retry();
-
-decorFiller.set_tries(5, 20);
-decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Anemone(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Seashellpointy(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 50, function(x,y,seed){ return new S_Waterplants(x, y); });
-decorFiller.fill_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -100,7 +94,7 @@ events.text(`You can be underwater thanks to the potion, but it doesn't prevent 
 events.byConstructor("B_Seashell", 2);
 events.byConstructor("B_Skeleton", 1);
 
-events.set_tries(75, 120);
+events.set_tries(100, 120);
 events.fill_by_retry();
 
 
