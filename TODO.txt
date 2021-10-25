@@ -4,6 +4,8 @@ im seeing overlapping deco spawn in unwalkable spots, is this on purpose?
 
 
 
+He's faking it to infiltrate the enemy
+
 
 
 - deco fissure/hellsmaw
@@ -13,8 +15,14 @@ im seeing overlapping deco spawn in unwalkable spots, is this on purpose?
 
 - hellsmaw 12 and 13 have different decor
 - hell
-- pandemonium
+- pandemonium:
+the key to survival -> progress -> success -> happiness -> understanding -> victory
+
+hidden ending:
+
 - heaven
+squares linked without any order
+
 
 
 should we rly limit to 3 choices when its inquiries, like _004/_priest?
@@ -22,6 +30,11 @@ should we rly limit to 3 choices when its inquiries, like _004/_priest?
 music loop
 
 check walking on small sprites
+
+ success/ happiness/your heart/wellness/wealth/eternity/time/understanding/immortality/power/overcoming/growth/CONTENT
+progress/excellence/the future/survival/victory/autocomplete
+
+
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
