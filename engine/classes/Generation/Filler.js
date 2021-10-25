@@ -82,11 +82,11 @@ class Filler {
     }
   }
 
-  _isEmpty(x, y) {
+  _isEmpty(obj, x, y) {
     for(var i = -0.2; i <= 1.05; i += 0.25){
       for(var j = -0.05; j <= 1.2; j += 0.25){
-        var xx = Math.max(1, x + this.obj_w * i);
-        var yy = Math.max(1, y - this.obj_h * j);
+        var xx = Math.max(1, x + obj.obj_w * i);
+        var yy = Math.max(1, y - obj.obj_h * j);
         var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
         if (elem){
           return false;
@@ -96,11 +96,11 @@ class Filler {
     return true;
   }
 
-  _canWalk(x, y) {
+  _canWalk(obj, x, y) {
     for(var i = -0.2; i <= 1.05; i += 0.25){
       for(var j = -0.05; j <= 1.2; j += 0.25){
-        var xx = Math.max(1, x + this.obj_w * i);
-        var yy = Math.max(1, y - this.obj_h * j);
+        var xx = Math.max(1, x + obj.obj_w * i);
+        var yy = Math.max(1, y - obj.obj_h * j);
         var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
         if (!CURRENTLEVEL.io.is_walkable(xx, yy)){
           return false;
@@ -110,10 +110,10 @@ class Filler {
     return true;
   }
 
-  _intersectWalk(x, y) {
+  _intersectWalk(obj, x, y) {
     var grain = 10;
-    for(var i = -1 * grain; i <= this.obj_w + grain; i += grain){
-      for(var j = -1 * grain; j <= this.obj_h + grain; j += grain){
+    for(var i = -1 * grain; i <= obj.obj_w + grain; i += grain){
+      for(var j = -1 * grain; j <= obj.obj_h + grain; j += grain){
         if(CURRENTLEVEL.io.is_walkable(x + i, y - j)){
           return true;
         }
@@ -125,11 +125,20 @@ class Filler {
   // ===================
   //hack Fillers
   // ===================
+  get_object(seed) {
+    this._assess_params(["obj_w", "obj_h", "obj_constructor"]);
+    return {
+      constructor: this.obj_constructor,
+      obj_w: this.obj_w,
+      obj_h: this.obj_h,
+    }
+  }
 
   fill_by_retry() {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
+    var o = this.get_object(this.gen.get());
 
     if (!this.guaranteed_products){
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
@@ -139,11 +148,11 @@ class Filler {
     var i = 0;
     var nb_placed = 0;
     while (i < nb_tries && nb_placed < nb_desired_products) {
-      var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
-      var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
+      var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
+      var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
-      if (this._canWalk(x, y) && this._isEmpty(x, y)) {
-        this.obj_constructor(x, y, this.gen.get());
+      if (this._canWalk(o, x, y) && this._isEmpty(o, x, y)) {
+        o.constructor(x, y, this.gen.get());
         nb_placed ++;
       }
 
@@ -152,9 +161,10 @@ class Filler {
   }
 
   fill_decor_by_retry(allow_overlap) {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
+    var o = this.get_object(this.gen.get());
 
     if (!this.guaranteed_products){
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
@@ -164,11 +174,11 @@ class Filler {
     var i = 0;
     var nb_placed = 0;
     while (i < nb_tries && nb_placed < nb_desired_products) {
-      var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
-      var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
+      var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
+      var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
-      if (!this._intersectWalk(x, y) && (allow_overlap || this._isEmpty(x, y))) {
-        this.obj_constructor(x, y, this.gen.get());
+      if (!this._intersectWalk(o, x, y) && (allow_overlap || this._isEmpty(o, x, y))) {
+        o.constructor(x, y, this.gen.get());
         nb_placed ++;
       }
 
@@ -177,14 +187,15 @@ class Filler {
   }
 
   fill_by_slots(density) {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     if (!density){
       density = 1;
     }
+    var o = this.get_object(this.gen.get());
     var access_offset = 50;
     var w = this.zone_w;
-    var h = this.zone_h - this.obj_h;
-    var nb_slots = [Math.floor(w / this.obj_w), Math.floor(h / this.obj_h)];
+    var h = this.zone_h - o.obj_h;
+    var nb_slots = [Math.floor(w / o.obj_w), Math.floor(h / o.obj_h)];
     var slot_actual_size = [w / nb_slots[0], h / nb_slots[1]];
 
     for(var i = 0; i < nb_slots[0]; i++) {
@@ -194,7 +205,7 @@ class Filler {
           }
 
           // provisory position for hash of object
-          var obj = this.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
+          var obj = o.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
 
           var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - obj.h_w);
           var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - obj.h_h);
@@ -204,9 +215,10 @@ class Filler {
   }
 
   fill_line(clear_middle) {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
 
-    var capacity = this.zone_w / this.obj_w;
+    var o = this.get_object(this.gen.get());
+    var capacity = this.zone_w / o.obj_w;
     var nb_furniture = 1 + this.gen.int(Math.max(0, capacity-1));
     var slot_size = this.zone_w/nb_furniture;
 
@@ -214,10 +226,10 @@ class Filler {
       var r = this.gen.get();
 
       // provisory position for hash of object
-      var obj = this.obj_constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + this.obj_h);
+      var obj = o.obj_constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);
       var x_offset = i * slot_size + r * (slot_size - obj.h_w);
 
-      obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + this.obj_h);
+      obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + o.obj_h);
 
       // leave the middle open for a hallway :/
       if (clear_middle && (x_offset + obj.h_w > this.zone_w / 2 - 20 && x_offset < this.zone_w / 2 + 20)) {
@@ -234,33 +246,44 @@ class Filler {
 }
 
 
-class MutliFiller extends Filler {
+class MultiFiller extends Filler {
   constructor(filler, obj_w, obj_h) {
     super();
     Object.assign(this, filler);
     this.constructors = [];
 
-    this.obj_w = obj_w;
-    this.obj_h = obj_h;
-    this.obj_constructor = this._constructor_constructor;
+    this.default_obj_w = obj_w;
+    this.default_obj_h = obj_h;
   }
 
-  _constructor_constructor(x,y,seed) {
+  get_object(seed) {
     var gen = new Generator(seed);
     var array = {};
     for (var i in this.constructors){
       array[i] = this.constructors[i].w;
     }
     var index = RANDOM.pick_in_weighted_array(array, gen);
-    var f = this.constructors[index].f;
-    return f(x,y,seed);
+    var c = this.constructors[index];
+    var r = {
+      constructor: c.obj_constructor,
+      obj_w: c.obj_w,
+      obj_h: c.obj_h,
+    };
+    console.log(r);
+    console.log(this.constructors);
+    return r;
   }
 
-  add_constructor(constructor_function, weight) {
+  add_constructor(obj_constructor, weight, obj_w, obj_h) {
     if (!weight){
       weight = 1;
     }
-    this.constructors.push({f: constructor_function, w: weight});
+    this.constructors.push({
+      obj_constructor: obj_constructor,
+      w: weight,
+      obj_w: obj_w || this.default_obj_w,
+      obj_h: obj_h || this.default_obj_h
+    });
   }
 
   clear() {
@@ -269,7 +292,7 @@ class MutliFiller extends Filler {
 }
 
 
-class EventFiller extends MutliFiller {
+class EventFiller extends MultiFiller {
   constructor(filler, hitbox_size, resize_event, recolor_event) {
     if(!hitbox_size){
       hitbox_size = 50;
