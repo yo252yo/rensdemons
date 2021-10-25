@@ -265,7 +265,7 @@ class S_WebLarge extends SimpleObject {
     this.default_text = this.text_interaction([
       "The back of the room is littered with metallic debris covered by a huge layer of spider web.",
       "The wall is covered by cobwebs, you can barely distinguish it behind.",
-      "The metallic wall is hidden behind several layers of spider webs. Nobody has been here in centuries.",
+      "A metallic wall is hidden behind several layers of spider webs. Nobody has been here in centuries.",
     ]);
   }
 }

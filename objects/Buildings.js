@@ -66,6 +66,36 @@ class S_MudFloor extends S_Floor {
   }
 }
 
+class S_CloudFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/clouds.png");
+  }
+}
+
+class S_GooFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/goo.png");
+  }
+}
+
+class S_WebFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/web.png");
+  }
+}
+
+class S_RockFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/rock.png");
+  }
+}
+
+class S_LavaFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, undefined, "assets/patterns/lava.png");
+  }
+}
+
 class S_TilingFloor extends S_Floor {
   constructor(x, y, w, h) {
     super(x, y, w, h, undefined, "assets/patterns/tiling.png");
