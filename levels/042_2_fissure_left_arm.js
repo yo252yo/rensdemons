@@ -45,7 +45,7 @@ var decorFiller = new Filler(gen.get());
 decorFiller.set_zone(875,3000,900,1525);
 decorFiller.set_tries(5, 15);
 decorFiller.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-decorFiller.fill_by_retry(true);
+decorFiller.fill_decor_by_retry();
 decorFiller.set_tries(5, 10);
 decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
 decorFiller.fill_by_retry();

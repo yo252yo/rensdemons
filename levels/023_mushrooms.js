@@ -78,13 +78,13 @@ var filler = new Filler(gen.get());
 filler.set_zone(1150,2475,2100,1475);
 filler.set_tries(100, 100);
 filler.set_object(30, 10, function(x,y,seed){ return new S_Tree(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry(true);
 filler.set_tries(75, 75);
 filler.set_object(100, 100, function(x,y,seed){ return new S_Shroomgiant(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry(true);
 filler.set_tries(25, 25);
 filler.set_object(20, 75, function(x,y,seed){ return new S_Shroomtall(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry(true);
 
 
 noTreeZone.destroy(true);

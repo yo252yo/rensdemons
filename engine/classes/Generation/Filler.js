@@ -55,13 +55,27 @@ class Filler {
     }
   }
 
-  _canBuild(x, y) {
+  _isEmpty(x, y) {
     for(var i = -0.2; i <= 1.05; i += 0.25){
       for(var j = -0.05; j <= 1.2; j += 0.25){
         var xx = Math.max(1, x + this.obj_w * i);
         var yy = Math.max(1, y - this.obj_h * j);
         var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
-        if (elem || !CURRENTLEVEL.io.is_walkable(xx, yy)){
+        if (elem){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  _canWalk(x, y) {
+    for(var i = -0.2; i <= 1.05; i += 0.25){
+      for(var j = -0.05; j <= 1.2; j += 0.25){
+        var xx = Math.max(1, x + this.obj_w * i);
+        var yy = Math.max(1, y - this.obj_h * j);
+        var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
+        if (!CURRENTLEVEL.io.is_walkable(xx, yy)){
           return false;
         }
       }
@@ -85,7 +99,7 @@ class Filler {
   //hack Fillers
   // ===================
 
-  fill_by_retry(decor) {
+  fill_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
@@ -101,7 +115,32 @@ class Filler {
       var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
 
-      if (decor? (!this._intersectWalk(x, y)) : this._canBuild(x, y)) {
+      if (this._canWalk(x, y) && this._isEmpty(x, y)) {
+        this.obj_constructor(x, y, this.gen.get());
+        nb_placed ++;
+      }
+
+      i++;
+    }
+  }
+
+  fill_decor_by_retry(allow_overlap) {
+    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h", "obj_w", "obj_h", "obj_constructor"]);
+    var nb_tries = 10000;
+    var nb_desired_products = this.guaranteed_products;
+
+    if (!this.guaranteed_products){
+      nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
+      nb_desired_products = 10000;
+    }
+
+    var i = 0;
+    var nb_placed = 0;
+    while (i < nb_tries && nb_placed < nb_desired_products) {
+      var x = this.zone_x + this.gen.get() * (this.zone_w - this.obj_w);
+      var y = this.zone_y - this.gen.get() * (this.zone_h - this.obj_h);
+
+      if (!this._intersectWalk(x, y) && (allow_overlap || this._isEmpty(x, y))) {
         this.obj_constructor(x, y, this.gen.get());
         nb_placed ++;
       }

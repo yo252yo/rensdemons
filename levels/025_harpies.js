@@ -111,16 +111,16 @@ var filler = new Filler(gen.get());
 filler.set_zone(1250,2475,1350,1300);
 filler.set_tries(20, 20);
 filler.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry();
 filler.set_tries(10, 10);
 filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry();
 filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry();
 filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry();
 filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-filler.fill_by_retry(true);
+filler.fill_decor_by_retry();
 
 filler.set_tries(1, 1);
 var chose_decor = function() {

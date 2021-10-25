@@ -223,16 +223,16 @@ else if(hellsmawpart == 3){
 
 decor.set_tries(2, 10);
 decor.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-decor.fill_by_retry(true);
+decor.fill_decor_by_retry();
 decor.set_tries(1, 5);
 decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
-decor.fill_by_retry(true);
+decor.fill_decor_by_retry();
 decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-decor.fill_by_retry(true);
+decor.fill_decor_by_retry();
 decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-decor.fill_by_retry(true);
+decor.fill_decor_by_retry();
 decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-decor.fill_by_retry(true);
+decor.fill_decor_by_retry();
 
 
 // ===================

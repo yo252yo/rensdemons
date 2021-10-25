@@ -78,21 +78,44 @@ new S_SavePoint(1350, 2075);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var decorFiller = new Filler(gen.get());
 
-decorFiller.set_zone(825,2675,1125,1275);
-decorFiller.set_tries(5, 15);
-decorFiller.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-decorFiller.fill_by_retry(true);
-decorFiller.set_tries(5, 10);
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
+var filler = new Filler(gen.get());
+filler.set_zone(825,2675,1125,1275);
+
+var bigDecorFiller = new MutliFiller(filler, 200, 50);
+
+bigDecorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); }, 2);
+bigDecorFiller.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2);
+bigDecorFiller.add_constructor( function(x,y,seed){ return new S_WebLarge(x, y); }, 0.1);
+
+bigDecorFiller.set_tries(5, 10);
+bigDecorFiller.fill_decor_by_retry();
+
+var decorFiller = new MutliFiller(filler, 60, 50);
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
+
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0.1);
+decorFiller.set_tries(5, 30);
+decorFiller.fill_decor_by_retry();
+
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
+
+decorFiller.set_tries(70, 100);
 decorFiller.fill_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-decorFiller.fill_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-decorFiller.fill_by_retry();
+
+
+
+
+
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
