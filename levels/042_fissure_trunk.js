@@ -8,15 +8,15 @@ var gen = new Generator(DICTIONARY.get("world_seed")*21);
 // ===================
 //hack 1. FLOORS
 // ===================
-new S_Floor(1100,2425,550,850);
+new S_WebFloor(1100,2425,550,850);
 
-new S_Floor(1100,2525,200,200);
-new S_Floor(1450,2525,200,200);
+new S_WebFloor(1100,2525,200,200);
+new S_WebFloor(1450,2525,200,200);
 
-new S_Floor(1000,1775,150,200);
-new S_Floor(1600,1775,150,200);
+new S_WebFloor(1000,1775,150,200);
+new S_WebFloor(1600,1775,150,200);
 
-new S_Floor(1300,1600,150,100);
+new S_WebFloor(1300,1600,150,100);
 
 // ===================
 //hack 2. EXIT
@@ -78,21 +78,10 @@ new S_SavePoint(1350, 2075);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-
 var filler = new Filler(gen.get());
-filler.set_zone(825,2675,1125,1275);
-
-var bigDecorFiller = new MultiFiller(filler, 200, 50);
-
-bigDecorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); }, 2);
-bigDecorFiller.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2);
-bigDecorFiller.add_constructor( function(x,y,seed){ return new S_WebLarge(x, y); }, 0.1);
-
-bigDecorFiller.set_tries(5, 10);
-bigDecorFiller.fill_decor_by_retry();
-
 var decorFiller = new MultiFiller(filler, 60, 50);
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
+decorFiller.set_zone(825,2675,1125,1275);
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); }, 0.5);
 decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
 
@@ -101,16 +90,19 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 0
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0.1);
-decorFiller.set_tries(5, 30);
+decorFiller.set_tries(30, 50);
 decorFiller.fill_decor_by_retry();
 
+
+decorFiller.set_zone(1050,2475,650,925);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
 
-decorFiller.set_tries(70, 100);
+decorFiller.set_tries(60, 80);
 decorFiller.fill_floor_by_retry();
+
 
 
 

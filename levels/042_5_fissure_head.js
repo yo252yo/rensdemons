@@ -3,13 +3,13 @@
 //hack 0. INITIALIZATION
 // ===================
 AUDIO.music.levels.fissure();
-var gen = new Generator(DICTIONARY.get("world_seed")*21);
+var gen = new Generator(DICTIONARY.get("world_seed")*25);
 
 // ===================
 //hack 1. FLOORS
 // ===================
-new S_Floor(1225,2500,175,125);
-new S_Floor(1125,2400,375,325);
+new S_WebFloor(1225,2500,175,125);
+new S_WebFloor(1125,2400,375,325);
 
 // ===================
 //hack 2. EXIT
@@ -60,21 +60,23 @@ s.interaction = function(){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var decorFiller = new Filler(gen.get());
-
+var filler = new Filler(gen.get());
+var decorFiller = new MultiFiller(filler, 60, 50);
 decorFiller.set_zone(1000,2650,650,750);
-decorFiller.set_tries(5, 15);
-decorFiller.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
+
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y); });
+decorFiller.set_tries(20, 30);
 decorFiller.fill_decor_by_retry();
-decorFiller.set_tries(5, 10);
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
+
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); });
+
+decorFiller.set_tries(20, 30);
 decorFiller.fill_floor_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-decorFiller.fill_floor_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-decorFiller.fill_floor_by_retry();
-decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-decorFiller.fill_floor_by_retry();
+
+
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
