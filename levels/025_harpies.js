@@ -107,59 +107,44 @@ new S_SavePoint(1850, 1375);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var filler = new Filler(gen.get());
+var f = new Filler(gen.get());
+var filler = new MultiFiller(f, 50, 50);
 filler.set_zone(1250,2475,1350,1300);
-filler.set_tries(20, 20);
-filler.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-filler.fill_decor_by_retry();
-filler.set_tries(10, 10);
-filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
-filler.fill_decor_by_retry();
-filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-filler.fill_decor_by_retry();
-filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-filler.fill_decor_by_retry();
-filler.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
+filler.set_tries(180, 200);
+
+filler.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 5, 200, 50);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1);
 filler.fill_decor_by_retry();
 
-filler.set_tries(1, 1);
-var chose_decor = function() {
-  var f =RANDOM.pick([
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks1(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks2(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks3(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Rocks4(x, y); })},
-    function() {filler.set_object(40, 40, function(x,y,seed){ return new S_Pebbles(x, y); })},
-  ], gen);
-  f();
-};
+filler.clear();
+filler.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_Pebbles(x, y); }, 1);
+
+filler.set_tries(1, 2);
 
 for (var i=0; i<2; i++){
-  chose_decor();
   filler.set_zone(1975,2400,275,175);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(2250,2400,250,275);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(2350,2125,125,350);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(2325,1775,200,250);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(2175,2025,150,475);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(1575,2025,600,100);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(1450,2075,125,200);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(1400,1425,175,150);
   filler.fill_floor_by_retry();
-  chose_decor();
   filler.set_zone(1650,1750,100,75);
   filler.fill_floor_by_retry();
 }
@@ -177,7 +162,7 @@ new SBattle(2475, 1275, '_02/_wrong_skeleton');
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(filler, 5);
+var events = new EventFiller(f, 5);
 
 events.battle('mountains/harpy', 3);
 events.battle('mountains/chimera', 2);
@@ -200,14 +185,14 @@ events.set_zone(1250,2400,1350,1300);
 events.set_tries(50, 100);
 events.fill_floor_by_retry();
 
-events.set_tries(3, 10);
+events.set_tries(4, 10);
 events.set_zone(2300,1475,175,250);
 events.fill_floor_by_retry();
 
 events.set_zone(1250,1975,150,375);
 events.fill_floor_by_retry();
 
-events.set_tries(10, 20);
+events.set_tries(15, 20);
 events.set_zone(1300,2275,575,175);
 events.fill_floor_by_retry();
 
