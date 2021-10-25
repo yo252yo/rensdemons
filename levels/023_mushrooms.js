@@ -74,32 +74,26 @@ new S_SavePoint(1975, 2050);
 // could improve load by making these cosmetics and not level items
 var noTreeZone = new S_LushFloor(2075,1475,100,175);
 
-var filler = new Filler(gen.get());
+var f = new Filler(gen.get());
+var filler = new MultiFiller(f);
 filler.set_zone(1150,2475,2100,1475);
-filler.set_tries(100, 100);
-filler.set_object(30, 10, function(x,y,seed){ return new S_Tree(x, y); });
-filler.fill_decor_by_retry(true);
-filler.set_tries(75, 75);
-filler.set_object(100, 100, function(x,y,seed){ return new S_Shroomgiant(x, y); });
-filler.fill_decor_by_retry(true);
-filler.set_tries(25, 25);
-filler.set_object(20, 75, function(x,y,seed){ return new S_Shroomtall(x, y); });
+filler.set_tries(200, 250);
+
+filler.add_constructor( function(x,y,seed){ return new S_Shroomgiant(x, y); }, 1, 100, 100);
+filler.add_constructor( function(x,y,seed){ return new S_Tree(x, y); }, 3, 30, 10);
+filler.add_constructor( function(x,y,seed){ return new S_Shroomtall(x, y); }, 1, 20, 75);
 filler.fill_decor_by_retry(true);
 
 
 noTreeZone.destroy(true);
 
-filler.set_tries(1, 2);
+filler.clear();
+filler.set_tries(0, 2);
 for(var f of hallways) {
   filler.set_zone_from_floor(f);
-  var r = gen.get();
-  if (r < 0.2){
-    filler.set_object(20, 20, function(x,y,seed){ return new S_PlantSmall(x, y); });
-    filler.fill_by_retry();
-  } else if (r < 0.4){
-    filler.set_object(20, 20, function(x,y,seed){ return new S_Shroomsmall(x, y); });
-    filler.fill_by_retry();
-  }
+  filler.add_constructor( function(x,y,seed){ return new S_PlantSmall(x, y); }, 1, 20, 20);
+  filler.add_constructor( function(x,y,seed){ return new S_Shroomsmall(x, y); }, 1, 20, 20);
+  filler.fill_by_retry();
 }
 
 // ===================
