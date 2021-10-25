@@ -138,7 +138,6 @@ class Filler {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
-    var o = this.get_object(this.gen.get());
 
     if (!this.guaranteed_products){
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
@@ -148,6 +147,7 @@ class Filler {
     var i = 0;
     var nb_placed = 0;
     while (i < nb_tries && nb_placed < nb_desired_products) {
+      var o = this.get_object(this.gen.get());
       var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
@@ -164,7 +164,6 @@ class Filler {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;
-    var o = this.get_object(this.gen.get());
 
     if (!this.guaranteed_products){
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
@@ -174,6 +173,7 @@ class Filler {
     var i = 0;
     var nb_placed = 0;
     while (i < nb_tries && nb_placed < nb_desired_products) {
+      var o = this.get_object(this.gen.get());
       var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
@@ -269,8 +269,6 @@ class MultiFiller extends Filler {
       obj_w: c.obj_w,
       obj_h: c.obj_h,
     };
-    console.log(r);
-    console.log(this.constructors);
     return r;
   }
 
