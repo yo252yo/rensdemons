@@ -49,21 +49,20 @@ new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var filler = new Filler(gen.get());
-filler.set_zone(1625,1925,1175,650);
-filler.set_tries(5, 17);
-filler.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
-filler.fill_floor_by_retry();
-filler.set_object(50, 50, function(x,y,seed){ return new S_Seashellpointy(x, y); });
-filler.fill_floor_by_retry();
-filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
-filler.fill_floor_by_retry();
+var f = new Filler(gen.get());
+var decorFiller = new MultiFiller(f, 50, 50);
+decorFiller.set_zone(1625,1925,1175,650);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Seashell(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_Seashellpointy(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_Planks(x, y); });
+decorFiller.set_tries(15, 50);
+decorFiller.fill_floor_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(filler, 10);
+var events = new EventFiller(decorFiller, 10);
 events.battleRubble(ITEM.Shield, 0.05);
 events.battleRubble(ITEM.Elixir_vine, 0.05);
 events.battleRubble(ITEM.Sword_wooden, 0.1);

@@ -56,8 +56,6 @@ whale.make_default_callback = function(){return function(){};};
 var f = new Filler(gen.get());
 var decorFiller = new MultiFiller(f, 50, 50);
 decorFiller.set_zone(1150,2600,1725,1300);
-
-
 decorFiller.add_constructor( function(x,y,seed){ return new S_AlgaeWall(x, y); }, 1, 100, 50);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Coral(x, y); }, 3);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Anemone(x, y); }, 2);
