@@ -50,7 +50,7 @@ class HG_Room {
       this.roomFiller.set_tries(0, this.gen.int(10) - 7);
       var type = this.type;
       this.roomFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(type, x, y, seed, true); });
-      this.roomFiller.fill_by_retry();
+      this.roomFiller.fill_floor_by_retry();
     }
 
     decorate(){

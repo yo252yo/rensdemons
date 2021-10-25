@@ -38,7 +38,7 @@ var FMap = new Filler(gen.get());
 FMap.set_zone(1050, 1000+h, w, h-50);
 FMap.set_tries(3, 10);
 FMap.set_object(100, 100, function(x,y,seed){ return new SM_Trees(x, y, seed);});
-FMap.fill_by_retry();
+FMap.fill_floor_by_retry();
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
 FEasyEvents.battle('world/ghost', 1.7);
@@ -64,7 +64,7 @@ FEasyEvents.text(`You see in the distance a battalion of the evil monsters broug
 
 FEasyEvents.set_zone_from_filler(FMap);
 FEasyEvents.set_tries(15, 30);
-FEasyEvents.fill_by_retry();
+FEasyEvents.fill_floor_by_retry();
 
 
 

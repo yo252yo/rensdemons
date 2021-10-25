@@ -53,11 +53,11 @@ var filler = new Filler(gen.get());
 filler.set_zone(1625,1925,1175,650);
 filler.set_tries(5, 17);
 filler.set_object(50, 50, function(x,y,seed){ return new S_Seashell(x, y); });
-filler.fill_by_retry();
+filler.fill_floor_by_retry();
 filler.set_object(50, 50, function(x,y,seed){ return new S_Seashellpointy(x, y); });
-filler.fill_by_retry();
+filler.fill_floor_by_retry();
 filler.set_object(50, 50, function(x,y,seed){ return new S_Planks(x, y); });
-filler.fill_by_retry();
+filler.fill_floor_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -82,7 +82,7 @@ events.byConstructor("B_Skeleton", 1);
 events.byConstructor("B_Seashell", 1);
 
 events.set_tries(20, 40);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

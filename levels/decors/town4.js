@@ -28,10 +28,10 @@ var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2025, 1950, 950);
 houseFiller.set_tries(5, 60);
 houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.indulgence, x, y, seed); });
-houseFiller.fill_by_retry();
+houseFiller.fill_floor_by_retry();
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 2025, 1950, 950);
 villagerFiller.set_tries(35, 120);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.indulgence, x, y, seed); });
-villagerFiller.fill_by_retry();
+villagerFiller.fill_floor_by_retry();

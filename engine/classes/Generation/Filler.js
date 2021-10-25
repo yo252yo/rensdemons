@@ -134,7 +134,7 @@ class Filler {
     }
   }
 
-  fill_by_retry() {
+  fill_floor_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
     var nb_desired_products = this.guaranteed_products;

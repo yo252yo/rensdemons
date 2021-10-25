@@ -137,31 +137,31 @@ var chose_decor = function() {
 for (var i=0; i<2; i++){
   chose_decor();
   filler.set_zone(1975,2400,275,175);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(2250,2400,250,275);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(2350,2125,125,350);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(2325,1775,200,250);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(2175,2025,150,475);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(1575,2025,600,100);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(1450,2075,125,200);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(1400,1425,175,150);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
   chose_decor();
   filler.set_zone(1650,1750,100,75);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
 }
 
 // ===================
@@ -198,18 +198,18 @@ events.byConstructor("B_Skeleton", 1);
 
 events.set_zone(1250,2400,1350,1300);
 events.set_tries(50, 100);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 events.set_tries(3, 10);
 events.set_zone(2300,1475,175,250);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 events.set_zone(1250,1975,150,375);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 events.set_tries(10, 20);
 events.set_zone(1300,2275,575,175);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

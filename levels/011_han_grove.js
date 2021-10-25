@@ -76,7 +76,7 @@ var treeFiller = new Filler(gen.get());
 treeFiller.set_zone(1050, 1500, 500, 450);
 treeFiller.set_tries(4, 15);
 treeFiller.set_object(100, 100, makeTree);
-treeFiller.fill_by_retry();
+treeFiller.fill_floor_by_retry();
 
 // ===================
 //hack 7. START/INIT

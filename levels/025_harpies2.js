@@ -77,10 +77,10 @@ var filler = new Filler(gen.get());
 filler.set_zone(550,1200,650,675);
 filler.set_tries(20, 20);
 filler.set_object(120, 60, function(x,y,seed){ return new S_Web(x, y); });
-filler.fill_by_retry();
+filler.fill_floor_by_retry();
 //filler.set_tries(10, 10);
 filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
-filler.fill_by_retry();
+filler.fill_floor_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -100,7 +100,7 @@ events.text("The dim light that follows you from the door is barely enough to li
 events.text("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
 
 events.set_tries(10, 20);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

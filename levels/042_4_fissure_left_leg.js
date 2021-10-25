@@ -38,13 +38,13 @@ decorFiller.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y)
 decorFiller.fill_decor_by_retry();
 decorFiller.set_tries(5, 10);
 decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 decorFiller.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -59,7 +59,7 @@ events.battle('caves/scorpion');
 events.battle('caves/crawler');
 
 events.set_tries(30, 50);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

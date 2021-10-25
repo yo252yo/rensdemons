@@ -60,7 +60,7 @@ events.byConstructor("B_Skeleton", 1);
 
 events.set_zone(425,1875,750,700);
 events.set_tries(50, 50);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 

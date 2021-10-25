@@ -275,7 +275,7 @@ events.text(`Your ascension is tiresome, your surroundings are scary. You try to
 events.text(`You're starting to wonder if this rocky desolate inferno really has an exit. Fortunately, the Goddess fills your heart with certainty that however dire the trial may seem, there is necessarily a way forward.`);
 
 events.set_tries(10, 50);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 if(hellsmawpart == 1){

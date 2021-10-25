@@ -82,7 +82,7 @@ new S_SavePoint(1350, 2075);
 var filler = new Filler(gen.get());
 filler.set_zone(825,2675,1125,1275);
 
-var bigDecorFiller = new MutliFiller(filler, 200, 50);
+var bigDecorFiller = new MultiFiller(filler, 200, 50);
 
 bigDecorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); }, 2);
 bigDecorFiller.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2);
@@ -91,7 +91,7 @@ bigDecorFiller.add_constructor( function(x,y,seed){ return new S_WebLarge(x, y);
 bigDecorFiller.set_tries(5, 10);
 bigDecorFiller.fill_decor_by_retry();
 
-var decorFiller = new MutliFiller(filler, 60, 50);
+var decorFiller = new MultiFiller(filler, 60, 50);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
@@ -110,7 +110,7 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2
 decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
 
 decorFiller.set_tries(70, 100);
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 
 
 
@@ -145,7 +145,7 @@ events.byConstructor("B_Seashell", 2);
 events.byConstructor("B_Skeleton", 1);
 */
 events.set_tries(30, 50);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

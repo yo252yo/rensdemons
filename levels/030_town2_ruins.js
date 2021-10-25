@@ -123,7 +123,7 @@ var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 1475, 1450);
 houseFiller.set_tries(15, 100);
 houseFiller.set_object(120, 160, function(x,y,seed){ obj.push(new S_House(CITIES.fear, x, y, seed)); });
-houseFiller.fill_by_retry();
+houseFiller.fill_floor_by_retry();
 
 
 for(var o of obj) {
@@ -145,11 +145,11 @@ var rubbleFiller = new Filler(gen.get());
 rubbleFiller.set_zone(1075, 2525, 1475, 1450);
 rubbleFiller.set_tries(200, 400);
 rubbleFiller.set_object(30, 30, function(x,y,seed){ return new S_Rubble(x, y); });
-rubbleFiller.fill_by_retry();
+rubbleFiller.fill_floor_by_retry();
 
 rubbleFiller.set_tries(30, 60);
 rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.mourning, x, y, seed); });
-rubbleFiller.fill_by_retry();
+rubbleFiller.fill_floor_by_retry();
 
 
 // ===================

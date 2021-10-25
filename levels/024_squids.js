@@ -65,7 +65,7 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Seashell(x, y); },
 decorFiller.add_constructor( function(x,y,seed){ return new S_Seashellpointy(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Waterplants(x, y); }, 2);
 decorFiller.set_tries(80, 100);
-decorFiller.fill_by_retry();
+decorFiller.fill_floor_by_retry();
 
 
 // ===================
@@ -95,7 +95,7 @@ events.byConstructor("B_Seashell", 2);
 events.byConstructor("B_Skeleton", 1);
 
 events.set_tries(100, 120);
-events.fill_by_retry();
+events.fill_floor_by_retry();
 
 
 // ===================

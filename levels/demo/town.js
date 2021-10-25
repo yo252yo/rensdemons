@@ -19,13 +19,13 @@ houseFiller.set_zone(1075, 1625, 550, 550);
 houseFiller.set_tries(10, 100);
 houseFiller.set_guaranteed(2);
 houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); });
-houseFiller.fill_by_retry();
+houseFiller.fill_floor_by_retry();
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 1625, 550, 550);
 villagerFiller.set_tries(2, 40);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
-villagerFiller.fill_by_retry();
+villagerFiller.fill_floor_by_retry();
 
 
 var change_nickname = function() {

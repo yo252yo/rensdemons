@@ -75,46 +75,46 @@ FEasyS.set_guaranteed(1);
 FEasyS.set_object(100, 100, function(x,y,seed){
   return new SM_Trees(x, y, seed, "", "011_han_grove");
 });
-FEasyS.fill_by_retry();
+FEasyS.fill_floor_by_retry();
 
 
 FHardSW.set_guaranteed(1);
 FHardSW.set_object(300, 250, function(x,y,seed){
   return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", LaterInStory);
 });
-FHardSW.fill_by_retry();
+FHardSW.fill_floor_by_retry();
 
 
 FHardNE.set_guaranteed(1);
 FHardNE.set_object(250, 150, function(x,y,seed){
   return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
 });
-FHardNE.fill_by_retry();
+FHardNE.fill_floor_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(250, 150, function(x,y,seed){
   return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
 });
-FHardMain.fill_by_retry();
+FHardMain.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(100, 50, function(x,y,seed){
   return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", LaterInStory);
 });
-FHardMain.fill_by_retry();
+FHardMain.fill_floor_by_retry();
 
 
 FMap.add_constructor( function(x,y,seed){ return new SM_Trees(x, y); }, 2, 100, 100);
 FMap.add_constructor( function(x,y,seed){ return new SM_Lake(x, y); }, 1.5, 300, 200);
 FMap.add_constructor( function(x,y,seed){ return new SM_Mountain(x, y); }, 1, 300, 150);
 FMap.set_tries(40, 100);
-FMap.fill_by_retry();
+FMap.fill_floor_by_retry();
 // Place hills after as they are walkable
 FMap.set_tries(10, 40);
 FMap.clear();
 FMap.add_constructor( function(x,y,seed){ return new SM_Hills(x, y); });
-FMap.fill_by_retry();
+FMap.fill_floor_by_retry();
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -148,11 +148,11 @@ FEasyEvents.text(`You see in the distance a battalion of the evil monsters broug
 
 FEasyEvents.set_zone_from_filler(FEasyS);
 FEasyEvents.set_tries(10, 25);
-FEasyEvents.fill_by_retry();
+FEasyEvents.fill_floor_by_retry();
 
 FEasyEvents.set_zone_from_filler(FEasyN);
 FEasyEvents.set_tries(30, 60);
-FEasyEvents.fill_by_retry();
+FEasyEvents.fill_floor_by_retry();
 
 
 
@@ -191,16 +191,16 @@ FHardEvents.text(`In the middle of a puddle of old blood that has long since dri
 
 FHardEvents.set_zone_from_filler(FHardSW);
 FHardEvents.set_tries(8, 20);
-FHardEvents.fill_by_retry();
+FHardEvents.fill_floor_by_retry();
 
 FHardEvents.set_zone_from_filler(FHardNE);
 FHardEvents.set_tries(10, 40);
-FHardEvents.fill_by_retry();
+FHardEvents.fill_floor_by_retry();
 
 
 FHardEvents.set_zone_from_filler(FHardMain);
 FHardEvents.set_tries(60, 100);
-FHardEvents.fill_by_retry();
+FHardEvents.fill_floor_by_retry();
 
 
 // ===================

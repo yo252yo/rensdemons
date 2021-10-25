@@ -93,7 +93,7 @@ for(var f of hallways) {
   filler.set_zone_from_floor(f);
   filler.add_constructor( function(x,y,seed){ return new S_PlantSmall(x, y); }, 1, 20, 20);
   filler.add_constructor( function(x,y,seed){ return new S_Shroomsmall(x, y); }, 1, 20, 20);
-  filler.fill_by_retry();
+  filler.fill_floor_by_retry();
 }
 
 // ===================
@@ -131,7 +131,7 @@ events.text('The leaves and branches are so heavy here that you have to actively
 
 for(var f of hallways) {
   events.set_zone_from_floor(f);
-  events.fill_by_retry();
+  events.fill_floor_by_retry();
 }
 
 

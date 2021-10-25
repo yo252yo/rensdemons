@@ -34,14 +34,14 @@ var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 1975, 950,  975);
 houseFiller.set_tries(5, 70);
 houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); });
-houseFiller.fill_by_retry();
+houseFiller.fill_floor_by_retry();
 
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 1975, 1000, 975);
 villagerFiller.set_tries(3, 30);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
-villagerFiller.fill_by_retry();
+villagerFiller.fill_floor_by_retry();
 
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
