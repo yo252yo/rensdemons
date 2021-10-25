@@ -13,8 +13,9 @@ var gen = new Generator(DICTIONARY.get("world_seed")*17 + hellsmawpart);
 
 AUDIO.music.levels.hellsmaw();
 
-var decor = new Filler(gen.get());
-var events = new EventFiller(decor, 1);
+var filler = new Filler(gen.get());
+var decor = new MultiFiller(filler, 40, 40);
+var events = new EventFiller(filler, 1);
 
 // ===================
 //hack 1. FLOORS
@@ -224,18 +225,21 @@ else if(hellsmawpart == 3){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-decor.set_tries(2, 10);
-decor.set_object(175, 50, function(x,y,seed){ return new S_RocksHuge(x, y); });
-decor.fill_decor_by_retry();
-decor.set_tries(1, 5);
-decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks1(x, y); });
-decor.fill_decor_by_retry();
-decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks2(x, y); });
-decor.fill_decor_by_retry();
-decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks3(x, y); });
-decor.fill_decor_by_retry();
-decor.set_object(50, 20, function(x,y,seed){ return new S_Rocks4(x, y); });
-decor.fill_decor_by_retry();
+
+decor.add_constructor( function(x,y,seed){ return new S_HellPlantLeaning(x, y); });
+decor.add_constructor( function(x,y,seed){ return new S_HellPlantSretching(x, y); });
+decor.add_constructor( function(x,y,seed){ return new S_HellPlantSlimy(x, y); });
+decor.add_constructor( function(x,y,seed){ return new S_HellPlantLoops(x, y); });
+decor.add_constructor( function(x,y,seed){ return new S_Spike(x, y); });
+decor.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2, 175, 50);
+decor.set_tries(30, 50);
+decor.fill_decor_by_retry(true);
+decor.set_tries(300, 500);
+decor.fill_floor_by_retry();
 
 
 // ===================

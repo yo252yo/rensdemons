@@ -487,3 +487,70 @@ class S_Hole extends SimpleObject {
     ]);
   }
 }
+
+
+
+class S_HellPlantLeaning extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "hell/plant");
+    this.adjust_hitbox(10,0,30,10);
+    this.specify_sprite_size(43,35);
+    this.default_text = this.text_interaction([
+      "This plant shines from an unnatural light.",
+      "The plant is home of a swarm of disgusting bugs that fly around it noisily.",
+      "The otherworldy vegetal undulates as if moved by a will of its own.",
+    ]);
+  }
+}
+
+class S_HellPlantSretching extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "hell/plant2");
+    this.adjust_hitbox(5,0,30,20);
+    this.specify_sprite_size(32,46);
+    this.default_text = this.text_interaction([
+      "This vegetal extends slimy tentacles that look pretty poisonous.",
+      "You observe an unfortunate fly get captured by the appendages of the unnatural plant.",
+      "This plant looks like nothing you've ever seen, and doubtless comes from another world.",
+    ]);
+  }
+}
+
+class S_HellPlantSlimy extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "hell/plant3");
+    this.adjust_hitbox(5,0,20,15);
+    this.specify_sprite_size(27,47);
+    this.default_text = this.text_interaction([
+      "This vegetal is constantly dripping brownish slime, like a repulsive fountain.",
+      "All you can think of to describe this plant is that it looks a lot like someone dipped a little shrub in some sort of dark goo.",
+      "You observe with a disgusted fascination the gunk that drops form the leaves of whatever this is. It makes an irregular squishy sound.",
+    ]);
+  }
+}
+
+class S_HellPlantLoops extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "hell/plant4");
+    this.adjust_hitbox(0,0,20,15);
+    this.specify_sprite_size(16, 28);
+    this.default_text = this.text_interaction([
+      "This strange flower is made of many fibers that roll up and extend according to a pattern you cannot understand.",
+      "As you approach the vegetal, you notice that it also extends in your direction. Better steer clear...",
+      "This alien plant seems to slowly change color between purple and green.",
+    ]);
+  }
+}
+
+class S_Spike extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "hell/spike");
+    this.adjust_hitbox(0,0,30,30);
+    this.specify_sprite_size(41, 96);
+    this.default_text = this.text_interaction([
+      "A brown spike perforates the rocky ground. You wonder if there's a monster under the ground...",
+      "This sharp appendage rises unnaturally from the ground. It seems that it stopped moving a while ago and solidified among the rocks, but you prefer to not take any chance and not approach it.",
+      "A spike taller than you emits an ungodly perverse aura.",
+    ]);
+  }
+}

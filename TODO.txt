@@ -1,5 +1,5 @@
 
-- deco hellsmaw
+- deco hellsmaw:  can we make the deco filler smart so that it also spawns on paths?
 
 
 - 2nd lieutenant EOF: ABILITIES.unlock("_lieutenant_defeated") ->> hell_map, + aerith death ;_;
