@@ -11,11 +11,38 @@ class Filler {
   //hack Parametrize
   // ===================
 
+  draw_debug() {
+    var html_rectangle = HTML.div.make({
+      w:this.zone_w,
+      h:this.zone_h,
+      top:this.zone_y - this.zone_h,
+      left:this.zone_x,
+    });
+    html_rectangle.style.position = "absolute";
+    html_rectangle.style.border = "3px dotted LightBlue";
+    html_rectangle.style.margin = "-3px";
+    html_rectangle.style.zIndex = "30000";
+
+    var label = HTML.div.make({w: 200, top: this.h_h/3, h:35});
+    label.innerHTML = this.zone_x + "/" + this.zone_y;
+    label.style.fontWeight = "bold";
+    label.style.fontSize = "small";
+    label.style.overflow = "hidden";
+    label.style.color = "#LightBlue";
+    html_rectangle.appendChild(label);
+
+    CURRENTLEVEL.system.html().appendChild(html_rectangle);
+  }
+
+
   set_zone(x, y, w, h) {
     this.zone_x = x;
     this.zone_y = y;
     this.zone_w = w;
     this.zone_h = h;
+    if(DEBUG.DISPLAY_FILLER_ZONES){
+      this.draw_debug();
+    }
   }
 
   set_zone_from_floor(floor) {
@@ -226,9 +253,6 @@ class MutliFiller extends Filler {
     }
     var index = RANDOM.pick_in_weighted_array(array, gen);
     var f = this.constructors[index].f;
-    console.log(f);
-    console.log(x);
-
     return f(x,y,seed);
   }
 

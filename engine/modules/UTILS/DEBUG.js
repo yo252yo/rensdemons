@@ -18,6 +18,10 @@ const DEBUG = {
     DEBUG.DISPLAY_ALL_TREES = true;
   },
 
+  display_filler_zones: function() {
+    DEBUG.DISPLAY_FILLER_ZONES = true;
+  },
+
   deactivate_scroll: function() {
     DEBUG.DEACTIVATE_SCROLL = true;
     window.removeEventListener('scroll', IO.handlers.onScroll);
@@ -109,6 +113,7 @@ const DEBUG = {
     DEBUG.get_all_items();
     DEBUG.get_all_party();
     DEBUG.reroll_seeds();
+    DEBUG.display_filler_zones();
 
 
     setInterval(FOG.stop, 1000);
