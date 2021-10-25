@@ -401,9 +401,6 @@ class S_Beelzebub extends SimpleObject {
 }
 
 
-
-
-
 class S_RockColumn extends SimpleObject {
   constructor(x, y){
     super(x, y, "cave/column");
@@ -454,5 +451,32 @@ class S_CristalTiny extends SimpleObject {
       "Little colored pebbles cast a diffuse multicolored light.",
     ]);
     this.walkable = true;
+  }
+}
+
+
+
+class S_Hole extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        super(x, y, "cave/hole");
+        this.adjust_hitbox(0,0,48,90);
+        this.specify_sprite_size(48, 90);
+        break;
+
+      case 1:
+        super(x, y, "cave/hole2");
+        this.adjust_hitbox(0,0,43,95);
+        this.specify_sprite_size(43, 95);
+        break;
+    }
+    this.default_text = this.text_interaction([
+      "The ground in front of you seems fractured and about to give way...",
+      "There's a crack in the floor in front of you. Too little to get in, but big enough to be dangerous.",
+      "You drop a pebble in this crack to see how deep it goes. The answer is pretty deep.",
+      "You feel like it's better to not get too close to this fractured stone, lest you may fall in.",
+    ]);
   }
 }

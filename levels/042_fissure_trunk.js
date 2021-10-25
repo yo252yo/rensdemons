@@ -95,6 +95,7 @@ decorFiller.fill_decor_by_retry();
 
 
 decorFiller.set_zone(1050,2475,650,925);
+decorFiller.add_constructor(function(x,y,seed){ return new S_Hole(x, y, seed); }, 1, 75, 150);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);

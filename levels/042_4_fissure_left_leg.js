@@ -48,7 +48,8 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0
 decorFiller.set_tries(15, 30);
 decorFiller.fill_decor_by_retry();
 
-decorFiller.set_zone(1175,2675,425,1075)
+decorFiller.set_zone(1175,2675,425,1075);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Hole(x, y, seed); }, 1, 75, 150);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);

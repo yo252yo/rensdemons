@@ -1,5 +1,6 @@
 
 AUDIO.music.levels.fissure();
+var gen = new Generator(DICTIONARY.get("world_seed")*20);
 
 new S_TownFloor(1050, 1550, 750, 750, "010_world_map", "assets/patterns/mud.png");
 
@@ -8,6 +9,15 @@ new S_ExitFloor(1400,1025,35,75, "042_fissure_trunk");
 new S_ExitFloor(1380,1200,20,125, "042_fissure_trunk");
 new S_ExitFloor(1360,1325,20,175, "042_fissure_trunk");
 new S_ExitFloor(1380,1425,20,150, "042_fissure_trunk");
+
+
+
+var rubbleFiller = new Filler(gen.get());
+rubbleFiller.set_zone(1050, 1550, 750, 750);
+rubbleFiller.set_tries(2, 5);
+rubbleFiller.set_object(75, 150, function(x,y,seed){ return new S_Hole(x, y, seed); });
+rubbleFiller.fill_floor_by_retry();
+
 
 
 CURRENTLEVEL.start_function = function() {
@@ -21,5 +31,4 @@ CURRENTLEVEL.start_function = function() {
   ], callback);
 };
 
-
-CURRENTLEVEL.initialize_with_character(1050, 1520);
+CURRENTLEVEL.initialize_with_character(1000, 1225);

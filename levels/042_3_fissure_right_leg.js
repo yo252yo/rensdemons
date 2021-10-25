@@ -52,6 +52,7 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Hole(x, y, seed); }, 1, 75, 150);
 
 decorFiller.set_tries(40, 50);
 decorFiller.fill_floor_by_retry();
