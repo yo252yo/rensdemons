@@ -1,6 +1,5 @@
 
 - deco hellsmaw
-- fissure flavor events and text
 
 
 - 2nd lieutenant EOF: ABILITIES.unlock("_lieutenant_defeated") ->> hell_map, + aerith death ;_;

@@ -71,6 +71,29 @@ events.battle('caves/mole', 0.8);
 events.battle('caves/scorpion');
 events.battle('caves/crawler');
 
+
+events.groundItem(ITEM.Linnens);
+events.groundItem(ITEM.AncientRubbles);
+events.battleRubble(ITEM.Arrow);
+events.battleRubble(ITEM.Poison_darts);
+events.battleRubble(ITEM.Rope);
+events.battleRubble(ITEM.Sword_iron, 0.1);
+events.battleRubble(ITEM.Net, 0.1);
+events.battleRubble(ITEM.Shield, 0.1);
+
+events.text([
+  `You find a metal tablet on the ground. It depicts with an uncanny precision huge machines from another time.`,
+  `$$BestFriend$: "What do you think these were for?"`,
+  `$$Ren$: "No idea, but I'm more impressed by the craftsmanship, this is clearly beyond the abilities of humans today..."`]);
+events.text([
+  `$$BestFriend$: "This place is weird... What do you think it used to be? A museum?"`,
+  `$$Ren$: "Possibly. Or maybe a temple?"`]);
+events.text(`You notice that the walls are covered with scratches. Looking more closely, it appears that it used to be sculpted into majestic scenes of the ancestor's daily lives, but time erroded the drawings beyond recognition, and most of the paint has since faded.`);
+events.text(`You pick up on the ground a little golden silhouette. It used to be a man, but several limbs are missing. Time took quite a toll on the icon, but you can still make out a few words written at the bottom: "no gods or kinds, only man".`);
+events.text(`You find scraps of papers that have withstood the passage of time, as if enchanted. On them are portrayed in the most realistic depiction you've ever seen the smiling faces of the ancestors. It's hard to think that you come from the same species, yet their lives were so easy, without famines or demons to fight...`);
+events.text(`You jump by surprise when a huge pile of rock and metal slides in a thunderous noise.`);
+events.text(`The faint glow of your torch is reflected on metallic surfaces on the walls. It appears to be some sort of broken mechanism, whose purpose has been long forgotten in the abyss of time.`);
+
 events.set_tries(40, 50);
 events.fill_floor_by_retry();
 

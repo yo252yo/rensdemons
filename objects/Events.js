@@ -19,9 +19,11 @@ class SE_event extends S_event {
 
   real_interaction() {
     var self = this;
-    TextBannerSequence.make([
-      this.text,
-    ], function(){
+    var array = this.text;
+    if (!Array.isArray(this.text)){
+      array = [this.text];
+    }
+    TextBannerSequence.make(array, function(){
       self.destroy();
       INVENTORY.increase(ITEM.XpToken);
     });

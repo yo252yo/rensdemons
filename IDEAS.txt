@@ -13,6 +13,7 @@
 - People whispering on the edge of the viewport
 - Plot device/MC guffin
 - the goddess SAVED your soul (save/save)
+- a room where you can build your own universe using javascript
 
 =================================================
 
