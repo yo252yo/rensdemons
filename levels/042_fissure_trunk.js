@@ -80,7 +80,7 @@ new S_SavePoint(1350, 2075);
 
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 60, 50);
-decorFiller.set_zone(825,2675,1125,1275);
+decorFiller.set_zone(1025,2500,700,975);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); }, 0.5);
 decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
@@ -90,11 +90,10 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 0
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0.1);
-decorFiller.set_tries(30, 50);
+decorFiller.set_tries(20, 40);
 decorFiller.fill_decor_by_retry();
 
 
-decorFiller.set_zone(1050,2475,650,925);
 decorFiller.add_constructor(function(x,y,seed){ return new S_Hole(x, y, seed); }, 1, 75, 150);
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
@@ -116,7 +115,7 @@ decorFiller.fill_floor_by_retry();
 
 
 var events = new EventFiller(decorFiller);
-events.set_zone(1050,2475,650,925);
+events.set_zone(1025,2500,700,975);
 
 events.battle('caves/bloodsucker', 0.1);
 events.battle('caves/bat');

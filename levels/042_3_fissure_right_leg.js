@@ -33,8 +33,9 @@ t.interaction = prophecy;
 
 
 var filler = new Filler(gen.get());
+filler.set_zone(1200,2650,450,1050);
 var decorFiller = new MultiFiller(filler, 60, 50);
-decorFiller.set_zone(1050,2875,825,1525);
+
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
@@ -44,10 +45,9 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 0
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 0.1);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0.1);
-decorFiller.set_tries(15, 30);
+decorFiller.set_tries(10, 20);
 decorFiller.fill_decor_by_retry();
 
-decorFiller.set_zone(1225,2650,500,1050)
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); });
 decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
@@ -61,8 +61,7 @@ decorFiller.fill_floor_by_retry();
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(decorFiller);
-events.set_zone(1225,2650,500,1050);
+var events = new EventFiller(decorFiller, 5);
 events.battle('caves/bloodsucker', 0.1);
 events.battle('caves/bat');
 events.battle('caves/mole', 0.8);
@@ -94,7 +93,7 @@ events.text(`You jump by surprise when a huge pile of rock and metal slides in a
 events.text(`The faint glow of your torch is reflected on metallic surfaces on the walls. It appears to be some sort of broken mechanism, whose purpose has been long forgotten in the abyss of time.`);
 
 
-events.set_tries(40, 50);
+events.set_tries(20, 30);
 events.fill_floor_by_retry();
 
 

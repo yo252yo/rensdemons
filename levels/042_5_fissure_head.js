@@ -45,17 +45,6 @@ var postBossDialog = function(){
   ABILITIES.unlock("_rhino_defeated");
 }
 
-var s = new SBattle(1275, 2250, 'caves/rhino', 100);
-s.interaction = function(){
-  if (!ABILITIES.has_ability("_rhino_defeated")){
-    BATTLE.api.make("caves/rhino", postBossDialog);
-  } else{
-    TextBannerSequence.make([
-      `$$Ren$: "Let's go back to $$demon_lieutenant$. And this time, let's not stop until $$demon_lord$ is defeated and $$world_name$ is free! We need to be the arm that carries out the Goddess's will!"`,
-    ]);
-  }
-}
-
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
@@ -68,19 +57,33 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); 
 decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
 
 decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y); });
-decorFiller.set_tries(20, 30);
+decorFiller.set_tries(1, 8);
+
+decorFiller.set_zone(1050,2500,600,225);
 decorFiller.fill_decor_by_retry();
-
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); });
-
-decorFiller.set_tries(20, 30);
-decorFiller.fill_floor_by_retry();
+decorFiller.set_zone(1050,2150,575,200);
+decorFiller.fill_decor_by_retry();
+decorFiller.set_zone(1050,2275,200,125);
+decorFiller.fill_decor_by_retry();
+decorFiller.set_zone(1425,2275,200,125);
+decorFiller.fill_decor_by_retry();
 
 
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
+
+var s = new SBattle(1275, 2250, 'caves/rhino', 100);
+s.interaction = function(){
+  if (!ABILITIES.has_ability("_rhino_defeated")){
+    BATTLE.api.make("caves/rhino", postBossDialog);
+  } else{
+    TextBannerSequence.make([
+      `$$Ren$: "Let's go back to $$demon_lieutenant$. And this time, let's not stop until $$demon_lord$ is defeated and $$world_name$ is free! We need to be the arm that carries out the Goddess's will!"`,
+    ]);
+  }
+}
 
 
 
