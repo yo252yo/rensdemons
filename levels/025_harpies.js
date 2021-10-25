@@ -10,64 +10,64 @@ var gen = new Generator(DICTIONARY.get("world_seed")*13);
 // ===================
 
 // main
-new S_MudFloor(1950,2450,100,175);
-new S_MudFloor(1950,2325,450,125);
-new S_MudFloor(2325,2400,200,275);
-new S_MudFloor(2375,2175,100,450);
-new S_MudFloor(2325,1775,200,275);
-new S_MudFloor(2200,1700,175,125);
-new S_MudFloor(2200,2025,100,375);
-new S_MudFloor(1550,2025,700,100);
-new S_MudFloor(1425,2100,175,250);
-new S_MudFloor(1475,1875,50,500);
-new S_MudFloor(1400,1450,200,175);
-new S_MudFloor(1550,1375,175,50);
-new S_MudFloor(1675,1725,50,400);
-new S_MudFloor(1625,1775,150,125);
-new S_MudFloor(1725,1725,350,50);
-new S_MudFloor(2000,1775,75,150);
-new S_MudFloor(2025,1675,25,350);
-new S_MudFloor(1850,1350,200,25);
-new S_MudFloor(1825,1400,100,150);
+new S_RockFloor(1950,2450,100,175);
+new S_RockFloor(1950,2325,450,125);
+new S_RockFloor(2325,2400,200,275);
+new S_RockFloor(2375,2175,100,450);
+new S_RockFloor(2325,1775,200,275);
+new S_RockFloor(2200,1700,175,125);
+new S_RockFloor(2200,2025,100,375);
+new S_RockFloor(1550,2025,700,100);
+new S_RockFloor(1425,2100,175,250);
+new S_RockFloor(1475,1875,50,500);
+new S_RockFloor(1400,1450,200,175);
+new S_RockFloor(1550,1375,175,50);
+new S_RockFloor(1675,1725,50,400);
+new S_RockFloor(1625,1775,150,125);
+new S_RockFloor(1725,1725,350,50);
+new S_RockFloor(2000,1775,75,150);
+new S_RockFloor(2025,1675,25,350);
+new S_RockFloor(1850,1350,200,25);
+new S_RockFloor(1825,1400,100,150);
 
 // shortcut
-new S_MudFloor(1975,2250,25,125);
-new S_MudFloor(1825,2150,175,25);
-new S_MudFloor(1825,2275,25,150);
-new S_MudFloor(1725,2275,125,25);
-new S_MudFloor(1725,2275,25,150);
-new S_MudFloor(1600,2150,150,25);
-new S_MudFloor(1600,2275,25,150);
-new S_MudFloor(1500,2275,125,25);
-new S_MudFloor(1500,2275,25,225);
+new S_RockFloor(1975,2250,25,125);
+new S_RockFloor(1825,2150,175,25);
+new S_RockFloor(1825,2275,25,150);
+new S_RockFloor(1725,2275,125,25);
+new S_RockFloor(1725,2275,25,150);
+new S_RockFloor(1600,2150,150,25);
+new S_RockFloor(1600,2275,25,150);
+new S_RockFloor(1500,2275,125,25);
+new S_RockFloor(1500,2275,25,225);
 
 // extra 1
-new S_MudFloor(2400,1525,25,125);
-new S_MudFloor(2400,1425,75,25);
-new S_MudFloor(2450,1425,25,100);
-new S_MudFloor(2325,1350,150,25);
-new S_MudFloor(2325,1350,25,100);
-new S_MudFloor(2325,1275,150,25);
-new S_MudFloor(2450,1300,75,75);
+new S_RockFloor(2400,1525,25,125);
+new S_RockFloor(2400,1425,75,25);
+new S_RockFloor(2450,1425,25,100);
+new S_RockFloor(2325,1350,150,25);
+new S_RockFloor(2325,1350,25,100);
+new S_RockFloor(2325,1275,150,25);
+new S_RockFloor(2450,1300,75,75);
 
 // extra 2
-new S_MudFloor(1300,1975,150,25);
-new S_MudFloor(1300,1975,25,150);
-new S_MudFloor(1300,1850,100,25);
-new S_MudFloor(1375,1850,25,125);
-new S_MudFloor(1300,1750,100,25);
-new S_MudFloor(1300,1750,25,125);
-new S_MudFloor(1300,1650,100,25);
-new S_MudFloor(1375,1675,75,75);
+new S_RockFloor(1300,1975,150,25);
+new S_RockFloor(1300,1975,25,150);
+new S_RockFloor(1300,1850,100,25);
+new S_RockFloor(1375,1850,25,125);
+new S_RockFloor(1300,1750,100,25);
+new S_RockFloor(1300,1750,25,125);
+new S_RockFloor(1300,1650,100,25);
+new S_RockFloor(1375,1675,75,75);
 
 // extra 3
-new S_MudFloor(1325,2275,200,25);
-new S_MudFloor(1325,2275,25,100);
-new S_MudFloor(1325,2200,75,25);
-new S_MudFloor(1375,2200,25,75);
-new S_MudFloor(1325,2150,75,25);
-new S_MudFloor(1325,2150,25,100);
-new S_MudFloor(1300,2100,75,75);
+new S_RockFloor(1325,2275,200,25);
+new S_RockFloor(1325,2275,25,100);
+new S_RockFloor(1325,2200,75,25);
+new S_RockFloor(1375,2200,25,75);
+new S_RockFloor(1325,2150,75,25);
+new S_RockFloor(1325,2150,25,100);
+new S_RockFloor(1300,2100,75,75);
 
 
 // ===================
