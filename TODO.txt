@@ -1,10 +1,11 @@
 
-
-
 - deco hellsmaw
 - fissure flavor events and text
 
-- 2nd lieutenant fight ("WIP BOSS START TEXT.") + end of fight
+
+- 2nd lieutenant EOF: ABILITIES.unlock("_lieutenant_defeated") ->> hell_map, + aerith death ;_;
+
+- talk about aerith death if you know, before the fight
 
 
 

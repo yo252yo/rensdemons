@@ -48,10 +48,19 @@ var attack = {
 };
 
 
-BATTLE.monster_actions.add_textual("WIP BOSS START TEXT.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lieutenant$ roars, and the ground trembles below your feet. A torrent of obsidian rocks rolls down from the nearest peak and head straight for you.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lieutenant$ pumps up his ungodly muscles. Flames start surrounding his crackled skin. He charges at you with a torrent of powerful fist blows.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lieutenant$ raises both arms and screams. As an answer to his cry, cracks open in the ground under your feet, and molten lava starts to make its way up. You quickly have to find a place safe from this scorching flooding.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lieutenant$ snaps his fingers. Hundreds of incandescent ball of fire appear in the air all around him. They dash through the air in your direction, leaving sparkly trails as they go.", attack);
+
 
 // ===================
 //hack START
 // ===================
 
-BATTLE.operations.start("WIP BOSS START TEXT.");
+BATTLE.operations.start([
+  "A Loquacious Lieutenant Laughs at your Logic.",
+  `$$demon_lieutenant$: "So you really think you can take me over by force?"`,
+  `$$Ren$: "Yes, the Goddess is with me!"`,
+  `$$demon_lieutenant$: "And where has she been the few hundred years? Anyway, you made your choice. It's time for you to accept the consequences..."`
+]);

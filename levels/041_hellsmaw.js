@@ -208,7 +208,10 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@12', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
 
-  new S_Beelzebub(1900, 2200);
+
+  if (!ABILITIES.has_ability("_lieutenant_defeated")){
+    new S_Beelzebub(1900, 2200);
+  }
 
   decor.set_zone(1600,2650,700,1000);
   events.set_zone(01,01,300,300);

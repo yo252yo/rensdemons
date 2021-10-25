@@ -373,17 +373,24 @@ class S_Beelzebub extends SimpleObject {
     this.specify_sprite_size(173,264);
     this.adjust_hitbox(50,10,100,100);
 
+
+    var self = this;
+    var postBossDialog = function(){
+      ABILITIES.unlock("_lieutenant_defeated");
+      self.destroy();
+    }
+
     this.interaction = function(){
       if(STATS.flag("StoryOfTheAncients")) {
         if(ABILITIES.has_ability("_lieutenant_confronted")) {
-          BATTLE.api.make("pandemonium/lieutenant");
+          BATTLE.api.make("pandemonium/lieutenant", postBossDialog);
         } else if(INVENTORY.has_ancient_armament()) {
           new CenteredTextMenu("What will you use?", [
             {"text": "The ancient artifact", "effect": function() {  BATTLE.api.make("pandemonium/_lieutenant_first_encounter"); }},
-            {"text": "Your faith", "effect": function() { BATTLE.api.make("pandemonium/lieutenant"); }},
+            {"text": "Your faith", "effect": function() { BATTLE.api.make("pandemonium/lieutenant", postBossDialog); }},
           ]);
         } else {
-          BATTLE.api.make("pandemonium/lieutenant");
+          BATTLE.api.make("pandemonium/lieutenant", postBossDialog);
         }
       } else {
         if (ABILITIES.has_ability("_lieutenant_confronted")){
