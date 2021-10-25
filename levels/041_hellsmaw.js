@@ -18,12 +18,21 @@ var decor = new MultiFiller(filler, 40, 40);
 var events = new EventFiller(filler, 1);
 events.set_tries(10, 12);
 
+
+var summitExit = function(){
+  if(ABILITIES.has_ability("_lieutenant_defeated")) {
+    CURRENTLEVEL.setup('050_hell_map');
+  } else{
+    CURRENTLEVEL.setup('041_hellsmaw@8', [2450,1825]);
+  }
+}
+
+
 // ===================
 //hack 1. FLOORS
 //hack 2. EXIT
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-var summitExit = '041_hellsmaw@8';// changes later
 
 if(hellsmawpart == 1){
   new S_LavaFloor(1875,2500,275,200);
@@ -225,7 +234,8 @@ else if(hellsmawpart == 3){
   new S_LavaFloor(1950,2475,75,625);
   new S_LavaFloor(1800,2275,350,275);
 
-  new S_ExitFloor(1775,2175,50,100, summitExit, [2450,1825]);
+  var summit = new S_ExitFloor(1775,2175,50,100);
+  summit.interaction = summitExit;
   new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@13', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@13', [1975, 1900]);
 
@@ -240,7 +250,8 @@ else if(hellsmawpart == 3){
   new S_LavaFloor(1950,2475,75,625);
   new S_LavaFloor(1800,2275,350,275);
 
-  new S_ExitFloor(1775,2175,50,100, summitExit, [2450,1825]);
+  var summit = new S_ExitFloor(1775,2175,50,100);
+  summit.interaction = summitExit;
   new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@12', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
 
