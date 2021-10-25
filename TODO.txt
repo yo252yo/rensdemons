@@ -1,10 +1,7 @@
+
+
 new filler type for most deco??
 im seeing overlapping deco spawn in unwalkable spots, is this on purpose?
-
-
-
-
-He's faking it to infiltrate the enemy
 
 
 
@@ -24,16 +21,13 @@ hidden ending:
 squares linked without any order
 
 
+------------------------------------
 
 should we rly limit to 3 choices when its inquiries, like _004/_priest?
 
 music loop
 
 check walking on small sprites
-
- success/ happiness/your heart/wellness/wealth/eternity/time/understanding/immortality/power/overcoming/growth/CONTENT
-progress/excellence/the future/survival/victory/autocomplete
-
 
 
 ---------------------------------------- BACKSIDE CONTENT:
