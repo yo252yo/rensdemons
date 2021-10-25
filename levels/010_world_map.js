@@ -19,7 +19,8 @@ var w = 2950;
 var f = new S_Floor(1050, 1000+h, w, h-50, 'obj_dark');
 f.visual_element.html_rectangle.style.border = "1px dotted #FFFFFF22";
 
-var FMap = new Filler(gen.get());
+var filler = new Filler(gen.get());
+var FMap = new MultiFiller(filler, 300, 200);
 FMap.set_zone(1075, 1000+h-25, w-50, h-100);
 //FMap.draw_for_debug('#FFFFFF')
 
@@ -104,24 +105,15 @@ FHardMain.set_object(100, 50, function(x,y,seed){
 FHardMain.fill_by_retry();
 
 
-//hack decor
-// could be non uniform
-for(var i = 0; i < 3; i++) {
-  FMap.set_tries(3, 25);
-  FMap.set_object(100, 100, function(x,y,seed){ return new SM_Trees(x, y, seed);});
-  FMap.fill_by_retry();
-
-  FMap.set_tries(3, 15);
-  FMap.set_object(300, 200, function(x,y,seed){ return new SM_Lake(x, y, seed);});
-  FMap.fill_by_retry();
-
-  FMap.set_tries(3, 15);
-  FMap.set_object(300, 150, function(x,y,seed){ return new SM_Mountain(x, y, seed);});
-  FMap.fill_by_retry();
-}
+FMap.add_constructor( function(x,y,seed){ return new SM_Trees(x, y); }, 2, 100, 100);
+FMap.add_constructor( function(x,y,seed){ return new SM_Lake(x, y); }, 1.5, 300, 200);
+FMap.add_constructor( function(x,y,seed){ return new SM_Mountain(x, y); }, 1, 300, 150);
+FMap.set_tries(40, 100);
+FMap.fill_by_retry();
 // Place hills after as they are walkable
 FMap.set_tries(10, 40);
-FMap.set_object(200, 100, function(x,y,seed){ return new SM_Hills(x, y, seed);});
+FMap.clear();
+FMap.add_constructor( function(x,y,seed){ return new SM_Hills(x, y); });
 FMap.fill_by_retry();
 
 // ===================
