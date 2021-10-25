@@ -112,10 +112,29 @@ class Filler {
 
   _intersectWalk(obj, x, y) {
     var grain = 10;
-    for(var i = -1 * grain; i <= obj.obj_w + grain; i += grain){
-      for(var j = -1 * grain; j <= obj.obj_h + grain; j += grain){
-        if(CURRENTLEVEL.io.is_walkable(x + i, y - j)){
-          return true;
+    for(var i = -3 * grain; i <= obj.obj_w + 3*grain; i += grain){
+      var def = -1;
+      var changes = 0;
+      for(var j = -3 * grain; j <= obj.obj_h + 3*grain; j += grain){
+        if(def != CURRENTLEVEL.io.is_walkable(x + i, y - j)){
+          changes ++;
+          def = CURRENTLEVEL.io.is_walkable(x + i, y - j);
+          if (changes > 2){
+            return true;
+          }
+        }
+      }
+    }
+    for(var j = -3 * grain; j <= obj.obj_h + 3*grain; j += grain){
+      var def = -1;
+      var changes = 0;
+      for(var i = -3 * grain; i <= obj.obj_w + 3*grain; i += grain){
+        if(def != CURRENTLEVEL.io.is_walkable(x + i, y - j)){
+          changes ++;
+          def = CURRENTLEVEL.io.is_walkable(x + i, y - j);
+          if (changes > 2){
+            return true;
+          }
         }
       }
     }

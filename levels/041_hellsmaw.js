@@ -8,14 +8,15 @@ var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_S
 if(s.length > 1){
   hellsmawpart= s[1];
 }
-
 var gen = new Generator(DICTIONARY.get("world_seed")*17 + hellsmawpart);
 
 AUDIO.music.levels.hellsmaw();
 
 var filler = new Filler(gen.get());
 var decor = new MultiFiller(filler, 40, 40);
+
 var events = new EventFiller(filler, 1);
+events.set_tries(10, 12);
 
 // ===================
 //hack 1. FLOORS
@@ -39,8 +40,10 @@ if(hellsmawpart == 1){
 
   new S_SavePoint(1900,2450,50,50);
 
-  decor.set_zone(1500,2700,1100,1000);
-  events.set_zone(1725,2400,625,575);
+  floors = [
+    [1675,2100,775,175],
+    [1875,2300,175,400],
+  ];
 }
 else if(hellsmawpart == 2){
   new S_LavaFloor(1950,2475,75,400);
@@ -57,8 +60,11 @@ else if(hellsmawpart == 2){
   new S_ExitFloor(2150,1875,50,50, '041_hellsmaw@6', [2000, 2500]);
   new S_ExitFloor(2350,2000,50,50, '041_hellsmaw@4', [2000, 2500]);
 
-  decor.set_zone(1500,2700,1100,1000);
-  events.set_zone(1750,2472,650,675);
+  floors = [
+    [1700,2175,750,175],
+    [1900,2475,175,700],
+    [2150,2300,250,400]
+  ];
 }
 else if(hellsmawpart == 3){
   new S_LavaFloor(1950,2475,75,300);
@@ -72,8 +78,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1825,2300,50,50, '041_hellsmaw@4', [2525,2475]);
   new S_ExitFloor(2125,2075,50,50, '041_hellsmaw@7', [2000, 2500]);
 
-  decor.set_zone(1625,2700,725,875);
-  events.set_zone(1775,2450,425,500);
+  floors = [
+    [1925,2450,125,525],
+    [1750,2050,325,125],
+    [1875,2275,350,175],
+  ];
 } else if(hellsmawpart == 4){
   new S_LavaFloor(1975,2500,625,50);
   new S_LavaFloor(2125,2650,300,325);
@@ -81,8 +90,9 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(2550,2500,75,50, '041_hellsmaw@3', [1850,2275]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [2375,2025]);
 
-  decor.set_zone(1775,2775,1000,575);
-  events.set_zone(2000,2675,575,375);
+  floors = [
+    [2075,2700,400,425]
+  ];
 } else if(hellsmawpart == 5){
   new S_LavaFloor(1750,2500,250,50);
   new S_LavaFloor(1650,2575,200,200);
@@ -92,8 +102,11 @@ else if(hellsmawpart == 3){
 
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [1775,2100]);
 
-  decor.set_zone(1450,2850,700,775);
-  events.set_zone(1525,2775,425,625);
+  floors = [
+    [1475,2375,350,275],
+    [1625,2800,350,250],
+    [1600,2575,350,225],
+  ];
 } else if(hellsmawpart == 6){
   new S_LavaFloor(1950,2475,75,700);
   new S_LavaFloor(1600,2125,725,75);
@@ -104,8 +117,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(2300,2125,50,75, '041_hellsmaw@8', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@2', [2175,1850]);
 
-  decor.set_zone(1425,2625,1125,1025);
-  events.set_zone(1650,2425,600,575);
+  floors = [
+  //  [1750,2275,450,350]
+    [1900,2450,175,650],
+    [1625,2200,675,225],
+  ];
 } else if(hellsmawpart == 7){
   new S_LavaFloor(1950,2475,75,700);
   new S_LavaFloor(1675,2175,300,50);
@@ -120,8 +136,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,1800,75,50, '041_hellsmaw@11', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@3', [2150,2050]);
 
-  decor.set_zone(1350,2650,900,1200);
-  events.set_zone(1575,2425,475,875);
+  floors = [
+    [1900,2450,175,625],
+    [1525,2200,375,325],
+    [1775,1875,125,325],
+  ];
 } else if(hellsmawpart == 8){
   new S_LavaFloor(1950,2475,75,175);
   new S_LavaFloor(1950,2325,650,50);
@@ -137,8 +156,10 @@ else if(hellsmawpart == 3){
 
   new S_SavePoint(2275,2250);
 
-  decor.set_zone(1800,2625,950,950);
-  events.set_zone(1925,2425,625,575);
+  floors = [
+    [1900,2475,675,225],
+    [2025,2150,325,375],
+  ];
 } else if(hellsmawpart == 9){
   new S_LavaFloor(1950,2475,75,225);
 
@@ -160,8 +181,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1850,1500,50,50, '041_hellsmaw@10', [2550,2000]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@6', [1975,1775]);
 
-  decor.set_zone(1775,2650,875,1325);
-  events.set_zone(1850,2425,700,975);
+  floors = [
+    [2250,1925,350,475],
+    [1825,2000,450,475],
+    [1900,2400,550,400],
+  ];
 } else if(hellsmawpart == 10){
   new S_LavaFloor(1950,2475,75,175);
   new S_LavaFloor(1825,2350,200,50);
@@ -176,8 +200,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(2525,2025,50,50, '041_hellsmaw@9', [1875,1475]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@6', [1600,2100]);
 
-  decor.set_zone(1525,2550,1150,875);
-  events.set_zone(1625,2500,925,700);
+  floors = [
+    [1575,2475,375,200],
+    [1750,2275,600,225],
+    [2050,2050,375,275],
+  ];
 } else if(hellsmawpart == 11){
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@7', [1975,1775]);
 
@@ -189,8 +216,11 @@ else if(hellsmawpart == 3){
   new S_LavaFloor(1950,2225,75,175);
   new S_LavaFloor(1725,2100,300,50);
 
-  decor.set_zone(1625,2550,1000,825);
-  events.set_zone(1700,2500,875,700);
+  floors = [
+    [1675,2200,375,200],
+    [2100,2075,475,250],
+    [1925,2325,275,400],
+  ];
 } else if(hellsmawpart == 12){
   new S_LavaFloor(1950,2475,75,625);
   new S_LavaFloor(1800,2275,350,275);
@@ -199,8 +229,13 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@13', [2000, 2500]);
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@13', [1975, 1900]);
 
-  decor.set_zone(1600,2650,700,1000);
-  events.set_zone(01,01,300,300);
+  events.set_tries(0, 0);
+  floors = [
+    [1900,2025,150,150],
+    [1750,2325,175,400],
+    [2050,2300,150,350],
+    [1900,2450,150,225],
+  ];
 } else if(hellsmawpart == 13){
   new S_LavaFloor(1950,2475,75,625);
   new S_LavaFloor(1800,2275,350,275);
@@ -210,12 +245,13 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
 
 
-  if (!ABILITIES.has_ability("_lieutenant_defeated")){
-    new S_Beelzebub(1900, 2200);
-  }
-
-  decor.set_zone(1600,2650,700,1000);
-  events.set_zone(01,01,300,300);
+  events.set_tries(0, 0);
+  floors = [
+    [1900,2025,150,150],
+    [1750,2325,175,400],
+    [2050,2300,150,350],
+    [1900,2450,150,225],
+  ];
 } else {
   CONSOLE.error("Requested unimplemented hellsmawpart: " + hellsmawpart);
 }
@@ -235,17 +271,20 @@ decor.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1.5);
 decor.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1.5);
 decor.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1.5);
 decor.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2, 175, 50);
-decor.set_tries(30, 50);
-decor.fill_decor_by_retry(true);
-decor.set_tries(300, 500);
-decor.fill_floor_by_retry();
+decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2.5, 175, 50);
+decor.set_tries(10, 30);
 
-
+for(var i of floors){
+  decor.set_zone(i[0], i[1], i[2], i[3]);
+  decor.fill_decor_by_retry();
+}
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
+if (!ABILITIES.has_ability("_lieutenant_defeated") && hellsmawpart == 13){
+  new S_Beelzebub(1900, 2200);
+}
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
@@ -281,9 +320,11 @@ events.text(`You find gigantic footsteps in the ground. Whatever monster left th
 events.text(`Your ascension is tiresome, your surroundings are scary. You try to take comfort in the fact that the final fight approaches, and your quest is almost over. But an intuition sent by the Goddess gives you the unpleasant hunch that things might not be so simple...`);
 events.text(`You're starting to wonder if this rocky desolate inferno really has an exit. Fortunately, the Goddess fills your heart with certainty that however dire the trial may seem, there is necessarily a way forward.`);
 
-events.set_tries(10, 50);
-events.fill_floor_by_retry();
 
+for(var i of floors){
+  events.set_zone(i[0], i[1], i[2], i[3]);
+  events.fill_floor_by_retry();
+}
 
 if(hellsmawpart == 1){
   CURRENTLEVEL.start_function = function() {
