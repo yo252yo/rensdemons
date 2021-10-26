@@ -375,9 +375,61 @@ class S_Beelzebub extends SimpleObject {
 
 
     var self = this;
-    var postBossDialog = function(){
+    var postBossPhase3 = function(){
       ABILITIES.unlock("_lieutenant_defeated");
+      STATS.record.flag("KilledBestFriend");
+      AUDIO.music.stop();
+
+      TextBannerSequence.make([
+        `You stay a long time kneeling on the ground in shock and disbelief. You don't want to let go of the body of $$BestFriend$. Tears keep flowing for hours. The world becomes a whirlwind of pain and sobs...`,
+        `At some point, you lose consciousness and fall asleep. The cherished face of $$BestFriend$ follows you in feverish nightmares.`,
+        `When you come to, your resolve has grown. The world around seems less colorful, your body is sluggish and heavy, you feel a deep empty hole in your chest. But you cannot let yourself go. You need to drag yourself forward and honor $$BestFriend$'s last wishes.`,
+        `You cannot allow yourself to let so much efforts and pain go to waste...`,
+      ]);
+    }
+
+    var postBossPhase2 = function(){
+      AUDIO.music.characters.BestFriend();
       self.destroy();
+
+      TextBannerSequence.make([
+        `$$BestFriend$: "$$Ren$..."`,
+        `$$Ren$: "$$BestFriend$!"`,
+        `You jump to the side of your long-life companion.`,
+        `$$BestFriend$ did not reach shelter on time and could not avoid the powerful explosion. The concussion tore some limbs, the conflagration ravaged some others... The beloved faced that cheered you up so many times is beyond recognition.`,
+        `There's no healing those cruel wounds... You immediately understand on some level that this inferno is the end of the road for $$BestFriend$. Yet, you refuse to accept it. You do not dare touch the weakened body, but you cannot help but trying every spell, unction or plant that comes to mind.`,
+        `$$BestFriend$: "$$Ren$, it's useless..."`,
+        `$$Ren$: "No! No! No!"`,
+        `It seems to be all you manage to say through the tears. $$BestFriend$'s fate leaves no room for doubt. But you hold on as strongly as you can, refusing to accept a world where $$BestFriend$ is not at your side.`,
+        `$$Ren$: "I can't! I can't do it without you!"`,
+        `$$BestFriend$: "You have to... Otherwise this will all be for nothing..."`,
+        `$$BestFriend$'s breath is slow and irregular. It pierces through the silence like a deadly whizzing.`,
+
+        `$$Ren$: "Curse the Goddess! Curse it all! What good is it to be the Promised Child if I can't even save the person I care the most about!"`,
+
+        `$$BestFriend$: "You can't... Say that..."`,
+        `$$BestFriend$ takes a pause. Each word seems to be more difficult than the previous one.`,
+        `$$BestFriend$: "You've got to... Keep the faith... Keep going..."`,
+        `$$BestFriend$: "We've come so far... You need to end it..."`,
+        `$$BestFriend$: "For everyone... For a better future..."`,
+        `$$BestFriend$: "For $$PreciousChild$..."`,
+        `$$BestFriend$: "Do it for me... Please..."`,
+
+        `Your face is soaked with tears as you hold the hand of your friend close to your heart.`,
+        `$$Ren$: "I will. I promise I will not let all of this be in vain. I will kill $$demon_lord$ and save $$world_name$. I will make it a happy and peaceful place... A place you would have wanted... It'll bear your name. You'll never be forgotten!"`,
+        `$$BestFriend$: "Thank... You..."`,
+        `$$BestFriend$ struggles to take a last painful breath, then falls eyes-closed on the ground. All suffering has stopped now, and the beloved face displays an outlandish peacefulness.`,
+
+      ], postBossPhase3);
+    }
+
+    var postBossDialog = function(){
+      TextBannerSequence.make([
+        `$$demon_lieutenant$ falls down on the ground, defeated. The weight of the shock makes everything shake around you.`,
+        `You let out a sigh of relief, but it is short lived: victory cannot be that easy. A morbid sizzling noise is coming out of the lifeless body of the demon. Its skin bubbles up. You barely have time to jump to cover, yelling at $$BestFriend$ to do the same.`,
+        `The deformed body of $$demon_lieutenant$ suddenly explodes in a massive burst of flames. For a few moments that seem like an eternity, you cannot see anything around you. Torrents of burning lava are scattered in all directions, blinding you with their incandescent light. You hold your breath as much as possible from the stench of the body's ignited insides.`,
+        `When the dust finally settles down, you're mostly unharmed. You look around for $$BestFriend$, only to discover with horror that your luck has not been shared...`,
+      ], postBossPhase2);
     }
 
     this.interaction = function(){
