@@ -396,7 +396,7 @@ class S_Beelzebub extends SimpleObject {
         `$$BestFriend$: "$$Ren$..."`,
         `$$Ren$: "$$BestFriend$!"`,
         `You jump to the side of your long-life companion.`,
-        `$$BestFriend$ did not reach shelter on time and could not avoid the powerful explosion. The concussion tore some limbs, the conflagration ravaged some others... The beloved faced that cheered you up so many times is beyond recognition.`,
+        `Despite all efforts, $$BestFriend$ did not reach shelter on time and could not avoid the powerful explosion. The concussion tore some limbs, the conflagration ravaged some others... The beloved faced that cheered you up so many times is beyond recognition.`,
         `There's no healing those cruel wounds... You immediately understand on some level that this inferno is the end of the road for $$BestFriend$. Yet, you refuse to accept it. You do not dare touch the weakened body, but you cannot help but trying every spell, unction or plant that comes to mind.`,
         `$$BestFriend$: "$$Ren$, it's useless..."`,
         `$$Ren$: "No! No! No!"`,

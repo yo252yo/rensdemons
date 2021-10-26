@@ -20,6 +20,8 @@ better memory management?
 
 menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
 
+better sprites for buildings and civilian battlers
+
 if theres a guy behind a house interaction interacts with the house (most prominent object)
 
 non rectangular hitboxes
