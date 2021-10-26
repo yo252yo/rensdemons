@@ -12,7 +12,7 @@ const PALETTE = {
   },
 
   body_color: function(){
-    if(CURRENTLEVEL.is_map()){
+    if(CURRENTLEVEL.level_name == "010_world_map"){
       return PALETTE.color('obj_dark');
     } else {
       return PALETTE.color('void');
@@ -20,7 +20,7 @@ const PALETTE = {
   },
 
   background_color: function(){
-    if(CURRENTLEVEL.is_map()){
+    if(CURRENTLEVEL.level_name == "010_world_map"){
       return ('obj_light');
     } else {
       return ('obj_dark');

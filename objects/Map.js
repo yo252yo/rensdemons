@@ -132,22 +132,6 @@ class SM_Crevasse extends MapObject {
   }
 }
 
-class SM_Vulcano extends MapObject {
-  constructor(x, y, label, destination, accessibility_function){
-    var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
-    super(visual, x, y, label, destination, accessibility_function);
-    this.adjust_hitbox(30,-10,270,200);
-    this.specify_sprite_size(315,266);
-    if(this.legend) this.legend.shift(150);
-
-    if(!destination){
-      this.interaction = this.text_interaction([
-        "A big vulcano blocks your path."
-      ]);
-    }
-  }
-}
-
 class SM_Hills extends MapObject {
   constructor(x, y, seed, label, destination, accessibility_function){
     var gen = new Generator(seed);
@@ -237,5 +221,54 @@ class SM_Mountain extends MapObject {
         "Crossing these mountains would take a long time, and a lot of effort. Better to avoid it.",
       ], seed);
     }
+  }
+}
+
+
+class SM_Vulcano extends MapObject {
+  constructor(x, y, label, destination, accessibility_function){
+    var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
+    super(visual, x, y, label, destination, accessibility_function);
+    this.adjust_hitbox(30,-10,270,200);
+    this.specify_sprite_size(315,266);
+    if(this.legend) this.legend.shift(150);
+
+    if(!destination){
+      this.interaction = this.text_interaction([
+        "A big vulcano blocks your path."
+      ]);
+    }
+  }
+}
+
+class SM_Pandemonium extends MapObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/map/pandemonium.png", 'obj_light');
+    super(visual, x, y, `Pandemonium`, "051_pandemonium");
+    this.adjust_hitbox(40,-10,235,200);
+    this.specify_sprite_size(300,251);
+    if(this.legend) this.legend.shift(140);
+  }
+}
+
+
+class SM_Heaven extends MapObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/map/heaven.png", 'obj_light');
+    super(visual, x, y, `Heaven`, "060_heaven");
+    this.adjust_hitbox(40,-10,235,200);
+    this.specify_sprite_size(300,215);
+    if(this.legend) this.legend.shift(150);
+    this.make_walkable();
+  }
+}
+
+class SM_HellVulcano extends MapObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/map/hellvulcano.png", 'obj_light');
+    super(visual, x, y, `Maw of Hell`, "041_hellsmaw@13");
+    this.adjust_hitbox(30,-10,270,200);
+    this.specify_sprite_size(315,266);
+    if(this.legend) this.legend.shift(150);
   }
 }

@@ -6,6 +6,9 @@
 
 
 - hellsmaw 12 and 13 have different decor
+
+- hellvulcano to "041_hellsmaw@13" at fixed Position
+
 - hell
 - pandemonium:
 the key to survival -> progress -> success -> happiness -> understanding -> victory
@@ -14,6 +17,9 @@ hidden ending:
 
 - heaven
 squares linked without any order
+
+
+doesnt seem too hard to make the change color scheme work for the interface and fog
 
 
 ------------------------------------
