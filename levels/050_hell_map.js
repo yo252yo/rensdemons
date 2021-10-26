@@ -34,6 +34,19 @@ new SM_Heaven(1600,1200, `Heaven`);
 //hack 7. START/INIT
 // ===================
 
+CURRENTLEVEL.start_function = function() {
+  var callback = function(){
+    SAVE.autosave();
+    IO.control.character();
+  }
+  TextBannerSequence.make([
+    `When you exit the vulcano, you find yourself in a different world. Your trip in the mountains indeed brought you to another dimension, probably the one where the demons originated.`,
+    `Maybe the loss of $$BestFriend$ numbed your soul, or maybe the Goddess prepared you for this on some level, but you do not seem surprised or scared by the new landscape that expands in front of your eyes.`,
+    "The fauna and flora are unlike anything you've ever seen before. The atmosphere seems thicker, somehow. The ground is dry and colorful, the plants seem to hide some deadly poisons. You have no doubt that every creature in this place is deadly. The heat and humidity make breathing hard.",
+    "But those hardship do not phase you. You're here for one purpose only, and your resolve is strong. You're going to find $$demon_lord$.",
+  ], callback);
+};
+
 CURRENTLEVEL.initialize_with_character(2475, 2225, 0.6);
 
 // ===================
