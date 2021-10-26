@@ -398,6 +398,19 @@ if(hellsmawpart == 1){
     ], IO.control.character);
   };
 } else if(hellsmawpart == 13){
+  var after = function(){
+    if(STATS.flag("KilledBestFriend")){
+      new CenteredTextMenu("Do you want to say a few words to your friend before the fight?",
+                    [
+                      {"text": "Yes", "effect": function(){ BATTLE.api.make("_party/_BestFriend"); }},
+                      {"text": "No", "effect": function(){ IO.control.character(); }},
+                   ]
+                 );
+    } else {
+      IO.control.character();
+    }
+  };
+
   CURRENTLEVEL.start_function = function() {
     TextBannerSequence.make([
       `$$BestFriend$: "Wait a minute, this place looks a lot like where we've just been..."`,
@@ -407,7 +420,7 @@ if(hellsmawpart == 1){
       `In the middle of the pit stands a beast bigger than any building you've ever seen. His humanoid shape is draped in flames. The crackled skin covering his muscular body marries crimson and black, like charred flesh. Two huge horns adorn a face that displays permanent anger. His red eyes shine through the clouds of smoke.`,
       `$$BestFriend$: "Is that... $$demon_lord$?"`,
       `$$Ren$: "Who else? Let's use our weapon before he notices us!"`,
-    ], IO.control.character);
+    ], after);
   };
 }
 
