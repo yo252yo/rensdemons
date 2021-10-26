@@ -21,6 +21,40 @@ var bf_join_party = function(){
   ], function(){ bf.destroy(); IO.control.character(); });
 };
 
+var bf_without_foreknowledge = function(){
+  TextBannerSequence.make([
+    `You still hesitate, worried about the dangers ahead. $$BestFriend$ takes your hand and smiles.`,
+    `$$BestFriend$: "Stop thinking about it, it's not a matter up for discussion. I'm not taking no for an answer. I'm not leaving your side, period. So, should we go?"`,
+  ], bf_join_party);
+}
+
+var bf_with_foreknowledge = function(){
+  TextBannerSequence.make([
+    `$$Ren$: "I'm forbidding you to come! I know for a fact that if you join me, you will die!"`,
+    `$$BestFriend$: "Is that so? How can you be so sure?"`,
+    `$$Ren$: "The Goddess..."`,
+    `$$BestFriend$: "Oh, stop it with the Goddess! There's no way you know everything that's going to happen!"`,
+    `$$Ren$: "But..."`,
+    `$$BestFriend$: "And what if I don't come, then what? Did the Goddess tell you that you'll succeed?"`,
+    `$$Ren$: "Well not yet, but..."`,
+    `$$BestFriend$: "See, you need me. Stop thinking about it, it's not a matter up for discussion. I'm not taking no for an answer. I'm not leaving your side, period. So, should we go?"`,
+    `You reluctantly cave, hoping that this time, something will be different...`,
+  ], bf_join_party);
+}
+
+var bf_prejoin_party = function(){
+  if(STATS.flag("KilledBestFriend")){
+    new CenteredTextMenu("Are you going to disclose your past experiences about what happens to your friend?",
+                  [
+                    {"text": "Tell everything", "effect": function(){ bf_with_foreknowledge(); }},
+                    {"text": "Pretend not to know", "effect": function(){ bf_without_foreknowledge(); }},
+                 ]
+               );
+  } else {
+    bf_without_foreknowledge();
+  }
+};
+
 // ===================
 //hack 7. START/INIT
 // ===================
@@ -57,9 +91,7 @@ CURRENTLEVEL.start_function = function() {
     `$$BestFriend$ winks playfully.`,
     `$$Ren$: "I... I don't know, I don't want bad things to happen to you..."`,
     `$$BestFriend$: "And I can't imagine anything worse than sitting here stuck in this village worrying about you, not knowing if you're even coming back. I've had a taste of this over the last few hours, and it's enough for a lifetime. Never again, no thanks."`,
-    `You still hesitate, worried about the dangers ahead. $$BestFriend$ takes your hand and smiles.`,
-    `$$BestFriend$: "Stop thinking about it, it's not a matter up for discussion. I'm not taking no for an answer. I'm not leaving your side, period. So, should we go?"`,
-  ], bf_join_party);
+  ], bf_prejoin_party);
 };
 
 
