@@ -1,26 +1,16 @@
 
-- 2nd lieutenant EOF: aerith death dialog ;_;
-
 - talk about aerith death if you know, before the fight
 
 
+- Total individualism, war of all against all in the fissure temple + smthing about smell!!
 
-- hellsmaw 12 and 13 have different decor
+- hell: deco, creatures, back to "041_hellsmaw@14" ?
 
-- hellvulcano to "041_hellsmaw@13" at fixed Position
-
-- hell
 - pandemonium:
 the key to survival -> progress -> success -> happiness -> understanding -> victory
 
 hidden ending:
-
-- heaven
-squares linked without any order
-
-
-doesnt seem too hard to make the change color scheme work for the interface and fog
-
+- heaven: squares linked without any order
 
 ------------------------------------
 
@@ -29,6 +19,10 @@ should we rly limit to 3 choices when its inquiries, like _004/_priest?
 music loop
 
 check walking on small sprites
+
+doesnt seem too hard to make the change color scheme work for the interface and fog
+
+hidden abilities shouldnt trigger notification sound
 
 
 ---------------------------------------- BACKSIDE CONTENT:
