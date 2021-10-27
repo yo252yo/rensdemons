@@ -47,6 +47,38 @@ class S_SavePoint extends LevelObject {
   }
 }
 
+class S_Altar extends LevelObject {
+  constructor(x, y, type){
+    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
+    super(visual, x, y);
+    this.adjust_hitbox(5,-5,40,20);
+    this.specify_sprite_size(50,50);
+    this.type = type;
+  }
+
+  interaction(){
+    var type = this.type;
+    var options = {};
+    var text = "";
+
+    if (Object.keys(ITEMS_ARCHETYPES).includes(type)){
+      options = [{"text": "Offer", "effect": function(){ SHOP.menu_sell(type, 100000); }},
+                {"text": "Request", "effect": function(){ SHOP.menu_buy(type, 100000); }}];
+      text = "You can offer goods or coins for requests.";
+    }
+    if (Object.keys(ABILITIES_ARCHETYPES).includes(type)){
+        options = [{"text": "Meditate", "effect": function(){ TRAINER.menu(type, 100000); }}];
+        text = "You can medidate in hope that the Goddess teaches you.";
+    }
+
+    new CenteredTextMenu(`What is an Altar of the Goddess doing in such an unholy place? You can pray so that She remembers you, but you notice that this altar is also dedicated to the Way of the ${type}. ${text}`,
+                  options.concat([
+                    {"text": "Worship", "effect": function(){ SAVE.print.save_menu(); }},
+                    {"text": "Postpone", "effect": "##CLOSE"}
+                 ]));
+  }
+}
+
 class B_Bed extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/bed");

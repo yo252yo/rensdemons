@@ -281,7 +281,7 @@ class SM_HellVulcano extends MapObject {
 class SM_Altar extends MapObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/hellmap/altar.png", 'obj_light');
-    super(visual, x, y, `Altar of<br />${type}`, "");
+    super(visual, x, y, `Altar of<br />${type}`, `$altar_${type}_${x}${y}`);
     this.adjust_hitbox(20,-10,40,50);
     this.specify_sprite_size(67,100);
     if(this.legend) this.legend.shift(20);

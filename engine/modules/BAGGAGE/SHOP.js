@@ -147,6 +147,18 @@ const SHOP = {
     },
   },
 
+  menu_sell: function(type, threshold) {
+    SHOP._current_type = type;
+    SHOP._current_threshold = threshold;
+    SHOP._menu.sell();
+  },
+
+  menu_buy: function(type, threshold) {
+    SHOP._current_type = type;
+    SHOP._current_threshold = threshold;
+    SHOP._menu.buy();
+  },
+
   enter: function(type, threshold) {
     SHOP._current_type = type;
     SHOP._current_threshold = threshold;

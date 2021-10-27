@@ -42,7 +42,7 @@ const TRAINER = {
 
   _menu: {
     buy: function(){
-      var merchant_text = `I can teach you the way of the ${TRAINER._current_type}, if you got enough experience in your journey (you have ${INVENTORY.count(ITEM.XpToken)}).`;
+      var merchant_text = `You can learn the way of the ${TRAINER._current_type} here, if you got enough experience in your journey (you have ${INVENTORY.count(ITEM.XpToken)}).`;
       var goods = [];
 
       for(var index in _TRAINER_PRICES){
@@ -77,6 +77,12 @@ const TRAINER = {
          ]
        );
     },
+  },
+
+  menu:function (type, threshold){
+    TRAINER._current_type = type;
+    TRAINER._current_threshold = threshold;
+    TRAINER._menu.buy();
   },
 
   enter: function(type, threshold) {

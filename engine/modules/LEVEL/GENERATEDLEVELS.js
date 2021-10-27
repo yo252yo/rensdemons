@@ -33,4 +33,30 @@ const GENERATEDLEVELS = {
       CURRENTLEVEL.initialize_with_character(c[0], c[1]);
     },
   },
+
+  altar: {
+    load: function(name) {
+      var decode = name.split("_");
+      var type = decode[1];
+      var seed = decode[2];
+      new S_TownFloor(1050, 1550, 500, 500, "050_hell_map", "assets/patterns/lava.png");
+      AUDIO.music.levels.hell();
+      new S_Altar(1275, 1325, type);
+
+
+      var gen = new Generator(DICTIONARY.get("world_seed") + seed);
+      var filler = new Filler(gen.get());
+      var decor = new MultiFiller(filler, 40, 40);
+      decor.add_constructor( function(x,y,seed){ return new S_HellPlantLeaning(x, y); });
+      decor.add_constructor( function(x,y,seed){ return new S_HellPlantSretching(x, y); });
+      decor.add_constructor( function(x,y,seed){ return new S_HellPlantSlimy(x, y); });
+      decor.add_constructor( function(x,y,seed){ return new S_HellPlantLoops(x, y); });
+      decor.add_constructor( function(x,y,seed){ return new S_Spike(x, y); });
+      decor.set_tries(8, 20);
+      decor.set_zone(1050, 1550, 500, 500);
+      decor.fill_decor_by_retry();
+
+      CURRENTLEVEL.initialize_with_character(1250, 1525);
+    },
+  },
 };
