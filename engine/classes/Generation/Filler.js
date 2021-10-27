@@ -258,10 +258,6 @@ class Filler {
       }
     }
   }
-
-  draw_for_debug(color) {
-    new S_Floor(this.zone_x, this.zone_y, this.zone_w, this.zone_h, color);
-  }
 }
 
 
