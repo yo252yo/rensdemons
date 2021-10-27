@@ -41,10 +41,11 @@ _SHOP_PRICES[ITEM.AncientRubbles] = 20;
 _SHOP_PRICES[ITEM.Fur] = 30;
 _SHOP_PRICES[ITEM.Scale] = 40;
 _SHOP_PRICES[ITEM.Eye] = 50;
+_SHOP_PRICES[ITEM.Medallion] = 750;
 
 
 
-_SHOP_SELLONLY = [ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Meat, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
+_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Meat, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
 
 const SHOP = {
   selling_discount: 0.5,
@@ -74,6 +75,9 @@ const SHOP = {
       if (INVENTORY.count(object)){
         INVENTORY.decrease(object);
         INVENTORY.increase(ITEM.Coin, SHOP._prices.sell(object));
+        if(object == ITEM.Medallion){
+          alert("You feel awful for getting rid of the last memento of the person you cared about the most... This sacrifice better be worth it.");
+        }
       }
 
       SHOP._current_menu.close();

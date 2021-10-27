@@ -271,7 +271,7 @@ class SM_Heaven extends MapObject {
 class SM_HellVulcano extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/hellvulcano.png", 'obj_light');
-    super(visual, x, y, `Maw of Hell`, "041_hellsmaw@13");
+    super(visual, x, y, `Maw of Hell`, "041_hellsmaw@14");
     this.adjust_hitbox(30,-10,270,200);
     this.specify_sprite_size(315,266);
     if(this.legend) this.legend.shift(150);

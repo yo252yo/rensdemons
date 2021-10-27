@@ -2,8 +2,7 @@
 - Total individualism, war of all against all in the fissure temple + smthing about smell!!
 
 - hell:
-= altar content
-= back to hellsmaw
+= altar content (try to sell medallion)
 = loot and flair
 = deco description
 
@@ -20,7 +19,7 @@ should we rly limit to 3 choices when its inquiries, like _004/_priest? or _best
 
 music loop
 
-check walking on small sprites
+check walking on small sprites (ie pebbles, etc)
 
 doesnt seem too hard to make the change color scheme work for the interface and fog
 

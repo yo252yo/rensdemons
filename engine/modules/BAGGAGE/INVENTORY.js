@@ -53,6 +53,7 @@ const ITEM = {
     Fur: "Fur",
     Meat: "Meat",
     Eye: "Eye",
+    Medallion: "Medallion",
 
     // Story
     BreathingPotion: "Breathing Potion",

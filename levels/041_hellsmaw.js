@@ -263,6 +263,23 @@ else if(hellsmawpart == 3){
     [2050,2300,150,350],
     [1900,2450,150,225],
   ];
+} else if(hellsmawpart == 14){
+  new S_LavaFloor(1950,2475,75,625);
+  new S_LavaFloor(1800,2275,350,275);
+
+  var summit = new S_ExitFloor(1775,2175,50,100, '050_hell_map');
+  new S_ExitFloor(1950,1875,75,50, '041_hellsmaw@14', [2000, 2500]);
+  new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@14', [1975, 1900]);
+
+//`For some reason, you expected some sort of treasure or secret to appear. But nothing is here except lingering sorrow.`,
+
+  events.set_tries(0, 0);
+  floors = [
+    [1900,2025,150,150],
+    [1750,2325,175,400],
+    [2050,2300,150,350],
+    [1900,2450,150,225],
+  ];
 } else {
   CONSOLE.error("Requested unimplemented hellsmawpart: " + hellsmawpart);
 }
@@ -296,6 +313,43 @@ for(var i of floors){
 if (!ABILITIES.has_ability("_lieutenant_defeated") && hellsmawpart == 13){
   new S_Beelzebub(1900, 2200);
 }
+
+if (hellsmawpart == 14){
+  var s = new SE_event(1950, 2125);
+  var end = function(){
+    s.destroy();
+    INVENTORY.increase(ITEM.Medallion);
+  };
+
+  var prompt2 = function(){
+    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
+        [
+          {"text": "Take it", "effect": end},
+          {"text": "Leave it", "effect": function(){ s.destroy(); }},
+       ]
+     );
+   };
+
+  var investigate = function() {
+    TextBannerSequence.make(['You spend a long time rummaging through the ashes. Finally, under a thick layer of rubbles, something attracts your gaze. You can\'t help but gasp as you recognize $$BestFriend$\'s medallion.'],
+    prompt2);
+  }
+
+  var prompt = function(){
+    new CenteredTextMenu("Investigate the scene?",
+        [
+          {"text": "Yes", "effect": investigate},
+          {"text": "No", "effect": "##CLOSE"},
+       ]
+     );
+   };
+
+  s.real_interaction = function() {
+    TextBannerSequence.make(['Moved by a Goddess-given intuition, you make your way back to the scene of the terrible battle. You believe there must be something, some sort of treasure, that you should be able to find now...'],
+    prompt);
+  }
+}
+
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
@@ -422,9 +476,20 @@ if(hellsmawpart == 1){
       `$$Ren$: "Who else? Let's use our weapon before he notices us!"`,
     ], after);
   };
+} else if(hellsmawpart == 14){
+  CURRENTLEVEL.start_function = function() {
+    TextBannerSequence.make([
+      `As you come back to the scene of the tragedy, the landscape around you seems eerily familiar, yet something feels off.`,
+      `Thanks to the wisdom of the Goddess, you know that demonic magic is at play here, and it will not allow you to go back to your world. The only way is forward.`,
+    ], IO.control.character);
+  };
 }
 
 // ===================
 //hack 7. START/INIT
 // ===================
-CURRENTLEVEL.initialize_with_character(2000, 2500);
+if(hellsmawpart == 14){
+  CURRENTLEVEL.initialize_with_character(1800, 2150);
+} else {
+  CURRENTLEVEL.initialize_with_character(2000, 2500);
+}
