@@ -53,44 +53,35 @@ FMap.fill_floor_by_retry();
 
 
 var FEvents = new EventFiller(FMap, 25, 25, 'obj_light');
-FEvents.battle('hell/centipede', 1.7);
-FEvents.battle('hell/devilfly', 1.2);
-FEvents.battle('hell/eyeball', 1.7);
-FEvents.battle('hell/hecatoncheir', 1.7);
-FEvents.battle('hell/sandworm', 1.5);
-FEvents.battle('hell/satyr', 1.7);
-FEvents.battle('hell/serpentine', 1.2);
-FEvents.battle('hell/toad', 1.2);
-FEvents.battle('hell/warlock', 1.2);
-/*
+FEvents.battle('hell/centipede', 1.9);
+FEvents.battle('hell/devilfly', 1.3);
+FEvents.battle('hell/eyeball', 1.9);
+FEvents.battle('hell/hecatoncheir', 1.9);
+FEvents.battle('hell/sandworm', 1.7);
+FEvents.battle('hell/satyr', 1.9);
+FEvents.battle('hell/serpentine', 1.3);
+FEvents.battle('hell/toad', 1.3);
+FEvents.battle('hell/warlock', 1.3);
 
-
-FEvents.battleRubble(ITEM.Poison_darts, 0.1);
-FEvents.battleRubble(ITEM.Dagger, 0.1);
-FEvents.battleRubble(ITEM.Elixir_ice, 0.1);
-FEvents.battleRubble(ITEM.Linnens, 0.7);
+FEvents.battleRubble(ITEM.Elixir_venom, 0.1);
+FEvents.battleRubble(ITEM.Elixir_decay, 0.1);
+FEvents.battleRubble(ITEM.Elixir_chaos, 0.1);
 FEvents.groundItem(ITEM.Bone, 0.6);
-FEvents.groundItem(ITEM.Stone, 0.6);
-FEvents.groundItem(ITEM.Berry, 0.6);
-FEvents.groundItem(ITEM.Mushroom, 0.6);
+FEvents.groundItem(ITEM.Goo, 0.6);
+FEvents.groundItem(ITEM.Eye, 0.6);
+FEvents.groundItem(ITEM.Meat, 0.6);
 
-FEvents.byConstructor("B_Pebbles", 0.5);
-FEvents.byConstructor("B_Plants", 0.5);
-FEvents.byConstructor("B_Skeleton", 1);
-FEvents.battle('world/ruins', 1);
+FEvents.byConstructor("B_Skeleton", 0.1);
 
-FEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
-FEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
-FEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
-FEvents.text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
-*/
-//FEvents.set_zone_from_filler(FEasyN);
+FEvents.text(`Around you, the arid region extends in all directions. Perspectives play tricks on your mind, shapes shift and move on the horizon. It's very hard to keep your sense of orientation in a world filled with ungodly magic...`, 0.9);
+FEvents.text(`You can't help but scream as your foot burrows in a patch of loose sand. You lose your footing and fall to the ground. Insects start to crawl onto you. Fortunately, you manage to get back up and push them away easily.`, 0.9);
+FEvents.text(`You can distinguish in the distance what is probably $$demon_lord$'s castle. It sits in the middle of the desert on top of a hill. Its many obsidian towers seem to tear through the sky. It's surrounded by a flurry of lightning bolts, but the sky is wide open...`, 0.9);
+FEvents.text(`You gaze at the sky of this other universe. Unlike yours, it's perfectly clear: no star or cloud to be seen. It's simply radiating an overwhelming flat light that slowly but surely burns up deeper and deeper into your skin.`, 0.9);
+FEvents.text(`You take cover between the odd trees when a swarm of flying demons approaches in your direction. You cannot face a whole army by yourself. You wait patiently for them to go away, praying that they have not noticed you.`, 0.9);
+FEvents.text(`You find what appears clearly to be human bones half burrowed in the dry ground. Did an unfortunate adventurer loose its way? Was there another Promised Child in the past? Or did a demon simply take its food back home?`, 0.9);
+
 FEvents.set_tries(100, 150);
 FEvents.fill_floor_by_retry();
-
-
-
-
 
 
 

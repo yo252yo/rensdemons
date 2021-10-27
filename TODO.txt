@@ -1,5 +1,3 @@
-hell:
-= loot and flair
 
 ! if we ever save in a generated level, it'll remember the save position every time we try to enter this level after :/
 
