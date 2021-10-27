@@ -1,7 +1,4 @@
-
-- Total individualism, war of all against all in the fissure temple + smthing about smell!!
-
-- hell:
+hell:
 = altar content (try to sell medallion)
 = loot and flair
 = deco description
