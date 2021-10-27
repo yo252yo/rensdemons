@@ -57,27 +57,29 @@ const BATTLE = {
       RANDOM.shuffle(options_winning);
       RANDOM.shuffle(options_unknown);
 
-      // Only keep 3 losing unknown actions
-      var useless_options_unknown = 0;
-      var winning_options_unknown = 0;
-      for (var i = options_unknown.length - 1; i >=0; i--){
-        var b = BATTLE._player_actions[options_unknown[i].text];
-        if(!b){ // text has been modified by dictionary
-          b = BATTLE._player_actions[options_unknown[i].index];
-        }
-        if (b && b.outcome){ // outcome null is most often win in several hits
-          if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
-            useless_options_unknown ++;
-            if (useless_options_unknown > 3){
-              options_unknown.splice(i, 1);
+      // Only keep 3 losing unknown actions for standard battles
+      if(!BATTLE.current_battle.includes("_")){
+        var useless_options_unknown = 0;
+        var winning_options_unknown = 0;
+        for (var i = options_unknown.length - 1; i >=0; i--){
+          var b = BATTLE._player_actions[options_unknown[i].text];
+          if(!b){ // text has been modified by dictionary
+            b = BATTLE._player_actions[options_unknown[i].index];
+          }
+          if (b && b.outcome){ // outcome null is most often win in several hits
+            if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
+              useless_options_unknown ++;
+              if (useless_options_unknown > 3){
+                options_unknown.splice(i, 1);
+              }
+            } else {
+              winning_options_unknown ++;
             }
-          } else {
-            winning_options_unknown ++;
           }
         }
       }
 
-      // meta blurb when you cant win
+      // remove meta blurb if you can win
       if(winning_options_unknown > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
         options_flight = options_flight.filter(function(e){
             return e.index != ABILITY.Foresight;

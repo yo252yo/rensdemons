@@ -4,6 +4,11 @@ HILL SPRITE:
   pebbles hide the sprite when walked on
   > mb things should have an option to be indexed by the top
 
+
+check walking on small sprites (ie pebbles, etc)
+
+doesnt seem too hard to make the change color scheme work for the interface and fog
+
 change color scheme doesnt change fog or map bg??
 
 dont forget to do a proper title screen in particula for mobile

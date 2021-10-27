@@ -13,15 +13,6 @@ the key to survival -> progress -> success -> happiness -> understanding -> vict
 hidden ending:
 - heaven: squares linked without any order
 
-------------------------------------
-
-should we rly limit to 3 choices when its inquiries, like _004/_priest? or _bestfriend
-
-check walking on small sprites (ie pebbles, etc)
-
-doesnt seem too hard to make the change color scheme work for the interface and fog
-
-
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
 - NPC thoughts
