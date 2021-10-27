@@ -88,7 +88,9 @@ const ABILITIES = {
   },
 
   unlock: function(name) {
-    AUDIO.effect.unlock();
+    if(!name.startsWith("_")){
+      AUDIO.effect.unlock();
+    }
     CONSOLE.log.abilities("Unlocked " + name);
     ABILITIES._abilities.set([name], true);
     BATTLETREE.api.unlock_ability(name);

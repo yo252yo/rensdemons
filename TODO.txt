@@ -21,8 +21,6 @@ check walking on small sprites (ie pebbles, etc)
 
 doesnt seem too hard to make the change color scheme work for the interface and fog
 
-hidden abilities shouldnt trigger notification sound
-
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
