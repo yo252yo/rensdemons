@@ -37,6 +37,11 @@ class MapObject extends LevelObject {
     return Math.min(super.distance_to_character(), this.legend.distance_to_character());
   }
 
+
+  destroy(){
+    this.legend.destroy();
+    super.destroy();
+  }
 }
 
 
@@ -243,7 +248,7 @@ class SM_Vulcano extends MapObject {
 
 class SM_Pandemonium extends MapObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/map/pandemonium.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/hellmap/pandemonium.png", 'obj_light');
     super(visual, x, y, `Pandemonium`, "051_pandemonium");
     this.adjust_hitbox(40,-10,235,200);
     this.specify_sprite_size(300,251);
@@ -254,7 +259,7 @@ class SM_Pandemonium extends MapObject {
 
 class SM_Heaven extends MapObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/map/heaven.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/hellmap/heaven.png", 'obj_light');
     super(visual, x, y, `Heaven`, "060_heaven");
     this.adjust_hitbox(40,-10,235,200);
     this.specify_sprite_size(300,215);
@@ -265,10 +270,99 @@ class SM_Heaven extends MapObject {
 
 class SM_HellVulcano extends MapObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/map/hellvulcano.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/hellmap/hellvulcano.png", 'obj_light');
     super(visual, x, y, `Maw of Hell`, "041_hellsmaw@13");
     this.adjust_hitbox(30,-10,270,200);
     this.specify_sprite_size(315,266);
     if(this.legend) this.legend.shift(150);
+  }
+}
+
+class SM_Altar extends MapObject {
+  constructor(x, y, type){
+    var visual = new StaticSprite("assets/objects/hellmap/altar.png", 'obj_light');
+    super(visual, x, y, `Altar of<br />${type}`, "");
+    this.adjust_hitbox(20,-10,40,50);
+    this.specify_sprite_size(67,100);
+    if(this.legend) this.legend.shift(20);
+  }
+}
+
+
+class SM_Creep extends MapObject {
+  constructor(x, y, seed, label){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        var visual = new StaticSprite("assets/objects/hellmap/creep1.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(10,-5,40,25);
+        this.specify_sprite_size(47,44);
+        break;
+
+      case 1:
+        var visual = new StaticSprite("assets/objects/hellmap/creep2.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(10,-5,50,25);
+        this.specify_sprite_size(53,50);
+        break;
+    }
+
+    this.interaction = this.text_interaction([
+      "..1",
+      "..2",
+    ], seed);
+  }
+}
+
+class SM_Fang extends MapObject {
+  constructor(x, y, seed, label, destination, accessibility_function){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        var visual = new StaticSprite("assets/objects/hellmap/fang1.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(15,0,30,30);
+        this.specify_sprite_size(51,114);
+        break;
+
+      case 1:
+        var visual = new StaticSprite("assets/objects/hellmap/fang2.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(10,0,20,30);
+        this.specify_sprite_size(46,114);
+        break;
+    }
+
+    this.interaction = this.text_interaction([
+      "..1",
+      "..2",
+    ], seed);
+  }
+}
+
+class SM_Tenta extends MapObject {
+  constructor(x, y, seed, label, destination, accessibility_function){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        var visual = new StaticSprite("assets/objects/hellmap/helltenta1.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(5,0,40,30);
+        this.specify_sprite_size(43,80);
+        break;
+
+      case 1:
+        var visual = new StaticSprite("assets/objects/hellmap/helltenta2.png", 'obj_light');
+        super(visual, x, y, label);
+        this.adjust_hitbox(10,0,40,40);
+        this.specify_sprite_size(57,175);
+        break;
+    }
+
+    this.interaction = this.text_interaction([
+      "..1",
+      "..2",
+    ], seed);
   }
 }

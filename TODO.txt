@@ -1,9 +1,12 @@
 
-- talk about aerith death if you know, before the fight _BestFriend.js
-
 - Total individualism, war of all against all in the fissure temple + smthing about smell!!
 
-- hell: deco, creatures, back to "041_hellsmaw@14" ?
+- hell:
+= altar content
+= back to hellsmaw
+= loot and flair
+= deco description
+
 
 - pandemonium:
 the key to survival -> progress -> success -> happiness -> understanding -> victory
