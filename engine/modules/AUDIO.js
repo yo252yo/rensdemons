@@ -70,6 +70,10 @@ const AUDIO = {
   },
 
   _play_music: function(track){
+    if (AUDIO._PLAYING == track){
+      return;
+    }
+    AUDIO._PLAYING = track;
     AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
     AUDIO._start_music();
@@ -117,6 +121,7 @@ const AUDIO = {
   music: {
     stop: function(){
       AUDIO._MUSIC_PLAYER.pause();
+      AUDIO._PLAYING = '';
     },
 
     interface:{

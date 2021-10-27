@@ -218,7 +218,7 @@ const CURRENTLEVEL = {
   _setup: {
     _setup_from_object: function(save) {
       CURRENTLEVEL.system.clear();
-      AUDIO.music.stop();
+      //AUDIO.music.stop();
 
       if(save.destroyed_objects) {
         CURRENTLEVEL.destroyed_objects = save.destroyed_objects;
