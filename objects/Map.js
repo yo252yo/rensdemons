@@ -289,7 +289,7 @@ class SM_Altar extends MapObject {
 }
 
 
-class SM_Creep extends MapObject {
+class SM_Worm extends MapObject {
   constructor(x, y, seed, label){
     var gen = new Generator(seed);
     switch(gen.int(2)){
@@ -309,8 +309,12 @@ class SM_Creep extends MapObject {
     }
 
     this.interaction = this.text_interaction([
-      "..1",
-      "..2",
+      "You find the giant carcass of what seems to be a worm. You shiver at the thought that others may be nearby...",
+      "A multitude of smaller insects are devouring what remains of this huge beast.",
+      "You don't dare come close to the colossal worm, but after careful observation it seems that it is just an empty moult.",
+      "This other world is filled with the rotting corpses of bugs that are more massive than you. You can't help but wonder if other creatures killed them as easily as you do flies in your world...",
+      "There's many such maggots in your field of view. They seem to be digging numerous tunnels in the arid land.",
+      "This grub wiggles in agony. It might be desiccating.",
     ], seed);
   }
 }
@@ -335,8 +339,11 @@ class SM_Fang extends MapObject {
     }
 
     this.interaction = this.text_interaction([
-      "..1",
-      "..2",
+      "A giant tusk towers over you.",
+      "The creature this fang came from must have been the size of a castle...",
+      "How did this giant tooth end up here? Is it all that's left of a long decomposed corpse? Or has it been planted by a demon, as a marker perhaps?",
+      "Looking closely at this tusk, you find rough markings carved in the ivory, but you cannot make sense of the demonic script.",
+      "This fang is browned by what is probably coagulated blood. Insects crawl on its surface.",
     ], seed);
   }
 }
@@ -361,8 +368,11 @@ class SM_Tenta extends MapObject {
     }
 
     this.interaction = this.text_interaction([
-      "..1",
-      "..2",
+      "You cannot tell if this tentacular shape is animal or vegetal... Or perhaps even mineral? After observing it for a while, it appears safe to approach.",
+      "You take advantage of this massive protuberance to shield yourself from the heat and rest a bit in its shade. But you cannot relax for long.",
+      "This kind of tentacular being seems to be as common as trees in your world. Its texture reminds you of raw flesh, and it emits a smell that remind you of uncooked food.",
+      "You watch in time as a swarm of flies approaches the strange plant and gets sucked in its gelatinous membrane.",
+      "Giant arabesques of shade dance on the ground as the massive otherworldly trunk unfurls its slimy arms.",
     ], seed);
   }
 }

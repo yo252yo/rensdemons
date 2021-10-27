@@ -38,7 +38,7 @@ var filler = new Filler(gen.get());
 var FMap = new MultiFiller(filler, 80, 80);
 FMap.set_zone(1075, 1000+h-25, w-50, h-100);
 
-FMap.add_constructor( function(x,y,seed){ return new SM_Creep(x, y, seed); }, 1.5);
+FMap.add_constructor( function(x,y,seed){ return new SM_Worm(x, y, seed); }, 1.5);
 FMap.add_constructor( function(x,y,seed){ return new SM_Fang(x, y, seed); });
 FMap.add_constructor( function(x,y,seed){ return new SM_Tenta(x, y, seed); }, 2);
 
