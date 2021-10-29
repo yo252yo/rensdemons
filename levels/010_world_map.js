@@ -16,7 +16,7 @@ var LaterInStory = function() { return false;};
 
 var h = 2550;
 var w = 2950;
-var f = new S_Floor(1050, 1000+h, w, h-50, 'obj_dark');
+var f = new S_MapFloor(1050, 1000+h, w, h-50, 'obj_dark');
 f.visual_element.html_rectangle.style.border = "1px dotted #FFFFFF22";
 
 var filler = new Filler(gen.get());

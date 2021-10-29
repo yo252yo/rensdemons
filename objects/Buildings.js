@@ -60,6 +60,12 @@ class S_LushFloor extends S_Floor {
   }
 }
 
+class S_MapFloor extends S_Floor {
+  constructor(x, y, w, h, color) {
+    super(x, y, w, h, color, "assets/patterns/map.png");
+  }
+}
+
 class S_MudFloor extends S_Floor {
   constructor(x, y, w, h) {
     super(x, y, w, h, undefined, "assets/patterns/mud.png");
