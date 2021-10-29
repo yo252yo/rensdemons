@@ -4,7 +4,7 @@
 
 graphic overhaul:
 - done until first town
-objects remaining: buildings/ exterior/ hell/
+objects remaining: buildings/ exterior/
 - need to do civilian battlers
 - need to check sprites for party
 - need better buildings and differnt building styles for different cities?
