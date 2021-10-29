@@ -99,10 +99,10 @@ const RESOURCES = {
     RESOURCES.get_img('assets/objects/buildings/church2.png');
     RESOURCES.get_img('assets/objects/buildings/house.png');
     RESOURCES.get_img('assets/objects/buildings/store.png');
-    RESOURCES.get_img('assets/objects/exterior/pebbles.png');
-    RESOURCES.get_img('assets/objects/exterior/plant.png');
+    RESOURCES.get_img('assets/objects/mountain/pebbles.png');
+    RESOURCES.get_img('assets/objects/forest/plant.png');
     RESOURCES.get_img('assets/objects/water/seashell.png');
-    RESOURCES.get_img('assets/objects/exterior/skeleton.png');
+    RESOURCES.get_img('assets/objects/ruins/skeleton.png');
     RESOURCES.get_img('assets/objects/forest/shroomgiant.png');
     RESOURCES.get_img('assets/objects/forest/shroomsmall.png');
     RESOURCES.get_img('assets/objects/forest/shroomtall.png');

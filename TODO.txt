@@ -3,11 +3,11 @@
 
 
 graphic overhaul:
-- done until first town
-objects remaining: buildings/ exterior/
+- audit from >= first town
 - need to do civilian battlers
 - need to check sprites for party
-- need better buildings and differnt building styles for different cities?
+- object/buildings: need better buildings and differnt building styles for different cities?
+
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
 
 > should non boss battlers have transparency

@@ -109,7 +109,7 @@ class S_Waterplants extends SimpleObject {
 
 class S_PlantSmall extends SimpleObject {
   constructor(x, y){
-    super(x, y, "exterior/plant");
+    super(x, y, "forest/plant");
     this.specify_sprite_size(29,24);
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
@@ -176,7 +176,7 @@ class S_Planks extends SimpleObject {
 
 class S_Pebbles extends SimpleObject {
   constructor(x, y){
-    super(x, y, "exterior/pebbles");
+    super(x, y, "mountain/pebbles");
     this.adjust_hitbox(10,0,20,15);
     this.specify_sprite_size(40,47);
     this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
@@ -307,7 +307,7 @@ class S_RubbleLarge extends SimpleObject {
 
 class B_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/pebbles", color, size);
+    super(x, y, "mountain/pebbles", color, size);
 
     this.set_description("There are pebbles on the ground.");
     this.add_interaction("Play", "You flick around a few spherical rocks with $$BestFriend$. The one who pushes the other's pebbles outside of the game area wins. Of course, you win!");
@@ -323,7 +323,7 @@ class B_Pebbles extends EventBattleObject {
 
 class B_Plants extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/plant", color, size);
+    super(x, y, "forest/plant", color, size);
 
     this.set_description("You find yourself near a little green plant.");
     this.add_interaction("Pluck", "You harvest a leaf from the small plant. It's very green, but serves no purpose whatsoever. Did you imagine it would trigger something? Why did you do that?");
@@ -354,7 +354,7 @@ class B_Seashell extends EventBattleObject {
 // NO BEST FRIEND!
 class B_Skeleton extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/skeleton", color, size);
+    super(x, y, "ruins/skeleton", color, size);
 
     this.set_description("You discover what appears to be a human skeleton.");
     this.add_interaction("Plunder", "You look around for any valuables that might be up for the taking after the demise of their previous owner. Sadly, there doesn't seem to be anything eager to be adopted by your benevolent care.");
