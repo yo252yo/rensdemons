@@ -18,7 +18,7 @@ class B_Statue extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/statue");
     this.adjust_hitbox(10,0,20,15);
-    this.specify_sprite_size(32,64);
+    this.specify_sprite_size(50,100);
 
     this.set_description("It's a statue of the Goddess. Blessed be her eternal soul.");
 

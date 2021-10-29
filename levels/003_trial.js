@@ -109,10 +109,10 @@ var make_statue = function(x, y, position) {
   };
 }
 
-make_statue(2410, 2020, "eastern");
-make_statue(1655, 1195, "northern");
-make_statue(1585, 2850, "southern");
-make_statue(830, 2025, "western");
+make_statue(2400, 2020, "eastern");
+make_statue(1650, 1195, "northern");
+make_statue(1575, 2850, "southern");
+make_statue(825, 2025, "western");
 
 // ===================
 //hack 7. START/INIT
