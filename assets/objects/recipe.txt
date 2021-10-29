@@ -1,0 +1,6 @@
+-> posterize
+-> adjust exposure
+-> remove transparency
+-> map to 2 colors
+-> remove white
+-> add a 60% black layer on top of the silhouette
