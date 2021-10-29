@@ -1,22 +1,13 @@
 
 ! if we ever save in a generated level, it'll remember the save position every time we try to enter this level after :/
 
-Uncaught TypeError: o.obj_constructor is not a function
-    at Filler.fill_line (Filler.js:248:19)
-    at HG_Room.decorate_bedroom (HouseGenerator.js:69:23)
-    at HG_Room.decorate (HouseGenerator.js:59:14)
-    at new HG_Room (HouseGenerator.js:19:12)
-    at HouseGenerator.build (HouseGenerator.js:147:23)
-    at Object.load (GENERATEDLEVELS.js:15:17)
-    at Object._setup_level (CURRENTLEVEL.js:246:40)
-    at Object._setup_from_object (CURRENTLEVEL.js:233:27)
-    at Object.setup (CURRENTLEVEL.js:283:27)
-    at Object.setup (GENERATEDLEVELS.js:7:20)
 
 
-
-
-
+graphic overhaul:
+- until first town
+- need to do civilian battlers
+- need to check sprites for allies
+- can i have differnt building styles for different cities?
 
 
 

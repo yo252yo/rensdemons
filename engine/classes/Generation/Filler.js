@@ -224,7 +224,7 @@ class Filler {
           }
 
           // provisory position for hash of object
-          var obj = o.obj_constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
+          var obj = o.constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
 
           var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - obj.h_w);
           var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - obj.h_h);
@@ -245,7 +245,7 @@ class Filler {
       var r = this.gen.get();
 
       // provisory position for hash of object
-      var obj = o.obj_constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);
+      var obj = o.constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);
       var x_offset = i * slot_size + r * (slot_size - obj.h_w);
 
       obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + o.obj_h);
