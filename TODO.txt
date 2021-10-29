@@ -2,15 +2,18 @@
 ! if we ever save in a generated level, it'll remember the save position every time we try to enter this level after :/
 
 
-
 graphic overhaul:
-- until first town
+- done until first town
+objects remaining: buildings/ exterior/ hell/
 - need to do civilian battlers
-- need to check sprites for allies
-- can i have differnt building styles for different cities?
+- need to check sprites for party
+- need better buildings and differnt building styles for different cities?
+- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
+
+> should non boss battlers have transparency
 
 
-
+can i zoom on object item during fights ??
 
 
 
