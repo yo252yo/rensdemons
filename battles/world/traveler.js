@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/objects/exterior/traveler.png", 'background');
+new CenteredImage("assets/battles/civilians/traveler.png", 'background');
 
 // ===================
 //hack PLAYER CAPABILITIES

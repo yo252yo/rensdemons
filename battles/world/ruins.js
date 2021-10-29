@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/objects/exterior/ruins.png", 'background');
+new CenteredImage("assets/battles/civilians/ruins.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.AncientRubbles, 0.2);
