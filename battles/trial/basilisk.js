@@ -2,6 +2,7 @@
 //hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/trial/basilisk.png", 'background');
+AUDIO.music.interface.boss();
 
 // ===================
 //hack PLAYER CAPABILITIES

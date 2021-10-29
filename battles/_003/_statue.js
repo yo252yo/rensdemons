@@ -2,6 +2,7 @@
 new CenteredImage("assets/battles/trial/statue.png", 'background');
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
+AUDIO.music.interface.boss();
 
 var battle = "_003/_statue";
 
