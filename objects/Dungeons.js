@@ -369,7 +369,7 @@ class B_Skeleton extends EventBattleObject {
 
 class S_Beelzebub extends SimpleObject {
   constructor(x, y){
-    super(x, y, "dungeons/beelzebub", "obj_dark");
+    super(x, y, "hell/beelzebub", "obj_dark");
     this.specify_sprite_size(173,264);
     this.adjust_hitbox(50,10,100,100);
 

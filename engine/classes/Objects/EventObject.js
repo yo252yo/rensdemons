@@ -3,13 +3,17 @@
 
 class S_event extends LevelObject {
   constructor(x, y, size, color) {
+    var sprite = '';
     if (!size){
       size = 50;
+    }
+    if(size < 30){
+      sprite = '2';
     }
     if(!color){
       color = 'obj_dark';
     }
-    var visual = new StaticSprite("assets/objects/event.png", color, size, size);
+    var visual = new StaticSprite(`assets/interface/event${sprite}.png`, color, size, size);
     super(visual, x, y);
 
     this.clicked = false;
@@ -29,8 +33,8 @@ class S_event extends LevelObject {
 }
 
 class SBattle extends S_event {
-  constructor(x, y, battle, size, color) {
-    super(x, y, size, color);
+  constructor(x, y, battle, size, color, is_map) {
+    super(x, y, size, color, is_map);
     this.battle = battle;
   }
 
