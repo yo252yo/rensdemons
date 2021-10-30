@@ -1,22 +1,6 @@
 
 ! if we ever save in a generated level, it'll remember the save position every time we try to enter this level after :/
 
-
-graphic overhaul:
-- audit from >= first town
-- need to do civilian battlers
-- need to check sprites for party
-- object/buildings: need better buildings and differnt building styles for different cities?
-
-- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
-
-> should non boss battlers have transparency
-
-
-can i zoom on object item during fights ??
-
-
-
 - pandemonium:
 share plants with altars
 the key to survival -> progress -> success -> happiness -> understanding -> victory
@@ -39,3 +23,5 @@ hidden ending:
 >  attacks in languge,
 >  encounter+battle
 - artifact have special sound effects
+
+---------------------------------------- TODO long
