@@ -3,16 +3,16 @@ const CREDITS = {
    <h3>Game by</h3>
    <a href="http://yo252yo.wordpress.com/" target="_blank">yo252yo</a>
 
-   <h3>Assets</h3>
+   <h3>Original assets provider</h3>
 
    <b>Music</b>:
    <a href="https://loyaltyfreakmusic.com/" target="_blank">loyaltyfreakmusic</a>
    <br />
 
-    <b>Characters</b>:
-    <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a>,
-    <a href="http://eurs.blog65.fc2.com/" target="_blank">Closet</a>
-    <br />
+   <b>Characters</b>:
+   <a href="http://untamed.wild-refuge.net/rmxpresources.php?characters" target="_blank">Sithiester</a>,
+   <a href="http://eurs.blog65.fc2.com/" target="_blank">Closet</a>
+   <br />
 
    <b>Map art</b>:
    <a href="https://opengameart.org/users/melle" target="_blank">MELLE</a>,
@@ -35,5 +35,10 @@ const CREDITS = {
    <a href="http://www.junkie-chain.jp/main.html" target="_blank">Junkie-chain</a>,
    <a href="https://pipoya.itch.io/" target="_blank">Pipoya</a>
    <br />
+
+   <b>Packaged web browser</b>:
+   <a href="https://www.palemoon.org/" target="_blank">Pale Moon</a>
+   <br />
+
    `,
  }

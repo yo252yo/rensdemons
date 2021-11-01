@@ -108,6 +108,9 @@ class MovingObject extends LevelObject {
   stop_autowalk() {
     this.destination_x = -1;
     this.destination_y = -1;
+    if(this.visual_element){
+      this.visual_element.adjust_depth(this.y);
+    }
     if(this.walk_interval){
       clearInterval(this.walk_interval);
     }

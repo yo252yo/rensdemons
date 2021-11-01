@@ -7,11 +7,11 @@ class S_event extends LevelObject {
     if (!size){
       size = 50;
     }
-    if(size < 30){
-      sprite = '2';
-    }
     if(!color){
       color = 'obj_dark';
+    }
+    if (color == 'obj_light'){
+    sprite = '2';
     }
     var visual = new StaticSprite(`assets/interface/event${sprite}.png`, color, size, size);
     super(visual, x, y);

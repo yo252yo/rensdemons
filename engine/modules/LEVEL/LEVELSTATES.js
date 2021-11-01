@@ -29,13 +29,13 @@ const LEVELSTATES = {
     }
   },
 
-  register_current: function(forced) {
-    LEVELSTATES.register_from_save(CURRENTLEVEL.factory.export(), forced);
+  register_current: function() {
+    LEVELSTATES.register_from_save(CURRENTLEVEL.factory.export());
   },
 
-  register_from_save: function(save, forced) {
+  register_from_save: function(save) {
     CONSOLE.log.level("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
-    if (forced || (save.level_name && !save.level_name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX) && !save.level_name.endsWith(CURRENTLEVEL.UNSAVED_LEVEL_SUFFIX))) {
+    if (save.level_name && !save.level_name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX) && !save.level_name.endsWith(CURRENTLEVEL.UNSAVED_LEVEL_SUFFIX)) {
       // Do not save generated level states
       LEVELSTATES._states.set([save.level_name], save);
     }

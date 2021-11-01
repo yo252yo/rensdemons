@@ -58,8 +58,8 @@ class BattleObject extends LevelObject {
 class EventBattleObject extends BattleObject {
     constructor(x, y, name, color, size) {
       size = size ? size: 50;
-      var sprite = size < 30 ? '2' : '';
       color = (color && color != "undefined") ? color: 'obj_dark';
+      var sprite = color == 'obj_light' ? '2' : '';
       var visual = new StaticSprite(`assets/interface/event${sprite}.png`, color, size, size);
       super(x, y, name, 2, "objects/" + name, visual);
       this.adjust_hitbox(0, 0, size, size);
