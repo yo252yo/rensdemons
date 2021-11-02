@@ -1,3 +1,7 @@
+S_GooFloor  is not used at all
+
+S_TilingFloor ?? only in trial, could be fun
+
 
 
 - pandemonium:
