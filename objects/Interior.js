@@ -20,6 +20,7 @@ class S_StainedGlass extends LevelObject {
     super(visual, x, y);
     this.interaction = this.text_interaction([
       "The giant stained glass bathes the whole room in colorful lights.",
+      "This stained glass window is massive.",
       "The light peeks through the magnificent ornate shapes, and you feel as if it comes from the Goddess herself.",
       "It takes you a few moment to understand the mosaic picture that those numerous little fragments are forming.",
       "The colorful light carresses your cheek and you feel as if the Goddess herself is reaching out through these windows.",
