@@ -9,6 +9,11 @@ ABILITIES.unlock("_trial_passed"); // redundant
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 new Snippet("levels/decors/temple");
+new S_StainedGlass(1075, 1050, 'church');
+new S_StainedGlass(1275, 1050, 'hope');
+new S_StainedGlass(1475, 1050, 'church');
+
+
 new S_ExitFloor(1250,1775,100,35, '005_town1');
 
 var make_priest = function (x, y) {

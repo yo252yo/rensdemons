@@ -14,6 +14,22 @@ class S_Column extends LevelObject {
   }
 }
 
+class S_StainedGlass extends LevelObject {
+  constructor(x, y, type){
+    var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
+    super(visual, x, y);
+    this.interaction = this.text_interaction([
+      "The giant stained glass bathes the whole room in colorful lights.",
+      "The light peeks through the magnificent ornate shapes, and you feel as if it comes from the Goddess herself.",
+      "It takes you a few moment to understand the mosaic picture that those numerous little fragments are forming.",
+      "The colorful light carresses your cheek and you feel as if the Goddess herself is reaching out through these windows.",
+      "You look at the deformed picture in colorful shadows that this window projects on the ground.",
+      "You marvel at the subtle craftsmanship that conspired to create so many fragments of colors that all fit together perfectly in a luminous picture.",
+      "Just like the window lights up the room, so too does the religious picture on display light up the mind.",
+    ]);
+  }
+}
+
 class B_Statue extends ItemBattleObject {
   constructor(x, y){
     super(x, y, "interior/statue");

@@ -7,6 +7,10 @@
 
 new Snippet("levels/decors/temple");
 
+new S_StainedGlass(1075, 1050, 'church');
+new S_StainedGlass(1275, 1050, 'hope');
+new S_StainedGlass(1475, 1050, 'church');
+
 var friend = new M_ChildM(1250, 1720);
 var friend_go = new Sequence();
 friend_go.add_TextBannerSequence([

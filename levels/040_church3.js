@@ -7,6 +7,10 @@
 new Snippet("levels/decors/temple");
 
 var f = new S_ExitFloor(1250,1775,100,35, '040_town3');
+new S_StainedGlass(1075, 1050, 'church');
+new S_StainedGlass(1275, 1050, 'denial');
+new S_StainedGlass(1475, 1050, 'church');
+
 
 
 var priest = new M_Priest(1250, 1650);
