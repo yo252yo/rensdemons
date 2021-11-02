@@ -28,6 +28,7 @@ const CREDITS = {
    <a href="http://www.tekepon.net/fsm/ http://www.tekepon.net/fsm/modules/refmap/index.php?mode=rules" target="_blank">REFMAP and FSM</a>,
    <a href="https://szadiart.itch.io/" target="_blank">Szadiart</a>,
    <a href="https://twitter.com/wht_dragon" target="_blank">whtdragon</a>,
+   <a href="https://bottled-up-studio.itch.io/" target="_blank">bottled-up</a>,
    <a href="https://www.rpgmakerweb.com/products/rpg-maker-mv" target="_blank">RPG Maker MV</a>
    <br />
 
