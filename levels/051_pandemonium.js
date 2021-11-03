@@ -27,6 +27,4 @@ new S_Stairs(1500, 1000, false);
 //hack 7. START/INIT
 // ===================
 
-//CURRENTLEVEL.initialize_with_character(1375, 1750);
-
-CURRENTLEVEL.initialize_with_character(1375, 750);
+CURRENTLEVEL.initialize_with_character(1375, 1750);
