@@ -68,6 +68,8 @@ if (floor < 6) {
 // ===================
 if (floor == 6) {
   new S_Throne(1250, 1350);
+} else {
+  new S_SavePoint(1325, 1200);
 }
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
