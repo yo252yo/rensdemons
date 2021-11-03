@@ -62,6 +62,13 @@ const ITEM = {
     AncientArmamentAmmunition: "Ancient Armament Ammunition",
     ShelterKey: "Shelter Key",
 
+    MaouKey0: "Key to Survival",
+    MaouKey1: "Key to Progress",
+    MaouKey2: "Key to Success",
+    MaouKey3: "Key to Happiness",
+    MaouKey4: "Key to Understanding",
+    MaouKey5: "Key to Victory",
+
   isItem: function(s){
     for (var i in ITEM){
       if(ITEM[i] == s){

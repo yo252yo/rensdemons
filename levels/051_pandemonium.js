@@ -36,7 +36,7 @@ var newfloor = function (is_up) {
 }
 
 // Left block
-new S_Door(1200, 1150, is_odd);
+new S_Door(1200, 1150, is_odd, floor);
 new S_CastleFloor(1225,1175,50,200);
 new S_CastleFloor(1200,1050,100,100);
 if (floor > 0){
@@ -44,7 +44,7 @@ if (floor > 0){
 }
 
 // Right block
-new S_Door(1400, 1150, (!is_odd && floor != 6));
+new S_Door(1400, 1150, (!is_odd && floor != 6), floor);
 new S_CastleFloor(1425,1175,50,200);
 new S_CastleFloor(1400,1050,100,100);
 if (floor < 6){

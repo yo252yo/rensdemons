@@ -30,7 +30,7 @@ class S_Stairs extends LevelObject {
 
 
 class S_Door extends LevelObject {
-  constructor(x, y, closed){
+  constructor(x, y, closed, lock){
     var visual = new StaticSprite(`assets/objects/pandemonium/door_open.png`, 'obj_dark');
     super(visual, x, y);
     this.closed = closed;
@@ -38,6 +38,7 @@ class S_Door extends LevelObject {
       this.visual_closed = new StaticSprite(`assets/objects/pandemonium/door_closed.png`, 'obj_dark');
       this.visual_closed.place_at(this.x, this.y);
       this.adjust_hitbox(0,0,98,40);
+      this.lock = lock;
     } else {
       this.adjust_hitbox(0,0,0,0);
     }
@@ -49,11 +50,19 @@ class S_Door extends LevelObject {
       this.visual_closed.destroy();
     }
     this.adjust_hitbox(0,0,0,0);
+    this.closed = false;
   }
 
   interaction(){
-    console.log(    this.visual_closed );
-    this.open();
+    if (!this.closed){ return; }
+
+    if(INVENTORY.count(ITEM['MaouKey' + this.lock]) > 0) {
+      this.open();
+    } else {
+      TextBannerSequence.make([
+        "Your path is barred by a massive door radiating demonic energy. You understand from the runes and pictograms carved in the stone that to open it you will need the " + ITEM['MaouKey' + this.lock] + ". Armed with your Goddess given intuition, you're convinced that it's on this floor.",
+      ]);
+    }
   }
 }
 

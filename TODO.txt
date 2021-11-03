@@ -7,15 +7,6 @@ S_TilingFloor ?? only in trial, could be fun
 - pandemonium extra room,
 - pandemonium deco, (share plants with altars)
 - pandemonium events, especially intro
-
-- pandemonium progress
-the key to survival -> 0
-progress -> 1
-success -> 2
-happiness -> 3
- understanding -> 4
-  victory -> 5
-
 - maou fight and ending
 
 
