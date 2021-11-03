@@ -459,6 +459,26 @@ class S_Beelzebub extends SimpleObject {
   }
 }
 
+class S_Throne extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "pandemonium/throne", "obj_light");
+    this.specify_sprite_size(200,184);
+    this.adjust_hitbox(10,10,180,100);
+    this.default_text = this.text_interaction([
+      "This is the biggest piece of furniture you've ever seen. It seems carved directly in what appears to be bone, and richly aggremented of golden gildings and velvet cushions bigger than you. A fitting throne for the emperor of demons.",
+    ]);
+  }
+}
+
+
+class S_Maou extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "pandemonium/maou", "obj_dark");
+    this.specify_sprite_size(300,300);
+    this.adjust_hitbox(50,10,180,100);
+  }
+}
+
 
 class S_RockColumn extends SimpleObject {
   constructor(x, y){

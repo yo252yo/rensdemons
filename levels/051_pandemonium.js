@@ -66,12 +66,18 @@ if (floor < 6) {
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
+if (floor == 6) {
+  new S_Throne(1250, 1350);
+}
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
+if (floor == 6) {
+  new S_Maou(1200, 1550);
+}
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
