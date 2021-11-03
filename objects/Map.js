@@ -249,7 +249,7 @@ class SM_Vulcano extends MapObject {
 class SM_Pandemonium extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/pandemonium.png", 'obj_light');
-    super(visual, x, y, `Pandemonium`, "051_pandemonium");
+    super(visual, x, y, `Pandemonium`, "051_pandemonium@0");
     this.adjust_hitbox(40,-10,235,200);
     this.specify_sprite_size(300,251);
     if(this.legend) this.legend.shift(140);

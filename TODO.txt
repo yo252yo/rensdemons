@@ -6,7 +6,12 @@ S_TilingFloor ?? only in trial, could be fun
 
 - pandemonium:
 share plants with altars
-the key to survival -> progress -> success -> happiness -> understanding -> victory
+the key to survival -> 0
+progress -> 1
+success -> 2
+happiness -> 3
+ understanding -> 4
+  victory -> 5
 
 hidden ending:
 - heaven: squares linked without any order
