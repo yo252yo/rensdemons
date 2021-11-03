@@ -14,6 +14,29 @@ class S_Column extends LevelObject {
   }
 }
 
+class S_Stairs extends LevelObject {
+  constructor(x, y, up){
+    var dir = up ? '_up' : '_down';
+    var visual = new StaticSprite(`assets/objects/pandemonium/stairs${dir}.png`, 'obj_dark');
+    super(visual, x, y);
+    this.interaction = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
+
+class S_Door extends LevelObject {
+  constructor(x, y, closed){
+    var dir = closed ? '_open' : '_closed';
+    var visual = new StaticSprite(`assets/objects/pandemonium/door${dir}.png`, 'obj_dark');
+    super(visual, x, y);
+    this.interaction = this.text_interaction([
+      "...",
+    ]);
+  }
+}
+
 class S_StainedGlass extends LevelObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
