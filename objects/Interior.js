@@ -21,7 +21,7 @@ class S_Stairs extends LevelObject {
     super(visual, x, y);
     this.adjust_hitbox(0,0,48,48);
     this.specify_sprite_size(48, 48);
-    
+
     this.interaction = function() {
       CURRENTLEVEL.setup(destination);
     }
@@ -31,16 +31,29 @@ class S_Stairs extends LevelObject {
 
 class S_Door extends LevelObject {
   constructor(x, y, closed){
-    var dir = closed ? '_closed' : '_open';
-    var visual = new StaticSprite(`assets/objects/pandemonium/door${dir}.png`, 'obj_dark');
+    var visual = new StaticSprite(`assets/objects/pandemonium/door_open.png`, 'obj_dark');
     super(visual, x, y);
     this.closed = closed;
     if(this.closed) {
+      this.visual_closed = new StaticSprite(`assets/objects/pandemonium/door_closed.png`, 'obj_dark');
+      this.visual_closed.place_at(this.x, this.y);
       this.adjust_hitbox(0,0,98,40);
     } else {
       this.adjust_hitbox(0,0,0,0);
     }
     this.specify_sprite_size(98, 92);
+  }
+
+  open(){
+    if(this.visual_closed){
+      this.visual_closed.destroy();
+    }
+    this.adjust_hitbox(0,0,0,0);
+  }
+
+  interaction(){
+    console.log(    this.visual_closed );
+    this.open();
   }
 }
 
