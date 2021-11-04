@@ -390,6 +390,7 @@ class S_Beelzebub extends SimpleObject {
 
     var postBossPhase2 = function(){
       AUDIO.music.characters.BestFriend();
+      PARTY.remove(PARTYMEMBERS.BestFriend);
       self.destroy();
 
       TextBannerSequence.make([
