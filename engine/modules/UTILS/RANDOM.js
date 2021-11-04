@@ -61,5 +61,17 @@ const RANDOM = {
         array[i] = array[j];
         array[j] = temp;
     }
-  }
+  },
+
+  glitch: function(text, strength){
+    var ntext = "";
+    for (var i = 0; i < text.length; i++) {
+        if (Math.random() < strength){
+          ntext += RANDOM.pick("###$$%%&*-._");
+        } else {
+          ntext += text[i];
+        }
+    }
+    return ntext;
+  },
 }
