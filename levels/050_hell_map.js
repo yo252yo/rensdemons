@@ -91,7 +91,9 @@ FEvents.fill_floor_by_retry();
 // ===================
 
 
-heaven.destroy();
+if(! ABILITIES.has_ability("_secret_ending_chosen")){
+  heaven.destroy();
+}
 
 CURRENTLEVEL.start_function = function() {
   var callback = function(){

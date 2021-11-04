@@ -5,6 +5,7 @@ new CenteredImage("assets/battles/pandemonium/maou.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
+STATS.record.flag("FoughtMaou");
 
 // ===================
 //hack PLAYER CAPABILITIES
@@ -26,7 +27,6 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 8, true);           // 75  ALCH
 
 
 
-
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
@@ -38,9 +38,21 @@ var attack = {
 };
 
 
-BATTLE.monster_actions.add_textual("WIP BOSS START TEXT.", attack);
+
+BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
+
+
 // ===================
 //hack START
 // ===================
 
-BATTLE.operations.start("WIP BOSS START TEXT.");
+BATTLE.operations.start([
+  "A Luciferian Lord Laments at your Loftiness.",
+  `$$demon_lord$: "It's such a shame... It looks like I will have to crush you like I did all the others!"`,
+  `$$Ren$: "Big talk for someone who's about to die!"`,
+  `$$demon_lord$: "Enough! I'll show you by force how little you matter!"`
+]);

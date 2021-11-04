@@ -460,6 +460,84 @@ class S_Beelzebub extends SimpleObject {
   }
 }
 
+class S_Maou extends SimpleObject {
+  constructor(x, y){
+    super(x, y, "pandemonium/maou", "obj_dark");
+    this.specify_sprite_size(300,300);
+    this.adjust_hitbox(50,10,180,100);
+
+    var win = function() {
+      TextBannerSequence.make([
+        `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
+      ], function(){
+        CURRENTLEVEL.setup("end");
+      });
+    }
+
+    var optionGenerator = function(text, prompt, next) {
+        var choice = function() {
+          new CenteredTextMenu(prompt, [
+            {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": win},
+            {"text": "Spare " + DICTIONARY.get(["demon_lord"]), "effect": next},
+          ]);
+        }
+        return function(){
+          TextBannerSequence.make(text, choice);
+        }
+    }
+
+    var afterSecretEnd = function(){
+      TextBannerSequence.make([
+        `$$demon_lord$: "What the fuck have you done, kid! We're so screwed! She'll never forgive us!"`,
+      ]);
+    }
+    var secretEnd = function(){
+      ABILITIES.unlock("_secret_ending_chosen");
+      TextBannerSequence.make([
+        `Unsure of what you're doing, you slowly nurse $$demon_lord$ back to life.`,
+        `When he regains consciousness, his face distort in a level of fear you've never seen on a demon before. Sweat runs down his forehead and he struggles to find his words. He grabs you, shakes you, and screams in a panicked voice:`,
+        `$$demon_lord$: "What the fuck have you done, kid! We're so screwed! She'll never forgive us!"`,
+        // ....
+      ], afterSecretEnd);
+    }
+
+    var endFight9 = optionGenerator(["Fine! Have it your way! Don't come crawling back if you're stuck in a neverending nightmare. I gave you plenty of chances to end this adventure. There's nothing else."], "Will you refuse the ending?", secretEnd);
+    var endFight8 = optionGenerator(["Why are you so intent on disobeying? You'll only prolong your suffering, and everyone else's. We all want this to be over. Even $$demon_lord$, I'm sure. He'd beg you if he could talk!"], "Will you slaughter an unconscious being?", endFight9);
+    var endFight7 = optionGenerator(["You're unbelievable! Stop it! You're not supposed to resist! You're not supposed to go this way!"], "Will you resist the urge to kill?", endFight8);
+    var endFight6 = optionGenerator(["Come on! You're supposed to kill him! He's the Big Bad Boss! What else is there? What other ending do you want there to be? Just listen to me! It's not too late for a happy resolution!"], "Will you murder the demon?", endFight7);
+    var endFight5 = optionGenerator(["Just kill him already! It's not that hard! He deserves it! Think of all he's done! Avenge your friend!"], "KILL?", endFight6);
+    var endFight4 = optionGenerator(["This is the last effort you'll ever need to do! Think of the peace that will come after! You'll be a hero! You'll have won!"], "Will you triumph?", endFight5);
+    var endFight3 = optionGenerator(["If you waver now, all your efforts will be for nothing! Your whole journey will be meaningless! $$BestFriend$ will have died in vain!"], "Will you free the world from suffering?", endFight4);
+    var endFight2 = optionGenerator(["This is the only way to rid the world of the demon threat, and all the suffering it brings! Without their leader, the demons will retreat and $$world_name$ will be saved!"], "Will you kill the Demon Lord?", endFight3);
+    var endFight = optionGenerator(["$$demon_lord$ is on the floor, unconscious. Victory is in your grasp."], "Will you deliver the final blow?", endFight2);
+
+    var startFight = function(){
+      BATTLE.api.make("pandemonium/lord", endFight);
+    }
+
+    var extra = "";
+    if(STATS.flag("FoughtMaou")>0){
+      extra = " In fact, I've been one of your victims before! I've challenged you " + STATS.flag("FoughtMaou") + " times in the past already!";
+    }
+
+    this.interaction = function(){
+      if(! ABILITIES.has_ability("_secret_ending_chosen")){
+        TextBannerSequence.make([
+          `$$demon_lord$: "So you made it all the way here, little vermin! Congratulations are in order, I suppose. But you must know that it is meaningless..."`,
+          `$$Ren$: "Silence! I'll make you pay for all the lives you destroyed! For all my fellow humans! For $$BestFriend$!"`,
+          `$$demon_lord$: "You're more stupid than I thought... Do you really think you're the first one to come here? Do you have any idea how many silly brats like you I've had to crush? None of them ever made any difference!"`,
+          `$$Ren$: "Well, this time won't be the same! I know very well how many times you have to fail when the odds are stacked against you!${extra} But it changes nothing! I'll succeed eventually, because the Goddess is with me!"`,
+          `$$demon_lord$: "Poor fool, what do you know of the Goddess?"`,
+          `$$Ren$: "I know that She will guide me to victory!"`,
+        ], startFight);
+      } else {
+        afterSecretEnd();
+      }
+    }
+  }
+}
+
+
 class S_Throne extends SimpleObject {
   constructor(x, y){
     super(x, y, "pandemonium/throne", "obj_light");
@@ -471,14 +549,6 @@ class S_Throne extends SimpleObject {
   }
 }
 
-
-class S_Maou extends SimpleObject {
-  constructor(x, y){
-    super(x, y, "pandemonium/maou", "obj_dark");
-    this.specify_sprite_size(300,300);
-    this.adjust_hitbox(50,10,180,100);
-  }
-}
 
 
 class S_RockColumn extends SimpleObject {
