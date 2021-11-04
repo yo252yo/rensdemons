@@ -488,7 +488,7 @@ class S_Maou extends SimpleObject {
 
     var afterSecretEnd = function(){
       TextBannerSequence.make([
-        `$$demon_lord$: "What the fuck have you done, kid! We're so screwed! She'll never forgive us!"`,
+        `You're still shocked by what you saw $$demon_lord$ do to himself. What kind of being is the Goddess, to inspire such terror in her servants? The only way to find out is to head for Heaven, which shouldn't be far from this castle.`,
       ]);
     }
     var secretEnd = function(){
@@ -497,12 +497,31 @@ class S_Maou extends SimpleObject {
         `Unsure of what you're doing, you slowly nurse $$demon_lord$ back to life.`,
         `When he regains consciousness, his face distort in a level of fear you've never seen on a demon before. Sweat runs down his forehead and he struggles to find his words. He grabs you, shakes you, and screams in a panicked voice:`,
         `$$demon_lord$: "What the fuck have you done, kid! We're so screwed! She'll never forgive us!"`,
-        // ....
+        `$$Ren$: "What... Who do you mean?"`,
+        `$$demon_lord$: "The Goddess! She's more powerful than you can ever imagine! She transcends time, space and dimensions!"`,
+        `$$Ren$: "You... Know the Goddess?"`,
+        `$$demon_lord$: "Of course! She created all things! I've been serving Her dutifully, and you fucked it all up!"`,
+        `$$Ren$: "Wait a minute... You were serving the Goddess?"`,
+        `$$demon_lord$: "Yes! You'd be a fool to oppose Her Almighty Will! I had one job to do, I was supposed to die, and that's fucking it! Why didn't you just kill me? What awaits us now is worse than death..."`,
+        `$$Ren$: "What?"`,
+        `$$demon_lord$: "Maybe it's not too late! Kill me! Please! Kill me! Maybe we can still fix it!"`,
+        `$$demon_lord$ pitifully grabs your arm and shakes your weapon, but you're still too puzzled to do anything. The colossal demon starts sobbing like a newborn.`,
+        `$$demon_lord$: "Please! I don't want to imagine what She will do to me! I've failed her! I was supposed to punish the humans for their hubris, and die peacefully when my time comes!"`,
+        `$$Ren$: "You mean... The Goddess is behind the demon invasion?"`,
+        `$$demon_lord$: "How could She not be? She is Divine! Everything is Her Holy Will! I just obey Her commands! Oh, Goddess, forgive me! Forgive him! Please, just let me die!"`,
+        `Sobs turn into convulsions. It truly is a pathetic sight. Strident wails raise from the contorted muscular body.`,
+        `$$Ren$: "Focus! There may still be hope! I want to meet Her. Where is She?"`,
+        `$$demon_lord$: "She's in Heaven, of course. She's always been near, but you couldn't see Her. It's pointless, though, you cannot survive Her wrath. We're doomed. This world has no point anymore, this life has no meaning. Please, oh, Mighty One, please spare little miserable me!"`,
+        `$$demon_lord$ lets out a high pitched scream that pierces your ears. The whimper continues:`,
+        `$$demon_lord$: "She's here! She sees All! She's Everywhere! And She's angry at us! Oh please, please! Her reckoning has come! Please, let it stop! Kill me!"`,
+        `Before you could do anything, you watch in horror as $$demon_lord$ burrows his fanged fingers deep within his chest and rips his body apart. Blood explodes in all directions as the massive lump of incandescent flesh crashes on the ground. $$demon_lord$ let out a final whisper:`,
+        `$$demon_lord$: "Forgive me, Mother! I failed you!"`,
       ], afterSecretEnd);
     }
 
-    var endFight9 = optionGenerator(["Fine! Have it your way! Don't come crawling back if you're stuck in a neverending nightmare. I gave you plenty of chances to end this adventure. There's nothing else."], "Will you refuse the ending?", secretEnd);
-    var endFight8 = optionGenerator(["Why are you so intent on disobeying? You'll only prolong your suffering, and everyone else's. We all want this to be over. Even $$demon_lord$, I'm sure. He'd beg you if he could talk!"], "Will you slaughter an unconscious being?", endFight9);
+    var endFight10 = optionGenerator(["Fine! Have it your way! Don't come crawling back if you're stuck in a neverending nightmare. I gave you plenty of chances to end this adventure. There's nothing else."], "Will you refuse the ending?", secretEnd);
+    var endFight9 = optionGenerator(["Why are you so intent on disobeying? You'll only prolong your suffering, and everyone else's. We all want this to be over. Even $$demon_lord$, I'm sure. He'd beg you if he could talk!"], "Will you slaughter an unconscious being?", endFight10);
+    var endFight8 = optionGenerator(["Are you seriously going to spare the monster that caused all this suffering? He killed most of your kind! It makes you basically an accomplice! Is this really the side you want to be on?"], "Will you oppose what you should do?", endFight9);
     var endFight7 = optionGenerator(["You're unbelievable! Stop it! You're not supposed to resist! You're not supposed to go this way!"], "Will you resist the urge to kill?", endFight8);
     var endFight6 = optionGenerator(["Come on! You're supposed to kill him! He's the Big Bad Boss! What else is there? What other ending do you want there to be? Just listen to me! It's not too late for a happy resolution!"], "Will you murder the demon?", endFight7);
     var endFight5 = optionGenerator(["Just kill him already! It's not that hard! He deserves it! Think of all he's done! Avenge your friend!"], "KILL?", endFight6);
