@@ -224,11 +224,11 @@ FHardEvents.fill_floor_by_retry();
 //hack 7. START/INIT
 // ===================
 var foundAncientArmamentCondition = function(){
-  return INVENTORY.has_ancient_armament && !ABILITIES.has_ability("saw_ancient_armament_prompt");
+  return INVENTORY.has_ancient_armament && !ABILITIES.has_ability("_saw_ancient_armament_prompt");
 }
 
 CURRENTLEVEL.add_trigger("foundAncientArmament", foundAncientArmamentCondition, function() {
-  ABILITIES.unlock("saw_ancient_armament_prompt");
+  ABILITIES.unlock("_saw_ancient_armament_prompt");
   TextBannerSequence.make([
     "$$BestFriend$: \"Hey $$Ren$, I'm no expert, but looking at the manual we found, I think we have everything we need to make this artifact work.\"",
     "$$Ren$: \"Do we?\"",
