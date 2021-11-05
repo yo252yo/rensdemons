@@ -38,13 +38,11 @@ var attack = {
 };
 
 
-
-BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
-BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
-BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
-BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
-BATTLE.monster_actions.add_textual("$$demon_lord$.", attack);
-
+BATTLE.monster_actions.add_textual("$$demon_lord$ raises an arm in the air. Immediately, he gets surrounded by a pillar of flames that reaches the ceiling and follows along the dark stone to engulf the whole room. The temperature of the atmosphere raises sharply, and it becomes hard to breathe. The flames are everywhere.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$ projects his demonic spirit into your mind. You try to put on psychological defenses, but they are laughable faced with the brute force of the monster. He fills your brain with horrific visions of nightmares. Your biggest fears and traumas harass you relentlessly, and you fall on the ground, paralyzed.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$ attacks you with a wave of magical energy. It sips into your whole body and sets your nerves ablaze. Every inch of yourself feels like it has been lit on fire. The acute pain is so overwhelming that you almost faint.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$ breathes on the ball of fire that he holds in his hand. A wave of flames expands from it and surrounds him. He soon finds himself at the center of an incandescent tornado. You realize with horror that the devouring whirlwind is expanding, taking more and more of the room's volume. It won't be long before the whole space is a burning maelstrom.", attack);
+BATTLE.monster_actions.add_textual("$$demon_lord$ snaps his finger. The air around you warms up fast. It becomes dry and sparks appear here and there. It seems to take up a crimson shade. Suddenly, you find yourself ablaze. A layer of flames surrounds every inch of your body and slowly devour your flesh.", attack);
 
 // ===================
 //hack START

@@ -7,6 +7,7 @@ if(s.length > 1){
   floor = parseInt(s[1]);
 }
 var gen = new Generator(DICTIONARY.get("world_seed")*31 + floor);
+AUDIO.music.levels.pandemonium();
 
 
 // ===================
