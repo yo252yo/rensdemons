@@ -8,8 +8,8 @@ S_TilingFloor ?? only in trial, could be fun
 - pandemonium deco, (share plants with altars)
 - pandemonium events, especially intro
 - visual glitches (overlay?)
-- ending
-
+- achievement menu
+- reset at reroll (SAVE.make_new_game): keep martyrdom and battletree?? but if we keep battletree we dont get XP anymore!!!
 
 hidden ending:
 - heaven: squares linked without any order

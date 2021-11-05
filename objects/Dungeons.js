@@ -470,7 +470,7 @@ class S_Maou extends SimpleObject {
       TextBannerSequence.make([
         `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
       ], function(){
-        CURRENTLEVEL.setup("end");
+        CURRENTLEVEL.setup("end@A");
       });
     }
 
