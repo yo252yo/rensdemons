@@ -76,6 +76,6 @@ var displayText = function() {
   ], nextPage);
 }
 
-setTimeout(displayText, 1000);
+setTimeout(displayText, 700);
 
 FOG.stop();
