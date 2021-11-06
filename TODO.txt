@@ -1,15 +1,12 @@
-S_GooFloor  is not used at all
-
-S_TilingFloor ?? only in trial, could be fun
 
 
 
 - pandemonium extra room,
 - pandemonium deco, (share plants with altars)
+  S_GooFloor  is not used at all
+  S_TilingFloor ?? only in trial, could be fun
 - pandemonium events, especially intro
 - visual glitches (overlay?)
-
-max xp gotten ever
 
 
 

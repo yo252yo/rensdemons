@@ -225,12 +225,15 @@ const BATTLETREE = {
       for (var i in BATTLETREE._targets.get([])) {
         score += BATTLETREE.score.score_battle(i).xp;
       }
+      STATS.record.maxScore(score);
       return score;
     },
 
     // Clearly this needs balance :) but it will do for now.
-    level: function() {
-      var xp = BATTLETREE.score.total_xp();
+    level: function(xp) {
+      if(!xp){
+        xp = BATTLETREE.score.total_xp();
+      }
       if (xp < 100){
         return 1 + Math.floor(xp / 20);
       }

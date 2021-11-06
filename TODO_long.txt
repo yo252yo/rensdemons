@@ -49,6 +49,7 @@ add new decoration items
 
 add rens parent sendoff before trial?
 
+compute max possible exploration score for the achievemnet menu
 
 decorate stores
 

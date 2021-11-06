@@ -130,7 +130,8 @@ const INTERFACE = {
 
     achievements: function() {
           new CenteredTextMenu(`
-        <h3>Exploration</h3>
+        <h4 style="clear:both;display:block;">Threads of fate exploration</h4>
+        ${STATS.get(STAT.MaxExplorationScore)} (level ${BATTLETREE.score.level(STATS.get(STAT.MaxExplorationScore))})
         <h4 style="clear:both;display:block;">Party members</h4>
         ${INTERFACE.display.print_achieve.party()}
         <h4 style="clear:both;display:block;">Legendary weapons</h4>

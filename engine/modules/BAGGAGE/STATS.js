@@ -1,6 +1,7 @@
 
 const STAT = {
   Death: "death",
+  MaxExplorationScore: "MaxExplorationScore",
 }
 
 const ENDINGS = {
@@ -50,6 +51,17 @@ const STATS = {
       STATS._stats.increment(["END_" + text], value);
       DISK.write("STATS");
     },
+
+    maxScore: function(value){
+      var g = STATS._stats.get([STAT.MaxExplorationScore]);
+      console.log(value);
+      if (!g || g < value){
+        STATS._stats.set([STAT.MaxExplorationScore], value);
+        DISK.write("STATS");
+      }
+    },
+
+
   },
 
   get: function(key){

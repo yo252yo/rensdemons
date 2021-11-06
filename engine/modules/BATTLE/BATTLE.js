@@ -395,6 +395,9 @@ const BATTLE = {
            INVENTORY.increase(ITEM.XpToken, exp_won);
            text.push(LANGUAGE.battle.xp(BATTLE.abilities_score_before, after));
            AUDIO.effect.levelup();
+
+          // This refreshes the STAT entry
+           var xp = BATTLETREE.score.total_xp();
         }
 
         if (text.length> 0){
