@@ -23,8 +23,10 @@ const BATTLETREE = {
       BATTLETREE._targets = new FluidMap(save.tree);
     },
 
-    make_new: function(){
-      BATTLETREE._targets = new FluidMap();
+    make_new: function(continu){
+      if(!continu) {
+        BATTLETREE._targets = new FluidMap();
+      }
     },
   },
 

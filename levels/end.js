@@ -112,6 +112,8 @@ var displayText = function() {
   TextBannerSequence.make(sequence, nextPage);
 }
 
+ABILITIES.unlock("_just_finished_game");
+
 setTimeout(displayText, 1000);
 
 FOG.stop();

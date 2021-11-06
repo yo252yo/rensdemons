@@ -45,8 +45,11 @@ const MARTYRDOM = {
       MARTYRDOM._spare_points = save.points;
     },
 
-    make_new: function() {
-      MARTYRDOM._progress = new FluidMap();
+    make_new: function(continu) {
+      if(!continu) {
+        MARTYRDOM._progress = new FluidMap();
+        MARTYRDOM._spare_points = 0;
+      }
     },
   },
 

@@ -76,6 +76,7 @@ const SAVE = {
   },
 
   make_new_game: function() {
+    var continu = ABILITIES.has_ability("_just_finished_game");
     for (var i in _SAVED_MODULES) {
       if(_DISK_MODULES.includes(_SAVED_MODULES[i])){
         continue; // No need to reset that which is on disk.
@@ -86,7 +87,7 @@ const SAVE = {
         CONSOLE.error("Failing to reset: " + _SAVED_MODULES[i]);
         continue;
       }
-      mod.factory.make_new();
+      mod.factory.make_new(continu);
     }
   },
 
