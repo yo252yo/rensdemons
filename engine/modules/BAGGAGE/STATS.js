@@ -4,7 +4,12 @@ const STAT = {
 }
 
 const ENDINGS = {
-  War: "END OF WAR",
+  War: "END OF WAR", // demon_lord
+  World: "END OF WORLD", // goddess
+  Line: "END OF LINE", // code
+  Game: "END OF GAME", // leave the game
+  Universe: "END OF UNIVERSE", // Fork on git
+  // road, world, ear, year, universe, trail, story, day, journey
 }
 
 const STATS = {

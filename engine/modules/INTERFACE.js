@@ -84,6 +84,76 @@ const INTERFACE = {
                {"text": "Back", "effect": "##BACK"}
             ]);
     },
+
+    print_achieve:{
+      party: function(){
+        var r = "<div style='float:left;clear:both;position:relative;display:block;margin-bottom:20px;'>";
+        for(var i in PARTYMEMBERS){
+          if (i == PARTYMEMBERS.Ren){
+          r += "<div id='character_portait_slot_" + i + "' onClick='AUDIO.music.interface.titlescreen();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
+          } else if(STATS.unlocked(i)){
+            r += "<div id='character_portait_slot_" + i + "' onClick='AUDIO.music.characters." + i +"();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
+          } else if(PARTYMEMBERS.isPartyMember(i)){
+            r += "<div style='float:left;position:relative;display:block;width:125px;height:125px;border: thick double #aaaaaa;opacity:0.3;'></div>";
+          }
+        }
+        r+="</div>";
+        return r;
+      },
+
+      artifacts: function(){
+        var r = "<div style='float:left;clear:both;position:relative;display:block;margin-bottom:20px;'>";
+        for(var i of ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact]){
+          if(STATS.unlocked(i)){
+            r += "<div id='character_portait_slot_" + i + "' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:50px;height:50px;'></div>";
+          } else if(ITEM.isItem(i)){
+            r += "<div style='float:left;position:relative;display:block;width:50px;height:50px;border: thick double #aaaaaa;opacity:0.3;'></div>";
+          }
+        }
+        r+="</div>";
+        return r;
+      },
+
+      endings: function(){
+        var r = "";
+        for(var i in ENDINGS){
+          if(STATS.ending(ENDINGS[i])){
+            r += "<div>- " + ENDINGS[i] + "</div>";
+          } else {
+            r += "<div style='opacity:0.2'>- " + ENDINGS[i] + "</div>";
+
+          }
+        }
+        return r;
+      },
+    },
+
+    achievements: function() {
+          new CenteredTextMenu(`
+        <h3>Exploration</h3>
+        <h4 style="clear:both;display:block;">Party members</h4>
+        ${INTERFACE.display.print_achieve.party()}
+        <h4 style="clear:both;display:block;">Legendary weapons</h4>
+        ${INTERFACE.display.print_achieve.artifacts()}
+        <h4 style="clear:both;display:block;">Endings</h4>
+        ${INTERFACE.display.print_achieve.endings()}
+           `, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+
+        for(var i in PARTYMEMBERS){
+          if(document.getElementById('character_portait_slot_' + i)){
+            var d = document.getElementById('character_portait_slot_' + i);
+            new LayeredImage("assets/portraits_large/" + i + "_$.png", 125, 125, d);
+          }
+        }
+        for(var i of ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact]){
+          if(document.getElementById('character_portait_slot_' + i)){
+            var d = document.getElementById('character_portait_slot_' + i);
+            new LayeredImage("assets/portraits_large/" + i + "_$.png", 50, 50, d);
+          }
+        }
+    },
   },
 
   _click_marker_end: function () {
