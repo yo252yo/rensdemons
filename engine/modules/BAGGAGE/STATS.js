@@ -3,6 +3,10 @@ const STAT = {
   Death: "death",
 }
 
+const ENDINGS = {
+  War: "END OF WAR",
+}
+
 const STATS = {
   _stats: new FluidMap(),
 
@@ -30,6 +34,16 @@ const STATS = {
       STATS._stats.increment(["FLAG_" + text], value);
       DISK.write("STATS");
     },
+
+    unlock: function(text, value){
+      STATS._stats.increment(["UNLOCK_" + text], value);
+      DISK.write("STATS");
+    },
+
+    ending: function(text, value){
+      STATS._stats.increment(["END_" + text], value);
+      DISK.write("STATS");
+    },
   },
 
   get: function(key){
@@ -40,4 +54,11 @@ const STATS = {
     return STATS._stats.get(["FLAG_" + text]);
   },
 
+  unlocked: function(text){
+    return STATS._stats.get(["UNLOCK_" + text]);
+  },
+
+  ending: function(text){
+    return STATS._stats.get(["END_" + text]);
+  },
 }

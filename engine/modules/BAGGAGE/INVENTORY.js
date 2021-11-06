@@ -139,6 +139,9 @@ const INVENTORY = {
 
   increase: function(name, quantity) {
     if(!quantity) {quantity = 1;}
+    if(ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact].includes(name)){
+      STATS.record.unlock(name);
+    }
     INVENTORY._inventory.increment([name], quantity);
     CONSOLE.log.item(name, quantity);
   },
@@ -168,7 +171,7 @@ const INVENTORY = {
   countEncounter: function(name){
     INVENTORY.increase("_encounter_" + name);
   },
-  
+
   getEncounterCount: function(name){
     return INVENTORY.count("_encounter_" + name);
   },

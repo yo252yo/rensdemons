@@ -94,6 +94,7 @@ const PARTY = {
 
   add: function(name) {
     PARTY._members.push(name);
+    STATS.record.unlock(name);
     CONSOLE.log.party(name + " joined");
   },
 

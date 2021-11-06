@@ -97,8 +97,9 @@ var nextPage = function(){
 var sequence = [];
 
 if(end == "A"){
+  STATS.record.ending(ENDINGS.War);
   sequence = [
-    "Congratulations! You have reached the END OF THE WAR.",
+    `Congratulations! You have reached the ${ENDINGS.War}.`,
     "With $$demon_lord$ dead, the demon army retreated, and the world of $$world_name$ was at peace at long last. $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. The capital was rebuilt, grander than ever, and named $$BestFriend$ in honor of your fallen comrad.",
     "Faith remained strong in the kingdom. Demons never came back. This ushered a long era of prosperity where humans were able to develop to new heights.",
   ];
