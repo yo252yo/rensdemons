@@ -123,7 +123,7 @@ const DISK = {
             }
           }
 
-          if(parsed["#MASTER_KEY"] != DISK._CONTENT["#MASTER_KEY"]){
+          if(parsed["#DISK_STATE_IDENTIFIER"] != DISK._CONTENT["#DISK_STATE_IDENTIFIER"]){
             CONSOLE.log.save("Loading save from a different device, restoring everything on disk.");
             DISK._CONTENT = parsed;
           } else {
