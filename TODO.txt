@@ -12,10 +12,6 @@ S_TilingFloor ?? only in trial, could be fun
   In party. Add and inventory. Add we can make stats for achieveemnts
   It's a bit ugly how we're using underscore for hidden abilities
 
-MAJOR BUGS:
-- after a reset for some reason i am able to use on eyeball a bunch of spells that i dont have (which are in the battletree). ie battletree unlocks stuff that shouldnt be unlocked
-
-
 
 
 

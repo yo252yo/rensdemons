@@ -24,10 +24,8 @@ class ActionObject {
 const PLAYER_ACTIONS = {
   _internal: {
     trigger_music: function(name){
-      for(var i in PARTYMEMBERS){
-        if(PARTYMEMBERS[i] == name){
-          AUDIO.music.characters[i]();
-        }
+      if(PARTYMEMBERS.isPartyMember(name)){
+        AUDIO.music.characters[name]();
       }
     },
 
@@ -36,7 +34,7 @@ const PLAYER_ACTIONS = {
     },
 
     _shorten_if_explored(name, description){
-      if(name in PARTYMEMBERS){
+      if(PARTYMEMBERS.isPartyMember(name)){
         return description; // summons always have full text
       }
       if (BATTLETREE.score.is_explored(BATTLE.current_battle, name)){
@@ -253,6 +251,9 @@ const PLAYER_ACTIONS = {
     }
 
     for(var i in PARTYMEMBERS){
+      if (typeof PARTYMEMBERS[i] == "function"){
+        continue;
+      }
       PLAYER_ACTIONS.useless(i);
     }
 
@@ -272,6 +273,9 @@ const PLAYER_ACTIONS = {
 
   kill_with_any_party_member: function(hits){
     for(var i in PARTYMEMBERS){
+      if (typeof PARTYMEMBERS[i] == "function"){
+        continue;
+      }
       if(i != PARTYMEMBERS.Ren){
         PLAYER_ACTIONS.win(i, hits);
       }

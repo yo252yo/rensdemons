@@ -26,6 +26,16 @@ const PARTYMEMBERS = {
  // extra mountain ruins, doing an expedition?
    TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
   // extra lake
+
+
+  isPartyMember: function(s){
+    for (var i in PARTYMEMBERS){
+      if(PARTYMEMBERS[i] == s){
+        return true;
+      }
+    }
+    return false;
+  },
 };
 
 

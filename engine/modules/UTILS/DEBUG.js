@@ -70,12 +70,18 @@ const DEBUG = {
 
   get_all_abilities: function() {
     for(var i of Object.keys(ABILITY)){
+      if (typeof ABILITY[i] == "function"){
+        continue;
+      }
       ABILITIES.unlock(ABILITY[i]);
     }
   },
 
   get_all_party: function() {
     for(var i of Object.keys(PARTYMEMBERS)){
+      if (typeof PARTYMEMBERS[i] == "function"){
+        continue;
+      }
       if (i != PARTYMEMBERS.Ren){
         PARTY.add(i);
       }

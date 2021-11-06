@@ -13,7 +13,7 @@ class SpeakerIcon extends TextElement {
     }
 
     is_supported_speaker(name){
-      if(name in PARTYMEMBERS){
+      if(PARTYMEMBERS.isPartyMember(name)){
         return true;
       }
       if(name == "demon_lieutenant" || name == "demon_lord" || name == "Priest"){

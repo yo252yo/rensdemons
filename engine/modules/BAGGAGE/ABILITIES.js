@@ -29,6 +29,15 @@ const ABILITY = {
     Persuade: "Persuade",
     Intimidate: "Intimidate",
     Mystify: "Mystify",
+
+    isAbility: function(s){
+      for (var i in ABILITY){
+        if(ABILITY[i] == s){
+          return true;
+        }
+      }
+      return false;
+    },
 }
 
 const ABILITIES_ARCHETYPES_NAMES = {
