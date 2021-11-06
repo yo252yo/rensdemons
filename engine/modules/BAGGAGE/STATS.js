@@ -26,6 +26,7 @@ const STATS = {
 
     make_new: function() {
       // Nothing is needed.
+      STATS.record.ending(ENDINGS.Game); // always true when the game is off
     },
   },
 
@@ -64,6 +65,9 @@ const STATS = {
   },
 
   ending: function(text){
+    if (text == ENDINGS.Game){
+      return false; // can never be true if the game is launched
+    }
     return STATS._stats.get(["END_" + text]);
   },
 }

@@ -8,13 +8,8 @@ S_TilingFloor ?? only in trial, could be fun
 - pandemonium deco, (share plants with altars)
 - pandemonium events, especially intro
 - visual glitches (overlay?)
-- achievement menu
-  In party. Add and inventory. Add we can make stats for achieveemnts
-  It's a bit ugly how we're using underscore for hidden abilities
-
 
 max xp gotten ever
-end of game ED
 
 
 
