@@ -163,6 +163,14 @@ const INVENTORY = {
     return (INVENTORY.count(ITEM.AncientArmamentAdvisor) > 0) &&
     (INVENTORY.count(ITEM.AncientArmamentArmature) > 0) &&
     (INVENTORY.count(ITEM.AncientArmamentAmmunition) > 0);
-  }
+  },
+
+  countEncounter: function(name){
+    INVENTORY.increase("_encounter_" + name);
+  },
+  
+  getEncounterCount: function(name){
+    return INVENTORY.count("_encounter_" + name);
+  },
 
 }

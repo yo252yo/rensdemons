@@ -11,7 +11,12 @@ S_TilingFloor ?? only in trial, could be fun
 - achievement menu
   In party. Add and inventory. Add we can make stats for achieveemnts
   It's a bit ugly how we're using underscore for hidden abilities
-- force XP score to be 0 at the beginning for the first encounter of the run for each monster, so that the first encounter gives mass XP! Keep it as ability?
+
+MAJOR BUGS:
+_rubble appears in experience and level is NaN
+- after a reset for some reason i am able to use on eyeball a bunch of spells that i dont have (which are in the battletree). ie battletree unlocks stuff that shouldnt be unlocked
+
+
 
 
 

@@ -328,6 +328,10 @@ const BATTLE = {
         BATTLE.builder.clear();
         IO.control.cede();
         BATTLE.abilities_score_before = BATTLETREE.score.score_battle(name);
+        if(!INVENTORY.getEncounterCount(name)){
+          BATTLE.abilities_score_before.xp = 0;
+        }
+        INVENTORY.countEncounter(name);
         BATTLE.builder.setup.animation();
         AUDIO.music.interface.battle();
         setTimeout ( function() { BATTLE.builder.setup.end(name, callback); }, 1000);
