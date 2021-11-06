@@ -100,7 +100,7 @@ decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2
 decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
 
-decorFiller.set_tries(60, 80);
+decorFiller.set_tries(20, 40);
 decorFiller.fill_floor_by_retry();
 
 
