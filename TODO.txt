@@ -9,7 +9,11 @@ S_TilingFloor ?? only in trial, could be fun
 - pandemonium events, especially intro
 - visual glitches (overlay?)
 - achievement menu
-- reset at reroll (SAVE.make_new_game): keep martyrdom and battletree?? but if we keep battletree we dont get XP anymore!!! so we should just force XP score to be 0 at the beginning for the first encounter of the run for each monster, so that the first encounter gives mass XP! Keep it as ability? 
+  In party. Add and inventory. Add we can make stats for achieveemnts
+  It's a bit ugly how we're using underscore for hidden abilities 
+- reset at reroll (SAVE.make_new_game): keep martyrdom and battletree?? but if we keep battletree we dont get XP anymore!!! so we should just force XP score to be 0 at the beginning for the first encounter of the run for each monster, so that the first encounter gives mass XP! Keep it as ability?
+  Make sure that downloading a save merges and not overwrites the disk
+
 
 hidden ending:
 - heaven: squares linked without any order

@@ -12,7 +12,7 @@ const STATS = {
     },
 
     import: function(save) {
-      STATS._stats = new FluidMap(save);
+      STATS._stats.merge(new FluidMap(save));
     },
 
     make_new: function() {

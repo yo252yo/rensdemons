@@ -126,6 +126,7 @@ const DISK = {
           if(parsed["#DISK_STATE_IDENTIFIER"] != DISK._CONTENT["#DISK_STATE_IDENTIFIER"]){
             CONSOLE.log.save("Loading save from a different device, restoring everything on disk.");
             DISK._CONTENT = parsed;
+            DISK._CONTENT["#DISK_STATE_IDENTIFIER"] = (new Date()).getTime();
           } else {
             CONSOLE.log.save("Loading save the same device, only loading the save file.");
             DISK._CONTENT["SAVE"] = parsed["SAVE"];
