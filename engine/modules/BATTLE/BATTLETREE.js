@@ -187,7 +187,7 @@ const BATTLETREE = {
 
     score_battle: function(battle) {
       if (battle.startsWith("_")) {
-        return 0;
+        return {xp: 0, unseen:0, explored:0};
       }
 
       var score = 0, unseen = 0, explored = 0;

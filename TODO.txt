@@ -13,7 +13,6 @@ S_TilingFloor ?? only in trial, could be fun
   It's a bit ugly how we're using underscore for hidden abilities
 
 MAJOR BUGS:
-_rubble appears in experience and level is NaN
 - after a reset for some reason i am able to use on eyeball a bunch of spells that i dont have (which are in the battletree). ie battletree unlocks stuff that shouldnt be unlocked
 
 
