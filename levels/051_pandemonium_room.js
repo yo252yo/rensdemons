@@ -139,6 +139,37 @@ if(placeholder){
 // ===================
 
 
+var events = new EventFiller(decorFiller, 25);
+events.set_zone(1200,1525,300,275);
+
+events.battle('pandemonium/abaddon');
+events.battle('pandemonium/asmodeus');
+events.battle('pandemonium/azazel');
+events.battle('pandemonium/belial');
+events.battle('pandemonium/belphegor');
+events.battle('pandemonium/golem');
+events.battle('pandemonium/hellhound');
+events.battle('pandemonium/ifrit');
+events.battle('pandemonium/mammon');
+events.battle('pandemonium/titan');
+
+events.groundItem(ITEM.Elixir_chaos);
+events.groundItem(ITEM.Elixir_decay);
+events.groundItem(ITEM.Goo);
+events.battleRubble(ITEM.Sword_great, 0.1);
+events.battleRubble(ITEM.Axe, 0.1);
+events.battleRubble(ITEM.Sword_iron, 0.1);
+
+events.text(`...`);
+events.text(`...`);
+events.text(`...`);
+events.text(`...`);
+events.text(`...`);
+
+events.set_tries(3, 7);
+events.fill_floor_by_retry();
+
+
 
 // ===================
 //hack 7. START/INIT

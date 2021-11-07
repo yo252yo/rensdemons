@@ -1,7 +1,6 @@
 
-- pandemonium deco, (share plants with altars, add wall deco and non goo rooms)
-
-- pandemonium events, especially intro
+- pandemonium events
+- pandemonium intro
 
 - visual glitches (overlay?)
 
