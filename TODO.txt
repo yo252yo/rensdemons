@@ -1,4 +1,3 @@
-add_constructor -> filler.add_default_constructor("S_Pebbles", extra arguments);
 
 - pandemonium deco, (share plants with altars)
 

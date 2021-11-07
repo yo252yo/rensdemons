@@ -112,7 +112,7 @@ var filler = new MultiFiller(f, 50, 50);
 filler.set_zone(1250,2475,1350,1300);
 filler.set_tries(180, 200);
 
-filler.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y, seed); }, 5, 200, 50);
+filler.add_default_constructor("S_RocksHuge", 5, 200, 50);
 filler.add_default_constructor("S_Rocks1");
 filler.add_default_constructor("S_Rocks2");
 filler.add_default_constructor("S_Rocks3");

@@ -56,12 +56,12 @@ whale.make_default_callback = function(){return function(){};};
 var f = new Filler(gen.get());
 var decorFiller = new MultiFiller(f, 50, 50);
 decorFiller.set_zone(1150,2600,1725,1300);
-decorFiller.add_constructor( function(x,y,seed){ return new S_AlgaeWall(x, y, seed); }, 1, 100, 50);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Coral(x, y, seed); }, 3);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Anemone(x, y, seed); }, 2);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Seashell(x, y, seed); }, 2);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Seashellpointy(x, y, seed); }, 2);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Waterplants(x, y, seed); }, 2);
+decorFiller.add_default_constructor("S_AlgaeWall", 1, 100, 50);
+decorFiller.add_default_constructor("S_Coral", 3);
+decorFiller.add_default_constructor("S_Anemone", 2);
+decorFiller.add_default_constructor("S_Seashell", 2);
+decorFiller.add_default_constructor("S_Seashellpointy", 2);
+decorFiller.add_default_constructor("S_Waterplants", 2);
 decorFiller.set_tries(80, 100);
 decorFiller.fill_floor_by_retry();
 

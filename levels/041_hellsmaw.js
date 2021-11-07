@@ -295,11 +295,11 @@ decor.add_default_constructor("S_HellPlantSlimy");
 decor.add_default_constructor("S_HellPlantLoops");
 decor.add_default_constructor("S_Spike");
 
-decor.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y, seed); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y, seed); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y, seed); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y, seed); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y, seed); }, 2.5, 175, 50);
+decor.add_default_constructor("S_Rocks1", 1.5);
+decor.add_default_constructor("S_Rocks2", 1.5);
+decor.add_default_constructor("S_Rocks3", 1.5);
+decor.add_default_constructor("S_Rocks4", 1.5);
+decor.add_default_constructor("S_RocksHuge", 2.5, 175, 50);
 decor.set_tries(10, 30);
 
 for(var i of floors){
