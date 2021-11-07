@@ -229,6 +229,15 @@ const BATTLETREE = {
       return score;
     },
 
+    total_total_xp: function() {
+      var score = 0;
+      for (var i in BATTLETREE._targets.get([])) {
+        var actions = BATTLETREE._targets.length([i]);
+        score += 3*actions;
+      }
+      return score;
+    },
+
     // Clearly this needs balance :) but it will do for now.
     level: function(xp) {
       if(!xp){
@@ -237,7 +246,8 @@ const BATTLETREE = {
       if (xp < 100){
         return 1 + Math.floor(xp / 20);
       }
-      return Math.floor(Math.log(xp) * 10) - 41;
+      // total is 12648 xp, lets try to fit it to lvl 100
+      return 6 + Math.floor((Math.log(xp) - 4.6) / (9.44 - 4.6) * (100-6));
     },
   },
 
