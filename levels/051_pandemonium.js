@@ -94,6 +94,15 @@ if (floor != 6) {
 }
 
 
+var wallFiller = new MultiFiller(filler, 75, 0);
+wallFiller.add_default_constructor("S_Painting");
+wallFiller.add_default_constructor("S_HellWindow");
+wallFiller.add_default_constructor("S_Flag");
+wallFiller.add_default_constructor("S_Mirror");
+wallFiller.set_zone(1525,1300,200,150);
+wallFiller.fill_line();
+wallFiller.set_zone(975,1300,200,150);
+wallFiller.fill_line();
 
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)

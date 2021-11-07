@@ -243,6 +243,7 @@ class Filler {
 
     for (var i = 0; i < nb_furniture; i++){
       var r = this.gen.get();
+      o = this.get_object(this.gen.get());
 
       // provisory position for hash of object
       var obj = o.constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);

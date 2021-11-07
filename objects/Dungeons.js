@@ -588,3 +588,53 @@ class S_Organ extends SimpleObject {
     ], seed);
   }
 }
+
+class S_Painting extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/painting");
+    this.adjust_hitbox(0,0,42, 68);
+    this.specify_sprite_size(42, 68);
+    this.default_text = this.text_interaction([
+      "...",
+    ], seed);
+  }
+}
+
+class S_HellWindow extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/window");
+    this.adjust_hitbox(0,0,46, 120);
+    this.specify_sprite_size(46, 120);
+    this.default_text = this.text_interaction([
+      "This stained glass window seems uncomfortably familiar.",
+      "You peek through the window and can barely make out through the foggy glass the vast arid expanses of the otherworld.",
+      "The stained glass would surely bring a bit more light to the room if it weren't so dark outside...",
+    ], seed);
+  }
+}
+
+class S_Flag extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/flag");
+    this.adjust_hitbox(0,0,47, 99);
+    this.specify_sprite_size(47, 99);
+    this.default_text = this.text_interaction([
+      "A flag whose coat of arm you do not recognize.",
+      "You find it curious that the demon lord would decorte his castle with flags just like any human king would.",
+      "The fabric is old, but you can still make out a coat of arm. The whole design seems extremely foreign to you.",
+    ], seed);
+  }
+}
+
+class S_Mirror extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/mirror");
+    this.adjust_hitbox(0,0,47, 94);
+    this.specify_sprite_size(47, 94);
+    this.default_text = this.text_interaction([
+      "In the darkness, you think you see something behind you. It's probably your imagination playing tricks on you.",
+      "Despite having come so far, you conclude that you haven't changed that much.",
+      "The mirror offers you a slightly dimmed picture of the room you're in.",
+    ], seed);
+  }
+}

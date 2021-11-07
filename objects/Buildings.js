@@ -236,7 +236,7 @@ class S_Church extends LevelObject {
 
     this.default_text = this.text_interaction([
       "It's a temple, but this is not the entrance.",
-    ], seed);
+    ]);
   }
 
   character_can_enter(){

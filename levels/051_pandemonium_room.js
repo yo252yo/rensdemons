@@ -98,14 +98,14 @@ if (isGooRoom){
     decorFiller.add_default_constructor("S_Armor");
     decorFiller.add_default_constructor("S_Candle");
     decorFiller.set_tries(2, 5);
-    decorFiller.fill_decor_by_retry(true);
+    decorFiller.fill_decor_by_retry();
   } else if(roomType < 0.6){
     decorFiller.add_default_constructor("B_Bed", 10);
     decorFiller.add_default_constructor("S_HellEgg");
     decorFiller.add_default_constructor("S_Candle",4);
     decorFiller.add_default_constructor("S_Spike");
     decorFiller.set_tries(1, 5);
-    decorFiller.fill_decor_by_retry(true);
+    decorFiller.fill_decor_by_retry();
   } else{
     decorFiller.add_default_constructor("S_HellEgg");
     decorFiller.add_default_constructor("B_Jar",2);
@@ -113,9 +113,18 @@ if (isGooRoom){
     decorFiller.add_default_constructor("S_Candle",4);
     decorFiller.add_default_constructor("S_Spike");
     decorFiller.set_tries(1, 5);
-    decorFiller.fill_decor_by_retry(true);
+    decorFiller.fill_decor_by_retry();
   }
 }
+
+var wallFiller = new MultiFiller(decorFiller, 75, 0);
+wallFiller.add_default_constructor("S_Painting");
+wallFiller.add_default_constructor("S_HellWindow");
+wallFiller.add_default_constructor("S_Flag");
+wallFiller.add_default_constructor("S_Mirror");
+
+//wallFiller.set_zone(1525,1300,200,150);
+wallFiller.fill_line();
 
 
 // ===================
