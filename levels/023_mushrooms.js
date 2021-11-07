@@ -79,9 +79,9 @@ var filler = new MultiFiller(f);
 filler.set_zone(1150,2475,2100,1475);
 filler.set_tries(200, 250);
 
-filler.add_constructor( function(x,y,seed){ return new S_Shroomgiant(x, y); }, 1, 100, 100);
-filler.add_constructor( function(x,y,seed){ return new S_Tree(x, y); }, 3, 30, 10);
-filler.add_constructor( function(x,y,seed){ return new S_Shroomtall(x, y); }, 1, 20, 75);
+filler.add_constructor( function(x,y,seed){ return new S_Shroomgiant(x, y, seed); }, 1, 100, 100);
+filler.add_constructor( function(x,y,seed){ return new S_Tree(x, y, seed); }, 3, 30, 10);
+filler.add_constructor( function(x,y,seed){ return new S_Shroomtall(x, y, seed); }, 1, 20, 75);
 filler.fill_decor_by_retry(true);
 
 
@@ -91,8 +91,8 @@ filler.clear();
 filler.set_tries(0, 2);
 for(var f of hallways) {
   filler.set_zone_from_floor(f);
-  filler.add_constructor( function(x,y,seed){ return new S_PlantSmall(x, y); }, 1, 20, 20);
-  filler.add_constructor( function(x,y,seed){ return new S_Shroomsmall(x, y); }, 1, 20, 20);
+  filler.add_constructor( function(x,y,seed){ return new S_PlantSmall(x, y, seed); }, 1, 20, 20);
+  filler.add_constructor( function(x,y,seed){ return new S_Shroomsmall(x, y, seed); }, 1, 20, 20);
   filler.fill_floor_by_retry();
 }
 

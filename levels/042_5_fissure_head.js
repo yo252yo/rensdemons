@@ -52,11 +52,10 @@ var postBossDialog = function(){
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 60, 50);
 decorFiller.set_zone(1000,2650,650,750);
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
-
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y); });
+decorFiller.add_default_constructor("S_CristalSmall");
+decorFiller.add_default_constructor("S_RockColumn");
+decorFiller.add_default_constructor("S_Web");
+decorFiller.add_default_constructor("S_CristalBig");
 decorFiller.set_tries(1, 8);
 
 decorFiller.set_zone(1050,2500,600,225);

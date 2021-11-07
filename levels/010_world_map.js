@@ -122,15 +122,15 @@ FHardMain.set_object(100, 50, function(x,y,seed){
 FHardMain.fill_floor_by_retry();
 
 
-FMap.add_constructor( function(x,y,seed){ return new SM_Trees(x, y); }, 2, 100, 100);
-FMap.add_constructor( function(x,y,seed){ return new SM_Lake(x, y); }, 1.5, 300, 200);
-FMap.add_constructor( function(x,y,seed){ return new SM_Mountain(x, y); }, 1, 300, 150);
+FMap.add_constructor( function(x,y,seed){ return new SM_Trees(x, y, seed); }, 2, 100, 100);
+FMap.add_constructor( function(x,y,seed){ return new SM_Lake(x, y, seed); }, 1.5, 300, 200);
+FMap.add_constructor( function(x,y,seed){ return new SM_Mountain(x, y, seed); }, 1, 300, 150);
 FMap.set_tries(40, 100);
 FMap.fill_floor_by_retry();
 // Place hills after as they are walkable
 FMap.set_tries(10, 40);
 FMap.clear();
-FMap.add_constructor( function(x,y,seed){ return new SM_Hills(x, y); });
+FMap.add_constructor( function(x,y,seed){ return new SM_Hills(x, y, seed); });
 FMap.fill_floor_by_retry();
 
 // ===================

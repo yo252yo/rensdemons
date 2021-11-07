@@ -289,17 +289,17 @@ else if(hellsmawpart == 3){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
+decor.add_default_constructor("S_HellPlantLeaning");
+decor.add_default_constructor("S_HellPlantSretching");
+decor.add_default_constructor("S_HellPlantSlimy");
+decor.add_default_constructor("S_HellPlantLoops");
+decor.add_default_constructor("S_Spike");
 
-decor.add_constructor( function(x,y,seed){ return new S_HellPlantLeaning(x, y); });
-decor.add_constructor( function(x,y,seed){ return new S_HellPlantSretching(x, y); });
-decor.add_constructor( function(x,y,seed){ return new S_HellPlantSlimy(x, y); });
-decor.add_constructor( function(x,y,seed){ return new S_HellPlantLoops(x, y); });
-decor.add_constructor( function(x,y,seed){ return new S_Spike(x, y); });
-decor.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1.5);
-decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 2.5, 175, 50);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y, seed); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y, seed); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y, seed); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y, seed); }, 1.5);
+decor.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y, seed); }, 2.5, 175, 50);
 decor.set_tries(10, 30);
 
 for(var i of floors){

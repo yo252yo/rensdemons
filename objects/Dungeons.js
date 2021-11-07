@@ -1,6 +1,6 @@
 
 class S_Tree extends LevelObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(25,0,20,15);
@@ -10,7 +10,7 @@ class S_Tree extends LevelObject {
       "Lustrous leaves, bulky branches... yes, definitely a tree.",
       "The foliage of the tree casts a pleasant shadow.",
       "It's a completely normal tree, hiding nothing whatsoever.",
-    ]);
+    ], seed);
   }
 
   interaction(){
@@ -30,7 +30,7 @@ class S_Tree extends LevelObject {
 }
 
 class S_AlgaeWall extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/algaewall");
     this.adjust_hitbox(20,0,110,25);
     this.specify_sprite_size(143,101);
@@ -38,12 +38,12 @@ class S_AlgaeWall extends SimpleObject {
       "These green aquatic plants intertwine in an impassible wall.",
       "You're faced with underwater vines tangled in an inextricable mess.",
       "There's no passing by this wall of tangling vines.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Anemone extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/anemone");
     this.adjust_hitbox(0,0,20,20);
     this.specify_sprite_size(30,44);
@@ -51,12 +51,12 @@ class S_Anemone extends SimpleObject {
       "The little tentacles around the mouth of the anemone seem to be fondling the water in search of food.",
       "You watch the mouth of the purple anemone open and close with the currents.",
       "It's a colorful anemone. Little fishes are swarming around it, finding a refuge in its watery mane.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Coral extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/coral");
     this.adjust_hitbox(0,0,50,25);
     this.specify_sprite_size(49,49);
@@ -64,12 +64,12 @@ class S_Coral extends SimpleObject {
       "This coral stands proudly as a refuge to thousands of tiny fishes swarming around it.",
       "You can't help but be impressed by the colorful reflections emanating from the porous coral structure.",
       "You are taken aback by the beauty of the mysterious natural arabesques drawn by the coral.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Seashell extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/seashell");
     this.adjust_hitbox(10,0,20,10);
     this.specify_sprite_size(27,22);
@@ -77,12 +77,12 @@ class S_Seashell extends SimpleObject {
       "This seashell still has an inhabitant.",
       "The floor is littered with shells like this. Most of them are still alive and well.",
       "You watch as the water carries the small shell and its inhabitant back and forth.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Seashellpointy extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/seashellpointy");
     this.adjust_hitbox(10,0,20,10);
     this.specify_sprite_size(24,25);
@@ -90,12 +90,12 @@ class S_Seashellpointy extends SimpleObject {
       "This shell is without a doubt a refuge for a hermit crab.",
       "You must be careful not to step on these, as they are quite pointy.",
       "You try to grab the seashell, but a claw comes out and dissuades you.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Waterplants extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/waterplants");
     this.adjust_hitbox(0,0,40,20);
     this.specify_sprite_size(47,50);
@@ -103,12 +103,12 @@ class S_Waterplants extends SimpleObject {
       "The underwater plants waver with water currents. Their dance is hypnotic.",
       "The algae wave slowly under the water currents. They bathe the scene by a faint fluorescent glow.",
       "The colorful algae seem to beckon you, but you know that if you get too close you might get tangled.",
-    ]);
+    ], seed);
   }
 }
 
 class S_PlantSmall extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "forest/plant");
     this.specify_sprite_size(29,24);
     this.adjust_hitbox(0,0,30,10);
@@ -116,13 +116,13 @@ class S_PlantSmall extends SimpleObject {
       "You can easily step over this little bush.",
       "It's a simple little green bush.",
       "Just a little bush, like there are so many in these woods.",
-    ]);
+    ], seed);
     this.walkable = true;
   }
 }
 
 class S_Shroomgiant extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "forest/shroomgiant");
     this.specify_sprite_size(104,113);
     this.adjust_hitbox(40,0,20,20);
@@ -130,12 +130,12 @@ class S_Shroomgiant extends SimpleObject {
       "This giant mushroom casts a wide shadow over the surroundings.",
       "You watch with apprehension this giant mushroom. If the cap were to fall, it might crush you.",
       "The bright red mushroom cap contrasts with the surrounding greenery. It also looks like you should probably not eat or lick it.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Shroomsmall extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "forest/shroomsmall");
     this.specify_sprite_size(29,24);
     this.adjust_hitbox(0,0,30,10);
@@ -143,13 +143,13 @@ class S_Shroomsmall extends SimpleObject {
       "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
       "There are countless mushrooms like these everywhere you look, under trees and bushes.",
       "The little mushrooms seem pretty innocuous. Hard to believe they're related to much bigger threats.",
-    ]);
+    ], seed);
     this.walkable = true;
   }
 }
 
 class S_Shroomtall extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "forest/shroomtall");
     this.specify_sprite_size(57,92);
     this.adjust_hitbox(20,0,20,20);
@@ -157,12 +157,12 @@ class S_Shroomtall extends SimpleObject {
       "The trunk of this mushroom extends vertically even higher than the surrounding trees.",
       "This mushroom is much taller than the others.",
       "This mushroom towers over you by several times your size.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Planks extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "water/planks");
     this.adjust_hitbox(10,0,20,10);
     this.specify_sprite_size(31,32);
@@ -170,12 +170,12 @@ class S_Planks extends SimpleObject {
       "These planks are all that remains of a long lost ship. There's definitely traces of the past here.",
       "You wonder where these planks come from, and what else from human civilization made its way there.",
       "The planks are barely recognizable, as the water smoothed the wood to an almost rock-like softness.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Pebbles extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/pebbles");
     this.adjust_hitbox(10,0,20,15);
     this.specify_sprite_size(40,47);
@@ -184,7 +184,7 @@ class S_Pebbles extends SimpleObject {
       "Of course, little rocks are everywhere. You need to be very careful not to trip on them.",
       "Those little rocks are too small to do anything, except making you trip, maybe.",
       "You barely avoid falling as you lose your footing from these little pebbles.",
-    ]);
+    ], seed);
     this.walkable = true;
   }
 }
@@ -200,52 +200,52 @@ var rocks = [
 ];
 
 class S_RocksHuge extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/rockshuge");
     this.adjust_hitbox(10,0,130,50);
     this.specify_sprite_size(157,171);
-    this.default_text = this.text_interaction(rocks);
+    this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks1 extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/rocks1");
     this.adjust_hitbox(20,0,50,20);
     this.specify_sprite_size(79,54);
-    this.default_text = this.text_interaction(rocks);
+    this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks2 extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/rocks2");
     this.adjust_hitbox(10,0,40,20);
     this.specify_sprite_size(57,69);
-    this.default_text = this.text_interaction(rocks);
+    this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks3 extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/rocks3");
     this.adjust_hitbox(0,0,40,20);
     this.specify_sprite_size(50,50);
-    this.default_text = this.text_interaction(rocks);
+    this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks4 extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "mountain/rocks4");
     this.adjust_hitbox(0,0,30,20);
     this.specify_sprite_size(30,59);
-    this.default_text = this.text_interaction(rocks);
+    this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Web extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "ruins/web");
     this.adjust_hitbox(0,0,100,40);
     this.specify_sprite_size(102,154);
@@ -253,12 +253,12 @@ class S_Web extends SimpleObject {
       "Giant spider webs fall down the ceiling. This place hasn't been visited in a long time...",
       "There's a lot of spider webs and dust, demonstrating how little this place has been used. Some of them coalesce in giant webs coming down the ceiling.",
       "This was either made by one very big spider, or many little ones over a very long period of time...",
-    ]);
+    ], seed);
   }
 }
 
 class S_WebLarge extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "ruins/weblarge");
     this.adjust_hitbox(0,0,190,30);
     this.specify_sprite_size(204,101);
@@ -266,12 +266,12 @@ class S_WebLarge extends SimpleObject {
       "The back of the room is littered with metallic debris covered by a huge layer of spider web.",
       "The wall is covered by cobwebs, you can barely distinguish it behind.",
       "A metallic wall is hidden behind several layers of spider webs. Nobody has been here in centuries.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Bocals extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "ruins/bocals");
     this.adjust_hitbox(0,0,30,20);
     this.specify_sprite_size(43,40);
@@ -279,29 +279,29 @@ class S_Bocals extends SimpleObject {
       "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
       "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
       "The content of this container have been sealed for centuries. You cannot imagine the smell that might arise if you were to open them.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Rubble extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "ruins/rubble");
     this.adjust_hitbox(0,0,30,10);
     this.specify_sprite_size(29, 29);
     this.default_text = this.text_interaction([
       "A pile of rubble, scraps of stone and wood...",
-    ]);
+    ], seed);
   }
 }
 
 class S_RubbleLarge extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "ruins/rubblelarge");
     this.specify_sprite_size(63,63);
     this.adjust_hitbox(0,0,60,30);
     this.default_text = this.text_interaction([
       "This messy pile of bricks is all that remains of a former construction...",
-    ]);
+    ], seed);
   }
 }
 
@@ -351,20 +351,20 @@ class B_Seashell extends EventBattleObject {
 }
 
 class S_Throne extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "pandemonium/throne", "obj_light");
     this.specify_sprite_size(200,184);
     this.adjust_hitbox(10,10,180,100);
     this.default_text = this.text_interaction([
       "This is the biggest piece of furniture you've ever seen. It seems carved directly in what appears to be bone, and richly aggremented of golden gildings and velvet cushions bigger than you. A fitting throne for the emperor of demons.",
-    ]);
+    ], seed);
   }
 }
 
 
 
 class S_RockColumn extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "cave/column");
     this.adjust_hitbox(0,0,40,30);
     this.specify_sprite_size(47,131);
@@ -372,12 +372,12 @@ class S_RockColumn extends SimpleObject {
       "A massive column of rock holds the ceilling of the cave above your head.",
       "A large natural pillar reaches all the way to the cavern's top.",
       "The cavern is pretty large and needs to be supported by several such rock stone.",
-    ]);
+    ], seed);
   }
 }
 
 class S_CristalBig extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "cave/cristalbig");
     this.adjust_hitbox(10,0,30,30);
     this.specify_sprite_size(54,96);
@@ -385,12 +385,12 @@ class S_CristalBig extends SimpleObject {
       "A large transparent rock lies in front of you. Through it, you can see the world in a azure teint.",
       "You find a massive ruby-like stone which reflects the pale surrounding glow with a bright red glare.",
       "This spiky stone shines brightly in a yellow hue and casts a powerful light on its surroundings.",
-    ]);
+    ], seed);
   }
 }
 
 class S_CristalSmall extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "cave/cristalsmall");
     this.adjust_hitbox(10,0,35,20);
     this.specify_sprite_size(57,48);
@@ -398,12 +398,12 @@ class S_CristalSmall extends SimpleObject {
       "This prismatic cristal deflects the light into a rainbow of a thousand shimmering hues.",
       "You find a rock that time has polished into a very smooth emerald surface.",
       "The translucent surface of this stone is marbled with darker lines which no doubt carry the trace of its history...",
-    ]);
+    ], seed);
   }
 }
 
 class S_CristalTiny extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "cave/cristaltiny");
     this.adjust_hitbox(10,0,30,30);
     this.specify_sprite_size(47, 45);
@@ -411,7 +411,7 @@ class S_CristalTiny extends SimpleObject {
       "Tiny specks of luminous gravel surround you.",
       "The floor is littered with shimmering cristals that cast a vague glow on your feet.",
       "Little colored pebbles cast a diffuse multicolored light.",
-    ]);
+    ], seed);
     this.walkable = true;
   }
 }
@@ -439,14 +439,14 @@ class S_Hole extends SimpleObject {
       "There's a crack in the floor in front of you. Too little to get in, but big enough to be dangerous.",
       "You drop a pebble in this crack to see how deep it goes. The answer is pretty deep.",
       "You feel like it's better to not get too close to this fractured stone, lest you may fall in.",
-    ]);
+    ], seed);
   }
 }
 
 
 
 class S_HellPlantLeaning extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "hell/plant");
     this.adjust_hitbox(10,0,30,10);
     this.specify_sprite_size(43,35);
@@ -454,12 +454,12 @@ class S_HellPlantLeaning extends SimpleObject {
       "This plant shines from an unnatural light.",
       "The plant is home of a swarm of disgusting bugs that fly around it noisily.",
       "The otherworldy vegetal undulates as if moved by a will of its own.",
-    ]);
+    ], seed);
   }
 }
 
 class S_HellPlantSretching extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "hell/plant2");
     this.adjust_hitbox(5,0,30,20);
     this.specify_sprite_size(32,46);
@@ -467,12 +467,12 @@ class S_HellPlantSretching extends SimpleObject {
       "This vegetal extends slimy tentacles that look pretty poisonous.",
       "You observe an unfortunate fly get captured by the appendages of the unnatural plant.",
       "This plant looks like nothing you've ever seen, and doubtless comes from another world.",
-    ]);
+    ], seed);
   }
 }
 
 class S_HellPlantSlimy extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "hell/plant3");
     this.adjust_hitbox(5,0,20,15);
     this.specify_sprite_size(27,47);
@@ -480,12 +480,12 @@ class S_HellPlantSlimy extends SimpleObject {
       "This vegetal is constantly dripping brownish slime, like a repulsive fountain.",
       "All you can think of to describe this plant is that it looks a lot like someone dipped a little shrub in some sort of dark goo.",
       "You observe with a disgusted fascination the gunk that drops form the leaves of whatever this is. It makes an irregular squishy sound.",
-    ]);
+    ], seed);
   }
 }
 
 class S_HellPlantLoops extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "hell/plant4");
     this.adjust_hitbox(0,0,20,15);
     this.specify_sprite_size(16, 28);
@@ -493,12 +493,12 @@ class S_HellPlantLoops extends SimpleObject {
       "This strange flower is made of many fibers that roll up and extend according to a pattern you cannot understand.",
       "As you approach the vegetal, you notice that it also extends in your direction. Better steer clear...",
       "This alien plant seems to slowly change color between purple and green.",
-    ]);
+    ], seed);
   }
 }
 
 class S_Spike extends SimpleObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     super(x, y, "hell/spike");
     this.adjust_hitbox(0,0,30,30);
     this.specify_sprite_size(41, 96);
@@ -506,7 +506,7 @@ class S_Spike extends SimpleObject {
       "A brown spike perforates the rocky ground. You wonder if there's a monster under the ground...",
       "This sharp appendage rises unnaturally from the ground. It seems that it stopped moving a while ago and solidified among the rocks, but you prefer to not take any chance and not approach it.",
       "A spike taller than you emits an ungodly perverse aura.",
-    ]);
+    ], seed);
   }
 }
 
@@ -545,6 +545,7 @@ class S_HellEgg extends SimpleObject {
       "Gelatinous balls glow faintly with a yellowish hue. It also spreads a stink close to rotten meat.",
       "The slimy eggs are maintained above the ground by a complex entanglement of gelatinous threads. They seem to be slowly growing and retracting, as if pulsating...",
       "You venture the guess that this is where demons are created, and this is how they reproduce. Hopefully, destroying their kind will prevent them from spawning more of these monstrous eggs.",
-    ]);
+      "A faint heat emanates from the goo, and you find it utterly repulsive.",
+    ], seed);
   }
 }

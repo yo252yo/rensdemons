@@ -77,7 +77,7 @@ if(floor == 0 && room == 0) {
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 50, 50);
 decorFiller.set_zone(1200,1525,300,275);
-decorFiller.add_constructor( function(x,y,seed){ return new S_HellEgg(x, y, seed); });
+decorFiller.add_default_constructor("S_HellEgg");
 if (isGooRoom){
   decorFiller.set_tries(80, 100);
 } else {

@@ -112,19 +112,19 @@ var filler = new MultiFiller(f, 50, 50);
 filler.set_zone(1250,2475,1350,1300);
 filler.set_tries(180, 200);
 
-filler.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y); }, 5, 200, 50);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1);
+filler.add_constructor( function(x,y,seed){ return new S_RocksHuge(x, y, seed); }, 5, 200, 50);
+filler.add_default_constructor("S_Rocks1");
+filler.add_default_constructor("S_Rocks2");
+filler.add_default_constructor("S_Rocks3");
+filler.add_default_constructor("S_Rocks4");
 filler.fill_decor_by_retry();
 
 filler.clear();
-filler.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 1);
-filler.add_constructor( function(x,y,seed){ return new S_Pebbles(x, y); }, 1);
+filler.add_default_constructor("S_Rocks1");
+filler.add_default_constructor("S_Rocks2");
+filler.add_default_constructor("S_Rocks3");
+filler.add_default_constructor("S_Rocks4");
+filler.add_default_constructor("S_Pebbles");
 
 filler.set_tries(1, 2);
 

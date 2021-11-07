@@ -2,7 +2,7 @@
 // runtime: Rectangle, StaticSprite
 
 class S_Column extends LevelObject {
-  constructor(x, y){
+  constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/interior/column.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
@@ -10,7 +10,7 @@ class S_Column extends LevelObject {
       "It's a column.",
       "Nothing but a column.",
       "A simple yet elegant stone column. It's supporting the roof.",
-    ]);
+    ], seed);
   }
 }
 
@@ -67,7 +67,7 @@ class S_Door extends LevelObject {
 }
 
 class S_StainedGlass extends LevelObject {
-  constructor(x, y, type){
+  constructor(x, y, type, seed){
     var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
     super(visual, x, y);
     this.interaction = this.text_interaction([
@@ -79,7 +79,7 @@ class S_StainedGlass extends LevelObject {
       "You look at the deformed picture in colorful shadows that this window projects on the ground.",
       "You marvel at the subtle craftsmanship that conspired to create so many fragments of colors that all fit together perfectly in a luminous picture.",
       "Just like the window lights up the room, so too does the religious picture on display light up the mind.",
-    ]);
+    ], seed);
   }
 }
 

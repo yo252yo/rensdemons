@@ -299,6 +299,10 @@ class MultiFiller extends Filler {
     });
   }
 
+  add_default_constructor(obj_name){
+    this.add_constructor( function(x,y,seed){ return eval(`new ${obj_name}(x, y, seed);`) });
+  }
+
   clear() {
     this.constructors = [];
   }

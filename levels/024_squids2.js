@@ -52,9 +52,9 @@ new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 var f = new Filler(gen.get());
 var decorFiller = new MultiFiller(f, 50, 50);
 decorFiller.set_zone(1625,1925,1175,650);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Seashell(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_Seashellpointy(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_Planks(x, y); });
+decorFiller.add_default_constructor("S_Seashell");
+decorFiller.add_default_constructor("S_Seashellpointy");
+decorFiller.add_default_constructor("S_Planks");
 decorFiller.set_tries(15, 50);
 decorFiller.fill_floor_by_retry();
 

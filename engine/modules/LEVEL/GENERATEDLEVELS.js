@@ -47,11 +47,13 @@ const GENERATEDLEVELS = {
       var gen = new Generator(DICTIONARY.get("world_seed") + seed);
       var filler = new Filler(gen.get());
       var decor = new MultiFiller(filler, 40, 40);
-      decor.add_constructor( function(x,y,seed){ return new S_HellPlantLeaning(x, y); });
-      decor.add_constructor( function(x,y,seed){ return new S_HellPlantSretching(x, y); });
-      decor.add_constructor( function(x,y,seed){ return new S_HellPlantSlimy(x, y); });
-      decor.add_constructor( function(x,y,seed){ return new S_HellPlantLoops(x, y); });
-      decor.add_constructor( function(x,y,seed){ return new S_Spike(x, y); });
+
+      decor.add_default_constructor("S_HellPlantLeaning");
+      decor.add_default_constructor("S_HellPlantSretching");
+      decor.add_default_constructor("S_HellPlantSlimy");
+      decor.add_default_constructor("S_HellPlantLoops");
+      decor.add_default_constructor("S_Spike");
+      
       decor.set_tries(8, 20);
       decor.set_zone(1050, 1550, 500, 500);
       decor.fill_decor_by_retry();

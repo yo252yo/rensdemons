@@ -130,6 +130,9 @@ class LevelObject {
     }
 
     text_interaction(texts, seed){
+      if(!seed){
+        seed = Math.random(); // we dont care much if its kept consistent over time, its just flavor text
+      }
       var gen = new Generator(seed);
       this.text = RANDOM.pick(texts, gen);
       var f = function() {

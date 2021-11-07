@@ -46,22 +46,22 @@ new S_WebLarge(1250,1600);
 var filler = new Filler(gen.get());
 filler.set_zone(1150,2675,375,1100);
 var decorFiller = new MultiFiller(filler, 60, 50);
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y); });
-decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalSmall(x, y, seed); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_RockColumn(x, y, seed); });
+decorFiller.add_constructor( function(x,y,seed){ return new S_Web(x, y, seed); });
 
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y); }, 0.1);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y); }, 0.1);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y); }, 0.1);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y); }, 0.1);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalBig(x, y, seed); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks1(x, y, seed); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks2(x, y, seed); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks4(x, y, seed); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rocks3(x, y, seed); }, 0.1);
 decorFiller.set_tries(10, 20);
 decorFiller.fill_decor_by_retry();
 
-decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y); }, 0.1);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y); }, 2);
-decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y); }, 2);
-decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_CristalTiny(x, y, seed); }, 0.1);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Bocals(x, y, seed); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_Rubble(x, y, seed); }, 2);
+decorFiller.add_constructor( function(x,y,seed){ return new S_RubbleLarge(x, y, seed); }, 2);
 decorFiller.add_constructor( function(x,y,seed){ return new S_Hole(x, y, seed); }, 1, 75, 150);
 
 decorFiller.set_tries(40, 50);
