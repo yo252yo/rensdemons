@@ -156,15 +156,15 @@ events.battle('pandemonium/titan');
 events.groundItem(ITEM.Elixir_chaos);
 events.groundItem(ITEM.Elixir_decay);
 events.groundItem(ITEM.Goo);
-events.battleRubble(ITEM.Sword_great, 0.1);
-events.battleRubble(ITEM.Axe, 0.1);
-events.battleRubble(ITEM.Sword_iron, 0.1);
 
-events.text(`...`);
-events.text(`...`);
-events.text(`...`);
-events.text(`...`);
-events.text(`...`);
+events.text(`You see a demon larvae hatching from a nearby egg. You're fast enough to get rid of the menace before it grows into something more dangerous.`, 0.8);
+events.text(`The wind howls as it speeds through the hallways of the castle, and a chill runs down your bones. No doubt the demons do not care about the temperature.`, 0.8);
+events.text(`A patrol of a group of well armed demons is heading your way. Fortunately, you manage to hide behind one of the numerous decorations and avoid the encounter.`, 0.8);
+events.text(`You can't help but think that for a spawning ground for barbaric beasts, the decoration is quite ostentatious. Those demons are clearly more civilized than you anticipated. It doesn't change your objective, though.`, 0.8);
+events.text(`You inadvertently trigger a deadly trap: the tile you were just stepping on opens up to reveal a very deep well. Fortunately, your reflexes help you jump out in time and save your skin. The Goddess must be looking out for you!`, 0.8);
+events.text(`This massive castle spells the end of your adventure. In your soul, the Goddess encourages you to climb higher and higher.`, 0.8);
+events.text(`You understand that this place is more than a symbol of power for $$demon_lord$. Based on the rooms you see around you, this is clearly a hatchery where demons are spawned. It's probably the very origin of the hordes that destroyed your world...`, 0.8);
+events.text(`You know that each step brings you closer to the final fight, and your subsequent victory. You keep pumping yourself up and preparing yourself for the final confrontation. You know that now is the time to prepare and summon all your strengths. There's only one possible outcome to all of this.`, 0.8);
 
 events.set_tries(3, 7);
 events.fill_floor_by_retry();

@@ -13,7 +13,7 @@ HILL SPRITE:
   pebbles hide the sprite when walked on
   > mb things should have an option to be indexed by the top
 
-
+more bed and jar actions, theyre Everywhere
 
 doesnt seem too hard to make the change color scheme work for the interface and fog
 

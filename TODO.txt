@@ -1,7 +1,4 @@
 
-- pandemonium events
-- pandemonium intro
-
 - visual glitches (overlay?)
 
 
