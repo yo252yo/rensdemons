@@ -300,7 +300,13 @@ class MultiFiller extends Filler {
   }
 
   add_default_constructor(obj_name, weight, obj_w, obj_h){
-    this.add_constructor(function(x,y,seed){ return eval(`new ${obj_name}(x, y, seed);`) }, weight, obj_w, obj_h);
+    this.add_constructor(function(x,y,seed){
+      var constructor = eval(`new ${obj_name}(x, y, seed);`);
+      if (!constructor){
+        CONSOLE.error('Filler default constructor failure: ' + obj_name);
+      }
+      return constructor;
+    }, weight, obj_w, obj_h);
   }
 
   clear() {

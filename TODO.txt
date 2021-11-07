@@ -1,5 +1,5 @@
 
-- pandemonium deco, (share plants with altars)
+- pandemonium deco, (share plants with altars, add wall deco and non goo rooms)
 
 - pandemonium events, especially intro
 
