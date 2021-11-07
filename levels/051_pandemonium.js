@@ -82,7 +82,12 @@ var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 100, 100);
 decorFiller.set_zone(975,1650,750,475);
 decorFiller.add_default_constructor("S_HellEgg");
-decorFiller.set_tries(2, 5);
+decorFiller.add_default_constructor("B_Jar",2);
+decorFiller.add_default_constructor("S_Armor",4);
+decorFiller.add_default_constructor("S_Candle",4);
+decorFiller.add_default_constructor("S_Spike");
+
+decorFiller.set_tries(15, 25);
 
 if (floor != 6) {
   decorFiller.fill_decor_by_retry(true);

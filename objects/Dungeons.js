@@ -549,3 +549,42 @@ class S_HellEgg extends SimpleObject {
     ], seed);
   }
 }
+
+class S_Armor extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/armor");
+    this.adjust_hitbox(0,0,32,25);
+    this.specify_sprite_size(32, 50);
+    this.default_text = this.text_interaction([
+      "An armor on display.",
+      "This armor seems to be shaped for a human. Could it be a war trophy?",
+      "The rust on this armor lets you know that it has been there a long time.",
+    ], seed);
+  }
+}
+
+class S_Candle extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/candle");
+    this.adjust_hitbox(0,0,23,15);
+    this.specify_sprite_size(23, 37);
+    this.default_text = this.text_interaction([
+      "The shadow around you are only barely pierced by the hesitant light of this chandelier.",
+      "The pale flames struggle to fight against the surrounding darkness.",
+      "This is the only thing that allows you to see around you...",
+    ], seed);
+  }
+}
+
+class S_Organ extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "pandemonium/organ");
+    this.adjust_hitbox(0,0,105,50);
+    this.specify_sprite_size(106, 96);
+    this.default_text = this.text_interaction([
+      "Although you admire the craftsmanship, and acknowledge that it does look fitting in this gloomy castle, you can't help but wonder what use is this musical instrument here...",
+      "You forget yourself and spend a few moment trying out notes on the keyboard of the organ. You half expect some sort of secret passage to appear, but nothing of the sort happens.",
+      "It would appear that the demon lord is quite the music lover...",
+    ], seed);
+  }
+}

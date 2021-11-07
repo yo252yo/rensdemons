@@ -77,13 +77,45 @@ if(floor == 0 && room == 0) {
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 50, 50);
 decorFiller.set_zone(1200,1525,300,275);
-decorFiller.add_default_constructor("S_HellEgg");
 if (isGooRoom){
+  decorFiller.add_default_constructor("S_HellEgg",7);
+  decorFiller.add_default_constructor("S_HellPlantLeaning");
+  decorFiller.add_default_constructor("S_HellPlantSretching");
+  decorFiller.add_default_constructor("S_HellPlantSlimy");
+  decorFiller.add_default_constructor("S_HellPlantLoops");
+  decorFiller.add_default_constructor("S_Spike");
   decorFiller.set_tries(80, 100);
+  decorFiller.fill_decor_by_retry(true);
 } else {
-  decorFiller.set_tries(0, 3);
+  var roomType = gen.get();
+  if(roomType < 0.2){
+    decorFiller.set_guaranteed(1);
+    decorFiller.add_default_constructor("S_Organ", 10, 100, 100);
+    decorFiller.set_tries(1, 1);
+    decorFiller.fill_decor_by_retry(true);
+    decorFiller.clear();
+
+    decorFiller.add_default_constructor("S_Armor");
+    decorFiller.add_default_constructor("S_Candle");
+    decorFiller.set_tries(2, 5);
+    decorFiller.fill_decor_by_retry(true);
+  } else if(roomType < 0.6){
+    decorFiller.add_default_constructor("B_Bed", 10);
+    decorFiller.add_default_constructor("S_HellEgg");
+    decorFiller.add_default_constructor("S_Candle",4);
+    decorFiller.add_default_constructor("S_Spike");
+    decorFiller.set_tries(1, 5);
+    decorFiller.fill_decor_by_retry(true);
+  } else{
+    decorFiller.add_default_constructor("S_HellEgg");
+    decorFiller.add_default_constructor("B_Jar",2);
+    decorFiller.add_default_constructor("S_Armor",4);
+    decorFiller.add_default_constructor("S_Candle",4);
+    decorFiller.add_default_constructor("S_Spike");
+    decorFiller.set_tries(1, 5);
+    decorFiller.fill_decor_by_retry(true);
+  }
 }
-decorFiller.fill_decor_by_retry(true);
 
 
 // ===================
