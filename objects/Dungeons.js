@@ -716,3 +716,42 @@ class S_Spike extends SimpleObject {
     ]);
   }
 }
+
+
+
+class S_HellEgg extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(4)){
+      case 0:
+        super(x, y, "pandemonium/hellwebby1");
+        this.adjust_hitbox(0,0,70,20);
+        this.specify_sprite_size(70, 48);
+        break;
+    case 1:
+      super(x, y, "pandemonium/hellwebby2");
+      this.adjust_hitbox(0,0,40,30);
+      this.specify_sprite_size(39, 59);
+      break;
+    case 2:
+      super(x, y, "pandemonium/hellwebby3");
+      this.adjust_hitbox(0,0,48,50);
+      this.specify_sprite_size(48, 100);
+      break;
+    case 3:
+      super(x, y, "pandemonium/hellwebby4");
+      this.adjust_hitbox(0,0,45,30);
+      this.specify_sprite_size(45, 91);
+      break;
+    }
+    this.default_text = this.text_interaction([
+      "This pile of gooey webs ebbs with an unhealthy glow.",
+      "You find what you assume to be eggs, held together by a viscous net of gelatin.",
+      "You imagine that demon larvae are gestating in these ungodly eggs. You seem some motion inside their slightly translucent membrane. Part of you wants to kill these monsters before they spawn, but you're not sure how to go about it. What if the fluid inside the egg was highly toxic? Better be careful...",
+      "You accidentally brush the surface of the slimy heap. Your hand stays stuck and your skin starts to burn. You immediately withdraw.",
+      "Gelatinous balls glow faintly with a yellowish hue. It also spreads a stink close to rotten meat.",
+      "The slimy eggs are maintained above the ground by a complex entanglement of gelatinous threads. They seem to be slowly growing and retracting, as if pulsating...",
+      "You venture the guess that this is where demons are created, and this is how they reproduce. Hopefully, destroying their kind will prevent them from spawning more of these monstrous eggs.",
+    ]);
+  }
+}

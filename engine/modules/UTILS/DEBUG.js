@@ -119,7 +119,7 @@ const DEBUG = {
     DEBUG.get_all_items();
     DEBUG.get_all_party();
     DEBUG.reroll_seeds();
-    //DEBUG.display_filler_zones();
+    DEBUG.display_filler_zones();
 
 
     setInterval(FOG.stop, 1000);

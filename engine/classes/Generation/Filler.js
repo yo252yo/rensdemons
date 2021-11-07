@@ -110,7 +110,7 @@ class Filler {
     return true;
   }
 
-  _intersectWalk(obj, x, y) {
+  _blockWalk(obj, x, y) {
     var grain = 10;
     for(var i = -3 * grain; i <= obj.obj_w + 3*grain; i += grain){
       var def = -1;
@@ -196,7 +196,7 @@ class Filler {
       var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
       var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
-      if (!this._intersectWalk(o, x, y) && (allow_overlap || this._isEmpty(o, x, y))) {
+      if (!this._blockWalk(o, x, y) && (allow_overlap || this._isEmpty(o, x, y))) {
         o.constructor(x, y, this.gen.get());
         nb_placed ++;
       }

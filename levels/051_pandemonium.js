@@ -77,6 +77,16 @@ if (floor == 6) {
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
+
+var filler = new Filler(gen.get());
+var decorFiller = new MultiFiller(filler, 100, 100);
+decorFiller.set_zone(975,1650,750,475);
+decorFiller.add_constructor( function(x,y,seed){ return new S_HellEgg(x, y, seed); });
+decorFiller.set_tries(2, 5);
+decorFiller.fill_decor_by_retry(true);
+
+
+
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
@@ -87,7 +97,6 @@ if (floor == 6) {
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
-
 
 
 // ===================

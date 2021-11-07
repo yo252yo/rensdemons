@@ -13,10 +13,18 @@ if(s.length > 1){
 var gen = new Generator(DICTIONARY.get("world_seed")*37 + floor + room);
 AUDIO.music.levels.pandemonium();
 
+var isGooRoom = false;
+if (gen.get() < 0.25){
+  isGooRoom = true;
+}
 // ===================
 //hack 1. FLOORS
 // ===================
-new S_GooFloor(1175,1525,350,275);
+if (isGooRoom){
+  new S_GooFloor(1175,1525,350,275);
+} else {
+  new S_CastleFloor(1175,1525,350,275);
+}
 
 // ===================
 //hack 2. EXIT
@@ -32,31 +40,57 @@ if(room < 2){
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-// ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
-// ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
+
 var x = 1225;
 var y = 1425;
 
 if(room >= 2){
   x += 200;
 }
+var placeholder;
 
 if(floor == 0 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey0);
+  placeholder = new S_SavePoint(x,y);
 } else if(floor == 1 && room == 2) {
   new SE_groundItem(x, y, ITEM.MaouKey1);
+  placeholder = new S_SavePoint(x,y);
 } else if(floor == 2 && room == 1) {
   new SE_groundItem(x, y, ITEM.MaouKey2);
+  placeholder = new S_SavePoint(x,y);
 } else if(floor == 3 && room == 3) {
   new SE_groundItem(x, y, ITEM.MaouKey3);
+  placeholder = new S_SavePoint(x,y);
 } else if(floor == 4 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey4);
+  placeholder = new S_SavePoint(x,y);
 } else if(floor == 5 && room == 2) {
   new SE_groundItem(x, y, ITEM.MaouKey5);
+  placeholder = new S_SavePoint(x,y);
+}
+
+// ===================
+//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+// ===================
+
+
+var filler = new Filler(gen.get());
+var decorFiller = new MultiFiller(filler, 50, 50);
+decorFiller.set_zone(1200,1525,300,275);
+decorFiller.add_constructor( function(x,y,seed){ return new S_HellEgg(x, y, seed); });
+if (isGooRoom){
+  decorFiller.set_tries(80, 100);
+} else {
+  decorFiller.set_tries(0, 3);
+}
+decorFiller.fill_decor_by_retry(true);
+
+
+// ===================
+//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+if(placeholder){
+  placeholder.destroy();
 }
 
 // ===================
@@ -70,7 +104,7 @@ if(floor == 0 && room == 0) {
 // ===================
 
 if(room < 2){
-  CURRENTLEVEL.initialize_with_character(1450, 1375);
+  CURRENTLEVEL.initialize_with_character(1475, 1375);
 } else {
-  CURRENTLEVEL.initialize_with_character(1200, 1375);
+  CURRENTLEVEL.initialize_with_character(1175, 1375);
 }
