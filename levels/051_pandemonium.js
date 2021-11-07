@@ -54,14 +54,16 @@ if (floor < 6){
 
 
 if (floor < 6) {
-  new S_CastleFloor(1700,1300,100,50);
-  new S_ExitFloor(1775,1300,50,50);
-  new S_CastleFloor(1700,1550,100,50);
-  new S_ExitFloor(1775,1550,50,50);
   new S_CastleFloor(900,1550,75,50);
-  new S_ExitFloor(875,1550,50,50);
+  new S_ExitFloor(875,1550,50,50, '051_pandemonium_room@' + floor + "_" + 0);
   new S_CastleFloor(900,1300,75,50);
-  new S_ExitFloor(875,1300,50,50);
+  new S_ExitFloor(875,1300,50,50, '051_pandemonium_room@' + floor + "_" + 1);
+
+  new S_CastleFloor(1700,1300,100,50);
+  new S_ExitFloor(1775,1300,50,50, '051_pandemonium_room@' + floor + "_" + 2);
+  new S_CastleFloor(1700,1550,100,50);
+  new S_ExitFloor(1775,1550,50,50, '051_pandemonium_room@' + floor + "_" + 3);
+
 }
 
 // ===================
