@@ -147,8 +147,7 @@ events.text(`You can't help but think that for a spawning ground for barbaric be
 events.text(`You inadvertently trigger a deadly trap: the tile you were just stepping on opens up to reveal a very deep well. Fortunately, your reflexes help you jump out in time and save your skin. The Goddess must be looking out for you!`, 0.8);
 events.text(`This massive castle spells the end of your adventure. In your soul, the Goddess encourages you to climb higher and higher.`, 0.8);
 events.text(`You understand that this place is more than a symbol of power for $$demon_lord$. Based on the rooms you see around you, this is clearly a hatchery where demons are spawned. It's probably the very origin of the hordes that destroyed your world...`, 0.8);
-
-events.text(`You know that each step brings you closer to the final fight, and your subsequent victory. You keep pumping yourself up and preparing yourself for the final confrontation. There's only one possible outcome to all of this.`, 0.8);
+events.text(`You know that each step brings you closer to the final fight, and your subsequent victory. You keep pumping yourself up and preparing yourself for the final confrontation. You know that now is the time to prepare and summon all your strengths. There's only one possible outcome to all of this.`, 0.8);
 
 
 events.set_tries(8, 15);
