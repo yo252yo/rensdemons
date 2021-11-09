@@ -112,6 +112,20 @@ if (floor != 6) {
 // ===================
 if (floor == 6) {
   new S_Maou(1200, 1550);
+
+  var i = function(){
+    TextBannerSequence.make([
+      `It's a statue of the Goddess... In the most evil place in the world...`,
+    ]);
+  }
+  var s1 = new B_Statue(975, 1175);
+  s1.interaction = i;
+  var s2 = new B_Statue(1675, 1175);
+  s2.interaction = i;
+  var s3 = new B_Statue(975, 1625);
+  s3.interaction = i;
+  var s4 = new B_Statue(1675, 1625);
+  s4.interaction = i;
 }
 
 // ===================
