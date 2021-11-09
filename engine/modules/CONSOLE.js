@@ -84,9 +84,10 @@ const CONSOLE = {
       CONSOLE._sys_log(". " + operation, "Pink");
     },
 
-    item : function(name, quantity){
+    item : function(name, quantity, set){
       var s = " ";
       if (quantity > 0){ s = " +";}
+      if (set){ s += "(SET)"; }
       CONSOLE._sys_log("} Item stock modification: " + name + s + quantity, "Orange");
     },
 

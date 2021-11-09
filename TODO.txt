@@ -2,8 +2,6 @@
 - visual glitches (overlay?)
 
 
-- heaven: squares linked without any order
-Up, Up, Down, Down, Left, Right, Left, Right
 
 
 ---------------------------------------- BACKSIDE CONTENT:

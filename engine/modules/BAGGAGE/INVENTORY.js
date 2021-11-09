@@ -146,6 +146,11 @@ const INVENTORY = {
     CONSOLE.log.item(name, quantity);
   },
 
+  set: function(name, quantity) {
+    INVENTORY._inventory.set([name], quantity);
+    CONSOLE.log.item(name, quantity, true);
+  },
+
   increase_function: function(name, quantity) {
     return function() {
       INVENTORY.increase(name, quantity);
