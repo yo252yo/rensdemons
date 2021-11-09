@@ -266,6 +266,15 @@ class SM_Heaven extends MapObject {
     if(this.legend) this.legend.shift(150);
     this.make_walkable();
   }
+
+  destroy(stillborn) {
+    if (this.visual_element){
+      this.visual_element.destroy();
+    }
+    this.legend.destroy();
+  //  CURRENTLEVEL.objects.remove_object(this, stillborn);
+    delete this;
+  }
 }
 
 class SM_HellVulcano extends MapObject {
