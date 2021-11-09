@@ -51,10 +51,13 @@ if(INVENTORY.count("_heaven_sequence") < 8){
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-
 if (INVENTORY.count("_heaven_sequence") >= 8){
   var s1 = new B_Statue(1350,1275);
-  s.interaction = function(){};
+  s1.interaction = function(){};
+
+  var s = new S_StainedGlass(1175,1475, 'circle');
+  s.visual_element.adjust_depth(0);
+  s.interaction = undefined;
 }
 
 // ===================
