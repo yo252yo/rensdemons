@@ -1,7 +1,8 @@
 
 - visual glitches (overlay?)
 
-
+- heaven:
+decor, events, flavor text, intro, ending, plot (konami clue)
 
 
 ---------------------------------------- BACKSIDE CONTENT:
