@@ -638,3 +638,80 @@ class S_Mirror extends SimpleObject {
     ], seed);
   }
 }
+
+
+class S_BookshelfBig extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "heaven/bookshelf_big");
+    this.adjust_hitbox(-5,0,150, 70);
+    this.specify_sprite_size(145, 142);
+    this.default_text = this.text_interaction([
+      ".",
+    ], seed);
+  }
+}
+class S_Bookshelf extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "heaven/bookshelf");
+    this.adjust_hitbox(-5,0,57, 50);
+    this.specify_sprite_size(50, 98);
+    this.default_text = this.text_interaction([
+      ".",
+    ], seed);
+  }
+}
+
+class S_Cloud extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(3)){
+      case 0:
+        super(x, y, "heaven/cloud1");
+        this.adjust_hitbox(0,0,70,20);
+        this.specify_sprite_size(70, 45);
+        break;
+    case 1:
+      super(x, y, "heaven/cloud2");
+      this.adjust_hitbox(0,0,45,20);
+      this.specify_sprite_size(48, 35);
+      break;
+    case 2:
+      super(x, y, "heaven/cloud3");
+      this.adjust_hitbox(0,0,40,20);
+      this.specify_sprite_size(42, 35);
+      break;
+    }
+    this.walkable = true;
+
+    this.default_text = this.text_interaction([
+      ".",
+    ], seed);
+  }
+}
+
+class S_Tomb extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(3)){
+      case 0:
+        super(x, y, "heaven/tomb1");
+        this.adjust_hitbox(0,0,26,20);
+        this.specify_sprite_size(26, 50);
+        break;
+    case 1:
+      super(x, y, "heaven/tomb2");
+      this.adjust_hitbox(0,0,40,30);
+      this.specify_sprite_size(45, 72);
+      break;
+    case 2:
+      super(x, y, "heaven/tomb3");
+      this.adjust_hitbox(0,0,25,15);
+      this.specify_sprite_size(26, 31);
+      break;
+    }
+
+    this.default_text = this.text_interaction([
+      ".",
+    ], seed);
+  }
+}

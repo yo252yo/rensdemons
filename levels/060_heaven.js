@@ -69,6 +69,36 @@ if (INVENTORY.count("_heaven_sequence") >= 8){
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
+var placeholder = new S_SavePoint(1375, 1325);
+
+var filler = new Filler(gen.get());
+var decorFiller = new MultiFiller(filler, 100, 100);
+decorFiller.set_zone(1125,1550,500,500);
+
+switch(gen.int(3)){
+  case 0:
+    decorFiller.add_default_constructor("S_Bookshelf", 1, 50, 100);
+    decorFiller.add_default_constructor("S_BookshelfBig", 3, 150, 150);
+    decorFiller.set_tries(30, 50);
+    break;
+  case 1:
+    decorFiller.add_default_constructor("S_Cloud", 1, 70, 50);
+    decorFiller.set_tries(15, 25);
+    break;
+  case 2:
+    decorFiller.add_default_constructor("S_Tomb", 50, 75);
+    decorFiller.set_tries(30, 50);
+    break;
+}
+
+
+if (INVENTORY.count("_heaven_sequence") < 8){
+  decorFiller.fill_decor_by_retry();
+}
+
+placeholder.destroy();
+
+
 // ===================
 //hack 7. START/INIT
 // ===================
