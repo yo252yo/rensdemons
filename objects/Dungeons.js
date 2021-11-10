@@ -645,9 +645,9 @@ class S_BookshelfBig extends SimpleObject {
     super(x, y, "heaven/bookshelf_big");
     this.adjust_hitbox(-5,0,150, 70);
     this.specify_sprite_size(145, 142);
-    this.default_text = this.text_interaction([
-      ".",
-    ], seed);
+    this.default_text = function(){
+      BATTLE.api.make("_060/_book");
+    }
   }
 }
 class S_Bookshelf extends SimpleObject {
@@ -655,9 +655,9 @@ class S_Bookshelf extends SimpleObject {
     super(x, y, "heaven/bookshelf");
     this.adjust_hitbox(-5,0,57, 50);
     this.specify_sprite_size(50, 98);
-    this.default_text = this.text_interaction([
-      ".",
-    ], seed);
+    this.default_text = function(){
+      BATTLE.api.make("_060/_book");
+    }
   }
 }
 

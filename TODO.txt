@@ -2,13 +2,8 @@
 - visual glitches (overlay?)
 
 - heaven:
-decor, events, flavor text, ending, plot (konami clue)
-
-
+tombstones, events, flavor text, ending, 
 Tombstones of actual npc with time of death
-
-  The books contain your story
-It says "and then having a flash from another world he went up up etc...
 
 
 
