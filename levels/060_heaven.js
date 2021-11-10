@@ -94,8 +94,8 @@ switch(gen.int(3)){
     break;
 }
 
-
-if (INVENTORY.count("_heaven_sequence") < 8){
+// no decor for first entrance
+if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") < 8){
   decorFiller.fill_decor_by_retry();
 }
 
@@ -105,6 +105,18 @@ placeholder.destroy();
 // ===================
 //hack 7. START/INIT
 // ===================
+
+if (!INVENTORY.count("_heaven_visits")){
+  CURRENTLEVEL.start_function = function() {
+    var callback = function(){
+      IO.control.character();
+    }
+    TextBannerSequence.make([
+      `You find yourself in the middle of a sea of cottony clouds. The slow swirling motion of the vapor is numbing your senses. No doubt that some sort of divine magic is also at play in this disorientation. You're not exactly sure how you arrived there or where you should go... The mist extends in every direction, but every time you look away it seems that the world changes around you. It's going to be hard to orient yourself, let alone pierce the mystery of this place...`,
+    ], callback);
+  };
+}
+
 // from is to make sure we dont blink out right away
 if(INVENTORY.count("_heaven_sequence") < 8 && from && !progressing && Math.random() < 0.2) {
   INVENTORY.set("_heaven_sequence", 0);
@@ -114,3 +126,4 @@ if(INVENTORY.count("_heaven_sequence") < 8 && from && !progressing && Math.rando
   CURRENTLEVEL._recover_position = [1375,1325];
   CURRENTLEVEL.initialize_with_character(1375,1325);
 }
+INVENTORY.increase("_heaven_visits");

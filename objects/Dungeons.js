@@ -684,7 +684,11 @@ class S_Cloud extends SimpleObject {
     this.walkable = true;
 
     this.default_text = this.text_interaction([
-      ".",
+      "Clouds of various pale colors are floating all around you.",
+      "You drift through the vaporous landscape.",
+      "Smoke raises all around you in nebulous clouds.",
+      "By looking closely, you can notice that the mist seems to glow very faintly.",
+      "Tiny cottony clouds like the ones you're walking on float lightly all around.",
     ], seed);
   }
 }

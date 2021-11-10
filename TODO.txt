@@ -2,7 +2,7 @@
 - visual glitches (overlay?)
 
 - heaven:
-decor, events, flavor text, intro, ending, plot (konami clue)
+decor, events, flavor text, ending, plot (konami clue)
 
 
 Tombstones of actual npc with time of death
