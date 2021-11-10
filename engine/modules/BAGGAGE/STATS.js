@@ -52,6 +52,11 @@ const STATS = {
       DISK.write("STATS");
     },
 
+    set_flag: function(text, value){
+      STATS._stats.set(["FLAG_" + text], value);
+      DISK.write("STATS");
+    },
+
     maxScore: function(value){
       var g = STATS._stats.get([STAT.MaxExplorationScore]);
       console.log(value);

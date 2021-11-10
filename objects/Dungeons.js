@@ -714,8 +714,25 @@ class S_Tomb extends SimpleObject {
       break;
     }
 
-    this.default_text = this.text_interaction([
-      ".",
-    ], seed);
+    var type = gen.get();
+    var selfproba = 0.15 * Math.min(STATS.get(STAT.Death) / 100, 1);
+    if(type < selfproba) {
+      this.default_text = this.text_interaction(["$$Ren$<br />The Promised Child"]);
+    } else if(type < selfproba + 0.05) {
+      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
+      var death = new Date(STATS.flag("KilledBestFriend"));
+      this.default_text = this.text_interaction([`$$BestFriend$<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+    } else {
+      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
+      var death = birth;
+      var name = "";
+      if (gen.get() > 0.5) {
+        name = gen.pick(DATASETS.female_names);
+      } else {
+        name = gen.pick(DATASETS.male_names);
+      }
+      this.default_text = this.text_interaction([`${name}<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+    }
+
   }
 }

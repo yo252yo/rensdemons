@@ -142,4 +142,8 @@ const DISK = {
 
       reader.readAsText(form.files[0]);
     },
+
+    identifier: function(){
+      return DISK.get("#DISK_STATE_IDENTIFIER");
+    },
 };

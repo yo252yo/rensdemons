@@ -2,8 +2,8 @@
 - visual glitches (overlay?)
 
 - heaven:
-tombstones, events, flavor text, ending, 
-Tombstones of actual npc with time of death
+events, flavor text, ending,
+Tombstones of all actual npc with time of death
 
 
 
