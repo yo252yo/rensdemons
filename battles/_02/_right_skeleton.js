@@ -1,5 +1,6 @@
 
-new CenteredImage("assets/objects/ruins/skeleton.png", 'background');
+var c = new CenteredImage("assets/objects/ruins/skeleton.png", 'background');
+c.adjust_dimensions(c.width * 2, c.height * 2);
 
 PLAYER_ACTIONS.allow_flight(true);
 PLAYER_ACTIONS.useless(ABILITY.Pray);
