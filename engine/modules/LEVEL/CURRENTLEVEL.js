@@ -203,6 +203,13 @@ const CURRENTLEVEL = {
     },
 
     clear: function() {
+      for(var obj of CURRENTLEVEL.level_objects){
+        if(obj && obj.record_death){
+          obj.record_death();
+        }
+      }
+      LEDGER.commit_to_stats();
+
       for(var key in CURRENTLEVEL.triggers) {
         clearTimeout(CURRENTLEVEL.triggers[key]);
       }

@@ -1,11 +1,7 @@
 
 - visual glitches (overlay?)
 
-- heaven:
-events, flavor text, ending,
-Tombstones of all actual npc with time of death
-
-
+- heaven: events, flavor text, ending,
 
 
 ---------------------------------------- BACKSIDE CONTENT:

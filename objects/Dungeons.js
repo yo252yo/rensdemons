@@ -723,16 +723,20 @@ class S_Tomb extends SimpleObject {
     var selfproba = 0.25 * Math.min(STATS.get(STAT.Death) / 100, 1);
     if(type < 0.05) {
       var villager = LEDGER.get_throwaway_villager(gen.get());
-      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${villager.birth.toLocaleString()} - ${villager.death.toLocaleString()}`]);
+      var birth = (new Date(villager.birth)).toLocaleString();
+      var death = (new Date(villager.death)).toLocaleString();
+      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${birth} - ${death}`]);
     } else if(type < 0.1) {
-      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
-      var death = new Date(STATS.flag("KilledBestFriend"));
-      this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+      var birth = (new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"])).toLocaleString();
+      var death = (new Date(STATS.flag("KilledBestFriend"))).toLocaleString();
+      this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br /> ${birth} - ${death}`]);
     } else if(type < 0.1 + selfproba) {
       this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child`]);
     } else {
       var villager = LEDGER.get_villager(gen.get());
-      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${villager.birth.toLocaleString()} - ${villager.death.toLocaleString()}`]);
+      var birth = (new Date(villager.birth)).toLocaleString();
+      var death = (new Date(villager.death)).toLocaleString();
+      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${birth} - ${death}`]);
     }
   }
 }

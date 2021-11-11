@@ -1,6 +1,7 @@
 
 const STAT = {
   Death: "death",
+  Ledger: "LEDGER",
   MaxExplorationScore: "MaxExplorationScore",
 }
 
@@ -34,6 +35,11 @@ const STATS = {
   record: {
     death: function(v) {
       STATS._stats.increment([STAT.Death], v);
+      DISK.write("STATS");
+    },
+
+    ledger: function(l) {
+      STATS._stats.set([STAT.Ledger], l);
       DISK.write("STATS");
     },
 

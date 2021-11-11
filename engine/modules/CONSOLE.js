@@ -84,6 +84,10 @@ const CONSOLE = {
       CONSOLE._sys_log(". " + operation, "Pink");
     },
 
+    ledger : function(operation){
+      CONSOLE._sys_log("}} " + operation, "Black");
+    },
+
     item : function(name, quantity, set){
       var s = " ";
       if (quantity > 0){ s = " +";}

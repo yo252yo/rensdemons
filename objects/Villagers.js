@@ -676,11 +676,16 @@ class M_Villager extends M_NPC {
     this.seed = seed;
     this.sprite_nb = sprite_nb;
     this.soul = get_villager_soul(type, this.seed, indoors, sprite_nb);
+    LEDGER.record_birth(this.soul.vname, type);
   }
 
   interaction() {
     this.face_character();
     this.soul.interaction(this.sprite_nb, this.seed);
+  }
+
+  record_death() {
+    LEDGER.record_death(this.soul.vname);
   }
 }
 
