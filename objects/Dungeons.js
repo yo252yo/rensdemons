@@ -714,25 +714,38 @@ class S_Tomb extends SimpleObject {
       break;
     }
 
-    var type = gen.get();
-    var selfproba = 0.15 * Math.min(STATS.get(STAT.Death) / 100, 1);
-    if(type < selfproba) {
-      this.default_text = this.text_interaction(["$$Ren$<br />The Promised Child"]);
-    } else if(type < selfproba + 0.05) {
-      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
-      var death = new Date(STATS.flag("KilledBestFriend"));
-      this.default_text = this.text_interaction([`$$BestFriend$<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+    this.engrave(gen);
+  }
+
+  engrave_throwaway_villager(gen) {
+    var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
+    var death = birth;
+    var name = "";
+    if (gen.get() > 0.5) {
+      name = gen.pick(DATASETS.female_names);
     } else {
-      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
-      var death = birth;
-      var name = "";
-      if (gen.get() > 0.5) {
-        name = gen.pick(DATASETS.female_names);
-      } else {
-        name = gen.pick(DATASETS.male_names);
-      }
-      this.default_text = this.text_interaction([`${name}<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+      name = gen.pick(DATASETS.male_names);
     }
 
+    var cities = [DICTIONARY.get("town_1"), DICTIONARY.get("town_2"), DICTIONARY.get("town_3"), DICTIONARY.get("town_4"), DICTIONARY.get("town_5")];
+    var city = gen.pick(cities);
+
+    this.default_text = this.text_interaction([`${name} of ${city}<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+  }
+
+  engrave(gen) {
+    var type = gen.get();
+    var selfproba = 0.25 * Math.min(STATS.get(STAT.Death) / 100, 1);
+    if(type < 0.05) {
+      this.engrave_throwaway_villager(gen);
+    } else if(type < 0.1) {
+      var birth = new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"]);
+      var death = new Date(STATS.flag("KilledBestFriend"));
+      this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br /> ${birth.toLocaleString()} - ${death.toLocaleString()}`]);
+    } else if(type < 0.1 + selfproba) {
+      this.default_text = this.text_interaction(["$$Ren$<br />The Promised Child"]);
+    } else {
+      this.engrave_throwaway_villager(gen);
+    }
   }
 }
