@@ -725,18 +725,20 @@ class S_Tomb extends SimpleObject {
       var villager = LEDGER.get_throwaway_villager(gen.get());
       var birth = (new Date(villager.birth)).toLocaleString();
       var death = (new Date(villager.death)).toLocaleString();
-      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${birth} - ${death}`]);
+      var cod = gen.pick(["Stillborn", "Dead on creation", "Crushed to make a tombstone", "Killed to make decorations", "Turned into stone", "Slaughtered for aesthetic enjoyment", "Murdered to make a point"]);
+      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
     } else if(type < 0.1) {
       var birth = (new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"])).toLocaleString();
       var death = (new Date(STATS.flag("KilledBestFriend"))).toLocaleString();
-      this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br /> ${birth} - ${death}`]);
+      this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br />Killed by a demon<br /> ${birth} - ${death}`]);
     } else if(type < 0.1 + selfproba) {
-      this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child`]);
+      this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child<br />Abandonned by the gods`]);
     } else {
       var villager = LEDGER.get_villager(gen.get());
       var birth = (new Date(villager.birth)).toLocaleString();
       var death = (new Date(villager.death)).toLocaleString();
-      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br /> ${birth} - ${death}`]);
+      var cod = gen.pick(["Assassinated by an otherwordly power", "Slain by a god", "Discarded after use", "Exterminated by a machine", "Wiped out of existence", "Recycled into more content", "Murdered for personal enjoyment", "Slaughtered for a higher being's pleasure", "Crushed to free up space", "Eradicated for amusement", "Discarded like a used toy", "Gone and forgotten", "Murdered without cause", "Killed by the system", "Obliterated by tradition", "Destroy by gods' disinterest", "Killed by you", "Murdered by you", "Slaughtered by you", "Destroyed by you", "Killed for your pleasure", "Massacred for your enjoyment", "Gave their life so you could go on", "Died because of you"]);
+      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
     }
   }
 }
