@@ -4,6 +4,8 @@
 - heaven: events, flavor text, ending,
 
 
+language in the ledger + cause of death on tombstone
+
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
 - NPC thoughts
