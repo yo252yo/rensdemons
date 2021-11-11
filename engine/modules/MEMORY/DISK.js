@@ -144,6 +144,6 @@ const DISK = {
     },
 
     identifier: function(){
-      return DISK.get("#DISK_STATE_IDENTIFIER");
+      return DISK._CONTENT["#DISK_STATE_IDENTIFIER"];
     },
 };
