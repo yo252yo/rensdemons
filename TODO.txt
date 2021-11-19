@@ -1,6 +1,7 @@
 
 
 
+
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
 - NPC thoughts
@@ -13,7 +14,7 @@ Game: "END OF GAME", // leave the game
 Universe: "END OF UNIVERSE", // Fork on git
 
 ---------------------------------------- OPTIONAL CONTENT:
-- dungeons
+- dungeons: tree, sirens, hawks, slimes
 - town2 survivors rescue!
 - more furniture ^^ (city specific ??)
 - more battle encounters (world map ruins, hellsmaw skeleton)
