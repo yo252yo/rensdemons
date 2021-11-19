@@ -117,17 +117,21 @@ class S_Maou extends SimpleObject {
     var win = function() {
       TextBannerSequence.make([
         `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
+        `As he draws his last breath, you cannot help but be intrigued by his facial expression. He looks... relieved?`,
       ], function(){
         CURRENTLEVEL.setup("end@A");
       });
     }
 
     var optionGenerator = function(text, prompt, next) {
+        var options = [
+          {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": win},
+        ];
+        if (STATS.ending(ENDINGS.War)){
+          options.push({"text": "Spare " + DICTIONARY.get(["demon_lord"]), "effect": next});
+        }
         var choice = function() {
-          new CenteredTextMenu(prompt, [
-            {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": win},
-            {"text": "Spare " + DICTIONARY.get(["demon_lord"]), "effect": next},
-          ]);
+          new CenteredTextMenu(prompt, options);
         }
         return function(){
           TextBannerSequence.make(text, choice);

@@ -70,10 +70,12 @@ if (floor < 6) {
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 if (floor == 6) {
-  new S_Throne(1250, 1350);
-} else {
-  new S_SavePoint(1325, 1200);
+  new S_Throne(1250, 1400);
 }
+
+new S_SavePoint(1325, 1200);
+
+
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
@@ -111,7 +113,7 @@ if (floor != 6) {
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 if (floor == 6) {
-  new S_Maou(1200, 1550);
+  new S_Maou(1200, 1600);
 
   var i = function(){
     TextBannerSequence.make([
@@ -185,6 +187,7 @@ if (floor == 6){
     TextBannerSequence.make([
       `You finally reach the final floor. You're exhausted, but the adrenaline you get from approaching your goal powers you through.`,
       `The top floor is just one wide room, with numerous openings in the walls from which $$demon_lord$ can gaze upon his territory in every direction. The demon lord is in the middle of the room, slowly pacing around his massive throne. It looks like he's waiting for something.`,
+      `Your intuition reminds you that you'd better pray at the altar before such an important encounter.`,
     ], IO.control.character);
   };
 }
