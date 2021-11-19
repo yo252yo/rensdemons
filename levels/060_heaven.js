@@ -64,15 +64,7 @@ if (INVENTORY.count("_heaven_sequence") >= 8){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-
-// ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-
-var placeholder = new S_SavePoint(1375, 1325);
+var placeholder = new S_SavePoint(1370, 1330);
 
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 100, 100);
@@ -99,8 +91,41 @@ if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") < 8
   decorFiller.fill_decor_by_retry();
 }
 
-placeholder.destroy();
 
+// ===================
+//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+// ===================
+//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+// ===================
+
+if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") < 8){
+  var events = new EventFiller(decorFiller, 25);
+  events.set_zone(1125,1550,500,500);
+
+  events.battle('heaven/angel');
+  events.battle('heaven/cherub');
+  events.battle('heaven/maneki');
+  events.battle('heaven/ponpon');
+  events.battle('heaven/raijuu');
+  events.battle('heaven/seraph');
+  events.battle('heaven/valkyrie');
+
+  events.groundItem(ITEM.Feather);
+  events.groundItem(ITEM.AncientRubbles);
+
+  events.text(`You cannot shake the distinct feeling of having been here before.`, 0.7);
+  events.text(`Your head spins with the voluptuous motions of the vapor all around you. There's a sort of sweetness in the air. It seems that the fog is even in your head. You cannot think straight, your memories start being hard to grasp. How did you get here?`, 0.7);
+  events.text(`You notice silhouettes floating above you. The fog makes it impossible to see clearly, but it appears to be flying creatures with wide wingspan. Probably angels.`, 0.7);
+  events.text(`You cannot shake the feeling that someone is watching you. As if there were some sort of invisible eyes pointed permanently on you...`, 0.7);
+  events.text(`A fruity smell of incense is slowly surrounding you. You blink and feel like everything around you changed. Have you been teleported? Has the environment morphed? How will you ever get out of this everchanging maze of illusions?`, 0.7);
+  events.text(`You get a vague impression of importance in this place. The air feels somehow thinner. This might be a delusion, but you can't help but think that you're close to the fabric of this universe. You get a weird ominous presentiment that a wrong move here could affect many lives in unexpected ways...`, 0.7);
+
+  events.set_tries(4, 18);
+  events.fill_floor_by_retry();
+}
+
+placeholder.destroy();
 
 // ===================
 //hack 7. START/INIT

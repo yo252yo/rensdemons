@@ -25,6 +25,8 @@ https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07ae
 
 https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
+review battle_debris
+
 i think edge doesnt like functions starting by _ esp nested in namespaces
 
 DODGE.absorb_params

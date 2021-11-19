@@ -1,12 +1,11 @@
 
-- visual glitches (overlay?)
-
-- heaven: events, flavor text, ending,
+- heaven: ending,
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
 - NPC thoughts
 - review ideas
+- visual glitches (overlay?)
 
 ---------------------------------------- OPTIONAL CONTENT:
 - dungeons
