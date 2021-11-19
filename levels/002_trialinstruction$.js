@@ -11,7 +11,9 @@ new S_StainedGlass(1075, 1050, 'church');
 new S_StainedGlass(1275, 1050, 'hope');
 new S_StainedGlass(1475, 1050, 'church');
 
-var friend = new M_ChildM(1250, 1720);
+var gen = new Generator(DICTIONARY.get("world_seed"));
+
+var friend = new M_ChildM(1250, 1720, DICTIONARY.get("child_friends_m1"), CITIES.hope);
 var friend_go = new Sequence();
 friend_go.add_TextBannerSequence([
   "Priest: \"Second-Borns! The day you've all been waiting for has finally arrived! Today, you shall prove yourself to the Goddess.\"",
@@ -53,7 +55,7 @@ friend_go.add_function(function(ignored_callback) {
 });
 
 var make_priest = function (x, y) {
-  var priest = new M_Priest(x,y);
+  var priest = new M_Priest(x,y, CITIES.hope);
   priest.interaction = function() {
     this.face_character();
     new TextBannerRandom([
@@ -92,19 +94,19 @@ make_priest(1200, 1550);
 make_priest(1275, 1550);
 make_priest(1350, 1550);
 
-(new M_ChildM(1150, 1670)).interaction = function() {
+(new M_ChildM(1150, 1670, gen.pick(DATASETS.male_names), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "The child is just weeping in silence."
   ])
  };
-(new M_ChildF(1180, 1710)).interaction = function() {
+(new M_ChildF(1180, 1710, DICTIONARY.get("child_friends_f1"), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "$$child_friends_f1$: \"You go ahead, I wanna watch your Trial. But you'll fail and I'll succeed, that's for sure!\""
   ])
  };
-(new M_ChildF(1280, 1710)).interaction = function() {
+(new M_ChildF(1280, 1710, gen.pick(DATASETS.female_names), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "Girl: \"I'm scared... so scared... why did I have to be a Second-Born! I wish big brother were never here! No! I wish big brother were the Promised Child... Mommy...\""

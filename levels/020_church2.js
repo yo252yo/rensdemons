@@ -122,7 +122,7 @@ var armament = function() {
   }
 }
 
-var hp = new M_Priest(1300, 1675);
+var hp = new M_Priest(1300, 1675, CITIES.fear);
 hp.interaction = function() {
   this.face_character();
   var options = [];

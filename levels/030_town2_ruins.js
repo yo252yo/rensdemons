@@ -40,7 +40,7 @@ wiseOldFool.interaction = function() {
 }
 
 var make_priest = function (x, y) {
-  var priest = new M_Priest(x,y);
+  var priest = new M_Priest(x,y, CITIES.fear);
   priest.interaction = function() {
     this.face_character();
 
@@ -108,7 +108,7 @@ var armament = function() {
 
 
 
-var hp = new M_Priest(1400, 1375);
+var hp = new M_Priest(1400, 1375, CITIES.fear);
 hp.interaction = function() {
   this.face_character();
   armament();

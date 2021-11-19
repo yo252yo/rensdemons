@@ -16,7 +16,7 @@ new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
 new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 100000);
 
 var make_priest = function (x, y) {
-  var priest = new M_Priest(x,y);
+  var priest = new M_Priest(x,y, CITIES.acceptance);
   priest.interaction = function() {
     this.face_character();
 

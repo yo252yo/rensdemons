@@ -53,9 +53,12 @@ const LEDGER = {
     return LEDGER._ledger;
   },
 
-  record_birth: function(name, city_type) {
+  record_birth: function(name, city_type, role) {
     if(!name){
       return;
+    }
+    if(!role){
+      role = "villager";
     }
     var city = "";
     switch(city_type){
@@ -78,26 +81,29 @@ const LEDGER = {
         city = DICTIONARY.get("town_2");
         break;
       default:
-        city = LEDGER.get_random_city(gen.get());
+        city = LEDGER.get_random_city(Math.random());
         break;
     }
     LEDGER.load_ledger();
     if(! LEDGER._ledger[name]) {
       LEDGER._ledger[name] = LEDGER._villager(city);
-      CONSOLE.log.ledger(`A new villager named ${name} has been born in the city of ${city}.`);
+      CONSOLE.log.ledger(`A new ${role} named ${name} has been born in the city of ${city}.`);
     } else {
-      CONSOLE.log.ledger(`An villager named ${name} has been brought back to life by necromancy.`);
+      CONSOLE.log.ledger(`A ${role} named ${name} has been brought back to life by necromancy.`);
     }
   },
 
-  record_death: function(name) {
+  record_death: function(name, role) {
     if(!name){
       return;
+    }
+    if(!role){
+      role = "villager";
     }
     LEDGER.load_ledger();
     if(LEDGER._ledger[name]) {
       LEDGER._ledger[name].death = (new Date()).getTime();
-      CONSOLE.log.ledger(`An innocent villager named ${name} has been mercilessly killed.`);
+      CONSOLE.log.ledger(`An innocent ${role} named ${name} has been mercilessly killed.`);
     } else {
       // This shouldnt happen lol;
       var city = LEDGER.get_random_city(gen.get());

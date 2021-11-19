@@ -28,7 +28,7 @@ var child_in_tree = function (x, y, name, child, dialog) {
 }
 
 var make_priest = function (x, y) {
-  var priest = new M_Priest(x,y);
+  var priest = new M_Priest(x,y, CITIES.hope);
   priest.interaction = function() {
     this.face_character();
     TextBannerSequence.make([
@@ -41,7 +41,7 @@ var make_priest = function (x, y) {
 
 new S_Tree(1110,1270);
 
-child_in_tree(1150, 1130, "cff1", new M_ChildF(),
+child_in_tree(1150, 1130, "cff1", new M_ChildF(0,0, DICTIONARY.get("child_friends_f1"), CITIES.hope),
   new TextBannerProgressive([
     "You found $$child_friends_f1$!",
     "$$child_friends_f1$: \"You're really good\"",
@@ -52,7 +52,7 @@ new S_Tree(1240,1380);
 
 new S_Tree(1290,1160);
 
-child_in_tree(1400, 1250, "cfm1", new M_ChildM(), new TextBannerProgressive([
+child_in_tree(1400, 1250, "cfm1", new M_ChildM(0,0, DICTIONARY.get("child_friends_m1"), CITIES.hope), new TextBannerProgressive([
     "You found $$child_friends_m1$!",
     "$$child_friends_m1$: \"Damn, I really thought I had a good spot this time...\"",
     "$$child_friends_m1$: \"I'm sure I'll do better next time!\"",
@@ -69,7 +69,7 @@ child_in_tree(1420, 1120, "cfbf", new M_ChildF(), new TextBannerProgressive([
     "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
 
-child_in_tree(1370,1380, "cff2", new M_ChildF(),
+child_in_tree(1370,1380, "cff2", new M_ChildF(0,0, DICTIONARY.get("child_friends_f2"), CITIES.hope),
   new TextBannerProgressive([
     "You found $$child_friends_f2$! It wasn't too hard, she's really bad at hiding. She can't stay too long without moving.",
     "$$child_friends_f2$: \"Finally, I was dying over there!\"",

@@ -13,7 +13,7 @@ new S_StainedGlass(1475, 1050, 'church');
 
 
 
-var priest = new M_Priest(1250, 1650);
+var priest = new M_Priest(1250, 1650, CITIES.denial);
 priest.interaction = function() {
   this.face_character();
 

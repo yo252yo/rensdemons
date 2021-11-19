@@ -3,6 +3,8 @@
 //hack 0. INITIALIZATION
 // ===================
 ABILITIES.unlock("_trial_passed"); // redundant
+var gen = new Generator(DICTIONARY.get("world_seed"));
+
 // ===================
 //hack 1. FLOORS
 //hack 2. EXIT
@@ -17,7 +19,7 @@ new S_StainedGlass(1475, 1050, 'church');
 new S_ExitFloor(1250,1775,100,35, '005_town1');
 
 var make_priest = function (x, y) {
-  var priest = new M_Priest(x,y);
+  var priest = new M_Priest(x,y, CITIES.hope);
   priest.interaction = function() {
     this.face_character();
 
@@ -41,19 +43,19 @@ hp.interaction = function() {
 };
 
 
-(new M_ChildM(1150, 1670)).interaction = function() {
+(new M_ChildM(1150, 1670, gen.pick(DATASETS.male_names), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "After this unlikely escape from a certain death, this child is overwhelmed by emotion. He's too stunned to talk, and simply weeps of joy."
   ])
  };
-(new M_ChildF(1180, 1710)).interaction = function() {
+(new M_ChildF(1180, 1710, DICTIONARY.get("child_friends_f1"), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "$$child_friends_f1$: \"I... I wasn't lying before. I could have done it too. Don't get too cocky because you're a god or something now.\""
   ])
  };
-(new M_ChildF(1280, 1710)).interaction = function() {
+(new M_ChildF(1280, 1710, gen.pick(DATASETS.female_names), CITIES.hope)).interaction = function() {
   this.face_character();
   TextBannerSequence.make([
     "Girl: \"You... you saved me! Thank you! Thank you! And now you'll save us all!\""
