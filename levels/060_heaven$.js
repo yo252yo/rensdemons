@@ -55,11 +55,15 @@ if (INVENTORY.count("_heaven_sequence") >= 8){
   var s1 = new B_Statue(1350,1275);
   var endFight = function() {
     if(ABILITIES.has_ability("_killed_god")){
-    /*  TextBannerSequence.make([
-        `.KILL.`,
-      ], function(){
-//        CURRENTLEVEL.setup("end@B");
-});*/
+      var callback = function(){
+        CURRENTLEVEL.setup("end@B");
+      }
+      TextBannerSequence.make([
+        `As you deliver the final blow, the holy body of the Goddess starts to fragment into a myriad of tiny sparkly particles. As the shining grains begin to dissipate, you see for the first time the sacred body actually move.`,
+        `It's a very subtle motion. The Goddess' lips come very slightly appart, and you hear Her whisper:`,
+        `Goddess: "Fool... You don't know anything..."`,
+        `The cloud of luminous dust, sole remainder of the entity that ruled the universe, dissipates slowly into the air...`,
+      ], callback);
     }
   }
 

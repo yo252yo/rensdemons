@@ -1,8 +1,7 @@
-need to write goddess dying, killing action (LANGUAGE/battle.js), and what happens after (060_heaven.js)
-end of fight, this gets rid of the _goddess, how does it work for other battles???
-special music for goddess
+heaven, when i do a fight, does the logic of state computation (it does it every time the level loads!!!)
 
-- heaven: ending,
+
+
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough

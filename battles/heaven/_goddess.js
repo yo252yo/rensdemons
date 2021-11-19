@@ -2,7 +2,7 @@
 //hack INITIALIZATION
 // ===================
 new CenteredImage("assets/battles/heaven/goddess.png", 'background');
-AUDIO.music.interface.boss();
+AUDIO.music.characters.Goddess();
 
 // ===================
 //hack PLAYER CAPABILITIES
@@ -14,7 +14,15 @@ PLAYER_ACTIONS.add({
   description: ["You decide you're not prepared for this encounter."],
 });
 
-PLAYER_ACTIONS.win("Kill God", 2);
+
+PLAYER_ACTIONS.add({
+  name: "Kill God",
+  description: LANGUAGE.actions.usage("Kill God"),
+  function: function(){
+    PLAYER_ACTIONS.win("Kill God", 6);
+    ABILITIES.unlock("_killed_god");
+  }
+});
 
 BATTLETREE.api.unlock("heaven/_goddess", "Kill God");
 

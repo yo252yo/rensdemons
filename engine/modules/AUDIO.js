@@ -149,6 +149,7 @@ const AUDIO = {
       TraitorFisher: function() { AUDIO._play_music("chara/surfing") },
       DisguisedPrincess: function() { AUDIO._play_music("chara/road3chill") },
       SavageChild: function() { AUDIO._play_music("chara/getready") },
+      Goddess: function() { AUDIO._play_music("chara/actionepic") },
     },
 
     town: { // strings, ambiant

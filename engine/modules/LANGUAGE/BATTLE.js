@@ -58,11 +58,10 @@ LANGUAGE.actions.generic = {
 
 LANGUAGE.actions["Kill God"] = {
   usage: function(){
-    return `description`;
+    return `You attempt to kill the Goddess.`;
   },
   win: function(){
-    ABILITY.unlock("_killed_god");
-    return `at the end of fight`;
+    return `You finally succeed.`;
   },
 };
 
@@ -73,7 +72,7 @@ LANGUAGE.actions["Kill God"] = {
 LANGUAGE.actions._get = function(name, type) {
   var r;
   try{
-    r = LANGUAGE.actions[name][type]();
+    r = LANGUAGE.actions[name.trim()][type]();
   } catch (e){
     r = LANGUAGE.actions[`generic`][type]();
   }
