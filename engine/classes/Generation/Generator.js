@@ -2,7 +2,7 @@
 class Generator {
   constructor(seed_source) {
     if (typeof seed_source == "string"){
-      this.seed = this._hash_seed(this._str_to_int(seed_source));
+      this.seed = this._hash_seed(STRING_UTILS.hash_str_to_int(seed_source));
     } else {
       this.seed = this._hash_seed(seed_source);
     }
@@ -16,17 +16,6 @@ class Generator {
     seed_source = ((seed_source >> 16) ^ seed_source) * 295559667;
     seed_source = (seed_source >> 16) ^ seed_source;
     return seed_source;
-  }
-
-   _str_to_int(str) {
-    var hash = 0, i, chr;
-    if (str.length === 0) return hash;
-    for (i = 0; i < str.length; i++) {
-      chr   = str.charCodeAt(i);
-      hash  = ((hash << 5) - hash) + chr;
-      hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
   }
 
   _get_next() {
