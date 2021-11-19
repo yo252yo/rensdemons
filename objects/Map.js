@@ -260,7 +260,7 @@ class SM_Pandemonium extends MapObject {
 class SM_Heaven extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/heaven.png", 'obj_light');
-    super(visual, x, y, `Heaven`, "060_heaven");
+    super(visual, x, y, `Heaven`, "060_heaven$");
     this.adjust_hitbox(40,-10,235,200);
     this.specify_sprite_size(300,215);
     if(this.legend) this.legend.shift(150);

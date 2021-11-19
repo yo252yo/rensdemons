@@ -1,3 +1,6 @@
+need to write goddess dying, killing action (LANGUAGE/battle.js), and what happens after (060_heaven.js)
+end of fight, this gets rid of the _goddess, how does it work for other battles???
+special music for goddess
 
 - heaven: ending,
 

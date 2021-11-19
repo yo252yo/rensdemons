@@ -56,6 +56,17 @@ LANGUAGE.actions.generic = {
 };
 
 
+LANGUAGE.actions["Kill God"] = {
+  usage: function(){
+    return `description`;
+  },
+  win: function(){
+    ABILITY.unlock("_killed_god");
+    return `at the end of fight`;
+  },
+};
+
+
 //------------------------------------------------------------------------------
 //Functions
 
