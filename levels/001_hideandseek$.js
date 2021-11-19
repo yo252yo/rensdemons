@@ -114,7 +114,7 @@ CURRENTLEVEL.start_function = function() {
       "$$Ren$: \"... 98\"",
       "$$Ren$: \"... 99\"",
       "$$Ren$: \"... 100! Ready or not, here I come!\"",
-    ], function(){ SAVE.autosave(); IO.control.character(); });
+    ], function(){ IO.control.character(); });
   }
 
   TextBannerSequence.make([

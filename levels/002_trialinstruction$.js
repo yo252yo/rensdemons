@@ -49,7 +49,6 @@ friend_go.add_TextBannerSequence([
 ]);
 friend_go.add_function(function(ignored_callback) {
   friend.destroy();
-  SAVE.autosave();
   IO.control.character();
 });
 
@@ -82,6 +81,7 @@ var hp_menu = function () {
 
 var hp = make_priest(1275, 1100);
 hp.interaction = function() {
+  SAVE.autosave();
   this.face_character();
   TextBannerSequence.make([
     "Priest: \"The task that awaits you is a perilous one. You will most likely perish, like many before you. Are you ready? Did you pray for the Goddess' power?\""
