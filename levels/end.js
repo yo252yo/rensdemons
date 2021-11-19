@@ -110,9 +110,9 @@ if(end == "A"){
   ];
 }
 if(end == "B"){
-  STATS.record.ending(ENDINGS.World);
+  STATS.record.ending(ENDINGS.God);
   sequence = [
-    `Congratulations! You have reached the ${ENDINGS.World}.`,
+    `Congratulations! You have reached the ${ENDINGS.God}.`,
     `Freed from the dominion of the Goddess, $$demon_lord$ and his armies withdrew from $$world_name$. The divine commands were the only reason for their thirst for blood. $$Ren$ had no problem negociating peace between demons and humans.`,
     `Without pillage of their lands, humans once again knew peace. For putting an end to the war, $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. But the deicide weighed heavily on the Promised Child's conscience.`,
     `To prevent chaos in the kingdom and for self-protection, $$Ren$ never disclosed to anyone what had happened in the other world. The hero had nobody to share the perpetual interrogations sparked by seeing the mysterious truth of so-called "heaven".`,

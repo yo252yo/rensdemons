@@ -6,8 +6,9 @@ const STAT = {
 }
 
 const ENDINGS = {
-  War: "END OF WAR", // demon_lord
-  World: "END OF WORLD", // goddess
+  War: "END OF WAR", // kill demon_lord
+  God: "END OF GOD", // kill goddess
+  World: "END OF WORLD", // kill goddess and ask for a new world
   Line: "END OF LINE", // code
   Game: "END OF GAME", // leave the game
   Universe: "END OF UNIVERSE", // Fork on git
