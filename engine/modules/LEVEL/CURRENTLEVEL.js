@@ -25,9 +25,13 @@ const CURRENTLEVEL = {
         char_y = CHARACTER.character.y;
         char_a = CHARACTER.facing_direction();
       }
+      var saved_destroyed_objects = CURRENTLEVEL.destroyed_objects;
+      if(CURRENTLEVEL.level_name.endsWith(CURRENTLEVEL.UNSAVED_LEVEL_SUFFIX)){
+        saved_destroyed_objects = [];
+      }
       return {
         level_name: CURRENTLEVEL.level_name,
-        destroyed_objects: CURRENTLEVEL.destroyed_objects,
+        destroyed_objects: saved_destroyed_objects,
         saved_character_position: [char_x, char_y, char_a],
         previous_lvl: CURRENTLEVEL.previous_lvl,
       };
