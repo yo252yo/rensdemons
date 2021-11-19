@@ -113,4 +113,4 @@ CURRENTLEVEL.initialize_with_character(2475, 2225, 0.6);
 // ===================
 //hack 8. AUTOSAVE
 // ===================
-SAVE.autosave();
+//SAVE.autosave();

@@ -5,29 +5,28 @@ var gen = new Generator(Math.random());//DICTIONARY.get("world_seed")*41);
 AUDIO.music.levels.heaven();
 var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
 
-var from = s[1];
-var state = INVENTORY.count("_heaven_sequence");
-var progressing = true;
 
-if ((state == 0 || state == 1) && from == "t$"){ // _ or T
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 2 && from == "d$"){ // TT
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 2 && from == "t$"){  // no move out of state 2
-} else if (state == 3 && from == "d$"){ // TTD
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 4 && from == "l$"){ // TTDD
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 5 && from == "r$"){ // TTDDL
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 6 && from == "l$"){ // TTDDLR
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 7 && from == "r$"){ // TTDDLRL
-  INVENTORY.increase("_heaven_sequence");
-} else if (state == 8) { // stay there
-} else {
-  progressing = false;
-  INVENTORY.set("_heaven_sequence", 0);
+var update_state = function(from){
+  var state = INVENTORY.count("_heaven_sequence");
+  if ((state == 0 || state == 1) && from == "t"){ // _ or T
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 2 && from == "d"){ // TT
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 2 && from == "t"){  // no move out of state 2
+  } else if (state == 3 && from == "d"){ // TTD
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 4 && from == "l"){ // TTDD
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 5 && from == "r"){ // TTDDL
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 6 && from == "l"){ // TTDDLR
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 7 && from == "r"){ // TTDDLRL
+    INVENTORY.increase("_heaven_sequence");
+  } else if (state == 8) { // stay there
+  } else {
+    INVENTORY.set("_heaven_sequence", 0);
+  }
 }
 
 
@@ -37,10 +36,22 @@ if ((state == 0 || state == 1) && from == "t$"){ // _ or T
 var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
 
 if(INVENTORY.count("_heaven_sequence") < 8){
-  t.left_border.interaction = function(){ CURRENTLEVEL.setup("060_heaven$@l$"); };
-  t.right_border.interaction = function(){ CURRENTLEVEL.setup("060_heaven$@r$"); };
-  t.top_border.interaction = function(){ CURRENTLEVEL.setup("060_heaven$@t$"); };
-  t.bot_border.interaction = function(){ CURRENTLEVEL.setup("060_heaven$@d$"); };
+  t.left_border.interaction = function(){
+    update_state("l");
+    CURRENTLEVEL.setup("060_heaven$");
+  };
+  t.right_border.interaction = function(){
+    update_state("r");
+    CURRENTLEVEL.setup("060_heaven$");
+  };
+  t.top_border.interaction = function(){
+    update_state("t");
+    CURRENTLEVEL.setup("060_heaven$");
+   };
+  t.bot_border.interaction = function(){
+    update_state("d");
+    CURRENTLEVEL.setup("060_heaven$");
+   };
 }
 
 // ===================
@@ -85,7 +96,7 @@ if (INVENTORY.count("_heaven_sequence") >= 8){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var placeholder = new S_SavePoint(1370, 1330);
+var placeholder = new S_Painting(1370, 1330);
 
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 100, 100);
@@ -107,7 +118,7 @@ switch(gen.int(3)){
     break;
 }
 
-// no decor for first entrance
+// no decor for first entrance or last floor
 if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") < 8){
   decorFiller.fill_decor_by_retry();
 }
@@ -176,9 +187,9 @@ else if (INVENTORY.count("_heaven_sequence") == 8 && !INVENTORY.count("_goddess_
   };
 }
 
-// from is to make sure we dont blink out right away
-if(INVENTORY.count("_heaven_sequence") < 8 && from && !progressing && Math.random() < 0.2) {
-  INVENTORY.set("_heaven_sequence", 0);
+// chance of TP out: not first visit, we are at the start of the sequence, i.e. not progressing
+if(INVENTORY.count("_heaven_visits") > 0 && INVENTORY.count("_heaven_sequence") == 0 && Math.random() < 0.2) {
+  INVENTORY.decrease("_heaven_sequence");
   CURRENTLEVEL.setup("050_hell_map");
 } else {
   // We use a trick to always spawn in the same place!
@@ -186,3 +197,7 @@ if(INVENTORY.count("_heaven_sequence") < 8 && from && !progressing && Math.rando
   CURRENTLEVEL.initialize_with_character(1375,1325);
 }
 INVENTORY.increase("_heaven_visits");
+
+if( INVENTORY.count("_heaven_sequence") < 0 ){
+   INVENTORY.increase("_heaven_sequence");
+}
