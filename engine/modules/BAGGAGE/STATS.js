@@ -34,6 +34,7 @@ const STATS = {
 
   record: {
     death: function(v) {
+      AUDIO.effect.unlock();
       STATS._stats.increment([STAT.Death], v);
       DISK.write("STATS");
     },
@@ -44,6 +45,7 @@ const STATS = {
     },
 
     flag: function(text, value){
+      AUDIO.effect.unlock();
       STATS._stats.increment(["FLAG_" + text], value);
       DISK.write("STATS");
     },
@@ -54,18 +56,20 @@ const STATS = {
     },
 
     ending: function(text, value){
+      AUDIO.effect.unlock();
       STATS._stats.increment(["END_" + text], value);
       DISK.write("STATS");
     },
 
     set_flag: function(text, value){
+      AUDIO.effect.unlock();
       STATS._stats.set(["FLAG_" + text], value);
       DISK.write("STATS");
     },
 
     maxScore: function(value){
       var g = STATS._stats.get([STAT.MaxExplorationScore]);
-      
+
       if (!g || g < value){
         STATS._stats.set([STAT.MaxExplorationScore], value);
         DISK.write("STATS");
