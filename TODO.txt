@@ -8,6 +8,7 @@
 - visual glitches (overlay?)
 - more language options for ledger console
 - alternate endings for goddess:
+a path where you discuss the truth with the goddess (you're the goddess all along)
 World: "END OF WORLD", // kill goddess and ask for a new world
 Line: "END OF LINE", // code, console, like demo
 Game: "END OF GAME", // leave the game
