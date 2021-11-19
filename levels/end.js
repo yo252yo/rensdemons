@@ -113,13 +113,13 @@ if(end == "B"){
   STATS.record.ending(ENDINGS.World);
   sequence = [
     `Congratulations! You have reached the ${ENDINGS.World}.`,
-    `Freed from the dominion of the Goddess, the $$demon_lord$ and his armies withdrew from $$world_name$. The divine commands were the only reason for their thirst for blood. Demons and humans quickly bartered peace, with $$Ren$ at the core of the negociations.`,
-    `Without the demons on their lands, humans once again knew peace. For orchestrating the end of the war, $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. But the deicide weighed heavily on the Promised Child's conscience.`,
+    `Freed from the dominion of the Goddess, $$demon_lord$ and his armies withdrew from $$world_name$. The divine commands were the only reason for their thirst for blood. $$Ren$ had no problem negociating peace between demons and humans.`,
+    `Without pillage of their lands, humans once again knew peace. For putting an end to the war, $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. But the deicide weighed heavily on the Promised Child's conscience.`,
     `To prevent chaos in the kingdom and for self-protection, $$Ren$ never disclosed to anyone what had happened in the other world. The hero had nobody to share the perpetual interrogations sparked by seeing the mysterious truth of so-called "heaven".`,
-    `Under $$Ren$'s leadership, and without the fear of demons, religious influence slowly faded. But nothing lasts forever, and $$Ren$'s life eventually came to an end after kickstarting a new era of prosperity. The story of the death of the Goddess died as well.`,
+    `Under $$Ren$'s leadership, and in the absence of demonic menace, religious influence slowly faded. But nothing lasts forever, and $$Ren$'s life eventually came to an end at the dawn of a new era of prosperity. The story of the death of the Goddess died as well.`,
     `It was a golden age for the human civilization, and they were able to develop to new heights. With social change, mentalities changed too, and a new cult appeared.`,
-    `Humans started worshiping a new Goddess, thanking Her for their bountiful expansion. The old Goddess fell into oblivion. She brought only war and suffering, when the new Goddess brought technology and wealth.`,
-    `She went by many names, but she was a symbol of hope and success for the human race. Galvanized by their new icon, they prospered like never before.`,
+    `Humans started worshiping a new Goddess, thanking Her for their bountiful expansion. The old Goddess fell into oblivion. She had brought only war and suffering, when the new Goddess represented technology and wealth.`,
+    `She went by many names, but She was mostly a universal symbol of hope and success for the human race. Galvanized by their new icon, they prospered like never before.`,
   ];
 }
 

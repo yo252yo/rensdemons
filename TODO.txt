@@ -1,6 +1,3 @@
-heaven, when i do a fight, does the logic of state computation (it does it every time the level loads!!!)
-
-
 
 
 ---------------------------------------- BACKSIDE CONTENT:
@@ -8,6 +5,7 @@ heaven, when i do a fight, does the logic of state computation (it does it every
 - NPC thoughts
 - review ideas
 - visual glitches (overlay?)
+- alternate endings for goddess!
 
 ---------------------------------------- OPTIONAL CONTENT:
 - dungeons
