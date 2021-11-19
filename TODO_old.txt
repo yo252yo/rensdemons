@@ -1,3 +1,23 @@
+- DODGE.absorb_params
+- better memory management?
+- menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)
+- https://github.com/Eloston/ungoogled-chromium/discussions/1721
+- non rectangular hitboxes
+- sell several items at once
+- i dont like how we store saved data as hidden abilities and items :P
+- Get less weird list of names??
+- Reduce the size of Datasets, maybe we can even completely generate it from the markov model? though currently generation doesnt conclude
+- fast travel out of dungeons (esp after getting artifact?) hard becasue the respawn point in levels is the last visited point
+- mb i need to make scroll work even without fog
+- make item sets (make chair with table)
+- should we merge the actions in the experience menu if they have the same name?
+- mb add BestFriend to the party that follows you around, for emotional attachment
+- party state, thoughts, etc...
+- should the LANGUAGE bits be generated from a pattern (or metapatern)?
+- could make most think in dictionary depend from a single seed by making markov use deterministic generator
+- map elements and dungeons decors could also be battleobjects
+
+
 - i think the transition between levels is fucked up probably because of concurrency
 - touch handler interupts boy walking
 - touch handler interupts text during battle

@@ -1,27 +1,64 @@
 
 
 
-
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
 - NPC thoughts
 - review ideas
 - visual glitches (overlay?)
+- more language options for ledger console
 - alternate endings for goddess:
 World: "END OF WORLD", // kill goddess and ask for a new world
-Line: "END OF LINE", // code
+Line: "END OF LINE", // code, console, like demo
 Game: "END OF GAME", // leave the game
 Universe: "END OF UNIVERSE", // Fork on git
+- https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
+
+
 
 ---------------------------------------- OPTIONAL CONTENT:
 - dungeons: tree, sirens, hawks, slimes
 - town2 survivors rescue!
+- hans dog somewhere
 - more furniture ^^ (city specific ??)
-- more battle encounters (world map ruins, hellsmaw skeleton)
+- more itembattles for dungeons and world, more battle encounters (world map ruins, hellsmaw skeleton)
+- more bed and jar actions
 - party members:
 >  description in party.js,
 >  attacks in languge,
 >  encounter+battle
-- artifact have special sound effects
+- review battle_debris add a few more actions for rubble treasures
+- add rens parent sendoff/house before trial?
+- ideas in todos in villager
 
----------------------------------------- TODO long
+---------------------------------------- GRAPHIC REWORK:
+- audit from >= first town
+- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
+- sprites for party members
+- object/buildings: need better buildings and differnt building styles for different cities?
+- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
+- check walking on small sprites (ie pebbles, etc):  hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded. /   pebbles hide the sprite when walked on /   > mb things should have an option to be indexed by the top
+- decorate stores
+- the treasure battler should probs be closed
+- mb revamp party screen with icons
+
+---------------------------------------- TODO
+- credit gfroad sumnmoning circle or replace ti with rpgmaker
+- spam space bar in battle makes the option menu reappear on fight
+- test on edge, epsecially functions starting by _, mb the nested ones
+- change color scheme doesnt change fog or map bg
+- proper title screen and death screen, esp for mobile
+- artifact have special sound effects
+- make experience menu multi tiered
+- if theres a guy behind a house interaction interacts with the house (most prominent object)
+- different sound walking on map
+- Skip dodge phase at high level?
+- did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ??
+- why does battletree have lists as leaves and not simply state?
+- shop, trainer, player_action have a bit of language text, DISK?
+- palette has functions that return objects, strings and functinos that just outright change the colors
+- The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
+- sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
+- can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
+- https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
+- finally, produce a zip, put on steam
