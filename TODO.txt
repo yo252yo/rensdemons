@@ -26,7 +26,7 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 
 ---------------------------------------- BACKSIDE:
 - walkthrough
-- NPC thoughts, People whispering on the edge of the viewport
+- NPC thoughts, People whispering on the edge of the viewport, some believe in last thursdayism
 - visual glitches, especially during Maou death (overlay?)
 - more language options for ledger console
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
@@ -112,6 +112,8 @@ unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them 
 ---------------------------------------- TROPES
 - add comment about how anything can fit in my bags
 - i expect more at the end of maou fight cause important enemies usually have stages
+- Whale: Fights you're supposed to lose
+- a casino in vegas (and lootboxes)
 
 
 

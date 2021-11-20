@@ -24,7 +24,6 @@ the only real power of the hero is respawn so they win by brute force in long ru
 - go to the next area and come back
 - go to the door
 - talk to an objective and exit, go close to the border
-- Fights you're supposed to lose
 - Guard patrols and npc behaviors
 - talk to one character / talk to a npc trigger the progression
 - game gives me clue for next location
@@ -48,7 +47,6 @@ the only real power of the hero is respawn so they win by brute force in long ru
 
 
 "there's always"/ things i expect to see:
-- a casino (and lootboxes)
 - a crafting system
 
 "i know im immortal":
@@ -77,6 +75,7 @@ Triggers:
 - didnt fght in a while -> boss
 - flashback sequence -> know you'll survive
 - got ammo -> theres gonna be zombies soon
+
 
 Others:
 - the rng was helpful/not
