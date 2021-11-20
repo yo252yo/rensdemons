@@ -1,21 +1,25 @@
 
+- plan side characters with tropes/ideas here. put the tropes either in side characters or in more battle items
 
 
 ---------------------------------------- BACKSIDE CONTENT:
 - walkthrough
-- NPC thoughts
+- NPC thoughts, People whispering on the edge of the viewport
 - review ideas
 - visual glitches (overlay?)
 - more language options for ledger console
-- alternate endings for goddess:
-a path where you discuss the truth with the goddess (you're the goddess all along)
+- alternate endings for goddess/heaven:
+a path where you discuss the truth with the goddess (you're the goddess all along, goddess= player avatar, there's no escaping the system, you're trapped.
+>> Step 1: youre trapped in the system, it keeps exploiting your energy,
+>> step 2: you ARE the system)
+>> Ren, you have the power to communicate with another world
 World: "END OF WORLD", // kill goddess and ask for a new world
-Line: "END OF LINE", // code, console, like demo
-Game: "END OF GAME", // leave the game
-Universe: "END OF UNIVERSE", // Fork on git
+This infinite loop of resets has no end in the game. There will always be another challenge as long as the player exists. This highlights the fact that the player is the true source of evil in the game world, because all this suffering only exists for their experience. The true boss that you must defeat is the player, the one who orchestrated all these Demon Lords, and the only way to kill it is to literally stop playing: the only winning move is not to play.
+Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript
+Universe: "END OF UNIVERSE", // Fork on git = true end
 - https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
-
-
+- Sometimes the game would crash with a very peculiar error code or error messags “help us”
+- connections with our world in heaven, popups/includes to wikipedia?
 
 ---------------------------------------- OPTIONAL CONTENT:
 - dungeons: tree, sirens, hawks, slimes
@@ -28,6 +32,11 @@ Universe: "END OF UNIVERSE", // Fork on git
 >  description in party.js,
 >  attacks in languge,
 >  encounter+battle
+>> the truth about the power of ren (how he goes back in time to alternate realities)
+>> He's faking it to infiltrate the enemy (traitorfisher)
+>> Artist vessel for god inspiration
+>> Save and load : rez someone to kill them again
+
 - review battle_debris add a few more actions for rubble treasures
 - add rens parent sendoff/house before trial?
 - ideas in todos in villager
@@ -50,10 +59,12 @@ Universe: "END OF UNIVERSE", // Fork on git
 - change color scheme doesnt change fog or map bg
 - proper title screen and death screen, esp for mobile
 - artifact have special sound effects
+- Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - make experience menu multi tiered
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
 - Skip dodge phase at high level?
+- title mirroring the number of loops: Ultimate Illusion I, II, III... (or just Ren's demons I)
 - did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ??
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?
