@@ -2,20 +2,21 @@
 - plan side characters with tropes/ideas here. put the tropes either in side characters or in more battle items
 
 
----------------------------------------- ENDINGS:
+---------------------------------------- GODESS ending path:
 - go see the Goddess and ask wtf, Goddess says this is futile there's a system we're trapped she's trapped too. youre trapped in the system, it keeps exploiting your energy,
 > fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
 
 - didnt work, theres always something that brings it back: reveal that youre the mastermind, you are the system, the goddess is working for you
 > but Ren, you have the power to communicate with another world, mb you can stop this madness
 > Rly destroy files? Impossible I think / Game can't delete itself but it can lock itself
->> Communication: "END OF Communication", 
+>> Communication: "END OF Communication",
 
 >>  There will always be another challenge as long as the player exists. This highlights the fact that the player is the true source of evil in the game world, because all this suffering only exists for their experience. The true boss that you must defeat is the player, the one who orchestrated all these Demon Lords, and the only way to kill it is to literally stop playing: the only winning move is not to play.
 >> Universe: "END OF UNIVERSE", // Fork on git = true end
 
-- bonus room in heaven
+---------------------------------------- HEAVEN new content:
 Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript
+- connections with our world in heaven, popups/includes to wikipedia?
 
 ---------------------------------------- BACKSIDE:
 - walkthrough
@@ -25,7 +26,6 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more language options for ledger console
 - https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
-- connections with our world in heaven, popups/includes to wikipedia?
 
 ---------------------------------------- OPTIONAL CONTENT:
 - dungeons: tree, sirens, hawks, slimes
