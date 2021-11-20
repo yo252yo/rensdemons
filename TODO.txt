@@ -3,6 +3,7 @@
 > fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
 
 - didnt work, theres always something that brings it back: reveal that youre the mastermind, you are the system, the goddess is working for you
+theres higher being controlling us, they see everything and know everything, we're pawns of destiny
 > but Ren, you have the power to communicate with another world, mb you can stop this madness
 > Rly destroy files? Impossible I think / Game can't delete itself but it can lock itself
 >> Communication: "END OF Communication",
@@ -31,7 +32,6 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 
 ---------------------------------------- OPTIONAL CONTENT:
-- dungeons: tree, sirens, hawks, slimes
 - town2 survivors rescue!
 - hans dog somewhere
 - more furniture ^^ (city specific ??)
@@ -39,6 +39,17 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more battle encounters (world map ruins, hellsmaw skeleton)
 - more bed and jar actions
 - review battle_debris add a few more actions for rubble treasures
+
+---------------------------------------- OPTIONAL DUNGEONS:
+- tree,
+
+- sirens,
+Going out at see -> Attack by a sea monster
+
+- hawks,
+theres always something behind the waterfall
+
+- slimes
 
 ---------------------------------------- PARTY MEMBERS:
 >  description in party.js,
@@ -77,12 +88,15 @@ GeniusProdigy: "GeniusProdigy", //child prodigy
 // extra mountain ruins, doing an expedition?
 >> the truth about the power of ren (how he goes back in time to alternate realities)
 >> Save and load : rez someone to kill them again
+studies you like an experiment
 
  TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
 // extra lake
 faking it to infiltrate the enemy, double triple quadruple mole
 >> Artist vessel for god inspiration
 Ren can Foresee a betrayal
+unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
+
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town
@@ -94,6 +108,12 @@ Ren can Foresee a betrayal
 - decorate stores
 - the treasure battler should probs be closed
 - mb revamp party screen with icons
+
+---------------------------------------- TROPES
+- add comment about how anything can fit in my bags
+- i expect more at the end of maou fight cause important enemies usually have stages
+
+
 
 ---------------------------------------- TODO
 - credit gfroad sumnmoning circle or replace ti with rpgmaker

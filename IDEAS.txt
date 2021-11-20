@@ -1,7 +1,6 @@
 ==== GUIDING THOUGHTS NOT FULLFILLED YET
 The system makes this villain self sustaining cycle to provide a diversion
-It's basically matrix:
-Kill the bad guy > Bad guy isn't so bad > You're trapped by the System > You are the system
+It's basically matrix: Kill the bad guy > Bad guy isn't so bad > You're trapped by the System > You are the system
 !! All ideology is like Video-game ideology  = only allows you to move within the game
 This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
 “Insanity is doing the same thing and expecting different results”
@@ -18,66 +17,76 @@ the only real power of the hero is respawn so they win by brute force in long ru
 
 ==== TROPES NOT FULLFILLED YET
 
-talk to an objective and exit, go close to the border
-go to the door
-go to the next area and come back
-traps: poison the drink you know the guard will use, etc....
-talk to one character
-I cannot be killed I'm glitched out
-Don't you think it's weird how we always find what we need on our way
-gods know everythng
-when i wake up somewhere i immediately proceed to loot everything
-the rng was helpful/not
-You should save before risky event
-I knew I was going to see someone soon I didn't have a fight in a while
-You always start by dead end for treasures
-Fairness is paramount
-Assume that a zone is fsafe once you've cleared it
-Time stops when you're opening menus
-You can trust repeatable lines of npcs
-Stuff resets when you exist and come back
-talk to a npc trigger the progression
-If Rens told to hurry he knows it's a bluff
-this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
-the secret of the waterfall
-The old lady wants to help
-Save point before bosses
-You're the only one who can fast travel
-I know which way it is
-“Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
-Attacks when you let your guard down
-Every puzzle has a solution
-A bridge is here to be used, corners are here as distractions
-You know this is a tutorial
-You know that this is a fetching quest
-Encounter the big boss before youre ready
-Attack by a sea monster
-Bosses have stages
-Expectation of being over or under level
-every room has a purpose
-fake choices
-flashback sequence you know you survive
-actually you know you survive till the end of the game!!
-death flags, flags in general (Before you go there let me warn you)
-got ammo that means were gonna run into zombie soon
-clear whole floor before moving on
-he knows the hitboxes
-Anything fits in a small rucksack or waist bag.
-AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
-guards lkose aggro on reset or if you move
-no sleep or toilet
-game gives me clue for next location
-fast travelers
-enemises lose aggro with time or distance
-All that stuff about looting objects, going into ppl houses etc
-casino and lootboxes
-craft system
-Fights you're supposed to lose
-Key items are spread equally around dungeon
-Guard patrols and npc behaviors
-Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
-isnt it weird that merchants buy all your shit
-invisible walls
-friendly fire
-special vision to see interactibles
-matrix effect, you slow down the time when you think
+: SnobRich : FemmeFatale : TorturedSoul : RetiredProtector : DisguisedPrincess : SavageChild : DumbMuscles :
+
+
+"I know where to go/how to progress/what to do": i.e. when you need to advance
+- go to the next area and come back
+- go to the door
+- talk to an objective and exit, go close to the border
+- Fights you're supposed to lose
+- Guard patrols and npc behaviors
+- talk to one character / talk to a npc trigger the progression
+- game gives me clue for next location
+- You know this is a tutorial / You know that this is a fetching quest
+- I know which way it is
+- this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
+- Stuff resets when you exist and come back
+
+
+"I know how the world works":
+- Fairness is paramount
+- Don't you think it's weird how we always find what we need on our way
+- Every puzzle has a solution
+- A bridge is here to be used, corners are here as distractions
+- invisible walls
+- Key items are spread equally around dungeon
+- no sleep or toilet
+- he knows the hitboxes
+- every room has a purpose
+- isnt it weird that merchants buy all your shit
+
+
+"there's always"/ things i expect to see:
+- a casino (and lootboxes)
+- a crafting system
+
+"i know im immortal":
+- I cannot be killed I'm glitched out
+- “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
+- actually you know you survive till the end of the game!!
+- death flags, flags in general (Before you go there let me warn you)
+
+
+"the way i do things":
+- when i wake up somewhere i immediately proceed to loot everything
+- You should save before risky event,  Save point before bosses
+- You always start by dead end for treasures
+- Assume that a zone is safe once you've cleared it / clear whole floor before moving on
+
+
+Events:
+- traps: poison the drink you know the guard will use, etc....
+- an old lady wants to help
+- fake choices that i know are fake
+
+
+Triggers:
+- let your guard down > attack
+- time limited event -> know its a bluff
+- didnt fght in a while -> boss
+- flashback sequence -> know you'll survive
+- got ammo -> theres gonna be zombies soon
+
+Others:
+- the rng was helpful/not
+- Time stops when you're opening menus / matrix effect, you slow down the time when you think
+- You can trust repeatable lines of npcs
+- Encounter the big boss before youre ready
+- Expectation of being over or under level
+- AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
+- guards lkose aggro on reset or if you move / enemises lose aggro with time or distance
+- fast travelers / You're the only one who can fast travel
+- All that stuff about looting objects, going into ppl houses etc
+- i cant hurt you, no friendly fire
+- special vision to see interactibles
