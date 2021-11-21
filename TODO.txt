@@ -64,6 +64,7 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more battle encounters (world map ruins, hellsmaw skeleton)
 - more bed and jar actions
 - review battle_debris add a few more actions for rubble treasures
+- villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
 ---------------------------------------- TREE DUNGEON
 get some Key items are spread equally around dungeon
@@ -80,6 +81,7 @@ Going out at see -> Attack by a sea monster
 time limited event -> know its a bluff
 let your guard down > attack
 didnt fght in a while -> boss
+- got ammo -> theres gonna be zombies soon
 we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
 
 TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
@@ -102,6 +104,7 @@ this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlock
 talk to an objective and exit, go close to the border
 talk to one character / talk to a npc trigger the progression
 go to the next area and come back
+"oh you were on a fetching mission/tutorial"
 
 ---------------------------------------- SLIMES DUNGEON
 stanley parable like "i know youre gonna take a left", at some point eventually you'll have to take a left
@@ -114,6 +117,8 @@ GeniusProdigy: "GeniusProdigy", //child prodigy
 studies you like an experiment
 the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
+so youre quantum immortal!!
+challenge to find his favorite food etc
 
 ---------------------------------------- TOWN2 CASTLE
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
@@ -153,7 +158,10 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
 // town4 debauch
 something about dating sims? true end etc... i know theres a series of choice to woo you
+dont you hate how everyone else seems very robotic, always doing the same things
 
+- You can trust repeatable lines of npcs
+- AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town
@@ -179,9 +187,14 @@ something about dating sims? true end etc... i know theres a series of choice to
 - event from aerith: Don't you think it's weird how we always find what we need on our way
 - event from aerith: isnt it weird that merchants buy all your shit
 - event from aerith: do we not need breaks? no sleep or toilet
+- event from aerith: how do you know youre immortal
 - event from aerith: you have an intuition about where to go O.o
+      "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
+- event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
+>> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
 - UpbeatDojikko: you have the power to communicate with another world
 - UpbeatDojikko:  I cN see your future you'll kill the bosses
+- an old lady arrives, ofc she wants to help and gives you crap
 
 
 ---------------------------------------- TODO

@@ -1,26 +1,9 @@
 
 : TreeDungeon + SavageChild
-: FemmeFatale ? 
-: RetiredProtector ?
 
-
-"I know where to go/how to progress/what to do": i.e. when you need to advance
-- go to the door
-- game gives me clue for next location
-- You know this is a tutorial / You know that this is a fetching quest
-- I know which way it is
-
-"there's always"/ things i expect to see:
-- a crafting system
-
-"i know im immortal":
-- death flags, flags in general (Before you go there let me warn you)
-
-"the way i do things":
-- You should save before risky event,  Save point before bosses
+---------------------------
 
 Events:
-- an old lady wants to help
 - fake choices that i know are fake
 
 Conversations:
@@ -28,17 +11,13 @@ Conversations:
 - challenge triggers a riddle or unlocks Expose
 - your conversation is weird and unnatural
 - more worshiping of you
-- topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 https://elderscrolls.fandom.com/wiki/Generic_Dialogue_(Oblivion)
 http://conceptnet.io/c/en/people
 
-Triggers:
-- flashback sequence -> know you'll survive
-- got ammo -> theres gonna be zombies soon
-
 Others:
-- You can trust repeatable lines of npcs
-- AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
+- you survive all the flashbacks
+- death flags, flags in general (Before you go there let me warn you)
+- there's always a crafting system
 - fast travelers / You're the only one who can fast travel
 - i cant hurt you, no friendly fire
 - “Insanity is doing the same thing and expecting different results”
