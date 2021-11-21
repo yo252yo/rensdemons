@@ -8,35 +8,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
-Needs thinking:
-
-- TreeDungeon + SavageChild
-
-- more fake choices that i know are fake
-- "I've been here before and I know you"
-- more death flags, flags in general (Before you go there let me warn you)
-- reference to the fact that there's always a crafting system
-- “Insanity is doing the same thing and expecting different results”
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---------------------------------------- GODDESS endings path:
 - go see the Goddess and ask wtf, Goddess says this is futile there's a system we're trapped she's trapped too. youre trapped in the system, it keeps exploiting your energy,
 > fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
@@ -102,11 +73,13 @@ Fairness is paramount
 every room has a purpose
 A bridge is here to be used, corners are here as distractions
 there has to be a new companion in this place/there has to be an artifact deep inside
+more fake choices that i know are fake
 
 - Plot device/MC guffin
 
 SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
 // extra forest dungeon?
+know her favorite fruits, chase after her we know where she runs away
 
 ---------------------------------------- SIREN DUNGEON
 Going out at see -> Attack by a sea monster
@@ -115,6 +88,7 @@ let your guard down > attack
 didnt fght in a while -> boss
 - got ammo -> theres gonna be zombies soon
 we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
+a lot of flags, something terrible will happen
 
 TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
 // extra lake
@@ -151,6 +125,7 @@ the only real power of the hero is respawn so they win by brute force in long ru
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
 so youre quantum immortal!!
 challenge to find his favorite food etc
+more fake choices that i know are fake ??
 
 ---------------------------------------- TOWN2 CASTLE
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
@@ -191,6 +166,7 @@ FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
 // town4 debauch
 something about dating sims? true end etc... i know theres a series of choice to woo you
 dont you hate how everyone else seems very robotic, always doing the same things
+more fake choices that i know are fake
 
 - You can trust repeatable lines of npcs
 - AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
@@ -221,6 +197,9 @@ dont you hate how everyone else seems very robotic, always doing the same things
 - UpbeatDojikko:  I cN see your future you'll kill the bosses
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
+- wiseold: “Insanity is doing the same thing and expecting different results”
+- add death flag in hells maw before aetith death
+
 
 ---------------------------------------- AERITH EVENTS
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
@@ -233,6 +212,8 @@ dont you hate how everyone else seems very robotic, always doing the same things
 - event from aerith: i cant hurt you, no friendly fire
       "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
 - event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
+- reference to the fact that there's always a crafting system
+
 
 ---------------------------------------- TODO
 - credit gfroad sumnmoning circle or replace ti with rpgmaker
