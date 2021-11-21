@@ -55,22 +55,6 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more language options for ledger console
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 
----------------------------------------- PARTY MEMBERS:
->  description in party.js,
->  attacks in languge,
->  encounter+battle
-
-
-FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
-// town4 debauch
-something about dating sims? true end etc... i know theres a series of choice to woo you
-
-RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-// town5 fear
-
- SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-// extra forest dungeon?
-
 
 ---------------------------------------- OPTIONAL CONTENT:
 - town2 survivors rescue!
@@ -86,6 +70,10 @@ get some Key items are spread equally around dungeon
 Fairness is paramount
 every room has a purpose
 A bridge is here to be used, corners are here as distractions
+there has to be a new companion in this place/there has to be an artifact deep inside
+
+SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+// extra forest dungeon?
 
 ---------------------------------------- SIREN DUNGEON
 Going out at see -> Attack by a sea monster
@@ -133,7 +121,7 @@ DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prin
 >> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
 escort mission, ??? see dumbmuscles
 
----------------------------------------- TORTUREDSOUL
+---------------------------------------- TOWN5 TORTUREDSOUL
 TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
 // town5 acceptance
 mb u can help him with suicide? save/load to kill him over and over/ stuff about death
@@ -142,8 +130,14 @@ mb u can help him with suicide? save/load to kill him over and over/ stuff about
 >> Save and load : rez someone to kill them again
 >> actually you know you survive till the end of the game!!
 
+---------------------------------------- TOWN5 RetiredProtector
+RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+// town5 acceptance
+>>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
+>>protector is like why me im nobody etc...
+im too old for this shit
 
----------------------------------------- SNOBRICH
+---------------------------------------- TOWN4 SNOBRICH
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
 >> lost something important, you help them by going in an out and it respawns??
@@ -154,6 +148,12 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 >> when i wake up somewhere i immediately proceed to loot everything
 >> Stuff resets when you exist and come back
 >>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
+
+---------------------------------------- TOWN4 FEMME FATALE
+FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
+// town4 debauch
+something about dating sims? true end etc... i know theres a series of choice to woo you
+
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town
