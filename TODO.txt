@@ -1,3 +1,8 @@
+
+I'm not the goddess the goddess lived in another world altogether you cannot comprehend the world of the gods much less visualize if but you are a special vessel that bridges the world with this one in  way you're a lot like me goddess you're my dual
+
+
+
 ---------------------------------------- GODESS ending path:
 - go see the Goddess and ask wtf, Goddess says this is futile there's a system we're trapped she's trapped too. youre trapped in the system, it keeps exploiting your energy,
 > fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
@@ -42,14 +47,24 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 
 ---------------------------------------- OPTIONAL DUNGEONS:
 - tree,
+get some Key items are spread equally around dungeon
+Fairness is paramount
+every room has a purpose
+A bridge is here to be used, corners are here as distractions
 
 - sirens,
 Going out at see -> Attack by a sea monster
+time limited event -> know its a bluff
+let your guard down > attack
+didnt fght in a while -> boss
+we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
 
 - hawks,
 theres always something behind the waterfall
 
 - slimes
+stanley parable like "i know youre gonna take a left", at some point eventually you'll have to take a left
+>>> special dungeon with narration? heaven ?
 
 ---------------------------------------- PARTY MEMBERS:
 >  description in party.js,
@@ -59,36 +74,51 @@ theres always something behind the waterfall
 DONE: StreetSmart: "StreetSmart", WiseOld: "WiseOld", BestFriend: "BestFriend", PreciousChild: "PreciousChild",
 UpbeatDojikko: "UpbeatDojikko",
 >> you have the power to communicate with another world
-
+>> I cN see your future you'll kill the bosses
 
 
 
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
+>> lost something important, you help them by going in an out and it respawns??
 
 FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
 // town4 debauch
 
 TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
 // town5 acceptance
+mb u can help him with suicide? save/load to kill him over and over/ stuff about death
+>> I cannot be killed I'm glitched out
+>> “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
+>> Save and load : rez someone to kill them again
+>> actually you know you survive till the end of the game!!
 
 RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town5 fear
 
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
 // mb in town2 if you save it or if you rescue the survivors
+>> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
+escort mission, ??? see dumbmuscles
+
 
  SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
 // extra forest dungeon?
 
  DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-// extra  cave?
+// extra  mountain?
+>> save him from traps/patrols?? help him set traps?
+escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
+Assume that a zone is safe once you've cleared it / clear whole floor before moving on
 
 GeniusProdigy: "GeniusProdigy", //child prodigy
-// extra mountain ruins, doing an expedition?
+// extra cave, doing an expedition?
 >> the truth about the power of ren (how he goes back in time to alternate realities)
->> Save and load : rez someone to kill them again
+>> read my mind
 studies you like an experiment
+the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
+The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
+
 
  TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
 // extra lake
@@ -96,7 +126,7 @@ faking it to infiltrate the enemy, double triple quadruple mole
 >> Artist vessel for god inspiration
 Ren can Foresee a betrayal
 unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
-
+theres always a fishing system
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town
@@ -113,8 +143,16 @@ unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them 
 - add comment about how anything can fit in my bags
 - i expect more at the end of maou fight cause important enemies usually have stages
 - Whale: Fights you're supposed to lose
-- a casino in vegas (and lootboxes)
-
+- a casino in vegas (and lootboxes) > the rng was helpful/not
+- when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
+- hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
+- invisible walls dialog at the end of the world
+- self awareness of weird hitboxes like church
+- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
+- event from aerith: Don't you think it's weird how we always find what we need on our way
+- event from aerith: isnt it weird that merchants buy all your shit
+- event from aerith: do we not need breaks? no sleep or toilet
+- event from aerith: you have an intuition about where to go O.o
 
 
 ---------------------------------------- TODO
@@ -129,7 +167,6 @@ unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them 
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
 - add rens parent sendoff/house before trial?
-- ideas in todos in villager
 - a suicide function?
 - Skip dodge phase at high level?
 - title mirroring the number of loops: Ultimate Illusion I, II, III... (or just Ren's demons I)

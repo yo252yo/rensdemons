@@ -139,17 +139,6 @@ PLAYER_ACTIONS.add({
 });
 
 
-/*
-more ideas:
-- I've been here and I know you
-- challenge triggers a riddle or unlocks Expose
-- your conversation is weird and unnatural
-- more worshiping of you
-- topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
-
-https://elderscrolls.fandom.com/wiki/Generic_Dialogue_(Oblivion)
-http://conceptnet.io/c/en/people
-*/
 
 
 // ===================

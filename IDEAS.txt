@@ -9,15 +9,13 @@ The world of gods is not fair so the goddess toys with us
 the goddess SAVED your soul (save/save)
 Plot device/MC guffin
 https://rationalwiki.org/wiki/Last_Thursdayism
-The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
 Rd is the portal at the border between fiction and reality
 insist that counter culture movements always get coopted
 By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle
-the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
 
 ==== TROPES NOT FULLFILLED YET
 
-: SnobRich : FemmeFatale : TorturedSoul : RetiredProtector : DisguisedPrincess : SavageChild : DumbMuscles :
+: SnobRich : FemmeFatale : RetiredProtector : DisguisedPrincess : SavageChild :
 
 
 "I know where to go/how to progress/what to do": i.e. when you need to advance
@@ -33,26 +31,11 @@ the only real power of the hero is respawn so they win by brute force in long ru
 - Stuff resets when you exist and come back
 
 
-"I know how the world works":
-- Fairness is paramount
-- Don't you think it's weird how we always find what we need on our way
-- Every puzzle has a solution
-- A bridge is here to be used, corners are here as distractions
-- invisible walls
-- Key items are spread equally around dungeon
-- no sleep or toilet
-- he knows the hitboxes
-- every room has a purpose
-- isnt it weird that merchants buy all your shit
-
-
 "there's always"/ things i expect to see:
 - a crafting system
 
+
 "i know im immortal":
-- I cannot be killed I'm glitched out
-- “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
-- actually you know you survive till the end of the game!!
 - death flags, flags in general (Before you go there let me warn you)
 
 
@@ -60,7 +43,6 @@ the only real power of the hero is respawn so they win by brute force in long ru
 - when i wake up somewhere i immediately proceed to loot everything
 - You should save before risky event,  Save point before bosses
 - You always start by dead end for treasures
-- Assume that a zone is safe once you've cleared it / clear whole floor before moving on
 
 
 Events:
@@ -69,22 +51,25 @@ Events:
 - fake choices that i know are fake
 
 
+Conversations:
+- I've been here and I know you
+- challenge triggers a riddle or unlocks Expose
+- your conversation is weird and unnatural
+- more worshiping of you
+- topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
+https://elderscrolls.fandom.com/wiki/Generic_Dialogue_(Oblivion)
+http://conceptnet.io/c/en/people
+
+
 Triggers:
-- let your guard down > attack
-- time limited event -> know its a bluff
-- didnt fght in a while -> boss
 - flashback sequence -> know you'll survive
 - got ammo -> theres gonna be zombies soon
 
 
 Others:
-- the rng was helpful/not
-- Time stops when you're opening menus / matrix effect, you slow down the time when you think
 - You can trust repeatable lines of npcs
-- Encounter the big boss before youre ready
-- Expectation of being over or under level
 - AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
-- guards lkose aggro on reset or if you move / enemises lose aggro with time or distance
+- guards lose aggro on reset or if you move / enemises lose aggro with time or distance
 - fast travelers / You're the only one who can fast travel
 - All that stuff about looting objects, going into ppl houses etc
 - i cant hurt you, no friendly fire
