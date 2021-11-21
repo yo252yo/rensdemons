@@ -1,16 +1,25 @@
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+---------------------------------------- TODO
 
-I'm not the goddess the goddess lived in another world altogether you cannot comprehend the world of the gods much less visualize if but you are a special vessel that bridges the world with this one in  way you're a lot like me goddess you're my dual
 
 
 
----------------------------------------- GODESS ending path:
+
+
+
+---------------------------------------- GODDESS endings path:
 - go see the Goddess and ask wtf, Goddess says this is futile there's a system we're trapped she's trapped too. youre trapped in the system, it keeps exploiting your energy,
 > fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
 
 - didnt work, theres always something that brings it back: reveal that youre the mastermind, you are the system, the goddess is working for you
 theres higher being controlling us, they see everything and know everything, we're pawns of destiny
+I'm not the goddess the goddess lived in another world altogether you cannot comprehend the world of the gods much less visualize if but you are a special vessel that bridges the world with this one in  way you're a lot like me goddess you're my dual
+talk directly to the player???
+you think youre the most free, yet youre the most constrained, you can only do what the game allows
+talk about ideology and cooptation
 > but Ren, you have the power to communicate with another world, mb you can stop this madness
 > Rly destroy files? Impossible I think / Game can't delete itself but it can lock itself
+>>> Rd is the portal at the border between fiction and reality
 >> Communication: "END OF Communication",
 
 >>  There will always be another challenge as long as the player exists. This highlights the fact that the player is the true source of evil in the game world, because all this suffering only exists for their experience. The true boss that you must defeat is the player, the one who orchestrated all these Demon Lords, and the only way to kill it is to literally stop playing: the only winning move is not to play.
@@ -24,6 +33,16 @@ const ENDINGS = {
   // road, world, ear, year, universe, trail, story, day, journey
 }
 
+The system makes this villain self sustaining cycle to provide a diversion
+It's basically matrix: Kill the bad guy > Bad guy isn't so bad > You're trapped by the System > You are the system
+!! All ideology is like Video-game ideology  = only allows you to move within the game
+This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
+
+Don't forget that the goddess needs blood
+The world of gods is not fair so the goddess toys with us
+insist that counter culture movements always get coopted
+
+
 ---------------------------------------- HEAVEN new content:
 Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript
 - connections with our world in heaven, popups/includes to wikipedia?
@@ -36,6 +55,23 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more language options for ledger console
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 
+---------------------------------------- PARTY MEMBERS:
+>  description in party.js,
+>  attacks in languge,
+>  encounter+battle
+
+
+FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
+// town4 debauch
+something about dating sims? true end etc... i know theres a series of choice to woo you
+
+RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+// town5 fear
+
+ SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+// extra forest dungeon?
+
+
 ---------------------------------------- OPTIONAL CONTENT:
 - town2 survivors rescue!
 - hans dog somewhere
@@ -45,71 +81,43 @@ Line: "END OF LINE", // code, console, like demo a room where you can build your
 - more bed and jar actions
 - review battle_debris add a few more actions for rubble treasures
 
----------------------------------------- OPTIONAL DUNGEONS:
-- tree,
+---------------------------------------- TREE DUNGEON
 get some Key items are spread equally around dungeon
 Fairness is paramount
 every room has a purpose
 A bridge is here to be used, corners are here as distractions
 
-- sirens,
+---------------------------------------- SIREN DUNGEON
 Going out at see -> Attack by a sea monster
 time limited event -> know its a bluff
 let your guard down > attack
 didnt fght in a while -> boss
 we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
 
-- hawks,
+TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+// extra lake
+faking it to infiltrate the enemy, double triple quadruple mole
+>> Artist vessel for god inspiration
+Ren can Foresee a betrayal
+unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
+theres always a fishing system
+
+---------------------------------------- HAWK DUNGEON
 theres always something behind the waterfall
 
-- slimes
-stanley parable like "i know youre gonna take a left", at some point eventually you'll have to take a left
->>> special dungeon with narration? heaven ?
-
----------------------------------------- PARTY MEMBERS:
->  description in party.js,
->  attacks in languge,
->  encounter+battle
-
-DONE: StreetSmart: "StreetSmart", WiseOld: "WiseOld", BestFriend: "BestFriend", PreciousChild: "PreciousChild",
-UpbeatDojikko: "UpbeatDojikko",
->> you have the power to communicate with another world
->> I cN see your future you'll kill the bosses
-
-
-
-SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
-// town4 debauch
->> lost something important, you help them by going in an out and it respawns??
-
-FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
-// town4 debauch
-
-TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
-// town5 acceptance
-mb u can help him with suicide? save/load to kill him over and over/ stuff about death
->> I cannot be killed I'm glitched out
->> “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
->> Save and load : rez someone to kill them again
->> actually you know you survive till the end of the game!!
-
-RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-// town5 fear
-
-DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
-// mb in town2 if you save it or if you rescue the survivors
->> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
-escort mission, ??? see dumbmuscles
-
-
- SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-// extra forest dungeon?
-
- DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
 // extra  mountain?
 >> save him from traps/patrols?? help him set traps?
 escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
 Assume that a zone is safe once you've cleared it / clear whole floor before moving on
+this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
+talk to an objective and exit, go close to the border
+talk to one character / talk to a npc trigger the progression
+go to the next area and come back
+
+---------------------------------------- SLIMES DUNGEON
+stanley parable like "i know youre gonna take a left", at some point eventually you'll have to take a left
+>>> special dungeon with narration? heaven ?
 
 GeniusProdigy: "GeniusProdigy", //child prodigy
 // extra cave, doing an expedition?
@@ -119,14 +127,33 @@ studies you like an experiment
 the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
 
+---------------------------------------- TOWN2 CASTLE
+DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
+// mb in town2 if you save it or if you rescue the survivors
+>> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
+escort mission, ??? see dumbmuscles
 
- TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
-// extra lake
-faking it to infiltrate the enemy, double triple quadruple mole
->> Artist vessel for god inspiration
-Ren can Foresee a betrayal
-unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
-theres always a fishing system
+---------------------------------------- TORTUREDSOUL
+TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+// town5 acceptance
+mb u can help him with suicide? save/load to kill him over and over/ stuff about death
+>> I cannot be killed I'm glitched out
+>> “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
+>> Save and load : rez someone to kill them again
+>> actually you know you survive till the end of the game!!
+
+
+---------------------------------------- SNOBRICH
+SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+// town4 debauch
+>> lost something important, you help them by going in an out and it respawns??
+>> special vision to see interactibles
+>> you can loot everything and nobody complains << useful to get rigch!
+>> All that stuff about looting objects, going into ppl houses etc
+>> You always start by dead end for treasures
+>> when i wake up somewhere i immediately proceed to loot everything
+>> Stuff resets when you exist and come back
+>>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town
@@ -153,6 +180,8 @@ theres always a fishing system
 - event from aerith: isnt it weird that merchants buy all your shit
 - event from aerith: do we not need breaks? no sleep or toilet
 - event from aerith: you have an intuition about where to go O.o
+- UpbeatDojikko: you have the power to communicate with another world
+- UpbeatDojikko:  I cN see your future you'll kill the bosses
 
 
 ---------------------------------------- TODO
@@ -179,3 +208,4 @@ theres always a fishing system
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
+- the goddess SAVED your soul (save/save) as confirmation when you save

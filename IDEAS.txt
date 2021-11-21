@@ -1,55 +1,28 @@
-==== GUIDING THOUGHTS NOT FULLFILLED YET
-The system makes this villain self sustaining cycle to provide a diversion
-It's basically matrix: Kill the bad guy > Bad guy isn't so bad > You're trapped by the System > You are the system
-!! All ideology is like Video-game ideology  = only allows you to move within the game
-This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
-“Insanity is doing the same thing and expecting different results”
-Don't forget taht the goddess needs blood
-The world of gods is not fair so the goddess toys with us
-the goddess SAVED your soul (save/save)
-Plot device/MC guffin
-https://rationalwiki.org/wiki/Last_Thursdayism
-Rd is the portal at the border between fiction and reality
-insist that counter culture movements always get coopted
-By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle
 
-==== TROPES NOT FULLFILLED YET
-
-: SnobRich : FemmeFatale : RetiredProtector : DisguisedPrincess : SavageChild :
+: TreeDungeon + SavageChild
+: FemmeFatale
+: RetiredProtector
+: By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 
 
 "I know where to go/how to progress/what to do": i.e. when you need to advance
-- go to the next area and come back
 - go to the door
-- talk to an objective and exit, go close to the border
-- Guard patrols and npc behaviors
-- talk to one character / talk to a npc trigger the progression
 - game gives me clue for next location
 - You know this is a tutorial / You know that this is a fetching quest
 - I know which way it is
-- this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
-- Stuff resets when you exist and come back
-
 
 "there's always"/ things i expect to see:
 - a crafting system
 
-
 "i know im immortal":
 - death flags, flags in general (Before you go there let me warn you)
 
-
 "the way i do things":
-- when i wake up somewhere i immediately proceed to loot everything
 - You should save before risky event,  Save point before bosses
-- You always start by dead end for treasures
-
 
 Events:
-- traps: poison the drink you know the guard will use, etc....
 - an old lady wants to help
 - fake choices that i know are fake
-
 
 Conversations:
 - I've been here and I know you
@@ -60,17 +33,15 @@ Conversations:
 https://elderscrolls.fandom.com/wiki/Generic_Dialogue_(Oblivion)
 http://conceptnet.io/c/en/people
 
-
 Triggers:
 - flashback sequence -> know you'll survive
 - got ammo -> theres gonna be zombies soon
 
-
 Others:
 - You can trust repeatable lines of npcs
 - AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
-- guards lose aggro on reset or if you move / enemises lose aggro with time or distance
 - fast travelers / You're the only one who can fast travel
-- All that stuff about looting objects, going into ppl houses etc
 - i cant hurt you, no friendly fire
-- special vision to see interactibles
+- “Insanity is doing the same thing and expecting different results”
+- Plot device/MC guffin
+- https://rationalwiki.org/wiki/Last_Thursdayism
