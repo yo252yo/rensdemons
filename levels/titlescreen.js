@@ -71,8 +71,8 @@ if(SCREEN.is_mobile()){
   };
 } else{
   var d = {
-    top: 400,
-    left: Math.floor(SCREEN.width() * 0.15),
+    top: 200,
+    left: Math.floor(SCREEN.width() * 0.1),
     height: 0,
     width: 550,
     padding: 75,
