@@ -75,7 +75,7 @@ if(SCREEN.is_mobile()){
     left: Math.floor(SCREEN.width() * 0.1),
     height: 0,
     width: 550,
-    padding: 75,
+    padding: 50,
   };
 }
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
