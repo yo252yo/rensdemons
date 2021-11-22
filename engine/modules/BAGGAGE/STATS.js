@@ -1,6 +1,7 @@
 
 const STAT = {
   Death: "death",
+  Endings: "endings",
   Ledger: "LEDGER",
   MaxExplorationScore: "MaxExplorationScore",
 }
@@ -59,6 +60,7 @@ const STATS = {
     ending: function(text, value){
       AUDIO.effect.unlock();
       STATS._stats.increment(["END_" + text], value);
+      STATS._stats.increment([STAT.Endings]);
       DISK.write("STATS");
     },
 

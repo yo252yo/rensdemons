@@ -15,6 +15,37 @@ const INTERFACE = {
     },
   },
 
+  game_title_string: function(){
+    var number = Math.max(1, STATS.get(STAT.Endings));
+    return `Ren's Demons ${number}`;
+  },
+  
+  game_title: function(){
+    if(SCREEN.is_mobile()){
+      var d = {
+        top: -5,
+        left:-5,
+        height: 130,
+        width: Math.floor(SCREEN.width())+10,
+      };
+    } else {
+      var d = {
+        top: 75,
+        left: Math.floor(SCREEN.width() * 0.5)-250,
+        height: 80,
+        width: 500,
+      };
+    }
+
+    var te = new TextElement(d.left,d.top+d.height, d.width, d.height);
+    te.write(`<h2 style="text-align:center; margin:10px;text-shadow:#ffffff 0px 0px 8px; font-weight: bold;">${INTERFACE.game_title_string()}</h2>`);
+
+    if(SCREEN.is_mobile()){
+      te.container.style.opacity = 0.7;
+    }
+    return te;
+  },
+
   display: {
     experience_menu: function() {
       var battles = BATTLETREE.get.all_battles();

@@ -76,6 +76,8 @@ var displayText = function() {
   ], nextPage);
 }
 
+INTERFACE.game_title();
+
 setTimeout(displayText, 700);
 
 FOG.stop();
