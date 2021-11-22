@@ -16,10 +16,10 @@ const INTERFACE = {
   },
 
   game_title_string: function(){
-    var number = Math.max(1, STATS.get(STAT.Endings));
+    var number = Math.max(1, 1+STATS.get(STAT.Endings));
     return `Ren's Demons ${number}`;
   },
-  
+
   game_title: function(){
     if(SCREEN.is_mobile()){
       var d = {
