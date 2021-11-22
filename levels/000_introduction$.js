@@ -76,7 +76,8 @@ var displayText = function() {
   ], nextPage);
 }
 
-INTERFACE.game_title();
+var te = INTERFACE.game_title();
+te.container.style.opacity = 0.75;
 
 setTimeout(displayText, 700);
 

@@ -23,4 +23,20 @@ const STRING_UTILS = {
     }
     return hash;
   },
+
+  romanize (num) {
+      if(!num){
+        return "O";
+      }
+      var r = "";
+      while(num > 100){
+         r += "C";
+         num -= 100;
+      }
+      var tens = ["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
+      var units = ["","I","II","III","IV","V","VI","VII","VIII","IX"];
+      r += tens[Math.floor(num / 10)];
+      r += units[Math.floor(num % 10)];
+      return r;
+  },
 };

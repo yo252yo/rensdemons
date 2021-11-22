@@ -16,7 +16,7 @@ const INTERFACE = {
   },
 
   game_title_string: function(){
-    var number = Math.max(1, 1+STATS.get(STAT.Endings));
+    var number = STRING_UTILS.romanize(Math.max(1, 1+STATS.get(STAT.Endings)));
     return `Ren's Demons ${number}`;
   },
 
