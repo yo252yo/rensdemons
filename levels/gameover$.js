@@ -7,17 +7,20 @@ var s2 = new LevelObject(new StaticSprite("assets/screens/gameover_layer2.png", 
 
 
 function adapt_sprite(s, depth) {
-  s.visual_element.container.style.position = "fixed";
   s.visual_element.container.style.top = "0px";
-  s.visual_element.container.style.left =  "0px";
+  var r = Math.floor(- 500 + 500 * SCREEN.width()/1620);
+  s.visual_element.container.style.right = r;
+  s.visual_element.html_canvas.style.right = r;
   s.visual_element.container.style.height = "100%";
   s.visual_element.html_canvas.style.height = "100%";
+  s.visual_element.html_canvas.style.position = "fixed";
   s.visual_element.adjust_depth(depth);
 
   s.visual_element.draw = function (){
     s.visual_element.tint();
   }
 }
+
 
 // We wait so that we're sure the sprite has been drawn :(
 setTimeout(function(){
@@ -39,8 +42,14 @@ var flavortext = RANDOM.pick(
   "This is not how it's supposed to be.",
   "There's another way.",
   "Your quest goes on."]);
-new CenteredTextMenu("<i>"+flavortext+"</i><br />Reap the fruits of your misfortune in the Martyrdom menu.", options);
+var te = new CenteredTextMenu("<i>"+flavortext+"</i><br />Reap the fruits of your misfortune in the Martyrdom menu.", options);
 
+if(!SCREEN.is_mobile()){
+  te.place_at(100,100);
+} else {
+  te.place_at(undefined,SCREEN.height() - 475);
+}
+FOG.stop();
 
 STATS.record.death();
 MARTYRDOM.death();

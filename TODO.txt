@@ -220,7 +220,6 @@ more fake choices that i know are fake
 - spam space bar in battle makes the option menu reappear on fight
 - test on edge, epsecially functions starting by _, mb the nested ones
 - change color scheme doesnt change fog or map bg
-- proper title screen and death screen, esp for mobile
 - artifact have special sound effects
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - make experience menu multi tiered
