@@ -65,15 +65,44 @@ if(INVENTORY.count("_heaven_sequence") < 8){
 if (INVENTORY.count("_heaven_sequence") >= 8){
   var s1 = new B_Statue(1350,1275);
   var endFight = function() {
-    if(ABILITIES.has_ability("_killed_god")){
+    if(INVENTORY.count("_killed_god")){
       var callback = function(){
         CURRENTLEVEL.setup("end@B");
       }
       TextBannerSequence.make([
         `As you deliver the final blow, the holy body of the Goddess starts to fragment into a myriad of tiny sparkly particles. As the shining grains begin to dissipate, you see for the first time the sacred body actually move.`,
-        `It's a very subtle motion. The Goddess' lips come very slightly appart, and you hear Her whisper:`,
+        `It's a very subtle motion. The Goddess' lips come very slightly apart, and you hear Her whisper:`,
         `Goddess: "Fool... You don't know anything..."`,
         `The cloud of luminous dust, sole remainder of the entity that ruled the universe, dissipates slowly into the air...`,
+      ], callback);
+    } else if(INVENTORY.count("_ended_suffering")){
+      var callback = function(){
+        CURRENTLEVEL.setup("end@C");
+      }
+      TextBannerSequence.make([
+        `Goddess: "Eliminating monsters, who raided the world and destroyed cities..."`,
+        `The only difference you can notice is a vague humming sound.`,
+        `$$Ren$: "Thanks..."`,
+        `But you're interrupted by the Goddess who continues her litany.`,
+        `Goddess: "Eliminating animals, who can be dangerous, and suffer themselves..."`,
+        `$$Ren$: "Hey, thank you but I think that's ok..."`,
+        `Goddess: "Eliminating weather, who can destroy crops..."`,
+        `$$Ren$: "Wait, don't do that, we need it!"`,
+        `Goddess: "Eliminating human adults, who suffer constantly from many worries..."`,
+        `$$Ren$: "Stop it! That's enough! You're going too far!"`,
+        `Goddess: "Eliminating human children, who will grow up to suffer..."`,
+        `$$Ren$: "No!"`,
+        `$$Ren$'s scream faded as the Promised Child disappeared in a flash of light.`,
+        `Goddess: "Eliminating all life forms, who could evolve to further suffer..."`,
+        `Goddess: "Eliminating the Goddess, and the world, so that it does not spawn any more suffering..."`,
+        `The Goddess' light grows brighter and swallows everything. Pretty soon, there is nothing but an ocean of pure white.`,
+      ], callback);
+    } else if(INVENTORY.count("_restarted_world")){
+      var callback = function(){
+        CURRENTLEVEL.setup("end@D");
+      }
+      TextBannerSequence.make([
+        `The Goddess' light grows brighter and swallows everything. Pretty soon, you perceive nothing but an ocean of pure white.`,
       ], callback);
     }
   }

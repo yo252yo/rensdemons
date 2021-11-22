@@ -2,17 +2,14 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+download save doesnt work with keyboard i think
 
 
-
-
-
-
----------------------------------------- GODDESS endings path:
-- go see the Goddess and ask wtf, Goddess says this is futile there's a system we're trapped she's trapped too. youre trapped in the system, it keeps exploiting your energy,
-> fake destroy the world:  ending.World: "END OF WORLD", // kill goddess and ask for a new world
-
+---------------------------------------- GODDESS true ending
 - didnt work, theres always something that brings it back: reveal that youre the mastermind, you are the system, the goddess is working for you
+she's trapped too.
+Goddess says this is futile there's a system we're trapped she's trapped too.
+youre trapped in the system, it keeps exploiting your energy,
 theres higher being controlling us, they see everything and know everything, we're pawns of destiny
 I'm not the goddess the goddess lived in another world altogether you cannot comprehend the world of the gods much less visualize if but you are a special vessel that bridges the world with this one in  way you're a lot like me goddess you're my dual
 talk directly to the player???
@@ -228,7 +225,6 @@ more fake choices that i know are fake
 - add rens parent sendoff/house before trial?
 - a suicide function?
 - Skip dodge phase at high level?
-- title mirroring the number of loops: Ultimate Illusion I, II, III... (or just Ren's demons I)
 - did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ??
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?

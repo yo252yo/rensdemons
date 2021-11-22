@@ -95,6 +95,11 @@ var nextPage = function(){
 }
 
 
+var new_world = [
+  `It was a barren land at first, but over enormous amounts of time, life began to develop in this new world. Plants came first, then animals, then finally humans.`,
+  `Tribes went from hunting to settling. They started to develop tools. As civilization grew, culture developed. Stories were told, and soon a religion developed around the ideal that the new humans aspired to. They trusted their Goddess to show them the way and protect them from hardships.`,
+  `Under this shared ideal, the people and their villages united into a common kingdom.`,
+];
 
 
 
@@ -121,6 +126,20 @@ if(end == "B"){
     `Humans started worshiping a new Goddess, thanking Her for their bountiful expansion. The old Goddess fell into oblivion. She had brought only war and suffering, when the new Goddess represented technology and wealth.`,
     `She went by many names, but She was mostly a universal symbol of hope and success for the human race. Galvanized by their new icon, they prospered like never before.`,
   ];
+}
+if(end == "C"){
+  STATS.record.ending(ENDINGS.Suffering);
+  sequence = [
+    `Congratulations! You have reached the ${ENDINGS.Suffering}.`,
+    `Suffering has been eliminated to the extent of the power of the Goddess, but even Her divine power has limits. Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
+  ].concat(new_world);
+}
+if(end == "D"){
+  STATS.record.ending(ENDINGS.World);
+  sequence = [
+    `Congratulations! You have reached the ${ENDINGS.World}.`,
+    `Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
+  ].concat(new_world);
 }
 
 
