@@ -58,7 +58,7 @@ const LEDGER = {
       return;
     }
     if(!role){
-      role = "villager";
+      role = "person";
     }
     var city = "";
     switch(city_type){

@@ -12,8 +12,8 @@ new S_StainedGlass(1275, 1050, 'acceptance');
 new S_StainedGlass(1475, 1050, 'church');
 
 
-new M_Trainer(1100, 1300, 0, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
-new M_Trainer(1475, 1150, 0, ABILITIES_ARCHETYPES_NAMES.Element, 100000);
+new M_Trainer(1100, 1300, 15, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);
+new M_Trainer(1475, 1150, 26, ABILITIES_ARCHETYPES_NAMES.Element, 100000);
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y, CITIES.acceptance);

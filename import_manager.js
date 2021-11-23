@@ -180,15 +180,16 @@ new Class("Objects/LevelObject");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/EventObject");
     IMPORTS.classes['Objects/EventObject'].child_library("Events");
   IMPORTS.classes['Objects/LevelObject'].child_class("Objects/MovingObject");
-    IMPORTS.classes['Objects/MovingObject'].child_library("MovingObjectsTemplates");
-    IMPORTS.classes['Objects/MovingObject'].child_module("LEVEL/CHARACTER");
-    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/BattleObject");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Buildings");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Bosses");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Dungeons");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Interior");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Map");
-      IMPORTS.classes['Objects/BattleObject'].child_library("Villagers");
+    IMPORTS.classes['Objects/MovingObject'].child_class("Objects/ConsciousObject");
+      IMPORTS.classes['Objects/ConsciousObject'].child_library("MovingObjectsTemplates");
+      IMPORTS.classes['Objects/ConsciousObject'].child_module("LEVEL/CHARACTER");
+      IMPORTS.classes['Objects/ConsciousObject'].child_class("Objects/BattleObject");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Buildings");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Bosses");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Dungeons");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Interior");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Map");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Villagers");
 
 new Class("Sequence");
 

@@ -31,9 +31,9 @@ TextBannerSequence.make([
 };
 
 
-new M_Trainer(1500, 1500, 0, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
-new M_Trainer(1500, 1350, 0, ABILITIES_ARCHETYPES_NAMES.Spirit, 100000);
-new M_Trainer(1500, 1200, 0, ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000);
+new M_Trainer(1500, 1500, 61, ABILITIES_ARCHETYPES_NAMES.Element, 2000);
+new M_Trainer(1500, 1350, 99, ABILITIES_ARCHETYPES_NAMES.Spirit, 100000);
+new M_Trainer(1500, 1200, 101, ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000);
 
 // ===================
 //hack 7. START/INIT

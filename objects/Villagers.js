@@ -659,10 +659,10 @@ var get_villager_soul = function(type, seed, indoors, sprite_nb) {
 }
 
 
-class M_NPC extends MovingObject {
-  constructor(x, y, sprite) {
+class M_NPC extends ConsciousObject {
+  constructor(x, y, sprite, name, city, role) {
     var visual = new MovingSprite("assets/characters/" + sprite + ".png", 'obj_dark', 32, 48);
-    super(visual, x, y, 32, 48);
+    super(visual, x, y, 32, 48, name, city, role);
     this.adjust_hitbox(7, 3, 20, 12);
     this.specify_sprite_size(32, 48);
   }
@@ -672,20 +672,16 @@ class M_Villager extends M_NPC {
   constructor(type, x, y, seed, indoors) {
     var gen = new Generator(seed);
     var sprite_nb = gen.int(5);
-    super(x, y, "villager" + sprite_nb);
+    var soul = get_villager_soul(type, seed, indoors, sprite_nb);
+    super(x, y, "villager" + sprite_nb, soul.vname, type, "villager");
     this.seed = seed;
     this.sprite_nb = sprite_nb;
-    this.soul = get_villager_soul(type, this.seed, indoors, sprite_nb);
-    LEDGER.record_birth(this.soul.vname, type);
+    this.soul = soul;
   }
 
   interaction() {
     this.face_character();
     this.soul.interaction(this.sprite_nb, this.seed);
-  }
-
-  record_death() {
-    LEDGER.record_death(this.soul.vname);
   }
 }
 
