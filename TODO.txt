@@ -2,7 +2,8 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
-download save doesnt work with keyboard i think
+
+
 
 
 ---------------------------------------- GODDESS true ending
@@ -28,6 +29,9 @@ const ENDINGS = {
   World: "END OF WORLD", // kill goddess and ask for a new world
   Line: "END OF LINE", // code
   Universe: "END OF UNIVERSE", // Fork on git
+
+>>>  to check that were cloned, verify the existence of a few functions/objects: BATTLE, souls.suffering, maou...
+
   // road, world, ear, year, universe, trail, story, day, journey
 }
 
@@ -213,6 +217,7 @@ more fake choices that i know are fake
 
 
 ---------------------------------------- TODO
+- download save doesnt work with keyboard i think
 - credit gfroad sumnmoning circle or replace ti with rpgmaker
 - spam space bar in battle makes the option menu reappear on fight
 - test on edge, epsecially functions starting by _, mb the nested ones
@@ -236,3 +241,5 @@ more fake choices that i know are fake
 - finally, produce a zip, put on steam
 - the goddess SAVED your soul (save/save) as confirmation when you save
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
+- cache ressources
+- optimize size on disk
