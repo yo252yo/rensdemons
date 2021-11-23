@@ -187,7 +187,7 @@ if (floor == 6){
     TextBannerSequence.make([
       `You finally reach the final floor. You're exhausted, but the adrenaline you get from approaching your goal powers you through.`,
       `The top floor is just one wide room, with numerous openings in the walls from which $$demon_lord$ can gaze upon his territory in every direction. The demon lord is in the middle of the room, slowly pacing around his massive throne. It looks like he's waiting for something.`,
-      `Your intuition reminds you that you'd better pray at the altar before such an important encounter.`,
+      `You have the itch to pray at the altar before such an important encounter.`,
     ], IO.control.character);
   };
 }
