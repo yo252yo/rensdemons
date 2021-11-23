@@ -95,9 +95,31 @@ const STATS = {
     return STATS._stats.get(["UNLOCK_" + text]);
   },
 
+  _enduniverse_validate: function(){
+    STATS.EU_prior ++;
+    if(STATS.EU_prior >= 2){ // this is the number of files we check :/
+      document.getElementById('END OF UNIVERSE').style.opacity = 1.0;
+    }
+  },
+
+  _enduniverse_invalidate: function(){
+    STATS.EU_prior = -1000;
+  },
+
   ending: function(text){
     if (text == ENDINGS.Game){
       return false; // can never be true if the game is launched
+    }
+    if (text == ENDINGS.Universe) {
+      // The only way for this to be true is to change the code or the files (const and class).
+      var prior = (typeof BATTLE == "undefined" && typeof ConsciousObject == "undefined");
+      if(prior){
+        STATS.EU_prior = 0;
+        IMPORTS.file_exists("battles/heaven/_goddess.js", STATS._enduniverse_invalidate, STATS._enduniverse_validate);
+        IMPORTS.file_exists("battles/pandemonium/lord.js", STATS._enduniverse_invalidate, STATS._enduniverse_validate);
+      } else {
+        return false;
+      }
     }
     return STATS._stats.get(["END_" + text]);
   },

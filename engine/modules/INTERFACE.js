@@ -149,9 +149,9 @@ const INTERFACE = {
         var r = "";
         for(var i in ENDINGS){
           if(STATS.ending(ENDINGS[i])){
-            r += "&lt;" + ENDINGS[i] + "&gt; ";
+            r += `<span id='${ENDINGS[i]}'>&lt;${ENDINGS[i]}&gt;</span> `;
           } else {
-            r += "<span style='opacity:0.2'>&lt;" + ENDINGS[i] + "&gt;</span> ";
+            r += `<span style='opacity:0.2' id='${ENDINGS[i]}'>&lt;${ENDINGS[i]}&gt;</span> `;
           }
         }
         return r;

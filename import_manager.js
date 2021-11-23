@@ -93,6 +93,15 @@ class Snippet extends Import {
 const IMPORTS = {
   classes:{},
   modules:{},
+
+  file_exists(name, f_yes, f_no){
+    var o = document.createElement('object');
+    o.data = name;
+    o.style.visibility = "hidden";
+    o.addEventListener('error', function(){ if(f_no){ f_no(); } });
+    o.addEventListener('load', function(){ if(f_yes){ f_yes(); } });
+    document.body.appendChild(o);
+  },
 }
 
 
