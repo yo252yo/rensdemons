@@ -2,26 +2,32 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+---------------------------------------- END OF LINE
+Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript,
+>> brick lock the game or delete suffering
+combination = mirror,  true hint is in library, smthing about mirrror seeing behind the truth of this world
+arrive in a new room with only computer and mirror
 
 
 ---------------------------------------- Meta conversation with YOU
+its funny, i thought i was your puppet, but it seems that you are pretty constrained too
 // you think youre the most free, yet youre the most constrained, you can only do what the game allows talk about ideology
 // !! All ideology is like Video-game ideology  = only allows you to move within the game
 
 // tragedy exists as long as there is an observer
 // This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
 // symbiotic parasitic relationship
+what happens when you forget me?
 
 // direct address to "You" ???
 
+is this a mirror? mb its a portal
 // >>> Rd is the portal at the border between fiction and reality
 // are we fictional> You're nothing more than a fragment of their imagination
 
----------------------------------------- HEAVEN new content:
-Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript,
->> brick lock the game or delete suffering
-combination = mirror, goddess hint "theres a way" but true hint is in library, smthing about mirrror seeing behind the truth of this world
 
+
+---------------------------------------- HEAVEN new content:
 - connections with our world in heaven, popups/includes to wikipedia?
 - https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 
