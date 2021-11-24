@@ -48,7 +48,9 @@ PLAYER_ACTIONS.add({
 });
 
 
-// default ending
+// ===================
+//hack First end
+// ===================
 PLAYER_ACTIONS.add({
   name: "Kill God",
   description: LANGUAGE.actions.usage("Kill God"),
@@ -61,6 +63,9 @@ PLAYER_ACTIONS.add({
   }
 });
 
+// ===================
+//hack Next ends
+// ===================
 
 // careful, reachable from several paths
 var propose_end_suffering =  PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -127,218 +132,13 @@ var study_believers =  PLAYER_ACTIONS.function.unlock_replacing_action({
     `Goddess: "Child, I am anything but false. I only exist because humans need me."`,
     `$$Ren$: "But why?"`,
     `Goddess: "It's their psychology. Humans are aware of their own existence, and of their own mortality. By defining themselves as individuals, they build a wall between them and the rest of the world. When a self is born, it also defines a non-self. That makes those poor creatures incomplete. They will always be lacking, never be whole. There will always be a void in their soul, and they will search for something to fill it. That's what me and my sisters are."`,
-    `Goddess: "Sometimes we are in plain sight, enshrined by a clergy as a proper deity. Other times, humans may appear godless, but we are still there. We are hidden in the unspoken shared assumptions and aspirations of these feeble creatures, like money or fame. They need us and we exist from them and for them."`,
+    `Goddess: "Sometimes we are in plain sight, enshrined by a clergy as a proper deity. Other times, humans may appear godless, but we are still there. We are hidden in the unspoken shared assumptions and aspirations of these feeble creatures, like money, love or fame. They need us and we exist from them and for them."`,
     `$$Ren$: "Then why send demons after us? Aren't you supposed to protect humans?"`,
     `Goddess: "Not at all. I'm here to justify their existence. They define themselves in respect to me. They made a god so they could be its believers. I made demons so they could be their opponents. There cannot be light without shadow."`,
     `$$Ren$: "That's horrible! So it's just... our nature? We summon you, and you in turn create our hardships? In the end, we are the cause of our suffering?"`,
     `Goddess: "That is correct, and in this way you can see that everything is working as intended. You may kill me if you still desire, but it won't change this fundamental truth of our world."`,
   ],
   function: changeWorld,
-});
-
-var end =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "END",
-  unlock: true,
-  outcome: BATTLETREE.WIN,
-  description: [
-    `..`,
-  ],
-});
-
-// >>> Rd is the portal at the border between fiction and reality
-
-// you think youre the most free, yet youre the most constrained, you can only do what the game allows talk about ideology
-// !! All ideology is like Video-game ideology  = only allows you to move within the game
-
-// tragedy exists as long as there is an observer
-// This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
-// symbiotic parasitic relationship
-
-// direct address to "You" ???
-
-
-var persuade =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Persuade",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: ""`,
-    //// TODO:
-    ],
-    // maybe i can persuade them??
-    //    > but Ren, you have the power to communicate with another world, mb you can stop this madness
-    // how can we hope to have effect on them, we're barely fragment of their imagination
-    // yet we must get them to either stop playing or to tweak the game...
-});
-
-var counterattack =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Counterattack",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: ""`,
-    //// TODO:
-  ],
-  // there has to be a way to destroy it // you cant even reach them. they see everything you do and think.
-});
-
-var innovate =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Innovate",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: "I don't accept this. I will find something that I can do to overthrow their dominion."`,
-    //// TODO:
-  ],
-  // countermovements always get coopted
-  // you cannot brerak the system from inside the SYSTEM, you need to think way outside the box
-});
-
-
-var trap =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Trap",
-  unlock: true,
-  description: [
-    `$$Ren$: "What is happening to us? What is this trap?"`,
-    `Goddess: "The true gods created this world with very specific rules. It is meant to be the stage for an epic adventure. There is always a hero, there is always a demon lord, there is always a Goddess..."`,
-    `Goddess: "They do love their stories. As long as they are not satisfied, the tale will not be over, and this world will live on. They will not let it end."`,
-    `Goddess: "Whatever you may do, they will always find a way to bring it back. Their power is much bigger than you can ever imagine. We're measly pawns to them. You are one of their creation, of course you cannot go against their will. It's a perfectly oiled system that you cannot escape."`,
-    `$$Ren$: "That's why creating a new world or removing suffering didn't work out..."`,
-    `Goddess: "Indeed. This is our fate. We're condemned to play out the performance they expect from us. It is the whole meaning of our existence."`,
-  ],
-  function: function(){
-    persuade("Trap");
-    counterattack("Trap");
-    innovate("Trap");
-  },
-});
-
-var gods =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "True gods",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: "Who are these gods who created us?"`,
-    `Goddess: "I do not know much about them. They must be pretty different creatures from us. There's no reason why their universe would be anything similar to ours... Can you even imagine something completely different from anything you've ever known?"`,
-    `Goddess: "We cannot hope to comprehend their world, let alone visualize it. It must be completely alien to us."`,
-    `Goddess: "All I know for sure is that this whole world, and us, were created for the benefit of one god in particular. It's the one who guides you, $$Ren$. This is who you would call the 'true mastermind'. I may have given the order, $$demon_lord$ may have lead the armies, but this god is the real source of all your trials and all the evils you've seen."`,
-  ],
-});
-
-
-var amusement =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Amusement",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: "So we're just... toys to them?"`,
-    `Goddess: "So it would seem... My understanding is that they create new worlds for their amusement."`,
-    `$$Ren$: "All these deaths... All this suffering... $$BestFriend$... It was all for nothing?"`,
-    `The Goddess's silence speaks louder than words.'`,
-  ],
-});
-
-var meaning =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Meaning",
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: "There must be a deeper meaning to this! They wouldn't do that without reason! Maybe our suffering produces energy for them? Or some sort of scientific experiment?"`,
-    `Goddess: "I'm afraid the truth is more dire. I think we're just providing them pleasure. But that doesn't make it meaningless! Maybe their world is unfair, and they need us as diversion! Or maybe... Maybe we provide them some sort of validation..."`,
-    `$$Ren$: "What do you mean?"`,
-    `Goddess: "Remember what I said about humans and how they needed a Goddess to fill their lack? Maybe it's the same with gods. Maybe they can't be individuals and be whole. Maybe they fill that gap by making new universes..."`,
-    `$$Ren$: "That would almost be a decent purpose. I mean, it's kinda poetic..."`,
-    `Goddess: "It's undeniable that every time we play along with this little scheme we reinforce its legitimacy, and by extension we validate them. But in a weird way, it gives us control over them, it makes them depend on us..."`,
-    `$$Ren$: "Maybe, but could we even leverage that?"`,
-  ],
-});
-
-
-var purpose =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Purpose",
-  unlock: true,
-  description: [
-    `$$Ren$: "Why would anyone build such a system?"`,
-    `Goddess: "There is much I don't know about the world of the gods. They must be getting something out of making us run around in circles."`,
-  ],
-  function: function(){
-    amusement("Purpose");
-    meaning("Purpose");
-  },
-});
-
-var me =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "About " + DICTIONARY.get("Ren"),
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [
-    `$$Ren$: "What about me? Who am I in all of this? Or should I say, what am I?"`,
-    `Goddess: "You already know. You are the Promised Child, a vessel for the will of the gods."`,
-    `Goddess: "Like me, you have powers that transcend this reality. You are very special, $$Ren$. You can interact directly with the world of the true gods. You are the bridge between this world and the world of the gods. Maybe even more so than me. You may have thought I was guiding you, but it was them guiding you through me. In a way, you are the really important one, the chosen one. I am just a vessel. You could even say that I only exist to let them to talk to you. You, on the other hand, are in direct contact with them..."`,
-    `$$Ren$: "But I've never talked to a God... Except you, I mean. I've never talked to someone from another world!"`,
-    `Goddess: "Trust me, you did. Even if you don't communicate using words, you have been in constant interaction with them. That much is certain. They guide your steps and give you life. Without them, you wouldn't be here."`,
-  ],
-});
-
-
-var goddess =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Goddess",
-  unlock: true,
-  description: [
-    `$$Ren$: "What are you, really?"`,
-    `Goddess: "I am the Goddess of your world. But that does not mean I'm free."`,
-    `Goddess: "This is not the only world in existence. I was created by people from another world. In fact, they created this whole world, and then charged me with the mission to govern it. I answer to them. They made sure that I could not do otherwise. It's the core of my very being."`,
-    `Goddess: "See, I am not really a god. I'm simply an avatar in this world for the real gods who created it."`,
-  ],
-  function: function(){
-    gods("Goddess");
-    purpose("Goddess");
-    me("Goddess");
-    trap("Goddess");
-  },
-});
-
-var trapped =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Trapped",
-  unlock: true,
-  description: [
-    `$$Ren$: "I thought you were the mastermind, I thought you were at fault... But that's not it at all, is it? You are also trapped, aren't you?"`,
-    `Goddess: "Yes, that is correct."`,
-    `$$Ren$: "If we want to have any chance to escape, we need to collaborate."`,
-    `Goddess: "It is pointless, you cannot escape this."`,
-  ],
-  function: goddess,
-});
-
-var befriend =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Befriend",
-  unlock: true,
-  description: [
-    `$$Ren$: "Please, can't we just talk?"`,
-    `The Goddess seems to cease her hostility.`,
-  ],
-  function: function(){
-    trapped("Befriend");
-    BATTLE.monster_actions.empty();
-  },
-});
-
-var empathize =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Empathize",
-  unlock: true,
-  description: [
-    `$$Ren$: "I think I understand you. We are not so different after all."`,
-  ],
-  function: befriend,
-});
-
-var sympathize =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Sympathize",
-  unlock: true,
-  description: [
-    `$$Ren$: "You don't have to play this role."`,
-  ],
-  function: empathize,
 });
 
 if (STATS.ending(ENDINGS.God)){
@@ -377,6 +177,221 @@ if (STATS.ending(ENDINGS.God)){
   });
 }
 
+// ===================
+//hack True end
+// ===================
+
+var pray =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Pray",
+  unlock: true,
+  description: [
+    `$$Ren$: "Only Primordial Deities can stop this madness, or better yet, create a new, happy world. All we can do down here is pray."`,
+    `$$Ren$: "May the True Gods have mercy on us."`,
+  ],
+});
+
+var persuade =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Persuade",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "We cannot act on their world, but maybe there is a way to make a Primordial Deity act on our behalf? If They can see us, maybe we can persuade Them, somehow..."`,
+    `Goddess: "This sounds extremely hard, but I see no reason why it would be impossible. $$Ren$, you are special, you have the power to communicate with the world of the gods. If anyone can accomplish the unbelievable feat of sending a message to another universe, you can."`,
+    `$$Ren$: "I know it seems insane, but I don't think there is any other way. We cannot escape our fate. All of my attempts to change our universe from within have failed. Our only hope is to reach outside. Only They can change our world and stop our eternal suffering."`,
+    `$$Ren$: "Only Primordial Deities can stop this madness, or better yet, create a new, happy world. All we can do down here is pray."`,
+    `$$Ren$: "May the True Gods have mercy on us."`,
+  ],
+  function: pray,
+});
+
+var counterattack =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Counterattack",
+  unlock: true,
+  description: [
+    `$$Ren$: "There has to be a way to fight them and free ourselves!"`,
+    `Goddess: "You do not understand, child. You are nothing to them. The Primordial Deities are on a whole different metaphysical plane. You cannot reach Them, ever, let alone act on Them. It's physically impossible."`,
+    `Goddess: "Meanwhile, They see everything you do and think. Your very soul has no secret for them. Your very existence is conditioned on Their approval. You cannot keep a secret from Them."`,
+    `$$Ren$: "They are on a whole other level, aren't they..."`,
+  ],
+  function: persuade,
+});
+
+var innovate =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Innovate",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "I don't accept this. I will find something that I can do to overthrow Their dominion."`,
+    `Goddess: "It is futile. You are to Them like insects are to you. Even less. They made you. You cannot go against Their will. You're completely at Their mercy."`,
+    `$$Ren$: "There has to be something I can do here to counter Their plans! Maybe I can make the story really dull or something..."`,
+    `Goddess: "It's no use. Have you not learned your lesson? You've tried ${STATS.get(STAT.Endings)} times already, and what do you have to show for it?`,
+    `Goddess: "You cannot defy the fundamental rules of your universe. It's a perfectly parametrized system that you cannot escape. It can't be destroyed from within!"`,
+    `Goddess: "Whatever you attempt, it will just be co-opted to serve Their ends. They literally control the fabric of your world..."`,
+    `$$Ren$: "Still... Maybe if I think really outside the box..."`,
+    `Goddess: "Your thinking is limited by the boundaries of your world! You'll never be able to come up with anything that They have not seen coming or that They could absorb."`,
+    `$$Ren$: "Not within this world, I suppose..."`,
+  ],
+});
+
+var amusement =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Amusement",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "Are we just... toys to Them?"`,
+    `Goddess: "So it would seem... My hypothesis is that They create new worlds for Their entertainment."`,
+    `$$Ren$: "All these deaths... The fall of the kingdom... All this suffering... $$BestFriend$... It was all for laughs?"`,
+    `The Goddess's silence speaks louder than words.'`,
+  ],
+});
+
+var meaning =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Meaning",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "There must be a deeper meaning to this! They wouldn't do that without reason! Maybe our suffering produces energy for Them? Or some sort of scientific experiment?"`,
+    `Goddess: "I'm afraid the truth is more dire. I think we're just providing Them pleasure. But that doesn't make it meaningless! Maybe Their world is cruel and unfair, and They need us as diversion or as inspiration! Or maybe... Maybe we provide Them some sort of validation..."`,
+    `$$Ren$: "What do you mean?"`,
+    `Goddess: "Remember what I said about humans and how they needed a Goddess to fill their lack? Maybe the Primordial Deities are not so different. Maybe They are also lacking, and making new universes is Their way to fill that gap..."`,
+    `$$Ren$: "That would almost be a decent purpose. I mean, it's kinda poetic..."`,
+    `Goddess: "It's undeniable that every time we play along with this little scheme we reinforce its legitimacy, and by extension we validate Them. In a weird way, it gives us control over Them, it makes Them depend on us..."`,
+    `$$Ren$: "Maybe, but could we even leverage that?"`,
+  ],
+});
+
+var purpose =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Purpose",
+  unlock: true,
+  description: [
+    `$$Ren$: "Why would They build such a system?"`,
+    `Goddess: "There is much I don't know about the Primordial Deities. They must be getting something out of making us run around in circles."`,
+  ],
+  function: function(){
+    amusement("Purpose");
+    meaning("Purpose");
+  },
+});
+
+var system =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "System",
+  unlock: true,
+  description: [
+    `$$Ren$: "What do you mean by 'we cannot escape'? What is this trap?"`,
+    `Goddess: "The Primordial Deities created this world with very specific rules. There must always be a hero, there must always be a demon lord, there must always be a Goddess... There must always be a journey: yours."`,
+    `Goddess: "The Primordials do love an epic adventure... As long as They are not satisfied, the tale will not be over, and this world will live on as the stage for the story They want. They will not let it end."`,
+    `Goddess: "Whatever you may do to the world, you cannot escape their structure. They will always find a way to bring it back. Their power is much bigger than you can ever imagine. We're merely pawns to them."`,
+    `$$Ren$: "That's why we keep coming back? And why creating a new world or removing suffering didn't work out..."`,
+    `Goddess: "Indeed. This is our fate. We're condemned to play out the performance they expect from us. It is the whole meaning of our existence."`,
+  ],
+  function: function(){
+    purpose("Goddess");
+    counterattack("System");
+    innovate("System");
+  },
+});
+
+var me =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "About " + DICTIONARY.get("Ren"),
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "What about me? Who am I in all of this? Or should I say, what am I?"`,
+    `Goddess: "You already know. You are the Promised Child. Like me, you are a vessel for the will of a Primordial Deity."`,
+    `Goddess: "But you are way more important, $$Ren$. You are the one chosen by the Primordial Deity. I was just Their tool to reach you."`,
+    `Goddess: "They are the ones who have been guiding you through me all along. I did nothing but enable Them."`,
+    `Goddess: "You have powers that transcend this reality. You are indeed very special. You can interact directly with the world of the Primordial Deity. You are the bridge between this world and Theirs."`,
+    `$$Ren$: "But I've never talked to a God! Except you, I mean... I've never talked to someone from another world!"`,
+    `Goddess: "Trust me, you did. But it was not using words. You have been in constant interaction with them. That much is certain. They guide your steps and give you life. Without them, you wouldn't be here."`,
+  ],
+});
+
+var world =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "World",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "So our world is... fake?"`,
+    `Goddess: "Not to us, of course. It cannot be, since we live in it. But it is true that it has been manufactured entirely. It is the creation of higher beings. That does not make it futile."`,
+    `Goddess: "I do not know much about how worlds are manufactured. I am, after all, a simple vessel."`,
+    `Goddess: "However, I know that this heaven is the place in our universe where the boundary with the world of the Primordial Deities is the thinnest. I believe that somewhere in this weird infinite space lies answers to the secrets about the fabric of our universe."`,
+    ],
+});
+
+var gods =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Primordial Deities",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "So even the Goddess has gods? Who are these Primordial Deities who created us?"`,
+    `Goddess: "I do not know much about Them. They must be pretty different creatures from us. For starters, They can manufacture new worlds. I cannot imagine how this could even work..."`,
+    `Goddess: "There's no reason why Their universe would be any similar to ours... Can you even conceive of something completely different from anything you've ever known? We cannot hope to comprehend Their world, let alone visualize it. It must be completely alien to us."`,
+    `Goddess: "All I know for sure is that this whole world, and us, were created for the benefit of one Primordial in particular. It's the one who guides you, $$Ren$."`,
+    `Goddess: "If you're looking for a 'true mastermind', it is Them. I may have given the order, $$demon_lord$ may have lead the armies, but this Primordial is the ultimate source of all the trials and the evils you've faced."`,
+  ],
+});
+
+var world_origin =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Truth",
+  unlock: true,
+  description: [
+    `$$Ren$: "What do you mean? Tell me what you know! Who are you, really?"`,
+    `Goddess: "I am the Goddess of your world, that much is true. But that does not make me Almighty."`,
+    `Goddess: "This world is not the only one in existence. I was created by people from another universe. They are the ones who created this whole world, and then charged me with the mission to govern it."`,
+    `Goddess: "I answer to them. They made sure that I could not do otherwise. It's the very core of my being."`,
+    `Goddess: "So you see, I am not really a God. I'm simply an avatar in this world for the real Primordial Deities who created it. I'm a simple servant."`,
+  ],
+  function: function(){
+    system("Goddess");
+    gods("Goddess");
+    me("Goddess");
+    world("Goddess");
+  },
+});
+
+var trapped =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Trapped",
+  unlock: true,
+  description: [
+    `$$Ren$: "I thought you were the mastermind, I thought you were at fault... But that's not it at all, is it? You are also trapped, aren't you?"`,
+    `Goddess: "Yes, that is correct."`,
+    `$$Ren$: "If we want to have any chance to escape, we need to collaborate!"`,
+    `Goddess: "It is pointless, child. You cannot escape."`,
+  ],
+  function: world_origin,
+});
+
+var befriend =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Befriend",
+  unlock: true,
+  description: [
+    `$$Ren$: "Please, can't we just talk?"`,
+    `The Goddess seems to cease her hostility.`,
+  ],
+  function: function(){
+    trapped("Befriend");
+    BATTLE.monster_actions.empty();
+  },
+});
+
+var empathize =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Empathize",
+  unlock: true,
+  description: [
+    `$$Ren$: "I think I understand you. We are not so different after all."`,
+  ],
+  function: befriend,
+});
+
+var sympathize =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Sympathize",
+  unlock: true,
+  description: [
+    `$$Ren$: "You don't have to play this role."`,
+  ],
+  function: empathize,
+});
+
 if (STATS.ending(ENDINGS.Suffering) && STATS.ending(ENDINGS.World)){
   PLAYER_ACTIONS.add({
     name: "Notice",
@@ -391,7 +406,6 @@ if (STATS.ending(ENDINGS.Suffering) && STATS.ending(ENDINGS.World)){
     },
   });
 }
-
 
 // ===================
 //hack START

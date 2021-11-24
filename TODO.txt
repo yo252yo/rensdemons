@@ -4,37 +4,23 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
+---------------------------------------- Meta conversation with YOU
+// you think youre the most free, yet youre the most constrained, you can only do what the game allows talk about ideology
+// !! All ideology is like Video-game ideology  = only allows you to move within the game
 
----------------------------------------- GODDESS true ending
-- didnt work, theres always something that brings it back: reveal that youre the mastermind, you are the system, the goddess is working for you
-she's trapped too.
-Goddess says this is futile there's a system we're trapped she's trapped too.
-youre trapped in the system, it keeps exploiting your energy,
-theres higher being controlling us, they see everything and know everything, we're pawns of destiny
-I'm not the goddess the goddess lived in another world altogether you cannot comprehend the world of the gods much less visualize if but you are a special vessel that bridges the world with this one in  way you're a lot like me goddess you're my dual
-talk directly to the player???
-you think youre the most free, yet youre the most constrained, you can only do what the game allows
-talk about ideology and cooptation
-> but Ren, you have the power to communicate with another world, mb you can stop this madness
-> Rly destroy files? Impossible I think / Game can't delete itself but it can lock itself
->>> Rd is the portal at the border between fiction and reality
->> Communication: "END OF Communication",
+// tragedy exists as long as there is an observer
+// This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
+// symbiotic parasitic relationship
 
->>  There will always be another challenge as long as the player exists. This highlights the fact that the player is the true source of evil in the game world, because all this suffering only exists for their experience. The true boss that you must defeat is the player, the one who orchestrated all these Demon Lords, and the only way to kill it is to literally stop playing: the only winning move is not to play.
->> Universe: "END OF UNIVERSE", // Fork on git = true end
+// direct address to "You" ???
 
-The system makes this villain self sustaining cycle to provide a diversion
-It's basically matrix: Kill the bad guy > Bad guy isn't so bad > You're trapped by the System > You are the system
-!! All ideology is like Video-game ideology  = only allows you to move within the game
-This is a game about Berkeley’s philosophy highlighting that the world only exists when perceived. The main point is that the world and the NPCs only exist when they are on screen: they only exist for the player and because of them. The title is a reference to Descarte’s demons. Consequence is that you litteraly make your own universe
-
-Don't forget that the goddess needs blood
-The world of gods is not fair so the goddess toys with us
-insist that counter culture movements always get coopted
-
+// >>> Rd is the portal at the border between fiction and reality
+// are we fictional> You're nothing more than a fragment of their imagination
 
 ---------------------------------------- HEAVEN new content:
-Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript
+Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript,
+>> brick lock the game or delete suffering
+combination = mirror, goddess hint "theres a way" but true hint is in library, smthing about mirrror seeing behind the truth of this world
 
 - connections with our world in heaven, popups/includes to wikipedia?
 - https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
