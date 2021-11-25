@@ -28,14 +28,20 @@ var checkProgress = function(pattern){
 var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
 
 var update_state = function(from){
+  // We're on final floor
+  if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) || HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+    CURRENTLEVEL.setup("050_hell_map");
+    return;
+  }
   HEAVEN_SEQUENCE = from + HEAVEN_SEQUENCE;
   HEAVEN_SEQUENCE = HEAVEN_SEQUENCE.substring(0,10);
   // potentially leaving
   if(!checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE) && Math.random() < 0.25){
     CURRENTLEVEL.setup("050_hell_map");
-  } else {
-    CURRENTLEVEL.setup("060_heaven$");
+    return;
   }
+
+  CURRENTLEVEL.setup("060_heaven$");
 }
 
 t.left_border.interaction = function(){  update_state("l");  };
