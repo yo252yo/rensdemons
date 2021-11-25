@@ -138,7 +138,7 @@ switch(gen.int(3)){
 }
 
 // no decor for first entrance or special floors
-if (INVENTORY.count("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (ABILITIES.has_ability("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   decorFiller.fill_decor_by_retry();
 }
 
@@ -173,7 +173,7 @@ events.text(`You get a vague impression of importance in this place. The air fee
 
 events.set_tries(4, 18);
 
-if (INVENTORY.count("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (ABILITIES.has_ability("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   events.fill_floor_by_retry();
 }
 
@@ -184,7 +184,8 @@ placeholder.destroy();
 // ===================
 
 // Start functions
-if (!INVENTORY.count("_heaven_visits")){
+if (!ABILITIES.has_ability("_heaven_visits")){
+  ABILITIES.unlock("_heaven_visits");
   CURRENTLEVEL.start_function = function() {
     var callback = function(){
       IO.control.character();
@@ -193,8 +194,8 @@ if (!INVENTORY.count("_heaven_visits")){
       `You find yourself in the middle of a sea of cottony clouds. The slow swirling motion of the vapor is numbing your senses. No doubt that some sort of divine magic is also at play in this disorientation. You're not exactly sure how you arrived there or where you should go... The mist extends in every direction, but every time you look away it seems that the world changes around you. It's going to be hard to orient yourself, let alone pierce the mystery of this place...`,
     ], callback);
   };
-} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !INVENTORY.count("_goddess_intro")) {
-  INVENTORY.increase("_goddess_intro");
+} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !ABILITIES.has_ability("_goddess_intro")) {
+  ABILITIES.unlock("_goddess_intro");
   CURRENTLEVEL.start_function = function() {
     var callback = function(){
       IO.control.character();
@@ -207,8 +208,6 @@ if (!INVENTORY.count("_heaven_visits")){
   };
 }
 
-// Init
-INVENTORY.increase("_heaven_visits");
 
 // We use a trick to always spawn in the same place!
 CURRENTLEVEL._recover_position = [1375,1325];
