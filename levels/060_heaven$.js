@@ -8,6 +8,8 @@ if(typeof HEAVEN_SEQUENCE == "undefined") {
   HEAVEN_SEQUENCE = "";
 }
 
+// Careful, if we add more sequences that start with L and R, we might make it impossible to leave ^^
+// the sequences are inverted (first character = latest)
 var GODDESS_SEQUENCE = "rlrlddtt";
 var MIRROR_SEQUENCE = "lrlrttdd";
 
@@ -26,27 +28,31 @@ var checkProgress = function(pattern){
 // ===================
 var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
 
-var update_state = function(from){
+var leave = function(){
+  HEAVEN_SEQUENCE = "";
+  CURRENTLEVEL.setup("050_hell_map");
+}
+
+var exit = function(from){
   // We're on final floor
   if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) || HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
-    CURRENTLEVEL.setup("050_hell_map");
-    return;
+    return leave();
   }
+  // Update sequence
   HEAVEN_SEQUENCE = from + HEAVEN_SEQUENCE;
   HEAVEN_SEQUENCE = HEAVEN_SEQUENCE.substring(0,10);
   // potentially leaving
-  if(!checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE) && Math.random() < 0.25){
-    CURRENTLEVEL.setup("050_hell_map");
-    return;
+  if(Math.random() < 0.3 && !checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE)){
+    return leave();
   }
 
   CURRENTLEVEL.setup("060_heaven$");
 }
 
-t.left_border.interaction = function(){  update_state("l");  };
-t.right_border.interaction = function(){  update_state("r");  };
-t.top_border.interaction = function(){  update_state("t");  };
-t.bot_border.interaction = function(){  update_state("d");  };
+t.left_border.interaction  = function(){  exit("l");  };
+t.right_border.interaction = function(){  exit("r");  };
+t.top_border.interaction   = function(){  exit("t");  };
+t.bot_border.interaction   = function(){  exit("d");  };
 
 
 // ===================
@@ -138,7 +144,7 @@ switch(gen.int(3)){
 }
 
 // no decor for first entrance or special floors
-if (ABILITIES.has_ability("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   decorFiller.fill_decor_by_retry();
 }
 
@@ -173,7 +179,7 @@ events.text(`You get a vague impression of importance in this place. The air fee
 
 events.set_tries(4, 18);
 
-if (ABILITIES.has_ability("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   events.fill_floor_by_retry();
 }
 
