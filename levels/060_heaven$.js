@@ -190,8 +190,8 @@ placeholder.destroy();
 // ===================
 
 // Start functions
-if (!ABILITIES.has_ability("_heaven_visits")){
-  ABILITIES.unlock("_heaven_visits");
+if (!ABILITIES.has_ability("_heaven_visited")){
+  ABILITIES.unlock("_heaven_visited");
   CURRENTLEVEL.start_function = function() {
     var callback = function(){
       IO.control.character();
