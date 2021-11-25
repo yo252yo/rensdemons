@@ -2,10 +2,11 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+END OF LINE
+mirror sequence
+
 mb a mirror room and a computer room that are different
 
-
----------------------------------------- END OF LINE
 Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript,
 >> brick lock the game or delete suffering
 combination = mirror,  true hint is in library, smthing about mirrror seeing behind the truth of this world
