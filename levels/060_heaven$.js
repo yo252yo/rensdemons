@@ -21,21 +21,22 @@ var checkProgress = function(pattern){
   return 0;
 }
 
+// ===================
+//hack 1. FLOORS
+//hack 2. EXIT
+// ===================
+var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
+
 var update_state = function(from){
   HEAVEN_SEQUENCE = from + HEAVEN_SEQUENCE;
   HEAVEN_SEQUENCE = HEAVEN_SEQUENCE.substring(0,10);
+  // potentially leaving
   if(!checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE) && Math.random() < 0.25){
     CURRENTLEVEL.setup("050_hell_map");
   } else {
     CURRENTLEVEL.setup("060_heaven$");
   }
 }
-
-// ===================
-//hack 1. FLOORS
-//hack 2. EXIT
-// ===================
-var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
 
 t.left_border.interaction = function(){  update_state("l");  };
 t.right_border.interaction = function(){  update_state("r");  };
