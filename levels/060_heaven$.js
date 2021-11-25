@@ -5,38 +5,29 @@ var gen = new Generator(Math.random());//DICTIONARY.get("world_seed")*41);
 AUDIO.music.levels.heaven();
 var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
 
-var next = function(){
-  INVENTORY.increase("_heaven_sequence");
-  CURRENTLEVEL.setup("060_heaven$");
+if(typeof HEAVEN_SEQUENCE == "undefined") {
+  HEAVEN_SEQUENCE = "";
+}
+
+var GODDESS_SEQUENCE = "rlrlddtt";
+var MIRROR_SEQUENCE = "lrlrttdd";
+
+var checkProgress = function(pattern){
+  for(var i = 0; i < pattern.length; i++){
+    if (HEAVEN_SEQUENCE.startsWith(pattern.substring(i))){
+      return pattern.length - i;
+    }
+  }
+  return 0;
 }
 
 var update_state = function(from){
-  var state = INVENTORY.count("_heaven_sequence");
-  if ((state == 0 || state == 1) && from == "t"){ // _ or T
-    next();
-  } else if (state == 2 && from == "d"){ // TT
-    next();
-  } else if (state == 2 && from == "t"){  // no move out of state 2
-  } else if (state == 3 && from == "d"){ // TTD
-    next();
-  } else if (state == 4 && from == "l"){ // TTDD
-    next();
-  } else if (state == 5 && from == "r"){ // TTDDL
-    next();
-  } else if (state == 6 && from == "l"){ // TTDDLR
-    next();
-  } else if (state == 7 && from == "r"){ // TTDDLRL
-    next();
-  } else if (state == 8) { // stay there
-    INVENTORY.set("_heaven_sequence", 0); // leaving immediately
+  HEAVEN_SEQUENCE = from + HEAVEN_SEQUENCE;
+  HEAVEN_SEQUENCE = HEAVEN_SEQUENCE.substring(0,10);
+  if(!checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE) && Math.random() < 0.25){
     CURRENTLEVEL.setup("050_hell_map");
   } else {
-    INVENTORY.set("_heaven_sequence", 0);
-    if(Math.random() < 0.25){
-      CURRENTLEVEL.setup("050_hell_map");
-    } else {
-      CURRENTLEVEL.setup("060_heaven$");
-    }
+    CURRENTLEVEL.setup("060_heaven$");
   }
 }
 
@@ -55,7 +46,7 @@ t.bot_border.interaction = function(){  update_state("d");  };
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
-if (INVENTORY.count("_heaven_sequence") == 8){
+if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   var s1 = new B_Statue(1350,1275);
   var endFight = function() {
     if(INVENTORY.count("_killed_god")){
@@ -140,8 +131,8 @@ switch(gen.int(3)){
     break;
 }
 
-// no decor for first entrance or last floor
-if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") != 8){
+// no decor for first entrance or special floors
+if (INVENTORY.count("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   decorFiller.fill_decor_by_retry();
 }
 
@@ -176,7 +167,7 @@ events.text(`You get a vague impression of importance in this place. The air fee
 
 events.set_tries(4, 18);
 
-if (INVENTORY.count("_heaven_visits") && INVENTORY.count("_heaven_sequence") != 8){
+if (INVENTORY.count("_heaven_visits") && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
   events.fill_floor_by_retry();
 }
 
@@ -196,7 +187,7 @@ if (!INVENTORY.count("_heaven_visits")){
       `You find yourself in the middle of a sea of cottony clouds. The slow swirling motion of the vapor is numbing your senses. No doubt that some sort of divine magic is also at play in this disorientation. You're not exactly sure how you arrived there or where you should go... The mist extends in every direction, but every time you look away it seems that the world changes around you. It's going to be hard to orient yourself, let alone pierce the mystery of this place...`,
     ], callback);
   };
-} else if (INVENTORY.count("_heaven_sequence") == 8 && !INVENTORY.count("_goddess_intro")) {
+} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !INVENTORY.count("_goddess_intro")) {
   INVENTORY.increase("_goddess_intro");
   CURRENTLEVEL.start_function = function() {
     var callback = function(){
