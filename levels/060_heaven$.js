@@ -3,7 +3,6 @@
 // ===================
 var gen = new Generator(Math.random());//DICTIONARY.get("world_seed")*41);
 AUDIO.music.levels.heaven();
-var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
 
 if(typeof HEAVEN_SEQUENCE == "undefined") {
   HEAVEN_SEQUENCE = "";
