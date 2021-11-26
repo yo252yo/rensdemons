@@ -1,8 +1,5 @@
 AUDIO.music.town.hope();
 
-var win = function(){
-  CURRENTLEVEL.setup("demo/end");
-}
 
 var gen = new Generator(DICTIONARY.get("world_seed")*2);
 

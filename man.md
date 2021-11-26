@@ -2,8 +2,8 @@
 
 - [Ren's Demons engine manual](#ren-s-demons-engine-manual)
   * [ABOUT](#ABOUT)
-  * [WINNING THE DEMO](#WINNING-THE-DEMO)
-  * [ENGINE DOCUMENTATION](#ENGINE-DOCUMENTATION)
+  * [WINNING](#WINNING)
+  * [DOCUMENTATION](#DOCUMENTATION)
 
 ## ABOUT
 
@@ -19,13 +19,13 @@ In the demo or in the main game, you control children stuck in a neverending cyc
 
 Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
 
-`win()`
+`win();`
 
 ### Bricking
 
 You can also prevent the suffering of the characters by **stoppping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't spawn any more suffering children. You can do that with the command:
 
-`DISK.corrupt()`
+`DISK.corrupt();`
 
 > WARNING: As the name indicates, it will **corrupt all the content of the disk beyond repair**. The characters will be free, but your save will NOT be recoverable. The only thing you can do after this is `DISK.hard_reset()`;
 

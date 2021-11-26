@@ -76,9 +76,9 @@ var man = function() {
   updatelog(datedString("Opening manual page"));
   var w;
   if(window.navigator.onLine) {
-    w = window.open("https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
+    w = window.open("https://github.com/yo252yo/rensdemons/blob/master/man.md");
   } else {
-    w = window.open("levels/demo/man.md");
+    w = window.open("man.md");
   }
   if(!w || w.closed || typeof w.closed=='undefined')
   {
