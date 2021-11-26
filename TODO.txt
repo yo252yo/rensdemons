@@ -2,8 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
->> brick lock the game or delete suffering
-
 
 MIRROR PATH
 combination = mirror,  true hint is in library, smthing about mirrror seeing behind the truth of this world

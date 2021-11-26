@@ -7,15 +7,13 @@
 
 ## ABOUT
 
-Ren's Demons is an upcoming game written in a custom js game engine for any computer/phone that runs a webbrowser. Its engine is accessible to anyone from the js console, or its code on github.
+Ren's Demons is a game written in a custom js game engine for any computer/phone that runs a web browser. Its engine is accessible to anyone from the js console, or its code on github.
 
-In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo**.
+In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo** or to get some endings.
 
 ## WINNING
 
-In the demo of Ren's Demons, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities. The main game also deals with cycles of suffering.
-
-In order to beat the game, you need to **break this cycle**.
+In the demo or in the main game, you control children stuck in a neverending cycle of pain and cruelty. In order to beat the game, you need to **break this cycle**. It appears that you cannot do that from inside the universe of the game. But you can manipulate the game from the js console.
 
 ### Removing suffering
 
@@ -25,15 +23,11 @@ Fortunately, this engine has a built-in solution to destroy all the demons and t
 
 ### Bricking
 
-You can also prevent the suffering of the characters by making sure the game is not able to run anymore. You can do that with the command:
+You can also prevent the suffering of the characters by **stoppping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't spawn any more suffering children. You can do that with the command:
 
 `DISK.corrupt()`
 
-<div class="panel panel-danger">
-As the name indicates, it will corrupt all the content of the disk. The characters will be free, but your save will NOT be recoverable. The only thing you can do after this is
-
-`DISK.hard_reset()`;
-</div>
+> WARNING: As the name indicates, it will **corrupt all the content of the disk beyond repair**. The characters will be free, but your save will NOT be recoverable. The only thing you can do after this is `DISK.hard_reset()`;
 
 ## DOCUMENTATION
 
