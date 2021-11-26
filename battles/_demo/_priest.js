@@ -5,11 +5,6 @@ new CenteredImage("assets/battles/civilians/priest.png", 'background');
 
 AUDIO.music.interface.boss();
 
-var win = function(){
-  CURRENTLEVEL.setup("demo/end");
-}
-
-
 var unlock_stab1 = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Stab yourself",
   unlock: true,

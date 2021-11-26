@@ -114,7 +114,7 @@ class S_Maou extends SimpleObject {
     this.specify_sprite_size(300,300);
     this.adjust_hitbox(50,10,180,100);
 
-    var win = function() {
+    var winn = function() {
       TextBannerSequence.make([
         `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
         `As he draws his last breath, you cannot help but be intrigued by his facial expression. He looks... relieved?`,
@@ -125,7 +125,7 @@ class S_Maou extends SimpleObject {
 
     var optionGenerator = function(text, prompt, next) {
         var options = [
-          {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": win},
+          {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": winn},
         ];
         if (STATS.ending(ENDINGS.War)){
           options.push({"text": "Spare " + DICTIONARY.get(["demon_lord"]), "effect": next});
