@@ -97,6 +97,7 @@ const DISK = {
     },
 
     corrupt: function(){
+      STATS.record.ending(ENDINGS.Line);
       localStorage.setItem('rd_state', "CORRUPTED AT REQUEST OF THE USER");
     },
 
