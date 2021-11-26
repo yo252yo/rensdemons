@@ -12,6 +12,7 @@ if(typeof HEAVEN_SEQUENCE == "undefined") {
 // the sequences are inverted (first character = latest)
 var GODDESS_SEQUENCE = "rlrlddtt";
 var MIRROR_SEQUENCE = "lrlrttdd";
+var UTF_SEQUENCE = "ddtddddd";
 
 var checkProgress = function(pattern){
   for(var i = 0; i < pattern.length; i++){
@@ -35,14 +36,14 @@ var leave = function(){
 
 var exit = function(from){
   // We're on final floor
-  if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) || HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+  if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) || HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE) || HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
     return leave();
   }
   // Update sequence
   HEAVEN_SEQUENCE = from + HEAVEN_SEQUENCE;
   HEAVEN_SEQUENCE = HEAVEN_SEQUENCE.substring(0,10);
   // potentially leaving
-  if(Math.random() < 0.3 && !checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE)){
+  if(Math.random() < 0.3 && !checkProgress(GODDESS_SEQUENCE) && !checkProgress(MIRROR_SEQUENCE) && !checkProgress(UTF_SEQUENCE)){
     return leave();
   }
 
@@ -144,7 +145,7 @@ switch(gen.int(3)){
 }
 
 // no decor for first entrance or special floors
-if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   decorFiller.fill_decor_by_retry();
 }
 
@@ -179,7 +180,7 @@ events.text(`You get a vague impression of importance in this place. The air fee
 
 events.set_tries(4, 18);
 
-if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   events.fill_floor_by_retry();
 }
 

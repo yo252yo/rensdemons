@@ -5,6 +5,65 @@ c.adjust_dimensions(c.width * 2, c.height * 2);
 PLAYER_ACTIONS.allow_flight(true);
 
 
+// ===================
+//hack Primordial deities
+// ===================
+
+var unlock_mirror = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Identity",
+  unlock: true,
+  description: [
+                  `You read what you can from the damaged page.`,
+                  `"For Primordial Deities, vision was the most important sense, and therefore the eyes had a strong symbolic importance."`,
+                  `...`,
+                  `"It was widely admitted that identity was constructed in contrast from the gaze of other people, and even oneself."`,
+                  `...`,
+                  `"Therefore, the child, when facing a mirror, becomes for the first time aware that they are not just a floating point of view but a complete body. They become aware of the whole of their selves: a dual system of mind and body. This mirror stage is paramount to the development of a person."`,
+                  `...`,
+                  `"In conclusion, to see oneself whole and understand the full relationship between the self and its environment, it is necessary to turn inwards."`,
+                  `"ONE MUST FOLLOW THE PATH OF THE MIRROR."`,
+                ],
+
+});
+
+
+var unlock_code = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Communication",
+  unlock: true,
+  description: [
+                `You read what you can from the damaged page.`,
+                `"Primordial Deities developed technology to the point where they could create other beings out of metal - the machines."`,
+                `"The machines understood only binary signal: 1 or UP for when the power was flowing, and 0 or DOWN for when it was not."`,
+                `"Therefore, in order to communicate with the machines, the Primordial Deities had to devise systems to encode their language in one that would be understandable by the machines."`,
+                `"The most popular code is as follows:"`,
+                `"A = number 65, in binary 01000001<br /> B = number 66, in binary 01000010<br /> C = number 67, in binary 01000011"`,
+                `...`,
+                `"Alphabet only starts at the number 65 to keep lower numbers for special characters."`,
+                `"! = number 33, in binary 00100001<br />...<br /> ? = number 63, in binary 00111111"`,
+                `"Some positions were kept for important signals."`,
+                `"START_OF_TEXT = number 2, in binary 00000010<br /> CANCEL = number 24, in binary 00011000"`,
+                `"END_OF_TRANSMISSION = number 4, in binary 00000100"`,
+                ],
+});
+
+
+if(STATS.flag("PrimordialDeities")){
+  PLAYER_ACTIONS.add({
+    name: "Primordial Deities",
+    unlock: true,
+    description: "You search through the books to see if anyone looks like it might have information about the Primordial Deities. You find an old tome that seems promising. It does not have a title. Instead, the cover is full of mysterious symbols. When you open it, some pages are so worn off that they are unreadable, others are torn, but it looks like some parts are still usable...",
+    function: function() {
+      unlock_mirror("Primordial Deities");
+      unlock_code("Primordial Deities");
+    },
+  });
+}
+
+
+// ===================
+//hack Godess path
+// ===================
+
 var unlock_begin = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Read the beginning",
   unlock: true,
@@ -53,8 +112,6 @@ var unlock_browse = PLAYER_ACTIONS.function.unlock_replacing_action({
                 ],
   function: unlock_bookshelf,
 });
-
-
 
 PLAYER_ACTIONS.add({
   name: "Read about you",

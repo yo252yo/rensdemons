@@ -346,6 +346,7 @@ var world_origin =  PLAYER_ACTIONS.function.unlock_replacing_action({
     gods("Truth");
     me("Truth");
     world("Truth");
+    STATS.record.flag("PrimordialDeities");
   },
 });
 
