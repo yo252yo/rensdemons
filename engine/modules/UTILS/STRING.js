@@ -39,4 +39,8 @@ const STRING_UTILS = {
       r += units[Math.floor(num % 10)];
       return r;
   },
+
+  datedString (s){
+    return (new Date()).toLocaleTimeString() + ": " + s;
+  },
 };

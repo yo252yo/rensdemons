@@ -17,6 +17,10 @@ const CONSOLE = {
     CONSOLE._sys_log(t, color);
   },
 
+  input: function(t) {
+    CONSOLE._sys_log(STRING_UTILS.datedString(t), "Blue", "font-weight:bold;");
+  },
+
   error: function(t, with_trace, with_alert) {
     CONSOLE._sys_log(t, "Red", "font-weight:bold;");
     if(with_trace){

@@ -6,9 +6,6 @@ var turnoff =  `Shutting down...`;
 
 AUDIO.music.interface.boss();
 
-var datedString = function(s){
-  return (new Date()).toLocaleTimeString() + ": " + s;
-}
 
 var log = HTML.div.make({w:"100%", h:"55%", z:10000, margin: 10, position: "fixed"});
 log.style.color = PALETTE.color("background").code();
@@ -49,7 +46,7 @@ var execute = function(){
     result = "[OBJECT]" + JSON.stringify(result);
   }
 
-  updatelog(datedString("> " + content));
+  updatelog(">> " + content);
   updatelog(result);
   document.getElementById('terminal_entry').value = "";
   return false;
@@ -57,7 +54,11 @@ var execute = function(){
 
 var updatelog = function (msg){
   if(msg) {
-    CONSOLE.log.level(msg);
+    if(typeof msg == "string" && msg.startsWith(">")){
+      CONSOLE.input(msg);
+    } else {
+      CONSOLE.log.level(msg);
+    }
   }
   logcontent.innerHTML = getLogs();
   logcontent.scrollTop = logcontent.scrollHeight;
@@ -72,35 +73,13 @@ var getLogs = function (){
 }
 
 
-var man = function() {
-  updatelog(datedString("Opening manual page"));
-  var w;
-  if(window.navigator.onLine) {
-    w = window.open("https://github.com/yo252yo/rensdemons/blob/master/man.md");
-  } else {
-    w = window.open("man.md");
-  }
-  if(!w || w.closed || typeof w.closed=='undefined')
-  {
-    updatelog("Error opening manual page, check for blocked popups or navigate to https://github.com/yo252yo/rensdemons/blob/master/levels/demo/man.md");
-  }
-}
-var help = man;
-var h = man;
-var hint = man;
-var manual = man;
-
-var win = function(){
-  CURRENTLEVEL.setup("demo/end");
-}
-
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Display console",
   unlock: true,
   function: function (){
-    updatelog(datedString("Displaying console log"));
-    updatelog(datedString("Connection to the simulation established."));
+    updatelog("> Displaying console log");
+    updatelog("Connection to the simulation established.");
     updatelog("#################################");
     updatelog("#   UNIVERSE ENGINE gOd-S 1.0   #");
     updatelog("#  AWAITING USER INPUT COMMAND  #");
@@ -115,7 +94,7 @@ var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Hide console",
   unlock: true,
   function: function (){
-    updatelog(datedString("Hiding console log"));
+    updatelog("> Hiding console log");
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
@@ -135,7 +114,7 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   outcome: BATTLETREE.ESCAPE,
   description: turnoff,
   extra_function: function (){
-    updatelog(datedString("Exiting terminal"));
+    updatelog("> Exiting terminal");
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
