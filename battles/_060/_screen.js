@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-var battle = "_demo/_screen";
+var battle = "_060/_screen";
 var turnoff =  `Shutting down...`;
 
 AUDIO.music.interface.boss();

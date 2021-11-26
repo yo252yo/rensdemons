@@ -260,3 +260,11 @@ const INTERFACE = {
     setTimeout(function(){t.destroy();}, 1000);
   },
 }
+
+var win = function(){
+  if(INTERFACE.is_trial()){
+    CURRENTLEVEL.setup("demo/end");
+  } else{
+    CURRENTLEVEL.setup("end@E");
+  }
+}

@@ -2,8 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
-UTF path /
-Line: "END OF LINE", // code, console, like demo a room where you can build your own universe using javascript,
 >> brick lock the game or delete suffering
 
 

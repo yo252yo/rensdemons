@@ -22,6 +22,16 @@ body {
   z-index:1000;
 }
 
+@-webkit-keyframes fadein{
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fading{
+  -webkit-animation: fadein 5s linear 1 normal forwards;
+}
+
+
 .highlighted {
   background-color: #FFFFFF33;
   border: 1px dotted;

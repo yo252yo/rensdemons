@@ -11,19 +11,17 @@ Ren's Demons is an upcoming game written in a custom js game engine for any comp
 
 In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo**.
 
-## WINNING THE DEMO
+## WINNING
 
-In the demo of Ren's Demons, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities.
+In the demo of Ren's Demons, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities. The main game also deals with cycles of suffering.
 
-In order to beat the demo, you need to **break this cycle**. One option is of course to close the game and move away, but it's not very satisfactory, is it :)
-
-Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one at the top of the mountain, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
+In order to beat the game, you need to **break this cycle**. Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
 
 `win()`
 
 ## DOCUMENTATION
 
-The code is organized in modules (global singletons), here are a few example commands:
+If you feel like creating new universes or adventures, I've done my best to make this code clean. It is organized in modules (global singletons), here are a few example commands:
 
 |                                               |                                   |
 |-----------------------------------------------|-----------------------------------|

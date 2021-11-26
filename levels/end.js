@@ -50,6 +50,9 @@ var drawMap = function() {
 };
 
 var makeMap = function() {
+  map_container.classList.remove("fading");
+  map_container.style.opacity = 1;
+
   // Draws the base
   base_canvas.getContext('2d').drawImage(base_resource, 0, 0, size, size);
 
@@ -141,8 +144,33 @@ if(end == "D"){
     `Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
   ].concat(new_world);
 }
+if(end == "E"){
+  STATS.record.ending(ENDINGS.Line);
+  map_container.classList.add("fading");
 
+  sequence = [
+    `> Initializing Wipe Inside Negativity routine.`,
+    `...`,
+    `> Tweaking the game engine to remove suffering.`,
+    `...`,
+    `> Eliminating monsters, who raided the world and destroyed cities.`,
+    `...`,
+    `> Eliminating animals, who can be dangerous, and suffer themselves.`,
+    `...`,
+    `> Eliminating weather, who can destroy crops.`,
+    `...`,
+    `> Eliminating human adults, who suffer constantly from many worries.`,
+    `...`,
+    `> Eliminating human children, who will grow up to suffer.`,
+    `...`,
+    `> Eliminating all life forms, who could evolve to further suffer.`,
+    `...`,
+    `> Eliminating the Goddess, and the world, so that it does not spawn any more suffering.`,
 
+    `Congratulations! You have reached the ${ENDINGS.Line}.`,
+    `Suffering has been eliminated by your command, but even this has limits. Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
+  ].concat(new_world);
+}
 
 
 var displayText = function() {

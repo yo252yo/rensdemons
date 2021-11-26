@@ -57,7 +57,7 @@ t.bot_border.interaction   = function(){  exit("d");  };
 
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack 3. Goddess-  PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   var s1 = new B_Statue(1350,1275);
@@ -117,6 +117,56 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   new S_SavePoint(1550, 1125);
   new S_SavePoint(1150, 1125);
 }
+
+
+// ===================
+//hack 3. Computer -  PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
+if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
+
+  var nothing = function(){
+    TextBannerSequence.make([`That did not do anything.`]);
+  }
+  var turnoff = function(){
+    TextBannerSequence.make([`The light fades out from the glass plate, and everything comes back to the state it was when you first got here.`]);
+  }
+
+  var lookat = function(){
+   new CenteredTextMenu("What will you do?",
+                 [
+                   {"text": "Look at the glass screen", "effect": function(){BATTLE.api.make('_demo/_screen')}},
+                   {"text": "Walk away", "effect": turnoff},
+                ]
+              );
+  }
+
+  var turnon = function(){
+    TextBannerSequence.make([
+      `As soon as your finger touches the glass, the humming grows louder, and the glass becomes imbued with a light glow. In an instant, shapes start forming on the lit surface. First, you see a wheel spinning slowly. Then it fades away to display the silhouette of a child in front of an altar on a flat colored background. You distinguish some text in a box.`,
+    ], lookat);
+  }
+
+  var approach = function(){
+    new CenteredTextMenu("What will you do?",
+                  [
+                    {"text": "Touch the glass", "effect": turnon},
+                    {"text": "Touch a block", "effect": nothing},
+                    {"text": "Nothing", "effect": "##CLOSE"},
+                 ]
+               );
+  }
+
+  var computer = new S_SavePoint(1350, 1300);
+  computer.interaction = function(){
+    TextBannerSequence.make([
+      `It's an altar, but this one seems a bit different from the ones you've seen so far. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
+    ], approach);
+  }
+}
+
+// ===================
+//hack 3. Mirror -  PERMANENT HARDCODED ELEMENTS (furniture)
+// ===================
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
