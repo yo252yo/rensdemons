@@ -93,4 +93,4 @@ This engine is completely open source. Feel free to download it for yourself (it
 
 You can tweak the existing game as much as you'd like. You could look into the code for the bad monsters, for instance. There would be a lot less suffering without the Goddess, the Demon Lord, Battles or ConsciousObject... Of course, some tweaks will break the game. But maybe it needs to be broken.
 
-Better yet, you can use the engine and make a totally new universe! I trust that the game provides enough examples to help you get started, especially with the syntax explanation above. Look at the `levels/` and `battles/` subfolders. Maybe this is the only way to true end, by transcending the cycle of suffering by make a game world where characters are happy!
+Better yet, you can use the engine and make a totally new universe! I trust that the game provides enough examples to help you get started, especially with the syntax explanation above. Look at the `levels/` and `battles/` subfolders. Maybe this is the only way to a true end, where the cycle of suffering is transcended by a game world where characters are happy! Go and be your own god!
