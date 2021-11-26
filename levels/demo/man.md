@@ -15,9 +15,25 @@ In addition to keeping the code clean, I thought I'd write this little guide for
 
 In the demo of Ren's Demons, you control different children in various cities in a desolate kingdom. You are stuck in a neverending cycle of pain and cruelty, as these children need to be sacrificed to the Goddess to protect the cities. The main game also deals with cycles of suffering.
 
-In order to beat the game, you need to **break this cycle**. Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
+In order to beat the game, you need to **break this cycle**.
+
+### Removing suffering
+
+Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
 
 `win()`
+
+### Bricking
+
+You can also prevent the suffering of the characters by making sure the game is not able to run anymore. You can do that with the command:
+
+`DISK.corrupt()`
+
+<div class="panel panel-danger">
+As the name indicates, it will corrupt all the content of the disk. The characters will be free, but your save will NOT be recoverable. The only thing you can do after this is
+
+`DISK.hard_reset()`;
+</div>
 
 ## DOCUMENTATION
 

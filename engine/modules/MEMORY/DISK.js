@@ -19,7 +19,6 @@ const DISK = {
       } catch (e) {
         CONSOLE.error("It appears that the space allocated on disk for the game has reached a limit. No progress can be saved anymore.", false, true);
       }
-
     },
 
     _set: function(key, value) {
@@ -95,6 +94,10 @@ const DISK = {
     hard_reset: function() {
         DISK._CONTENT = DISK._get_empty();
         DISK._record_to_storage();
+    },
+
+    corrupt: function(){
+      localStorage.setItem('rd_state', "CORRUPTED AT REQUEST OF THE USER");
     },
 
     restore_from_file: function() {
