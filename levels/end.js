@@ -153,6 +153,8 @@ if(end == "E"){
     `...`,
     `> Tweaking the game engine to remove suffering.`,
     `...`,
+    `> Eliminating $$demon_lord$.`,
+    `...`,
     `> Eliminating monsters, who raided the world and destroyed cities.`,
     `...`,
     `> Eliminating animals, who can be dangerous, and suffer themselves.`,

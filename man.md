@@ -4,6 +4,7 @@
   * [ABOUT](#ABOUT)
   * [WINNING](#WINNING)
   * [DOCUMENTATION](#DOCUMENTATION)
+  * [MAKING OTHER WORLDS](#MAKING-OTHER-WORLDS)
 
 ## ABOUT
 
@@ -13,17 +14,17 @@ In addition to keeping the code clean, I thought I'd write this little guide for
 
 ## WINNING
 
-In the demo or in the main game, you control children stuck in a neverending cycle of pain and cruelty. In order to beat the game, you need to **break this cycle**. It appears that you cannot do that from inside the universe of the game. But you can manipulate the game from the js console.
+In the demo or in the main game, you control children stuck in a neverending cycle of pain and cruelty. In order to beat the game, you need to **break this cycle** and free the characters. It appears that you cannot do that from inside the universe of the game. You're gonna have to think outside the box.
 
 ### Removing suffering
 
-Fortunately, this engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
+You can manipulate the game from the js console. This game engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
 
 `win();`
 
 ### Bricking
 
-You can also prevent the suffering of the characters by **stoppping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't spawn any more suffering children. You can do that with the command:
+You can also prevent the suffering of the characters by **stoppping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't create any more suffering children. You can do that with the command:
 
 `DISK.corrupt();`
 
@@ -85,3 +86,11 @@ If you feel like creating new universes or adventures, I've done my best to make
 | `new SBattle(100, 100, 'world/mummy');`       | New battle mystery object         |
 | `new SE_event(20, 275, 'You find nothing');`  | New event mystery object          |
 |                                               |                                   |
+
+## MAKING OTHER WORLDS
+
+This engine is completely open source. Feel free to download it for yourself (it's also included in the game).
+
+You can tweak the existing game as much as you'd like. You could look into the code for the bad monsters, for instance. There would be a lot less suffering without the Goddess, the Demon Lord, Battles or ConsciousObject... Of course, some tweaks will break the game. But maybe it needs to be broken.
+
+Better yet, you can use the engine and make a totally new universe! I trust that the game provides enough examples to help you get started, especially with the syntax explanation above. Look at the `levels/` and `battles/` subfolders. Maybe this is the only way to true end, by transcending the cycle of suffering by make a game world where characters are happy!
