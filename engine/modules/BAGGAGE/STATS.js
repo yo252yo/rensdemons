@@ -61,7 +61,9 @@ const STATS = {
     ending: function(text, value){
       AUDIO.effect.unlock();
       STATS._stats.increment(["END_" + text], value);
-      STATS._stats.increment([STAT.Endings]);
+      if(text != ENDINGS.Game){
+        STATS._stats.increment([STAT.Endings]);
+      }
       DISK.write("STATS");
     },
 
