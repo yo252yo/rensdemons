@@ -2,9 +2,6 @@ new Snippet("levels/decors/temple");
 
 var f = new S_ExitFloor(1250,1775,100,35, 'demo/town');
 
-var win = function(){
-  CURRENTLEVEL.setup("demo/end");
-}
 
 var talk = function() {
   TextBannerSequence.make([

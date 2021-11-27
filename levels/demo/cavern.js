@@ -1,10 +1,6 @@
 
 AUDIO.music.levels.harpies();
 
-var win = function(){
-  CURRENTLEVEL.setup("demo/end");
-}
-
 
 var nothing = function(){
   TextBannerSequence.make([`That did not do anything.`]);
