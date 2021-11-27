@@ -742,3 +742,62 @@ class S_Tomb extends SimpleObject {
     }
   }
 }
+
+class S_MagicMirror extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "heaven/mirror");
+    this.adjust_hitbox(-5,0,57, 50);
+    this.specify_sprite_size(50, 98);
+    this.default_text = function(){
+      BATTLE.api.make("_060/_mirror");
+    }
+  }
+}
+
+
+class S_Computer extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "interior/savepoint");
+    this.adjust_hitbox(5,-5,40,20);
+    this.specify_sprite_size(50,50);
+
+
+    var nothing = function(){
+      TextBannerSequence.make([`That did not do anything.`]);
+    }
+    var turnoff = function(){
+      TextBannerSequence.make([`The light fades out from the glass plate, and everything comes back to the state it was when you first got here.`]);
+    }
+
+    var lookat = function(){
+     new CenteredTextMenu("What will you do?",
+                   [
+                     {"text": "Look at the glass screen", "effect": function(){BATTLE.api.make('_demo/_screen')}},
+                     {"text": "Walk away", "effect": turnoff},
+                  ]
+                );
+    }
+
+    var turnon = function(){
+      TextBannerSequence.make([
+        `As soon as your finger touches the glass, the humming grows louder, and the glass becomes imbued with a light glow. In an instant, shapes start forming on the lit surface. First, you see a wheel spinning slowly. Then it fades away to display the silhouette of a child in front of an altar on a flat colored background. You distinguish some text in a box.`,
+      ], lookat);
+    }
+
+    var approach = function(){
+      new CenteredTextMenu("What will you do?",
+                    [
+                      {"text": "Touch the glass", "effect": turnon},
+                      {"text": "Touch a block", "effect": nothing},
+                      {"text": "Nothing", "effect": "##CLOSE"},
+                   ]
+                 );
+    }
+
+    this.default_text = function(){
+      TextBannerSequence.make([
+        `It's an altar, but this one seems a bit different from the ones you've seen so far. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
+      ], approach);
+    }
+  }
+}
