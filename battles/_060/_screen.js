@@ -86,6 +86,7 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
     updatelog("#################################");
     log.style.visibility = "visible";
     IO.key_interceptor.deactivate();
+    document.getElementById('terminal_entry').focus();
   }
 });
 
