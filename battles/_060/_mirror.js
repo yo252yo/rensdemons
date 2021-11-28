@@ -1,7 +1,44 @@
 
 var c = new CenteredImage("assets/objects/heaven/mirror.png", 'background');
-c.adjust_dimensions(c.width * 2, c.height * 2);
+c.adjust_dimensions(c.width * 4, c.height * 4);
 AUDIO.music.characters.Goddess();
+
+var video_container = HTML.div.make({
+  w: 120,
+  h: 200,
+  left: 25,
+  top: 55,
+  z:-1000,
+  position: "relative",
+  overflow: "hidden",
+  id: "video_container",
+});
+
+c.html_canvas.style.opacity = 0.8;
+c.container.appendChild(video_container);
+
+var video = document.createElement('video');
+video.autoplay = true;
+video.id = "videoElement";
+video.style.height = "200px";
+video.style.position = "relative";
+video_container.appendChild(video);
+
+
+var try_display_video = function(){
+  if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        var params = stream.getVideoTracks()[0].getSettings();
+        var width = (params.width * 200 / params.height);
+        video.style.left = "-" + ((width - 120) / 2) + "px"; //center
+        document.getElementById("videoElement").srcObject = stream;
+      })
+      .catch(function (error) {}); // its ok to give up
+  }
+}
+
+
 
 PLAYER_ACTIONS.allow_flight(true);
 var battle = "_060/_mirror";
@@ -171,6 +208,7 @@ PLAYER_ACTIONS.add({
     quick_action("Look inside", yes, "Your God",             [`$$Ren$: "Wow! You must also be the Goddess's God! Are you the Primordial Deity who's been in contact with me?"`]);
     quick_action("Look inside", yes, "A Primordial Deity",   [`$$Ren$: "Wow! Are you the Primordial Deity who's been in contact with me?"`]);
     quick_action("Look inside", yes, "A player",             [`$$Ren$: "I see. You're having fun... Are you the Primordial Deity who's been in contact with me?"`]);
+    try_display_video();
   }
 });
 
