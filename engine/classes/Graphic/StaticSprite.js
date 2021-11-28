@@ -46,6 +46,7 @@ class StaticSprite extends CanvasElement {
     specify_sprite_size(w,h){ // For filler objects we need to preload w and h to avoid race conditions with image loading
         this.width = w;
         this.height = h;
+        this.draw();
     }
 }
 

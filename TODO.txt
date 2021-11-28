@@ -2,9 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
-BattleImage is risky: when you come from a level, draw is called before end of constructor, but when you go directly to battle draw is called after, and the normal rescaling doesnt happen
-
-
 
 ---------------------------------------- HEAVEN new content:
 - connections with our world in heaven, popups/includes to wikipedia?

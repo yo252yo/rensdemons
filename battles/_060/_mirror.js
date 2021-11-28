@@ -1,6 +1,5 @@
 
-var c = new CenteredImage("assets/objects/heaven/mirror.png", 'background');
-c.adjust_dimensions(c.width * 4, c.height * 4);
+var c = new CenteredImage("assets/objects/heaven/mirror.png", 'background', 4);
 AUDIO.music.characters.Goddess();
 
 var video_container = HTML.div.make({

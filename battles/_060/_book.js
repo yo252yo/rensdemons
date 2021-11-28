@@ -1,6 +1,5 @@
 
-var c = new CenteredImage("assets/objects/heaven/bookshelf.png", 'background');
-c.adjust_dimensions(c.width * 2, c.height * 2);
+var c = new CenteredImage("assets/objects/heaven/bookshelf.png", 'background', 2);
 
 PLAYER_ACTIONS.allow_flight(true);
 
