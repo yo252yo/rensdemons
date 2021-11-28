@@ -2,7 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
-
 ---------------------------------------- HEAVEN new content:
 - connections with our world in heaven, popups/includes to wikipedia?
 - https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
@@ -198,7 +197,8 @@ more fake choices that i know are fake
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
 - the goddess SAVED your soul (save/save) as confirmation when you save
-- try https://en.wikipedia.org/wiki/Electron_(software_framework)
+- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements?
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 - cache ressources
 - optimize size on disk
+- marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb

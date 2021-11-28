@@ -54,7 +54,7 @@ var confirm = function(cause){
 }
 
 var euthanasia = function(cause){
-  var cue = [`$$Ren$: "Please... I just want it to end. I don't want to see any more deaths that I can't prevent!"`];
+  var cue = [`$$Ren$: "Please... I just want it to end. I don't want to see any more deaths that I can't prevent! You've seen everything, you've been here all along, you should understand... There's no other way."`];
   quick_action(cause, confirm, "No!!!", cue);
   quick_action(cause, euthanasia_consequences, "How?  ", euthanasia_instructions);
   quick_action(cause, confirm, "Are you sure?", cue);
@@ -86,7 +86,7 @@ var reaction = function(cause){
 
 var portal = function(cause){
   var cue = [`$$Ren$: "It's properly amazing. I have crossed from the world of the humans to the ones of the demons, but I never thought I'd meet someone from a dimension so far away. And so incredibly powerful!"`];
-  quick_action(cause, reaction, "It's a portal between worlds", cue);
+  quick_action(cause, reaction, "It's a portal between our worlds", cue);
   quick_action(cause, reaction, "It's the border between fiction and reality", cue);
   quick_action(cause, reaction, "On my side, it's a window on a screen", cue);
   quick_action(cause, reaction, "It's not the mirror, it's my power", cue);
