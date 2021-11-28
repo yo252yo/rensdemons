@@ -14,7 +14,6 @@ var video_container = HTML.div.make({
   id: "video_container",
 });
 
-c.html_canvas.style.opacity = 0.8;
 c.container.appendChild(video_container);
 
 var video = document.createElement('video');
