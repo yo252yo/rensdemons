@@ -115,4 +115,21 @@ const LEDGER = {
     LEDGER.load_ledger();
     STATS.record.ledger(JSON.stringify(LEDGER._ledger));
   },
+
+  getBio: function(){
+    var villager;
+    if (Math.random() < 0.2){
+      villager = LEDGER.get_throwaway_villager(Math.random());
+    } else{
+      villager = LEDGER.get_villager(Math.random());
+    }
+    var birth = (new Date(villager.birth)).toLocaleString();
+    var death = (new Date(villager.death)).toLocaleString();
+    return `<h1>${villager.name}</h1>
+    <hr>
+    <h5>Not from Wikipedia, the free encyclopedia</h5>
+    <strong>Birth</strong>: ${birth}, in ${villager.city}, ${DICTIONARY.get("world_name")}<br />
+    <strong>Death</strong>: ${death}, in ${villager.city}, ${DICTIONARY.get("world_name")}
+    `;
+  }
 }

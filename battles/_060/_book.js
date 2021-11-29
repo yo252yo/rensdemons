@@ -19,6 +19,13 @@ frame.style.opacity = 0.4;
 frame.innerHTML = `<iframe id="iframe" src="https://en.m.wikipedia.org/wiki/Special:RandomInCategory/Living people" title="Life of a person" style="width:100%;height:100%;background:white;">test</iframe>`;
 
 
+var fakeframe = HTML.div.make({position:"absolute", overflow: "scroll", w:"87%", h:SCREEN.is_mobile()?"55%":"80%", top: "10%", left:"8%"});
+frame_container.appendChild(fakeframe);
+fakeframe.style.opacity = 0.4;
+fakeframe.style.background = "white";
+fakeframe.style.visibility = "hidden";
+
+
 
 
 
@@ -43,7 +50,7 @@ var getUrl = function(){
 
   // RD
   for(var i = 0; i <30; i++){
-    possibilities.push("wiki.html");
+    possibilities.push("");
   }
 
   return RANDOM.pick(possibilities);
@@ -54,7 +61,17 @@ var unlock_random_book = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   function: function() {
     c.destroy();
-    document.getElementById('iframe').src = getUrl();
+    var url = getUrl();
+    console.log(url);
+    if (url != ""){
+      document.getElementById('iframe').src = url;
+      document.getElementById('iframe').style.visibility = "visible";
+      fakeframe.style.visibility = "hidden";
+    } else {
+      document.getElementById('iframe').style.visibility = "hidden";
+      fakeframe.style.visibility = "visible";
+      fakeframe.innerHTML = LEDGER.getBio();
+    }
     frame_container.style.visibility = "visible";
   },
 });
@@ -63,7 +80,7 @@ if (STATS.ending(ENDINGS.God)){
   PLAYER_ACTIONS.add({
     name: "Browse other books",
     unlock: true,
-    description: "It seems that all documents are accounts of the lives of different people.",
+    description: "It seems that all documents are accounts of the lives of different people, from this universe, but also from many others.",
     function: function() {
       BATTLETREE.api.lock("_060/_book", "Primordial Deities");
       BATTLETREE.api.lock("_060/_book", "Read about you");
