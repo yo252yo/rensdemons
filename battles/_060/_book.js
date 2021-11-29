@@ -79,7 +79,7 @@ if (STATS.ending(ENDINGS.God)){
   PLAYER_ACTIONS.add({
     name: "Browse other books",
     unlock: true,
-    description: "It seems that all documents are accounts of the lives of different people, from this universe, but also from many others.",
+    description: "It seems that all documents are accounts of the lives of different people, from this universe, but also from many others. Most of the writings are complete, but some are clearly half way done, waiting for a nearby angel to write the finishing lines.",
     function: function() {
       BATTLETREE.api.lock("_060/_book", "Primordial Deities");
       BATTLETREE.api.lock("_060/_book", "Read about you");
