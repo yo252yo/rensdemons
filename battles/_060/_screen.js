@@ -18,15 +18,21 @@ CURRENTLEVEL.system.html().appendChild(log);
 
 var logcontent = document.createElement("textarea");
 logcontent.style.position = "relative";
-logcontent.style.height = "47%";
 logcontent.style.width = "80%";
 logcontent.style.margin = "10px";
 logcontent.style.fontSize = "large";
 logcontent.style.background = "black";
 logcontent.style.border = "1px white solid";
 logcontent.style.color = "white";
+logcontent.id = "logcontent";
 logcontent.readOnly = true;
 log.appendChild(logcontent);
+
+if(SCREEN.is_mobile()){
+  document.getElementById("logcontent").style.height = "45%";
+} else {
+  document.getElementById("logcontent").style.height = "80%";
+}
 
 var logform = HTML.div.make({position:"relative"});
 log.appendChild(logform);
@@ -85,31 +91,45 @@ var getLogs = function (){
 
 
 
-var frame_container = HTML.div.make({w:"100%", h:"55%", z:10000, margin: 10, position: "fixed"});
+var frame_container = HTML.div.make({w:"95%", h:"55%", z:10000, margin: 10, position: "fixed"});
 //frame_container.style.background = "red";
-frame_container.innerHTML = `<iframe onerror="alert('test')" id="iframe" src="https://www.yo252yo.com/rd/man.md" title="description" style="width:100%;height:90%;background:white;">test</iframe>`;
+frame_container.innerHTML = `<iframe id="iframe" src="https://www.yo252yo.com/rd/man.md" title="description" style="width:100%;background:white;">test</iframe>`;
 frame_container.style.visibility = "hidden";
 CURRENTLEVEL.system.html().appendChild(frame_container);
+if(SCREEN.is_mobile()){
+  document.getElementById("iframe").style.height = "50%";
+} else {
+  document.getElementById("iframe").style.height = "90%";
+}
 
 var frameform = HTML.div.make({position:"relative"});
 frame_container.appendChild(frameform);
+frameform.style.color = PALETTE.color("background").code();
 frameform.innerHTML = `
-  <form action='javascript:executeframe()'>
-  &gt; <input type="text" id='frame_entry' style="margin:10px;width:70%;color:white;background:black;" value="https://www.yo252yo.com/rd/man.md" />
-  <input type="submit" value="ENTER" />
-  <input type="submit" onclick="openframe();" value="OPEN" />
+  <form action='javascript:executeframe()' style="font-weight:bold;">
+  &gt; <input type="text" id='frame_entry' style="margin:10px;width:50%;color:white;background:black;" value="https://www.yo252yo.com/rd/man.md" />
+  <input type="submit" value="ENTER" /> or
+  <input type="submit" onclick="openframe();" value="OPEN" /> (recommended in case of loading error).
   </form>
 `;
 
 
 var executeframe = function(){
   var content = document.getElementById('frame_entry').value;
+  if(!content.startsWith("http")){
+    content = "https://" + content;
+    document.getElementById('frame_entry').value = content;
+  }
   document.getElementById('iframe').src = content;
   return false;
 }
 
 var openframe = function(){
   var content = document.getElementById('frame_entry').value;
+  if(!content.startsWith("http")){
+    content = "https://" + content;
+    document.getElementById('frame_entry').value = content;
+  }
   var c = window.open(content);
   console.log(c);
   return false;
