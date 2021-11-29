@@ -121,7 +121,11 @@ const INTERFACE = {
         var r = "<div style='float:left;clear:both;position:relative;display:block;margin-bottom:20px;'>";
         for(var i in PARTYMEMBERS){
           if (i == PARTYMEMBERS.Ren){
-          r += "<div id='character_portait_slot_" + i + "' onClick='AUDIO.music.interface.titlescreen();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
+            if(STATS.flag("MirrorConversation")){
+              r += "<div id='character_portait_slot_" + i + "' onClick='AUDIO.music.interface.titlescreen();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
+            } else{
+              r += "<div style='float:left;position:relative;display:block;width:125px;height:125px;border: thick double #aaaaaa;opacity:0.3;'></div>";
+            }
           } else if(STATS.unlocked(i)){
             r += "<div id='character_portait_slot_" + i + "' onClick='AUDIO.music.characters." + i +"();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
           } else if(PARTYMEMBERS.isPartyMember(i)){

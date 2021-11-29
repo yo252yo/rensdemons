@@ -67,6 +67,9 @@ var end = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Goodbye",
   unlock: true,
   description: [`$$Ren$: "It's all up to you, now. Please, save me. You're my only hope."`],
+  extra_function: function(){
+    STATS.record.flag("MirrorConversation");
+  }
 });
 
 var remember = function(cause){

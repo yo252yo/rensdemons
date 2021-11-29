@@ -1,8 +1,6 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
-pmake mirror talk achievemnt
-
 wiki.html
 
 
