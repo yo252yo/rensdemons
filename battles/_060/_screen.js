@@ -131,7 +131,6 @@ var openframe = function(){
     document.getElementById('frame_entry').value = content;
   }
   var c = window.open(content);
-  console.log(c);
   return false;
 }
 
