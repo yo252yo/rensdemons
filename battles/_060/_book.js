@@ -62,11 +62,10 @@ var unlock_random_book = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function() {
     c.destroy();
     var url = getUrl();
-    console.log(url);
     if (url != ""){
       document.getElementById('iframe').src = url;
-      document.getElementById('iframe').style.visibility = "visible";
       fakeframe.style.visibility = "hidden";
+      document.getElementById('iframe').style.visibility = "visible";
     } else {
       document.getElementById('iframe').style.visibility = "hidden";
       fakeframe.style.visibility = "visible";
