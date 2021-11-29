@@ -3,6 +3,47 @@ var c = new CenteredImage("assets/objects/heaven/bookshelf.png", 'background', 2
 
 PLAYER_ACTIONS.allow_flight(true);
 
+var frame_container = HTML.div.make({w:"95%", h:"55%", z:10000, margin: 10, position: "fixed"});
+frame_container.style.visibility = "hidden";
+CURRENTLEVEL.system.html().appendChild(frame_container);
+
+var decor = HTML.div.make({position:"absolute",w:"100%",h:SCREEN.is_mobile()?"70%":"100%",z:-1});
+frame_container.appendChild(decor);
+decor.innerHTML = `
+  <img draggable="false" src="assets/interface/page.png" style="width:100%;height:100%;user-select: none;-moz-user-select: none;-webkit-user-select: none;" />
+`;
+
+var frame = HTML.div.make({position:"absolute", w:"87%", h:SCREEN.is_mobile()?"55%":"80%", top: "10%", left:"8%"});
+frame_container.appendChild(frame);
+frame.style.opacity = 0.4;
+frame.innerHTML = `<iframe id="iframe" src="https://en.m.wikipedia.org/wiki/Special:RandomInCategory/Living people" title="Life of a person" style="width:100%;height:100%;background:white;">test</iframe>`;
+
+
+
+
+var unlock_random_book = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Take random parchment",
+  unlock: true,
+  function: function() {
+    c.destroy();
+    document.getElementById('iframe').src = "https://en.m.wikipedia.org/wiki/Special:RandomInCategory/Living people";
+    frame_container.style.visibility = "visible";
+  },
+});
+
+if (STATS.ending(ENDINGS.God)){
+  PLAYER_ACTIONS.add({
+    name: "Browse other books",
+    unlock: true,
+    description: "It seems that all documents are accounts of the lives of different people.",
+    function: function() {
+      BATTLETREE.api.lock("_060/_book", "Primordial Deities");
+      BATTLETREE.api.lock("_060/_book", "Read about you");
+      unlock_random_book("Browse other books");
+    },
+  });
+}
+
 
 // ===================
 //hack Primordial deities
@@ -54,6 +95,7 @@ if(STATS.flag("PrimordialDeities")){
     function: function() {
       unlock_mirror("Primordial Deities");
       unlock_code("Primordial Deities");
+      BATTLETREE.api.lock("_060/_book", "Browse other books");
     },
   });
 }
@@ -120,6 +162,7 @@ PLAYER_ACTIONS.add({
     unlock_begin("Read about you");
     unlock_browse("Read about you");
     unlock_end("Read about you");
+    BATTLETREE.api.lock("_060/_book", "Browse other books");
   },
 });
 
