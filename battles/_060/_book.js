@@ -21,12 +21,40 @@ frame.innerHTML = `<iframe id="iframe" src="https://en.m.wikipedia.org/wiki/Spec
 
 
 
+
+var getUrl = function(){
+  // real people
+  var possibilities = [
+    "https://en.m.wikipedia.org/wiki/Special:RandomInCategory/Living_people",
+    "https://en.wikipedia.org/wiki/Special:RandomInCategory/Characters_in_Greek_mythology",
+    "https://en.wikipedia.org/wiki/Special:RandomInCategory/Pages_using_infobox_person_with_unknown_empty_parameters",
+    "https://en.wikipedia.org/wiki/Special:RandomInCategory/Possibly_living_people",
+  ];
+
+  for(var i = 4; i <21; i++){
+    possibilities.push("https://en.wikipedia.org/wiki/Special:RandomInCategory/" + i + "th-century_births");
+  }
+
+  // fictional people
+  for(var i = 0; i <15; i++){
+    possibilities.push("https://en.wikipedia.org/wiki/Special:RandomInCategory/All_fictional_character_redirects");
+    possibilities.push("https://en.wikipedia.org/wiki/Special:RandomInCategory/Character_pop");
+  }
+
+  // RD
+  for(var i = 0; i <30; i++){
+    possibilities.push("wiki.html");
+  }
+
+  return RANDOM.pick(possibilities);
+}
+
 var unlock_random_book = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Take random parchment",
   unlock: true,
   function: function() {
     c.destroy();
-    document.getElementById('iframe').src = "https://en.m.wikipedia.org/wiki/Special:RandomInCategory/Living people";
+    document.getElementById('iframe').src = getUrl();
     frame_container.style.visibility = "visible";
   },
 });

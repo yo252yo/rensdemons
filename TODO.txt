@@ -3,10 +3,9 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 pmake mirror talk achievemnt
 
-iframe error handling
+wiki.html
 
-- connections with our world in heaven, popups/includes to wikipedia?
-en.wikipedia.org/wiki/Special:RandomInCategory/Living people
+
 
 
 ---------------------------------------- BACKSIDE:
