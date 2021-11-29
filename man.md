@@ -18,7 +18,7 @@ In the demo or in the main game, you control children stuck in a neverending cyc
 
 ### Removing suffering
 
-You can manipulate the game from the js console. This game engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Inside Negativity** (W.I.N.). In js, it's done by **typing**:
+You can manipulate the game from the js console. This game engine has a built-in solution to destroy all the demons and the suffering they cause in one go. You can trigger it from any js **console**, including the one in the game, by calling the module **Wipe Internal Negativity** (W.I.N.). In js, it's done by **typing**:
 
 `win();`
 
@@ -36,6 +36,10 @@ If you feel like creating new universes or adventures, I've done my best to make
 
 |                                               |                                   |
 |-----------------------------------------------|-----------------------------------|
+|                                               |                                   |
+| `win();`                                      | Wipe Internal Negativity          |
+| `man();`                                      | Opens this page                   |
+|                                               |                                   |
 | **INVENTORY**                                 |                                   |
 | `INVENTORY.increase(ITEM.Coin, 100);`         | Give yourself items               |
 |                                               |                                   |

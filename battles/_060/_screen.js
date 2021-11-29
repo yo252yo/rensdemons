@@ -6,6 +6,9 @@ var turnoff =  `Shutting down...`;
 
 AUDIO.music.interface.boss();
 
+// ===================
+//hack LOG
+// ===================
 
 var log = HTML.div.make({w:"100%", h:"55%", z:10000, margin: 10, position: "fixed"});
 log.style.color = PALETTE.color("background").code();
@@ -28,12 +31,13 @@ log.appendChild(logcontent);
 var logform = HTML.div.make({position:"relative"});
 log.appendChild(logform);
 logform.innerHTML = `
-  <form action='javascript:execute()'>
+  <form action='javascript:executelog()'>
   &gt; <input type="text" id='terminal_entry' style="margin:10px;width:70%;color:white;background:black;" placeholder="TYPE COMMAND" />
   <input type="submit" value="EXECUTE" /></form>
 `;
 
-var execute = function(){
+
+var executelog = function(){
   var content = document.getElementById('terminal_entry').value;
   try {
     var result = eval(content);
@@ -73,10 +77,61 @@ var getLogs = function (){
 }
 
 
+
+
+// ===================
+//hack FRAME
+// ===================
+
+
+
+var frame_container = HTML.div.make({w:"100%", h:"55%", z:10000, margin: 10, position: "fixed"});
+//frame_container.style.background = "red";
+frame_container.innerHTML = `<iframe onerror="alert('test')" id="iframe" src="https://www.yo252yo.com/rd/man.md" title="description" style="width:100%;height:90%;background:white;">test</iframe>`;
+frame_container.style.visibility = "hidden";
+CURRENTLEVEL.system.html().appendChild(frame_container);
+
+var frameform = HTML.div.make({position:"relative"});
+frame_container.appendChild(frameform);
+frameform.innerHTML = `
+  <form action='javascript:executeframe()'>
+  &gt; <input type="text" id='frame_entry' style="margin:10px;width:70%;color:white;background:black;" value="https://www.yo252yo.com/rd/man.md" />
+  <input type="submit" value="ENTER" />
+  <input type="submit" onclick="openframe();" value="OPEN" />
+  </form>
+`;
+
+
+var executeframe = function(){
+  var content = document.getElementById('frame_entry').value;
+  document.getElementById('iframe').src = content;
+  return false;
+}
+
+var openframe = function(){
+  var content = document.getElementById('frame_entry').value;
+  var c = window.open(content);
+  console.log(c);
+  return false;
+}
+
+// ===================
+//hack COMMANDS
+// ===================
+
+var hideconsole = "Hide console";
+var displayconsole = "Debug console";
+var hidebrowser = "Hide navigator";
+var displaybrowser = "Navigator screen";
+
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Display console",
+  name: displayconsole,
   unlock: true,
   function: function (){
+    BATTLETREE.api.unlock(battle, hideconsole);
+    BATTLETREE.api.lock(battle, displayconsole);
+    BATTLETREE.api.lock(battle, displaybrowser);
+
     updatelog("> Displaying console log");
     updatelog("Connection to the simulation established.");
     updatelog("#################################");
@@ -91,22 +146,51 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Hide console",
+  name: hideconsole,
   unlock: true,
   function: function (){
+    BATTLETREE.api.lock(battle, hideconsole);
+    BATTLETREE.api.unlock(battle, displayconsole);
+    BATTLETREE.api.unlock(battle, displaybrowser);
+
     updatelog("> Hiding console log");
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
 });
 
-var unlock_man = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "MANual page",
+var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: displaybrowser,
   unlock: true,
-  function: function () {
-    man();
+  extra_function: function () {
+    BATTLETREE.api.unlock(battle, hidebrowser);
+    BATTLETREE.api.lock(battle, displayconsole);
+    BATTLETREE.api.lock(battle, displaybrowser);
+
+    frame_container.style.visibility = "visible";
+    IO.key_interceptor.deactivate();
+
+    BATTLETREE.api.unlock(battle, "Stop pressing button");
+    BATTLETREE.api.lock(battle, "Press buttons");
   }
 });
+
+var unlock_browser_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: hidebrowser,
+  unlock: true,
+  extra_function: function () {
+    BATTLETREE.api.lock(battle, hidebrowser);
+    BATTLETREE.api.unlock(battle, displayconsole);
+    BATTLETREE.api.unlock(battle, displaybrowser);
+
+    frame_container.style.visibility = "hidden";
+    IO.key_interceptor.activate();
+  }
+});
+
+// ===================
+//hack STARTUP
+// ===================
 
 var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Exit",
@@ -120,14 +204,6 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
-
-PLAYER_ACTIONS.add({
-  name: "Abort",
-  outcome: BATTLETREE.ESCAPE,
-  unlock: true,
-  description: turnoff,
-});
-
 PLAYER_ACTIONS.add({
   name: "Retry",
   unlock: true,
@@ -135,11 +211,23 @@ PLAYER_ACTIONS.add({
   extra_function: function(){
     BATTLETREE.api.lock(battle, "Abort");
     BATTLETREE.api.lock(battle, "Fail");
+
     unlock_terminal_show("Retry");
     unlock_terminal_hide("Retry");
-    unlock_exit("Retry");
-    unlock_man("Retry");
+    unlock_browser("Retry");
+    unlock_browser_hide("Retry");
+    unlock_exit("Retry")
+
+    BATTLETREE.api.lock(battle, hidebrowser);
+    BATTLETREE.api.lock(battle, hideconsole);
   }
+});
+
+PLAYER_ACTIONS.add({
+  name: "Abort",
+  outcome: BATTLETREE.ESCAPE,
+  unlock: true,
+  description: turnoff,
 });
 
 PLAYER_ACTIONS.add({

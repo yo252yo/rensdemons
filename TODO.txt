@@ -1,10 +1,11 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+pmake mirror talk achievemnt
 
+iframe error handling
 
----------------------------------------- HEAVEN new content:
-- connections with our world in heaven, popups/includes to wikipedia?
+- connections with our world in heaven, popups/includes to wikipedia? https://en.wikipedia.org/wiki/Special:Random/People
 
 
 ---------------------------------------- BACKSIDE:
