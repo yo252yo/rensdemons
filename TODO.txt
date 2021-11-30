@@ -14,7 +14,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
-
 ---------------------------------------- BACKSIDE:
 - walkthrough
 - NPC thoughts, backstory (add to bio) People whispering on the edge of the viewport, some believe in last thursdayism
@@ -180,6 +179,12 @@ more fake choices that i know are fake
       "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
 - event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
 - reference to the fact that there's always a crafting system
+
+
+---------------------------------------- REREAD/FLESH OUT????
+- interactions with real world like books
+- man.md about forking
+- mirror conv
 
 
 ---------------------------------------- TODO
