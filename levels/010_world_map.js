@@ -8,8 +8,6 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 var after_going_to_town2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("_town3_prompted") || STATS.flag("StoryOfTheAncients");};
 
-var LaterInStory = function() { return false;};
-
 // ===================
 //hack 1. FLOORS
 // ===================
@@ -97,27 +95,27 @@ FEasyS.fill_floor_by_retry();
 
 FHardSW.set_guaranteed(1);
 FHardSW.set_object(300, 250, function(x,y,seed){
-  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", LaterInStory);
+  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees");
 });
 FHardSW.fill_floor_by_retry();
 
 
 FHardNE.set_guaranteed(1);
 FHardNE.set_object(250, 150, function(x,y,seed){
-  return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", LaterInStory);
+  return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens");
 });
 FHardNE.fill_floor_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(250, 150, function(x,y,seed){
-  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", LaterInStory);
+  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks");
 });
 FHardMain.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.set_object(100, 50, function(x,y,seed){
-  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", LaterInStory);
+  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes");
 });
 FHardMain.fill_floor_by_retry();
 

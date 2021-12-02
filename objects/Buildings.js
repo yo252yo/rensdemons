@@ -114,6 +114,14 @@ class S_CastleFloor extends S_Floor {
   }
 }
 
+
+class S_SeaFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, 'obj_dark', "assets/patterns/sea.png");
+    this.walkable = false;
+  }
+}
+
 class S_ExitFloor extends S_Floor {
   constructor(x, y, w, h, outside, force_new_position) {
     super(x, y, w, h, 'obj_dark', "assets/patterns/exit.png", force_new_position);
