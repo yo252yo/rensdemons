@@ -10,6 +10,26 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
+Going out at see -> Attack by a sea monster
+time limited event -> know its a bluff
+let your guard down > attack
+didnt fght in a while -> boss
+- got ammo -> theres gonna be zombies soon
+we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
+a lot of flags, something terrible will happen
+
+TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
+// extra lake
+faking it to infiltrate the enemy, double triple quadruple mole
+>> Artist vessel for god inspiration
+Ren can Foresee a betrayal
+unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
+theres always a fishing system
+
+
+
+
+
 
 
 
@@ -46,22 +66,6 @@ SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
 // extra forest dungeon?
 know her favorite fruits, chase after her we know where she runs away
 
----------------------------------------- SIREN DUNGEON
-Going out at see -> Attack by a sea monster
-time limited event -> know its a bluff
-let your guard down > attack
-didnt fght in a while -> boss
-- got ammo -> theres gonna be zombies soon
-we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
-a lot of flags, something terrible will happen
-
-TraitorFisher: "TraitorFisher", //  traitor   fisherman/cook
-// extra lake
-faking it to infiltrate the enemy, double triple quadruple mole
->> Artist vessel for god inspiration
-Ren can Foresee a betrayal
-unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
-theres always a fishing system
 
 ---------------------------------------- HAWK DUNGEON
 theres always something behind the waterfall
@@ -184,7 +188,7 @@ more fake choices that i know are fake
 ---------------------------------------- REREAD/FLESH OUT????
 - interactions with real world like books
 - man.md about forking
-- mirror conv
+- mirror conv (esp more first person actions?? "you" direct)
 
 
 ---------------------------------------- TODO
@@ -211,7 +215,7 @@ more fake choices that i know are fake
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
 - the goddess SAVED your soul (save/save) as confirmation when you save
-- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements?
+- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 - cache ressources
 - optimize size on disk
