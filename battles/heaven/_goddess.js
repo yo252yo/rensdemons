@@ -148,7 +148,8 @@ if (STATS.ending(ENDINGS.God)){
       `$$Ren$: "I did not come here in peace, I came here to get rid of you."`,
       `Goddess: "Then why talk and delay? Have at it!"`,
       `$$Ren$: "I... can't. When I kill you, you eventually come back."`,
-      `Goddess: "Not so easy to kill a god after all? But you are mistaken. It is not me who comes back. When I die, another one by the same name will take my place. There must always be a Goddess. People need something to believe in. But it will not be me. If you kill me, I will be gone forever."`,
+      `Goddess: "Not so easy to kill a god after all? Just when you think that one is dead, another one is already rising."`,
+      `Goddess: "But you are mistaken. It is not me who comes back. When I die, another one by the same name will take my place. There must always be a Goddess. People need something to believe in. But it will not be me. If you kill me, I will be gone forever."`,
     ],
     unlock: true,
     function: function(){
