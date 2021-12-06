@@ -1,16 +1,13 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+the audio sound effect of boat walking is wrong
 
 
 
 
 
 
-
-
-
-Going out at see -> Attack by a sea monster
 time limited event -> know its a bluff
 let your guard down > attack
 didnt fght in a while -> boss
@@ -215,7 +212,7 @@ more fake choices that i know are fake
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
 - the goddess SAVED your soul (save/save) as confirmation when you save
-- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
+- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 - cache ressources
 - optimize size on disk

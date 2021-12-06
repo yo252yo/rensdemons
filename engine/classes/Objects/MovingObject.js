@@ -8,8 +8,8 @@ var _RUNNING_BONUS = 1.8;
 
 class MovingObject extends LevelObject {
 
-  static try_make_walk_to(moving_object, x, y, callback) {
-      return moving_object.try_walk_to(x,y, callback);
+  static try_make_walk_to(moving_object, x, y, callback, forced) {
+      return moving_object.try_walk_to(x,y, callback, forced);
   }
 
   constructor(visual, x, y, w, h) {
@@ -70,10 +70,11 @@ class MovingObject extends LevelObject {
     }
 
     if (this.is_at(this.destination_x, this.destination_y)) {
-        if(this.walk_callback){
-          this.walk_callback();
-        }
+        var c = this.walk_callback;
         this.stop_autowalk();
+        if(c){
+          c();
+        }
         return;
     }
 
@@ -125,7 +126,7 @@ class MovingObject extends LevelObject {
     if(stop_autowalk){
       this.stop_autowalk();
     }
-    if (CURRENTLEVEL.io.is_walkable(this.x + dx, this.y+dy, this)) {
+    if (CURRENTLEVEL.io.is_walkable(this.x + dx, this.y+dy, this) || this.forced_walking) {
       // The hash is different every time we move, so instead we'll key the sound
       // effect per class.
       AUDIO.effect.footstep(1300 / this._movement_increment(), this.constructor.name);
@@ -161,11 +162,12 @@ class MovingObject extends LevelObject {
     this._try_walk_by_pixels(this._movement_increment() * unit_x, this._movement_increment() * unit_y, true);
   }
 
-  try_walk_to(x, y, callback) {
+  try_walk_to(x, y, callback, forced) {
     var currently_moving = this.is_walking();
     this.destination_x = x - this.width / 2;
     this.destination_y = y + 10;
     this.walk_callback = callback;
+    this.forced_walking = forced;
 
     if (!currently_moving) {
       this.start_auto_walk();

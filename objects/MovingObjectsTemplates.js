@@ -43,5 +43,6 @@ class M_Boat extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/boat.png", 'obj_light', 128, 128);
     super(visual, x, y, 128, 128);
+    this.adjust_hitbox(30, 0, 65, 128);
   }
 }
