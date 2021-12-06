@@ -18,6 +18,9 @@ var attack = function(){
   AUDIO.music.levels.sirens();
   TextBannerSequence.make([
     `The boat suddenly comes to a halt.`,
+    `$$BestFriend$: "What's happening? Why are we not moving?"`,
+    `$$Ren$: "I told you..."`,
+    `Waves start to shake the sea around you, as tentacles sprawl around and grab your little wooden raft.`,
   ]);
 //  CHARACTER.character.visual_element.show();
 //  IO.control.character();
@@ -25,13 +28,14 @@ var attack = function(){
 
 var moveBoat2 = function(){
   MovingObject.try_make_walk_to(b, 2000,2000, function(){}, true);
-  MovingObject.try_make_walk_to(CHARACTER.character, 2050,1900, attack, true); // for the camera
+  MovingObject.try_make_walk_to(CHARACTER.character, 2050,1950, attack, true); // for the camera
 }
 
 var moveBoat = function(){
   CHARACTER.character.visual_element.hide();
+  CHARACTER.character.silenced = true;
   MovingObject.try_make_walk_to(b, 1700,2000, moveBoat2, true);
-  MovingObject.try_make_walk_to(CHARACTER.character, 1750,1900, function(){}, true); // for the camera
+  MovingObject.try_make_walk_to(CHARACTER.character, 1750,1950, function(){}, true); // for the camera
 }
 
 var boardBoat = function(){

@@ -21,7 +21,8 @@ const CREDITS = {
 
    <b>Sound effects</b>:
    <a href="https://audio-alchemist.itch.io/" target="_blank">Audio Alchemist</a>,
-   <a href="https://opengameart.org/users/p0ss" target="_blank">p0ss</a>
+   <a href="https://opengameart.org/users/p0ss" target="_blank">p0ss</a>,
+   <a href="https://www.kenney.nl/" target="_blank">Kenney</a>
    <br />
 
    <b>Tiles</b>:

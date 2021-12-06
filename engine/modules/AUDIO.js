@@ -109,7 +109,11 @@ const AUDIO = {
     dodge_place: function() {     AUDIO._play_sfx('dodge_place'); },
     dodge_attack: function() {     AUDIO._play_sfx('dodge_attack'); },
     footstep: function(cooldown, key) {
-      AUDIO._play_sfx('footstep', cooldown, key);
+      if(key == "M_Boat"){
+        AUDIO._play_sfx('water', cooldown, key);
+      } else {
+        AUDIO._play_sfx('footstep', cooldown, key);
+      }
     },
     page: function() {
       var t = 250;
@@ -179,7 +183,6 @@ const AUDIO = {
       fissure: function() {           AUDIO._play_music("level/la pire nausee n'est pas ici"); },
       pandemonium: function() {       AUDIO._play_music("level/top me"); },
       heaven: function() {            AUDIO._play_music("level/a moment of calm"); },
-
     },
   },
 
