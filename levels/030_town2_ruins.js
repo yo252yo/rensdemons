@@ -22,7 +22,7 @@ obj.push(new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 2200, 1300, gen.get()))
 obj.push(new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 2225, 2225, gen.get()));
 obj.push(new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get()));
 
-var wiseOldFool = new M_Priest(1050, 1075);
+var wiseOldFool = new M_WiseOld(1050, 1075);
 
 wiseOldFool.interaction = function() {
   this.face_character();

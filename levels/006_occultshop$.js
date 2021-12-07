@@ -25,7 +25,7 @@ new B_Statue(1225, 1225);
 
 new B_Table(1325, 1325);
 
-var shopkeep = new M_NPC(1325, 1275, "villager2");
+var shopkeep = new M_UpbeatDojikko(1325, 1275);
 shopkeep.interaction = function(){
   this.face_character();
   if(PARTY.has_member(PARTYMEMBERS.UpbeatDojikko)){

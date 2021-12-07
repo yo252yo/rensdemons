@@ -16,7 +16,7 @@ var f = new S_ExitFloor(1250,1775,100,35, '020_town2');
 new M_Trainer(1100, 1650, 11, ABILITIES_ARCHETYPES_NAMES.Element, 750);
 new M_Trainer(1450, 1650, 33, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
 
-var wiseOldFool = new M_Priest(1500, 1125);
+var wiseOldFool = new M_WiseOld(1500, 1125);
 
 wiseOldFool.interaction = function() {
   this.face_character();

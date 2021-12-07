@@ -62,3 +62,27 @@ class M_PreciousChild extends MovingObject {
     this.adjust_hitbox(5, 0, 20, 5);
   }
 }
+
+class M_UpbeatDojikko extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/UpbeatDojikko.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}
+
+class M_WiseOld extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/WiseOld.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}
+
+class M_StreetSmart extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/StreetSmart.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}
