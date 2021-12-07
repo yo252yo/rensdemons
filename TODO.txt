@@ -2,6 +2,9 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+battles with partymembers icon, automated cut instead of static png
+
+hangrove doesnt use his sprite i think
 
 
 
@@ -21,6 +24,7 @@ faking it to infiltrate the enemy, double triple quadruple mole
 Ren can Foresee a betrayal
 unwavering loyalty: Someone’ll drop their oranges, you’ll help to pick them up, and then they’ll follow you for the next 60 hours as thanks, because that’s a perfectly normal response.
 theres always a fishing system
+
 
 
 
