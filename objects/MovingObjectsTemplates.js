@@ -46,3 +46,19 @@ class M_Boat extends MovingObject {
     this.adjust_hitbox(30, 0, 65, 128);
   }
 }
+
+
+class M_BestFriend extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/BestFriend.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}
+class M_PreciousChild extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/PreciousChild.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}

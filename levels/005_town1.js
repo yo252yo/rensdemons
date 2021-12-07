@@ -12,7 +12,7 @@ new Snippet("levels/decors/town1");
 
 
 var g =  [1525, 1425];
-var bf = new M_ChildF(g[0] + 50, g[1] + 10);
+var bf = new M_BestFriend(g[0] + 50, g[1] + 10);
 
 var bf_join_party = function(){
   PARTY.add(PARTYMEMBERS.BestFriend);

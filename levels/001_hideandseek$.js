@@ -62,7 +62,7 @@ child_in_tree(1400, 1250, "cfm1", new M_ChildM(0,0, DICTIONARY.get("child_friend
 new S_Tree(1470,1300);
 new S_Tree(1550,1100);
 
-child_in_tree(1420, 1120, "cfbf", new M_ChildF(), new TextBannerProgressive([
+child_in_tree(1420, 1120, "cfbf", new M_BestFriend(), new TextBannerProgressive([
     "You found your best friend, $$BestFriend$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.BestFriend); },
     "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
@@ -79,7 +79,7 @@ child_in_tree(1370,1380, "cff2", new M_ChildF(0,0, DICTIONARY.get("child_friends
     "$$child_friends_f2$: \"Sorry...\"",
 ]));
 
-child_in_tree(1250, 1280, "cfm3", new M_ChildM(),
+child_in_tree(1250, 1280, "cfm3", new M_PreciousChild(),
   new TextBannerProgressive([
     "You found $$PreciousChild$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.PreciousChild); },
