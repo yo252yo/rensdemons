@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/civilians/bf.png", 'background');
+new CenteredMovingImage("assets/characters/party/BestFriend.png", 'background',32,48, 2);
 AUDIO.music.characters.BestFriend();
 
 PLAYER_ACTIONS.escape();

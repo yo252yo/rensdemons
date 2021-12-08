@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/civilians/villager2.png", 'background');
+new CenteredMovingImage("assets/characters/party/UpbeatDojikko.png", 'background',32,48, 2);
 AUDIO.music.characters.UpbeatDojikko();
 
 PLAYER_ACTIONS.escape();
