@@ -172,7 +172,7 @@ const DODGE = {
       for (var l in CURRENTLEVEL.level_objects){
         var object = CURRENTLEVEL.level_objects[l];
         DODGE.saved_dimensions[object.hash()] = [object.visual_element.width, object.visual_element.height];
-        object.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100);
+        object.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 150);
         object.visual_element.adjust_dimensions(50,50);
       }
     },
