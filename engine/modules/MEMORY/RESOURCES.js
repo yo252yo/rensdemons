@@ -18,7 +18,7 @@ const RESOURCES = {
       resource.style = "display:none;";
       resource.onload = function(){RESOURCES.is_loaded(resource);};
 
-      document.body.appendChild(resource);
+      document.getElementById('resourceLoader').appendChild(resource);
       return resource;
   },
 
