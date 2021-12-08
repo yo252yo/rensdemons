@@ -21,11 +21,13 @@ new S_ExitFloor(2150,2225,250,50, "010_world_map");
 // ===================
 new S_SavePoint(2175, 1900, 100, 50);
 
+var shopkeep = new M_TraitorFisher(2300, 1750);
+
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var placeholder = new S_Painting(2250, 1775);
+var placeholder = new S_Painting(2250, 1795);
 
 var f = new Filler(gen.get());
 var decorFiller = new MultiFiller(f, 50, 50);
@@ -77,18 +79,24 @@ placeholder.destroy();
 //hack 7. START/INIT
 // ===================
 
+var fight = function(){
+  IO.control.character();
+  BATTLE.api.make('_party/_TraitorFisherTrial');
+}
 
 var next = function() {
   PARTY.changeNickname(PARTYMEMBERS.TraitorFisher);
   TextBannerSequence.make([
     `$$TraitorFisher$: "Why were you trespassing on the territory of the Sirens?"`,
     `$$Ren$: "The Sirens? Sorry, we had no idea..."`,
-  ], IO.control.character);
+    `The crowd of merfolk exchange concerned murmurs in a tongue you cannot comprehend. It sounds like hisses and tongue clicks. $$TraitorFisher$ sends a few concerned gazes around.`,
+    `$$TraitorFisher$: "I'm sorry, we must begin your formal trial."`,
+  ], fight);
 };
 CURRENTLEVEL.start_function = function() {
   TextBannerSequence.make([
     `You get dragged all the way to the bottom of the lake. When the currents finally quiet down, the tentacular monster that brought you here is nowhere to be seen. Instead, you can see plenty of heavily armored sirens and tritons floating in the water all around. They are all watching you with a suspicious eye.`,
-    `In front of you, a young woman, studying you patiently. She seems very serious, and not at all phased by this unusual environment or by your presence.`,
+    `In front of you stands a young woman, studying you patiently. She seems very serious, and not at all phased by this unusual environment or by your presence.`,
   ], next);
 };
 
