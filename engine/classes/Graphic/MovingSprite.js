@@ -4,10 +4,12 @@
 var _ANIMATION_SPEED = 100;
 
 class MovingSprite extends CanvasElement {
-    constructor(path, color, width, height) {
+    constructor(path, color, width, height, scale) {
       super(color);
-      this.width = width;
-      this.height = height;
+      this.width_pattern = width;
+      this.height_pattern = height;
+      this.width = width * (scale || 1);
+      this.height = height * (scale || 1);
       super.adjust_dimensions(this.width, this.height);
 
       this.sprite_index_x = 0;
@@ -30,8 +32,8 @@ class MovingSprite extends CanvasElement {
       this.html_canvas.width = this.width;
       this.html_canvas.height = this.height;
 
-      var source_index = [this.sprite_index_x * this.width, this.sprite_index_y * this.height];
-      this.html_canvas.getContext('2d').drawImage(this.resource, source_index[0], source_index[1], this.width, this.height, 0, 0, this.width, this.height);
+      var source_index = [this.sprite_index_x * this.width_pattern, this.sprite_index_y * this.height_pattern];
+      this.html_canvas.getContext('2d').drawImage(this.resource, source_index[0], source_index[1], this.width_pattern, this.height_pattern, 0, 0, this.width, this.height);
       super.tint();
     }
 
@@ -113,5 +115,13 @@ class MovingSprite extends CanvasElement {
     adjust_depth(z) {
       super.adjust_depth(z);
       this.html_canvas.style.zIndex = z;
+    }
+
+    adjust_dimensions(w,h) {
+        super.adjust_dimensions(w, h);
+        if (this.html_canvas){
+          this.html_canvas.style.width = w + "px";
+          this.html_canvas.style.height = h + "px";
+        }
     }
 }

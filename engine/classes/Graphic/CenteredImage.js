@@ -20,10 +20,9 @@ class CenteredImage extends FixedSprite {
 class CenteredMovingImage extends MovingSprite {
 
     constructor(path, color, width, height, scale) {
-      super(path, color, width, height);
+      super(path, color, width, height, scale);
       this.scale = scale || 1;
       this.container.style.position = "fixed";
-      // this.place_at(SCREEN.width() / 2 - this.resource.width / 2, SCREEN.height() / 2);
       this.draw();
     }
 
@@ -34,9 +33,6 @@ class CenteredMovingImage extends MovingSprite {
 
     draw() {
       super.draw();
-      this.html_canvas.style.width = this.width * this.scale;
-      this.html_canvas.style.height = this.height * this.scale;
-
       if(! this.lvl_obj){
         this.lvl_obj = new LevelObject(this, SCREEN.width() / 2 - this.width / 2, Math.max(SCREEN.height() / 2 - 50, this.height));
       } else {
