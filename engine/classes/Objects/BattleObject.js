@@ -81,7 +81,7 @@ class ItemBattleObject extends BattleObject {
 class SoulBattleObject extends BattleObject {
     constructor(x, y, name, spritenb) {
       var visual = new VisualElement(0,0,0,0);
-      super(x, y, name, 4, "battles/civilians/villager" + spritenb, visual);
+      super(x, y, name, 4, "characters/villager" + spritenb, visual);
       this.lastingBattle = true;
     }
 }

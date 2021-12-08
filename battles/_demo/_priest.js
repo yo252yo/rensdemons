@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/civilians/priest.png", 'background');
+new CenteredMovingImage("assets/characters/priest.png", 'background',32,48, 2);
 
 AUDIO.music.interface.boss();
 

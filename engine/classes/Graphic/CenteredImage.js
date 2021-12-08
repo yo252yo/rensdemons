@@ -22,7 +22,7 @@ class CenteredMovingImage extends MovingSprite {
     constructor(path, color, width, height, scale) {
       super(path, color, width, height);
       this.scale = scale || 1;
-      // this.container.style.position = "fixed";
+      this.container.style.position = "fixed";
       // this.place_at(SCREEN.width() / 2 - this.resource.width / 2, SCREEN.height() / 2);
       this.draw();
     }

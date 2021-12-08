@@ -39,7 +39,11 @@ const BATTLEOBJECTSMANAGER = {
     if (name != battleobject.name){ // we do a roundtrip to BATTLE for the whole battle setup
       CONSOLE.error("[BATTLEOBJECTSMANAGER] called with the wrong battleobject.");
     }
-    var c = new CenteredImage("assets/" + battleobject.battle_sprite_name + ".png", 'background', 2);
+    if(battleobject.battle_sprite_name.startsWith("characters")){
+      var c = new CenteredMovingImage("assets/" + battleobject.battle_sprite_name + ".png", 'background',32,48, 2);
+    } else{
+      var c = new CenteredImage("assets/" + battleobject.battle_sprite_name + ".png", 'background', 2);
+    }
 
     BATTLEOBJECTSMANAGER.battle.add_commands_from_object(battleobject);
 

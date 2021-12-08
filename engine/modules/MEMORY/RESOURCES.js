@@ -31,10 +31,6 @@ const RESOURCES = {
   },
 
   preload: function(){
-    RESOURCES.get_img('assets/battles/civilians/child_m.png');
-    RESOURCES.get_img('assets/battles/civilians/priest.png');
-    RESOURCES.get_img('assets/battles/civilians/villager0.png');
-    RESOURCES.get_img('assets/battles/civilians/villager2.png');
     RESOURCES.get_img('assets/battles/forests/blob.png');
     RESOURCES.get_img('assets/battles/forests/boar.png');
     RESOURCES.get_img('assets/battles/forests/flower.png');
