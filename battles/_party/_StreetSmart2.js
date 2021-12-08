@@ -220,7 +220,7 @@ var unlock_goodbye = PLAYER_ACTIONS.function.unlock_replacing_action({
     `He walks away, but before leaving he turns to you a last time and gives you a genuine smile.`,
     `$$StreetSmart$: "Hey, thanks."`,
   ],
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.ESCAPE,
 });
 
 var unlock_pay = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -241,7 +241,7 @@ var unlock_pay = PLAYER_ACTIONS.function.unlock_replacing_action({
 
 var unlock_betray = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Betray",
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.ESCAPE,
   unlock: true,
   description: [`At the last minute, you try to grab the thief's hand. However, his stellar reflexes are better than yours, and he manages to jump backwards and take flight.`, ],
 });
@@ -288,21 +288,21 @@ PLAYER_ACTIONS.add({
   name: "Call help",
   unlock: true,
   description: [`You scream, waking up $$BestFriend$. Seeing this, the rogue flies away with a speed that you didn't know humans were capable of. You're safe.`],
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.ESCAPE,
 });
 
 PLAYER_ACTIONS.add({
   name: "Draw weapon",
   unlock: true,
   description: [`You draw your weapon. The thief reacts at lightning speed by running away with great dexterity. He vanishes in the distance before you can react.`],
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.ESCAPE,
 });
 
 PLAYER_ACTIONS.add({
   name: "Chase",
   unlock: true,
   description: [`You start running after the thief, in order to catch him, but your body is no match for the capabilities of this young man. It doesn't take long for him to outrun you and lose you.`],
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.ESCAPE,
 });
 
 
