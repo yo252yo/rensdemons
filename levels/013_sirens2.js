@@ -42,6 +42,8 @@ decorFiller.add_default_constructor("S_TentaPlant", 2);
 decorFiller.add_default_constructor("S_TentaPlantMini", 2);
 decorFiller.add_default_constructor("S_Coral", 1);
 decorFiller.add_default_constructor("S_Anemone", 1);
+decorFiller.add_default_constructor("S_Whirlwind", 1);
+
 
 decorFiller.set_tries(75, 100);
 decorFiller.fill_floor_by_retry();

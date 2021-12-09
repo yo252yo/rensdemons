@@ -722,6 +722,7 @@ class S_BookshelfBig extends SimpleObject {
     }
   }
 }
+
 class S_Bookshelf extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, "heaven/bookshelf");
@@ -870,6 +871,24 @@ class S_Computer extends SimpleObject {
       TextBannerSequence.make([
         `It's an altar, but this one seems a bit different from the ones you've seen so far. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
       ], approach);
+    }
+  }
+}
+
+class S_Whirlwind extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "water/whirlwind");
+    this.adjust_hitbox(0,0,46,44);
+    this.specify_sprite_size(46, 44);
+    var gen = new Generator(seed);
+    var tp = function(){
+      CURRENTLEVEL.setup("013_sirens2", [1100 + gen.get() * 2325,2175 - gen.get() * 1300]);
+    }
+    this.default_text = function(){
+      TextBannerSequence.make([
+        `You get sucked in a whirlwind of water.`,
+        `The current drags you to a totally different part of the lake.`,
+      ], tp);
     }
   }
 }
