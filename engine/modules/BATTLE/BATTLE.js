@@ -231,6 +231,10 @@ const BATTLE = {
       BATTLETREE.api.declare(BATTLE.current_battle, action_object.name);
     },
 
+    empty: function(){
+      BATTLE._player_actions = [];
+    },
+
     remove: function(name) {
       delete BATTLE._player_actions[name];
     },

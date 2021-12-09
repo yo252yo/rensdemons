@@ -2,9 +2,19 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+make gameover resize faster
+
+
+indicate the rarity of the event to get a lootbox effect
 
 
 
+
+run away!! we have times
+
+best friend: how did you knwo to trust here
+
+add her to party
 
 time limited event -> know its a bluff
 let your guard down > attack
@@ -36,6 +46,7 @@ theres always a fishing system
 - visual glitches, especially during Maou death (overlay?)
 - more language options for ledger console
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
+theyreannoyed at having to pretend they dont know the guy and they just respawned
 
 
 ---------------------------------------- OPTIONAL CONTENT:
@@ -91,6 +102,7 @@ The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulati
 so youre quantum immortal!!
 challenge to find his favorite food etc
 more fake choices that i know are fake ??
+how do you know my name???
 
 ---------------------------------------- TOWN2 CASTLE
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
