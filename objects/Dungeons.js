@@ -107,6 +107,78 @@ class S_Waterplants extends SimpleObject {
   }
 }
 
+class S_WaterPlantWall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "water/plantwall");
+    this.adjust_hitbox(0,0,50,10);
+    this.specify_sprite_size(49,47);
+    this.default_text = this.text_interaction([
+      "Large leafy algae float slowly in the water.",
+      "You cannot pass through this wall of leafy algae.",
+      "Algae extend like a sheet of green vegetal dancing in the current.",
+    ], seed);
+  }
+}
+
+class S_BubblePlant extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(3)){
+      case 0:
+        super(x, y, "water/bubbleplant1");
+        this.adjust_hitbox(0,0,40,35);
+        this.specify_sprite_size(41, 57);
+        break;
+    case 1:
+      super(x, y, "water/bubbleplant2");
+      this.adjust_hitbox(0,0,35,25);
+      this.specify_sprite_size(39, 73);
+      break;
+    case 2:
+      super(x, y, "water/bubbleplant3");
+      this.adjust_hitbox(5,0,45,40);
+      this.specify_sprite_size(48, 89);
+      break;
+    }
+    this.default_text = this.text_interaction([
+      "The bulbous part of this plant follows the current, barely anchored by its stalk.",
+      "You watch mesmerized as the long stem dances along water currents.",
+      "The bulb seems drawn towards the surface. You wonder what it contains.",
+      "These plants seems that they're sprouting out of the ground towards the surface high above.",
+      "The stem is very thin but somehow extraordinarly sturdy.",
+      "You almost get entangled in a web of thin stems. Better not get too close.",
+      "The stem is light green, bordering on transparent, whereas the bulb is a bright shade of yellow.",
+    ], seed);
+  }
+}
+
+class S_TentaPlant extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "water/tentaplant");
+    this.adjust_hitbox(0,0,48,30);
+    this.specify_sprite_size(48,121);
+    this.default_text = this.text_interaction([
+      "The big squirmy plant extends far above your head, towards the surface.",
+      "You inadvertently get hit by one of the branches of this weird slimy plant. Fortunately, it doesn't seem poisonous.",
+      "Contrary to other vegetals, this one seems to have a sturdy armature that allows it to stand upright and not get dragged by currents.",
+    ], seed);
+  }
+}
+
+class S_TentaPlantMini extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "water/tentaplantmini");
+    this.adjust_hitbox(0,0,38,40);
+    this.specify_sprite_size(38,41);
+    this.default_text = this.text_interaction([
+      "You tread lightly over the many bulbous little sprouts, your weight lessened by the water.",
+      "The bulging sprouts emit a squishy sound when you touch them.",
+      "The ground is covered in brightly colored small burgeons.",
+    ], seed);
+    this.walkable = true;
+  }
+}
+
 class S_PlantSmall extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, "forest/plant");

@@ -30,16 +30,19 @@ var shopkeep = new M_TraitorFisher(2300, 1750);
 var placeholder = new S_Painting(2250, 1795);
 
 var f = new Filler(gen.get());
-var decorFiller = new MultiFiller(f, 50, 50);
+var decorFiller = new MultiFiller(f, 50, 80);
 decorFiller.set_zone(1075,2200,2375,1350);
-decorFiller.add_default_constructor("S_Seashell");
-decorFiller.add_default_constructor("S_Seashellpointy");
-decorFiller.add_default_constructor("S_Planks");
+decorFiller.add_default_constructor("S_Seashell", 0.6);
+decorFiller.add_default_constructor("S_Seashellpointy", 0.6);
+decorFiller.add_default_constructor("S_Planks", 0.4);
 
-decorFiller.add_default_constructor("S_AlgaeWall", 1, 100, 50);
-decorFiller.add_default_constructor("S_Coral", 3);
-decorFiller.add_default_constructor("S_Anemone", 2);
-decorFiller.add_default_constructor("S_Waterplants", 2);
+decorFiller.add_default_constructor("S_WaterPlantWall", 1);
+decorFiller.add_default_constructor("S_BubblePlant", 4);
+decorFiller.add_default_constructor("S_TentaPlant", 2);
+decorFiller.add_default_constructor("S_TentaPlantMini", 2);
+decorFiller.add_default_constructor("S_Coral", 1);
+decorFiller.add_default_constructor("S_Anemone", 1);
+
 decorFiller.set_tries(75, 100);
 decorFiller.fill_floor_by_retry();
 
