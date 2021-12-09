@@ -21,8 +21,18 @@ new S_ExitFloor(2150,2225,250,50, "010_world_map");
 // ===================
 new S_SavePoint(2175, 1900, 100, 50);
 
-var shopkeep = new M_TraitorFisher(2300, 1750);
+var traitor = new M_TraitorFisher(2300, 1750);
 
+traitor.interaction = function() {
+  this.face_character();
+  if (PARTY.has_member(PARTYMEMBERS.TraitorFisher)){
+    TextBannerSequence.make([
+      `$$TraitorFisher$: "Let's leave quickly before we get found out!"`,
+    ]);
+  } else {
+    BATTLE.api.make('_party/_TraitorFisher');
+  }
+}
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
