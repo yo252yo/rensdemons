@@ -5,9 +5,7 @@ indicate the rarity of the event to get a lootbox effect
 
 
 FISHER:
-description in party.js >
-attacks in langug, >
-encounter+battle
+encounter + join
 
 SIRENS:
 more floors, boss

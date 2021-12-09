@@ -165,3 +165,32 @@ LANGUAGE.actions[PARTYMEMBERS.WiseOld] = {
     ]);
   },
 };
+
+LANGUAGE.actions[PARTYMEMBERS.TraitorFisher] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.TraitorFisher)) + RANDOM.pick([
+        `$$TraitorFisher$ sneaks onto the battleground. She explains a convoluted plan to infiltrate enemy ranks and take them down from the inside.`,
+        `$$TraitorFisher$ springs forward and explains theatrically how she's been scheming and preparing for this moment for years. All the pieces are in place, now, and it's time for her plans to finally bear fruits!`,
+        `$$TraitorFisher$ says that her true goal joining your party was to be able to meet the $$&ENEMY$. Now it's finally time to reveal her true allegiance.`]);
+
+    var dialog = RANDOM.pick([
+      `$$TraitorFisher$: "My name is $$TraitorFisher$. Just $$TraitorFisher$."`,
+      `$$TraitorFisher$: "All along, you thought I was an innocent naive girl? Fooled you! All this time, I've been..."`,
+      `$$TraitorFisher$: "Brace yourself for the big reveal I've been working towards secretly the whole time!"`]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `$$TraitorFisher$ approaches the $$&ENEMY$. She gives you an apologetic smile, and joins the enemy ranks.`,
+      `$$TraitorFisher$ decides to betray you and sides with the $$&ENEMY$.`,
+      `$$TraitorFisher$ starts exposing a convoluted plan explaining why she needs to join the enemy side. Before you understand what's going on, she's already buttering up to the $$&ENEMY$.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$TraitorFisher$ reveals that she has been friends with the $$&ENEMY$ for years to prepare for this. She has no problems coming close to the unsuspecting $$&ENEMY$, and betray her long time acquaintance by stabbing it in the back.`,
+      `$$TraitorFisher$ convinces the $$&ENEMY$ to let her join its party. But no sooner did she earn the trust of the credulous $$&ENEMY$ that she betrays it, exposing its weak points to the world. You have no problem exploiting this information to conclude the fight.`,
+      `$$TraitorFisher$ pretends to attack you. The $$&ENEMY$ is convinced and invites her to join its ranks. She convinces the $$&ENEMY$ that it's best for her to infiltrate your party as a double agent. But as soon as she's back, $$TraitorFisher$ starts negotiating with the $$&ENEMY$ to betray you. The $$&ENEMY$ is visibly confused. Taking advantage of its turmoil, $$TraitorFisher$ strikes down the $$&ENEMY$ in an instant.`,
+    ]);
+  },
+};
