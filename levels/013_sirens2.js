@@ -94,9 +94,16 @@ placeholder.destroy();
 //hack 7. START/INIT
 // ===================
 
+var callback = function(){
+  TextBannerSequence.make([
+    `$$BestFriend$: "What... What just happened? How did you know you could trust her?"`,
+    `$$BestFriend$: "Of course, the Goddess! Well, let's not linger! She said to head south, right?"`,
+  ]);
+}
+
 var fight = function(){
   IO.control.character();
-  BATTLE.api.make('_party/_TraitorFisherTrial');
+  BATTLE.api.make('_party/_TraitorFisherTrial', callback);
 }
 
 var next = function() {
