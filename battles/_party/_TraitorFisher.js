@@ -53,9 +53,13 @@ var agent_number_text = function(n){
 }
 
 var description_traitor = function(n) {
-  var side = ["Sirens", "Humans"];
+  if (agent_number % 2 == 0){
+    var side = ["Sirens", "Humans"];
+  } else {
+    var side = ["Humans", "Sirens"];
+  }
   if (n == 1){
-    return [`$$TraitorFisher$: "Because I was working for the Humans all along!"`];
+    return [`$$TraitorFisher$: "Because I was working for the ${side[n%2]} all along!"`, `$$BestFriend$ gasps in shock.`];
   }
   if(n == agent_number){
     return [`$$TraitorFisher$: "I was only pretending to side with the ${side[n%2]} all along! It was a ruse in order to gain their trust and infiltrate their ranks."`, `$$BestFriend$ gasps in shock.`].concat(description_traitor(n-1));
