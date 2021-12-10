@@ -121,7 +121,7 @@ PLAYER_ACTIONS.add({
   unlock: STATS.flag("_sirens_language"),
   description: [
     `As you alternate clicks and hisses, the crowd of merfolks grows silent and wide eyed. $$BestFriend$ stares at you with incredulity. The siren emissary shares the general disbelief:`,
-    `$$TraitorFisher$: "Who are you and how do you know our language?"`,
+    `$$TraitorFisher$: "Who are you? How do you know our language? How are you so well learned in our laws?"`,
     `$$BestFriend$: "Yes, when did you learn that?"`,
   ],
   function: beg,
@@ -139,7 +139,7 @@ var learn = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "Please..."`,
     `$$TraitorFisher$ sighs reluctantly and articulates a series of hisses and clicks: ... .-.. .- ...- .`,
     `The merfolks all around exchange interrogative glances.`,
-    `$$TraitorFisher$: "This is the most self-deprecating word in their language. Usually, merfolks would be honor bound to show mercy to anyone speaking it. But it doesn't work for humans."`,
+    `$$TraitorFisher$: "This is a special clause in Siren law. It's very self-deprecating. It's a provision that allows anyone to surrender all their rights and ask for exile. Usually, merfolks would be honor bound to consider it. But it doesn't work for humans."`,
     `You try to reproduce the noises.`,
     `$$Ren$: "... .-.. .- ...- ."`,
     `A series of agitated clicks shakes the crowd. It might be your imagination, but you get the feeling that they are laughing at you.`,
