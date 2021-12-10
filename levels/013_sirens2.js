@@ -68,33 +68,33 @@ decorFiller.fill_floor_by_retry();
 // ===================
 
 var events = new EventFiller(decorFiller, 10);
-events.battle('waters/anemone', 0.5);
-events.battle('waters/crab', 0.5);
-events.battle('waters/jellyfish', 0.5);
-events.battle('waters/mermaid');
-events.battle('waters/naiad');
-events.battle('waters/triton');
-/*
-events.battleRubble(ITEM.Shield, 0.05);
-events.battleRubble(ITEM.Elixir_vine, 0.05);
-events.battleRubble(ITEM.Sword_wooden, 0.1);
-events.battleRubble(ITEM.Bone);
+events.battle('waters/anemone');
+events.battle('waters/crab');
+events.battle('waters/jellyfish');
+events.battle('waters/mermaid', 2);
+events.battle('waters/naiad', 2);
+events.battle('waters/triton', 2);
 events.groundItem(ITEM.Scale);
 events.groundItem(ITEM.Seashell);
-events.groundItem(ITEM.AncientRubbles);
-events.groundItem(ITEM.Net, 0.1);
-events.text('You find a pile of goo that surely used to be other living creatures. You shudder at the thought that it may be the fate that awaits you.');
-events.text('The stench and humidity is unbearable. The floor under your feet is gooey and unsteady. You progress with difficulty.');
-events.text('You notice a dull pain in your feet. When you take a look, you notice that there is thin layer of thick liquid everywhere around you. It is weakening the leather of your shoes and slowly burning your skin underneath. It\'s taking a very long time, but things will surely get worse if you don\'t find a way out fast.');
-events.text('Trinkets and bits of human-made objects lie around you on the exposed flesh. It gives you hope that you can find something interesting around here.');
+events.battleRubble(ITEM.Bone);
+events.battleRubble(ITEM.Spear, 0.05);
+events.battleRubble(ITEM.Elixir_venom, 0.1);
+events.battleRubble(ITEM.Poison_darts, 0.1);
+events.battleRubble(ITEM.BreathingPotion, 0.1);
+events.byConstructor("B_Seashell", 0.1);
+events.byConstructor("B_Skeleton", 0.1);
+events.text('The waters in this lake are way more tumultuous than the placid surface had lead you to believe. Every now and then you see columns of bubbles swirling, or fishes being dragged by powerful chaotic currents.');
+events.text(`A patrol of heavily armed tritons is swimming nearby. You don't think you can take them head on. Fortunately, you can swim down to the sand. You croutch and wait for the menace to go away.`);
+events.text(`The lake is much deeper than you first thought. When you look up, you can barely see rays of light defracted by massive quantities of water. Most of the ambient light that allows you to see comes from fluorescent vegetals.`);
+events.text(`The water dulls the sounds around you. It makes it hard to be reactive to approaching danger. When a flesh eating fish charges you from behind, you only notice it way too late. Fortunately, $$BestFriend$ is ready and manages to counter the animal before you even get hurt.`);
+events.text(`The bottom of the lake is full of life. Huge swarms of fishes are swimming above your heads. Their colorful scale make them shine in the darkness like moving sparkly stars. The Sirens people must not be hungry.`);
+events.text(`The breathing potion makes it possible for you to remain underwater. You breathe in the liquid and it somehow sustains you without drowning. The feeling is weird, it's definitely more viscous and heavy than air, and it has a distinctly fishy taste.`);
 
-events.byConstructor("B_Skeleton", 1);
-events.byConstructor("B_Seashell", 1);
-*/
 events.set_tries(50, 75);
 events.fill_floor_by_retry();
 
 placeholder.destroy();
+
 // ===================
 //hack 7. START/INIT
 // ===================

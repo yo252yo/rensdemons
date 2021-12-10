@@ -1,4 +1,4 @@
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+ePARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 make gameover resize faster
 indicate the rarity of the event to get a lootbox effect
@@ -14,8 +14,6 @@ encounters and loots
 - didnt fght in a while -> boss
 - got ammo -> theres gonna be zombies soon
 - we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro
-
-add her to party
 
 a lot of flags, something terrible will happen
 
@@ -184,6 +182,7 @@ more fake choices that i know are fake
 ---------------------------------------- REREAD/FLESH OUT????
 - interactions with real world like books
 - man.md about forking
+- add a link to the demo in heaven
 - mirror conv (esp more first person actions?? "you" direct)
 
 
@@ -216,3 +215,6 @@ more fake choices that i know are fake
 - cache ressources
 - optimize size on disk
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
+
+---------------------------------------- DURING BETA
+- more event text by zones
