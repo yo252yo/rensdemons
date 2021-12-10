@@ -13,8 +13,13 @@ new S_SandFloor(1075,2200,2375,1350);
 // ===================
 //hack 2. EXIT
 // ===================
-new S_ExitFloor(2150,2225,250,50, "010_world_map");
-
+var x = new S_ExitFloor(2150,2225,250,50, "010_world_map");
+x.interaction = function(){
+  new CenteredTextMenu("Swim to the surface?", [
+    {"text": "Yes", "effect": function(){ CURRENTLEVEL.setup("010_world_map"); }},
+    {"text": "Not yet", "effect": function(){}},
+  ]);
+}
 
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
