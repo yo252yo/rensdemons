@@ -291,3 +291,18 @@ class S_Castle extends LevelObject {
     super.destroy();
   }
 }
+
+
+class S_Placeholder extends LevelObject {
+  constructor(x, y, w, h){
+    var visual = new Rectangle(x,y,w,h, 'white');
+    super(visual, x, y);
+    this.adjust_hitbox(x, y, w, h);
+    this.walkable = false;
+  }
+
+  interaction(){
+    this.walkable = false;
+    // a non  null function to make sure this is interactible
+  }
+}

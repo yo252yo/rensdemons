@@ -130,7 +130,7 @@ if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var placeholder = new S_Painting(1370, 1330);
+var placeholder = new S_Placeholder(1340, 1350, 100, 100);
 
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 100, 100);
