@@ -876,13 +876,17 @@ class S_Computer extends SimpleObject {
 }
 
 class S_Whirlwind extends SimpleObject {
-  constructor(x, y, seed){
+  constructor(x, y, seed, destination){
     super(x, y, "water/whirlwind");
     this.adjust_hitbox(0,0,46,44);
     this.specify_sprite_size(46, 44);
     var gen = new Generator(seed);
     var tp = function(){
-      CURRENTLEVEL.setup("013_sirens2", [1100 + gen.get() * 2325,2175 - gen.get() * 1300]);
+      if(!destination){
+        CURRENTLEVEL.setup("013_sirens2", [1100 + gen.get() * 2325,2175 - gen.get() * 1300]);
+      } else{
+        CURRENTLEVEL.setup(destination);
+      }
     }
     this.default_text = function(){
       TextBannerSequence.make([

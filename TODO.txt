@@ -2,23 +2,16 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 make gameover resize faster
 indicate the rarity of the event to get a lootbox effect
-
-
-
 pandemonium painting is missing text
 
 
-SIRENS:
-final floors, boss
-correct vortex to move on
+
+
+013_sirens2@4 : final floors, 
 - let your guard down > attack
 - didnt fght in a while -> boss
-- got ammo -> theres gonna be zombies soon
-- we'll be safe once we pass this theeshold/ rly?wtf we'll lose aggro (@2)
-- also a text saying you get deeper @3
-
-
-a lot of flags, something terrible will happen
+- save point -> theres gonna be zombies soon
+- a lot of flags, something terrible will happen
 
 
 
