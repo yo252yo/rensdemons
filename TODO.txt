@@ -4,20 +4,7 @@ make gameover resize faster
 indicate the rarity of the event to get a lootbox effect
 pandemonium painting is missing text
 
-
-
-
-013_sirens2@4 : final floors, 
-- let your guard down > attack
-- didnt fght in a while -> boss
-- save point -> theres gonna be zombies soon
-- a lot of flags, something terrible will happen
-
-
-
-
-
-
+finish siren
 
 
 
@@ -35,6 +22,7 @@ theyreannoyed at having to pretend they dont know the guy and they just respawne
 - town2 survivors rescue!
 - hans dog somewhere
 - more furniture ^^ (city specific ??)
+- add a link to the demo in heaven
 - more itembattles for dungeons and world,
 - more battle encounters (world map ruins, hellsmaw skeleton)
 - more bed and jar actions
@@ -175,11 +163,6 @@ more fake choices that i know are fake
 - reference to the fact that there's always a crafting system
 
 
----------------------------------------- REREAD/FLESH OUT????
-- interactions with real world like books
-- man.md about forking
-- add a link to the demo in heaven
-- mirror conv (esp more first person actions?? "you" direct)
 
 
 ---------------------------------------- TODO
@@ -212,5 +195,14 @@ more fake choices that i know are fake
 - optimize size on disk
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 
----------------------------------------- DURING BETA
-- more event text by zones
+
+---------------------------------------- SEND OUT FOR BETA
+
+---------------------------------------- POLISHING
+- more event text in zones
+
+
+---------------------------------------- REREAD/FLESH OUT????
+- more interactions with real world like books
+- man.md about forking
+- mirror conv (esp more first person actions?? "you" direct)
