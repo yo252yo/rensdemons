@@ -99,15 +99,60 @@ if(sirenspart < 4) {
   f.set_object(50, 50, constructor);
   f.fill_floor_by_retry();
 } else{
+  new SE_event(2500, 2150, [
+    `$$Ren$: "We haven't seen any monster for a while, now..."`,
+    `$$BestFriend$: "Isn't that good? That means we're safe!"`,
+    `$$Ren$: "On the contrary, it means that something big is coming..."`,
+    `$$BestFriend$: "What kind of twisted logic is that!"`,
+  ], 100);
+  new SE_event(2825, 2150, [
+    `$$BestFriend$: "This place is so quiet... It's almost relaxing!"`,
+    `$$Ren$: "I bet it hides something. It's too suspicious."`,
+  ], 100);
+
+  new SE_event(3325, 2150, [
+    `$$BestFriend$: "Look, over there, an altar!"`,
+    `$$Ren$: "That means we're going to face a pretty big challenge soon."`,
+    `$$BestFriend$: "How do you get that from an altar?"`,
+    `$$Ren$: "It's the Goddess' way of warning us!"`,
+    `$$BestFriend$: "I see..."`,
+  ], 100);
   new S_SavePoint(3425, 2150);
-  new SBattle(4575, 2125, '#boss');
-  new SBattle(4750, 2125, '#artifact');
-  new SBattle(4425, 2125, '#haventbeenattackedinawhiledialog');
-
-  new SBattle(3225, 2150, '#doublesize:lookanaltarsomethingbadwillhappen');
 
 
- // more random flags and conversations ???
+  new SE_event(3550, 2125, [
+    `$$BestFriend$: "It's getting darker, we must be getting close to the deepest point of the lake, and still, nothing."`,
+  ], 50);
+  new SE_event(3775, 2125, [
+    `$$BestFriend$: "Without the swarm of armed sirens, I feel like I'm looking at the scenery for the first time. It's beautiful here!"`,
+    `$$Ren$: "Don't get too comfortable. There's no such thing as peace. It's the calm before the storm."`,
+  ], 50);
+  new SE_event(4000, 2125, [
+    `$$BestFriend$: "When we get out of here, let's take some actual rest somewhere quiet. We could find a cabin..."`,
+    `$$Ren$: "Don't start making plans for the future! That's a sure-fire way to invite disaster!"`,
+    `$$BestFriend$: "You're so superstitious..."`,
+  ], 50);
+  new SE_event(4200, 2125, [
+    `$$BestFriend$: "What are you so afraid of? It's empty here, we're completely safe!"`,
+    `$$Ren$: "Stop saying this kind of things! You're asking for trouble!"`,
+  ], 50);
+
+  new SE_event(4425, 2125, [
+    `$$BestFriend$: "Let's just swim away, if you're so scared..."`,
+    `$$Ren$: "I'm not sure. Clearly there's something here. Something big. I bet it's worth the trouble..."`,
+    `$$BestFriend$: "You're getting all that from the absence of enemies? Don't you think you might be reading too much into it?"`,
+  ], 50);
+
+  new SBattle(4575, 2125, 'waters/serpent');
+
+  new SE_event(4750, 2125, [
+    `You discover a sword planted upright in the sand. It is unlike any weapon you've ever seen. The blade shines so bright that it lights up the whole surroundings. It's even hard to look at it. The hilt is ornamented with the finest golden arabesques you've ever seen. You quietly think that no human could have done that. It's surrounded by an aura that seems to slowly vibrate the very fabric of the universe, ringing your ears with an angelic buzz.`,
+    `$$BestFriend$: "Woah!"`,
+    `$$Ren$: "It's probably a holy artifact. It can help us tremendously on our quest!"`,
+    `$$BestFriend$: "Take it!"`,
+    `You expected to struggle, but the weapon slides effortlessly out of the ground. Even taking into account the fact that you're underwater, the blade is incredibly light. It cuts through the water almost without resistance.`,
+    `$$Ren$: "This is amazing..."`,
+  ], 50, undefined, function(){ INVENTORY.increase(ITEM.Sword_legend); });
 }
 
 
@@ -238,7 +283,7 @@ if(sirenspart == 1){
     TextBannerSequence.make([
       `You've reached the bottom of the lake, the deepest parts of the water. The place is so dark that you can barely see. Contrary to what you've seen before, everything seems very quiet.`,
       `$$BestFriend$: "It seems like we'll be safe here..."`,
-      `$$Ren$: "Don't relax your guard, though. That's begging for trouble. It's always when you let your guard down that you get attacked by the biggest creature..."`,
+      `$$Ren$: "Don't let your guard down, though. That's begging for trouble. It's always when you start to feel safe that you get attacked by the biggest creature..."`,
     ], IO.control.character);
   };
   CURRENTLEVEL.initialize_with_character(1000, 2175);

@@ -12,9 +12,10 @@ class SB_treasure extends SBattle {
 }
 
 class SE_event extends S_event {
-  constructor(x, y, text, size, color) {
+  constructor(x, y, text, size, color, extra) {
     super(x, y, size, color);
     this.text = text;
+    this.extra = extra;
   }
 
   real_interaction() {
@@ -24,6 +25,9 @@ class SE_event extends S_event {
       array = [this.text];
     }
     TextBannerSequence.make(array, function(){
+      if(self.extra){
+          self.extra();
+      }
       self.destroy();
       INVENTORY.increase(ITEM.XpToken);
     });

@@ -12,5 +12,5 @@ scorpion
 crawler
 
 
-lizard boss
+lizard boss hammer
 */

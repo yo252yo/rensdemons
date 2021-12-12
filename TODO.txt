@@ -4,10 +4,6 @@ make gameover resize faster
 indicate the rarity of the event to get a lootbox effect
 pandemonium painting is missing text
 
-finish siren
-
-
-
 
 ---------------------------------------- BACKSIDE:
 - walkthrough
