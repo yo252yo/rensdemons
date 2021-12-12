@@ -116,6 +116,10 @@ class Filler {
       var def = -1;
       var changes = 0;
       for(var j = -3 * grain; j <= obj.obj_h + 3*grain; j += grain){
+        var o = CURRENTLEVEL.io.select_interactible_at(x + i, y - j);
+        if(o && o.hash().startsWith("S_ExitFloor")){
+            return true;
+        }
         if(def != CURRENTLEVEL.io.is_walkable(x + i, y - j)){
           changes ++;
           def = CURRENTLEVEL.io.is_walkable(x + i, y - j);
@@ -129,6 +133,10 @@ class Filler {
       var def = -1;
       var changes = 0;
       for(var i = -3 * grain; i <= obj.obj_w + 3*grain; i += grain){
+        var o = CURRENTLEVEL.io.select_interactible_at(x + i, y - j);
+        if(o && o.hash().startsWith("S_ExitFloor")){
+            return true;
+        }
         if(def != CURRENTLEVEL.io.is_walkable(x + i, y - j)){
           changes ++;
           def = CURRENTLEVEL.io.is_walkable(x + i, y - j);
