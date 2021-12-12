@@ -5,6 +5,36 @@ indicate the rarity of the event to get a lootbox effect
 pandemonium painting is missing text
 
 
+
+
+tree
+trunk
+nymph
+blob << boss rod
+
+
+get some Key items are spread equally around dungeon
+Fairness is paramount
+every room has a purpose
+A bridge is here to be used, corners are here as distractions
+there has to be a new companion in this place/there has to be an artifact deep inside
+more fake choices that i know are fake
+
+- Plot device/MC guffin
+
+SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
+// extra forest dungeon?
+know her favorite fruits, chase after her we know where she runs away
+
+
+
+
+
+
+
+
+
+
 ---------------------------------------- BACKSIDE:
 - walkthrough
 - NPC thoughts, backstory (add to bio) People whispering on the edge of the viewport, some believe in last thursdayism
@@ -25,19 +55,6 @@ theyreannoyed at having to pretend they dont know the guy and they just respawne
 - review battle_debris add a few more actions for rubble treasures
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
----------------------------------------- TREE DUNGEON
-get some Key items are spread equally around dungeon
-Fairness is paramount
-every room has a purpose
-A bridge is here to be used, corners are here as distractions
-there has to be a new companion in this place/there has to be an artifact deep inside
-more fake choices that i know are fake
-
-- Plot device/MC guffin
-
-SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-// extra forest dungeon?
-know her favorite fruits, chase after her we know where she runs away
 
 
 ---------------------------------------- HAWK DUNGEON
