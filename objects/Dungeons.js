@@ -29,6 +29,62 @@ class S_Tree extends LevelObject {
   }
 }
 
+class S_TreeSad extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "forest/treesad");
+    this.adjust_hitbox(20,0,30,25);
+    this.specify_sprite_size(70,87);
+    this.default_text = this.text_interaction([
+      "The trees in this forest are different from the one you're used to. There seems to be many different types.",
+      "The thin branches of this tree move around you like a curtain as you make your way through them.",
+      "This tree spreads out a relaxing scent. Maybe too relaxing. Better not linger.",
+      "The leaves of this tree are slightly sticky. Some insects are trapped on them.",
+    ], seed);
+  }
+}
+
+class S_TreePalm extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "forest/treepalm");
+    this.adjust_hitbox(10,0,25,25);
+    this.specify_sprite_size(44,73);
+    this.default_text = this.text_interaction([
+      "The trees in this forest are different from the one you're used to. There seems to be many different types.",
+      "The trunk of this tree is very rough and spiky.",
+      "A few critters have made this tree their home.",
+      "The leaves of this tree are thick and surprisingly large.",
+    ], seed);
+  }
+}
+
+class S_Vine extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "forest/vine");
+    this.adjust_hitbox(5,0,30,20);
+    this.specify_sprite_size(44,96);
+    this.default_text = this.text_interaction([
+      "A robust vine extends upwards.",
+      "Vines such as this one are everywhere around you, making the progression through these woods tedious.",
+      "This plant creeps upwards towards the canopy that completely covers the sky.",
+    ], seed);
+  }
+}
+
+class S_Plant extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "forest/plant1");
+    this.adjust_hitbox(0,0,40,20);
+    this.specify_sprite_size(48,48);
+    this.default_text = this.text_interaction([
+      "A green leafy plant you can easily pass through.",
+      "The long stems of this plant tickle you.",
+      "This fluffy vegetal emits a suspiciously sweet smell.",
+    ], seed);
+    this.walkable = true;
+  }
+}
+
+
 class S_AlgaeWall extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, "water/algaewall");
@@ -667,7 +723,9 @@ class S_Painting extends SimpleObject {
     this.adjust_hitbox(0,0,42, 68);
     this.specify_sprite_size(42, 68);
     this.default_text = this.text_interaction([
-      "...",
+      "The portrait of a presumably famous demon. He looks so... human.",
+      "The demon on this painting smiles at you mysteriously. Their eyes seem to follow you wherever you go.",
+      "This is a painting of a charming demon lady. She's wearing opulent jewelry. She almost seems friendly.",
     ], seed);
   }
 }

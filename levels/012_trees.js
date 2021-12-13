@@ -59,19 +59,22 @@ if(treepart == 1){
 // ===================
 var f = new Filler(gen.get());
 
-var filler = new MultiFiller(f);
+var filler = new MultiFiller(f, 40, 40);
 filler.set_zone(decor_zone[0],decor_zone[1],decor_zone[2],decor_zone[3]);
 filler.set_tries(30, 50);
 
-filler.add_default_constructor("S_Tree", 3, 30, 10);
-// need new varieties of trees
+filler.add_default_constructor("S_Tree", 2);
+filler.add_default_constructor("S_TreeSad", 3);
+filler.add_default_constructor("S_TreePalm", 3);
+filler.add_default_constructor("S_Vine", 3);
 filler.fill_decor_by_retry(true);
 
 filler.clear();
-filler.set_tries(0, 2);
+filler.set_tries(0, 4);
 for(var f of event_floors) {
   filler.set_zone_from_floor(f);
   filler.add_default_constructor("S_PlantSmall", 1, 20, 20);
+  filler.add_default_constructor("S_Plant", 1, 50, 50);
   filler.fill_floor_by_retry();
 }
 
@@ -132,7 +135,7 @@ if(treepart == 1){
 } else if(treepart == 3){
   CURRENTLEVEL.start_function = function() {
     TextBannerSequence.make([
-      `When you come to a set of two open paths, you entered the one on your left after much hesitation.`,
+      `When you come to a set of two open paths, you enter the one on your left after much hesitation.`,
     ], IO.control.character);
   };
 }
