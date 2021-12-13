@@ -12,45 +12,119 @@ var gen = new Generator(DICTIONARY.get("world_seed")*57);
 
 // ===================
 //hack 1. FLOORS
-// ===================
-
-var event_floors = [];
-var decor_zone = [1800,2550,400,725];
-if(treepart == 1){
-  new S_LushFloor(1950,2450,100,500);
-} else if(treepart == 2){
-  event_floors.push(new S_LushFloor(1950,2450,100,500));
-} else if(treepart == 3){
-  event_floors.push(new S_LushFloor(1950,2450,100,250));
-  event_floors.push(new S_LushFloor(1800,2275,400,125));
-  new S_LushFloor(1800,2175,100,100);
-  new S_LushFloor(2100,2175,100,100);
-
-  decor_zone = [1700,2550,600,600];
-}
-
-// ===================
 //hack 2. EXIT
 // ===================
 
-if(treepart == 1) {
-  new S_ExitFloor(1900,2500,200,75, '010_world_map');
-  new S_ExitFloor(1950,1975,100,50, '012_trees@2');
-} else if(treepart == 2){
-  new S_ExitFloor(1950,2475,100,50, '012_trees');
-  new S_ExitFloor(1950,1975,100,50, '012_trees@3');
-} else if(treepart == 3){
-  new S_ExitFloor(1950,2475,100,50, '012_trees@2');
+var event_floors = [];
+var events_zone = [1950,2100,2050,2250];
+var multiplier = 1;
 
-  new S_ExitFloor(1800,2100,100,50); // next
-  new S_ExitFloor(2100,2100,100,50); // cul de sac
+var botmid = function(to){
+  multiplier++;
+  new S_LushFloor(1950,2475,100,300);
+  if(to) {
+    new S_ExitFloor(1950,2500,100,50, to);
+  }
+
+  events_zone[3] = Math.max(events_zone[3], 2450);
 }
+
+var botleft = function(to){
+  multiplier++;
+  new S_LushFloor(1650,2475,100,300);
+  if(to) {
+    new S_ExitFloor(1650,2500,100,50, to);
+  }
+  events_zone[3] = Math.max(events_zone[3], 2450);
+  events_zone[0] = Math.min(events_zone[0], 1650);
+}
+
+var botright = function(to){
+  multiplier++;
+  new S_LushFloor(2250,2475,100,300);
+  if(to) {
+    new S_ExitFloor(2250,2500,100,50, to);
+  }
+  events_zone[3] = Math.max(events_zone[3], 2450);
+  events_zone[2] = Math.max(events_zone[2], 2350);
+}
+
+var topmid = function(to){
+  multiplier++;
+  new S_LushFloor(1950,2200,100,300);
+  if(to) {
+    new S_ExitFloor(1950,1925,100,50, to);
+  }
+  events_zone[1] = Math.min(events_zone[1], 1925);
+}
+
+var topleft = function(to){
+  multiplier++;
+  new S_LushFloor(1650,2200,100,300);
+  if(to) {
+    new S_ExitFloor(1650,1925,100,50, to);
+  }
+  events_zone[1] = Math.min(events_zone[1], 1925);
+  events_zone[0] = Math.min(events_zone[0], 1650);
+}
+
+var topright = function(to){
+  multiplier++;
+  new S_LushFloor(2250,2200,100,300);
+  if(to) {
+    new S_ExitFloor(2250,1925,100,50, to);
+  }
+  events_zone[1] = Math.min(events_zone[1], 1925);
+  events_zone[2] = Math.max(events_zone[2], 2350);
+}
+
+
+var bridgeright = function(to){
+  multiplier++;
+  new S_LushFloor(1950,2225,400,100);
+  if(to) {
+    new S_LushFloor(2300,2225,100,100);
+    new S_ExitFloor(2375,2225,50,100, to);
+  }
+  events_zone[2] = Math.max(events_zone[2], 2350);
+}
+
+var bridgeleft = function(to){
+  multiplier++;
+  new S_LushFloor(1650,2225,400,100);
+  if(to) {
+    new S_LushFloor(1600,2225,100,100);
+    new S_ExitFloor(1575,2225,50,100, to);
+  }
+  events_zone[0] = Math.min(events_zone[0], 1650);
+}
+
+
+if(treepart == 1){
+  topmid('012_trees@2');
+  botmid('010_world_map');
+} else if(treepart == 2){
+  topmid('012_trees@3');
+  botmid('012_trees');
+} else if(treepart == 3){
+  botmid('012_trees@2');
+  bridgeright();
+  bridgeleft();
+  topleft('todo');
+  topright('012_trees@4');
+} else if(treepart == 4){
+  botmid('012_trees@3');
+}
+
+var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
+
 
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
 if(treepart == 1){
+  events_zone = undefined;
   new S_SavePoint(1975, 2250);
 }
 
@@ -59,9 +133,9 @@ if(treepart == 1){
 // ===================
 var f = new Filler(gen.get());
 
-var filler = new MultiFiller(f, 40, 40);
-filler.set_zone(decor_zone[0],decor_zone[1],decor_zone[2],decor_zone[3]);
-filler.set_tries(30, 50);
+var filler = new MultiFiller(f, 20, 20);
+filler.set_zone(decor_zone[0],decor_zone[3],decor_zone[2] - decor_zone[0],decor_zone[3] - decor_zone[1]);
+filler.set_tries(5*multiplier, 15*multiplier);
 
 filler.add_default_constructor("S_Tree", 2);
 filler.add_default_constructor("S_TreeSad", 3);
@@ -70,13 +144,13 @@ filler.add_default_constructor("S_Vine", 3);
 filler.fill_decor_by_retry(true);
 
 filler.clear();
-filler.set_tries(0, 4);
-for(var f of event_floors) {
-  filler.set_zone_from_floor(f);
-  filler.add_default_constructor("S_PlantSmall", 1, 20, 20);
-  filler.add_default_constructor("S_Plant", 1, 50, 50);
-  filler.fill_floor_by_retry();
+filler.set_tries(2, 5*multiplier);
+if(events_zone){
+  filler.set_zone(events_zone[0],events_zone[3],events_zone[2] - events_zone[0],events_zone[3] - events_zone[1]);
 }
+filler.add_default_constructor("S_PlantSmall", 1, 20, 20);
+filler.add_default_constructor("S_Plant", 1, 50, 50);
+filler.fill_floor_by_retry();
 
 // ===================
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
@@ -87,15 +161,14 @@ for(var f of event_floors) {
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 var events = new EventFiller(filler, 5);
-events.set_tries(5, 10);
-events.battle('forests/boar');
-/*
+events.set_tries(1*multiplier, 8*multiplier);
+events.battle('forests/tree',3);
+events.battle('forests/trunk',3);
+events.battle('forests/nymph',2);
 events.battle('forests/flower');
-events.battle('forests/fox');
 events.battle('forests/mandragora');
-events.battle('forests/squirrel');
-events.battle('forests/morel',3);
-events.battle('forests/truffle',3);
+
+/*
 events.groundItem(ITEM.Stick, 0.5);
 events.groundItem(ITEM.Berry, 0.5);
 events.groundItem(ITEM.Flower, 0.5);
@@ -109,36 +182,35 @@ events.text('The heavy vegetation around and above you is creating a very dark a
 events.text('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
 events.text('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
 */
-for(var f of event_floors) {
-  events.set_zone_from_floor(f);
+
+if(events_zone){
+  events.set_zone(events_zone[0],events_zone[3],events_zone[2] - events_zone[0],events_zone[3] - events_zone[1]);
   events.fill_floor_by_retry();
 }
-
 
 // ===================
 //hack 7. START/INIT
 // ===================
-
-
-if(treepart == 1){
+var start = function(t){
   CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive at a the entrance of a very dense forest. The trees emanate a threatening aura. An altar of the Goddess stands a few steps before you. You ponder whether or not you should get in.`,
-    ], IO.control.character);
-  };
-} else if(treepart == 2){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You move forward in the woods. The vegetation grows very compact around you, so much so that it blocks almost all daylight. This seems like a place you would easily get lost in.`,
-    ], IO.control.character);
-  };
-} else if(treepart == 3){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `When you come to a set of two open paths, you enter the one on your left after much hesitation.`,
-    ], IO.control.character);
+    TextBannerSequence.make(t, IO.control.character);
   };
 }
 
 
-CURRENTLEVEL.initialize_with_character(2000, 2450);
+if(treepart == 1){
+  start([
+    `You arrive at a the entrance of a very dense forest. The trees emanate a threatening aura. An altar of the Goddess stands a few steps before you. You ponder whether or not you should get in.`,
+  ]);
+} else if(treepart == 2){
+  start([
+      `You move forward in the woods. The vegetation grows very compact around you, so much so that it blocks almost all daylight. This seems like a place you would easily get lost in.`,
+  ]);
+} else if(treepart == 3){
+  start([
+      `When you come to a set of two open paths, you enter the one on your left after much hesitation.`,
+  ]);
+}
+
+
+CURRENTLEVEL.initialize_with_character(2000, 2475);
