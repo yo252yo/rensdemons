@@ -19,82 +19,100 @@ var event_floors = [];
 var events_zone = [1950,2100,2050,2250];
 var multiplier = 1;
 
-var botmid = function(to){
+var spawnpoint = function(how){
+  if(how == 'bridgeright'){
+    return [2400,2175];
+  } else if(how == 'bridgeleft'){
+    return [1600,2175];
+  } else if(how == 'topleft'){
+    return [1700,1950];
+  } else if(how == 'botleft'){
+    return [1700,2475];
+  } else if(how == 'topright'){
+    return [2300,1950];
+  } else if(how == 'botright'){
+    return [2300,2475];
+  } else if (how == 'topmid'){
+    return [2000,1950];
+  }
+  return undefined; //default
+}
+
+var botmid = function(to, how){
   multiplier++;
   new S_LushFloor(1950,2475,100,300);
   if(to) {
-    new S_ExitFloor(1950,2500,100,50, to);
+    new S_ExitFloor(1950,2500,100,50, to, spawnpoint(how));
   }
 
   events_zone[3] = Math.max(events_zone[3], 2450);
 }
 
-var botleft = function(to){
+var botleft = function(to, how){
   multiplier++;
   new S_LushFloor(1650,2475,100,300);
   if(to) {
-    new S_ExitFloor(1650,2500,100,50, to);
+    new S_ExitFloor(1650,2500,100,50, to, spawnpoint(how));
   }
   events_zone[3] = Math.max(events_zone[3], 2450);
   events_zone[0] = Math.min(events_zone[0], 1650);
 }
 
-var botright = function(to){
+var botright = function(to, how){
   multiplier++;
   new S_LushFloor(2250,2475,100,300);
   if(to) {
-    new S_ExitFloor(2250,2500,100,50, to);
+    new S_ExitFloor(2250,2500,100,50, to, spawnpoint(how));
   }
   events_zone[3] = Math.max(events_zone[3], 2450);
   events_zone[2] = Math.max(events_zone[2], 2350);
 }
 
-var topmid = function(to){
+var topmid = function(to, how){
   multiplier++;
   new S_LushFloor(1950,2200,100,300);
   if(to) {
-    new S_ExitFloor(1950,1925,100,50, to);
+    new S_ExitFloor(1950,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
 }
 
-var topleft = function(to){
+var topleft = function(to, how){
   multiplier++;
   new S_LushFloor(1650,2200,100,300);
   if(to) {
-    new S_ExitFloor(1650,1925,100,50, to);
+    new S_ExitFloor(1650,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
   events_zone[0] = Math.min(events_zone[0], 1650);
 }
 
-var topright = function(to){
+var topright = function(to, how){
   multiplier++;
   new S_LushFloor(2250,2200,100,300);
   if(to) {
-    new S_ExitFloor(2250,1925,100,50, to);
+    new S_ExitFloor(2250,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
   events_zone[2] = Math.max(events_zone[2], 2350);
 }
 
-
-var bridgeright = function(to){
+var bridgeright = function(to, how){
   multiplier++;
   new S_LushFloor(1950,2225,400,100);
   if(to) {
     new S_LushFloor(2300,2225,100,100);
-    new S_ExitFloor(2375,2225,50,100, to);
+    new S_ExitFloor(2375,2225,50,100, to, spawnpoint(how));
   }
   events_zone[2] = Math.max(events_zone[2], 2350);
 }
 
-var bridgeleft = function(to){
+var bridgeleft = function(to, how){
   multiplier++;
   new S_LushFloor(1650,2225,400,100);
   if(to) {
     new S_LushFloor(1600,2225,100,100);
-    new S_ExitFloor(1575,2225,50,100, to);
+    new S_ExitFloor(1575,2225,50,100, to, spawnpoint(how));
   }
   events_zone[0] = Math.min(events_zone[0], 1650);
 }
@@ -110,10 +128,24 @@ if(treepart == 1){
   botmid('012_trees@2');
   bridgeright();
   bridgeleft();
-  topleft('todo');
+  topleft('012_trees@5');
   topright('012_trees@4');
 } else if(treepart == 4){
   botmid('012_trees@3');
+  ABILITIES.unlock("_treepart4");
+} else if(treepart == 5){
+  botmid('012_trees@3');
+  topmid('012_trees@6');
+  bridgeleft('012_trees@7', 'bridgeright');
+} else if(treepart == 6){
+  botmid('012_trees@5');
+  ABILITIES.unlock("_treepart6");
+} else if(treepart == 7){
+  botleft('todo');
+  bridgeright('012_trees@5');
+  topmid('todo');
+  bridgeleft();
+  topleft('todo');
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -125,8 +157,11 @@ var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,event
 
 if(treepart == 1){
   events_zone = undefined;
-  new S_SavePoint(1975, 2250);
+  new S_SavePoint(1975, 2200);
+} else if(treepart == 7){
+  new S_SavePoint(1975, 2200);
 }
+
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
@@ -210,6 +245,24 @@ if(treepart == 1){
   start([
       `When you come to a set of two open paths, you enter the one on your left after much hesitation.`,
   ]);
+} else if(treepart == 5){
+  var r = [];
+  if(ABILITIES.has_ability("_treepart4")){
+    r.push(`Despite struggling to find your way and refusing to accept your fate, you're finally on to the right path.`)
+  }
+  start(r.concat([
+      `You now decide to make a turn to the left.`,
+  ]));
+} else if(treepart == 7){
+  var r = [];
+  if(ABILITIES.has_ability("_treepart6")){
+    r.push(`Of course, you had reservations about your decision, but in the end turning left was the only sensible choice.`)
+  }
+  start(r.concat([
+      `You are now in the depths of the forest. You get the feeling that this place is going to be very confusing. You wish you had a map. You consider drawing one yourself. You think it's very annoying that you have to do that in this day and age. You think there should be a map easy to access somewhere. Everything must have been charted by now...`,
+      `Although, considering the complexity of the task, you also realize that this place must contain pretty powerful secrets. You wouldn't have to do so much efforts if the payoff wasn't worth it.`,
+      `Comforted by that thought, you decide to follow your gut and pick a path at random.`,
+  ]));
 }
 
 

@@ -5,11 +5,7 @@ indicate the rarity of the event to get a lootbox effect, better menu for encoun
 
 
 TREE DUNGEON:
-tree
-trunk
-nymph
 blob << boss rod
-
 
 get some Key items are spread equally around dungeon
 Fairness is paramount
