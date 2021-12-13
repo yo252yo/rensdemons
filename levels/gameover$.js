@@ -7,6 +7,11 @@ var s2 = new LevelObject(new StaticSprite("assets/screens/gameover_layer2.png", 
 
 
 function adapt_sprite(s, depth) {
+  if(!s.visual_element.drawn){
+    setTimeout(function(){ adapt_sprite(s, depth); }, 100);
+    return;
+  }
+
   s.visual_element.container.style.top = "0px";
   var r = Math.floor(- 500 + 500 * SCREEN.width()/1620);
   s.visual_element.container.style.right = r;
@@ -21,13 +26,12 @@ function adapt_sprite(s, depth) {
   }
 }
 
-
-// We wait so that we're sure the sprite has been drawn :(
-setTimeout(function(){
+var adapt_all_sprite = function(){
   adapt_sprite(s0, 0);
   adapt_sprite(s1, 1);
   adapt_sprite(s2, 2);
-}, 500);
+}
+adapt_all_sprite();
 
 var options = [];
 

@@ -16,6 +16,7 @@ class StaticSprite extends CanvasElement {
     }
 
     draw() {
+      this.drawn = true;
       this.html_canvas.width = this.resource.width;
       this.html_canvas.height = this.resource.height;
 
