@@ -49,7 +49,6 @@ var execute = function(){
   updatelog(">> " + content);
   updatelog(result);
   document.getElementById('terminal_entry').value = "";
-  return false;
 }
 
 var updatelog = function (msg){
