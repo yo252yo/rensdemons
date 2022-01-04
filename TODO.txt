@@ -1,8 +1,5 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
-indicate the rarity of the event to get a lootbox effect, better menu for encounters
-
-
 
 TREE DUNGEON:
 blob << boss rod
@@ -24,7 +21,7 @@ donate food (meat??) at every occasion?
 
 
 
-what happened in the demo villagers
+what happened in the demo villagers << ?? wtf???
 
 
 
@@ -41,6 +38,13 @@ what happened in the demo villagers
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 theyreannoyed at having to pretend they dont know the guy and they just respawned
 
+
+
+---------------------------------------- LOOTBOX EFFECT:
+- indicate rarity
+- reward for completing like voice of cards?
+- better menu for encounters
+- better animation when discovering
 
 ---------------------------------------- OPTIONAL CONTENT:
 - town2 survivors rescue!

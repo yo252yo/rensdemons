@@ -16,8 +16,6 @@
 - should the LANGUAGE bits be generated from a pattern (or metapatern)?
 - could make most think in dictionary depend from a single seed by making markov use deterministic generator
 - map elements and dungeons decors could also be battleobjects
-
-
 - i think the transition between levels is fucked up probably because of concurrency
 - touch handler interupts boy walking
 - touch handler interupts text during battle
@@ -32,3 +30,4 @@
 - during his demo playthrough M fireball doesnt get crossed when useless
 - be careful, write in present and second person, also dont make things spawn on doors
 - when you enter harpie peak youre spawned on wrong location < fixed with autosave??
+- what happened in the demo villagers << ?? wtf???
