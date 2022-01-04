@@ -69,6 +69,8 @@ const ITEM = {
     MaouKey4: "Key to Understanding",
     MaouKey5: "Key to Victory",
 
+    Branch: "Weird Branch",
+
   isItem: function(s){
     for (var i in ITEM){
       if(ITEM[i] == s){

@@ -44,12 +44,17 @@ class SE_groundItem extends S_event {
     this.quantity = quantity;
   }
 
-  real_interaction() {
+  real_interaction(extra_callback) {
     INVENTORY.increase(this.object, this.quantity);
     var self = this;
     TextBannerSequence.make([
       "You found something on the ground. It's a " + self.object + ".",
-    ], function(){self.destroy();});
+    ], function(){
+      self.destroy();
+      if(extra_callback){
+        extra_callback();
+      }
+    });
   }
 
   debug_name() {

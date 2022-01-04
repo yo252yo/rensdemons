@@ -8,7 +8,7 @@ var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_S
 if(s.length > 1){
   treepart= parseInt(s[1]);
 }
-var gen = new Generator(DICTIONARY.get("world_seed")*57);
+var gen = new Generator((DICTIONARY.get("world_seed")+ treepart)*57);
 
 // ===================
 //hack 1. FLOORS
@@ -25,15 +25,15 @@ var spawnpoint = function(how){
   } else if(how == 'bridgeleft'){
     return [1600,2175];
   } else if(how == 'topleft'){
-    return [1700,1950];
+    return [1700,1925];
   } else if(how == 'botleft'){
     return [1700,2475];
   } else if(how == 'topright'){
-    return [2300,1950];
+    return [2300,1925];
   } else if(how == 'botright'){
     return [2300,2475];
   } else if (how == 'topmid'){
-    return [2000,1950];
+    return [2000,1925];
   }
   return undefined; //default
 }
@@ -42,59 +42,65 @@ var botmid = function(to, how){
   multiplier++;
   new S_LushFloor(1950,2475,100,300);
   if(to) {
-    new S_ExitFloor(1950,2500,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(1950,2500,100,50, to, spawnpoint(how));
   }
 
   events_zone[3] = Math.max(events_zone[3], 2450);
+  return e;
 }
 
 var botleft = function(to, how){
   multiplier++;
   new S_LushFloor(1650,2475,100,300);
   if(to) {
-    new S_ExitFloor(1650,2500,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(1650,2500,100,50, to, spawnpoint(how));
   }
   events_zone[3] = Math.max(events_zone[3], 2450);
   events_zone[0] = Math.min(events_zone[0], 1650);
+  return e;
 }
 
 var botright = function(to, how){
   multiplier++;
   new S_LushFloor(2250,2475,100,300);
   if(to) {
-    new S_ExitFloor(2250,2500,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(2250,2500,100,50, to, spawnpoint(how));
   }
   events_zone[3] = Math.max(events_zone[3], 2450);
   events_zone[2] = Math.max(events_zone[2], 2350);
+  return e;
 }
 
 var topmid = function(to, how){
   multiplier++;
   new S_LushFloor(1950,2200,100,300);
   if(to) {
-    new S_ExitFloor(1950,1925,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(1950,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
+  return e;
 }
 
 var topleft = function(to, how){
   multiplier++;
   new S_LushFloor(1650,2200,100,300);
   if(to) {
-    new S_ExitFloor(1650,1925,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(1650,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
   events_zone[0] = Math.min(events_zone[0], 1650);
+  return e;
 }
 
 var topright = function(to, how){
   multiplier++;
   new S_LushFloor(2250,2200,100,300);
   if(to) {
-    new S_ExitFloor(2250,1925,100,50, to, spawnpoint(how));
+    var e = new S_ExitFloor(2250,1925,100,50, to, spawnpoint(how));
   }
   events_zone[1] = Math.min(events_zone[1], 1925);
   events_zone[2] = Math.max(events_zone[2], 2350);
+  return e;
 }
 
 var bridgeright = function(to, how){
@@ -102,19 +108,21 @@ var bridgeright = function(to, how){
   new S_LushFloor(1950,2225,400,100);
   if(to) {
     new S_LushFloor(2300,2225,100,100);
-    new S_ExitFloor(2375,2225,50,100, to, spawnpoint(how));
+    var e = new S_ExitFloor(2375,2225,50,100, to, spawnpoint(how));
   }
   events_zone[2] = Math.max(events_zone[2], 2350);
+  return e;
 }
 
-var bridgeleft = function(to, how){
+var bridgeleft = function(to, how, condition){
   multiplier++;
   new S_LushFloor(1650,2225,400,100);
   if(to) {
     new S_LushFloor(1600,2225,100,100);
-    new S_ExitFloor(1575,2225,50,100, to, spawnpoint(how));
+    var e = new S_ExitFloor(1575,2225,50,100, to, spawnpoint(how));
   }
   events_zone[0] = Math.min(events_zone[0], 1650);
+  return e;
 }
 
 
@@ -141,11 +149,30 @@ if(treepart == 1){
   botmid('012_trees@5');
   ABILITIES.unlock("_treepart6");
 } else if(treepart == 7){
-  botleft('todo');
   bridgeright('012_trees@5');
-  topmid('todo');
+  botleft('012_trees@10', 'topmid');
+  topmid('012_trees@9');
+  topleft('012_trees@8');
+  var next = bridgeleft('012_trees@11', 'bridgeright');
+
+  if (INVENTORY.count(ITEM.Branch) < 3){
+    next.interaction = function(){
+      TextBannerSequence.make([
+        `You approach this path, but as you expected, you cannot pass yet. The path is blocked by fierce looking sentient trees. They move very slowly, but they manage to convey to you that the inside of the forest is a holy sanctuary where only those of their kind may enter.`,
+        `However, you do not lose hope. You think there must be a way to disguise yourself as one of them. Perhaps if you could find a few branches...`,
+      ]);
+    }
+  }
+} else if(treepart == 8){
+  botmid('012_trees@7');
+} else if(treepart == 9){
+  botmid('012_trees@7');
+} else if(treepart == 10){
+  topmid('012_trees@7');
+} else if(treepart == 11){
+  bridgeright('012_trees@7');
   bridgeleft();
-  topleft('todo');
+  topleft('012_trees@12');
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -160,7 +187,11 @@ if(treepart == 1){
   new S_SavePoint(1975, 2200);
 } else if(treepart == 7){
   new S_SavePoint(1975, 2200);
+} else if(treepart == 8 || treepart == 9 || treepart == 10){
+  var placeholder = new S_Placeholder(1975, 2200,50, 50);
 }
+
+
 
 
 // ===================
@@ -191,6 +222,22 @@ filler.fill_floor_by_retry();
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
+if(treepart == 8 || treepart == 9 || treepart == 10){
+  var b = new SE_groundItem(1975, 2200, ITEM.Branch);
+  if (INVENTORY.count(ITEM.Branch) == 0){
+    b.interaction = function(){
+      var after = function(){
+        TextBannerSequence.make([
+          `However, you think that one branch is not going to be enough for anything. You convince yourself you need to find more.`,
+          `You know there must be a certain symmetry in this forest. You decide to go back and explore the other paths in search for more branches.`,
+        ]);
+      }
+      TextBannerSequence.make([
+        `You notice that there is a weirdly shaped branch on the ground. Since it's not like the other ones, you think it could be important.`,
+      ],  function(){ b.real_interaction(after);});
+    };
+  }
+}
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -223,6 +270,10 @@ if(events_zone){
   events.fill_floor_by_retry();
 }
 
+
+if(placeholder){
+  placeholder.destroy();
+}
 // ===================
 //hack 7. START/INIT
 // ===================
@@ -262,6 +313,13 @@ if(treepart == 1){
       `You are now in the depths of the forest. You get the feeling that this place is going to be very confusing. You wish you had a map. You consider drawing one yourself. You think it's very annoying that you have to do that in this day and age. You think there should be a map easy to access somewhere. Everything must have been charted by now...`,
       `Although, considering the complexity of the task, you also realize that this place must contain pretty powerful secrets. You wouldn't have to do so much efforts if the payoff wasn't worth it.`,
       `Comforted by that thought, you decide to follow your gut and pick a path at random.`,
+  ]));
+} else if(treepart == 11){
+  var r = [];
+  start(r.concat([
+      `You hold the branches you found in front of your face, hoping to make your way deeper in the forest without being stopped by the vegetal guards.`,
+      `You breathe a sigh of relief after witnessing that the sentinels have been fooled by your disguise. You're a bit surprised that such a simple idea did the trick. But you reason that since you're still not too deep in the forest, the guards you met were the weakest.`,
+      `You continue on your exploration.`
   ]));
 }
 
