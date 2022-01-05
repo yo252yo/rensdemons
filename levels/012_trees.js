@@ -310,7 +310,7 @@ if(treepart == 1) {
 // ===================
 var f = new Filler(gen.get());
 
-var filler = new MultiFiller(f, 10, 20);
+var filler = new MultiFiller(f, 15, 20);
 filler.set_zone(decor_zone[0],decor_zone[3],decor_zone[2] - decor_zone[0],decor_zone[3] - decor_zone[1]);
 filler.set_tries(5*multiplier, 15*multiplier);
 
@@ -402,39 +402,36 @@ if(treepart == 39){
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 var events = new EventFiller(filler, 5);
-events.set_tries(1*multiplier, 8*multiplier);
+events.set_tries(Math.ceil(0.5*multiplier), 7*multiplier);
 events.battle('forests/tree',3);
 events.battle('forests/trunk',3);
 events.battle('forests/nymph',2);
 events.battle('forests/flower');
-events.battle('forests/mandragora');
+events.battle('forests/mandragora'); // 10
 
-/*
-events.groundItem(ITEM.Stick, 0.5);
-events.groundItem(ITEM.Berry, 0.5);
-events.groundItem(ITEM.Flower, 0.5);
-events.groundItem(ITEM.Mushroom);
-events.battleRubble(ITEM.AncientRubbles, 0.5);
-events.byConstructor("B_Plants", 2);
-events.byConstructor("B_Skeleton", 1);
+events.groundItem(ITEM.Stick, 0.7);
+events.groundItem(ITEM.Berry, 0.7);
+events.groundItem(ITEM.Flower, 0.7);
+events.battleRubble(ITEM.Elixir_vine, 1);
 
-events.text('You do not see many creatures around you in these woods, but you do hear scratching and cracklings all around you. The feeling of there being something nearby watching you that you cannot pinpoint is especially nerve-wracking.');
-events.text('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');
-events.text('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
-events.text('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
+events.byConstructor("B_Plants", 0.5);
 
-Stanley went around touching every little thing in the office, but it didn't make a single difference, nor did it advance the story in any way.
-
-youre determined to find treasures if you can
-
-every room has a purpose: A bridge is here to be used, corners are here as distractions
-*/
+events.text(`You feel observed. Are the trees all around somehow watching you? That's ridiculous, they're just trees... Yet, you can't fake this uneasy feeling.`, 0.5);
+events.text(`You hear rustling in the bushes behind you. Is there someone else here?`, 0.5);
+events.text(`You feel determined to explore this forest in depth. You may find very interesting things.`, 0.5);
+events.text(`You find a weirdly shaped tiny tree. You're keenly aware that everything in this forest has a purpose, and you wonder what this tree is for. Is it a distraction?`, 0.5);
+events.text('You look behind a bush, excited at the potential of what you may find there. Sadly, behind the bush is just another bush.', 0.5);
+events.text(`You wonder how much longer you'll have to walk in the darkness of this oppressive forest. The result better be worth it!`, 0.5);
+events.text('You cannot help but doubting yourself. Maybe you are underprepared for this forest. Maybe you should have trained more. Maybe you should leave and come back later...', 0.5);
+events.text('You feel rather disappointed with this place so far. You expected a mighty sanctuary full of riches. But it turns out that sentient trees are very similar to normal trees. And very static.', 0.5);
+events.text('You are confident in the fairness of this forest. The tougher the trial, the better the reward. You continue your march empowered by this feeling of determination.', 0.5);
+events.text('You look carefully around you, but there seems to be nothing of note. This did not progress your quest at all.', 0.5);
+events.text('You examine closely every plant and animal you come across. Everything that seems even remotely intriguing. Who knows where you can find a hidden gem?', 0.5);
 
 if(events_zone){
   events.set_zone(events_zone[0],events_zone[3],events_zone[2] - events_zone[0],events_zone[3] - events_zone[1]);
   events.fill_floor_by_retry();
 }
-
 
 if(placeholder){
   placeholder.destroy();
