@@ -189,12 +189,12 @@ if(treepart == 1){
   botmid('012_trees@14');
   topmid('012_trees@16');
 
-  botleft('012_trees@17');
+  botleft('012_trees@17', 'topmid');
   bridgeleft('012_trees@18');
   topleft('012_trees@19');
   topright('012_trees@20');
-  bridgeright('012_trees@21');
-  botright('012_trees@22');
+  bridgeright('012_trees@21', 'bridgeleft');
+  botright('012_trees@22', 'topmid');
 } else if(treepart == 16){
   botmid('012_trees@15');
   var next = topmid('012_trees@17');
@@ -210,11 +210,20 @@ if(treepart == 1){
       ]);
     }
   }
-
+} else if(treepart == 17){
+  topmid('012_trees@15', 'botleft');
+} else if(treepart == 21){
+  bridgeleft('012_trees@15', 'bridgeright');
+} else if(treepart == 22){
+  topmid('012_trees@15', 'botright');
 }
+
+
+
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
 
+var partsWithBranches = [8, 9, 10, 17, 21, 22];
 
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
@@ -223,9 +232,9 @@ var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,event
 if(treepart == 1){
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
-} else if(treepart == 7 || treepart == 15){
+} else if([7,15].includes(treepart)) {
   new S_SavePoint(1975, 2200);
-} else if(treepart == 8 || treepart == 9 || treepart == 10){
+} else if(partsWithBranches.includes(treepart)){
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
 }
 
@@ -237,7 +246,7 @@ if(treepart == 1){
 // ===================
 var f = new Filler(gen.get());
 
-var filler = new MultiFiller(f, 20, 20);
+var filler = new MultiFiller(f, 10, 20);
 filler.set_zone(decor_zone[0],decor_zone[3],decor_zone[2] - decor_zone[0],decor_zone[3] - decor_zone[1]);
 filler.set_tries(5*multiplier, 15*multiplier);
 
@@ -260,7 +269,7 @@ filler.fill_floor_by_retry();
 //hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
-if(treepart == 8 || treepart == 9 || treepart == 10){
+if(partsWithBranches.includes(treepart)){
   var b = new SE_groundItem(1975, 2200, ITEM.Branch);
   if (INVENTORY.count(ITEM.Branch) == 0){
     b.interaction = function(){
