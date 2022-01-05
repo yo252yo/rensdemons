@@ -21,13 +21,16 @@ const ARCHETYPES = {
     if(!category) { return "";}
     var table = ARCHETYPES._archetypes()[category];
     var num = 0;
+    var tot = table.length;
     // suboptimal in computation but nice in code.
     for(var i in table){
-      if (INVENTORY.count(table[i]) || ABILITIES.has_ability(table[i])) {
+      if (ITEMS_NOT_BATTLE.includes(table[i])){
+        tot --;
+      } else if (INVENTORY.count(table[i]) || ABILITIES.has_ability(table[i])) {
         num ++;
       }
     }
-    return `(${ARCHETYPES._proficiency_text(num / table.length)})`;
+    return `(${ARCHETYPES._proficiency_text(num / tot)})`;
   },
 
   _fits_category: function (item, category){
