@@ -185,6 +185,32 @@ if(treepart == 1){
   botmid('012_trees@12');
   bridgeright();
   topright('012_trees@15');
+} else if(treepart == 15){
+  botmid('012_trees@14');
+  topmid('012_trees@16');
+
+  botleft('012_trees@17');
+  bridgeleft('012_trees@18');
+  topleft('012_trees@19');
+  topright('012_trees@20');
+  bridgeright('012_trees@21');
+  botright('012_trees@22');
+} else if(treepart == 16){
+  botmid('012_trees@15');
+  var next = topmid('012_trees@17');
+
+  if (INVENTORY.count(ITEM.Branch) < 3 + 6){
+    next.interaction = function(){
+      TextBannerSequence.make([
+        `You know that a great treasure lies beyond this path, but as you guessed, it is not easy making your way to the innermost sanctum of the forest.`,
+        `The sentient trees here are of a much higher status than the ones you've fooled before. They see right past through your ridiculous disguise and forbid you to pass.`,
+        `In order to trick them, you're going to need many more branches to complete your mimicry. Based on the layout of the clearing you've just crossed, you guess that you need to find a total of 6 in addition to the 3 you had from before.`,
+        `You have faith that what you need is spread out fairly in the different corners of the forest. You chuckle at the irony of exploring the different branches of the path to gather literal branches.`,
+        `Bracing yourself, you go back on your steps towards the clearing.`,
+      ]);
+    }
+  }
+
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -197,7 +223,7 @@ var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,event
 if(treepart == 1){
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
-} else if(treepart == 7){
+} else if(treepart == 7 || treepart == 15){
   new S_SavePoint(1975, 2200);
 } else if(treepart == 8 || treepart == 9 || treepart == 10){
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
@@ -275,6 +301,10 @@ events.text('You do not see many creatures around you in these woods, but you do
 events.text('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');
 events.text('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
 events.text('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
+
+Stanley went around touching every little thing in the office, but it didn't make a single difference, nor did it advance the story in any way.
+
+youre determined to find treasures if you can
 */
 
 if(events_zone){
@@ -344,6 +374,11 @@ if(treepart == 1){
 } else if(treepart == 14){
   start([
       `The vegetation grows dense around you. Moving forward becomes a real challenge. Every step, you need to force your way through bushes and roots. The sunlight has completely disappeared from the thick canopy above you.`,
+  ]);
+} else if(treepart == 15){
+  start([
+      `You arrive at a clearing where the path branches in many directions. You shudder at the thought of all these possible routes to explore. But you breathe a sigh of relief seeing a holy altar that will undoubtely help you find your way in this hellish forest.`,
+      `You know that the way out is probably forward, but you also feel the urge to explore the other paths in search of treasures they could hide.`,
   ]);
 }
 

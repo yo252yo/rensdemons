@@ -25,8 +25,7 @@ wordplay: branch/ branching narrative???
 
 
 
-
-
+Stanley went around touching every little thing in the office, but it didn't make a single difference, nor did it advance the story in any way.
 
 
 
@@ -47,6 +46,15 @@ theyreannoyed at having to pretend they dont know the guy and they just respawne
 - reward for completing like voice of cards?
 - better menu for encounters
 - better animation when discovering
+
+
+An Ambitious Arsonist Aspired to set you Ablaze.
+> The Arsonist's failure tarnished his name forever and he was disowned by his family.
+
+An Attentive Anglerjelly Aims at Attracting you.
+> The Anglerjelly's encounter with you left it feeling even more empty than before.
+
+
 
 ---------------------------------------- OPTIONAL CONTENT:
 - town2 survivors rescue!
@@ -187,6 +195,7 @@ more fake choices that i know are fake
 
 
 ---------------------------------------- TODO
+- some items apper in battletree and shouldtn like Medallion
 - download save doesnt work with keyboard i think
 - credit gfroad sumnmoning circle or replace ti with rpgmaker
 - spam space bar in battle makes the option menu reappear on fight
