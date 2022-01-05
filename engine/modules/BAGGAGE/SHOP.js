@@ -45,7 +45,7 @@ _SHOP_PRICES[ITEM.Medallion] = 750;
 
 
 
-_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Meat, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
+_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
 
 const SHOP = {
   selling_discount: 0.5,
