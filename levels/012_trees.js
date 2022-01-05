@@ -25,15 +25,15 @@ var spawnpoint = function(how){
   } else if(how == 'bridgeleft'){
     return [1600,2175];
   } else if(how == 'topleft'){
-    return [1700,1925];
+    return [1700,1920];
   } else if(how == 'botleft'){
     return [1700,2475];
   } else if(how == 'topright'){
-    return [2300,1925];
+    return [2300,1920];
   } else if(how == 'botright'){
     return [2300,2475];
   } else if (how == 'topmid'){
-    return [2000,1925];
+    return [2000,1920];
   }
   return undefined; //default
 }
@@ -252,7 +252,31 @@ if(treepart == 1){
   botmid('012_trees@31', 'topmid');
 } else if(treepart == 31){
   topmid('012_trees@30');
+} else if(treepart == 32){
+  botmid('012_trees@28', 'topmid');
+  bridgeleft('012_trees@33', 'bridgeright');
+  bridgeright('012_trees@36', 'bridgeleft');
+} else if(treepart == 33){
+  bridgeright('012_trees@32', 'bridgeleft');
+  topmid('012_trees@34', 'botmid');
+} else if(treepart == 34){
+  bridgeright('012_trees@37', 'bridgeleft');
+  botmid('012_trees@33', 'topmid');
+} else if(treepart == 35){
+  bridgeleft('012_trees@37', 'bridgeright');
+  botmid('012_trees@36', 'topmid');
+} else if(treepart == 36){
+  bridgeleft('012_trees@32', 'bridgeright');
+  topmid('012_trees@35', 'botmid');
+} else if(treepart == 37){
+  topmid('012_trees@38');
+  bridgeleft('012_trees@34', 'bridgeright');
+  bridgeright('012_trees@35', 'bridgeleft');
+} else if(treepart == 38){
+  botmid('012_trees@37', 'topmid');
+  topmid('012_trees@39');
 }
+
 
 
 
@@ -268,7 +292,7 @@ var partsWithBranches = [8, 9, 10, 17, 21, 22, 23, 24, 27];
 if(treepart == 1){
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
-} else if([7, 15, 28].includes(treepart)) {
+} else if([7, 15, 28, 37].includes(treepart)) {
   new S_SavePoint(1975, 2200);
 } else if(partsWithBranches.includes(treepart)){
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
@@ -474,6 +498,18 @@ if(treepart == 1){
 } else if(treepart == 31){
   start([
       `This route comes to a sudden end. You take this as a sign that something important is nearby.`,
+  ]);
+} else if(treepart == 32){
+  start([
+      `You arrive once more at a fork in your path. By now, it is clear that this apparent choice is not really a choice at all. You advance on one of the paths.`,
+  ]);
+} else if(treepart == 37){
+  start([
+      `You suspect that the path you did not take arrives here too. You consider checking this before advancing further.`,
+  ]);
+} else if(treepart == 38){
+  start([
+      `You have reached the deepest part of the forest. You praise yourself mentally for holding out this long in this labyrinth. You carefully advance towards the place you suspect to hold a great treasure, shivering with anticipation.`,
   ]);
 }
 
