@@ -237,15 +237,17 @@ const PLAYER_ACTIONS = {
 
     var prices = SHOP.get_raw_prices();
     for (var i in prices){
-      if(prices[i] >= threshold) {
-        PLAYER_ACTIONS.win(i, 1);
-      } else if(ITEMS_NOT_BATTLE.includes(i)) {
+      if(ITEMS_NOT_BATTLE.includes(i)) {
         continue;
       } else if(
-        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
-        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
-        ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Tool).includes(i)
+        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
+        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
+        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Tool).includes(i)
       ) {
+        continue;
+      } else if(prices[i] >= threshold){
+        PLAYER_ACTIONS.win(i, 1);
+      } else{
         PLAYER_ACTIONS.useless(i);
       }
     }
