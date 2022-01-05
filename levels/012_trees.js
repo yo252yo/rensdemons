@@ -275,11 +275,15 @@ if(treepart == 1){
 } else if(treepart == 38){
   botmid('012_trees@37', 'topmid');
   topmid('012_trees@39');
+} else if(treepart == 39){
+  botmid('012_trees@38', 'topmid');
+  var exit = topmid('012_trees@39');
+  exit.interaction = function(){
+    TextBannerSequence.make([
+      `The path continues through the forest. As you progress, the vegetation clears up around you. It's clear that you're moving away from the core of this weird place. The way out is much easier than the way in. Before long, you're out of the woods.`,
+    ], function(){ CURRENTLEVEL.setup("010_world_map") });
+  };
 }
-
-
-
-
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
 
@@ -289,16 +293,17 @@ var partsWithBranches = [8, 9, 10, 17, 21, 22, 23, 24, 27];
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
 
-if(treepart == 1){
+if(treepart == 1) {
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
 } else if([7, 15, 28, 37].includes(treepart)) {
   new S_SavePoint(1975, 2200);
-} else if(partsWithBranches.includes(treepart)){
+} else if(partsWithBranches.includes(treepart)) {
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
+} else if(treepart == 39){
+  events_zone = undefined;
+  // boss and artifact!
 }
-
-
 
 
 // ===================
@@ -404,6 +409,8 @@ events.text('The leaves and branches are so heavy here that you have to actively
 Stanley went around touching every little thing in the office, but it didn't make a single difference, nor did it advance the story in any way.
 
 youre determined to find treasures if you can
+
+every room has a purpose: A bridge is here to be used, corners are here as distractions
 */
 
 if(events_zone){

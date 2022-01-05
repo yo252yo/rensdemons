@@ -4,26 +4,11 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 TREE DUNGEON:
 blob << boss rod
 
-
-every room has a purpose: A bridge is here to be used, corners are here as distractions
-there has to be a new companion in this place/there has to be an artifact deep inside
-more fake choices that i know are fake
-
-- Plot device/MC guffin
-
 SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
 // extra forest dungeon?
 know her favorite fruits, chase after her we know where she runs away
 donate food (meat??) at every occasion?
 
-
-wordplay: branch/ branching narrative???
-
-
-
-
-
-Stanley went around touching every little thing in the office, but it didn't make a single difference, nor did it advance the story in any way.
 
 
 
