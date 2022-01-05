@@ -4,10 +4,8 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 TREE DUNGEON:
 blob << boss rod
 
-get some Key items are spread equally around dungeon
-Fairness is paramount
-every room has a purpose
-A bridge is here to be used, corners are here as distractions
+
+every room has a purpose: A bridge is here to be used, corners are here as distractions
 there has to be a new companion in this place/there has to be an artifact deep inside
 more fake choices that i know are fake
 
@@ -195,6 +193,7 @@ more fake choices that i know are fake
 
 
 ---------------------------------------- TODO
+- make sure events and saves are prioritary when interacting
 - some items apper in battletree and shouldtn like Medallion
 - download save doesnt work with keyboard i think
 - credit gfroad sumnmoning circle or replace ti with rpgmaker

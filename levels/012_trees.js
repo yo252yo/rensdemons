@@ -190,7 +190,7 @@ if(treepart == 1){
   topmid('012_trees@16');
 
   botleft('012_trees@17', 'topmid');
-  bridgeleft('012_trees@18');
+  bridgeleft('012_trees@18', 'bridgeright');
   topleft('012_trees@19');
   topright('012_trees@20');
   bridgeright('012_trees@21', 'bridgeleft');
@@ -216,6 +216,16 @@ if(treepart == 1){
   bridgeleft('012_trees@15', 'bridgeright');
 } else if(treepart == 22){
   topmid('012_trees@15', 'botright');
+} else if(treepart == 18){
+  bridgeright('012_trees@15', 'bridgeleft');
+  botmid('012_trees@23', 'topmid');
+} else if(treepart == 23){
+  topmid('012_trees@18', 'botmid');
+} else if(treepart == 20){
+  botmid('012_trees@15', 'topright');
+  bridgeright('012_trees@24', 'bridgeleft');
+} else if(treepart == 24){
+  bridgeleft('012_trees@20', 'bridgeright');
 }
 
 
@@ -223,7 +233,7 @@ if(treepart == 1){
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
 
-var partsWithBranches = [8, 9, 10, 17, 21, 22];
+var partsWithBranches = [8, 9, 10, 17, 21, 22, 23, 24, 27];
 
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
