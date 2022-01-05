@@ -181,8 +181,10 @@ if(treepart == 1){
   topright('012_trees@13');
 } else if(treepart == 13){
   botmid('012_trees@12');
-//  ABILITIES.unlock("_treepart4");
 } else if(treepart == 14){
+  botmid('012_trees@12');
+  bridgeright();
+  topright('012_trees@15');
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -334,6 +336,14 @@ if(treepart == 1){
 } else if(treepart == 12){
   start([
       `When you come to a set of two open paths, you enter again the one on your left.`,
+  ]);
+} else if(treepart == 12){
+  start([
+      `But before moving forward, you are dedicated to exploring every corner of this forest.`,
+  ]);
+} else if(treepart == 14){
+  start([
+      `The vegetation grows dense around you. Moving forward becomes a real challenge. Every step, you need to force your way through bushes and roots. The sunlight has completely disappeared from the thick canopy above you.`,
   ]);
 }
 
