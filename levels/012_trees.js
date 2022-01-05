@@ -226,6 +226,17 @@ if(treepart == 1){
   bridgeright('012_trees@24', 'bridgeleft');
 } else if(treepart == 24){
   bridgeleft('012_trees@20', 'bridgeright');
+} else if(treepart == 19){
+  bridgeleft('012_trees@25', 'bridgeright');
+  botmid('012_trees@15', 'topleft');
+} else if(treepart == 25){
+  bridgeright('012_trees@19', 'bridgeleft');
+  bridgeleft('012_trees@26', 'bridgeright');
+} else if(treepart == 26){
+  bridgeright('012_trees@25', 'bridgeleft');
+  botmid('012_trees@27', 'topmid');
+} else if(treepart == 27){
+  topmid('012_trees@26');
 }
 
 
@@ -398,6 +409,14 @@ if(treepart == 1){
   start([
       `You arrive at a clearing where the path branches in many directions. You shudder at the thought of all these possible routes to explore. But you breathe a sigh of relief seeing a holy altar that will undoubtely help you find your way in this hellish forest.`,
       `You know that the way out is probably forward, but you also feel the urge to explore the other paths in search of treasures they could hide.`,
+  ]);
+} else if(treepart == 26){
+  var other = `You're thankful that other routes are not this long.`;
+  if (INVENTORY.count(ITEM.Branch) < 4){
+    other = `You hope that other routes are not this long.`;
+  }
+  start([
+      `You sigh as this complicated path is really annoying. You should be getting close to its end, now.`, other
   ]);
 }
 
