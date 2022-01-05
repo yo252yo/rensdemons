@@ -302,7 +302,6 @@ if(treepart == 1) {
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
 } else if(treepart == 39){
   events_zone = undefined;
-  // boss and artifact!
 }
 
 
@@ -380,6 +379,24 @@ if([29, 31].includes(treepart)){
   };
 }
 
+if(treepart == 39){
+  new SBattle(1950, 2275, 'forests/blob', 100);
+
+  var b = new SE_groundItem(1950, 2050,   ITEM.Staff, 1, 100);
+  var take = function(){
+    INVENTORY.increase(ITEM.Staff);
+    b.destroy();
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `A plethora of roots join together in an complex entanglement. At the perfect center, they rise up to form a sort of pedestal which supports the artifact you've been longing for.`,
+      `A quick glance could have confused it with one of the many branches you're now wearing, but this would be mistaken. The patterns of the bark seem to follow some sort of arrangement, and these arabesques emit an unnatural soft purple glow.`,
+      `When you seize the staff, you are surprised to find that this mystical piece of wood that is almost as big as you weighs practically nothing. You wave it around and feel the air crackle around the artifact. You're sure this holds a tremendous power.`,
+      `You keep the Legendary Staff and decide to make your way out of this place.`,
+    ], take);
+  };
+}
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -517,6 +534,10 @@ if(treepart == 1){
 } else if(treepart == 38){
   start([
       `You have reached the deepest part of the forest. You praise yourself mentally for holding out this long in this labyrinth. You carefully advance towards the place you suspect to hold a great treasure, shivering with anticipation.`,
+  ]);
+} else if(treepart == 39){
+  start([
+      `This is the heart of the woods. The vegetation around you gently glows with a mysterious light. It seems to you that the trees around you are humming, as if communicating with each other. What you came for is surely close, but you know that there will be an ultimate trial before you can reach it. No treasure comes unguarded.`,
   ]);
 }
 
