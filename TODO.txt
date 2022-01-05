@@ -7,12 +7,6 @@ know her favorite fruits, chase after her we know where she runs away
 donate food (meat??) at every occasion?
 
 
-everywhere reverse
-5. DESTRUCTIBLE HARDCODED ELEMENTS
-and
-6. DESTRUCTIBLE FILLER ELEMENTS
-all fillers should run before extra elems
-
 ---------------------------------------- BACKSIDE:
 - walkthrough
 - NPC thoughts, backstory (add to bio) People whispering on the edge of the viewport, some believe in last thursdayism
@@ -34,7 +28,7 @@ An Ambitious Arsonist Aspired to set you Ablaze.
 > The Arsonist's failure tarnished his name forever and he was disowned by his family.
 
 An Attentive Anglerjelly Aims at Attracting you.
-> The Anglerjelly's encounter with you left it feeling even more empty than before.
+> The Anglerjelly's encounter with you left it feeling even more empty than before, and it continued to roam the sea searching for something it couldn't quite define.
 
 
 
@@ -179,6 +173,7 @@ more fake choices that i know are fake
 ---------------------------------------- TODO
 - make sure events and saves are prioritary when interacting
 - some items apper in battletree and shouldtn like Medallion
+- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - download save doesnt work with keyboard i think
 - credit gfroad sumnmoning circle or replace ti with rpgmaker
 - spam space bar in battle makes the option menu reappear on fight

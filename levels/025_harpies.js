@@ -149,17 +149,9 @@ for (var i=0; i<2; i++){
   filler.fill_floor_by_retry();
 }
 
-// ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-new SBattle(2015, 1450, 'mountains/dragon');
-new SBattle(1325, 2075, '_02/_wrong_skeleton');
-new SBattle(1400, 1650, '_02/_right_skeleton');
-new SBattle(2475, 1275, '_02/_wrong_skeleton');
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(f, 5);
@@ -196,6 +188,14 @@ events.set_tries(15, 20);
 events.set_zone(1300,2275,575,175);
 events.fill_floor_by_retry();
 
+// ===================
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+
+new SBattle(2015, 1450, 'mountains/dragon');
+new SBattle(1325, 2075, '_02/_wrong_skeleton');
+new SBattle(1400, 1650, '_02/_right_skeleton');
+new SBattle(2475, 1275, '_02/_wrong_skeleton');
 
 // ===================
 //hack 7. START/INIT

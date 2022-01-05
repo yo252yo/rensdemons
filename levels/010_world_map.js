@@ -131,7 +131,7 @@ FMap.add_default_constructor("SM_Hills");
 FMap.fill_floor_by_retry();
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');

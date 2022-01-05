@@ -44,7 +44,7 @@ villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITI
 villagerFiller.fill_floor_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){

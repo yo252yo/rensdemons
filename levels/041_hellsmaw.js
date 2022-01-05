@@ -306,52 +306,10 @@ for(var i of floors){
   decor.set_zone(i[0], i[1], i[2], i[3]);
   decor.fill_decor_by_retry();
 }
-// ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 
-if (!ABILITIES.has_ability("_lieutenant_defeated") && hellsmawpart == 13){
-  new S_Beelzebub(1900, 2200);
-}
-
-if (hellsmawpart == 14){
-  var s = new SE_event(1950, 2125);
-  var end = function(){
-    s.destroy();
-    INVENTORY.increase(ITEM.Medallion);
-  };
-
-  var prompt2 = function(){
-    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
-        [
-          {"text": "Take it", "effect": end},
-          {"text": "Leave it", "effect": function(){ s.destroy(); }},
-       ]
-     );
-   };
-
-  var investigate = function() {
-    TextBannerSequence.make(['You spend a long time rummaging through the ashes. Finally, under a thick layer of rubbles, something attracts your gaze. You can\'t help but gasp as you recognize $$BestFriend$\'s medallion.'],
-    prompt2);
-  }
-
-  var prompt = function(){
-    new CenteredTextMenu("Investigate the scene?",
-        [
-          {"text": "Yes", "effect": investigate},
-          {"text": "No", "effect": "##CLOSE"},
-       ]
-     );
-   };
-
-  s.real_interaction = function() {
-    TextBannerSequence.make(['Moved by a Goddess-given intuition, you make your way back to the scene of the terrible battle. You believe there must be something, some sort of treasure, that you should be able to find now...'],
-    prompt);
-  }
-}
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 events.battle('world/arsonist', 2);
@@ -483,6 +441,51 @@ if(hellsmawpart == 1){
       `Thanks to the wisdom of the Goddess, you know that demonic magic is at play here, and it will not allow you to go back to your world. The only way is forward.`,
     ], IO.control.character);
   };
+}
+
+
+// ===================
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+
+if (!ABILITIES.has_ability("_lieutenant_defeated") && hellsmawpart == 13){
+  new S_Beelzebub(1900, 2200);
+}
+
+if (hellsmawpart == 14){
+  var s = new SE_event(1950, 2125);
+  var end = function(){
+    s.destroy();
+    INVENTORY.increase(ITEM.Medallion);
+  };
+
+  var prompt2 = function(){
+    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
+        [
+          {"text": "Take it", "effect": end},
+          {"text": "Leave it", "effect": function(){ s.destroy(); }},
+       ]
+     );
+   };
+
+  var investigate = function() {
+    TextBannerSequence.make(['You spend a long time rummaging through the ashes. Finally, under a thick layer of rubbles, something attracts your gaze. You can\'t help but gasp as you recognize $$BestFriend$\'s medallion.'],
+    prompt2);
+  }
+
+  var prompt = function(){
+    new CenteredTextMenu("Investigate the scene?",
+        [
+          {"text": "Yes", "effect": investigate},
+          {"text": "No", "effect": "##CLOSE"},
+       ]
+     );
+   };
+
+  s.real_interaction = function() {
+    TextBannerSequence.make(['Moved by a Goddess-given intuition, you make your way back to the scene of the terrible battle. You believe there must be something, some sort of treasure, that you should be able to find now...'],
+    prompt);
+  }
 }
 
 // ===================

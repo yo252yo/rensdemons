@@ -70,7 +70,7 @@ decorFiller.fill_decor_by_retry();
 
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var s = new SBattle(1275, 2250, 'caves/rhino', 100);

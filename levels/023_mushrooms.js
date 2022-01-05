@@ -85,7 +85,6 @@ filler.add_default_constructor("S_Shroomtall", 1, 20, 75);
 filler.fill_decor_by_retry(true);
 
 
-noTreeZone.destroy(true);
 
 filler.clear();
 filler.set_tries(0, 2);
@@ -96,15 +95,9 @@ for(var f of hallways) {
   filler.fill_floor_by_retry();
 }
 
-// ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-new SBattle(2075, 1425, '_02/_loot_forest');
-new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(filler, 10);
@@ -134,6 +127,14 @@ for(var f of hallways) {
   events.fill_floor_by_retry();
 }
 
+
+// ===================
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+
+noTreeZone.destroy(true);
+new SBattle(2075, 1425, '_02/_loot_forest');
+new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
 //hack 7. START/INIT

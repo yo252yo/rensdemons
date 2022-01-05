@@ -128,14 +128,7 @@ wallFiller.fill_line();
 
 
 // ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-if(placeholder){
-  placeholder.destroy();
-}
-
-// ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 
@@ -169,6 +162,13 @@ events.text(`You know that each step brings you closer to the final fight, and y
 events.set_tries(3, 7);
 events.fill_floor_by_retry();
 
+
+// ===================
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
+if(placeholder){
+  placeholder.destroy();
+}
 
 
 // ===================

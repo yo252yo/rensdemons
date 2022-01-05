@@ -157,12 +157,8 @@ if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_
   decorFiller.fill_decor_by_retry();
 }
 
-
 // ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-// ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
 var events = new EventFiller(decorFiller, 25);
@@ -193,6 +189,11 @@ if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_
 }
 
 placeholder.destroy();
+
+
+// ===================
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+// ===================
 
 // ===================
 //hack 7. START/INIT

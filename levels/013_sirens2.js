@@ -195,7 +195,7 @@ if(sirenspart < 4){
 }
 
 // ===================
-//hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
   var events = new EventFiller(decorFiller, 10);

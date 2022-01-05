@@ -5,7 +5,7 @@
 //hack 2. EXIT
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 new Snippet("levels/decors/town1");

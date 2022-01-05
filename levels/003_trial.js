@@ -11,7 +11,7 @@ AUDIO.music.levels.trial();
 new Snippet("levels/decors/maze");
 
 // ===================
-//hack 5. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
+//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
 
 // start
