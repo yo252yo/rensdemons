@@ -173,6 +173,16 @@ if(treepart == 1){
   bridgeright('012_trees@7');
   bridgeleft();
   topleft('012_trees@12');
+}  else if(treepart == 12){
+  botmid('012_trees@11');
+  bridgeright();
+  bridgeleft();
+  topleft('012_trees@14');
+  topright('012_trees@13');
+} else if(treepart == 13){
+  botmid('012_trees@12');
+//  ABILITIES.unlock("_treepart4");
+} else if(treepart == 14){
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -321,6 +331,10 @@ if(treepart == 1){
       `You breathe a sigh of relief after witnessing that the sentinels have been fooled by your disguise. You're a bit surprised that such a simple idea did the trick. But you reason that since you're still not too deep in the forest, the guards you met were the weakest.`,
       `You continue on your exploration.`
   ]));
+} else if(treepart == 12){
+  start([
+      `When you come to a set of two open paths, you enter again the one on your left.`,
+  ]);
 }
 
 
