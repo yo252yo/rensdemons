@@ -197,7 +197,7 @@ if(treepart == 1){
   botright('012_trees@22', 'topmid');
 } else if(treepart == 16){
   botmid('012_trees@15');
-  var next = topmid('012_trees@17');
+  var next = topmid('012_trees@28');
 
   if (INVENTORY.count(ITEM.Branch) < 3 + 6){
     next.interaction = function(){
@@ -237,6 +237,21 @@ if(treepart == 1){
   botmid('012_trees@27', 'topmid');
 } else if(treepart == 27){
   topmid('012_trees@26');
+} else if(treepart == 28){
+  botmid('012_trees@16', 'topmid');
+  bridgeleft('012_trees@29', 'bridgeright');
+  bridgeright('012_trees@30', 'bridgeleft');
+
+  if (INVENTORY.count("_knots_pressed") >= 2){
+    topmid('012_trees@32');
+  }
+} else if(treepart == 29){
+  bridgeright('012_trees@28', 'bridgeleft');
+} else if(treepart == 30){
+  bridgeleft('012_trees@28', 'bridgeright');
+  botmid('012_trees@31', 'topmid');
+} else if(treepart == 31){
+  topmid('012_trees@30');
 }
 
 
@@ -253,7 +268,7 @@ var partsWithBranches = [8, 9, 10, 17, 21, 22, 23, 24, 27];
 if(treepart == 1){
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
-} else if([7,15].includes(treepart)) {
+} else if([7, 15, 28].includes(treepart)) {
   new S_SavePoint(1975, 2200);
 } else if(partsWithBranches.includes(treepart)){
   var placeholder = new S_Placeholder(1975, 2200,50, 50);
@@ -306,6 +321,36 @@ if(partsWithBranches.includes(treepart)){
     };
   }
 }
+
+if([29, 31].includes(treepart)){
+  var b = new SE_groundItem(1950, 2225, "_knots_pressed", 1, 100);
+  var press = function(){
+    INVENTORY.increase("_knots_pressed");
+    b.destroy();
+    var extra = ` You know that you need to press another knot somewhere, in another route. It would be absurd for the other path to be useless.`;
+    if(INVENTORY.count("_knots_pressed") >= 2){
+      extra = ` You decide to retrace your steps and be on the lookout for changes in the environment.`;
+    }
+    TextBannerSequence.make([
+      `Nothing seems to have changed around you, but you are sure that you had an important effect on your environment, contributing to open the path to the heart of the forest.` + extra,
+    ]);
+  }
+  var prompt = function(){
+    new CenteredTextMenu("Will you press the knot?",
+                  [
+                    {"text": "Yes", "effect": press},
+                    {"text": "No", "effect": "##CLOSE"},
+                 ]
+               );
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `Your way is blocked by a massive tree. It is probably several millenia old. You marvel at its size and the intricate patterns of its bark. Your attention is drawn to a knot that stands out slightly.`,
+    ], prompt);
+  };
+}
+
 
 // ===================
 //hack 6. DESTRUCTIBLE FILLER ELEMENTS (encounters)
@@ -417,6 +462,18 @@ if(treepart == 1){
   }
   start([
       `You sigh as this complicated path is really annoying. You should be getting close to its end, now.`, other
+  ]);
+} else if(treepart == 28){
+  start([
+      `Once again, the path before you splits in two. You suspect that this is not really a choice and that you will have to explore both sides.`,
+  ]);
+} else if(treepart == 29){
+  start([
+      `The path seems to come to a dead-end. But you speculate that this route was not created for nothing. You know that every part of this forest a purpose. You believe that this portion warrants close examination.`,
+  ]);
+} else if(treepart == 31){
+  start([
+      `This route comes to a sudden end. You take this as a sign that something important is nearby.`,
   ]);
 }
 

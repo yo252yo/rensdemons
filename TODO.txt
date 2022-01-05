@@ -205,6 +205,7 @@ more fake choices that i know are fake
 - make experience menu multi tiered
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
+- check save/disk size
 - add rens parent sendoff/house before trial?
 - a suicide function?
 - Skip dodge phase at high level?
