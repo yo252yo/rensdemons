@@ -190,6 +190,11 @@ const BATTLE = {
               description = description.slice(0, description.length-1);
               BATTLE.monster_actions.prepare_escape(outcome_description, action_object.extra_function);
               break;
+            case BATTLETREE.NOTHING:
+              if(action_object.extra_function) {
+                action_object.extra_function();
+              }
+              break;
           }
         } else if(action_object.extra_function) {
           action_object.extra_function();

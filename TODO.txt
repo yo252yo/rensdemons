@@ -1,10 +1,7 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
-SavageChild: "SavageChild", //brawnish/savage girl/enfant loup
-// extra forest dungeon?
-know her favorite fruits, chase after her we know where she runs away
-donate food (meat??) at every occasion?
+savagechild we know her hiding spot
 
 
 ---------------------------------------- BACKSIDE:
