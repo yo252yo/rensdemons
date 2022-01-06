@@ -194,3 +194,34 @@ LANGUAGE.actions[PARTYMEMBERS.TraitorFisher] = {
     ]);
   },
 };
+
+LANGUAGE.actions[PARTYMEMBERS.SavageChild] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.SavageChild)) + RANDOM.pick([
+      `$$SavageChild$ sprawls onto the battleground on all fours, spitting and hissing like an animal. She jumps in place excitedly.`,
+      `$$SavageChild$ approaches carefully the $$&ENEMY$, eyes squinting. She sniffs the air and assesses the scent of her opponent.`,
+      `$$SavageChild$ crawls cautiously towards the $$&ENEMY$. Her feral body undulates like a feline as she awaits the perfect opportunity to strike.`,
+    ]);
+
+    var dialog = RANDOM.pick([
+    `$$SavageChild$: "$$SavageChild$ fight."`,
+    `$$SavageChild$: "GRRRRR!"`,
+    `$$SavageChild$: "$$SavageChild$ protect the pack."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ has no problem dodging the repeated assaults of $$SavageChild$. The little girl cannot even land her hands on her enemy. She charges relentlessly a dozen times before giving up, exhausted.`,
+      `$$SavageChild$ enters a staring match with the $$&ENEMY$. The first to falter will be vulnerable. Sadly, it seems that the $$&ENEMY$ has a stronger will, and $$SavageChild$ turns around assessing this is one fight she cannot win.`,
+      `The $$&ENEMY$ spreads out their body in an animal display of dominance. It may look ridiculous, but it is enough to beat $$SavageChild$ into submission. She turns away yelping.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$SavageChild$ jumps onto the $$&ENEMY$ mouth wide-open. She starts biting it all over. Soon, her sharp teeth are tearing up the flesh of the $$&ENEMY$, which cannot overthrow the girl despite violent contorsions.`,
+      `$$SavageChild$ charges on the $$&ENEMY$ with a inhuman roar. She scratches her enemy with her nails that have become as long and sharp as claws. The $$&ENEMY$ twists and turns but the wild girl does not falter. Soon, the opponent falls on the ground, lacerated by a thousand cuts.`,
+      `$$SavageChild$ grabs hold of the $$&ENEMY$ and proceed to bite and scratch it. The child may not look like much, but no amount of struggle can relax her feral grip. She continues her savage assault until her prey is nothing more than shreds.`,
+    ]);
+  },
+};
