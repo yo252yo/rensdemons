@@ -169,7 +169,6 @@ more fake choices that i know are fake
 
 ---------------------------------------- TODO
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
-- download save doesnt work with keyboard i think
 - spam space bar in battle makes the option menu reappear on fight
 - test on edge, epsecially functions starting by _, mb the nested ones
 - change color scheme doesnt change fog or map bg
