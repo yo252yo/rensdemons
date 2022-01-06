@@ -14,9 +14,10 @@ const CREDITS = {
    <a href="http://eurs.blog65.fc2.com/" target="_blank">Closet</a>
    <br />
 
-   <b>Map art</b>:
+   <b>Interface art</b>:
    <a href="https://opengameart.org/users/melle" target="_blank">MELLE</a>,
-   <a href="https://opengameart.org/users/prushik" target="_blank">prushik</a>
+   <a href="https://opengameart.org/users/prushik" target="_blank">prushik</a>, 
+   <a href="https://opengameart.org/users/lukerustltd" target="_blank">lukerustltd</a>
    <br />
 
    <b>Sound effects</b>:
