@@ -62,6 +62,10 @@ class Filler {
     this.guaranteed_products = guaranteed_products;
   }
 
+  set_desired(desired_products) {
+    this.desired_products = desired_products;
+  }
+
   set_object(w, h, obj_constructor) {
     this.obj_w = w;
     this.obj_h = h;
@@ -164,11 +168,12 @@ class Filler {
   fill_floor_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
-    var nb_desired_products = this.guaranteed_products;
+    var nb_desired_products = this.desired_products || 10000;
 
-    if (!this.guaranteed_products){
+    if (this.guaranteed_products){
+      nb_desired_products = this.guaranteed_products;
+    } else {
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
-      nb_desired_products = 10000;
     }
 
     var i = 0;
@@ -190,15 +195,17 @@ class Filler {
   fill_decor_by_retry(allow_overlap) {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
     var nb_tries = 10000;
-    var nb_desired_products = this.guaranteed_products;
+    var nb_desired_products = this.desired_products || 10000;
 
-    if (!this.guaranteed_products){
+    if (this.guaranteed_products){
+      nb_desired_products = this.guaranteed_products;
+    } else {
       nb_tries = Math.max(0, this.min_tries + (this.max_tries - this.min_tries) * this.gen.get());
-      nb_desired_products = 10000;
     }
 
     var i = 0;
     var nb_placed = 0;
+    console.log(nb_desired_products);
     while (i < nb_tries && nb_placed < nb_desired_products) {
       var o = this.get_object(this.gen.get());
       var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
