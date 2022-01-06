@@ -332,8 +332,8 @@ filler.fill_floor_by_retry();
 // ===================
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
-var events = new EventFiller(filler, 5);
-events.set_tries(Math.ceil(0.5*multiplier), 7*multiplier);
+var events = new EventFiller(filler, 10);
+events.set_tries(Math.ceil(1*multiplier), 7*multiplier);
 events.battle('forests/tree',3);
 events.battle('forests/trunk',3);
 events.battle('forests/nymph',2);
@@ -435,6 +435,15 @@ if(treepart == 39){
       `You keep the Legendary Staff and decide to make your way out of this place.`,
     ], take);
   };
+}
+
+
+if(events_zone && !PARTY.has_member(PARTYMEMBERS.SavageChild) && Math.random() < 0.3){
+  events.clear();
+  events.set_tries(1, 50);
+  events.set_desired(1);
+  events.battle('_party/_SavageChild');
+  events.fill_floor_by_retry();
 }
 
 // ===================
