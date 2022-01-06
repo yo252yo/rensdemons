@@ -442,7 +442,7 @@ if(events_zone && !PARTY.has_member(PARTYMEMBERS.SavageChild) && Math.random() <
   events.clear();
   events.set_tries(1, 50);
   events.set_desired(1);
-  events.battle('_party/_SavageChild');
+  events.byConstructor("SB_SavageChild");
   events.fill_floor_by_retry();
 }
 

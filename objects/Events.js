@@ -66,5 +66,18 @@ class SE_small_groundItem extends SE_groundItem {
   constructor(x, y, object) {
     super(x, y, object, 1, 25);
   }
+}
 
+class SB_SavageChild extends SBattle {
+  real_interaction() {
+    this.destroy();
+    
+    if (INVENTORY.count("_donated_meat") < 3) {
+      BATTLE.api.make('_party/_SavageChild');
+    } else if(INVENTORY.count("_donated_meat") < 6) {
+      BATTLE.api.make('_party/_SavageChild2');
+    } else {
+      BATTLE.api.make('_party/_SavageChild3');
+    }
+  }
 }
