@@ -87,6 +87,14 @@ const CURRENTLEVEL = {
       return CURRENTLEVEL.io.select_at(x, y, true);
     },
 
+    is_prioritary_object: function(o){
+      return o.hash().startsWith("S_ExitFloor") || o.hash().startsWith("S_SavePoint");
+    },
+
+    is_secondary_object: function(o){
+      return o.hash().startsWith("SE_") || o.hash().startsWith("SB_") || o.hash().startsWith("SBattle");
+    },
+
     select_at: function(x, y, interactible) {
       var here = [];
 
@@ -110,7 +118,12 @@ const CURRENTLEVEL = {
         var max = here[0].get_depth();
         var argmax = here[0];
         for (var i = 0; i < here.length; i ++) {
-          if(here[i].hash().startsWith("S_ExitFloor")){
+          if(CURRENTLEVEL.io.is_prioritary_object(here[i])){
+            return here[i];
+          }
+        }
+        for (var i = 0; i < here.length; i ++) {
+          if(CURRENTLEVEL.io.is_secondary_object(here[i])){
             return here[i];
           }
 

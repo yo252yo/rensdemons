@@ -168,7 +168,6 @@ more fake choices that i know are fake
 
 
 ---------------------------------------- TODO
-- make sure events and saves are prioritary when interacting
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - download save doesnt work with keyboard i think
 - credit gfroad sumnmoning circle or replace ti with rpgmaker
