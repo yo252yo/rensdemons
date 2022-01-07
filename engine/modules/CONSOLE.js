@@ -124,11 +124,12 @@ const CONSOLE = {
     },
 
     ledger: function(operation){
-      CONSOLE._speech(`A herald proclaims: "${operation}"`);
+      CONSOLE._speech(`A herald proclaims: "Hear, hear! ${operation}"`);
     },
 
     thoughts: function(name, thought){
-      CONSOLE._speech(`$name thinks: "${thought}"`);
+      var verb = RANDOM.pick(["thinks", "thinks", "thinks", "whispers", "sighs", "mumbles", "mutters", "murmurs", "broods", "daydreams", "reflects", "ponders", "ruminates"]);
+      CONSOLE._speech(`${name} ${verb}: "${thought}"`);
     },
   },
 };
