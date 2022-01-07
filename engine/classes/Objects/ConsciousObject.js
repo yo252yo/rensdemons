@@ -133,6 +133,8 @@ class ConsciousObject extends MovingObject {
       "Do we really need<br />all this pompous religious<br />crap?",
       "I wonder if anyone<br />is buying into this Goddess<br />crap....",
 
+      "Here comes that kid<br />again...",
+      "This script is lame,<br />I wish I could escape...",
 
       "I'm so tired of<br />this charade...",
       "Do we really have to<br />keep pretending, all<br />for this child's benefit?",
