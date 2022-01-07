@@ -341,6 +341,7 @@ const BATTLE = {
 
     setup: {
       start: function(name, callback) {
+        LEDGER.commit_to_stats();
         BATTLE.builder.clear();
         IO.control.cede();
         BATTLE.abilities_score_before = BATTLETREE.score.score_battle(name);
