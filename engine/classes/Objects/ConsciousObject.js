@@ -129,6 +129,9 @@ class ConsciousObject extends MovingObject {
       `Jfc this plot is so<br />cliche it hurts...`,
       `I wish I could be<br />in a more interesting story...`,
       `It's the same as the<br />other times! It's<br />always the same!`,
+      "Can't belive I<br />have to pretend to be<br />a zealot...",
+      "Do we really need<br />all this pompous religious<br />crap?",
+      "I wonder if anyone<br />is buying into this Goddess<br />crap....",
 
 
       "I'm so tired of<br />this charade...",
@@ -179,12 +182,24 @@ class ConsciousObject extends MovingObject {
 
       "Is it my job to make them<br />do something interesting?",
       "Maybe the child will do<br />something different this time!",
+      "In a way, it's sad.<br />We all know, but they're<br />the only one in the dark...",
 
       `Maybe Sysiphus was happy<br />but I'm not!`,
 
       "I'm not a performer,<br />I'm a prisoner!",
       "How can anyone expect me<br />to carry on under<br />these conditions?",
       "Good afternoon,<br />good evening<br />and goodnight.",
+
+      "I'm pretty sure this<br />world didnt exist until<br />recently...",
+      "I hate them, but<br />they did create this world...",
+      "On to serve our overlord<br />and creators...",
+      "I know they made us<br />but does that mean we<br />have to serve them?",
+
+      "At least I know how<br />frail my existence is.<br />They don't",
+      "I bet they think of<br />their world as the real one...",
+      "I believe I've only been<br />alive for a couple of minutes...",
+      
+      "I wish I could see<br />the one putting us<br />through all this...",
 
     ]);
     CONSOLE.log.thoughts(this.name, thought.replaceAll("<br />", " "));
