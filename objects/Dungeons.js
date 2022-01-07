@@ -858,12 +858,14 @@ class S_Tomb extends SimpleObject {
       var death = (new Date(villager.death)).toLocaleString();
       var cod = gen.pick(["Stillborn", "Dead on creation", "Crushed to make a tombstone", "Killed to make decorations", "Turned into stone", "Slaughtered for aesthetic enjoyment", "Murdered to make a point"]);
       this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
-    } else if(type < 0.1) {
+    } else if(type < 0.1 && !S_Tomb.done_bf) {
       var birth = (new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"])).toLocaleString();
       var death = (new Date(STATS.flag("KilledBestFriend"))).toLocaleString();
       this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br />Killed by a demon<br /> ${birth} - ${death}`]);
-    } else if(type < 0.1 + selfproba) {
+      S_Tomb.done_bf = true;
+    } else if(type < 0.1 + selfproba && !S_Tomb.done_self) {
       this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child<br />Abandonned by the gods`]);
+      S_Tomb.done_self = true;
     } else {
       var villager = LEDGER.get_villager(gen.get());
       var birth = (new Date(villager.birth)).toLocaleString();
