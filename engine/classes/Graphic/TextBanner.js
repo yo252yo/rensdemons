@@ -2,7 +2,7 @@
 // runtime SCREEN, IO
 
 
-class TextBanner extends TextBox {
+class TextBanner extends InteractingTextBox {
   static getDimensions() {
     if(SCREEN.is_mobile()){
       return {

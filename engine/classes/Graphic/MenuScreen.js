@@ -2,7 +2,7 @@
 // runtime SCREEN, IO
 
 
-class MenuScreen extends TextBox {
+class MenuScreen extends InteractingTextBox {
   static getDimensions() {
     if(SCREEN.is_mobile()){
       return {

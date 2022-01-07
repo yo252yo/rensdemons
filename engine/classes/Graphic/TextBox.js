@@ -38,8 +38,6 @@ class TextBox extends TextElement {
         this.text_future_pages = "";
         this.last_turned = (new Date()).getTime();
         this.speaker = null;
-
-        IO.control.dialog(this);
     }
 
     measure_letter_capability(w, h, padding) {
@@ -250,3 +248,11 @@ class TextBoxFitted extends TextBox {
       this.html.style.textAlign = "center";
   }
 }
+
+
+class InteractingTextBox extends TextBox {
+    constructor(x, y, w, h, padding, anchored) {
+        super(x,y,w,h, padding, anchored);
+        IO.control.dialog(this);
+    }
+  }
