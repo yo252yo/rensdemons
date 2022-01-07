@@ -63,7 +63,7 @@ const SAVE = {
       save: new SaveFile(),
     };
     DISK.write("SAVE");
-    CONSOLE.log.save("Saved in save slot " + index);
+    CONSOLE.log.save("Saved: slot " + index);
   },
 
   load: function(index) {
@@ -72,7 +72,7 @@ const SAVE = {
       return;
     }
     SAVE._load_savefile(SAVE.slots[index].save);
-    CONSOLE.log.save("Loaded save slot " + index);
+    CONSOLE.log.save("Loaded: slot " + index);
   },
 
   make_new_game: function() {
@@ -106,7 +106,7 @@ const SAVE = {
         e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         a.dispatchEvent(e);
 
-        CONSOLE.log.save("Save file downloaded");
+        console.log.debug("Save file downloaded");
       }
 
       new CenteredTextMenu("Save?", [

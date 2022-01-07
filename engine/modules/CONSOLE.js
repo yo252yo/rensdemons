@@ -2,23 +2,17 @@
 const CONSOLE = {
   logs: [],
 
-  _sys_log: function(t, color, extra_style) {
-    if (!color) {
-      color = "#AAAAAA";
+  _log: function(t, color, extra_style) {
+    var style = extra_style;
+    if (color) {
+      style = "color:" + color + ";" + style;
     }
     CONSOLE.logs.push(t);
-    console.log("%c " + t, "color:" + color + ";font-style: italic;" + extra_style);
+    console.log("%c " + t, style);
   },
 
-  debug: function(t, color) {
-    if (!color) {
-      color = "#006666";
-    }
-    CONSOLE._sys_log(t, color);
-  },
-
-  input: function(t) {
-    CONSOLE._sys_log(STRING_UTILS.datedString(t), "Blue", "font-weight:bold;");
+  _sys_log: function(t, color, extra_style) {
+    CONSOLE._log(t, color || "#AAAAAA", "font-style: italic;" + extra_style);
   },
 
   error: function(t, with_trace, with_alert) {
@@ -39,13 +33,31 @@ const CONSOLE = {
     throw "Break request";
   },
 
+
   log: {
-    level: function(name) {
-      CONSOLE._sys_log(": " + name, "Pink");
+    debug: function(t, color) {
+      CONSOLE._sys_log(t, color || "#a64b9b");
     },
 
+// ===================
+//hack System
+// ===================
+
+    setup: function(name) {
+      CONSOLE._sys_log(". Level setup: " + name);
+    },
+
+    save: function(operation){
+      CONSOLE._sys_log(". " + operation);
+    },
+
+// ===================
+//hack Disabled system
+// ===================
+
     import: function(name) {
-      //CONSOLE._sys_log(">> Loaded " + name, "DarkGray");
+      //CONSOLE._sys_log(". Import " + name);
+
       var bar = document.getElementById("loading_bar");
       var logs = document.getElementById("loading_log");
       if(bar){
@@ -56,51 +68,60 @@ const CONSOLE = {
       }
     },
 
-    battletree: function(operation) {
-      CONSOLE._sys_log("# Action " + operation, "LightBlue");
-    },
-
-    setup: function(name) {
-      CONSOLE._sys_log("- Setup level " + name, "LightGray");
-    },
-
     disk: function(operation){
-      CONSOLE._sys_log(". Disk state updated: " + operation, "DarkGreen");
+      //CONSOLE._sys_log(". Disk updated: " + operation);
     },
 
-    save: function(operation){
-      CONSOLE._sys_log("$ " + operation, "Green");
+    io: function(operation){
+      //CONSOLE._sys_log("]IO: " + operation, "Orange");
     },
 
-    event : function(operation){
-      CONSOLE._sys_log("- Event " + operation, "Purple");
+    event: function(operation){
+      //CONSOLE._sys_log("- Event: " + operation, "#86adad");
     },
 
-    abilities : function(operation){
-      CONSOLE._sys_log(") Ability: " + operation, "Yellow");
+    levelstate: function(name) {
+      //CONSOLE._sys_log(": " + name);
     },
 
-    io : function(operation){
-      CONSOLE._sys_log("]IO: " + operation, "Orange");
+// ===================
+//hack Baggage log
+// ===================
+
+    abilities: function(operation){
+      CONSOLE._sys_log("(Ability) " + operation, "#7daaab");
     },
 
-    battle : function(operation){
-      CONSOLE._sys_log(". " + operation, "Pink");
-    },
-
-    ledger : function(operation){
-      CONSOLE._sys_log("}} " + operation, "Black");
-    },
-
-    item : function(name, quantity, set){
+    item: function(name, quantity, set){
       var s = " ";
       if (quantity > 0){ s = " +";}
       if (set){ s += "(SET)"; }
-      CONSOLE._sys_log("} Item stock modification: " + name + s + quantity, "Orange");
+      CONSOLE._sys_log("(Item) " + name + s + quantity, "#7daaab");
     },
 
-    party : function(operation){
-      CONSOLE._sys_log(")) Party: " + operation, "Brown");
+    party: function(operation){
+      CONSOLE._sys_log("(Party) " + operation, "#7daaab");
+    },
+
+    flag: function(operation){
+      CONSOLE._sys_log("(Flag) " + operation, "#7daaab");
+    },
+
+    battletree: function(operation) {
+      CONSOLE._sys_log("(Action) " + operation, "#8aa68a");
+    },
+
+// ===================
+//hack Backside
+// ===================
+
+    input: function(t) {
+      CONSOLE._sys_log(STRING_UTILS.datedString(t), "Blue", "font-weight:bold;");
+    },
+
+    ledger: function(operation){
+      // Ledger announcements
+      CONSOLE._log(operation, "Black");
     },
   },
 };

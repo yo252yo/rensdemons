@@ -88,7 +88,7 @@ const PALETTE = {
 
   print() {
     for (var i in PALETTE._COLORS){
-      CONSOLE.debug(i + ": " + PALETTE._COLORS[i].code(), PALETTE._COLORS[i].code());
+      CONSOLE.log.debug(i + ": " + PALETTE._COLORS[i].code(), PALETTE._COLORS[i].code());
     }
   },
 

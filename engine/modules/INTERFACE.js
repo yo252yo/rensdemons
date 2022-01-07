@@ -266,7 +266,7 @@ const INTERFACE = {
 }
 
 var man = function() {
-  CONSOLE.input("> Opening manual page");
+  CONSOLE.log.input("> Opening manual page");
   var w;
   if(window.navigator.onLine) {
     w = window.open("https://github.com/yo252yo/rensdemons/blob/master/man.md");

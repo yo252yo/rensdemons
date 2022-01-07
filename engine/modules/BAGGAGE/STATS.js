@@ -36,10 +36,23 @@ const STATS = {
   },
 
   record: {
+    _increment(key, v){
+      STATS._stats.increment([key], v);
+      DISK.write("STATS");
+
+      CONSOLE.log.flag("Changed " + key + " by " + (v || 1));
+    },
+
+    _set(key, v){
+      STATS._stats.set([key], v);
+      DISK.write("STATS");
+
+      CONSOLE.log.flag("Set " + key + " by " + (v || 1));
+    },
+
     death: function(v) {
       AUDIO.effect.unlock();
-      STATS._stats.increment([STAT.Death], v);
-      DISK.write("STATS");
+      STATS.record._increment(STAT.Death, v);
     },
 
     ledger: function(l) {
@@ -49,39 +62,33 @@ const STATS = {
 
     flag: function(text, value){
       AUDIO.effect.unlock();
-      STATS._stats.increment(["FLAG_" + text], value);
-      DISK.write("STATS");
+      STATS.record._increment("FLAG_" + text, value);
     },
 
     unlock: function(text, value){
-      STATS._stats.increment(["UNLOCK_" + text], value);
-      DISK.write("STATS");
+      STATS.record._increment("UNLOCK_" + text, value);
     },
 
     ending: function(text, value){
       AUDIO.effect.unlock();
-      STATS._stats.increment(["END_" + text], value);
       if(text != ENDINGS.Game){
-        STATS._stats.increment([STAT.Endings]);
+        STATS.record._increment(STAT.Endings, value);
       }
-      DISK.write("STATS");
+      STATS.record._increment("END_" + text, value);
     },
 
     set_flag: function(text, value){
       AUDIO.effect.unlock();
-      STATS._stats.set(["FLAG_" + text], value);
-      DISK.write("STATS");
+      STATS.record._set("FLAG_" + text, value);
     },
 
     maxScore: function(value){
       var g = STATS._stats.get([STAT.MaxExplorationScore]);
 
       if (!g || g < value){
-        STATS._stats.set([STAT.MaxExplorationScore], value);
-        DISK.write("STATS");
+        STATS.record._set(STAT.MaxExplorationScore, value);
       }
     },
-
 
   },
 

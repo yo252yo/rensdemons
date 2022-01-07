@@ -6,7 +6,7 @@ const BUILDER = {
 
   _record: function(row, color) {
     if(!color) {color = "#FFFFFF";};
-    CONSOLE.debug(row, color);
+    CONSOLE.log.debug(row, color);
     eval(row); // DANGER
     if(! BUILDER._LOG.includes(row)){
       BUILDER._LOG.push(row);
@@ -16,7 +16,7 @@ const BUILDER = {
   export() {
     var log = BUILDER._LOG.join('\n');
     navigator.clipboard.writeText(log);
-    CONSOLE.debug("Saved to clipboard");
+    CONSOLE.log.debug("Saved to clipboard");
   },
 
   draw_alt_rectangle: function(x, y){

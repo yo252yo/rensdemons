@@ -63,11 +63,11 @@ var executelog = function(){
 }
 
 var updatelog = function (msg){
-  if(typeof msg == "string" && msg) {
-    if(msg.startsWith(">")){
-      CONSOLE.input(msg);
+  if(msg) {
+    if(typeof msg == "string" && msg.startsWith(">")){
+      CONSOLE.log.input(msg);
     } else {
-      CONSOLE.log.level(msg);
+      CONSOLE.log.debug(msg);
     }
   }
   logcontent.innerHTML = getLogs();

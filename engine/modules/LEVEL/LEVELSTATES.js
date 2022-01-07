@@ -34,7 +34,7 @@ const LEVELSTATES = {
   },
 
   register_from_save: function(save) {
-    CONSOLE.log.level("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
+    CONSOLE.log.levelstate("Saved levelstate for " + save.level_name + "(" + save.saved_character_position + ")");
     if (save.level_name && !save.level_name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX) && !save.level_name.endsWith(CURRENTLEVEL.UNSAVED_LEVEL_SUFFIX)) {
       // Do not save generated level states
       LEVELSTATES._states.set([save.level_name], save);

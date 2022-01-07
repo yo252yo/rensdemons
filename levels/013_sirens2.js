@@ -89,7 +89,7 @@ if(sirenspart < 4) {
   var constructor = function(x,y, seed){
     var rx = 100*((x - 1075) / dim[0]);
     var ry = 100*((2200 - y) / dim[1]);
-     CONSOLE.debug(`Escape whirlwind located at (${rx}%,${ry}%) position.`);
+     CONSOLE.log.debug(`Escape whirlwind located at (${rx}%,${ry}%) position.`);
      return new S_Whirlwind(x,y, seed, "013_sirens2@" + (sirenspart+1));
    }
 

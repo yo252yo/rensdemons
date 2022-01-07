@@ -54,9 +54,9 @@ var execute = function(){
 var updatelog = function (msg){
   if(msg) {
     if(typeof msg == "string" && msg.startsWith(">")){
-      CONSOLE.input(msg);
+      CONSOLE.log.input(msg);
     } else {
-      CONSOLE.log.level(msg);
+      CONSOLE.log.debug(msg);
     }
   }
   logcontent.innerHTML = getLogs();
