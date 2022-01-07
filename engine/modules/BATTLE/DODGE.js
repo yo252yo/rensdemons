@@ -292,10 +292,10 @@ const DODGE = {
 
       var str = "attack at " + DODGE.attack_angle + " with amplitude " + DODGE.get_params.attack_amplitude() + " defending at " + DODGE.defense_angle;
       if (DODGE.outcome.compute()){
-        CONSOLE.debug("[DODGE] " + str );
+        CONSOLE.log.debug("[DODGE] " + str );
         setTimeout(DODGE.outcome.success, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
       } else {
-        CONSOLE.debug("[NODODGE] " + str);
+        CONSOLE.log.debug("[NODODGE] " + str);
         setTimeout(DODGE.outcome.failure, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
       }
     },
