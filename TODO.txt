@@ -169,7 +169,6 @@ more fake choices that i know are fake
 ---------------------------------------- TODO
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
-- spam space bar in battle makes the option menu reappear on fight
 - test on edge, epsecially functions starting by _, mb the nested ones
 - change color scheme doesnt change fog or map bg
 - artifact have special sound effects
@@ -180,8 +179,8 @@ more fake choices that i know are fake
 - check save/disk size
 - add rens parent sendoff/house before trial?
 - a suicide function?
-- Skip dodge phase at high level?
 - did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ?? character descriptions
+- poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?
 - palette has functions that return objects, strings and functinos that just outright change the colors

@@ -137,8 +137,6 @@ const DODGE = {
       var x = mid * (1 + Math.cos(defense_angle));
       var y = mid * (1 - Math.sin(defense_angle));
       HTML.canvas.draw_line_in(DODGE.sprite.attacked.html_canvas, "void", mid, mid, x, y);
-
-
     },
 
     hit: function(){
@@ -268,7 +266,29 @@ const DODGE = {
   },
 
   events:{
+
+    instadodge: function(){
+      if(BATTLE.current_battle == 'trial/basilisk'){
+        return false; // tutorial
+      }
+      if(DODGE.get_params.attack_amplitude() < 0.005){
+        return true;
+      }
+      if (DODGE.get_params.actual_warning_time_ms() + DODGE.get_params.actual_react_time_ms() > 3500){
+        return true;
+      }
+
+      return false;
+    },
+
     prompt: function(){
+
+      if (DODGE.events.instadodge()){
+        CONSOLE.log.debug("[INSTANT DODGE]");
+        DODGE.outcome.success();
+        return;
+      }
+
       DODGE.draw.prompt();
       DODGE.accepting_input = true;
       setTimeout(DODGE.events.react, DODGE.get_params.actual_warning_time_ms());
