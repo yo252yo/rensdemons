@@ -8,7 +8,7 @@ class ConsciousObject extends MovingObject {
 
       if (!start){
         // proba to actually think
-        if (RANDOM.float() < 0.2) {
+        if (RANDOM.float() < 0.3) {
           thinker.think();
         }
       }
