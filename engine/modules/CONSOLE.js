@@ -15,6 +15,10 @@ const CONSOLE = {
     CONSOLE._log(t, color || "#AAAAAA", "font-style: italic;" + extra_style);
   },
 
+  _speech: function(t, color, extra_style) {
+    CONSOLE._log(t, color || "#000000", "font-weight:bold;" + extra_style);
+  },
+
   error: function(t, with_trace, with_alert) {
     CONSOLE._sys_log(t, "Red", "font-weight:bold;");
     if(with_trace){
@@ -120,8 +124,11 @@ const CONSOLE = {
     },
 
     ledger: function(operation){
-      // Ledger announcements
-      CONSOLE._log(operation, "Black");
+      CONSOLE._speech(`A herald proclaims: "${operation}"`);
+    },
+
+    thoughts: function(name, thought){
+      CONSOLE._speech(`$name thinks: "${thought}"`);
     },
   },
 };

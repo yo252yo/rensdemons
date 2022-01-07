@@ -168,6 +168,7 @@ more fake choices that i know are fake
 
 
 ---------------------------------------- TODO
+- throwaway villagers with random names should always keep the same name otherwise they take way too much space
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - spam space bar in battle makes the option menu reappear on fight
 - test on edge, epsecially functions starting by _, mb the nested ones
