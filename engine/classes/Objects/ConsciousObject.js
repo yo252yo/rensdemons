@@ -170,6 +170,26 @@ class ConsciousObject extends MovingObject {
 
       `All these people<br />acting just for a child?`,
 
+      `So now I have to pretend<br />I don't know them?`,
+      `Ok I need to act as if<br />it's our first meeting...`,
+      `I hope the child won't<br />notice that it's not our<br />first encounter...`,
+      `It's so annoying to have<br />to pretend to be surprised<br />every time!`,
+
+      `How can I make them<br />believe I've been here<br />a long time?`,
+      `They shouldn't notice that I just got here!`,
+      `I hope they won't notice<br />that I just arrived here...`,
+      `Do I look like I've been<br />here a long time?`,
+      `Do I look like I've been<br />alive more than a few minutes?`,
+      `Ok so I just have<br />to pretend that this is<br />my life. Simple.`,
+      `I always find it hard<br />to pretend that I don't<br />know them already...`,
+      `How can I pretend not<br />to know them when they're the<br />reason we're all here!`,
+      `I literally just came into<br />being and I already have to<br />deal with this shit...`,
+      `They're gonna notice<br />that I'm faking it...`,
+      `How can I pretend<br />that I've existed for more<br />than a few seconds?`,
+
+      `I can't believe anyone<br />is buying this masquerade...`,
+
+
       "What happens if the<br />child figures out we're<br />all in on it?",
       "I wonder if they've<br />already figured out that<br />it's all staged...",
       `I wonder if they know<br />they're being manipulated...`,
@@ -198,7 +218,7 @@ class ConsciousObject extends MovingObject {
       "At least I know how<br />frail my existence is.<br />They don't",
       "I bet they think of<br />their world as the real one...",
       "I believe I've only been<br />alive for a couple of minutes...",
-      
+
       "I wish I could see<br />the one putting us<br />through all this...",
 
     ]);
