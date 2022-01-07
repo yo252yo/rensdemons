@@ -123,7 +123,7 @@ const CONSOLE = {
       CONSOLE._sys_log(STRING_UTILS.datedString(t), "Blue", "font-weight:bold;");
     },
 
-    ledger: function(operation){
+    herald: function(operation){
       CONSOLE._speech(`A herald proclaims: "Hear, hear! ${operation}"`);
     },
 

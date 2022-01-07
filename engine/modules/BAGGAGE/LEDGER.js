@@ -87,9 +87,9 @@ const LEDGER = {
     LEDGER.load_ledger();
     if(! LEDGER._ledger[name]) {
       LEDGER._ledger[name] = LEDGER._villager(city);
-      CONSOLE.log.ledger(`A new ${role} named ${name} has been born in the city of ${city}.`);
+      CONSOLE.log.herald(`A new ${role} named ${name} has been born in the city of ${city}.`);
     } else {
-      CONSOLE.log.ledger(`A ${role} named ${name} has been brought back to life by necromancy.`);
+      CONSOLE.log.herald(`A ${role} named ${name} has been brought back to life by necromancy.`);
     }
   },
 
@@ -103,7 +103,7 @@ const LEDGER = {
     LEDGER.load_ledger();
     if(LEDGER._ledger[name]) {
       LEDGER._ledger[name].death = (new Date()).getTime();
-      CONSOLE.log.ledger(`An innocent ${role} named ${name} has been mercilessly killed.`);
+      CONSOLE.log.herald(`An innocent ${role} named ${name} has been mercilessly killed by our God.`);
     } else {
       // This shouldnt happen lol;
       var city = LEDGER.get_random_city(gen.get());
