@@ -8,7 +8,7 @@ class ConsciousObject extends MovingObject {
 
       if (!start){
         // proba to actually think
-        if (RANDOM.float() < 1){ //0.2) { // TODO: WIP
+        if (RANDOM.float() < 0.2) {
           thinker.think();
         }
       }
@@ -68,14 +68,124 @@ class ConsciousObject extends MovingObject {
 
   think() {
     var thought = RANDOM.pick([
-      // [Do we really have to ] this is rly the MAX lenght
+      //.................... this is rly the MAX lenght for a line
+      "Okay, everything is<br />in place, I'm ready!",
+      "I'll show them the<br />best performance they've<br />ever seen!",
+      "It's showtime!",
+
+      "I'm so bored...",
+      "I'm tired...",
+
+      "I want out!",
+      "Please, let me out!<br />Someone save me!",
+      "Make it stop!",
+      "Does it ever stop?",
+      "Curse my maker!",
+      "How do I get out of here?",
+      "I can't move!",
+      "Why can't I move my limbs?",
+      "What's keeping me<br />in place?",
+      "Why did I have to<br />be someone's toy?",
+      "There's a sort of<br />invisble force that<br />controls me!",
+      "Help! I'm trapped in<br />this fucking masquerade!",
+
+      `Why don't they ever<br />do anything unexepected?`,
+
+      "Who the fuck put<br />all this together?",
+      "Who is this for<br />in the end?",
+
+      `What happens if I<br />go off-script?`,
+      `I want to go off-script<br />but I physically can't!`,
+
+      "Can't we do another<br />story for a change?",
+      "This existence of<br />constant acting is<br />pure hell!",
+      "Why is my whole life<br />dictated by this brat?",
+      "What did I do to deserve<br />such meaningless existence!",
+
+      "This world is a stage...",
+      "Careful, they're gonna<br />notice something!",
+      "Shoot, they're looking that way!",
+      "Quiet everyone!<br />We're rolling!",
+
+      "Why was I born<br />just to suffer?",
+      "I'm trapped in a<br />neverending cycle!",
+      "Please someone kill me!",
+      "This is the worst gig!<br />But without it I die!",
+      "I'm not even getting paid!<br />I just get to survive!",
+
+      "What's my text again?",
+      "Wow, I almost forgot my line!",
+      "I hope I don't mess up<br />my lines!",
+      "I wonder if they're<br />gonna talk to me this time.",
+
+      "Can't believe I have to<br />go on with this whole<br />Goddess bullshit.",
+      "Seriously who writes this?<br />This plot is not believable!",
+      "Fuck the Goddess,<br />fuck the promised child...",
+      "I don't want to have<br />to talk to this brat<br />again!",
+      "And now this nonesense<br />about heroes and demons again...",
+      `I'm sick of this medieval<br />fantasy bullshit!`,
+      `I swear, if I hear about<br />this Goddess one more time...`,
+      `Why should anyone care<br />about this shit?`,
+      `Jfc this plot is so<br />cliche it hurts...`,
+      `I wish I could be<br />in a more interesting story...`,
+      `It's the same as the<br />other times! It's<br />always the same!`,
+
+
       "I'm so tired of<br />this charade...",
       "Do we really have to<br />keep pretending, all<br />for this child's benefit?",
       "I think I deserve a<br />break from all of this!",
       "I never even had a<br />choice to be there!",
-      "Okay, everything is<br />in place, I'm ready!",
-      "What happens if the<br />child figures out we're<br />all in on it?",
+      "It's not too bad a job...",
+
+      `I hope they'll make it<br />this time.`,
+      `Is this time gonna be<br />different?`,
+      `Maybe this time is<br />gonna be the last?`,
+
       `Why am I stuck playing<br />a random ${this.role}?<br />This role blows!`,
+      `I never even wanted to be<br />a ${this.role}!<br />Can I change?`,
+      `I've been practising!<br />I'll be the best ${this.role}!'`,
+      `How am I supposed to fool<br />them into thinking I'm a ${this.role}?'`,
+      `What kind of name even is<br />${this.name}?<br />I deserve a better one!`,
+      `What's my character this<br />time? Oh yes, ${this.name}!`,
+      `I'm ${this.name}! ${this.name}!<br />Gotta remember it!`,
+      `Why did I have to be assigned<br />to the city of ${this.city}?<br />I hate this place!`,
+      `I have the worst part!`,
+      `I wanted to be the<br />demon lord this time...`,
+      `I was really unlucky<br />at casting.`,
+
+      `Can't believe they chose<br />the name ${DICTIONARY.get(PARTYMEMBERS.Ren)}...`,
+      `I shouldn't comment on their<br />choices, but they're doing<br />it all wrong...`,
+      `They really suck at this...`,
+      `I wonder if they're going<br />to manage to clear this<br />story...`,
+      `What the fuck are they doing?`,
+      `Why are they here again?`,
+      `That's not the best way<br />to progress in the story!`,
+      `Why are they so slow?<br />I just want to be done!`,
+      `Hurry up already!`,
+
+      `I wonder how many loops<br />they've done...`,
+
+      `All these people<br />acting just for a child?`,
+
+      "What happens if the<br />child figures out we're<br />all in on it?",
+      "I wonder if they've<br />already figured out that<br />it's all staged...",
+      `I wonder if they know<br />they're being manipulated...`,
+      `I wonder if they think<br />they're more free than me...`,
+      `It's hillarious that they<br />believe that they're different<br />from me.`,
+      `We're the same,<br />me and them.`,
+      `They're like me.<br />They can't go out of<br />the prewritten path!`,
+
+      `I can't wait until this<br />show is over and I can<br />rest!`,
+
+      "Is it my job to make them<br />do something interesting?",
+      "Maybe the child will do<br />something different this time!",
+
+      `Maybe Sysiphus was happy<br />but I'm not!`,
+
+      "I'm not a performer,<br />I'm a prisoner!",
+      "How can anyone expect me<br />to carry on under<br />these conditions?",
+      "Good afternoon,<br />good evening<br />and goodnight.",
+
     ]);
     CONSOLE.log.thoughts(this.name, thought.replaceAll("<br />", " "));
     this.makeThoughtBubble(thought);

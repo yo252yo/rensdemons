@@ -3,16 +3,15 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 savagechild we know her hiding spot
 
-a lot more thoughts
-NPC thoughts, backstory (add to bio) People whispering on the edge of the viewport, some believe in last thursdayism
-fix the timer WIP TODOS
 
+some believe in last thursdayism
 
 
 
 
 ---------------------------------------- BACKSIDE:
 - walkthrough
+- NPC backstory/bio
 - visual glitches, especially during Maou death (overlay?)
 - more language options for ledger console
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
