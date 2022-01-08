@@ -205,7 +205,6 @@ class Filler {
 
     var i = 0;
     var nb_placed = 0;
-    console.log(nb_desired_products);
     while (i < nb_tries && nb_placed < nb_desired_products) {
       var o = this.get_object(this.gen.get());
       var x = this.zone_x + this.gen.get() * (this.zone_w - o.obj_w);
