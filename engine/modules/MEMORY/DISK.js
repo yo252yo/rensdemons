@@ -129,18 +129,18 @@ const DISK = {
           }
 
           if(parsed["#DISK_STATE_IDENTIFIER"] != DISK._CONTENT["#DISK_STATE_IDENTIFIER"]){
-            console.log.debug("Loading save from a different device, restoring everything on disk.");
+            CONSOLE.log.debug("Loading save from a different device, restoring everything on disk.");
             DISK._CONTENT = parsed;
             DISK._CONTENT["#DISK_STATE_IDENTIFIER"] = (new Date()).getTime();
           } else {
-            console.log.debug("Loading save the same device, only loading the save file.");
+            CONSOLE.log.debug("Loading save the same device, only loading the save file.");
             DISK._CONTENT["SAVE"] = parsed["SAVE"];
           }
 
           DISK._record_to_storage();
           DISK.initialize_game();
           SAVE.load(1);
-        } catch {
+        } catch (e){
           CONSOLE.error("This file has the wrong format or may be corrupted.", false, true);
         }
       });
