@@ -142,6 +142,10 @@ class S_ExitFloor extends S_Floor {
     }
     return false;
   }
+
+  initialize_with_character() {
+    CURRENTLEVEL.initialize_with_character(this.x+this.w/2, this.y-this.h/2);
+  }
 }
 
 class S_TownFloor extends S_Floor {
