@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 var floor = 0;
 var room = 0;
@@ -17,8 +17,9 @@ var isGooRoom = false;
 if (gen.get() < 0.25){
   isGooRoom = true;
 }
+
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 if (isGooRoom){
   new S_GooFloor(1175,1525,350,275);
@@ -27,18 +28,18 @@ if (isGooRoom){
 }
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
-
+var exit;
 if(room < 2){
-  new S_ExitFloor(1500,1400,50,50, '051_pandemonium@' + floor);
+  exit = new S_ExitFloor(1500,1400,50,50, '051_pandemonium@' + floor);
 } else {
-  new S_ExitFloor(1150,1400,50,50, '051_pandemonium@' + floor);
+  exit =  new S_ExitFloor(1150,1400,50,50, '051_pandemonium@' + floor);
 }
 
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 var x = 1225;
@@ -47,32 +48,24 @@ var y = 1425;
 if(room >= 2){
   x += 200;
 }
-var placeholder;
 
 if(floor == 0 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey0);
-  placeholder = new S_SavePoint(x,y);
 } else if(floor == 1 && room == 2) {
   new SE_groundItem(x, y, ITEM.MaouKey1);
-  placeholder = new S_SavePoint(x,y);
 } else if(floor == 2 && room == 1) {
   new SE_groundItem(x, y, ITEM.MaouKey2);
-  placeholder = new S_SavePoint(x,y);
 } else if(floor == 3 && room == 3) {
   new SE_groundItem(x, y, ITEM.MaouKey3);
-  placeholder = new S_SavePoint(x,y);
 } else if(floor == 4 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey4);
-  placeholder = new S_SavePoint(x,y);
 } else if(floor == 5 && room == 2) {
   new SE_groundItem(x, y, ITEM.MaouKey5);
-  placeholder = new S_SavePoint(x,y);
 }
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR
 // ===================
-
 
 var filler = new Filler(gen.get());
 var decorFiller = new MultiFiller(filler, 50, 50);
@@ -128,9 +121,8 @@ wallFiller.fill_line();
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS
 // ===================
-
 
 var events = new EventFiller(decorFiller, 25);
 events.set_zone(1200,1525,300,275);
@@ -164,19 +156,7 @@ events.fill_floor_by_retry();
 
 
 // ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-if(placeholder){
-  placeholder.destroy();
-}
-
-
-// ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
-if(room < 2){
-  CURRENTLEVEL.initialize_with_character(1475, 1375);
-} else {
-  CURRENTLEVEL.initialize_with_character(1175, 1375);
-}
+exit.initialize_with_character();
