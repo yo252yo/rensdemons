@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.trees();
 
@@ -11,8 +11,8 @@ if(s.length > 1){
 var gen = new Generator((DICTIONARY.get("world_seed")+ treepart)*57);
 
 // ===================
-//hack 1. FLOORS
-//hack 2. EXIT
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
 
 var event_floors = [];
@@ -25,15 +25,15 @@ var spawnpoint = function(how){
   } else if(how == 'bridgeleft'){
     return [1600,2175];
   } else if(how == 'topleft'){
-    return [1700,1920];
+    return [1700,1900];
   } else if(how == 'botleft'){
     return [1700,2475];
   } else if(how == 'topright'){
-    return [2300,1920];
+    return [2300,1900];
   } else if(how == 'botright'){
     return [2300,2475];
   } else if (how == 'topmid'){
-    return [2000,1920];
+    return [2000,1900];
   }
   return undefined; //default
 }
@@ -287,26 +287,91 @@ if(treepart == 1){
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
 
-var partsWithBranches = [8, 9, 10, 17, 21, 22, 23, 24, 27];
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 if(treepart == 1) {
   events_zone = undefined;
   new S_SavePoint(1975, 2200);
-} else if([7, 15, 28, 37].includes(treepart)) {
-  new S_SavePoint(1975, 2200);
-} else if(partsWithBranches.includes(treepart)) {
-  var placeholder = new S_Placeholder(1975, 2200,50, 50);
-} else if(treepart == 39){
-  events_zone = undefined;
 }
 
+if([7, 15, 28, 37].includes(treepart)) {
+  new S_SavePoint(1975, 2200);
+}
+
+// branches
+if([8, 9, 10, 17, 21, 22, 23, 24, 27].includes(treepart)){
+  var b = new SE_groundItem(1975, 2200, ITEM.Branch);
+  if (INVENTORY.count(ITEM.Branch) == 0){
+    b.interaction = function(){
+      var after = function(){
+        TextBannerSequence.make([
+          `However, you think that one branch is not going to be enough for anything. You convince yourself you need to find more.`,
+          `You know there must be a certain symmetry in this forest. You decide to go back and explore the other paths in search for more branches.`,
+        ]);
+      }
+      TextBannerSequence.make([
+        `You notice that there is a weirdly shaped branch on the ground. Since it's not like the other ones, you think it could be important.`,
+      ],  function(){ b.real_interaction(after);});
+    };
+  }
+}
+
+// knots
+if([29, 31].includes(treepart)){
+  var b = new SE_groundItem(1950, 2225, "_knots_pressed", 1, 100);
+  var press = function(){
+    INVENTORY.increase("_knots_pressed");
+    b.destroy();
+    var extra = ` You know that you need to press another knot somewhere, in another route. It would be absurd for the other path to be useless.`;
+    if(INVENTORY.count("_knots_pressed") >= 2){
+      extra = ` You decide to retrace your steps and be on the lookout for changes in the environment.`;
+    }
+    TextBannerSequence.make([
+      `Nothing seems to have changed around you, but you are sure that you had an important effect on your environment, contributing to open the path to the heart of the forest.` + extra,
+    ]);
+  }
+  var prompt = function(){
+    new CenteredTextMenu("Will you press the knot?",
+                  [
+                    {"text": "Yes", "effect": press},
+                    {"text": "No", "effect": "##CLOSE"},
+                 ]
+               );
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `Your way is blocked by a massive tree. It is probably several millenia old. You marvel at its size and the intricate patterns of its bark. Your attention is drawn to a knot that stands out slightly.`,
+    ], prompt);
+  };
+}
+
+// ending
+if(treepart == 39){
+  events_zone = undefined;
+  new SBattle(1950, 2275, 'forests/blob', 100);
+
+  var b = new SE_groundItem(1950, 2050,   ITEM.Staff, 1, 100);
+  var take = function(){
+    INVENTORY.increase(ITEM.Staff);
+    b.destroy();
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `A plethora of roots join together in an complex entanglement. At the perfect center, they rise up to form a sort of pedestal which supports the artifact you've been longing for.`,
+      `A quick glance could have confused it with one of the many branches you're now wearing, but this would be mistaken. The patterns of the bark seem to follow some sort of arrangement, and these arabesques emit an unnatural soft purple glow.`,
+      `When you seize the staff, you are surprised to find that this mystical piece of wood that is almost as big as you weighs practically nothing. You wave it around and feel the air crackle around the artifact. You're sure this holds a tremendous power.`,
+      `You keep the Legendary Staff and decide to make your way out of this place.`,
+    ], take);
+  };
+}
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR
 // ===================
 var f = new Filler(gen.get());
 
@@ -329,8 +394,9 @@ filler.add_default_constructor("S_PlantSmall", 1, 20, 20);
 filler.add_default_constructor("S_Plant", 1, 50, 50);
 filler.fill_floor_by_retry();
 
+
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS
 // ===================
 var events = new EventFiller(filler, 10);
 events.set_tries(Math.ceil(1*multiplier), 7*multiplier);
@@ -364,80 +430,8 @@ if(events_zone){
   events.fill_floor_by_retry();
 }
 
-if(placeholder){
-  placeholder.destroy();
-}
 
-// ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-if(partsWithBranches.includes(treepart)){
-  var b = new SE_groundItem(1975, 2200, ITEM.Branch);
-  if (INVENTORY.count(ITEM.Branch) == 0){
-    b.interaction = function(){
-      var after = function(){
-        TextBannerSequence.make([
-          `However, you think that one branch is not going to be enough for anything. You convince yourself you need to find more.`,
-          `You know there must be a certain symmetry in this forest. You decide to go back and explore the other paths in search for more branches.`,
-        ]);
-      }
-      TextBannerSequence.make([
-        `You notice that there is a weirdly shaped branch on the ground. Since it's not like the other ones, you think it could be important.`,
-      ],  function(){ b.real_interaction(after);});
-    };
-  }
-}
-
-if([29, 31].includes(treepart)){
-  var b = new SE_groundItem(1950, 2225, "_knots_pressed", 1, 100);
-  var press = function(){
-    INVENTORY.increase("_knots_pressed");
-    b.destroy();
-    var extra = ` You know that you need to press another knot somewhere, in another route. It would be absurd for the other path to be useless.`;
-    if(INVENTORY.count("_knots_pressed") >= 2){
-      extra = ` You decide to retrace your steps and be on the lookout for changes in the environment.`;
-    }
-    TextBannerSequence.make([
-      `Nothing seems to have changed around you, but you are sure that you had an important effect on your environment, contributing to open the path to the heart of the forest.` + extra,
-    ]);
-  }
-  var prompt = function(){
-    new CenteredTextMenu("Will you press the knot?",
-                  [
-                    {"text": "Yes", "effect": press},
-                    {"text": "No", "effect": "##CLOSE"},
-                 ]
-               );
-  }
-
-  b.interaction = function(){
-    TextBannerSequence.make([
-      `Your way is blocked by a massive tree. It is probably several millenia old. You marvel at its size and the intricate patterns of its bark. Your attention is drawn to a knot that stands out slightly.`,
-    ], prompt);
-  };
-}
-
-if(treepart == 39){
-  new SBattle(1950, 2275, 'forests/blob', 100);
-
-  var b = new SE_groundItem(1950, 2050,   ITEM.Staff, 1, 100);
-  var take = function(){
-    INVENTORY.increase(ITEM.Staff);
-    b.destroy();
-  }
-
-  b.interaction = function(){
-    TextBannerSequence.make([
-      `A plethora of roots join together in an complex entanglement. At the perfect center, they rise up to form a sort of pedestal which supports the artifact you've been longing for.`,
-      `A quick glance could have confused it with one of the many branches you're now wearing, but this would be mistaken. The patterns of the bark seem to follow some sort of arrangement, and these arabesques emit an unnatural soft purple glow.`,
-      `When you seize the staff, you are surprised to find that this mystical piece of wood that is almost as big as you weighs practically nothing. You wave it around and feel the air crackle around the artifact. You're sure this holds a tremendous power.`,
-      `You keep the Legendary Staff and decide to make your way out of this place.`,
-    ], take);
-  };
-}
-
-
+// Extra event for savagechild ad hoc
 if(events_zone && !PARTY.has_member(PARTYMEMBERS.SavageChild) && Math.random() < 0.3){
   events.clear();
   events.set_tries(1, 50);
@@ -446,9 +440,11 @@ if(events_zone && !PARTY.has_member(PARTYMEMBERS.SavageChild) && Math.random() <
   events.fill_floor_by_retry();
 }
 
+
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
+
 var start = function(t){
   CURRENTLEVEL.start_function = function() {
     TextBannerSequence.make(t, IO.control.character);
@@ -548,5 +544,5 @@ if(treepart == 1){
   ]);
 }
 
-
+// default is to spawn botmid
 CURRENTLEVEL.initialize_with_character(2000, 2475);
