@@ -184,7 +184,17 @@ if(treepart == 1){
 } else if(treepart == 14){
   botmid('012_trees@12');
   bridgeright();
+  bridgeleft('012_trees@40', 'bridgeright');
   topright('012_trees@15');
+} else if(treepart == 40){
+  bridgeleft();
+  bridgeright('012_trees@14', 'bridgeleft');
+  botmid('012_trees@41', 'topmid');
+  botleft('012_trees@41', 'topleft');
+} else if(treepart == 41){
+  bridgeleft();
+  topmid('012_trees@40', 'botmid');
+  topleft('012_trees@40', 'botleft');
 } else if(treepart == 15){
   botmid('012_trees@14');
   topmid('012_trees@16');
@@ -543,6 +553,10 @@ if(treepart == 1){
 } else if(treepart == 39){
   start([
       `This is the heart of the woods. The vegetation around you gently glows with a mysterious light. It seems to you that the trees around you are humming, as if communicating with each other. What you came for is surely close, but you know that there will be an ultimate trial before you can reach it. No treasure comes unguarded.`,
+  ]);
+} else if(treepart == 40){
+  start([
+      `You decide to take your time and investigate this dead-end for a while before going back to the main path.`,
   ]);
 }
 
