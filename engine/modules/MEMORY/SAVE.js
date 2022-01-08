@@ -106,7 +106,7 @@ const SAVE = {
         e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         a.dispatchEvent(e);
 
-        console.log.debug("Save file downloaded");
+        CONSOLE.log.debug("Save file downloaded");
       }
 
       new CenteredTextMenu("Save?", [
