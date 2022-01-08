@@ -417,6 +417,8 @@ events.text(`You feel observed. Are the trees all around somehow watching you? T
 events.text(`You hear rustling in the bushes behind you. Is there someone else here?`, 0.5);
 events.text(`You feel determined to explore this forest in depth. You may find very interesting things.`, 0.5);
 events.text(`You find a weirdly shaped tiny tree. You're keenly aware that everything in this forest has a purpose, and you wonder what this tree is for. Is it a distraction?`, 0.5);
+events.text(`You look around, leaving no bush unchecked, in hope of finding some sort of treasure, to no avail.`, 0.5);
+events.text(`You investigate your surroundings, hoping for anything new and noteworthy. But it's just a forest.`, 0.5);
 events.text('You look behind a bush, excited at the potential of what you may find there. Sadly, behind the bush is just another bush.', 0.5);
 events.text(`You wonder how much longer you'll have to walk in the darkness of this oppressive forest. The result better be worth it!`, 0.5);
 events.text('You cannot help but doubting yourself. Maybe you are underprepared for this forest. Maybe you should have trained more. Maybe you should leave and come back later...', 0.5);
