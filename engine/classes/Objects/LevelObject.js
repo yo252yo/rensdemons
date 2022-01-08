@@ -122,13 +122,20 @@ class LevelObject {
     }
 
     destroy(stillborn) {
-      if (this.visual_element){
-        this.visual_element.destroy();
-      }
       if (this.record_death){
         this.record_death();
       }
-      CURRENTLEVEL.objects.remove_object(this, stillborn);
+      if(stillborn){
+        this.finish_destroy();
+      } else {
+        CURRENTLEVEL.objects.program_destruction(this);
+      }
+    }
+
+    finish_destroy() {
+      if (this.visual_element){
+        this.visual_element.destroy();
+      }
       delete this;
     }
 

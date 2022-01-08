@@ -16,6 +16,7 @@ const CURRENTLEVEL = {
   destroyed_objects: [],
   triggers: [],
   start_function: null,
+  is_initialized: false,
 
   factory: {
     export: function(){
@@ -235,6 +236,7 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.triggers = {};
       CURRENTLEVEL.start_function = null;
       CHARACTER.clear();
+      CURRENTLEVEL.is_initialized = false;
     },
 
   },
@@ -316,29 +318,33 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_objects.push(object);
     },
 
-    remove_object: function(object, stillborn) {
+    destroy_object: function(object) {
       for (var i in CURRENTLEVEL.level_objects){
         var candidate = CURRENTLEVEL.level_objects[i];
-        if (candidate && candidate.hash() == object.hash()){
-          if (object != candidate){
-            // destroy all homonyms
-            candidate.destroy();
-          }
+        if (candidate && candidate.hash() == object.hash()){ // destroy homonyms
+          candidate.finish_destroy();
           CURRENTLEVEL.level_objects[i] = null;
         }
       }
-      if(!stillborn && !CURRENTLEVEL.destroyed_objects.includes(object.hash())){
+    },
+
+    program_destruction: function(object) {
+      if(!CURRENTLEVEL.destroyed_objects.includes(object.hash())){
         CURRENTLEVEL.destroyed_objects.push(object.hash());
       }
       CURRENTLEVEL.system.redraw();
+      if(CURRENTLEVEL.is_initialized){
+        CURRENTLEVEL.objects.destroy_object(object);
+      }
     },
 
     cleanup_dead: function(){
       for (var o of CURRENTLEVEL.level_objects){
         if (o && o.hash && o.hash() && CURRENTLEVEL.destroyed_objects.includes(o.hash())){
-          o.destroy();
+          CURRENTLEVEL.objects.destroy_object(o);
         }
       }
+      CURRENTLEVEL.is_initialized = true;
     }
   },
 

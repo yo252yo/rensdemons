@@ -272,7 +272,7 @@ class SM_Heaven extends MapObject {
       this.visual_element.destroy();
     }
     this.legend.destroy();
-  //  CURRENTLEVEL.objects.remove_object(this, stillborn);
+  //  CURRENTLEVEL.objects.program_destruction(this, stillborn);
     delete this;
   }
 }
