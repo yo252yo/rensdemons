@@ -92,14 +92,14 @@ const MARTYRDOM = {
 
     _category: function(category_index){
       var category = MARTYRDOMS[category_index];
-      return `${category} [${STRING_UTILS.romanize(MARTYRDOM._get.lvl(category)+1)}] (${MARTYRDOM._get.price(category_index)}*)`;
+      return `${category} [${STRING_UTILS.romanize(MARTYRDOM._get.lvl(category)+1)}] (cost ${MARTYRDOM._get.price(category_index)})`;
     },
 
     _fill_menu: function(){
       if(!MARTYRDOM.menu){return;}
       var title = "<b>Martyrdom</b><hr/>";
       if (MARTYRDOM._spare_points > 0){
-        title += "Unspent: " + MARTYRDOM._spare_points + "*<br />";
+        title += "Unspent: " + MARTYRDOM._spare_points + "<br />";
       } else {
         title += "No spare martyrdom<br />";
       }
