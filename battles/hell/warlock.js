@@ -57,4 +57,4 @@ BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and sta
 //hack START
 // ===================
 
-BATTLE.operations.start("A Wicked Warlock Wages War.");
+BATTLE.operations.start(BESTIARY.intro("hell/warlock"));

@@ -59,4 +59,4 @@ BATTLE.monster_actions.add_textual("The Crawler disappears on the wall in front 
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Cunning Crawler Creeps in the Cavern.");
+BATTLE.operations.start(BESTIARY.intro("caves/crawler"));

@@ -55,5 +55,4 @@ BATTLE.monster_actions.add_textual("The Phoenix whips you with its incandescent 
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Pompous Phoenix Parades or Patrols.");
+BATTLE.operations.start(BESTIARY.intro("mountains/phoenix"));

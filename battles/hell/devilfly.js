@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Devilfly's hypnotic noise slowly turns y
 //hack START
 // ===================
 
-BATTLE.operations.start("A Deadly Devilfly Drones with Defiance.");
+BATTLE.operations.start(BESTIARY.intro("hell/devilfly"));

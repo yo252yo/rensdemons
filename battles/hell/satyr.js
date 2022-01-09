@@ -55,4 +55,4 @@ BATTLE.monster_actions.add_textual("The Satyr casts on you a powerful spell that
 //hack START
 // ===================
 
-BATTLE.operations.start("A Sanguinary Satyr Shrieks in the Shadows.");
+BATTLE.operations.start(BESTIARY.intro("hell/satyr"));

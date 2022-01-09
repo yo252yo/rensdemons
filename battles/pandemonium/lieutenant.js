@@ -59,7 +59,7 @@ BATTLE.monster_actions.add_textual("$$demon_lieutenant$ snaps his fingers. Hundr
 // ===================
 
 BATTLE.operations.start([
-  "A Loquacious Lieutenant Laughs at your Logic.",
+  BESTIARY.intro("pandemonium/lieutenant"),
   `$$demon_lieutenant$: "So you really think you can take me over by force?"`,
   `$$Ren$: "Yes, the Goddess is with me!"`,
   `$$demon_lieutenant$: "And where has she been the few hundred years? Anyway, you made your choice. It's time for you to accept the consequences..."`

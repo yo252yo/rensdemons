@@ -50,5 +50,4 @@ BATTLE.monster_actions.add_textual("The Asmodeus reminds you that you will never
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("An Abyssal Asmodeus Assesses you and Attacks.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/asmodeus"));

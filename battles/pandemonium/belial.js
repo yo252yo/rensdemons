@@ -52,4 +52,4 @@ BATTLE.monster_actions.add_textual("The Belial denies your existence until you d
 // ===================
 
 
-BATTLE.operations.start("A Bestial Belial Banishes you Brutally.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/belial"));

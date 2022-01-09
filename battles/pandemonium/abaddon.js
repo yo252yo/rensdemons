@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Abaddon reminds you of all your sad and 
 //hack START
 // ===================
 
-BATTLE.operations.start("An Abhorrent Abaddon Awaits your Attrition.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/abaddon"));

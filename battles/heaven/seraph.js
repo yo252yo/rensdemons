@@ -51,4 +51,4 @@ BATTLE.monster_actions.add_textual("The Seraph excuses your failures in a condes
 //hack START
 // ===================
 
-BATTLE.operations.start("A Smug Seraph Shames your Soul.");
+BATTLE.operations.start(BESTIARY.intro("heaven/seraph"));

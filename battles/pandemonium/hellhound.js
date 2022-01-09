@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you ca
 //hack START
 // ===================
 
-BATTLE.operations.start("A Hulky Hellhound lets out a Hollow Howl.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/hellhound"));

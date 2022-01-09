@@ -59,5 +59,4 @@ BATTLE.monster_actions.add_textual("The Pterosaur bites the air in your directio
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Predatory Pterosaur Pierces through the Panorama.");
+BATTLE.operations.start(BESTIARY.intro("mountains/pterosaur"));

@@ -52,4 +52,4 @@ BATTLE.monster_actions.add_textual("The Toad croaks first normaly, but then swit
 //hack START
 // ===================
 
-BATTLE.operations.start("A Toxic Toad Taunts you by its Throbs.");
+BATTLE.operations.start(BESTIARY.intro("hell/toad"));

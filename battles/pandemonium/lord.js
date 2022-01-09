@@ -49,7 +49,7 @@ BATTLE.monster_actions.add_textual("$$demon_lord$ snaps his finger. The air arou
 // ===================
 
 BATTLE.operations.start([
-  "A Luciferian Lord Laments at your Loftiness.",
+  BESTIARY.intro("pandemonium/lord"),
   `$$demon_lord$: "It's such a shame... It looks like I will have to crush you like I did all the others!"`,
   `$$Ren$: "Big talk for someone who's about to die!"`,
   `$$demon_lord$: "Enough! I'll show you by force how little you matter!"`

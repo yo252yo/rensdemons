@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Fox bites you. Its sharp teeth and power
 //hack START
 // ===================
 
-BATTLE.operations.start("A Frisky Fox Feints Flight.");
+BATTLE.operations.start(BESTIARY.intro("forests/fox"));

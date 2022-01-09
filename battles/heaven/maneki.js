@@ -57,4 +57,4 @@ BATTLE.monster_actions.add_textual("The Maneki proposes a gamble. You think you 
 //hack START
 // ===================
 
-BATTLE.operations.start("A Mischievous Maneki Marinates some Machination.");
+BATTLE.operations.start(BESTIARY.intro("heaven/maneki"));

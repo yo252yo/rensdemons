@@ -48,4 +48,4 @@ BATTLE.monster_actions.add_textual("The Morel activates its rhizome which shakes
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Menacing Morel Meets its Match.");
+BATTLE.operations.start(BESTIARY.intro("forests/morel"));

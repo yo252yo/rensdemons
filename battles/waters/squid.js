@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Squid overwhelms you with a barrage of h
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Slithering Squid Swam to Smother you.");
+BATTLE.operations.start(BESTIARY.intro("waters/squid"));

@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Raijuu is static. Its light aura permeat
 //hack START
 // ===================
 
-BATTLE.operations.start("A Rebel Raijuu's Radiation Reverberates around.");
+BATTLE.operations.start(BESTIARY.intro("heaven/raijuu"));

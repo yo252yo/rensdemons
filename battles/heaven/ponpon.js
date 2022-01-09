@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Ponpon flies around making chirpy noises
 //hack START
 // ===================
 
-BATTLE.operations.start("A Pure-looking Ponpon Pretends to be Pacific.");
+BATTLE.operations.start(BESTIARY.intro("heaven/ponpon"));

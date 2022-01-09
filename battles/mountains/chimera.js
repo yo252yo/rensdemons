@@ -55,4 +55,4 @@ BATTLE.monster_actions.add_textual("The Chimera grabs on to your arm and tries t
 //hack START
 // ===================
 
-BATTLE.operations.start("A Cawing Chimera Charges like a Cannonball.");
+BATTLE.operations.start(BESTIARY.intro("mountains/chimera"));

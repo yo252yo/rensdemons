@@ -57,5 +57,4 @@ BATTLE.monster_actions.add_textual("The Blob splits up in a dozen smaller versio
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Burgeoning Blob Buds and Bloats.");
+BATTLE.operations.start(BESTIARY.intro("forests/blob"));

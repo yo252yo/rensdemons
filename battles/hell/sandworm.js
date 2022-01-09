@@ -51,4 +51,4 @@ BATTLE.monster_actions.add_textual("The Sandworm mystic dance seems to have seve
 //hack START
 // ===================
 
-BATTLE.operations.start("A Swirly Sandworm Spews its Spite.");
+BATTLE.operations.start(BESTIARY.intro("hell/sandworm"));

@@ -56,5 +56,4 @@ BATTLE.monster_actions.add_textual("The Serpent dives out of the water and summo
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Sumptuous Serpent Slashes through the Sea.");
+BATTLE.operations.start(BESTIARY.intro("waters/serpent"));

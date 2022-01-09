@@ -57,4 +57,4 @@ BATTLE.monster_actions.add_textual("The Lizard slithers towards you through the 
 //hack START
 // ===================
 
-BATTLE.operations.start("A Large Lizard Looms over the Land.");
+BATTLE.operations.start(BESTIARY.intro("caves/lizard"));

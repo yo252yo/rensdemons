@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Scorpion's stinger darts towards you, dr
 //hack START
 // ===================
 
-BATTLE.operations.start("A Spiteful Scorpion's Stinger Shines.");
+BATTLE.operations.start(BESTIARY.intro("caves/scorpion"));

@@ -59,4 +59,4 @@ BATTLE.monster_actions.add_textual("The Bloodusucker flutters like a moth and tr
 //hack START
 // ===================
 
-BATTLE.operations.start("A Bizzare Bloodusucker Buzzes near your Body.");
+BATTLE.operations.start(BESTIARY.intro("caves/bloodsucker"));

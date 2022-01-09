@@ -54,4 +54,4 @@ BATTLE.monster_actions.add_textual("The Crab crawls towards you and pinches your
 //hack START
 // ===================
 
-BATTLE.operations.start("A Cruel Crab Cuts air with its Claws.");
+BATTLE.operations.start(BESTIARY.intro("waters/crab"));

@@ -54,4 +54,4 @@ BATTLE.monster_actions.add_textual("The Fungus seems to be aiming at using its h
 //hack START
 // ===================
 
-BATTLE.operations.start("A Feral Fungus Frightens you with its Force.");
+BATTLE.operations.start(BESTIARY.intro("forests/fungus"));

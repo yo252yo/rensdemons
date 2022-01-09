@@ -52,4 +52,4 @@ BATTLE.monster_actions.add_textual("The Titan informs you that a thing you thoug
 //hack START
 // ===================
 
-BATTLE.operations.start("A Titan Trumpets your Tragic Termination.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/titan"));

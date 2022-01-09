@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Golem harasses you with a relentless flo
 //hack START
 // ===================
 
-BATTLE.operations.start("A Gigantic Golem Gouges the Ground.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/golem"));

@@ -48,4 +48,4 @@ BATTLE.monster_actions.add_textual("The Ifrit sends you a mental picture of the 
 //hack START
 // ===================
 
-BATTLE.operations.start("An Incandescent Ifrit Ignites with Ire.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/ifrit"));

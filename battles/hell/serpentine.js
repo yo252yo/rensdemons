@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Serpentine makes indecent gestures in yo
 //hack START
 // ===================
 
-BATTLE.operations.start("A Saucy Serpentine Seeks to Seduce you.");
+BATTLE.operations.start(BESTIARY.intro("hell/serpentine"));

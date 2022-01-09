@@ -49,4 +49,4 @@ BATTLE.monster_actions.add_textual("The Anemone spits balls of a venomous goo.",
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("An Angry Anemone Articulates its Appendage.");
+BATTLE.operations.start(BESTIARY.intro("waters/anemone"));

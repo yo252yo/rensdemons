@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Naiad waves her rod and casts a choking 
 //hack START
 // ===================
 
-BATTLE.operations.start("A Nautical Naiad Nags you Noxiously.");
+BATTLE.operations.start(BESTIARY.intro("waters/naiad"));

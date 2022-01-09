@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Angel recounts your past experiences, cr
 //hack START
 // ===================
 
-BATTLE.operations.start("An Arrogant Angel Ascends with Attitude.");
+BATTLE.operations.start(BESTIARY.intro("heaven/angel"));

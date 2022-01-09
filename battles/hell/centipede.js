@@ -49,4 +49,4 @@ BATTLE.monster_actions.add_textual("The Centipede doesn't seem to move a muscle 
 //hack START
 // ===================
 
-BATTLE.operations.start("A Colossal Centipede Contemplates Crushing you.");
+BATTLE.operations.start(BESTIARY.intro("hell/centipede"));

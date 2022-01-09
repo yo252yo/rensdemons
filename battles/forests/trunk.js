@@ -59,4 +59,4 @@ BATTLE.monster_actions.add_textual("The Trunk extends a pointy twig to pierce yo
 //hack START
 // ===================
 
-BATTLE.operations.start("A Terrifying Thorny Trunk Towers over you.");
+BATTLE.operations.start(BESTIARY.intro("forests/trunk"));

@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Mole digs under you, and the ground beco
 //hack START
 // ===================
 
-BATTLE.operations.start("A Measly Mole Moves in the Muck.");
+BATTLE.operations.start(BESTIARY.intro("caves/mole"));

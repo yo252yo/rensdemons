@@ -63,4 +63,4 @@ PLAYER_ACTIONS.add({
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Vicious Viper Ventures into View.");
+BATTLE.operations.start(BESTIARY.intro("trial/viper"));

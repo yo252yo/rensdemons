@@ -57,4 +57,4 @@ BATTLE.monster_actions.add_textual("The Slime melts into an expanding noxious pu
 //hack START
 // ===================
 
-BATTLE.operations.start("A Slushy Slime Sludges Sloppily.");
+BATTLE.operations.start(BESTIARY.intro("caves/slime"));

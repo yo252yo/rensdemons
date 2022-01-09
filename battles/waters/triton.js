@@ -63,5 +63,4 @@ BATTLE.monster_actions.add_textual("The Triton tries to slit your throat with hi
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Triton Trooper Treads the Tides.");
+BATTLE.operations.start(BESTIARY.intro("waters/triton"));

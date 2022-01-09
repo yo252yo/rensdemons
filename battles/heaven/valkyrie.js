@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Valkyrie tells you to do what you want. 
 //hack START
 // ===================
 
-BATTLE.operations.start("A Vile Valkyrie Volunteers to Violate you.");
+BATTLE.operations.start(BESTIARY.intro("heaven/valkyrie"));

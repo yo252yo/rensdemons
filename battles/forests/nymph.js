@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Nymph slowly surrounds you with her vine
 //hack START
 // ===================
 
-BATTLE.operations.start("A Naughty Nymph is Nourrished by Nature.");
+BATTLE.operations.start(BESTIARY.intro("forests/nymph"));

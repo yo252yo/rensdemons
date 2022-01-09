@@ -50,5 +50,4 @@ BATTLE.monster_actions.add_textual("The Mammon reminds you of all the things you
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Macabre Mammon Mocks your Minuscule size.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/mammon"));

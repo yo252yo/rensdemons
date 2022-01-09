@@ -37,4 +37,5 @@ BATTLE.monster_actions.add_textual("The Arachnid's many legs burrow in your fore
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("An Aversive Arachnid Appears on your Arm.");
+
+BATTLE.operations.start(BESTIARY.intro("trial/arachnid"));

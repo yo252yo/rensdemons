@@ -51,4 +51,4 @@ BATTLE.monster_actions.add_textual("The Eyeball maintains its cold judging glanc
 //hack START
 // ===================
 
-BATTLE.operations.start("An Eery Eyeball Examines your Ego.");
+BATTLE.operations.start(BESTIARY.intro("hell/eyeball"));

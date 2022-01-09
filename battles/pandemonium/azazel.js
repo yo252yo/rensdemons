@@ -47,5 +47,4 @@ BATTLE.monster_actions.add_textual("The Azazel postulates you that nobody really
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("An Accursed Azazel Ambushes you with Aplomb.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/azazel"));

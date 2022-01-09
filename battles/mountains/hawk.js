@@ -62,5 +62,4 @@ BATTLE.monster_actions.add_textual("The Hawk's talons take a deep grip on your a
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Hungry Hawk Hurls towards the Humans.");
+BATTLE.operations.start(BESTIARY.intro("mountains/hawk"));

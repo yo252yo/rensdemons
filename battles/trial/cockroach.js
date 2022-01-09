@@ -35,4 +35,4 @@ BATTLE.monster_actions.add_textual("The Cockroach runs around in circles.", atta
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Crass Cockroach Crawls Creepily.");
+BATTLE.operations.start(BESTIARY.intro("trial/cockroach"));

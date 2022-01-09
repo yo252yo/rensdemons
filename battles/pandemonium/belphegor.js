@@ -52,4 +52,4 @@ BATTLE.monster_actions.add_textual("The Belphegor's influence on your brain plun
 //hack START
 // ===================
 
-BATTLE.operations.start("A Barbaric Belphegor Besmirches you with Babble.");
+BATTLE.operations.start(BESTIARY.intro("pandemonium/belphegor"));

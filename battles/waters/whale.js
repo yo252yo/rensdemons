@@ -44,4 +44,4 @@ PLAYER_ACTIONS.add({
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Wondrous Whale Wrecked your Wares.");
+BATTLE.operations.start(BESTIARY.intro("waters/whale"));

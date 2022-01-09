@@ -37,4 +37,4 @@ BATTLE.monster_actions.add_textual("The Rodent shakes its whiskers. Maybe it's c
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Repulsive Rodent Rushes to your Rear.");
+BATTLE.operations.start(BESTIARY.intro("trial/rodent"));

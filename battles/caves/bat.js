@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Bat whirls around you in a flurry of sla
 //hack START
 // ===================
 
-BATTLE.operations.start("A Black Bat Bursts Before you.");
+BATTLE.operations.start(BESTIARY.intro("caves/bat"));

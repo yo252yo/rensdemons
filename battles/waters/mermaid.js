@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Mermaid approaches you gently, but sudde
 //hack START
 // ===================
 
-BATTLE.operations.start("A Magnificent Mermaid Mesmerizes you with Magnetism.");
+BATTLE.operations.start(BESTIARY.intro("waters/mermaid"));

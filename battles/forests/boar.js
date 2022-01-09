@@ -54,4 +54,4 @@ BATTLE.monster_actions.add_textual("The Boar exhales strongly. It seems enraged.
 //hack START
 // ===================
 
-BATTLE.operations.start("A Brazen Boar Braces for Battle.");
+BATTLE.operations.start(BESTIARY.intro("forests/boar"));

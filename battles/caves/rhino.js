@@ -56,4 +56,4 @@ BATTLE.monster_actions.add_textual("The Rhino slams into the nearest wall. Its m
 //hack START
 // ===================
 
-BATTLE.operations.start("A Rocky Rhino's Roar Resounds all around.");
+BATTLE.operations.start(BESTIARY.intro("caves/rhino"));

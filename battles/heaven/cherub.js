@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Cherub simply notes that there is no way
 //hack START
 // ===================
 
-BATTLE.operations.start("A Cheeky Cherub Condemns your Carreer.");
+BATTLE.operations.start(BESTIARY.intro("heaven/cherub"));

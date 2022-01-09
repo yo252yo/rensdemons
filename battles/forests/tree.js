@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Tree overwhelms you with a tornado of fo
 //hack START
 // ===================
 
-BATTLE.operations.start("A moving Tree Twists and Turns Towards you.");
+BATTLE.operations.start(BESTIARY.intro("forests/tree"));

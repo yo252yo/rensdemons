@@ -50,4 +50,4 @@ BATTLE.monster_actions.add_textual("The Jellyfish swims all around you energetic
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Judgemental Jellyfish Jiggles Joyfully.");
+BATTLE.operations.start(BESTIARY.intro("waters/jellyfish"));

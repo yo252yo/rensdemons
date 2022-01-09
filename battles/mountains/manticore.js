@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Manticore's venomous stinger darts towar
 //hack START
 // ===================
 
-BATTLE.operations.start("A Mythical Manticore Marches on the Mountain.");
+BATTLE.operations.start(BESTIARY.intro("mountains/manticore"));

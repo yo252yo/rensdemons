@@ -67,4 +67,4 @@ BATTLE.monster_actions.add_textual("The Basilisk gets ever closer, snapping its 
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Beastly Basilisk Blitzed on your Body.");
+BATTLE.operations.start(BESTIARY.intro("trial/basilisk"));

@@ -53,4 +53,4 @@ BATTLE.monster_actions.add_textual("The Harpy emits a series of howls that pierc
 //hack START
 // ===================
 
-BATTLE.operations.start("A Hysterical Harpy Harasses the Heroes.");
+BATTLE.operations.start(BESTIARY.intro("mountains/harpy"));

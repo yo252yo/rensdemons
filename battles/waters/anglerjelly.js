@@ -49,4 +49,4 @@ BATTLE.monster_actions.add_textual("The Anglerjelly seems pretty innocuous. It b
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("An Attentive Anglerjelly Aims at Attracting you.");
+BATTLE.operations.start(BESTIARY.intro("waters/anglerjelly"));
