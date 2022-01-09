@@ -12,6 +12,17 @@ BESTIARY = {
     return BESTIARY.dict[split[0]][split[1]]["intro"];
   },
 
+  introed: function(battle_name) {
+    var split = battle_name.split("/");
+    if (! BESTIARY.dict[split[0]]){
+      return undefined;
+    }
+    if (! BESTIARY.dict[split[0]][split[1]]){
+      return undefined;
+    }
+    return BESTIARY.dict[split[0]][split[1]]["introed"];
+  },
+
   size: function(category){
     if (! BESTIARY.dict[category]){
       return -1;

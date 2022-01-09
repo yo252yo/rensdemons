@@ -360,7 +360,16 @@ const BATTLETREE = {
         BATTLETREE.display._display_targets_element(html, to_print, battle);
       }
 
-      new MenuScreen("<b>" + battle + "</b> - " + BATTLETREE.score.completion(battle) + "%<hr/>" + html[0] );
+      var intro = BESTIARY.introed(battle);
+      if(intro){
+        intro = `<i>${intro}</i><hr/>`;
+      }
+
+      new MenuScreen(`
+        <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%<hr/>
+        ${intro}
+
+        ${html[0]}`);
     },
   },
 
