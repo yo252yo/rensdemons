@@ -130,11 +130,29 @@ const BATTLETREE = {
     },
 
     all_battles: function(){
+      return BATTLETREE.get.battles_of_type("");
+    },
+
+    battles_of_type: function(prefix){
       var battles = Object.keys(BATTLETREE._targets.get([]));
       var displayable_battles = [];
       for(var b in battles){
-        if (DEBUG.DISPLAY_ALL_TREES || !battles[b].startsWith("_")){
+        var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
+        if (!hidden && battles[b].startsWith(prefix)){
           displayable_battles.push(battles[b]);
+        }
+      }
+      return displayable_battles;
+    },
+
+    all_battles_types: function(){
+      var battles = Object.keys(BATTLETREE._targets.get([]));
+      var displayable_battles = [];
+      for(var b in battles){
+        var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
+        var name = battles[b].split("/")[0];
+        if (!hidden && !displayable_battles.includes(name)){
+          displayable_battles.push(name);
         }
       }
       return displayable_battles;
@@ -248,6 +266,43 @@ const BATTLETREE = {
       }
       // total is 12648 xp, lets try to fit it to lvl 100
       return 6 + Math.floor((Math.log(xp) - 4.6) / (9.44 - 4.6) * (100-6));
+    },
+
+    score_category: function(prefix){
+      var battles = Object.keys(BATTLETREE._targets.get([]));
+      var n = 0;
+      for(var b in battles){
+        var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
+        if (!hidden && battles[b].startsWith(prefix)){
+          n ++;
+        }
+      }
+      return n;
+    },
+
+    total_category: function(prefix){
+      switch(prefix){
+        case "caves":
+          return 8;
+        case "forests":
+          return 12;
+        case "heaven":
+          return 7;
+        case "hell":
+          return 9;
+        case "mountains":
+          return 8;
+        case "pandemonium":
+          return 12;
+        case "trial":
+          return 5;
+        case "waters":
+          return 11;
+        case "world":
+          return 15;
+        default:
+          return -1;
+      }
     },
   },
 

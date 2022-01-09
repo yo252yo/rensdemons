@@ -2,11 +2,18 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+WIP: nesting the experience menu
+- icons for mobs
+- move battleitem to the same level as normal battles, which means syncing the names, which means syncing the names of the files in object/
+- need to sync the names of the files for some cases like morel for instance, and need to make them flat
+- need to recolor bosses
+- need to come up with icons for battleitems/handle them
+- need to prettify the final experience menu
+no i dont want battleitems mixed with normal battles, otherwise its hell to count!!! they should remain in envbironment but villagers should  be separate
 
 
 
-
-
+- can i mb close the menu and open it back, to fake a goback ???
 
 
 
@@ -14,7 +21,7 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 - walkthrough
 - visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
-
+- make the buildings/sprites/etc... say NOT READY or smhting
 
 
 ---------------------------------------- LOOTBOX EFFECT:

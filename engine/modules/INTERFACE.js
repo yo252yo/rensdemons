@@ -47,21 +47,58 @@ const INTERFACE = {
   },
 
   display: {
-    experience_menu: function() {
-      var battles = BATTLETREE.get.all_battles();
+    _battle_type_title: function(name){
+      var score = BATTLETREE.score.score_category(name);
+      var total = BATTLETREE.score.total_category(name);
+      if(total < 0){
+        total = "";
+      } else {
+        total = " out of " + total;
+      }
+      return `${name} (${score}${total})`;
+    },
+
+    experience_submenu: function(category) {
+      var battles = BATTLETREE.get.battles_of_type(category);
       var battles_options = [];
       for(var i in battles) {
         (function(index){
+          var split = battles[index].split("/");
+          var name = split[split.length - 1];
+          var prefix = "";// `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.5" src="assets/battles/${battles[index]}.png" />`;
           battles_options.push({
-            "text": battles[index] + " (" + BATTLETREE.score.completion(battles[index]) + "%)",
-            "effect": function(){ BATTLETREE.display.display_tree(battles[index]); }
+            "text": prefix + name + " (" + BATTLETREE.score.completion(battles[index]) + "%)",
+            "effect": function(){ BATTLETREE.display.display_tree(battles[index]); },
+          //  "height": "52px",
+          });
+        }(i));
+      };
+      for(var i = BATTLETREE.score.score_category(category); i < BATTLETREE.score.total_category(category); i++){
+        battles_options.push({"text": "???", "effect": function(){}, "keep_open": true});
+      }
+
+      battles_options.push(TEXTMENU_EMPTYROW);
+      battles_options.push({"text": "Back to experiences", "effect": "##BACK"});
+      battles_options.push({"text": "Back to game", "effect": "##CLOSE"});
+
+      new CenteredTextMenu(`<b>${INTERFACE.display._battle_type_title(category)}</b>`, battles_options);
+    },
+
+    experience_menu: function() {
+      var battletypes = BATTLETREE.get.all_battles_types();
+      var battles_options = [];
+      for(var i in battletypes) {
+        (function(index){
+          battles_options.push({
+            "text": INTERFACE.display._battle_type_title(battletypes[index]),
+            "effect": function(){ INTERFACE.display.experience_submenu(battletypes[index]); },
           });
         }(i));
       };
 
 
       battles_options.push(TEXTMENU_EMPTYROW);
-      battles_options.push({"text": "Back", "effect": "##BACK"});
+      battles_options.push({"text": "Back to game", "effect": "##CLOSE"});
 
       new CenteredTextMenu(`<b>${DICTIONARY.get(PARTYMEMBERS.Ren)}</b> - level ` + BATTLETREE.score.level() + ` (` + INVENTORY.count(ITEM.XpToken) + ` xp gathered)`,
         battles_options);
