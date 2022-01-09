@@ -1,5 +1,5 @@
 
-new CenteredImage("assets/battles/trial/statue.png", 'background');
+new CenteredImage("assets/battles/civilians/statue.png", 'background');
 
 PLAYER_ACTIONS.useless(ABILITY.Pray);
 AUDIO.music.interface.boss();

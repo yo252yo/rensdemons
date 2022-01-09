@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/beelzebub.png", 'background');
+new CenteredImage("assets/battles/pandemonium/lieutenant.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

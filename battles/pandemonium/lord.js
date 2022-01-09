@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/maou.png", 'background');
+new CenteredImage("assets/battles/pandemonium/lord.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
