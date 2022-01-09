@@ -127,6 +127,11 @@ const PARTY = {
       }
     },
 
+    _get_entry: function(name){
+      var prefix = `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;" src="assets/portraits_small/${name}.png" />`;
+      return prefix + PARTY.display._get_name(name);
+    },
+
     character: function(name) {
       var nickname = PARTY.display._get_name(name);
       var original = PARTY.display._get_name("ORIGINAL_" + name);
@@ -153,7 +158,7 @@ const PARTY = {
 
     menu: function() {
       var options = [
-        {"text": PARTY.display._get_name("Ren"), "effect": function(){ PARTY.display.character("Ren"); }}
+        {"text": PARTY.display._get_entry("Ren"), "effect": function(){ PARTY.display.character("Ren"); }}
       ];
       if (ABILITIES.has_ability("_trial_passed")) {
         options.push({"text": PARTY.display._get_name("Goddess"), "effect": function(){ PARTY.display.character("Goddess"); }});
@@ -161,7 +166,7 @@ const PARTY = {
       for(var member of PARTY._members){
         var f = function(m) {
           options.push(
-            {"text": PARTY.display._get_name(m),
+            {"text": PARTY.display._get_entry(m),
             "effect": function(){ PARTY.display.character(m); }});
         }
         f(member);
