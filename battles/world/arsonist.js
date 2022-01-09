@@ -62,4 +62,4 @@ BATTLE.monster_actions.add_textual("The Arsonist sets fire to the floor around y
 //hack START
 // ===================
 
-BATTLE.operations.start("An Ambitious Arsonist Aspires to set you Ablaze.");
+BATTLE.operations.start(BESTIARY.intro("world/arsonist"));

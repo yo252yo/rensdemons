@@ -64,4 +64,4 @@ BATTLE.monster_actions.add_textual("The Mammoth slams you with his powerful tusk
 //hack START
 // ===================
 
-BATTLE.operations.start("A Massive Mammoth Mashes the Mud at every step.");
+BATTLE.operations.start(BESTIARY.intro("world/mammoth"));

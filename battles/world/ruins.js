@@ -51,4 +51,4 @@ PLAYER_ACTIONS.add({
 //hack START
 // ===================
 
-BATTLE.operations.start("You stumble upon an odd structure. As you approach, you conclude that it must be the ruins of a building from a long gone civilization. It is entirely unlike anything you know. Instead of wood and stone, you find mostly rusted metal and a smooth, alien substance.");
+BATTLE.operations.start(BESTIARY.intro("world/ruins"));

@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Butcher slices through the air with prec
 //hack START
 // ===================
 // basis for a barbacue/buffet
-BATTLE.operations.start("A Butcher Beholds you as the Basis for his Buffet.");
+BATTLE.operations.start(BESTIARY.intro("world/butcher"));

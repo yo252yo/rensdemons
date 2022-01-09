@@ -49,4 +49,4 @@ BATTLE.monster_actions.add_textual("The Wraith speaks with a deep voice, though 
 // ===================
 //hack START
 // ===================
-BATTLE.operations.start("A Wayward Wraith Wails its Woe.");
+BATTLE.operations.start(BESTIARY.intro("world/wraith"));

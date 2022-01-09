@@ -59,4 +59,4 @@ PLAYER_ACTIONS.add({
 //hack START
 // ===================
 
-BATTLE.operations.start("You cross the path of another weary traveler.");
+BATTLE.operations.start(BESTIARY.intro("world/traveler"));

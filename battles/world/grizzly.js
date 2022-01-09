@@ -61,4 +61,4 @@ BATTLE.monster_actions.add_textual("The Grizzly bites you in a quick maw movemen
 //hack START
 // ===================
 
-BATTLE.operations.start("A Gnarly Grizzly Growls Gluttonously.");
+BATTLE.operations.start(BESTIARY.intro("world/grizzly"));

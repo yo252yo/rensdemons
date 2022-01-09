@@ -58,4 +58,4 @@ BATTLE.monster_actions.add_textual("The Vadhaka multiplies her assaults with her
 //hack START
 // ===================
 
-BATTLE.operations.start("A Vigorous Vadhaka Vows Vengeance.");
+BATTLE.operations.start(BESTIARY.intro("world/vadhaka"));

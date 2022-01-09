@@ -281,28 +281,7 @@ const BATTLETREE = {
     },
 
     total_category: function(prefix){
-      switch(prefix){
-        case "caves":
-          return 8;
-        case "forests":
-          return 12;
-        case "heaven":
-          return 7;
-        case "hell":
-          return 9;
-        case "mountains":
-          return 8;
-        case "pandemonium":
-          return 12;
-        case "trial":
-          return 5;
-        case "waters":
-          return 11;
-        case "world":
-          return 15;
-        default:
-          return -1;
-      }
+      return BESTIARY.size(prefix);
     },
   },
 

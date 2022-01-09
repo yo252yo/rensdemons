@@ -55,5 +55,4 @@ BATTLE.monster_actions.add_textual("The skeleton swings its sword at you, while 
 // ===================
 //hack START
 // ===================
-
-BATTLE.operations.start("A Snorty Skeleton Seizes its Sword.");
+BATTLE.operations.start(BESTIARY.intro("world/skeleton"));

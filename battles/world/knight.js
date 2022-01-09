@@ -60,4 +60,4 @@ BATTLE.monster_actions.add_textual("The Knight swings his sword expertly towards
 //hack START
 // ===================
 
-BATTLE.operations.start("A black Knight Knows he will Kill a Kid.");
+BATTLE.operations.start(BESTIARY.intro("world/knight"));

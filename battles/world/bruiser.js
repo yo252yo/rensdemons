@@ -63,4 +63,4 @@ BATTLE.monster_actions.add_textual("The Bruiser chains up slow but powerful hits
 //hack START
 // ===================
 
-BATTLE.operations.start("A Brutal Bruiser thinks you're Begging for a Beating.");
+BATTLE.operations.start(BESTIARY.intro("world/bruiser"));
