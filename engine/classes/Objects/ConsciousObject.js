@@ -118,6 +118,9 @@ class ConsciousObject extends MovingObject {
       "I hope I don't mess up<br />my lines!",
       "I wonder if they're<br />gonna talk to me this time.",
 
+      "Will that lousy job ever stop?",
+      "How can I escape this never-ending cycle?",
+
       "Can't believe I have to<br />go on with this whole<br />Goddess bullshit.",
       "Seriously who writes this?<br />This plot is not believable!",
       "Fuck the Goddess,<br />fuck the promised child...",
