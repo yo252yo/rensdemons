@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/cherub.png", 'background');
+BESTIARY.picture('heaven/cherub');
 PLAYER_ACTIONS.allow_flight();
 
 

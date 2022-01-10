@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/centipede.png", 'background');
+BESTIARY.picture('hell/centipede');
 PLAYER_ACTIONS.allow_flight();
 
 

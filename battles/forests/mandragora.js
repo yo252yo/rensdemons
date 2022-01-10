@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/forests/mandragora.png", 'background');
+BESTIARY.picture('forests/mandragora');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

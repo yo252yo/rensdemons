@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/mountains/phoenix.png", 'background');
+BESTIARY.picture('mountains/phoenix');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

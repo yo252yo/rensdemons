@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/waters/serpent.png", 'background');
+BESTIARY.picture('waters/serpent');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

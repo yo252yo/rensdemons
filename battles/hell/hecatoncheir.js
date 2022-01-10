@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/hecatoncheir.png", 'background');
+BESTIARY.picture('hell/hecatoncheir');
 PLAYER_ACTIONS.allow_flight();
 
 

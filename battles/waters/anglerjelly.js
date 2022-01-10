@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/waters/anglerjelly.png", 'background');
+BESTIARY.picture('waters/anglerjelly');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

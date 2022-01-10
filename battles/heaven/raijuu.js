@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/raijuu.png", 'background');
+BESTIARY.picture('heaven/raijuu');
 PLAYER_ACTIONS.allow_flight();
 
 

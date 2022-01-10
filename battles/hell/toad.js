@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/toad.png", 'background');
+BESTIARY.picture('hell/toad');
 PLAYER_ACTIONS.allow_flight();
 
 

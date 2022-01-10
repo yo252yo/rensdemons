@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/hellhound.png", 'background');
+BESTIARY.picture('pandemonium/hellhound');
 PLAYER_ACTIONS.allow_flight();
 
 

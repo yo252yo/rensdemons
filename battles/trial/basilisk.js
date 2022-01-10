@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/trial/basilisk.png", 'background');
+BESTIARY.picture('trial/basilisk');
 AUDIO.music.interface.boss();
 
 // ===================

@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/trial/cockroach.png", 'background');
+BESTIARY.picture('trial/cockroach');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

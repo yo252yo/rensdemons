@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/warlock.png", 'background');
+BESTIARY.picture('hell/warlock');
 PLAYER_ACTIONS.allow_flight();
 
 

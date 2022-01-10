@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/mammon.png", 'background');
+BESTIARY.picture('pandemonium/mammon');
 PLAYER_ACTIONS.allow_flight();
 
 

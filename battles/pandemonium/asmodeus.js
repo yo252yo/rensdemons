@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/asmodeus.png", 'background');
+BESTIARY.picture('pandemonium/asmodeus');
 PLAYER_ACTIONS.allow_flight();
 
 

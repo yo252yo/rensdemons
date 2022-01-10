@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/golem.png", 'background');
+BESTIARY.picture('pandemonium/golem');
 PLAYER_ACTIONS.allow_flight();
 
 

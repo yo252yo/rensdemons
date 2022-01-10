@@ -1,7 +1,8 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/caves/bat.png", 'background');
+BESTIARY.picture('caves/bat');
+
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);

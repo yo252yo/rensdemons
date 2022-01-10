@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/titan.png", 'background');
+BESTIARY.picture('pandemonium/titan');
 PLAYER_ACTIONS.allow_flight();
 
 

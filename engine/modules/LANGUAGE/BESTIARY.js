@@ -29,6 +29,10 @@ BESTIARY = {
     }
     return Object.keys(BESTIARY.dict[category]).length;
   },
+
+  picture: function(battlename){
+    return new CenteredImage(`assets/battles/${battlename}.png`, 'background');
+  }
 }
 
 

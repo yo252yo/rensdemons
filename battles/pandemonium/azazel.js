@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/azazel.png", 'background');
+BESTIARY.picture('pandemonium/azazel');
 PLAYER_ACTIONS.allow_flight();
 
 

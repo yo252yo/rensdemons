@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/waters/jellyfish.png", 'background');
+BESTIARY.picture('waters/jellyfish');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

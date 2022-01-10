@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/satyr.png", 'background');
+BESTIARY.picture('hell/satyr');
 PLAYER_ACTIONS.allow_flight();
 
 

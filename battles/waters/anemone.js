@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/waters/anemone.png", 'background');
+BESTIARY.picture('waters/anemone');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

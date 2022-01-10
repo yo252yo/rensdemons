@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/caves/scorpion.png", 'background');
+BESTIARY.picture('caves/scorpion');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Poison_darts, 0.5);

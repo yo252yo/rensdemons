@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/caves/rhino.png", 'background');
+BESTIARY.picture('caves/rhino');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

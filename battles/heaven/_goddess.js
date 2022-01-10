@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/goddess.png", 'background');
+BESTIARY.picture('heaven/goddess');
 AUDIO.music.characters.Goddess();
 
 // ===================

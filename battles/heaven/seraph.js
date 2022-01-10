@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/seraph.png", 'background');
+BESTIARY.picture('heaven/seraph');
 PLAYER_ACTIONS.allow_flight();
 
 

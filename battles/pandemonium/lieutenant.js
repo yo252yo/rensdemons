@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/lieutenant.png", 'background');
+BESTIARY.picture('pandemonium/lieutenant');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

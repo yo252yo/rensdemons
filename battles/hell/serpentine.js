@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/serpentine.png", 'background');
+BESTIARY.picture('hell/serpentine');
 PLAYER_ACTIONS.allow_flight();
 
 

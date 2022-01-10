@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/valkyrie.png", 'background');
+BESTIARY.picture('heaven/valkyrie');
 PLAYER_ACTIONS.allow_flight();
 
 

@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/pandemonium/belphegor.png", 'background');
+BESTIARY.picture('pandemonium/belphegor');
 PLAYER_ACTIONS.allow_flight();
 
 

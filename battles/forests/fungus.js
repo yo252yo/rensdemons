@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/forests/fungus.png", 'background');
+BESTIARY.picture('forests/fungus');
 PLAYER_ACTIONS.allow_flight();
 
 AUDIO.music.interface.boss();

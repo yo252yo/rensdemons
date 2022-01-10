@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/caves/lizard.png", 'background');
+BESTIARY.picture('caves/lizard');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 

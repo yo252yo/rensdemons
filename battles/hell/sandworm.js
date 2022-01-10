@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/hell/sandworm.png", 'background');
+BESTIARY.picture('hell/sandworm');
 PLAYER_ACTIONS.allow_flight();
 
 

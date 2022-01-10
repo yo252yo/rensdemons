@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/trial/arachnid.png", 'background');
+BESTIARY.picture('trial/arachnid');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

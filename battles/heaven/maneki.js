@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/heaven/maneki.png", 'background');
+BESTIARY.picture('heaven/maneki');
 PLAYER_ACTIONS.allow_flight();
 
 

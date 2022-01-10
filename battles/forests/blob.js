@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/forests/blob.png", 'background');
+BESTIARY.picture('forests/blob');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
