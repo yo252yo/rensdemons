@@ -141,8 +141,9 @@ const PARTY = {
        nameString += "(" + original + ")";
      }
 
+     var extra = SCREEN.is_mobile() ? "clear:both;" : "float: left;";
       new FullTextMenu(`<b>${nameString}</b><hr/>
-                      <div style='float: left;width:300px;height:300px;position:relative;' id='character_portait_slot'>
+                      <div style='width:300px;height:300px;position:relative;${extra}' id='character_portait_slot'>
                       </div>` + PARTY.description(name),
                     [
                      {"text": "Change nickname", "effect": function(){ PARTY.changeNickname(name); }},
