@@ -39,6 +39,14 @@ BESTIARY = {
     return BESTIARY.dict[split[0]][split[1]]["introed"];
   },
 
+  outroed: function(battle_name) {
+    var split = battle_name.split("/");
+    if(BESTIARY.is_advanced(battle_name)){
+      return BESTIARY.dict[split[0]][split[1]]["outro"];
+    }
+    return "";
+  },
+
   size: function(category) {
     if (! BESTIARY.dict[category]){
       return -1;
@@ -85,7 +93,7 @@ BESTIARY.dict["world"]["bruiser"] = {
 };
 BESTIARY.dict["world"]["butcher"] = {
   "intro": "A Butcher Beholds you as the Basis for his Buffet.",
-  "introed": "A Butcher Beholded you as the Basis for his Buffet.",
+  "introed": "A Butcher Beheld you as the Basis for his Buffet.",
 };
 BESTIARY.dict["world"]["djinn"] = {
   "intro": "A Deviant Djinn Drifts in an eerie Dance.",

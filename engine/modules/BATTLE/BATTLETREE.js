@@ -371,6 +371,7 @@ const BATTLETREE = {
       }
 
       var intro = BESTIARY.introed(battle) || "";
+      intro += BESTIARY.outroed(battle) || "";
       if(intro){
         intro = `<hr/><i>${intro}</i>`;
       }
