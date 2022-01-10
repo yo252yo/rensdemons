@@ -15,7 +15,8 @@ no i dont want battleitems mixed with normal battles, otherwise its hell to coun
 >>> QUID des battleitems
 >>> QUID world/ruins world/traveller
 
-- can i mb close the menu and open it back, to fake a goback ???
+
+make all battle images square???
 
 
 

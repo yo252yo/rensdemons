@@ -12,6 +12,22 @@ BESTIARY = {
     return BESTIARY.dict[split[0]][split[1]]["intro"];
   },
 
+  is_boss(battle_name){
+    return [
+      "caves/rhino",
+      "caves/lizard",
+      "forests/blob",
+      "forests/fungus",
+      "mountains/phoenix",
+      "mountains/dragon",
+      "pandemonium/lord",
+      "pandemonium/lieutenant",
+      "trial/basilisk",
+      "waters/whale",
+      "waters/serpent",
+    ].includes(battle_name);
+  },
+
   introed: function(battle_name) {
     var split = battle_name.split("/");
     if (! BESTIARY.dict[split[0]]){
@@ -23,16 +39,38 @@ BESTIARY = {
     return BESTIARY.dict[split[0]][split[1]]["introed"];
   },
 
-  size: function(category){
+  size: function(category) {
     if (! BESTIARY.dict[category]){
       return -1;
     }
     return Object.keys(BESTIARY.dict[category]).length;
   },
 
-  picture: function(battlename){
-    return new CenteredImage(`assets/battles/${battlename}.png`, 'background');
-  }
+  is_advanced:function(battlename) {
+    var score = BATTLETREE.score.num_wins(battlename);
+
+    if(BESTIARY.is_boss(battlename) && score > 0){
+      return true;
+    } else if (battlename.startsWith("trial") && score > 0) {
+      return true;
+    } else if (score > 1) {
+      return true;
+    }
+    return false;
+  },
+
+  picture_address: function(battlename) {
+    var suffix = ``;
+    if(!BESTIARY.is_boss(battlename) && BESTIARY.is_advanced(battlename)){
+      suffix = "_advanced";
+    }
+
+    return `assets/battles${suffix}/${battlename}.png`;
+  },
+
+  picture: function(battlename) {
+    return new CenteredImage(BESTIARY.picture_address(battlename), 'background');
+  },
 }
 
 

@@ -232,6 +232,16 @@ const BATTLETREE = {
       }
     },
 
+    num_wins: function(battle) {
+      var score = 0;
+      for (var i in BATTLETREE._targets.get([battle])) {
+        if (BATTLETREE._targets.get([battle,i]) == BATTLETREE.WIN){
+          score++;
+        }
+      }
+      return score;
+    },
+
     completion: function(battle) {
       var actions = BATTLETREE._targets.length([battle]);
       var result = BATTLETREE.score.score_battle(battle).xp / (3*actions);
@@ -370,16 +380,16 @@ const BATTLETREE = {
           <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
           ${intro}
           <hr/>
-            <div style='width:200px;height:200px;position:relative;clear:both;margin:5px'>
-              <div id='image_slot' style="position:relative;top:200px"></div>
+            <div style='width:150px;height:150px;position:relative;clear:both;margin:5px'>
+              <div id='image_slot' style="position:relative;top:150px"></div>
             </div>
           <hr/>
           ${tree[0]}`;
       } else {
         var text = `
           <div style="width:100%;position:relative;display:inline-block;">
-            <div style='width:200px;height:200px;position:relative;float:left;margin:20px'>
-              <div id='image_slot' style="position:relative;top:200px"></div>
+            <div style='width:150px;height:150px;position:relative;float:left;margin:20px'>
+              <div id='image_slot' style="position:relative;top:150px"></div>
             </div><div style='position:relative;'>
               <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
               ${intro}
@@ -394,7 +404,7 @@ const BATTLETREE = {
       s.onEnd(INTERFACE.display.experience_menu);
 
       var d = document.getElementById('image_slot');
-      var c = new StaticSprite(`assets/battles/${battle}.png`, 'background', 200, 200, d);
+      var c = new StaticSprite(BESTIARY.picture_address(battle), 'background', 150, 150, d);
     },
   },
 };
