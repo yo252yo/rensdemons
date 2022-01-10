@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/world_hard/arsonist.png", 'background');
+new CenteredImage("assets/battles/world/arsonist.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Elixir_fire, 0.5);

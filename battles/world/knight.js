@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/world_hard/knight.png", 'background');
+new CenteredImage("assets/battles/world/knight.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Sword_iron, 0.1);

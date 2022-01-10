@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/world_easy/ghost.png", 'background');
+new CenteredImage("assets/battles/world/ghost.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================

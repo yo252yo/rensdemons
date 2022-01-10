@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/world_easy/skeleton.png", 'background');
+new CenteredImage("assets/battles/world/skeleton.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Bone, 5);

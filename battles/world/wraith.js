@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/world_easy/wraith.png", 'background');
+new CenteredImage("assets/battles/world/wraith.png", 'background');
 PLAYER_ACTIONS.allow_flight();
 
 // ===================
