@@ -68,7 +68,7 @@ const INTERFACE = {
           var prefix = "";// `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.5" src="assets/battles/${battles[index]}.png" />`;
           battles_options.push({
             "text": prefix + name + " (" + BATTLETREE.score.completion(battles[index]) + "%)",
-            "effect": function(){ BATTLETREE.display.display_tree(battles[index]); },
+            "effect": function(){ BATTLETREE.display.display_battletree(battles[index]); },
           //  "height": "52px",
           });
         }(i));

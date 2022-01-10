@@ -352,25 +352,49 @@ const BATTLETREE = {
       }
     },
 
-    display_tree: function(battle) {
-      var html = [""]; // to pass by reference.
+    display_battletree: function(battle) {
+      var tree = [""]; // to pass by reference.
       var to_print = BATTLETREE.get._starters(battle);
 
       while(to_print.length > 0) {
-        BATTLETREE.display._display_targets_element(html, to_print, battle);
+        BATTLETREE.display._display_targets_element(tree, to_print, battle);
       }
 
-      var intro = BESTIARY.introed(battle);
+      var intro = BESTIARY.introed(battle) || "";
       if(intro){
-        intro = `<i>${intro}</i><hr/>`;
+        intro = `<hr/><i>${intro}</i>`;
       }
 
-      new MenuScreen(`
-        <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%<hr/>
-        ${intro}
+      if (SCREEN.is_mobile()){
+        var text = `
+          <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
+          ${intro}
+          <hr/>
+            <div style='width:200px;height:200px;position:relative;clear:both;margin:5px'>
+              <div id='image_slot' style="position:relative;top:200px"></div>
+            </div>
+          <hr/>
+          ${tree[0]}`;
+      } else {
+        var text = `
+          <div style="width:100%;position:relative;display:inline-block;">
+            <div style='width:200px;height:200px;position:relative;float:left;margin:20px'>
+              <div id='image_slot' style="position:relative;top:200px"></div>
+            </div><div style='position:relative;'>
+              <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
+              ${intro}
+            </div>
+          </div><hr />
+          ${tree[0]}`;
 
-        ${html[0]}`);
+      }
+
+
+      var s = new MenuScreen(text);
+      s.onEnd(INTERFACE.display.experience_menu);
+
+      var d = document.getElementById('image_slot');
+      var c = new StaticSprite(`assets/battles/${battle}.png`, 'background', 200, 200, d);
     },
   },
-
 };
