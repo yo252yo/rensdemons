@@ -11,6 +11,9 @@ LANGUAGE.battle = {
     if (after.explored > before.explored){
       r += "You explored " + (after.explored  - before.explored ) + " threads. ";
     }
+    if(after.is_empathized && !before.is_empathized){
+      r += "You also unlocked empathy for this opponent. ";
+    }
     return r;
   },
 

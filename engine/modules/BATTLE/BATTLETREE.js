@@ -218,7 +218,8 @@ const BATTLETREE = {
           explored++;
         }
       }
-      var r = {xp: score, unseen:unseen, explored:explored};
+      var empathized = BESTIARY.is_empathized(battle);
+      var r = {xp: score, unseen:unseen, explored:explored, is_empathized:empathized};
       return r;
     },
 
