@@ -65,11 +65,15 @@ const INTERFACE = {
         (function(index){
           var split = battles[index].split("/");
           var name = split[split.length - 1];
-          var prefix = "";// `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.5" src="assets/battles/${battles[index]}.png" />`;
+          var img = BESTIARY.default_picture(battles[index]);
+          var prefix = ``;
+          if (img){
+            prefix = `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.7" src="${img}" />`;
+          }
+          var suffix = BESTIARY.is_empathized(battles[index]) ? " - empathized": "";
           battles_options.push({
-            "text": prefix + name + " (" + BATTLETREE.score.completion(battles[index]) + "%)",
+            "text": prefix + name + " (" + BATTLETREE.score.completion(battles[index]) + "%" + suffix + ")",
             "effect": function(){ BATTLETREE.display.display_battletree(battles[index]); },
-          //  "height": "52px",
           });
         }(i));
       };

@@ -41,7 +41,7 @@ BESTIARY = {
 
   outroed: function(battle_name) {
     var split = battle_name.split("/");
-    if(BESTIARY.is_advanced(battle_name)){
+    if(BESTIARY.is_empathized(battle_name)){
       return BESTIARY.dict[split[0]][split[1]]["outro"];
     }
     return "";
@@ -54,14 +54,14 @@ BESTIARY = {
     return Object.keys(BESTIARY.dict[category]).length;
   },
 
-  is_advanced:function(battlename) {
+  is_empathized:function(battlename) {
     var score = BATTLETREE.score.num_wins(battlename);
 
     if(BESTIARY.is_boss(battlename) && score > 0){
       return true;
-    } else if (battlename.startsWith("trial") && score > 0) {
+    } else if (battlename.startsWith("trial") && score > 1) {
       return true;
-    } else if (score > 1) {
+    } else if (score > 2) {
       return true;
     }
     return false;
@@ -69,11 +69,23 @@ BESTIARY = {
 
   picture_address: function(battlename) {
     var suffix = ``;
-    if(!BESTIARY.is_boss(battlename) && BESTIARY.is_advanced(battlename)){
+    if(!BESTIARY.is_boss(battlename) && BESTIARY.is_empathized(battlename)){
       suffix = "_advanced";
     }
 
-    return `assets/battles${suffix}/${battlename}.png`;
+    return BESTIARY.default_picture(battlename, suffix);
+  },
+
+  default_picture: function(battlename, suffix) {
+    var split = battlename.split("/");
+    if (!suffix){
+      suffix = "";
+    }
+    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]]){
+      return undefined;
+    } else {
+      return `assets/battles${suffix}/${battlename}.png`;
+    }
   },
 
   picture: function(battlename) {
