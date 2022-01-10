@@ -70,7 +70,7 @@ BESTIARY = {
   picture_address: function(battlename) {
     var suffix = ``;
     if(!BESTIARY.is_boss(battlename) && BESTIARY.is_empathized(battlename)){
-      suffix = "_advanced";
+      suffix = "_empathized";
     }
 
     return BESTIARY.default_picture(battlename, suffix);
