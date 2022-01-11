@@ -161,6 +161,9 @@ class ConsciousObject extends MovingObject {
       `I wanted to be the<br />demon lord this time...`,
       `I was really unlucky<br />at casting.`,
 
+
+      `What do I need to play again?<br />Oh yeah I can do ${this.city}.`,
+
       `Can't believe they chose<br />the name ${DICTIONARY.get(PARTYMEMBERS.Ren)}...`,
       `I shouldn't comment on their<br />choices, but they're doing<br />it all wrong...`,
       `They really suck at this...`,
