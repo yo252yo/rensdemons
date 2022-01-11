@@ -1,11 +1,21 @@
 
 class SB_rubble extends SBattle {
+  constructor(x, y, battle, size, color, is_map) {
+    super(x, y, battle, size, color, is_map);
+    this.icon_type = "event_purse";
+  }
+
   real_interaction() {
     SPECIALBATTLES.rubble(this.battle, this.make_default_callback());
   }
 }
 
 class SB_treasure extends SBattle {
+  constructor(x, y, battle, size, color, is_map) {
+    super(x, y, battle, size, color, is_map);
+    this.icon_type = "event_purse";
+  }
+
   real_interaction() {
     SPECIALBATTLES.treasure(this.battle, this.make_default_callback());
   }
@@ -42,6 +52,7 @@ class SE_groundItem extends S_event {
     super(x, y, size, color);
     this.object = object;
     this.quantity = quantity;
+    this.icon_type = "event_purse";
   }
 
   real_interaction(extra_callback) {
@@ -71,7 +82,7 @@ class SE_small_groundItem extends SE_groundItem {
 class SB_SavageChild extends SBattle {
   real_interaction() {
     this.destroy();
-    
+
     if (INVENTORY.count("_donated_meat") < 3) {
       BATTLE.api.make('_party/_SavageChild');
     } else if(INVENTORY.count("_donated_meat") < 6) {

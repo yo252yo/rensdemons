@@ -139,9 +139,12 @@ const CURRENTLEVEL = {
 
     try_interact: function(element) {
       if(element.distance_to_character() < CURRENTLEVEL._MAX_CLICK_INTERACTION_DISTANCE) {
-        element.interaction();
+        var made_sound = element.interaction();
+        if(!made_sound){
+          AUDIO.effect.interaction();
+        }
+        // another sound effect for lootbox ???
         CHARACTER.get().stop_autowalk();
-        AUDIO.effect.interaction();
         return true;
       }
     },

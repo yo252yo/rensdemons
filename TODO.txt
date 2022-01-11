@@ -13,21 +13,12 @@ no i dont want battleitems mixed with normal battles, otherwise its hell to coun
 
 
 
-
-
 ---------------------------------------- LOOTBOX EFFECT:
-- indicate rarity
-- reward for completing like voice of cards?
-- better menu for encounters
-- better animation when discovering
+Tweek rarity,
 
 
-
-
-
-
-
-Tweek rarity, display a centered image, play a good audio effect
+make BattleObject into Events???? they dont have icon
+!! B_Skel esp (EventBattleObject)
 
 
 

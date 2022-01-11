@@ -106,6 +106,7 @@ const AUDIO = {
     },
     choice: function() {          AUDIO._play_sfx('choice'); },
     interaction: function() {     AUDIO._play_sfx('interaction'); },
+    lootbox: function() {     AUDIO._play_sfx('coinchest'); },
     dodge_place: function() {     AUDIO._play_sfx('dodge_place'); },
     dodge_attack: function() {     AUDIO._play_sfx('dodge_attack'); },
     footstep: function(cooldown, key) {
