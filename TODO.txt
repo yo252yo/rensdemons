@@ -6,10 +6,28 @@ WIP: nesting the experience menu
 >>> QUID des battleitems
 >>> QUID world/ruins world/traveller
 
+
 - move battleitem to the same level as normal battles, which means syncing the names, which means syncing the names of the files in object/
 - need to come up with icons for battleitems/handle them
 no i dont want battleitems mixed with normal battles, otherwise its hell to count!!! they should remain in envbironment but villagers should  be separate
 
+
+
+
+
+---------------------------------------- LOOTBOX EFFECT:
+- indicate rarity
+- reward for completing like voice of cards?
+- better menu for encounters
+- better animation when discovering
+
+
+
+
+
+
+
+Tweek rarity, display a centered image, play a good audio effect
 
 
 
@@ -20,19 +38,8 @@ no i dont want battleitems mixed with normal battles, otherwise its hell to coun
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 - make the buildings/sprites/etc... say NOT READY or smhting
 
+force first replay by making it rely on ability not flag
 
----------------------------------------- LOOTBOX EFFECT:
-- indicate rarity
-- reward for completing like voice of cards?
-- better menu for encounters
-- better animation when discovering
-
-
-An Ambitious Arsonist Aspired to set you Ablaze.
-> The Arsonist's failure tarnished his name forever and he was disowned by his family.
-
-An Attentive Anglerjelly Aims at Attracting you.
-> The Anglerjelly's encounter with you left it feeling even more empty than before, and it continued to roam the sea searching for something it couldn't quite define.
 
 
 
@@ -64,8 +71,7 @@ go to the next area and come back
 "oh you were on a fetching mission/tutorial"
 
 ---------------------------------------- SLIMES DUNGEON
-stanley parable like "i know youre gonna take a left", at some point eventually you'll have to take a left
->>> special dungeon with narration? heaven ?
+heaven ?
 
 GeniusProdigy: "GeniusProdigy", //child prodigy
 // extra cave, doing an expedition?
@@ -78,6 +84,33 @@ so youre quantum immortal!!
 challenge to find his favorite food etc
 more fake choices that i know are fake ??
 how do you know my name???
+
+
+
+
+
+
+
+
+Reality
+
+
+Play a role / play a game
+
+Control
+
+
+Ideology can't take down the system from within the system
+
+Rules of the gsmr control your sfordsmces affords ce
+
+
+Cave js like 5 floors separated by passowd door, each floor has a poem cluex
+Passwords are around baudrillard philosophy and systemic meaning of the gsmr
+The last one mb is spectacle
+Simulation cycle never-ending etc system goddess e c
+
+
 
 ---------------------------------------- TOWN2 CASTLE
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
