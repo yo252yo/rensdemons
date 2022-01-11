@@ -17,7 +17,7 @@ const CREDITS = {
    <b>Interface art</b>:
    <a href="https://opengameart.org/users/melle" target="_blank">MELLE</a>,
    <a href="https://opengameart.org/users/prushik" target="_blank">prushik</a>, 
-   <a href="https://opengameart.org/users/lukerustltd" target="_blank">lukerustltd</a>
+   <a href="https://opengameart.org/users/gfroad" target="_blank">gfroad</a>
    <br />
 
    <b>Sound effects</b>:
