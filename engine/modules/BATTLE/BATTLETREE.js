@@ -150,7 +150,11 @@ const BATTLETREE = {
       var displayable_battles = [];
       for(var b in battles){
         var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
-        var name = battles[b].split("/")[0];
+        var namesplit = battles[b].split("/");
+        var name = namesplit[0]; // one before last
+        if(battles[b].startsWith(BATTLEOBJECTSMANAGER.prefix)){
+          name = BATTLEOBJECTSMANAGER.prefix + namesplit[1];
+        }
         if (!hidden && !displayable_battles.includes(name)){
           displayable_battles.push(name);
         }

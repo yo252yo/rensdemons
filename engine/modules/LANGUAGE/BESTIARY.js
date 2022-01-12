@@ -76,6 +76,18 @@ BESTIARY = {
     return BESTIARY.default_picture_address(battlename, suffix);
   },
 
+  _find_path: function(battlename, suffix){
+    if(battlename.startsWith(BATTLEOBJECTSMANAGER.prefix)){
+      return "assets/" + battlename.replace(BATTLEOBJECTSMANAGER.prefix, "objects/") + ".png";
+    } else {
+      return `assets/battles${suffix}/${battlename}.png`;
+    }
+  },
+
+  normalize(battlename){
+    return battlename.replace(BATTLEOBJECTSMANAGER.prefix, "");
+  },
+
   default_picture_address: function(battlename, suffix) {
     var split = battlename.split("/");
     if (!suffix){
@@ -84,7 +96,7 @@ BESTIARY = {
     if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]] || BESTIARY.dict[split[0]][split[1]]["no_img"]){
       return undefined;
     } else {
-      return `assets/battles${suffix}/${battlename}.png`;
+      return BESTIARY._find_path(battlename, suffix);
     }
   },
 
