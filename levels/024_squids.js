@@ -89,8 +89,8 @@ events.text(`There is a lot of fishing swimming all around you. Most of them are
 events.text(`You find a huge rock that stands out suspiciously. It triggers your curiosity, so you try to push it to see if it covers anything, but despite all your efforts it won't budge. It's most likely a false trail...`);
 events.text(`You can be underwater thanks to the potion, but it doesn't prevent your clothes from being damp. You make progress really slowly. The water resistance is significantly stronger than air, which slows every of your motion. But it's ok, you'll just take your time.`);
 
-events.byConstructor("B_Seashell", 2);
-events.byConstructor("B_Skeleton", 1);
+events.byConstructor("EB_Seashell", 2);
+events.byConstructor("EB_Skeleton", 1);
 
 events.set_tries(100, 120);
 events.fill_floor_by_retry();

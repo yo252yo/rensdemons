@@ -78,8 +78,8 @@ new SE_event(2100, 2250, 'You\'re starting to lose hope to ever see the light of
 new SE_event(1425, 1575, 'You find bones that pretty clearly draw the shape of a human child your age. You try your best to not think too much about their previous owner.', 25);
 new SE_event(1200, 1275, 'You find absolutely nothing, it\'s a dead end. You start to feel pretty gloomy about your chances of survival...', 50);
 
-new B_Skeleton(1275, 2250);
-new B_Skeleton(1875, 1725);
+new EB_Skeleton(1275, 2250);
+new EB_Skeleton(1875, 1725);
 
 
 //hack statues

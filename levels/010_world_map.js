@@ -150,9 +150,9 @@ FEasyEvents.groundItem(ITEM.Stone, 1.5);
 FEasyEvents.groundItem(ITEM.Berry, 0.6);
 FEasyEvents.groundItem(ITEM.Mushroom, 1.5);
 
-FEasyEvents.byConstructor("B_Pebbles", 0.5);
-FEasyEvents.byConstructor("B_Plants", 0.5);
-FEasyEvents.byConstructor("B_Skeleton", 1);
+FEasyEvents.byConstructor("EB_Pebbles", 0.5);
+FEasyEvents.byConstructor("EB_Plants", 0.5);
+FEasyEvents.byConstructor("EB_Skeleton", 1);
 FEasyEvents.battle('world/ruins', 1);
 
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
@@ -192,7 +192,7 @@ FHardEvents.groundItem(ITEM.Feather, 0.7);
 FHardEvents.groundItem(ITEM.Flower, 0.7);
 FHardEvents.groundItem(ITEM.Bone, 0.7);
 
-FHardEvents.byConstructor("B_Skeleton", 2.5);
+FHardEvents.byConstructor("EB_Skeleton", 2.5);
 FHardEvents.battle('world/traveler', 2);
 FHardEvents.battle('world/ruins', 1);
 

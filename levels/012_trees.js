@@ -421,7 +421,7 @@ events.groundItem(ITEM.Berry, 0.7);
 events.groundItem(ITEM.Flower, 0.7);
 events.battleRubble(ITEM.Elixir_vine, 1);
 
-events.byConstructor("B_Plants", 0.5);
+events.byConstructor("EB_Plants", 0.5);
 
 events.text(`You feel observed. Are the trees all around somehow watching you? That's ridiculous, they're just trees... Yet, you can't fake this uneasy feeling.`, 0.5);
 events.text(`You hear rustling in the bushes behind you. Is there someone else here?`, 0.5);

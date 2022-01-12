@@ -49,9 +49,9 @@ FEasyEvents.battleRubble(ITEM.Linnens, 0.7);
 FEasyEvents.groundItem(ITEM.Bone, 0.8);
 FEasyEvents.groundItem(ITEM.Stone, 0.8);
 FEasyEvents.groundItem(ITEM.Berry, 0.8);
-FEasyEvents.byConstructor("B_Pebbles", 0.5);
-FEasyEvents.byConstructor("B_Plants", 0.5);
-FEasyEvents.byConstructor("B_Skeleton", 1);
+FEasyEvents.byConstructor("EB_Pebbles", 0.5);
+FEasyEvents.byConstructor("EB_Plants", 0.5);
+FEasyEvents.byConstructor("EB_Skeleton", 1);
 
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);

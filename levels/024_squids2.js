@@ -77,8 +77,8 @@ events.text('The stench and humidity is unbearable. The floor under your feet is
 events.text('You notice a dull pain in your feet. When you take a look, you notice that there is thin layer of thick liquid everywhere around you. It is weakening the leather of your shoes and slowly burning your skin underneath. It\'s taking a very long time, but things will surely get worse if you don\'t find a way out fast.');
 events.text('Trinkets and bits of human-made objects lie around you on the exposed flesh. It gives you hope that you can find something interesting around here.');
 
-events.byConstructor("B_Skeleton", 1);
-events.byConstructor("B_Seashell", 1);
+events.byConstructor("EB_Skeleton", 1);
+events.byConstructor("EB_Seashell", 1);
 
 events.set_tries(20, 40);
 events.fill_floor_by_retry();

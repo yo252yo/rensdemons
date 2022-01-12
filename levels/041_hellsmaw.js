@@ -334,7 +334,7 @@ events.battleRubble(ITEM.Elixir_decay, 0.1);
 events.battleRubble(ITEM.Elixir_chaos, 0.1);
 events.battleRubble(ITEM.Elixir_venom, 0.2);
 events.battleRubble(ITEM.Elixir_vine, 0.2);
-events.byConstructor("B_Skeleton");
+events.byConstructor("EB_Skeleton");
 
 events.text(`You cross an especially thick portion of fog. The stench is unbearable. You can't help but cough from the abrasive effect on your throat.`);
 events.text(`Violent shrieks echo in the valley. You and $$BestFriend$ exchange a worried glance, wondering what kind of inhuman creature can make such ungodly noises.`);

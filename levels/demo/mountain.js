@@ -52,7 +52,7 @@ events.battleRubble(ITEM.Arrow, 0.2);
 events.battleRubble(ITEM.Bone, 0.2);
 events.text('The path is thin, the climb is steep. You feel sweat running down your forehead and your back as you struggle to continue your path.');
 events.text('The peaks in front of you seem to be piercing through the skies. You can distinguish, close to the highest point, a shining spot in the facade of the rock. Seems like a door. It\'s probably your goal!');
-events.byConstructor("B_Skeleton", 1);
+events.byConstructor("EB_Skeleton", 1);
 
 events.set_zone(425,1875,750,700);
 events.set_tries(50, 50);

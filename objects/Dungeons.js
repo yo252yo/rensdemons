@@ -433,7 +433,7 @@ class S_RubbleLarge extends SimpleObject {
   }
 }
 
-class B_Pebbles extends EventBattleObject {
+class EB_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
     super(x, y, "mountain/pebbles", color, size);
 
@@ -449,7 +449,7 @@ class B_Pebbles extends EventBattleObject {
   }
 }
 
-class B_Plants extends EventBattleObject {
+class EB_Plants extends EventBattleObject {
   constructor(x, y, color, size){
     super(x, y, "forest/plant", color, size);
 
@@ -464,7 +464,7 @@ class B_Plants extends EventBattleObject {
   }
 }
 
-class B_Seashell extends EventBattleObject {
+class EB_Seashell extends EventBattleObject {
   constructor(x, y, color, size){
     super(x, y, "water/seashell", color, size);
 
@@ -475,6 +475,22 @@ class B_Seashell extends EventBattleObject {
     this.add_interaction("Balance", "You try to balance the seashell on your finger. The pressure of the water around you makes it pretty easy. You're not sure why you did it, but it does feel a little nice.");
     this.add_interaction("Admire", "You take a moment to look at the shell. It's pale, but it has reflects from a myriad of hues that change as you move it around. It's quite mesmerizing.");
     this.add_interaction("Gather", "This might be worth something. You pick it up, before noticing it's actually broken in several pieces. No use for it now...");
+  }
+}
+
+// NO BEST FRIEND!
+class EB_Skeleton extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "ruins/skeleton", color, size);
+
+    this.set_description("You discover what appears to be a human skeleton.");
+    this.add_interaction("Plunder", "You look around for any valuables that might be up for the taking after the demise of their previous owner. Sadly, there doesn't seem to be anything eager to be adopted by your benevolent care.");
+    this.add_interaction("Empathize", "You try to imagine the life of whoever these bones used to be. They had a family, friends, desires, hopes... But now this pile of bones is all there is to show for it. It's tragic, but it's the fate that awaits you too, some day.");
+    this.add_interaction("Investigate", "You look closely at the bones to try and figure out what you can about the person or the circumstances of their death. Sadly, you're just a child, and not a wise scholar well versed in medicinal studies, so you don't learn anything from this, but it was certainly worth a shot!");
+    this.add_interaction("Scramble", "Moved by the Goddess, you mess up the pile of bones. Why would anyone do such a thing? Maybe someone in the far future will find these bones, and imagine they belonged to someone very weirdly shaped?");
+    this.add_interaction("Scrutinize", "Looking at the bones, you can clearly see bitemarks. Some scavenger animal came this way and devoured what was left of this pour soul.");
+    this.add_interaction("Harmonize", "You forget all respect for the dead and start smashing the bones against each other, producing some different sounds. Pretty soon, you've mastered their tone and you've managed to compose a pleasant rhythmic melody.");
+    this.add_interaction("Study", "You look at the different bones and how they fit together, shuddering at the thought that something very similar is present inside of you.");
   }
 }
 
