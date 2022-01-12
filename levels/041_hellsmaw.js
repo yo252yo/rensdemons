@@ -315,11 +315,11 @@ for(var i of floors){
 events.battle('world/arsonist', 2);
 events.battle('world/djinn', 2);
 events.battle('world/knight', 2);
-events.battle('world/vadhaka', 2);
+events.battle('world/butcher', 2);
 
 events.battle('hell/devilfly', 2);
 events.battle('hell/sandworm', 2);
-events.battle('hell/serpentine', 2);
+events.battle('hell/serpentine', 1);
 events.battle('hell/toad', 2);
 events.battle('hell/warlock', 2);
 

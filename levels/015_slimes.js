@@ -4,12 +4,12 @@ console.log("todo")
 /*
 
 bat
-blooduscker
+blooduscker  > rare
 slime
 
-mole
+mole > rare
 scorpion
-crawler
+crawler > very rare
 
 
 lizard boss hammer

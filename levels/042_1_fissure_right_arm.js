@@ -74,9 +74,9 @@ decorFiller.fill_floor_by_retry();
 var events = new EventFiller(decorFiller, 5);
 events.battle('caves/bloodsucker', 0.1);
 events.battle('caves/bat');
-events.battle('caves/mole', 0.8);
+events.battle('caves/mole', 0.1);
 events.battle('caves/scorpion');
-events.battle('caves/crawler');
+events.battle('caves/crawler', 0.3);
 
 
 events.groundItem(ITEM.Linnens);

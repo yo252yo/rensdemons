@@ -58,9 +58,9 @@ FEvents.battle('hell/devilfly', 1.3);
 FEvents.battle('hell/eyeball', 1.9);
 FEvents.battle('hell/hecatoncheir', 1.9);
 FEvents.battle('hell/sandworm', 1.7);
-FEvents.battle('hell/satyr', 1.9);
-FEvents.battle('hell/serpentine', 1.3);
-FEvents.battle('hell/toad', 1.3);
+FEvents.battle('hell/satyr', 0.5);
+FEvents.battle('hell/serpentine', 1.5);
+FEvents.battle('hell/toad', 1);
 FEvents.battle('hell/warlock', 1.3);
 
 FEvents.battleRubble(ITEM.Elixir_venom, 0.1);

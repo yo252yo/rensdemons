@@ -203,7 +203,7 @@ if(sirenspart < 4){
   events.battle('waters/crab', modifier);
   events.battle('waters/jellyfish', modifier);
   events.battle('waters/mermaid', 2 * modifier);
-  events.battle('waters/naiad', 2 * modifier);
+  events.battle('waters/naiad', 0.5 * modifier);
   events.battle('waters/triton', 2 * modifier);
   events.groundItem(ITEM.Scale);
   events.groundItem(ITEM.Seashell);

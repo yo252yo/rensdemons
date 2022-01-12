@@ -77,7 +77,7 @@ events.battle('waters/anemone', 0.5);
 events.battle('waters/crab', 0.5);
 events.battle('waters/anglerjelly');
 events.battle('waters/jellyfish');
-events.battle('waters/octopus');
+events.battle('waters/octopus', 0.2);
 events.battle('waters/squid');
 events.battleRubble(ITEM.AncientRubbles, 0.5);
 events.battleRubble(ITEM.Scale, 0.3);

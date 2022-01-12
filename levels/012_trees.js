@@ -412,7 +412,7 @@ var events = new EventFiller(filler, 10);
 events.set_tries(Math.ceil(1*multiplier), 7*multiplier);
 events.battle('forests/tree',3);
 events.battle('forests/trunk',3);
-events.battle('forests/nymph',2);
+events.battle('forests/nymph',0.5);
 events.battle('forests/flower');
 events.battle('forests/mandragora'); // 10
 

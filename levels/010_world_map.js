@@ -139,16 +139,16 @@ FEasyEvents.battle('world/ghost', 1.7);
 FEasyEvents.battle('world/goblin', 1.7);
 FEasyEvents.battle('world/mummy', 1.7);
 FEasyEvents.battle('world/skeleton', 1.7);
-FEasyEvents.battle('world/wraith', 1.7);
+FEasyEvents.battle('world/wraith', 0.8);
 
 FEasyEvents.battleRubble(ITEM.Poison_darts, 0.1);
 FEasyEvents.battleRubble(ITEM.Dagger, 0.1);
 FEasyEvents.battleRubble(ITEM.Elixir_ice, 0.1);
 FEasyEvents.battleRubble(ITEM.Linnens, 0.7);
 FEasyEvents.groundItem(ITEM.Bone, 0.6);
-FEasyEvents.groundItem(ITEM.Stone, 0.6);
+FEasyEvents.groundItem(ITEM.Stone, 1.5);
 FEasyEvents.groundItem(ITEM.Berry, 0.6);
-FEasyEvents.groundItem(ITEM.Mushroom, 0.6);
+FEasyEvents.groundItem(ITEM.Mushroom, 1.5);
 
 FEasyEvents.byConstructor("B_Pebbles", 0.5);
 FEasyEvents.byConstructor("B_Plants", 0.5);
@@ -178,7 +178,7 @@ FHardEvents.battle('world/djinn', 2);
 FHardEvents.battle('world/grizzly', 2);
 FHardEvents.battle('world/knight', 2);
 FHardEvents.battle('world/mammoth', 2);
-FHardEvents.battle('world/vadhaka', 2);
+FHardEvents.battle('world/vadhaka', 0.7);
 
 
 FHardEvents.battleRubble(ITEM.Arrow, 0.3);

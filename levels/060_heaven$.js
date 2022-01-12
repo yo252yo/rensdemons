@@ -166,9 +166,9 @@ events.set_zone(1125,1550,500,500);
 
 events.battle('heaven/angel');
 events.battle('heaven/cherub');
-events.battle('heaven/maneki');
-events.battle('heaven/ponpon');
-events.battle('heaven/raijuu');
+events.battle('heaven/maneki', 0.1);
+events.battle('heaven/ponpon', 0.5);
+events.battle('heaven/raijuu', 0.5);
 events.battle('heaven/seraph');
 events.battle('heaven/valkyrie');
 
