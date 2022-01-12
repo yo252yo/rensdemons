@@ -2,6 +2,7 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+
 WIP: nesting the experience menu
 >>> QUID des battleitems
 >>> QUID world/ruins world/traveller
@@ -13,8 +14,7 @@ no i dont want battleitems mixed with normal battles, otherwise its hell to coun
 
 
 
----------------------------------------- LOOTBOX EFFECT:
-Tweek rarity,
+>>>>>>> Tweek rarity,
 
 
 make BattleObject into Events???? they dont have icon

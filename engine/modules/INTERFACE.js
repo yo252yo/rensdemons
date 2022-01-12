@@ -4,7 +4,7 @@ const INTERFACE = {
   text:{
     _martyrdom_notif: function() {
       if (MARTYRDOM.display.notif()) {
-        return "<span style='color:red;font-weight:bold;'>*</span>";
+        return "<span style='color:red;font-weight:bold;font-size:40px;'>*</span>";
       } else{
         return "";
       }
