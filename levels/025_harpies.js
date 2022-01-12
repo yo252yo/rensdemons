@@ -158,7 +158,7 @@ var events = new EventFiller(f, 5);
 
 events.battle('mountains/harpy', 3);
 events.battle('mountains/chimera', 2);
-events.battle('mountains/manticore', 0.1);
+events.battle('mountains/manticore', 0.4);
 events.battle('mountains/emu', 1);
 events.groundItem(ITEM.Feather);
 events.groundItem(ITEM.Stone, 0.5);

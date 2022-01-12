@@ -118,7 +118,7 @@ var events = new EventFiller(decorFiller, 15);
 events.set_zone(975,1650,750,475);
 
 events.battle('pandemonium/abaddon', 1.5);
-events.battle('pandemonium/asmodeus', 0.3);
+events.battle('pandemonium/asmodeus', 0.4);
 events.battle('pandemonium/azazel', 1.5);
 events.battle('pandemonium/belial', 1.5);
 events.battle('pandemonium/belphegor', 1);
