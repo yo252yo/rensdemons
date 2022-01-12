@@ -1,7 +1,9 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/civilians/traveler.png", 'background');
+//new CenteredImage("assets/battles/encounters/traveler.png", 'background');
+
+BESTIARY.picture('encounters/traveler');
 
 // ===================
 //hack PLAYER CAPABILITIES
@@ -59,4 +61,4 @@ PLAYER_ACTIONS.add({
 //hack START
 // ===================
 
-BATTLE.operations.start(BESTIARY.intro("world/traveler"));
+BATTLE.operations.start(BESTIARY.intro("encounters/traveler"));

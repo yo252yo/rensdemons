@@ -153,7 +153,7 @@ FEasyEvents.groundItem(ITEM.Mushroom, 1.5);
 FEasyEvents.byConstructor("EB_Pebbles", 0.5);
 FEasyEvents.byConstructor("EB_Plants", 0.5);
 FEasyEvents.byConstructor("EB_Skeleton", 1);
-FEasyEvents.battle('world/ruins', 1);
+FEasyEvents.battle('encounters/ruins', 1);
 
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
@@ -193,8 +193,8 @@ FHardEvents.groundItem(ITEM.Flower, 0.7);
 FHardEvents.groundItem(ITEM.Bone, 0.7);
 
 FHardEvents.byConstructor("EB_Skeleton", 2.5);
-FHardEvents.battle('world/traveler', 2);
-FHardEvents.battle('world/ruins', 1);
+FHardEvents.battle('encounters/traveler', 2);
+FHardEvents.battle('encounters/ruins', 1);
 
 FHardEvents.text(`You stop your progression: you can see in the distance a pack of feral beasts. As you observe them carefully, you notice that they seem to be tearing to shreds the corpses of a few innocent travelers, throwing around the meat as if making a game out of it. Their fur is drenched in the blood of their unfortunate victims. Crouched on the floor, your heart beating fast, you wait for them to finish their meal, praying that you don't get noticed.`);
 FHardEvents.text(`The sound of metal alerts you of the movement of enemy troops in the distance. You barely have time to find shelter in a bush. A group of several heavily armored demons are patrolling the steppes at a fast pace. The sun makes the dark metal of their foreign armor shine softly.`);

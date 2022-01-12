@@ -94,19 +94,20 @@ BESTIARY = {
 }
 
 //hack world
-BESTIARY.dict["world"] = {};
+BESTIARY.dict["encounters"] = {};
 //hack NOT MONSTERS
-BESTIARY.dict["world"]["traveler"] = {
+BESTIARY.dict["encounters"]["traveler"] = {
   "intro": "You cross the path of another weary traveler.",
   "introed": "You crossed the path of another weary traveler.",
 };
-BESTIARY.dict["world"]["ruins"] = {
+BESTIARY.dict["encounters"]["ruins"] = {
   "intro": "You stumble upon an odd structure. As you approach, you conclude that it must be the ruins of a building from a long gone civilization. It is entirely unlike anything you know. Instead of wood and stone, you find mostly rusted metal and a smooth, alien substance.",
   "introed": "You stumbled upon an odd structure.",
 };
 
 
-
+//hack world
+BESTIARY.dict["world"] = {};
 BESTIARY.dict["world"]["arsonist"] = {
   "intro": "An Ambitious Arsonist Aspires to set you Ablaze.",
   "introed": "An Ambitious Arsonist Aspired to set you Ablaze.",

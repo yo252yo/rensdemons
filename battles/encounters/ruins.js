@@ -1,7 +1,8 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-new CenteredImage("assets/battles/civilians/ruins.png", 'background');
+//new CenteredImage("assets/battles/encounters/ruins.png", 'background');
+BESTIARY.picture('encounters/ruins');
 PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.AncientRubbles, 0.2);
@@ -46,9 +47,8 @@ PLAYER_ACTIONS.add({
 });
 
 
-
 // ===================
 //hack START
 // ===================
 
-BATTLE.operations.start(BESTIARY.intro("world/ruins"));
+BATTLE.operations.start(BESTIARY.intro("encounters/ruins"));
