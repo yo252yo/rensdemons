@@ -12,7 +12,7 @@ LANGUAGE.battle = {
       r += "You explored " + (after.explored  - before.explored ) + " threads. ";
     }
     if(after.is_empathized && !before.is_empathized){
-      r += "You also unlocked empathy for this opponent. ";
+      r += "You also got a glimpse at the true self of this opponent and unlocked Empathy. ";
     }
     return r;
   },
