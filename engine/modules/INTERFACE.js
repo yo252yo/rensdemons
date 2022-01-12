@@ -55,7 +55,17 @@ const INTERFACE = {
       } else {
         total = " out of " + total;
       }
-      return `${name} (${score}${total})`;
+      var dname = name.replace(BATTLEOBJECTSMANAGER.prefix, "");
+      return `${dname} (${score}${total})`;
+    },
+
+    _is_hostile: function(battlename){
+      if(battlename.startsWith(BATTLEOBJECTSMANAGER.prefix)){
+        return false;
+      } else if(battlename.startsWith("encounters")){
+        return false;
+      }
+      return true;
     },
 
     experience_submenu: function(category) {
@@ -91,7 +101,24 @@ const INTERFACE = {
     experience_menu: function() {
       var battletypes = BATTLETREE.get.all_battles_types();
       var battles_options = [];
+      // Hostiles
       for(var i in battletypes) {
+        if(!INTERFACE.display._is_hostile(battletypes[i])){
+          continue;
+        }
+        (function(index){
+          battles_options.push({
+            "text": INTERFACE.display._battle_type_title(battletypes[index]),
+            "effect": function(){ INTERFACE.display.experience_submenu(battletypes[index]); },
+          });
+        }(i));
+      };
+      // Non hostiles
+      battles_options.push(TEXTMENU_EMPTYROW);
+      for(var i in battletypes) {
+        if(INTERFACE.display._is_hostile(battletypes[i])){
+          continue;
+        }
         (function(index){
           battles_options.push({
             "text": INTERFACE.display._battle_type_title(battletypes[index]),

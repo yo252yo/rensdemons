@@ -32,7 +32,8 @@ name.startsWith(BATTLEOBJECTSMANAGER.prefix)
 - ItemBattleObject
 - SoulBattleObject
 
-
+>> icons
+>> score total
 
 
 

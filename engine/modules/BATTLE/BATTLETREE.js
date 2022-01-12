@@ -397,10 +397,11 @@ const BATTLETREE = {
         }
       }
 
+      var dbattle = battle.replace(BATTLEOBJECTSMANAGER.prefix, "");
 
       if (SCREEN.is_mobile()){
         var text = `
-          <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
+          <b>${dbattle}</b> - ${BATTLETREE.score.completion(battle)}%
           ${intro}
           <hr/>
           ${imghtml}
@@ -411,7 +412,7 @@ const BATTLETREE = {
           <div style="width:100%;position:relative;display:inline-block;">
             ${imghtml}
             <div style='position:relative;'>
-              <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
+              <b>${dbattle}</b> - ${BATTLETREE.score.completion(battle)}%
               ${intro}
             </div>
           </div><hr />
