@@ -3,7 +3,7 @@
 
 class S_Column extends LevelObject {
   constructor(x, y, seed){
-    var visual = new StaticSprite("assets/objects/objects/column.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/interior/column.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(10,0,20,15);
     this.interaction = this.text_interaction([
@@ -85,7 +85,7 @@ class S_StainedGlass extends LevelObject {
 
 class B_Statue extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/statue");
+    super(x, y, "interior/statue");
     this.adjust_hitbox(0,0,50,40);
     this.specify_sprite_size(50,100);
 
@@ -101,7 +101,7 @@ class B_Statue extends ItemBattleObject {
 
 class S_SavePoint extends LevelObject {
   constructor(x, y){
-    var visual = new StaticSprite("assets/objects/objects/savepoint.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,20);
     this.specify_sprite_size(50,50);
@@ -118,7 +118,7 @@ class S_SavePoint extends LevelObject {
 
 class S_Altar extends LevelObject {
   constructor(x, y, type){
-    var visual = new StaticSprite("assets/objects/objects/savepoint.png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,20);
     this.specify_sprite_size(50,50);
@@ -150,7 +150,7 @@ class S_Altar extends LevelObject {
 
 class B_Bed extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/bed");
+    super(x, y, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
     this.specify_sprite_size(32,75);
 
@@ -167,7 +167,7 @@ class B_Bed extends ItemBattleObject {
 
 class B_Bucket extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/bucket");
+    super(x, y, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
     this.specify_sprite_size(31,28);
 
@@ -184,7 +184,7 @@ class B_Bucket extends ItemBattleObject {
 
 class B_Cabinet extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/cabinet");
+    super(x, y, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
     this.specify_sprite_size(31,48);
 
@@ -200,7 +200,7 @@ class B_Cabinet extends ItemBattleObject {
 
 class B_Chair extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/chair");
+    super(x, y, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
     this.specify_sprite_size(30,33);
 
@@ -215,7 +215,7 @@ class B_Chair extends ItemBattleObject {
 
 class B_Hay extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/hay");
+    super(x, y, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
     this.specify_sprite_size(64,66);
 
@@ -230,7 +230,7 @@ class B_Hay extends ItemBattleObject {
 
 class B_Housefire extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/housefire");
+    super(x, y, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
     this.specify_sprite_size(33,33);
 
@@ -246,7 +246,7 @@ class B_Housefire extends ItemBattleObject {
 
 class B_Jar extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/jar");
+    super(x, y, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
     this.specify_sprite_size(32,35);
 
@@ -261,7 +261,7 @@ class B_Jar extends ItemBattleObject {
 
 class B_Shelf extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/shelf");
+    super(x, y, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
     this.specify_sprite_size(59,67);
 
@@ -276,7 +276,7 @@ class B_Shelf extends ItemBattleObject {
 
 class B_Stool extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/stool");
+    super(x, y, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
     this.specify_sprite_size(25,28);
 
@@ -290,7 +290,7 @@ class B_Stool extends ItemBattleObject {
 
 class B_Table extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/table");
+    super(x, y, "interior/table");
     this.adjust_hitbox(0,0,31,34);
     this.specify_sprite_size(31,34);
 
@@ -304,7 +304,7 @@ class B_Table extends ItemBattleObject {
 
 class B_Chest extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "objects/chest", 1);
+    super(x, y, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
     this.specify_sprite_size(50,45);
 
