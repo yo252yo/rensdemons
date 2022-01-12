@@ -73,15 +73,17 @@ BESTIARY = {
       suffix = "_empathized";
     }
 
-    return BESTIARY.default_picture(battlename, suffix);
+    return BESTIARY.default_picture_address(battlename, suffix);
   },
 
-  default_picture: function(battlename, suffix) {
+  default_picture_address: function(battlename, suffix) {
     var split = battlename.split("/");
     if (!suffix){
       suffix = "";
     }
-    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]]){
+    console.log(BESTIARY.dict[split[0]][split[1]]);
+    console.log(BESTIARY.dict[split[0]][split[1]]["no_img"]);
+    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]] || BESTIARY.dict[split[0]][split[1]]["no_img"]){
       return undefined;
     } else {
       return `assets/battles${suffix}/${battlename}.png`;
@@ -93,7 +95,7 @@ BESTIARY = {
   },
 }
 
-//hack world
+//hack encounters
 BESTIARY.dict["encounters"] = {};
 //hack NOT MONSTERS
 BESTIARY.dict["encounters"]["traveler"] = {
@@ -103,6 +105,10 @@ BESTIARY.dict["encounters"]["traveler"] = {
 BESTIARY.dict["encounters"]["ruins"] = {
   "intro": "You stumble upon an odd structure. As you approach, you conclude that it must be the ruins of a building from a long gone civilization. It is entirely unlike anything you know. Instead of wood and stone, you find mostly rusted metal and a smooth, alien substance.",
   "introed": "You stumbled upon an odd structure.",
+};
+BESTIARY.dict["encounters"]["villagers"] = {
+  "no_img": true,
+  "introed": "You started a self-aware conversation with a villager.",
 };
 
 

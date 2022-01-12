@@ -65,7 +65,7 @@ const INTERFACE = {
         (function(index){
           var split = battles[index].split("/");
           var name = split[split.length - 1];
-          var img = BESTIARY.default_picture(battles[index]);
+          var img = BESTIARY.default_picture_address(battles[index]);
           var prefix = ``;
           if (img){
             prefix = `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.7" src="${img}" />`;

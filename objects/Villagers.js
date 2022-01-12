@@ -640,7 +640,7 @@ var get_rejection_soul = function(type, seed, indoors, seed) {
 
 var get_meta_soul = function(seed, sprite_nb) {
   return {interaction: function() {
-    SPECIALBATTLES.characters("villagers", "villager" + sprite_nb, seed);
+    SPECIALBATTLES.encounters("villagers", "villager" + sprite_nb, seed);
   }};
 }
 

@@ -377,36 +377,51 @@ const BATTLETREE = {
         intro = `<hr/><i>${intro}</i>`;
       }
 
+      var img = BESTIARY.picture_address(battle);
+      var imghtml = ``;
+      if (img){
+        if (SCREEN.is_mobile()){
+          imghtml = `
+          <div style='width:150px;height:150px;position:relative;clear:both;margin:5px'>
+            <div id='image_slot' style="position:relative;top:150px"></div>
+          </div>`;
+        } else {
+          imghtml = `
+          <div style='width:150px;height:150px;position:relative;float:left;margin:20px'>
+            <div id='image_slot' style="position:relative;top:150px"></div>
+          </div>`;
+        }
+      }
+
+
       if (SCREEN.is_mobile()){
         var text = `
           <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
           ${intro}
           <hr/>
-            <div style='width:150px;height:150px;position:relative;clear:both;margin:5px'>
-              <div id='image_slot' style="position:relative;top:150px"></div>
-            </div>
+          ${imghtml}
           <hr/>
           ${tree[0]}`;
       } else {
         var text = `
           <div style="width:100%;position:relative;display:inline-block;">
-            <div style='width:150px;height:150px;position:relative;float:left;margin:20px'>
-              <div id='image_slot' style="position:relative;top:150px"></div>
-            </div><div style='position:relative;'>
+            ${imghtml}
+            <div style='position:relative;'>
               <b>${battle}</b> - ${BATTLETREE.score.completion(battle)}%
               ${intro}
             </div>
           </div><hr />
           ${tree[0]}`;
-
       }
 
 
       var s = new MenuScreen(text);
       s.onEnd(INTERFACE.display.experience_menu);
 
-      var d = document.getElementById('image_slot');
-      var c = new StaticSprite(BESTIARY.picture_address(battle), 'background', 150, 150, d);
+      if (img){
+        var d = document.getElementById('image_slot');
+        var c = new StaticSprite(img, 'background', 150, 150, d);
+      }
     },
   },
 };
