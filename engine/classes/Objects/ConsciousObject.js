@@ -155,7 +155,7 @@ class ConsciousObject extends MovingObject {
       `How am I supposed to fool<br />them into thinking I'm a ${this.role}?'`,
       `What kind of name even is<br />${this.name}?<br />I deserve a better one!`,
       `What's my character this<br />time? Oh yes, ${this.name}!`,
-      `I'm ${this.name}! ${this.name}!<br />Gotta remember it!`,
+      `I'm playing ${this.name}! ${this.name}!<br />Gotta remember it!`,
       `Why did I have to be assigned<br />to the city of ${this.city}?<br />I hate this place!`,
       `I have the worst part!`,
       `I wanted to be the<br />demon lord this time...`,
