@@ -95,7 +95,6 @@ BESTIARY = {
 
 //hack encounters
 BESTIARY.dict["encounters"] = {};
-//hack NOT MONSTERS
 BESTIARY.dict["encounters"]["traveler"] = {
   "intro": "You cross the path of another weary traveler.",
   "introed": "You crossed the path of another weary traveler.",

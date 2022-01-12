@@ -27,6 +27,11 @@ furtnitures/...
 encounters/...
 
 
+name.startsWith(BATTLEOBJECTSMANAGER.prefix)
+- EventBattleObject
+- ItemBattleObject
+- SoulBattleObject
+
 
 
 

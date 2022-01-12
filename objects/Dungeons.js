@@ -906,7 +906,7 @@ class S_MagicMirror extends SimpleObject {
 
 class S_Computer extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "interior/savepoint");
+    super(x, y, "objects/savepoint");
     this.adjust_hitbox(5,-5,40,20);
     this.specify_sprite_size(50,50);
 
