@@ -81,8 +81,6 @@ BESTIARY = {
     if (!suffix){
       suffix = "";
     }
-    console.log(BESTIARY.dict[split[0]][split[1]]);
-    console.log(BESTIARY.dict[split[0]][split[1]]["no_img"]);
     if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]] || BESTIARY.dict[split[0]][split[1]]["no_img"]){
       return undefined;
     } else {
