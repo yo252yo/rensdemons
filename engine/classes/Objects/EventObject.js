@@ -2,6 +2,16 @@
 // runtime: Rectangle, StaticSprite
 
 class S_event extends LevelObject {
+  static make_icon(icon_type, x, y) {
+    var icon = new StaticSprite(`assets/interface/${icon_type}.png`, PALETTE.text_color().code(), 200, 200);
+
+    icon.html_canvas.style.background = PALETTE.text_background().code();
+    icon.html_canvas.style.border = "5px outset " + PALETTE.text_border().code();
+    icon.adjust_depth(9999);
+    icon.place_at(x-90, y+50);
+    return icon
+  }
+
   constructor(x, y, size, color, icon_type) {
     var sprite = '';
     if (!size){
@@ -31,12 +41,7 @@ class S_event extends LevelObject {
     }
 
     if(this.icon_type){
-      this.icon = new StaticSprite(`assets/interface/${this.icon_type}.png`, PALETTE.text_color().code(), 200, 200);
-
-      this.icon.html_canvas.style.background = PALETTE.text_background().code();
-      this.icon.html_canvas.style.border = "5px outset " + PALETTE.text_border().code();
-      this.icon.adjust_depth(9999);
-      this.icon.place_at(this.x-90, this.y+50);
+      this.icon = S_event.make_icon(this.icon_type, this.x, this.y);
     }
 
     this.clicked = true;
