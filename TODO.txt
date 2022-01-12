@@ -1,12 +1,14 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+>>>>>>> Tweek rarity,
 
 
-WIP: nesting the experience menu
+
+EXPERIENCE MENU AND EVENT ICONS:
 >>> QUID des battleitems
 >>> QUID world/ruins world/traveller
-
+>>> QUID make BattleObject into Events???? they dont have icon !! B_Skel esp (EventBattleObject)
 
 - move battleitem to the same level as normal battles, which means syncing the names, which means syncing the names of the files in object/
 - need to come up with icons for battleitems/handle them
@@ -14,11 +16,8 @@ no i dont want battleitems mixed with normal battles, otherwise its hell to coun
 
 
 
->>>>>>> Tweek rarity,
 
 
-make BattleObject into Events???? they dont have icon
-!! B_Skel esp (EventBattleObject)
 
 
 
