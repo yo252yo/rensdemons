@@ -158,5 +158,3 @@ events.fill_floor_by_retry();
 //hack 7. START/INIT
 // ===================
 CURRENTLEVEL.initialize_with_character(1360,2370);
-
-// boss = rhino
