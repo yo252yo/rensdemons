@@ -2,6 +2,23 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
+tell at each event that you discovered threads ?
+
+
+/*
+
+bat
+blooduscker  > rare
+slime
+
+mole > rare
+scorpion
+crawler > very rare
+
+
+lizard boss hammer
+*/
+
 
 
 ---------------------------------------- SLIMES DUNGEON
@@ -21,25 +38,96 @@ how do you know my name??? can you guess my name? and whatever you guess its rig
 
 
 
+1. rules
+The first password is that which binds
+Forbids and restrict some actions
+But creates a space for the minds
+To join in common creations
 
 
+2. spectacle
+The password is a great display
+That fascinates and lures the eye
+An empty show, an actor's way
+to blur the truth and mistify
+
+
+3. play
+What actors do on the big stage
+What people do in society
+What children do at early age
+What even gods do presently
+
+
+4. normal
+This is the frame that's placed on you
+The reference that we all share
+The fence enclosing your world view
+As invisible as the air
+
+
+5. appearances
+This is only what you can see
+Why should it decide how you care
+But thinking past this fallacy
+Is more than most people can bear
+
+
+6. bias
+When you look at what suits your views
+When you idealize the past
+When you follow that which feels true
+Rational inquiries bypassed
+
+
+
+
+confirmation bias
+status quo bias
+natural fallacy
+
+
+
+
+
+Simulation
+appearance
 Reality
-
-
-Play a role / play a game
-
 Control
-
-
+game
+Attention (who gets to decide?)
+Rules of the game control your affordances
+words
+implicit
+time
 Ideology can't take down the system from within the system
-
-Rules of the gsmr control your sfordsmces affords ce
+illusion, distraction, divertissement
+fallacy, bias
 
 
 Cave js like 5 floors separated by passowd door, each floor has a poem cluex
 Passwords are around baudrillard philosophy and systemic meaning of the gsmr
 The last one mb is spectacle
 Simulation cycle never-ending etc system goddess e c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
