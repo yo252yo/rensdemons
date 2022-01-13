@@ -1,40 +1,8 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
-
-
-EXPERIENCE MENU AND EVENT ICONS:
->>> QUID des battleitems
->>> QUID encounters/ruins world/traveller
-
-
-
-- move battleitem to the same level as normal battles, which means syncing the names, which means syncing the names of the files in object/
-- need to come up with icons for battleitems/handle them
-no i dont want battleitems mixed with normal battles, otherwise its hell to count!!! they should remain in envbironment but villagers should  be separate
-
-
-
-
-- villagers
-- furnitures
-- encounters (encounters/ruins, world/traveller)
-- encounters (EB_Plants, EB_Seashell, EB_Pebbles, EB_Skeleton)
-
-what id want:
-villagers/...
-furtnitures/...
-encounters/...
-
-
-name.startsWith(BATTLEOBJECTSMANAGER.prefix)
-- EventBattleObject
-- ItemBattleObject
-- SoulBattleObject
-
->> icons
->> score total
-
+Icons for villagers types?
+can we make the icon in the profil not stretch to square?
 
 
 ---------------------------------------- BACKSIDE:

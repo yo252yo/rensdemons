@@ -76,14 +76,6 @@ BESTIARY = {
     return BESTIARY.default_picture_address(battlename, suffix);
   },
 
-  _find_path: function(battlename, suffix){
-    if(battlename.startsWith(BATTLEOBJECTSMANAGER.prefix)){
-      return "assets/" + battlename.replace(BATTLEOBJECTSMANAGER.prefix, "objects/") + ".png";
-    } else {
-      return `assets/battles${suffix}/${battlename}.png`;
-    }
-  },
-
   normalize(battlename){
     return battlename.replace(BATTLEOBJECTSMANAGER.prefix, "");
   },
@@ -93,10 +85,12 @@ BESTIARY = {
     if (!suffix){
       suffix = "";
     }
-    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]] || BESTIARY.dict[split[0]][split[1]]["no_img"]){
+    if(battlename.startsWith(BATTLEOBJECTSMANAGER.prefix)){
+      return "assets/" + battlename.replace(BATTLEOBJECTSMANAGER.prefix, "objects/") + ".png";
+    } else if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]] || BESTIARY.dict[split[0]][split[1]]["no_img"]){
       return undefined;
     } else {
-      return BESTIARY._find_path(battlename, suffix);
+      return `assets/battles${suffix}/${battlename}.png`;
     }
   },
 
