@@ -398,12 +398,12 @@ const BATTLETREE = {
         if (SCREEN.is_mobile()){
           imghtml = `
           <div style='width:150px;height:150px;position:relative;clear:both;margin:5px'>
-            <div id='image_slot' style="position:relative;top:150px"></div>
+            <div id='image_slot' style="position:relative;"></div>
           </div>`;
         } else {
           imghtml = `
           <div style='width:150px;height:150px;position:relative;float:left;margin:20px'>
-            <div id='image_slot' style="position:relative;top:150px"></div>
+            <div id='image_slot' style="position:relative;"></div>
           </div>`;
         }
       }
@@ -436,7 +436,18 @@ const BATTLETREE = {
 
       if (img){
         var d = document.getElementById('image_slot');
-        var c = new StaticSprite(img, 'background', 150, 150, d);
+        var c = new StaticSprite(img, 'background', undefined, undefined, d);
+        var r = c.width / c.height;
+        if(!c.width || !c.height){
+          c.adjust_dimensions(150, 150);
+          c.place_at(0, 150);
+        } else if(r > 1){
+          c.adjust_dimensions(150, 150 / r);
+          c.place_at(0, 150 / r);
+        } else {
+          c.adjust_dimensions(r * 150, 150);
+          c.place_at(0, 150);
+        }
       }
     },
   },
