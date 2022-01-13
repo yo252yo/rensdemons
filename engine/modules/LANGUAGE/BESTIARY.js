@@ -578,7 +578,6 @@ BESTIARY.dict["caves"]["lizard"] = {
 
 
 //hack interior
-// BESTIARY.intro("interior/stool")
 BESTIARY.dict["interior"] = {};
 BESTIARY.dict["interior"]["stool"] = {
   "intro": "A simple wooden stool.",
@@ -629,7 +628,6 @@ BESTIARY.dict["interior"]["chest"] = {
   "introed": "A chest, doubtlessly holding the family's belongings.",
 };
 
-//this.set_description(BESTIARY.intro("interior/stool"));
 //hack exterior
 BESTIARY.dict["exterior"] = {};
 BESTIARY.dict["exterior"]["pebbles"] = {
@@ -664,7 +662,7 @@ BESTIARY.dict["villagers"]["denial"] = {
   "introed": "You met strangers who took comfort in pretense.",
 };
 BESTIARY.dict["villagers"]["fear"] = {
-  "introed": "You met strangers who blamed others for their situation.",
+  "introed": "You met strangers who blamed others for their misfortune.",
 };
 BESTIARY.dict["villagers"]["hope"] = {
   "introed": "You met strangers with blind faith in a brighter future.",

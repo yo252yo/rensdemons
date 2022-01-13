@@ -1,47 +1,12 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
-Icons for villagers types?
-
-
-
----------------------------------------- BACKSIDE:
-- walkthrough
-- visual glitches, especially during Maou death (overlay?)
-- Sometimes the game would crash with a very peculiar error code or error messags “help us”
-- make the buildings/sprites/etc... say NOT READY or smhting
 
 force first replay by making it rely on ability not flag
 
 
 
 
----------------------------------------- OPTIONAL CONTENT:
-- town2 survivors rescue!
-- hans dog somewhere
-- more furniture ^^ (city specific ??)
-- add a link to the demo in heaven
-- more itembattles for dungeons and world,
-- more battle encounters (world map ruins, hellsmaw skeleton)
-- more bed and jar actions
-- review battle_debris add a few more actions for rubble treasures
-- villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
-
-
-
----------------------------------------- HAWK DUNGEON
-theres always something behind the waterfall
-
-DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-// extra  mountain?
->> save him from traps/patrols?? help him set traps?
-escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
-Assume that a zone is safe once you've cleared it / clear whole floor before moving on
-this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
-talk to an objective and exit, go close to the border
-talk to one character / talk to a npc trigger the progression
-go to the next area and come back
-"oh you were on a fetching mission/tutorial"
 
 ---------------------------------------- SLIMES DUNGEON
 heaven ?
@@ -84,6 +49,51 @@ The last one mb is spectacle
 Simulation cycle never-ending etc system goddess e c
 
 
+
+
+
+
+
+
+
+
+
+---------------------------------------- BACKSIDE:
+- walkthrough
+- visual glitches, especially during Maou death (overlay?)
+- Sometimes the game would crash with a very peculiar error code or error messags “help us”
+- make the buildings/sprites/etc... say NOT READY or smhting
+
+
+
+
+
+---------------------------------------- OPTIONAL CONTENT:
+- town2 survivors rescue!
+- hans dog somewhere
+- more furniture ^^ (city specific ??)
+- add a link to the demo in heaven
+- more itembattles for dungeons and world,
+- more battle encounters (world map ruins, hellsmaw skeleton)
+- more bed and jar actions
+- review battle_debris add a few more actions for rubble treasures
+- villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
+
+
+
+---------------------------------------- HAWK DUNGEON
+theres always something behind the waterfall
+
+DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+// extra  mountain?
+>> save him from traps/patrols?? help him set traps?
+escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
+Assume that a zone is safe once you've cleared it / clear whole floor before moving on
+this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
+talk to an objective and exit, go close to the border
+talk to one character / talk to a npc trigger the progression
+go to the next area and come back
+"oh you were on a fetching mission/tutorial"
 
 ---------------------------------------- TOWN2 CASTLE
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
