@@ -296,6 +296,17 @@ const BATTLETREE = {
     },
 
     total_category: function(prefix){
+      if(prefix.startsWith(BATTLEOBJECTSMANAGER.prefix + "villagers")){
+        return Object.keys(CITIES).length;
+      }
+      if(prefix.startsWith(BATTLEOBJECTSMANAGER.prefix + "interior")){
+        return Object.keys(OBJ_INTERIOR).length;
+      }
+      if(prefix.startsWith(BATTLEOBJECTSMANAGER.prefix + "exterior")){
+        return Object.keys(OBJ_EXTERIOR).length;
+      }
+
+
       return BESTIARY.size(prefix);
     },
   },

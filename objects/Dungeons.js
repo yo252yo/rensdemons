@@ -1,4 +1,11 @@
 
+const OBJ_EXTERIOR = {
+  pebbles: "exterior/pebbles",
+  plant: "exterior/plant",
+  seashell: "exterior/seashell",
+  skeleton: "exterior/skeleton",
+}
+
 class S_Tree extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
@@ -435,7 +442,7 @@ class S_RubbleLarge extends SimpleObject {
 
 class EB_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/pebbles", color, size);
+    super(x, y, OBJ_INTERIOR.pebbles, color, size);
 
     this.set_description("There are pebbles on the ground.");
     this.add_interaction("Play", "You flick around a few spherical rocks with $$BestFriend$. The one who pushes the other's pebbles outside of the game area wins. Of course, you win!");
@@ -451,7 +458,7 @@ class EB_Pebbles extends EventBattleObject {
 
 class EB_Plants extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/plant", color, size);
+    super(x, y, OBJ_INTERIOR.plant, color, size);
 
     this.set_description("You find yourself near a little green plant.");
     this.add_interaction("Pluck", "You harvest a leaf from the small plant. It's very green, but serves no purpose whatsoever. Did you imagine it would trigger something? Why did you do that?");
@@ -466,7 +473,7 @@ class EB_Plants extends EventBattleObject {
 
 class EB_Seashell extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/seashell", color, size);
+    super(x, y, OBJ_INTERIOR.seashell, color, size);
 
     this.set_description("There's a seashell on your way.");
     this.add_interaction("Listen", "You bring the seashell to your ear. It is said that you can hear the sea, but since you're already underwater, it changes nothing for you.");
@@ -481,7 +488,7 @@ class EB_Seashell extends EventBattleObject {
 // NO BEST FRIEND!
 class EB_Skeleton extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, "exterior/skeleton", color, size);
+    super(x, y, OBJ_INTERIOR.skeleton, color, size);
 
     this.set_description("You discover what appears to be a human skeleton.");
     this.add_interaction("Plunder", "You look around for any valuables that might be up for the taking after the demise of their previous owner. Sadly, there doesn't seem to be anything eager to be adopted by your benevolent care.");
