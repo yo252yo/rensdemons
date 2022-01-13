@@ -1,21 +1,6 @@
 // use(Object)
 // runtime: Rectangle, StaticSprite
 
-const OBJ_INTERIOR = {
-  statue: "interior/statue",
-  bed: "interior/bed",
-  bucket: "interior/bucket",
-  cabinet: "interior/cabinet",
-  chair: "interior/chair",
-  hay: "interior/hay",
-  housefire: "interior/housefire",
-  jar: "interior/jar",
-  shelf: "interior/shelf",
-  stool: "interior/stool",
-  chest: "interior/chest",
-  table: "interior/table",
-}
-
 class S_Column extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/interior/column.png", 'obj_light');
@@ -99,11 +84,11 @@ class S_StainedGlass extends LevelObject {
 
 class B_Statue extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.statue);
+    super(x, y, "interior/statue");
     this.adjust_hitbox(0,0,50,40);
     this.specify_sprite_size(50,100);
 
-    this.set_description("It's a statue of the Goddess. Blessed be her eternal soul.");
+    this.set_description(BESTIARY.intro("interior/statue"));
 
     this.add_interaction("Prostrate", "You prostrate yourself in front of the statue of the Goddess.");
     this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
@@ -164,11 +149,11 @@ class S_Altar extends LevelObject {
 
 class B_Bed extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.bed);
+    super(x, y, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
     this.specify_sprite_size(32,75);
 
-    this.set_description("It's a regular bed to sleep in.");
+    this.set_description(BESTIARY.intro("interior/bed"));
 
     this.add_interaction("Inspect", "This bed is made of linen covering a wooden frame. The thin mattress is made of hay. It doesn't look too great...");
     this.add_interaction("Resist", "This bed looks very comfortable. The thick wool beddings beckon you.");
@@ -181,11 +166,11 @@ class B_Bed extends ItemBattleObject {
 
 class B_Bucket extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.bucket);
+    super(x, y, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
     this.specify_sprite_size(31,28);
 
-    this.set_description("It's a wooden bucket.");
+    this.set_description(BESTIARY.intro("interior/bucket"));
     this.add_interaction("Examine", "A bucket full of fresh water. Someone must have brought it back from the well recently.");
     this.add_interaction("Behold", "This bucket is empty...");
     this.add_interaction("Wonder", "As you gaze at this bucket, you can't help but wonder if this is really the best place for a bucket... But on the other hand, why not?");
@@ -198,11 +183,11 @@ class B_Bucket extends ItemBattleObject {
 
 class B_Cabinet extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.cabinet);
+    super(x, y, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
     this.specify_sprite_size(31,48);
 
-    this.set_description("A wooden cabinet, probably storing clothes or tableware...");
+    this.set_description(BESTIARY.intro("interior/cabinet"));
     this.add_interaction("Imagine", "The family stores their belonging in this cabinet. What kind of things are there? You're curious, but you don't want to intrude. You're invading their privacy enough as it is...");
     this.add_interaction("Esteem", "Not everyone could afford a wooden cabinet with engravings of holy texts. This is surely a mark of wealth.");
     this.add_interaction("Condemn", "This storage container looks pretty unsteady. The people here probably built it themselves. Better not touch it.");
@@ -214,11 +199,11 @@ class B_Cabinet extends ItemBattleObject {
 
 class B_Chair extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.chair);
+    super(x, y, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
     this.specify_sprite_size(30,33);
 
-    this.set_description("This is a chair.");
+    this.set_description(BESTIARY.intro("interior/chair"));
     this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
     this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless, $$BestFriend$ is puzzled. But Her ways are mysterious.");
@@ -229,11 +214,11 @@ class B_Chair extends ItemBattleObject {
 
 class B_Hay extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.hay);
+    super(x, y, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
     this.specify_sprite_size(64,66);
 
-    this.set_description("A pile of hay.");
+    this.set_description(BESTIARY.intro("interior/hay"));
     this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");
     this.add_interaction("Empathize", "Any place can be a bed when you're tired enough. When monsters roam the lands, you cannot be too picky..");
     this.add_interaction("Jump", "The Goddess urges you to jump in the hay. $$BestFriend$ joins you and you have a great time. It's fun, but now you're covered in it.");
@@ -244,11 +229,11 @@ class B_Hay extends ItemBattleObject {
 
 class B_Housefire extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.housefire);
+    super(x, y, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
     this.specify_sprite_size(33,33);
 
-    this.set_description("This is a housefire.");
+    this.set_description(BESTIARY.intro("interior/housefire"));
     this.add_interaction("Appreciate", "The fire keeps the room warm and cooks the food. Two blessings in one.");
     this.add_interaction("Yearn", "On the fire, a pot is slowly cooking. It's some sort of stew. Or a soup?");
     this.add_interaction("Smell", "The smell of burning wood is filling up the room. It feels... nostalgic.");
@@ -260,11 +245,11 @@ class B_Housefire extends ItemBattleObject {
 
 class B_Jar extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.jar);
+    super(x, y, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
     this.specify_sprite_size(32,35);
 
-    this.set_description("A beautiful pottery jar.");
+    this.set_description(BESTIARY.intro("interior/jar"));
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
     this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
     this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few for your personal use.", INVENTORY.increase_function(ITEM.Berry,3));
@@ -275,11 +260,11 @@ class B_Jar extends ItemBattleObject {
 
 class B_Shelf extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.shelf);
+    super(x, y, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
     this.specify_sprite_size(59,67);
 
-    this.set_description("A wooden shelf of reasonable sturdiness.");
+    this.set_description(BESTIARY.intro("interior/shelf"));
     this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hordes have put the village in.");
     this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
     this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
@@ -290,11 +275,11 @@ class B_Shelf extends ItemBattleObject {
 
 class B_Stool extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.stool);
+    super(x, y, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
     this.specify_sprite_size(25,28);
 
-    this.set_description("A simple wooden stool.");
+    this.set_description(BESTIARY.intro("interior/stool"));
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
     this.add_interaction("Climb", "You cannot resist the urge to stand on the stool. $$BestFriend$ watches you, split between amusement and concern. Surely an act of the Goddess again...");
     this.add_interaction("Sit", "Obeying your inner voice, you sit on this stool. Nothing happens. You stand back up. Thanks you, Goddess.");
@@ -304,11 +289,11 @@ class B_Stool extends ItemBattleObject {
 
 class B_Table extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.table);
+    super(x, y, "interior/table");
     this.adjust_hitbox(0,0,31,34);
     this.specify_sprite_size(31,34);
 
-    this.set_description("This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.");
+    this.set_description(BESTIARY.intro("interior/table"));
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
     this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you, especially $$BestFriend$ who keeps calling you back. This is so embarrassing. You finally get out, and swear to never acknowledge this happened.");
     this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
@@ -318,11 +303,11 @@ class B_Table extends ItemBattleObject {
 
 class B_Chest extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, OBJ_INTERIOR.chest, 1);
+    super(x, y, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
     this.specify_sprite_size(50,45);
 
-    this.set_description("A chest, doubtlessly holding the family's belongings.");
+    this.set_description(BESTIARY.intro("interior/chest"));
     this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");
     this.add_interaction("Withstand", "You know the Goddess wants you to open this chest and loot it, but you also know it would be pointless and impolite. You try to look away, and keep the thought away from your mind.");
     this.add_interaction("Marvel", "Not only does this family have possessions, they have so much that they can even put some in a chest! It's nice to see that the everlasting war spared a few people.");

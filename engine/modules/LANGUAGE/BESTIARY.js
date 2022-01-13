@@ -3,13 +3,13 @@ BESTIARY = {
 
   intro: function(battle_name) {
     var split = battle_name.split("/");
-    if (! BESTIARY.dict[split[0]]){
+    if (split.length < 2 || ! BESTIARY.dict[split[split.length-2]]){
       return undefined;
     }
-    if (! BESTIARY.dict[split[0]][split[1]]){
+    if (! BESTIARY.dict[split[split.length-2]][split[split.length - 1]]){
       return undefined;
     }
-    return BESTIARY.dict[split[0]][split[1]]["intro"];
+    return BESTIARY.dict[split[split.length-2]][split[split.length - 1]]["intro"];
   },
 
   is_boss(battle_name){
@@ -29,14 +29,15 @@ BESTIARY = {
   },
 
   introed: function(battle_name) {
+    console.log(battle_name);
     var split = battle_name.split("/");
-    if (! BESTIARY.dict[split[0]]){
+    if (split.length < 2 || ! BESTIARY.dict[split[split.length-2]]){
       return undefined;
     }
-    if (! BESTIARY.dict[split[0]][split[1]]){
+    if (! BESTIARY.dict[split[split.length-2]][split[split.length - 1]]){
       return undefined;
     }
-    return BESTIARY.dict[split[0]][split[1]]["introed"];
+    return BESTIARY.dict[split[split.length-2]][split[split.length - 1]]["introed"];
   },
 
   outroed: function(battle_name) {
@@ -573,4 +574,98 @@ BESTIARY.dict["caves"]["lizard"] = {
   "intro": "A Large Lizard Looms over the Land.",
   "introed": "A Large Lizard Loomed over the Land.",
   "outro": "It got into a deadly feud with its clone that grew out of its cut tail.",
+};
+
+
+//hack interior
+// BESTIARY.intro("interior/stool")
+BESTIARY.dict["interior"] = {};
+BESTIARY.dict["interior"]["stool"] = {
+  "intro": "A simple wooden stool.",
+  "introed": "A simple wooden stool.",
+};
+BESTIARY.dict["interior"]["statue"] = {
+  "intro": "It's a statue of the Goddess. Blessed be her eternal soul.",
+  "introed": "It's a statue of the Goddess. Blessed be her eternal soul.",
+};
+BESTIARY.dict["interior"]["bed"] = {
+  "intro": "It's a regular bed to sleep in.",
+  "introed": "It's a regular bed to sleep in.",
+};
+BESTIARY.dict["interior"]["bucket"] = {
+  "intro": "It's a wooden bucket.",
+  "introed": "It's a wooden bucket.",
+};
+BESTIARY.dict["interior"]["cabinet"] = {
+  "intro": "A wooden cabinet, probably storing clothes or tableware...",
+  "introed": "A wooden cabinet, probably storing clothes or tableware...",
+};
+BESTIARY.dict["interior"]["chair"] = {
+  "intro": "This is a chair.",
+  "introed": "This is a chair.",
+};
+BESTIARY.dict["interior"]["hay"] = {
+  "intro": "A pile of hay.",
+  "introed": "A pile of hay.",
+};
+BESTIARY.dict["interior"]["housefire"] = {
+  "intro": "This is a housefire.",
+  "introed": "This is a housefire.",
+};
+BESTIARY.dict["interior"]["jar"] = {
+  "intro": "A beautiful pottery jar.",
+  "introed": "A beautiful pottery jar.",
+};
+BESTIARY.dict["interior"]["shelf"] = {
+  "intro": "A wooden shelf of reasonable sturdiness.",
+  "introed": "A wooden shelf of reasonable sturdiness.",
+};
+BESTIARY.dict["interior"]["table"] = {
+  "intro": "This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.",
+  "introed": "This is a textbook example of a wooden table. Four sturdy wooden legs, holding planks nailed together. A table.",
+};
+BESTIARY.dict["interior"]["chest"] = {
+  "intro": "A chest, doubtlessly holding the family's belongings.",
+  "introed": "A chest, doubtlessly holding the family's belongings.",
+};
+
+//this.set_description(BESTIARY.intro("interior/stool"));
+//hack exterior
+BESTIARY.dict["exterior"] = {};
+BESTIARY.dict["exterior"]["pebbles"] = {
+  "intro": "There are pebbles on the ground.",
+  "introed": "There were pebbles on the ground.",
+};
+BESTIARY.dict["exterior"]["plant"] = {
+  "intro": "You find yourself near a little green plant.",
+  "introed": "You found yourself near a little green plant.",
+};
+BESTIARY.dict["exterior"]["seashell"] = {
+  "intro": "There's a seashell on your way.",
+  "introed": "There was a seashell on your way.",
+};
+BESTIARY.dict["exterior"]["skeleton"] = {
+  "intro": "You discover what appears to be a human skeleton.",
+  "introed": "You discovered what appeared to be a human skeleton.",
+};
+
+//hack villagers
+BESTIARY.dict["villagers"] = {};
+BESTIARY.dict["villagers"]["indulgence"] = {
+  "introed": "You met strangers who drown their worries in debauchery.",
+};
+BESTIARY.dict["villagers"]["acceptance"] = {
+  "introed": "You met strangers who resigned to their fate.",
+};
+BESTIARY.dict["villagers"]["mourning"] = {
+  "introed": "You met strangers who had lost everything.",
+};
+BESTIARY.dict["villagers"]["denial"] = {
+  "introed": "You met strangers who took comfort in pretense.",
+};
+BESTIARY.dict["villagers"]["fear"] = {
+  "introed": "You met strangers who blamed others for their situation.",
+};
+BESTIARY.dict["villagers"]["hope"] = {
+  "introed": "You met strangers with blind faith in a brighter future.",
 };

@@ -1,11 +1,4 @@
 
-const OBJ_EXTERIOR = {
-  pebbles: "exterior/pebbles",
-  plant: "exterior/plant",
-  seashell: "exterior/seashell",
-  skeleton: "exterior/skeleton",
-}
-
 class S_Tree extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
@@ -442,9 +435,9 @@ class S_RubbleLarge extends SimpleObject {
 
 class EB_Pebbles extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, OBJ_INTERIOR.pebbles, color, size);
+    super(x, y, "exterior/pebbles", color, size);
 
-    this.set_description("There are pebbles on the ground.");
+    this.set_description(BESTIARY.intro("exterior/pebbles"));
     this.add_interaction("Play", "You flick around a few spherical rocks with $$BestFriend$. The one who pushes the other's pebbles outside of the game area wins. Of course, you win!");
     this.add_interaction("Play", "You flick around a few spherical rocks with $$BestFriend$. The one who pushes the other's pebbles outside of the game area wins. Of course, you lose!");
     this.add_interaction("Eat", "What? Why would you do that? The Goddess formally forbids you from doing something so stupid! There are limits to exploration.");
@@ -458,9 +451,9 @@ class EB_Pebbles extends EventBattleObject {
 
 class EB_Plants extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, OBJ_INTERIOR.plant, color, size);
+    super(x, y, "exterior/plant", color, size);
 
-    this.set_description("You find yourself near a little green plant.");
+    this.set_description(BESTIARY.intro("exterior/plant"));
     this.add_interaction("Pluck", "You harvest a leaf from the small plant. It's very green, but serves no purpose whatsoever. Did you imagine it would trigger something? Why did you do that?");
     this.add_interaction("Trample", "You jump on the plant and trample it to death, under the inquisitive gaze of $$BestFriend$. You explain that you really couldn't help yourself.");
     this.add_interaction("Taste", "Trusting your instinct, you shove a bit of the leaves in your mouth, before immediately spitting it out. It may not have been poisonous, but it tasted extremely bitter.");
@@ -473,9 +466,9 @@ class EB_Plants extends EventBattleObject {
 
 class EB_Seashell extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, OBJ_INTERIOR.seashell, color, size);
+    super(x, y, "exterior/seashell", color, size);
 
-    this.set_description("There's a seashell on your way.");
+    this.set_description(BESTIARY.intro("exterior/seashell"));
     this.add_interaction("Listen", "You bring the seashell to your ear. It is said that you can hear the sea, but since you're already underwater, it changes nothing for you.");
     this.add_interaction("Grind", "You crush the shell with your boot. Soon, it's nothing but a thin powder, barely distinguishable from the sand around. $$BestFriend$ seems disappointed.");
     this.add_interaction("Ornate", "You take the shell and quickly fashion a little necklace from it, that you give to $$BestFriend$. The presents is much appreciated, and the new ornament makes the smile of your best friend smile even brighter.");
@@ -488,9 +481,9 @@ class EB_Seashell extends EventBattleObject {
 // NO BEST FRIEND!
 class EB_Skeleton extends EventBattleObject {
   constructor(x, y, color, size){
-    super(x, y, OBJ_INTERIOR.skeleton, color, size);
+    super(x, y, "exterior/skeleton", color, size);
 
-    this.set_description("You discover what appears to be a human skeleton.");
+    this.set_description(BESTIARY.intro("exterior/skeleton"));
     this.add_interaction("Plunder", "You look around for any valuables that might be up for the taking after the demise of their previous owner. Sadly, there doesn't seem to be anything eager to be adopted by your benevolent care.");
     this.add_interaction("Empathize", "You try to imagine the life of whoever these bones used to be. They had a family, friends, desires, hopes... But now this pile of bones is all there is to show for it. It's tragic, but it's the fate that awaits you too, some day.");
     this.add_interaction("Investigate", "You look closely at the bones to try and figure out what you can about the person or the circumstances of their death. Sadly, you're just a child, and not a wise scholar well versed in medicinal studies, so you don't learn anything from this, but it was certainly worth a shot!");

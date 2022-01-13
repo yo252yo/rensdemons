@@ -2,7 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 Icons for villagers types?
-move descriptions from Interior, Dungeon and write custom ones for Villagers to BESTIARY?
 
 
 

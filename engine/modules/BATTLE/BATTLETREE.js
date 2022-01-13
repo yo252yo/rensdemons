@@ -300,12 +300,11 @@ const BATTLETREE = {
         return Object.keys(CITIES).length;
       }
       if(prefix.startsWith(BATTLEOBJECTSMANAGER.prefix + "interior")){
-        return Object.keys(OBJ_INTERIOR).length;
+        return BESTIARY.size("interior");
       }
       if(prefix.startsWith(BATTLEOBJECTSMANAGER.prefix + "exterior")){
-        return Object.keys(OBJ_EXTERIOR).length;
+        return BESTIARY.size("exterior");
       }
-
 
       return BESTIARY.size(prefix);
     },
