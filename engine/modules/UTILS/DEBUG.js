@@ -108,7 +108,7 @@ const DEBUG = {
     BUILDER.activate.alt_hallways();
     BUILDER.activate.shift_brush();
 
-    DEBUG.log_mouse_positions();
+    //DEBUG.log_mouse_positions();
     //DEBUG.draw_grid();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
