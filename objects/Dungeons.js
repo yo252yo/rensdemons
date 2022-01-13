@@ -560,6 +560,77 @@ class S_CristalTiny extends SimpleObject {
   }
 }
 
+class S_RockLump extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "cave/rocklump");
+    this.adjust_hitbox(0,0,74,50);
+    this.specify_sprite_size(74,114);
+    this.default_text = this.text_interaction([
+      "This pile of rock comes from a cave-in... Best be careful.",
+      "Part of the gallery collapsed in this stack of debris. You hope nobody got trapped under.",
+      "A tiny tunnel dug by some animal opens above the heap of debris that resulted from its construction.",
+    ], seed);
+
+  }
+}
+
+class S_CristalFragment extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "cave/cristalfragment");
+    this.adjust_hitbox(0,0,27,20);
+    this.specify_sprite_size(27,29);
+    this.default_text = this.text_interaction([
+      "This pure fragment of crystal seems so sharp that you could cut yourself touching it the wrong way.",
+      "The thin fragments of this crystal refracts the light of your torch in a wonderful rainbow.",
+      "The thin branches of this crystal resonate with a clear ringing when you carress the surface with your finger.",
+    ], seed);
+  }
+}
+
+class S_Caveplant extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        super(x, y, "cave/caveplant");
+        this.adjust_hitbox(0,0,89,20);
+        this.specify_sprite_size(89,53);
+        break;
+      case 1:
+        super(x, y, "cave/caveplant2");
+        this.adjust_hitbox(0,0,56,18);
+        this.specify_sprite_size(56,38);
+        break;
+    }
+    this.default_text = this.text_interaction([
+      "This plant seems to favor the darkness of caves. It's almost translucent.",
+      "The flowers of this vegetal look like bells. You push on one, and it produces a high pitch ringing.",
+      "The flowers drip a mysterious yellow liquid every few seconds. Judging by the holes in the ground below them, it must be acidic.",
+      "The main stem carrying pale flowers bends under their collective weight.",
+      "You shake the stem of the plant, and step back in disgust as a yellowish goo splurges out of the flowers onto the ground.",
+      "It seems that this plant doesnt need sunlight, and thrives in the humid darkness of the cave.",
+    ], seed);
+  }
+}
+
+class S_Cavesprouts extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, "cave/cavesprouts");
+    this.adjust_hitbox(0,0,40,35);
+    this.specify_sprite_size(40,44);
+    this.default_text = this.text_interaction([
+      "Little plants sprout up from the ground. No doubt before long they'll be as tall as the other ones here.",
+      "Those little bulbs emit a strange fresh smell.",
+      "You stumble upon a sprout on the ground that you didn't notice and fall head first on the floor. Your feet are covered with translucent slime.",
+    ], seed);
+  }
+}
+
+
+
+
+
+
 
 
 class S_Hole extends SimpleObject {

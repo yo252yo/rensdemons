@@ -94,3 +94,11 @@ class M_TraitorFisher extends MovingObject {
     this.adjust_hitbox(5, 0, 20, 5);
   }
 }
+
+class M_GeniusProdigy extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/GeniusProdigy.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+}
