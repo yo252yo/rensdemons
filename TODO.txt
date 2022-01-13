@@ -2,10 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
-force first replay by making it rely on ability not flag
-
-
-
 
 
 ---------------------------------------- SLIMES DUNGEON
@@ -21,10 +17,7 @@ The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulati
 so youre quantum immortal!!
 challenge to find his favorite food etc
 more fake choices that i know are fake ??
-how do you know my name???
-
-
-
+how do you know my name??? can you guess my name? and whatever you guess its right!
 
 
 
@@ -56,13 +49,14 @@ Simulation cycle never-ending etc system goddess e c
 
 
 
-
-
 ---------------------------------------- BACKSIDE:
-- walkthrough
 - visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 - make the buildings/sprites/etc... say NOT READY or smhting
+
+
+Explain that the console is like magic words that change the fabric of the universe
+Link to rend demo
 
 
 
@@ -184,12 +178,10 @@ more fake choices that i know are fake
 - reference to the fact that there's always a crafting system
 
 
-
 ---------------------------------------- DO A FILLER CHECK:
 - ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN
 - spawn chara on exit bands, its safer
 See 051_pandemonium_room and 012_trees
-
 
 ---------------------------------------- TODO
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
@@ -198,7 +190,6 @@ See 051_pandemonium_room and 012_trees
 - change color scheme doesnt change fog or map bg
 - artifact have special sound effects
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
-- make experience menu multi tiered
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
 - check save/disk size
@@ -213,24 +204,23 @@ See 051_pandemonium_room and 012_trees
 - The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
-- https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
 - the goddess SAVED your soul (save/save) as confirmation when you save
-- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 - cache ressources
-- optimize size on disk
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
-
 
 ---------------------------------------- SEND OUT FOR BETA
 
----------------------------------------- POLISHING
+---------------------------------------- POLISHING/PRODUCTIONIZE
+- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
+- optimize size on disk
+- walkthrough
 - more event text in zones
 - more text for existing objects?
-
-
----------------------------------------- REREAD/FLESH OUT????
-- more interactions with real world like books
-- man.md about forking
-- mirror conv (esp more first person actions?? "you" direct)
+- mb more interactions with real world like books
+- reread/flesh out man.md about forking
+- reread/flesh out mirror conv (esp more first person actions?? "you" direct)
+- https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
+- steam achievements
+- trailer/arts

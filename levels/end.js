@@ -112,7 +112,7 @@ var sequence = [];
 if(end == "A"){
   STATS.record.ending(ENDINGS.War);
   sequence = [
-    `Congratulations! You have reached the ${ENDINGS.War}.`,
+    `Congratulations! You have reached the ${ENDINGS.War}. But the story is not over.`,
     "With $$demon_lord$ dead, the demon army retreated, and the world of $$world_name$ was at peace at long last. $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. The capital was rebuilt, grander than ever, and named $$BestFriend$ in honor of your fallen comrade.",
     "Faith remained strong in the kingdom. Demons never came back. This ushered a long era of prosperity where humans were able to develop to new heights.",
   ];
@@ -120,7 +120,7 @@ if(end == "A"){
 if(end == "B"){
   STATS.record.ending(ENDINGS.God);
   sequence = [
-    `Congratulations! You have reached the ${ENDINGS.God}.`,
+    `Congratulations! You have reached the ${ENDINGS.God}. But the story is not over.`,
     `Freed from the dominion of the Goddess, $$demon_lord$ and his armies withdrew from $$world_name$. The divine commands were the only reason for their thirst for blood. $$Ren$ had no problem negociating peace between demons and humans.`,
     `Without pillage of their lands, humans once again knew peace. For putting an end to the war, $$Ren$ was heralded as a hero, and named ruler as soon as age allowed it. But the deicide weighed heavily on the Promised Child's conscience.`,
     `To prevent chaos in the kingdom and for self-protection, $$Ren$ never disclosed to anyone what had happened in the other world. The hero had nobody to share the perpetual interrogations sparked by seeing the mysterious truth of so-called "heaven".`,
@@ -133,14 +133,14 @@ if(end == "B"){
 if(end == "C"){
   STATS.record.ending(ENDINGS.Suffering);
   sequence = [
-    `Congratulations! You have reached the ${ENDINGS.Suffering}.`,
+    `Congratulations! You have reached the ${ENDINGS.Suffering}. But the story is not over.`,
     `Suffering has been eliminated to the extent of the power of the Goddess, but even Her divine power has limits. Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
   ].concat(new_world);
 }
 if(end == "D"){
   STATS.record.ending(ENDINGS.World);
   sequence = [
-    `Congratulations! You have reached the ${ENDINGS.World}.`,
+    `Congratulations! You have reached the ${ENDINGS.World}. But the story is not over.`,
     `Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
   ].concat(new_world);
 }
@@ -169,7 +169,7 @@ if(end == "E"){
     `...`,
     `> Eliminating the Goddess, and the world, so that it does not spawn any more suffering.`,
 
-    `Congratulations! You have reached the ${ENDINGS.Line}.`,
+    `Congratulations! You have reached the ${ENDINGS.Line}. But the story is not over.`,
     `Suffering has been eliminated by your command, but even this has limits. Eventually, in the middle of the infinite ocean of light, a world starts to form.`,
   ].concat(new_world);
 }

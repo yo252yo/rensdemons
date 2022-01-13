@@ -64,10 +64,13 @@ const ABILITIES = {
       ABILITIES._abilities = new FluidMap(save);
     },
 
-    make_new: function() {
+    make_new: function(continu) {
       ABILITIES._abilities = new FluidMap();
       ABILITIES._abilities.set([ABILITY.Escape], true);
       ABILITIES._abilities.set([ABILITY.CallHelp], true);
+      if(continu) {
+        ABILITIES.unlock("_new_game_plus");
+      }
     },
   },
 

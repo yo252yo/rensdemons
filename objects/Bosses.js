@@ -103,6 +103,7 @@ class S_Maou extends SimpleObject {
       TextBannerSequence.make([
         `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
         `As he draws his last breath, you cannot help but be intrigued by his facial expression. He looks... relieved?`,
+        `Something is not quite right...`,
       ], function(){
         CURRENTLEVEL.setup("end@A");
       });
@@ -112,7 +113,7 @@ class S_Maou extends SimpleObject {
         var options = [
           {"text": "Kill " + DICTIONARY.get(["demon_lord"]), "effect": winn},
         ];
-        if (STATS.ending(ENDINGS.War)){
+        if (ABILITIES.has_ability("_new_game_plus")){
           options.push({"text": "Spare " + DICTIONARY.get(["demon_lord"]), "effect": next});
         }
         var choice = function() {
