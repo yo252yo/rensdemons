@@ -650,16 +650,16 @@ BESTIARY.dict["exterior"]["skeleton"] = {
 //hack villagers
 BESTIARY.dict["villagers"] = {};
 BESTIARY.dict["villagers"]["indulgence"] = {
-  "introed": "You met strangers who drown their worries in debauchery.",
+  "introed": "You met strangers who drown their despair in debauchery.",
 };
 BESTIARY.dict["villagers"]["acceptance"] = {
-  "introed": "You met strangers who resigned to their fate.",
+  "introed": "You met strangers who resign to their demise.",
 };
 BESTIARY.dict["villagers"]["mourning"] = {
-  "introed": "You met strangers who had lost everything.",
+  "introed": "You met strangers who have lost everything.",
 };
 BESTIARY.dict["villagers"]["denial"] = {
-  "introed": "You met strangers who took comfort in pretense.",
+  "introed": "You met strangers who take comfort in pretense.",
 };
 BESTIARY.dict["villagers"]["fear"] = {
   "introed": "You met strangers who blamed others for their misfortune.",
