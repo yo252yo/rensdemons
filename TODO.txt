@@ -2,7 +2,8 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 ------- events (loot and text)
-------- story progress
+------- start function text
+------- hint mechanism
 
 
 
@@ -29,25 +30,26 @@ An empty show, an actor's way
 to blur the truth and mistify
 
 
+
+6. fallacy
+When you look at what suits your views
+When you idealize the past
+When you follow that which feels true
+Rational inquiries bypassed
+
+
+5. ap pe ar an  //ces
+This is only what you can see
+Why should it dictate how you care
+But reason past superficy
+Is more than most people can bear
+
+
 4. n o r m //al
 This is the frame that's placed on you
 The reference that we all share
 The fence enclosing your world view
 As invisible as the air
-
-
-5. ap pe ar an  //ces
-This is only what you can see
-Why should it decide how you care
-But thinking past this fallacy
-Is more than most people can bear
-
-
-6. bias
-When you look at what suits your views
-When you idealize the past
-When you follow that which feels true
-Rational inquiries bypassed
 
 
 

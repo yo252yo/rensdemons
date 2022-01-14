@@ -297,19 +297,25 @@ if(slimepart == 2) {
 // ===================
 //hack D. UNIQUE ELEMENTS
 // ===================
+
+
+
+
+
+
 if(slimepart == 2) {
   new S_SavePoint(3045, 1895);
   new S_SavePoint(1975, 1675);
 
-  new SBattle(5775, 1565, '#doorD', 125);
-  new SBattle(2325, 1140, '#doorC', 125);
+  new S_SlimeDoor(5775, 1565, 'fallacy'); //D
+  new S_SlimeDoor(2325, 1140, 'spectacle'); //C
 }  else if(slimepart == 1) {
   new S_SavePoint(1875, 3350);
   new S_SavePoint(2200, 5350);
   new S_SavePoint(5750, 3425);
 
-  new SBattle(2375, 3350, '#doorB', 125);
-  new SBattle(3750, 3875, '#doorA', 125);
+  new S_SlimeDoor(2375, 3350, 'play'); //B
+  new S_SlimeDoor(3750, 3875, 'rules'); //A
 
   new M_GeniusProdigy(3875, 3925);
 } else if (slimepart == 3){
@@ -317,8 +323,8 @@ if(slimepart == 2) {
   new S_SavePoint(5875, 2750);
   new S_SavePoint(5700, 4050);
 
-  new SBattle(6625, 2600, '#doorE', 125);
-  new SBattle(5650, 3775, '#doorF', 125);
+  new S_SlimeDoor(6625, 2600, 'appearances'); //E
+  new S_SlimeDoor(5650, 3775, 'normal'); //F
 
   new SBattle(3525, 4950, '#artifact');
   new SBattle(3512, 4850, 'caves/lizard');

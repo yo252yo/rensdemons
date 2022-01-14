@@ -197,7 +197,9 @@ new Class("Objects/LevelObject");
         IMPORTS.classes['Objects/BattleObject'].child_library("Buildings");
         IMPORTS.classes['Objects/BattleObject'].child_library("Bosses");
         IMPORTS.classes['Objects/BattleObject'].child_library("Dungeons");
+        IMPORTS.classes['Objects/BattleObject'].child_library("Specials");
         IMPORTS.classes['Objects/BattleObject'].child_library("Interior");
+        IMPORTS.classes['Objects/BattleObject'].child_library("EventBattles");
         IMPORTS.classes['Objects/BattleObject'].child_library("Map");
         IMPORTS.classes['Objects/BattleObject'].child_library("Villagers");
 
