@@ -1,6 +1,11 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+
+EB_SKELETON is not indexed
+
+
+
 ------- events (loot and text)
 ------- start function text
 ------- hint mechanism
