@@ -166,9 +166,10 @@ const DODGE = {
     },
 
     resize_existing: function() {
-      DODGE.initial_sprites = CURRENTLEVEL.level_objects.slice();
-      for (var l in CURRENTLEVEL.level_objects){
-        var object = CURRENTLEVEL.level_objects[l];
+      var objects = CURRENTLEVEL.objects.get_all_objects();
+      DODGE.initial_sprites = objects.slice();
+      for (var l in objects){
+        var object = objects[l];
         DODGE.saved_dimensions[object.hash()] = [object.visual_element.width, object.visual_element.height];
         object.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 150);
         object.visual_element.adjust_dimensions(50,50);

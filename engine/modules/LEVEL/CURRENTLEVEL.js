@@ -214,8 +214,9 @@ const CURRENTLEVEL = {
     },
 
     redraw: function() {
-      for(var i in CURRENTLEVEL.level_objects){
-        var el = CURRENTLEVEL.level_objects[i];
+      var objects = CURRENTLEVEL.objects.get_all_objects();
+      for(var i in objects){
+        var el = objects[i];
         if(el && el.get_visual && el.get_visual().draw){
           el.get_visual().draw();
         }
@@ -224,7 +225,7 @@ const CURRENTLEVEL = {
     },
 
     clear: function() {
-      for(var obj of CURRENTLEVEL.level_objects){
+      for(var obj of CURRENTLEVEL.objects.get_all_objects()){
         if(obj && obj.record_death){
           obj.record_death();
         }
@@ -321,9 +322,14 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_objects.push(object);
     },
 
+    get_all_objects: function(){
+      return CURRENTLEVEL.level_objects;
+    },
+
     destroy_object: function(object) {
-      for (var i in CURRENTLEVEL.level_objects){
-        var candidate = CURRENTLEVEL.level_objects[i];
+      var objects = CURRENTLEVEL.level_objects;
+      for (var i in objects){
+        var candidate = objects[i];
         if (candidate && candidate.hash() == object.hash()){ // destroy homonyms
           candidate.finish_destroy();
           CURRENTLEVEL.level_objects[i] = null;
@@ -342,7 +348,7 @@ const CURRENTLEVEL = {
     },
 
     cleanup_dead: function(){
-      for (var o of CURRENTLEVEL.level_objects){
+      for (var o of CURRENTLEVEL.objects.get_all_objects()){
         if (o && o.hash && o.hash() && CURRENTLEVEL.destroyed_objects.includes(o.hash())){
           CURRENTLEVEL.objects.destroy_object(o);
         }

@@ -34,9 +34,10 @@ const DEBUG = {
   },
 
   draw_hitboxes: function(even_floors) {
-    for(var i in CURRENTLEVEL.level_objects) {
-      if (CURRENTLEVEL.level_objects[i] && CURRENTLEVEL.level_objects[i].draw_hitbox) {
-        CURRENTLEVEL.level_objects[i].draw_hitbox(even_floors);
+    var objects = CURRENTLEVEL.objects.get_all_objects();
+    for(var i in objects) {
+      if (objects[i] && objects[i].draw_hitbox) {
+        objects[i].draw_hitbox(even_floors);
       }
     }
   },
