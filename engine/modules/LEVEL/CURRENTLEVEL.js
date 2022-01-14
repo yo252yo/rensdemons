@@ -330,8 +330,9 @@ const CURRENTLEVEL = {
       var w = object.w || object.h_w || object.visual_element.width;
       var h = object.h || object.h_h || object.visual_element.height;
       if(!x || !y || !w || !h){
-        CONSOLE.error("Indexing empty object : " + object);
+        CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash());
       }
+
 
       var start = CURRENTLEVEL.objects._square_index(x,y-h);
       var end = CURRENTLEVEL.objects._square_index(x+w,y);
