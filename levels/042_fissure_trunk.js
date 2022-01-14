@@ -119,7 +119,7 @@ events.set_zone(1025,2500,700,975);
 
 events.battle('caves/bloodsucker', 0.1);
 events.battle('caves/bat');
-events.battle('caves/mole', 0.3);
+events.battle('caves/mole', 0.2);
 events.battle('caves/scorpion');
 events.battle('caves/crawler', 0.5);
 

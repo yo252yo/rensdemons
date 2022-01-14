@@ -313,7 +313,7 @@ if(slimepart == 2) {
   new SBattle(5650, 3775, '#doorF', 125);
 
   new SBattle(3525, 4950, '#artifact');
-  new SBattle(3512, 4850, '#boss/lizard');
+  new SBattle(3512, 4850, 'caves/lizard');
 }
 
 
@@ -359,6 +359,12 @@ for(var f of rooms) {
 var events = new EventFiller(bigDecorFiller, 5, 75);
 
 events.battle('caves/bloodsucker', 0.1);
+events.battle('caves/mole', 0.5);
+events.battle('caves/crawler', 0.2);
+events.battle('caves/slime', 1 + slimepart);
+events.battle('caves/bat', 1);
+
+
 events.set_tries(1, 1 + slimepart);
 for(var f of hallways) {
   events.set_zone(f.x,f.y+5,f.w,f.h);
