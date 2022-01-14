@@ -1,39 +1,9 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+------- events (loot and text)
+------- story progress
 
-
-
-/*
-
-bat
-blooduscker  > rare
-slime
-
-mole > rare
-scorpion
-crawler > very rare
-
-
-lizard boss hammer
-*/
-
-
-
----------------------------------------- SLIMES DUNGEON
-heaven ?
-
-GeniusProdigy: "GeniusProdigy", //child prodigy
-// extra cave, doing an expedition?
->> the truth about the power of ren (how he goes back in time to alternate realities)
->> read my mind
-studies you like an experiment
-the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
-The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
-so youre quantum immortal!!
-challenge to find his favorite food etc
-more fake choices that i know are fake ??
-how do you know my name??? can you guess my name? and whatever you guess its right!
 
 
 
@@ -118,12 +88,17 @@ Simulation cycle never-ending etc system goddess e c
 
 
 
-
-
-
-
-
-
+------- GeniusProdigy
+// extra cave, doing an expedition?
+>> the truth about the power of ren (how he goes back in time to alternate realities)
+>> read my mind
+studies you like an experiment
+the only real power of the hero is respawn so they win by brute force in long run, cf yuusha yoshihiko
+The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
+so youre quantum immortal!!
+challenge to find his favorite food etc
+more fake choices that i know are fake ??
+how do you know my name??? can you guess my name? and whatever you guess its right!
 
 
 
