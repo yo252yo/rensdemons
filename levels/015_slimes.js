@@ -137,6 +137,136 @@ if(slimepart == 2){
 
   // Entrance
   rooms.push(new S_MudFloor(2075,5500,300,300));
+} else if (slimepart == 3){
+
+  // zone 1
+  hallways.push(new S_RockFloor(6050,1475,25,375));
+  hallways.push(new S_RockFloor(6050,1125,175,25));
+  hallways.push(new S_RockFloor(6225,1500,50,225));
+  hallways.push(new S_RockFloor(6150,1300,300,25));
+  hallways.push(new S_RockFloor(6300,1525,475,25));
+  hallways.push(new S_RockFloor(6425,1400,25,125));
+  hallways.push(new S_RockFloor(6425,1400,275,25));
+  hallways.push(new S_RockFloor(6675,1750,25,375));
+  hallways.push(new S_RockFloor(6150,1825,25,300));
+
+  hallways.push(new S_RockFloor(6425,2575,275,75));
+
+  hallways.push(new S_RockFloor(5900,1750,675,25));
+  hallways.push(new S_RockFloor(6850,1575,300,25));
+  hallways.push(new S_RockFloor(7125,2300,25,750));
+  hallways.push(new S_RockFloor(6925,2300,225,25));
+  hallways.push(new S_RockFloor(6925,2300,25,375));
+  hallways.push(new S_RockFloor(6500,1950,450,25));
+  hallways.push(new S_RockFloor(6675,1750,375,25));
+  hallways.push(new S_RockFloor(7025,2125,25,400));
+  hallways.push(new S_RockFloor(5975,2175,25,450));
+  hallways.push(new S_RockFloor(5975,2175,400,25));
+  hallways.push(new S_RockFloor(6350,2175,25,200));
+
+
+  hallways.push(new S_RockFloor(7125,1825,175,25));
+  hallways.push(new S_RockFloor(7275,2750,25,950));
+  hallways.push(new S_RockFloor(7025,2575,550,25));
+  hallways.push(new S_RockFloor(7550,3000,25,450));
+  hallways.push(new S_RockFloor(7375,3000,200,25));
+  hallways.push(new S_RockFloor(7375,3000,25,150));
+  hallways.push(new S_RockFloor(7275,2875,125,25));
+  hallways.push(new S_RockFloor(6875,2650,250,25));
+  hallways.push(new S_RockFloor(7100,2750,25,125));
+  hallways.push(new S_RockFloor(6725,3375,25,750));
+  hallways.push(new S_RockFloor(6475,2250,25,275));
+  hallways.push(new S_RockFloor(6475,2250,400,25));
+  hallways.push(new S_RockFloor(6800,2475,25,450));
+  hallways.push(new S_RockFloor(6650,2150,175,25));
+  hallways.push(new S_RockFloor(6650,2250,25,175));
+  hallways.push(new S_RockFloor(6200,3525,475,25));
+  hallways.push(new S_RockFloor(6675,3875,25,375));
+  hallways.push(new S_RockFloor(6675,3875,325,25));
+  hallways.push(new S_RockFloor(6825,3500,675,25));
+  hallways.push(new S_RockFloor(7025,3500,25,375));
+  hallways.push(new S_RockFloor(7150,3625,25,350));
+  hallways.push(new S_RockFloor(7225,3500,25,525));
+  hallways.push(new S_RockFloor(7350,3575,25,350));
+  hallways.push(new S_RockFloor(7350,3250,225,25));
+
+  hallways.push(new S_RockFloor(5675,2525,775,25));
+  hallways.push(new S_RockFloor(5675,2725,25,575));
+  hallways.push(new S_RockFloor(6475,2925,25,375));
+  hallways.push(new S_RockFloor(6150,2925,350,25));
+  hallways.push(new S_RockFloor(6400,3250,25,350));
+  hallways.push(new S_RockFloor(6300,3250,125,25));
+  hallways.push(new S_RockFloor(6250,3175,25,200));
+  hallways.push(new S_RockFloor(6300,2925,25,225));
+  hallways.push(new S_RockFloor(6050,3175,150,25));
+  hallways.push(new S_RockFloor(6050,3175,25,500));
+  hallways.push(new S_RockFloor(5925,2700,150,25));
+  hallways.push(new S_RockFloor(5450,2800,375,25));
+  hallways.push(new S_RockFloor(5450,2800,25,300));
+  hallways.push(new S_RockFloor(5175,3675,25,500));
+  hallways.push(new S_RockFloor(5175,3675,275,25));
+  hallways.push(new S_RockFloor(5425,3675,25,250));
+  hallways.push(new S_RockFloor(5425,3450,625,25));
+  hallways.push(new S_RockFloor(5725,3550,25,125));
+  hallways.push(new S_RockFloor(5325,3375,875,25));
+  hallways.push(new S_RockFloor(5850,3100,225,25));
+  hallways.push(new S_RockFloor(5850,3225,25,325));
+  hallways.push(new S_RockFloor(5650,3225,225,25));
+  hallways.push(new S_RockFloor(5650,3225,25,325));
+  hallways.push(new S_RockFloor(5650,2925,225,25));
+  hallways.push(new S_RockFloor(5475,3000,200,25));
+  hallways.push(new S_RockFloor(5475,3150,25,175));
+  hallways.push(new S_RockFloor(5275,3150,225,25));
+
+
+  hallways.push(new S_RockFloor(5350,2400,25,200));
+  hallways.push(new S_RockFloor(4950,2225,625,25));
+  hallways.push(new S_RockFloor(5350,2975,25,475));
+  hallways.push(new S_RockFloor(4925,2450,375,25));
+  hallways.push(new S_RockFloor(4925,3000,25,575));
+  hallways.push(new S_RockFloor(4775,2825,175,25));
+  hallways.push(new S_RockFloor(4625,3150,25,275));
+  hallways.push(new S_RockFloor(4625,3150,250,25));
+  hallways.push(new S_RockFloor(4850,3300,25,175));
+  hallways.push(new S_RockFloor(4850,3300,225,25));
+  hallways.push(new S_RockFloor(5050,3300,25,475));
+  hallways.push(new S_RockFloor(5050,2850,175,25));
+  hallways.push(new S_RockFloor(5200,3050,25,225));
+  hallways.push(new S_RockFloor(4925,2675,325,25));
+  hallways.push(new S_RockFloor(4575,2550,450,25));
+  hallways.push(new S_RockFloor(4575,2750,25,225));
+  hallways.push(new S_RockFloor(5350,2300,350,25));
+
+
+
+
+  // NO EVENT ON THIS BATCH, ending
+  new S_RockFloor(5675,4100,75,375);
+  new S_RockFloor(5675,4100,650,25);
+  new S_RockFloor(6300,4700,25,625);
+  new S_RockFloor(4450,4700,1875,25);
+  new S_RockFloor(4450,4700,25,400);
+  new S_RockFloor(3525,4325,950,25);
+  new S_RockFloor(3525,4850,25,550);
+  new S_RockFloor(3475,5000,150,175);
+
+
+  // Entrance
+  rooms.push(new S_RockFloor(5925,1550,400,100));
+
+  // rooms
+  rooms.push(new S_RockFloor(6725,1600,150,175));
+  rooms.push(new S_RockFloor(6350,2000,175,175));
+  rooms.push(new S_RockFloor(5800,2800,150,150));
+  rooms.push(new S_RockFloor(6675,2650,225,200));
+  rooms.push(new S_RockFloor(6175,3425,150,275));
+  rooms.push(new S_RockFloor(5125,3200,175,175));
+  rooms.push(new S_RockFloor(5625,3750,200,225));
+
+  rooms.push(new S_RockFloor(6975,3000,325,175));
+  rooms.push(new S_RockFloor(5275,2525,200,150));
+  rooms.push(new S_RockFloor(6650,3525,200,175));
+  rooms.push(new S_RockFloor(4550,2900,250,175));
 }
 
 
@@ -150,8 +280,10 @@ if(slimepart == 2) {
 }  else if(slimepart == 1) {
   exit = new S_ExitFloor(2100,5525,250,50, '010_world_map');
   new S_ExitFloor(2525,3350,50,125, '015_slimes@2');
+} else if(slimepart == 3) {
+  exit = new S_ExitFloor(5925,1550,50,100, '015_slimes@2');
+  new S_ExitFloor(3525,5025,50,50, '010_world_map');
 }
-
 
 
 // ===================
@@ -159,6 +291,7 @@ if(slimepart == 2) {
 // ===================
 if(slimepart == 2) {
   new S_SavePoint(3045, 1895);
+  new S_SavePoint(1975, 1675);
 
   new SBattle(5775, 1565, '#doorD', 125);
   new SBattle(2325, 1140, '#doorC', 125);
@@ -171,6 +304,16 @@ if(slimepart == 2) {
   new SBattle(3750, 3875, '#doorA', 125);
 
   new M_GeniusProdigy(3875, 3925);
+} else if (slimepart == 3){
+  new S_SavePoint(6450, 1925);
+  new S_SavePoint(5875, 2750);
+  new S_SavePoint(5700, 4050);
+
+  new SBattle(6625, 2600, '#doorE', 125);
+  new SBattle(5650, 3775, '#doorF', 125);
+
+  new SBattle(3525, 4950, '#artifact');
+  new SBattle(3512, 4850, '#boss/lizard');
 }
 
 
@@ -179,8 +322,8 @@ if(slimepart == 2) {
 // ===================
 
 var filler = new Filler(gen.get());
-var bigDecorFiller = new MultiFiller(filler, 100, 100);
-var smallDecorFiller = new MultiFiller(filler, 50, 50);
+var bigDecorFiller = new MultiFiller(filler, 80, 80);
+var smallDecorFiller = new MultiFiller(filler, 40, 40);
 
 var rocks = 1/slimepart;
 var cristals = 1*slimepart;
@@ -199,7 +342,7 @@ smallDecorFiller.add_default_constructor("S_Cavesprouts", 0.7 + 0.5 * cristals);
 
 
 for(var f of rooms) {
-  var base = Math.max(1, Math.round(5 * (f.w * f.h) / 200000));
+  var base = Math.max(2, Math.round(5 * (f.w * f.h) / 200000));
   bigDecorFiller.set_tries(base, 1.5 * base);
   smallDecorFiller.set_tries(base, 1.5 * base);
   bigDecorFiller.set_zone(f.x-50,f.y+50,f.w+100,f.h+100);
@@ -221,8 +364,8 @@ for(var f of hallways) {
   events.set_zone(f.x,f.y+5,f.w,f.h);
   events.fill_floor_by_retry();
 }
+events.set_tries(2, 2 + slimepart * 2);
 for(var f of rooms) {
-  events.set_tries(3, 3 + slimepart * 2);
   events.set_zone_from_floor(f);
   events.fill_floor_by_retry();
 }
