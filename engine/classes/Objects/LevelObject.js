@@ -150,18 +150,12 @@ class LevelObject {
       }
       return f;
     }
-
-    specify_sprite_size(w,h) {
-      if (this.visual_element.specify_sprite_size) {
-        this.visual_element.specify_sprite_size(w,h);
-      }
-      // else it probably doesnt even need it
-    }
 }
 
 class SimpleObject extends LevelObject {
-  constructor(x, y, name, color) {
+  constructor(x, y, w, h, name, color) {
     var visual = new StaticSprite("assets/objects/" + name + ".png", color ? color:'obj_light');
+    visual.specify_sprite_size(w, h);
     super(visual, x, y);
   }
 

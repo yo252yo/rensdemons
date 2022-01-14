@@ -74,15 +74,17 @@ class EventBattleObject extends BattleObject {
 }
 
 class ItemBattleObject extends BattleObject {
-    constructor(x, y, name, max_actions) {
+    constructor(x, y, w, h, name, max_actions) {
       var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
+      visual.specify_sprite_size(w, h);
       super(x, y, name, max_actions, "objects/" + name, visual);
     }
 }
 
 class SoulBattleObject extends BattleObject {
     constructor(x, y, name, spritenb) {
-      var visual = new VisualElement(0,0,0,0);
+      var visual = new VisualElement(0,0,-1,-1);
+
       super(x, y, name, 4, "characters/villager" + spritenb, visual);
       this.lastingBattle = true;
     }

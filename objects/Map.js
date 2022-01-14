@@ -69,11 +69,11 @@ class SM_Town extends MapObject {
     }
     var label = DICTIONARY.get(code).toUpperCase() + subtitle;
 
+    visual.specify_sprite_size(150,170);
     super(visual, x, y, label, destination, accessibility_function);
 
     if(this.legend) this.legend.shift(60);
     this.adjust_hitbox(20,-40,120,110);
-    this.specify_sprite_size(150,170);
   }
 }
 
@@ -83,16 +83,16 @@ class SM_Trees extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
+        visual.specify_sprite_size(100, 100);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,65,80);
-        this.specify_sprite_size(100, 100);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/trees1.png", 'obj_light');
+        visual.specify_sprite_size(85, 100);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,0,55,80);
-        this.specify_sprite_size(85, 100);
         break;
     }
     if(!destination){
@@ -110,9 +110,9 @@ class SM_Trees extends MapObject {
 class SM_Forest extends MapObject {
   constructor(x, y, label, destination, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/forest.png", 'obj_light');
+    visual.specify_sprite_size(310,245);
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(15,0,285,220);
-    this.specify_sprite_size(310,245);
     if(this.legend) this.legend.shift(140);
   }
 }
@@ -120,9 +120,9 @@ class SM_Forest extends MapObject {
 class SM_Cave extends MapObject {
   constructor(x, y, label, destination, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/cave.png", 'obj_light');
+    visual.specify_sprite_size(75,50);
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(0,-10,50,30);
-    this.specify_sprite_size(75,50);
     if(this.legend) this.legend.shift(20,10);
   }
 }
@@ -130,9 +130,9 @@ class SM_Cave extends MapObject {
 class SM_Crevasse extends MapObject {
   constructor(x, y, label, destination, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/crevasse.png", 'obj_light');
+    visual.specify_sprite_size(180,55);
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(20,0,155,50);
-    this.specify_sprite_size(180,55);
     if(this.legend) this.legend.shift(80);
   }
 }
@@ -143,16 +143,16 @@ class SM_Hills extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/hills0.png", 'obj_light');
+        visual.specify_sprite_size(180,80);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,200,100);
-        this.specify_sprite_size(180,80);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/hills1.png", 'obj_light');
+        visual.specify_sprite_size(190,125);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,200,100);
-        this.specify_sprite_size(190,125);
         break;
     }
 //    visual.adjust_depth(1); // this is buggy
@@ -175,17 +175,17 @@ class SM_Lake extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
+        visual.specify_sprite_size(280,155);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,270,150);
-        this.specify_sprite_size(280,155);
         if(this.legend) this.legend.shift(130);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
+        visual.specify_sprite_size(180,90);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(0,0,190,90);
-        this.specify_sprite_size(180,90);
         if(this.legend) this.legend.shift(70);
         break;
     }
@@ -205,17 +205,17 @@ class SM_Mountain extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
+        visual.specify_sprite_size(165,130);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(10,0,140,90);
-        this.specify_sprite_size(165,130);
         if(this.legend) this.legend.shift(70);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/mountain1.png", 'obj_light');
+        visual.specify_sprite_size(260,155);
         super(visual, x, y, label, destination, accessibility_function);
         this.adjust_hitbox(20,-5,240,120);
-        this.specify_sprite_size(260,155);
         if(this.legend) this.legend.shift(110);
         break;
     }
@@ -233,9 +233,9 @@ class SM_Mountain extends MapObject {
 class SM_Vulcano extends MapObject {
   constructor(x, y, label, destination, accessibility_function){
     var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
+    visual.specify_sprite_size(315,266);
     super(visual, x, y, label, destination, accessibility_function);
     this.adjust_hitbox(30,-10,270,200);
-    this.specify_sprite_size(315,266);
     if(this.legend) this.legend.shift(150);
 
     if(!destination){
@@ -249,9 +249,9 @@ class SM_Vulcano extends MapObject {
 class SM_Pandemonium extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/pandemonium.png", 'obj_light');
+    visual.specify_sprite_size(300,251);
     super(visual, x, y, `Pandemonium`, "051_pandemonium@0");
     this.adjust_hitbox(40,-10,235,200);
-    this.specify_sprite_size(300,251);
     if(this.legend) this.legend.shift(140);
   }
 }
@@ -260,9 +260,9 @@ class SM_Pandemonium extends MapObject {
 class SM_Heaven extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/heaven.png", 'obj_light');
+    visual.specify_sprite_size(300,215);
     super(visual, x, y, `Heaven`, "060_heaven$");
     this.adjust_hitbox(40,-10,235,200);
-    this.specify_sprite_size(300,215);
     if(this.legend) this.legend.shift(150);
     this.make_walkable();
   }
@@ -280,9 +280,9 @@ class SM_Heaven extends MapObject {
 class SM_HellVulcano extends MapObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/hellmap/hellvulcano.png", 'obj_light');
+    visual.specify_sprite_size(315,266);
     super(visual, x, y, `Maw of Hell`, "041_hellsmaw@14");
     this.adjust_hitbox(30,-10,270,200);
-    this.specify_sprite_size(315,266);
     if(this.legend) this.legend.shift(150);
   }
 }
@@ -290,9 +290,9 @@ class SM_HellVulcano extends MapObject {
 class SM_Altar extends MapObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/hellmap/altar.png", 'obj_light');
+    visual.specify_sprite_size(67,100);
     super(visual, x, y, `Altar of<br />${type}`, `$altar_${type}_${x}${y}`);
     this.adjust_hitbox(20,-10,40,50);
-    this.specify_sprite_size(67,100);
     if(this.legend) this.legend.shift(20);
   }
 }
@@ -304,16 +304,16 @@ class SM_Worm extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/hellmap/creep1.png", 'obj_light');
+        visual.specify_sprite_size(47,44);
         super(visual, x, y, label);
         this.adjust_hitbox(10,-5,40,25);
-        this.specify_sprite_size(47,44);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/hellmap/creep2.png", 'obj_light');
+        visual.specify_sprite_size(53,50);
         super(visual, x, y, label);
         this.adjust_hitbox(10,-5,50,25);
-        this.specify_sprite_size(53,50);
         break;
     }
 
@@ -334,16 +334,16 @@ class SM_Fang extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/hellmap/fang1.png", 'obj_light');
+        visual.specify_sprite_size(51,114);
         super(visual, x, y, label);
         this.adjust_hitbox(15,0,30,30);
-        this.specify_sprite_size(51,114);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/hellmap/fang2.png", 'obj_light');
+        visual.specify_sprite_size(46,114);
         super(visual, x, y, label);
         this.adjust_hitbox(10,0,20,30);
-        this.specify_sprite_size(46,114);
         break;
     }
 
@@ -363,16 +363,16 @@ class SM_Tenta extends MapObject {
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/hellmap/helltenta1.png", 'obj_light');
+        visual.specify_sprite_size(43,80);
         super(visual, x, y, label);
         this.adjust_hitbox(5,0,40,30);
-        this.specify_sprite_size(43,80);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/hellmap/helltenta2.png", 'obj_light');
+        visual.specify_sprite_size(57,175);
         super(visual, x, y, label);
         this.adjust_hitbox(10,0,40,40);
-        this.specify_sprite_size(57,175);
         break;
     }
 

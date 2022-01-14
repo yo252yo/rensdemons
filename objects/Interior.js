@@ -18,9 +18,9 @@ class S_Stairs extends LevelObject {
   constructor(x, y, up, destination){
     var dir = up ? '_up' : '_down';
     var visual = new StaticSprite(`assets/objects/pandemonium/stairs${dir}.png`, 'obj_dark');
+    visual.specify_sprite_size(48, 48);
     super(visual, x, y);
     this.adjust_hitbox(0,0,48,48);
-    this.specify_sprite_size(48, 48);
 
     this.interaction = function() {
       CURRENTLEVEL.setup(destination);
@@ -31,6 +31,7 @@ class S_Stairs extends LevelObject {
 class S_Door extends LevelObject {
   constructor(x, y, closed, lock){
     var visual = new StaticSprite(`assets/objects/pandemonium/door_open.png`, 'obj_dark');
+    visual.specify_sprite_size(98, 92);
     super(visual, x, y);
     this.closed = closed;
     if(this.closed) {
@@ -41,7 +42,6 @@ class S_Door extends LevelObject {
     } else {
       this.adjust_hitbox(0,0,0,0);
     }
-    this.specify_sprite_size(98, 92);
   }
 
   open(){
@@ -84,9 +84,8 @@ class S_StainedGlass extends LevelObject {
 
 class B_Statue extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/statue");
+    super(x, y, 50,100, "interior/statue");
     this.adjust_hitbox(0,0,50,40);
-    this.specify_sprite_size(50,100);
 
     this.set_description(BESTIARY.intro("interior/statue"));
 
@@ -101,9 +100,9 @@ class B_Statue extends ItemBattleObject {
 class S_SavePoint extends LevelObject {
   constructor(x, y){
     var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
+    visual.specify_sprite_size(50,50);
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,20);
-    this.specify_sprite_size(50,50);
   }
 
   interaction(){
@@ -118,9 +117,9 @@ class S_SavePoint extends LevelObject {
 class S_Altar extends LevelObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
+    visual.specify_sprite_size(50,50);
     super(visual, x, y);
     this.adjust_hitbox(5,-5,40,20);
-    this.specify_sprite_size(50,50);
     this.type = type;
   }
 
@@ -149,9 +148,9 @@ class S_Altar extends LevelObject {
 
 class B_Bed extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/bed");
+    super(x, y, 32,75, "interior/bed");
     this.adjust_hitbox(0,0,32,60);
-    this.specify_sprite_size(32,75);
+
 
     this.set_description(BESTIARY.intro("interior/bed"));
 
@@ -166,9 +165,9 @@ class B_Bed extends ItemBattleObject {
 
 class B_Bucket extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/bucket");
+    super(x, y, 31,28, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
-    this.specify_sprite_size(31,28);
+
 
     this.set_description(BESTIARY.intro("interior/bucket"));
     this.add_interaction("Examine", "A bucket full of fresh water. Someone must have brought it back from the well recently.");
@@ -183,9 +182,9 @@ class B_Bucket extends ItemBattleObject {
 
 class B_Cabinet extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/cabinet");
+    super(x, y, 31,48, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
-    this.specify_sprite_size(31,48);
+
 
     this.set_description(BESTIARY.intro("interior/cabinet"));
     this.add_interaction("Imagine", "The family stores their belonging in this cabinet. What kind of things are there? You're curious, but you don't want to intrude. You're invading their privacy enough as it is...");
@@ -199,9 +198,9 @@ class B_Cabinet extends ItemBattleObject {
 
 class B_Chair extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/chair");
+    super(x, y, 30,33, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
-    this.specify_sprite_size(30,33);
+
 
     this.set_description(BESTIARY.intro("interior/chair"));
     this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
@@ -214,9 +213,9 @@ class B_Chair extends ItemBattleObject {
 
 class B_Hay extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/hay");
+    super(x, y, 64,66, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
-    this.specify_sprite_size(64,66);
+
 
     this.set_description(BESTIARY.intro("interior/hay"));
     this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");
@@ -229,9 +228,9 @@ class B_Hay extends ItemBattleObject {
 
 class B_Housefire extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/housefire");
+    super(x, y, 33,33, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
-    this.specify_sprite_size(33,33);
+
 
     this.set_description(BESTIARY.intro("interior/housefire"));
     this.add_interaction("Appreciate", "The fire keeps the room warm and cooks the food. Two blessings in one.");
@@ -245,9 +244,9 @@ class B_Housefire extends ItemBattleObject {
 
 class B_Jar extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/jar");
+    super(x, y, 32,35, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
-    this.specify_sprite_size(32,35);
+
 
     this.set_description(BESTIARY.intro("interior/jar"));
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
@@ -260,9 +259,9 @@ class B_Jar extends ItemBattleObject {
 
 class B_Shelf extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/shelf");
+    super(x, y, 59,67, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
-    this.specify_sprite_size(59,67);
+
 
     this.set_description(BESTIARY.intro("interior/shelf"));
     this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hordes have put the village in.");
@@ -275,9 +274,9 @@ class B_Shelf extends ItemBattleObject {
 
 class B_Stool extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/stool");
+    super(x, y, 25,28, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
-    this.specify_sprite_size(25,28);
+
 
     this.set_description(BESTIARY.intro("interior/stool"));
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
@@ -289,9 +288,9 @@ class B_Stool extends ItemBattleObject {
 
 class B_Table extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/table");
+    super(x, y, 31,34, "interior/table");
     this.adjust_hitbox(0,0,31,34);
-    this.specify_sprite_size(31,34);
+
 
     this.set_description(BESTIARY.intro("interior/table"));
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
@@ -303,9 +302,9 @@ class B_Table extends ItemBattleObject {
 
 class B_Chest extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, "interior/chest", 1);
+    super(x, y, 50,45, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
-    this.specify_sprite_size(50,45);
+
 
     this.set_description(BESTIARY.intro("interior/chest"));
     this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");

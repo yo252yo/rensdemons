@@ -2,9 +2,9 @@
 class S_Tree extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
-    super(visual, x, y);
+    super(visual, x, y, 77,73);
     this.adjust_hitbox(25,0,20,15);
-    this.specify_sprite_size(77,73);
+
     this.default_text = this.text_interaction([
       "It's a tree.",
       "Lustrous leaves, bulky branches... yes, definitely a tree.",
@@ -31,9 +31,9 @@ class S_Tree extends LevelObject {
 
 class S_TreeSad extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/treesad");
+    super(x, y, 70,87, "forest/treesad");
     this.adjust_hitbox(20,0,30,25);
-    this.specify_sprite_size(70,87);
+
     this.default_text = this.text_interaction([
       "The trees in this forest are different from the one you're used to. There seems to be many different types.",
       "The thin branches of this tree move around you like a curtain as you make your way through them.",
@@ -45,9 +45,9 @@ class S_TreeSad extends SimpleObject {
 
 class S_TreePalm extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/treepalm");
+    super(x, y, 44,73, "forest/treepalm");
     this.adjust_hitbox(10,0,25,25);
-    this.specify_sprite_size(44,73);
+
     this.default_text = this.text_interaction([
       "The trees in this forest are different from the one you're used to. There seems to be many different types.",
       "The trunk of this tree is very rough and spiky.",
@@ -59,9 +59,9 @@ class S_TreePalm extends SimpleObject {
 
 class S_Vine extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/vine");
+    super(x, y, 44,96, "forest/vine");
     this.adjust_hitbox(5,0,30,20);
-    this.specify_sprite_size(44,96);
+
     this.default_text = this.text_interaction([
       "A robust vine extends upwards.",
       "Vines such as this one are everywhere around you, making the progression through these woods tedious.",
@@ -72,9 +72,9 @@ class S_Vine extends SimpleObject {
 
 class S_Plant extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/plant1");
+    super(x, y, 48,48, "forest/plant1");
     this.adjust_hitbox(0,0,40,20);
-    this.specify_sprite_size(48,48);
+
     this.default_text = this.text_interaction([
       "A green leafy plant you can easily pass through.",
       "The long stems of this plant tickle you.",
@@ -87,9 +87,9 @@ class S_Plant extends SimpleObject {
 
 class S_AlgaeWall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/algaewall");
+    super(x, y, 143,101, "water/algaewall");
     this.adjust_hitbox(20,0,110,25);
-    this.specify_sprite_size(143,101);
+
     this.default_text = this.text_interaction([
       "These green aquatic plants intertwine in an impassible wall.",
       "You're faced with underwater vines tangled in an inextricable mess.",
@@ -100,9 +100,9 @@ class S_AlgaeWall extends SimpleObject {
 
 class S_Anemone extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/anemone");
+    super(x, y, 30,44, "water/anemone");
     this.adjust_hitbox(0,0,20,20);
-    this.specify_sprite_size(30,44);
+
     this.default_text = this.text_interaction([
       "The little tentacles around the mouth of the anemone seem to be fondling the water in search of food.",
       "You watch the mouth of the purple anemone open and close with the currents.",
@@ -113,9 +113,9 @@ class S_Anemone extends SimpleObject {
 
 class S_Coral extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/coral");
+    super(x, y, 49,49, "water/coral");
     this.adjust_hitbox(0,0,50,25);
-    this.specify_sprite_size(49,49);
+
     this.default_text = this.text_interaction([
       "This coral stands proudly as a refuge to thousands of tiny fishes swarming around it.",
       "You can't help but be impressed by the colorful reflections emanating from the porous coral structure.",
@@ -126,9 +126,9 @@ class S_Coral extends SimpleObject {
 
 class S_Seashell extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "exterior/seashell");
+    super(x, y, 27,22, "exterior/seashell");
     this.adjust_hitbox(10,0,20,10);
-    this.specify_sprite_size(27,22);
+
     this.default_text = this.text_interaction([
       "This seashell still has an inhabitant.",
       "The floor is littered with shells like this. Most of them are still alive and well.",
@@ -139,9 +139,9 @@ class S_Seashell extends SimpleObject {
 
 class S_Seashellpointy extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/seashellpointy");
+    super(x, y, 24,25, "water/seashellpointy");
     this.adjust_hitbox(10,0,20,10);
-    this.specify_sprite_size(24,25);
+
     this.default_text = this.text_interaction([
       "This shell is without a doubt a refuge for a hermit crab.",
       "You must be careful not to step on these, as they are quite pointy.",
@@ -152,9 +152,9 @@ class S_Seashellpointy extends SimpleObject {
 
 class S_Waterplants extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/waterplants");
+    super(x, y, 47,50, "water/waterplants");
     this.adjust_hitbox(0,0,40,20);
-    this.specify_sprite_size(47,50);
+
     this.default_text = this.text_interaction([
       "The underwater plants waver with water currents. Their dance is hypnotic.",
       "The algae wave slowly under the water currents. They bathe the scene by a faint fluorescent glow.",
@@ -165,9 +165,9 @@ class S_Waterplants extends SimpleObject {
 
 class S_WaterPlantWall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/plantwall");
+    super(x, y, 49,47, "water/plantwall");
     this.adjust_hitbox(0,0,50,10);
-    this.specify_sprite_size(49,47);
+
     this.default_text = this.text_interaction([
       "Large leafy algae float slowly in the water.",
       "You cannot pass through this wall of leafy algae.",
@@ -181,19 +181,19 @@ class S_BubblePlant extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(3)){
       case 0:
-        super(x, y, "water/bubbleplant1");
+        super(x, y, 41, 57, "water/bubbleplant1");
         this.adjust_hitbox(0,0,40,35);
-        this.specify_sprite_size(41, 57);
+
         break;
     case 1:
-      super(x, y, "water/bubbleplant2");
+      super(x, y, 39, 73, "water/bubbleplant2");
       this.adjust_hitbox(0,0,35,25);
-      this.specify_sprite_size(39, 73);
+
       break;
     case 2:
-      super(x, y, "water/bubbleplant3");
+      super(x, y, 48, 89, "water/bubbleplant3");
       this.adjust_hitbox(5,0,45,40);
-      this.specify_sprite_size(48, 89);
+
       break;
     }
     this.default_text = this.text_interaction([
@@ -210,9 +210,9 @@ class S_BubblePlant extends SimpleObject {
 
 class S_TentaPlant extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/tentaplant");
+    super(x, y, 48,121, "water/tentaplant");
     this.adjust_hitbox(0,0,48,30);
-    this.specify_sprite_size(48,121);
+
     this.default_text = this.text_interaction([
       "The big squirmy plant extends far above your head, towards the surface.",
       "You inadvertently get hit by one of the branches of this weird slimy plant. Fortunately, it doesn't seem poisonous.",
@@ -223,9 +223,9 @@ class S_TentaPlant extends SimpleObject {
 
 class S_TentaPlantMini extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/tentaplantmini");
+    super(x, y, 38,41, "water/tentaplantmini");
     this.adjust_hitbox(0,0,38,40);
-    this.specify_sprite_size(38,41);
+
     this.default_text = this.text_interaction([
       "You tread lightly over the many bulbous little sprouts, your weight lessened by the water.",
       "The bulging sprouts emit a squishy sound when you touch them.",
@@ -237,8 +237,8 @@ class S_TentaPlantMini extends SimpleObject {
 
 class S_PlantSmall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "exterior/plant");
-    this.specify_sprite_size(29,24);
+    super(x, y, 29,24, "exterior/plant");
+
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "You can easily step over this little bush.",
@@ -251,8 +251,8 @@ class S_PlantSmall extends SimpleObject {
 
 class S_Shroomgiant extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/shroomgiant");
-    this.specify_sprite_size(104,113);
+    super(x, y, 104,113, "forest/shroomgiant");
+
     this.adjust_hitbox(40,0,20,20);
     this.default_text = this.text_interaction([
       "This giant mushroom casts a wide shadow over the surroundings.",
@@ -264,8 +264,8 @@ class S_Shroomgiant extends SimpleObject {
 
 class S_Shroomsmall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/shroomsmall");
-    this.specify_sprite_size(29,24);
+    super(x, y, 29,24, "forest/shroomsmall");
+
     this.adjust_hitbox(0,0,30,10);
     this.default_text = this.text_interaction([
       "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
@@ -278,8 +278,8 @@ class S_Shroomsmall extends SimpleObject {
 
 class S_Shroomtall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "forest/shroomtall");
-    this.specify_sprite_size(57,92);
+    super(x, y, 57,92, "forest/shroomtall");
+
     this.adjust_hitbox(20,0,20,20);
     this.default_text = this.text_interaction([
       "The trunk of this mushroom extends vertically even higher than the surrounding trees.",
@@ -291,9 +291,9 @@ class S_Shroomtall extends SimpleObject {
 
 class S_Planks extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "water/planks");
+    super(x, y, 31,32, "water/planks");
     this.adjust_hitbox(10,0,20,10);
-    this.specify_sprite_size(31,32);
+
     this.default_text = this.text_interaction([
       "These planks are all that remains of a long lost ship. There's definitely traces of the past here.",
       "You wonder where these planks come from, and what else from human civilization made its way there.",
@@ -304,9 +304,9 @@ class S_Planks extends SimpleObject {
 
 class S_Pebbles extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "exterior/pebbles");
+    super(x, y, 40,47, "exterior/pebbles");
     this.adjust_hitbox(10,0,20,15);
-    this.specify_sprite_size(40,47);
+
     this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.default_text = this.text_interaction([
       "Of course, little rocks are everywhere. You need to be very careful not to trip on them.",
@@ -329,54 +329,54 @@ var rocks = [
 
 class S_RocksHuge extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "mountain/rockshuge");
+    super(x, y, 157,171, "mountain/rockshuge");
     this.adjust_hitbox(10,0,130,50);
-    this.specify_sprite_size(157,171);
+
     this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks1 extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "mountain/rocks1");
+    super(x, y, 79,54, "mountain/rocks1");
     this.adjust_hitbox(20,0,50,20);
-    this.specify_sprite_size(79,54);
+
     this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks2 extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "mountain/rocks2");
+    super(x, y, 57,69, "mountain/rocks2");
     this.adjust_hitbox(10,0,40,20);
-    this.specify_sprite_size(57,69);
+
     this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks3 extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "mountain/rocks3");
+    super(x, y, 50,50, "mountain/rocks3");
     this.adjust_hitbox(0,0,40,20);
-    this.specify_sprite_size(50,50);
+
     this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Rocks4 extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "mountain/rocks4");
+    super(x, y, 30,59, "mountain/rocks4");
     this.adjust_hitbox(0,0,30,20);
-    this.specify_sprite_size(30,59);
+
     this.default_text = this.text_interaction(rocks, seed);
   }
 }
 
 class S_Web extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "ruins/web");
+    super(x, y, 102,154, "ruins/web");
     this.adjust_hitbox(0,0,100,40);
-    this.specify_sprite_size(102,154);
+
     this.default_text = this.text_interaction([
       "Giant spider webs fall down the ceiling. This place hasn't been visited in a long time...",
       "There's a lot of spider webs and dust, demonstrating how little this place has been used. Some of them coalesce in giant webs coming down the ceiling.",
@@ -387,9 +387,9 @@ class S_Web extends SimpleObject {
 
 class S_WebLarge extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "ruins/weblarge");
+    super(x, y, 204,101, "ruins/weblarge");
     this.adjust_hitbox(0,0,190,30);
-    this.specify_sprite_size(204,101);
+
     this.default_text = this.text_interaction([
       "The back of the room is littered with metallic debris covered by a huge layer of spider web.",
       "The wall is covered by cobwebs, you can barely distinguish it behind.",
@@ -400,9 +400,9 @@ class S_WebLarge extends SimpleObject {
 
 class S_Bocals extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "ruins/bocals");
+    super(x, y, 43,40, "ruins/bocals");
     this.adjust_hitbox(0,0,30,20);
-    this.specify_sprite_size(43,40);
+
     this.default_text = this.text_interaction([
       "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
       "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
@@ -413,9 +413,9 @@ class S_Bocals extends SimpleObject {
 
 class S_Rubble extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "ruins/rubble");
+    super(x, y, 29, 29, "ruins/rubble");
     this.adjust_hitbox(0,0,30,10);
-    this.specify_sprite_size(29, 29);
+
     this.default_text = this.text_interaction([
       "A pile of rubble, scraps of stone and wood...",
     ], seed);
@@ -424,8 +424,8 @@ class S_Rubble extends SimpleObject {
 
 class S_RubbleLarge extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "ruins/rubblelarge");
-    this.specify_sprite_size(63,63);
+    super(x, y, 63,63, "ruins/rubblelarge");
+
     this.adjust_hitbox(0,0,60,30);
     this.default_text = this.text_interaction([
       "This messy pile of bricks is all that remains of a former construction...",
@@ -496,8 +496,8 @@ class EB_Skeleton extends EventBattleObject {
 
 class S_Throne extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/throne", "obj_light");
-    this.specify_sprite_size(200,184);
+    super(x, y, 200,184, "pandemonium/throne", "obj_light");
+
     this.adjust_hitbox(10,10,180,100);
     this.default_text = this.text_interaction([
       "This is the biggest piece of furniture you've ever seen. It seems carved directly in what appears to be bone, and richly aggremented of golden gildings and velvet cushions bigger than you. A fitting throne for the emperor of demons.",
@@ -509,9 +509,9 @@ class S_Throne extends SimpleObject {
 
 class S_RockColumn extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/column");
+    super(x, y, 47,131, "cave/column");
     this.adjust_hitbox(0,0,40,30);
-    this.specify_sprite_size(47,131);
+
     this.default_text = this.text_interaction([
       "A massive column of rock holds the ceilling of the cave above your head.",
       "A large natural pillar reaches all the way to the cavern's top.",
@@ -522,9 +522,9 @@ class S_RockColumn extends SimpleObject {
 
 class S_CristalBig extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/cristalbig");
+    super(x, y, 54,96, "cave/cristalbig");
     this.adjust_hitbox(10,0,30,30);
-    this.specify_sprite_size(54,96);
+
     this.default_text = this.text_interaction([
       "A large transparent rock lies in front of you. Through it, you can see the world in a azure teint.",
       "You find a massive ruby-like stone which reflects the pale surrounding glow with a bright red glare.",
@@ -535,9 +535,9 @@ class S_CristalBig extends SimpleObject {
 
 class S_CristalSmall extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/cristalsmall");
+    super(x, y, 57,48, "cave/cristalsmall");
     this.adjust_hitbox(10,0,35,20);
-    this.specify_sprite_size(57,48);
+
     this.default_text = this.text_interaction([
       "This prismatic cristal deflects the light into a rainbow of a thousand shimmering hues.",
       "You find a rock that time has polished into a very smooth emerald surface.",
@@ -548,9 +548,9 @@ class S_CristalSmall extends SimpleObject {
 
 class S_CristalTiny extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/cristaltiny");
+    super(x, y, 47, 45, "cave/cristaltiny");
     this.adjust_hitbox(10,0,30,30);
-    this.specify_sprite_size(47, 45);
+
     this.default_text = this.text_interaction([
       "Tiny specks of luminous gravel surround you.",
       "The floor is littered with shimmering cristals that cast a vague glow on your feet.",
@@ -562,9 +562,9 @@ class S_CristalTiny extends SimpleObject {
 
 class S_RockLump extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/rocklump");
+    super(x, y, 74,114, "cave/rocklump");
     this.adjust_hitbox(0,0,74,50);
-    this.specify_sprite_size(74,114);
+
     this.default_text = this.text_interaction([
       "This pile of rock comes from a cave-in... Best be careful.",
       "Part of the gallery collapsed in this stack of debris. You hope nobody got trapped under.",
@@ -576,9 +576,9 @@ class S_RockLump extends SimpleObject {
 
 class S_CristalFragment extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/cristalfragment");
+    super(x, y, 27,29, "cave/cristalfragment");
     this.adjust_hitbox(0,0,27,20);
-    this.specify_sprite_size(27,29);
+
     this.default_text = this.text_interaction([
       "This pure fragment of crystal seems so sharp that you could cut yourself touching it the wrong way.",
       "The thin fragments of this crystal refracts the light of your torch in a wonderful rainbow.",
@@ -592,14 +592,14 @@ class S_Caveplant extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
-        super(x, y, "cave/caveplant");
+        super(x, y, 89,53, "cave/caveplant");
         this.adjust_hitbox(0,0,89,20);
-        this.specify_sprite_size(89,53);
+
         break;
       case 1:
-        super(x, y, "cave/caveplant2");
+        super(x, y, 56,38, "cave/caveplant2");
         this.adjust_hitbox(0,0,56,18);
-        this.specify_sprite_size(56,38);
+
         break;
     }
     this.default_text = this.text_interaction([
@@ -615,9 +615,9 @@ class S_Caveplant extends SimpleObject {
 
 class S_Cavesprouts extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "cave/cavesprouts");
+    super(x, y, 40,44, "cave/cavesprouts");
     this.adjust_hitbox(0,0,40,35);
-    this.specify_sprite_size(40,44);
+
     this.default_text = this.text_interaction([
       "Little plants sprout up from the ground. No doubt before long they'll be as tall as the other ones here.",
       "Those little bulbs emit a strange fresh smell.",
@@ -638,15 +638,15 @@ class S_Hole extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
-        super(x, y, "cave/hole");
+        super(x, y, 48, 90, "cave/hole");
         this.adjust_hitbox(0,0,48,90);
-        this.specify_sprite_size(48, 90);
+
         break;
 
       case 1:
-        super(x, y, "cave/hole2");
+        super(x, y, 43, 95, "cave/hole2");
         this.adjust_hitbox(0,0,43,95);
-        this.specify_sprite_size(43, 95);
+
         break;
     }
     this.default_text = this.text_interaction([
@@ -662,9 +662,9 @@ class S_Hole extends SimpleObject {
 
 class S_HellPlantLeaning extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "hell/plant");
+    super(x, y, 43,35, "hell/plant");
     this.adjust_hitbox(10,0,30,10);
-    this.specify_sprite_size(43,35);
+
     this.default_text = this.text_interaction([
       "This plant shines from an unnatural light.",
       "The plant is home of a swarm of disgusting bugs that fly around it noisily.",
@@ -675,9 +675,9 @@ class S_HellPlantLeaning extends SimpleObject {
 
 class S_HellPlantSretching extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "hell/plant2");
+    super(x, y, 32,46, "hell/plant2");
     this.adjust_hitbox(5,0,30,20);
-    this.specify_sprite_size(32,46);
+
     this.default_text = this.text_interaction([
       "This vegetal extends slimy tentacles that look pretty poisonous.",
       "You observe an unfortunate fly get captured by the appendages of the unnatural plant.",
@@ -688,9 +688,9 @@ class S_HellPlantSretching extends SimpleObject {
 
 class S_HellPlantSlimy extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "hell/plant3");
+    super(x, y, 27,47, "hell/plant3");
     this.adjust_hitbox(5,0,20,15);
-    this.specify_sprite_size(27,47);
+
     this.default_text = this.text_interaction([
       "This vegetal is constantly dripping brownish slime, like a repulsive fountain.",
       "All you can think of to describe this plant is that it looks a lot like someone dipped a little shrub in some sort of dark goo.",
@@ -701,9 +701,9 @@ class S_HellPlantSlimy extends SimpleObject {
 
 class S_HellPlantLoops extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "hell/plant4");
+    super(x, y, 16, 28, "hell/plant4");
     this.adjust_hitbox(0,0,20,15);
-    this.specify_sprite_size(16, 28);
+
     this.default_text = this.text_interaction([
       "This strange flower is made of many fibers that roll up and extend according to a pattern you cannot understand.",
       "As you approach the vegetal, you notice that it also extends in your direction. Better steer clear...",
@@ -714,9 +714,8 @@ class S_HellPlantLoops extends SimpleObject {
 
 class S_Spike extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "hell/spike");
+    super(x, y, 41, 96, "hell/spike");
     this.adjust_hitbox(0,0,30,30);
-    this.specify_sprite_size(41, 96);
     this.default_text = this.text_interaction([
       "A brown spike perforates the rocky ground. You wonder if there's a monster under the ground...",
       "This sharp appendage rises unnaturally from the ground. It seems that it stopped moving a while ago and solidified among the rocks, but you prefer to not take any chance and not approach it.",
@@ -732,25 +731,21 @@ class S_HellEgg extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(4)){
       case 0:
-        super(x, y, "pandemonium/hellwebby1");
+        super(x, y, 70, 48, "pandemonium/hellwebby1");
         this.adjust_hitbox(0,0,70,20);
-        this.specify_sprite_size(70, 48);
         break;
-    case 1:
-      super(x, y, "pandemonium/hellwebby2");
-      this.adjust_hitbox(0,0,40,30);
-      this.specify_sprite_size(39, 59);
-      break;
-    case 2:
-      super(x, y, "pandemonium/hellwebby3");
-      this.adjust_hitbox(0,0,48,50);
-      this.specify_sprite_size(48, 100);
-      break;
-    case 3:
-      super(x, y, "pandemonium/hellwebby4");
-      this.adjust_hitbox(0,0,45,30);
-      this.specify_sprite_size(45, 91);
-      break;
+      case 1:
+        super(x, y, 39, 59, "pandemonium/hellwebby2");
+        this.adjust_hitbox(0,0,40,30);
+        break;
+      case 2:
+        super(x, y, 48, 100, "pandemonium/hellwebby3");
+        this.adjust_hitbox(0,0,48,50);
+        break;
+      case 3:
+        super(x, y, 45, 91, "pandemonium/hellwebby4");
+        this.adjust_hitbox(0,0,45,30);
+        break;
     }
     this.default_text = this.text_interaction([
       "This pile of gooey webs ebbs with an unhealthy glow.",
@@ -767,9 +762,9 @@ class S_HellEgg extends SimpleObject {
 
 class S_Armor extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/armor");
+    super(x, y, 32, 50, "pandemonium/armor");
     this.adjust_hitbox(0,0,32,25);
-    this.specify_sprite_size(32, 50);
+
     this.default_text = this.text_interaction([
       "An armor on display.",
       "This armor seems to be shaped for a human. Could it be a war trophy?",
@@ -780,9 +775,9 @@ class S_Armor extends SimpleObject {
 
 class S_Candle extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/candle");
+    super(x, y, 23, 37, "pandemonium/candle");
     this.adjust_hitbox(0,0,23,15);
-    this.specify_sprite_size(23, 37);
+
     this.default_text = this.text_interaction([
       "The shadow around you are only barely pierced by the hesitant light of this chandelier.",
       "The pale flames struggle to fight against the surrounding darkness.",
@@ -793,9 +788,9 @@ class S_Candle extends SimpleObject {
 
 class S_Organ extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/organ");
+    super(x, y, 106, 96, "pandemonium/organ");
     this.adjust_hitbox(0,0,105,50);
-    this.specify_sprite_size(106, 96);
+
     this.default_text = this.text_interaction([
       "Although you admire the craftsmanship, and acknowledge that it does look fitting in this gloomy castle, you can't help but wonder what use is this musical instrument here...",
       "You forget yourself and spend a few moment trying out notes on the keyboard of the organ. You half expect some sort of secret passage to appear, but nothing of the sort happens.",
@@ -806,9 +801,9 @@ class S_Organ extends SimpleObject {
 
 class S_Painting extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/painting");
+    super(x, y, 42, 68, "pandemonium/painting");
     this.adjust_hitbox(0,0,42, 68);
-    this.specify_sprite_size(42, 68);
+
     this.default_text = this.text_interaction([
       "The portrait of a presumably famous demon. He looks so... human.",
       "The demon on this painting smiles at you mysteriously. Their eyes seem to follow you wherever you go.",
@@ -819,9 +814,9 @@ class S_Painting extends SimpleObject {
 
 class S_HellWindow extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/window");
+    super(x, y, 46, 120, "pandemonium/window");
     this.adjust_hitbox(0,0,46, 120);
-    this.specify_sprite_size(46, 120);
+
     this.default_text = this.text_interaction([
       "This stained glass window seems uncomfortably familiar.",
       "You peek through the window and can barely make out through the foggy glass the vast arid expanses of the otherworld.",
@@ -832,9 +827,9 @@ class S_HellWindow extends SimpleObject {
 
 class S_Flag extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/flag");
+    super(x, y, 47, 99, "pandemonium/flag");
     this.adjust_hitbox(0,0,47, 99);
-    this.specify_sprite_size(47, 99);
+
     this.default_text = this.text_interaction([
       "A flag whose coat of arm you do not recognize.",
       "You find it curious that the demon lord would decorte his castle with flags just like any human king would.",
@@ -845,9 +840,9 @@ class S_Flag extends SimpleObject {
 
 class S_Mirror extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "pandemonium/mirror");
+    super(x, y, 47, 94, "pandemonium/mirror");
     this.adjust_hitbox(0,0,47, 94);
-    this.specify_sprite_size(47, 94);
+
     this.default_text = this.text_interaction([
       "In the darkness, you think you see something behind you. It's probably your imagination playing tricks on you.",
       "Despite having come so far, you conclude that you haven't changed that much.",
@@ -859,9 +854,9 @@ class S_Mirror extends SimpleObject {
 
 class S_BookshelfBig extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "heaven/bookshelf_big");
+    super(x, y, 145, 142, "heaven/bookshelf_big");
     this.adjust_hitbox(-5,0,150, 70);
-    this.specify_sprite_size(145, 142);
+
     this.default_text = function(){
       BATTLE.api.make("_060/_book");
     }
@@ -870,9 +865,9 @@ class S_BookshelfBig extends SimpleObject {
 
 class S_Bookshelf extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "heaven/bookshelf");
+    super(x, y, 50, 98, "heaven/bookshelf");
     this.adjust_hitbox(-5,0,57, 50);
-    this.specify_sprite_size(50, 98);
+
     this.default_text = function(){
       BATTLE.api.make("_060/_book");
     }
@@ -884,19 +879,19 @@ class S_Cloud extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(3)){
       case 0:
-        super(x, y, "heaven/cloud1");
+        super(x, y, 70, 45, "heaven/cloud1");
         this.adjust_hitbox(0,0,70,20);
-        this.specify_sprite_size(70, 45);
+
         break;
     case 1:
-      super(x, y, "heaven/cloud2");
+      super(x, y, 48, 35, "heaven/cloud2");
       this.adjust_hitbox(0,0,45,20);
-      this.specify_sprite_size(48, 35);
+
       break;
     case 2:
-      super(x, y, "heaven/cloud3");
+      super(x, y, 42, 35, "heaven/cloud3");
       this.adjust_hitbox(0,0,40,20);
-      this.specify_sprite_size(42, 35);
+
       break;
     }
     this.walkable = true;
@@ -916,19 +911,19 @@ class S_Tomb extends SimpleObject {
     var gen = new Generator(seed);
     switch(gen.int(3)){
       case 0:
-        super(x, y, "heaven/tomb1");
+        super(x, y, 26, 50, "heaven/tomb1");
         this.adjust_hitbox(0,0,26,20);
-        this.specify_sprite_size(26, 50);
+
         break;
     case 1:
-      super(x, y, "heaven/tomb2");
+      super(x, y, 45, 72, "heaven/tomb2");
       this.adjust_hitbox(0,0,40,30);
-      this.specify_sprite_size(45, 72);
+
       break;
     case 2:
-      super(x, y, "heaven/tomb3");
+      super(x, y, 26, 31, "heaven/tomb3");
       this.adjust_hitbox(0,0,25,15);
-      this.specify_sprite_size(26, 31);
+
       break;
     }
 
@@ -965,9 +960,9 @@ class S_Tomb extends SimpleObject {
 
 class S_MagicMirror extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "heaven/mirror");
+    super(x, y, 50, 98, "heaven/mirror");
     this.adjust_hitbox(-5,0,57, 50);
-    this.specify_sprite_size(50, 98);
+
     this.default_text = function(){
       BATTLE.api.make("_060/_mirror");
     }
@@ -977,9 +972,9 @@ class S_MagicMirror extends SimpleObject {
 
 class S_Computer extends SimpleObject {
   constructor(x, y, seed){
-    super(x, y, "interior/savepoint");
+    super(x, y, 50,50, "interior/savepoint");
     this.adjust_hitbox(5,-5,40,20);
-    this.specify_sprite_size(50,50);
+
 
 
     var nothing = function(){
@@ -1024,9 +1019,9 @@ class S_Computer extends SimpleObject {
 
 class S_Whirlwind extends SimpleObject {
   constructor(x, y, seed, destination){
-    super(x, y, "water/whirlwind");
+    super(x, y, 46, 44, "water/whirlwind");
     this.adjust_hitbox(0,0,46,44);
-    this.specify_sprite_size(46, 44);
+
     var gen = new Generator(seed);
     var tp = function(){
       if(!destination){

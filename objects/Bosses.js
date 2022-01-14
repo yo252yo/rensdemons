@@ -2,8 +2,7 @@
 
 class S_Beelzebub extends SimpleObject {
   constructor(x, y){
-    super(x, y, "hell/beelzebub", "obj_dark");
-    this.specify_sprite_size(173,264);
+    super(x, y, 173, 264, "hell/beelzebub", "obj_dark");
     this.adjust_hitbox(50,10,100,100);
 
 
@@ -95,8 +94,7 @@ class S_Beelzebub extends SimpleObject {
 
 class S_Maou extends SimpleObject {
   constructor(x, y){
-    super(x, y, "pandemonium/maou", "obj_dark");
-    this.specify_sprite_size(300,300);
+    super(x, y, 300, 300, "pandemonium/maou", "obj_dark");
     this.adjust_hitbox(50,10,180,100);
 
     var winn = function() {

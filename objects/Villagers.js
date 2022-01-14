@@ -664,7 +664,6 @@ class M_NPC extends ConsciousObject {
     var visual = new MovingSprite("assets/characters/" + sprite + ".png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48, name, city, role);
     this.adjust_hitbox(7, 3, 20, 12);
-    this.specify_sprite_size(32, 48);
   }
 }
 
