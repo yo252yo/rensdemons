@@ -25,7 +25,7 @@ var look_closer = "Look closer";
 var look_even_closer = "Look even closer";
 var speak = "Speak";
 var description = "You find scratch marks under the text.";
-var hint = "*** ******* **";
+var hint = "a** t****** m*";
 var solution = "act through me";
 var getDescription = function(){ return description; }
 var getHint = function(){ return hint; }
@@ -61,7 +61,7 @@ var tip_object = function() {
       attempts++;
       if (attempts > 1) {
         description = "You find scratch marks under the text. You can make out a few letters.";
-        updateHint("a** *h***g* *e");
+        updateHint("a*t thr**gh m*");
       }
       BATTLE.player_actions.remove(look_even_closer);
       PLAYER_ACTIONS.add(tip_object());
@@ -128,10 +128,10 @@ PLAYER_ACTIONS.add({
 });
 
 
-make_riddle("fourth", "If the world is a stage, this is all you can do.<br />And when the curtain falls, it's time to start a new.<br />And though this speaks often of deceit and pretense.<br />So too this qualifies actions of any sense.");
-make_riddle("third", "This word bridges the way between the start and goal.<br />This is what you traverse, this is your course in whole.<br />This qualifies your means, your intermediate grind.<br />Though this bares resemblance to the thoughts in your mind.");
-make_riddle("second", "How can so few letters describe many rich worlds?<br />Impossible to doubt, or to define in words.<br />No two ones are the same, yet we cherish our own.<br />For it lets us each be, or else 'I' would be gone.");
-make_riddle("first", "To you, the chosen one, trapped in this dreary maze,<br />I'll obey your command, if you speak the right phrase.<br />When I hear the three words that my icons hinted<br />You will be my servant forever anointed.");
+make_riddle("fourth", "If the world is a stage, this is all you can do.<br />And when the curtain falls, it's time to start a new.<br />And though this speaks often of deceit and pretense.<br />So too this qualifies actions of any sense.<br />**");
+make_riddle("third", "This word bridges the way between the start and goal.<br />This is what you traverse, this is your course in whole.<br />This qualifies your means, your intermediate grind.<br />Though this bares resemblance to the thoughts in your mind.<br />*******");
+make_riddle("second", "How can so few letters describe many rich worlds?<br />Impossible to doubt, or to define in words.<br />No two ones are the same, yet we cherish our own.<br />For it lets us each be, or else 'I' would be gone.<br />***");
+make_riddle("first", "To you, the chosen one, trapped in this dreary maze,<br />I'll obey your command, if you speak the right phrase.<br />When I hear the three words that my icons hinted<br />You will be my servant forever anointed.<br />*** ******* **");
 
 
 BATTLE.operations.start("You find yourself faced with a statue of the Goddess. You first bow and look down before Her Magnifiscence, but as you look up you notice some text on the pedestal.");
