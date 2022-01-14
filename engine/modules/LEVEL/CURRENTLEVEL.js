@@ -6,6 +6,7 @@ const CURRENTLEVEL = {
   _MAX_CLICK_INTERACTION_DISTANCE: 20,
   _FACE_INTERACTION_DISTANCE: 20,
   _TRIGGER_COOLDOWN: 200,
+  _INDEX_SQUARE_SIZE: 100,
   SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR : '@',
   GERERATED_LEVEL_PREFIX : '$',
   UNSAVED_LEVEL_SUFFIX : '$',
@@ -319,21 +320,68 @@ const CURRENTLEVEL = {
   },
 
   objects: {
+    _square_index: function(x,y){
+      return [CURRENTLEVEL._INDEX_SQUARE_SIZE*Math.floor(x/CURRENTLEVEL._INDEX_SQUARE_SIZE), CURRENTLEVEL._INDEX_SQUARE_SIZE*Math.floor(y/CURRENTLEVEL._INDEX_SQUARE_SIZE)];
+    },
+
     index_object: function(object) {
-      CURRENTLEVEL.level_objects.push(object);
+      var x = object.x || object.h_x || object.visual_element.x;
+      var y = object.y || object.h_y || object.visual_element.y;
+      var w = object.w || object.h_w || object.visual_element.width;
+      var h = object.h || object.h_h || object.visual_element.height;
+      if(!x || !y || !w || !h){
+        CONSOLE.error("Indexing empty object : " + object);
+      }
+
+      var start = CURRENTLEVEL.objects._square_index(x,y-h);
+      var end = CURRENTLEVEL.objects._square_index(x+w,y);
+
+      for(var i = start[0]; i <= end[0]; i += CURRENTLEVEL._INDEX_SQUARE_SIZE){
+        for(var j = start[1]; j <= end[1]; j += CURRENTLEVEL._INDEX_SQUARE_SIZE){
+          if(!CURRENTLEVEL.level_objects[i]){
+            CURRENTLEVEL.level_objects[i] = {};
+          }
+          if(!CURRENTLEVEL.level_objects[i][j]){
+            CURRENTLEVEL.level_objects[i][j] = [];
+          }
+          CURRENTLEVEL.level_objects[i][j].push(object);
+        }
+      }
     },
 
     get_all_objects: function(x, y){
-      return CURRENTLEVEL.level_objects;
+      if(x && y){
+        var start = CURRENTLEVEL.objects._square_index(x,y);
+        if (CURRENTLEVEL.level_objects[start[0]] && CURRENTLEVEL.level_objects[start[0]][start[1]]){
+          return CURRENTLEVEL.level_objects[start[0]][start[1]];
+        } else {
+          return [];
+        }
+      }
+      var result = [];
+      for(var i in CURRENTLEVEL.level_objects){
+        for(var j in CURRENTLEVEL.level_objects[i]){
+          for(var o of CURRENTLEVEL.level_objects[i][j]){
+            if(!result.includes(o)){
+              result.push(o);
+            }
+          }
+        }
+      }
+      return result;
     },
 
     destroy_object: function(object) {
-      var objects = CURRENTLEVEL.level_objects;
-      for (var i in objects){
-        var candidate = objects[i];
-        if (candidate && candidate.hash() == object.hash()){ // destroy homonyms
-          candidate.finish_destroy();
-          CURRENTLEVEL.level_objects[i] = null;
+      var hash = object.hash();
+      for(var i in CURRENTLEVEL.level_objects){
+        for(var j in CURRENTLEVEL.level_objects[i]){
+          for(var k in CURRENTLEVEL.level_objects[i][j]){
+            var candidate = CURRENTLEVEL.level_objects[i][j][k];
+            if (candidate && candidate.hash() == hash){ // destroy all homonyms in all squares
+              candidate.finish_destroy();
+              CURRENTLEVEL.level_objects[i][j][k] = null;
+            }
+          }
         }
       }
     },
