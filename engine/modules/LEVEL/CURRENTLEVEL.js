@@ -100,14 +100,15 @@ const CURRENTLEVEL = {
       var here = [];
 
       // could be optimized by ordering objects
-      for(var i in CURRENTLEVEL.level_objects) {
-        if (!CURRENTLEVEL.level_objects[i]){
+      var objects = CURRENTLEVEL.objects.get_all_objects(x, y);
+      for(var i in objects) {
+        if (!objects[i]){
           continue;
         }
-        if (CURRENTLEVEL.level_objects[i].is_interactible && CURRENTLEVEL.level_objects[i].is_interactible(x,y)) {
-          here.push(CURRENTLEVEL.level_objects[i]);
-        } else if (!interactible && CURRENTLEVEL.level_objects[i].is_at_sprite(x,y)) {
-          here.push(CURRENTLEVEL.level_objects[i]);
+        if (objects[i].is_interactible && objects[i].is_interactible(x,y)) {
+          here.push(objects[i]);
+        } else if (!interactible && objects[i].is_at_sprite(x,y)) {
+          here.push(objects[i]);
         }
       }
 
@@ -153,7 +154,7 @@ const CURRENTLEVEL = {
       var walkable = false;
 
       // could be optimized by ordering objects
-      for(var object of CURRENTLEVEL.level_objects) {
+      for(var object of CURRENTLEVEL.objects.get_all_objects(x, y)) {
         if (!object){
           continue;
         }
@@ -322,7 +323,7 @@ const CURRENTLEVEL = {
       CURRENTLEVEL.level_objects.push(object);
     },
 
-    get_all_objects: function(){
+    get_all_objects: function(x, y){
       return CURRENTLEVEL.level_objects;
     },
 
