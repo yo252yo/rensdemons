@@ -282,7 +282,15 @@ if(slimepart == 2) {
   new S_ExitFloor(2525,3350,50,125, '015_slimes@2');
 } else if(slimepart == 3) {
   exit = new S_ExitFloor(5925,1550,50,100, '015_slimes@2');
-  new S_ExitFloor(3525,5025,50,50, '010_world_map');
+  var shortcut = new S_ExitFloor(3525,5025,50,50, '010_world_map');
+
+  shortcut.interaction = function(){
+    TextBannerSequence.make([
+      `The tunnel gets progressively smaller, and you think for a while that it might be a dead end, but as every step becomes a struggle you notice a very bright light ahead of you.`,
+      `Progression becomes easier as you progress towards the light. Soon, you're able to see the sky! It's an opening that leads to the outside. Galvanized by this conclusion, you speed up and climb until you make it to the open air.`,
+      `You take a moment to breathe the fresh breeze to empty your lungs of the stale dry air of the grottos.`,
+    ], function(){ CURRENTLEVEL.setup("010_world_map") });
+  };
 }
 
 
