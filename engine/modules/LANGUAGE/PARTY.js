@@ -225,3 +225,35 @@ LANGUAGE.actions[PARTYMEMBERS.SavageChild] = {
     ]);
   },
 };
+
+
+LANGUAGE.actions[PARTYMEMBERS.GeniusProdigy] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)) + RANDOM.pick([
+      `$$GeniusProdigy$ slowly arrives on the battleground, head deep in a book. He finally lifts up his gaze after finishing his page, and looks around distractedly.`,
+      `$$GeniusProdigy$ does not hear your call straight away, as he seems busy drawing diagrams for some invention. You multiply the calls, until you finally get his attention. He hurries to the fight to make up for the lost time.`,
+      `$$GeniusProdigy$ moves towards the target with sure steps. He almost seems bored, as he takes mental note of every feature of the environment.`,
+    ]);
+
+    var dialog = RANDOM.pick([
+      `$$GeniusProdigy$: "When you get rid of all disproved hypotheses, whatever remains, however improbable, must be the truth."`,
+      `$$GeniusProdigy$: "I have the perfect protocol for this! I hope it'll yield good samples!"`,
+      `$$GeniusProdigy$: "Stand back, it's time to use science!"`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `$$GeniusProdigy$ computes the odds of victory. Considering how low they are, he concludes that the reasonable course of action is to withdraw from the fight.`,
+      `$$GeniusProdigy$ assesses the situation by building a mental model of the environment, taking into consideration every possible factor. No matter how many strategies he simulates, the results are bleak. The conclusion of this cost-benefit analysis is to leave the floor to someone else.`,
+      `$$GeniusProdigy$ closes his eyes and thinks hard to come up with a strategy to win the battle. The $$&ENEMY$, however, doesn't wait and takes advantage of this crucial reflection time to strike $$GeniusProdigy$ first.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$GeniusProdigy$ has computed the equilibrium of physical forces in the vicinity. Thanks to this calculation, he figured out the single optimal point where to hit the $$&ENEMY$. A precise flick of the finger is enough to incapacitate the opponent.`,
+      `$$GeniusProdigy$ constantly outwits the $$&ENEMY$ with a clever battle strategy. To every blow, he has already prepared a defense and a counter. He remains one step ahead of his opponent until the $$&ENEMY$ finally gives up, exhausted.`,
+      `$$GeniusProdigy$ smiles slyly. He has already foreseen all the events unfolding, and he is prepared. Everything is happening according to plan. Suddenly, the $$&ENEMY$ collapses on the ground for no apparent reason. With a satisfied face, $$GeniusProdigy$ goes back to his reading, refusing to elaborate on his methods.`,
+    ]);
+  },
+};

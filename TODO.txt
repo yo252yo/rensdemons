@@ -3,11 +3,12 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
--- GeniusProdigy
->  attacks in langug,
->  encounter+battle
+-- GeniusProdigy encounter+battle
 
 "Arent these ruine cool, etc..."
+entranced in his observation until you call his name
+
+
 "what is a child like you doing here"
 "guess my name"
 "wow, lets do some tests!"
