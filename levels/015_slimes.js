@@ -354,8 +354,23 @@ if(slimepart == 1) {
   new S_SlimeTip(6300, 2750, 23);
   new S_SlimeTip(5325, 3375, 24);
 
-  new SBattle(3525, 4950, '#artifact');
+
   new SBattle(3512, 4850, 'caves/lizard');
+
+  var b = new SE_groundItem(3525, 4950, ITEM.War_hammer);
+  var take = function(){
+    INVENTORY.increase(ITEM.War_hammer);
+    b.destroy();
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `Behind the corpse of the defeated monster, you discover the treasure it was hoarding. There's a pile of rusty armors and weapons, probably looted from the dead corpses of adventurers unfortunate enough to wander near the beast's lair. Most of these are in a pretty decrepit state and don't seem like they could be of any use.`,
+      `However, a single object catches your eye. In the middle of the decayed weapons, a war hammer shines like if it was new. Its metallic surface project silvery rays on the linings of the cave. The intricate design of the object is a remanent of a long gone craftsmanship. Perhaps not even human.`,
+      `You grab the handle and discover that you can lift this behemot of a weapon, albeit not without a certain effort. But you feel like the weight in your hand is infinitesimal compared to its striking power. It seems that it could crush anything.`
+    ], take);
+  };
+
 }
 
 

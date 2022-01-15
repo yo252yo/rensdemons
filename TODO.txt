@@ -6,20 +6,15 @@ EB_SKELETON is not indexed
 
 
 
-------- events (loot and text)
-------- start function text
--- get artifact lol
-------- hint mechanism
+-- events (loot and text)
+-- start function text
 
+-- GeniusProdigy
+"Arent these ruine cool, etc..."
+"what is a child like you doing here"
+"guess my name"
+"wow, lets do some tests!"
 
-
-
-
-
-
-
-
-------- GeniusProdigy
 // extra cave, doing an expedition?
 >> the truth about the power of ren (how he goes back in time to alternate realities)
 >> read my mind
