@@ -1,6 +1,10 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 ---------------------------------------- TODO
 
+S_StainedGlass, 001 is broken by indexing
+
+
+
 
 -- GeniusProdigy
 "Arent these ruine cool, etc..."

@@ -297,6 +297,10 @@ const BATTLE = {
     },
   },
 
+  win: function(){
+    BATTLE.monster_actions.prepare_win("OVERRIDING WIN");
+  },
+
   operations: {
     play_monster: function () {
       if (BATTLE._monster_actions.length > 0){
