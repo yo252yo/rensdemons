@@ -549,6 +549,7 @@ class S_Caveplant extends SimpleObject {
       "The main stem carrying pale flowers bends under their collective weight.",
       "You shake the stem of the plant, and step back in disgust as a yellowish goo splurges out of the flowers onto the ground.",
       "It seems that this plant doesnt need sunlight, and thrives in the humid darkness of the cave.",
+      "The rock below the plant seems to grow translucent and more crystaline under the effect of the acid drippings of the vegetal.",
     ], seed);
   }
 }

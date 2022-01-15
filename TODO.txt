@@ -2,9 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 ---------------------------------------- TODO
 
 
--- events (loot and text)
--- start function text
-
 -- GeniusProdigy
 "Arent these ruine cool, etc..."
 "what is a child like you doing here"
@@ -61,6 +58,9 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 ---------------------------------------- HAWK DUNGEON
 baudrillard simulation / lacan themed?
+should i have something like "no exit"
+
+
 
 theres always something behind the waterfall
 
@@ -99,7 +99,7 @@ RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander 
 >>protector is like why me im nobody etc...
 im too old for this shit
 
----------------------------------------- TOWN4 SNOBRICH
+---------------------------------------- TOWN4 SNOBRICH MANOR
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
 >> lost something important, you help them by going in an out and it respawns??

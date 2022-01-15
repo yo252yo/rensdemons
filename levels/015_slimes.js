@@ -239,8 +239,6 @@ if(slimepart == 1) {
   hallways.push(new S_RockFloor(5350,2300,350,25));
 
 
-
-
   // NO EVENT ON THIS BATCH, ending
   new S_RockFloor(5675,4100,75,375);
   new S_RockFloor(5675,4100,650,25);
@@ -307,9 +305,6 @@ if(slimepart == 1) {
 
 
 
-
-
-
 if(slimepart == 1) {
   new S_SavePoint(1875, 3350);
   new S_SavePoint(2200, 5350);
@@ -373,7 +368,7 @@ if(slimepart == 1) {
     TextBannerSequence.make([
       `Behind the corpse of the defeated monster, you discover the treasure it was hoarding. There's a pile of rusty armors and weapons, probably looted from the dead corpses of adventurers unfortunate enough to wander near the beast's lair. Most of these are in a pretty decrepit state and don't seem like they could be of any use.`,
       `However, a single object catches your eye. In the middle of the decayed weapons, a war hammer shines like if it was new. Its metallic surface project silvery rays on the linings of the cave. The intricate design of the object is a remanent of a long gone craftsmanship. Perhaps not even human.`,
-      `You grab the handle and discover that you can lift this behemot of a weapon, albeit not without a certain effort. But you feel like the weight in your hand is infinitesimal compared to its striking power. It seems that it could crush anything.`
+      `You grab the handle and discover that you can lift this behemoth of a weapon, albeit not without a certain effort. But you feel like the weight in your hand is infinitesimal compared to its striking power. It seems that it could crush anything.`
     ], take);
   };
 
@@ -421,11 +416,36 @@ for(var f of rooms) {
 
 var events = new EventFiller(bigDecorFiller, 5, 75);
 
-events.battle('caves/bloodsucker', 0.1);
-events.battle('caves/mole', 0.5);
-events.battle('caves/crawler', 0.2);
-events.battle('caves/slime', 1 + slimepart);
-events.battle('caves/bat', 1);
+events.battle('caves/bloodsucker', 0.2);
+events.battle('caves/mole', 1);
+events.battle('caves/crawler', 0.5);
+events.battle('caves/slime', 1.5 + slimepart);
+events.battle('caves/bat', 1.5);
+
+
+events.groundItem(ITEM.Stone, 1 / slimepart);
+events.groundItem(ITEM.Bone, 0.7);
+events.groundItem(ITEM.Mushroom, 0.3);
+events.groundItem(ITEM.AncientRubbles, 0.5 * slimepart);
+events.battleRubble(ITEM.Goo, 0.5 * slimepart);
+events.battleRubble(ITEM.Elixir_decay, 0.2);
+events.battleRubble(ITEM.Elixir_chaos, 0.1);
+events.battleRubble(ITEM.Sword_iron, 0.01);
+events.battleRubble(ITEM.Spear, 0.01);
+events.battleRubble(ITEM.Axe, 0.01);
+
+events.byConstructor("EB_Skeleton", 0.5);
+
+events.text(`You find traces of blue sludge on the ground. You summarize that a slimy monster must have recently passed here.`, 0.5);
+events.text(`You accidentally step into a puddle of yellowish slime, and curse yourself as you shake your still wet feet.`, 0.5);
+events.text(`You see what appears to be a tiny slime sucking on a rock crystal. The crystal loses in color as the one of the monster strengthens.`, 0.5);
+events.text(`You hide when you hear a pack of slimes sliding down a tunnel. They spread themselves around shiny crystals nearby in an attempt to ingest them. There's a cracking noise, and the rocks disappear into a myriad of dusty fragments inside their translucent bodies.`, 0.5);
+events.text(`You hear a loud rumble in the distance. You pray that this is not a cave-in blocking your way out...`, 0.5);
+events.text(`In this place, the ground is especially humid. You struggle to make your way through the thick mud.`, 0.5);
+events.text(`You ponder at tiny tunnels branching out from your path. They must have been created by moles and other animals that now inhabit this abandonned mine.`, 0.5);
+events.text(`The atmosphere around you is thick with mineral dust. Every breath you take is an effort, and every time you speak you feel like your mouth is full of sand.`, 0.5);
+events.text(`You find a trail of pink goo that a slime left in its wake. Intrigued, you follow it, but it goes straight into the wall.`, 0.5);
+events.text(`You find yourself facing a giant purple slime. You start to get ready for battle, but to your surprise the monster recoils and collapses on the ground. You see its mass diminish, not understanding fully what is happening. By the time you figure out that the ground is soaking up the slime, nothing is left but a vaguely colorful puddle.`, 0.5);
 
 
 events.set_tries(1, 1 + slimepart);
@@ -441,5 +461,21 @@ for(var f of rooms) {
 // ===================
 //hack G. START/INIT
 // ===================
+
+if(slimepart == 1){
+  CURRENTLEVEL.setup_text_start_function([
+    `You enter an opening you saw on the facade of a little rocky hill. To your surprise, it seems to burrow into the ground in a large network of tunnels. The regular shape of those shafts make you think they were probably man-made. You have no idea how deep this goes.`,
+  ]);
+} else if(slimepart == 2){
+  CURRENTLEVEL.setup_text_start_function([
+    `You continue your progression further into the abyss.`,
+    `$$BestFriend$: "Are you sure you want to go there?"`,
+  ]);
+} else if(slimepart == 3){
+  CURRENTLEVEL.setup_text_start_function([
+    `Most of the tunnels are now barely wide enough for one person to fit. The air is heavy and hard to breathe. Complete silence oppresses you.`,
+  ]);
+}
+
 
 exit.initialize_with_character();
