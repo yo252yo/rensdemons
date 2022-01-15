@@ -352,7 +352,9 @@ const CURRENTLEVEL = {
           if(!CURRENTLEVEL.level_objects[i][j]){
             CURRENTLEVEL.level_objects[i][j] = [];
           }
-          CURRENTLEVEL.level_objects[i][j].push(object);
+          if(! CURRENTLEVEL.level_objects[i][j].includes(object)){
+            CURRENTLEVEL.level_objects[i][j].push(object);
+          }
         }
       }
     },

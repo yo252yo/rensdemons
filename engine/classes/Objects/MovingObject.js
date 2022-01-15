@@ -34,7 +34,12 @@ class MovingObject extends LevelObject {
     this.y += y;
     this.sprite.shift(x, y);
     // In case we're the character, can be optimized
-    SCREEN.scroll_screen_to_character();
+
+    if(this.hash().startsWith("M_Character")){
+      SCREEN.scroll_screen_to_character();
+    } else {
+      CURRENTLEVEL.objects.index_object(this);
+    }
   }
 
   gravity_center() {
