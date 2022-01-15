@@ -111,9 +111,9 @@ const PARTY = {
     CONSOLE.log.party(name + " left");
   },
 
-  changeNickname: function(name) {
+  changeNickname: function(name, prompt_text) {
     var trueName = PARTY.display._get_name(name);
-    var newName = prompt("Chose a nickname for " + trueName, trueName);
+    var newName = prompt(prompt_text || ("Chose a nickname for " + trueName), trueName);
 
     if (newName) {
       DICTIONARY.set(name, newName.replaceAll(' ',''));
