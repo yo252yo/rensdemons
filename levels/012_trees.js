@@ -465,23 +465,18 @@ if(events_zone && !PARTY.has_member(PARTYMEMBERS.SavageChild) && Math.random() <
 //hack G. START/INIT
 // ===================
 
-var start = function(t){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make(t, IO.control.character);
-  };
-}
 
 
 if(treepart == 1){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
     `You arrive at a the entrance of a very dense forest. The trees emanate a threatening aura. An altar of the Goddess stands a few steps before you. You ponder whether or not you should get in.`,
   ]);
 } else if(treepart == 2){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You move forward in the woods. The vegetation grows very compact around you, so much so that it blocks almost all daylight. This seems like a place you would easily get lost in.`,
   ]);
 } else if(treepart == 3){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `When you come to a set of two open paths, you enter the one on your left after much hesitation.`,
   ]);
 } else if(treepart == 5){
@@ -489,7 +484,7 @@ if(treepart == 1){
   if(ABILITIES.has_ability("_treepart4")){
     r.push(`Despite struggling to find your way and refusing to accept your fate, you're finally on to the right path.`)
   }
-  start(r.concat([
+  CURRENTLEVEL.setup_text_start_function(r.concat([
       `You now decide to make a turn to the left.`,
   ]));
 } else if(treepart == 7){
@@ -497,32 +492,32 @@ if(treepart == 1){
   if(ABILITIES.has_ability("_treepart6")){
     r.push(`Of course, you had reservations about your decision, but in the end turning left was the only sensible choice.`)
   }
-  start(r.concat([
+  CURRENTLEVEL.setup_text_start_function(r.concat([
       `You are now in the depths of the forest. You get the feeling that this place is going to be very confusing. You wish you had a map. You consider drawing one yourself. You think it's very annoying that you have to do that in this day and age. You think there should be a map easy to access somewhere. Everything must have been charted by now...`,
       `Although, considering the complexity of the task, you also realize that this place must contain pretty powerful secrets. You wouldn't have to do so much efforts if the payoff wasn't worth it.`,
       `Comforted by that thought, you decide to follow your gut and pick a path at random.`,
   ]));
 } else if(treepart == 11){
   var r = [];
-  start(r.concat([
+  CURRENTLEVEL.setup_text_start_function(r.concat([
       `You hold the branches you found in front of your face, hoping to make your way deeper in the forest without being stopped by the vegetal guards.`,
       `You breathe a sigh of relief after witnessing that the sentinels have been fooled by your disguise. You're a bit surprised that such a simple idea did the trick. But you reason that since you're still not too deep in the forest, the guards you met were the weakest.`,
       `You continue on your exploration.`
   ]));
 } else if(treepart == 12){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `When you come to a set of two open paths, you enter again the one on your left.`,
   ]);
 } else if(treepart == 12){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `But before moving forward, you are dedicated to exploring every corner of this forest.`,
   ]);
 } else if(treepart == 14){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `The vegetation grows dense around you. Moving forward becomes a real challenge. Every step, you need to force your way through bushes and roots. The sunlight has completely disappeared from the thick canopy above you.`,
   ]);
 } else if(treepart == 15){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You arrive at a clearing where the path branches in many directions. You shudder at the thought of all these possible routes to explore. But you breathe a sigh of relief seeing a holy altar that will undoubtely help you find your way in this hellish forest.`,
       `You know that the way out is probably forward, but you also feel the urge to explore the other paths in search of treasures they could hide.`,
   ]);
@@ -531,39 +526,39 @@ if(treepart == 1){
   if (INVENTORY.count(ITEM.Branch) < 4){
     other = `You hope that other routes are not this long.`;
   }
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You sigh as this complicated path is really annoying. You should be getting close to its end, now.`, other
   ]);
 } else if(treepart == 28){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `Once again, the path before you splits in two. You suspect that this is not really a choice and that you will have to explore both sides.`,
   ]);
 } else if(treepart == 29){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `The path seems to come to a dead-end. But you speculate that this route was not created for nothing. You know that every part of this forest a purpose. You believe that this portion warrants close examination.`,
   ]);
 } else if(treepart == 31){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `This route comes to a sudden end. You take this as a sign that something important is nearby.`,
   ]);
 } else if(treepart == 32){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You arrive once more at a fork in your path. By now, it is clear that this apparent choice is not really a choice at all. You advance on one of the paths.`,
   ]);
 } else if(treepart == 37){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You suspect that the path you did not take arrives here too. You consider checking this before advancing further.`,
   ]);
 } else if(treepart == 38){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You have reached the deepest part of the forest. You praise yourself mentally for holding out this long in this labyrinth. You carefully advance towards the place you suspect to hold a great treasure, shivering with anticipation.`,
   ]);
 } else if(treepart == 39){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `This is the heart of the woods. The vegetation around you gently glows with a mysterious light. It seems to you that the trees around you are humming, as if communicating with each other. What you came for is surely close, but you know that there will be an ultimate trial before you can reach it. No treasure comes unguarded.`,
   ]);
 } else if(treepart == 40){
-  start([
+  CURRENTLEVEL.setup_text_start_function([
       `You decide to take your time and investigate this dead-end for a while before going back to the main path.`,
   ]);
 }

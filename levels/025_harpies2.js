@@ -107,12 +107,10 @@ events.fill_floor_by_retry();
 //hack 7. START/INIT
 // ===================
 
-CURRENTLEVEL.start_function = function() {
-  TextBannerSequence.make([
-    `The door opens with a loud air pressure sound. It clearly hasn't been moved in ages. Clouds of dusts from inside are shaken for the first time in centuries. You keep coughing and you have to wait a few minutes for the atmosphere to settle down before you can make out anything.`,
-    `The inside is a huge cavern. The walls are covered by metal, keeping the place fresh and preventing it from crumbling. The only light source is from the door you opened. There's dust and cobwebs everywhere, but the cool air is a welcome refreshment after your climb.`,
-    `$$BestFriend$: "Whatever we are looking for, it must be here somewhere!"`,
-  ], IO.control.character);
-};
+CURRENTLEVEL.setup_text_start_function([
+  `The door opens with a loud air pressure sound. It clearly hasn't been moved in ages. Clouds of dusts from inside are shaken for the first time in centuries. You keep coughing and you have to wait a few minutes for the atmosphere to settle down before you can make out anything.`,
+  `The inside is a huge cavern. The walls are covered by metal, keeping the place fresh and preventing it from crumbling. The only light source is from the door you opened. There's dust and cobwebs everywhere, but the cool air is a welcome refreshment after your climb.`,
+  `$$BestFriend$: "Whatever we are looking for, it must be here somewhere!"`,
+]);
 
 CURRENTLEVEL.initialize_with_character(850, 1225);

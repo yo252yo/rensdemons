@@ -140,13 +140,11 @@ new SBattle(2125, 1375, 'forests/fungus');
 //hack 7. START/INIT
 // ===================
 
-CURRENTLEVEL.start_function = function() {
-  TextBannerSequence.make([
+CURRENTLEVEL.setup_text_start_function([
   `You stand before the forest that the priest mentioned. It doesn't seem very dangerous, but you can tell that the lustrous vegetation becomes very dense quite fast, promising to make navigation a real challenge. Only a small trail seems walkable in the middle of the tangled mess of bushes.`,
   `$$BestFriend$: "What are we even looking for?"`,
   `$$Ren$: "Not sure... Some sort of irregularity? Things that could be ancient ruins, burrowed under the vegetation?"`,
   `$$BestFriend$: "That's going to be tough..."`,
-  ], IO.control.character);
-};
+]);
 
 CURRENTLEVEL.initialize_with_character(2000, 2425);

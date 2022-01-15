@@ -254,37 +254,29 @@ if(sirenspart == 1){
       `$$TraitorFisher$: "I'm sorry, we must begin your formal trial."`,
     ], fight);
   };
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You get dragged all the way to the bottom of the lake. When the currents finally quiet down, the tentacular monster that brought you here is nowhere to be seen. Instead, you can see plenty of heavily armored sirens and tritons floating in the water all around. They are all watching you with a suspicious eye.`,
-      `In front of you stands a young woman, studying you patiently. She seems very serious, and not at all phased by this unusual environment or by your presence.`,
-    ], next);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You get dragged all the way to the bottom of the lake. When the currents finally quiet down, the tentacular monster that brought you here is nowhere to be seen. Instead, you can see plenty of heavily armored sirens and tritons floating in the water all around. They are all watching you with a suspicious eye.`,
+    `In front of you stands a young woman, studying you patiently. She seems very serious, and not at all phased by this unusual environment or by your presence.`,
+  ], next);
   CURRENTLEVEL.initialize_with_character(2275, 1800);
 } else if(sirenspart == 2){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `$$BestFriend$: "We've arrived in a completely different part of the lake... Do you think the Siren army will follow us here?"`,
-      `$$Ren$: "I'm pretty sure that they won't. In this world, if you run away for a bit, your pursuers will always give up."`,
-      `$$BestFriend$: "That seems unlikely. Why would they just abandon the chase?"`,
-      `$$Ren$: "I guess the Goddess has our backs!"`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `$$BestFriend$: "We've arrived in a completely different part of the lake... Do you think the Siren army will follow us here?"`,
+    `$$Ren$: "I'm pretty sure that they won't. In this world, if you run away for a bit, your pursuers will always give up."`,
+    `$$BestFriend$: "That seems unlikely. Why would they just abandon the chase?"`,
+    `$$Ren$: "I guess the Goddess has our backs!"`,
+  ]);
   CURRENTLEVEL.initialize_with_character(2275, 1800);
 } else if(sirenspart == 3){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive in an even deeper and densely populated part of the lake.`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You arrive in an even deeper and densely populated part of the lake.`,
+  ]);
   CURRENTLEVEL.initialize_with_character(2275, 1800);
 } else {
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You've reached the bottom of the lake, the deepest parts of the water. The place is so dark that you can barely see. Contrary to what you've seen before, everything seems very quiet.`,
-      `$$BestFriend$: "It seems like we'll be safe here..."`,
-      `$$Ren$: "Don't let your guard down, though. That's begging for trouble. It's always when you start to feel safe that you get attacked by the biggest creature..."`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You've reached the bottom of the lake, the deepest parts of the water. The place is so dark that you can barely see. Contrary to what you've seen before, everything seems very quiet.`,
+    `$$BestFriend$: "It seems like we'll be safe here..."`,
+    `$$Ren$: "Don't let your guard down, though. That's begging for trouble. It's always when you start to feel safe that you get attacked by the biggest creature..."`,
+  ]);
   CURRENTLEVEL.initialize_with_character(1000, 2175);
 }

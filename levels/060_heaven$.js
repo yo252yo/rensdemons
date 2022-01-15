@@ -202,26 +202,16 @@ placeholder.destroy();
 // Start functions
 if (!ABILITIES.has_ability("_heaven_visited")){
   ABILITIES.unlock("_heaven_visited");
-  CURRENTLEVEL.start_function = function() {
-    var callback = function(){
-      IO.control.character();
-    }
-    TextBannerSequence.make([
-      `You find yourself in the middle of a sea of cottony clouds. The slow swirling motion of the vapor is numbing your senses. No doubt that some sort of divine magic is also at play in this disorientation. You're not exactly sure how you arrived there or where you should go... The mist extends in every direction, but every time you look away it seems that the world changes around you. It's going to be hard to orient yourself, let alone pierce the mystery of this place...`,
-    ], callback);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You find yourself in the middle of a sea of cottony clouds. The slow swirling motion of the vapor is numbing your senses. No doubt that some sort of divine magic is also at play in this disorientation. You're not exactly sure how you arrived there or where you should go... The mist extends in every direction, but every time you look away it seems that the world changes around you. It's going to be hard to orient yourself, let alone pierce the mystery of this place...`,
+  ]);
 } else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !ABILITIES.has_ability("_goddess_intro")) {
   ABILITIES.unlock("_goddess_intro");
-  CURRENTLEVEL.start_function = function() {
-    var callback = function(){
-      IO.control.character();
-    }
-    TextBannerSequence.make([
-      `You're not completely sure how you navigated this limitless ocean of clouds, but you made it. In front of you, on top of a large stained glass circle, stands the Goddess Herself. Or at least, you think that's her. She looks exactly like the many statues you've seen.`,
-      `You're almost surprised to not find Her bigger. Compared to $$demon_lord$, She is closer to you in size. Yet, She radiates an unimaginable amount of power. Her silver skin glows almost blindingly, the velvety fabric She's draped in seems to fold infinitely, inviting your gaze to always dive deeper in fractal nebulae. It's impossible to look at Her for more than a second, lest you might never look away...`,
-      `She's surrounded by altars, as if to suggest mindfulness before you dare approach Her.`,
-    ], callback);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You're not completely sure how you navigated this limitless ocean of clouds, but you made it. In front of you, on top of a large stained glass circle, stands the Goddess Herself. Or at least, you think that's her. She looks exactly like the many statues you've seen.`,
+    `You're almost surprised to not find Her bigger. Compared to $$demon_lord$, She is closer to you in size. Yet, She radiates an unimaginable amount of power. Her silver skin glows almost blindingly, the velvety fabric She's draped in seems to fold infinitely, inviting your gaze to always dive deeper in fractal nebulae. It's impossible to look at Her for more than a second, lest you might never look away...`,
+    `She's surrounded by altars, as if to suggest mindfulness before you dare approach Her.`,
+  ]);
 }
 
 

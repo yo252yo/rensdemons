@@ -46,11 +46,9 @@ computer.interaction = function(){
 new S_Floor(1050,1450,400,400);
 new S_ExitFloor(1150,1475,200,50, 'demo/mountain');
 
-CURRENTLEVEL.start_function = function() {
-  TextBannerSequence.make([
-    `You arrive in a cavern. The air is cool but damp. Nobody seems to have been here in ages, as demonstrated by a thick layer of dust on the floor. The walls seem covered in metal. A low constant humming fills the room but you cannot make out where it's coming from. Prehaps this weird metal altar in the center?`,
-  ], IO.control.character);
-};
+CURRENTLEVEL.setup_text_start_function([
+  `You arrive in a cavern. The air is cool but damp. Nobody seems to have been here in ages, as demonstrated by a thick layer of dust on the floor. The walls seem covered in metal. A low constant humming fills the room but you cannot make out where it's coming from. Prehaps this weird metal altar in the center?`,
+]);
 
 
 CURRENTLEVEL.initialize_with_character(1250, 1400);

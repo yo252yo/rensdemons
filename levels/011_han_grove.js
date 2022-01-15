@@ -81,15 +81,10 @@ treeFiller.fill_floor_by_retry();
 // ===================
 //hack 7. START/INIT
 // ===================
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    SAVE.autosave();
-    IO.control.character();
-  }
-  TextBannerSequence.make([
+
+CURRENTLEVEL.setup_text_start_function([
     "You arrive at a small grove. The lush trees provide a welcome shelter from the elements. Any of them would be a great place for a nap.",
     `$$BestFriend$: "How about a little break?"`,
-  ], callback);
-};
+  ], undefined, true);
 
 CURRENTLEVEL.initialize_with_character(1050, 1520);

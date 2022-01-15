@@ -176,21 +176,17 @@ if (floor == 6) {
 //hack 7. START/INIT
 // ===================
 if (floor == 0){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive in the main hall of the wide castle. The floor is paved with cold marble slabs, the walls are made of old stone. The place is swarming with demons and ungodly sights. No doubt that $$demon_lord$ is in the middle of all this.`,
-      `You gather your courage. You're at the heart of the enemy's forces. The end is near.`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You arrive in the main hall of the wide castle. The floor is paved with cold marble slabs, the walls are made of old stone. The place is swarming with demons and ungodly sights. No doubt that $$demon_lord$ is in the middle of all this.`,
+    `You gather your courage. You're at the heart of the enemy's forces. The end is near.`,
+  ]);
 }
 if (floor == 6){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You finally reach the final floor. You're exhausted, but the adrenaline you get from approaching your goal powers you through.`,
-      `The top floor is just one wide room, with numerous openings in the walls from which $$demon_lord$ can gaze upon his territory in every direction. The demon lord is in the middle of the room, slowly pacing around his massive throne. It looks like he's waiting for something.`,
-      `You have the itch to pray at the altar before such an important encounter.`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You finally reach the final floor. You're exhausted, but the adrenaline you get from approaching your goal powers you through.`,
+    `The top floor is just one wide room, with numerous openings in the walls from which $$demon_lord$ can gaze upon his territory in every direction. The demon lord is in the middle of the room, slowly pacing around his massive throne. It looks like he's waiting for something.`,
+    `You have the itch to pray at the altar before such an important encounter.`,
+  ]);
 }
 
 if(floor == 0){

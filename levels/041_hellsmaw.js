@@ -350,65 +350,49 @@ for(var i of floors){
 }
 
 if(hellsmawpart == 1){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive at the foot of a mountain chain. The rock is black and rises steeply in contrast to the surrounding meadow, as if some sort of massive otherworldly spike perforated the ground. Every now and then, you can hear an ominous rumbling in the distance. The smell of sulfur overwhelms you and makes it hard to breathe. From the summit, a thick grey fog runs down the slopes and makes it impossible to see what lies ahead of you..."`,
-      `$$BestFriend$: "So this is it, this is $$demon_lord$'s hideout?"`,
-      `$$Ren$: "I think so... This is the heart of enemy territory! Let's be extra careful, it must be swarming with demons..."`,
-      `Next to you, an old worn out altar stands as the last stand of civilization.`,
-      `The track you can climb is thin and unreliable. Pretty soon, it forks into different paths shrouded in fog that crawl up the sharp facade. You pray that the Goddess leads you to the right one...`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You arrive at the foot of a mountain chain. The rock is black and rises steeply in contrast to the surrounding meadow, as if some sort of massive otherworldly spike perforated the ground. Every now and then, you can hear an ominous rumbling in the distance. The smell of sulfur overwhelms you and makes it hard to breathe. From the summit, a thick grey fog runs down the slopes and makes it impossible to see what lies ahead of you..."`,
+    `$$BestFriend$: "So this is it, this is $$demon_lord$'s hideout?"`,
+    `$$Ren$: "I think so... This is the heart of enemy territory! Let's be extra careful, it must be swarming with demons..."`,
+    `Next to you, an old worn out altar stands as the last stand of civilization.`,
+    `The track you can climb is thin and unreliable. Pretty soon, it forks into different paths shrouded in fog that crawl up the sharp facade. You pray that the Goddess leads you to the right one...`,
+  ]);
 } else if(hellsmawpart == 4){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive on an island in the middle of a little lake of lava. The boiling liquid warms up the atmosphere to a point that makes it hard to breathe.`,
-      `$$BestFriend$: "Let's not linger, ok?"`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You arrive on an island in the middle of a little lake of lava. The boiling liquid warms up the atmosphere to a point that makes it hard to breathe.`,
+    `$$BestFriend$: "Let's not linger, ok?"`,
+  ]);
 } else if(hellsmawpart == 5){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `The path in front of you has been blocked by rocks piled up in a landslide.`,
-      `$$Ren$: "Looks like we can't go this way..."`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `The path in front of you has been blocked by rocks piled up in a landslide.`,
+    `$$Ren$: "Looks like we can't go this way..."`,
+  ]);
 } else if(hellsmawpart == 6){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
+  CURRENTLEVEL.setup_text_start_function([
     `$$BestFriend$: "How long have we been here? This place is a hellish maze..."`,
     `$$Ren$: "I don't know anymore... Everything looks the same... It feels like we're not making progress..."`,
     `$$BestFriend$: "The evil magic of this place is getting to us... We cannot give up and let them win!"`,
-    ], IO.control.character);
-  };
+  ]);
 } else if(hellsmawpart == 7){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `$$BestFriend$: "Let's take a little break, please."`,
-      `You agree. You share a small meal and drink plenty of water to gather forces for the climb to come. But this is not a very restful stop: you can't help but staying on your guard, not relaxing your mind for even a second...`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `$$BestFriend$: "Let's take a little break, please."`,
+    `You agree. You share a small meal and drink plenty of water to gather forces for the climb to come. But this is not a very restful stop: you can't help but staying on your guard, not relaxing your mind for even a second...`,
+  ]);
 } else if(hellsmawpart == 8){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `$$BestFriend$: "I can't take it anymore! How much longer is this going to be?"`,
-      `$$Ren$: "Look, an altar! Surely it's the Goddess' way to tell us we're very close to our goal! We better pray!"`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `$$BestFriend$: "I can't take it anymore! How much longer is this going to be?"`,
+    `$$Ren$: "Look, an altar! Surely it's the Goddess' way to tell us we're very close to our goal! We better pray!"`,
+  ]);
 } else if(hellsmawpart == 10){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You keep making your way on the thin track among cascades of abrasive fog. You can tell that next to you, the floor gives in into a huge cliff. You cannot even see the bottom.`,
-      `$$Ren$: "Let's be very careful, we won't surive this fall..."`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You keep making your way on the thin track among cascades of abrasive fog. You can tell that next to you, the floor gives in into a huge cliff. You cannot even see the bottom.`,
+    `$$Ren$: "Let's be very careful, we won't survive this fall..."`,
+  ]);
 } else if(hellsmawpart == 12){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `You arrive at what appears to be the summit. In front of you, the ground caves in, forming a crater where the fog is so thick that you cannot see the ground. All around, columns of lava suddenly raise up and explode, projecting flurries of molten droplets in every direction.`,
-      `$$BestFriend$: "I guess this is it..."`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `You arrive at what appears to be the summit. In front of you, the ground caves in, forming a crater where the fog is so thick that you cannot see the ground. All around, columns of lava suddenly raise up and explode, projecting flurries of molten droplets in every direction.`,
+    `$$BestFriend$: "I guess this is it..."`,
+  ]);
 } else if(hellsmawpart == 13){
   var after = function(){
     if(STATS.flag("KilledBestFriend")){
@@ -423,8 +407,7 @@ if(hellsmawpart == 1){
     }
   };
 
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
+  CURRENTLEVEL.setup_text_start_function([
       `$$BestFriend$: "Wait a minute, this place looks a lot like where we've just been..."`,
       `$$Ren$: "We're at the very core of the demon kingdom. It is the concentration of all their evil power. That must be playing tricks on us..."`,
       `$$BestFriend$: "That must be it... But I feel like something is different in the air... Something has changed, but I can't pinpoint what..."`,
@@ -433,14 +416,11 @@ if(hellsmawpart == 1){
       `$$BestFriend$: "Is that... $$demon_lord$?"`,
       `$$Ren$: "Who else? Let's use our weapon before he notices us!"`,
     ], after);
-  };
 } else if(hellsmawpart == 14){
-  CURRENTLEVEL.start_function = function() {
-    TextBannerSequence.make([
-      `As you come back to the scene of the tragedy, the landscape around you seems eerily familiar, yet something feels off.`,
-      `Thanks to the wisdom of the Goddess, you know that demonic magic is at play here, and it will not allow you to go back to your world. The only way is forward.`,
-    ], IO.control.character);
-  };
+  CURRENTLEVEL.setup_text_start_function([
+    `As you come back to the scene of the tragedy, the landscape around you seems eerily familiar, yet something feels off.`,
+    `Thanks to the wisdom of the Goddess, you know that demonic magic is at play here, and it will not allow you to go back to your world. The only way is forward.`,
+  ]);
 }
 
 

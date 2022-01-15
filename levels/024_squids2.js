@@ -88,16 +88,14 @@ events.fill_floor_by_retry();
 //hack 7. START/INIT
 // ===================
 
-CURRENTLEVEL.start_function = function() {
-  TextBannerSequence.make([
-    `You find yourself inside the whale. Fortunately, you're small enough to have avoided being ground by the huge teeth, but the surrounding stench leaves no doubt about your future demise to powerful digestive fluids. However, you notice that a lot of other things have been swallowed by the monster, and you can see here and there things that were clearly made by humans. Maybe there's a silver lining in all of this...`,
-    `$$BestFriend$: "Damn it, this is a true children's book cliche!"`,
-    `$$BestFriend$ is next to you on the floor, which is actually the moist and gooey animal tongue.`,
-    `$$Ren$: "Are you okay?"`,
-    `$$BestFriend$: "Yeah, I think so. We need to get out of here, fast."`,
-    `$$Ren$: "Agreed, but let's keep an eye out for the artifact, there's pretty ancient stuff inside here."`,
-    `$$BestFriend$: "If you say so... I just want to get out before being eaten. And I think there's only one way..."`,
-  ], IO.control.character);
-};
+CURRENTLEVEL.setup_text_start_function([
+  `You find yourself inside the whale. Fortunately, you're small enough to have avoided being ground by the huge teeth, but the surrounding stench leaves no doubt about your future demise to powerful digestive fluids. However, you notice that a lot of other things have been swallowed by the monster, and you can see here and there things that were clearly made by humans. Maybe there's a silver lining in all of this...`,
+  `$$BestFriend$: "Damn it, this is a true children's book cliche!"`,
+  `$$BestFriend$ is next to you on the floor, which is actually the moist and gooey animal tongue.`,
+  `$$Ren$: "Are you okay?"`,
+  `$$BestFriend$: "Yeah, I think so. We need to get out of here, fast."`,
+  `$$Ren$: "Agreed, but let's keep an eye out for the artifact, there's pretty ancient stuff inside here."`,
+  `$$BestFriend$: "If you say so... I just want to get out before being eaten. And I think there's only one way..."`,
+]);
 
 CURRENTLEVEL.initialize_with_character(1100, 1350);

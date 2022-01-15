@@ -201,12 +201,10 @@ new SBattle(2475, 1275, '_02/_wrong_skeleton');
 //hack 7. START/INIT
 // ===================
 
-CURRENTLEVEL.start_function = function() {
-  TextBannerSequence.make([
-    `You stand in front of a tall mountain. There is a sort of path climbing up towards the summit. Up there, mythical creatures fly around the peak, cutting through the clouds and letting out screeching cries that chill you to the bone.`,
-    `$$BestFriend$: "Is there really an ancient refuge here?"`,
-    `$$Ren$: "I suppose we'll have to find out."`,
-  ], IO.control.character);
-};
+CURRENTLEVEL.setup_text_start_function([
+  `You stand in front of a tall mountain. There is a sort of path climbing up towards the summit. Up there, mythical creatures fly around the peak, cutting through the clouds and letting out screeching cries that chill you to the bone.`,
+  `$$BestFriend$: "Is there really an ancient refuge here?"`,
+  `$$Ren$: "I suppose we'll have to find out."`,
+]);
 
 CURRENTLEVEL.initialize_with_character(2000, 2425);

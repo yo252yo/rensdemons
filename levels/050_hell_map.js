@@ -95,18 +95,12 @@ if(! ABILITIES.has_ability("_secret_ending_chosen")){
   heaven.destroy();
 }
 
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    SAVE.autosave();
-    IO.control.character();
-  }
-  TextBannerSequence.make([
-    `When you exit the vulcano, you find yourself in a different world. Your trip in the mountains indeed brought you to another dimension, probably the one where the demons originated.`,
-    `Maybe the loss of $$BestFriend$ numbed your soul, or maybe the Goddess prepared you for this on some level, but you do not seem surprised or scared by the new landscape that expands in front of your eyes.`,
-    "A dry wasteland extends as far as your eye can see. The fauna and flora are unlike anything you've ever seen before. The atmosphere seems thicker, somehow. The ground is dry and colorful. You have no doubt that every creature in this place is deadly. The overpowering heat make breathing hard.",
-    "But those hardship do not phase you. You're here for one purpose only, and your resolve is strong. You're going to find $$demon_lord$.",
-  ], callback);
-};
+CURRENTLEVEL.setup_text_start_function([
+  `When you exit the volcano, you find yourself in a different world. Your trip in the mountains indeed brought you to another dimension, probably the one where the demons originated.`,
+  `Maybe the loss of $$BestFriend$ numbed your soul, or maybe the Goddess prepared you for this on some level, but you do not seem surprised or scared by the new landscape that expands in front of your eyes.`,
+  "A dry wasteland extends as far as your eye can see. The fauna and flora are unlike anything you've ever seen before. The atmosphere seems thicker, somehow. The ground is dry and colorful. You have no doubt that every creature in this place is deadly. The overpowering heat make breathing hard.",
+  "But those hardship do not phase you. You're here for one purpose only, and your resolve is strong. You're going to find $$demon_lord$.",
+], undefined, true);
 
 CURRENTLEVEL.initialize_with_character(2475, 2225, 0.6);
 

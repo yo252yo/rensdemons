@@ -436,6 +436,22 @@ const CURRENTLEVEL = {
     FOG.moveToChar();
   },
 
+  setup_text_start_function: function(text, c, autosave){
+    var callback = function(){
+      if(autosave){
+        SAVE.autosave();
+      }
+      if(c) {
+         c();
+      } else {
+         IO.control.character();
+      }
+    }
+    CURRENTLEVEL.start_function = function() {
+      TextBannerSequence.make(text, callback);
+    };
+  },
+
   add_trigger: function(key, f_condition, f_execute) {
     if(CURRENTLEVEL.triggers[key] && f_condition() && IO.interface._can_trigger_level_event()){
       CONSOLE.log.event("Triggered " + key);

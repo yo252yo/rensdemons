@@ -105,21 +105,18 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 // ===================
 //hack 7. START/INIT
 // ===================
-
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    PARTY.changeNickname(PARTYMEMBERS.Ren);
-    TextBannerSequence.make([
-      "$$Ren$: \"... 97\"",
-      "$$Ren$: \"... 98\"",
-      "$$Ren$: \"... 99\"",
-      "$$Ren$: \"... 100! Ready or not, here I come!\"",
-    ], function(){ IO.control.character(); });
-  }
-
+var callback = function(){
+  PARTY.changeNickname(PARTYMEMBERS.Ren);
   TextBannerSequence.make([
-    "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
-  ], callback);
+    "$$Ren$: \"... 97\"",
+    "$$Ren$: \"... 98\"",
+    "$$Ren$: \"... 99\"",
+    "$$Ren$: \"... 100! Ready or not, here I come!\"",
+  ], function(){ IO.control.character(); });
 };
+
+CURRENTLEVEL.setup_text_start_function([
+  "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
+], callback);
 
 CURRENTLEVEL.initialize_with_character(1150, 1300);

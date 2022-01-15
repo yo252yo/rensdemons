@@ -19,16 +19,9 @@ rubbleFiller.set_object(75, 150, function(x,y,seed){ return new S_Hole(x, y, see
 rubbleFiller.fill_floor_by_retry();
 
 
-
-CURRENTLEVEL.start_function = function() {
-  var callback = function(){
-    SAVE.autosave();
-    IO.control.character();
-  }
-  TextBannerSequence.make([
+CURRENTLEVEL.setup_text_start_function([
     "In front of you, a thin crack splits the ground into an open wound. It seems barely enough for a child to get through. The walls are steep, but the irregular rock offers plenty of support to climb down. You can tell that it dives deep into the earth. It seems to widen as it burrows underground. You think you see something shimmering vaguely at the bottom.",
     `$$BestFriend$: "I think this is a place where we can find out a lot more about the ancestors... Should we go?"`,
-  ], callback);
-};
+  ], undefined, true);
 
 CURRENTLEVEL.initialize_with_character(1000, 1225);
