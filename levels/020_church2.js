@@ -18,20 +18,6 @@ new M_Trainer(1450, 1650, 33, ABILITIES_ARCHETYPES_NAMES.Diplomat, 750);
 
 var wiseOldFool = new M_WiseOld(1500, 1125);
 
-wiseOldFool.interaction = function() {
-  this.face_character();
-  if (PARTY.has_member(PARTYMEMBERS.WiseOld)){
-    TextBannerSequence.make([
-      `$$WiseOld$: "I am yours to command."`,
-    ]);
-  } else if (INVENTORY.count("_wiseOldTraining") == 1) {
-    BATTLE.api.make('_party/_WiseOldBody');
-  } else if (INVENTORY.count("_wiseOldTraining") == 2) {
-    BATTLE.api.make('_party/_WiseOldMind');
-  } else {
-    BATTLE.api.make('_party/_WiseOldHeart');
-  }
-}
 
 var explanations = function() {
   var short = [

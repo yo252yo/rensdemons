@@ -24,21 +24,6 @@ obj.push(new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get())
 
 var wiseOldFool = new M_WiseOld(1050, 1075);
 
-wiseOldFool.interaction = function() {
-  this.face_character();
-  if (PARTY.has_member(PARTYMEMBERS.WiseOld)){
-    TextBannerSequence.make([
-      `$$WiseOld$: "Our mission is now more important than ever!."`,
-    ]);
-  } else if (INVENTORY.count("_wiseOldTraining") == 1) {
-    BATTLE.api.make('_party/_WiseOldBody');
-  } else if (INVENTORY.count("_wiseOldTraining") == 2) {
-    BATTLE.api.make('_party/_WiseOldMind');
-  } else {
-    BATTLE.api.make('_party/_WiseOldHeart');
-  }
-}
-
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y, CITIES.fear);
   priest.interaction = function() {

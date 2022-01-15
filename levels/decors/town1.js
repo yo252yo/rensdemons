@@ -49,8 +49,4 @@ villagerFiller.fill_floor_by_retry();
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
   var preciousChild  = new M_PreciousChild(1875, 1980);
-  preciousChild.interaction = function() {
-    this.face_character();
-    BATTLE.api.make('_party/_PreciousChild');
-   };
 }

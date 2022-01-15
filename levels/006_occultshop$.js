@@ -26,14 +26,6 @@ new B_Statue(1225, 1225);
 new B_Table(1325, 1325);
 
 var shopkeep = new M_UpbeatDojikko(1325, 1275);
-shopkeep.interaction = function(){
-  this.face_character();
-  if(PARTY.has_member(PARTYMEMBERS.UpbeatDojikko)){
-    new TextBanner(`$$UpbeatDojikko$: "Go ahead, I'm right behind you. Just tidying a few things here."`);
-  } else {
-    BATTLE.api.make('_party/_UpbeatDojikko');
-  }
-}
 
 // ===================
 //hack 7. START/INIT
