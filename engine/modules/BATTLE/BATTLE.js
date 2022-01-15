@@ -236,8 +236,11 @@ const BATTLE = {
       BATTLETREE.api.declare(BATTLE.current_battle, action_object.name);
     },
 
-    empty: function(){
+    empty: function(escape){
       BATTLE._player_actions = [];
+      if(escape){
+        PLAYER_ACTIONS.escape();
+      }
     },
 
     remove: function(name) {

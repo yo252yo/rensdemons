@@ -150,6 +150,8 @@ class M_GeniusProdigy extends MovingObject {
       TextBannerSequence.make([
         `$$GeniusProdigy$: "Let's go! I can't wait to see what we'll discover on our way!"`,
       ]);
+    } else if (INVENTORY.count("_geniusInvestigation") == 1){
+      BATTLE.api.make('_party/_GeniusProdigy2');
     } else {
       BATTLE.api.make('_party/_GeniusProdigy');
     }
