@@ -2,7 +2,7 @@
 
 
 class LevelObject {
-    constructor(sprite, x, y) {
+    constructor(sprite, x, y, force_index) {
         this.x = x;
         this.y = y;
         this.original_x = x;
@@ -11,7 +11,7 @@ class LevelObject {
 
         this.visual_element.place_at(x, y);
         this.walkable = false;
-        CURRENTLEVEL.objects.index_object(this);
+        CURRENTLEVEL.objects.index_object(this, force_index);
     }
 
     place_at(x,y){

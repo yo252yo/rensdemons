@@ -324,13 +324,20 @@ const CURRENTLEVEL = {
       return [CURRENTLEVEL._INDEX_SQUARE_SIZE*Math.floor(x/CURRENTLEVEL._INDEX_SQUARE_SIZE), CURRENTLEVEL._INDEX_SQUARE_SIZE*Math.floor(y/CURRENTLEVEL._INDEX_SQUARE_SIZE)];
     },
 
-    index_object: function(object) {
+    index_object: function(object, force_index) {
       var x = object.x || object.h_x || object.visual_element.x;
       var y = object.y || object.h_y || object.visual_element.y;
       var w = object.w || object.h_w || object.visual_element.width;
       var h = object.h || object.h_h || object.visual_element.height;
       if(!x || !y || !w || !h){
-        CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash(), true);
+        if(force_index){
+          x = x || -1;
+          y = y || -1;
+          w = w || 1;
+          h = h || 1;
+        } else {
+          CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash(), true);
+        }
       }
 
 
