@@ -158,16 +158,17 @@ class S_Whirlwind extends SimpleObject {
 
 
 class S_SlimeDoor extends S_event {
-  constructor(x, y, answer) {
+  constructor(x, y, code) {
     super(x, y, 125, undefined, "event_text");
-    this.answer = answer;
+    this.code = code;
   }
 
   ask()  {
     var guess = prompt("What will you say?");
+    var answer = S_SlimeTip.get_answer(this.code);
     if (!guess) { guess = ""; }
     guess = guess.toLowerCase();
-    if(guess == this.answer){
+    if(guess == answer){
       var self = this;
       TextBannerSequence.make([
         `In a wooshing sound, the curtain of metal burrows in the ceiling, leaving the way free.`,
@@ -181,9 +182,209 @@ class S_SlimeDoor extends S_event {
 
   interaction() {
     var self = this;
+    var tips = S_SlimeTip.get_full_tips(this.code);
+    var letters = S_SlimeTip.get_full_letters(this.code);
     TextBannerSequence.make([
       `The wall is different here. In the middle of the rock, a flat sheet of metal is inscribed with runes and symbols. You summarize that it is expecting you to say some sort of password.`,
+      `You remember the carvings you have seen so far:`, `${tips}`, `${letters}`
     ], function() { self.ask(); });
   }
+}
 
+class S_SlimeTip extends S_event {
+  static has_tip(code){
+    var t = INVENTORY.count("_slime_tips");
+    return (t & (2**code)) > 0;
+  }
+
+  static get_tip_text(code){
+    if(!S_SlimeTip.has_tip(code)) {
+      return "???????";
+    }
+    switch (code) {
+      case 1:
+        return "The first password is that which binds";
+      case 2:
+        return "Forbids and restrict some actions";
+      case 3:
+        return "But creates a space for the minds";
+      case 4:
+        return "To join in common creations";
+
+      case 5:
+        return "What actors do on the big stage";
+      case 6:
+        return "What people do in society";
+      case 7:
+        return "What children do at early age";
+      case 8:
+        return "What even gods do presently";
+
+      case 9:
+        return "The password is a great display";
+      case 10:
+        return "That fascinates and lures the eye";
+      case 11:
+        return "An empty show, an actor's way";
+      case 12:
+        return "To blur the truth and mystify";
+
+      case 13:
+        return "When you look at what suits your views";
+      case 14:
+        return "When you idealize the past";
+      case 15:
+        return "When you follow that which feels true";
+      case 16:
+        return "Rational inquiries bypassed";
+
+      case 17:
+        return "This is only what you can see";
+      case 18:
+        return "Why should it dictate how you care";
+      case 19:
+        return "But reason past superficy";
+      case 20:
+        return "Is more than most people can bear";
+
+      case 21:
+        return "This is the frame that's placed on you";
+      case 22:
+        return "The reference that we all share";
+      case 23:
+        return "The fence enclosing your world view";
+      case 24:
+        return "As invisible as the air";
+    }
+  }
+  static get_letters(code){
+    if(!S_SlimeTip.has_tip(code)) {
+      return "????";
+    }
+    switch (code) {
+      case 1:
+        return "[l]";
+      case 2:
+        return "[s]";
+      case 3:
+        return "[e] [u]";
+      case 4:
+        return "[r]";
+
+      case 5:
+        return "[p]";
+      case 6:
+        return "[a]";
+      case 7:
+        return "[l]";
+      case 8:
+        return "[y]";
+
+      case 9:
+        return "[a] [?] [c]"; // c
+      case 10:
+        return "[e] [t]";
+      case 11:
+        return "[s] [?]"; // e
+      case 12:
+        return "[l] [p]";
+
+      case 13:
+        return "[i]";
+      case 14:
+        return "[s]";
+      case 15:
+        return "[?]"; // a
+      case 16:
+        return "[b]";
+
+      case 17:
+        return "[p] [c] [?]"; // e
+      case 18:
+        return "[s] [?]"; // a
+      case 19:
+        return "[n] [e] [?]"; // a
+      case 20:
+        return "[?] [r] [a]"; // p
+
+      case 21:
+        return "[o]";
+      case 22:
+        return "[l] [?]"; // r
+      case 23:
+        return "[a] [?]"; // m
+      case 24:
+        return "[n]";
+    }
+  }
+
+  static get_answer(code){
+    switch (code) {
+      case 'A':
+        return "rules";
+      case 'B':
+        return "play";
+      case 'C':
+        return "spectacle";
+      case 'D':
+        return "bias";
+      case 'E':
+        return "appearances";
+      case 'F':
+        return "normal";
+    }
+  }
+
+  static get_full_tips(code){
+    switch (code) {
+      case 'A':
+        return `${S_SlimeTip.get_tip_text(1)} <br /> ${S_SlimeTip.get_tip_text(2)} <br /> ${S_SlimeTip.get_tip_text(3)} <br /> ${S_SlimeTip.get_tip_text(4)}`;
+      case 'B':
+        return `${S_SlimeTip.get_tip_text(5)} <br /> ${S_SlimeTip.get_tip_text(6)} <br /> ${S_SlimeTip.get_tip_text(7)} <br /> ${S_SlimeTip.get_tip_text(8)}`;
+      case 'C':
+        return `${S_SlimeTip.get_tip_text(9)} <br /> ${S_SlimeTip.get_tip_text(10)} <br /> ${S_SlimeTip.get_tip_text(11)} <br /> ${S_SlimeTip.get_tip_text(12)}`;
+      case 'D':
+        return `${S_SlimeTip.get_tip_text(13)} <br /> ${S_SlimeTip.get_tip_text(14)} <br /> ${S_SlimeTip.get_tip_text(15)} <br /> ${S_SlimeTip.get_tip_text(16)}`;
+      case 'E':
+        return `${S_SlimeTip.get_tip_text(17)} <br /> ${S_SlimeTip.get_tip_text(18)} <br /> ${S_SlimeTip.get_tip_text(19)} <br /> ${S_SlimeTip.get_tip_text(20)}`;
+      case 'F':
+        return `${S_SlimeTip.get_tip_text(21)} <br /> ${S_SlimeTip.get_tip_text(22)} <br /> ${S_SlimeTip.get_tip_text(23)} <br /> ${S_SlimeTip.get_tip_text(24)}`;
+    }
+  }
+
+  static get_full_letters(code){
+    switch (code) {
+      case 'A':
+        return `${S_SlimeTip.get_letters(1)} ${S_SlimeTip.get_letters(2)} ${S_SlimeTip.get_letters(3)} ${S_SlimeTip.get_letters(4)}`;
+      case 'B':
+        return `${S_SlimeTip.get_letters(5)} ${S_SlimeTip.get_letters(6)} ${S_SlimeTip.get_letters(7)} ${S_SlimeTip.get_letters(8)}`;
+      case 'C':
+        return `${S_SlimeTip.get_letters(9)} ${S_SlimeTip.get_letters(10)} ${S_SlimeTip.get_letters(11)} ${S_SlimeTip.get_letters(12)}`;
+      case 'D':
+        return `${S_SlimeTip.get_letters(13)} ${S_SlimeTip.get_letters(14)} ${S_SlimeTip.get_letters(15)} ${S_SlimeTip.get_letters(16)}`;
+      case 'E':
+        return `${S_SlimeTip.get_letters(17)} ${S_SlimeTip.get_letters(18)} ${S_SlimeTip.get_letters(19)} ${S_SlimeTip.get_letters(20)}`;
+      case 'F':
+        return `${S_SlimeTip.get_letters(21)} ${S_SlimeTip.get_letters(22)} ${S_SlimeTip.get_letters(23)} ${S_SlimeTip.get_letters(24)}`;
+    }
+  }
+
+  constructor(x, y, code) {
+    super(x, y, undefined, undefined, "event_text");
+    this.code = code;
+  }
+
+  interaction() {
+    var t = INVENTORY.count("_slime_tips");
+
+    INVENTORY.set("_slime_tips", t | (2**this.code));
+
+    var tip = S_SlimeTip.get_tip_text(this.code);
+    var letters = S_SlimeTip.get_letters(this.code);
+
+    TextBannerSequence.make([
+      `The notice some writings carved on the rocky wall, possibly from one of your predecessors. `,
+      `${tip} <br />  <br /> ${letters}`
+    ]);
+  }
 }

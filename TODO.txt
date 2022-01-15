@@ -8,85 +8,8 @@ EB_SKELETON is not indexed
 
 ------- events (loot and text)
 ------- start function text
+-- get artifact lol
 ------- hint mechanism
-
-
-
-
-1. r u l e s
-The first password is that which binds
-Forbids and restrict some actions
-But creates a space for the minds
-To join in common creations
-
-
-
-3. p l a y
-What actors do on the big stage
-What people do in society
-What children do at early age
-What even gods do presently
-
-
-2. sp ec ta cl e
-The password is a great display
-That fascinates and lures the eye
-An empty show, an actor's way
-to blur the truth and mistify
-
-
-
-6. fallacy
-When you look at what suits your views
-When you idealize the past
-When you follow that which feels true
-Rational inquiries bypassed
-
-
-5. ap pe ar an  //ces
-This is only what you can see
-Why should it dictate how you care
-But reason past superficy
-Is more than most people can bear
-
-
-4. n o r m //al
-This is the frame that's placed on you
-The reference that we all share
-The fence enclosing your world view
-As invisible as the air
-
-
-
-
-confirmation bias
-status quo bias
-natural fallacy
-
-
-
-
-
-Simulation
-appearance
-Reality
-Control
-game
-Attention (who gets to decide?)
-Rules of the game control your affordances
-words
-implicit
-time
-Ideology can't take down the system from within the system
-illusion, distraction, divertissement
-fallacy, bias
-
-
-Cave js like 5 floors separated by passowd door, each floor has a poem cluex
-Passwords are around baudrillard philosophy and systemic meaning of the gsmr
-The last one mb is spectacle
-Simulation cycle never-ending etc system goddess e c
-
 
 
 
@@ -127,9 +50,9 @@ how do you know my name??? can you guess my name? and whatever you guess its rig
 
 Explain that the console is like magic words that change the fabric of the universe
 Link to rend demo
+The cycle of replay with the promise of a true ending is precisely what the system exploits
 
-
-
+You need to be OK with your lack ie with quitting the game and act outside the system
 
 
 ---------------------------------------- OPTIONAL CONTENT:
@@ -146,6 +69,8 @@ Link to rend demo
 
 
 ---------------------------------------- HAWK DUNGEON
+baudrillard simulation / lacan themed?
+
 theres always something behind the waterfall
 
 DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
@@ -266,6 +191,7 @@ See 051_pandemonium_room and 012_trees
 - add rens parent sendoff/house before trial?
 - dodger initial position a litl bit more up
 - a suicide function?
+- break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ?? character descriptions
 - poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
 - why does battletree have lists as leaves and not simply state?
