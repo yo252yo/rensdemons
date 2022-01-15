@@ -16,6 +16,7 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);
     r[PARTYMEMBERS.TraitorFisher] = MARKOV_MODELS.human_names.mutate("Judes", 5); //  traitor
     r[PARTYMEMBERS.SavageChild] = MARKOV_MODELS.human_names.mutate("Mowgli", 5); // Taiga//ametoyuki/toradora/mowgli/mononoke/razor
+    r[PARTYMEMBERS.GeniusProdigy] = MARKOV_MODELS.human_names.mutate("Amadeus", 5); //  hayate/killua/lelouch/near/ender/mozart/mathilda
 
 
     r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5); // sasuke/seifer/Riku/squall/batman
@@ -24,7 +25,6 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.SnobRich] = MARKOV_MODELS.human_names.mutate("Nanami", 5); // Draco/Sanzenin/ouran/gatsby/nanami utena
     r[PARTYMEMBERS.FemmeFatale] = MARKOV_MODELS.human_names.mutate("Lust", 3); // lust/matahary
     r[PARTYMEMBERS.DisguisedPrincess] = MARKOV_MODELS.human_names.mutate("Sheik", 5); //  sheik
-    r[PARTYMEMBERS.GeniusProdigy] = MARKOV_MODELS.human_names.mutate("Amadeus", 5); //  hayate/killua/lelouch/near/ender/mozart/mathilda
 
     for(var i in r) {
       r["ORIGINAL_" + i] = r[i];

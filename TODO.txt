@@ -7,6 +7,9 @@ S_StainedGlass, 001 is broken by indexing
 
 
 -- GeniusProdigy
+>  attacks in langug,
+>  encounter+battle
+
 "Arent these ruine cool, etc..."
 "what is a child like you doing here"
 "guess my name"
@@ -125,6 +128,7 @@ more fake choices that i know are fake
 - You can trust repeatable lines of npcs
 - AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
 - your conversation is weird and unnatural
+talk about lacan the chase and desire
 
 ---------------------------------------- GRAPHIC REWORK:
 - audit from >= first town

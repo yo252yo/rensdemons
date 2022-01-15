@@ -8,6 +8,7 @@ const PARTYMEMBERS = {
   WiseOld: "WiseOld",
   TraitorFisher: "TraitorFisher",
   SavageChild: "SavageChild",
+  GeniusProdigy: "GeniusProdigy",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
@@ -21,9 +22,7 @@ const PARTYMEMBERS = {
   DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
  // mb in town2 if you save it or if you rescue the survivors
    DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-  // extra  cave?
-  GeniusProdigy: "GeniusProdigy", //child prodigy
- // extra mountain ruins, doing an expedition?
+  // extra  mountain?
 
   isPartyMember: function(s){
     for (var i in PARTYMEMBERS){
@@ -71,6 +70,9 @@ const PARTY = {
       case PARTYMEMBERS.TraitorFisher:
         return `${DICTIONARY.get(PARTYMEMBERS.TraitorFisher)} loves cooking. She turns the study of ingredients and their interactions into an almost scientific discipline. She's always made a point to gather the best ingredients herself. That's how she also became an expert at fishing. But one day, while she was trying to catch a promising fish, she fell into the hands of the merfolks.<br /><br />
                 ${DICTIONARY.get(PARTYMEMBERS.TraitorFisher)} is very bright and calculating. She saw there an opportunity. She started to work as a double agent in the Siren army, spying for the humans. But she also had to prove her loyalty to her new masters by sabotaging mankind. And she quickly betrayed both to join you on your quest. She supposedly wants to discover new recipes, but her actual motivations are mysterious. It's impossible to keep track of all her convoluted schemes. In the end, only she knows where her true allegiance lies...`;
+      case PARTYMEMBERS.GeniusProdigy:
+        return `${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} is one of the very few humans lucky enough to not have to worry about their survival every day. Otherwise, he would not have lived very long. He never pays attention to the down-to-earth problems of daily life. Instead, he's always in his own little world, daydreaming about his latest discoveries, pondering existential questions, designing experimental protocols, reading whatever he can find...<br /><br />
+                Born in an aristocratic family, ${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} took advantage of his priviledged position to follow his passion, to the dismay of his parents. His curiosity lead him to explore and analyse many parts of the world, until his steps brought him to ${DICTIONARY.get(PARTYMEMBERS.Ren)}, who stands as the biggest mystery he's ever encountered. Naturally, he couldn't let it go without getting answers.`;
       default:
         return "";
     }
