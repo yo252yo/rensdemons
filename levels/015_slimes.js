@@ -284,14 +284,20 @@ if(slimepart == 1) {
 } else if(slimepart == 3) {
   exit = new S_ExitFloor(5925,1550,50,100, '015_slimes@2');
   var shortcut = new S_ExitFloor(3525,5025,50,50, '010_world_map');
-
   shortcut.interaction = function(){
-    TextBannerSequence.make([
-      `The tunnel gets progressively smaller, and you think for a while that it might be a dead end, but as every step becomes a struggle you notice a very bright light ahead of you.`,
-      `Progression becomes easier as you progress towards the light. Soon, you're able to see the sky! It's an opening that leads to the outside. Galvanized by this conclusion, you speed up and climb until you make it to the open air.`,
-      `You take a moment to breathe the fresh breeze to empty your lungs of the stale dry air of the grottos.`,
-    ], function(){ CURRENTLEVEL.setup("010_world_map") });
-  };
+    if(INVENTORY.count(ITEM.War_hammer)){
+      TextBannerSequence.make([
+        `You brandish your new found weapon and strike the wall of the cavern. To your surprise, the war hammer plows through it without much resistance.`,
+        `You made an opening in the wall. Through it, rays of light pierce into the room. You need a minute for your eyes to adjust for the new brightness, before you realize that you opened a passage to the outside.`,
+        `You marvel at the thickness of the rock that you just casually smashed, before climbing your way in the gap`,
+        `You take a moment to breathe the fresh breeze to empty your lungs of the stale dry air of the grottos.`,
+      ], function(){ CURRENTLEVEL.setup("010_world_map") });
+    } else {
+      TextBannerSequence.make([
+        `The cavern wall appears to be normal.`,
+      ]);
+    }
+  }
 }
 
 

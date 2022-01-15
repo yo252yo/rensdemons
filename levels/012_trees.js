@@ -289,10 +289,18 @@ if(treepart == 1){
   botmid('012_trees@38', 'topmid');
   var exit = topmid('012_trees@39');
   exit.interaction = function(){
-    TextBannerSequence.make([
-      `The path continues through the forest. As you progress, the vegetation clears up around you. It's clear that you're moving away from the core of this weird place. The way out is much easier than the way in. Before long, you're out of the woods.`,
-    ], function(){ CURRENTLEVEL.setup("010_world_map") });
-  };
+    if(INVENTORY.count(ITEM.Staff)){
+      TextBannerSequence.make([
+        `The trees in this area are really thick and block your way. But as you get closer with your new staff in hand, the weapon starts shining.`,
+        `With every step you take, the vegetation before you receeds, slowly opening a path before you. Tree, bushes and flowers shift imperceptibly but surely all around you, forming a sort of protective bubble, while you advance in a straight line.`,
+        `You continue to create a path through the forest. As you progress, the vegetation clears up around you and becomes less dense. It's clear that you're moving away from the core of this weird place. Before long, you're out of the woods. You can't help but think the trees behind you stand as a guard of honor to wish you safe travels.`,
+      ], function(){ CURRENTLEVEL.setup("010_world_map") });
+    } else {
+      TextBannerSequence.make([
+        `The trees form a wall too thick to go through.`,
+      ]);
+    }
+  }
 }
 
 var decor_zone = [events_zone[0]-150,events_zone[1]-150,events_zone[2]+150,events_zone[3]+150];
@@ -364,7 +372,7 @@ if(treepart == 39){
   events_zone = undefined;
   new SBattle(1950, 2275, 'forests/blob', 100);
 
-  var b = new SE_groundItem(1950, 2050,   ITEM.Staff, 1, 100);
+  var b = new SE_groundItem(1975, 2050,   ITEM.Staff);
   var take = function(){
     INVENTORY.increase(ITEM.Staff);
     b.destroy();
