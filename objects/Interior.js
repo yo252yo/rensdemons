@@ -68,6 +68,11 @@ class S_Door extends LevelObject {
 class S_StainedGlass extends LevelObject {
   constructor(x, y, type, seed){
     var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
+    if(type == "church") {
+      visual.specify_sprite_size(41, 140);
+    } else {
+      visual.specify_sprite_size(55, 140);
+    }
     super(visual, x, y);
     this.interaction = this.text_interaction([
       "The giant stained glass bathes the whole room in colorful lights.",

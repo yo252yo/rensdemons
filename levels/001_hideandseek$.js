@@ -41,7 +41,7 @@ var make_priest = function (x, y) {
 
 new S_Tree(1110,1270);
 
-child_in_tree(1150, 1130, "cff1", new M_ChildF(0,0, DICTIONARY.get("child_friends_f1"), CITIES.hope),
+child_in_tree(1150, 1130, "cff1", new M_ChildF(-1,-1, DICTIONARY.get("child_friends_f1"), CITIES.hope),
   new TextBannerProgressive([
     "You found $$child_friends_f1$!",
     "$$child_friends_f1$: \"You're really good\"",
@@ -52,7 +52,7 @@ new S_Tree(1240,1380);
 
 new S_Tree(1290,1160);
 
-child_in_tree(1400, 1250, "cfm1", new M_ChildM(0,0, DICTIONARY.get("child_friends_m1"), CITIES.hope), new TextBannerProgressive([
+child_in_tree(1400, 1250, "cfm1", new M_ChildM(-1,-1, DICTIONARY.get("child_friends_m1"), CITIES.hope), new TextBannerProgressive([
     "You found $$child_friends_m1$!",
     "$$child_friends_m1$: \"Damn, I really thought I had a good spot this time...\"",
     "$$child_friends_m1$: \"I'm sure I'll do better next time!\"",
@@ -62,14 +62,14 @@ child_in_tree(1400, 1250, "cfm1", new M_ChildM(0,0, DICTIONARY.get("child_friend
 new S_Tree(1470,1300);
 new S_Tree(1550,1100);
 
-child_in_tree(1420, 1120, "cfbf", new M_BestFriend(), new TextBannerProgressive([
+child_in_tree(1420, 1120, "cfbf", new M_BestFriend(-1,-1), new TextBannerProgressive([
     "You found your best friend, $$BestFriend$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.BestFriend); },
     "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
     "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
 
-child_in_tree(1370,1380, "cff2", new M_ChildF(0,0, DICTIONARY.get("child_friends_f2"), CITIES.hope),
+child_in_tree(1370,1380, "cff2", new M_ChildF(-1,-1, DICTIONARY.get("child_friends_f2"), CITIES.hope),
   new TextBannerProgressive([
     "You found $$child_friends_f2$! It wasn't too hard, she's really bad at hiding. She can't stay too long without moving.",
     "$$child_friends_f2$: \"Finally, I was dying over there!\"",
@@ -79,7 +79,7 @@ child_in_tree(1370,1380, "cff2", new M_ChildF(0,0, DICTIONARY.get("child_friends
     "$$child_friends_f2$: \"Sorry...\"",
 ]));
 
-child_in_tree(1250, 1280, "cfm3", new M_PreciousChild(),
+child_in_tree(1250, 1280, "cfm3", new M_PreciousChild(-1,-1),
   new TextBannerProgressive([
     "You found $$PreciousChild$!",
     function(){  PARTY.changeNickname(PARTYMEMBERS.PreciousChild); },

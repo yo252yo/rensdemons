@@ -16,13 +16,15 @@ class MM_Child extends ConsciousObject {
 
 class M_ChildM extends MM_Child {
   constructor(x, y, name, city) {
-    super(x, y, new MovingSprite("assets/characters/child_m.png", 'obj_dark', 32, 48), name, city);
+    var visual = new MovingSprite("assets/characters/child_m.png", 'obj_dark', 32, 48);
+    super(x, y, visual, name, city);
   }
 }
 
 class M_ChildF extends MM_Child {
   constructor(x, y, name, city) {
-    super(x, y, new MovingSprite("assets/characters/child_f.png", 'obj_dark', 32, 48), name, city);
+    var visual = new MovingSprite("assets/characters/child_f.png", 'obj_dark', 32, 48);
+    super(x, y, visual, name, city);
   }
 }
 
