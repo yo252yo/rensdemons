@@ -15,15 +15,6 @@ var make_loss = function(from, name, text){
   return f(from);
 }
 
-/*
-WHO makes you do it??
-The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
-energy from running in the loop
-
-
-i need to investigate more, ie follow you
-*/
-
 
 var reality = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Reality`,
@@ -34,11 +25,25 @@ var reality = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$GeniusProdigy$: "Jokes aside, you may think of them as some sort of alternate universes. They never existed to begin with. Not in the way our does."`,
     `You wonder if this explanation really makes sense.`,
   ],
-  function: function(){
-
-  },
+  outcome: BATTLETREE.NOTHING,
 });
 
+var future = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Future`,
+  unlock: true,
+  description: [
+    `$$Ren$: "So, what then?"`,
+    `$$GeniusProdigy$: "I'm a bit at a loss at the moment. I need to figure out an experimental protocol to clarify the nature of this knowledge transfer. I wonder if I could also learn more about alternate realities in the process... I don't know how much observational data will help, but I'm sure I'll figure out something in the long term."`,
+    `$$Ren$: "Observational data? Long term?"`,
+    `$$GeniusProdigy$: "Oh yeah sorry, I guess the proper social protocol is to ask? I don't really care, though, I'm coming with you whether you like it or not. I'm not about to let such an interesting subject escape me."`,
+    `$$Ren$: "What? Oh ok."`,
+    "$$GeniusProdigy$ joins your party!",
+  ],
+  outcome: BATTLETREE.WIN,
+  extra_function: function(){
+    PARTY.add(PARTYMEMBERS.GeniusProdigy);
+  },
+});
 
 var rejoice = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Rejoice`,
@@ -82,6 +87,7 @@ var ask = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     implications(`Ask`);
     rejoice(`Ask`);
+    future(`Ask`);
   },
 });
 

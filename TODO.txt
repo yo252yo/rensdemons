@@ -3,11 +3,19 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
-GeniusProdigy encounter+battle
-
 
 GAMEOVER sprites are not well indexed
 
+
+more geniusprodigy talk ???
+
+
+
+/*
+WHO makes you do it??
+The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
+energy from running in the loop
+*/
 
 
 
