@@ -104,7 +104,7 @@ var how = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var dodge = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: `Clues`,
+  name: `Dodge`,
   unlock: true,
   description: [
     `$$Ren$: "That was not very nice."`,
@@ -138,8 +138,8 @@ var artifact = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   function: function(){
     BATTLE.player_actions.empty(true);
-    BATTLE.monster_actions.add_textual(`$$GeniusProdigy$ jumps on you and unsheathe a dagger in a quick gesture.`, attack);
     dodge('Clues');
+    BATTLE.monster_actions.add_textual(`$$GeniusProdigy$ jumps on you and unsheathe a dagger in a quick gesture.`, attack);
   },
 });
 
