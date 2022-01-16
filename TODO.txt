@@ -6,7 +6,7 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 GeniusProdigy encounter+battle
 
 
-
+GAMEOVER sprites are not well indexed
 
 
 
