@@ -329,7 +329,7 @@ const CURRENTLEVEL = {
       var y = object.y || object.h_y || object.visual_element.y;
       var w = object.w || object.h_w || object.visual_element.width;
       var h = object.h || object.h_h || object.visual_element.height;
-      if(!x || !y || !w || !h){
+      if(x == undefined || y == undefined || w == undefined || h == undefined){
         if(force_index){
           x = x || -1;
           y = y || -1;

@@ -1,8 +1,13 @@
 AUDIO.music.interface.titlescreen();
 
-var s0 = new LevelObject(new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer0.png", 'player'), 0, SCREEN.height());
-var s1 = new LevelObject(new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer1.png", 'background'), 0, SCREEN.height());
-var s2 = new LevelObject(new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer2.png", 'obj_light'), 0, SCREEN.height());
+var ss0 = new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer0.png", 'player', SCREEN.width(), SCREEN.height());
+var s0 = new LevelObject(ss0, 0, SCREEN.height());
+
+var ss1 = new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer1.png", 'background', SCREEN.width(), SCREEN.height());
+var s1 = new LevelObject(ss1, 0, SCREEN.height());
+
+var ss2 = new StaticSprite("https://yo252yo.com/rd/assets/screens/title_layer2.png", 'obj_light', SCREEN.width(), SCREEN.height());
+var s2 = new LevelObject(ss2, 0, SCREEN.height());
 
 
 function adapt_sprite(s, depth) {
