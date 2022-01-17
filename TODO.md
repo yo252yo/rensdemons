@@ -1,10 +1,5 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
----------------------------------------- TODO
-
-
-
-
-GAMEOVER sprites are not well indexed
+# WIP
 
 
 
@@ -12,7 +7,7 @@ GAMEOVER sprites are not well indexed
 
 
 
----------------------------------------- MORE HEAVEN
+# MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
@@ -33,13 +28,13 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 
----------------------------------------- BACKSIDE:
+# BACKSIDE  ----------------------------------------------------
 - visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 - make the buildings/sprites/etc... say NOT READY or smhting
 
 
----------------------------------------- OPTIONAL CONTENT:
+# OPTIONAL CONTENT  ----------------------------------------------------
 - town2 survivors rescue!
 - hans dog somewhere
 - more furniture ^^ (city specific ??)
@@ -51,7 +46,7 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 
----------------------------------------- HAWK DUNGEON
+# HAWK DUNGEON  ----------------------------------------------------
 baudrillard simulation / lacan themed?
 should i have something like "no exit"
 
@@ -70,13 +65,13 @@ talk to one character / talk to a npc trigger the progression
 go to the next area and come back
 "oh you were on a fetching mission/tutorial"
 
----------------------------------------- TOWN2 CASTLE
+# TOWN2 CASTLE  ----------------------------------------------------
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
 // mb in town2 if you save it or if you rescue the survivors
 >> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
 escort mission, ??? see dumbmuscles
 
----------------------------------------- TOWN5 TORTUREDSOUL
+# TOWN5 TORTUREDSOUL  ----------------------------------------------------
 TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
 // town5 acceptance
 mb u can help him with suicide? save/load to kill him over and over/ stuff about death
@@ -87,14 +82,14 @@ mb u can help him with suicide? save/load to kill him over and over/ stuff about
 Triggering  flag, like playing biwa, is as good as murder
 Artist vessel for god inspiration
 
----------------------------------------- TOWN5 RetiredProtector
+# TOWN5 RetiredProtector  ----------------------------------------------------
 RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town5 acceptance
 >>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 >>protector is like why me im nobody etc...
 im too old for this shit
 
----------------------------------------- TOWN4 SNOBRICH MANOR
+# TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
 >> lost something important, you help them by going in an out and it respawns??
@@ -106,7 +101,7 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 >> Stuff resets when you exist and come back
 >>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
 
----------------------------------------- TOWN4 FEMME FATALE
+# TOWN4 FEMME FATALE  ----------------------------------------------------
 FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
 // town4 debauch
 something about dating sims? true end etc... i know theres a series of choice to woo you
@@ -118,7 +113,7 @@ more fake choices that i know are fake
 - your conversation is weird and unnatural
 talk about lacan the chase and desire
 
----------------------------------------- GRAPHIC REWORK:
+# GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 - object/buildings: need better buildings and differnt building styles for different cities?
@@ -128,7 +123,7 @@ talk about lacan the chase and desire
 - the treasure battler should probs be closed
 - mb revamp party screen with icons
 
----------------------------------------- TROPES
+# TROPES  ----------------------------------------------------
 - add comment about how anything can fit in my bags
 - i expect more at the end of maou fight cause important enemies usually have stages
 - Whale: Fights you're supposed to lose
@@ -146,7 +141,7 @@ talk about lacan the chase and desire
 - add death flag in hells maw before aetith death
 
 
----------------------------------------- AERITH EVENTS
+# AERITH EVENTS  ----------------------------------------------------
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
 - event from aerith: Don't you think it's weird how we always find what we need on our way
 - event from aerith: isnt it weird that merchants buy all your shit
@@ -160,12 +155,12 @@ talk about lacan the chase and desire
 - reference to the fact that there's always a crafting system
 
 
----------------------------------------- DO A FILLER CHECK:
+# DO A FILLER CHECK  ----------------------------------------------------
 - ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN
 - spawn chara on exit bands, its safer
 See 051_pandemonium_room and 012_trees
 
----------------------------------------- TODO
+# BUGFIXES  ----------------------------------------------------
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - test on edge, epsecially functions starting by _, mb the nested ones
@@ -192,9 +187,9 @@ See 051_pandemonium_room and 012_trees
 - cache ressources
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 
----------------------------------------- SEND OUT FOR BETA
+# SEND OUT FOR BETA  ----------------------------------------------------
 
----------------------------------------- POLISHING/PRODUCTIONIZE
+# POLISHING/PRODUCTIONIZE  ----------------------------------------------------
 - replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - optimize size on disk
 - walkthrough
