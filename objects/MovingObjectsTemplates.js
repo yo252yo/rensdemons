@@ -57,6 +57,7 @@ class M_BestFriend extends MovingObject {
     this.adjust_hitbox(5, 0, 20, 5);
   }
 }
+
 class M_PreciousChild extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/PreciousChild.png", 'obj_dark', 32, 48);
@@ -68,6 +69,25 @@ class M_PreciousChild extends MovingObject {
     this.face_character();
     BATTLE.api.make('_party/_PreciousChild');
    }
+}
+
+class M_FemmeFatale extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/FemmeFatale.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+
+  interaction = function() {
+    this.face_character();
+    if (PARTY.has_member(PARTYMEMBERS.FemmeFatale)){
+      TextBannerSequence.make([
+        `$$FemmeFatale$: "After you... I hate to see you go, but I like to watch you leave..."`,
+      ]);
+    } else {
+      BATTLE.api.make('_party/_FemmeFatale');
+    }
+  }
 }
 
 class M_UpbeatDojikko extends MovingObject {

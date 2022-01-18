@@ -25,6 +25,9 @@ s.enter = function() {
   CURRENTLEVEL.setup("006_occultshop$");
 };
 
+if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
+  var preciousChild  = new M_PreciousChild(1875, 1980);
+}
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
@@ -46,7 +49,3 @@ villagerFiller.fill_floor_by_retry();
 // ===================
 //hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================
-
-if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
-  var preciousChild  = new M_PreciousChild(1875, 1980);
-}
