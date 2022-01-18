@@ -257,3 +257,38 @@ LANGUAGE.actions[PARTYMEMBERS.GeniusProdigy] = {
     ]);
   },
 };
+
+
+
+LANGUAGE.actions[PARTYMEMBERS.FemmeFatale] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.FemmeFatale)) + RANDOM.pick([
+      `$$FemmeFatale$ approaches slowly. Every step she takes radiates with sensuality. She gives you a kind wave, before turning to the $$&ENEMY$.`,
+      `$$FemmeFatale$'s hair flows gently in the breeze. Her elaborate garments highlight perfectly her gorgeous silhouette. As soon as she advances, all eyes turn towards her.`,
+      `$$FemmeFatale$'s entrance feels like the arrival of a deity. Every movement is perfectly calibrated to exude grace. Her revealing outfit is an expertly calibrated display of her fair skin.`,
+    ]);
+
+    var dialog = RANDOM.pick([
+      `$$FemmeFatale$: "Don't let go of your desire."`,
+      `$$FemmeFatale$: "I'll show you the time of your life."`,
+      `$$FemmeFatale$: "You, me, right here, right now ;)"`,
+      `$$FemmeFatale$: "I'll bring your wildest fantasies to life."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ does not seem to respond to $$FemmeFatale$'s charms. You did not think it was possible, and yet here you are...`,
+      `$$FemmeFatale$ does not inspire any reaction from the $$&ENEMY$. You don't understand how it's possible.`,
+      `$$FemmeFatale$'s approach is ineffective on the $$&ENEMY$. Maybe the $$&ENEMY$'s preferences lie elsewhere...`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$FemmeFatale$ blows the $$&ENEMY$ a kiss. It doesn't take more to send the $$&ENEMY$ into a storm of fantasies and delusions. Distracted, the head full of erotic scenarii, the $$&ENEMY$ becomes vulnerable, and soon, powerless.`,
+      `$$FemmeFatale$ winks and whispers suggestively to the $$&ENEMY$. The $$&ENEMY$ becomes entrances and pledges heart and soul to $$FemmeFatale$. As they are abiding her every word, she makes the $$&ENEMY$ do a few silly pirouettes, before asking them to fetch her something really, really far.`,
+      `$$FemmeFatale$ starts describing in incredibly evocative details the sexual activities she supposedly craves to do with the $$&ENEMY$. Embarrassed and aroused, the $$&ENEMY$ keeps begging for more details and more privacy. It's then extremely easy to drag them far from the fight, and leave them hanging forever.`,
+      `It doesn't take more than a few carefully chosen words in the velvety voice of $$FemmeFatale$ to make the $$&ENEMY$ succumb to her charms. Desperate to be loved by the woman of their dreams, the $$&ENEMY$ accepts her every order. To prove their devotion, the $$&ENEMY$ does not even hesitate when she orders them to kill themselves.`,
+    ]);
+  },
+};

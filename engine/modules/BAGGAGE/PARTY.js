@@ -9,11 +9,10 @@ const PARTYMEMBERS = {
   TraitorFisher: "TraitorFisher",
   SavageChild: "SavageChild",
   GeniusProdigy: "GeniusProdigy",
+  FemmeFatale: "FemmeFatale",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
- // town4 debauch
-  FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
  // town4 debauch
  TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
 // town5 acceptance
@@ -64,15 +63,17 @@ const PARTY = {
         return `All Churches in the kingdom have been waiting for the Promised Child, but the Church of ${DICTIONARY.get("town_2")} is home of the Tutor, a priest with the privilege to dedicate their whole life to learning and studying in order to support the Promised Child in due time. This is ${DICTIONARY.get(PARTYMEMBERS.WiseOld)}'s position. Usually, the Tutor passes the torch to their apprentice at a younger age, but ${DICTIONARY.get(PARTYMEMBERS.WiseOld)} was determined to remain in function in spite of his age. Maybe he figured out in some way that he would encounter the Promised Child.<br /><br />
                 Years of solitude in libraries have turned him into quite a peculiar character, and people tend to get uncomfortable faced with his eccentricity. But nobody would question his dedication to his duties: if he gave his approval and joined the Promised Child, it must mean that the Child is ready for the challenges ahead.`;
       case PARTYMEMBERS.SavageChild:
-        return `${DICTIONARY.get(PARTYMEMBERS.SavageChild)} was the Second-Born in a loving family. Perhaps too loving. Fearing she might succumb to the Trial of the Second-Borns, her mother commited the ultimate heresy of not volunteering her. She faked ${DICTIONARY.get(PARTYMEMBERS.SavageChild)}'s death to even her husband, and abandonned the poor baby in a forest to give her better odds of growing up.<br /><br />
-                ${DICTIONARY.get(PARTYMEMBERS.SavageChild)} grew up among wild beasts and owes her survival to their clemency. She had to become fierce, agile and quick-witted, and she lacks the basics of civilization. Having to fend for herself made her very cautious, but she does know a good trail when she sees one. When she assessed that you could be a reliable source of food, she opted to follow you. But don't make the mistake of thinking you've tamed her just because you've named her.
-                `;
+        return `${DICTIONARY.get(PARTYMEMBERS.SavageChild)} was the Second-Born in a loving family. Perhaps too loving. Fearing she might succumb to the Trial of the Second-Borns, her mother committed the ultimate heresy of not volunteering her. She faked ${DICTIONARY.get(PARTYMEMBERS.SavageChild)}'s death to even her husband, and abandonned the poor baby in a forest to give her better odds of growing up.<br /><br />
+                ${DICTIONARY.get(PARTYMEMBERS.SavageChild)} grew up among wild beasts and owes her survival to their clemency. She had to become fierce, agile and quick-witted, and she lacks the basics of civilization. Having to fend for herself made her very cautious, but she does know a good trail when she sees one. When she assessed that you could be a reliable source of food, she opted to follow you. But don't make the mistake of thinking you've tamed her just because you've named her.`;
       case PARTYMEMBERS.TraitorFisher:
         return `${DICTIONARY.get(PARTYMEMBERS.TraitorFisher)} loves cooking. She turns the study of ingredients and their interactions into an almost scientific discipline. She's always made a point to gather the best ingredients herself. That's how she also became an expert at fishing. But one day, while she was trying to catch a promising fish, she fell into the hands of the merfolks.<br /><br />
                 ${DICTIONARY.get(PARTYMEMBERS.TraitorFisher)} is very bright and calculating. She saw there an opportunity. She started to work as a double agent in the Siren army, spying for the humans. But she also had to prove her loyalty to her new masters by sabotaging mankind. And she quickly betrayed both to join you on your quest. She supposedly wants to discover new recipes, but her actual motivations are mysterious. It's impossible to keep track of all her convoluted schemes. In the end, only she knows where her true allegiance lies...`;
       case PARTYMEMBERS.GeniusProdigy:
         return `${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} is one of the very few humans lucky enough to not have to worry about their survival every day. Otherwise, he would not have lived very long. He never pays attention to the down-to-earth problems of daily life. Instead, he's always in his own little world, daydreaming about his latest discoveries, pondering existential questions, designing experimental protocols, reading whatever he can find...<br /><br />
-                Born in an aristocratic family, ${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} took advantage of his priviledged position to follow his passion, to the dismay of his parents. His curiosity lead him to explore and analyse many parts of the world, until his steps brought him to ${DICTIONARY.get(PARTYMEMBERS.Ren)}, who stands as the biggest mystery he's ever encountered. Naturally, he couldn't let it go without getting answers.`;
+                Born in an aristocratic family, ${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} took advantage of his priviledged position to follow his passion, to the dismay of his parents. His curiosity lead him to explore and analyze many parts of the world, until his steps brought him to ${DICTIONARY.get(PARTYMEMBERS.Ren)}, who stands as the biggest mystery he's ever encountered. Naturally, he couldn't let it go without getting answers.`;
+      case PARTYMEMBERS.FemmeFatale:
+        return `Like many, ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} was orphaned by the war. She was very young when both her parents died and it fell on her to take care of her younger siblings. She spent a long time begging for scraps in the streets of ${DICTIONARY.get("town_4")} before she got old enough to use her body to her advantage.<br /><br />
+                In a cruel world, you sometimes do whatever it takes to survive. ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} has found a way to exploit base human instincts to put food on the table of her family. She feels pride in using people's impulses to her advantage. So she got intrigued and moved when she met someone naive like ${DICTIONARY.get(PARTYMEMBERS.Ren)} who didn't see her as a product. Someone like that needs her protection, and maybe she can even make a few coins in the process...`;
       default:
         return "";
     }
