@@ -2,7 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
-simulation of the game to distract from cruel fate
 
 
 
@@ -48,9 +47,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 # HAWK DUNGEON  ----------------------------------------------------
-baudrillard simulation / lacan themed?
-should i have something like "no exit"
-
 
 
 theres always something behind the waterfall
@@ -71,6 +67,11 @@ DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prin
 // mb in town2 if you save it or if you rescue the survivors
 >> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
 escort mission, ??? see dumbmuscles
+
+
+baudrillardian simulation
+simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
+
 
 # TOWN5 TORTUREDSOUL  ----------------------------------------------------
 TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
@@ -191,3 +192,4 @@ See 051_pandemonium_room and 012_trees
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - steam achievements
 - trailer/arts
+- ctrlf "todo" "wip"

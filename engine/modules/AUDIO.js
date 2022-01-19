@@ -172,8 +172,11 @@ const AUDIO = {
 
       sirens: function() {            AUDIO._play_music("level/whatifyouaretheevildoppleganger") },
       trees: function() {             AUDIO._play_music("level/whenyouareallovermybody") },
-      hawks: function() {             AUDIO._play_music("level/itsnevertoolateforsidequests") },
+      hawks: function() {             AUDIO._play_music("level/twoarmiesfightinginadystopianformicapunkworld") },
       slimes: function() {            AUDIO._play_music("level/whatgreyaliensaredoingtothecows") },
+
+      castle: function() {            AUDIO._play_music("level/itsnevertoolateforsidequests") },
+      manor: function() {             AUDIO._play_music("level/igot99broadswords") },
 
       mushrooms: function() {         AUDIO._play_music("level/jeudelaconversation"); },
       squids: function() {            AUDIO._play_music("level/ihatehimsomuch"); },
