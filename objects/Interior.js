@@ -87,6 +87,17 @@ class S_StainedGlass extends LevelObject {
   }
 }
 
+class S_RoyalThrone extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 36, 83, "interior/throne");
+    this.adjust_hitbox(0,0,36, 53);
+
+    this.default_text = this.text_interaction([
+      "This is the throne of the king of all humans. It's suitably cushiony.",
+    ], seed);
+  }
+}
+
 class B_Statue extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 50,100, "interior/statue");
@@ -319,5 +330,25 @@ class B_Chest extends ItemBattleObject {
     this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthusiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
     this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
     this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden));
+  }
+}
+
+class B_WeaponRack extends ItemBattleObject {
+  constructor(x, y){
+    super(x, y, 48,39, "interior/weaponrack", 1);
+    this.adjust_hitbox(0,0,48,20);
+
+
+    this.set_description(BESTIARY.intro("interior/weaponrack"));
+    this.add_interaction("Hairbrush", "The metal is so shiny that you can see yourself in it. You take this chance to fix up your hair.");
+    this.add_interaction("Touch", "Drawn by the shine, you approach your finger from the blade. Well done, now you're bleeding.");
+    this.add_interaction("Jump", "This looks like a hurdle, doesn't it? You feel compelled to jump above it, but you hit it and it falls, making a loud metallic mess in the process.");
+    this.add_interaction("Wonder", "In this town, you've seen more weapons than citizens. Do they really need more than one per head?");
+    this.add_interaction("Disgust", "One of the blades still has blood on it, proudly displayed as a token of a past victory.");
+    this.add_interaction("Inspect", "The owner name is inscribed on the blade. It's accompanied by a motto that is less than kind to strangers.");
+    this.add_interaction("Steal", "Dreaming of the price these weapons are worth, you try to sneak one away, but they are so important in this city that the owners never let them out of their sight for long.");
+
+
+
   }
 }

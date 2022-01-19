@@ -627,6 +627,10 @@ BESTIARY.dict["interior"]["chest"] = {
   "intro": "A chest, doubtlessly holding the family's belongings.",
   "introed": "A chest, doubtlessly holding the family's belongings.",
 };
+BESTIARY.dict["interior"]["weaponrack"] = {
+  "intro": "This rack holds shiny, well sharpened swords, ready to be used at the first occasion.",
+  "introed": "This rack held shiny, well sharpened swords, ready to be used at the first occasion.",
+};
 
 //hack exterior
 BESTIARY.dict["exterior"] = {};
