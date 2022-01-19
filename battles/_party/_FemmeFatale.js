@@ -78,6 +78,153 @@ var updateMonsterAction = function(situation){
 //hack phase2: resolution
 
 
+var accept = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Accept`,
+  unlock: true,
+  description: [
+    `$$FemmeFatale$: "Nice, I've always wanted to go see the world. Maybe this is my chance!"`,
+    "$$FemmeFatale$ joins your party!",
+    `$$FemmeFatale$: "So... Where are we going?"`,
+    ],
+    outcome: BATTLETREE.WIN,
+    extra_function: function(){
+      PARTY.changeNickname(PARTYMEMBERS.FemmeFatale);
+      PARTY.add(PARTYMEMBERS.FemmeFatale);
+    },
+});
+
+var refuse = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Refuse`,
+  unlock: true,
+  description: [
+    `$$FemmeFatale$: "That's fair. Well hit me up anytime if you change your mind. I could use a break from this life."`,
+    ],
+  outcome: BATTLETREE.LOSS,
+});
+
+var conversation = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Lonely`,
+  unlock: true,
+  description: [
+    `$$Ren$: "Still, it drives me crazy how people's conversations are always so weird and unnatural. Even you, at times... It all seems so... artificial. Don't you see it too? Doesn't it make you feel lonely?"`,
+    `$$FemmeFatale$: "Of course it does. But it's simply the way life is. We're only humans, after all. An impossible mix of complexity and simplicity."`,
+    `She marks a pause, thinking for a while.`,
+    `$$FemmeFatale$: "It's weird, I think it's the first time I've talked about this with anyone else. It's kinda... refreshing."`,
+    `$$FemmeFatale$: "Do you mind if I hang out with you a bit longer? You look like you could use an expert at human relationships to watch your back..."`,
+    ],
+  function: function(){
+    accept(`Lonely`);
+    refuse(`Lonely`);
+    STATS.record.flag("FemmeFatale_lonely");
+  }
+});
+
+var different = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Different`,
+  unlock: true,
+  description: [
+    `$$Ren$: "No, you don't understand! To me, people are literally always saying the same thing. A couple of sentences in a loop. It's driving me insane!"`,
+    `$$Ren$: "Even you, I know what you're going to say!"`,
+    `$$FemmeFatale$: "Oh yeah? Try me!"`,
+    `$$Ren$: "You're going to go on about the fact that it's the way life is, how we're only humans, and... what was it again? A mix of complexity and simplicity."`,
+    `$$FemmeFatale$: "That does sound like something I would say..."`,
+    `$$FemmeFatale$: "It's not as impressive as you think, though. Most of the time, I know what my clients are going to say before they say it..."`,
+  ],
+  outcome: BATTLETREE.NOTHING,
+});
+
+
+var tired = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Tired`,
+  unlock: true,
+  description: [
+    `$$Ren$: "Then you get it, don't you? Aren't you tired of pretending that people are interesting? That the choices we make matter? How can you go on knowing that things are always the same..."`,
+    `$$FemmeFatale$: "I just do. Partly because I don't have a choice, partly because even the most simple headed man can be beautiful in his nuances."`,
+    `Her words give you a lot to think about.`,
+  ],
+  outcome: BATTLETREE.NOTHING,
+});
+
+
+
+var impressed = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Others`,
+  unlock: true,
+  description: [
+    `$$Ren$: "Wow, you're nothing like the other people I've met."`,
+    `$$Ren$: "Everyone seems so... robotic to me. They're just repeating the same things over and over again. They're always doing the same things..."`,
+    `$$Ren$: "It feels a bit like... You're seeing it too! And yet you're not the Promised Child!"`,
+    `$$FemmeFatale$: "That's just my experience talking. But never forget that even if that impression may be valid, you and I are not different from them. We also have our buttons, everybody does. And we'll also react predictably when they're pushed."`,
+    ],
+  function: function(){
+    conversation(`Others`);
+    tired(`Others`);
+     if(STATS.flag("FemmeFatale_lonely")) {
+       different(`Others`);
+     }
+   }
+});
+
+var outrage = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Outrage`,
+  unlock: true,
+  description: [
+    `$$Ren$: "What? How dare you?"`,
+    `$$FemmeFatale$: "Please, there's one thing I'm good at, and that's reading people. I figure them out, what makes them tick, and how to press their buttons. Don't play innocent with me, I know that's what you were doing with me earlier. I know that little game way too well to be duped."`,
+    `Taken aback, you don't know how to respond. Seeing your confusion, $$FemmeFatale$ laughs.`,
+    `$$FemmeFatale$: "That's okay, there's no harm in trying to understand people... What matters is what you do as a result."`,
+    ],
+  function: impressed
+});
+
+var cycle = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Ethics`,
+  unlock: true,
+  description: [
+    `$$Ren$: "Are you not just trapping people in a vicious cycle?"`,
+    `$$FemmeFatale$: "Am I? I'm giving them what they think they want, and also what they don't know they actually want. Sounds like a win to me..."`,
+    `$$FemmeFatale$: "It's no different from what you're doing!"`,
+    ],
+  function: outrage
+});
+
+
+var ending = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Good end`,
+  unlock: true,
+  description: [
+    `$$Ren$: "But how do I reach the good ending?"`,
+    `$$FemmeFatale$: "You don't. Or rather, you've always been there. It's all about the chase, isn't it?"`,
+    `$$FemmeFatale$: "People neve want what they think they want. They only want to run after it. That's where they are truly content. And that's what I'm giving them. A hope, an ideal..."`,
+    `$$FemmeFatale$: "That's the most important lesson I've learned, and that's why I'm so good at what I do. You gotta keep them wanting more."`,
+  ],
+  function: function(){
+    cycle("Good end");
+  }
+});
+
+var flag = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Flag`,
+  unlock: true,
+  description: [
+    `$$Ren$: "But why? Did I miss a flag?"`,
+    `$$FemmeFatale$: "Oh, honey... It's not how human interactions work! There's no such thing as flags, scores, and so on... Believe me, I know a fair bit about that..."`,
+  ],
+  outcome: BATTLETREE.NOTHING,
+});
+
+
+var route = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Routes`,
+  unlock: true,
+  description: [
+    `$$Ren$: "This is not the route I wanted for this relationship to go down! Did none of my choices matter?"`,
+    `$$FemmeFatale$: "Of course they did, I wouldn't be standing here talking to you otherwise. But maybe it mattered in a way you were not expecting. Maybe you were so fixated on an illusionary goal that you didn't see the real growth happening in front of you..."`,
+  ],
+  outcome: BATTLETREE.NOTHING,
+});
+
+
 var accept_defeat = function() {
   PLAYER_ACTIONS.add({
     name: "Accept defeat",
@@ -85,28 +232,18 @@ var accept_defeat = function() {
     description: [
       `$$Ren$: "I'm never reaching 100%, am I?"`,
       `$$FemmeFatale$ finds the wording weird but understands the sentiments. She smiles and nods.`,
-    //  `$$FemmeFatale$: "It's all about the chase, isn't it?"`,
     ],
     function: function(){
       BATTLE.monster_actions.empty();
       BATTLE.player_actions.empty(true);
-      //TODO wip phase two
-
+      ending("Accept defeat");
+      flag("Accept defeat");
+      choices("Accept defeat");
+      route("Accept defeat");
     }
   });
 }
 
-
-// I'm never getting the good end?
-// dont you hate how everyone else seems very robotic, always doing the same things
-// all of this is so fake more fake choices that i know are fake
-
-// You can trust repeatable lines of npcs
-// i know what youre doing, i do the same thing, figuring out peoples button and pushing them
-// AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
-// your conversation is weird and unnatural
-// talk about lacan the chase and desire
-// flags
 
 
 //hack phase 1: the chase

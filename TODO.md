@@ -2,7 +2,11 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
- FEMME FATALE emd
+More FEMME FATALE 
+// fake Choices
+// routes
+// You can trust repeatable lines of npcs
+
 
 
 
