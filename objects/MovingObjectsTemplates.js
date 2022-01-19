@@ -177,3 +177,23 @@ class M_GeniusProdigy extends MovingObject {
     }
   }
 }
+
+
+class M_DisguisedPrincess extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/DisguisedPrincess.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 5);
+  }
+
+  interaction = function() {
+    this.face_character();
+    if (PARTY.has_member(PARTYMEMBERS.DisguisedPrincess)){
+      TextBannerSequence.make([
+        `$$DisguisedPrincess$: "I think we're good. Ok, let's go."`,
+      ]);
+    }  else {
+      BATTLE.api.make('_party/_DisguisedPrincess');
+    }
+  }
+}

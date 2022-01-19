@@ -47,8 +47,8 @@ const DEBUG = {
       var row = HTML.div.make({
         w:2500,
         h:1,
-        top:25*i,
-        left:0,
+        top:1000+25*i,
+        left:1000+0,
         z:1000,
         border: "1px dotted #FFFFFF33"
       });
@@ -56,8 +56,8 @@ const DEBUG = {
        var column = HTML.div.make({
         w:1,
         h:2500,
-        top:0,
-        left:25*i,
+        top:1000+0,
+        left:1000+25*i,
         z:1000,
         border: "1px dotted #FFFFFF33"
       });
@@ -110,7 +110,7 @@ const DEBUG = {
     BUILDER.activate.shift_brush();
 
     //DEBUG.log_mouse_positions();
-    //DEBUG.draw_grid();
+  //  DEBUG.draw_grid();
     DEBUG.activate_character_tp();
     DEBUG.run_faster();
     DEBUG.allow_scroll();

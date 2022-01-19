@@ -3,7 +3,15 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
+ TOWN2 CASTLE  
+DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
 
+>> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
+escort mission, ??? see dumbmuscles
+
+
+baudrillardian simulation
+simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
 
 
 
@@ -62,15 +70,6 @@ talk to one character / talk to a npc trigger the progression
 go to the next area and come back
 "oh you were on a fetching mission/tutorial"
 
-# TOWN2 CASTLE  ----------------------------------------------------
-DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
-// mb in town2 if you save it or if you rescue the survivors
->> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
-escort mission, ??? see dumbmuscles
-
-
-baudrillardian simulation
-simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
 
 
 # TOWN5 TORTUREDSOUL  ----------------------------------------------------
