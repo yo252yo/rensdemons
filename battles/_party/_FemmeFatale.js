@@ -75,6 +75,40 @@ var updateMonsterAction = function(situation){
   BATTLE.monster_actions.add_textual([flavortext + "<br />" + scoretext, situation.prompt]);
 }
 
+//hack phase2: resolution
+
+
+var accept_defeat = function() {
+  PLAYER_ACTIONS.add({
+    name: "Accept defeat",
+    unlock: true,
+    description: [
+      `$$Ren$: "I'm never reaching 100%, am I?"`,
+      `$$FemmeFatale$ finds the wording weird but understands the sentiments. She smiles and nods.`,
+    //  `$$FemmeFatale$: "It's all about the chase, isn't it?"`,
+    ],
+    function: function(){
+      BATTLE.monster_actions.empty();
+      BATTLE.player_actions.empty(true);
+      //TODO wip phase two
+
+    }
+  });
+}
+
+
+// I'm never getting the good end?
+// dont you hate how everyone else seems very robotic, always doing the same things
+// all of this is so fake more fake choices that i know are fake
+
+// You can trust repeatable lines of npcs
+// i know what youre doing, i do the same thing, figuring out peoples button and pushing them
+// AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
+// your conversation is weird and unnatural
+// talk about lacan the chase and desire
+// flags
+
+
 //hack phase 1: the chase
 
 
@@ -239,6 +273,14 @@ var situations = [
       {action: "Compare the women", reaction: "$$FemmeFatale$ does not think this a respectable behavior.", score: -1},
     ]
   },
+  {
+    prompt: "You bump into her.",
+    options: [
+      {action: "Accuse her", reaction: "She says it's your fault.", score: -1},
+      {action: "Apologize", reaction: "She apologizes too.", score: 1},
+      {action: "Ignore it", reaction: "She accepts to let it go.", score: 0},
+    ]
+  },
 ];
 
 var add_player_actions = function(o, nextSituation){
@@ -274,21 +316,7 @@ var queue_situation = function(situation){
   }
 
   if (INVENTORY.count(scoreitem) > 0.999) { // 14 steps min
-    PLAYER_ACTIONS.add({
-      name: "Accept defeat",
-      unlock: true,
-      description: [
-        `$$Ren$: "I'm never reaching 100%, am I?"`,
-        `$$FemmeFatale$ finds the wording weird but understands the sentiments. She smiles and nods.`,
-      //  `$$FemmeFatale$: "It's all about the chase, isn't it?"`,
-      ],
-      function: function(){
-        BATTLE.monster_actions.empty();
-        BATTLE.player_actions.empty(true);
-        //TODO wip phase two
-
-      }
-    });
+    accept_defeat();
   }
 }
 

@@ -2,52 +2,8 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
+ FEMME FATALE emd
 
-
-
-
-# TOWN4 FEMME FATALE  ----------------------------------------------------
-
-
-Un séduction fame qui ne finit jamais, il boucle et ren réalise que en fait il aura à jamais la good end
-
-A succession or possible fake séduction events
-
-Don't let go of your desire
-
-Display affection points and follow Zeno paradox going up littley by little but never reaching 100 percent
-
-
-
-
-
-FemmeFatale: "FemmeFatale", // prostitute/ femme fatale
-// town4 debauch
-something about dating sims? true end etc... i know theres a series of choice to woo you
-dont you hate how everyone else seems very robotic, always doing the same things
-more fake choices that i know are fake
-
-- You can trust repeatable lines of npcs
-- AI or NPCs endlessly repeating the same phrase (Hey! Look! Listen!)
-- your conversation is weird and unnatural
-talk about lacan the chase and desire
-
-
-
-
-
-tsundere route
-yandere route
-dominatrix route
-osananajimi route
-
-innocuous choices: rest/play, help that girl or that other girl, help her or finish PRODUCTIONIZE
-mb it starts by you bumping into her and you have the option to apologize or not
-stop her/dont stop her
-actions, binaries
-veryc character focus
-
-flag
 
 
 # MORE HEAVEN  ----------------------------------------------------
