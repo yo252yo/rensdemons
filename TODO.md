@@ -3,6 +3,10 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 
+HEXAGON TILES!!!!!!!
+
+
+
  TOWN2 CASTLE  
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
 
