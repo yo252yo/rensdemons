@@ -123,7 +123,7 @@ var different = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Different`,
   unlock: true,
   description: [
-    `$$Ren$: "No, you don't understand! To me, people are literally always saying the same thing. A couple of sentences in a loop. It's driving me insane!"`,
+    `$$Ren$: "Yyou don't understand! To me, people are literally always saying the same thing. A couple of sentences in a loop. It's driving me insane!"`,
     `$$Ren$: "Even you, I know what you're going to say!"`,
     `$$FemmeFatale$: "Oh yeah? Try me!"`,
     `$$Ren$: "You're going to go on about the fact that it's the way life is, how we're only humans, and... what was it again? A mix of complexity and simplicity."`,
@@ -169,8 +169,8 @@ var outrage = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Outrage`,
   unlock: true,
   description: [
-    `$$Ren$: "What? How dare you?"`,
-    `$$FemmeFatale$: "Please, there's one thing I'm good at, and that's reading people. I figure them out, what makes them tick, and how to press their buttons. Don't play innocent with me, I know that's what you were doing with me earlier. I know that little game way too well to be duped."`,
+    `$$Ren$: "What? What do you mean?"`,
+    `$$FemmeFatale$: "Please, there's one thing I'm good at, and that's reading people. I figure them out, what makes them tick, and how to press their buttons. Don't play innocent with me, I know what you were doing with me earlier. You were not exactly subtle in gauging my reactions to tell me what I wanted to hear. I know the game way too well to be duped."`,
     `Taken aback, you don't know how to respond. Seeing your confusion, $$FemmeFatale$ laughs.`,
     `$$FemmeFatale$: "That's okay, there's no harm in trying to understand people... What matters is what you do as a result."`,
     ],
@@ -183,7 +183,7 @@ var cycle = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$Ren$: "Are you not just trapping people in a vicious cycle?"`,
     `$$FemmeFatale$: "Am I? I'm giving them what they think they want, and also what they don't know they actually want. Sounds like a win to me..."`,
-    `$$FemmeFatale$: "It's no different from what you're doing!"`,
+    `$$FemmeFatale$: "By the way, you're the one to talk! It's no different from what you're doing!"`,
     ],
   function: outrage
 });
@@ -196,7 +196,7 @@ var ending = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "But how do I reach the good ending?"`,
     `$$FemmeFatale$: "You don't. Or rather, you've always been there. It's all about the chase, isn't it?"`,
     `$$FemmeFatale$: "People neve want what they think they want. They only want to run after it. That's where they are truly content. And that's what I'm giving them. A hope, an ideal..."`,
-    `$$FemmeFatale$: "That's the most important lesson I've learned, and that's why I'm so good at what I do. You gotta keep them wanting more."`,
+    `$$FemmeFatale$: "That's the most important lesson I've learned, and that's why I'm so good at what I do. All humans are the same. You just gotta keep them wanting more."`,
   ],
   function: function(){
     cycle("Good end");
