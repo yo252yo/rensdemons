@@ -104,7 +104,7 @@ class ConsciousObject extends MovingObject {
 
       "This world is a stage...",
       "Careful, they're gonna<br />notice something!",
-      "Shoot, they're looking that way!",
+      "Shoot, they're looking my way!",
       "Quiet everyone!<br />We're rolling!",
 
       "Why was I born<br />just to suffer?",

@@ -108,10 +108,8 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 - object/buildings: need better buildings and differnt building styles for different cities?
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
-- check walking on small sprites (ie pebbles, etc):  hills are fixed at the position where they are and the character appears behind them when they walk on it, floors are not rerendered when the sprite has loaded. /   pebbles hide the sprite when walked on /   > mb things should have an option to be indexed by the top
 - decorate stores
 - the treasure battler should probs be closed
-- mb revamp party screen with icons
 
 # TROPES  ----------------------------------------------------
 - add comment about how anything can fit in my bags

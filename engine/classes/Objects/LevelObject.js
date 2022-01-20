@@ -42,8 +42,11 @@ class LevelObject {
       return this.visual_element;
     }
 
-    make_walkable() {
+    make_walkable(display_over_character) {
       this.walkable = true;
+      if(! display_over_character && this.visual_element){
+        this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
+      }
     }
 
     adjust_hitbox(x,y,w,h) {

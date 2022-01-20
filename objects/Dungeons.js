@@ -80,7 +80,7 @@ class S_Plant extends SimpleObject {
       "The long stems of this plant tickle you.",
       "This fluffy vegetal emits a suspiciously sweet smell.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -231,7 +231,7 @@ class S_TentaPlantMini extends SimpleObject {
       "The bulging sprouts emit a squishy sound when you touch them.",
       "The ground is covered in brightly colored small burgeons.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -245,7 +245,7 @@ class S_PlantSmall extends SimpleObject {
       "It's a simple little green bush.",
       "Just a little bush, like there are so many in these woods.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -272,7 +272,7 @@ class S_Shroomsmall extends SimpleObject {
       "There are countless mushrooms like these everywhere you look, under trees and bushes.",
       "The little mushrooms seem pretty innocuous. Hard to believe they're related to much bigger threats.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -307,13 +307,12 @@ class S_Pebbles extends SimpleObject {
     super(x, y, 40,47, "exterior/pebbles");
     this.adjust_hitbox(10,0,20,15);
 
-    this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.default_text = this.text_interaction([
       "Of course, little rocks are everywhere. You need to be very careful not to trip on them.",
       "Those little rocks are too small to do anything, except making you trip, maybe.",
       "You barely avoid falling as you lose your footing from these little pebbles.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -496,7 +495,7 @@ class S_CristalTiny extends SimpleObject {
       "The floor is littered with shimmering cristals that cast a vague glow on your feet.",
       "Little colored pebbles cast a diffuse multicolored light.",
     ], seed);
-    this.walkable = true;
+    this.make_walkable();
   }
 }
 
@@ -813,7 +812,7 @@ class S_Cloud extends SimpleObject {
 
       break;
     }
-    this.walkable = true;
+    this.make_walkable(true);
 
     this.default_text = this.text_interaction([
       "Clouds of various pale colors are floating all around you.",
@@ -834,7 +833,6 @@ class S_GameBoard extends SimpleObject {
     this.default_text = this.text_interaction([
       "A cartoonishly deformed map of the kingdom split into hexagonal tiles. The colors and details are so vivid they seem more real than reality. ",
     ], seed);
-    this.walkable = true;
-    this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
+    this.make_walkable();
   }
 }

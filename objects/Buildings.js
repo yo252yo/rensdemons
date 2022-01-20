@@ -238,7 +238,7 @@ class S_Store extends S_EnterableBuilding {
 class S_Church extends LevelObject {
   constructor(x, y, inside_lvl){
     var base = new S_building(x, y-1, 0, 0, "church");
-    base.make_walkable();
+    base.make_walkable(true);
     var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
     visual.specify_sprite_size(166, 347);
     super(visual, x, y);
@@ -274,7 +274,7 @@ class S_Church extends LevelObject {
 class S_Castle extends LevelObject {
   constructor(x, y, inside_lvl){
     var base = new S_building(x, y-1,0,0, "castle");
-    base.make_walkable();
+    base.make_walkable(true);
     var visual = new StaticSprite("assets/objects/buildings/castle2.png", 'obj_light');
     visual.specify_sprite_size(485, 432);
     super(visual, x, y);

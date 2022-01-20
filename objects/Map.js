@@ -155,8 +155,6 @@ class SM_Hills extends MapObject {
         this.adjust_hitbox(0,0,200,100);
         break;
     }
-//    visual.adjust_depth(1); // this is buggy
-    this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
     this.make_walkable();
     if(!destination){
       this.interaction = this.text_interaction([
@@ -264,7 +262,7 @@ class SM_Heaven extends MapObject {
     super(visual, x, y, `Heaven`, "060_heaven$");
     this.adjust_hitbox(40,-10,235,200);
     if(this.legend) this.legend.shift(150);
-    this.make_walkable();
+    this.make_walkable(true);
   }
 
   destroy(stillborn) {
