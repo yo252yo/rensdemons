@@ -134,7 +134,7 @@ for (var f of rooms) {
 // ===================
 
 var make_noble = function (x, y, seed) {
-  var noble = new M_ScriptedVillager(CITIES.fear, x, y, seed, []);
+  var noble = new M_Noble(x, y, seed);
   noble.interaction = function() {
     this.face_character();
     new TextBannerRandom([
@@ -163,7 +163,8 @@ var make_noble = function (x, y, seed) {
       `Noble: "The player missed a lot of good opportunities! And it's too late to ever get them back, now..."`,
       `Noble: "We need to replace the current Promised Child, they are so inefficient."`,
       `Noble: "I'd much rather spectate! Playing the game is so stressful."`,
-      `Noble: "Commentators are just as important as players! Analyzes are how we learn and develop new strategies!"`,
+      `Noble: "This king's political pogram is interesting, but I don't think it's enough to win."`,
+      `Noble: "Some people say we're useless. But commentators are just as important as players! Analyzes are how we learn and develop new strategies!"`,
     ]);
  };
  return noble;

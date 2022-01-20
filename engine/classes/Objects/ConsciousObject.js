@@ -233,6 +233,10 @@ class ConsciousObject extends MovingObject {
       "I could come up with a<br />better dialog than this!",
 
     ]);
+    this.actuallythink(thought);
+  }
+
+  actuallythink(thought) {
     CONSOLE.log.thoughts(this.name, thought.replaceAll("<br />", " "));
     this.makeThoughtBubble(thought);
   }

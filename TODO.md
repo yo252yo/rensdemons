@@ -14,8 +14,6 @@ escort mission, ??? see dumbmuscles
 
 
 > add Guards
-> nobles as a separate class of thoughts? change new M_ScriptedVillager(CITIES.fear, x, y, seed, []);
-
 
 # MORE HEAVEN  ----------------------------------------------------
 

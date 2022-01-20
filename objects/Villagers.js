@@ -685,6 +685,47 @@ class M_Villager extends M_NPC {
 }
 
 
+class M_Noble extends M_NPC {
+  constructor(x, y, seed) {
+    var gen = new Generator(seed);
+    var sprite_nb = gen.int(5);
+
+    if (sprite_nb == 2 || sprite_nb == 3) {
+      var vname = gen.pick(DATASETS.female_names);
+    } else {
+      var vname = gen.pick(DATASETS.male_names);
+    }
+
+    super(x, y, "villager" + sprite_nb, vname, CITIES.fear, "noble");
+  }
+
+  think() {
+    if(Math.random() < 0.5){
+      super.think();
+      return;
+    }
+    var thought = RANDOM.pick([
+      "Oh my god do we have to<br />pretend to care about this<br />stupid game again?",
+      "This game is cringe AF",
+      `Do they think they're<br />being smart by doing a game<br />within a play?`,
+      `At least this time<br />I'm playing a noble`,
+      `I hate this role now<br />I have to die in the fall of<br /> ${DICTIONARY.get('town_2')}`,
+      `Ok I need to ignore<br />the child and focus on the game.`,
+      `This is really stupid!<br />What are the rules even?`,
+      `Is there a point to this<br />stupid game?`,
+      `So I'm have to pretend to<br />be a noble pretending to be<br />a soldier?`,
+      `This place is the worst<br />good thing it'll be destroyed<br />soon...`,
+      `I wonder if they'll save<br />our town this time...`,
+      `Ok, the decadent upper class.<br />I can play that.`,
+      `How am I supposed to<br />talk about a game I know<br />nothing about.`,
+
+    ]);
+    this.actuallythink(thought);
+  }
+}
+
+
+
 class M_ScriptedVillager extends M_Villager {
   constructor(type, x, y, seed, texts) {
     super(type, x, y, seed);
