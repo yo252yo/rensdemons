@@ -15,6 +15,12 @@ new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
 // ===================
 //hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
 // ===================
+
+var g = new S_GameBoard(1125, 1425);
+g.default_text = g.text_interaction([
+  "All that remains of the castle is the King's game board. Its in surprisingly good condition contrasts with the shreds of the real buildings slowly rotting all around in the desertic reality.",
+]);
+
 var obj = [];
 obj.push(new S_Church(1700, 1750, "020_church2"));
 obj.push(new S_Castle(1075, 1425));

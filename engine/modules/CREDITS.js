@@ -16,7 +16,7 @@ const CREDITS = {
 
    <b>Interface art</b>:
    <a href="https://opengameart.org/users/melle" target="_blank">MELLE</a>,
-   <a href="https://opengameart.org/users/prushik" target="_blank">prushik</a>, 
+   <a href="https://opengameart.org/users/prushik" target="_blank">prushik</a>,
    <a href="https://opengameart.org/users/gfroad" target="_blank">gfroad</a>
    <br />
 
@@ -32,6 +32,7 @@ const CREDITS = {
    <a href="https://twitter.com/wht_dragon" target="_blank">whtdragon</a>,
    <a href="https://forums.rpgmakerweb.com/index.php?threads/avys-mv-stuff.53317/" target="_blank">Avy</a>,
    <a href="https://bottled-up-studio.itch.io/" target="_blank">bottled-up</a>,
+   <a href="https://www.kenney.nl/" target="_blank">Kenney</a>, 
    <a href="https://www.rpgmakerweb.com/products/rpg-maker-mv" target="_blank">RPG Maker MV</a>
    <br />
 

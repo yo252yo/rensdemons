@@ -92,6 +92,8 @@ new S_StainedGlass(2225, 1300, 'man');
 new S_StainedGlass(2125, 1300, 'man');
 new S_StainedGlass(2025, 1300, 'man');
 
+new S_GameBoard(2700, 1625);
+
 // ===================
 //hack E. DECOR
 // ===================

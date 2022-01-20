@@ -824,3 +824,17 @@ class S_Cloud extends SimpleObject {
     ], seed);
   }
 }
+
+
+class S_GameBoard extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 390,330, "interior/game");
+
+    this.adjust_hitbox(0,0,390,330);
+    this.default_text = this.text_interaction([
+      "A cartoonishly deformed map of the kingdom split into hexagonal tiles. The colors and details are so vivid they seem more real than reality. ",
+    ], seed);
+    this.walkable = true;
+    this.visual_element.adjust_depth(this.visual_element.y-this.visual_element.height);
+  }
+}
