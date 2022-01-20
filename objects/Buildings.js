@@ -284,10 +284,22 @@ class S_Castle extends LevelObject {
     this.default_text = this.text_interaction([
       "It's the royal castle.",
     ]);
+
+  }
+
+  character_can_enter(){
+    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
+    var dy = (CHARACTER.get().y - this.y);
+    console.log(dx);
+    return (dx > 0.45 && dx < 0.65 && dy > 0);
   }
 
   interaction(){
-    this.default_text();
+    if (this.character_can_enter()){
+      CURRENTLEVEL.setup("026_castle");
+    } else {
+      this.default_text();
+    }
   }
 
   destroy() {
