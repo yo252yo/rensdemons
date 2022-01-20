@@ -39,7 +39,9 @@ const MARTYRDOM = {
   },
 
   death: function(inc) {
-    if(!inc) {inc = 1;}
+    if(!inc) {
+      inc = 1 + STATS.get(STAT.Endings);
+    }
     MARTYRDOM._spare_points += inc;
   },
 
