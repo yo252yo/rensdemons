@@ -12,9 +12,6 @@ DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prin
 escort mission, ??? see dumbmuscles
 
 
-
-> add Guards
-
 # MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??

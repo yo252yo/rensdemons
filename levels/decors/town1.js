@@ -46,6 +46,9 @@ villagerFiller.set_tries(3, 30);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
 villagerFiller.fill_floor_by_retry();
 
+villagerFiller.set_tries(2, 6);
+villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Guard(CITIES.hope, x, y, seed); });
+villagerFiller.fill_floor_by_retry();
 // ===================
 //hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
 // ===================

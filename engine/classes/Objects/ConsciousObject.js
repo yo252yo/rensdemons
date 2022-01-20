@@ -76,6 +76,13 @@ class ConsciousObject extends MovingObject {
       "I'm so bored...",
       "I'm tired...",
 
+      "They're really not<br />doing a good job...<br />They died so much!",
+      "They chose really<br />bad abilities...",
+      "This item composition<br />is a big mistake!",
+      "They probably don't<br />even understand the plot...",
+
+      "It's hard pretending<br />that we haven't met...",
+
       "I want out!",
       "Please, let me out!<br />Someone save me!",
       "Make it stop!",

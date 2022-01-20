@@ -12,9 +12,9 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 //hack C. EXIT
 // ===================
 
-var exit = new S_ExitFloor(2500,2500,150,50, "020_town2");
+var exit = new S_ExitFloor(2500,2600,150,50, "020_town2");
 
-new S_TilingFloor(2500,2475,150,900);
+new S_TilingFloor(2500,2575,150,1000);
 new S_TilingFloor(2625,2300,525,100);
 new S_TilingFloor(1975,2300,550,100);
 new S_TilingFloor(2625,1800,525,100);
@@ -107,13 +107,38 @@ new M_ScriptedVillager(CITIES.fear, 3079, 1329, gen.get(), [`Noble: "It's a bold
 new M_ScriptedVillager(CITIES.fear, 2698, 1536, gen.get(), [`Noble: "I've been kept in the back the whole time. I think I'm some sort of backup army..."`]);
 new M_ScriptedVillager(CITIES.fear, 2932, 1501, gen.get(), [`Noble: "I'm the Promised Child, I'm going straight to Hell's Maw! Our victory is guaranteed!"`]);
 
+var guardsthrone = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "The throne room is up ahead. As the Promised Child, I can't deny you entry, but you should know that the King and his advisors are pretty busy with important matters of the state. You shouldn't bother them for nothing."`
+      ]);
+ };
+var g1 = new M_Guard(CITIES.fear,2500, 1725, gen.get());
+var g2 = new M_Guard(CITIES.fear,2615, 1725, gen.get());
+g1.interaction = guardsthrone;
+g2.interaction = guardsthrone;
+
+var guardsentry = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "This is the royal castle. You may enter, you're the Promised Child. But don't make a mess."`
+      ]);
+ };
+var g3 = new M_Guard(CITIES.fear, 2500, 2550, gen.get());
+var g4 = new M_Guard(CITIES.fear, 2615, 2550, gen.get());
+g3.interaction = guardsentry;
+g4.interaction = guardsentry;
+
+
 // ===================
 //hack E. DECOR
 // ===================
 
 var f = new Filler(gen.get());
 var filler = new MultiFiller(f, 50, 50);
-filler.set_tries(3, 6);
+filler.set_tries(3, 10);
 
 filler.add_default_constructor("B_Chest");
 filler.add_default_constructor("B_Bucket");
@@ -123,7 +148,16 @@ filler.add_default_constructor("B_Housefire");
 filler.add_default_constructor("B_Statue");
 filler.add_default_constructor("B_WeaponRack", 2);
 
+//filler.add_default_constructor("M_PalaceGuard",3);
 
+for (var f of rooms) {
+  filler.set_zone_from_floor(f);
+  filler.fill_floor_by_retry();
+}
+filler.clear();
+filler.set_object_size(20, 20);
+filler.add_default_constructor("M_PalaceGuard");
+filler.set_tries(15, 20);
 for (var f of rooms) {
   filler.set_zone_from_floor(f);
   filler.fill_floor_by_retry();

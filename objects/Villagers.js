@@ -718,7 +718,9 @@ class M_Noble extends M_NPC {
       `I wonder if they'll save<br />our town this time...`,
       `Ok, the decadent upper class.<br />I can play that.`,
       `How am I supposed to<br />talk about a game I know<br />nothing about.`,
-
+      `Wait, which is the<br />game and which is the<br />real again?`,
+      `Why are we taking<br />this game so seriously?`,
+      `This stupid game has a<br />lot more weight than it<br />should...`,
     ]);
     this.actuallythink(thought);
   }

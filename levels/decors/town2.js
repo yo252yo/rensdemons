@@ -36,3 +36,7 @@ villagerFiller.set_zone(1075, 2525, 1475, 1450);
 villagerFiller.set_tries(2, 10);//this.gen.int(10) - 7
 villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.fear, x, y, seed); });
 villagerFiller.fill_floor_by_retry();
+
+villagerFiller.set_tries(6, 20);
+villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Guard(CITIES.fear, x, y, seed); });
+villagerFiller.fill_floor_by_retry();

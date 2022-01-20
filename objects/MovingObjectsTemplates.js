@@ -39,6 +39,96 @@ class M_Priest extends ConsciousObject {
     this.face_character();
     CONSOLE.error("No interaction implemented for priest.");
   }
+
+  think() {
+    if(Math.random() < 0.5){
+      super.think();
+      return;
+    }
+    var thought = RANDOM.pick([
+      `These robes are<br />so uncomfortable!`,
+      `I'm itchy...`,
+      `I'm so sweaty under this...`,
+      `Am I supposed to look wise?`,
+      `I hate to pull up<br />a spiritual front...`,
+      `I just have to fake<br />a shaky voice and the kid<br />will buy it.`,
+      `I hope I look<br />spiritual enough...`,
+      `Ok how can I look<br />more spiritual?`,
+      `Do these robes make<br />me look fat?`,
+      `I sound like a crazy person...`,
+    ]);
+    this.actuallythink(thought);
+  }
+}
+
+class M_Guard extends ConsciousObject {
+  constructor(city, x, y, seed) {
+    var visual = new MovingSprite("assets/characters/guard.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48, undefined, city, "guard");
+    this.adjust_hitbox(7, 3, 25, 12);
+    this.default_text = this.text_interaction([
+      `Guard: "We need to maintain order no matter what."`,
+      `Guard: "I've got my eye on you."`,
+      `Guard: "You better stay in line, kiddo."`,
+      `Guard: "No roughhousing in this town."`,
+      `Guard: "Keep calm and keep moving."`,
+      `Guard: "If you see anything suspicious, report it straight away."`,
+      `Guard: "I'll make sure nothing goes wrong in this town."`,
+      `Guard: "Nothing to see here, carry on."`,
+      `Guard: "I'll protect this town from monsters, but also from any ill intent human."`,
+    ], seed);
+  }
+
+  interaction() {
+    this.face_character();
+    this.default_text();
+  }
+
+  think() {
+    if(Math.random() < 0.5){
+      super.think();
+      return;
+    }
+    var thought = RANDOM.pick([
+      `At least I get to<br />carry a weapon...`,
+      `This armor weighs a ton!`,
+      `A single step takes so much<br />effort in this tin can!`,
+      `This helmet looks stupid.`,
+      `I can't see a thing!`,
+      `I need to seem tough.`,
+      `Why am I a guard again?`,
+      `I hope they think<br />I'm tough enough!`,
+      `What am I protecting<br />I know there won't be an<br />attack...`,
+      `This is all scripted<br />of course the town is safe.`,
+      `At no point in the plot<br />do I do any real fighting.`,
+      `Why do we need guards if<br />the monsters are in on it?`
+    ]);
+    this.actuallythink(thought);
+  }
+}
+
+class M_PalaceGuard extends M_Guard {
+  constructor(x, y, seed) {
+    super(CITIES.fear, x, y, seed);
+
+    if(seed < 0.1){
+      return;// keep the parent default_text
+    }
+
+    this.default_text = this.text_interaction([
+      `Guard: "I bet they're having fun playing the game while we're here on duty..."`,
+      `Guard: "We need to keep the palace safe while the nobles work on solving the big problems of the kingdom."`,
+      `Guard: "Most of these rooms are for guards. The royal family does not need that much space."`,
+      `Guard: "Sometimes, if a noble does really really bad at the game, they can be demoted to guard..."`,
+      `Guard: "There's no shortage of security here. We got the most important people of the kingdom in the building."`,
+      `Guard: "Nothing bad is going to happen to this castle on my watch."`,
+      `Guard: "Maybe some day, if I do my duty really well, I'll be chosen as a Pawn in the Game!"`,
+      `Guard: "I don't understand all these politics and economics talks. I'm just happy doing my simple job."`,
+      `Guard: "All the complex rules of politics are way above my head. But they pay me to keep them safe, so it's fine by me."`,
+      `Guard: "I almost enrolled in the army, but this is a much more comfortable job. Nothing bad ever happens here."`,
+      `Guard: "Nothing ever happens here..."`,
+    ], seed);
+  }
 }
 
 class M_Boat extends MovingObject {

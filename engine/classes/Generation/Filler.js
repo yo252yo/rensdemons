@@ -73,6 +73,11 @@ class Filler {
     this.obj_constructor = obj_constructor;
   }
 
+  set_object_size(w, h) {
+    this.obj_w = w;
+    this.obj_h = h;
+  }
+
   // ===================
   //hack Utilities
   // ===================
