@@ -684,6 +684,19 @@ class M_Villager extends M_NPC {
   }
 }
 
+
+class M_ScriptedVillager extends M_Villager {
+  constructor(type, x, y, seed, texts) {
+    super(type, x, y, seed);
+    this.default_text = this.text_interaction(texts, seed);
+  }
+
+  interaction() {
+    this.face_character();
+    this.default_text();
+  }
+}
+
 class M_Vendor extends M_Villager {
   constructor(x, y, seed, type, threshold) {
     super("", x,y,seed);

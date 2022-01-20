@@ -149,7 +149,11 @@ class LevelObject {
       var gen = new Generator(seed);
       this.text = RANDOM.pick(texts, gen);
       var f = function() {
-        new TextBanner(this.text);
+        var array = this.text;
+        if (typeof array == "string") {
+          array= [array];
+        }
+        TextBannerSequence.make(array);
       }
       return f;
     }

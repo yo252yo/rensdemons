@@ -42,6 +42,7 @@ var make_priest = function (x, y) {
       "Priest: \"May the Goddess help us rebuild! And shield us while we do so!\"",
       "Priest: \"This is the end of $$town_2$... There's no recovering from this.\"",
       "Priest: \"The High Priest wants to talk to you.\"",
+      "Priest: \"All the nobles perished or fled. We're all that's left, trying to salvage what we can here.\"",
     ]);
  };
  return priest;

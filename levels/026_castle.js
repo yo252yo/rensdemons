@@ -92,6 +92,21 @@ new S_StainedGlass(2025, 1300, 'man');
 
 new S_GameBoard(2700, 1625);
 
+new M_ScriptedVillager(CITIES.fear, 2558, 1358, 1, [[
+    `The King is on his throne. He doesn't pay you any attention. Instead, his gaze is fully captured by the gigantic board game occupying part of the room.`,
+    `When you insist you're the Promised Child, he pats you on the head paternalistically and dismisses you.`,
+    `King: "Good, good. Now go, you're interrupting the game."`,
+    `$$BestFriend$: "I don't think we'll find any help here..."`,
+  ]]);
+
+new M_ScriptedVillager(CITIES.fear, 2787, 1371, 1, [`Noble: "This time I'm the king! I hope I'll do a good job, this could make or break my whole life!"`]);
+new M_ScriptedVillager(CITIES.fear, 3038, 1534, gen.get(), [`Noble: "I hate being the bad guy! Someone has to do it though. Can't wait until this simulation is over and we start the next one..."`]);
+new M_ScriptedVillager(CITIES.fear, 2841, 1574, gen.get(), [`Noble: "I don't know what the king has in mind for me. Some sort of pincer attack, I think..."`]);
+new M_ScriptedVillager(CITIES.fear, 2925, 1410, gen.get(), [`Noble: "I'm the vanguard! Awaiting orders from my liege!"`]);
+new M_ScriptedVillager(CITIES.fear, 3079, 1329, gen.get(), [`Noble: "It's a bold move, but he's overextending. He's going to lose because he can't maintain his supply chains."`]);
+new M_ScriptedVillager(CITIES.fear, 2698, 1536, gen.get(), [`Noble: "I've been kept in the back the whole time. I think I'm some sort of backup army..."`]);
+new M_ScriptedVillager(CITIES.fear, 2932, 1501, gen.get(), [`Noble: "I'm the Promised Child, I'm going straight to Hell's Maw! Our victory is guaranteed!"`]);
+
 // ===================
 //hack E. DECOR
 // ===================
@@ -117,6 +132,48 @@ for (var f of rooms) {
 // ===================
 //hack F. EVENTS
 // ===================
+
+var make_noble = function (x, y, seed) {
+  var noble = new M_ScriptedVillager(CITIES.fear, x, y, seed, []);
+  noble.interaction = function() {
+    this.face_character();
+    new TextBannerRandom([
+      `Noble: "I have a lot of money riding on this simulation. I hope they're not going to mess this up."`,
+      `Noble: "Sure this one is not bad but it's nothing compared to last season, we had the most promising general."`,
+      `Noble: "The Promised Child is a total beginner this time. There's no way humanity will survive."`,
+      `Noble: "This king is not a bad one, but he made a lot of mistakes in the beginning. I'm not sure whether he can catch up."`,
+      `Noble: "This is ridiculous, if I was the player, the game would be won already!"`,
+      `Noble: "There's no way they can win the game with this stupid strategy. No way!"`,
+      `Noble: "I'm not sure. There's been misplays, but there's been some brillant decision making from the player."`,
+      `Noble: "This player is a dunce. They can't defeat the demons armies if they don't develop their economy better."`,
+      `Noble: "This game is a mess. Simply a mess. Let's just start over."`,
+      `Noble: "I lost my last game, but I still did better than that! I blame the randomness..."`,
+      `Noble: "The Promised Child in this game is widely underqualified."`,
+      `Noble: "Mankind is in a decent position, but I still think that the demons are going to win."`,
+      `Noble: "Before my last defeat, I was the most powerful general in the kindgom. Curse this game!"`,
+      `Noble: "This game is rigged anyway. I've never seen the human armies succeed."`,
+      `Noble: "The humans better win. Their armies cost us most of the kingdom's budget!"`,
+      `Noble: "I'm a professional game commentator. I've been praised for my great insights and understanding. It's one of the most prestigious positions in the kingdom!"`,
+      `Noble: "Did you notice that the tiles are new? I've orchestrated the production! It's one of the biggest construction projects of mankind!"`,
+      `Noble: "I heard they're developing new secret weapons for the game. With this, the armies of darkness won't stand a chance!"`,
+      `Noble: "Don't go! The beginning of the game is always boring, but if you are patient, the action is going to be so cool and violent!"`,
+      `Noble: "Did you see the brand new game pieces? They're so shiny! I heard they cost something like a year worth of taxes..."`,
+      `Noble: "If you lose two games in a row, you're exiled. We only want winners here."`,
+      `Noble: "I think this game might be too easy..."`,
+      `Noble: "The player missed a lot of good opportunities! And it's too late to ever get them back, now..."`,
+      `Noble: "We need to replace the current Promised Child, they are so inefficient."`,
+      `Noble: "I'd much rather spectate! Playing the game is so stressful."`,
+      `Noble: "Commentators are just as important as players! Analyzes are how we learn and develop new strategies!"`,
+    ]);
+ };
+ return noble;
+}
+
+var villagerFiller = new Filler(gen.get());
+villagerFiller.set_zone(2000,1675,475,400);
+villagerFiller.set_tries(25, 40);
+villagerFiller.set_object(30, 40, make_noble);
+villagerFiller.fill_floor_by_retry();
 
 
 // ===================
