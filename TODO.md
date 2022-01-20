@@ -2,6 +2,8 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
+> people in the castle: simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
+> disguisedprincess
 
  TOWN2 CASTLE  
 DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
@@ -10,8 +12,7 @@ DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prin
 escort mission, ??? see dumbmuscles
 
 
-baudrillardian simulation
-simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
+
 
 
 

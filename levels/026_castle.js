@@ -42,8 +42,6 @@ rooms.push(new S_TilingFloor(2675,2475,175,150));
 rooms.push(new S_TilingFloor(2875,2475,275,150));
 
 
-
-
 new S_TilingFloor(2050,2375,50,125);
 new S_TilingFloor(2250,2375,50,125);
 new S_TilingFloor(2400,2375,50,125);
@@ -102,8 +100,6 @@ var f = new Filler(gen.get());
 var filler = new MultiFiller(f, 50, 50);
 filler.set_tries(3, 6);
 
-
-
 filler.add_default_constructor("B_Chest");
 filler.add_default_constructor("B_Bucket");
 filler.add_default_constructor("B_Jar");
@@ -117,14 +113,6 @@ for (var f of rooms) {
   filler.set_zone_from_floor(f);
   filler.fill_floor_by_retry();
 }
-/*
-filler.set_zone(2650,2200,550,400);
-filler.fill_floor_by_retry();
-filler.set_zone(1950,2500,550,200);
-filler.fill_floor_by_retry();
-filler.set_zone(2650,2500,550,200);
-filler.fill_floor_by_retry();
-*/
 
 // ===================
 //hack F. EVENTS
@@ -134,5 +122,12 @@ filler.fill_floor_by_retry();
 // ===================
 //hack G. START/INIT
 // ===================
+
+CURRENTLEVEL.setup_text_start_function([
+  `When you enter the castle, the place is teeming with activity. Guards run down hallways, well-dressed guests yell at each other. You wonder what could be causing such commotion. Could it be your arrival?`,
+  `$$BestFriend$: "Something is going on here... Are we under attack?"`,
+  `It becomes clear that everyone is fully invested in some sort of event, that has nothing to do with you.`,
+]);
+
 
 exit.initialize_with_character();
