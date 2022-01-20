@@ -131,6 +131,7 @@ var g4 = new M_Guard(CITIES.fear, 2615, 2550, gen.get());
 g3.interaction = guardsentry;
 g4.interaction = guardsentry;
 
+new S_SavePoint(2100, 1975);
 
 // ===================
 //hack E. DECOR

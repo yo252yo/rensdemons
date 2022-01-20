@@ -1,6 +1,9 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # WIP
 
+attacks in langug,
+  encounter+battle
+
 
 > people in the castle: simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
 > disguisedprincess

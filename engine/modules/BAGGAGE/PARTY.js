@@ -10,6 +10,7 @@ const PARTYMEMBERS = {
   SavageChild: "SavageChild",
   GeniusProdigy: "GeniusProdigy",
   FemmeFatale: "FemmeFatale",
+  DisguisedPrincess: "DisguisedPrincess",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
@@ -18,8 +19,6 @@ const PARTYMEMBERS = {
 // town5 acceptance
   RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
   // town5 fear
-  DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
- // mb in town2 if you save it or if you rescue the survivors
    DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
   // extra  mountain?
 
@@ -74,6 +73,9 @@ const PARTY = {
       case PARTYMEMBERS.FemmeFatale:
         return `Like many, ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} was orphaned by the war. She was very young when both her parents died and it fell on her to take care of her younger siblings. She spent a long time begging for scraps in the streets of ${DICTIONARY.get("town_4")} before she got old enough to use her body to her advantage.<br /><br />
                 In a cruel world, you sometimes do whatever it takes to survive. ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} has found a way to exploit base human instincts to put food on the table of her family. She feels pride in using people's impulses to her advantage. So she got intrigued and moved when she met someone naive like ${DICTIONARY.get(PARTYMEMBERS.Ren)} who didn't see her as a product. Someone like that needs her protection, and maybe she can even make a few coins in the process...`;
+      case PARTYMEMBERS.DisguisedPrincess:
+        return `Born to the royal family, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} never liked the pagentry and ceremonies that it entailed. The young aristocrat was always dreaming of faraway lands and waiting impatiently for the visit of the next adventurer or storyteller in the court. As a teenager, the walls of the royal castle started to feel like a prison, and ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} began to view with disdain the futile games and schemes that the people in power were doing.<br /><br />
+                Gardening was a welcome escape out of the oppressive castle, and it grew steadily into a passion for herbalism. One day, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} discovered in the royal library tomes that told of poisons and elixirs that might come in handy for an escape. Armed with this knowledge, the self-taught alchemist started to draft a plan to leave the castle and join the common folk, when ${DICTIONARY.get(PARTYMEMBERS.Ren)} appeared as a welcome help.`;
       default:
         return "";
     }
