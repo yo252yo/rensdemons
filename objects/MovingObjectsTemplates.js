@@ -282,13 +282,19 @@ class M_DisguisedPrincess extends MovingObject {
 
   interaction = function() {
     this.face_character();
-    if (PARTY.has_member(PARTYMEMBERS.DisguisedPrincess)){
-      TextBannerSequence.make([
-        `$$DisguisedPrincess$: "I think we're good. Ok, let's go."`,
-      ]);
-    }  else {
+    var press = function(){
       CURRENTLEVEL.setup("026_castle2", [2025, 1875]);
-//      BATTLE.api.make('_party/_DisguisedPrincess');
     }
+
+    var callback = function(){
+      SAVE.autosave();
+      new CenteredTextMenu("Are you ready to attempt to sneak "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + " out of the castle??",
+                    [
+                      {"text": "Yes", "effect": press},
+                      {"text": "No", "effect": "##CLOSE"},
+                   ]
+                 );
+    }
+    BATTLE.api.make('_party/_DisguisedPrincess', callback);
   }
 }
