@@ -2,7 +2,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
-SHARE CASTLE DECOR 
 
 attacks in langug,
   encounter+battle
