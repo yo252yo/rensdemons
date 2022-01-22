@@ -25,9 +25,9 @@ class S_Floor extends LevelObject {
     this.w = w;
     this.h = h;
 
-    this.visual_element.adjust_depth(-1);
     this.adjust_hitbox(10,0,w- 20,h-10);
-    this.make_walkable();
+    this.make_walkable(true);
+    this.visual_element.adjust_depth(-1);
   }
 
   draw_hitbox(even_floors){
