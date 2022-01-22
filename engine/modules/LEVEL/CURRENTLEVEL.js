@@ -339,11 +339,6 @@ const CURRENTLEVEL = {
           CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash(), true);
         }
       }
-      if (x == 2615 || x == 2602){
-        CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash());
-        console.log(object);
-      }
-
 
       var start = CURRENTLEVEL.objects._square_index(x,y-h);
       var end = CURRENTLEVEL.objects._square_index(x+w,y);
