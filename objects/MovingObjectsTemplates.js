@@ -128,6 +128,10 @@ class M_PalaceGuard extends M_Guard {
       `Guard: "I almost enrolled in the army, but this is a much more comfortable job. Nothing bad ever happens here."`,
       `Guard: "Nothing ever happens here..."`,
     ], seed);
+
+    if(ABILITIES.has_ability("_poisoned_palace_guards") && CURRENTLEVEL.level_name.endsWith("2")) {
+      this.destroy();
+    }
   }
 }
 

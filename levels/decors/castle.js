@@ -113,6 +113,37 @@ new M_ScriptedVillager(CITIES.fear, 2928, 1542, gen.get(), [`Noble: "I'm the Pro
 new M_ScriptedVillager(CITIES.fear, 2875, 1325, gen.get(), [`Noble: "I rolled the dice and got assigned to playing the Goddess... It sucks, I'm staying on the side the whole time, I don't really understand what She's supposed to be doing to be honest. How do I play her?"`]);
 
 
+var guardsthrone = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "The throne room is up ahead. As the Promised Child, I can't deny you entry, but you should know that the King and his advisors are pretty busy with important matters of the state. You shouldn't bother them for nothing."`
+      ]);
+ };
+ var g1 = new M_PalaceGuard(2500, 1775, gen.get());
+ var g2 = new M_PalaceGuard(2615, 1775, gen.get());
+ var g3 = new M_PalaceGuard(3170, 1430, gen.get());
+ var g4 = new M_PalaceGuard(1920, 1430, gen.get());
+
+g1.interaction = guardsthrone;
+g2.interaction = guardsthrone;
+g3.interaction = guardsthrone;
+g4.interaction = guardsthrone;
+
+
+var guardsentry = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "This is the royal castle. You may enter, you're the Promised Child. But don't make a mess."`
+      ]);
+ };
+var g3 = new M_PalaceGuard( 2500, 2550, gen.get());
+var g4 = new M_PalaceGuard( 2615, 2550, gen.get());
+g3.interaction = guardsentry;
+g4.interaction = guardsentry;
+
+
 // ===================
 //hack E. DECOR
 // ===================
