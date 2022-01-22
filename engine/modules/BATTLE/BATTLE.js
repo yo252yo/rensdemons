@@ -442,6 +442,7 @@ const BATTLE = {
 
       end: function(ending) {
         ending();
+        BATTLE.builder.clear();
       },
 
       loss: function() {
