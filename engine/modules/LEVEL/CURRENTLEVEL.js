@@ -339,13 +339,17 @@ const CURRENTLEVEL = {
           CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash(), true);
         }
       }
+      if (x == 2615 || x == 2602){
+        CONSOLE.error(`Indexing empty object : ${x} ${y} ${w} ${h} : ` + object.hash());
+        console.log(object);
+      }
 
 
       var start = CURRENTLEVEL.objects._square_index(x,y-h);
       var end = CURRENTLEVEL.objects._square_index(x+w,y);
 
-      for(var i = start[0]; i <= end[0]; i += CURRENTLEVEL._INDEX_SQUARE_SIZE){
-        for(var j = start[1]; j <= end[1]; j += CURRENTLEVEL._INDEX_SQUARE_SIZE){
+      for(var i = start[0] - CURRENTLEVEL._INDEX_SQUARE_SIZE; i <= end[0] + CURRENTLEVEL._INDEX_SQUARE_SIZE; i += CURRENTLEVEL._INDEX_SQUARE_SIZE){
+        for(var j = start[1] - CURRENTLEVEL._INDEX_SQUARE_SIZE; j <= end[1] + CURRENTLEVEL._INDEX_SQUARE_SIZE; j += CURRENTLEVEL._INDEX_SQUARE_SIZE){
           if(!CURRENTLEVEL.level_objects[i]){
             CURRENTLEVEL.level_objects[i] = {};
           }
