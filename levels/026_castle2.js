@@ -143,7 +143,6 @@ var g4 = new M_Guard(CITIES.fear, 2615, 2550, gen.get());
 g3.interaction = guardsentry;
 g4.interaction = guardsentry;
 
-new S_SavePoint(2100, 1975);
 
 // ===================
 //hack E. DECOR
@@ -237,10 +236,8 @@ villagerFiller.fill_floor_by_retry();
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
-  `When you enter the castle, the place is teeming with activity. Guards run down hallways, well-dressed guests yell at each other. You wonder what could be causing such commotion. Could it be your arrival?`,
-  `$$BestFriend$: "Something is going on here... Are we under attack?"`,
-  `It becomes clear that everyone is fully invested in some sort of event, that has nothing to do with you.`,
+  `$$DisguisedPrincess$: "Let's go! I hope you're ready!"`,
 ]);
 
 
-exit.initialize_with_character();
+CURRENTLEVEL.initialize_with_character(2025, 1875);

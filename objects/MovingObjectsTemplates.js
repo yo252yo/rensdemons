@@ -5,7 +5,7 @@
 class MM_Child extends ConsciousObject {
   constructor(x, y, visual, name, city) {
     super(visual, x, y, 32, 48, name, city, "child");
-    this.adjust_hitbox(10, 0, 10, 5);
+    this.adjust_hitbox(10, 0, 10, 10);
   }
 
   interaction() {
@@ -144,7 +144,7 @@ class M_BestFriend extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/BestFriend.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 }
 
@@ -152,7 +152,7 @@ class M_PreciousChild extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/PreciousChild.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -165,7 +165,7 @@ class M_FemmeFatale extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/FemmeFatale.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -184,7 +184,7 @@ class M_UpbeatDojikko extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/UpbeatDojikko.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function(){
@@ -201,7 +201,7 @@ class M_WiseOld extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/WiseOld.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -224,7 +224,7 @@ class M_StreetSmart extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/StreetSmart.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 }
 
@@ -232,7 +232,7 @@ class M_TraitorFisher extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/TraitorFisher.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -251,7 +251,7 @@ class M_GeniusProdigy extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/GeniusProdigy.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -273,7 +273,7 @@ class M_DisguisedPrincess extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/DisguisedPrincess.png", 'obj_dark', 32, 48);
     super(visual, x, y, 32, 48);
-    this.adjust_hitbox(5, 0, 20, 5);
+    this.adjust_hitbox(5, 0, 20, 10);
   }
 
   interaction = function() {
@@ -283,7 +283,8 @@ class M_DisguisedPrincess extends MovingObject {
         `$$DisguisedPrincess$: "I think we're good. Ok, let's go."`,
       ]);
     }  else {
-      BATTLE.api.make('_party/_DisguisedPrincess');
+      CURRENTLEVEL.setup("026_castle2", [2025, 1875]);
+//      BATTLE.api.make('_party/_DisguisedPrincess');
     }
   }
 }

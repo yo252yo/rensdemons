@@ -1,6 +1,9 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # WIP
 
+
+SHARE CASTLE DECOR 
+
 attacks in langug,
   encounter+battle
 
@@ -55,6 +58,8 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 # HAWK DUNGEON  ----------------------------------------------------
+
+a big spiral of concentric circle programatically generated to get smaller until the top
 
 
 theres always something behind the waterfall
