@@ -156,6 +156,10 @@ class ConsciousObject extends MovingObject {
       `Is this time gonna be<br />different?`,
       `Maybe this time is<br />gonna be the last?`,
 
+      `For God's sakes...`,
+      `Again?`,
+      `I hope they don't<br />talk to me...`,
+
       `Why am I stuck playing<br />a random ${this.role}?<br />This role blows!`,
       `I never even wanted to be<br />a ${this.role}!<br />Can I change?`,
       `I've been practising!<br />I'll be the best ${this.role}!'`,
