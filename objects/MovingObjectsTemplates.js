@@ -294,12 +294,17 @@ class M_DisguisedPrincess extends MovingObject {
       CURRENTLEVEL.setup("026_castle2", [2025, 1875]);
     }
 
+    var talk = function(){
+      BATTLE.api.make('_party/_DisguisedPrincess', callback);
+    }
+
     var callback = function(){
       SAVE.autosave();
       new CenteredTextMenu("Are you ready to attempt to sneak "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + " out of the castle?",
                     [
                       {"text": "Yes", "effect": press},
                       {"text": "No", "effect": "##CLOSE"},
+                      {"text": "Talk more", "effect": talk},
                    ]
                  );
     }

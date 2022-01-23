@@ -19,8 +19,9 @@ var plan = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Plan`,
   unlock: true,
   description: [
-    `$$Ren$: "Huh... Don't we need... You know... a plan or something? Can we just walk out?"`,
-    `$$DisguisedPrincess$: "Oh right, I almost forgot! Sorry, I got excited because it's the first time ever I get to interact in private with an adventurer! And to think I've been working on this plan for years! And now I have someone to help!"`,
+    `$$Ren$: "Huh... Don't we need... You know... a plan or something? There's a lot of guards, they won't let us just walk out!"`,
+    `$$DisguisedPrincess$: "Oh right, you're right! Good thinking! How did you know?`,
+    `$$DisguisedPrincess$: "I almost forgot! Sorry, I got too excited because it's the first time ever I get to interact in private with an adventurer! And to think I've been working on this plan for years! And now I have someone to help!"`,
     `$$DisguisedPrincess$'s thoughts are clearly a mess, scrambled by the excitement of meeting you and potentially getting help. The noble takes a second to think clearly and continues on a calmer tone.`,
     `$$DisguisedPrincess$: "Sorry, yes. Please forgive my excitement. I should have started by saying that I've been studying alchemy, and I've developed an elixir that should... indispose the guards. Without killing them, of course, I'm not a monster. But the castle is teeming with them, we do need to get rid of them if we want to get out safely."`,
     `$$Ren$: "I see..."`,
@@ -81,7 +82,9 @@ var ok = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$DisguisedPrincess$: "I'm ready!"`,
   ],
   function: function(){
-    plan(`Ok... sure`);
+    if( STATS.flag("_seen_castle2")){
+      plan(`Ok... sure`);
+    }
     go(`Ok... sure`);
   }
 });

@@ -7,7 +7,7 @@
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
 new Snippet("levels/decors/castle");
-
+STATS.record.flag("_seen_castle2");
 
 // ===================
 //hack D. UNIQUE ELEMENTS
