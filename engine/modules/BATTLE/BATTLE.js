@@ -449,17 +449,17 @@ const BATTLE = {
       },
 
       escape: function() {
-        BATTLE.builder.clear();
         CURRENTLEVEL.setup(BATTLE.origin_level, true);
+        BATTLE.builder.clear();
       },
 
       win: function() {
-        BATTLE.builder.clear();
         CURRENTLEVEL.setup(BATTLE.origin_level, true);
 
         if (BATTLE.win_callback){
           setTimeout(BATTLE.win_callback, 200);
         }
+        BATTLE.builder.clear();
       },
     },
   },
