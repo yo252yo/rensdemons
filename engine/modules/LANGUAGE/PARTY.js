@@ -259,7 +259,6 @@ LANGUAGE.actions[PARTYMEMBERS.GeniusProdigy] = {
 };
 
 
-
 LANGUAGE.actions[PARTYMEMBERS.FemmeFatale] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.FemmeFatale)) + RANDOM.pick([
@@ -289,6 +288,38 @@ LANGUAGE.actions[PARTYMEMBERS.FemmeFatale] = {
       `$$FemmeFatale$ winks and whispers suggestively to the $$&ENEMY$. The $$&ENEMY$ becomes entrances and pledges heart and soul to $$FemmeFatale$. As they are abiding her every word, she makes the $$&ENEMY$ do a few silly pirouettes, before asking them to fetch her something really, really far.`,
       `$$FemmeFatale$ starts describing in incredibly evocative details the sexual activities she supposedly craves to do with the $$&ENEMY$. Embarrassed and aroused, the $$&ENEMY$ keeps begging for more details and more privacy. It's then extremely easy to drag them far from the fight, and leave them hanging forever.`,
       `It doesn't take more than a few carefully chosen words in the velvety voice of $$FemmeFatale$ to make the $$&ENEMY$ succumb to her charms. Desperate to be loved by the woman of their dreams, the $$&ENEMY$ accepts her every order. To prove their devotion, the $$&ENEMY$ does not even hesitate when she orders them to kill themselves.`,
+    ]);
+  },
+};
+
+
+LANGUAGE.actions[PARTYMEMBERS.DisguisedPrincess] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)) + RANDOM.pick([
+      `$$DisguisedPrincess$ arrives with leather bags full of dried herbs and mixes. The vials on the aristocrat's pockets clink with every step.`,
+      `$$DisguisedPrincess$ rushes on the battleground full of the determination that was for so long sealed by the sheltered aristocrat life.`,
+      `$$DisguisedPrincess$ is impatient to be of use. After gathering herbs and potions, the runaway noble turns to the $$&ENEMY$.`,
+    ]);
+
+    var dialog = RANDOM.pick([
+      `$$DisguisedPrincess$: "I may never sit on the throne, but I can still save this kingdom!"`,
+      `$$DisguisedPrincess$: "I had to run away and become nobody so that I could be free to be myself! No more and no less."`,
+      `$$DisguisedPrincess$: "I will not be made to hide behind thick walls! I will not be anyone's puppet anymore!"`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `$$&ENEMY$ seems immune to $$DisguisedPrincess$'s best poisons...`,
+      `$$DisguisedPrincess$ keeps blowing a powdered concoction on the $$&ENEMY$ without much success.`,
+      `$$DisguisedPrincess$'s special elixirs did not have the expected effect. Could there be a problem with the formula?`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `$$DisguisedPrincess$ sets up an elaborate trap, spreading a mysterious elixir on the floor. When the $$&ENEMY$ arrives in that zone, they suddenly freezes. The poison sinks into the $$&ENEMY$'s vulnerable body and weakens it from the inside. In a matter of seconds, it turns into a pile of amorphous goo.`,
+      `$$DisguisedPrincess$ blows a weird powder towards the $$&ENEMY$. Nothing seems to happen at first, but when the $$&ENEMY$ starts moving, they immediately fall on the ground. After a few jolts, the $$&ENEMY$ becomes rigid and lifeless.`,
+      `$$DisguisedPrincess$ pops the lid of a vial and splashes its content in the direction of the $$&ENEMY$. You're surprised to see the droplets correct their course and fly in the direction of their targets. They hit the $$&ENEMY$, making as many tiny holes in their victim's body. Riddled with so many tiny open wounds, it's not long before the $$&ENEMY$ is neutralized.`,
     ]);
   },
 };
