@@ -178,8 +178,15 @@ class M_FemmeFatale extends MovingObject {
       TextBannerSequence.make([
         `$$FemmeFatale$: "After you... I hate to see you go, but I like to watch you leave..."`,
       ]);
-    } else {
+    } else if (INVENTORY.count("_FemmeFataleTokens") >= 5){
       BATTLE.api.make('_party/_FemmeFatale');
+    } else if (INVENTORY.count("_FemmeFataleTokens") >= 2){
+      BATTLE.api.make('_party/_FemmeFatale0');
+    } else {
+      TextBannerSequence.make([
+        `$$FemmeFatale$: "I can give you the time of your life, honey!"`,
+      ]);
+      INVENTORY.increase("_FemmeFataleTokens");
     }
   }
 }
