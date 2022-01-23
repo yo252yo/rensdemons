@@ -442,7 +442,6 @@ const BATTLE = {
 
       end: function(ending) {
         ending();
-        BATTLE.builder.clear();
       },
 
       loss: function() {
@@ -450,10 +449,12 @@ const BATTLE = {
       },
 
       escape: function() {
+        BATTLE.builder.clear();
         CURRENTLEVEL.setup(BATTLE.origin_level, true);
       },
 
       win: function() {
+        BATTLE.builder.clear();
         CURRENTLEVEL.setup(BATTLE.origin_level, true);
 
         if (BATTLE.win_callback){

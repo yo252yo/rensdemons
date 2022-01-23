@@ -1,7 +1,6 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # WIP
 
-> losing a battle clears the battle lol
 
 > should we specify that starting a battle clears the timeline?
 
