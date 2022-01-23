@@ -129,7 +129,7 @@ class M_PalaceGuard extends M_Guard {
       `Guard: "Nothing ever happens here..."`,
     ], seed);
 
-    if(ABILITIES.has_ability("_poisoned_palace_guards") && CURRENTLEVEL.level_name.endsWith("2")) {
+    if(INVENTORY.count("_poisoned_palace_guards") >= 3 && CURRENTLEVEL.level_name.endsWith("2")) {
       this.destroy();
     }
   }
@@ -290,18 +290,24 @@ class M_DisguisedPrincess extends MovingObject {
   interaction = function() {
     this.face_character();
     var press = function(){
+      LEVELSTATES._states.delete(["026_castle2"]);
       CURRENTLEVEL.setup("026_castle2", [2025, 1875]);
     }
 
     var callback = function(){
       SAVE.autosave();
-      new CenteredTextMenu("Are you ready to attempt to sneak "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + " out of the castle??",
+      new CenteredTextMenu("Are you ready to attempt to sneak "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + " out of the castle?",
                     [
                       {"text": "Yes", "effect": press},
                       {"text": "No", "effect": "##CLOSE"},
                    ]
                  );
     }
-    BATTLE.api.make('_party/_DisguisedPrincess', callback);
+
+    if(! INVENTORY.count(ITEM.PoisonousHerbs)){
+      BATTLE.api.make('_party/_DisguisedPrincess', callback);
+    } else {
+      callback();
+    }
   }
 }

@@ -33,15 +33,18 @@ rooms.push(new S_TilingFloor(2250,2200,225,200));
 rooms.push(new S_TilingFloor(2175,1975,125,150));
 rooms.push(new S_TilingFloor(2325,1975,150,150));
 rooms.push(new S_TilingFloor(2675,2200,125,375));
-rooms.push(new S_TilingFloor(2825,1975,325,150));
 rooms.push(new S_TilingFloor(2825,2200,175,200));
 rooms.push(new S_TilingFloor(3025,2200,125,200));
 
 rooms.push(new S_TilingFloor(1975,2450,200,150));
 rooms.push(new S_TilingFloor(2200,2450,150,150));
-rooms.push(new S_TilingFloor(2375,2450,100,150));
 rooms.push(new S_TilingFloor(2675,2450,175,150));
 rooms.push(new S_TilingFloor(2875,2450,275,150));
+
+
+new S_TilingFloor(2375,2450,100,150);
+new S_TilingFloor(2825,1975,325,150);
+
 
 
 new S_TilingFloor(2050,2375,50,125);
@@ -138,11 +141,130 @@ var guardsentry = function() {
       `Guard: "This is the royal castle. You may enter, you're the Promised Child. But don't make a mess."`
       ]);
  };
-var g3 = new M_PalaceGuard( 2500, 2550, gen.get());
-var g4 = new M_PalaceGuard( 2615, 2550, gen.get());
-g3.interaction = guardsentry;
-g4.interaction = guardsentry;
+var g5 = new M_PalaceGuard( 2500, 2550, gen.get());
+var g6 = new M_PalaceGuard( 2615, 2550, gen.get());
+g5.interaction = guardsentry;
+g6.interaction = guardsentry;
 
+
+var guardsbottle = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "Piss off, kid. This is the stock of booze, the most precious room in the castle. Nothing in there for you."`
+      ]);
+ };
+var g7 = new M_PalaceGuard(2425, 2300, gen.get());
+g7.interaction = guardsbottle;
+
+
+var guardscooking = function() {
+    this.face_character();
+
+    new TextBannerRandom([
+      `Guard: "I love cooking duty. I get to wait around and snack on the food I prepare."`
+      ]);
+ };
+var g8 = new M_PalaceGuard(3100, 1900, gen.get());
+g8.interaction = guardscooking;
+
+
+
+
+
+var jarpoison = function(){
+  INVENTORY.increase("_poisoned_palace_guards", 2);
+  TextBannerSequence.make([
+    `This mead has been spiked. Whoever drinks it is guaranteed to go straight to the puking phase of the recreative process.`
+  ]);
+}
+var jarprompt = function(){
+  new CenteredTextMenu("Will you put "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + "'s herbs in the mead?",
+                [
+                  {"text": "Yes", "effect": jarpoison},
+                  {"text": "No", "effect": "##CLOSE"},
+               ]
+             );
+}
+
+var jarfunction = function() {
+  if(INVENTORY.count(ITEM.PoisonousHerbs)){
+    if(INVENTORY.count("_poisoned_palace_guards") == 2 || INVENTORY.count("_poisoned_palace_guards") == 3){
+      TextBannerSequence.make([
+        `This mead has been spiked. Whoever drinks it is guaranteed to go straight to the puking phase of the recreative process.`
+      ]);
+    } else {
+      TextBannerSequence.make([
+        `This is the stock of mead the guards use to unwind after a shift.`
+      ], jarprompt);
+    }
+  } else {
+    TextBannerSequence.make([
+      `A jar full of mead. The well deserved reward for a guard's duty!`
+    ]);
+  }
+ };
+
+var jars = [new B_Jar(2375, 2400),
+new B_Jar(2375, 2350),
+new B_Jar(2375, 2450),
+new B_Jar(2400, 2450),
+new B_Jar(2425, 2450),
+new B_Jar(2450, 2450),
+new B_Jar(2450, 2400),
+new B_Jar(2450, 2350)];
+for(var j of jars ){
+  j.interaction = jarfunction;
+}
+
+
+
+new B_Bucket(2850, 1850);
+new B_Table(2925, 1850);
+new B_Table(3075, 1850);
+new B_Bucket(3125, 1975);
+
+
+
+var stewpoison = function(){
+  INVENTORY.increase("_poisoned_palace_guards");
+  TextBannerSequence.make([
+    `The stew has your secret ingredient. It's sure to leave a lasting impression.`
+  ]);
+}
+var stewprompt = function(){
+  new CenteredTextMenu("Will you put "+ DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess) + "'s herbs in the stew?",
+                [
+                  {"text": "Yes", "effect": stewpoison},
+                  {"text": "No", "effect": "##CLOSE"},
+               ]
+             );
+}
+
+var stewfunction = function() {
+  if(INVENTORY.count(ITEM.PoisonousHerbs)){
+    if(INVENTORY.count("_poisoned_palace_guards") == 1 || INVENTORY.count("_poisoned_palace_guards") == 3){
+      TextBannerSequence.make([
+        `The stew has your secret ingredient. It's sure to leave a lasting impression.`
+      ]);
+    } else {
+      TextBannerSequence.make([
+        `This stew appears to be the next meal for the guards.`
+      ], stewprompt);
+    }
+  } else {
+    TextBannerSequence.make([
+      `A tasty smelling stew is slowly simmering. You're envious of the ones who get to eat it.`
+    ]);
+  }
+ };
+
+var stews = [new B_Housefire(2875, 1925),
+new B_Housefire(2950, 1925),
+new B_Housefire(3025, 1925)];
+for(var j of stews ){
+  j.interaction = stewfunction;
+}
 
 // ===================
 //hack E. DECOR

@@ -1,20 +1,16 @@
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # WIP
 
+> losing a battle clears the battle lol
+
+> should we specify that starting a battle clears the timeline?
+
+> DisguisedPrincess runaway:
+- events in 026_castle2
+- add to party + name
+- impressed you know who to poison? mb force a game over before "plan"
 
 
-attacks in langug,
-  encounter+battle
-
-
-> people in the castle: simulation of the game to distract from cruel fate. the king is obsessed with running a weird sports game
-> disguisedprincess
-
- TOWN2 CASTLE  
-DisguisedPrincess: "DisguisedPrincess", //magical princess / noble / hidden prince  girl disguised as boi       herboriste/traps/poison
-
->> mb infiltration of the castle, you help him escape, by knowing patrols and poisoning guards...
-escort mission, ??? see dumbmuscles
 
 
 # MORE HEAVEN  ----------------------------------------------------

@@ -57,6 +57,7 @@ const ITEM = {
 
     // Story
     BreathingPotion: "Breathing Potion",
+    PoisonousHerbs: "Poisonous Herbs",
     AncientArmamentAdvisor: "Ancient Armament Advisor",
     AncientArmamentArmature: "Ancient Armament Armature",
     AncientArmamentAmmunition: "Ancient Armament Ammunition",
