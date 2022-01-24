@@ -6,12 +6,11 @@ load autosave after a change of level (gameover) loads where the change happened
 
 
 
+
 > should we specify that starting a battle clears the timeline?
 
 > DisguisedPrincess runaway:
-- events in 026_castle2
-- add to party + name
-- impressed you know who to poison? mb force a game over before "plan"
+Add some tripwire for a guard mb
 
 
 
