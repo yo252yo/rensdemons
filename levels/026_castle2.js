@@ -17,7 +17,7 @@ var die = function(){CURRENTLEVEL.setup("gameover$")};
 new SE_event(2450, 1800, [`As you approach the main hallway, nobles in the throne room notice your little party. They start screaming for the guards, claiming a kidnapping is taking place. Some of the guards with the bravest stomach come running and arrest you. They throw you in prison without trial where you spend the rest of your days.`], 50, undefined, die);
 new SE_event(1950, 1425, [`As you approach the throne room hallway, nobles inside notice your little party. They start screaming for the guards, claiming a kidnapping is taking place. Some of the guards with the bravest stomach come running and arrest you. They throw you in prison without trial where you spend the rest of your days.`], 50, undefined, die);
 
-var guard = new SE_event(2100, 2275, [`You walk slowly, but you stumble upon the patrol route of one of the rare surviving guards. He is quick to conclude a kidnapping attempt, and throws you in prison where you spend the rest of your days.`], 50, undefined, die);
+var guard = new SE_event(2075, 2275, [`You walk slowly, but you stumble upon the patrol route of one of the rare surviving guards. He is quick to conclude a kidnapping attempt, and throws you in prison where you spend the rest of your days.`], 50, undefined, die);
 
 
 new SE_event(2000, 2200, [
@@ -92,6 +92,86 @@ new SE_event(1900, 2000, [
   `$$Ren$: "If we do that, people will see us!"`,
   `$$DisguisedPrincess$: "Right, good point."`,
 ], 50);
+
+
+
+
+
+var guard2 = new SE_event(2250, 2325, 'As you enter the room, you find yourself facing a guard recovering slowly from stomach pain. He is on his way out, and has clearly seen you. He rings the alarm, and before long you\'re surrounded and thrown in jail for kidnapping where you spend the rest of your days.', 50, undefined,
+function(){
+  die();
+  STATS.record.flag("_castle_guard_escape_seen");
+});
+if (STATS.flag("_castle_guard_escape_seen")){
+  new SE_event(2275, 2275,[
+    `You setup a tripwire on the floor.`,
+    `$$DisguisedPrincess$: "What is that for?"`,
+    `But before you have time to explain, a guard comes out of the room next to you. He's still shaken by the poison he ingested, so he doesn't notice the tripwire. He falls head first and lies on the ground, unconscious.`,
+    `$$DisguisedPrincess$: "Wow."`,
+  ], 50, undefined, function(){
+    guard2.destroy();
+  });
+} else {
+  new SE_event(2275, 2275,[
+    `You carefully make your way in front of an open room. As soon as you passed it, you hear a noise behind you. A guard, recovering from his poisoning, is staggering behind you. You start running, but it's too late, he rang the alarm, and before long you're surrounded and thrown in jail for kidnapping where you spend the rest of your days.`,
+  ], 50, undefined, function(){
+    die();
+    STATS.record.flag("_castle_guard_escape_seen");
+  });
+}
+
+var jump = function(){
+  TextBannerSequence.make([
+    `You hurry up the staircases to climb a tower of the castle. The view from up there is impressive, but you don't have time to marvel at it, guards could come any minute. You take a deep breath and jump to the ground. The feeling of the air slashing your face is the last thing you ever feel before crashing to the ground in a macabre noise.`
+  ], die);
+}
+
+new SE_event(1900, 2450, [
+  `$$Ren$: "Is there no other way out?"`,
+  `$$DisguisedPrincess$: "No, this castle only has a single exit. Supposedly it's easier to defend that way. I'm sure the King has some kind of hidden secret way out, but I'm not privy to it."`,
+  `$$DisguisedPrincess$: "We could climb on the roof and jump..."`,
+], 50, undefined, function(){
+  new CenteredTextMenu("What to do?",
+                [
+                  {"text": "Climb and jump", "effect": jump},
+                  {"text": "Refuse", "effect": "##CLOSE"},
+               ]
+             );
+});
+
+
+
+
+
+
+
+var examineground = function(){
+  TextBannerSequence.make([
+    `You signal to your party to stop and examine the ground. There's a dent there, that would have made you trip if you hadn't been careful. You slowly advance around it.`,
+    `$$DisguisedPrincess$: "Good call! How did you notice?"`,
+    `$$BestFriend$: "It's a hunch given by the Goddess, I suppose. It happens all the time."`,
+    `$$DisguisedPrincess$: "Cool!"`,
+  ]);
+}
+
+var keepwalking = function(){
+  TextBannerSequence.make([
+    `There's a dent in the ground that you had not seen. You trip on it and fall on the ground noisily. The commotion attracts some of the guards that were spared by the poison. They are quick to accuse you of kidnapping and to throw you in prison without trial where you spend the rest of your days.`
+  ], die);
+}
+
+
+new SE_event(1900, 2200, [
+  `You are in a hallway. Nothing is going on. Nothing at all is suspicious.`,
+], 50, undefined, function(){
+  new CenteredTextMenu("What to do?",
+                [
+                  {"text": "Keep walking", "effect": keepwalking},
+                  {"text": "Examine ground", "effect": examineground},
+               ]
+             );
+});
+
 
 
 // ===================

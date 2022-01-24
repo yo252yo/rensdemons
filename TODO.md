@@ -7,14 +7,6 @@ load autosave after a change of level (gameover) loads where the change happened
 
 
 
-> should we specify that starting a battle clears the timeline?
-
-> DisguisedPrincess runaway:
-Add some tripwire for a guard mb
-
-
-
-
 # MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??
@@ -156,6 +148,7 @@ See 051_pandemonium_room and 012_trees
 - test on edge, epsecially functions starting by _, mb the nested ones
 - change color scheme doesnt change fog or map bg
 - artifact have special sound effects
+- should we specify that starting a battle clears the timeline?
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
