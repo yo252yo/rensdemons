@@ -2,6 +2,10 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 # WIP
 
 
+load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
+
+
+
 > should we specify that starting a battle clears the timeline?
 
 > DisguisedPrincess runaway:

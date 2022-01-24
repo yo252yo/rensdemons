@@ -13,6 +13,19 @@ STATS.record.flag("_seen_castle2");
 //hack D. UNIQUE ELEMENTS
 // ===================
 
+new SE_event(2450, 1800, [`As you approach the main hallway, nobles in the throne room notice your little party. They start screaming for the guards, claiming a kidnapping is taking place. Some of the guards with the bravest stomach come running and arrest you. They throw you in prison without trial where you spend the rest of your days.`], 50, undefined, function(){CURRENTLEVEL.setup("gameover$")});
+var guard = new SE_event(2100, 2275, [`You walk slowly, but you stumble upon the patrol route of one of the rare surviving guards. He is quick to conclude a kidnapping attempt, and throws you in prison where you spend the rest of your days.`], 50, undefined, function(){CURRENTLEVEL.setup("gameover$")});
+
+
+new SE_event(2000, 2200, [
+  `$$Ren$: "Let's hide here for a bit!"`,
+  `Your party does not really understand why, but knows better than questionning you. A few moments after you found a hiding spot, you hear footsteps in the hallway. One of the remaining guards was patrolling.`,
+  `$$DisguisedPrincess$: "How did you know that?"`,
+  `$$Ren$: "Nevermind, let's go!"`,
+], 50, undefined, function(){
+  guard.destroy();
+});
+
 
 
 // ===================
