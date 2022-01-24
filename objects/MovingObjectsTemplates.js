@@ -111,23 +111,21 @@ class M_PalaceGuard extends M_Guard {
   constructor(x, y, seed) {
     super(CITIES.fear, x, y, seed);
 
-    if(seed < 0.1){
-      return;// keep the parent default_text
+    if(seed > 0.1){
+      this.default_text = this.text_interaction([
+        `Guard: "I bet they're having fun playing the game while we're here on duty..."`,
+        `Guard: "We need to keep the palace safe while the nobles work on solving the big problems of the kingdom."`,
+        `Guard: "Most of these rooms are for guards. The royal family does not need that much space."`,
+        `Guard: "Sometimes, if a noble does really really bad at the game, they can be demoted to guard..."`,
+        `Guard: "There's no shortage of security here. We got the most important people of the kingdom in the building."`,
+        `Guard: "Nothing bad is going to happen to this castle on my watch."`,
+        `Guard: "Maybe some day, if I do my duty really well, I'll be chosen as a Pawn in the Game!"`,
+        `Guard: "I don't understand all these politics and economics talks. I'm just happy doing my simple job."`,
+        `Guard: "All the complex rules of politics are way above my head. But they pay me to keep them safe, so it's fine by me."`,
+        `Guard: "I almost enrolled in the army, but this is a much more comfortable job. Nothing bad ever happens here."`,
+        `Guard: "Nothing ever happens here..."`,
+      ], seed);
     }
-
-    this.default_text = this.text_interaction([
-      `Guard: "I bet they're having fun playing the game while we're here on duty..."`,
-      `Guard: "We need to keep the palace safe while the nobles work on solving the big problems of the kingdom."`,
-      `Guard: "Most of these rooms are for guards. The royal family does not need that much space."`,
-      `Guard: "Sometimes, if a noble does really really bad at the game, they can be demoted to guard..."`,
-      `Guard: "There's no shortage of security here. We got the most important people of the kingdom in the building."`,
-      `Guard: "Nothing bad is going to happen to this castle on my watch."`,
-      `Guard: "Maybe some day, if I do my duty really well, I'll be chosen as a Pawn in the Game!"`,
-      `Guard: "I don't understand all these politics and economics talks. I'm just happy doing my simple job."`,
-      `Guard: "All the complex rules of politics are way above my head. But they pay me to keep them safe, so it's fine by me."`,
-      `Guard: "I almost enrolled in the army, but this is a much more comfortable job. Nothing bad ever happens here."`,
-      `Guard: "Nothing ever happens here..."`,
-    ], seed);
 
     if(INVENTORY.count("_poisoned_palace_guards") >= 3 && CURRENTLEVEL.level_name.endsWith("2")) {
       this.destroy();

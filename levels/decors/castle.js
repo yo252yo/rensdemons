@@ -141,8 +141,8 @@ var guardsentry = function() {
       `Guard: "This is the royal castle. You may enter, you're the Promised Child. But don't make a mess."`
       ]);
  };
-var g5 = new M_PalaceGuard( 2500, 2550, gen.get());
-var g6 = new M_PalaceGuard( 2615, 2550, gen.get());
+var g5 = new M_PalaceGuard(2500, 2550, gen.get());
+var g6 = new M_PalaceGuard(2615, 2550, gen.get());
 g5.interaction = guardsentry;
 g6.interaction = guardsentry;
 
