@@ -1,9 +1,8 @@
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
 # WIP
 
 
 load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
-
 
 
 
@@ -33,7 +32,7 @@ talk to an objective and exit, go close to the border
 talk to one character / talk to a npc trigger the progression
 go to the next area and come back
 "oh you were on a fetching mission/tutorial"
-
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
 
 
@@ -86,14 +85,14 @@ mb u can help him with suicide? save/load to kill him over and over/ stuff about
 >> actually you know you survive till the end of the game!!
 Triggering  flag, like playing biwa, is as good as murder
 Artist vessel for god inspiration
-
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # TOWN5 RetiredProtector  ----------------------------------------------------
 RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town5 acceptance
 >>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 >>protector is like why me im nobody etc...
 im too old for this shit
-
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
@@ -105,7 +104,7 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 >> when i wake up somewhere i immediately proceed to loot everything
 >> Stuff resets when you exist and come back
 >>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
-
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
 # GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town

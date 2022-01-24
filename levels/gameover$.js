@@ -15,13 +15,25 @@ function adapt_sprite(s, depth) {
     setTimeout(function(){ adapt_sprite(s, depth); }, 100);
     return;
   }
-
-  s.visual_element.container.style.top = "0px";
-  var r = Math.floor(- 500 + 500 * SCREEN.width()/1620);
-  s.visual_element.container.style.right = r;
-  s.visual_element.html_canvas.style.right = r;
   s.visual_element.container.style.height = "100%";
   s.visual_element.html_canvas.style.height = "100%";
+  s.visual_element.container.style.top = "0px";
+
+  if(SCREEN.width() / SCREEN.height() > 0.8 * 1620 / 1080){
+    s.visual_element.container.style.width = "100%";
+    s.visual_element.html_canvas.style.width = "100%";
+  } else{
+  s.visual_element.container.style.width = 1620/1080 * SCREEN.height();
+  s.visual_element.html_canvas.style.width = 1620/1080 * SCREEN.height();
+
+
+    var r = Math.floor(- 400 + 500 * SCREEN.width()/1620);
+    s.visual_element.container.style.right = r;
+    s.visual_element.html_canvas.style.right = r;
+
+  }
+
+
   s.visual_element.html_canvas.style.position = "fixed";
   s.visual_element.adjust_depth(depth);
 
@@ -29,6 +41,22 @@ function adapt_sprite(s, depth) {
     s.visual_element.tint();
   }
 }
+
+/*
+  if(SCREEN.is_mobile()){
+    s.visual_element.container.style.top = "-100px";
+    s.visual_element.container.style.left =  "-500px";
+    s.visual_element.html_canvas.style.left =  "-500px";
+  } else {
+    s.visual_element.container.style.right =  "0px";
+    s.visual_element.html_canvas.style.right =  "0px";
+    s.visual_element.container.style.top = "0px";
+  }
+  s.visual_element.container.style.height = "100%";
+  s.visual_element.html_canvas.style.height = "100%";
+  s.visual_element.html_canvas.style.position = "fixed";
+  s.visual_element.adjust_depth(depth);
+*/
 
 var adapt_all_sprite = function(){
   adapt_sprite(s0, 0);
