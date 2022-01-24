@@ -13,7 +13,7 @@ const CURRENTLEVEL = {
 
   level_name: "",
   previous_lvl: "", // used to exit houses
-  level_objects: [], // Would benefit from being smartly indexed.
+  _level_objects: [], // Would benefit from being smartly indexed.
   destroyed_objects: [],
   triggers: [],
   start_function: null,
@@ -238,7 +238,7 @@ const CURRENTLEVEL = {
         clearTimeout(CURRENTLEVEL.triggers[key]);
       }
       CURRENTLEVEL.system.html().innerHTML = "";
-      CURRENTLEVEL.level_objects = [];
+      CURRENTLEVEL._level_objects = [];
       CURRENTLEVEL.triggers = {};
       CURRENTLEVEL.start_function = null;
       CHARACTER.clear();
@@ -329,7 +329,7 @@ const CURRENTLEVEL = {
       var y = object.y || object.h_y || object.visual_element.y;
       var w = object.w || object.h_w || object.visual_element.width;
       var h = object.h || object.h_h || object.visual_element.height;
-      if(x == undefined || y == undefined || w == undefined || h == undefined){
+      if(x == undefined || y == undefined || w == undefined || h == undefined || isNaN(w) || isNaN(h)){
         if(force_index){
           x = x || -1;
           y = y || -1;
@@ -345,14 +345,14 @@ const CURRENTLEVEL = {
 
       for(var i = start[0] - CURRENTLEVEL._INDEX_SQUARE_SIZE; i <= end[0] + CURRENTLEVEL._INDEX_SQUARE_SIZE; i += CURRENTLEVEL._INDEX_SQUARE_SIZE){
         for(var j = start[1] - CURRENTLEVEL._INDEX_SQUARE_SIZE; j <= end[1] + CURRENTLEVEL._INDEX_SQUARE_SIZE; j += CURRENTLEVEL._INDEX_SQUARE_SIZE){
-          if(!CURRENTLEVEL.level_objects[i]){
-            CURRENTLEVEL.level_objects[i] = {};
+          if(!CURRENTLEVEL._level_objects[i]){
+            CURRENTLEVEL._level_objects[i] = {};
           }
-          if(!CURRENTLEVEL.level_objects[i][j]){
-            CURRENTLEVEL.level_objects[i][j] = [];
+          if(!CURRENTLEVEL._level_objects[i][j]){
+            CURRENTLEVEL._level_objects[i][j] = [];
           }
-          if(! CURRENTLEVEL.level_objects[i][j].includes(object)){
-            CURRENTLEVEL.level_objects[i][j].push(object);
+          if(! CURRENTLEVEL._level_objects[i][j].includes(object)){
+            CURRENTLEVEL._level_objects[i][j].push(object);
           }
         }
       }
@@ -361,16 +361,16 @@ const CURRENTLEVEL = {
     get_all_objects: function(x, y){
       if(x && y){
         var start = CURRENTLEVEL.objects._square_index(x,y);
-        if (CURRENTLEVEL.level_objects[start[0]] && CURRENTLEVEL.level_objects[start[0]][start[1]]){
-          return CURRENTLEVEL.level_objects[start[0]][start[1]];
+        if (CURRENTLEVEL._level_objects[start[0]] && CURRENTLEVEL._level_objects[start[0]][start[1]]){
+          return CURRENTLEVEL._level_objects[start[0]][start[1]];
         } else {
           return [];
         }
       }
       var result = [];
-      for(var i in CURRENTLEVEL.level_objects){
-        for(var j in CURRENTLEVEL.level_objects[i]){
-          for(var o of CURRENTLEVEL.level_objects[i][j]){
+      for(var i in CURRENTLEVEL._level_objects){
+        for(var j in CURRENTLEVEL._level_objects[i]){
+          for(var o of CURRENTLEVEL._level_objects[i][j]){
             if(!result.includes(o)){
               result.push(o);
             }
@@ -382,13 +382,13 @@ const CURRENTLEVEL = {
 
     destroy_object: function(object) {
       var hash = object.hash();
-      for(var i in CURRENTLEVEL.level_objects){
-        for(var j in CURRENTLEVEL.level_objects[i]){
-          for(var k in CURRENTLEVEL.level_objects[i][j]){
-            var candidate = CURRENTLEVEL.level_objects[i][j][k];
+      for(var i in CURRENTLEVEL._level_objects){
+        for(var j in CURRENTLEVEL._level_objects[i]){
+          for(var k in CURRENTLEVEL._level_objects[i][j]){
+            var candidate = CURRENTLEVEL._level_objects[i][j][k];
             if (candidate && candidate.hash() == hash){ // destroy all homonyms in all squares
               candidate.finish_destroy();
-              CURRENTLEVEL.level_objects[i][j][k] = null;
+              CURRENTLEVEL._level_objects[i][j][k] = null;
             }
           }
         }

@@ -5,7 +5,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
 
 
-boss dodgers are bugged!
 
 
 # HAWK DUNGEON  ----------------------------------------------------
