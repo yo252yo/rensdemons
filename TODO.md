@@ -5,6 +5,37 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
 
 
+boss dodgers are bugged!
+
+
+# HAWK DUNGEON  ----------------------------------------------------
+
+can use world/grizzly
+hawk
+pterosaur (rare)
+emu ( a litl rare)
+
+use S_MudFloor  ???
+
+
+TEXT FOR WAND AND EXIT
+
+
+
+theres always something behind the waterfall
+
+DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
+// extra  mountain?
+>> save him from traps/patrols?? help him set traps?
+escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
+Assume that a zone is safe once you've cleared it / clear whole floor before moving on
+this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
+talk to an objective and exit, go close to the border
+talk to one character / talk to a npc trigger the progression
+go to the next area and come back
+"oh you were on a fetching mission/tutorial"
+
+
 
 
 # MORE HEAVEN  ----------------------------------------------------
@@ -43,26 +74,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - more bed and jar actions
 - review battle_debris add a few more actions for rubble treasures
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
-
-
-
-# HAWK DUNGEON  ----------------------------------------------------
-
-a big spiral of concentric circle programatically generated to get smaller until the top
-
-
-theres always something behind the waterfall
-
-DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-// extra  mountain?
->> save him from traps/patrols?? help him set traps?
-escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
-Assume that a zone is safe once you've cleared it / clear whole floor before moving on
-this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
-talk to an objective and exit, go close to the border
-talk to one character / talk to a npc trigger the progression
-go to the next area and come back
-"oh you were on a fetching mission/tutorial"
 
 
 
