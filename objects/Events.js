@@ -34,7 +34,9 @@ class SE_event extends S_event {
     if (!Array.isArray(this.text)){
       array = [this.text];
     }
-    array[array.length - 1] = array[array.length - 1] + " (1xp)";
+    if(!array[array.length - 1].endsWith(`"`)){
+      array[array.length - 1] = array[array.length - 1] + " (1xp)";
+    }
     TextBannerSequence.make(array, function(){
       if(self.extra){
           self.extra();
