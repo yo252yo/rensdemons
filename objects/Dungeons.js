@@ -569,6 +569,37 @@ class S_Cavesprouts extends SimpleObject {
 
 
 
+class S_Rootstall extends SimpleObject {
+  constructor(x, y, seed){
+  super(x, y, 34, 83, "mountain/tallroots");
+  this.adjust_hitbox(2,0,30,25);
+
+    this.default_text = this.text_interaction([
+      "This summit is home to a strange variety of plants that look like scaly stalagmites.",
+      "The stalk of this plant is taller than you, yet stands upright unyielding to the pressures of gravity, the wind, or your occasional push.",
+      "You take a minute to lean against the dry vegetal, taking advantage of its sturdiness. When you take the road again, your clothes are full of loose fibers.",
+      "You believe these weird rods to be a weird mineral accretion, but on close inspection it turns out to be a very solid vegetal.",
+    ], seed);
+  }
+}
+
+class S_Root extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 45,54, "mountain/roots");
+    this.adjust_hitbox(2,0,40,35);
+
+    this.default_text = this.text_interaction([
+      "The brittle plant you see everywhere on this mountain sprouts out as little bulbs like this.",
+      "You find little sprouts of a dry looking brown scaly plant.",
+      "You try to knock one of these vegetal bulbs, but they are surprisingly solid.",
+      "The sturdy vegetal stays in place as you trip on it.",
+    ], seed);
+  }
+}
+
+
+
+
 
 
 

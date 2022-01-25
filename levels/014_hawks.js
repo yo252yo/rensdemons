@@ -89,6 +89,8 @@ filler.add_default_constructor("S_Rocks2");
 filler.add_default_constructor("S_Rocks3");
 filler.add_default_constructor("S_Rocks4");
 filler.add_default_constructor("S_Pebbles");
+filler.add_default_constructor("S_Rootstall", 1.5);
+filler.add_default_constructor("S_Root", 1.5); 
 
 filler.set_tries(10+2*size/100, 10+3*size/100);
 
