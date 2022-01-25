@@ -11,6 +11,7 @@ const PARTYMEMBERS = {
   GeniusProdigy: "GeniusProdigy",
   FemmeFatale: "FemmeFatale",
   DisguisedPrincess: "DisguisedPrincess",
+  DumbMuscles: "DumbMuscles",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
@@ -19,8 +20,6 @@ const PARTYMEMBERS = {
 // town5 acceptance
   RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
   // town5 fear
-   DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-  // extra  mountain?
 
   isPartyMember: function(s){
     for (var i in PARTYMEMBERS){
@@ -74,8 +73,11 @@ const PARTY = {
         return `Like many, ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} was orphaned by the war. She was very young when both her parents died and it fell on her to take care of her younger siblings. She spent a long time begging for scraps in the streets of ${DICTIONARY.get("town_4")} before she got old enough to use her body to her advantage.<br /><br />
                 In a cruel world, you sometimes do whatever it takes to survive. ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} has found a way to exploit base human instincts to put food on the table of her family. She feels pride in using people's impulses to her advantage. So she got intrigued and moved when she met someone naive like ${DICTIONARY.get(PARTYMEMBERS.Ren)} who didn't see her as a product. Someone like that needs her protection, and maybe she can even make a few coins in the process...`;
       case PARTYMEMBERS.DisguisedPrincess:
-        return `Born to the royal family, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} never liked the pagentry and ceremonies that it entailed. The young aristocrat was always dreaming of faraway lands and waiting impatiently for the visit of the next adventurer or storyteller in the court. As a teenager, the walls of the royal castle started to feel like a prison, and ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} began to view with disdain the futile games and schemes that the people in power were doing.<br /><br />
+        return `Born to the royal family, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} never liked the pageantry and ceremonies that it entailed. The young aristocrat was always dreaming of faraway lands and waiting impatiently for the visit of the next adventurer or storyteller in the court. As a teenager, the walls of the royal castle started to feel like a prison, and ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} began to view with disdain the futile games and schemes that the people in power were doing.<br /><br />
                 Gardening was a welcome escape out of the oppressive castle, and it grew steadily into a passion for herbalism. One day, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} discovered in the royal library tomes that told of poisons and elixirs that might come in handy for an escape. Armed with this knowledge, the self-taught alchemist started to draft a plan to leave the castle and join the common folk, when ${DICTIONARY.get(PARTYMEMBERS.Ren)} appeared as a welcome help.`;
+      case PARTYMEMBERS.DumbMuscles:
+        return `The Goddess was not kind to ${DICTIONARY.get(PARTYMEMBERS.DumbMuscles)} and gave him at birth less than average mental abilities. He got picked on and teased a lot by the other children. But fortunately, he had no shortage of courage and determination. Through rigorous training, he built up his body to ensure he would never again be the butt of the joke.<br /><br />
+                Through all of this, his heart never tarnished, for his kindness was on par with his resolve. He longed to use his cultivated strength for the good of his fellow humans. Becoming a mercenary adventurer seemed the right thing to do. He did not foresee that the quests could be so difficult. Luckily, he found in ${DICTIONARY.get(PARTYMEMBERS.Ren)} a mentor and an inspiration that he could follow to learn the ropes until he is ready to make his own way.`;
       default:
         return "";
     }

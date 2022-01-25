@@ -9,7 +9,6 @@ load autosave after a change of level (gameover) loads where the change happened
 # HAWK DUNGEON  ----------------------------------------------------
 
 - loots and text events
-- DumbMuscles  description in party.js
 - DumbMuscles  attacks in langug,
 - DumbMuscles  encounter+battle
 
