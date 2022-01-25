@@ -1,4 +1,3 @@
-
 # WIP
 
 
@@ -8,15 +7,10 @@ load autosave after a change of level (gameover) loads where the change happened
 
 # HAWK DUNGEON  ----------------------------------------------------
 
-can use world/grizzly
-hawk
-pterosaur (rare)
-emu ( a litl rare)
+- loots and text events
+- TEXT FOR WAND AND EXIT
+- DumbMuscles story
 
-use S_MudFloor  ???
-
-
-TEXT FOR WAND AND EXIT
 
 
 
