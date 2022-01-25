@@ -140,8 +140,11 @@ class TextMenu extends TextElement {
     }
 
     select(choice) {
+      var prevSelected = this.selected;
       this.selected = parseInt(choice);
-      this.update_menu();
+      if (prevSelected != this.selected){
+        this.update_menu();
+      }
     }
 
     // Since several JS events can be fired, we need to be careful about executing
