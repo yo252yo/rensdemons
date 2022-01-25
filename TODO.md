@@ -160,7 +160,6 @@ See 051_pandemonium_room and 012_trees
 - dodger initial position a litl bit more up
 - a suicide function?
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
-- did i fix word break in little textbox but not in CenteredTextMenu ?? https://github.com/yo252yo/rensdemons/commit/45d726acf5d6e3ff75444e5c90bd045d5150fa40 ?? character descriptions
 - poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?

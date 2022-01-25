@@ -43,6 +43,7 @@ class TextMenu extends TextElement {
         this.options = options;
         this.selected = 0;
         this.in_destruction = false;
+        this.html.style.wordBreak = "normal"; // not needed in menus
         this.print_menu();
         this.scroll_if_overflow();
     }
