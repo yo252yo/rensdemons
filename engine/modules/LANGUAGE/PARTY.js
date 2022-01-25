@@ -62,7 +62,7 @@ LANGUAGE.actions[PARTYMEMBERS.PreciousChild] = {
     return RANDOM.pick([
       `The innocent smile of $$PreciousChild$ seems to melt the heart of the $$&ENEMY$. It doesn't want to fight anymore.`,
       `As soon as it sees $$PreciousChild$, the face of the $$&ENEMY$ lights up. $$PreciousChild$'s candor touches its heart and pacifies it for good.`,
-      `$$&ENEMY$ cannot help but be moved by $$PreciousChild$'s innocence. It approaches you, and you can tell that all ill intent is gone.`,
+      `The $$&ENEMY$ cannot help but be moved by $$PreciousChild$'s innocence. It approaches you, and you can tell that all ill intent is gone.`,
     ]);
   },
 };
@@ -310,7 +310,7 @@ LANGUAGE.actions[PARTYMEMBERS.DisguisedPrincess] = {
   },
   fail: function(){
     return RANDOM.pick([
-      `$$&ENEMY$ seems immune to $$DisguisedPrincess$'s best poisons...`,
+      `The $$&ENEMY$ seems immune to $$DisguisedPrincess$'s best poisons...`,
       `$$DisguisedPrincess$ keeps blowing a powdered concoction on the $$&ENEMY$ without much success.`,
       `$$DisguisedPrincess$'s special elixirs did not have the expected effect. Could there be a problem with the formula?`,
     ]);
@@ -320,6 +320,38 @@ LANGUAGE.actions[PARTYMEMBERS.DisguisedPrincess] = {
       `$$DisguisedPrincess$ sets up an elaborate trap, spreading a mysterious elixir on the floor. When the $$&ENEMY$ arrives in that zone, they suddenly freezes. The poison sinks into the $$&ENEMY$'s vulnerable body and weakens it from the inside. In a matter of seconds, it turns into a pile of amorphous goo.`,
       `$$DisguisedPrincess$ blows a weird powder towards the $$&ENEMY$. Nothing seems to happen at first, but when the $$&ENEMY$ starts moving, they immediately fall on the ground. After a few jolts, the $$&ENEMY$ becomes rigid and lifeless.`,
       `$$DisguisedPrincess$ pops the lid of a vial and splashes its content in the direction of the $$&ENEMY$. You're surprised to see the droplets correct their course and fly in the direction of their targets. They hit the $$&ENEMY$, making as many tiny holes in their victim's body. Riddled with so many tiny open wounds, it's not long before the $$&ENEMY$ is neutralized.`,
+    ]);
+  },
+};
+
+
+LANGUAGE.actions[PARTYMEMBERS.DumbMuscles] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.DumbMuscles)) + RANDOM.pick([
+      `$$DumbMuscles$ rushes on the battleground, jumping excitedly in every direction and vocifering strange cries to psych himself up.`,
+      `$$DumbMuscles$ runs around the $$&ENEMY$ a couple of times as a warmup, and takes a stance in the middle of the field. For no apparent reason, he slowly jolts up and down to signal he's ready to fight.`,
+      `$$DumbMuscles$ roars loudly as he barges on the scene, punching the air around him in a show of strength.`,
+    ]);
+    var dialog = RANDOM.pick([
+      `$$DumbMuscles$: "I'm gonna beat the living shit out of you!"`,
+      `$$DumbMuscles$: "Who needs strategy when you have raw power?"`,
+      `$$DumbMuscles$: "I came here to kick ass and chew dried meat... and there's a famine going on."`,
+      `$$DumbMuscles$: "Say hello to my friends, left fist and right fist... haven't named them yet. They'll beat you up all the same."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ has no problems blocking the straightforward punches of $$DumbMuscles$.`,
+      `$$DumbMuscles$'s brute force is no match for the agility of the $$&ENEMY$ who easily dodges his crude assault.`,
+      `The $$&ENEMY$ uses $$DumbMuscles$'s strengh against him through clever combat moves.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+    `$$DumbMuscles$ charges on the $$&ENEMY$ like a berserker and overwhelms his target with a flurry of heavy punches. The $$&ENEMY$ does not have a second to react. After what seems like an eternity of vigourous blows, $$DumbMuscles$ steps back, and the $$&ENEMY$ immediately falls to the ground.`,
+    `$$DumbMuscles$ takes a few steps back to accumulate energy, then suddenly dashes towards the $$&ENEMY$ like a madman, yelling out an intimidating roar. The tackle seems powerful enough to take down a building. The $$&ENEMY$ is thrown on the ground with the added pressure of the muscle power of the young man. They will never move again.`,
+    `$$DumbMuscles$ seems animated by a blind rage, and assaults the $$&ENEMY$ with his naked fists. The blows don't stop and push back the staggering target with every hit. The $$&ENEMY$ is quickly incapacitated and in no state to counterattack. $$DumbMuscles$ finishes them, spits on the ground, and wipes the sweat of his face, grinning after a hard job well done.`,
     ]);
   },
 };
