@@ -47,6 +47,22 @@ if(sirenspart == 1){
   var x = new S_ExitFloor(1050,2000,50,250, "010_world_map");
 } else {
   var x = new S_ExitFloor(925,2200,50,200, "010_world_map");
+  var xx = new S_ExitFloor(4825,2125,50,50);
+
+  xx.interaction = function(){
+    if(INVENTORY.count(ITEM.Sword_legend)){
+      TextBannerSequence.make([
+        `Not sure of what you're expecting exactly, you wave your newfound sword in front of you, slashing the dark waters. To your surprise, this motion actually does something. You find the thick mass of liquid at the bottom of the lake splitting under the sharp edge of the metal.`,
+        `In front of you, the waters separate, and a path opens. You approach it, fascinated to see air at this depth. It seems safe to use.`,
+        `You progress alongside the new path that cuts the lake into two. It slowly climbs up towards the surface in a direct line. Around you, behind a curtain of water, you can see sirens and tritons looking with puzzlement at the new rift in the waters. You wonder if it will stay like this forever, or if the lake will reform.`,
+        `In any case, you quickly make your way to the surface.`,
+      ], function(){ CURRENTLEVEL.setup("010_world_map") });
+    } else {
+      TextBannerSequence.make([
+        `Nothing to see here but more water.`,
+      ]);
+    }
+  }
 }
 
 x.interaction = function(){
