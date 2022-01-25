@@ -8,7 +8,7 @@ class SpeakerIcon extends TextElement {
         top = SCREEN.height() * 0.6;
       }
       super(SCREEN.width() * 0.05, top, 150, 150);
-      this.html.innerHTML = `<div style="width:140px;height:140px;position:absolute;overflow:hidden;" id="portrait_div"></div>`;
+      this.html.innerHTML = `<div style="width:136px;height:136px;position:absolute;overflow:hidden;" id="portrait_div"></div>`;
       this.make_portrait(name);
     }
 
