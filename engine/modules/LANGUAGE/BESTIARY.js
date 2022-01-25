@@ -151,7 +151,7 @@ BESTIARY.dict["world"]["goblin"] = {
 BESTIARY.dict["world"]["grizzly"] = {
   "intro": "A Gnarly Grizzly Growls Gluttonously.",
   "introed": "A Gnarly Grizzly Growled Gluttonously.",
-  "outro": "It's thick fur made it too hot for it to go outside except in the dead of the night.",
+  "outro": "Its thick fur made it too hot for it to go outside except in the dead of the night.",
 };
 BESTIARY.dict["world"]["knight"] = {
   "intro": "A black Knight Knows he will Kill a Kid.",
