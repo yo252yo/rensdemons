@@ -3,7 +3,6 @@
 
 load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
 
-SE_groundItem with special interactions (artifacts) dont have icons
 
 
 

@@ -134,14 +134,26 @@ if(sirenspart < 4) {
 
   new SBattle(4575, 2125, 'waters/serpent');
 
-  new SE_event(4750, 2125, [
-    `You discover a sword planted upright in the sand. It is unlike any weapon you've ever seen. The blade shines so bright that it lights up the whole surroundings. It's even hard to look at it. The hilt is ornamented with the finest golden arabesques you've ever seen. You quietly think that no human could have done that. It's surrounded by an aura that seems to slowly vibrate the very fabric of the universe, ringing your ears with an angelic buzz.`,
-    `$$BestFriend$: "Woah!"`,
-    `$$Ren$: "It's probably a holy artifact. It can help us tremendously on our quest!"`,
-    `$$BestFriend$: "Take it!"`,
-    `You expected to struggle, but the weapon slides effortlessly out of the ground. Even taking into account the fact that you're underwater, the blade is incredibly light. It cuts through the water almost without resistance.`,
+
+  var b = new SE_groundItem(4750, 2125,   ITEM.Sword_legend);
+  var take = function(){
+    INVENTORY.increase(ITEM.Sword_legend);
+    b.destroy();
+  }
+
+  b.interaction = function(){
+    b.make_icon();
+    TextBannerSequence.make([
+      `You discover a sword planted upright in the sand. It is unlike any weapon you've ever seen. The blade shines so bright that it lights up the whole surroundings. It's even hard to look at it. The hilt is ornamented with the finest golden arabesques you've ever seen. You quietly think that no human could have done that. It's surrounded by an aura that seems to slowly vibrate the very fabric of the universe, ringing your ears with an angelic buzz.`,
+      `$$BestFriend$: "Woah!"`,
+      `$$Ren$: "It's probably a holy artifact. It can help us tremendously on our quest!"`,
+      `$$BestFriend$: "Take it!"`,
+      `You expected to struggle, but the weapon slides effortlessly out of the ground. Even taking into account the fact that you're underwater, the blade is incredibly light. It cuts through the water almost without resistance.`,
     `$$Ren$: "This is amazing..."`,
-  ], 50, undefined, function(){ INVENTORY.increase(ITEM.Sword_legend); });
+    ], take);
+  };
+
+
 }
 
 

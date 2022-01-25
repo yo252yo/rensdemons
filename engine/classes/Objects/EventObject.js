@@ -35,14 +35,18 @@ class S_event extends LevelObject {
 
   real_interaction() {}
 
+  make_icon(forced_type) {
+    console.log(this);
+    if(this.icon_type){
+      this.icon = S_event.make_icon(forced_type || this.icon_type, this.x, this.y);
+    }
+  }
+
   interaction(){
     if(this.clicked){
       return;
     }
-
-    if(this.icon_type){
-      this.icon = S_event.make_icon(this.icon_type, this.x, this.y);
-    }
+    this.make_icon();
 
     this.clicked = true;
     this.real_interaction();

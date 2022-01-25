@@ -379,6 +379,7 @@ if(treepart == 39){
   }
 
   b.interaction = function(){
+    b.make_icon();
     TextBannerSequence.make([
       `A plethora of roots join together in an complex entanglement. At the perfect center, they rise up to form a sort of pedestal which supports the artifact you've been longing for.`,
       `A quick glance could have confused it with one of the many branches you're now wearing, but this would be mistaken. The patterns of the bark seem to follow some sort of arrangement, and these arabesques emit an unnatural soft purple glow.`,
