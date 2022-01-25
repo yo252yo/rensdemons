@@ -61,6 +61,22 @@ switch(hawkpart % 4){
 if (hawkpart == 20){ // summit
   new S_MudFloor(2475,2700,50,150);
   floors.push(new S_MudFloor(2400,2600,200,200));
+
+  var xx = new S_ExitFloor(2475,2425,50,50);
+
+  xx.interaction = function(){
+    if(INVENTORY.count(ITEM.Wand)){
+      TextBannerSequence.make([
+        `Looking down on the plains below, you wave your newly found wand, curious to see if anything could happen.`,
+        `As you do this, a myriad of tiny sparkly particles leave the tip of your wand and flow to the air before you. They appear chaotic at first, doing a mesmerizing dance you cannot make sense of, but soon a pattern appears. They seem to be forming a kind of path joining your feet to the ground floor.`,
+        `You probe carefully the ethereal path with your feet, and find that it seems solid enough to support your weight. You decide to make your way further, and discover that you are actually pleasantly sliding through the air on this glowing ramp. You reach an incredible speed, but you still feel in control. It's like the world around you is moving and you're not. In any case, it only takes seconds before you're back on solid ground.`,
+      ], function(){ CURRENTLEVEL.setup("010_world_map") });
+    } else {
+      TextBannerSequence.make([
+        `The view of the plains down below is breathtaking, but the slope is way too steep to go down that way.`,
+      ]);
+    }
+  }
 }
 
 // ===================
@@ -72,7 +88,21 @@ if(hawkpart % 4 == 1){
 }
 if(hawkpart == 20){
   new SBattle(2475, 2650, 'mountains/phoenix');
-  new SBattle(2475, 2500, '#wand'); // WIP TODO
+
+  var b = new SE_groundItem(2475, 2500,   ITEM.Wand);
+  var take = function(){
+    INVENTORY.increase(ITEM.Wand);
+    b.destroy();
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `At the very summit of the mountain, you find the nest of the majestic phoenix. It's so big that you can fit several times inside the mass of plants and twigs. You do not dare try, however, because it is filled with loose feathers who seem to burn magically like orphan flames.`,
+      `In the middle of the nest, something catches your eyes. Surrounded by silvery ashes, a single twig stands upright. It emits a warm red glow which makes it hard to see its details. It looks as if a feather got embedded in the wood. The fiery barbs circle around the rod and end in a tiny perpetual flame at the tip.`,
+      `You decide that the item is too intriguing to pass. You enter the nest carefully, but to your surprise you find that it does not burn.`,
+      `You take the magic wand. It sends sparkles through the air as you wave it around. You cannot wait to try out the amazing powers contained within.`,
+    ], take);
+  };
 }
 
 // ===================
@@ -137,9 +167,12 @@ events.text('You examine closely every plant and animal you come across. Everyth
 
 */
 
-for (var floor of floors){
-  events.set_zone_from_floor(floor);
-  events.fill_floor_by_retry();
+
+if(hawkpart != 20){
+  for (var floor of floors){
+    events.set_zone_from_floor(floor);
+    events.fill_floor_by_retry();
+  }
 }
 
 // ===================

@@ -3,22 +3,23 @@
 
 load autosave after a change of level (gameover) loads where the change happened, contrary to SAVE.load(0) which loads proper location
 
+SE_groundItem with special interactions (artifacts) dont have icons
+
 
 
 # HAWK DUNGEON  ----------------------------------------------------
 
 - loots and text events
-- TEXT FOR WAND AND EXIT
-- DumbMuscles story
+- DumbMuscles  description in party.js
+- DumbMuscles  attacks in langug,
+- DumbMuscles  encounter+battle
 
 
 
-
-theres always something behind the waterfall
 
 DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
 // extra  mountain?
->> save him from traps/patrols?? help him set traps?
+save him from traps/patrols?? help him set traps?
 escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
 Assume that a zone is safe once you've cleared it / clear whole floor before moving on
 this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
@@ -26,7 +27,8 @@ talk to an objective and exit, go close to the border
 talk to one character / talk to a npc trigger the progression
 go to the next area and come back
 "oh you were on a fetching mission/tutorial"
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
+theres always something behind the waterfall
 
 
 
