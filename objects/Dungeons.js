@@ -371,6 +371,19 @@ class S_Rocks4 extends SimpleObject {
   }
 }
 
+class S_Boulder extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 87,87, "mountain/boulder");
+    this.adjust_hitbox(0,0,87,60);
+
+    this.default_text = this.text_interaction([
+      "This boulder is perfectly round.",
+      "The rock must have acquired its spherical shape by centuries of erosion and rolling around.",
+      "A spherical boulder.",
+    ], seed);
+  }
+}
+
 class S_Web extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, 102,154, "ruins/web");

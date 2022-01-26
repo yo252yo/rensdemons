@@ -8,23 +8,25 @@ load autosave after a change of level (gameover) loads where the change happened
 
 # HAWK DUNGEON  ----------------------------------------------------
 
-- DumbMuscles  encounter+battle
+
+name introductions
+
+- help him set a trap
+- talk to an objective and exit, go close to the border, go to the next area and come back
+
+- save him from obvious trap
+- you need to push this rock to advance
+- Assume that a zone is safe once you've cleared it
+- clear whole floor before moving on
+- this jewel unlocks something
+- this bridge is gonna collapse
+- talk to one character / talk to a npc trigger the progression
+- theres always something behind the waterfall
 
 
 
-
-DumbMuscles: "DumbMuscles",//  The Big Guy strong and dumb      brute force
-// extra  mountain?
-save him from traps/patrols?? help him set traps?
-escort mission, mb he's stuck and you have to help him progress (you need to press this button to advance, etc...)
-Assume that a zone is safe once you've cleared it / clear whole floor before moving on
-this bridge is gonna collapse/ this piece requires a trigger/  this jewel unlocks something
-talk to an objective and exit, go close to the border
-talk to one character / talk to a npc trigger the progression
-go to the next area and come back
 "oh you were on a fetching mission/tutorial"
 
-theres always something behind the waterfall
 
 
 
@@ -99,7 +101,7 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
 # GRAPHIC REWORK  ----------------------------------------------------
-- audit from >= first town
+- audit from >= first town mb use szadi for houses
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 - object/buildings: need better buildings and differnt building styles for different cities?
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??

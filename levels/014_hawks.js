@@ -106,9 +106,58 @@ if(hawkpart == 20){
   };
 }
 if(hawkpart == 2){
-  new S_AntiFloor(1300,1325,100,250);
-  new M_DumbMuscles(1275, 1125);
+
+  var b = new M_Boulder(1225, 1175);
+
+  var cementboulder = function(){
+    b.interaction = function(){};
+    b.make_walkable();
+    if(!walkable_antifoor){
+      CONSOLE.error("cannot find the ground to walk on");
+    }
+    walkable_antifoor.make_walkable(true);
+  }
+
+  var moveboulder = function(){
+    b.silenced = true;
+    MovingObject.try_make_walk_to(b, 1340, 1175, cementboulder, true);
+  }
+
+  b.interaction = function(){
+    if (!ABILITIES.has_ability("_followedByDumbMuscles")){
+      TextBannerSequence.make([
+        `A perfectly spherical boulder, about the size of the gap in the road. If only someone was strong enough to push it...`,
+      ]);
+    } else {
+      TextBannerSequence.make([
+        `$$Ren$: "Ok, $$DumbMuscles$?"`,
+        `$$DumbMuscles$: "Yeah, mate?"`,
+        `$$Ren$: "See this big round rock?"`,
+        `$$DumbMuscles$: "Yeah?"`,
+        `$$Ren$: "Doesn't it make you think of anything?"`,
+        `$$DumbMuscles$: "Huh, no?"`,
+        `$$Ren$: "It's okay. Look, it's spherical, it can be rolled. You can push it, it should fill the gap!"`,
+        `$$DumbMuscles$: "Wow, you just blew my mind! You just... know that stuff?"`,
+        `$$Ren$: "Yeah, it's pretty common for adventurers."`,
+        `$$BestFriend$: "Actually, I don't know if that's common knowledge. Don't take it too hard, $$DumbMuscles$. $$Ren$ gets intel directly from the Goddess."`,
+        `$$DumbMuscles$: "That is rad! Well, I learned something, thanks mate. Leave it to me!"`,
+        `$$DumbMuscles$ pushes the boulder effortlessly. It rolls and blocks the chasm, creating a way forward.`,
+      ], moveboulder);
+    }
+  }
+
+  new S_AntiFloor(1300,1325,70,145);
+  var walkable_antifoor = new S_AntiFloor(1300,1180,70,80);
+
+
+
+  new M_DumbMuscles(1250, 1275);
+
+  var placeholder = new S_AntiFloor(1175,1350,500,300);
+  placeholder.interaction = function(){}
+  new S_Boulder(1200, 2000);
 }
+
 
 // ===================
 //hack E. DECOR
@@ -119,6 +168,7 @@ var f = new Filler(gen.get());
 var filler = new MultiFiller(f, 50, 50);
 
 filler.add_default_constructor("S_RocksHuge", 3, 200, 50);
+filler.add_default_constructor("S_Boulder", 0.3, 100, 100);
 filler.add_default_constructor("S_Rocks1");
 filler.add_default_constructor("S_Rocks2");
 filler.add_default_constructor("S_Pebbles");
@@ -171,6 +221,10 @@ if(hawkpart != 20){
   }
 }
 
+
+if(placeholder){
+  placeholder.destroy();
+}
 // ===================
 //hack G. START/INIT
 // ===================

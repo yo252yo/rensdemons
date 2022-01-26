@@ -30,9 +30,7 @@ class MovingObject extends LevelObject {
   }
 
   _shift(x, y) {
-    this.x += x;
-    this.y += y;
-    this.sprite.shift(x, y);
+    this.shift(x, y);
     // In case we're the character, can be optimized
 
     if(this.hash().startsWith("M_Character")){
@@ -131,6 +129,7 @@ class MovingObject extends LevelObject {
     if(stop_autowalk){
       this.stop_autowalk();
     }
+
     if (CURRENTLEVEL.io.is_walkable(this.x + dx, this.y+dy, this) || this.forced_walking) {
       // The hash is different every time we move, so instead we'll key the sound
       // effect per class.

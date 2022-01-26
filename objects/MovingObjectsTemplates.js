@@ -337,3 +337,12 @@ class M_DisguisedPrincess extends MovingObject {
     }
   }
 }
+
+class M_Boulder extends MovingObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/mountain/boulder.png", 'obj_light', 87, 87);
+    visual.walk_speed = 0.6;
+    super(visual, x, y, 87,87);
+    this.adjust_hitbox(0,0,87,60);
+  }
+}
