@@ -18,11 +18,14 @@ var yes3 = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Yeah bro, welcome to the gang! Watch and learn!",
   unlock: true,
   description: [
-      `$$DumbMuscles$: "Sweet! Thanks mate!"`,
+    `$$DumbMuscles$: "Sweet! Thanks mate!"`,
+    `$$DumbMuscles$: "Oh, just one thing, my name's $$DumbMuscles$! But if we're gonna be best mates, you're gonna have to give me a nickname! What do you think?"`,
+    `He seems pleased with your choice.`,
     ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
     ABILITIES.unlock("_followedByDumbMuscles");
+    PARTY.changeNickname(PARTYMEMBERS.DumbMuscles);
   },
 });
 

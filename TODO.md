@@ -9,11 +9,8 @@ load autosave after a change of level (gameover) loads where the change happened
 # HAWK DUNGEON  ----------------------------------------------------
 
 
-name introductions
-
 - help him set a trap
 - talk to an objective and exit, go close to the border, go to the next area and come back
-
 - save him from obvious trap
 - you need to push this rock to advance
 - Assume that a zone is safe once you've cleared it
