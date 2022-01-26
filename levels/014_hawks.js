@@ -139,38 +139,29 @@ for (var floor of floors){
 
 
 var events = new EventFiller(filler, 10);
+var monstermodifier = 1 + hawkpart/20 * 1.5;
 events.set_tries(2+size/100, 2*size/100);
-events.battle('mountains/pterosaur',0.3);
-events.battle('mountains/emu',0.5);
-events.battle('mountains/hawk', 2);
-events.battle('world/grizzly');
-events.battle('caves/scorpion', 0.5);
+events.battle('mountains/pterosaur',0.3 * monstermodifier);
+events.battle('mountains/emu',0.5 * monstermodifier);
+events.battle('mountains/hawk', 2 * monstermodifier);
+events.battle('world/grizzly', 1 * monstermodifier);
+events.battle('caves/scorpion', 0.5 * monstermodifier);
 
-/*
+events.groundItem(ITEM.Stone);
+events.groundItem(ITEM.Feather);
+events.battleRubble(ITEM.Arrow);
 
+events.byConstructor("EB_Pebbles", 0.5);
 
-events.groundItem(ITEM.Stick, 0.7);
-events.groundItem(ITEM.Berry, 0.7);
-events.groundItem(ITEM.Flower, 0.7);
-events.battleRubble(ITEM.Elixir_vine, 1);
-
-events.byConstructor("EB_Plants", 0.5);
-
-events.text(`You feel observed. Are the trees all around somehow watching you? That's ridiculous, they're just trees... Yet, you can't fake this uneasy feeling.`, 0.5);
-events.text(`You hear rustling in the bushes behind you. Is there someone else here?`, 0.5);
-events.text(`You feel determined to explore this forest in depth. You may find very interesting things.`, 0.5);
-events.text(`You find a weirdly shaped tiny tree. You're keenly aware that everything in this forest has a purpose, and you wonder what this tree is for. Is it a distraction?`, 0.5);
-events.text(`You look around, leaving no bush unchecked, in hope of finding some sort of treasure, to no avail.`, 0.5);
-events.text(`You investigate your surroundings, hoping for anything new and noteworthy. But it's just a forest.`, 0.5);
-events.text('You look behind a bush, excited at the potential of what you may find there. Sadly, behind the bush is just another bush.', 0.5);
-events.text(`You wonder how much longer you'll have to walk in the darkness of this oppressive forest. The result better be worth it!`, 0.5);
-events.text('You cannot help but doubting yourself. Maybe you are underprepared for this forest. Maybe you should have trained more. Maybe you should leave and come back later...', 0.5);
-events.text('You feel rather disappointed with this place so far. You expected a mighty sanctuary full of riches. But it turns out that sentient trees are very similar to normal trees. And very static.', 0.5);
-events.text('You are confident in the fairness of this forest. The tougher the trial, the better the reward. You continue your march empowered by this feeling of determination.', 0.5);
-events.text('You look carefully around you, but there seems to be nothing of note. This did not progress your quest at all.', 0.5);
-events.text('You examine closely every plant and animal you come across. Everything that seems even remotely intriguing. Who knows where you can find a hidden gem?', 0.5);
-
-*/
+events.text(`You hear a piercing whistling sound and you notice an eagle darting through the air in your direction. As it comes closer at an incredible speed, it appears to be of massive size. You barely have the time to dodge the charge by jumping behind nearby rocks.`, 0.5);
+events.text(`You jump with surprise as a massive flock of birds of prey take flight simultaneously from behind a nearby rock. The cumulated wing beating and shrieking is deafening. You can feel the air flow that their takeoff is producing.`, 0.5);
+events.text(`You wonder if any human ever made it this far up the mountain. You've not seen many traces of previous travelers. Maybe you're the very first to reach that far!`, 0.5);
+events.text(`As you climb up, the air is getting thinner, and each step becomes harder than the one before. You find yourself gasping for breath. You decide to slow down the pace to make up for it.`, 0.5);
+events.text(`You see something odd on the ground. A quick examination informs you that it is a broken eggshell. When you look up, however, you find yourself faced with what is presumably the parent of the unlucky egg. The eagle stares at you with piercing eyes. You attempt to signify your peaceful intentions by not moving much. After what seems like an eternity, the beast moves on to other matters.`, 0.5);
+events.text(`You look up at the peak of the mountain you're trying to climb. The very summit seems like a sharp needle piercing the sky. At the top, you believe you see some kind of incandescent radiating light. Are you imagining it?`, 0.5);
+events.text(`You hear the nearby shrieks of a ravenous bird echoing in the stone around you, but the creature is nowhere to be seen. After carefully monitoring your surroundings, you decide to progress slowly.`, 0.5);
+events.text(`A flock of vultures is fighting over the remains of what used to be a small mammal. The battle gets tense, in a flurry of beaks and claws. When the dust settles down, the birds fly away, leaving one of their kind wounded to death on the side of the path.`, 0.5);
+events.text(`The air gets colder as you progress down the path. You cough when you swallow some of the dust from the path that the wind threw in your face.`, 0.5);
 
 
 if(hawkpart != 20){

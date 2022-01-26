@@ -8,7 +8,6 @@ load autosave after a change of level (gameover) loads where the change happened
 
 # HAWK DUNGEON  ----------------------------------------------------
 
-- loots and text events
 - DumbMuscles  encounter+battle
 
 
