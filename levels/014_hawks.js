@@ -105,6 +105,10 @@ if(hawkpart == 20){
     ], take);
   };
 }
+if(hawkpart == 2){
+  new S_AntiFloor(1300,1325,100,250);
+  new M_DumbMuscles(1275, 1125);
+}
 
 // ===================
 //hack E. DECOR

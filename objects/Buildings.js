@@ -114,6 +114,13 @@ class S_CastleFloor extends S_Floor {
   }
 }
 
+class S_AntiFloor extends S_Floor {
+  constructor(x, y, w, h) {
+    super(x, y, w, h, "void", undefined);
+    this.walkable = false;
+  }
+}
+
 
 class S_SeaFloor extends S_Floor {
   constructor(x, y, w, h) {

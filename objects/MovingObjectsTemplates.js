@@ -277,6 +277,95 @@ class M_GeniusProdigy extends MovingObject {
   }
 }
 
+class M_DumbMuscles extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/DumbMuscles.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 10);
+
+    if(PARTY.has_member(PARTYMEMBERS.DumbMuscles) ){
+      this.destroy();
+    }
+  }
+
+  interaction = function() {
+
+    var no = function(){
+      TextBannerSequence.make([
+        `He seems disappointed.`,
+        `$$DumbMuscles$: "Alright. Get out of the way, then. I'm gonna jump."`,
+      ]);
+    }
+
+    var yes3 = function(){
+      ABILITIES.unlock("_followedByDumbMuscles");
+      TextBannerSequence.make([
+        `$$DumbMuscles$: "Sweet! Thanks mate!"`,
+      ]);
+    }
+
+
+    var prompt3 = function(){
+      new CenteredTextMenu("Accept his request?",
+                    [
+                      {"text": "Yeah bro, welcome to the gang! Watch and learn!", "effect": yes3},
+                      {"text": "No", "effect": no},
+                   ]
+                 );
+    }
+
+    var yes2 = function(){
+      TextBannerSequence.make([
+        `$$Ren$: "What's the problem?"`,
+        `$$DumbMuscles$: "Well I've started being an adventurer, and I got this request to go fetch magic feathers from some kind of magic bird at the top of the mountain. But it's my very first quest and I'm having a tough time. Look, the path is broken. I don't know what to do, mate. Can you like... show me the ropes? Teach me a bit about adventuring?"`,
+        `$$DumbMuscles$: "I know I'm asking a lot, but I swear, if we run into trouble, you can count on my fists to protect you! Please!"`,
+      ], prompt3);
+    }
+
+    var prompt2 = function(){
+      new CenteredTextMenu("Will you help him?",
+                    [
+                      {"text": "You betch'a... or something", "effect": yes2},
+                      {"text": "No", "effect": no},
+                   ]
+                 );
+    }
+
+    var yes = function(){
+      TextBannerSequence.make([
+        `He rushes towards you enthusiastically and hugs you. It feels more like he's crushing your bones.`,
+        `$$DumbMuscles$: "That's awesome, mate! Blessed be the Goddess! You can help me, then!"`,
+      ], prompt2);
+    }
+
+    var prompt = function(){
+      new CenteredTextMenu("How to answer him?",
+                    [
+                      {"text": "Yes, 'mate'!", "effect": yes},
+                      {"text": "No", "effect": no},
+                   ]
+                 );
+    }
+
+
+    this.face_character();
+    if (ABILITIES.has_ability("_followedByDumbMuscles")){
+      TextBannerSequence.make([
+        `$$DumbMuscles$: "You can count on me, mate. I'll follow you anywhere!"`,
+      ]);
+    } else {
+      TextBannerSequence.make([
+        `You find a muscular young man doing stretches next to a wide crack in the path.`,
+        `$$DumbMuscles$: "Stand back, mates, I'm gonna jump!"`,
+        `$$BestFriend$: "Wait! Don't! It's way too far!"`,
+        `$$DumbMuscles$: "Who are you? What are you doing here?"`,
+        `He takes a good look at you.`,
+        `$$DumbMuscles$: "Wow, mate! Are you guys experienced adventurers?"`,
+      ], prompt);
+    }
+  }
+}
+
 
 class M_DisguisedPrincess extends MovingObject {
   constructor(x, y) {

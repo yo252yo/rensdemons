@@ -127,6 +127,7 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 # AERITH EVENTS  ----------------------------------------------------
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
+>> put events in their own language file?
 - event from aerith: Don't you think it's weird how we always find what we need on our way
 - event from aerith: isnt it weird that merchants buy all your shit
 - event from aerith: do we not need breaks? no sleep or toilet
@@ -185,4 +186,5 @@ See 051_pandemonium_room and 012_trees
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - steam achievements
 - trailer/arts
+- word count
 - ctrlf "todo" "wip"
