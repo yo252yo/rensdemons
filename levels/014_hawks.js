@@ -349,6 +349,35 @@ if(hawkpart == 1){
     `You find yourself at the bottom of the tallest mountain you've ever seen. It is bound to be an arduous climb.`,
   ]);
 }
+if(hawkpart == 19){
+  CURRENTLEVEL.setup_text_start_function([
+    `As you near the summit, you see that the floor is littered with incandescent feathers.`,
+    `$$Ren$: "Aren't those what you needed?"`,
+    `$$DumbMuscles$ crouches down and picks up a few.`,
+    `$$DumbMuscles$: "Yeah, I think. Thanks for everything, mate."`,
+    `You stare awkwardly at each other during a moment of silence.`,
+    `$$Ren$: "I guess... this is goodbye, then?"`,
+    `$$DumbMuscles$: "Well, huh... There's more..."`,
+    `$$Ren$: "What?"`,
+    `$$DumbMuscles$: "I kinda don't want to go back alone. What if there's more puzzles and stuff that I don't know on the way down?"`,
+    `$$Ren$: "There won't be. We cleared the whole way."`,
+    `$$DumbMuscles$: "Still, I'd be much more confident if I could stick to your side a bit longer. Just until I know the ropes, you know..."`,
+    `$$Ren$: "What about your quest?"`,
+    `$$DumbMuscles$: "The questgiver didn't specify a time limit..."`,
+    `$$Ren$: "Oh, I see. That means you have until the end of the universe."`,
+    `$$DumbMuscles$: "Yep."`,
+    `You exchange a smile.`,
+    `$$Ren$: "Ok, you can tag along."`,
+    `$$DumbMuscles$: "Sweet!"`,
+    "$$DumbMuscles$ joins your party!",
+  ], function(){ PARTY.add(PARTYMEMBERS.DumbMuscles); IO.control.character(); });
+}
+if(hawkpart == 20){
+  CURRENTLEVEL.setup_text_start_function([
+    `The summit stands in front of you, piercing the cottony layer of clouds below.`,
+    `On top, you can see on a small platform a cluster of wood bathed in a crimson glow. On top, a gigantic bird seems to be ablaze. It lets out a piercing shriek as soon as it sees you.`,
+  ]);
+}
 
 exit.initialize_with_character(2500, 2500);
 
