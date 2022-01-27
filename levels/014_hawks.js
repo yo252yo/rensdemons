@@ -151,7 +151,6 @@ if(hawkpart == 2) {
   new M_DumbMuscles(1250, 1275);
 
   var placeholder = new S_AntiFloor(1175,1350,500,300, true);
-  new S_Boulder(1200, 2000);
 }
 if(hawkpart == 3) {
   new S_AntiFloor(3450,1325,250,200);
@@ -186,6 +185,29 @@ if(hawkpart == 3) {
                );
   });
 }
+if(hawkpart == 18){
+  var b = new M_Boulder(2350, 2350);
+
+  var moveboulder = function(){
+    b.silenced = true;
+    MovingObject.try_make_walk_to(b, 2400, 2290, undefined, true);
+  }
+
+  b.interaction = function(){
+    TextBannerSequence.make([
+      `$$DumbMuscles$: "Dammit there's a boulder in the way!"`,
+      `$$Ren$: "So... ?"`,
+      `$$DumbMuscles$: "So what?"`,
+      `$$Ren$: "Well, we can push it..."`,
+      `$$DumbMuscles$: "How can you tell?"`,
+      `$$Ren$: "It's the same as before!"`,
+      `$$DumbMuscles$: "Oh right, right!"`,
+      `$$DumbMuscles$ rolls the big boulder out of the way.`,
+    ], moveboulder);
+  }
+  var placeholder = new S_AntiFloor(2325,2425,125,200, true);
+}
+
 
 // ===================
 //hack E. DECOR

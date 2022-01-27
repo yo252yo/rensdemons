@@ -11,11 +11,9 @@ load autosave after a change of level (gameover) loads where the change happened
 
 - help him set a trap
 - talk to an objective and exit, go close to the border, go to the next area and come back
-- you need to push this rock to advance
 - Assume that a zone is safe once you've cleared it
 - clear whole floor before moving on
 - this jewel unlocks something
-- this bridge is gonna collapse
 - talk to one character / talk to a npc trigger the progression
 - theres always something behind the waterfall
 
