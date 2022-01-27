@@ -75,7 +75,6 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 >>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
-- this jewel unlocks something
 
 # GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town mb use szadi for houses

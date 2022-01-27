@@ -62,6 +62,7 @@ const ITEM = {
     AncientArmamentArmature: "Ancient Armament Armature",
     AncientArmamentAmmunition: "Ancient Armament Ammunition",
     ShelterKey: "Shelter Key",
+    Gemstone: "Shiny Gemstone",
 
     MaouKey0: "Key to Survival",
     MaouKey1: "Key to Progress",

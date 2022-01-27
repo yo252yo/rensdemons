@@ -191,3 +191,77 @@ class S_Maou extends SimpleObject {
     }
   }
 }
+
+
+class S_RockColumnGoddess extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 47,129, "cave/godesscolumn");
+    this.adjust_hitbox(0,0,40,30);
+  }
+
+  interaction() {
+    var consume = function(){
+      var newFloor = new S_MudFloor(2125,2725,50,550);
+      INVENTORY.increase(ITEM.Gemstone, -2);
+    }
+    var putgems = function(){
+      TextBannerSequence.make([
+        `You hear a click as soon as the second gem is enshrined in the socket. The rock in front of you splits up and unveils a path that burrows even deeper in the mountain.`,
+      ], consume);
+    }
+
+    var sequel = function(){
+      if(INVENTORY.count(ITEM.Gemstone) == 1){
+        TextBannerSequence.make([
+          `You only have one stone.`,
+          `$$Ren$: "We need to look for the other one. I'm pretty sure it is specifically on this mountain, not anywhere else in the world."`,
+        ]);
+      } else if(INVENTORY.count(ITEM.Gemstone) == 2){
+        new CenteredTextMenu("Place your gems in the sockets?",
+                    [
+                      {"text": "Yes", "effect": putgems},
+                      {"text": "No", "effect": "##CLOSE"},
+                   ]
+                 );
+      }
+    }
+
+    TextBannerSequence.make([
+      `This rock pillar has a shape oddly reminiscing of the Goddess, except that there are two holes where the eyes should be.`,
+    ], sequel);
+  }
+}
+
+
+
+class SE_gem extends S_event {
+  constructor(x, y) {
+    super(x, y);
+    this.icon_type = "event_purse";
+  }
+
+  real_interaction(extra_callback) {
+    INVENTORY.increase(ITEM.Gemstone);
+    var self = this;
+
+    var extras = [
+      `$$DumbMuscles$: "What is that? It looks so cool! But it doesn't seem to have any use..."`,
+      `$$Ren$: "I'm pretty sure it's something that will turn out to be important later. It probably unlocks something. Better keep it carefully!"`,
+      `$$DumbMuscles$: "For once I agree with your weird intuition, it does look important."`,
+    ];
+    if(ABILITIES.has_ability("_DumbMuscles_searchinggemstones")){
+      extras = [
+        `$$DumbMuscles$: "What is that?"`,
+        `$$Ren$: "It's one of the gemstones we need for the eyes of the Goddess in the cave, did you forget already?"`,
+      ];
+    }
+
+
+    TextBannerSequence.make([
+      "You found something on the ground. It's a " + ITEM.Gemstone + ".",
+    ].concat(extras), function(){
+      self.destroy();
+    });
+  }
+
+}

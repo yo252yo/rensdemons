@@ -312,10 +312,14 @@ if(hawkpart == 6) {
 
   new S_MudFloor(1725,2300,475,50);
   new S_MudFloor(2150,2300,75,375);
-  new S_MudFloor(2000,1975,200,50);
+  new S_MudFloor(2000,1975,400,50);
   new S_MudFloor(1975,2175,75,250);
   new S_MudFloor(1875,2175,150,50);
 
+  new S_MudFloor(2350,2350,50,425);
+  new S_MudFloor(2350,2475,50,50);
+
+  new SE_gem(2350, 2475);
 
   var walkable_antifoor = new S_AntiFloor(1750,1760,70,70);
   var finalBoulder = new M_Boulder(1825, 1850);
@@ -341,11 +345,21 @@ if(hawkpart == 6) {
   var blockingBoulder2 = new M_Boulder(1950, 1975);
   plugBoulder(blockingBoulder2, fake_walkable_antifoor2, 1890, 1975, false, true);
 
+  var gem_antifloor = new S_AntiFloor(2350,2450,50,125);
+  gem_antifloor.visual_element.adjust_depth(-2);
+  var gem_boulder = new M_Boulder(2200, 2300);
+  plugBoulder(gem_boulder, gem_antifloor, 2375, 2425);
+
+}
+if(hawkpart == 7){
+  new SE_gem(3350, 1675);
 }
 if(hawkpart == 8){
   new S_Waterfall(2825, 3250);
   new S_MudFloor(2825,3275,96,455);
   new S_MudFloor(2700,2875,175,50);
+  new S_MudFloor(2700,2875,50,200);
+  new S_MudFloor(2125,2725,625,50);
 
   var destroyable_antifoor = new S_AntiFloor(2575,3475,175,275);
   var placeholder = new S_AntiFloor(2425,3450,525,275, true);
@@ -363,16 +377,21 @@ if(hawkpart == 8){
   ]);
 
   var feffect = function(){
+
     destroyable_antifoor.destroy();
     if(destroyable_event){
       destroyable_event.destroy();
     }
+    feffect = undefined;
   }
+  new S_RockColumnGoddess(2175, 2690);
 
-  var f = new M_Faery(2715, 2865);
+  new S_MudFloor(2125,2200,50,50);
+
+  var f = new M_Faery(2135, 2190);
   f.interaction = function() {
     this.face_character();
-    if (destroyable_antifoor){
+    if (feffect){
       TextBannerSequence.make([
         `In front of you stands an ethereal feminine shape. Instead of matter, she seems made of a kind of translucent liquid.`,
         `$$DumbMuscles$: "Wow!"`,
@@ -396,6 +415,31 @@ if(hawkpart == 8){
 
 
   }
+
+  new SE_event(2775, 2875, [
+    `Behind the waterfall, you find a natural cave which extends with a tunnel into the depths of the mountain.`,
+  ]);
+
+  var extra = [
+    `$$BestFriend$: "You think there's gonna be gemstones just... laying around in the mountains?"`,
+    `$$Ren$: "I know so. In fact I'm pretty sure they are specifically on this mountain, not anywhere else in the world."`,
+    `$$BestFriend$: "Okay, Promised Child. Let's go look around then!"`,
+  ];
+  if(INVENTORY.count(ITEM.Gemstone)){
+     extra = [
+      `$$DumbMuscles$: "You mean like the one we picked up earlier?"`,
+      `$$Ren$: "Exactly. It's no coincidence we found it on this mountain. I bet it fits perfectly. Try it!"`,
+    ];
+  }
+
+  new SE_event(2225, 2725, [
+    `$$DumbMuscles$: "Dead end... well, so much for that."`,
+    `$$Ren$: "No, there's no way this tunnel doesn't lead somewhere!"`,
+    `$$BestFriend$: "You know, sometimes nature does stuff for no reason."`,
+    `$$Ren$: "Nature, maybe, but not the Goddess! Look at that pillar over there, doesn't the shape remind you of Her?"`,
+    `$$DumbMuscles$: "I could see it I guess..."`,
+    `$$Ren$: "Except... the eyes are missing! Well, it's simple. We just need to find two gemstones and put them in the sockets!"`,
+  ].concat(extra), 50, undefined, function(){ ABILITIES.unlock("_DumbMuscles_searchinggemstones");});
 }
 
 
