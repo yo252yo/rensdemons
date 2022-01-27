@@ -139,7 +139,8 @@ if(hawkpart == 2) {
         `$$DumbMuscles$: "Wow, you just blew my mind! You just... know that stuff?"`,
         `$$Ren$: "Yeah, it's pretty common for adventurers."`,
         `$$BestFriend$: "Actually, I don't know if that's common knowledge. Don't take it too hard, $$DumbMuscles$. $$Ren$ gets intel directly from the Goddess."`,
-        `$$DumbMuscles$: "That is rad! Well, I learned something, thanks mate. Leave it to me!"`,
+        `$$Ren$: "Yeah, it seems that I instantly knew everything I needed about adventure!"`,
+        `$$DumbMuscles$: "That is so rad! Well, I learned something, thanks mate. Leave it to me!"`,
         `$$DumbMuscles$ pushes the boulder effortlessly. It rolls and blocks the chasm, creating a way forward.`,
       ], moveboulder);
     }
@@ -152,9 +153,61 @@ if(hawkpart == 2) {
 
   var placeholder = new S_AntiFloor(1175,1350,500,300, true);
 }
+if(hawkpart == 3) {
+  var a = new SE_event(3775, 2450, [`...`]);
+
+  var destroyStack = function(){
+    a.destroy();
+    INVENTORY.increase("_dumbmuscle_story_quest");
+    TextBannerSequence.make([
+      `$$DumbMuscles$ gives a little push and the pile of rocks crumbles. The boulders roll on the road and fill a gap in the road a few steps ahead of you.`,
+      `$$Ren$: "See! That's how you make good things happen!"`,
+    ]);
+  }
+
+  var prompt = function(){
+    new CenteredTextMenu("What do you want to do?",
+                  [
+                    {"text": "Destroy the stack", "effect": destroyStack},
+                    {"text": "Leave things as they are", "effect": "##CLOSE"},
+                 ]
+               );
+ }
+
+  a.interaction = function(){
+    TextBannerSequence.make([
+      `You find a pile of rocks that seem pretty unstable.`,
+      `$$Ren$: "Let's push it down."`,
+      `$$DumbMuscles$: "Why?"`,
+      `$$Ren$: "I don't know. This looks interactible, we should try and see what it does!"`,
+      `$$DumbMuscles$: "If you say so..."`,
+    ], prompt);
+  }
+}
 if(hawkpart == 4) {
-  new S_AntiFloor(3500,3875,200,225);
-  var placeholder = new S_AntiFloor(3425,3975,375,350, true);
+  new S_AntiFloor(3650,2750,125,150);
+  var b = new S_AntiFloor(3775,2750,75,150);
+  new S_AntiFloor(3850,2750,125,150);
+  var placeholder = new S_AntiFloor(3625,2775,375,350, true);
+  if (!INVENTORY.count("_dumbmuscle_story_quest")){
+    new SE_event(3775, 2625, [
+      `$$DumbMuscles$: "Look! Another gap in the road! And this time there's no boulder!"`,
+      `$$Ren$: "That usually means we missed something..."`,
+      `$$DumbMuscles$: "What do you mean?"`,
+      `$$Ren$: "We need to trace back our steps and be more careful. There's got to be something that allows us to pass through."`,
+      `$$DumbMuscles$: "Are you sure? Maybe there's just no way forward..."`,
+      `$$Ren$: "There's always a way forward."`,
+    ]);
+  } else {
+    b.destroy();
+    new SE_event(3775, 2650, [
+      `The chasm in the road has been filled by the gravel from your earlier destruction of a random pile of rocks. How fortunate. The Goddess is really looking up for you!`,
+    ], 75);
+  }
+}
+if(hawkpart == 5) {
+  new S_AntiFloor(1750,3375,175,150);
+  var placeholder = new S_AntiFloor(1675,3450,275,300, true);
   var leavehim = function(){
     TextBannerSequence.make([
       `$$DumbMuscles$ runs carelessly on the ledge, proud to display his equilibrium by doing jumps and sumbersaults. Unfortunately, nature doesn't share his enthusiasm, and the sudden weigh increase causes the ground to finish its collapse under your feet. Soon, you're burrowed under layers of thick rock.`
@@ -172,7 +225,7 @@ if(hawkpart == 4) {
       `You use ropes to secure your bodies and possessions, and start making your way very slowly over the dangerous ledge. Thanks to your preparations, you cross without a hitch.`,
     ]);
   }
-  new SE_event(3650, 3925, [
+  new SE_event(1900, 3425, [
     'At this place, the rock collapsed and left only a very thin line to advance. $$DumbMuscles$ is advancing towards it.'
   ], 75, undefined, function(){
     new CenteredTextMenu("What do you want to do?",
@@ -347,6 +400,15 @@ if(hawkpart == 1){
     `You find yourself at the bottom of the tallest mountain you've ever seen. It is bound to be an arduous climb.`,
   ]);
 }
+if(hawkpart == 3){
+  CURRENTLEVEL.setup_text_start_function([
+    `$$DumbMuscles$: "So how does this work? There are monsters everywhere around that path..."`,
+    `$$Ren$: "Well usually, you'd want to clear everything in an area before moving on to the next."`,
+    `$$DumbMuscles$: "Do I have to?"`,
+    `$$Ren$: "Not really, but you might miss something important."`,
+    `$$DumbMuscles$: "I see..."`,
+  ]);
+}
 if(hawkpart == 19){
   CURRENTLEVEL.setup_text_start_function([
     `As you near the summit, you see that the floor is littered with incandescent feathers.`,
@@ -379,6 +441,6 @@ if(hawkpart == 20){
 
 exit.initialize_with_character(2500, 2500);
 
-if(hawkpart == 4){
+if(hawkpart == 5){
   SAVE.autosave();
 }
