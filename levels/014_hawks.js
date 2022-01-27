@@ -105,8 +105,7 @@ if(hawkpart == 20){
     ], take);
   };
 }
-if(hawkpart == 2){
-
+if(hawkpart == 2) {
   var b = new M_Boulder(1225, 1175);
 
   var cementboulder = function(){
@@ -149,15 +148,44 @@ if(hawkpart == 2){
   new S_AntiFloor(1300,1325,70,145);
   var walkable_antifoor = new S_AntiFloor(1300,1180,70,80);
 
-
-
   new M_DumbMuscles(1250, 1275);
 
-  var placeholder = new S_AntiFloor(1175,1350,500,300);
-  placeholder.interaction = function(){}
+  var placeholder = new S_AntiFloor(1175,1350,500,300, true);
   new S_Boulder(1200, 2000);
 }
+if(hawkpart == 3) {
+  new S_AntiFloor(3450,1325,250,200);
+  var placeholder = new S_AntiFloor(3400,1350,400,325, true);
 
+  var leavehim = function(){
+    TextBannerSequence.make([
+      `$$DumbMuscles$ runs carelessly on the ledge, proud to display his equilibrium by doing jumps and sumbersaults. Unfortunately, nature doesn't share his enthusiasm, and the sudden weigh increase causes the ground to finish its collapse under your feet. Soon, you're burrowed under layers of thick rock.`
+    ], function(){CURRENTLEVEL.setup("gameover$")});
+  }
+  var stophim = function(){
+    TextBannerSequence.make([
+      `$$Ren$: "$$DumbMuscles$, stop!"`,
+      `$$DumbMuscles$ suddenly comes to a halt."`,
+      `$$DumbMuscles$: "What?"`,
+      `$$Ren$: "This is obviously a trap! The path forms only a tiny bridge before the next platform. It's going to collapse if we walk on it."`,
+      `$$DumbMuscles$ looks at you inquisitively. $$BestFriend$ shrugs.`,
+      `$$DumbMuscles$: "What do we do then?"`,
+      `$$Ren$: "We take precautions!"`,
+      `You use ropes to secure your bodies and possessions, and start making your way very slowly over the dangerous ledge. Thanks to your preparations, you cross without a hitch.`,
+    ]);
+  }
+
+  new SE_event(3425, 1150, [
+    'At this place, the rock collapsed and left only a very thin line to advance. $$DumbMuscles$ is advancing towards it.'
+  ], 75, undefined, function(){
+    new CenteredTextMenu("What do you want to do?",
+                  [
+                    {"text": "Stop him", "effect": stophim},
+                    {"text": "Leave him", "effect": leavehim},
+                 ]
+               );
+  });
+}
 
 // ===================
 //hack E. DECOR
@@ -236,3 +264,7 @@ if(hawkpart == 1){
 }
 
 exit.initialize_with_character(2500, 2500);
+
+if(hawkpart == 3){
+  SAVE.autosave();
+}

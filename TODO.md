@@ -11,7 +11,6 @@ load autosave after a change of level (gameover) loads where the change happened
 
 - help him set a trap
 - talk to an objective and exit, go close to the border, go to the next area and come back
-- save him from obvious trap
 - you need to push this rock to advance
 - Assume that a zone is safe once you've cleared it
 - clear whole floor before moving on
@@ -67,6 +66,8 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 # TOWN5 TORTUREDSOUL  ----------------------------------------------------
+
+REBEL!
 TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
 // town5 acceptance
 mb u can help him with suicide? save/load to kill him over and over/ stuff about death

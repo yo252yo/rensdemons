@@ -115,9 +115,12 @@ class S_CastleFloor extends S_Floor {
 }
 
 class S_AntiFloor extends S_Floor {
-  constructor(x, y, w, h) {
+  constructor(x, y, w, h, interactible) {
     super(x, y, w, h, "void", undefined);
     this.walkable = false;
+    if (interactible){
+      this.interaction = function() {};
+    }
   }
 }
 
