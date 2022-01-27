@@ -15,6 +15,38 @@ var gen = new Generator((DICTIONARY.get("world_seed")+ hawkpart)*61);
 //hack C. EXIT
 // ===================
 
+var plugBoulder = function (boulder, walkable_antifoor, tx, ty, now, keephard) {
+  var cementboulder = function(){
+    boulder.interaction = function(){};
+    if (!keephard){
+      boulder.make_walkable();
+    }
+    if(!walkable_antifoor){
+      CONSOLE.error("cannot find the ground to walk on");
+    }
+    walkable_antifoor.make_walkable(true);
+  }
+
+  var moveboulder = function(){
+    boulder.silenced = true;
+    MovingObject.try_make_walk_to(boulder, tx, ty, cementboulder, true);
+  }
+
+  if(now){
+    moveboulder();
+  } else {
+    boulder.interaction = function(){
+      new CenteredTextMenu("Push the boulder?",
+                    [
+                      {"text": "Yes", "effect": moveboulder},
+                      {"text": "No", "effect": "##CLOSE"},
+                   ]
+                 );
+     };
+   }
+}
+
+
 var centerX = 1000 + 1500;
 var centerY = 1000 + 1500;
 
@@ -108,18 +140,8 @@ if(hawkpart == 20){
 if(hawkpart == 2) {
   var b = new M_Boulder(1225, 1175);
 
-  var cementboulder = function(){
-    b.interaction = function(){};
-    b.make_walkable();
-    if(!walkable_antifoor){
-      CONSOLE.error("cannot find the ground to walk on");
-    }
-    walkable_antifoor.make_walkable(true);
-  }
-
   var moveboulder = function(){
-    b.silenced = true;
-    MovingObject.try_make_walk_to(b, 1340, 1175, cementboulder, true);
+    plugBoulder(b, walkable_antifoor, 1340, 1175, true);
   }
 
   b.interaction = function(){
@@ -280,6 +302,49 @@ if(hawkpart == 5) {
                );
   });
 }
+if(hawkpart == 6) {
+  new S_AntiFloor(1750,1695,70,120);
+  var placeholder = new S_AntiFloor(1525,2725,600,1225, true);
+
+
+  new S_MudFloor(1825,2050,50,50);
+  new S_MudFloor(1850,2050,75,225);
+
+  new S_MudFloor(1725,2300,475,50);
+  new S_MudFloor(2150,2300,75,375);
+  new S_MudFloor(2000,1975,200,50);
+  new S_MudFloor(1975,2175,75,250);
+  new S_MudFloor(1875,2175,150,50);
+
+
+  var walkable_antifoor = new S_AntiFloor(1750,1760,70,70);
+  var finalBoulder = new M_Boulder(1825, 1850);
+  plugBoulder(finalBoulder, walkable_antifoor, 1780, 1750);
+
+  var walkable_anteantifoor = new S_AntiFloor(1725,2050,150,50);
+  walkable_anteantifoor.visual_element.adjust_depth(-2);
+  var antefinalBoulder = new M_Boulder(1825, 2175);
+  plugBoulder(antefinalBoulder, walkable_anteantifoor, 1790, 2060);
+
+
+  var fake_walkable_antifoor = new S_AntiFloor(100,100,10,10);
+  var fakeBoulder = new M_Boulder(1600, 2025);
+  plugBoulder(fakeBoulder, fake_walkable_antifoor, 1550, 2000);
+
+
+  var fake_walkable_antifoor2 = new S_AntiFloor(200,200,10,10);
+  var blockingBoulder = new M_Boulder(1725, 2300);
+  plugBoulder(blockingBoulder, fake_walkable_antifoor2, 1800, 2380);
+
+
+  var fake_walkable_antifoor3 = new S_AntiFloor(150,150,10,10);
+  var blockingBoulder2 = new M_Boulder(1950, 1975);
+  plugBoulder(blockingBoulder2, fake_walkable_antifoor2, 1890, 1975, false, true);
+
+}
+
+
+
 if(hawkpart == 11){ // open, only used for 12 for now!
   if(INVENTORY.count("_dumbmuscle_hunt_step") > 1){
     INVENTORY.set("_dumbmuscle_hunt_step", 10);
@@ -464,6 +529,16 @@ if(hawkpart == 3){
     `$$DumbMuscles$: "Do I have to?"`,
     `$$Ren$: "Not really, but you might miss something important."`,
     `$$DumbMuscles$: "I see..."`,
+  ]);
+}
+if(hawkpart == 6){
+  CURRENTLEVEL.setup_text_start_function([
+    `$$DumbMuscles$: "Wow! What the hell is going on here?"`,
+    `$$Ren$: "Calm down, it's a pretty classic puzzle. It's simple, we have to push the boulders in the right order."`,
+    `$$DumbMuscles$: "What if I mess up?"`,
+    `$$Ren$: "We'll just leave and come back, and we can try again."`,
+    `$$DumbMuscles$: "Just like that?"`,
+    `$$Ren$: "Yeah, just like that."`,
   ]);
 }
 if(hawkpart == 19){
