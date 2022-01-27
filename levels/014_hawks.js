@@ -152,10 +152,9 @@ if(hawkpart == 2) {
 
   var placeholder = new S_AntiFloor(1175,1350,500,300, true);
 }
-if(hawkpart == 3) {
-  new S_AntiFloor(3450,1325,250,200);
-  var placeholder = new S_AntiFloor(3400,1350,400,325, true);
-
+if(hawkpart == 4) {
+  new S_AntiFloor(3500,3875,200,225);
+  var placeholder = new S_AntiFloor(3425,3975,375,350, true);
   var leavehim = function(){
     TextBannerSequence.make([
       `$$DumbMuscles$ runs carelessly on the ledge, proud to display his equilibrium by doing jumps and sumbersaults. Unfortunately, nature doesn't share his enthusiasm, and the sudden weigh increase causes the ground to finish its collapse under your feet. Soon, you're burrowed under layers of thick rock.`
@@ -173,8 +172,7 @@ if(hawkpart == 3) {
       `You use ropes to secure your bodies and possessions, and start making your way very slowly over the dangerous ledge. Thanks to your preparations, you cross without a hitch.`,
     ]);
   }
-
-  new SE_event(3425, 1150, [
+  new SE_event(3650, 3925, [
     'At this place, the rock collapsed and left only a very thin line to advance. $$DumbMuscles$ is advancing towards it.'
   ], 75, undefined, function(){
     new CenteredTextMenu("What do you want to do?",
@@ -381,6 +379,6 @@ if(hawkpart == 20){
 
 exit.initialize_with_character(2500, 2500);
 
-if(hawkpart == 3){
+if(hawkpart == 4){
   SAVE.autosave();
 }
