@@ -37,6 +37,8 @@ const SAVE = {
   },
 
   _load_savefile: function(savefile){
+    LEVELSTATES.factory.make_new(); // We merge instead of replacing to deal with concurrency with currrentlevel but we do need to make sure to start from a blank slate.
+
     for (var i in _SAVED_MODULES) {
       var mod = eval(_SAVED_MODULES[i]); // Be careful, eval is evil
       if (!mod || !mod.factory || !mod.factory.import || !(_SAVED_MODULES[i] in savefile)) {
