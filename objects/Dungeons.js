@@ -880,3 +880,15 @@ class S_GameBoard extends SimpleObject {
     this.make_walkable();
   }
 }
+
+class S_Waterfall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 96,432, "mountain/waterfall");
+
+    this.adjust_hitbox(0,0,10,10);
+    this.default_text = this.text_interaction([
+      "A powerful current of water runs down the side of the mountain in a beautiful waterfall.",
+    ], seed);
+    this.make_walkable(true);
+  }
+}

@@ -3,18 +3,6 @@
 
 
 
-# HAWK DUNGEON  ----------------------------------------------------
-
-
-- this jewel unlocks something
-- talk to one character / talk to a npc trigger the progression
-- theres always something behind the waterfall
-- more rock puzzle
-
-
-
-
-
 # MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??
@@ -86,6 +74,8 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 >> Stuff resets when you exist and come back
 >>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
+- this jewel unlocks something
 
 # GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town mb use szadi for houses

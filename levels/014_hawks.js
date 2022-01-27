@@ -342,7 +342,61 @@ if(hawkpart == 6) {
   plugBoulder(blockingBoulder2, fake_walkable_antifoor2, 1890, 1975, false, true);
 
 }
+if(hawkpart == 8){
+  new S_Waterfall(2825, 3250);
+  new S_MudFloor(2825,3275,96,455);
+  new S_MudFloor(2700,2875,175,50);
 
+  var destroyable_antifoor = new S_AntiFloor(2575,3475,175,275);
+  var placeholder = new S_AntiFloor(2425,3450,525,275, true);
+
+  var destroyable_event = new SE_event(2750, 3350, [
+    `$$DumbMuscles$: "What about now? No boulder, and I'm pretty sure we didn't pass by a pile of rocks or some other convenient stuff we missed."`,
+    `$$Ren$: "Admittedly. This looks like the kind of place where you'd need to talk to someone to trigger an event and unlock progression."`,
+    `$$DumbMuscles$: "But there's nobody around!"`,
+    `$$Ren$: "What about that waterfall?"`,
+    `$$DumbMuscles$: "What about it?"`,
+    `$$Ren$: "We need to check behind it."`,
+    `$$DumbMuscles$: "You mean... go under that water? But it is so cold and powerful!"`,
+    `$$Ren$: "Yes, I know. But there's always something behind the waterfall. Always."`,
+    `$$DumbMuscles$ exchanges a puzzled look with $$BestFriend$ who just shrugs.`,
+  ]);
+
+  var feffect = function(){
+    destroyable_antifoor.destroy();
+    if(destroyable_event){
+      destroyable_event.destroy();
+    }
+  }
+
+  var f = new M_Faery(2715, 2865);
+  f.interaction = function() {
+    this.face_character();
+    if (destroyable_antifoor){
+      TextBannerSequence.make([
+        `In front of you stands an ethereal feminine shape. Instead of matter, she seems made of a kind of translucent liquid.`,
+        `$$DumbMuscles$: "Wow!"`,
+        `Faerie: "Hello. Who are you?"`,
+        `$$Ren$: "We're simple adventurers passing by. You must be a spirit of nature?"`,
+        `Faerie: "Yes, I am indeed the spirit of this mountain. I do not recall having ever had human visitors in eons."`,
+        `$$DumbMuscles$: "This mountain is hard to climb."`,
+        `Faerie: "I know. I commend you for making it this far. And warn you that the way ahead is even harder."`,
+        `$$DumbMuscles$: "Thanks, but I've got my mate here, $$Ren$, nothing can stop us!"`,
+        `$$BestFriend$: "$$Ren$ is the Promised Child, you see..."`,
+        `Faerie: "By the Goddess, why didn't you say so sooner? It explains why you managed to make it so far! It's an honor to meet you! Is there anything I can do to help your quest?"`,
+        `$$Ren$: "As a matter of fact, yes. There's a rift blocking our way..."`,
+        `Faerie: "Say no more! Consider it done!"`,
+        `Faerie: "You can pass now! I wish you the best of luck on your travels!"`,
+      ], feffect);
+    } else {
+      TextBannerSequence.make([
+        `Faerie: "You can pass now! I wish you the best of luck on your travels!"`,
+      ]);
+    }
+
+
+  }
+}
 
 
 if(hawkpart == 11){ // open, only used for 12 for now!

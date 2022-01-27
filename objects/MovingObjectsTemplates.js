@@ -141,6 +141,14 @@ class M_Boat extends MovingObject {
   }
 }
 
+class M_Faery extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/spirit.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(7, 3, 25, 12);
+  }
+}
+
 
 class M_BestFriend extends MovingObject {
   constructor(x, y) {
