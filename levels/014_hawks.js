@@ -183,11 +183,22 @@ if(hawkpart == 3) {
       `$$DumbMuscles$: "If you say so..."`,
     ], prompt);
   }
+
+  if (INVENTORY.count("_dumbmuscle_story_quest") == 2){
+    INVENTORY.set("_dumbmuscle_story_quest", 3);
+  }
+
 }
 if(hawkpart == 4) {
   new S_AntiFloor(3650,2750,125,150);
   var b = new S_AntiFloor(3775,2750,75,150);
   new S_AntiFloor(3850,2750,125,150);
+
+
+  if(INVENTORY.count("_dumbmuscle_story_quest") > 0) {
+    b.destroy();
+  }
+
   var placeholder = new S_AntiFloor(3625,2775,375,350, true);
   if (!INVENTORY.count("_dumbmuscle_story_quest")){
     new SE_event(3775, 2625, [
@@ -198,12 +209,45 @@ if(hawkpart == 4) {
       `$$DumbMuscles$: "Are you sure? Maybe there's just no way forward..."`,
       `$$Ren$: "There's always a way forward."`,
     ]);
-  } else {
-    b.destroy();
+  } else if(INVENTORY.count("_dumbmuscle_story_quest") <= 2) {
     new SE_event(3775, 2650, [
       `The chasm in the road has been filled by the gravel from your earlier destruction of a random pile of rocks. How fortunate. The Goddess is really looking up for you!`,
     ], 75);
+
+    var a = new SE_event(3775, 2775, [`...`], 75);
+    a.interaction = function(){
+      if (INVENTORY.count("_dumbmuscle_story_quest") == 1){
+        TextBannerSequence.make([
+          `No sooner did you make your way past the gap that a giant eagle charges towards you. Sharp claws ahead, the bird seems determined to make you its prey.`,
+          `$$DumbMuscles$: "Oh shit mate! What do we do? What do we do!"`,
+          `$$Ren$: "Calm down! Let's go back down the road a bit, in an area we cleared. We made sure that it's safe!"`,
+          `$$DumbMuscles$: "It'll follow us!"`,
+          `$$Ren$: "Only for a while!"`,
+          `You start going back on your steps.`,
+          `$$DumbMuscles$: "It's still following us!"`,
+          `The predator is indeed still aiming for your back.`,
+          `$$Ren$: "Trust me, it will stop!"`,
+        ], function(){ INVENTORY.set("_dumbmuscle_story_quest", 2); });
+      } else {
+        TextBannerSequence.make([
+          `The eagle is still charging towards you menacingly.`,
+          `$$DumbMuscles$: "Oh shit! We need to run!"`,
+          `$$Ren$: "Don't worry, we have time."`,
+          `Indeed, when you look at the bird, it is clearly moving, but it doesn't seem like the distance between you and it ever decreases.`,
+        ]);
+      }
+    }
+  } else  {
+    new SE_event(3775, 2785, [
+      `The way seems clear. Your predator is nowhere to be found.`,
+      `$$DumbMuscles$: "Damn! It's gone!"`,
+      `$$Ren$: "See!"`,
+      `$$BestFriend$: "I should be used to it by now, but I'm still puzzled by your weird tactics."`,
+      `$$DumbMuscles$: "As long as it works..."`,
+    ], 75);
+
   }
+
 }
 if(hawkpart == 5) {
   new S_AntiFloor(1750,3375,175,150);
