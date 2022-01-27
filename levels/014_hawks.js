@@ -164,7 +164,7 @@ if(hawkpart == 3) {
   var stophim = function(){
     TextBannerSequence.make([
       `$$Ren$: "$$DumbMuscles$, stop!"`,
-      `$$DumbMuscles$ suddenly comes to a halt."`,
+      `$$DumbMuscles$ suddenly comes to a halt.`,
       `$$DumbMuscles$: "What?"`,
       `$$Ren$: "This is obviously a trap! The path forms only a tiny bridge before the next platform. It's going to collapse if we walk on it."`,
       `$$DumbMuscles$ looks at you inquisitively. $$BestFriend$ shrugs.`,
@@ -184,6 +184,71 @@ if(hawkpart == 3) {
                  ]
                );
   });
+}
+if(hawkpart == 11){ // open, only used for 12 for now!
+  if(INVENTORY.count("_dumbmuscle_hunt_step") > 1){
+    INVENTORY.set("_dumbmuscle_hunt_step", 10);
+  }
+}
+if(hawkpart == 12){
+  var e = new SE_event(3000, 3100, [`...`], 100);
+  e.interaction = function(){
+  if (INVENTORY.count("_dumbmuscle_hunt_step") == 10){
+    TextBannerSequence.make([
+      `When you come back, you see that your trap has caught a rabbit.`,
+      `$$DumbMuscles$: "Damn mate, that's impressive! You were right!"`,
+      `You improvide a little campfire to cook your catch and share a friendly meal.`,
+      `$$DumbMuscles$: "I still have a lot to learn..."`,
+      `Full and well rested, you decide to continue on your way.`,
+    ], function(){e.destroy();});
+  } else if (INVENTORY.count("_dumbmuscle_hunt_step") == 5){
+    TextBannerSequence.make([
+      `$$Ren$: "Remember, we need to go back to the previous part of the path, and then come back."`,
+      `$$DumbMuscles$: "What does that even mean, part of the path..."`,
+    ]);
+  } else if (INVENTORY.count("_dumbmuscle_hunt_step") == 4){
+    TextBannerSequence.make([
+      `$$DumbMuscles$: "There's still nothing..."`,
+      `$$Ren$: "Hmm... Ok let's try this: let's go back to the previous part of the path, and then come back. It should be enough."`,
+      `$$DumbMuscles$: "What do you mean?"`,
+      `$$Ren$: "Well it will show that we've been far enough for long enough!"`,
+      `$$DumbMuscles$: "I don't..."`,
+      `$$BestFriend$: "It's probably best to just do what $$Ren$ says without trying to understand in this kind of situations."`,
+      `$$DumbMuscles$: "Ok..."`,
+    ], function(){INVENTORY.increase("_dumbmuscle_hunt_step")});
+  } else if (INVENTORY.count("_dumbmuscle_hunt_step") == 3){
+    TextBannerSequence.make([
+      `$$DumbMuscles$: "$$Ren$! The prey is not coming!"`,
+      `$$Ren$: "It's because you're too close, you're scaring the wildlife!"`,
+    ], function(){INVENTORY.increase("_dumbmuscle_hunt_step")});
+  } else if (INVENTORY.count("_dumbmuscle_hunt_step") == 2){
+    TextBannerSequence.make([
+      `$$DumbMuscles$: "$$Ren$! The meat is not coming!"`,
+      `$$Ren$: "You have to wait for your prey to come!"`,
+    ], function(){INVENTORY.increase("_dumbmuscle_hunt_step")});
+  } else if (INVENTORY.count("_dumbmuscle_hunt_step") == 1){
+    TextBannerSequence.make([
+      `You watch and give tips and indications as $$DumbMuscles$ sets up the trap. He does not do too poorly.`,
+      `$$DumbMuscles$: "Awesome! We're gonna have some meat!"`,
+    ], function(){INVENTORY.increase("_dumbmuscle_hunt_step")});
+  } else {
+      TextBannerSequence.make([
+        `$$DumbMuscles$: "Mate, can we take a break?"`,
+        `$$Ren$: "Sure, is there a problem?"`,
+        `$$DumbMuscles$: "I'm just so hungry!"`,
+        `$$Ren$: "Yeah, let's have a meal! What kind of rations are you carrying?"`,
+        `$$DumbMuscles$: "Rations?"`,
+        `$$Ren$: "What food did you prepare?"`,
+        `$$DumbMuscles$: "I was supposed to prepare something?"`,
+        `You sigh.`,
+        `$$DumbMuscles$: "Hey, go easy on me, it's my first quest, remember."`,
+        `$$Ren$: "Alright, alright! Let's just catch something here and eat it! There must be hares in this mountain..."`,
+        `$$DumbMuscles$: "Ok, sweet, how do we do that?"`,
+        `$$Ren$: "You need to lay a trap on the ground. Here, you can use this."`,
+        `You hand him a basic rabbit trap.`,
+      ], function(){INVENTORY.increase("_dumbmuscle_hunt_step")});
+    }
+  }
 }
 if(hawkpart == 18){
   var b = new M_Boulder(2350, 2350);
