@@ -144,7 +144,7 @@ class S_ExitFloor extends S_Floor {
   }
 
   is_interactible(x,y) {
-    var margin = 15;
+    var margin = 10;
     if (x >= this.x - margin && x <= this.x + this.w + margin) {
       if (y >= this.y - this.h - margin && y <= this.y + margin) {
         return true;

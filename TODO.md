@@ -6,16 +6,11 @@
 # HAWK DUNGEON  ----------------------------------------------------
 
 
-- talk to an objective and exit, go close to the border, go to the next area and come back
-- Assume that a zone is safe once you've cleared it
-- clear whole floor before moving on
 - this jewel unlocks something
 - talk to one character / talk to a npc trigger the progression
 - theres always something behind the waterfall
+- more rock puzzle
 
-
-
-"oh you were on a fetching mission/tutorial"
 
 
 

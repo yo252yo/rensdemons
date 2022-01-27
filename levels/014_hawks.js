@@ -345,6 +345,19 @@ if(hawkpart == 12){
     }
   }
 }
+if(hawkpart == 16){
+  new SE_event(2525, 2900, [
+    `$$DumbMuscles$: "Can we rest a bit? I need to replenish my energy."`,
+    `$$Ren$: "Good idea, let's nap!"`,
+    `$$DumbMuscles$: "Here? Is it safe?"`,
+    `$$Ren$: "Yeah, we just cleared the zone."`,
+    `$$DumbMuscles$: "What if we get attacked by beast or something?"`,
+    `$$Ren$: "We won't. We eliminated all non-optional dangers."`,
+    `$$DumbMuscles$: "If you say so..."`,
+    `$$DumbMuscles$ is doubtful, but you still all set up a little camp. So much climbing took a toll on your stamina, and the respite is much welcome.`,
+    `As you expected, nothing bad happens.`,
+  ], 75);
+}
 if(hawkpart == 18){
   var b = new M_Boulder(2350, 2350);
 
@@ -463,8 +476,10 @@ if(hawkpart == 19){
     `$$Ren$: "I guess... this is goodbye, then?"`,
     `$$DumbMuscles$: "Well, huh... There's more..."`,
     `$$Ren$: "What?"`,
-    `$$DumbMuscles$: "I kinda don't want to go back alone. What if there's more puzzles and stuff that I don't know on the way down?"`,
+    `$$DumbMuscles$: "I kinda don't want to go back alone. What if there's more puzzles or dangers and stuff that I don't know on the way down?"`,
     `$$Ren$: "There won't be. We cleared the whole way."`,
+    `$$DumbMuscles$: "But what if monsters come back?"`,
+    `$$Ren$: "They won't."`,
     `$$DumbMuscles$: "Still, I'd be much more confident if I could stick to your side a bit longer. Just until I know the ropes, you know..."`,
     `$$Ren$: "What about your quest?"`,
     `$$DumbMuscles$: "The questgiver didn't specify a time limit..."`,
