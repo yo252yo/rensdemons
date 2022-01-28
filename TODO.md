@@ -3,6 +3,35 @@
 
 
 
+# TOWN5 TORTUREDSOUL  ----------------------------------------------------
+
+
+you try to kill him over and over again but it never sticks, hes glitched or smthing
+
+
+meaningless reality that will never fill your lack >>> suicide
+ human tendency to seek inherent value and meaning in life, and the human inability to find these with any certainty
+
+Don't you ever want to give up?
+Sure I do but I don't think I could
+Why what hsppensd when u do
+
+REBEL!
+TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
+// town5 acceptance
+mb u can help him with suicide? save/load to kill him over and over/ stuff about death
+>> I cannot be killed I'm glitched out
+>> “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
+>> Save and load : rez someone to kill them again
+>> actually you know you survive till the end of the game!!
+Triggering  flag, like playing biwa, is as good as murder
+Artist vessel for god inspiration
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
+
+
+
+
 # MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??
@@ -42,19 +71,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 
 
-# TOWN5 TORTUREDSOUL  ----------------------------------------------------
-
-REBEL!
-TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
-// town5 acceptance
-mb u can help him with suicide? save/load to kill him over and over/ stuff about death
->> I cannot be killed I'm glitched out
->> “Don't sacrifice yourself... “”Don't worry I have a way to cheat death “
->> Save and load : rez someone to kill them again
->> actually you know you survive till the end of the game!!
-Triggering  flag, like playing biwa, is as good as murder
-Artist vessel for god inspiration
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 # TOWN5 RetiredProtector  ----------------------------------------------------
 RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town5 acceptance
