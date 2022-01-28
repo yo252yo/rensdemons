@@ -22,6 +22,19 @@ class SpeakerIcon extends TextElement {
       return false;
     }
 
+    get_x_offset(image_key) {
+      switch(image_key) {
+        case PARTYMEMBERS.TorturedSoul:
+          return -120;
+        case PARTYMEMBERS.DumbMuscles:
+          return -100;
+        case PARTYMEMBERS.WiseOld: 
+          return -100;
+        default:
+          return -80;
+      }
+    }
+
     make_portrait(name) {
       var image_key;
       name = name.replaceAll("$","");
@@ -34,7 +47,7 @@ class SpeakerIcon extends TextElement {
       }
       var div = document.getElementById("portrait_div");
       var v = new LayeredImage("assets/portraits_large/" + image_key + "_$.png", 300, 300, div);
-      v.shift(-80, -75);
+      v.shift(this.get_x_offset(image_key), -75);
       v.adjust_depth(10000);
     }
   }
