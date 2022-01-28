@@ -20,9 +20,8 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.FemmeFatale] = MARKOV_MODELS.human_names.mutate("Lust", 3); // lust/matahary
     r[PARTYMEMBERS.DisguisedPrincess] = MARKOV_MODELS.human_names.mutate("Sheik", 5); //  sheik
     r[PARTYMEMBERS.DumbMuscles] = MARKOV_MODELS.human_names.mutate("Zell", 5); // wakka/barrett/nendou/joey
-
-
     r[PARTYMEMBERS.TorturedSoul] = MARKOV_MODELS.human_names.mutate("Sasuke", 5); // sasuke/seifer/Riku/squall/batman
+
     r[PARTYMEMBERS.RetiredProtector] = MARKOV_MODELS.human_names.mutate("Geralt", 5); // snake/jhon wick
     r[PARTYMEMBERS.SnobRich] = MARKOV_MODELS.human_names.mutate("Nanami", 5); // Draco/Sanzenin/ouran/gatsby/nanami utena
 

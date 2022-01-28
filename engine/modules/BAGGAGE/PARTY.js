@@ -12,14 +12,13 @@ const PARTYMEMBERS = {
   FemmeFatale: "FemmeFatale",
   DisguisedPrincess: "DisguisedPrincess",
   DumbMuscles: "DumbMuscles",
+  TorturedSoul: "TorturedSoul",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
  // town4 debauch
- TorturedSoul: "TorturedSoul", // dark emo antihero maverik trop dark, poet/bard/jester/minstrel/painter:
-// town5 acceptance
   RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-  // town5 fear
+  // town3
 
   isPartyMember: function(s){
     for (var i in PARTYMEMBERS){
@@ -68,16 +67,19 @@ const PARTY = {
                 ${DICTIONARY.get(PARTYMEMBERS.TraitorFisher)} is very bright and calculating. She saw there an opportunity. She started to work as a double agent in the Siren army, spying for the humans. But she also had to prove her loyalty to her new masters by sabotaging mankind. And she quickly betrayed both to join you on your quest. She supposedly wants to discover new recipes, but her actual motivations are mysterious. It's impossible to keep track of all her convoluted schemes. In the end, only she knows where her true allegiance lies...`;
       case PARTYMEMBERS.GeniusProdigy:
         return `${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} is one of the very few humans lucky enough to not have to worry about their survival every day. Otherwise, he would not have lived very long. He never pays attention to the down-to-earth problems of daily life. Instead, he's always in his own little world, daydreaming about his latest discoveries, pondering existential questions, designing experimental protocols, reading whatever he can find...<br /><br />
-                Born in an aristocratic family, ${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} took advantage of his priviledged position to follow his passion, to the dismay of his parents. His curiosity lead him to explore and analyze many parts of the world, until his steps brought him to ${DICTIONARY.get(PARTYMEMBERS.Ren)}, who stands as the biggest mystery he's ever encountered. Naturally, he couldn't let it go without getting answers.`;
+                Born in an aristocratic family, ${DICTIONARY.get(PARTYMEMBERS.GeniusProdigy)} took advantage of his priviledged position to follow his passion, to the dismay of his parents. His curiosity lead him to explore and analyze many parts of the world, until his steps brought him to you, who stands as the biggest mystery he's ever encountered. Naturally, he couldn't let it go without getting answers.`;
       case PARTYMEMBERS.FemmeFatale:
         return `Like many, ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} was orphaned by the war. She was very young when both her parents died and it fell on her to take care of her younger siblings. She spent a long time begging for scraps in the streets of ${DICTIONARY.get("town_4")} before she got old enough to use her body to her advantage.<br /><br />
-                In a cruel world, you sometimes do whatever it takes to survive. ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} has found a way to exploit base human instincts to put food on the table of her family. She feels pride in using people's impulses to her advantage. So she got intrigued and moved when she met someone naive like ${DICTIONARY.get(PARTYMEMBERS.Ren)} who didn't see her as a product. Someone like that needs her protection, and maybe she can even make a few coins in the process...`;
+                In a cruel world, you sometimes do whatever it takes to survive. ${DICTIONARY.get(PARTYMEMBERS.FemmeFatale)} has found a way to exploit base human instincts to put food on the table of her family. She feels pride in using people's impulses to her advantage. So she got intrigued and moved when she met someone naive like you who didn't see her as a product. Someone like that needs her protection, and maybe she can even make a few coins in the process...`;
       case PARTYMEMBERS.DisguisedPrincess:
         return `Born to the royal family, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} never liked the pageantry and ceremonies that it entailed. The young aristocrat was always dreaming of faraway lands and waiting impatiently for the visit of the next adventurer or storyteller in the court. As a teenager, the walls of the royal castle started to feel like a prison, and ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} began to view with disdain the futile games and schemes that the people in power were doing.<br /><br />
-                Gardening was a welcome escape out of the oppressive castle, and it grew steadily into a passion for herbalism. One day, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} discovered in the royal library tomes that told of poisons and elixirs that might come in handy for an escape. Armed with this knowledge, the self-taught alchemist started to draft a plan to leave the castle and join the common folk, when ${DICTIONARY.get(PARTYMEMBERS.Ren)} appeared as a welcome help.`;
+                Gardening was a welcome escape out of the oppressive castle, and it grew steadily into a passion for herbalism. One day, ${DICTIONARY.get(PARTYMEMBERS.DisguisedPrincess)} discovered in the royal library tomes that told of poisons and elixirs that might come in handy for an escape. Armed with this knowledge, the self-taught alchemist started to draft a plan to leave the castle and join the common folk, when you appeared as a welcome help.`;
       case PARTYMEMBERS.DumbMuscles:
         return `The Goddess was not kind to ${DICTIONARY.get(PARTYMEMBERS.DumbMuscles)} and gave him at birth less than average mental abilities. He got picked on and teased a lot by the other children. But fortunately, he had no shortage of courage and determination. Through rigorous training, he built up his body to ensure he would never again be the butt of the joke.<br /><br />
-                Through all of this, his heart never tarnished, for his kindness was on par with his resolve. He longed to use his cultivated strength for the good of his fellow humans. Becoming a mercenary adventurer seemed the right thing to do. He did not foresee that the quests could be so difficult. Luckily, he found in ${DICTIONARY.get(PARTYMEMBERS.Ren)} a mentor and an inspiration that he could follow to learn the ropes until he is ready to make his own way.`;
+                Through all of this, his heart never tarnished, for his kindness was on par with his resolve. He longed to use his cultivated strength for the good of his fellow humans. Becoming a mercenary adventurer seemed the right thing to do. He did not foresee that the quests could be so difficult. Luckily, he found in you a mentor and an inspiration that he could follow to learn the ropes until he is ready to make his own way.`;
+      case PARTYMEMBERS.TorturedSoul:
+        return `${DICTIONARY.get(PARTYMEMBERS.TorturedSoul)}'s past is dark, full of traumas secrets. Nobody really knows the hardships he had to go through that left him forever scarred, but it is assumed that it might have something to do with chickens. In any case, the weight of that somber history is visible on his face. And his gestures. And his clothes. He is not one to hide the feelings of suffering that swallow his soul.<br /><br />
+                In a hostile nonsensical world, suicide seemed to ${DICTIONARY.get(PARTYMEMBERS.TorturedSoul)} as the only way to end his pain. But none of his attempts were successful. He got intrigued by your peculiar relationship to death, and decided to stick to your side, partly out of morbid curiosity, partly following his death wish that your impossible quest was bound to fufill.`;
       default:
         return "";
     }

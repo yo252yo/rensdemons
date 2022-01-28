@@ -3,8 +3,7 @@
 
 
 
-# TOWN5 TORTUREDSOUL  ----------------------------------------------------
-
+# TOWN5 TORTUREDSOUL battle
 
 you try to kill him over and over again but it never sticks, hes glitched or smthing
 
@@ -26,8 +25,18 @@ mb u can help him with suicide? save/load to kill him over and over/ stuff about
 >> actually you know you survive till the end of the game!!
 Triggering  flag, like playing biwa, is as good as murder
 Artist vessel for god inspiration
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
+
+We never really move on. We just get used to the pain
+How many times can your heart break until there’s nothing left to be broken?
+Sometimes it’s better to be alone. No one can hurt you that way.
+The scars you cant see are the hardest to heal
+Life hurts a lot more than death
+Have you ever been so alone in a crowded town
+Suicide is not the love of death, but its the fear of living
+People who commit suicide are just fallen angels that want to go home.
+// life is a drak tunnel in the black night of my dark life
+These wounds won't seem to heal, this pain is just too real There's just too much that time cannot erase
 
 
 

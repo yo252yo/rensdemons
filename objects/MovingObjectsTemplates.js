@@ -197,6 +197,23 @@ class M_FemmeFatale extends MovingObject {
   }
 }
 
+class M_TorturedSoul extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/TorturedSoul.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 10);
+  }
+
+  interaction = function(){
+    this.face_character();
+    if(PARTY.has_member(PARTYMEMBERS.TorturedSoul)){
+      new TextBanner(`$$TorturedSoul$: "There is nothing for people forsaken like me in this life. I might as well follow while waiting for death. Your doomed quest will surely bring me the end that I long for."`);
+    } else {
+      BATTLE.api.make('_party/_TorturedSoul');
+    }
+  }
+}
+
 class M_UpbeatDojikko extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/UpbeatDojikko.png", 'obj_dark', 32, 48);
