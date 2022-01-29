@@ -188,7 +188,7 @@ make_attack(
 );
 
 make_attack(
-  `Such a lonely day, and it's mine...`,
+  `And if you die, I wanna die with you, take your hand and walk away...`,
   "'Lonely Day' - System of a Down"
 );
 
@@ -212,6 +212,6 @@ make_attack(
 // =================== START
 // ===================
 BATTLE.operations.start([
-  `You find a young man wearing black velvety clothes brooding in a corner of the town. When he sees you, he pretends not to and starts reciting a poem to himself.`,
+  `You find a young man wearing overly convoluted black velvety clothes brooding in a corner of the town. When he sees you, he pretends not to and starts reciting a poem to himself.`,
   `$$TorturedSoul$: "Is there a loneliest place than a crowded city?"`,
 ]);

@@ -361,30 +361,32 @@ LANGUAGE.actions[PARTYMEMBERS.TorturedSoul] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.TorturedSoul)) + RANDOM.pick([
       `$$TorturedSoul$ arrives slowly, taking wide theatrical strides. His cape floats dramatically behind him. He lets out a big sigh before turning to the $$&ENEMY$.`,
-      `It seems that $$TorturedSoul$ is reluctant to come to the battleground. His face is pouty, though it is hardly different from usual. He drags his feets and exhales loudly to show his discontent. `,
+      `It seems that $$TorturedSoul$ is reluctant to come to the battleground. His face is pouty, though it is hardly different from usual. He drags his feet and exhales loudly to show his discontent. `,
       `You have to call several times before getting any answer from $$TorturedSoul$, and when you do it's an annoyed grunt. He drags himself to the battleground, mumbling complains about how you're bothering him.`,
     ]);
     var dialog = RANDOM.pick([
+      `$$TorturedSoul$: "We never really move on. We just get used to the pain."`,
       `$$TorturedSoul$: "What is silence but another word for my suffering..."`,
       `$$TorturedSoul$: "I offer my blood as libation to herald my pledge that this is not a phase. Black is just my color."`,
-      `$$TorturedSoul$: "I will let you drown into the abyss of pain that is my bleeding heart."`,
+      `$$TorturedSoul$: "The scars you cant see are the hardest to heal. I will drown you into the abyss of pain that is my bleeding heart."`,
       `$$TorturedSoul$: "Just beg that I don't spare you, for life is often more painful than death."`,
-
+      `$$TorturedSoul$: "How many times can your heart break until there’s nothing left to be broken?`,
+      `$$TorturedSoul$: "I prefer to be alone. That way, nobody can hurt you.`,
     ]);
     return [text, dialog];
   },
   fail: function(){
     return RANDOM.pick([
       `The $$&ENEMY$ laughs out loud at the lonely maverik. His dark demeanor did not impress them at all.`,
-      `The $$&ENEMY$ opens up to $$TorturedSoul$'s honnesty by sharing their own pain and worries. It just makes $$TorturedSoul$ even sadder, and he has to withdraw to hide his tears.`,
-      `The $$&ENEMY$ is unmoved by the overly sentimental display of $$TorturedSoul$. They simply ignore him and keep attacking.`,
+      `The $$&ENEMY$ opens up to $$TorturedSoul$'s honnesty by sharing their own pain and worries. It just makes the depressed artist even sadder, and he has to withdraw to hide his tears.`,
+      `The $$&ENEMY$ is unmoved by the overly sentimental display of the sad poet. They simply ignore him and keep attacking.`,
     ]);
   },
   win: function(){
     return RANDOM.pick([
       `The $$&ENEMY$ listens intently to the lamenting complaints of $$TorturedSoul$. As the tortured soul discusses life and its meaning, it appears clear that the $$&ENEMY$ relates to $$TorturedSoul$'s hopelessness. Before long, the $$&ENEMY$ agrees fully and commiserates with the rebel. They conclude that suicide is the only reasonable answer to the absurdity of existence, and in a matter of seconds, the $$&ENEMY$ takes their own life.`,
-      `$$TorturedSoul$'s blunt oversentimentality is too much to bear for the $$&ENEMY$. All this poetry talk of suicide and heart in pain makes them recoil in cringe. The second-hand embarrasment is very effective, and soon the $$&ENEMY$ cannot take anymore of this unceasing whining and runs away to avoid ever facing him again.`,
-      `$$TorturedSoul$ opens his heart and shares his feeling to the $$&ENEMY$. They listen politely at first, but grow empathetical as the tales of woe slowly but surely engulfes their heart. The $$&ENEMY$ cannot ignore a suffering so intense that the poor man is even willing to take his own life. Filled with compassion, the $$&ENEMY$ shares $$TorturedSoul$'s pain, and becomes overwhelmed with existential despair. It becomes too intense for them to handle, and the $$&ENEMY$ falls sobbing on the ground, never to raise up again.`,
+      `$$TorturedSoul$'s blunt oversentimentality is too much to bear for the $$&ENEMY$. All this poetry talk of suicide and heart in pain makes them recoil in cringe. The second-hand embarrassment is very effective, and soon the $$&ENEMY$ cannot take anymore of this unceasing whining and runs away to avoid ever facing him again.`,
+      `$$TorturedSoul$ opens his heart and shares his feeling to the $$&ENEMY$. They listen politely at first, but grow empathetical as the tales of woe slowly but surely engulfs their heart. The $$&ENEMY$ cannot ignore a suffering so intense that the poor man is even willing to take his own life. Filled with compassion, the $$&ENEMY$ shares $$TorturedSoul$'s pain, and becomes overwhelmed with existential despair. It becomes too intense for them to handle, and the $$&ENEMY$ falls sobbing on the ground, never to raise up again.`,
     ]);
   },
 };
