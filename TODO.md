@@ -3,16 +3,6 @@
 
 
 
-# TOWN5 TORTUREDSOUL battle
-
-you try to kill him over and over again but it never sticks,
-- hes glitched or smthing
-- Save and load : rez someone to kill them again
-- actually you know you survive till the end of the game
-- Triggering  flag, like playing biwa, is as good as murder
-
-
-
 
 # MORE HEAVEN  ----------------------------------------------------
 
@@ -60,6 +50,7 @@ RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander 
 >>protector is like why me im nobody etc...
 im too old for this shit
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch

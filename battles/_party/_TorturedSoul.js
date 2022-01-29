@@ -11,7 +11,7 @@ var cantdie = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$Ren$: "I... I don't think I can die. I know this might sounds weird..."`,
     `$$TorturedSoul$: "No, it doesn't. I'm the same. I've tried to take my own life countless times, but to no avail."`,
-    `$$Ren$: "I think it might be a slightly different case. I have a way to cheat death."`,
+    `$$Ren$: "I think it might be a slightly different case. I have a way to cheat death. At least until I've finished my mission."`,
     `$$TorturedSoul$: "Well, if you have such mastery over death, maybe you can help me..."`,
   ],
   outcome: BATTLETREE.WIN,
@@ -25,7 +25,7 @@ var duty = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "I have my duty to uphold as the Promised Child."`,
-    `$$TorturedSoul$: "Good for you, I guess... You haven't realized how meaningless it really is... Then you can't understand me. You're just deluding yourself."`,
+    `$$TorturedSoul$: "Good for you, I guess... You haven't realized how meaningless it really is... I must imagine you happy. Then you can't understand me. You're just deluding yourself."`,
     `$$TorturedSoul$: "Just leave me to my woes. Everybody always does."`,
   ],
   outcome: BATTLETREE.ESCAPE,
@@ -63,8 +63,8 @@ var meaning = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "What do you mean?"`,
     `$$TorturedSoul$: "Look at these sheep, tending to their chores every day. Don't they know that none of this matters? We'll all be dead and forgotten soon."`,
     `$$TorturedSoul$: "They all strive every day, but what is it all for? We all want to believe there's a meaning and a certainty in our lives, but the truth is that there is none. It's all fake."`,
-    `$$TorturedSoul$: "We're all broken, bleeding, lacking, and reality will never fill our void."`,
-    `$$TorturedSoul$: "What's the point in fighting it? It's like trying to fill a pierced barrel."`,
+    `$$TorturedSoul$: "We're all broken, bleeding, lacking, and reality will never fill our void. All that meets our efforts is the unreasonable silence of the world."`,
+    `$$TorturedSoul$: "Man stands face to face with the irrational. What's the point in fighting it? It's like trying to fill a pierced barrel."`,
     `$$TorturedSoul$: "Don't you ever feel like giving up?"`,
   ],
   function: function(){
