@@ -3,7 +3,6 @@
 
 
 
-
 # MORE HEAVEN  ----------------------------------------------------
 
 WHO makes you do it??
@@ -48,6 +47,7 @@ RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander 
 // town5 acceptance
 >>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 >>protector is like why me im nobody etc...
+>>> no the goddess brought u to me, i was ordinary too before the goddess chose me
 im too old for this shit
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 

@@ -12,14 +12,14 @@ if(INVENTORY.count("_torturedSoulSteps") > 5){
     unlock: true,
     description: [
       `$$Ren$: "You're right. It seems you can't die."`,
-      `$$TorturedSoul$: "What do you mean?"`,
+      `$$TorturedSoul$: "What do thou mean?"`,
       `$$Ren$: "I tried to kill you ${INVENTORY.count("_torturedSoulSteps") - 1} times, in various ways. It never sticks. You might be glitched or something. I keep bringing you back to life..."`,
-      `$$TorturedSoul$: "What? I didn't feel anything."`,
+      `$$TorturedSoul$: "What are thou rambling about? I did not perceive anything."`,
       `$$BestFriend$: "Don't worry. $$Ren$ is always rambling like that. It's the possession by the Goddess, you see..."`,
-      `$$TorturedSoul$: "Ah... So what?"`,
+      `$$TorturedSoul$: "Ah... So what of it?"`,
       `$$Ren$: "I don't know. I don't think I can help you..."`,
-      `$$TorturedSoul$: "Such a shame... But it means a lot to me that you heard me out."`,
-      `$$TorturedSoul$: "I think I'll follow you. If I'm waiting for death, it might as well be at your side. After all, you seem to be on a suicidal mission of your own. Maybe I can also taste the fruit of your certain doom."`,
+      `$$TorturedSoul$: "Such a shame... Yet I can glimpse in thee a kindred spirit. It soothes my heart that thou heard me out."`,
+      `$$TorturedSoul$: "I have a mind to follow thee. As I am awaiting my demise, I could as well be at thine side. Thou seem to be on a suicidal expedition of thine own. Perchance could I also partake in the exquisite fruit of thine ascertained doom."`,
       `$$Ren$: "Sure... Whatever."`,
       "$$TorturedSoul$ joins your party!",
     ],
@@ -63,8 +63,8 @@ PLAYER_ACTIONS.add({
   name: "Refuse",
   unlock: true,
   description: [
-    `$$TorturedSoul$: "It seems that you don't understand me after all..."`,
-    `$$TorturedSoul$: "Just leave me to my woes then. Everybody always does."`,
+    `$$TorturedSoul$: "It appears that thou don't understand me after all..."`,
+    `$$TorturedSoul$: "Do abandon me to my woes. Everybody always does."`,
   ],
   outcome: BATTLETREE.ESCAPE,
 });
@@ -73,5 +73,5 @@ PLAYER_ACTIONS.add({
 // =================== START
 // ===================
 BATTLE.operations.start([
-  `$$TorturedSoul$: "Help me. Put me out of my misery."`,
+  `$$TorturedSoul$: "I beg thee to be of assistance. Bring an end to my misery."`,
 ]);

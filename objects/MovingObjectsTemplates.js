@@ -207,7 +207,7 @@ class M_TorturedSoul extends MovingObject {
   interaction = function(){
     this.face_character();
     if(PARTY.has_member(PARTYMEMBERS.TorturedSoul)){
-      new TextBanner(`$$TorturedSoul$: "There is nothing for people forsaken like me in this life. I might as well follow while waiting for death. Your doomed quest will surely bring me the end that I long for."`);
+        new TextBanner(`$$TorturedSoul$: "There is nothing for my forsaken kin in this universe. I might as well follow thee while awaiting demise. Thine doomed quest shall inexorably deliver me the conclusion that I long for."`);
     } else if( INVENTORY.count("_torturedSoulSteps") ){
       BATTLE.api.make('_party/_TorturedSoul2');
     } else {

@@ -365,13 +365,13 @@ LANGUAGE.actions[PARTYMEMBERS.TorturedSoul] = {
       `You have to call several times before getting any answer from $$TorturedSoul$, and when you do it's an annoyed grunt. He drags himself to the battleground, mumbling complains about how you're bothering him.`,
     ]);
     var dialog = RANDOM.pick([
-      `$$TorturedSoul$: "We never really move on. We just get used to the pain."`,
-      `$$TorturedSoul$: "What is silence but another word for my suffering..."`,
-      `$$TorturedSoul$: "I offer my blood as libation to herald my pledge that this is not a phase. Black is just my color."`,
-      `$$TorturedSoul$: "The scars you cant see are the hardest to heal. I will drown you into the abyss of pain that is my bleeding heart."`,
-      `$$TorturedSoul$: "Just beg that I don't spare you, for life is often more painful than death."`,
-      `$$TorturedSoul$: "How many times can your heart break until there’s nothing left to be broken?`,
-      `$$TorturedSoul$: "I prefer to be alone. That way, nobody can hurt you.`,
+      `$$TorturedSoul$: "We never really heal. We only acclimate to affliction."`,
+      `$$TorturedSoul$: "What is silence but another expression for my endless suffering..."`,
+      `$$TorturedSoul$: "I offer my blood as libation to herald my pledge that this is not a phase. Black is my true color."`,
+      `$$TorturedSoul$: "The scars thou cannot see are the toughest to regenerate. I shall douse thee in the abyss of misery that is my bleeding bosom."`,
+      `$$TorturedSoul$: "Plead that I do not spare thee, for surviving is oft more dolorous than passing."`,
+      `$$TorturedSoul$: "How many times can thine heart shatter until there’s naught left to be broken?`,
+      `$$TorturedSoul$: "I would sooner be solitary. Only thus can nobody hurt thou.`,
     ]);
     return [text, dialog];
   },

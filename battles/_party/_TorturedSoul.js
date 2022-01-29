@@ -10,9 +10,9 @@ var cantdie = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "I... I don't think I can die. I know this might sounds weird..."`,
-    `$$TorturedSoul$: "No, it doesn't. I'm the same. I've tried to take my own life countless times, but to no avail."`,
+    `$$TorturedSoul$: "No, it does not. My personal situation is quite similar. Countless times have I attempted to withdraw my own life. However, it was to no avail."`,
     `$$Ren$: "I think it might be a slightly different case. I have a way to cheat death. At least until I've finished my mission."`,
-    `$$TorturedSoul$: "Well, if you have such mastery over death, maybe you can help me..."`,
+    `$$TorturedSoul$: "Say, if thou have such mastery over death, perchance might thou assist me..."`,
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
@@ -25,8 +25,8 @@ var duty = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "I have my duty to uphold as the Promised Child."`,
-    `$$TorturedSoul$: "Good for you, I guess... You haven't realized how meaningless it really is... I must imagine you happy. Then you can't understand me. You're just deluding yourself."`,
-    `$$TorturedSoul$: "Just leave me to my woes. Everybody always does."`,
+    `$$TorturedSoul$: "Fine on thee, I suppose... Thou are but deluding thyself. Thou are still spellbound and have yet to comprehend how meaningless it all really is. I must imagine thee happy."`,
+    `$$TorturedSoul$: "Do abandon me to my woes. Everybody always does."`,
   ],
   outcome: BATTLETREE.ESCAPE,
 });
@@ -36,7 +36,7 @@ var giveup = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "I guess I have my doubts... But I don't think I could."`,
-    `$$TorturedSoul$: "Why is that?"`,
+    `$$TorturedSoul$: "Why would that be?"`,
   ],
   function: function(){
     BATTLE.player_actions.empty(true);
@@ -50,8 +50,8 @@ var dontgiveup = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "I have to stay strong, for the Goddess."`,
-    `$$TorturedSoul$: "Good for you, I guess... Then you can't understand me. You're just deluding yourself."`,
-    `$$TorturedSoul$: "Just leave me to my woes. Everybody always does."`,
+    `$$TorturedSoul$: "Fine on thee, I suppose... Then thou cannot understand me. Thou are but deluding thyself."`,
+    `$$TorturedSoul$: "Do abandon me to my woes. Everybody always does."`,
   ],
   outcome: BATTLETREE.ESCAPE,
 });
@@ -61,11 +61,11 @@ var meaning = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "What do you mean?"`,
-    `$$TorturedSoul$: "Look at these sheep, tending to their chores every day. Don't they know that none of this matters? We'll all be dead and forgotten soon."`,
-    `$$TorturedSoul$: "They all strive every day, but what is it all for? We all want to believe there's a meaning and a certainty in our lives, but the truth is that there is none. It's all fake."`,
-    `$$TorturedSoul$: "We're all broken, bleeding, lacking, and reality will never fill our void. All that meets our efforts is the unreasonable silence of the world."`,
-    `$$TorturedSoul$: "Man stands face to face with the irrational. What's the point in fighting it? It's like trying to fill a pierced barrel."`,
-    `$$TorturedSoul$: "Don't you ever feel like giving up?"`,
+    `$$TorturedSoul$: "Behold these sheep, tending to their chores every day. Do they not realize that none of this actually matters? We will all be dead and forgotten in a blink."`,
+    `$$TorturedSoul$: "They all strive every day, but what is it all for? We all want to believe in a higher meaning, any certainty organizing our existences. The truth is that there is none. It is all smokes and mirror. There is no meaning to be found on this earth."`,
+    `$$TorturedSoul$: "Thus do we all err, broken, bleeding, lacking, longing to fill a void that reality never will. All that meets our efforts is the unreasonable silence of the world."`,
+    `$$TorturedSoul$: "Man stands face to face with the irrational. What is the point in denying it? It is similar to attempting to replenish a pierced barrel."`,
+    `$$TorturedSoul$: "Do thou never feel like giving up?"`,
   ],
   function: function(){
     BATTLE.player_actions.empty(true);
@@ -79,7 +79,8 @@ var promisedchild = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "The Goddess did not abandon us! She sent us a Promised Child!"`,
-    `$$TorturedSoul$: "I've heard this story before... And yet things are still the same. Even if it was true, which I doubt, what can a lone child do against hordes of demons?"`,
+    `$$TorturedSoul$: "I have heeded this tale a thousand times over... And yet things remain same as ever. Even if it was correct, which I still doubt, what could a lone youngster do faced with hordes of demons?"`,
+    `$$TorturedSoul$: "Through my art, I am also a vessel for the divine. Thereby know I only too well how it inspires us by its tantalizing glow, only to ultimately forsake us."`,
   ],
   outcome: BATTLETREE.NOTHING,
 });
@@ -89,7 +90,7 @@ var goddess = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "What about the Goddess? She cares for you. There's salvation in devotion!"`,
-    `$$TorturedSoul$: "How can anything I do possibly affect Her? She has forsaken us, the war is already lost. The Goddess is dead and left us to fend for ourselves. Why take up a doomed cause?"`,
+      `$$TorturedSoul$: "How could anything I do conceivably affect Her? She sits comfortably, remote, in heaven. She has forsaken us. The feud is already lost. The Goddess is dead and abandoned us to fend for ourselves. Why partake in a doomed enterprise?"`,
   ],
   outcome: promisedchild,
 });
@@ -99,10 +100,10 @@ var art = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$Ren$: "What about art? You sound like a poet."`,
-    `$$TorturedSoul$: "It's true, I used to write. Or rather, I used to be a conduit for divine inspiration."`,
-    `$$TorturedSoul$: "It kept me busy for a while, distracted me from the pain of existence..."`,
-    `$$TorturedSoul$: "But every work I produced only reminded me how alone I was. Nobody really understood me or my art."`,
-    `$$TorturedSoul$: "We're always alone, in the end. We all die alone. Nobody can ever see what's in your soul. How much of a link can you really establish through broken communications?"`,
+    `$$TorturedSoul$: "It is true, I used to write. Rather, I used to be a vessel for divine inspiration."`,
+    `$$TorturedSoul$: "It occupied me a moment. Such delicate distraction from the misery of existence..."`,
+    `$$TorturedSoul$: "But each masterpiece I birthed only reminded me how alone I actually was. Nobody really understood me or my art."`,
+    `$$TorturedSoul$: "We are always alone, ultimately. Alone shall we face death. Nobody can ever peek inside thine soul. How much could one really share through shattered communications?"`,
   ],
   outcome: BATTLETREE.NOTHING,
 });
@@ -111,8 +112,8 @@ var no = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Not really",
   unlock: true,
   description: [
-    `$$TorturedSoul$: "I know, right..."`,
-    `$$TorturedSoul$: "This absurd world is devoid of meaning, and there is nothing us measly humans can do about it..."`,
+    `$$TorturedSoul$: "I grasp thy emotion..."`,
+    `$$TorturedSoul$: "This absurd universe is devoid of meaning, and there is naught that us measly humans could do about it..."`,
   ],
   function: function(){
     BATTLE.player_actions.empty(true);
@@ -127,8 +128,8 @@ var yeah = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Hum... yeah",
   unlock: true,
   description: [
-    `$$TorturedSoul$: "Good for you, I guess... Then you can't understand me. You're just deluding yourself."`,
-    `$$TorturedSoul$: "Just leave me to my woes. Everybody always does."`,
+    `$$TorturedSoul$: "Fine on thee, I suppose... Then thou cannot understand me. Thou are but deluding thyself."`,
+    `$$TorturedSoul$: "Do abandon me to my woes. Everybody always does."`,
   ],
   outcome: BATTLETREE.ESCAPE,
 });
@@ -137,7 +138,7 @@ PLAYER_ACTIONS.add({
   name: "Are you ok?",
   unlock: true,
   description: [
-    `$$TorturedSoul$: "Can anyone be okay in this shattered world? Are you?"`,
+    `$$TorturedSoul$: "Could anyone be content in this shattered realm? Would thou?"`,
   ],
   function: function(){
     yeah("Are you ok?");
@@ -213,5 +214,5 @@ make_attack(
 // ===================
 BATTLE.operations.start([
   `You find a young man wearing overly convoluted black velvety clothes brooding in a corner of the town. When he sees you, he pretends not to and starts reciting a poem to himself.`,
-  `$$TorturedSoul$: "Is there a loneliest place than a crowded city?"`,
+  `$$TorturedSoul$: "Is there a more lonesome location than a crowded borough?"`,
 ]);
