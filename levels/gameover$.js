@@ -74,7 +74,7 @@ options.push({"text": "Load", "effect": function(){ SAVE.print.load_menu(); }});
 options.push({"text": "New game", "effect": function(){ INTERFACE.start_game(); }});
 
 var flavortext = RANDOM.pick(
-  ["This is not how you die.",
+  ["This is not how it ends.",
   "This is not how it's supposed to be.",
   "There's another way.",
   "Your quest goes on."]);

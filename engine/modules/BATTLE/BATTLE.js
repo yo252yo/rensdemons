@@ -142,7 +142,11 @@ const BATTLE = {
       new BattleMenu("", BATTLE.turn_factory._order_player_actions(options));
     },
 
-    monster: function(text, dodge_difficulty) {
+    monster: function(text, dodge_difficulty, extra_function) {
+      if (extra_function){
+        extra_function();
+      }
+
       var array = text;
       if (!Array.isArray(text)){
         array = [text];
@@ -249,12 +253,12 @@ const BATTLE = {
   },
 
   monster_actions: {
-    add_textual: function(text, dodge_difficulty) {
+    add_textual: function(text, dodge_difficulty, extra_function) {
       if (dodge_difficulty) {
         DEBUG.battle_log.add([BATTLE.current_battle, "#ATTACKS"], dodge_difficulty);
       }
       BATTLE._monster_actions.push(
-       function() { BATTLE.turn_factory.monster(text, dodge_difficulty); }
+       function() { BATTLE.turn_factory.monster(text, dodge_difficulty, extra_function); }
       );
     },
 

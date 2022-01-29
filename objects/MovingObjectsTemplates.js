@@ -208,6 +208,8 @@ class M_TorturedSoul extends MovingObject {
     this.face_character();
     if(PARTY.has_member(PARTYMEMBERS.TorturedSoul)){
       new TextBanner(`$$TorturedSoul$: "There is nothing for people forsaken like me in this life. I might as well follow while waiting for death. Your doomed quest will surely bring me the end that I long for."`);
+    } else if( INVENTORY.count("_torturedSoulSteps") ){
+      BATTLE.api.make('_party/_TorturedSoul2');
     } else {
       BATTLE.api.make('_party/_TorturedSoul');
     }

@@ -32,7 +32,7 @@ const CREDITS = {
    <a href="https://twitter.com/wht_dragon" target="_blank">whtdragon</a>,
    <a href="https://forums.rpgmakerweb.com/index.php?threads/avys-mv-stuff.53317/" target="_blank">Avy</a>,
    <a href="https://bottled-up-studio.itch.io/" target="_blank">bottled-up</a>,
-   <a href="https://www.kenney.nl/" target="_blank">Kenney</a>, 
+   <a href="https://www.kenney.nl/" target="_blank">Kenney</a>,
    <a href="https://www.rpgmakerweb.com/products/rpg-maker-mv" target="_blank">RPG Maker MV</a>
    <br />
 
@@ -45,5 +45,17 @@ const CREDITS = {
    <a href="https://www.palemoon.org/" target="_blank">Pale Moon</a>
    <br />
 
+
+   <b>Fair use song lyrics brief quotation in the encounter in town of Acceptance</b>:
+   'Welcome to My Life' - Simple Plan,
+   'Boulevard of Broken Dreams' - Green Day,
+   'My Immortal' - Evanescence,
+   'Lonely Day' - System of a Down,
+   'Behind Blue Eyes' - Limp Bizkit,
+   'Numb' - Linkin Park,
+   'Everybody's Changing' - Keane,
+   <br />
+   <br />
+   <i>If you notice any attribution problem, contact me and I'll immediately fix it.</i>
    `,
  }
