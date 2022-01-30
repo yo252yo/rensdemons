@@ -7,11 +7,9 @@ RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander 
 >>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 >>protector is like why me im nobody etc...
 >>> no the goddess brought u to me, i was ordinary too before the goddess chose me
-im too old for this shit
 PARTY MEMBERS:
 
 >  description in party.js
->  attacks in langug,
 >  encounter+battle
 
  //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
@@ -20,10 +18,6 @@ PARTY MEMBERS:
 You have to guess his correct backsroey but all guesses are correct
 
 theres several sprites anyone you pick is good
-
-Mb enemy flee on sight / shake from his reputation
-
-Just when I thought u was out they pull me back in
 
 Before you I had no meaning I had lost my faith
 

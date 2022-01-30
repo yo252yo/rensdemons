@@ -377,7 +377,7 @@ LANGUAGE.actions[PARTYMEMBERS.TorturedSoul] = {
   },
   fail: function(){
     return RANDOM.pick([
-      `The $$&ENEMY$ laughs out loud at the lonely maverik. His dark demeanor did not impress them at all.`,
+      `The $$&ENEMY$ laughs out loud at the lonely maverick. His dark demeanor did not impress them at all.`,
       `The $$&ENEMY$ opens up to $$TorturedSoul$'s honnesty by sharing their own pain and worries. It just makes the depressed artist even sadder, and he has to withdraw to hide his tears.`,
       `The $$&ENEMY$ is unmoved by the overly sentimental display of the sad poet. They simply ignore him and keep attacking.`,
     ]);
@@ -387,6 +387,37 @@ LANGUAGE.actions[PARTYMEMBERS.TorturedSoul] = {
       `The $$&ENEMY$ listens intently to the lamenting complaints of $$TorturedSoul$. As the tortured soul discusses life and its meaning, it appears clear that the $$&ENEMY$ relates to $$TorturedSoul$'s hopelessness. Before long, the $$&ENEMY$ agrees fully and commiserates with the rebel. They conclude that suicide is the only reasonable answer to the absurdity of existence, and in a matter of seconds, the $$&ENEMY$ takes their own life.`,
       `$$TorturedSoul$'s blunt oversentimentality is too much to bear for the $$&ENEMY$. All this poetry talk of suicide and heart in pain makes them recoil in cringe. The second-hand embarrassment is very effective, and soon the $$&ENEMY$ cannot take anymore of this unceasing whining and runs away to avoid ever facing him again.`,
       `$$TorturedSoul$ opens his heart and shares his feeling to the $$&ENEMY$. They listen politely at first, but grow empathetical as the tales of woe slowly but surely engulfs their heart. The $$&ENEMY$ cannot ignore a suffering so intense that the poor man is even willing to take his own life. Filled with compassion, the $$&ENEMY$ shares $$TorturedSoul$'s pain, and becomes overwhelmed with existential despair. It becomes too intense for them to handle, and the $$&ENEMY$ falls sobbing on the ground, never to raise up again.`,
+    ]);
+  },
+};
+
+
+LANGUAGE.actions[PARTYMEMBERS.RetiredProtector] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.RetiredProtector)) + RANDOM.pick([
+      `$$RetiredProtector$ arrives on the battlefield. His every motion exudes mastery. No energy is wasted in his experienced stroll. The expert soldier takes a perfect stance and faces his enemy.`,
+      `The metallic noise of armor precedes $$RetiredProtector$ on the battleground. The retired tactician makes his way with a determined stride. Heads turn on his way, which he greets with a warm smile.`,
+      `$$RetiredProtector$ puts up his heavy armor and walks slowly but surely in your direction. He signals that he is ready to protect you and designate a safe location for you to stand. A few tactical directions given later, he's ready to face his enemy.`,
+    ]);
+    var dialog = RANDOM.pick([
+      `$$RetiredProtector$: "I'm getting too old for this kind of things..."`,
+      `$$RetiredProtector$: "Just when I had earned a peaceful retirement, I get pulled back in..."`,
+      `$$RetiredProtector$: "I used to be unmatched on the battlefields. Now I'm merely a shadow of my former self."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ is unimpressed by the mastery emanating from $$RetiredProtector$.`,
+      `Alas, $$RetiredProtector$ is starting to show his age. He is not as agile and quick as he used to be, and the $$&ENEMY$ quickly bests him.`,
+      `$$RetiredProtector$'s time tested tactics are no match for the new generation. Time has passed him by, and so $$&ENEMY$ triumphs.`,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      `The $$&ENEMY$ takes a moment to stare at $$RetiredProtector$. Suddenly, they recoil in shock. They have recognized the legendary warrior whose tales they have heard so many times. Realizing they do not stand a chance against a hero of this stature, the $$&ENEMY$ decides to save their own lives and run away cowardly.`,
+      `As soon as $$RetiredProtector$ walks on the battle grounds, the $$&ENEMY$ realizes who he is. How could they not? His reputation precedes him! The $$&ENEMY$ starts shaking in fear as countless tales of $$RetiredProtector$'s exploits come to mind. Tetanized by fear, the $$&ENEMY$ offers no resistance, and $$RetiredProtector$ has no problem slaying them.`,
+      `When $$RetiredProtector$ arrives, the $$&ENEMY$ is seized by surprised. Abandoning any aggressively, the $$&ENEMY$ prostrates themselves, explaining how they know of $$RetiredProtector$'s every exploits, and how much they admire him. $$RetiredProtector$ is embarassed but flatters, insisting that it was a long time ago, but the $$&ENEMY$ will not stop praising him. The only way to get rid of them ends up being a handshake and signing a memorabilia.`,
     ]);
   },
 };
