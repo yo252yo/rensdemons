@@ -328,6 +328,25 @@ class M_DumbMuscles extends MovingObject {
 }
 
 
+class M_RetiredProtector extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/RetiredProtector.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 10);
+  }
+
+  interaction = function() {
+    this.face_character();
+
+    var self = this;
+    var d = function(){
+      self.destroy();
+    }
+    BATTLE.api.make('_party/_RetiredProtector', d);
+  }
+}
+
+
 class M_DisguisedPrincess extends MovingObject {
   constructor(x, y) {
     var visual = new MovingSprite("assets/characters/party/DisguisedPrincess.png", 'obj_dark', 32, 48);

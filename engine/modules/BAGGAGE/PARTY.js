@@ -13,12 +13,12 @@ const PARTYMEMBERS = {
   DisguisedPrincess: "DisguisedPrincess",
   DumbMuscles: "DumbMuscles",
   TorturedSoul: "TorturedSoul",
+  RetiredProtector: "RetiredProtector",
 
 // todo:
   SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
  // town4 debauch
-  RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-  // town3
+
 
   isPartyMember: function(s){
     for (var i in PARTYMEMBERS){

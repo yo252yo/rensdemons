@@ -1,6 +1,33 @@
 # WIP
 
 
+# TOWN5 RetiredProtector  ----------------------------------------------------
+RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+// town5 acceptance
+>>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
+>>protector is like why me im nobody etc...
+>>> no the goddess brought u to me, i was ordinary too before the goddess chose me
+im too old for this shit
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
+ //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
+// town3
+
+You have to guess his correct backsroey but all guesses are correct
+
+theres several sprites anyone you pick is good
+
+Mb enemy flee on sight / shake from his reputation
+
+Just when I thought u was out they pull me back in
+
+Before you I had no meaning I had lost my faith
+
+It's as if I was born to serve you
+
+I feel like I wasn't Rly alive before I met you
+
+
 
 
 # MORE HEAVEN  ----------------------------------------------------
@@ -41,15 +68,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
 
-
-# TOWN5 RetiredProtector  ----------------------------------------------------
-RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-// town5 acceptance
->>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
->>protector is like why me im nobody etc...
->>> no the goddess brought u to me, i was ordinary too before the goddess chose me
-im too old for this shit
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
