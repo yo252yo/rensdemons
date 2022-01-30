@@ -1,34 +1,9 @@
 # WIP
 
 
+RetiredProtector  encounter battle
 
-# TOWN5 RetiredProtector  ----------------------------------------------------
->  encounter+battle +  description in party.js
 
-RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
->>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
->>protector is like why me im nobody etc...
->>> no the goddess brought u to me, i was ordinary too before the goddess chose me
-
- //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-// town3
-
-You have to guess his correct backsroey but all guesses are correct
-
-theres several sprites anyone you pick is good
-
-Before you I had no meaning I had lost my faith
-
-It's as if I was born to serve you
-
-I feel like I wasn't Rly alive before I met you
-
-No you're wrong...
-Oh yeah player you're right
-
-If u don't follow you ill stop existing
-
-PARTY.changeNickname(PARTYMEMBERS.DumbMuscles);
 
 
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
@@ -136,6 +111,7 @@ See 051_pandemonium_room and 012_trees
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - test on edge, epsecially functions starting by _, mb the nested ones
 - change color scheme doesnt change fog or map bg
+- Mb interaction per villager per summon
 - artifact have special sound effects
 - should we specify that starting a battle clears the timeline?
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
