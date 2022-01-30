@@ -12,7 +12,7 @@ class DictionaryGenerator {
     r[PARTYMEMBERS.PreciousChild] = MARKOV_MODELS.human_names.mutate("Honey", 5); // hope/genis/ed/hideyoshi/honey senpai
     r[PARTYMEMBERS.UpbeatDojikko] = MARKOV_MODELS.human_names.mutate("Asahina", 5); //  riku/yuffie/dojiko/asahina/phoebe
     r[PARTYMEMBERS.StreetSmart] = MARKOV_MODELS.human_names.mutate("Han", 5); //hansolo / Quistis / aladdin
-    r['han_dog'] = MARKOV_MODELS.human_names.mutate("Pachiko", 3);
+    r['han_dog'] = MARKOV_MODELS.human_names.mutate("Guffin", 5); //Pachiko
     r[PARTYMEMBERS.WiseOld] = MARKOV_MODELS.human_names.mutate("Gandalf", 5);
     r[PARTYMEMBERS.TraitorFisher] = MARKOV_MODELS.human_names.mutate("Judes", 5); //  traitor
     r[PARTYMEMBERS.SavageChild] = MARKOV_MODELS.human_names.mutate("Mowgli", 5); // Taiga//ametoyuki/toradora/mowgli/mononoke/razor
