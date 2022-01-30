@@ -28,16 +28,29 @@ class SpeakerIcon extends TextElement {
           return -120;
         case PARTYMEMBERS.DumbMuscles:
           return -100;
-        case PARTYMEMBERS.WiseOld: 
+        case PARTYMEMBERS.WiseOld:
           return -100;
         default:
           return -80;
       }
     }
 
+    get_y_offset(image_key) {
+      switch(image_key) {
+        case PARTYMEMBERS.RetiredProtector:
+          return -20;
+        default:
+          return -75;
+      }
+    }
+
     make_portrait(name) {
       var image_key;
       name = name.replaceAll("$","");
+      // We use this one trick because we need to be able to dynamically change the name during the fight
+      if (name == DICTIONARY.get(PARTYMEMBERS.RetiredProtector)){
+        name = PARTYMEMBERS.RetiredProtector;
+      }
       if (this.is_supported_speaker(name)){ // For now, only party members have icons
           image_key = name;
       }
@@ -47,7 +60,7 @@ class SpeakerIcon extends TextElement {
       }
       var div = document.getElementById("portrait_div");
       var v = new LayeredImage("assets/portraits_large/" + image_key + "_$.png", 300, 300, div);
-      v.shift(this.get_x_offset(image_key), -75);
+      v.shift(this.get_x_offset(image_key), this.get_y_offset(image_key));
       v.adjust_depth(10000);
     }
   }
