@@ -1,9 +1,6 @@
 # WIP
 
 
-RetiredProtector  encounter battle
-
-
 
 
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------

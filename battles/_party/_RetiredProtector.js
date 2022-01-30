@@ -11,16 +11,23 @@ var _RETIRE = '';
 
 var writebio = function(){
   DICTIONARY.set('RetiredProtector_bio', `
-    His brilliant qualities quickly earned him the title of best ${_ROLE} in the kingdom. He was admired by all for his strength in battle and his integrity, as he was always following his ${_MOTIVATION}. His successful career came at a cost, however, as ${_COST}.<br /><br />
+    His many qualities quickly earned him the title of best ${_ROLE} in the kingdom. He was admired by all for his strength in battle and his integrity, as he was always following his ${_MOTIVATION}. His successful career came at a cost, however, as ${_COST}.<br /><br />
     But the glory days could not last forever. When ${_RETIRE}, he decided to retire and withdraw from public life. He settled under a fake name in peaceful ${DICTIONARY.get("town_3")} and swore never to fight again.
   `);
 }
 
-var unlock_end = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "FINISH",
+var goddess = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Goddess",
   unlock: true,
   description: [
-    `...`,
+    `$$Ren$: "I'm not really sure. The Goddess brought you to me."`,
+    `$$Ren$: "In a way, it's a lot like me. I was just an ordinary child before She chose me too for this holy mission."`,
+    `$$Ren$: "She has a way to do that... Pick the perfect choice. Select a random undescript element and imbue it with meaning, make it special."`,
+    `$$Ren$: "I wasn't the Promised Child before she looked at me. You were not my protector until she looked at you. But with Her great powers... She changed us."`,
+    `$$RetiredProtector$: "You're right. After this conversation, I do feel changed. It feels like I never could have escaped this calling."`,
+    `$$RetiredProtector$: "A few hours ago, I was an old soul getting ready to die. I had lost my faith and my motivation. But you and the Goddess barged into my life, and now it feels like it was always meant to be. Like my story is not over."`,
+    `$$RetiredProtector$: "I'll follow you, kid. My blade is yours. The Goddess picked me through you, and made me alive again. The moment I turn away, I will stop existing."`,
+    "$$RetiredProtector$ joins your party!",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function() {
@@ -30,27 +37,26 @@ var unlock_end = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 
-/* TODO WIP
+var unlock_9_keys = ["30 years", "10 years", "15 years", "25 years"];
+var unlock_9 = function(from, name) {
+  var f = PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: name,
+    unlock: true,
+    description: [
+      `$$Ren$: "... ${name}. You retired ${name} years ago."`,
+      `$$RetiredProtector$ take a pause to think. He does mental math, counts on his fingers, and then looks at you with surprised.`,
+      `$$RetiredProtector$: "Well I'll be damned! You're right! It looks like you might now me better than I know myself..."`,
+      `$$Ren$: "The Goddess does. I'm just her vessel."`,
+      `$$RetiredProtector$: "Can I just ask, though. Why me? I know I used to be a great soldier, but I haven't fought in a long time! There's probably hundreds more qualified soldiers in the army. Heck, maybe even in this room. Why did you pick a random nobody like me?"`,
+    ],
+    function: function() {
+      BATTLE.player_actions.empty(true);
+      goddess(name);
+    },
+  });
+  f(from);
+}
 
-No you're wrong...
-Oh yeah player you're right
-
-
-
-By giving attention to an element you make it special and imbue it with meaning,
-ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
-protector is like why me im nobody etc...
-no the goddess brought u to me, i was ordinary too before the goddess chose me
-
-
-Before you I had no meaning I had lost my faith
-
-It's as if I was born to serve you
-
-I feel like I wasn't Rly alive before I met you
-
-If u don't follow you ill stop existing
-*/
 
 
 var unlock_8_keys = ["lost daughter", "dead liege", "inspiring master", "abandonned wife"];
@@ -82,15 +88,14 @@ var unlock_8 = function(from, key) {
       `After calming down, he looks at you sternly and asks.`,
       `$$RetiredProtector$: "Is there anything you don't know about me?"`,
       `For only answer, you give him a shy apologetic smile.`,
-      `$$RetiredProtector$: "You really have the Goddess on your side..."`,
+      `$$RetiredProtector$: "You really have the Goddess on your side... To this you can just come and pull me out, make me hold a sword for the first time in 20 years..."`,
+      `$$Ren$: "Actually, you're wrong, it has been..."`,
     ],
     function: function() {
       BATTLE.player_actions.empty(true);
-  /*    for (var k of unlock_8_keys){
-        unlock_8(name, k);
-      }*/
-      unlock_end(name);
-      // WIP TODO MORE
+      for (var k of unlock_9_keys){
+        unlock_9(name, k);
+      }
     },
   });
   f(from);
@@ -328,7 +333,7 @@ for(var n of names){
       unlock: true,
       description: [
         `$$Ren$: "...${name}?"`,
-        `${name}: "That's me, though it's a name I have not heard in a long time. I don't go by it anymore. What do you want, kid?"`,
+        `${name}: "I don't know how you found me, but yeah, that's me. Though it's a name I have not heard in a long time. I don't go by it anymore. What do you want, kid?"`,
       ],
       function: function() {
         BATTLE.player_actions.empty(true);

@@ -83,7 +83,7 @@ const PARTY = {
       case PARTYMEMBERS.RetiredProtector:
         return `${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} had a long brilliant carreer in the military.
                 ${DICTIONARY.get('RetiredProtector_bio')}
-                But some calls cannot be ignored, and so ${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} takes up once again the armor he had donned to protect you on your dangerous quest.`;
+                Yet, some calls cannot be ignored, and so ${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} takes up once again the armor he had donned to protect you on your dangerous quest.`;
       default:
         return "";
     }
