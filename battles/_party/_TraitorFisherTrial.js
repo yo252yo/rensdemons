@@ -13,7 +13,7 @@ var submit = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `You bow your neck, waiting for the impact.`,
     `You hear the whooshing sound of the scythe cutting through the water.`,
-    `And then $$TraitorFisher$ whispers in your ear:`,
+    `And then $$TraitorFisher$ whispers in your ear.`,
     `$$TraitorFisher$: "Quick, this is your chance, run away now! Be fast! The closest shore is to the south!"`,
   ],
   outcome: BATTLETREE.WIN,
@@ -120,7 +120,7 @@ PLAYER_ACTIONS.add({
   name: "... .-.. .- ...- .",
   unlock: STATS.flag("_sirens_language"),
   description: [
-    `As you alternate clicks and hisses, the crowd of merfolks grows silent and wide eyed. $$BestFriend$ stares at you with incredulity. The siren emissary shares the general disbelief:`,
+    `As you alternate clicks and hisses, the crowd of merfolks grows silent and wide eyed. $$BestFriend$ stares at you with incredulity. The siren emissary shares the general disbelief.`,
     `$$TraitorFisher$: "Who are you? How do you know our language? How are you so well learned in our laws?"`,
     `$$BestFriend$: "Yes, when did you learn that?"`,
   ],

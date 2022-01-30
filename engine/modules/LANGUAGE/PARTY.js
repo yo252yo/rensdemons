@@ -100,7 +100,7 @@ LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
 LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.StreetSmart)) + RANDOM.pick([
-      `$$StreetSmart$ makes a grand entrance, as usual. He looks at the $$&ENEMY$ mockingly and taunts with a sly smile:`,
+      `$$StreetSmart$ makes a grand entrance, as usual. He looks at the $$&ENEMY$ mockingly and taunts with a sly smile.`,
       `You need to be very convincing to persuade $$StreetSmart$ to help. Finally, after promising him a large share of the booty, he deigns come to your rescue.`,
       `Moved by the promise of a bribe, $$StreetSmart$ accepts to help. He looks around, gauging the terrain for his beasts, and then begins to work his talent.`]);
 
@@ -130,7 +130,7 @@ LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
 LANGUAGE.actions[PARTYMEMBERS.WiseOld] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.WiseOld)) + RANDOM.pick([
-      `$$WiseOld$ gets up painfully and walk slowly towards the $$&ENEMY$. After a moment of reflection, he says solemnly:`,
+      `$$WiseOld$ gets up painfully and walk slowly towards the $$&ENEMY$. After a moment of reflection, he says solemnly.`,
       `As usual, $$WiseOld$ struggles to make his way to the $$&ENEMY$ with his slow, elderly pace. The $$&ENEMY$ watches patiently, perplexed.`,
       `$$WiseOld$ closes his eyes and bows his head, as if entering a meditative trance. By some miracle, the $$&ENEMY$ does not react right away.`,
     ]);

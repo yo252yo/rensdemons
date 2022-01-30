@@ -39,7 +39,7 @@ var riddle = function(text, answer, destination){
   }
   return function() {
     TextBannerSequence.make([
-      `A heavy metal door stands before you. Runes and pictograms indicate that it expects you to speak out loud a password. Surprisingly, a part of the text is in a language you can decipher:`,
+      `A heavy metal door stands before you. Runes and pictograms indicate that it expects you to speak out loud a password. Surprisingly, a part of the text is in a language you can decipher.`,
       text
     ], ask);
   };

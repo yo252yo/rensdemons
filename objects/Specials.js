@@ -186,7 +186,7 @@ class S_SlimeDoor extends S_event {
     var letters = S_SlimeTip.get_full_letters(this.code);
     TextBannerSequence.make([
       `The wall is different here. In the middle of the rock, a flat sheet of metal is inscribed with runes and symbols. You summarize that it is expecting you to say some sort of password.`,
-      `You remember the carvings you have seen so far:`, `${tips}`, `${letters}`
+      `You remember the carvings you have seen so far.`, `${tips}`, `${letters}`
     ], function() { self.ask(); });
   }
 }

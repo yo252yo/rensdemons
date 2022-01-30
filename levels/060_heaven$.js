@@ -68,7 +68,7 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
       }
       TextBannerSequence.make([
         `As you deliver the final blow, the holy body of the Goddess starts to fragment into a myriad of tiny sparkly particles. As the shining grains begin to dissipate, you see for the first time the sacred body actually move.`,
-        `It's a very subtle motion. The Goddess' lips come very slightly apart, and you hear Her whisper:`,
+        `It's a very subtle motion. The Goddess' lips come very slightly apart, and you hear Her whisper.`,
         `Goddess: "Fool... You don't know anything..."`,
         `The cloud of luminous dust, sole remainder of the entity that ruled the universe, dissipates slowly into the air...`,
       ], callback);

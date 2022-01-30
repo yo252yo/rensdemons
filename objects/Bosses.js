@@ -131,7 +131,7 @@ class S_Maou extends SimpleObject {
       ABILITIES.unlock("_secret_ending_chosen");
       TextBannerSequence.make([
         `Unsure of what you're doing, you slowly nurse $$demon_lord$ back to life.`,
-        `When he regains consciousness, his face distort in a level of fear you've never seen on a demon before. Sweat runs down his forehead and he struggles to find his words. He grabs you, shakes you, and screams in a panicked voice:`,
+        `When he regains consciousness, his face distort in a level of fear you've never seen on a demon before. Sweat runs down his forehead and he struggles to find his words. He grabs you, shakes you, and screams in a panicked voice.`,
         `$$demon_lord$: "What the fuck have you done, kid! We're so screwed! She'll never forgive us!"`,
         `$$Ren$: "What... Who do you mean?"`,
         `$$demon_lord$: "The Goddess! She's more powerful than you can ever imagine! She transcends time, space and dimensions!"`,
@@ -148,9 +148,9 @@ class S_Maou extends SimpleObject {
         RANDOM.glitch(`Sobs turn into convulsions. It truly is a pathetic sight. Strident wails raise from the contorted muscular body.`, 0.04),
         `$$Ren$: "Focus! There may still be hope! I want to meet Her. Where is She?"`,
         `$$demon_lord$: "` + RANDOM.glitch(`Heaven! She's in Heaven, of course. She's always been near, but you couldn't see Her. It's pointless, though, you cannot survive Her wrath. We're doomed. This world has no point anymore, this life has no meaning. Please, oh, Mighty One, please spare little miserable me!`, 0.06) + `"`,
-        `$$demon_lord$ ` + RANDOM.glitch(`lets out a high pitched scream that pierces your ears. The whimper continues:`, 0.1),
+        `$$demon_lord$ ` + RANDOM.glitch(`lets out a high pitched scream that pierces your ears. The whimper continues.`, 0.1),
         `$$demon_lord$: "` + RANDOM.glitch(`She's here! She sees All! She's Everywhere! And She's angry at us! Oh please, please! Her reckoning has come! Please, let it stop! Kill me!`, 0.15) + `"`,
-        `Before you could do anything, you watch in horror as $$demon_lord$ burrows his fanged fingers deep within his chest and rips his body apart. Blood explodes in all directions as the massive lump of incandescent flesh crashes on the ground. $$demon_lord$ let out a final whisper:`,
+        `Before you could do anything, you watch in horror as $$demon_lord$ burrows his fanged fingers deep within his chest and rips his body apart. Blood explodes in all directions as the massive lump of incandescent flesh crashes on the ground. $$demon_lord$ let out a final whisper.`,
         `$$demon_lord$: "Forgive me, Mother! I failed you!"`,
       ], afterSecretEnd);
     }

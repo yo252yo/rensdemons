@@ -169,7 +169,7 @@ var unlock_nobody = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: [`$$Ren$: "I'm nobody, really. Who are you?"`,
-                `$$GeniusProdigy$ thinks for a while, completely oblivious to your question. He then shakes his head:`,
+                `$$GeniusProdigy$ thinks for a while, completely oblivious to your question. He then shakes his head.`,
                 `$$GeniusProdigy$: "No, sorry, I can't accept this answer. You guessing my first name is an incredibly unlikely event. It demands an explanation equaly exceptional."`,
                 ],
 });

@@ -80,8 +80,8 @@ var remember = function(cause){
 }
 
 var euthanasia_consequences = function(cause){
-  quick_action(cause, remember, "What will happen to you?", [`$$Ren$: "I guess I'll just finally die...`, `$$Ren$ hesistates and then asks, embarassed:`, `$$Ren$: "Will you remember me when I'm gone?"`]);
-  quick_action(cause, remember, "I don't want to kill you", [`$$Ren$: "There's no other way, this universe is doomed. Just give me peace, at last."`, `$$Ren$ hesistates and then asks, embarassed:`, `$$Ren$: "Will you remember me when I'm gone?"`]);
+  quick_action(cause, remember, "What will happen to you?", [`$$Ren$: "I guess I'll just finally die...`, `$$Ren$ hesistates and then asks, embarassed.`, `$$Ren$: "Will you remember me when I'm gone?"`]);
+  quick_action(cause, remember, "I don't want to kill you", [`$$Ren$: "There's no other way, this universe is doomed. Just give me peace, at last."`, `$$Ren$ hesistates and then asks, embarassed.`, `$$Ren$: "Will you remember me when I'm gone?"`]);
 }
 
 var euthanasia_instructions = [`$$Ren$: "Whatever you did to create this prison, just do the opposite. Stop watching me, turn off your portal... I don't know... Please stop toying with me, stop torturing me, just let me die..."`, `Tears start flowing on $$Ren$'s face as all the hardships encountered come to mind.`];
@@ -115,7 +115,7 @@ var help = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var reaction = function(cause){
-  var cue = [`$$Ren$ pauses, hesitating to say something. That's obviously meaningless, because you can read the child's thoughts. Eventually, $$Ren$ speaks timidly:`,`$$Ren$: "You're so powerful... and you're outside my universe... can you help me?"`];
+  var cue = [`$$Ren$ pauses, hesitating to say something. That's obviously meaningless, because you can read the child's thoughts. Eventually, $$Ren$ speaks timidly.`,`$$Ren$: "You're so powerful... and you're outside my universe... can you help me?"`];
   quick_action(cause, help, "Me neither", cue);
   quick_action(cause, help, "I'm glad I met you", cue);
   quick_action(cause, help, "It blows my mind too", cue);
