@@ -33,6 +33,7 @@ class DictionaryGenerator {
     r['child_friends_m1'] = 'Michael';
     r['child_friends_f1'] = 'Sarah';
     r['child_friends_f2'] = 'Emily';
+    r['RetiredProtector_bio'] = '';
 
     // Geography names
     r['mushroom_adj'] = camel(RANDOM.grab(DATASETS.propaganda_adjectives));

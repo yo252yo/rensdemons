@@ -11,7 +11,7 @@ AUDIO.music.characters.RetiredProtector();
 //hack C. EXIT
 // ===================
 
-new S_WoodFloor(1775,2300,550,550);
+new S_WoodFloor(1775,2300,500,500);
 var exit = new S_ExitFloor(1950,2325,150,50, "040_town3");
 
 // ===================
@@ -32,7 +32,7 @@ filler.add_default_constructor("M_RetiredProtector");
 filler.fill_floor_by_retry();
 
 filler.clear();
-filler.set_tries(15, 20);
+filler.set_tries(25, 30);
 filler.add_default_constructor("B_Bucket");
 filler.add_default_constructor("B_Table");
 filler.add_default_constructor("B_Jar");

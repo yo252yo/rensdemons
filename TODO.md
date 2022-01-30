@@ -1,16 +1,14 @@
 # WIP
 
 
+
 # TOWN5 RetiredProtector  ----------------------------------------------------
+>  encounter+battle +  description in party.js
+
 RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
-// town5 acceptance
 >>?? By giving attention to an element you make it special and imbue it with meaning, ie le rôle du mec qui n'a pas de rôle. you create your universe, quantum observer effect, yada yada
 >>protector is like why me im nobody etc...
 >>> no the goddess brought u to me, i was ordinary too before the goddess chose me
-PARTY MEMBERS:
-
->  description in party.js
->  encounter+battle
 
  //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town3
@@ -30,7 +28,31 @@ Oh yeah player you're right
 
 If u don't follow you ill stop existing
 
+PARTY.changeNickname(PARTYMEMBERS.DumbMuscles);
 
+
+# TOWN4 SNOBRICH MANOR  ----------------------------------------------------
+SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
+// town4 debauch
+>> lost something important, you help them by going in an out and it respawns??
+>> special vision to see interactibles
+>> you can loot everything and nobody complains << useful to get rigch!
+>> All that stuff about looting objects, going into ppl houses etc
+>> You always start by dead end for treasures
+>> when i wake up somewhere i immediately proceed to loot everything
+>> Stuff resets when you exist and come back
+>>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
+PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+
+
+# GRAPHIC REWORK  ----------------------------------------------------
+DRAW BUILDINGS FOR CASERN AND MANOR
+- audit from >= first town mb use szadi for houses
+- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
+- object/buildings: need better buildings and differnt building styles for different cities?
+- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
+- decorate stores
+- the treasure battler should probs be closed
 
 # MORE HEAVEN  ----------------------------------------------------
 
@@ -70,28 +92,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
 
-
-# TOWN4 SNOBRICH MANOR  ----------------------------------------------------
-SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
-// town4 debauch
->> lost something important, you help them by going in an out and it respawns??
->> special vision to see interactibles
->> you can loot everything and nobody complains << useful to get rigch!
->> All that stuff about looting objects, going into ppl houses etc
->> You always start by dead end for treasures
->> when i wake up somewhere i immediately proceed to loot everything
->> Stuff resets when you exist and come back
->>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
-
-
-# GRAPHIC REWORK  ----------------------------------------------------
-- audit from >= first town mb use szadi for houses
-- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-- object/buildings: need better buildings and differnt building styles for different cities?
-- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
-- decorate stores
-- the treasure battler should probs be closed
 
 # TROPES  ----------------------------------------------------
 - add comment about how anything can fit in my bags

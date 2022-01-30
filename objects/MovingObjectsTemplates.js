@@ -342,7 +342,22 @@ class M_RetiredProtector extends MovingObject {
     var d = function(){
       self.destroy();
     }
-    BATTLE.api.make('_party/_RetiredProtector', d);
+
+    if (PARTY.has_member(PARTYMEMBERS.RetiredProtector)){
+      new TextBannerRandom([
+        `Ex-soldier: "I'm just having a peaceful retirement in this lovely town."`,
+        `Ex-soldier: "Up for a game of cards?"`,
+        `Ex-soldier: "I'm so glad the war is over."`,
+        `Ex-soldier: "I can't imagine a better place to enjoy the rest of my days."`,
+        `Ex-soldier: "I loved battles, but I have to admit safety is much better."`,
+        `Ex-soldier: "Since fighting is over, I've taken up gardening."`,
+        `Ex-soldier: "If there's no danger, there's no need for soldiers!"`,
+        `Ex-soldier: "I think this place used to be a casern. Now it's just our hangout spot."`,
+        `Ex-soldier: "I don't know what this place used to be, but now it's where the men of the village gather to have some fun."`,
+      ]);
+    } else {
+      BATTLE.api.make('_party/_RetiredProtector', d);
+    }
   }
 }
 

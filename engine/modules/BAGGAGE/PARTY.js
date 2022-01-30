@@ -80,6 +80,10 @@ const PARTY = {
       case PARTYMEMBERS.TorturedSoul:
         return `${DICTIONARY.get(PARTYMEMBERS.TorturedSoul)}'s past is dark, full of traumas secrets. Nobody really knows the hardships the poet had to go through that left him forever scarred, but it is assumed that it might have something to do with chickens. In any case, the weight of that somber history is visible on art. And his face. And his gestures. And his clothes. He is not one to hide the feelings of suffering that swallow his soul.<br /><br />
                 In a hostile nonsensical world, suicide seemed to ${DICTIONARY.get(PARTYMEMBERS.TorturedSoul)} as the only way to end his pain. But none of his attempts were successful. He got intrigued by your peculiar relationship to death, and decided to stick to your side, partly out of morbid curiosity, partly following his death wish that your impossible quest was bound to fulfill.`;
+      case PARTYMEMBERS.RetiredProtector:
+        return `${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} had a long brilliant carreer in the military that earned him a comfortable retirement.
+                ${DICTIONARY.get('RetiredProtector_bio')}
+                But some calls cannot be ignored, and so ${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} took up once again the armor he had donned to protect you on your dangerous quest.`;
       default:
         return "";
     }
