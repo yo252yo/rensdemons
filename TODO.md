@@ -8,7 +8,11 @@ RetiredProtector: "RetiredProtector", //  Retired or rebel military / commander 
 >>protector is like why me im nobody etc...
 >>> no the goddess brought u to me, i was ordinary too before the goddess chose me
 im too old for this shit
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+PARTY MEMBERS:
+
+>  description in party.js
+>  attacks in langug,
+>  encounter+battle
 
  //  Retired or rebel military / commander / hardboiled warrior / vailiant protector   tactitian
 // town3
@@ -27,6 +31,10 @@ It's as if I was born to serve you
 
 I feel like I wasn't Rly alive before I met you
 
+No you're wrong...
+Oh yeah player you're right
+
+If u don't follow you ill stop existing
 
 
 

@@ -367,7 +367,7 @@ LANGUAGE.actions[PARTYMEMBERS.TorturedSoul] = {
     var dialog = RANDOM.pick([
       `$$TorturedSoul$: "We never really heal. We only acclimate to affliction."`,
       `$$TorturedSoul$: "What is silence but another expression for my endless suffering..."`,
-      `$$TorturedSoul$: "I offer my blood as libation to herald my pledge that this is not a phase. Black is my true color."`,
+      `$$TorturedSoul$: "I offer my blood as libation to seal this pact and herald my pledge that this is not a phase. Black is my true color."`,
       `$$TorturedSoul$: "The scars thou cannot see are the toughest to regenerate. I shall douse thee in the abyss of misery that is my bleeding bosom."`,
       `$$TorturedSoul$: "Plead that I do not spare thee, for surviving is oft more dolorous than passing."`,
       `$$TorturedSoul$: "How many times can thine heart shatter until there’s naught left to be broken?`,
