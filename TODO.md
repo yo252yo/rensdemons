@@ -14,7 +14,11 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
  when i wake up somewhere i immediately proceed to loot everything
 Stuff resets when you exist and come back
  sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
-PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
+PARTY MEMBERS:
+
+ >  description in party.js
+ >  attacks in langug,
+ >  encounter+battle
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
@@ -50,6 +54,8 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 - make the buildings/sprites/etc... say NOT READY or smhting
+- make herald a character in NG+ ?
+
 
 
 # OPTIONAL CONTENT  ----------------------------------------------------

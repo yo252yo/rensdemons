@@ -14,11 +14,7 @@ const PARTYMEMBERS = {
   DumbMuscles: "DumbMuscles",
   TorturedSoul: "TorturedSoul",
   RetiredProtector: "RetiredProtector",
-
-// todo:
-  SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
- // town4 debauch
-
+  SnobRich: "SnobRich",
 
   isPartyMember: function(s){
     for (var i in PARTYMEMBERS){
@@ -84,6 +80,8 @@ const PARTY = {
         return `${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} had a long brilliant career in the military.
                 ${DICTIONARY.get('RetiredProtector_bio')}
                 Yet, some calls cannot be ignored, and so ${DICTIONARY.get(PARTYMEMBERS.RetiredProtector)} takes up once again the armor he had donned to protect you on your dangerous quest.`;
+      case PARTYMEMBERS.SnobRich:
+        return `...TODO WIP`;
       default:
         return "";
     }

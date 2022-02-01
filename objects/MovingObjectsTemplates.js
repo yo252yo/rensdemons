@@ -327,6 +327,28 @@ class M_DumbMuscles extends MovingObject {
   }
 }
 
+class M_SnobRich extends MovingObject {
+  constructor(x, y) {
+    var visual = new MovingSprite("assets/characters/party/SnobRich.png", 'obj_dark', 32, 48);
+    super(visual, x, y, 32, 48);
+    this.adjust_hitbox(5, 0, 20, 10);
+
+    if(PARTY.has_member(PARTYMEMBERS.SnobRich) ){
+      this.destroy();
+    }
+  }
+
+  interaction = function() {
+    this.face_character();
+  /*  if (ABILITIES.has_ability("_followedByDumbMuscles")){
+      TextBannerSequence.make([
+        `$$DumbMuscles$: "You can count on me, mate. I'll follow you anywhere!"`,
+      ]);
+    } else {*/
+      BATTLE.api.make('_party/_SnobRich');
+  //  }
+  }
+}
 
 class M_RetiredProtector extends MovingObject {
   constructor(x, y) {

@@ -311,9 +311,9 @@ class S_Manor extends S_LayeredBuilding {
       "This villa is bigger and more sumptuous than the others.",
     );
     this.add_layer("details");
-    this.add_door(130, 170, function(){
+/*    this.add_door(130, 170, function(){
       CURRENTLEVEL.setup("027_manor");
-    });
+    });*/
     this.adjust_hitbox(10,0,275,120);
   }
 }

@@ -421,3 +421,26 @@ LANGUAGE.actions[PARTYMEMBERS.RetiredProtector] = {
     ]);
   },
 };
+
+
+LANGUAGE.actions[PARTYMEMBERS.SnobRich] = {
+  usage: function(){
+    var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.SnobRich)) + RANDOM.pick([
+      ``,
+    ]);
+    var dialog = RANDOM.pick([
+      `$$SnobRich$: "..."`,
+    ]);
+    return [text, dialog];
+  },
+  fail: function(){
+    return RANDOM.pick([
+      ``,
+    ]);
+  },
+  win: function(){
+    return RANDOM.pick([
+      ``,
+    ]);
+  },
+};

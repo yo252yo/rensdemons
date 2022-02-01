@@ -23,6 +23,7 @@ new S_Store(CITIES.indulgence, ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 16
 new S_Manor(2525,1150);
 
 new M_FemmeFatale(2125, 1125);
+new M_SnobRich(2725, 1175);
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
