@@ -29,7 +29,6 @@ BESTIARY = {
   },
 
   introed: function(battle_name) {
-    console.log(battle_name);
     var split = battle_name.split("/");
     if (split.length < 2 || ! BESTIARY.dict[split[split.length-2]]){
       return undefined;

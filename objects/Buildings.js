@@ -191,7 +191,7 @@ class S_LayeredBuilding extends LevelObject {
   add_layer(modifier) {
     var visual = new StaticSprite("assets/objects/buildings/" + this.name + "_" + modifier +".png", 'obj_light');
     visual.specify_sprite_size(this.w, this.h);
-    var object = new LevelObject(visual, this.x, this.y+(this.layers.length));
+    var object = new LevelObject(visual, this.x, this.y+(0.1 * this.layers.length));
     this.layers.push(object);
   }
 
@@ -223,10 +223,26 @@ class S_LayeredBuilding extends LevelObject {
 
 class S_House extends S_LayeredBuilding {
   constructor(type, x, y, seed) {
-    super("house", x, y, 120, 157,
-      "It's a house, but this is not the entrance."
-    );
-    this.add_layer("windows");
+    switch(type){
+      case CITIES.fear:
+        var description = "This house looks fierce and unwelcoming. The spikes coming out of the roof and walls speak volumes about its hostility. You cannot even peek through the thin slits that serve as windows.";
+        break;
+      case CITIES.hope:
+        var description = "A welcoming house covered with flowers and plants. Their fruity aroma puts you in a good mood. The door is half open, inviting you in.";
+        break;
+      case CITIES.indulgence:
+        var description = "This house has no door or window, only open holes from which escapes loud conversation, occasional music and sometimes more adult noises. You hear the clinging of bottles, and people vehemently pressuring you to come in.";
+        break;
+      case CITIES.acceptance:
+        var description = "This house shows its wear. It has not been maintained in a while. Stones are covered in moss, some of them are missing.";
+        break;
+      case CITIES.denial:
+        var description = "A very normal looking house. Nothing unusual about it. Absolutely nothing stands out as suspicious. It is as normal as a house can ever be. The shutters are closed.";
+        break;
+    }
+    super("house", x, y, 120, 157, description);
+    this.add_layer(type);
+    this.add_layer(type + "_windows");
     this.add_door(40, 80, function(){
       GENERATEDLEVELS.house.setup(type, seed);
     });
@@ -235,11 +251,12 @@ class S_House extends S_LayeredBuilding {
 }
 
 class S_Store extends S_LayeredBuilding {
-  constructor(type, threshold, x, y, seed) {
+  constructor(city, type, threshold, x, y, seed) {
     super("house", x, y, 120, 157,
       `This place specializes in the way of the ${type}. You wonder what you could learn or purchase inside...`
     );
     this.add_layer("store");
+    this.add_layer(city);
     this.add_door(40, 80, function(){
       GENERATEDLEVELS.store.setup(type, threshold, seed);
     });
@@ -250,7 +267,7 @@ class S_Store extends S_LayeredBuilding {
 class S_Church extends S_LayeredBuilding {
   constructor(x, y, inside_lvl){
     super("church", x, y, 166, 347,
-      "It's a temple, but this is not the entrance."
+      "In every city, the temple is a beacon welcoming both devout villagers and wandering pilgrims."
     );
     this.add_layer("details");
     if(inside_lvl){

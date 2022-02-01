@@ -6,10 +6,10 @@ var gen = new Generator(DICTIONARY.get("world_seed")*2);
 new S_TownFloor(1050, 1650, 600, 600, "demo/world_map");
 new S_Church(1450, 1500, "demo/church");
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1070, 1150, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 1220, 1150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 1370, 1150, gen.get());
-new S_Store(ABILITIES_ARCHETYPES_NAMES.Element, 500, 1520, 1150, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1070, 1150, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 200, 1220, 1150, gen.get());
+new S_Store(CITIES.hope, ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 1370, 1150, gen.get());
+new S_Store(CITIES.hope, ABILITIES_ARCHETYPES_NAMES.Element, 500, 1520, 1150, gen.get());
 
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 1625, 550, 550);

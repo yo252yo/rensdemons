@@ -17,8 +17,8 @@ new S_TownFloor(1050, 3050, 2000, 2000, "010_world_map");
 // ===================
 new S_Church(1950, 2050, "040_church3");
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 100000, 1225, 1350, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100000, 2600, 1525, gen.get());
+new S_Store(CITIES.denial, ITEMS_ARCHETYPES_NAMES.Weapon, 100000, 1225, 1350, gen.get());
+new S_Store(CITIES.denial, ITEMS_ARCHETYPES_NAMES.Tool, 100000, 2600, 1525, gen.get());
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)

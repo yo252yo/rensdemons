@@ -17,9 +17,9 @@ new S_Church(1700, 1750, "020_church2");
 
 new S_Castle(1075, 1425);
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 500, 2200, 1300, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 200, 2225, 2225, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Weapon, 500, 2200, 1300, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Tool, 200, 2225, 2225, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get());
 
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)

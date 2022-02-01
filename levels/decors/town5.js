@@ -18,9 +18,9 @@ new S_Church(1850, 1775, "022_church5$");
 
 new S_Casern(1725, 2475);
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 100000, 1625, 1700, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100000, 1175, 2050, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 100000, 1375, 1225, gen.get());
+new S_Store(CITIES.acceptance, ITEMS_ARCHETYPES_NAMES.Weapon, 100000, 1625, 1700, gen.get());
+new S_Store(CITIES.acceptance, ITEMS_ARCHETYPES_NAMES.Tool, 100000, 1175, 2050, gen.get());
+new S_Store(CITIES.acceptance, ITEMS_ARCHETYPES_NAMES.Alchemy, 100000, 1375, 1225, gen.get());
 
 
 new M_TorturedSoul(1075, 2550);

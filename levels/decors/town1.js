@@ -17,10 +17,10 @@ new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
 
 new S_Church(1450, 1400, "004_trial_end");
 
-new S_Store(ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1700, 1175, gen.get());
-new S_Store(ITEMS_ARCHETYPES_NAMES.Tool, 100, 1850, 1225, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1700, 1175, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 100, 1850, 1225, gen.get());
 
-var s = new S_Store("Occult", 0, 1150, 1950, gen.get());
+var s = new S_Store(CITIES.hope, "Occult", 0, 1150, 1950, gen.get());
 s.enter = function() {
   CURRENTLEVEL.setup("006_occultshop$");
 };
