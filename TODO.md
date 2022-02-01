@@ -6,14 +6,15 @@
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
->> lost something important, you help them by going in an out and it respawns??
->> special vision to see interactibles
->> you can loot everything and nobody complains << useful to get rigch!
->> All that stuff about looting objects, going into ppl houses etc
->> You always start by dead end for treasures
->> when i wake up somewhere i immediately proceed to loot everything
->> Stuff resets when you exist and come back
->>> sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
+
+ lost something important, you help them by going in an out and it respawns??
+ special vision to see interactibles
+ you can loot everything and nobody complains << useful to get rigch!
+ All that stuff about looting objects, going into ppl houses etc
+ You always start by dead end for treasures
+ when i wake up somewhere i immediately proceed to loot everything
+Stuff resets when you exist and come back
+ sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
 PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+battle
 
 
