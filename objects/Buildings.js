@@ -12,7 +12,6 @@ const CITIES = {
 }
 
 
-
 class S_Floor extends LevelObject {
   constructor(x, y, w, h, color, texture){
     if (!color){
@@ -40,7 +39,6 @@ class S_Floor extends LevelObject {
     return -1;
   }
 }
-
 
 class S_WoodFloor extends S_Floor {
   constructor(x, y, w, h) {
@@ -124,7 +122,6 @@ class S_AntiFloor extends S_Floor {
   }
 }
 
-
 class S_SeaFloor extends S_Floor {
   constructor(x, y, w, h) {
     super(x, y, w, h, 'obj_dark', "assets/patterns/sea.png");
@@ -174,6 +171,56 @@ class S_TownFloor extends S_Floor {
   }
 }
 
+
+
+
+class S_LayeredBuilding extends LevelObject {
+  constructor(name, x, y, w, h, description){
+    var visual = new StaticSprite("assets/objects/buildings/" + name + "_base.png", 'obj_dark');
+    visual.specify_sprite_size(w, h);
+    super(visual, x, y);
+    this.layers = [];
+    this.describe = this.text_interaction([description]);
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.name = name;
+  }
+
+  add_layer(modifier) {
+    var visual = new StaticSprite("assets/objects/buildings/" + this.name + "_" + modifier +".png", 'obj_light');
+    visual.specify_sprite_size(this.w, this.h);
+    var object = new LevelObject(visual, this.x, this.y+(this.layers.length));
+    this.layers.push(object);
+  }
+
+  add_door(from, to, enter_function) {
+    this.enter_function = enter_function;
+    var self = this;
+    this.character_can_enter = function() {
+      var dx = (CHARACTER.get().x + 15 - self.x);
+      var dy = (CHARACTER.get().y - self.y);
+      return (dx > from && dx < to && dy > 0);
+    }
+  }
+
+  interaction(){
+    if (this.character_can_enter() && this.enter_function){
+      this.enter_function();
+    } else if (this.describe) {
+      this.describe();
+    }
+  }
+
+  destroy() {
+    for(var layer of this.layers) {
+      layer.destroy();
+    }
+    super.destroy();
+  }
+}
+
 class S_building extends LevelObject {
   constructor(x, y, w, h, type){
     var visual = new StaticSprite("assets/objects/buildings/" + type + ".png", 'obj_dark');
@@ -183,65 +230,30 @@ class S_building extends LevelObject {
   }
 }
 
-class S_EnterableBuilding extends LevelObject {
-  constructor(visual, x, y) {
-    var base = new S_building(x, y-1, 120, 157, "building");
-    super(visual, x, y);
-    this.base = base;
-  }
 
-  character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x);
-    var dy = (CHARACTER.get().y - this.y);
-    return (dx > 40 && dx < 80 && dy > 0);
-  }
-
-  interaction(){
-    if (this.character_can_enter() && this.enter){
-      this.enter();
-    } else if (this.describe) {
-      this.describe();
-    }
-  }
-
-  destroy() {
-    this.base.destroy();
-    super.destroy();
-  }
-}
-
-class S_House extends S_EnterableBuilding {
+class S_House extends S_LayeredBuilding {
   constructor(type, x, y, seed) {
-    var visual = new StaticSprite("assets/objects/buildings/house.png", 'obj_light');
-    super(visual, x, y);
-    this.seed = seed;
-    this.type = type;
-
-    this.describe = this.text_interaction([
-      "It's a house, but this is not the entrance.",
-    ], seed);
-  }
-
-  enter() {
-    GENERATEDLEVELS.house.setup(this.type, this.seed);
+    super("house", x, y, 120, 157,
+      "It's a house, but this is not the entrance."
+    );
+    this.add_layer("windows");
+    this.add_door(40, 80, function(){
+      GENERATEDLEVELS.house.setup(type, seed);
+    });
+    this.adjust_hitbox(0,0,120,90);
   }
 }
 
-class S_Store extends S_EnterableBuilding {
+class S_Store extends S_LayeredBuilding {
   constructor(type, threshold, x, y, seed) {
-    var visual = new StaticSprite("assets/objects/buildings/store.png", 'obj_light');
-    super(visual, x, y);
-    this.type = type;
-    this.seed = seed;
-    this.threshold = threshold;
-
-    this.describe = this.text_interaction([
-      `This place specializes in the way of the ${this.type}. You wonder what you could learn or purchase inside...`,
-    ], seed);
-  }
-
-  enter() {
-    GENERATEDLEVELS.store.setup(this.type, this.threshold, this.seed);
+    super("house", x, y, 120, 157,
+      `This place specializes in the way of the ${type}. You wonder what you could learn or purchase inside...`
+    );
+    this.add_layer("store");
+    this.add_door(40, 80, function(){
+      GENERATEDLEVELS.store.setup(type, threshold, seed);
+    });
+    this.adjust_hitbox(0,0,120,90);
   }
 }
 
