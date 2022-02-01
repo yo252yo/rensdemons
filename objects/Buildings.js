@@ -221,16 +221,6 @@ class S_LayeredBuilding extends LevelObject {
   }
 }
 
-class S_building extends LevelObject {
-  constructor(x, y, w, h, type){
-    var visual = new StaticSprite("assets/objects/buildings/" + type + ".png", 'obj_dark');
-    visual.specify_sprite_size(w, h);
-    super(visual, x, y);
-    this.adjust_hitbox(0,0,120,90);
-  }
-}
-
-
 class S_House extends S_LayeredBuilding {
   constructor(type, x, y, seed) {
     super("house", x, y, 120, 157,
@@ -257,161 +247,59 @@ class S_Store extends S_LayeredBuilding {
   }
 }
 
-class S_Church extends LevelObject {
+class S_Church extends S_LayeredBuilding {
   constructor(x, y, inside_lvl){
-    var base = new S_building(x, y-1, 0, 0, "church");
-    base.make_walkable(true);
-    var visual = new StaticSprite("assets/objects/buildings/church2.png", 'obj_light');
-    visual.specify_sprite_size(166, 347);
-    super(visual, x, y);
-    this.adjust_hitbox(0,0,170,200);
-    this.inside = inside_lvl;
-    this.base = base;
-
-    this.default_text = this.text_interaction([
-      "It's a temple, but this is not the entrance.",
-    ]);
-  }
-
-  character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 175;
-    var dy = (CHARACTER.get().y - this.y);
-    return (dx > 0.3 && dx < 0.7 && dy > 0);
-  }
-
-  interaction(){
-    if (this.inside && this.character_can_enter()){
-      CURRENTLEVEL.setup(this.inside);
-    } else {
-      this.default_text();
+    super("church", x, y, 166, 347,
+      "It's a temple, but this is not the entrance."
+    );
+    this.add_layer("details");
+    if(inside_lvl){
+      this.add_door(50, 115, function(){
+        CURRENTLEVEL.setup(inside_lvl);
+      });
     }
-  }
-
-  destroy() {
-    this.base.destroy();
-    super.destroy();
+    this.adjust_hitbox(0,0,165,200);
   }
 }
 
-class S_Castle extends LevelObject {
-  constructor(x, y, inside_lvl){
-    var base = new S_building(x, y-1,0,0, "castle");
-    base.make_walkable(true);
-    var visual = new StaticSprite("assets/objects/buildings/castle2.png", 'obj_light');
-    visual.specify_sprite_size(485, 432);
-    super(visual, x, y);
-    this.adjust_hitbox(10,0,460,300);
-    this.base = base;
-
-    this.default_text = this.text_interaction([
-      "It's the royal castle.",
-    ]);
-
-  }
-
-  character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
-    var dy = (CHARACTER.get().y - this.y);
-    console.log(dx);
-    return (dx > 0.45 && dx < 0.65 && dy > 0);
-  }
-
-  interaction(){
-    if (this.character_can_enter()){
+class S_Castle extends S_LayeredBuilding {
+  constructor(x, y){
+    super("castle", x, y, 485, 432,
+      "The royal castle towers over the city with its massive dark silhouette."
+    );
+    this.add_layer("details");
+    this.add_door(200, 280, function(){
       CURRENTLEVEL.setup("026_castle");
-    } else {
-      this.default_text();
-    }
-  }
-
-  destroy() {
-    this.base.destroy();
-    super.destroy();
+    });
+    this.adjust_hitbox(10,0,460,300);
   }
 }
 
-
-
-
-
-class S_Casern extends LevelObject {
-  constructor(x, y, inside_lvl){
-    var base = new S_building(x, y-1,0,0, "casern");
-    base.make_walkable(true);
-    var visual = new StaticSprite("assets/objects/buildings/casern2.png", 'obj_light');
-    visual.specify_sprite_size(250, 160);
-    super(visual, x, y);
-    this.adjust_hitbox(10,0,240,100);
-    this.base = base;
-
-    this.default_text = this.text_interaction([
+class S_Casern extends S_LayeredBuilding {
+  constructor(x, y){
+    super("casern", x, y, 250, 160,
       "This heavy building looks like it has seen better days. It seems to be some sort of military facility",
-    ]);
-
-  }
-
-  character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
-    var dy = (CHARACTER.get().y - this.y);
-    console.log(dx);
-    return (dx > 0.45 && dx < 0.65 && dy > 0);
-  }
-
-  interaction(){
-    if (this.character_can_enter()){
+    );
+    this.add_layer("details");
+    this.add_door(110, 140, function(){
       CURRENTLEVEL.setup("028_casern");
-    } else {
-      this.default_text();
-    }
-  }
-
-  destroy() {
-    this.base.destroy();
-    super.destroy();
+    });
+    this.adjust_hitbox(0,0,250,100);
   }
 }
 
-
-
-
-
-class S_Manor extends LevelObject {
-  constructor(x, y, inside_lvl){
-    var base = new S_building(x, y-1,0,0, "manor");
-    base.make_walkable(true);
-    var visual = new StaticSprite("assets/objects/buildings/manor2.png", 'obj_light');
-    visual.specify_sprite_size(300, 240);
-    super(visual, x, y);
-    this.adjust_hitbox(10,0,280,100);
-    this.base = base;
-
-    this.default_text = this.text_interaction([
-      "This villa is bigger and more somptuous than the others.",
-    ]);
-
-  }
-
-  character_can_enter(){
-    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
-    var dy = (CHARACTER.get().y - this.y);
-    console.log(dx);
-    return (dx > 0.35 && dx < 0.5 && dy > 0);
-  }
-
-  interaction(){
-    if (this.character_can_enter()){
+class S_Manor extends S_LayeredBuilding {
+  constructor(x, y){
+    super("manor", x, y, 300, 240,
+      "This villa is bigger and more sumptuous than the others.",
+    );
+    this.add_layer("details");
+    this.add_door(130, 170, function(){
       CURRENTLEVEL.setup("027_manor");
-    } else {
-      this.default_text();
-    }
-  }
-
-  destroy() {
-    this.base.destroy();
-    super.destroy();
+    });
+    this.adjust_hitbox(10,0,275,120);
   }
 }
-
 
 
 

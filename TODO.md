@@ -3,11 +3,7 @@
 
 
 
-Move retired to acceptance (sprite, text)
-
-
-BUILDINGS FOR CASERN AND MANOR
-
+Move retired to acceptance (casern sprite, text)
 casern bigger???
 
 
