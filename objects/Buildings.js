@@ -176,7 +176,7 @@ class S_TownFloor extends S_Floor {
 
 class S_LayeredBuilding extends LevelObject {
   constructor(name, x, y, w, h, description){
-    var visual = new StaticSprite("assets/objects/buildings/" + name + "_base.png", 'obj_dark');
+    var visual = new StaticSprite("assets/objects/buildings/" + name + "_base.png", 'obj_light');
     visual.specify_sprite_size(w, h);
     super(visual, x, y);
     this.layers = [];
@@ -189,7 +189,7 @@ class S_LayeredBuilding extends LevelObject {
   }
 
   add_layer(modifier) {
-    var visual = new StaticSprite("assets/objects/buildings/" + this.name + "_" + modifier +".png", 'obj_light');
+    var visual = new StaticSprite("assets/objects/buildings/" + this.name + "_" + modifier +".png", 'obj_dark');
     visual.specify_sprite_size(this.w, this.h);
     var object = new LevelObject(visual, this.x, this.y+(0.1 * this.layers.length));
     this.layers.push(object);
@@ -295,7 +295,7 @@ class S_Castle extends S_LayeredBuilding {
 class S_Casern extends S_LayeredBuilding {
   constructor(x, y){
     super("casern", x, y, 250, 200,
-      "This heavy building looks like it has seen better days. It seems to be some sort of military facility",
+      "This massive building looks like it has seen better days. It seems to be some sort of military facility",
     );
     this.add_layer("details");
     this.add_door(110, 140, function(){
