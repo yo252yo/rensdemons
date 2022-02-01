@@ -294,7 +294,7 @@ class S_Castle extends S_LayeredBuilding {
 
 class S_Casern extends S_LayeredBuilding {
   constructor(x, y){
-    super("casern", x, y, 250, 160,
+    super("casern", x, y, 250, 200,
       "This heavy building looks like it has seen better days. It seems to be some sort of military facility",
     );
     this.add_layer("details");

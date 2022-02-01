@@ -3,9 +3,7 @@
 
 
 
-Move retired to acceptance (casern sprite, text)
-casern bigger???
-acceptance house roof is a bit too dark
+Move retired to acceptance in text
 
 
 
