@@ -345,15 +345,15 @@ class M_RetiredProtector extends MovingObject {
 
     if (PARTY.has_member(PARTYMEMBERS.RetiredProtector)){
       new TextBannerRandom([
-        `Ex-soldier: "I'm just having a peaceful retirement in this lovely town."`,
-        `Ex-soldier: "Up for a game of cards?"`,
-        `Ex-soldier: "I'm so glad the war is over."`,
-        `Ex-soldier: "I can't imagine a better place to enjoy the rest of my days."`,
-        `Ex-soldier: "I loved battles, but I have to admit safety is much better."`,
-        `Ex-soldier: "Since fighting is over, I've taken up gardening."`,
-        `Ex-soldier: "If there's no danger, there's no need for soldiers!"`,
-        `Ex-soldier: "I think this place used to be a casern. Now it's just our hangout spot."`,
-        `Ex-soldier: "I don't know what this place used to be, but now it's where the men of the village gather to have some fun."`,
+        `Ex-soldier: "I'm just waiting for my fate in this town."`,
+        `Ex-soldier: "Up for a game of cards? Loser takes all."`,
+        `Ex-soldier: "Sure I'm sad we lost the war, but at least now we don't have to fight anymore."`,
+        `Ex-soldier: "This is as good a place as any to wait for death."`,
+        `Ex-soldier: "I loved battles, but I always knew deep down we did not stand a chance."`,
+        `Ex-soldier: "It's a relief to know that death is close, now I don't have to find a hobby to take up after the war."`,
+        `Ex-soldier: "There's no need for soldiers when the war is already lost."`,
+        `Ex-soldier: "I think this place used to be a casern. Now that our fate is sealed we come here to wait for death together."`,
+        `Ex-soldier: "I don't know what this place used to be, but now it's where the men of the village gather to watch time pass."`,
       ]);
     } else {
       BATTLE.api.make('_party/_RetiredProtector', d);

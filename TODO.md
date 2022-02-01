@@ -2,12 +2,6 @@
 
 
 
-
-Move retired to acceptance in text
-
-
-
-
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch

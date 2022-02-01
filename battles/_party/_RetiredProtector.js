@@ -12,7 +12,7 @@ var _RETIRE = '';
 var writebio = function(){
   DICTIONARY.set('RetiredProtector_bio', `
     His many qualities quickly earned him the title of best ${_ROLE} in the kingdom. He was admired by all for his strength in battle and his integrity, as he was always following his ${_MOTIVATION}. His successful career came at a cost, however, as ${_COST}.<br /><br />
-    But the glory days could not last forever. When ${_RETIRE}, he decided to retire and withdraw from public life. He settled under a fake name in peaceful ${DICTIONARY.get("town_3")} and swore never to fight again.
+    But the glory days could not last forever. When ${_RETIRE}, he decided to retire and withdraw from public life. He settled under a fake name in quiet ${DICTIONARY.get("town_5")} and swore never to fight again.
   `);
 }
 
@@ -22,7 +22,7 @@ var goddess = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$Ren$: "I'm not really sure. The Goddess brought you to me."`,
     `$$Ren$: "In a way, it's a lot like me. I was just an ordinary child before She chose me too for this holy mission."`,
-    `$$Ren$: "She has a way to do that... Pick the perfect choice. Select a random undescript element and imbue it with meaning, make it special."`,
+    `$$Ren$: "She has a way to do that... Pick the perfect choice. Select a random nondescript element and imbue it with meaning, make it special."`,
     `$$Ren$: "I wasn't the Promised Child before she looked at me. You were not my protector until she looked at you. But with Her great powers... She changed us."`,
     `$$RetiredProtector$: "You're right. After this conversation, I do feel changed. It feels like I never could have escaped this calling."`,
     `$$RetiredProtector$: "A few hours ago, I was an old soul getting ready to die. I had lost my faith and my motivation. But you and the Goddess barged into my life, and now it feels like it was always meant to be. Like my story is not over."`,
@@ -59,7 +59,7 @@ var unlock_9 = function(from, name) {
 
 
 
-var unlock_8_keys = ["lost daughter", "dead liege", "inspiring master", "abandonned wife"];
+var unlock_8_keys = ["lost daughter", "dead liege", "inspiring master", "abandoned wife"];
 var unlock_8 = function(from, key) {
   var pronoun = "her";
   var name = STRING_UTILS.camel_case(key);
