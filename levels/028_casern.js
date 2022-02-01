@@ -12,7 +12,7 @@ AUDIO.music.characters.RetiredProtector();
 // ===================
 
 new S_WoodFloor(1775,2300,500,500);
-var exit = new S_ExitFloor(1950,2325,150,50, "040_town3");
+var exit = new S_ExitFloor(1950,2325,150,50, "022_town5");
 
 // ===================
 //hack D. UNIQUE ELEMENTS

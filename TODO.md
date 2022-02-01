@@ -3,6 +3,18 @@
 
 
 
+Move retired to acceptance (sprite, text)
+
+
+BUILDINGS FOR CASERN AND MANOR
+
+casern bigger???
+
+
+insert new houses
+
+
+
 # TOWN4 SNOBRICH MANOR  ----------------------------------------------------
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
@@ -19,7 +31,6 @@ PARTY MEMBERS: >  description in party.js >  attacks in langug, >  encounter+bat
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
-DRAW BUILDINGS FOR CASERN AND MANOR
 - audit from >= first town mb use szadi for houses
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 - object/buildings: need better buildings and differnt building styles for different cities?

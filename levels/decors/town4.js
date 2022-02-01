@@ -20,6 +20,7 @@ new S_Store(ITEMS_ARCHETYPES_NAMES.Alchemy, 10000, 2825, 1900, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Diplomat, 100000, 2200, 1375, gen.get());
 new S_Store(ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 1600, gen.get());
 
+new S_Manor(2525,1150);
 
 new M_FemmeFatale(2125, 1125);
 

@@ -319,6 +319,92 @@ class S_Castle extends LevelObject {
 }
 
 
+
+
+
+class S_Casern extends LevelObject {
+  constructor(x, y, inside_lvl){
+    var base = new S_building(x, y-1,0,0, "casern");
+    base.make_walkable(true);
+    var visual = new StaticSprite("assets/objects/buildings/casern2.png", 'obj_light');
+    visual.specify_sprite_size(250, 160);
+    super(visual, x, y);
+    this.adjust_hitbox(10,0,240,100);
+    this.base = base;
+
+    this.default_text = this.text_interaction([
+      "This heavy building looks like it has seen better days. It seems to be some sort of military facility",
+    ]);
+
+  }
+
+  character_can_enter(){
+    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
+    var dy = (CHARACTER.get().y - this.y);
+    console.log(dx);
+    return (dx > 0.45 && dx < 0.65 && dy > 0);
+  }
+
+  interaction(){
+    if (this.character_can_enter()){
+      CURRENTLEVEL.setup("028_casern");
+    } else {
+      this.default_text();
+    }
+  }
+
+  destroy() {
+    this.base.destroy();
+    super.destroy();
+  }
+}
+
+
+
+
+
+class S_Manor extends LevelObject {
+  constructor(x, y, inside_lvl){
+    var base = new S_building(x, y-1,0,0, "manor");
+    base.make_walkable(true);
+    var visual = new StaticSprite("assets/objects/buildings/manor2.png", 'obj_light');
+    visual.specify_sprite_size(300, 240);
+    super(visual, x, y);
+    this.adjust_hitbox(10,0,280,100);
+    this.base = base;
+
+    this.default_text = this.text_interaction([
+      "This villa is bigger and more somptuous than the others.",
+    ]);
+
+  }
+
+  character_can_enter(){
+    var dx = (CHARACTER.get().x + 15 - this.x) / 432;
+    var dy = (CHARACTER.get().y - this.y);
+    console.log(dx);
+    return (dx > 0.35 && dx < 0.5 && dy > 0);
+  }
+
+  interaction(){
+    if (this.character_can_enter()){
+      CURRENTLEVEL.setup("027_manor");
+    } else {
+      this.default_text();
+    }
+  }
+
+  destroy() {
+    this.base.destroy();
+    super.destroy();
+  }
+}
+
+
+
+
+
+
 class S_Placeholder extends LevelObject {
   constructor(x, y, w, h){
     var visual = new Rectangle(x,y,w,h, 'white');
