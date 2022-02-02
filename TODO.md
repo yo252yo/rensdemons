@@ -2,16 +2,23 @@
 
 
 
-# 027_manor: SNOBRICH MANOR 
+# 027_manor: SNOBRICH MANOR
+
+
+take some events from downstairs up
+
+check condition for allow upstairs access
+
+make the bit where snobrich joins
+
+upstairs has a room with good loot
+
 
  lost something important, you help them by going in an out and it respawns??
- special vision to see interactibles
- you can loot everything and nobody complains << useful to get rigch!
- All that stuff about looting objects, going into ppl houses etc
- You always start by dead end for treasures
- when i wake up somewhere i immediately proceed to loot everything
 Stuff resets when you exist and come back
- sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
+
+respawn = infinite money
+
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
