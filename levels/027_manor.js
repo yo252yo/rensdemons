@@ -27,6 +27,8 @@ rooms.push(new S_WoodFloor(2075,2275,350,300));
 
 var exit = new S_ExitFloor(1950,2325,100,50, "021_town4");
 
+new S_Stairs(1975, 1625, true, '027_manor2');
+
 // ===================
 //hack D. UNIQUE ELEMENTS
 // ===================
@@ -118,15 +120,6 @@ new SE_event(2300, 1650, [
   ], 50, undefined);
 
 
-new SE_event(1825, 1775, [
-  `You got a Rare wine.`,
-  `$$SnobRich$: "Oh, good choice, that is worth a fortune!"`,
-  `$$Ren$: "Why is it just lying on the floor then?"`,
-  `$$SnobRich$: "I suppose this place has really gone downhill since we left!"`,
-  ], 50, undefined, function(){
-    INVENTORY.increase("Rare wine");
-  });
-
 new SE_event(1625, 1800, [
   `$$SnobRich$: "Doesn't anyone complain when you're going through all their properties?"`,
   `$$Ren$: "Not really."`,
@@ -136,20 +129,16 @@ new SE_event(1625, 1800, [
   `$$SnobRich$: "This case is... complicated. Let's leave it at that, shall we?"`,
   ], 50, undefined);
 
-new SE_event(2125, 1800, [
-  `You got a Coin.`,
-  `$$SnobRich$: "Wow, you'd even take a single coin from the floor?"`,
-  `$$Ren$: "I know it's not much, but it does add up. Besides, once I've looked, I can't not take it."`,
-  `$$SnobRich$: "Suit yourself."`,
-  ], 50, undefined, function(){
-    INVENTORY.increase(ITEM.Coin);
-  });
 
 new SE_event(2275, 2075, [
-  `You got a Spoon.`,
+  `You got a Rare wine.`,
+  `$$SnobRich$: "Oh, good choice, that is worth a fortune!"`,
+  `$$Ren$: "Why is it just lying on the floor then?"`,
+  `$$SnobRich$: "I suppose this place has really gone downhill since we left!"`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Spoon");
+    INVENTORY.increase("Rare wine");
   });
+
 
 new SE_event(1700, 1600, [
     `You got a Stuffed Bear Head.`,
