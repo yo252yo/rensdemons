@@ -33,6 +33,12 @@ class DictionaryGenerator {
     r['child_friends_f1'] = 'Sarah';
     r['child_friends_f2'] = 'Emily';
     r['RetiredProtector_bio'] = '';
+    r['SnobRich_particules'] =
+      MARKOV_MODELS.human_names.mutate("Margarita Maria Victoria", 3) + "-" +
+      MARKOV_MODELS.human_names.mutate("Esperanza Jacoba de Felicidad la Perpetua Thadeus Maria Pius Ultra Andrea de Brinje") + " von " +
+      MARKOV_MODELS.human_names.mutate("Borbon y Borbon") + " d'" +
+      MARKOV_MODELS.human_names.mutate("Aviano", 3)
+    ;
 
     // Geography names
     r['mushroom_adj'] = camel(RANDOM.grab(DATASETS.propaganda_adjectives));

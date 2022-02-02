@@ -175,7 +175,7 @@ class Markov {
     }
   }
 
-  mutate(word, mutations) {
+  mutate_word(word, mutations) {
     if (!mutations){
       mutations = 1;
     }
@@ -185,13 +185,27 @@ class Markov {
       var decorated = this._str_decorate(mutated_word);
 
       var nb_mut = 1 + RANDOM.int(mutations);
-      for (var i =0; i< nb_mut; i++) {
+      for (var i = 0; i < nb_mut; i++) {
         var mutate_pos = prefix.length + RANDOM.int(word.length);
         decorated = this._mutate_at(decorated, mutate_pos);
       }
       mutated_word = this._str_undecorate(decorated);
     }
     return mutated_word;
+  }
+
+  mutate(word, mutations) {
+    var s = word.split(" ");
+    var r = "";
+    for(var w of s){
+      if(w.length <= 2){
+        r += w;
+      } else {
+        r += this.mutate_word(w, mutations);
+      }
+      r += " ";
+    }
+    return r.substring(0, r.length - 1);
   }
 
   mutate_n(word, mutations, n) {
