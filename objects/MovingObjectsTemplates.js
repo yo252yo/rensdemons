@@ -340,13 +340,13 @@ class M_SnobRich extends MovingObject {
 
   interaction = function() {
     this.face_character();
-  /*  if (ABILITIES.has_ability("_followedByDumbMuscles")){
+    if (INVENTORY.count("_followedBySnobRich")){
       TextBannerSequence.make([
-        `$$DumbMuscles$: "You can count on me, mate. I'll follow you anywhere!"`,
+        `$$SnobRich$: "I am so looking forward to your exciting demonstration!"`,
       ]);
-    } else {*/
+    } else {
       BATTLE.api.make('_party/_SnobRich');
-  //  }
+    }
   }
 }
 

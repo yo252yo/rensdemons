@@ -2,9 +2,7 @@
 
 
 
-# TOWN4 SNOBRICH MANOR encounter+battle
-SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
-// town4 debauch
+# 027_manor: SNOBRICH MANOR 
 
  lost something important, you help them by going in an out and it respawns??
  special vision to see interactibles
