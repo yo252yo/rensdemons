@@ -11,7 +11,7 @@ AUDIO.music.characters.RetiredProtector();
 //hack C. EXIT
 // ===================
 
-new S_WoodFloor(1775,2300,500,500);
+new S_TilingFloor(1775,2300,500,500);
 var exit = new S_ExitFloor(1950,2325,150,50, "022_town5");
 
 // ===================
