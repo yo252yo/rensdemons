@@ -426,21 +426,30 @@ LANGUAGE.actions[PARTYMEMBERS.RetiredProtector] = {
 LANGUAGE.actions[PARTYMEMBERS.SnobRich] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.SnobRich)) + RANDOM.pick([
-      ``,
+      `$$SnobRich$ is reluctant to come. What if the dirty terrain stains her designer dress? A wrong move could ruin her elaborate hairdo. You have to plead for what seems an eternity to get her to move.`,
+      `$$SnobRich$ approaches the scene very carefully. She tiptoes towards the $$&ENEMY$, lifting up her voluminous garment to avoid ruining the expensive fabric on the dirty ground.`,
+      `$$SnobRich$ is quite irked that you dare disturb her. She takes what seems like an eternity to prepare herself for a public appearance, while the $$&ENEMY$ astonishingly waits patiently. When her makeup and hairdo meet her lowest personal standards, she finally approaches the battle.`,
     ]);
     var dialog = RANDOM.pick([
-      `$$SnobRich$: "..."`,
+      `$$SnobRich$: "How dare you lay your filthy commoner eyes on me!?!"`,
+      `$$SnobRich$: "You may not be worth it, but rejoice, I'll demonstrate what it means to be a proper refined lady."`,
+      `$$SnobRich$: "Oh dear, you look like a desperate cause for my world renowned generosity."`,
+      `$$SnobRich$: "You will rue the day when you displeased the treasured $$SnobRich$ $$SnobRich_particules$."`,
     ]);
     return [text, dialog];
   },
   fail: function(){
     return RANDOM.pick([
-      ``,
+      `The $$&ENEMY$ sneers at $$SnobRich$'s mannerism and mocks how ill equipped she is for the real world.`,
+      `The $$&ENEMY$ does not react with the deference $$SnobRich$ expected. She is outraged and storms away. Never had she faced such affront!`,
+      `The $$&ENEMY$ has of course never heard of $$SnobRich$, so she has to fend for herself in the absence of anyone doing the work for her. She does not do well.`,
     ]);
   },
   win: function(){
     return RANDOM.pick([
-      ``,
+      `The $$&ENEMY$ recognizes $$SnobRich$ from her reputation and immediately prostrates themselves. They fawn over the privileged lady and obey her every whim. She enjoys the attention for a short while, before sending her new attendant away for good on an impossible errand.`,
+      `$$SnobRich$ approaches the $$&ENEMY$ with condescension. She negotiates a bribe to end the battle. She of course has no idea what money is worth to normal people, so she offers a ridiculously measly sum, but to everyone's surprise the $$&ENEMY$ agrees to go away, reinforcing $$SnobRich$'s conviction that everything can be solved with money.`,
+      `$$SnobRich$ takes out her purse and starts throwing money at the problem. The $$&ENEMY$ is puzzled at first, but then has to withdraw as the rain of heavy metal coins turns into a deluge that proves too much to handle. $$SnobRich$ lets out a disdainful sneer and walks away regally, leaving you to clean up the mess if you don't want all this money to go to waste.`,
     ]);
   },
 };

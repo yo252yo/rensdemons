@@ -2,7 +2,7 @@
 
 
 
-# TOWN4 SNOBRICH MANOR  ----------------------------------------------------
+# TOWN4 SNOBRICH MANOR encounter+battle
 SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
 // town4 debauch
 
@@ -14,11 +14,6 @@ SnobRich: "SnobRich", //the snob/uptight rich merchant   banker
  when i wake up somewhere i immediately proceed to loot everything
 Stuff resets when you exist and come back
  sounds like we should go to a dungeon together... treeforest??? or a special building ?? castle/manor
-PARTY MEMBERS:
-
- >  description in party.js
- >  attacks in langug,
- >  encounter+battle
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
