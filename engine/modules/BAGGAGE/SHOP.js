@@ -43,9 +43,22 @@ _SHOP_PRICES[ITEM.Scale] = 40;
 _SHOP_PRICES[ITEM.Eye] = 50;
 _SHOP_PRICES[ITEM.Medallion] = 750;
 
+_SHOP_PRICES[ITEM.OldBook] = 3;
+_SHOP_PRICES[ITEM.PorcelainDoll] = 10;
+_SHOP_PRICES[ITEM.SnobRichKey] = 6;
+_SHOP_PRICES[ITEM.Spoon] = 1;
+_SHOP_PRICES[ITEM.SilverGoblet] = 8;
+_SHOP_PRICES[ITEM.Umbrella] = 4;
+_SHOP_PRICES[ITEM.Candle] = 2;
+_SHOP_PRICES[ITEM.Vase] = 3;
+_SHOP_PRICES[ITEM.RareWine] = 20;
+_SHOP_PRICES[ITEM.StuffedBearHead] = 50;
+_SHOP_PRICES[ITEM.MassiveGoldStatue] = 70;
 
 
-_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom];
+_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom,
+ITEM.OldBook,ITEM.PorcelainDoll,ITEM.SnobRichKey,ITEM.Spoon,ITEM.SilverGoblet,ITEM.Umbrella,ITEM.Candle,ITEM.Vase,ITEM.RareWine,ITEM.StuffedBearHead,ITEM.MassiveGoldStatue,
+];
 
 const SHOP = {
   selling_discount: 0.5,

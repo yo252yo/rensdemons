@@ -39,9 +39,9 @@ new SE_event(2025, 2200, [
     `$$SnobRich$ seems a bit disappointed`,
     `$$SnobRich$: "Just one?"`,
     `$$Ren$: "Usually, I can only take one thing per container."`,
-    `You got an Umbrella.`,
+    `You got an ${ITEM.Umbrella}.`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Umbrella");
+    INVENTORY.increase(ITEM.Umbrella);
   });
 
 new SE_event(1925, 2125, [
@@ -63,7 +63,7 @@ new SE_event(1950, 1975, [
 
 new SE_event(1500, 1625, [
   ], 50, undefined, function(){
-    `You got a Big rusty key.`,
+    `You got a ${ITEM.SnobRichKey}.`,
     `$$Ren$: "Now this looks important."`,
     `$$SnobRich$: "Does it? It's just a random key..."`,
     `$$Ren$: "Keys usually opens up something!"`,
@@ -71,7 +71,7 @@ new SE_event(1500, 1625, [
     `$$Ren$: "If there is a key, there must be something worth protecting!"`,
     `$$SnobRich$: "Yes, people sleeping!"`,
     `$$Ren$: "You'll see..."`,
-    INVENTORY.increase("Big rusty key");
+    INVENTORY.increase(ITEM.SnobRichKey);
   });
 
 new SE_event(2450, 1625, [
@@ -82,13 +82,13 @@ new SE_event(2450, 1625, [
   ], 50, undefined);
 
 new SE_event(2450, 2275, [
-  `You got a Candle.`,
+  `You got a ${ITEM.Candle}.`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Candle");
+    INVENTORY.increase(ITEM.Candle);
   });
 
 new SE_event(1500, 2275, [
-  `You got a Vase.`,
+  `You got a ${ITEM.Vase}.`,
   `$$SnobRich$: "Why did you remove the flowers before taking it?"`,
   `$$Ren$: "I can only get the vase."`,
   `$$BestFriend$: "Put it back! The flowers are going to die!"`,
@@ -96,7 +96,7 @@ new SE_event(1500, 2275, [
   `$$BestFriend$: "What do you mean?"`,
   `$$SnobRich$: "If I did not know you were following the Goddess, I'd have you thrown in an asylum..."`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Vase");
+    INVENTORY.increase(ITEM.Vase);
   });
 
 
@@ -131,17 +131,17 @@ new SE_event(1625, 1800, [
 
 
 new SE_event(2275, 2075, [
-  `You got a Rare wine.`,
+  `You got a ${ITEM.RareWine}.`,
   `$$SnobRich$: "Oh, good choice, that is worth a fortune!"`,
   `$$Ren$: "Why is it just lying on the floor then?"`,
   `$$SnobRich$: "I suppose this place has really gone downhill since we left!"`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Rare wine");
+    INVENTORY.increase(ITEM.RareWine);
   });
 
 
 new SE_event(1700, 1600, [
-    `You got a Stuffed Bear Head.`,
+    `You got a ${ITEM.StuffedBearHead}.`,
     `$$BestFriend$: "You can't possibly tell me that we'll need that for our quest!"`,
     `$$Ren$: "I don't think so, but you never know what lies ahead... Besides, if it's not useful, I'll sell it."`,
     `$$BestFriend$: "That's so heavy though!"`,
@@ -154,17 +154,17 @@ new SE_event(1700, 1600, [
     `$$BestFriend$: "I think that just shows they have good taste."`,
     `$$SnobRich$: "Hey! Respect my father's hunting trophies."`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Stuffed Bear Head");
+    INVENTORY.increase(ITEM.StuffedBearHead);
   });
 
 
 new SE_event(2325, 1825, [
-    `You got a Massive Gold Statue.`,
+    `You got a ${ITEM.MassiveGoldStatue}.`,
     `$$SnobRich$: "How are you going to carry that? It's huge!"`,
     `$$Ren$: "The Goddess made my bag bottomless. Look."`,
     `Your companions look in awe as you fit the oversized sculpture in your inventory.`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Massive Gold Statue");
+    INVENTORY.increase(ITEM.MassiveGoldStatue);
   });
 
 new SE_event(2125, 2100, [
@@ -188,7 +188,7 @@ new SE_event(1600, 2225, [
 
 var blockingEvent = new SE_event(1950, 1800, [], 100, undefined);
 blockingEvent.interaction = function(){
-  if(!INVENTORY.count("Big rusty key")){ // WIP TODO condition
+  if(!INVENTORY.count(ITEM.SnobRichKey)){ // WIP TODO condition
     TextBannerSequence.make([
       `$$Ren$: "I don't think we should leave this floor yet. I like to clean up a floor completely before moving on to the next. It helps with tracking progress, and, once again, not forgetting anything important."`,
       `$$BestFriend$: "What could be so important?"`,

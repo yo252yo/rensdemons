@@ -9,7 +9,8 @@ check condition for allow upstairs access
 
 make the bit where snobrich joins
 
-make items sellable
+
+change all events to feature the money icon
 
 
 

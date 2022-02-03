@@ -4,6 +4,38 @@ const ITEM = {
   XpToken: "_XpToken",
   // Bags
 
+  // SnobRich
+    Spoon: "Spoon",
+    Candle: "Candle",
+    OldBook: "Old Book",
+    Vase: "Vase",
+    Umbrella: "Umbrella",
+    SnobRichKey: "Big rusty key",
+    SilverGoblet: "Silver Goblet",
+    PorcelainDoll: "Creepy Porcelain Doll",
+    RareWine: "Rare Wine",
+    StuffedBearHead: "Stuffed Bear Head",
+    MassiveGoldStatue: "Massive Gold Statue",
+
+  // Loot. IdeaS: spices, herbs, leather?
+    Stone: "Blunt Stone",
+    Mushroom: "Mushroom",
+    Berry: "Berry",
+    Stick: "Stick",
+    Fang: "Venomous Fang",
+    Bone: "Sharp Bone",
+    Flower: "Flower",
+    Feather: "Feather",
+    Linnens: "Linens",
+    Scale: "Scale",
+    AncientRubbles: "Ancient Rubbles",
+    Seashell: "Seashell",
+    Goo: "Enchanted Goo",
+    Fur: "Fur",
+    Meat: "Meat",
+    Eye: "Eye",
+    Medallion: "Medallion",
+
   // Way of the Alchemy
     Elixir_fire: "Fire Elixir",
     Elixir_ice: "Ice Elixir",
@@ -36,24 +68,6 @@ const ITEM = {
     Bow: "Bow",
     Net: "Net",
 
-    // Loot. IdeaS: spices, herbs, leather?
-    Stone: "Blunt Stone",
-    Mushroom: "Mushroom",
-    Berry: "Berry",
-    Stick: "Stick",
-    Fang: "Venomous Fang",
-    Bone: "Sharp Bone",
-    Flower: "Flower",
-    Feather: "Feather",
-    Linnens: "Linens",
-    Scale: "Scale",
-    AncientRubbles: "Ancient Rubbles",
-    Seashell: "Seashell",
-    Goo: "Enchanted Goo",
-    Fur: "Fur",
-    Meat: "Meat",
-    Eye: "Eye",
-    Medallion: "Medallion",
 
     // Story
     BreathingPotion: "Breathing Potion",
@@ -63,6 +77,8 @@ const ITEM = {
     AncientArmamentAmmunition: "Ancient Armament Ammunition",
     ShelterKey: "Shelter Key",
     Gemstone: "Shiny Gemstone",
+
+
 
     MaouKey0: "Key to Survival",
     MaouKey1: "Key to Progress",

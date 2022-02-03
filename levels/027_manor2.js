@@ -48,13 +48,13 @@ glitch.interaction = function(){
     glitch.make_walkable();
   };
 
-  if(!INVENTORY.count("Spoon")){
+  if(!INVENTORY.count(ITEM.Spoon)){
     TextBannerSequence.make([
-      `You got a Spoon.`,
+      `You got a ${ITEM.Spoon}.`,
     ], kill);
-  } else if(INVENTORY.count("Spoon") == 1) {
+  } else if(INVENTORY.count(ITEM.Spoon) == 1) {
     TextBannerSequence.make([
-      `You got a Spoon.`,
+      `You got a ${ITEM.Spoon}.`,
       `$$BestFriend$: "Didn't we already pick up that spoon?"`,
       `$$Ren$: "I think so. But it came back. It must be glitched."`,
       `$$BestFriend$: "Glitched?"`,
@@ -62,7 +62,7 @@ glitch.interaction = function(){
     ], kill);
   } else {
     TextBannerSequence.make([
-      `You got a Spoon.`,
+      `You got a ${ITEM.Spoon}.`,
       `$$BestFriend$: "One more?"`,
       `$$Ren$: "Yep! We can get rich that way!"`,
       `$$SnobRich$: "That's a rather slow income, if you ask me."`,
@@ -107,23 +107,23 @@ cache.interaction = function(){
       `You look closely at the wall.`,
       `$$Ren$: "If there was a cache on the other side of the house, that means there's probably a symmetrical one here!"`,
       `You try to press on the planks, and sure enough one of them reveals a little niche like in the parent's bedroom. This one does not contain a sword, however, but a pretty old silver goblet.`,
-      `You got a Silver Goblet.`,
+      `You got a ${ITEM.SilverGoblet}.`,
     ], function() {
-      INVENTORY.increase("Silver Goblet");
+      INVENTORY.increase(ITEM.SilverGoblet);
       cache.destroy();
     });
   }
 };
 
 new SE_event(1675, 2000, [
-    `You got an Old Book.`,
+    `You got an ${ITEM.OldBook}.`,
     `$$SnobRich$: "What is this? Probably some old account books..."`,
     `$$BestFriend$: "What does it say?"`,
     `$$Ren$: "Most of the pages are blank, there's at most one or two paragraphs written in it."`,
     `$$Ren$: "Who cares anyway, I just want to resell it."`,
     `$$BestFriend$: "I can't imagine anyone wanting to buy that..."`,
   ], 50, undefined, function(){
-    INVENTORY.increase("Old Book");
+    INVENTORY.increase(ITEM.OldBook);
   });
 
 new SE_event(2300, 2200, [
@@ -165,9 +165,9 @@ doll.interaction = function(){
     TextBannerSequence.make([
       `When you come back to the room, the porcelain doll is intact in all her usual creepiness. $$SnobRich$ is overjoyed but manages her reaction carefully. She takes the toy with infinite precautions and cradles it like an actual infant, making sure every one of her motion is as smooth and safe as can be.`,
       `$$SnobRich$: "I cannot believe you were right! How did you do that? You really have wonderful powers. Thank you so much!"`,
-      `You got a Creepy Porcelain Doll.`,
+      `You got a ${ITEM.PorcelainDoll}.`,
     ], function() {
-      INVENTORY.increase("Creepy Porcelain Doll");
+      INVENTORY.increase(ITEM.PorcelainDoll);
       doll.destroy();
     });
   }
@@ -177,13 +177,13 @@ doll.interaction = function(){
 
 var door = new SE_event(2050, 1750, []);
 door.interaction = function(){
-  if(!INVENTORY.count("Big rusty key")){
+  if(!INVENTORY.count(ITEM.SnobRichKey)){
     TextBannerSequence.make([
       `You find yourself faced with a locked heavy door. Like for all locked doors, though, you know the key has to be nearby.`,
       ]);
   } else{
     TextBannerSequence.make([
-      `You slide the Big rusty key in the lock and turn it effortlessly. The door opens.`,
+      `You slide the ${ITEM.SnobRichKey} in the lock and turn it effortlessly. The door opens.`,
       `$$SnobRich$: "Congratulations on opening my parents bedroom. You can see how pointless it is, now."`,
       `$$Ren$: "Just you wait..."`,
     ], function() {
