@@ -1,7 +1,7 @@
 
 class ConsciousObject extends MovingObject {
   static thinkTrigger(thinker, start) {
-      if(!STATS.get(STAT.Endings)){
+      if(!STATS.is_post_game()){
         // only expose thoughts after the game has been cleared once
         return;
       }
@@ -23,7 +23,7 @@ class ConsciousObject extends MovingObject {
   }
   static checkThoughtBubble(thinker) {
     if(thinker && thinker.bubble){
-      if (Math.abs(thinker.x - CHARACTER.character.x) < 170 && Math.abs(thinker.y - CHARACTER.character.y) < 170){
+      if (Math.abs(thinker.x - CHARACTER.character.x) < FOG.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < FOG.BERKELEY_DISTANCE){
         thinker.bubble.destroy();
       } else {
         setTimeout(function(){ConsciousObject.checkThoughtBubble(thinker)}, 500);

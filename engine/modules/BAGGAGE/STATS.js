@@ -132,4 +132,8 @@ const STATS = {
     }
     return STATS._stats.get(["END_" + text]);
   },
+
+  is_post_game: function(){
+    return STATS.get(STAT.Endings);
+  },
 }
