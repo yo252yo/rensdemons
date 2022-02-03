@@ -43,7 +43,7 @@ var glitch = new SE_event_loot(2075, 2000, [], 50);
 
 glitch.real_interaction = function(){
   var kill = function(){
-    INVENTORY.increase("Spoon");
+    INVENTORY.increase(ITEM.Spoon);
     glitch.visual_element.destroy(true);
     glitch.make_walkable();
     glitch.end_speech();

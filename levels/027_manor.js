@@ -29,6 +29,8 @@ var exit = new S_ExitFloor(1950,2325,100,50, "021_town4");
 
 new S_Stairs(1975, 1625, true, '027_manor2');
 
+new S_SavePoint(2000, 2025);
+
 // ===================
 //hack D. UNIQUE ELEMENTS
 // ===================
@@ -213,6 +215,9 @@ blockingEvent.real_interaction = function(){
 };
 
 
+if(INVENTORY.count(ITEM.PorcelainDoll)){
+  new SBattle(1950, 2250, '_party/_SnobRich2', 100);
+}
 
 // ===================
 //hack E. DECOR

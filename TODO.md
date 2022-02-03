@@ -2,15 +2,6 @@
 
 
 
-# 027_manor: SNOBRICH MANOR
-
-
-
-make the bit where snobrich joins
-
-
-
-
 
 # BACKSIDE  ----------------------------------------------------
 
@@ -131,6 +122,7 @@ See 051_pandemonium_room and 012_trees
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 - cache ressources
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
+- ctrlf TODO WIP
 
 # SEND OUT FOR BETA  ----------------------------------------------------
 
