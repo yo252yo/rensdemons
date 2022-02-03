@@ -10,7 +10,7 @@ const ITEM = {
     OldBook: "Old Book",
     Vase: "Vase",
     Umbrella: "Umbrella",
-    SnobRichKey: "Big rusty key",
+    SnobRichKey: "Big Rusty Key",
     SilverGoblet: "Silver Goblet",
     PorcelainDoll: "Creepy Porcelain Doll",
     RareWine: "Rare Wine",
