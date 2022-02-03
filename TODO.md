@@ -5,12 +5,8 @@
 
 # BACKSIDE  ----------------------------------------------------
 
-Actually hide the items in fog with delay of appearance small
-
-
 - visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
-- make the buildings/sprites/etc... say NOT READY or smhting
 - make herald a character in NG+ ?
 
 

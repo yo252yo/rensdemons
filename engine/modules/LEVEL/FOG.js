@@ -1,18 +1,26 @@
 
 const FOG = {
+  BERKELEY_DISTANCE: 170,
   MIN_VIEWPORT: 350,
   MAX_VIEWPORT: 1000,
   MASK_WIDTH: 2*SCREEN.width(),
   MASK_HEIGHT: 2*SCREEN.height(),
 
   draw: function() {
+
+    var opacity = 0.98;
+
+    if(STATS.is_post_game()){
+      opacity = 0.65;
+    }
+
     var base_obj = {
         w:FOG.MASK_WIDTH,
         h:FOG.MASK_HEIGHT,
         z:10000,
         background: "player",
         position: "absolute",
-        opacity: 0.98,
+        opacity: opacity,
       };
     var border_top = HTML.js.clone(base_obj);
     var border_bot = HTML.js.clone(base_obj);
@@ -31,6 +39,10 @@ const FOG = {
 
     FOG.move(0,0);
     FOG._stopped = false;
+
+    if(STATS.is_post_game()){
+      FOG.update_surroundings_berkeley();
+    }
   },
 
   _stop: function(name){
@@ -85,5 +97,54 @@ const FOG = {
       FOG.move(CHARACTER.get().x, CHARACTER.get().y);
     }
   },
+
+  update_surroundings_berkeley: function() {
+
+    var c = CURRENTLEVEL.objects.get_all_objects();
+    for(var o of c){
+      if (!o || o == CHARACTER.character || !o.distance_to_character || !o.visual_element){
+        continue;
+      }
+      if(Math.random() < 0.1){
+        continue; // glitches
+      }
+
+      /* // Version 1: super blinky
+      var max = FOG.viewport() / 2;
+      var min = FOG.BERKELEY_DISTANCE;
+      var d = (min + max) / 2 + Math.random() * (max - min) / 2;
+      if(o.distance_to_character() >  d) {
+        o.visual_element.hide();
+      } else {
+        o.visual_element.show();
+      }*/
+      if(o.distance_to_character() > FOG.viewport() / 2) {
+        o.visual_element.hide();
+      } else if (o.distance_to_character() < FOG.BERKELEY_DISTANCE) {
+        o.visual_element.show();
+      } else {
+        /* // Version 2: objects in viewport stuck to hidden
+        var r = Math.random();
+        if(r < 0.2){
+          o.visual_element.show();
+        } else if(r > 0.97){
+          o.visual_element.hide();
+        }*/
+
+        if(Math.random() < 0.98){
+          o.visual_element.show();
+        } else {
+          o.visual_element.hide();
+        }
+      }
+
+
+    }
+
+
+    clearTimeout(FOG.berkeley_timeout); // avoid collisions since FOG.draw is called every level.
+    var delay = 300 + 300 * (Math.random() - 0.5);
+    FOG.berkeley_timeout = setTimeout(FOG.update_surroundings_berkeley, delay);
+  }
 
 }

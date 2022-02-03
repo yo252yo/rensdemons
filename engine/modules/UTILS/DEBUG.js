@@ -124,11 +124,15 @@ const DEBUG = {
 
 
     setInterval(FOG.stop, 1000);
+  //  DEBUG.stop_berkeley_mode();
     //setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
   },
 
+  stop_berkeley_mode: function(){
+    FOG.update_surroundings_berkeley = function(){};
+  },
 
   signal: {
     mouse_position: function(x, y) {
