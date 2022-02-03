@@ -89,12 +89,53 @@ new SE_event(2400, 1725, [
   `$$SnobRich$: "I never knew this was there... I guess my parents kept it for protection."`,
   ], 50, undefined, function(){
     INVENTORY.increase(ITEM.Sword_great);
+    INVENTORY.increase("_found_cache_snobrich");
+  });
+
+
+var cache = new SE_event(1550, 1725);
+cache.interaction = function(){
+  if(!INVENTORY.count("_found_cache_snobrich")){
+    TextBannerSequence.make([
+      `This wall is perfectly ordinary.`,
+      `$$SnobRich$: "There's nothing there."`,
+      `$$Ren$: "There must be. My intuition is telling me!"`,
+      `$$SnobRich$: "This is my room, I spent all my life here. I can tell you that there's nothing there!"`,
+    ]);
+  } else{
+    TextBannerSequence.make([
+      `You look closely at the wall.`,
+      `$$Ren$: "If there was a cache on the other side of the house, that means there's probably a symmetrical one here!"`,
+      `You try to press on the planks, and sure enough one of them reveals a little niche like in the parent's bedroom. This one does not contain a sword, however, but a pretty old silver goblet.`,
+      `You got a Silver Goblet.`,
+    ], function() {
+      INVENTORY.increase("Silver Goblet");
+      cache.destroy();
+    });
+  }
+};
+
+new SE_event(1675, 2000, [
+    `You got an Old Book.`,
+    `$$SnobRich$: "What is this? Probably some old account books..."`,
+    `$$BestFriend$: "What does it say?"`,
+    `$$Ren$: "Most of the pages are blank, there's at most one or two paragraphs written in it."`,
+    `$$Ren$: "Who cares anyway, I just want to resell it."`,
+    `$$BestFriend$: "I can't imagine anyone wanting to buy that..."`,
+  ], 50, undefined, function(){
+    INVENTORY.increase("Old Book");
+  });
+
+new SE_event(2300, 2200, [
+    `You got an ${ITEM.Elixir_ice}.`,
+    `$$BestFriend$: "Cool! This I know for sure we can use in battle!"`,
+    `$$Ren$: "We could also sell it."`,
+  ], 50, undefined, function(){
+    INVENTORY.increase(ITEM.Elixir_ice);
   });
 
 
 var doll = new SE_event(1725, 1800, []);
-
-
 
 doll.interaction = function(){
   if(!INVENTORY.count("_porcelaindollstory")){
