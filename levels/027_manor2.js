@@ -39,13 +39,14 @@ new B_Chest(1850, 1850);
 // ===================
 
 
-var glitch = new SE_event(2075, 2000, [], 50);
+var glitch = new SE_event_loot(2075, 2000, [], 50);
 
-glitch.interaction = function(){
+glitch.real_interaction = function(){
   var kill = function(){
     INVENTORY.increase("Spoon");
     glitch.visual_element.destroy(true);
     glitch.make_walkable();
+    glitch.end_speech();
   };
 
   if(!INVENTORY.count(ITEM.Spoon)){
@@ -71,7 +72,7 @@ glitch.interaction = function(){
 }
 
 
-new SE_event(1600, 2250, [
+new SE_event_loot(1600, 2250, [
   `You got a Coin.`,
   `$$SnobRich$: "Wow, you'd even take a single coin from the floor?"`,
   `$$Ren$: "I know it's not much, but it does add up. Besides, once I've looked, I can't not take it."`,
@@ -81,7 +82,7 @@ new SE_event(1600, 2250, [
   });
 
 
-new SE_event(2400, 1725, [
+new SE_event_loot(2400, 1725, [
   `$$SnobRich$: "See, I told you, it's just a normal bedroom."`,
   `$$Ren$: "It's never just a normal bedroom."`,
   `As you say that, you notice a loose plank on the wall. You push it and discover a hidden niche behind the wall. In it, you find a fancy weapon.`,
@@ -93,15 +94,15 @@ new SE_event(2400, 1725, [
   });
 
 
-var cache = new SE_event(1550, 1725);
-cache.interaction = function(){
+var cache = new SE_event_loot(1550, 1725);
+cache.real_interaction = function(){
   if(!INVENTORY.count("_found_cache_snobrich")){
     TextBannerSequence.make([
       `This wall is perfectly ordinary.`,
       `$$SnobRich$: "There's nothing there."`,
       `$$Ren$: "There must be. My intuition is telling me!"`,
       `$$SnobRich$: "This is my room, I spent all my life here. I can tell you that there's nothing there!"`,
-    ]);
+    ], function(){cache.end_speech(true); });
   } else{
     TextBannerSequence.make([
       `You look closely at the wall.`,
@@ -115,7 +116,7 @@ cache.interaction = function(){
   }
 };
 
-new SE_event(1675, 2000, [
+new SE_event_loot(1675, 2000, [
     `You got an ${ITEM.OldBook}.`,
     `$$SnobRich$: "What is this? Probably some old account books..."`,
     `$$BestFriend$: "What does it say?"`,
@@ -126,7 +127,7 @@ new SE_event(1675, 2000, [
     INVENTORY.increase(ITEM.OldBook);
   });
 
-new SE_event(2300, 2200, [
+new SE_event_loot(2300, 2200, [
     `You got an ${ITEM.Elixir_ice}.`,
     `$$BestFriend$: "Cool! This I know for sure we can use in battle!"`,
     `$$Ren$: "We could also sell it."`,
@@ -135,9 +136,9 @@ new SE_event(2300, 2200, [
   });
 
 
-var doll = new SE_event(1725, 1800, []);
+var doll = new SE_event_loot(1725, 1800, []);
 
-doll.interaction = function(){
+doll.real_interaction = function(){
   if(!INVENTORY.count("_porcelaindollstory")){
     TextBannerSequence.make([
       `As soon as you enter the bedroom, $$SnobRich$ rushes towards a porcelain doll laying on the ground.`,
@@ -154,13 +155,15 @@ doll.interaction = function(){
       `$$Ren$: "Sometimes, environments restore themselves while I'm away. Objects and monsters respawn."`,
       `$$SnobRich$: "So you can go back in time?"`,
       `$$Ren$: "It's more like the room is going to go back in time. I don't understand it very well myself. I think it's easier to show you. Come."`,
-    ]);
+    ], function(){doll.end_speech(true); });
     INVENTORY.set("_porcelaindollstory", 1);
   } else if (INVENTORY.count("_porcelaindollstory") == 1) {
     TextBannerSequence.make([
       `$$Ren$: "We just need to go somewhere else and come back. Somewhere sufficiently far. Like downstairs."`,
       `$$BestFriend$: "Sounds like you're preparing a magic trick."`,
-    ]);
+    ], function(){
+      doll.end_speech(true);
+    });
   } else {
     TextBannerSequence.make([
       `When you come back to the room, the porcelain doll is intact in all her usual creepiness. $$SnobRich$ is overjoyed but manages her reaction carefully. She takes the toy with infinite precautions and cradles it like an actual infant, making sure every one of her motion is as smooth and safe as can be.`,
@@ -176,11 +179,11 @@ doll.interaction = function(){
 
 
 var door = new SE_event(2050, 1750, []);
-door.interaction = function(){
+door.real_interaction = function(){
   if(!INVENTORY.count(ITEM.SnobRichKey)){
     TextBannerSequence.make([
       `You find yourself faced with a locked heavy door. Like for all locked doors, though, you know the key has to be nearby.`,
-      ]);
+    ], function(){door.end_speech(true); });
   } else{
     TextBannerSequence.make([
       `You slide the ${ITEM.SnobRichKey} in the lock and turn it effortlessly. The door opens.`,

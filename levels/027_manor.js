@@ -33,7 +33,7 @@ new S_Stairs(1975, 1625, true, '027_manor2');
 //hack D. UNIQUE ELEMENTS
 // ===================
 
-new SE_event(2025, 2200, [
+new SE_event_loot(2025, 2200, [
     `When you enter the house, you notice immediately a cupboard on your right. A quick glance through indicates that it's where the owners would keep their umbrellas. You take one and show it to $$SnobRich$.`,
     `$$Ren$: "I can take one of these..."`,
     `$$SnobRich$ seems a bit disappointed`,
@@ -44,7 +44,7 @@ new SE_event(2025, 2200, [
     INVENTORY.increase(ITEM.Umbrella);
   });
 
-new SE_event(1925, 2125, [
+new SE_event_loot(1925, 2125, [
     `$$SnobRich$ points at an expensive looking painting on the wall.`,
     `$$SnobRich$: "How about this painting? It's my father, it's always been one of my favorite."`,
     `$$Ren$: "Sorry, it's pretty rare that I can take stuff from the walls. Paintings don't usually come off."`,
@@ -61,7 +61,7 @@ new SE_event(1950, 1975, [
     `$$Ren$: "I like to start by dead ends. They often have pretty interesting stuff."`,
   ], 100, undefined);
 
-new SE_event(1500, 1625, [
+new SE_event_loot(1500, 1625, [
   ], 50, undefined, function(){
     `You got a ${ITEM.SnobRichKey}.`,
     `$$Ren$: "Now this looks important."`,
@@ -81,13 +81,13 @@ new SE_event(2450, 1625, [
   `$$SnobRich$: "I don't think I'll ever understand your rules..."`,
   ], 50, undefined);
 
-new SE_event(2450, 2275, [
+new SE_event_loot(2450, 2275, [
   `You got a ${ITEM.Candle}.`,
   ], 50, undefined, function(){
     INVENTORY.increase(ITEM.Candle);
   });
 
-new SE_event(1500, 2275, [
+new SE_event_loot(1500, 2275, [
   `You got a ${ITEM.Vase}.`,
   `$$SnobRich$: "Why did you remove the flowers before taking it?"`,
   `$$Ren$: "I can only get the vase."`,
@@ -130,7 +130,7 @@ new SE_event(1625, 1800, [
   ], 50, undefined);
 
 
-new SE_event(2275, 2075, [
+new SE_event_loot(2275, 2075, [
   `You got a ${ITEM.RareWine}.`,
   `$$SnobRich$: "Oh, good choice, that is worth a fortune!"`,
   `$$Ren$: "Why is it just lying on the floor then?"`,
@@ -140,7 +140,7 @@ new SE_event(2275, 2075, [
   });
 
 
-new SE_event(1700, 1600, [
+new SE_event_loot(1700, 1600, [
     `You got a ${ITEM.StuffedBearHead}.`,
     `$$BestFriend$: "You can't possibly tell me that we'll need that for our quest!"`,
     `$$Ren$: "I don't think so, but you never know what lies ahead... Besides, if it's not useful, I'll sell it."`,
@@ -158,7 +158,7 @@ new SE_event(1700, 1600, [
   });
 
 
-new SE_event(2325, 1825, [
+new SE_event_loot(2325, 1825, [
     `You got a ${ITEM.MassiveGoldStatue}.`,
     `$$SnobRich$: "How are you going to carry that? It's huge!"`,
     `$$Ren$: "The Goddess made my bag bottomless. Look."`,
@@ -167,7 +167,7 @@ new SE_event(2325, 1825, [
     INVENTORY.increase(ITEM.MassiveGoldStatue);
   });
 
-new SE_event(2125, 2100, [
+new SE_event_loot(2125, 2100, [
     `You got a ${ITEM.Berry}.`,
     `$$BestFriend$: "Eww don't pick that up we don't know how long this has been on the floor!"`,
     `$$Ren$: "It's fine, I promise. It doesn't spoil!"`,
@@ -176,7 +176,7 @@ new SE_event(2125, 2100, [
     INVENTORY.increase(ITEM.Berry);
   });
 
-new SE_event(1600, 2225, [
+new SE_event_loot(1600, 2225, [
     `You got a ${ITEM.Seashell}.`,
     `$$SnobRich$: "What on earth is this doing here?"`,
     `$$Ren$: "I'm not sure. Things don't always make sense. The bottom line is that it's ours now!"`,
@@ -187,13 +187,15 @@ new SE_event(1600, 2225, [
 
 
 var blockingEvent = new SE_event(1950, 1800, [], 100, undefined);
-blockingEvent.interaction = function(){
+blockingEvent.real_interaction = function(){
   if(!INVENTORY.count(ITEM.SnobRichKey)){ // WIP TODO condition
     TextBannerSequence.make([
       `$$Ren$: "I don't think we should leave this floor yet. I like to clean up a floor completely before moving on to the next. It helps with tracking progress, and, once again, not forgetting anything important."`,
       `$$BestFriend$: "What could be so important?"`,
       `$$Ren$: "I don't know... Maybe there's something critical to our quest!"`,
-    ]);
+    ], function() {
+      blockingEvent.end_speech(true);
+    });
   } else{
     TextBannerSequence.make([
       `$$Ren$: "Ok, I think we've cleared this place, we can move on."`,

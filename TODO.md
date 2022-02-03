@@ -10,7 +10,6 @@ check condition for allow upstairs access
 make the bit where snobrich joins
 
 
-change all events to feature the money icon
 
 
 

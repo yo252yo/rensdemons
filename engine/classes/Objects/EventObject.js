@@ -54,10 +54,17 @@ class S_event extends LevelObject {
     return true;
   }
 
-  destroy(){
+  end_speech(make_redoable) {
     if(this.icon){
       this.icon.destroy();
     }
+    if(make_redoable){
+      this.clicked = false;
+    }
+  }
+
+  destroy(){
+    this.end_speech();
     super.destroy();
   }
 }

@@ -47,6 +47,15 @@ class SE_event extends S_event {
   }
 }
 
+
+class SE_event_loot extends SE_event {
+
+  constructor(x, y, text, size, color, extra) {
+    super(x, y, text, size, color, extra);
+    this.icon_type = "event_purse";
+  }
+}
+
 class SE_groundItem extends S_event {
   constructor(x, y, object, quantity, size, color) {
     if (!quantity){
