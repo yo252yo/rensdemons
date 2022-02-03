@@ -5,7 +5,6 @@
 # 027_manor: SNOBRICH MANOR
 
 
-check condition for allow upstairs access
 
 make the bit where snobrich joins
 

@@ -188,20 +188,26 @@ new SE_event_loot(1600, 2225, [
 
 var blockingEvent = new SE_event(1950, 1800, [], 100, undefined);
 blockingEvent.real_interaction = function(){
-  if(!INVENTORY.count(ITEM.SnobRichKey)){ // WIP TODO condition
+  if(INVENTORY.count(ITEM.Umbrella) &&
+    INVENTORY.count(ITEM.Candle) &&
+    INVENTORY.count(ITEM.Vase) &&
+    INVENTORY.count(ITEM.RareWine) &&
+    INVENTORY.count(ITEM.MassiveGoldStatue) &&
+    INVENTORY.count(ITEM.StuffedBearHead)
+  ){
+    TextBannerSequence.make([
+      `$$Ren$: "Ok, I think we've cleared this place, we can move on."`,
+      `$$BestFriend$: "Whatever you say..."`,
+    ], function() {
+      blockingEvent.destroy();
+    });
+  } else{
     TextBannerSequence.make([
       `$$Ren$: "I don't think we should leave this floor yet. I like to clean up a floor completely before moving on to the next. It helps with tracking progress, and, once again, not forgetting anything important."`,
       `$$BestFriend$: "What could be so important?"`,
       `$$Ren$: "I don't know... Maybe there's something critical to our quest!"`,
     ], function() {
       blockingEvent.end_speech(true);
-    });
-  } else{
-    TextBannerSequence.make([
-      `$$Ren$: "Ok, I think we've cleared this place, we can move on."`,
-      `$$BestFriend$: "Whatever you say..."`,
-    ], function() {
-      blockingEvent.destroy();
     });
   }
 };
