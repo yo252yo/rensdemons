@@ -233,6 +233,9 @@ for(var f of rooms){
 //hack F. EVENTS
 // ===================
 
+if(INVENTORY.count("_porcelaindollstory") == 1){
+  INVENTORY.set("_porcelaindollstory", 2);
+}
 
 // ===================
 //hack G. START/INIT

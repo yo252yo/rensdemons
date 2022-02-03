@@ -9,13 +9,7 @@ check condition for allow upstairs access
 
 make the bit where snobrich joins
 
-upstairs has a room with good loot
-
-
- lost something important, you help them by going in an out and it respawns??
-Stuff resets when you exist and come back
-
-respawn = infinite money
+make items sellable
 
 
 
@@ -121,6 +115,7 @@ See 051_pandemonium_room and 012_trees
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
+- metapowers ? TP, make floors
 - check save/disk size
 - add rens parent sendoff/house before trial?
 - dodger initial position a litl bit more up

@@ -13,7 +13,7 @@ new S_WoodFloor(1950,1950,100,375);
 new S_WoodFloor(1875,1750,250,50);
 
 var rooms = [];
-rooms.push(new S_WoodFloor(1575,1875,350,300));
+new S_WoodFloor(1575,1875,350,300);
 rooms.push(new S_WoodFloor(1575,2275,850,375));
 new S_WoodFloor(2075,1875,350,300);
 
@@ -28,15 +28,47 @@ new B_Statue(2350, 1850);
 new B_Chest(2100, 1850);
 
 
+new B_Bed(1725, 1650);
+new B_Table(1650, 1600);
+new B_Table(1800, 1600);
+new B_Statue(1600, 1850);
+new B_Chest(1850, 1850);
+
 // ===================
 //hack D. UNIQUE ELEMENTS
 // ===================
 
-new SE_event(1825, 1775, [
-  `You got a Spoon.`,
-  ], 50, undefined, function(){
+
+var glitch = new SE_event(2075, 2000, [], 50);
+
+glitch.interaction = function(){
+  var kill = function(){
     INVENTORY.increase("Spoon");
-  });
+    glitch.visual_element.destroy(true);
+    glitch.make_walkable();
+  };
+
+  if(!INVENTORY.count("Spoon")){
+    TextBannerSequence.make([
+      `You got a Spoon.`,
+    ], kill);
+  } else if(INVENTORY.count("Spoon") == 1) {
+    TextBannerSequence.make([
+      `You got a Spoon.`,
+      `$$BestFriend$: "Didn't we already pick up that spoon?"`,
+      `$$Ren$: "I think so. But it came back. It must be glitched."`,
+      `$$BestFriend$: "Glitched?"`,
+      `$$Ren$: "It means the state of the world did not properly change. Oh well, more for us."`,
+    ], kill);
+  } else {
+    TextBannerSequence.make([
+      `You got a Spoon.`,
+      `$$BestFriend$: "One more?"`,
+      `$$Ren$: "Yep! We can get rich that way!"`,
+      `$$SnobRich$: "That's a rather slow income, if you ask me."`,
+    ], kill);
+  }
+}
 
 
 new SE_event(1600, 2250, [
@@ -60,12 +92,54 @@ new SE_event(2400, 1725, [
   });
 
 
+var doll = new SE_event(1725, 1800, []);
+
+
+
+doll.interaction = function(){
+  if(!INVENTORY.count("_porcelaindollstory")){
+    TextBannerSequence.make([
+      `As soon as you enter the bedroom, $$SnobRich$ rushes towards a porcelain doll laying on the ground.`,
+      `$$SnobRich$: "It's my favorite doll! I can't believe we've been separated! I'll never let you go again!"`,
+      `Yet, carried away by her burst of emotions, $$SnobRich$ gets careless. Just when she starts to get up, hugging dearly her newly found treasure, she makes a wrong move, ties her foot in her convoluted dress and twists her ankle. She falls forward with a loud noise and a piercing scream. The doll did not survive the impact. Her head rolls ominously a few feet away.`,
+      `$$SnobRich$ watched in disbelief, her heavily made-up face starting to twitch into a grimace. Terrified of the upcoming wailing that would surely damage your eardrums, you decide to be proactive.`,
+      `$$Ren$: "Wait! I can fix this!"`,
+      `$$SnobRich$: "There's no point! With the fracture, she's going to be hideous!"`,
+      `$$Ren$: "I'm not talking about a cheap repair! I can get you the original one back. Do you trust my powers?"`,
+      `$$SnobRich$ is doubtful but wants to believe in whatever could bring her beloved toy back.`,
+      `$$SnobRich$: "What do I need to do?"`,
+      `$$Ren$: "Not much. We need to leave and come back."`,
+      `$$SnobRich$: "How is that going to help?"`,
+      `$$Ren$: "Sometimes, environments restore themselves while I'm away. Objects and monsters respawn."`,
+      `$$SnobRich$: "So you can go back in time?"`,
+      `$$Ren$: "It's more like the room is going to go back in time. I don't understand it very well myself. I think it's easier to show you. Come."`,
+    ]);
+    INVENTORY.set("_porcelaindollstory", 1);
+  } else if (INVENTORY.count("_porcelaindollstory") == 1) {
+    TextBannerSequence.make([
+      `$$Ren$: "We just need to go somewhere else and come back. Somewhere sufficiently far. Like downstairs."`,
+      `$$BestFriend$: "Sounds like you're preparing a magic trick."`,
+    ]);
+  } else {
+    TextBannerSequence.make([
+      `When you come back to the room, the porcelain doll is intact in all her usual creepiness. $$SnobRich$ is overjoyed but manages her reaction carefully. She takes the toy with infinite precautions and cradles it like an actual infant, making sure every one of her motion is as smooth and safe as can be.`,
+      `$$SnobRich$: "I cannot believe you were right! How did you do that? You really have wonderful powers. Thank you so much!"`,
+      `You got a Creepy Porcelain Doll.`,
+    ], function() {
+      INVENTORY.increase("Creepy Porcelain Doll");
+      doll.destroy();
+    });
+  }
+};
+
+
+
 var door = new SE_event(2050, 1750, []);
 door.interaction = function(){
   if(!INVENTORY.count("Big rusty key")){
     TextBannerSequence.make([
       `You find yourself faced with a locked heavy door. Like for all locked doors, though, you know the key has to be nearby.`,
-    ]);
+      ]);
   } else{
     TextBannerSequence.make([
       `You slide the Big rusty key in the lock and turn it effortlessly. The door opens.`,
@@ -76,7 +150,6 @@ door.interaction = function(){
     });
   }
 };
-
 // ===================
 //hack E. DECOR
 // ===================
