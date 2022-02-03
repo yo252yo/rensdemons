@@ -19,6 +19,17 @@ respawn = infinite money
 
 
 
+# BACKSIDE  ----------------------------------------------------
+
+Actually hide the items in fog with delay of appearance small
+
+
+- visual glitches, especially during Maou death (overlay?)
+- Sometimes the game would crash with a very peculiar error code or error messags “help us”
+- make the buildings/sprites/etc... say NOT READY or smhting
+- make herald a character in NG+ ?
+
+
 # GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town mb use szadi for houses
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
@@ -46,13 +57,6 @@ The cycle of replay with the promise of a true ending is precisely what the syst
 
 You need to be OK with your lack ie with quitting the game and act outside the system
 
-
-
-# BACKSIDE  ----------------------------------------------------
-- visual glitches, especially during Maou death (overlay?)
-- Sometimes the game would crash with a very peculiar error code or error messags “help us”
-- make the buildings/sprites/etc... say NOT READY or smhting
-- make herald a character in NG+ ?
 
 
 

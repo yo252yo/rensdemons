@@ -165,7 +165,7 @@ class S_Altar extends LevelObject {
 class B_Bed extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 32,75, "interior/bed");
-    this.adjust_hitbox(0,0,32,60);
+    this.adjust_hitbox(-2,0,34,60);
 
 
     this.set_description(BESTIARY.intro("interior/bed"));
