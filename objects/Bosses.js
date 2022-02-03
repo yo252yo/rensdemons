@@ -202,7 +202,7 @@ class S_RockColumnGoddess extends SimpleObject {
   interaction() {
     var consume = function(){
       var newFloor = new S_MudFloor(2125,2725,50,550);
-      INVENTORY.increase(ITEM.Gemstone, -2);
+      INVENTORY.decrease(ITEM.Gemstone, 2);
     }
     var putgems = function(){
       TextBannerSequence.make([

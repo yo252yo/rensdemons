@@ -11,7 +11,7 @@ if(INVENTORY.count(ITEM.Meat)){
     description: [`You decide to leave meat on the ground. You are a bit puzzled by your own action, but you assume it will make sense later.`],
     outcome: BATTLETREE.WIN,
     extra_function: function() {
-      INVENTORY.increase(ITEM.Meat, -1);
+      INVENTORY.decrease(ITEM.Meat, 1);
       INVENTORY.increase("_donated_meat", 1);
     },
   });

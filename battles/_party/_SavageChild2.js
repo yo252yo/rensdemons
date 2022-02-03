@@ -15,7 +15,7 @@ if(INVENTORY.count(ITEM.Meat)){
     ],
     outcome: BATTLETREE.WIN,
     extra_function: function() {
-      INVENTORY.increase(ITEM.Meat, -1);
+      INVENTORY.decrease(ITEM.Meat, 1);
       INVENTORY.increase("_donated_meat", 1);
     },
   });
@@ -29,7 +29,7 @@ if(INVENTORY.count(ITEM.Meat)){
     ],
     outcome: BATTLETREE.ESCAPE,
     extra_function: function() {
-      INVENTORY.increase(ITEM.Meat, -1);
+      INVENTORY.decrease(ITEM.Meat, 1);
     },
   });
 

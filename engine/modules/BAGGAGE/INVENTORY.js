@@ -163,6 +163,11 @@ const INVENTORY = {
     }
     INVENTORY._inventory.increment([name], quantity);
     CONSOLE.log.item(name, quantity);
+    
+    var g = INVENTORY._inventory.get([name]);
+    if (g <= 0){
+      INVENTORY._inventory.delete([name]);
+    }
   },
 
   set: function(name, quantity) {

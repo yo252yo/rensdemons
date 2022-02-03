@@ -7,7 +7,7 @@ INVENTORY.set("_followedBySnobRich", 0);
 
 var lose_item = function(item){
   if(INVENTORY.count(item)){
-    INVENTORY.increase(item, -1);
+    INVENTORY.decrease(item, 1);
   }
 }
 
