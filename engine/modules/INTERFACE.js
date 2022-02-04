@@ -331,6 +331,52 @@ const INTERFACE = {
 
     setTimeout(function(){t.destroy();}, 1000);
   },
+
+  glitch: function(){
+    AUDIO.effect.glitch();
+    var g = document.getElementById("glitch");
+    if (g){
+      g.style.visibility = "visible";
+      g.style.top = Math.floor(Math.random() * (-200) - 10) + "px";
+      g.style.left = Math.floor(Math.random() * (-200) - 10) + "px";
+    }
+
+    var offset_top = Math.floor(Math.random() * 200 - 100) + "px";
+    var offset_left = Math.floor(Math.random() * 200 - 100) + "px";
+
+    var l = document.getElementById("level");
+    if (l){
+      l.style.opacity = 0.5;
+      l.style.top = offset_top;
+      l.style.left = offset_left;
+    }
+
+    var t = document.getElementById("textBanner");
+    if (t){
+      t.style.marginTop = offset_top;
+      t.style.marginTeft = offset_left;
+    }
+
+
+    setTimeout(INTERFACE.unglitch, 300);
+  },
+
+  unglitch: function(){
+    document.getElementById("glitch").style.visibility = "hidden";
+
+    var l = document.getElementById("level");
+    if (l){
+      l.style.opacity = 1;
+      l.style.top = "0px";
+      l.style.left = "0px";
+    }
+    var t = document.getElementById("textBanner");
+    if (t){
+      t.style.marginTop = "0px";
+      t.style.marginTeft = "0px";
+    }
+
+  }
 }
 
 var man = function() {

@@ -106,9 +106,10 @@ const AUDIO = {
     },
     choice: function() {          AUDIO._play_sfx('choice'); },
     interaction: function() {     AUDIO._play_sfx('interaction'); },
-    lootbox: function() {     AUDIO._play_sfx('coinchest'); },
+    lootbox: function() {         AUDIO._play_sfx('coinchest'); },
     dodge_place: function() {     AUDIO._play_sfx('dodge_place'); },
-    dodge_attack: function() {     AUDIO._play_sfx('dodge_attack'); },
+    dodge_attack: function() {    AUDIO._play_sfx('dodge_attack'); },
+    glitch: function() {          AUDIO._play_sfx('glitch'); },
     footstep: function(cooldown, key) {
       if(key == "M_Boat"){
         AUDIO._play_sfx('water', cooldown, key);

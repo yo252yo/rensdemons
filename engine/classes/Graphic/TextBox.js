@@ -4,6 +4,7 @@
 var _LETTER_BY_LETTER_DELAY = 20;
 var _MIN_PAGE_TIME_MS = 250;
 
+var GLITCH_CHARACTERS = "###***||%%__";
 
 // Initialize the module (measure char size)
 var test_div = document.createElement('div');
@@ -103,6 +104,11 @@ class TextBox extends TextElement {
 
       if (instant) {
         textbox.html.innerHTML += text_printing;
+        for(var c of GLITCH_CHARACTERS){
+          if(text_printing.includes(c)){
+            INTERFACE.glitch();
+          }
+        }
         return;
       }
 
@@ -121,9 +127,14 @@ class TextBox extends TextElement {
         textbox.html.innerHTML += text_printing.substr(0, cutoff+1);
         textbox.pages[0] = text_printing.substr(cutoff + 1, text_printing.length - cutoff);
       } else {
-        textbox.html.innerHTML += text_printing[0];
+        var c = text_printing[0];
+        textbox.html.innerHTML += c;
+        if(GLITCH_CHARACTERS.includes(c)){
+          INTERFACE.glitch();
+        }
         textbox.pages[0] = text_printing.substring(1);
       }
+
 
       textbox.text_printing_timeout = setTimeout(TextBox.print_text, _LETTER_BY_LETTER_DELAY, textbox);
     }

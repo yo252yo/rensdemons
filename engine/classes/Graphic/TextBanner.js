@@ -31,6 +31,8 @@ class TextBanner extends InteractingTextBox {
       if (text) {
         this.change_text(text, instant);
       }
+
+      this.container.id = "textBanner";
   }
 }
 

@@ -5,9 +5,20 @@
 
 # BACKSIDE  ----------------------------------------------------
 
-- visual glitches, especially during Maou death (overlay?)
 - Sometimes the game would crash with a very peculiar error code or error messags “help us”
 - make herald a character in NG+ ?
+
+
+BERLE:EY EFFECT SHOULDNT TAKE PLACE IN BATTLES
+
+glitches also change ongoing text a bit, one letter here and there
+
+in new game + have regular glitches
+
+
+new game + you get the action spoiler in combats where you is_empathized
+Mb implemented as ren's summon
+Mb after victory you get a special attack that allows you to one shot or two shot everyone you ve already beaten. Mb it's about information like disclose the secret or call out their bluff
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
@@ -104,6 +115,8 @@ See 051_pandemonium_room and 012_trees
 - metapowers ? TP, make floors
 - check save/disk size
 - add rens parent sendoff/house before trial?
+- Make sure the end feels like caprica
+- When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
 - a suicide function?
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
@@ -119,6 +132,7 @@ See 051_pandemonium_room and 012_trees
 - cache ressources
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - ctrlf TODO WIP
+- regenerate resource preloading list
 
 # SEND OUT FOR BETA  ----------------------------------------------------
 
