@@ -99,6 +99,7 @@ const FOG = {
   },
 
   update_surroundings_berkeley: function() {
+    var max = 1.5 * Math.max(SCREEN.width(), SCREEN.height());
 
     var c = CURRENTLEVEL.objects.get_all_objects();
     for(var o of c){
@@ -118,9 +119,12 @@ const FOG = {
       } else {
         o.visual_element.show();
       }*/
-      if(o.distance_to_character() > FOG.viewport() / 2) {
+      var d = o.distance_to_character();
+      if (d > max){
+        continue;
+      } else if(d > FOG.viewport() / 2) {
         o.visual_element.hide();
-      } else if (o.distance_to_character() < FOG.BERKELEY_DISTANCE) {
+      } else if (d < FOG.BERKELEY_DISTANCE) {
         o.visual_element.show();
       } else {
         /* // Version 2: objects in viewport stuck to hidden
