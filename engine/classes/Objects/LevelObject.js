@@ -63,7 +63,7 @@ class LevelObject {
         top:(this.visual_element.y + this.h_y - this.h_h),
         left:(this.visual_element.x + this.h_x),
       });
-      html_rectangle.style.position = "absolute";
+      html_rectangle.style.position = "relative";
       html_rectangle.style.border = "3px dotted DarkGrey";
       html_rectangle.style.margin = "-3px";
       html_rectangle.style.zIndex = "30000";

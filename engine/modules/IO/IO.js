@@ -174,7 +174,7 @@ const IO = {
 
   click_interceptor: {
     activate: function() {
-      var level = document.getElementById("level");
+      var level = document;//.getElementById("level");
       level.addEventListener('click', IO.handlers.onClick, { passive: false});
       level.addEventListener('touchstart', IO.handlers.onClick, { passive: false});
 
@@ -184,7 +184,7 @@ const IO = {
     },
 
     deactivate: function() {
-      var level = document.getElementById("level");
+      var level = document;//.getElementById("level");
       level.removeEventListener('click', IO.handlers.onClick, { passive: false});
       level.removeEventListener('touchstart', IO.handlers.onClick, { passive: false});
 
