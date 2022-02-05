@@ -38,10 +38,6 @@ const FOG = {
 
     FOG.move(0,0);
     FOG._stopped = false;
-
-    if(STATS.is_post_game()){
-      GLITCH.update_surroundings_berkeley();
-    }
   },
 
   _stop: function(name){

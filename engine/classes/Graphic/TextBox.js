@@ -4,8 +4,6 @@
 var _LETTER_BY_LETTER_DELAY = 20;
 var _MIN_PAGE_TIME_MS = 250;
 
-var GLITCH_CHARACTERS = "###***||%%__";
-
 // Initialize the module (measure char size)
 var test_div = document.createElement('div');
 document.body.appendChild(test_div);
@@ -104,9 +102,9 @@ class TextBox extends TextElement {
 
       if (instant) {
         textbox.html.innerHTML += text_printing;
-        for(var c of GLITCH_CHARACTERS){
+        for(var c of GLITCH.GLITCH_CHARACTERS){
           if(text_printing.includes(c)){
-            INTERFACE.glitch();
+            GLITCH.glitch();
           }
         }
         return;
@@ -129,8 +127,8 @@ class TextBox extends TextElement {
       } else {
         var c = text_printing[0];
         textbox.html.innerHTML += c;
-        if(GLITCH_CHARACTERS.includes(c)){
-          INTERFACE.glitch();
+        if(GLITCH.GLITCH_CHARACTERS.includes(c)){
+          GLITCH.glitch();
         }
         textbox.pages[0] = text_printing.substring(1);
       }

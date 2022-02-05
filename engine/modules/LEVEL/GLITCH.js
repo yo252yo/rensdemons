@@ -1,6 +1,7 @@
 
 const GLITCH = {
   BERKELEY_DISTANCE: 170,
+  GLITCH_CHARACTERS: "###***||%%__",
 
   update_surroundings_berkeley: function() {
     var max = 1.5 * Math.max(SCREEN.width(), SCREEN.height());
@@ -51,5 +52,68 @@ const GLITCH = {
     clearTimeout(GLITCH.berkeley_timeout); // avoid collisions since FOG.draw is called every level.
     var delay = 300 + 300 * (Math.random() - 0.5);
     GLITCH.berkeley_timeout = setTimeout(GLITCH.update_surroundings_berkeley, delay);
-  }
+  },
+
+  init_level:function(){
+    if(STATS.is_post_game()){
+      GLITCH.update_surroundings_berkeley();
+    }
+  },
+
+  glitch: function(){
+    AUDIO.effect.glitch();
+    var g = document.getElementById("glitch");
+    if (g){
+      g.style.visibility = "visible";
+      g.style.top = Math.floor(Math.random() * (-200) - 10) + "px";
+      g.style.left = Math.floor(Math.random() * (-200) - 10) + "px";
+    }
+
+    var offset_top = Math.floor(Math.random() * 200 - 100) + "px";
+    var offset_left = Math.floor(Math.random() * 200 - 100) + "px";
+
+    var l = document.getElementById("level");
+    if (l){
+      l.style.opacity = 0.5;
+      l.style.top = offset_top;
+      l.style.left = offset_left;
+    }
+
+    var t = document.getElementById("textBanner");
+    if (t){
+      t.style.marginTop = offset_top;
+      t.style.marginTeft = offset_left;
+    }
+
+
+    setTimeout(GLITCH.unglitch, 300);
+  },
+
+  unglitch: function(){
+    document.getElementById("glitch").style.visibility = "hidden";
+
+    var l = document.getElementById("level");
+    if (l){
+      l.style.opacity = 1;
+      l.style.top = "0px";
+      l.style.left = "0px";
+    }
+    var t = document.getElementById("textBanner");
+    if (t){
+      t.style.marginTop = "0px";
+      t.style.marginTeft = "0px";
+    }
+  },
+
+  glitch_text: function(text, strength){
+    var ntext = "";
+    for (var i = 0; i < text.length; i++) {
+        if (Math.random() < strength){
+          ntext += RANDOM.pick(GLITCH.GLITCH_CHARACTERS);
+        } else {
+          ntext += text[i];
+        }
+    }
+    return ntext;
+  },
 }

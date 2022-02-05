@@ -62,16 +62,4 @@ const RANDOM = {
         array[j] = temp;
     }
   },
-
-  glitch: function(text, strength){
-    var ntext = "";
-    for (var i = 0; i < text.length; i++) {
-        if (Math.random() < strength){
-          ntext += RANDOM.pick(GLITCH_CHARACTERS);
-        } else {
-          ntext += text[i];
-        }
-    }
-    return ntext;
-  },
 }

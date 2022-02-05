@@ -269,6 +269,7 @@ const CURRENTLEVEL = {
 
     _setup_level: function(name) {
       FOG.draw();
+      GLITCH.init_level();
       CURRENTLEVEL.level_name = name;
       CURRENTLEVEL._setup._setup_colors();
 
