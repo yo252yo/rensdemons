@@ -1,36 +1,5 @@
 
 class ConsciousObject extends MovingObject {
-  static thinkTrigger(thinker, start) {
-      if(!STATS.is_post_game()){
-        // only expose thoughts after the game has been cleared once
-        return;
-      }
-
-      if (!start){
-        // proba to actually think
-        if (RANDOM.float() < 0.3) {
-          thinker.think();
-        }
-      }
-      var nextThoughtSeconds = 5 + RANDOM.int(30);
-      thinker.thoughtsTimeout = setTimeout(function(){ConsciousObject.thinkTrigger(thinker)}, nextThoughtSeconds * 1000);
-  }
-
-  static clearThoughtBubble(thinker) {
-    if(thinker && thinker.bubble){
-      thinker.bubble.destroy();
-    }
-  }
-  static checkThoughtBubble(thinker) {
-    if(thinker && thinker.bubble){
-      if (Math.abs(thinker.x - CHARACTER.character.x) < GLITCH.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < GLITCH.BERKELEY_DISTANCE){
-        thinker.bubble.destroy();
-      } else {
-        setTimeout(function(){ConsciousObject.checkThoughtBubble(thinker)}, 500);
-      }
-    }
-  }
-
   constructor(visual, x, y, w, h, name, city, role, seed) {
     super(visual, x, y, w, h);
     var gen = new Generator(seed || Math.random());
@@ -46,23 +15,26 @@ class ConsciousObject extends MovingObject {
       }
     }
 
-    ConsciousObject.thinkTrigger(this, true);
-
+    THOUGHTS.thinkTrigger(this, true);
     LEDGER.record_birth(this.name, this.city, this.role);
   }
 
-  makeThoughtBubble(thought){
+  killThoughtBubble(){
     if(this.bubble) {
       this.bubble.destroy();
     }
+  }
+
+  makeThoughtBubble(thought){
+    this.killThoughtBubble();
 
     if (this.x && this.y) {
        this.bubble = new TextBoxFitted(this.x, this.y - 55, thought);
        this.bubble.adjust_depth(9000);
        var thinker = this;
 
-      ConsciousObject.checkThoughtBubble(thinker);
-      setTimeout(function(){ConsciousObject.clearThoughtBubble(thinker)}, 6000);
+      THOUGHTS.checkThoughtBubble(thinker);
+      setTimeout(function(){THOUGHTS.clearThoughtBubble(thinker)}, 6000);
     }
   }
 
@@ -253,11 +225,7 @@ class ConsciousObject extends MovingObject {
   }
 
   record_death() {
-    if(this.bubble) {
-      this.bubble.destroy();
-    }
-
-    clearTimeout(this.thoughtsTimeout);
+    THOUGHTS.stopThinking(this);
     LEDGER.record_death(this.name, this.role);
   }
 }

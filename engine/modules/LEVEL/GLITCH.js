@@ -1,4 +1,46 @@
 
+class THOUGHTS {
+  static thinkTrigger(thinker, start) {
+      if(!STATS.is_post_game()){
+        // only expose thoughts after the game has been cleared once
+        return;
+      }
+
+      if (!start){
+        // proba to actually think
+        if (RANDOM.float() < 0.3) {
+          thinker.think();
+        }
+      }
+      var nextThoughtSeconds = 5 + RANDOM.int(30);
+      thinker.thoughtsTimeout = setTimeout(function(){THOUGHTS.thinkTrigger(thinker)}, nextThoughtSeconds * 1000);
+  }
+
+  static stopThinking(thinker){
+    if(thinker){
+      thinker.killThoughtBubble();
+      clearTimeout(thinker.thoughtsTimeout)
+    }
+  }
+
+  static clearThoughtBubble(thinker) {
+    if(thinker){
+      thinker.killThoughtBubble();
+    }
+  }
+
+  static checkThoughtBubble(thinker) {
+    if(thinker && thinker.bubble){
+      if (Math.abs(thinker.x - CHARACTER.character.x) < GLITCH.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < GLITCH.BERKELEY_DISTANCE){
+        thinker.killThoughtBubble();
+      } else {
+        setTimeout(function(){THOUGHTS.checkThoughtBubble(thinker)}, 500);
+      }
+    }
+  }
+}
+
+
 const GLITCH = {
   BERKELEY_DISTANCE: 170,
   GLITCH_CHARACTERS: "###***||%%__",
