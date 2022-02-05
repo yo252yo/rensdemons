@@ -147,9 +147,9 @@ class S_Maou extends SimpleObject {
         `$$demon_lord$: "` + GLITCH.text.glitch(`How could She not be? She is Divine! Everything is Her Holy Will! I just obey Her commands! Oh, Goddess, forgive me! Forgive him! Please, just let me die!`, 0.03) + `"`,
         GLITCH.text.glitch(`Sobs turn into convulsions. It truly is a pathetic sight. Strident wails raise from the contorted muscular body.`, 0.04),
         `$$Ren$: "Focus! There may still be hope! I want to meet Her. Where is She?"`,
-        `$$demon_lord$: "` + GLITCH.text.glitch(`Heaven! She's in Heaven, of course. She's always been near, but you couldn't see Her. It's pointless, though, you cannot survive Her wrath. We're doomed. This world has no point anymore, this life has no meaning. Please, oh, Mighty One, please spare little miserable me!`, 0.06) + `"`,
-        `$$demon_lord$ ` + GLITCH.text.glitch(`lets out a high pitched scream that pierces your ears. The whimper continues.`, 0.1),
-        `$$demon_lord$: "` + GLITCH.text.glitch(`She's here! She sees All! She's Everywhere! And She's angry at us! Oh please, please! Her reckoning has come! Please, let it stop! Kill me!`, 0.15) + `"`,
+        `$$demon_lord$: "` + GLITCH.text.glitch(`Heaven! She's in Heaven, of course. She's always been near, but you couldn't see Her. It's pointless, though, you cannot survive Her wrath. We're doomed. This world has no point anymore, this life has no meaning. Please, oh, Mighty One, please spare little miserable me!`, 0.05) + `"`,
+        `$$demon_lord$ ` + GLITCH.text.glitch(`lets out a high pitched scream that pierces your ears. The whimper continues.`, 0.08),
+        `$$demon_lord$: "` + GLITCH.text.glitch(`She's here! She sees All! She's Everywhere! And She's angry at us! Oh please, please! Her reckoning has come! Please, let it stop! Kill me!`, 0.1) + `"`,
         `Before you could do anything, you watch in horror as $$demon_lord$ burrows his fanged fingers deep within his chest and rips his body apart. Blood explodes in all directions as the massive lump of incandescent flesh crashes on the ground. $$demon_lord$ let out a final whisper.`,
         `$$demon_lord$: "Forgive me, Mother! I failed you!"`,
       ], afterSecretEnd);

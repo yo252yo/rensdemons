@@ -142,7 +142,7 @@ const GLITCH = {
       GLITCH.screen._move_html_element("textBanner", offset_top, offset_left);
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
 
-
+      GLITCH.text.fuckup_banner();
       setTimeout(GLITCH.screen.unglitch, 300);
     },
 
@@ -185,6 +185,26 @@ const GLITCH = {
       }
       return r;
     },
+
+    fuckup_banner: function(){
+      var banner = document.getElementById("textBanner");
+      if (!banner){
+        return;
+      }
+      for (var node of banner.firstChild.childNodes){
+        if (node.nodeType == Node.TEXT_NODE){
+          var replacement = "";
+          for (var c of node.textContent){
+            if(Math.random() < 0.02){
+              replacement += GLITCH.text.get_char();
+            } else {
+              replacement += c;
+            }
+          }
+          node.textContent = replacement;
+        }
+      }
+    }
   },
 
 }
