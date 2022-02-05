@@ -96,6 +96,7 @@ const GLITCH = {
 
       GLITCH.screen._move_html_element("level", offset_top, offset_left, 0.5);
       GLITCH.screen._move_html_element("textBanner", offset_top, offset_left);
+      GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
 
 
       setTimeout(GLITCH.screen.unglitch, 300);
@@ -106,6 +107,7 @@ const GLITCH = {
 
       GLITCH.screen._move_html_element("level", 0, 0, 1);
       GLITCH.screen._move_html_element("textBanner", 0, 0);
+      GLITCH.screen._move_html_element("portrait_icon_container", 0, 0);
     },
   },
 

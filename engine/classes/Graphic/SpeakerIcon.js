@@ -10,6 +10,7 @@ class SpeakerIcon extends TextElement {
       super(SCREEN.width() * 0.05, top, 150, 150);
       this.html.innerHTML = `<div style="width:136px;height:136px;position:absolute;overflow:hidden;" id="portrait_div"></div>`;
       this.make_portrait(name);
+      this.html.id = "portrait_icon_container";
     }
 
     is_supported_speaker(name){
