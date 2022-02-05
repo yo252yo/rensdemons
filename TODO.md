@@ -2,9 +2,6 @@
 
 
 
-
-TITLESCREEN IS SCROLLABLE AND HAS A LOOSE IMAGE
-
 # GLITCHING  ----------------------------------------------------
 
 - alternate glitch image of the goddess saying STOP

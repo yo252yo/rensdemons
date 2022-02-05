@@ -96,3 +96,4 @@ FOG.stop();
 
 
 var r = new Rectangle (-100,SCREEN.height()+100, SCREEN.width()+200, SCREEN.height()+200, undefined, "assets/screens/title_bg.png", true);
+r.container.style.position = "fixed";
