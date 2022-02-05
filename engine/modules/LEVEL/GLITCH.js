@@ -31,7 +31,9 @@ class THOUGHTS {
 
   static checkThoughtBubble(thinker) {
     if(thinker && thinker.bubble){
-      if (Math.abs(thinker.x - CHARACTER.character.x) < GLITCH.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < GLITCH.BERKELEY_DISTANCE){
+      if(!CHARACTER.character){
+        thinker.killThoughtBubble();
+      } else if (Math.abs(thinker.x - CHARACTER.character.x) < GLITCH.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < GLITCH.BERKELEY_DISTANCE){
         thinker.killThoughtBubble();
       } else {
         setTimeout(function(){THOUGHTS.checkThoughtBubble(thinker)}, 500);
@@ -73,7 +75,7 @@ const GLITCH = {
 
       var c = CURRENTLEVEL.objects.get_all_objects();
       for(var o of c) {
-        if(!CHARACTER.character){
+        if(!CHARACTER.character || !CHARACTER.character.sprite){
           break; // fail fast on levels without character or when character isnt loaded
         }
 
