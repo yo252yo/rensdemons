@@ -131,7 +131,7 @@ const DEBUG = {
   },
 
   stop_berkeley_mode: function(){
-    GLITCH.update_surroundings_berkeley = function(){};
+    GLITCH.berkeley.update_surroundings = function(){};
   },
 
   signal: {

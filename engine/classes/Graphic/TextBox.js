@@ -102,11 +102,7 @@ class TextBox extends TextElement {
 
       if (instant) {
         textbox.html.innerHTML += text_printing;
-        for(var c of GLITCH.GLITCH_CHARACTERS){
-          if(text_printing.includes(c)){
-            GLITCH.glitch();
-          }
-        }
+        GLITCH.react_to_print_text(text_printing);
         return;
       }
 
@@ -127,9 +123,7 @@ class TextBox extends TextElement {
       } else {
         var c = text_printing[0];
         textbox.html.innerHTML += c;
-        if(GLITCH.GLITCH_CHARACTERS.includes(c)){
-          GLITCH.glitch();
-        }
+        GLITCH.react_to_print_text(text_printing[0]);
         textbox.pages[0] = text_printing.substring(1);
       }
 
