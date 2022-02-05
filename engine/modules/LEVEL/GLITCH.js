@@ -71,30 +71,31 @@ const GLITCH = {
   },
 
   screen: {
+    _move_html_element(id, top, left, opacity){
+      var element = document.getElementById(id);
+      if (element){
+        element.style.marginTop = top +  "px";
+        element.style.marginLeft = left +  "px";
+        if(opacity){
+          element.style.opacity = opacity;
+        }
+      }
+    },
+
     glitch: function(){
       AUDIO.effect.glitch();
       var g = document.getElementById("glitch");
       if (g){
         g.style.visibility = "visible";
-        g.style.top = Math.floor(Math.random() * (-200) - 10) + "px";
-        g.style.left = Math.floor(Math.random() * (-200) - 10) + "px";
+        g.style.top = Math.floor(Math.random() * (-200) - 10);
+        g.style.left = Math.floor(Math.random() * (-200) - 10);
       }
 
-      var offset_top = Math.floor(Math.random() * 200 - 100) + "px";
-      var offset_left = Math.floor(Math.random() * 200 - 100) + "px";
+      var offset_top = Math.floor(Math.random() * 200 - 100);
+      var offset_left = Math.floor(Math.random() * 200 - 100);
 
-      var l = document.getElementById("level");
-      if (l){
-        l.style.opacity = 0.5;
-        l.style.top = offset_top;
-        l.style.left = offset_left;
-      }
-
-      var t = document.getElementById("textBanner");
-      if (t){
-        t.style.marginTop = offset_top;
-        t.style.marginTeft = offset_left;
-      }
+      GLITCH.screen._move_html_element("level", offset_top, offset_left, 0.5);
+      GLITCH.screen._move_html_element("textBanner", offset_top, offset_left);
 
 
       setTimeout(GLITCH.screen.unglitch, 300);
@@ -103,17 +104,8 @@ const GLITCH = {
     unglitch: function(){
       document.getElementById("glitch").style.visibility = "hidden";
 
-      var l = document.getElementById("level");
-      if (l){
-        l.style.opacity = 1;
-        l.style.top = "0px";
-        l.style.left = "0px";
-      }
-      var t = document.getElementById("textBanner");
-      if (t){
-        t.style.marginTop = "0px";
-        t.style.marginTeft = "0px";
-      }
+      GLITCH.screen._move_html_element("level", 0, 0, 1);
+      GLITCH.screen._move_html_element("textBanner", 0, 0);
     },
   },
 
