@@ -5,10 +5,10 @@
 # GLITCHING  ----------------------------------------------------
 
 - Mb all conscious object during glich scream in pain and help us and so on.
-- make glitches regular after the first one
 - better glitching in battles ?? (menus, sprites...)
 - glitched characters can circle
 - display console in dialog text sometimes
+- change color scheme doesnt change fog or map bg
 
 
 # NG+  ----------------------------------------------------
@@ -103,7 +103,6 @@ See 051_pandemonium_room and 012_trees
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - test on edge, epsecially functions starting by _, mb the nested ones
-- change color scheme doesnt change fog or map bg
 - Mb interaction per villager per summon
 - artifact have special sound effects
 - should we specify that starting a battle clears the timeline?

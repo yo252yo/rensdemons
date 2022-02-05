@@ -49,7 +49,25 @@ const GLITCH = {
     if(STATS.is_post_game()){
       GLITCH.berkeley.update_surroundings();
     }
+    if(STATS.flag(STAT.Glitches)){
+      GLITCH.regular_glitch(true);
+    }
   },
+
+  regular_glitch: function(is_init){
+    clearTimeout(GLITCH.regular_glitch_timeout);
+
+    var delay = 4000 + 2000 * Math.random(); // About every 5 secs
+
+    GLITCH.regular_glitch_timeout = setTimeout(GLITCH.regular_glitch, delay);
+
+    if(!is_init){
+      if (Math.random() < 0.08) { // Trigger every 5 seconds, we want a glitch per minute, so every 12 triggers
+        GLITCH.screen.glitch();
+      }
+    }
+  },
+
 
   berkeley: {
     update_surroundings: function() {
@@ -158,7 +176,14 @@ const GLITCH = {
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
 
       GLITCH.text.fuckup_banner();
-      setTimeout(GLITCH.screen.unglitch, 150 + 200 * Math.random());
+
+      if(Math.random() < 0.3){ // dble glitch
+        var delay = 25 + 175 * Math.random();
+        setTimeout(GLITCH.screen.glitch, delay);
+        setTimeout(PALETTE.factory.make_new, delay - 15);
+      } else {
+        setTimeout(GLITCH.screen.unglitch, 150 + 200 * Math.random());
+      }
     },
 
     unglitch: function(){

@@ -129,6 +129,7 @@ class S_Maou extends SimpleObject {
     }
     var secretEnd = function(){
       ABILITIES.unlock("_secret_ending_chosen");
+      STATS.record.flag(STAT.Glitches);
       TextBannerSequence.make([
         `Unsure of what you're doing, you slowly nurse $$demon_lord$ back to life.`,
         `When he regains consciousness, his face distort in a level of fear you've never seen on a demon before. Sweat runs down his forehead and he struggles to find his words. He grabs you, shakes you, and screams in a panicked voice.`,

@@ -4,6 +4,7 @@ const STAT = {
   Endings: "endings",
   Ledger: "LEDGER",
   MaxExplorationScore: "MaxExplorationScore",
+  Glitches: "Glitches",
 }
 
 const ENDINGS = {
