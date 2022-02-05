@@ -1,24 +1,24 @@
 # WIP
 
-Mb all conscious object during glich scream in pain and help us and so on. Keep more stqste and reuse the Stat of ren's desth
 
 
-# BACKSIDE  ----------------------------------------------------
 
-- Sometimes the game would crash with a very peculiar error code or error messags “help us”
+TITLESCREEN IS SCROLLABLE AND HAS A LOOSE IMAGE
+
+# GLITCHING  ----------------------------------------------------
+
+- alternate glitch image of the goddess saying STOP
+- Mb all conscious object during glich scream in pain and help us and so on.
+- glitches also change ongoing text a bit, one letter here and there
+- make glitches regular after the first one
+- the way its currently setup isnt great as menus can have some of the glitch characters
+- better glitching in battles ?? (menus, sprites...)
+
+
+# NG+  ----------------------------------------------------
+
 - make herald a character in NG+ ?
-
-
-BERLE:EY EFFECT SHOULDNT TAKE PLACE IN BATTLES
-
-glitches also change ongoing text a bit, one letter here and there
-
-in new game + have regular glitches
-
->>>  check how it works in battles
-
-
-new game + you get the action spoiler in combats where you is_empathized
+- new game + you get the action spoiler in combats where you is_empathized
 Mb implemented as ren's summon
 Mb after victory you get a special attack that allows you to one shot or two shot everyone you ve already beaten. Mb it's about information like disclose the secret or call out their bluff
 
@@ -26,7 +26,7 @@ Mb after victory you get a special attack that allows you to one shot or two sho
 # GRAPHIC REWORK  ----------------------------------------------------
 - audit from >= first town mb use szadi for houses
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-- object/buildings: need better buildings and differnt building styles for different cities?
+- extra items per city style
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
 - decorate stores
 - the treasure battler should probs be closed
@@ -121,6 +121,7 @@ See 051_pandemonium_room and 012_trees
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
 - a suicide function?
+- Keep more stats and reuse the Stat of ren's desth
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
 - why does battletree have lists as leaves and not simply state?

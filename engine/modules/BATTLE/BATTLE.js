@@ -484,6 +484,7 @@ const BATTLE = {
       LEVELSTATES.register_current();
       BATTLE.origin_level = origin_level;
       BATTLE.builder.setup.start(name, callback);
+      GLITCH.berkeley.stop();
     },
   },
 

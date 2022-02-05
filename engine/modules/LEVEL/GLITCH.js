@@ -23,6 +23,10 @@ const GLITCH = {
 
       var c = CURRENTLEVEL.objects.get_all_objects();
       for(var o of c) {
+        if(!CHARACTER.character){
+          break; // fail fast on levels without character or when character isnt loaded
+        }
+
         if (!o || o == CHARACTER.character || !o.distance_to_character || !o.visual_element){
           continue;
         }
@@ -68,6 +72,12 @@ const GLITCH = {
       var delay = 300 + 300 * (Math.random() - 0.5);
       GLITCH.berkeley_timeout = setTimeout(GLITCH.berkeley.update_surroundings, delay);
     },
+
+    stop: function(){
+      if(GLITCH.berkeley_timeout){
+        clearTimeout(GLITCH.berkeley_timeout);
+      }
+    }
   },
 
   screen: {
