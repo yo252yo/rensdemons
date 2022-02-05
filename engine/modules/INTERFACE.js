@@ -304,6 +304,7 @@ const INTERFACE = {
     INTERFACE.draw.escape_button();
     INTERFACE.draw.click_marker();
     CURRENTLEVEL.system.redraw();
+    FOG.recolor(PALETTE.fog_color());
   },
 
   make_compass: function() {

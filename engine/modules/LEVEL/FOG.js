@@ -6,7 +6,6 @@ const FOG = {
   MASK_HEIGHT: 2*SCREEN.height(),
 
   draw: function() {
-
     var opacity = 0.98;
 
     if(STATS.is_post_game()){
@@ -56,6 +55,9 @@ const FOG = {
   },
 
   recolor: function(c){
+    if(!c || !document.getElementById("fog_top") || !document.getElementById("fog_bot") || !document.getElementById("fog_left") || !document.getElementById("fog_right")){
+      return;
+    }
     var color = c.code();
     document.getElementById("fog_top").style.background = color;
     document.getElementById("fog_bot").style.background = color;
