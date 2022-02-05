@@ -76,7 +76,12 @@ const AUDIO = {
     AUDIO._PLAYING = track;
     AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
+    AUDIO._MUSIC_PLAYER.playbackRate = 1;
     AUDIO._start_music();
+  },
+
+  set_music_speed: function(speed){
+    AUDIO._MUSIC_PLAYER.playbackRate = speed;
   },
 
   _free_sfx_slot: function(key) {

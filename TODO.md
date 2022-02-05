@@ -6,9 +6,10 @@
 
 - alternate glitch image of the goddess saying STOP
 - Mb all conscious object during glich scream in pain and help us and so on.
-- glitches also change ongoing text a bit, one letter here and there
 - make glitches regular after the first one
 - better glitching in battles ?? (menus, sprites...)
+- glitched characters can circle
+- display console in dialog text sometimes
 
 
 # NG+  ----------------------------------------------------

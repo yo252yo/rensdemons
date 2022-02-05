@@ -128,6 +128,9 @@ const GLITCH = {
 
     glitch: function(){
       AUDIO.effect.glitch();
+      PALETTE.factory.make_new();
+      AUDIO.set_music_speed(0.5 + Math.random());
+
       var g = document.getElementById("glitch");
       if (g){
         g.style.visibility = "visible";
