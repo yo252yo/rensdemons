@@ -43,19 +43,11 @@ class THOUGHTS {
 
 const GLITCH = {
   BERKELEY_DISTANCE: 170,
-  GLITCH_CHARACTERS: "###***||%%__",
+  GLITCH_CHARACTER: "^",
 
   init_level:function(){
     if(STATS.is_post_game()){
       GLITCH.berkeley.update_surroundings();
-    }
-  },
-
-  react_to_print_text:function(text){
-    for(var c of text){
-      if(GLITCH.GLITCH_CHARACTERS.includes(c)){
-        GLITCH.screen.glitch();
-      }
     }
   },
 
@@ -163,15 +155,36 @@ const GLITCH = {
     },
   },
 
-  glitch_text: function(text, strength){
-    var ntext = "";
-    for (var i = 0; i < text.length; i++) {
-        if (Math.random() < strength){
-          ntext += RANDOM.pick(GLITCH.GLITCH_CHARACTERS);
-        } else {
-          ntext += text[i];
+  text: {
+    get_char: function(){
+      return RANDOM.pick("#*|%_$&");
+    },
+
+    glitch: function(text, strength){
+      var ntext = "";
+      for (var i = 0; i < text.length; i++) {
+          if (Math.random() < strength){
+            ntext += GLITCH.GLITCH_CHARACTER;
+          } else {
+            ntext += text[i];
+          }
+      }
+      return ntext;
+    },
+
+    process:function(text){
+      var r = "";
+      for(var i in text){
+        if(text[i] == GLITCH.GLITCH_CHARACTER){
+          GLITCH.screen.glitch();
+          r += GLITCH.text.get_char();
         }
-    }
-    return ntext;
+        else {
+          r += text[i];
+        }
+      }
+      return r;
+    },
   },
+
 }

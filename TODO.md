@@ -8,7 +8,6 @@
 - Mb all conscious object during glich scream in pain and help us and so on.
 - glitches also change ongoing text a bit, one letter here and there
 - make glitches regular after the first one
-- the way its currently setup isnt great as menus can have some of the glitch characters
 - better glitching in battles ?? (menus, sprites...)
 
 
