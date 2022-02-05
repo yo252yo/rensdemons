@@ -3,12 +3,11 @@
 
 class S_event extends LevelObject {
   static make_icon(icon_type, x, y) {
-    var icon = new StaticSprite(`assets/interface/${icon_type}.png`, PALETTE.text_color().code(), 200, 200);
+    var icon = new BorderedSprite(`assets/interface/${icon_type}.png`, PALETTE.text_color().code(), 200, 200);
 
-    icon.html_canvas.style.background = PALETTE.text_background().code();
-    icon.html_canvas.style.border = "5px outset " + PALETTE.text_border().code();
     icon.adjust_depth(9999);
     icon.place_at(x-90, y+50);
+    icon.html_canvas.id = "event_icon";
     return icon
   }
 

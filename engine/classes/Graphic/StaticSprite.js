@@ -57,5 +57,17 @@ class FixedSprite extends StaticSprite {
       super(path, color);
       this.container.style.position = "fixed";
     }
+}
 
+
+class BorderedSprite extends StaticSprite {
+    constructor(path, color, width, height) {
+      super(path, color, width, height);
+    }
+
+    draw(){
+      super.draw();
+      this.html_canvas.style.background = PALETTE.text_background().code();
+      this.html_canvas.style.border = "5px outset " + PALETTE.text_border().code();
+    }
 }

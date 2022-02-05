@@ -176,6 +176,7 @@ const GLITCH = {
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
       GLITCH.screen._move_html_element("battle_menu", offset_top, offset_left);
       GLITCH.screen._move_html_element("battle_centered_img", offset_top, offset_left);
+      GLITCH.screen._move_html_element("event_icon", offset_top, offset_left);
       GLITCH.text.fuckup_div("battle_menu");
 
       GLITCH.text.fuckup_banner();
@@ -198,6 +199,7 @@ const GLITCH = {
       GLITCH.screen._move_html_element("portrait_icon_container", 0, 0);
       GLITCH.screen._move_html_element("battle_menu", 0, 0);
       GLITCH.screen._move_html_element("battle_centered_img", 0, 0);
+      GLITCH.screen._move_html_element("event_icon", 0, 0);
       GLITCH.text.restore_banner();
     },
   },
