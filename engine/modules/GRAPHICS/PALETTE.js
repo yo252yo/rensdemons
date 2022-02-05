@@ -132,9 +132,9 @@ const PALETTE = {
   factory: {
     make_new: function() {
       if(STATS.get(STAT.Endings) > 0){
-        PALETTE.generate.pick_harmonized_palette();
-      } else {
         PALETTE.generate.pick_random_palette();
+      } else {
+        PALETTE.generate.pick_harmonized_palette();
       }
       DISK.write("PALETTE");
       INTERFACE.color_interface();
