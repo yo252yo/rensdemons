@@ -63,11 +63,17 @@ a:active {
    width:200%;
    height:200%;
    background-image: url("assets/screens/noise.png");
+   background-repeat: no-repeat;
    z-index:9000001;
    position:fixed;
    top:-100px;
    left:-100px;
    visibility:hidden;
+   /* opacity: 0.5; */
+   /* mix-blend-mode: color-dodge; */
+   /* mix-blend-mode: color-burn; */
+   mix-blend-mode: difference;
+   /* mix-blend-mode: exclusion; */
 }
 
 
