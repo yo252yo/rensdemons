@@ -23,7 +23,7 @@ class ConsciousObject extends MovingObject {
   }
   static checkThoughtBubble(thinker) {
     if(thinker && thinker.bubble){
-      if (Math.abs(thinker.x - CHARACTER.character.x) < FOG.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < FOG.BERKELEY_DISTANCE){
+      if (Math.abs(thinker.x - CHARACTER.character.x) < GLITCH.BERKELEY_DISTANCE && Math.abs(thinker.y - CHARACTER.character.y) < GLITCH.BERKELEY_DISTANCE){
         thinker.bubble.destroy();
       } else {
         setTimeout(function(){ConsciousObject.checkThoughtBubble(thinker)}, 500);

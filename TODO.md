@@ -1,6 +1,6 @@
 # WIP
 
-
+Mb all conscious object during glich scream in pain and help us and so on. Keep more stqste and reuse the Stat of ren's desth
 
 
 # BACKSIDE  ----------------------------------------------------
@@ -14,6 +14,8 @@ BERLE:EY EFFECT SHOULDNT TAKE PLACE IN BATTLES
 glitches also change ongoing text a bit, one letter here and there
 
 in new game + have regular glitches
+
+>>>  check how it works in battles
 
 
 new game + you get the action spoiler in combats where you is_empathized

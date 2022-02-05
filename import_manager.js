@@ -111,6 +111,7 @@ new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
 new Module("GRAPHICS/SCREEN");
   IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
+  IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/GLITCH");
 
 new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
