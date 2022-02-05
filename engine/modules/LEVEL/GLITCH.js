@@ -53,6 +53,9 @@ const GLITCH = {
     }
     if(STATS.flag(STAT.Glitches)){
       GLITCH.regular_glitch(true);
+      if(!GLITCH.textInterval) {
+        GLITCH.textInterval = setInterval(GLITCH.text.continuousProcess, 100);
+      }
     }
   },
 
@@ -67,6 +70,7 @@ const GLITCH = {
         GLITCH.screen.glitch();
       }
     }
+
   },
 
   berkeley: {
@@ -154,6 +158,12 @@ const GLITCH = {
       }
     },
     activate_overlay: function() {
+      if(Math.random() < 0.02){
+        var g = document.getElementById("glitchcode");
+        g.innerHTML = document.documentElement.innerHTML;
+        g.style.visibility = "visible";
+        return;
+      }
 
       var g = document.getElementById("glitch");
       if (g){
@@ -204,6 +214,7 @@ const GLITCH = {
     unglitch: function(){
       PALETTE.factory.make_new();
       document.getElementById("glitch").style.visibility = "hidden";
+      document.getElementById("glitchcode").style.visibility = "hidden";
 
       GLITCH.screen._move_html_element("level", 0, 0, 1);
       GLITCH.screen._move_html_element("textBanner", 0, 0);
@@ -217,7 +228,11 @@ const GLITCH = {
 
   text: {
     get_char: function(){
-      return RANDOM.pick("#*|%_$&");
+      var r = String.fromCharCode(Math.floor(128+Math.random()*128));
+      if (Math.random() < 0.1){
+        r += String.fromCharCode(Math.floor(128+Math.random()*128));
+      }
+      return r;
     },
 
     glitch: function(text, strength){
@@ -244,6 +259,30 @@ const GLITCH = {
         }
       }
       return r;
+    },
+
+    continuousProcess: function(){
+      var parent = document.getElementById("textBanner");
+      if(!parent){
+        return;
+      }
+
+      for (var node of parent.firstChild.childNodes){
+        if (node.nodeType == Node.TEXT_NODE){
+          var replacement = "";
+          for (var i in node.textContent){
+            if(node.textContent.charCodeAt(i) >= 128){
+              if(node.textContent.charCodeAt(i-1) >= 128 && Math.random() < 0.3){
+                continue;
+              }
+              replacement += GLITCH.text.get_char();
+            } else {
+              replacement += node.textContent[i];
+            }
+          }
+          node.textContent = replacement;
+        }
+      }
     },
 
     fuckup_div: function(id){
