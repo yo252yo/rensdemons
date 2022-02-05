@@ -466,6 +466,7 @@ BESTIARY.dict["heaven"]["angel"] = {
   "introed": "An Arrogant Angel Ascended with Attitude.",
   "outro": "It did its best, considering its abilities, but sometimes your best is not enough.",
 };
+BESTIARY.dict["heaven"]["goddess"] = {};
 
 
 //hack forests
