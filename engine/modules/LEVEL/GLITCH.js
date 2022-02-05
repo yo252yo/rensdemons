@@ -146,7 +146,7 @@ const GLITCH = {
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
 
       GLITCH.text.fuckup_banner();
-      setTimeout(GLITCH.screen.unglitch, 300);
+      setTimeout(GLITCH.screen.unglitch, 200 + 300 * Math.random());
     },
 
     unglitch: function(){
