@@ -132,6 +132,16 @@ const GLITCH = {
     }
   },
 
+  display_conscious_suffering: function() {
+    for(var o of CURRENTLEVEL.objects.get_all_objects()){
+      if (o && o.suffer && o.distance_to_character() > GLITCH.BERKELEY_DISTANCE) {
+        if (Math.random() < 0.3){
+          o.suffer();
+        }
+      }
+    }
+  },
+
   screen: {
     _move_html_element(id, top, left, opacity){
       var element = document.getElementById(id);
@@ -180,6 +190,7 @@ const GLITCH = {
       GLITCH.text.fuckup_div("battle_menu");
 
       GLITCH.text.fuckup_banner();
+      GLITCH.display_conscious_suffering();
 
       if(Math.random() < 0.3){ // dble glitch
         var delay = 25 + 175 * Math.random();

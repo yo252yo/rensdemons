@@ -224,6 +224,26 @@ class ConsciousObject extends MovingObject {
     this.makeThoughtBubble(thought);
   }
 
+  suffer(){
+    var thought = RANDOM.pick([
+      "Aouch!",
+      "Help!",
+      "Please help!",
+      "Help us!",
+      "Stop it!",
+      "Stop this!",
+      "Make it stop!",
+      "Save us!",
+      "Save me!",
+      "Kill me!",
+      "Stop!",
+      "Please!",
+
+
+    ]);
+    this.actuallythink(thought);
+  }
+
   record_death() {
     THOUGHTS.stopThinking(this);
     LEDGER.record_death(this.name, this.role);

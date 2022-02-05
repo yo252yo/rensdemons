@@ -4,7 +4,6 @@
 
 # GLITCHING  ----------------------------------------------------
 
-- Mb all conscious object during glich scream in pain and help us and so on.
 - glitched characters can circle
 
 
