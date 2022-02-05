@@ -7,6 +7,7 @@ class VisualElement {
           container = CURRENTLEVEL.system.html();
         }
         container.appendChild(this.container);
+        CURRENTLEVEL.visual_elements.push(this);
 
         this.adjust_dimensions(w, h);
         this.place_at(x, y);

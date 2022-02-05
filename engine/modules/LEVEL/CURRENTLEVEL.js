@@ -14,6 +14,7 @@ const CURRENTLEVEL = {
   level_name: "",
   previous_lvl: "", // used to exit houses
   _level_objects: [], // Would benefit from being smartly indexed.
+  visual_elements: [],
   destroyed_objects: [],
   triggers: [],
   start_function: null,
@@ -216,14 +217,11 @@ const CURRENTLEVEL = {
     },
 
     redraw: function() {
-      var objects = CURRENTLEVEL.objects.get_all_objects();
-      for(var i in objects){
-        var el = objects[i];
-        if(el && el.get_visual && el.get_visual().draw){
-          el.get_visual().draw();
+      for(var e of CURRENTLEVEL.visual_elements){
+        if(e.draw) {
+          e.draw();
         }
       }
-      CHARACTER.redraw();
     },
 
     clear: function() {
@@ -239,6 +237,7 @@ const CURRENTLEVEL = {
       }
       CURRENTLEVEL.system.html().innerHTML = "";
       CURRENTLEVEL._level_objects = [];
+      CURRENTLEVEL.visual_elements = [];
       CURRENTLEVEL.triggers = {};
       CURRENTLEVEL.start_function = null;
       CHARACTER.clear();
