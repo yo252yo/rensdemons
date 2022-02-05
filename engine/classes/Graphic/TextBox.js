@@ -121,6 +121,7 @@ class TextBox extends TextElement {
         textbox.pages[0] = text_printing.substr(cutoff + 1, text_printing.length - cutoff);
       } else {
         var c = text_printing[0];
+        // we make sure to add the character before potentially fucking up the text
         textbox.html.innerHTML += c;
         GLITCH.text.process(text_printing[0]);
         textbox.pages[0] = text_printing.substring(1);

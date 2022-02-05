@@ -5,7 +5,7 @@
 # GLITCHING  ----------------------------------------------------
 
 - glitched characters can circle
-
+CHECK GLITCH SPEAKER NAME IN DIALOG
 
 # NG+  ----------------------------------------------------
 
