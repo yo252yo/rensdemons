@@ -4,7 +4,6 @@
 
 # GLITCHING  ----------------------------------------------------
 
-- alternate glitch image of the goddess saying STOP
 - Mb all conscious object during glich scream in pain and help us and so on.
 - make glitches regular after the first one
 - better glitching in battles ?? (menus, sprites...)

@@ -62,8 +62,9 @@ a:active {
 #glitch {
    width:200%;
    height:200%;
+   /* Actually determined in GLITCH.js */
    background-image: url("assets/screens/noise.png");
-   background-repeat: no-repeat;
+   background-repeat: repeat;
    z-index:9000001;
    position:fixed;
    top:-100px;

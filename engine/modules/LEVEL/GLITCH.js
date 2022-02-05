@@ -125,18 +125,30 @@ const GLITCH = {
         }
       }
     },
-
-    glitch: function(){
-      AUDIO.effect.glitch();
-      PALETTE.factory.make_new();
-      AUDIO.set_music_speed(0.5 + Math.random());
+    activate_overlay: function() {
 
       var g = document.getElementById("glitch");
       if (g){
+        if (Math.random() > 0.05){
+          g.style.top = Math.floor(Math.random() * (-200) - 10);
+          g.style.left = Math.floor(Math.random() * (-200) - 10);
+          g.style.backgroundImage= `url("assets/screens/noise.png")`;
+          g.style.backgroundRepeat= `repeat`;
+        } else {
+          g.style.left = (-500 + SCREEN.width() / 2 ) +"px";
+          g.style.top = "0px";
+          g.style.backgroundImage= `url("assets/screens/warning.png")`;
+          g.style.backgroundRepeat= `no-repeat`;
+        }
         g.style.visibility = "visible";
-        g.style.top = Math.floor(Math.random() * (-200) - 10);
-        g.style.left = Math.floor(Math.random() * (-200) - 10);
       }
+    },
+
+    glitch: function(){
+      AUDIO.effect.glitch();
+      AUDIO.set_music_speed(0.5 + Math.random());
+
+      GLITCH.screen.activate_overlay();
 
       var offset_top = Math.floor(Math.random() * 200 - 100);
       var offset_left = Math.floor(Math.random() * 200 - 100);
@@ -146,10 +158,11 @@ const GLITCH = {
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
 
       GLITCH.text.fuckup_banner();
-      setTimeout(GLITCH.screen.unglitch, 200 + 300 * Math.random());
+      setTimeout(GLITCH.screen.unglitch, 150 + 200 * Math.random());
     },
 
     unglitch: function(){
+      PALETTE.factory.make_new();
       document.getElementById("glitch").style.visibility = "hidden";
 
       GLITCH.screen._move_html_element("level", 0, 0, 1);
