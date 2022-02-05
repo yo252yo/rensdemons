@@ -48,21 +48,21 @@ const GLITCH = {
   GLITCH_CHARACTER: "^",
 
   init_level:function(){
-  //  if(STATS.is_post_game()){
+    if(STATS.is_post_game()){
       GLITCH.berkeley.update_surroundings();
-  //  }
-  //  if(STATS.flag(STAT.Glitches)){
+    }
+    if(STATS.flag(STAT.Glitches)){
       GLITCH.regular_glitch(true);
       if(!GLITCH.textInterval) {
         GLITCH.textInterval = setInterval(GLITCH.text.continuousProcess, 100);
       }
-  //  }
+    }
   },
 
   regular_glitch: function(is_init){
     clearTimeout(GLITCH.regular_glitch_timeout);
 
-    var delay = 400 + 200 * Math.random(); // About every 5 secs
+    var delay = 4000 + 2000 * Math.random(); // About every 5 secs
     GLITCH.regular_glitch_timeout = setTimeout(GLITCH.regular_glitch, delay);
 
     if(!is_init){
