@@ -68,7 +68,6 @@ const GLITCH = {
     }
   },
 
-
   berkeley: {
     update_surroundings: function() {
       var max = 1.5 * Math.max(SCREEN.width(), SCREEN.height());
@@ -193,6 +192,7 @@ const GLITCH = {
       GLITCH.screen._move_html_element("level", 0, 0, 1);
       GLITCH.screen._move_html_element("textBanner", 0, 0);
       GLITCH.screen._move_html_element("portrait_icon_container", 0, 0);
+      GLITCH.text.restore_banner();
     },
   },
 
@@ -232,20 +232,36 @@ const GLITCH = {
       if (!banner){
         return;
       }
-      for (var node of banner.firstChild.childNodes){
-        if (node.nodeType == Node.TEXT_NODE){
-          var replacement = "";
-          for (var c of node.textContent){
-            if(Math.random() < 0.02){
-              replacement += GLITCH.text.get_char();
-            } else {
-              replacement += c;
+
+      if (Math.random() < 0.3){// Show console
+        if(!GLITCH.saved_html) {
+          GLITCH.saved_html = banner.firstChild.innerHTML;
+        }
+        banner.firstChild.innerHTML = "> " + CONSOLE.logs.slice(-4).join("<br />> ");
+      } else {
+        for (var node of banner.firstChild.childNodes){
+          if (node.nodeType == Node.TEXT_NODE){
+            var replacement = "";
+            for (var c of node.textContent){
+              if(Math.random() < 0.02){
+                replacement += GLITCH.text.get_char();
+              } else {
+                replacement += c;
+              }
             }
+            node.textContent = replacement;
           }
-          node.textContent = replacement;
         }
       }
-    }
+    },
+
+    restore_banner: function(){
+      var banner = document.getElementById("textBanner");
+      if(banner && GLITCH.saved_html){
+        banner.firstChild.innerHTML = GLITCH.saved_html;
+        GLITCH.saved_html = undefined;
+      }
+    },
   },
 
 }

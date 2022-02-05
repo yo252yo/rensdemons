@@ -124,7 +124,7 @@ const DEBUG = {
 
 
     setInterval(FOG.stop, 1000);
-    DEBUG.stop_berkeley_mode();
+    // DEBUG.stop_berkeley_mode();
     //setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
