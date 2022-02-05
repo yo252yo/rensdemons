@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-//new CenteredImage("assets/battles/encounters/ruins.png", 'background');
+//new CenteredBattleImage("assets/battles/encounters/ruins.png", 'background');
 BESTIARY.picture('encounters/ruins');
 PLAYER_ACTIONS.allow_flight();
 

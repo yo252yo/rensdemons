@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredMovingImage("assets/characters/party/PreciousChild.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/PreciousChild.png", 'background',32,48, 2);
 AUDIO.music.characters.PreciousChild();
 
 PLAYER_ACTIONS.escape();

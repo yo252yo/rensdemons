@@ -1,5 +1,5 @@
 
-new CenteredMovingImage("assets/characters/party/SnobRich.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/SnobRich.png", 'background',32,48, 2);
 
 AUDIO.music.characters.SnobRich();
 PLAYER_ACTIONS.escape();

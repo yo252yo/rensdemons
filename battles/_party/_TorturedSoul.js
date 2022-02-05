@@ -1,5 +1,5 @@
 
-new CenteredMovingImage("assets/characters/party/TorturedSoul.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/TorturedSoul.png", 'background',32,48, 2);
 
 AUDIO.music.characters.TorturedSoul();
 PLAYER_ACTIONS.escape();

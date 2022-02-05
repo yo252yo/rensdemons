@@ -1,5 +1,5 @@
 
-new CenteredMovingImage("assets/characters/party/DumbMuscles.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/DumbMuscles.png", 'background',32,48, 2);
 
 AUDIO.music.characters.DumbMuscles();
 PLAYER_ACTIONS.escape();

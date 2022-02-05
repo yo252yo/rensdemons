@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredMovingImage("assets/characters/priest.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/priest.png", 'background',32,48, 2);
 
 PLAYER_ACTIONS.escape();
 

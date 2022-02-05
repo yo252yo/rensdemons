@@ -40,9 +40,9 @@ const BATTLEOBJECTSMANAGER = {
       CONSOLE.error("[BATTLEOBJECTSMANAGER] called with the wrong battleobject.");
     }
     if(battleobject.battle_sprite_name.startsWith("characters")){
-      var c = new CenteredMovingImage("assets/" + battleobject.battle_sprite_name + ".png", 'background',32,48, 2);
+      var c = new CenteredMovingBattleImage("assets/" + battleobject.battle_sprite_name + ".png", 'background',32,48, 2);
     } else{
-      var c = new CenteredImage("assets/" + battleobject.battle_sprite_name + ".png", 'background', 2);
+      var c = new CenteredBattleImage("assets/" + battleobject.battle_sprite_name + ".png", 'background', 2);
     }
 
     BATTLEOBJECTSMANAGER.battle.add_commands_from_object(battleobject);

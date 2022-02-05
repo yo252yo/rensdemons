@@ -305,6 +305,9 @@ const INTERFACE = {
     INTERFACE.draw.click_marker();
     CURRENTLEVEL.system.redraw();
     FOG.recolor(PALETTE.fog_color());
+    if(BATTLE.current_battle){
+      PALETTE.color_for_battle();
+    }
   },
 
   make_compass: function() {

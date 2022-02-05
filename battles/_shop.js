@@ -1,7 +1,7 @@
 
 // get the sprite name from BATTLE.make_conversation
 var sprite = SPECIALBATTLES._battle_extra_data[0];
-var s = new CenteredMovingImage("assets/characters/villager" + sprite + ".png", 'background', 32, 48);
+var s = new CenteredMovingBattleImage("assets/characters/villager" + sprite + ".png", 'background', 32, 48);
 
 
 PLAYER_ACTIONS.allow_flight();

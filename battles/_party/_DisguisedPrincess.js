@@ -1,5 +1,5 @@
 
-new CenteredMovingImage("assets/characters/party/DisguisedPrincess.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/DisguisedPrincess.png", 'background',32,48, 2);
 
 AUDIO.music.characters.DisguisedPrincess();
 PLAYER_ACTIONS.escape();

@@ -95,7 +95,7 @@ BESTIARY = {
   },
 
   picture: function(battlename) {
-    return new CenteredImage(BESTIARY.picture_address(battlename), 'background');
+    return new CenteredBattleImage(BESTIARY.picture_address(battlename), 'background');
   },
 }
 

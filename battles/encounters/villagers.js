@@ -7,7 +7,7 @@
 var sprite = SPECIALBATTLES._battle_extra_data[0];
 var gen = new Generator(SPECIALBATTLES._battle_extra_data[1]);
 
-var s = new CenteredMovingImage("assets/characters/" + sprite + ".png", 'background', 32, 48, 2);
+var s = new CenteredMovingBattleImage("assets/characters/" + sprite + ".png", 'background', 32, 48, 2);
 var name = "Villager";
 
 if (sprite == "villager2" || sprite == "villager3") {

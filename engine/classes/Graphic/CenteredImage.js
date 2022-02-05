@@ -8,7 +8,12 @@ class CenteredImage extends FixedSprite {
 
     draw() {
       super.draw();
-      this.adjust_dimensions(this.width * this.scale, this.height * this.scale);
+      if(!this.adjusted){
+        this.adjust_dimensions(this.width * this.scale, this.height * this.scale);
+        if (this.width  > 0 && this.height >0){
+          this.adjusted = true;
+        }
+      }
       if(! this.lvl_obj){
         this.lvl_obj = new LevelObject(this, SCREEN.width() / 2 - this.resource.width / 2, Math.max(SCREEN.height() / 2 - 50, this.resource.height), true);
       } else{
@@ -17,12 +22,20 @@ class CenteredImage extends FixedSprite {
     }
 }
 
-class CenteredMovingImage extends MovingSprite {
+class CenteredBattleImage extends CenteredImage {
+  constructor(path, color, scale) {
+    super(path, color, scale);
+    this.container.id = "battle_centered_img";
+  }
+}
+
+class CenteredMovingBattleImage extends MovingSprite {
 
     constructor(path, color, width, height, scale) {
       super(path, color, width, height, scale);
       this.scale = scale || 1;
       this.container.style.position = "fixed";
+      this.container.id = "battle_centered_img";
       this.draw();
     }
 

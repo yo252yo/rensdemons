@@ -58,7 +58,6 @@ const GLITCH = {
     clearTimeout(GLITCH.regular_glitch_timeout);
 
     var delay = 4000 + 2000 * Math.random(); // About every 5 secs
-
     GLITCH.regular_glitch_timeout = setTimeout(GLITCH.regular_glitch, delay);
 
     if(!is_init){
@@ -173,6 +172,9 @@ const GLITCH = {
       GLITCH.screen._move_html_element("level", offset_top, offset_left, 0.5);
       GLITCH.screen._move_html_element("textBanner", offset_top, offset_left);
       GLITCH.screen._move_html_element("portrait_icon_container", offset_top, offset_left);
+      GLITCH.screen._move_html_element("battle_menu", offset_top, offset_left);
+      GLITCH.screen._move_html_element("battle_centered_img", offset_top, offset_left);
+      GLITCH.text.fuckup_div("battle_menu");
 
       GLITCH.text.fuckup_banner();
 
@@ -192,6 +194,8 @@ const GLITCH = {
       GLITCH.screen._move_html_element("level", 0, 0, 1);
       GLITCH.screen._move_html_element("textBanner", 0, 0);
       GLITCH.screen._move_html_element("portrait_icon_container", 0, 0);
+      GLITCH.screen._move_html_element("battle_menu", 0, 0);
+      GLITCH.screen._move_html_element("battle_centered_img", 0, 0);
       GLITCH.text.restore_banner();
     },
   },
@@ -227,6 +231,29 @@ const GLITCH = {
       return r;
     },
 
+    fuckup_div: function(id){
+      var parent = document.getElementById(id);
+      if(!parent){
+        return;
+      }
+
+      for (var node of parent.firstChild.childNodes){
+        if (node.nodeType == Node.TEXT_NODE || node.nodeName == "DIV"){
+          var isBattleMenu = node.nodeName == "DIV";
+          var replacement = "";
+          for (var c of node.textContent){
+            if(Math.random() < (isBattleMenu ? 0.2 : 0.02)){
+              replacement += GLITCH.text.get_char();
+            } else {
+              replacement += c;
+            }
+          }
+          node.textContent = replacement;
+        }
+      }
+
+    },
+
     fuckup_banner: function(){
       var banner = document.getElementById("textBanner");
       if (!banner){
@@ -239,19 +266,7 @@ const GLITCH = {
         }
         banner.firstChild.innerHTML = "> " + CONSOLE.logs.slice(-4).join("<br />> ");
       } else {
-        for (var node of banner.firstChild.childNodes){
-          if (node.nodeType == Node.TEXT_NODE){
-            var replacement = "";
-            for (var c of node.textContent){
-              if(Math.random() < 0.02){
-                replacement += GLITCH.text.get_char();
-              } else {
-                replacement += c;
-              }
-            }
-            node.textContent = replacement;
-          }
-        }
+        GLITCH.text.fuckup_div("textBanner");
       }
     },
 

@@ -1,7 +1,7 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredMovingImage("assets/characters/party/BestFriend.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/BestFriend.png", 'background',32,48, 2);
 AUDIO.music.characters.BestFriend();
 
 PLAYER_ACTIONS.escape();

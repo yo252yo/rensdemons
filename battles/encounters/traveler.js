@@ -1,7 +1,7 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-//new CenteredImage("assets/battles/encounters/traveler.png", 'background');
+//new CenteredBattleImage("assets/battles/encounters/traveler.png", 'background');
 
 BESTIARY.picture('encounters/traveler');
 

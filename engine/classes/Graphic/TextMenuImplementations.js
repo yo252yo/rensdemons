@@ -81,5 +81,6 @@ class BattleMenu extends TextMenu {
         this.html.style.background = PALETTE.battle_menu_background().code();
         this.html.style.border = "2px solid " + PALETTE.text_border().code();
         this.html.style.color = PALETTE.battle_menu_color().code();
+        this.html.id = "battle_menu";
     }
 }

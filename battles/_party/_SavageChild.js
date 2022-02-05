@@ -1,5 +1,5 @@
 
-//new CenteredMovingImage("assets/characters/party/SavageChild.png", 'background',32,48, 2);
+//new CenteredMovingBattleImage("assets/characters/party/SavageChild.png", 'background',32,48, 2);
 
 AUDIO.music.characters.SavageChild();
 PLAYER_ACTIONS.escape();

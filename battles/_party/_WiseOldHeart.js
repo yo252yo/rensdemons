@@ -1,5 +1,5 @@
 
-new CenteredMovingImage("assets/characters/party/WiseOld.png", 'background',32,48, 2);
+new CenteredMovingBattleImage("assets/characters/party/WiseOld.png", 'background',32,48, 2);
 
 PLAYER_ACTIONS.escape();
 AUDIO.music.characters.WiseOld();

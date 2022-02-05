@@ -5,8 +5,9 @@
 # GLITCHING  ----------------------------------------------------
 
 - Mb all conscious object during glich scream in pain and help us and so on.
-- better glitching in battles ?? (menus, sprites...)
 - glitched characters can circle
+- EVENT ICON
+- bak tot itle make background disappear because character is still there for berkeley mode, mb we should destroy character in currentlevel setup
 
 
 # NG+  ----------------------------------------------------

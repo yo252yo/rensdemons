@@ -1,5 +1,5 @@
 
-var c = new CenteredImage("assets/objects/heaven/bookshelf.png", 'background', 2);
+var c = new CenteredBattleImage("assets/objects/heaven/bookshelf.png", 'background', 2);
 
 PLAYER_ACTIONS.allow_flight(true);
 

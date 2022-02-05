@@ -1,5 +1,5 @@
 
-new CenteredImage("assets/battles/treasure.png", 'background');
+new CenteredBattleImage("assets/battles/treasure.png", 'background');
 
 var open = "Open";
 
