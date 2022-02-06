@@ -125,6 +125,18 @@ const BATTLETREE = {
       return "Leading to several possibilities";
     },
 
+    childrenCount: function(battle, name){
+      var c = BATTLETREE._targets.get([battle]);
+      var r = 0;
+      for(var action in c){
+        if (action.startsWith(name)){
+          r++;
+        }
+      }
+
+      return r;
+    },
+
     _check_node: function(node, value){
       return node.length == 1 && node[0] == value;
     },
@@ -326,7 +338,11 @@ const BATTLETREE = {
 
       switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
-          return "<b>" + display_name + "</b>";
+          var i = BATTLETREE.get.childrenCount(battle, name);
+          if (i > 1){
+            var textI =  ` (${i})`;
+          }
+          return "<b>" + display_name + `${textI}</b>`;
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
