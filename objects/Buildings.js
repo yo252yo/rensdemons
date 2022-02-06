@@ -270,6 +270,9 @@ class S_Church extends S_LayeredBuilding {
       "In every city, the temple is a beacon welcoming both devout villagers and wandering pilgrims."
     );
     this.add_layer("details");
+
+    new M_Herald(x+80, y-175);
+
     if(inside_lvl){
       this.add_door(50, 115, function(){
         CURRENTLEVEL.setup(inside_lvl);

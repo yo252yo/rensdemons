@@ -16,7 +16,7 @@ class ConsciousObject extends MovingObject {
     }
 
     THOUGHTS.thinkTrigger(this, true);
-    LEDGER.record_birth(this.name, this.city, this.role);
+    LEDGER.record_birth(this);
   }
 
   killThoughtBubble(){

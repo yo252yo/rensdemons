@@ -53,15 +53,20 @@ const LEDGER = {
     return LEDGER._ledger;
   },
 
-  record_birth: function(name, city_type, role) {
+  record_birth: function(conscious_object) {
+    var name = conscious_object.name;
+    var role = conscious_object.role || "person";
+
+    if(role == "herald"){
+      // Lets not spam everything by considering the herald itself a human
+      LEDGER.latest_herald = conscious_object;
+      return;
+    }
     if(!name){
       return;
     }
-    if(!role){
-      role = "person";
-    }
     var city = "";
-    switch(city_type){
+    switch(conscious_object.city){
       case CITIES.acceptance:
         city = DICTIONARY.get("town_5");
         break;
@@ -87,9 +92,9 @@ const LEDGER = {
     LEDGER.load_ledger();
     if(! LEDGER._ledger[name]) {
       LEDGER._ledger[name] = LEDGER._villager(city);
-      CONSOLE.log.herald(`A new ${role} named ${name} has been born in the city of ${city}.`);
+      LEDGER.herald(`A new ${role} named ${name} has been born in the city of ${city}.`);
     } else {
-      CONSOLE.log.herald(`A ${role} named ${name} has been brought back to life by necromancy.`);
+      LEDGER.herald(`A ${role} named ${name} has been brought back to life by necromancy.`);
     }
   },
 
@@ -103,12 +108,25 @@ const LEDGER = {
     LEDGER.load_ledger();
     if(LEDGER._ledger[name]) {
       LEDGER._ledger[name].death = (new Date()).getTime();
-      CONSOLE.log.herald(`An innocent ${role} named ${name} has been mercilessly killed by our God.`);
+      LEDGER.herald(`An innocent ${role} named ${name} has been mercilessly killed by our God.`);
     } else {
       // This shouldnt happen lol;
       var city = LEDGER.get_random_city(gen.get());
       LEDGER._ledger[name] = LEDGER._villager(city);
     }
+  },
+
+  herald(text) {
+    CONSOLE.log.herald(text);
+    if(LEDGER.latest_herald){
+      LEDGER.latest_herald.makeThoughtBubble(text);
+    }
+  },
+
+
+  clear_level: function(){
+    LEDGER.commit_to_stats();
+    LEDGER.latest_herald = undefined;
   },
 
   commit_to_stats: function() {

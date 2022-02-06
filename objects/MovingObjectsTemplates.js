@@ -107,6 +107,16 @@ class M_Guard extends ConsciousObject {
   }
 }
 
+class M_Herald extends ConsciousObject {
+  constructor(x, y) {
+    var visual = new Rectangle(x, y,0,0, 'white');
+    super(visual, x, y, 0, 0, undefined, undefined, "herald");
+    this.adjust_hitbox(0, 0, 0, 0);
+  }
+  interaction() { }
+  think() {  }
+}
+
 class M_PalaceGuard extends M_Guard {
   constructor(x, y, seed) {
     super(CITIES.fear, x, y, seed);

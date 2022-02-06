@@ -5,7 +5,6 @@
 
 # NG+  ----------------------------------------------------
 
-- make herald a character in NG+ ? at least a speech bubble on the church
 - new game + you get the action spoiler in combats where you is_empathized
 Mb implemented as ren's summon
 Mb after victory you get a special attack that allows you to one shot or two shot everyone you ve already beaten. Mb it's about information like disclose the secret or call out their bluff
@@ -14,6 +13,7 @@ Mb after victory you get a special attack that allows you to one shot or two sho
 - more bed and jar actions
 - extra items per city style
 - finish the item folder
+- Put wall stuff inside houses mb (better houses)
 
 
 # GRAPHIC REWORK  ----------------------------------------------------
@@ -27,6 +27,7 @@ Mb after victory you get a special attack that allows you to one shot or two sho
 - ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
 - spawn chara on exit bands, its safer
 See 051_pandemonium_room and 012_trees
+- A look for foreknowledge opportunities
 
 # MORE HEAVEN  ----------------------------------------------------
 
