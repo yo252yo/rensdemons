@@ -52,7 +52,7 @@ class SM_Town extends MapObject {
     var subtitle = "";
     switch(code){
       case "town_1":
-        subtitle = "<br />City of Hope";
+        subtitle = "<br />City of Expectations";
         break;
       case "town_2":
         subtitle = "<br />City of Fear";
