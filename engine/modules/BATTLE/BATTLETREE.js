@@ -339,8 +339,9 @@ const BATTLETREE = {
       switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
           var i = BATTLETREE.get.childrenCount(battle, name);
+          var textI = "";
           if (i > 1){
-            var textI =  ` (${i})`;
+            textI = ` (${i})`;
           }
           return "<b>" + display_name + `${textI}</b>`;
         case BATTLETREE.LOSS:
