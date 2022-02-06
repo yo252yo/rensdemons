@@ -1,9 +1,6 @@
 # WIP
 
 
-dble check the foresight things, should it be in isLearnableAbility ???
-
-
 # ITEMS  ----------------------------------------------------
 - more bed and jar actions
 - extra items per city style
