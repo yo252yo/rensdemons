@@ -63,7 +63,7 @@ const ITEM = {
   // Way of the Tools
     // Tools
     Arrow: "Arrow",
-    Poison_darts: "Poison darts",
+    Poison_darts: "Laced darts",
     Rope: "Rope",
     Bow: "Bow",
     Net: "Net",
@@ -163,7 +163,7 @@ const INVENTORY = {
     }
     INVENTORY._inventory.increment([name], quantity);
     CONSOLE.log.item(name, quantity);
-    
+
     var g = INVENTORY._inventory.get([name]);
     if (g <= 0){
       INVENTORY._inventory.delete([name]);

@@ -119,9 +119,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - dodger initial position a litl bit more up
 - a suicide function?
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
-
-- poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
-
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?
 - palette has functions that return objects, strings and functinos that just outright change the colors
