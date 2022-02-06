@@ -125,8 +125,15 @@ const LEDGER = {
 
 
   clear_level: function(){
-    LEDGER.commit_to_stats();
+
+    for(var obj of CURRENTLEVEL.objects.get_all_objects()){
+      if(obj && obj.record_death){
+        obj.record_death();
+      }
+    }
     LEDGER.latest_herald = undefined;
+
+    LEDGER.commit_to_stats();
   },
 
   commit_to_stats: function() {

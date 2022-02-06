@@ -1,6 +1,10 @@
 # WIP
 
 
+we can send the thoughts to a different layer and have them persist after the level is reset
+
+
+thoughts are clear at thinkier death because it stops thinking but the herald does not die mb it should
 
 
 # NG+  ----------------------------------------------------

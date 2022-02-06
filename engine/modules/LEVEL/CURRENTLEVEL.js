@@ -225,13 +225,7 @@ const CURRENTLEVEL = {
     },
 
     clear: function() {
-      for(var obj of CURRENTLEVEL.objects.get_all_objects()){
-        if(obj && obj.record_death){
-          obj.record_death();
-        }
-      }
       LEDGER.clear_level();
-
       for(var key in CURRENTLEVEL.triggers) {
         clearTimeout(CURRENTLEVEL.triggers[key]);
       }
