@@ -4,6 +4,7 @@ const ABILITY = {
   CallHelp: "Call help",
   Pray: "Pray",
   Feed: "Feed",
+  Spoiler: "Spoil",
 
   // Way of the Elements
     Fireball: "Fireball",
@@ -30,7 +31,10 @@ const ABILITY = {
     Intimidate: "Intimidate",
     Mystify: "Mystify",
 
-    isAbility: function(s){
+    isLearnableAbility: function(s){
+      if (s == ABILITY.Spoiler){
+        return false;
+      }
       for (var i in ABILITY){
         if(ABILITY[i] == s){
           return true;

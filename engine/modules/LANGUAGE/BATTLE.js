@@ -37,6 +37,36 @@ LANGUAGE.battle = {
     ];
   },
 
+  spoiler: function() {
+    return [
+      RANDOM.pick([
+        `You approach the $$&ENEMY$, moved by a mysterious feeling of foreknowledge.`,
+        `You share your Goddess given intuitions with the $$&ENEMY$.`,
+        `Armed with your mystical experience, you let the $$&ENEMY$ peek through the veil of reality.`,
+      ]),
+      RANDOM.pick([
+        `$$Ren$: "I know you. I know how this ends."`,
+        `$$Ren$: "I have been to hell and back. I have seen the future. You do not stand in my way."`,
+        `$$Ren$: "I have already defeated the demon lord once. There's nothing left for you but submission."`,
+      ]),
+      RANDOM.pick([
+        `You are a just small child, but for some reason your words ring true to the $$&ENEMY$. Their expression changes radically.`,
+        `The $$&ENEMY$ appears to be moved by your words and lose all aggressivity.`,
+        `They really shouldn't, but against all odds the $$&ENEMY$ seems to believe you.`,
+      ]),
+      RANDOM.pick([
+        `$$&ENEMY$: "So you know?"`,
+        `$$&ENEMY$: "No need to keep this up, then."`,
+        `$$&ENEMY$: "Oh, ok."`,
+      ]),
+      RANDOM.pick([
+        `The $$&ENEMY$ gives you a compassionate smile and withdraws.`,
+        `The $$&ENEMY$ wishes you good luck, with a hint of sadness in their eyes.`,
+        `The $$&ENEMY$ pledges you their full support, and lets you go on your way.`,
+      ]),
+    ];
+  },
+
   several_hit_feedback: function (){
     return [`It's clearly effective, but you can tell that one hit is not enough to bring down your enemy. You're going to need more!`];
   },

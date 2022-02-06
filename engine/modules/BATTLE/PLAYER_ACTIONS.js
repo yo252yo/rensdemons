@@ -270,6 +270,20 @@ const PLAYER_ACTIONS = {
       description: LANGUAGE.battle.foresight(),
       outcome: BATTLETREE.ESCAPE,
     });
+
+    // New game plus only
+    if(BATTLE.current_battle && STATS.is_post_game() && BESTIARY.is_empathized(BATTLE.current_battle)){
+      PLAYER_ACTIONS.add({
+        name: ABILITY.Spoiler,
+        description: LANGUAGE.battle.spoiler(),
+        unlock: true,
+        outcome: BATTLETREE.WIN,
+        function:function(){
+          PLAYER_ACTIONS._internal.trigger_music(PARTYMEMBERS.Ren);
+        }
+      });
+      //BATTLETREE.api.develop(BATTLE.current_battle, ABILITY.Spoiler, BATTLETREE.WIN);
+    }
   },
 
 

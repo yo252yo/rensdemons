@@ -1,17 +1,8 @@
 # WIP
 
 
-we can send the thoughts to a different layer and have them persist after the level is reset
+dble check the foresight things, should it be in isLearnableAbility ???
 
-
-thoughts are clear at thinkier death because it stops thinking but the herald does not die mb it should
-
-
-# NG+  ----------------------------------------------------
-
-- new game + you get the action spoiler in combats where you is_empathized
-Mb implemented as ren's summon
-Mb after victory you get a special attack that allows you to one shot or two shot everyone you ve already beaten. Mb it's about information like disclose the secret or call out their bluff
 
 # ITEMS  ----------------------------------------------------
 - more bed and jar actions
@@ -113,7 +104,7 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
 - test on edge, epsecially functions starting by _, mb the nested ones
 - Mb interaction per villager per partymember
-- artifact have special sound effects
+- artifact have special sound effects / music in battle/???
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map

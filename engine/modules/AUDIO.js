@@ -160,6 +160,7 @@ const AUDIO = {
       DisguisedPrincess: function() { AUDIO._play_music("chara/road3chill") },
       SavageChild: function() {       AUDIO._play_music("chara/getready") },
       Goddess: function() {           AUDIO._play_music("chara/actionepic") },
+      Ren: function() {               AUDIO.music.interface.titlescreen(); },
     },
 
     town: { // strings, ambiant

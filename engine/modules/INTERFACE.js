@@ -190,7 +190,7 @@ const INTERFACE = {
         for(var i in PARTYMEMBERS){
           if (i == PARTYMEMBERS.Ren){
             if(STATS.flag("MirrorConversation")){
-              r += "<div id='achievement_menu_slot_" + i + "' onClick='AUDIO.music.interface.titlescreen();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
+              r += "<div id='achievement_menu_slot_" + i + "' onClick='AUDIO.music.characters.Ren();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:125px;height:125px;'></div>";
             } else{
               r += "<div style='float:left;position:relative;display:block;width:125px;height:125px;border: thick double #aaaaaa;opacity:0.3;'></div>";
             }

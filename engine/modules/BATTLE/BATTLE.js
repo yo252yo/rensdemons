@@ -25,7 +25,7 @@ const BATTLE = {
           return false;
         }
       }
-      if(ABILITY.isAbility(trimmed) && !(ABILITIES.has_ability(trimmed))){
+      if(ABILITY.isLearnableAbility(trimmed) && !(ABILITIES.has_ability(trimmed))){
         return false;
       }
       if(PARTYMEMBERS.isPartyMember(trimmed) && !(PARTY.has_member(trimmed))){
