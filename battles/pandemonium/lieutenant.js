@@ -5,7 +5,6 @@ BESTIARY.picture('pandemonium/lieutenant');
 PLAYER_ACTIONS.allow_flight();
 AUDIO.music.interface.boss();
 
-// LOOT SOMETHING SPECIAL WIP BOSS START TEXT.
 
 
 // ===================

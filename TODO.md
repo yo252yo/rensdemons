@@ -1,24 +1,32 @@
 # WIP
 
 
-check glitch on phone
 
 
 # NG+  ----------------------------------------------------
 
-- make herald a character in NG+ ?
+- make herald a character in NG+ ? at least a speech bubble on the church
 - new game + you get the action spoiler in combats where you is_empathized
 Mb implemented as ren's summon
 Mb after victory you get a special attack that allows you to one shot or two shot everyone you ve already beaten. Mb it's about information like disclose the secret or call out their bluff
 
+# ITEMS  ----------------------------------------------------
+- more bed and jar actions
+- extra items per city style
+- finish the item folder
+
 
 # GRAPHIC REWORK  ----------------------------------------------------
-- audit from >= first town mb use szadi for houses
-- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-- extra items per city style
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
 - decorate stores
 - the treasure battler should probs be closed
+
+# FILLER CHECK  ----------------------------------------------------
+- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
+- graphical audit from >= first town
+- ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
+- spawn chara on exit bands, its safer
+See 051_pandemonium_room and 012_trees
 
 # MORE HEAVEN  ----------------------------------------------------
 
@@ -39,17 +47,18 @@ The cycle of replay with the promise of a true ending is precisely what the syst
 
 You need to be OK with your lack ie with quitting the game and act outside the system
 
+# BATTLE ENCOUNTERS  ----------------------------------------------------
+- more?
+- more battle encounters (world map ruins, hellsmaw skeleton)
+- double check battle/encounters especially sprites
+- review battle_debris add a few more actions for rubble treasures
+- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 
 
 
 # OPTIONAL CONTENT  ----------------------------------------------------
 - town2 survivors rescue!
-- hans dog somewhere
-- more furniture ^^ (city specific ??)
 - more itembattles for dungeons and world,
-- more battle encounters (world map ruins, hellsmaw skeleton)
-- more bed and jar actions
-- review battle_debris add a few more actions for rubble treasures
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
 
@@ -87,29 +96,27 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - reference to the fact that there's always a crafting system
 
 
-# DO A FILLER CHECK  ----------------------------------------------------
-- ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN
-- spawn chara on exit bands, its safer
-See 051_pandemonium_room and 012_trees
+# NEEDS THOUGHS  ----------------------------------------------------
+- metapowers ? TP, make floors
+-- Make sure the end feels like capricam superpowers
+- should we specify that starting a battle clears the timeline?
+- power creep in NG+ satisfactory enough ???
+- Keep more stats and reuse the Stat of ren's desth
+- fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 
 # BUGFIXES  ----------------------------------------------------
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space
-- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - test on edge, epsecially functions starting by _, mb the nested ones
-- Mb interaction per villager per summon
+- Mb interaction per villager per partymember
 - artifact have special sound effects
-- should we specify that starting a battle clears the timeline?
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - different sound walking on map
-- metapowers ? TP, make floors
 - check save/disk size
 - add rens parent sendoff/house before trial?
-- Make sure the end feels like caprica
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
 - a suicide function?
-- Keep more stats and reuse the Stat of ren's desth
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - poison darts is highlighted after using poison because we use startswith to know which is the ongoing command because of repeated attacks
 - why does battletree have lists as leaves and not simply state?
@@ -118,26 +125,22 @@ See 051_pandemonium_room and 012_trees
 - The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
-- finally, produce a zip, put on steam
-- fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
-- cache ressources
-- marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
-- ctrlf TODO WIP
-- regenerate resource preloading list
+- cache ressources  regenerate resource preloading list
 
 # SEND OUT FOR BETA  ----------------------------------------------------
 
 # POLISHING/PRODUCTIONIZE  ----------------------------------------------------
 - replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - optimize size on disk
-- walkthrough
-- more event text in zones
+- marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
+- write walkthrough
+- more event text in zones?
 - more text for existing objects?
 - mb more interactions with real world like books
 - reread/flesh out man.md about forking
 - reread/flesh out mirror conv (esp more first person actions?? "you" direct)
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
-- steam achievements
 - trailer/arts
 - word count
-- ctrlf "todo" "wip"
+- fix title screen
+- finally, produce a zip, put on steam
