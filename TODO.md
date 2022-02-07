@@ -1,6 +1,10 @@
 # WIP
 
 
+Rewind effect when escaping battle? Would it even work with party members
+
+
+
 # ITEMS  ----------------------------------------------------
 - more bed and jar actions
 - extra items per city style
