@@ -156,8 +156,6 @@ class B_Statue extends ItemBattleObject {
     super(x, y, 50,100, "interior/statue");
     this.adjust_hitbox(0,0,50,40);
 
-    this.set_description(BESTIARY.intro("interior/statue"));
-
     this.add_interaction("Prostrate", "You prostrate yourself in front of the statue of the Goddess.");
     this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
     this.add_interaction("Ponder", "A holy statue of the Goddess, like many others in this town.");
@@ -171,15 +169,14 @@ class B_Bed extends ItemBattleObject {
     super(x, y, 32,75, "interior/bed");
     this.adjust_hitbox(-2,0,34,60);
 
-
-    this.set_description(BESTIARY.intro("interior/bed"));
-
     this.add_interaction("Inspect", "This bed is made of linen covering a wooden frame. The thin mattress is made of hay. It doesn't look too great...");
     this.add_interaction("Resist", "This bed looks very comfortable. The thick wool beddings beckon you.");
     this.add_interaction("Envy", "The pillow seems to be made with feathers. How were they able to afford such luxury?");
     this.add_interaction("Nap", "The Goddess wants you to take a nap. It's not your bed, but it will do. You comply reluctantly. You can get a few minutes of sleep, and wake up barely more rested than before. Maybe even a bit more groggy.");
     this.add_interaction("Sit", "You obey the voice of the Goddess inside you that urges you to sit on the bed. You sit for a while and look at your surroundings. It's pretty boring, so you stop.");
     this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly, while $$BestFriend$ looks at you bewildered, between shock and consternation. At least you got some linens out of the whole ordeal...", INVENTORY.increase_function(ITEM.Linnens, 2));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
   }
 }
 
@@ -188,8 +185,6 @@ class B_Bucket extends ItemBattleObject {
     super(x, y, 31,28, "interior/bucket");
     this.adjust_hitbox(0,0,31,28);
 
-
-    this.set_description(BESTIARY.intro("interior/bucket"));
     this.add_interaction("Examine", "A bucket full of fresh water. Someone must have brought it back from the well recently.");
     this.add_interaction("Behold", "This bucket is empty...");
     this.add_interaction("Wonder", "As you gaze at this bucket, you can't help but wonder if this is really the best place for a bucket... But on the other hand, why not?");
@@ -205,8 +200,6 @@ class B_Cabinet extends ItemBattleObject {
     super(x, y, 31,48, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
 
-
-    this.set_description(BESTIARY.intro("interior/cabinet"));
     this.add_interaction("Imagine", "The family stores their belonging in this cabinet. What kind of things are there? You're curious, but you don't want to intrude. You're invading their privacy enough as it is...");
     this.add_interaction("Esteem", "Not everyone could afford a wooden cabinet with engravings of holy texts. This is surely a mark of wealth.");
     this.add_interaction("Condemn", "This storage container looks pretty unsteady. The people here probably built it themselves. Better not touch it.");
@@ -221,8 +214,6 @@ class B_Chair extends ItemBattleObject {
     super(x, y, 30,33, "interior/chair");
     this.adjust_hitbox(0,0,30,33);
 
-
-    this.set_description(BESTIARY.intro("interior/chair"));
     this.add_interaction("Please", "You want to sit in it. But it would be rude. Or would it? You're not even sure...");
     this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
     this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless, $$BestFriend$ is puzzled. But Her ways are mysterious.");
@@ -236,8 +227,6 @@ class B_Hay extends ItemBattleObject {
     super(x, y, 64,66, "interior/hay");
     this.adjust_hitbox(0,0,64,36);
 
-
-    this.set_description(BESTIARY.intro("interior/hay"));
     this.add_interaction("Appraise", "Hay may not make the most comfortable of beds, but it is certainly the cheapest.");
     this.add_interaction("Empathize", "Any place can be a bed when you're tired enough. When monsters roam the lands, you cannot be too picky..");
     this.add_interaction("Jump", "The Goddess urges you to jump in the hay. $$BestFriend$ joins you and you have a great time. It's fun, but now you're covered in it.");
@@ -251,8 +240,6 @@ class B_Housefire extends ItemBattleObject {
     super(x, y, 33,33, "interior/housefire");
     this.adjust_hitbox(0,0,33,20);
 
-
-    this.set_description(BESTIARY.intro("interior/housefire"));
     this.add_interaction("Appreciate", "The fire keeps the room warm and cooks the food. Two blessings in one.");
     this.add_interaction("Yearn", "On the fire, a pot is slowly cooking. It's some sort of stew. Or a soup?");
     this.add_interaction("Smell", "The smell of burning wood is filling up the room. It feels... nostalgic.");
@@ -267,13 +254,14 @@ class B_Jar extends ItemBattleObject {
     super(x, y, 32,35, "interior/jar");
     this.adjust_hitbox(0,0,32,20);
 
-
-    this.set_description(BESTIARY.intro("interior/jar"));
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
     this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
     this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few for your personal use.", INVENTORY.increase_function(ITEM.Berry,3));
     this.add_interaction("Break", 'As you watch this jar, you can hear the voice of the Goddess inside you. "Break it... Break it...". You resist it. For now...');
     this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarrassing. You try to put the pieced back together, but the deed is done. $$BestFriend$ is shocked when the owner turns out really understanding and forgives you as soon as you mention that you're the Promised Child.");
+
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
   }
 }
 
@@ -282,8 +270,6 @@ class B_Shelf_wall extends ItemBattleObject {
     super(x, y, 59,67, "interior/shelf");
     this.adjust_hitbox(0,0,59,67);
 
-
-    this.set_description(BESTIARY.intro("interior/shelf"));
     this.add_interaction("Look", "This shelf stores the family's food supplies. In a corner, there's even meat being salted and dried. Pretty fancy considering the dire situation that the devil's hordes have put the village in.");
     this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
     this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
@@ -297,8 +283,6 @@ class B_Stool extends ItemBattleObject {
     super(x, y, 25,28, "interior/stool");
     this.adjust_hitbox(0,0,25,28);
 
-
-    this.set_description(BESTIARY.intro("interior/stool"));
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
     this.add_interaction("Climb", "You cannot resist the urge to stand on the stool. $$BestFriend$ watches you, split between amusement and concern. Surely an act of the Goddess again...");
     this.add_interaction("Sit", "Obeying your inner voice, you sit on this stool. Nothing happens. You stand back up. Thanks you, Goddess.");
@@ -311,8 +295,6 @@ class B_Table extends ItemBattleObject {
     super(x, y, 31,34, "interior/table");
     this.adjust_hitbox(0,0,31,34);
 
-
-    this.set_description(BESTIARY.intro("interior/table"));
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
     this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you, especially $$BestFriend$ who keeps calling you back. This is so embarrassing. You finally get out, and swear to never acknowledge this happened.");
     this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
@@ -325,8 +307,6 @@ class B_Chest extends ItemBattleObject {
     super(x, y, 50,45, "interior/chest", 1);
     this.adjust_hitbox(0,0,50,24);
 
-
-    this.set_description(BESTIARY.intro("interior/chest"));
     this.add_interaction("Resign", "It's just a matter of time before the Goddess has you ransacking it, isn't it?");
     this.add_interaction("Withstand", "You know the Goddess wants you to open this chest and loot it, but you also know it would be pointless and impolite. You try to look away, and keep the thought away from your mind.");
     this.add_interaction("Marvel", "Not only does this family have possessions, they have so much that they can even put some in a chest! It's nice to see that the everlasting war spared a few people.");
@@ -342,7 +322,10 @@ class B_AlchemyShelf_wall extends ItemBattleObject {
     super(x, y, 48,96, "interior/alchemyshelf");
     this.adjust_hitbox(-3,0,51,46);
 
-    this.set_description(BESTIARY.intro("interior/alchemyshelf"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -352,7 +335,10 @@ class B_Barrel extends ItemBattleObject {
     super(x, y, 30,33, "interior/barrel");
     this.adjust_hitbox(0,0,30,15);
 
-    this.set_description(BESTIARY.intro("interior/barrel"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -362,7 +348,10 @@ class B_Bocals extends ItemBattleObject {
     super(x, y, 41,42, "interior/bocals");
     this.adjust_hitbox(0,0,31,20);
 
-    this.set_description(BESTIARY.intro("interior/bocals"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -372,7 +361,10 @@ class B_Box extends ItemBattleObject {
     super(x, y, 33,34, "interior/box");
     this.adjust_hitbox(0,0,33,24);
 
-    this.set_description(BESTIARY.intro("interior/box"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -382,7 +374,8 @@ class B_Chimney_wall extends ItemBattleObject {
     super(x, y, 51,96, "interior/chimney");
     this.adjust_hitbox(-5,0,56,96);
 
-    this.set_description(BESTIARY.intro("interior/chimney"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -392,7 +385,8 @@ class B_Clock_wall extends ItemBattleObject {
     super(x, y, 34,87, "interior/clock");
     this.adjust_hitbox(-5,0,39,87);
 
-    this.set_description(BESTIARY.intro("interior/clock"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -402,7 +396,10 @@ class B_Papers extends ItemBattleObject {
     super(x, y, 23,23, "interior/papers");
     this.adjust_hitbox(0,0,23,18);
 
-    this.set_description(BESTIARY.intro("interior/papers"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -412,7 +409,10 @@ class B_Sack extends ItemBattleObject {
     super(x, y, 36,35, "interior/sack");
     this.adjust_hitbox(0,0,36,18);
 
-    this.set_description(BESTIARY.intro("interior/sack"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -422,7 +422,8 @@ class B_FancyShelf_wall extends ItemBattleObject {
     super(x, y, 49,97, "interior/fancyshelf");
     this.adjust_hitbox(-5,0,54,47);
 
-    this.set_description(BESTIARY.intro("interior/fancyshelf"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -432,7 +433,8 @@ class B_Candles_wall extends ItemBattleObject {
     super(x, y, 31,59, "interior/wallcandles");
     this.adjust_hitbox(-5,0,36,59);
 
-    this.set_description(BESTIARY.intro("interior/wallcandles"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -441,7 +443,9 @@ class B_Window_wall extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 32,54, "interior/window");
     this.adjust_hitbox(-5,0,37,54);
-    this.set_description(BESTIARY.intro("interior/window"));
+
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -450,7 +454,9 @@ class B_CurtainedWindow_wall extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 52,72, "interior/curtainedwindow");
     this.adjust_hitbox(-5,0,57,72);
-    this.set_description(BESTIARY.intro("interior/curtainedwindow"));
+
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -463,8 +469,6 @@ class B_WeaponRack extends ItemBattleObject {
     super(x, y, 48,39, "interior/weaponrack");
     this.adjust_hitbox(0,0,48,20);
 
-
-    this.set_description(BESTIARY.intro("interior/weaponrack"));
     this.add_interaction("Hairbrush", "The metal is so shiny that you can see yourself in it. You take this chance to fix up your hair.");
     this.add_interaction("Touch", "Drawn by the shine, you approach your finger from the blade. Well done, now you're bleeding.");
     this.add_interaction("Jump", "This looks like a hurdle, doesn't it? You feel compelled to jump above it, but you hit it and it falls, making a loud metallic mess in the process.");
@@ -479,7 +483,9 @@ class B_ShieldDisplay_wall extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 28,52, "interior/shielddisplay");
     this.adjust_hitbox(-4,0,32,52);
-    this.set_description(BESTIARY.intro("interior/shielddisplay"));
+
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -489,7 +495,8 @@ class B_WeaponDisplay_wall extends ItemBattleObject {
     super(x, y, 38,59, "interior/weapondisplay");
     this.adjust_hitbox(0,0,40,59);
 
-    this.set_description(BESTIARY.intro("interior/weapondisplay"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -500,7 +507,8 @@ class B_Bottles extends ItemBattleObject {
     super(x, y, 41,44, "interior/bottles");
     this.adjust_hitbox(0,0,38,25);
 
-    this.set_description(BESTIARY.intro("interior/bottles"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -510,7 +518,8 @@ class B_BottlesShelf_wall extends ItemBattleObject {
     super(x, y, 144,91, "interior/bottlesshelf");
     this.adjust_hitbox(-5,0,150,91);
 
-    this.set_description(BESTIARY.intro("interior/bottlesshelf"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -521,7 +530,8 @@ class B_FlowerCrown_wall extends ItemBattleObject {
     super(x, y, 34,55, "interior/flowercrown");
     this.adjust_hitbox(-5,0,39,55);
 
-    this.set_description(BESTIARY.intro("interior/flowercrown"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -531,7 +541,8 @@ class B_PottedFlower extends ItemBattleObject {
     super(x, y, 46,45, "interior/pottedflower");
     this.adjust_hitbox(5,0,36,25);
 
-    this.set_description(BESTIARY.intro("interior/pottedflower"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -541,7 +552,8 @@ class B_PottedPlant extends ItemBattleObject {
     super(x, y, 51,46, "interior/pottedplant");
     this.adjust_hitbox(2,0,46,25);
 
-    this.set_description(BESTIARY.intro("interior/pottedplant"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -552,7 +564,8 @@ class B_Mask_wall extends ItemBattleObject {
     super(x, y, 64,89, "interior/mask");
     this.adjust_hitbox(0,0,64,89);
 
-    this.set_description(BESTIARY.intro("interior/mask"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -562,7 +575,8 @@ class B_SpikyMask_wall extends ItemBattleObject {
     super(x, y, 64,89, "interior/spikymask");
     this.adjust_hitbox(0,0,64,89);
 
-    this.set_description(BESTIARY.intro("interior/spikymask"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }
@@ -574,7 +588,8 @@ class B_Rope extends ItemBattleObject {
     super(x, y, 50,47, "interior/rope");
     this.adjust_hitbox(0,0,50,42);
 
-    this.set_description(BESTIARY.intro("interior/rope"));
+    this.add_interaction("XXX", "XXXX");
+    this.add_interaction("XXX", "XXXX");
     this.add_interaction("XXX", "XXXX");
   }
 }

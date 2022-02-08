@@ -78,6 +78,7 @@ class ItemBattleObject extends BattleObject {
       var visual = new StaticSprite("assets/objects/" + name + ".png", 'obj_light');
       visual.specify_sprite_size(w, h);
       super(x, y, name, max_actions, "objects/" + name, visual);
+      this.set_description(BESTIARY.intro(name));
     }
 }
 

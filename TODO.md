@@ -5,12 +5,13 @@
 New items:
 - actions (everything XXX)
 - put in use (especially wall, region lock)
--- improve houses
--- table chair combo
--- more bed and jar actions
---- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
---- decorate stores
---- the treasure battler should probs be closed
+- improve house shapes
+- table chair combo
+- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
+- decorate stores/trainers
+- the chest sprite should be closed
+
+
 
 B_Barrel,B_Bocals, B_Box, B_Papers, B_Sack, B_Window
  B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall,B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall
@@ -119,7 +120,7 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 
 # BUGFIXES  ----------------------------------------------------
-- throwaway villagers with random names should always keep the same name otherwise they take way too much space
+- throwaway villagers with random names should always keep the same name otherwise they take way too much space (plus they should be displayed as resurected not born)
 - test on edge, epsecially functions starting by _, mb the nested ones
 - Mb interaction per villager per partymember
 - artifact have special sound effects / music in battle/???
