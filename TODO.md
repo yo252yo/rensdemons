@@ -1,21 +1,38 @@
 # WIP
 
 
-Rewind effect when escaping battle? Would it even work with party members
+
+New items:
+- actions (everything XXX)
+- put in use (especially wall, region lock)
+-- improve houses
+-- table chair combo
+-- more bed and jar actions
+--- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
+--- decorate stores
+--- the treasure battler should probs be closed
+
+B_Barrel,B_Bocals, B_Box, B_Papers, B_Sack, B_Window
+ B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall,B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall
+
+// fear
+B_ShieldDisplay_wall, B_WeaponDisplay_wall , B_WeaponRack
+
+// Indulgence
+B_Bottles, B_BottlesShelf_wall
+
+// Hope
+B_FlowerCrown_wall, B_PottedFlower, B_PottedPlant
+
+// Denial
+B_Mask_wall, B_SpikyMask_wall
+
+// Acceptance
+B_Rope
 
 
 
-# ITEMS  ----------------------------------------------------
-- more bed and jar actions
-- extra items per city style
-- finish the item folder
-- Put wall stuff inside houses mb (better houses)
 
-
-# GRAPHIC REWORK  ----------------------------------------------------
-- figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
-- decorate stores
-- the treasure battler should probs be closed
 
 # FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
@@ -95,7 +112,7 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 
 # NEEDS THOUGHS  ----------------------------------------------------
 - metapowers ? TP, make floors
--- Make sure the end feels like capricam superpowers
+-- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
 - should we specify that starting a battle clears the timeline?
 - power creep in NG+ satisfactory enough ???
 - Keep more stats and reuse the Stat of ren's desth

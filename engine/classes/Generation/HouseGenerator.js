@@ -73,7 +73,7 @@ class HG_Room {
     }
 
     decorate_kitchen(){
-      this.roomFiller.set_object(60, 15, this._gen_furniture_function([B_Shelf, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair]));
+      this.roomFiller.set_object(60, 15, this._gen_furniture_function([B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair]));
       this.roomFiller.fill_line(!this.is_top);
 
       this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Housefire, B_Table, B_Stool]));

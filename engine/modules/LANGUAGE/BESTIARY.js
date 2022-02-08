@@ -676,8 +676,8 @@ BESTIARY.dict["interior"]["papers"] = {
   "introed": "Rolls of papers layed on the floor.",
 };
 BESTIARY.dict["interior"]["pottedflower"] = {
-  "intro": "The room is decorated with lively green plants.",
-  "introed": "The room was decorated with lively green plants.",
+  "intro": "A potted colorful flower brightens the room.",
+  "introed": "A potted colorful flower brightened the room.",
 };
 BESTIARY.dict["interior"]["rope"] = {
   "intro": "This rope is showing signs of wear.",
@@ -707,6 +707,19 @@ BESTIARY.dict["interior"]["window"] = {
   "intro": "Through the window, you can see the streets of the city.",
   "introed": "Through the window, you could see the streets of the city.",
 };
+BESTIARY.dict["interior"]["curtainedwindow"] = {
+  "intro": "Fabric curtains provide a pleasant addition to this window.",
+  "introed": "Fabric curtains provided a pleasant addition to this window.",
+};
+BESTIARY.dict["interior"]["pottedplant"] = {
+  "intro": "The room is decorated with lively green plants.",
+  "introed": "The room was decorated with lively green plants.",
+};
+BESTIARY.dict["interior"]["spikymask"] = {
+  "intro": "The mask on the wall seems to mock you.",
+  "introed": "The mask on the wall seemed to mock you.",
+};
+
 
 
 //hack exterior
