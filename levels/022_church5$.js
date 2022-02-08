@@ -7,9 +7,9 @@
 new Snippet("levels/decors/temple");
 
 var f = new S_ExitFloor(1250,1775,100,35, '022_town5');
-new S_StainedGlass(1075, 1050, 'church');
-new S_StainedGlass(1275, 1050, 'acceptance');
-new S_StainedGlass(1475, 1050, 'church');
+new S_StainedGlass_wall(1075, 1050, 'church');
+new S_StainedGlass_wall(1275, 1050, 'acceptance');
+new S_StainedGlass_wall(1475, 1050, 'church');
 
 
 new M_Trainer(1100, 1300, 15, ABILITIES_ARCHETYPES_NAMES.Spirit, 750);

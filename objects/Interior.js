@@ -67,7 +67,7 @@ class S_Door extends LevelObject {
   }
 }
 
-class S_StainedGlass extends LevelObject {
+class S_StainedGlass_wall extends LevelObject {
   constructor(x, y, type, seed){
     var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
     if(type == "church") {

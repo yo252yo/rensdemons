@@ -754,58 +754,6 @@ class S_Organ extends SimpleObject {
   }
 }
 
-class S_Painting extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 42, 68, "pandemonium/painting");
-    this.adjust_hitbox(0,0,42, 68);
-
-    this.default_text = this.text_interaction([
-      "The portrait of a presumably famous demon. He looks so... human.",
-      "The demon on this painting smiles at you mysteriously. Their eyes seem to follow you wherever you go.",
-      "This is a painting of a charming demon lady. She's wearing opulent jewelry. She almost seems friendly.",
-    ], seed);
-  }
-}
-
-class S_HellWindow extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 46, 120, "pandemonium/window");
-    this.adjust_hitbox(0,0,46, 120);
-
-    this.default_text = this.text_interaction([
-      "This stained glass window seems uncomfortably familiar.",
-      "You peek through the window and can barely make out through the foggy glass the vast arid expanses of the otherworld.",
-      "The stained glass would surely bring a bit more light to the room if it weren't so dark outside...",
-    ], seed);
-  }
-}
-
-class S_Flag extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 47, 99, "pandemonium/flag");
-    this.adjust_hitbox(0,0,47, 99);
-
-    this.default_text = this.text_interaction([
-      "A flag whose coat of arm you do not recognize.",
-      "You find it curious that the demon lord would decorte his castle with flags just like any human king would.",
-      "The fabric is old, but you can still make out a coat of arm. The whole design seems extremely foreign to you.",
-    ], seed);
-  }
-}
-
-class S_Mirror extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 47, 94, "pandemonium/mirror");
-    this.adjust_hitbox(0,0,47, 94);
-
-    this.default_text = this.text_interaction([
-      "In the darkness, you think you see something behind you. It's probably your imagination playing tricks on you.",
-      "Despite having come so far, you conclude that you haven't changed that much.",
-      "The mirror offers you a slightly dimmed picture of the room you're in.",
-    ], seed);
-  }
-}
-
 class S_Throne extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, 200,184, "pandemonium/throne", "obj_light");
@@ -826,6 +774,58 @@ class S_Bocals extends SimpleObject {
       "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
       "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
       "The content of this container have been sealed for centuries. You cannot imagine the smell that might arise if you were to open them.",
+    ], seed);
+  }
+}
+
+class S_Painting_wall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 42, 68, "pandemonium/painting");
+    this.adjust_hitbox(0,0,42, 68);
+
+    this.default_text = this.text_interaction([
+      "The portrait of a presumably famous demon. He looks so... human.",
+      "The demon on this painting smiles at you mysteriously. Their eyes seem to follow you wherever you go.",
+      "This is a painting of a charming demon lady. She's wearing opulent jewelry. She almost seems friendly.",
+    ], seed);
+  }
+}
+
+class S_HellWindow_wall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 46, 120, "pandemonium/window");
+    this.adjust_hitbox(0,0,46, 120);
+
+    this.default_text = this.text_interaction([
+      "This stained glass window seems uncomfortably familiar.",
+      "You peek through the window and can barely make out through the foggy glass the vast arid expanses of the otherworld.",
+      "The stained glass would surely bring a bit more light to the room if it weren't so dark outside...",
+    ], seed);
+  }
+}
+
+class S_Flag_wall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 47, 99, "pandemonium/flag");
+    this.adjust_hitbox(0,0,47, 99);
+
+    this.default_text = this.text_interaction([
+      "A flag whose coat of arm you do not recognize.",
+      "You find it curious that the demon lord would decorte his castle with flags just like any human king would.",
+      "The fabric is old, but you can still make out a coat of arm. The whole design seems extremely foreign to you.",
+    ], seed);
+  }
+}
+
+class S_Mirror_wall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 47, 94, "pandemonium/mirror");
+    this.adjust_hitbox(0,0,47, 94);
+
+    this.default_text = this.text_interaction([
+      "In the darkness, you think you see something behind you. It's probably your imagination playing tricks on you.",
+      "Despite having come so far, you conclude that you haven't changed that much.",
+      "The mirror offers you a slightly dimmed picture of the room you're in.",
     ], seed);
   }
 }

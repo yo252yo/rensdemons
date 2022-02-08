@@ -111,10 +111,10 @@ if (isGooRoom){
 }
 
 var wallFiller = new MultiFiller(decorFiller, 75, 0);
-wallFiller.add_default_constructor("S_Painting");
-wallFiller.add_default_constructor("S_HellWindow");
-wallFiller.add_default_constructor("S_Flag");
-wallFiller.add_default_constructor("S_Mirror");
+wallFiller.add_default_constructor("S_Painting_wall");
+wallFiller.add_default_constructor("S_HellWindow_wall");
+wallFiller.add_default_constructor("S_Flag_wall");
+wallFiller.add_default_constructor("S_Mirror_wall");
 
 //wallFiller.set_zone(1525,1300,200,150);
 wallFiller.fill_line();

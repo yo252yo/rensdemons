@@ -7,9 +7,9 @@
 
 new Snippet("levels/decors/temple");
 
-new S_StainedGlass(1075, 1050, 'church');
-new S_StainedGlass(1275, 1050, 'hope');
-new S_StainedGlass(1475, 1050, 'church');
+new S_StainedGlass_wall(1075, 1050, 'church');
+new S_StainedGlass_wall(1275, 1050, 'hope');
+new S_StainedGlass_wall(1475, 1050, 'church');
 
 var gen = new Generator(DICTIONARY.get("world_seed"));
 

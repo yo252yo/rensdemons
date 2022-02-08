@@ -86,16 +86,16 @@ new S_Column(3125, 1375);
 new S_Column(3125, 1500);
 new S_Column(3125, 1625);
 
-new S_StainedGlass(2650, 1300, 'man');
-new S_StainedGlass(2425, 1300, 'man');
-new S_StainedGlass(2750, 1300, 'man');
-new S_StainedGlass(2850, 1300, 'man');
-new S_StainedGlass(2950, 1300, 'man');
-new S_StainedGlass(3050, 1300, 'man');
-new S_StainedGlass(2325, 1300, 'man');
-new S_StainedGlass(2225, 1300, 'man');
-new S_StainedGlass(2125, 1300, 'man');
-new S_StainedGlass(2025, 1300, 'man');
+new S_StainedGlass_wall(2650, 1300, 'man');
+new S_StainedGlass_wall(2425, 1300, 'man');
+new S_StainedGlass_wall(2750, 1300, 'man');
+new S_StainedGlass_wall(2850, 1300, 'man');
+new S_StainedGlass_wall(2950, 1300, 'man');
+new S_StainedGlass_wall(3050, 1300, 'man');
+new S_StainedGlass_wall(2325, 1300, 'man');
+new S_StainedGlass_wall(2225, 1300, 'man');
+new S_StainedGlass_wall(2125, 1300, 'man');
+new S_StainedGlass_wall(2025, 1300, 'man');
 
 new S_GameBoard(2700, 1675);
 

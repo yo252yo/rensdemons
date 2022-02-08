@@ -6,9 +6,9 @@
 // ===================
 new Snippet("levels/decors/temple");
 
-new S_StainedGlass(1075, 1050, 'church');
-new S_StainedGlass(1275, 1050, 'fear');
-new S_StainedGlass(1475, 1050, 'church');
+new S_StainedGlass_wall(1075, 1050, 'church');
+new S_StainedGlass_wall(1275, 1050, 'fear');
+new S_StainedGlass_wall(1475, 1050, 'church');
 
 
 var f = new S_ExitFloor(1250,1775,100,35, '020_town2');

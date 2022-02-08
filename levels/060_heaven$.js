@@ -108,7 +108,7 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
     BATTLE.api.make("heaven/_goddess", endFight);
   };
 
-  var s = new S_StainedGlass(1175,1475, 'circle');
+  var s = new S_StainedGlass_wall(1175,1475, 'circle');
   s.visual_element.adjust_depth(0);
   s.interaction = undefined;
 
