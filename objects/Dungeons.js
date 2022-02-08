@@ -1,4 +1,6 @@
 
+//hack Greenery
+
 class S_Tree extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/forest/tree.png", 'obj_light');
@@ -84,6 +86,62 @@ class S_Plant extends SimpleObject {
   }
 }
 
+class S_Shroomgiant extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 104,113, "forest/shroomgiant");
+
+    this.adjust_hitbox(40,0,20,20);
+    this.default_text = this.text_interaction([
+      "This giant mushroom casts a wide shadow over the surroundings.",
+      "You watch with apprehension this giant mushroom. If the cap were to fall, it might crush you.",
+      "The bright red mushroom cap contrasts with the surrounding greenery. It also looks like you should probably not eat or lick it.",
+    ], seed);
+  }
+}
+
+class S_Shroomsmall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 29,24, "forest/shroomsmall");
+
+    this.adjust_hitbox(0,0,30,10);
+    this.default_text = this.text_interaction([
+      "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
+      "There are countless mushrooms like these everywhere you look, under trees and bushes.",
+      "The little mushrooms seem pretty innocuous. Hard to believe they're related to much bigger threats.",
+    ], seed);
+    this.make_walkable();
+  }
+}
+
+class S_Shroomtall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 57,92, "forest/shroomtall");
+
+    this.adjust_hitbox(20,0,20,20);
+    this.default_text = this.text_interaction([
+      "The trunk of this mushroom extends vertically even higher than the surrounding trees.",
+      "This mushroom is much taller than the others.",
+      "This mushroom towers over you by several times your size.",
+    ], seed);
+  }
+}
+
+class S_PlantSmall extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 29,24, "exterior/plant");
+
+    this.adjust_hitbox(0,0,30,10);
+    this.default_text = this.text_interaction([
+      "You can easily step over this little bush.",
+      "It's a simple little green bush.",
+      "Just a little bush, like there are so many in these woods.",
+    ], seed);
+    this.make_walkable();
+  }
+}
+
+
+//hack Waters
 
 class S_AlgaeWall extends SimpleObject {
   constructor(x, y, seed){
@@ -235,60 +293,6 @@ class S_TentaPlantMini extends SimpleObject {
   }
 }
 
-class S_PlantSmall extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 29,24, "exterior/plant");
-
-    this.adjust_hitbox(0,0,30,10);
-    this.default_text = this.text_interaction([
-      "You can easily step over this little bush.",
-      "It's a simple little green bush.",
-      "Just a little bush, like there are so many in these woods.",
-    ], seed);
-    this.make_walkable();
-  }
-}
-
-class S_Shroomgiant extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 104,113, "forest/shroomgiant");
-
-    this.adjust_hitbox(40,0,20,20);
-    this.default_text = this.text_interaction([
-      "This giant mushroom casts a wide shadow over the surroundings.",
-      "You watch with apprehension this giant mushroom. If the cap were to fall, it might crush you.",
-      "The bright red mushroom cap contrasts with the surrounding greenery. It also looks like you should probably not eat or lick it.",
-    ], seed);
-  }
-}
-
-class S_Shroomsmall extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 29,24, "forest/shroomsmall");
-
-    this.adjust_hitbox(0,0,30,10);
-    this.default_text = this.text_interaction([
-      "These mushrooms are of a very manageable size, but you lack the knowledge to figure out whether they're nourishing or deadly. Better stay away.",
-      "There are countless mushrooms like these everywhere you look, under trees and bushes.",
-      "The little mushrooms seem pretty innocuous. Hard to believe they're related to much bigger threats.",
-    ], seed);
-    this.make_walkable();
-  }
-}
-
-class S_Shroomtall extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 57,92, "forest/shroomtall");
-
-    this.adjust_hitbox(20,0,20,20);
-    this.default_text = this.text_interaction([
-      "The trunk of this mushroom extends vertically even higher than the surrounding trees.",
-      "This mushroom is much taller than the others.",
-      "This mushroom towers over you by several times your size.",
-    ], seed);
-  }
-}
-
 class S_Planks extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, 31,32, "water/planks");
@@ -301,6 +305,8 @@ class S_Planks extends SimpleObject {
     ], seed);
   }
 }
+
+//hack Rocks
 
 class S_Pebbles extends SimpleObject {
   constructor(x, y, seed){
@@ -384,6 +390,30 @@ class S_Boulder extends SimpleObject {
   }
 }
 
+class S_Rubble extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 29, 29, "ruins/rubble");
+    this.adjust_hitbox(0,0,30,10);
+
+    this.default_text = this.text_interaction([
+      "A pile of rubble, scraps of stone and wood...",
+    ], seed);
+  }
+}
+
+class S_RubbleLarge extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 63,63, "ruins/rubblelarge");
+
+    this.adjust_hitbox(0,0,60,30);
+    this.default_text = this.text_interaction([
+      "This messy pile of bricks is all that remains of a former construction...",
+    ], seed);
+  }
+}
+
+//hack Caves
+
 class S_Web extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, 102,154, "ruins/web");
@@ -409,55 +439,6 @@ class S_WebLarge extends SimpleObject {
     ], seed);
   }
 }
-
-class S_Bocals extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 43,40, "ruins/bocals");
-    this.adjust_hitbox(0,0,30,20);
-
-    this.default_text = this.text_interaction([
-      "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
-      "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
-      "The content of this container have been sealed for centuries. You cannot imagine the smell that might arise if you were to open them.",
-    ], seed);
-  }
-}
-
-class S_Rubble extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 29, 29, "ruins/rubble");
-    this.adjust_hitbox(0,0,30,10);
-
-    this.default_text = this.text_interaction([
-      "A pile of rubble, scraps of stone and wood...",
-    ], seed);
-  }
-}
-
-class S_RubbleLarge extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 63,63, "ruins/rubblelarge");
-
-    this.adjust_hitbox(0,0,60,30);
-    this.default_text = this.text_interaction([
-      "This messy pile of bricks is all that remains of a former construction...",
-    ], seed);
-  }
-}
-
-
-class S_Throne extends SimpleObject {
-  constructor(x, y, seed){
-    super(x, y, 200,184, "pandemonium/throne", "obj_light");
-
-    this.adjust_hitbox(10,10,180,100);
-    this.default_text = this.text_interaction([
-      "This is the biggest piece of furniture you've ever seen. It seems carved directly in what appears to be bone, and richly aggremented of golden gildings and velvet cushions bigger than you. A fitting throne for the emperor of demons.",
-    ], seed);
-  }
-}
-
-
 
 class S_RockColumn extends SimpleObject {
   constructor(x, y, seed){
@@ -579,8 +560,32 @@ class S_Cavesprouts extends SimpleObject {
   }
 }
 
+class S_Hole extends SimpleObject {
+  constructor(x, y, seed){
+    var gen = new Generator(seed);
+    switch(gen.int(2)){
+      case 0:
+        super(x, y, 48, 90, "cave/hole");
+        this.adjust_hitbox(0,0,48,90);
 
+        break;
 
+      case 1:
+        super(x, y, 43, 95, "cave/hole2");
+        this.adjust_hitbox(0,0,43,95);
+
+        break;
+    }
+    this.default_text = this.text_interaction([
+      "The ground in front of you seems fractured and about to give way...",
+      "There's a crack in the floor in front of you. Too little to get in, but big enough to be dangerous.",
+      "You drop a pebble in this crack to see how deep it goes. The answer is pretty deep.",
+      "You feel like it's better to not get too close to this fractured stone, lest you may fall in.",
+    ], seed);
+  }
+}
+
+//hack Special flora
 
 class S_Rootstall extends SimpleObject {
   constructor(x, y, seed){
@@ -609,40 +614,6 @@ class S_Root extends SimpleObject {
     ], seed);
   }
 }
-
-
-
-
-
-
-
-
-class S_Hole extends SimpleObject {
-  constructor(x, y, seed){
-    var gen = new Generator(seed);
-    switch(gen.int(2)){
-      case 0:
-        super(x, y, 48, 90, "cave/hole");
-        this.adjust_hitbox(0,0,48,90);
-
-        break;
-
-      case 1:
-        super(x, y, 43, 95, "cave/hole2");
-        this.adjust_hitbox(0,0,43,95);
-
-        break;
-    }
-    this.default_text = this.text_interaction([
-      "The ground in front of you seems fractured and about to give way...",
-      "There's a crack in the floor in front of you. Too little to get in, but big enough to be dangerous.",
-      "You drop a pebble in this crack to see how deep it goes. The answer is pretty deep.",
-      "You feel like it's better to not get too close to this fractured stone, lest you may fall in.",
-    ], seed);
-  }
-}
-
-
 
 class S_HellPlantLeaning extends SimpleObject {
   constructor(x, y, seed){
@@ -708,8 +679,6 @@ class S_Spike extends SimpleObject {
   }
 }
 
-
-
 class S_HellEgg extends SimpleObject {
   constructor(x, y, seed){
     var gen = new Generator(seed);
@@ -743,6 +712,8 @@ class S_HellEgg extends SimpleObject {
     ], seed);
   }
 }
+
+//hack Indoors dungeons
 
 class S_Armor extends SimpleObject {
   constructor(x, y, seed){
@@ -835,6 +806,31 @@ class S_Mirror extends SimpleObject {
   }
 }
 
+class S_Throne extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 200,184, "pandemonium/throne", "obj_light");
+
+    this.adjust_hitbox(10,10,180,100);
+    this.default_text = this.text_interaction([
+      "This is the biggest piece of furniture you've ever seen. It seems carved directly in what appears to be bone, and richly aggremented of golden gildings and velvet cushions bigger than you. A fitting throne for the emperor of demons.",
+    ], seed);
+  }
+}
+
+class S_Bocals extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 43,40, "ruins/bocals");
+    this.adjust_hitbox(0,0,30,20);
+
+    this.default_text = this.text_interaction([
+      "The previous inhabitants of this place supposedly used this to store food, but it was so long ago... The content is now some sort of black goo that you'd rather stay clear of.",
+      "This probably used to hold some sort of sustenance, but now it just looks like rot and mold. It's covered in dust and spider webs.",
+      "The content of this container have been sealed for centuries. You cannot imagine the smell that might arise if you were to open them.",
+    ], seed);
+  }
+}
+
+//hack Special dungeons
 
 class S_Cloud extends SimpleObject {
   constructor(x, y, seed){
@@ -867,7 +863,6 @@ class S_Cloud extends SimpleObject {
     ], seed);
   }
 }
-
 
 class S_GameBoard extends SimpleObject {
   constructor(x, y, seed){

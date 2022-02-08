@@ -1,6 +1,8 @@
 // use(Object)
 // runtime: Rectangle, StaticSprite
 
+//hack Special objects
+
 class S_Column extends LevelObject {
   constructor(x, y, seed){
     var visual = new StaticSprite("assets/objects/interior/column.png", 'obj_light');
@@ -98,38 +100,6 @@ class S_RoyalThrone extends SimpleObject {
   }
 }
 
-class B_Statue extends ItemBattleObject {
-  constructor(x, y){
-    super(x, y, 50,100, "interior/statue");
-    this.adjust_hitbox(0,0,50,40);
-
-    this.set_description(BESTIARY.intro("interior/statue"));
-
-    this.add_interaction("Prostrate", "You prostrate yourself in front of the statue of the Goddess.");
-    this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
-    this.add_interaction("Ponder", "A holy statue of the Goddess, like many others in this town.");
-    this.add_interaction("Contemplate", "An effigy of the protective Goddess. Its presence is a silent invitation for Her grace upon this place.");
-    this.add_interaction("Salvage", "You notice that this statue is a bit old. Some parts of it are crumbling. You seize a piece of rock that rolled a few feet away, and decide to keep it.", INVENTORY.increase_function(ITEM.Stone));
-  }
-}
-
-class S_SavePoint extends LevelObject {
-  constructor(x, y){
-    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
-    visual.specify_sprite_size(50,50);
-    super(visual, x, y);
-    this.adjust_hitbox(5,-5,40,20);
-  }
-
-  interaction(){
-    new CenteredTextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
-                  [
-                    {"text": "Worship", "effect": function(){ SAVE.print.save_menu(); }},
-                    {"text": "Postpone", "effect": "##CLOSE"}
-                 ]);
-  }
-}
-
 class S_Altar extends LevelObject {
   constructor(x, y, type){
     var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
@@ -159,6 +129,40 @@ class S_Altar extends LevelObject {
                     {"text": "Worship", "effect": function(){ SAVE.print.save_menu(); }},
                     {"text": "Postpone", "effect": "##CLOSE"}
                  ]));
+  }
+}
+
+class S_SavePoint extends LevelObject {
+  constructor(x, y){
+    var visual = new StaticSprite("assets/objects/interior/savepoint.png", 'obj_light');
+    visual.specify_sprite_size(50,50);
+    super(visual, x, y);
+    this.adjust_hitbox(5,-5,40,20);
+  }
+
+  interaction(){
+    new CenteredTextMenu("You found an Altar of the Goddess. Will you pray that She remembers you?",
+                  [
+                    {"text": "Worship", "effect": function(){ SAVE.print.save_menu(); }},
+                    {"text": "Postpone", "effect": "##CLOSE"}
+                 ]);
+  }
+}
+
+//hack Indoors furniture
+
+class B_Statue extends ItemBattleObject {
+  constructor(x, y){
+    super(x, y, 50,100, "interior/statue");
+    this.adjust_hitbox(0,0,50,40);
+
+    this.set_description(BESTIARY.intro("interior/statue"));
+
+    this.add_interaction("Prostrate", "You prostrate yourself in front of the statue of the Goddess.");
+    this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
+    this.add_interaction("Ponder", "A holy statue of the Goddess, like many others in this town.");
+    this.add_interaction("Contemplate", "An effigy of the protective Goddess. Its presence is a silent invitation for Her grace upon this place.");
+    this.add_interaction("Salvage", "You notice that this statue is a bit old. Some parts of it are crumbling. You seize a piece of rock that rolled a few feet away, and decide to keep it.", INVENTORY.increase_function(ITEM.Stone));
   }
 }
 
@@ -332,6 +336,8 @@ class B_Chest extends ItemBattleObject {
     this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden));
   }
 }
+
+//hack Region-locked furniture
 
 class B_WeaponRack extends ItemBattleObject {
   constructor(x, y){
