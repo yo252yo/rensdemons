@@ -631,6 +631,83 @@ BESTIARY.dict["interior"]["weaponrack"] = {
   "intro": "This rack holds shiny, well sharpened swords, ready to be used at the first occasion.",
   "introed": "This rack held shiny, well sharpened swords, ready to be used at the first occasion.",
 };
+BESTIARY.dict["interior"]["alchemyshelf"] = {
+  "intro": "This shelf stores dozens of jars containing various foods for long term storage.",
+  "introed": "This shelf stored dozens of jars containing various foods for long term storage.",
+};
+BESTIARY.dict["interior"]["barrel"] = {
+  "intro": "This wooden barrel is sure to contain some fine bevrage.",
+  "introed": "This wooden barrel was sure to contain some fine bevrage.",
+};
+BESTIARY.dict["interior"]["bocals"] = {
+  "intro": "A few empty jars lay on the floor.",
+  "introed": "A few empty jars layed on the floor.",
+};
+BESTIARY.dict["interior"]["bottles"] = {
+  "intro": "You find a couple of bottles on the floor.",
+  "introed": "You found a couple of bottles on the floor.",
+};
+BESTIARY.dict["interior"]["bottlesshelf"] = {
+  "intro": "This shelf is filled with dozens of bottles of alcoholic bevrages.",
+  "introed": "This shelf was filled with dozens of bottles of alcoholic bevrages.",
+};
+BESTIARY.dict["interior"]["box"] = {
+  "intro": "A wooden box is filled to the brim with potatoes.",
+  "introed": "A wooden box was filled to the brim with potatoes.",
+};
+BESTIARY.dict["interior"]["chimney"] = {
+  "intro": "A chimney provides light and heat to the room.",
+  "introed": "A chimney provided light and heat to the room.",
+};
+BESTIARY.dict["interior"]["clock"] = {
+  "intro": "A ticking clock counts the time you're wasting.",
+  "introed": "A ticking clock counted the time you're wasting.",
+};
+BESTIARY.dict["interior"]["flowercrown"] = {
+  "intro": "A beautiful flower crown brings life to the wall.",
+  "introed": "A beautiful flower crown brought life to the wall.",
+};
+BESTIARY.dict["interior"]["mask"] = {
+  "intro": "A mask is hung on the wall, displaying an uncanny happy expression.",
+  "introed": "A mask was hung on the wall, displaying an uncanny happy expression.",
+};
+BESTIARY.dict["interior"]["papers"] = {
+  "intro": "Rolls of papers lay on the floor.",
+  "introed": "Rolls of papers layed on the floor.",
+};
+BESTIARY.dict["interior"]["pottedflower"] = {
+  "intro": "The room is decorated with lively green plants.",
+  "introed": "The room was decorated with lively green plants.",
+};
+BESTIARY.dict["interior"]["rope"] = {
+  "intro": "This rope is showing signs of wear.",
+  "introed": "This rope was showing signs of wear.",
+};
+BESTIARY.dict["interior"]["sack"] = {
+  "intro": "A big sack contains provisions, probably cereals.",
+  "introed": "A big sack contained provisions, probably cereals.",
+};
+BESTIARY.dict["interior"]["fancyshelf"] = {
+  "intro": "This fancy shelf lets you know that this household is not poor.",
+  "introed": "This fancy shelf let you know that this household is not poor.",
+};
+BESTIARY.dict["interior"]["shielddisplay"] = {
+  "intro": "A shield is proudly displayed on the wall.",
+  "introed": "A shield was proudly displayed on the wall",
+};
+BESTIARY.dict["interior"]["wallcandles"] = {
+  "intro": "Candles light up the room with a trembling light.",
+  "introed": "Candles lit up the room with a trembling light.",
+};
+BESTIARY.dict["interior"]["weapondisplay"] = {
+  "intro": "The swords hung on the wall seem ready to be used at a moment's notice.",
+  "introed": "The swords hung on the wall seemed ready to be used at a moment's notice.",
+};
+BESTIARY.dict["interior"]["window"] = {
+  "intro": "Through the window, you can see the streets of the city.",
+  "introed": "Through the window, you could see the streets of the city.",
+};
+
 
 //hack exterior
 BESTIARY.dict["exterior"] = {};
