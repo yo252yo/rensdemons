@@ -118,6 +118,7 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - power creep in NG+ satisfactory enough ???
 - Keep more stats and reuse the Stat of ren's desth
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
+- MAKE BUG INTO A COMMAND???
 
 # BUGFIXES  ----------------------------------------------------
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space (plus they should be displayed as resurected not born)
