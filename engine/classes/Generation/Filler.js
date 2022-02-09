@@ -32,6 +32,9 @@ class Filler {
     for (var i in this.constructors){
       array[i] = this.constructors[i].w;
     }
+    if (!array.length){
+      CONSOLE.error('Filler called without constructor.', true);
+    }
     var index = RANDOM.pick_in_weighted_array(array, gen);
     var c = this.constructors[index];
     var r = {
