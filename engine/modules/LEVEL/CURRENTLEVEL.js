@@ -389,7 +389,12 @@ const CURRENTLEVEL = {
       }
     },
 
-    program_destruction: function(object) {
+    program_destruction: function(object, stillborn) {
+      if(stillborn) {
+        CURRENTLEVEL.objects.destroy_object(object);
+        return;
+      }
+
       if(!CURRENTLEVEL.destroyed_objects.includes(object.hash())){
         CURRENTLEVEL.destroyed_objects.push(object.hash());
       }

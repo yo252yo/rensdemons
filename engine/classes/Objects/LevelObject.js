@@ -63,7 +63,7 @@ class LevelObject {
         top:(this.visual_element.y + this.h_y - this.h_h),
         left:(this.visual_element.x + this.h_x),
       });
-      html_rectangle.style.position = "relative";
+      html_rectangle.style.position = "absolute";
       html_rectangle.style.border = "3px dotted DarkGrey";
       html_rectangle.style.margin = "-3px";
       html_rectangle.style.zIndex = "30000";
@@ -125,14 +125,11 @@ class LevelObject {
     }
 
     destroy(stillborn) {
-      if (this.record_death){
+      if (!stillborn && this.record_death){
         this.record_death();
       }
-      if(stillborn){
-        this.finish_destroy();
-      } else {
-        CURRENTLEVEL.objects.program_destruction(this);
-      }
+
+      CURRENTLEVEL.objects.program_destruction(this, stillborn);
     }
 
     finish_destroy() {
