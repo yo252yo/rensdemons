@@ -48,14 +48,16 @@ class HG_Room {
       peopleFiller.fill_floor_by_retry();
     }
 
-    decorate(){
+    decorate() {
       var r = this.gen.get();
-      if (r < 0.3){
+      if (r < 0.1){
+        this.decorate_prayer_room();
+      } else if (r < 0.3) {
         this.decorate_bedroom();
-      } else if (r < 0.6) {
+      } else if (r < 0.7) {
         this.decorate_kitchen();
-      } else{
-        this.decorate_random_room();
+      } else {
+        this.decorate_storage_room();
       }
     }
 
@@ -107,7 +109,7 @@ class HG_Room {
       }
     }
 
-    decorate_bedroom(){ //70 px top
+    decorate_bedroom() { //70 px top
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),55, 0);
         topfiller.set_zone_from_floor(this.floor);
@@ -124,17 +126,19 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Hay", 70, 50);
       decorFiller.add_default_constructor("B_Chest");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, 0.1 * Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.set_tries(3, 0.1 * Math.floor(this.w * this.h / 3000)); // WIP
       decorFiller.fill_decor_by_retry();
     }
 
-    decorate_kitchen(){
+    decorate_kitchen() {
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),55, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
+        topfiller.add_default_constructor("B_Shelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Cabinet_wall", 1, 30, 20);
         topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
         this.exclusive_wall_furniture(topfiller);
@@ -145,24 +149,26 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Barrel");
       decorFiller.add_default_constructor("B_Bocals");
       decorFiller.add_default_constructor("B_Box");
+      decorFiller.add_default_constructor("B_Jar");
       decorFiller.add_default_constructor("B_Sack");
       decorFiller.add_default_constructor("B_Housefire");
+      decorFiller.add_default_constructor("B_Bucket");
       decorFiller.add_default_constructor("B_Table");
       decorFiller.add_default_constructor("B_Stool");
+      decorFiller.add_default_constructor("B_Chair");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.set_tries(3, Math.floor(this.w * this.h / 3000)); // WIP
       decorFiller.fill_decor_by_retry();
-
     }
 
-    decorate_random_room(){
+    decorate_storage_room() {
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),55, 0);
         topfiller.set_zone_from_floor(this.floor);
-        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
-        topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
+        topfiller.add_default_constructor("B_Shelf_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Cabinet_wall", 1, 30, 20);
         topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
@@ -176,11 +182,30 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Sack");
       decorFiller.add_default_constructor("B_Jar");
       decorFiller.add_default_constructor("B_Stool");
-      decorFiller.add_default_constructor("S_SavePoint", 0.1);
       decorFiller.add_default_constructor("B_Bucket");
       decorFiller.add_default_constructor("B_Chest");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 3000)); // WIP
+      decorFiller.fill_decor_by_retry();
+    }
+
+    decorate_prayer_room() {
+      if(this.is_top){
+        var topfiller = new Filler(this.gen.get(),55, 0);
+        topfiller.set_zone_from_floor(this.floor);
+        topfiller.add_default_constructor("B_Clock_wall");
+        topfiller.add_default_constructor("B_Candles_wall");
+        this.exclusive_wall_furniture(topfiller);
+        topfiller.fill_line();
+      }
+      var decorFiller = new Filler(this.gen.get(),50, 50);
+      decorFiller.set_zone_from_floor(this.floor);
+      decorFiller.add_default_constructor("B_Papers");
+      decorFiller.add_default_constructor("S_SavePoint", 0.2);
+      decorFiller.add_default_constructor("B_Statue");
+      decorFiller.add_default_constructor("B_Chest");
+      this.exclusive_furniture(decorFiller);
+      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 3000)); // WIP
       decorFiller.fill_decor_by_retry();
     }
 

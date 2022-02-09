@@ -195,7 +195,7 @@ class B_Bucket extends ItemBattleObject {
   }
 }
 
-class B_Cabinet extends ItemBattleObject {
+class B_Cabinet_wall extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 31,48, "interior/cabinet");
     this.adjust_hitbox(0,0,31,48);
