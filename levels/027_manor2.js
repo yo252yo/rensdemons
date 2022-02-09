@@ -197,7 +197,7 @@ door.real_interaction = function(){
 //hack E. DECOR
 // ===================
 
-new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [850,375]);
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [850,375], false, true);
 
 // ===================
 //hack F. EVENTS

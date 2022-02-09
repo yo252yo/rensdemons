@@ -6,7 +6,7 @@ var _MIN_ROOM_H = 100;
 var _HOUSE_ELEM_BLOCK = 12.5;
 
 class HG_Room {
-    constructor(type, seed, x, y, imposed_dimensions, is_top) {
+    constructor(type, seed, x, y, imposed_dimensions, is_top, empty) {
       this.type = type;
       this.gen = new Generator(seed);
       this.x = x;
@@ -16,7 +16,9 @@ class HG_Room {
       this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
 
       this.decorate();
-      this.populate();
+      if(empty){
+        this.populate();
+      }
     }
 
     dimention(imposed_dimensions) {
@@ -40,24 +42,65 @@ class HG_Room {
     }
 
     populate() {
+
+      var multiplier = 1;
+      switch(this.type){
+        case CITIES.hope:
+          multiplier = 1;
+          break;
+        case CITIES.fear:
+          multiplier = 2;
+          break;
+        case CITIES.indulgence:
+          multiplier = 5;
+          break;
+        case CITIES.denial:
+          multiplier = 1;
+          break;
+        case CITIES.acceptance:
+          multiplier = 0.7;
+          break;
+      }
       var peopleFiller = new Filler(this.gen.get(),50, 60);
       peopleFiller.set_zone_from_floor(this.floor);
-      peopleFiller.set_tries(0, this.gen.int(10) - 7);
+      peopleFiller.set_tries(0, this.gen.int(12 * multiplier) - 7);
       var type = this.type;
       peopleFiller.add_constructor(function(x,y,seed){ return new M_Villager(type, x, y, seed, true); });
       peopleFiller.fill_floor_by_retry();
     }
 
     decorate() {
-      var r = this.gen.get();
-      if (r < 0.1){
-        this.decorate_prayer_room();
-      } else if (r < 0.3) {
-        this.decorate_bedroom();
-      } else if (r < 0.7) {
-        this.decorate_kitchen();
-      } else {
-        this.decorate_storage_room();
+      var thresholds = {};
+      switch(this.type){
+        case CITIES.hope:
+          thresholds = {prayer: 2, kitchen: 2, storage: 2, hangout: 1, bedroom: 1};
+          break;
+        case CITIES.fear:
+          thresholds = {prayer: 3, kitchen: 1, storage: 3, hangout: 1, bedroom: 1};
+          break;
+        case CITIES.indulgence:
+          thresholds = {prayer: 0.5, kitchen: 3, storage: 1, hangout: 2, bedroom: 1};
+          break;
+        case CITIES.denial:
+          thresholds = {prayer: 1, kitchen: 1, storage: 1, hangout: 1, bedroom: 1};
+          break;
+        case CITIES.acceptance:
+          thresholds = {prayer: 2, kitchen: 1, storage: 1, hangout: 0.5, bedroom: 2};
+          break;
+      }
+
+      switch(RANDOM.pick_in_weighted_array(thresholds, this.gen)){
+        case "prayer":
+          return this.decorate_prayer_room();
+        case "kitchen":
+          return this.decorate_kitchen();
+        case "storage":
+          return this.decorate_storage_room();
+        case "hangout":
+          return this.decorate_hangout_room();
+        case "bedroom":
+          return this.decorate_bedroom();
+
       }
     }
 
@@ -109,9 +152,24 @@ class HG_Room {
       }
     }
 
+    object_density_multiplier(){
+      switch(this.type){
+        case CITIES.hope:
+          return 2;
+        case CITIES.fear:
+          return 1;
+        case CITIES.indulgence:
+          return 5;
+        case CITIES.denial:
+          return 1;
+        case CITIES.acceptance:
+          return 0.3;
+      }
+    }
+
     decorate_bedroom() { //70 px top
       if(this.is_top){
-        var topfiller = new Filler(this.gen.get(),55, 0);
+        var topfiller = new Filler(this.gen.get(),60, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
@@ -126,13 +184,13 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Hay", 70, 50);
       decorFiller.add_default_constructor("B_Chest");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, 0.1 * Math.floor(this.w * this.h / 3000)); // WIP
+      decorFiller.set_tries(3, 0.1 * this.object_density_multiplier() * Math.floor(this.w * this.h / 3500));
       decorFiller.fill_decor_by_retry();
     }
 
     decorate_kitchen() {
       if(this.is_top){
-        var topfiller = new Filler(this.gen.get(),55, 0);
+        var topfiller = new Filler(this.gen.get(),60, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
@@ -157,13 +215,34 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Stool");
       decorFiller.add_default_constructor("B_Chair");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, Math.floor(this.w * this.h / 3000)); // WIP
+      decorFiller.set_tries(3, this.object_density_multiplier() * Math.floor(this.w * this.h / 3500));
+      decorFiller.fill_decor_by_retry();
+    }
+
+    decorate_hangout_room() {
+      if(this.is_top){
+        var topfiller = new Filler(this.gen.get(),60, 0);
+        topfiller.set_zone_from_floor(this.floor);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Clock_wall");
+        topfiller.add_default_constructor("B_Candles_wall");
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        this.exclusive_wall_furniture(topfiller);
+        topfiller.fill_line();
+      }
+      var decorFiller = new Filler(this.gen.get(),50, 50);
+      decorFiller.set_zone_from_floor(this.floor);
+      decorFiller.add_default_constructor("B_Table");
+      decorFiller.add_default_constructor("B_Stool");
+      decorFiller.add_default_constructor("B_Chair");
+      this.exclusive_furniture(decorFiller);
+      decorFiller.set_tries(3, 0.8 * this.object_density_multiplier() * Math.floor(this.w * this.h / 3500));
       decorFiller.fill_decor_by_retry();
     }
 
     decorate_storage_room() {
       if(this.is_top){
-        var topfiller = new Filler(this.gen.get(),55, 0);
+        var topfiller = new Filler(this.gen.get(),60, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Candles_wall");
         topfiller.add_default_constructor("B_Shelf_wall", 1, 55, 20);
@@ -185,13 +264,13 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Bucket");
       decorFiller.add_default_constructor("B_Chest");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 3000)); // WIP
+      decorFiller.set_tries(3, 1.2 * this.object_density_multiplier() * Math.floor(this.w * this.h / 3500));
       decorFiller.fill_decor_by_retry();
     }
 
     decorate_prayer_room() {
       if(this.is_top){
-        var topfiller = new Filler(this.gen.get(),55, 0);
+        var topfiller = new Filler(this.gen.get(),60, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
@@ -205,7 +284,7 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Statue");
       decorFiller.add_default_constructor("B_Chest");
       this.exclusive_furniture(decorFiller);
-      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 3000)); // WIP
+      decorFiller.set_tries(3, 0.5 * this.object_density_multiplier() * Math.floor(this.w * this.h / 3500));
       decorFiller.fill_decor_by_retry();
     }
 

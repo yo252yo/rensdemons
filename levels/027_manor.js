@@ -218,10 +218,10 @@ if(INVENTORY.count(ITEM.PorcelainDoll)){
 // ===================
 
 
-new HG_Room(CITIES.indulgence, gen.get(), 1575, 1875, [350,300], true);
-new HG_Room(CITIES.indulgence, gen.get(), 2075, 1875, [350,300], true);
-new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [350,300]);
-new HG_Room(CITIES.indulgence, gen.get(), 2075, 2275, [350,300]);
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 1875, [350,300], true, true);
+new HG_Room(CITIES.indulgence, gen.get(), 2075, 1875, [350,300], true, true);
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [350,300], false, true);
+new HG_Room(CITIES.indulgence, gen.get(), 2075, 2275, [350,300], false, true);
 
 // ===================
 //hack F. EVENTS
