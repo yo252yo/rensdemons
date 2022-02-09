@@ -33,11 +33,11 @@ new M_TorturedSoul(1075, 2550);
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 950, 1450);
 houseFiller.set_tries(5, 40);
-houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.acceptance, x, y, seed); });
+houseFiller.add_constructor( function(x,y,seed){ return new S_House(CITIES.acceptance, x, y, seed); }, 1, 120, 160);
 houseFiller.fill_floor_by_retry();
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 2525, 950, 1450);
 villagerFiller.set_tries(10, 30);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.acceptance, x, y, seed); });
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.acceptance, x, y, seed); }, 1 , 50, 60);
 villagerFiller.fill_floor_by_retry();

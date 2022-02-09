@@ -114,7 +114,7 @@ hp.interaction = function() {
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 1475, 1450);
 houseFiller.set_tries(15, 100);
-houseFiller.set_object(120, 160, function(x,y,seed){ obj.push(new S_House(CITIES.fear, x, y, seed)); });
+houseFiller.add_constructor(function(x,y,seed){ obj.push(new S_House(CITIES.fear, x, y, seed)); }, 1, 120, 160);
 houseFiller.fill_floor_by_retry();
 
 
@@ -136,11 +136,11 @@ var gen = new Generator(gen.get());
 var rubbleFiller = new Filler(gen.get());
 rubbleFiller.set_zone(1075, 2525, 1475, 1450);
 rubbleFiller.set_tries(200, 400);
-rubbleFiller.set_object(30, 30, function(x,y,seed){ return new S_Rubble(x, y); });
+rubbleFiller.add_default_constructor("S_Rubble", 1, 30, 30);
 rubbleFiller.fill_floor_by_retry();
-
+rubbleFiller.clear();
 rubbleFiller.set_tries(30, 60);
-rubbleFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.mourning, x, y, seed); });
+rubbleFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.mourning, x, y, seed); }, 1, 50, 60);
 rubbleFiller.fill_floor_by_retry();
 
 

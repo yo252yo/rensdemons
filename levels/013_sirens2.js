@@ -98,10 +98,10 @@ if(sirenspart < 4) {
      return new S_Whirlwind(x,y, seed, "013_sirens2@" + (sirenspart+1));
    }
 
-  var f = new Filler(gen.get());
+  var f = new Filler(gen.get(), 50, 50);
   f.set_zone(1075+50,2200+50,dim[0]-100, dim[1]-100);
   f.set_guaranteed(1);
-  f.set_object(50, 50, constructor);
+  f.add_constructor(constructor);
   f.fill_floor_by_retry();
 } else{
   new SE_event(2500, 2150, [

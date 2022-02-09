@@ -11,17 +11,17 @@ new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 200, 1220, 1150, gen.get()
 new S_Store(CITIES.hope, ABILITIES_ARCHETYPES_NAMES.Spirit, 500, 1370, 1150, gen.get());
 new S_Store(CITIES.hope, ABILITIES_ARCHETYPES_NAMES.Element, 500, 1520, 1150, gen.get());
 
-var houseFiller = new Filler(gen.get());
+var houseFiller = new Filler(gen.get(), 120, 160);
 houseFiller.set_zone(1075, 1625, 550, 550);
 houseFiller.set_tries(10, 100);
 houseFiller.set_guaranteed(2);
-houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); });
+houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); });
 houseFiller.fill_floor_by_retry();
 
-var villagerFiller = new Filler(gen.get());
+var villagerFiller = new Filler(gen.get(), 50, 60);
 villagerFiller.set_zone(1075, 1625, 550, 550);
 villagerFiller.set_tries(2, 40);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); });
 villagerFiller.fill_floor_by_retry();
 
 

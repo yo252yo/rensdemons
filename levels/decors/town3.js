@@ -27,11 +27,11 @@ new S_Store(CITIES.denial, ITEMS_ARCHETYPES_NAMES.Tool, 100000, 2600, 1525, gen.
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 3025, 1950, 1950);
 houseFiller.set_tries(20, 125);
-houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.denial, x, y, seed); });
+houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.denial, x, y, seed); }, 1, 120, 160);
 houseFiller.fill_floor_by_retry();
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 3025, 1950, 1950);
 villagerFiller.set_tries(20, 75);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.denial, x, y, seed); });
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.denial, x, y, seed); },1 , 50, 60);
 villagerFiller.fill_floor_by_retry();

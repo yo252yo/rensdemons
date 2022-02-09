@@ -30,10 +30,10 @@ m.interaction = function() {
     , brave);
 }
 
-var FMap = new Filler(gen.get());
+var FMap = new Filler(gen.get(), 100, 100);
 FMap.set_zone(1050, 1000+h, w, h-50);
 FMap.set_tries(3, 10);
-FMap.set_object(100, 100, function(x,y,seed){ return new SM_Trees(x, y, seed);});
+FMap.add_default_constructor("SM_Trees");
 FMap.fill_floor_by_retry();
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');

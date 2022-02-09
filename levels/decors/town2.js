@@ -28,15 +28,15 @@ new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.ge
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 1475, 1450);
 houseFiller.set_tries(20, 100);
-houseFiller.set_object(120, 160, function(x,y,seed){ return new S_House(CITIES.fear, x, y, seed); });
+houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.fear, x, y, seed); },1 ,120, 160);
 houseFiller.fill_floor_by_retry();
 
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(1075, 2525, 1475, 1450);
 villagerFiller.set_tries(2, 10);//this.gen.int(10) - 7
-villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Villager(CITIES.fear, x, y, seed); });
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.fear, x, y, seed); },1,50,60);
 villagerFiller.fill_floor_by_retry();
 
 villagerFiller.set_tries(6, 20);
-villagerFiller.set_object(50, 60, function(x,y,seed){ return new M_Guard(CITIES.fear, x, y, seed); });
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Guard(CITIES.fear, x, y, seed); },1,50,60);
 villagerFiller.fill_floor_by_retry();

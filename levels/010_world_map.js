@@ -87,36 +87,36 @@ v.interaction = function() {
 
 //hack landmarks
 FEasyS.set_guaranteed(1);
-FEasyS.set_object(100, 100, function(x,y,seed){
+FEasyS.add_constructor(function(x,y,seed){
   return new SM_Trees(x, y, seed, "", "011_han_grove");
-});
+}, 1, 100, 100);
 FEasyS.fill_floor_by_retry();
 
 
 FHardSW.set_guaranteed(1);
-FHardSW.set_object(300, 250, function(x,y,seed){
+FHardSW.add_constructor(function(x,y,seed){
   return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees");
-});
+}, 1, 300, 250);
 FHardSW.fill_floor_by_retry();
 
 
 FHardNE.set_guaranteed(1);
-FHardNE.set_object(250, 150, function(x,y,seed){
+FHardNE.add_constructor(function(x,y,seed){
   return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens");
-});
+}, 1, 250, 150);
 FHardNE.fill_floor_by_retry();
 
 
 FHardMain.set_guaranteed(1);
-FHardMain.set_object(250, 150, function(x,y,seed){
+FHardMain.add_constructor(function(x,y,seed){
   return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks");
-});
+}, 1, 250, 150);
 FHardMain.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
-FHardMain.set_object(100, 50, function(x,y,seed){
+FHardMain.add_constructor(function(x,y,seed){
   return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes");
-});
+},1 ,100, 50);
 FHardMain.fill_floor_by_retry();
 
 FMap.add_default_constructor("SM_Trees", 2, 100, 100);

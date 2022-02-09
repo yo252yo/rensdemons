@@ -297,8 +297,7 @@ for (var f of rooms) {
   filler.fill_floor_by_retry();
 }
 filler.clear();
-filler.set_object_size(20, 20);
-filler.add_default_constructor("M_PalaceGuard");
+filler.add_default_constructor("M_PalaceGuard", 1, 20, 20);
 filler.set_tries(15, 20);
 for (var f of rooms) {
   filler.set_zone_from_floor(f);
@@ -357,5 +356,5 @@ var make_noble = function (x, y, seed) {
 var villagerFiller = new Filler(gen.get());
 villagerFiller.set_zone(2000,1725,475,450);
 villagerFiller.set_tries(25, 40);
-villagerFiller.set_object(30, 40, make_noble);
+villagerFiller.add_constructor(make_noble, 1, 30, 40);
 villagerFiller.fill_floor_by_retry();

@@ -76,10 +76,11 @@ new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 var filler = new Filler(gen.get());
 filler.set_zone(550,1200,650,675);
 filler.set_tries(20, 20);
-filler.set_object(120, 60, function(x,y,seed){ return new S_Web(x, y); });
+filler.add_default_constructor("S_Web", 1, 120, 60);
 filler.fill_floor_by_retry();
+filler.clear();
 //filler.set_tries(10, 10);
-filler.set_object(40, 25, function(x,y,seed){ return new S_Bocals(x, y); });
+filler.add_default_constructor("S_Bocals", 1, 40, 25);
 filler.fill_floor_by_retry();
 
 // ===================

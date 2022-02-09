@@ -72,10 +72,10 @@ var makeTree = function(x,y,seed){
   return t;
 }
 
-var treeFiller = new Filler(gen.get());
+var treeFiller = new Filler(gen.get(), 100, 100);
 treeFiller.set_zone(1050, 1500, 500, 450);
 treeFiller.set_tries(4, 15);
-treeFiller.set_object(100, 100, makeTree);
+treeFiller.add_constructor(makeTree);
 treeFiller.fill_floor_by_retry();
 
 // ===================

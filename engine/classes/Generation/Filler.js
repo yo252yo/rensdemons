@@ -2,9 +2,59 @@
 
 
 class Filler {
-  constructor(seed) {
+  constructor(seed, obj_w, obj_h) {
     this.gen = new Generator(seed);
-    this.events = [];
+    this.constructors = [];
+
+    this.default_obj_w = obj_w;
+    this.default_obj_h = obj_h;
+  }
+
+  // ===================
+  //hack Manage objects
+  // ===================
+
+  get_object(seed) {
+    var gen = new Generator(seed);
+    var array = {};
+    for (var i in this.constructors){
+      array[i] = this.constructors[i].w;
+    }
+    var index = RANDOM.pick_in_weighted_array(array, gen);
+    var c = this.constructors[index];
+    var r = {
+      constructor: c.obj_constructor,
+      obj_w: c.obj_w,
+      obj_h: c.obj_h,
+    };
+    return r;
+  }
+
+  // obj_constructor expectx arguments (x,y,seed) - > void
+  add_constructor(obj_constructor, weight, obj_w, obj_h) {
+    if (!weight){
+      weight = 1;
+    }
+    this.constructors.push({
+      obj_constructor: obj_constructor,
+      w: weight,
+      obj_w: obj_w || this.default_obj_w,
+      obj_h: obj_h || this.default_obj_h
+    });
+  }
+
+  add_default_constructor(obj_name, weight, obj_w, obj_h) {
+    this.add_constructor(function(x,y,seed){
+      var constructor = eval(`new ${obj_name}(x, y, seed);`);
+      if (!constructor){
+        CONSOLE.error('Filler default constructor failure: ' + obj_name);
+      }
+      return constructor;
+    }, weight, obj_w, obj_h);
+  }
+
+  clear() {
+    this.constructors = [];
   }
 
   // ===================
@@ -33,7 +83,6 @@ class Filler {
 
     CURRENTLEVEL.system.html().appendChild(html_rectangle);
   }
-
 
   set_zone(x, y, w, h) {
     this.zone_x = x;
@@ -64,18 +113,6 @@ class Filler {
 
   set_desired(desired_products) {
     this.desired_products = desired_products;
-  }
-
-  set_object(w, h, obj_constructor) {
-    this.obj_w = w;
-    this.obj_h = h;
-    // constructor expectx arguments (x,y,seed)
-    this.obj_constructor = obj_constructor;
-  }
-
-  set_object_size(w, h) {
-    this.obj_w = w;
-    this.obj_h = h;
   }
 
   // ===================
@@ -161,14 +198,6 @@ class Filler {
   // ===================
   //hack Fillers
   // ===================
-  get_object(seed) {
-    this._assess_params(["obj_w", "obj_h", "obj_constructor"]);
-    return {
-      constructor: this.obj_constructor,
-      obj_w: this.obj_w,
-      obj_h: this.obj_h,
-    }
-  }
 
   fill_floor_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
@@ -249,7 +278,6 @@ class Filler {
   }
 }
 
-
 class MultiFiller extends Filler {
   constructor(filler, obj_w, obj_h) {
     super();
@@ -259,50 +287,7 @@ class MultiFiller extends Filler {
     this.default_obj_w = obj_w;
     this.default_obj_h = obj_h;
   }
-
-  get_object(seed) {
-    var gen = new Generator(seed);
-    var array = {};
-    for (var i in this.constructors){
-      array[i] = this.constructors[i].w;
-    }
-    var index = RANDOM.pick_in_weighted_array(array, gen);
-    var c = this.constructors[index];
-    var r = {
-      constructor: c.obj_constructor,
-      obj_w: c.obj_w,
-      obj_h: c.obj_h,
-    };
-    return r;
-  }
-
-  add_constructor(obj_constructor, weight, obj_w, obj_h) {
-    if (!weight){
-      weight = 1;
-    }
-    this.constructors.push({
-      obj_constructor: obj_constructor,
-      w: weight,
-      obj_w: obj_w || this.default_obj_w,
-      obj_h: obj_h || this.default_obj_h
-    });
-  }
-
-  add_default_constructor(obj_name, weight, obj_w, obj_h){
-    this.add_constructor(function(x,y,seed){
-      var constructor = eval(`new ${obj_name}(x, y, seed);`);
-      if (!constructor){
-        CONSOLE.error('Filler default constructor failure: ' + obj_name);
-      }
-      return constructor;
-    }, weight, obj_w, obj_h);
-  }
-
-  clear() {
-    this.constructors = [];
-  }
 }
-
 
 class EventFiller extends MultiFiller {
   constructor(filler, hitbox_size, resize_event, recolor_event) {

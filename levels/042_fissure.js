@@ -15,7 +15,7 @@ new S_ExitFloor(1380,1425,20,150, "042_fissure_trunk");
 var rubbleFiller = new Filler(gen.get());
 rubbleFiller.set_zone(1050, 1550, 750, 750);
 rubbleFiller.set_tries(2, 5);
-rubbleFiller.set_object(75, 150, function(x,y,seed){ return new S_Hole(x, y, seed); });
+rubbleFiller.add_default_constructor("S_Hole",1, 75, 150);
 rubbleFiller.fill_floor_by_retry();
 
 
