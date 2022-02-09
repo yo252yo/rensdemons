@@ -370,13 +370,28 @@ class B_Box extends ItemBattleObject {
 
 class B_Chimney_wall extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, 51,96, "interior/chimney");
+    super(x, y, 51, 96, "interior/chimney");
+    this.oy = y;
     this.adjust_hitbox(-5,0,56,96);
+    this.position();
 
     this.add_interaction("Discover", "You're pretty sure this kind of chimney is the place where a secret passage would be. You wait until the fire dies down, then process to press methodically each and every stone of the fireplace. But there is nothing to be found. Although, maybe it required a special combination of presses...");
     this.add_interaction("Climb", "As soon as the fire dies of, you slide yourself inside the chimney and attempt to go up. You may have expected a secret compartment or even a noteworthy experience, but there's nothing but a lot of soot. When you come down, you realize with shame that you've made the whole room black, in addition to your own body of course.");
     this.add_interaction("Warm", "You warm yourself at the fire. The heated air is slowly engulfing you, making you drowsy. It feels good to be close to the heat source of this room. You deserve a little rest.");
-    this.add_interaction("Observe", "You look at the dancing flames in the heart of the chimney. You remain there longer than you anticipated, mesmerized by the fluid movements of the fire.");  }
+    this.add_interaction("Observe", "You look at the dancing flames in the heart of the chimney. You remain there longer than you anticipated, mesmerized by the fluid movements of the fire.");
+  }
+
+  position(){
+    if(this.y != this.oy){
+      return;
+    }
+    if(this.shift){
+      this.shift(0, 20);
+    }
+    var self = this;
+    setTimeout(function(){self.position();}, 100);
+  }
+
 }
 
 class B_Clock_wall extends ItemBattleObject {
