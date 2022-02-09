@@ -6,11 +6,12 @@ var _MIN_ROOM_H = 100;
 var _HOUSE_ELEM_BLOCK = 12.5;
 
 class HG_Room {
-    constructor(type, seed, x, y, imposed_dimensions) {
+    constructor(type, seed, x, y, imposed_dimensions, is_top) {
       this.type = type;
       this.gen = new Generator(seed);
       this.x = x;
       this.y = y;
+      this.is_top = is_top;
       this.dimention(imposed_dimensions);
       this.draw();
 
@@ -70,65 +71,94 @@ class HG_Room {
           return [B_PottedFlower, B_PottedPlant];
         case CITIES.indulgence:
           return [B_Bottles];
-        case CITITES.fear:
+        case CITIES.fear:
           return [B_WeaponRack];
         default:
           return [];
       }
     }
 
-    exclusive_wall_furniture(){
+    exclusive_wall_furniture(filler) {
       switch(this.type){
         case CITIES.denial:
-          return [B_Mask_wall, B_SpikyMask_wall, B_Mask_wall, B_SpikyMask_wall, B_Mask_wall, B_SpikyMask_wall];
+          filler.add_default_constructor("B_Mask_wall", 4);
+          filler.add_default_constructor("B_SpikyMask_wall", 4);
+          filler.add_default_constructor("B_CurtainedWindow_wall");
+          break;
         case CITIES.hope:
-          return [B_FlowerCrown_wall];
+          filler.add_default_constructor("B_Window_wall");
+          filler.add_default_constructor("B_FlowerCrown_wall");
+          break;
+        case CITIES.acceptance:
+          filler.add_default_constructor("B_Window_wall");
+          break;
         case CITIES.indulgence:
-          return [B_BottlesShelf_wall, B_BottlesShelf_wall, B_BottlesShelf_wall];
-        case CITITES.fear:
-          return [B_ShieldDisplay_wall, B_WeaponDisplay_wall, B_ShieldDisplay_wall, B_WeaponDisplay_wall];
+          filler.add_default_constructor("B_Window_wall");
+          filler.add_default_constructor("B_BottlesShelf_wall", 3);
+          break;
+        case CITIES.fear:
+          filler.add_default_constructor("B_CurtainedWindow_wall");
+          filler.add_default_constructor("B_ShieldDisplay_wall", 2);
+          filler.add_default_constructor("B_WeaponDisplay_wall", 2);
+          break;
         default:
-          return [];
+          break;
       }
     }
 
     decorate_bedroom(){ //70 px top
+      if(this.is_top){
+        var filler = new MultiFiller(this.roomFiller, 55, 0);
+        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        filler.add_default_constructor("B_Clock_wall");
+        filler.add_default_constructor("B_Candles_wall");
+        this.exclusive_wall_furniture(filler);
+        filler.fill_line();
+      }
+
       var bedroom_furniture = [B_Papers, B_Bed, B_Hay, B_Chest].concat(this.exclusive_furniture());
-      var bedroom_wall_furniture = [B_Bed, B_Hay, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_Candles_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
-
-      this.roomFiller.set_object(50, 50, this._gen_furniture_function(bedroom_wall_furniture));
-      this.roomFiller.fill_line(!this.is_top);
-
       this.roomFiller.set_object(100, 100, this._gen_furniture_function(bedroom_furniture));
       this.roomFiller.fill_by_slots(0.1);
     }
 
     decorate_kitchen(){
+      if(this.is_top){
+        var filler = new MultiFiller(this.roomFiller, 55, 0);
+        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        filler.add_default_constructor("B_Clock_wall");
+        filler.add_default_constructor("B_Candles_wall");
+        filler.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        filler.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        this.exclusive_wall_furniture(filler);
+        filler.fill_line();
+      }
+
+
       var kitchen_furniture = [B_Barrel, B_Bocals, B_Box, B_Sack, B_Housefire, B_Table, B_Stool].concat(this.exclusive_furniture());
-      var kitchen_wall_furniture = [B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall, B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
-
-      this.roomFiller.set_object(60, 15, this._gen_furniture_function(kitchen_wall_furniture));
-      this.roomFiller.fill_line(!this.is_top);
-
       this.roomFiller.set_object(100, 100, this._gen_furniture_function(kitchen_furniture));
       this.roomFiller.fill_by_slots(0.5);
     }
 
     decorate_random_room(){
+      if(this.is_top){
+        var filler = new MultiFiller(this.roomFiller, 55, 0);
+        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        filler.add_default_constructor("B_Clock_wall");
+        filler.add_default_constructor("B_Candles_wall");
+        filler.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        filler.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        this.exclusive_wall_furniture(filler);
+        filler.fill_line();
+      }
+
+
       var misc_furniture = [B_Barrel, B_Bocals, B_Box, B_Papers, B_Sack, B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest].concat(this.exclusive_furniture());
-      var misc_wall_furniture = [B_Statue, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall, B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
-
-
-      this.roomFiller.set_object(this.w, 15, this._gen_furniture_function(misc_wall_furniture));
-      this.roomFiller.fill_line(!this.is_top);
-
       this.roomFiller.set_object(100, 100, this._gen_furniture_function(misc_furniture));
       this.roomFiller.fill_by_slots(0.2);
     }
 
     expand_top() {
-       this.room_top = new HG_Room(this.type, this.gen.get(), this.x, this.y - this.h - 25, [this.w, 0]);
-       this.room_top.is_top = true;
+       this.room_top = new HG_Room(this.type, this.gen.get(), this.x, this.y - this.h - 25, [this.w, 0], true);
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
        var c = HTML.snapToGrid(connection_x, this.y - this.h + 25);
        new S_WoodFloor(c[0], c[1], 50, 75);
@@ -146,8 +176,7 @@ class HG_Room {
       var y = this.room_top.y;
       var w = this.room_right.w;
       var h = this.room_top.h;
-      var diag = new HG_Room(this.type, this.gen.get(), x, y, [w, h]);
-      diag.is_top = true;
+      var diag = new HG_Room(this.type, this.gen.get(), x, y, [w, h], true);
       var connection_left = HTML.snapToGrid(x-50, y - h/2+25);
       var connection_bot = HTML.snapToGrid(x + w/2-25, y+50);
 

@@ -252,7 +252,7 @@ class Filler {
     }
   }
 
-  fill_line(clear_middle) {
+  fill_line() { // To use this, all items should have similar width!
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
 
     var o = this.get_object(this.gen.get());
@@ -270,10 +270,7 @@ class Filler {
 
       obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + o.obj_h);
 
-      // leave the middle open for a hallway :/
-      if (clear_middle && (x_offset + obj.h_w > this.zone_w / 2 - 20 && x_offset < this.zone_w / 2 + 20)) {
-        obj.destroy(true);
-      } else if (x_offset > this.zone_w - obj.h_w) {
+      if (x_offset > this.zone_w - obj.h_w) {
         obj.destroy(true);
       }
     }
