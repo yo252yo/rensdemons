@@ -224,34 +224,6 @@ class Filler {
     }
   }
 
-  fill_by_slots(density) {
-    this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
-    if (!density){
-      density = 1;
-    }
-    var o = this.get_object(this.gen.get());
-    var access_offset = 50;
-    var w = this.zone_w;
-    var h = this.zone_h - o.obj_h;
-    var nb_slots = [Math.floor(w / o.obj_w), Math.floor(h / o.obj_h)];
-    var slot_actual_size = [w / nb_slots[0], h / nb_slots[1]];
-
-    for(var i = 0; i < nb_slots[0]; i++) {
-      for(var j = 0; j < nb_slots[1]; j++) {
-          if (this.gen.get() > density){
-            continue;
-          }
-
-          // provisory position for hash of object
-          var obj = o.constructor(this.zone_x + i * slot_actual_size[0], this.zone_y - j * slot_actual_size[1]);
-
-          var x = (i * slot_actual_size[0]) + this.gen.get() * (slot_actual_size[0] - obj.h_w);
-          var y = (j * slot_actual_size[1]) + this.gen.get() * (slot_actual_size[1] - obj.h_h);
-          obj.place_at(this.zone_x + x, this.zone_y - y - access_offset);
-      }
-    }
-  }
-
   fill_line() { // To use this, all items should have similar width!
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
 

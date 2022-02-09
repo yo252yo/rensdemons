@@ -13,7 +13,7 @@ class HG_Room {
       this.y = y;
       this.is_top = is_top;
       this.dimention(imposed_dimensions);
-      this.draw();
+      this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
 
       this.roomFiller = new Filler(this.gen.get());
       this.roomFiller.set_zone(this.x, this.y - 20, this.w,  this.h - 20);
@@ -41,10 +41,6 @@ class HG_Room {
       }
     }
 
-    draw() {
-      this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
-    }
-
     populate() {
       this.roomFiller.set_tries(0, this.gen.int(10) - 7);
       var type = this.type;
@@ -63,18 +59,23 @@ class HG_Room {
       }
     }
 
-    exclusive_furniture() {
+    exclusive_furniture(filler) {
       switch(this.type){
         case CITIES.acceptance:
-          return [B_Rope];
+          filler.add_default_constructor("B_Rope", 3);
+          break;
         case CITIES.hope:
-          return [B_PottedFlower, B_PottedPlant];
+          filler.add_default_constructor("B_PottedPlant", 2);
+          filler.add_default_constructor("B_PottedFlower", 2);
+          break;
         case CITIES.indulgence:
-          return [B_Bottles];
+          filler.add_default_constructor("B_Bottles", 3);
+          break;
         case CITIES.fear:
-          return [B_WeaponRack];
+          filler.add_default_constructor("B_WeaponRack", 3);
+          break;
         default:
-          return [];
+          break;
       }
     }
 
@@ -108,53 +109,73 @@ class HG_Room {
 
     decorate_bedroom(){ //70 px top
       if(this.is_top){
-        var filler = new MultiFiller(this.roomFiller, 55, 0);
-        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
-        filler.add_default_constructor("B_Clock_wall");
-        filler.add_default_constructor("B_Candles_wall");
-        this.exclusive_wall_furniture(filler);
-        filler.fill_line();
+        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Clock_wall");
+        topfiller.add_default_constructor("B_Candles_wall");
+        this.exclusive_wall_furniture(topfiller);
+        topfiller.fill_line();
       }
-
-      var bedroom_furniture = [B_Papers, B_Bed, B_Hay, B_Chest].concat(this.exclusive_furniture());
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function(bedroom_furniture));
-      this.roomFiller.fill_by_slots(0.1);
+      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      decorFiller.add_default_constructor("B_Papers");
+      decorFiller.add_default_constructor("B_Bed", 50, 80);
+      decorFiller.add_default_constructor("B_Hay", 70, 50);
+      decorFiller.add_default_constructor("B_Chest");
+      this.exclusive_furniture(decorFiller);
+      decorFiller.set_tries(3, 0.1 * Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.fill_decor_by_retry();
     }
 
     decorate_kitchen(){
       if(this.is_top){
-        var filler = new MultiFiller(this.roomFiller, 55, 0);
-        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
-        filler.add_default_constructor("B_Clock_wall");
-        filler.add_default_constructor("B_Candles_wall");
-        filler.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
-        filler.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
-        this.exclusive_wall_furniture(filler);
-        filler.fill_line();
+        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Clock_wall");
+        topfiller.add_default_constructor("B_Candles_wall");
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        this.exclusive_wall_furniture(topfiller);
+        topfiller.fill_line();
       }
+      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      decorFiller.add_default_constructor("B_Barrel");
+      decorFiller.add_default_constructor("B_Bocals");
+      decorFiller.add_default_constructor("B_Box");
+      decorFiller.add_default_constructor("B_Sack");
+      decorFiller.add_default_constructor("B_Housefire");
+      decorFiller.add_default_constructor("B_Table");
+      decorFiller.add_default_constructor("B_Stool");
+      this.exclusive_furniture(decorFiller);
+      decorFiller.set_tries(3, Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.fill_decor_by_retry();
 
-
-      var kitchen_furniture = [B_Barrel, B_Bocals, B_Box, B_Sack, B_Housefire, B_Table, B_Stool].concat(this.exclusive_furniture());
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function(kitchen_furniture));
-      this.roomFiller.fill_by_slots(0.5);
     }
 
     decorate_random_room(){
       if(this.is_top){
-        var filler = new MultiFiller(this.roomFiller, 55, 0);
-        filler.add_default_constructor("B_Chimney_wall", 1, 55, 20);
-        filler.add_default_constructor("B_Clock_wall");
-        filler.add_default_constructor("B_Candles_wall");
-        filler.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
-        filler.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
-        this.exclusive_wall_furniture(filler);
-        filler.fill_line();
+        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Clock_wall");
+        topfiller.add_default_constructor("B_Candles_wall");
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        this.exclusive_wall_furniture(topfiller);
+        topfiller.fill_line();
       }
-
-
-      var misc_furniture = [B_Barrel, B_Bocals, B_Box, B_Papers, B_Sack, B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest].concat(this.exclusive_furniture());
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function(misc_furniture));
-      this.roomFiller.fill_by_slots(0.2);
+      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      decorFiller.add_default_constructor("B_Barrel");
+      decorFiller.add_default_constructor("B_Bocals");
+      decorFiller.add_default_constructor("B_Box");
+      decorFiller.add_default_constructor("B_Papers");
+      decorFiller.add_default_constructor("B_Sack");
+      decorFiller.add_default_constructor("B_Jar");
+      decorFiller.add_default_constructor("B_Stool");
+      decorFiller.add_default_constructor("S_SavePoint", 0.1);
+      decorFiller.add_default_constructor("B_Bucket");
+      decorFiller.add_default_constructor("B_Chest");
+      this.exclusive_furniture(decorFiller);
+      decorFiller.set_tries(3, 0.5 * Math.floor(this.w * this.h / 2000)); // WIP
+      decorFiller.fill_decor_by_retry();
     }
 
     expand_top() {
