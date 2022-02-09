@@ -37,6 +37,9 @@ filler.add_default_constructor("B_Bucket");
 filler.add_default_constructor("B_Table");
 filler.add_default_constructor("B_Jar");
 filler.add_default_constructor("B_Stool");
+filler.add_default_constructor("B_Barrel");
+
+
 
 filler.fill_floor_by_retry();
 

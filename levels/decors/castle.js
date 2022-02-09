@@ -205,14 +205,14 @@ var jarfunction = function() {
   }
  };
 
-var jars = [new B_Jar(2375, 2400),
-new B_Jar(2375, 2350),
-new B_Jar(2375, 2450),
-new B_Jar(2400, 2450),
-new B_Jar(2425, 2450),
-new B_Jar(2450, 2450),
-new B_Jar(2450, 2400),
-new B_Jar(2450, 2350)];
+var jars = [new B_Barrel(2375, 2400),
+new B_Barrel(2375, 2350),
+new B_Barrel(2375, 2450),
+new B_Barrel(2400, 2450),
+new B_Barrel(2425, 2450),
+new B_Barrel(2450, 2450),
+new B_Barrel(2450, 2400),
+new B_Barrel(2450, 2350)];
 for(var j of jars ){
   j.interaction = jarfunction;
 }
@@ -262,6 +262,9 @@ var stewfunction = function() {
 var stews = [new B_Housefire(2875, 1925),
 new B_Housefire(2950, 1925),
 new B_Housefire(3025, 1925)];
+new B_Sack(2825, 1975);
+new B_Box(2875, 1975);
+new B_Sack(2925, 1975);
 for(var j of stews ){
   j.interaction = stewfunction;
 }
@@ -280,6 +283,11 @@ filler.add_default_constructor("B_Jar");
 filler.add_default_constructor("B_Stool");
 filler.add_default_constructor("B_Housefire");
 filler.add_default_constructor("B_Statue");
+filler.add_default_constructor("B_Barrel");
+filler.add_default_constructor("B_Box");
+filler.add_default_constructor("B_Sack");
+
+
 filler.add_default_constructor("B_WeaponRack", 2);
 
 //filler.add_default_constructor("M_PalaceGuard",3);
