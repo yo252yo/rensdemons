@@ -1,6 +1,6 @@
 # WIP
 
-Room shapes: acceptance, hope and fear
+it seems that filler line puts too much stuff in, and sometimes goes too far left
 
 New items:
 - table chair combo
