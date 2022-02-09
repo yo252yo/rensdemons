@@ -13,7 +13,8 @@ const GENERATEDLEVELS = {
       var seed = decode[2];
       var h = new HouseGenerator(type, seed, CURRENTLEVEL.previous_lvl);
       var c = h.build();
-      CURRENTLEVEL.initialize_with_character(c[0], c[1]);
+      AUDIO.music.levels.house();
+      c.initialize_with_character();
     },
   },
 
@@ -53,7 +54,7 @@ const GENERATEDLEVELS = {
       decor.add_default_constructor("S_HellPlantSlimy");
       decor.add_default_constructor("S_HellPlantLoops");
       decor.add_default_constructor("S_Spike");
-      
+
       decor.set_tries(8, 20);
       decor.set_zone(1050, 1550, 500, 500);
       decor.fill_decor_by_retry();

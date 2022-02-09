@@ -18,8 +18,6 @@ class HG_Room {
       this.roomFiller.set_zone(this.x, this.y - 20, this.w,  this.h - 20);
       this.decorate();
       this.populate();
-
-      AUDIO.music.levels.house();
     }
 
     dimention(imposed_dimensions) {
@@ -43,7 +41,7 @@ class HG_Room {
     }
 
     draw() {
-      new S_WoodFloor(this.x, this.y, this.w, this.h);
+      this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
     }
 
     populate() {
@@ -65,26 +63,36 @@ class HG_Room {
     }
 
     decorate_bedroom(){ //70 px top
-      this.roomFiller.set_object(50, 50, this._gen_furniture_function([B_Bed, B_Hay]));
+      var bedroom_furniture = [B_Bed, B_Hay, B_Chest];
+      var bedroom_wall_furniture = [B_Bed, B_Hay];
+
+      this.roomFiller.set_object(50, 50, this._gen_furniture_function(bedroom_wall_furniture));
       this.roomFiller.fill_line(!this.is_top);
 
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Bed, B_Hay, B_Chest]));
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function(bedroom_furniture));
       this.roomFiller.fill_by_slots(0.1);
     }
 
     decorate_kitchen(){
-      this.roomFiller.set_object(60, 15, this._gen_furniture_function([B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair]));
+      var kitchen_furniture = [B_Housefire, B_Table, B_Stool];
+      var kitchen_wall_furniture = [B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair];
+
+      this.roomFiller.set_object(60, 15, this._gen_furniture_function(kitchen_wall_furniture));
       this.roomFiller.fill_line(!this.is_top);
 
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Housefire, B_Table, B_Stool]));
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function(kitchen_furniture));
       this.roomFiller.fill_by_slots(0.5);
     }
 
     decorate_random_room(){
-      this.roomFiller.set_object(this.w, 15, this._gen_furniture_function([B_Statue]));
+      var misc_furniture = [B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest];
+      var misc_wall_furniture = [B_Statue];
+
+
+      this.roomFiller.set_object(this.w, 15, this._gen_furniture_function(misc_wall_furniture));
       this.roomFiller.fill_line(!this.is_top);
 
-      this.roomFiller.set_object(100, 100, this._gen_furniture_function([B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest]));
+      this.roomFiller.set_object(100, 100, this._gen_furniture_function(misc_furniture));
       this.roomFiller.fill_by_slots(0.2);
     }
 
@@ -125,7 +133,7 @@ class HG_Room {
 
     main_entrance(outside) {
       var f = new S_ExitFloor(this.x + 0.5*this.w - 25, this.y + 25, 50, 35, outside);
-      return [this.x + 0.5*this.w - 15, this.y + 5];
+      return f;
     }
 }
 
@@ -134,13 +142,9 @@ class HouseGenerator {
     constructor(type, seed, outside) {
       this.gen = new Generator(seed);
       this.type = type;
-      this.MAX_ROOM_W = 500;
-      this.MAX_ROOM_H = 500;
-      this.MIN_ROOM_W = 100;
-      this.MIN_ROOM_H = 100;
       this.x = 1200;
       this.y = 2000;
-      this.outside = outside
+      this.outside = outside;
     }
 
     build() {
@@ -148,5 +152,4 @@ class HouseGenerator {
       main_hall.expand();
       return main_hall.main_entrance(this.outside); // entrance
     }
-
 }
