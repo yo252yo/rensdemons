@@ -298,7 +298,7 @@ for (var f of rooms) {
 }
 filler.clear();
 filler.add_default_constructor("M_PalaceGuard", 1, 20, 20);
-filler.set_tries(15, 20);
+filler.set_tries(1, 5);
 for (var f of rooms) {
   filler.set_zone_from_floor(f);
   filler.fill_floor_by_retry();
