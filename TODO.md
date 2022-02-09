@@ -1,34 +1,12 @@
 # WIP
 
-
+Room shapes: acceptance, hope and fear
 
 New items:
-- improve house shapes
 - table chair combo
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
 - decorate stores/trainers
 - the chest sprite should be closed
-
-
-
-B_Barrel,B_Bocals, B_Box, B_Papers, B_Sack, B_Window
- B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall,B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall
-
-// fear
-B_ShieldDisplay_wall, B_WeaponDisplay_wall , B_WeaponRack
-
-// Indulgence
-B_Bottles, B_BottlesShelf_wall
-
-// Hope
-B_FlowerCrown_wall, B_PottedFlower, B_PottedPlant
-
-// Denial
-B_Mask_wall, B_SpikyMask_wall
-
-// Acceptance
-B_Rope
-
 
 
 

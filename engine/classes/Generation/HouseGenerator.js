@@ -1,8 +1,4 @@
 
-var _MAX_ROOM_W = 500;
-var _MAX_ROOM_H = 500;
-var _MIN_ROOM_W = 100;
-var _MIN_ROOM_H = 100;
 var _HOUSE_ELEM_BLOCK = 12.5;
 
 class HG_Room {
@@ -15,19 +11,37 @@ class HG_Room {
       this.dimention(imposed_dimensions);
       this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
 
-      this.decorate();
-      if(empty){
+      if(!empty){
         this.populate();
       }
+      this.decorate();
     }
+
+    room_extrema_dimensions(){
+      switch(this.type){
+        case CITIES.hope:
+          return [100,100,500,500];
+        case CITIES.fear:
+          return [100,100,500,500];
+        case CITIES.indulgence:
+          return [400,200,700,500];
+        case CITIES.denial:
+          return [200,200,300,300];
+        case CITIES.acceptance:
+          return [100,100,500,500];
+      }
+    }
+
 
     dimention(imposed_dimensions) {
       if (!imposed_dimensions)  imposed_dimensions = [];
       this.w = imposed_dimensions[0];
       this.h = imposed_dimensions[1];
 
-      if (!this.w)        this.w = _MIN_ROOM_W + (_MAX_ROOM_W - _MIN_ROOM_W) * this.gen.get();
-      if (!this.h)        this.h = _MIN_ROOM_H + (_MAX_ROOM_H - _MIN_ROOM_H) * this.gen.get();
+      var extrema = this.room_extrema_dimensions();
+
+      if (!this.w)        this.w = extrema[0] + (extrema[2] - extrema[0]) * this.gen.get();
+      if (!this.h)        this.h = extrema[1] + (extrema[3] - extrema[1]) * this.gen.get();
 
       this.w = _HOUSE_ELEM_BLOCK * Math.round(this.w / _HOUSE_ELEM_BLOCK);
       this.h = _HOUSE_ELEM_BLOCK * Math.round(this.h / _HOUSE_ELEM_BLOCK);
@@ -288,26 +302,26 @@ class HG_Room {
       decorFiller.fill_decor_by_retry();
     }
 
-    expand_top() {
-       this.room_top = new HG_Room(this.type, this.gen.get(), this.x, this.y - this.h - 25, [this.w, 0], true);
+    expand_top(is_top) {
+       this.room_top = new HG_Room(this.type, this.gen.get(), this.x, this.y - this.h - 25, [this.w, 0], is_top);
        var connection_x = this.x + Math.min(this.room_top.w, this.w)/2 - 25;
        var c = HTML.snapToGrid(connection_x, this.y - this.h + 25);
        new S_WoodFloor(c[0], c[1], 50, 75);
     }
 
-    expand_right() {
-       this.room_right = new HG_Room(this.type, this.gen.get(), this.x + this.w + 25, this.y, [0, this.h]);
+    expand_right(is_top) {
+       this.room_right = new HG_Room(this.type, this.gen.get(), this.x + this.w + 25, this.y, [0, this.h], is_top);
        var connection_y = this.y - Math.min(this.room_right.h, this.h)/2 + 25;
        var c = HTML.snapToGrid(this.x + this.w - 25, connection_y);
        new S_WoodFloor(c[0], c[1], 75, 50);
     }
 
-    expand_diag() {
+    expand_diag(is_top) {
       var x = this.room_right.x;
       var y = this.room_top.y;
       var w = this.room_right.w;
       var h = this.room_top.h;
-      var diag = new HG_Room(this.type, this.gen.get(), x, y, [w, h], true);
+      var diag = new HG_Room(this.type, this.gen.get(), x, y, [w, h], is_top);
       var connection_left = HTML.snapToGrid(x-50, y - h/2+25);
       var connection_bot = HTML.snapToGrid(x + w/2-25, y+50);
 
@@ -316,9 +330,30 @@ class HG_Room {
     }
 
     expand() {
-      this.expand_top();
-      this.expand_right();
-      this.expand_diag();
+      switch(this.type){
+        case CITIES.hope:
+          this.expand_top(true);
+          this.expand_right();
+          this.expand_diag(true);
+          break;
+        case CITIES.fear:
+          this.expand_top(true);
+          this.expand_right();
+          this.expand_diag(true);
+          break;
+        case CITIES.indulgence:
+          break;
+        case CITIES.denial:
+          this.expand_top(true);
+          this.expand_right();
+          this.expand_diag(true);
+          break;
+        case CITIES.acceptance:
+          this.expand_top(true);
+          this.expand_right();
+          this.expand_diag(true);
+          break;
+      }
     }
 
     main_entrance(outside) {
@@ -338,7 +373,11 @@ class HouseGenerator {
     }
 
     build() {
-      var main_hall = new HG_Room(this.type, this.gen.get(), this.x, this.y);
+      var is_top = false;
+      if(this.type == CITIES.indulgence){
+        is_top = true;
+      }
+      var main_hall = new HG_Room(this.type, this.gen.get(), this.x, this.y, undefined, is_top);
       main_hall.expand();
       return main_hall.main_entrance(this.outside); // entrance
     }
