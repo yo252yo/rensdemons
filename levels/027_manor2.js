@@ -12,11 +12,8 @@ AUDIO.music.levels.manor();
 new S_WoodFloor(1950,1950,100,375);
 new S_WoodFloor(1875,1750,250,50);
 
-var rooms = [];
 new S_WoodFloor(1575,1875,350,300);
-rooms.push(new S_WoodFloor(1575,2275,850,375));
 new S_WoodFloor(2075,1875,350,300);
-
 
 new S_Stairs(1975, 1625, false, '027_manor');
 
@@ -33,6 +30,8 @@ new B_Table(1650, 1600);
 new B_Table(1800, 1600);
 new B_Statue(1600, 1850);
 new B_Chest(1850, 1850);
+
+new B_Papers(2225, 1750);
 
 // ===================
 //hack D. UNIQUE ELEMENTS
@@ -198,24 +197,7 @@ door.real_interaction = function(){
 //hack E. DECOR
 // ===================
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
-
-filler.clear();
-filler.set_tries(10, 20);
-filler.add_default_constructor("B_Bucket");
-filler.add_default_constructor("B_Table");
-filler.add_default_constructor("B_Jar");
-filler.add_default_constructor("B_Stool");
-filler.add_default_constructor("B_Statue");
-filler.add_default_constructor("B_Chair");
-filler.add_default_constructor("B_Chest");
-
-for(var f of rooms){
-  filler.set_zone_from_floor(f);
-  filler.fill_floor_by_retry();
-}
-
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [850,375]);
 
 // ===================
 //hack F. EVENTS

@@ -18,12 +18,6 @@ new S_WoodFloor(1500,2275,50,700);
 new S_WoodFloor(1725,2025,50,200);
 new S_WoodFloor(2225,2025,50,200);
 
-var rooms = [];
-rooms.push(new S_WoodFloor(1575,1875,350,300));
-rooms.push(new S_WoodFloor(2075,1875,350,300));
-rooms.push(new S_WoodFloor(1575,2275,350,300));
-rooms.push(new S_WoodFloor(2075,2275,350,300));
-
 
 var exit = new S_ExitFloor(1950,2325,100,50, "021_town4");
 
@@ -223,24 +217,11 @@ if(INVENTORY.count(ITEM.PorcelainDoll)){
 //hack E. DECOR
 // ===================
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
 
-filler.clear();
-filler.set_tries(10, 20);
-filler.add_default_constructor("B_Bucket");
-filler.add_default_constructor("B_Table");
-filler.add_default_constructor("B_Jar");
-filler.add_default_constructor("B_Stool");
-filler.add_default_constructor("B_Statue");
-filler.add_default_constructor("B_Chair");
-filler.add_default_constructor("B_Chest");
-
-for(var f of rooms){
-  filler.set_zone_from_floor(f);
-  filler.fill_floor_by_retry();
-}
-
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 1875, [350,300], true);
+new HG_Room(CITIES.indulgence, gen.get(), 2075, 1875, [350,300], true);
+new HG_Room(CITIES.indulgence, gen.get(), 1575, 2275, [350,300]);
+new HG_Room(CITIES.indulgence, gen.get(), 2075, 2275, [350,300]);
 
 // ===================
 //hack F. EVENTS
