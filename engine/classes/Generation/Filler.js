@@ -10,18 +10,6 @@ class Filler {
     this.default_obj_h = obj_h;
   }
 
-  copy(obj_w, obj_h) {
-    var n = new Filler();
-    Object.assign(n, this);
-    if(obj_w){
-      n.default_obj_w = obj_w;
-    }
-    if(obj_h){
-      n.default_obj_h = obj_h;
-    }
-    return n;
-  }
-
   // ===================
   //hack Manage objects
   // ===================

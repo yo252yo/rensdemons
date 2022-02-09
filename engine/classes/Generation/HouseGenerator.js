@@ -15,8 +15,6 @@ class HG_Room {
       this.dimention(imposed_dimensions);
       this.floor = new S_WoodFloor(this.x, this.y, this.w, this.h);
 
-      this.roomFiller = new Filler(this.gen.get(), 50, 60);
-      this.roomFiller.set_zone(this.x, this.y - 20, this.w,  this.h - 20);
       this.decorate();
       this.populate();
     }
@@ -42,10 +40,12 @@ class HG_Room {
     }
 
     populate() {
-      this.roomFiller.set_tries(0, this.gen.int(10) - 7);
+      var peopleFiller = new Filler(this.gen.get(),50, 60);
+      peopleFiller.set_zone_from_floor(this.floor);
+      peopleFiller.set_tries(0, this.gen.int(10) - 7);
       var type = this.type;
-      this.roomFiller.add_constructor(function(x,y,seed){ return new M_Villager(type, x, y, seed, true); });
-      this.roomFiller.fill_floor_by_retry();
+      peopleFiller.add_constructor(function(x,y,seed){ return new M_Villager(type, x, y, seed, true); });
+      peopleFiller.fill_floor_by_retry();
     }
 
     decorate(){
@@ -109,14 +109,16 @@ class HG_Room {
 
     decorate_bedroom(){ //70 px top
       if(this.is_top){
-        var topfiller = this.roomFiller.copy(55, 0);
+        var topfiller = new Filler(this.gen.get(),55, 0);
+        topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = this.roomFiller.copy(50, 50);
+      var decorFiller = new Filler(this.gen.get(),50, 50);
+      decorFiller.set_zone_from_floor(this.floor);
       decorFiller.add_default_constructor("B_Papers");
       decorFiller.add_default_constructor("B_Bed", 50, 80);
       decorFiller.add_default_constructor("B_Hay", 70, 50);
@@ -128,7 +130,8 @@ class HG_Room {
 
     decorate_kitchen(){
       if(this.is_top){
-        var topfiller = this.roomFiller.copy(55, 0);
+        var topfiller = new Filler(this.gen.get(),55, 0);
+        topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
@@ -137,7 +140,8 @@ class HG_Room {
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = this.roomFiller.copy(50, 50);
+      var decorFiller = new Filler(this.gen.get(),50, 50);
+      decorFiller.set_zone_from_floor(this.floor);
       decorFiller.add_default_constructor("B_Barrel");
       decorFiller.add_default_constructor("B_Bocals");
       decorFiller.add_default_constructor("B_Box");
@@ -153,7 +157,8 @@ class HG_Room {
 
     decorate_random_room(){
       if(this.is_top){
-        var topfiller = this.roomFiller.copy(55, 0);
+        var topfiller = new Filler(this.gen.get(),55, 0);
+        topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
@@ -162,7 +167,8 @@ class HG_Room {
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = this.roomFiller.copy(50, 50);
+      var decorFiller = new Filler(this.gen.get(),50, 50);
+      decorFiller.set_zone_from_floor(this.floor);
       decorFiller.add_default_constructor("B_Barrel");
       decorFiller.add_default_constructor("B_Bocals");
       decorFiller.add_default_constructor("B_Box");

@@ -380,9 +380,8 @@ if(slimepart == 1) {
 //hack E. DECOR
 // ===================
 
-var filler = new Filler(gen.get());
-var bigDecorFiller = filler.copy(80, 80);
-var smallDecorFiller = filler.copy(40, 40);
+var bigDecorFiller = new Filler(gen.get(), 80, 80);
+var smallDecorFiller = new Filler(gen.get(), 40, 40);
 
 var rocks = 1/slimepart;
 var cristals = 1*slimepart;
