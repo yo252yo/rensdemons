@@ -62,9 +62,39 @@ class HG_Room {
       }
     }
 
+    exclusive_furniture() {
+      switch(this.type){
+        case CITIES.acceptance:
+          return [B_Rope];
+        case CITIES.hope:
+          return [B_PottedFlower, B_PottedPlant];
+        case CITIES.indulgence:
+          return [B_Bottles];
+        case CITITES.fear:
+          return [B_WeaponRack];
+        default:
+          return [];
+      }
+    }
+
+    exclusive_wall_furniture(){
+      switch(this.type){
+        case CITIES.denial:
+          return [B_Mask_wall, B_SpikyMask_wall, B_Mask_wall, B_SpikyMask_wall, B_Mask_wall, B_SpikyMask_wall];
+        case CITIES.hope:
+          return [B_FlowerCrown_wall];
+        case CITIES.indulgence:
+          return [B_BottlesShelf_wall, B_BottlesShelf_wall, B_BottlesShelf_wall];
+        case CITITES.fear:
+          return [B_ShieldDisplay_wall, B_WeaponDisplay_wall, B_ShieldDisplay_wall, B_WeaponDisplay_wall];
+        default:
+          return [];
+      }
+    }
+
     decorate_bedroom(){ //70 px top
-      var bedroom_furniture = [B_Bed, B_Hay, B_Chest];
-      var bedroom_wall_furniture = [B_Bed, B_Hay];
+      var bedroom_furniture = [B_Papers, B_Bed, B_Hay, B_Chest].concat(this.exclusive_furniture());
+      var bedroom_wall_furniture = [B_Bed, B_Hay, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_Candles_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
 
       this.roomFiller.set_object(50, 50, this._gen_furniture_function(bedroom_wall_furniture));
       this.roomFiller.fill_line(!this.is_top);
@@ -74,8 +104,8 @@ class HG_Room {
     }
 
     decorate_kitchen(){
-      var kitchen_furniture = [B_Housefire, B_Table, B_Stool];
-      var kitchen_wall_furniture = [B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair];
+      var kitchen_furniture = [B_Barrel, B_Bocals, B_Box, B_Sack, B_Housefire, B_Table, B_Stool].concat(this.exclusive_furniture());
+      var kitchen_wall_furniture = [B_Shelf_wall, B_Bucket, B_Cabinet, B_Jar, B_Stool, B_Chair, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall, B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
 
       this.roomFiller.set_object(60, 15, this._gen_furniture_function(kitchen_wall_furniture));
       this.roomFiller.fill_line(!this.is_top);
@@ -85,8 +115,8 @@ class HG_Room {
     }
 
     decorate_random_room(){
-      var misc_furniture = [B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest];
-      var misc_wall_furniture = [B_Statue];
+      var misc_furniture = [B_Barrel, B_Bocals, B_Box, B_Papers, B_Sack, B_Jar, B_Stool, S_SavePoint, B_Bucket, B_Chest].concat(this.exclusive_furniture());
+      var misc_wall_furniture = [B_Statue, B_Window_wall, B_Chimney_wall, B_Clock_wall, B_FancyShelf_wall, B_Candles_wall, B_AlchemyShelf_wall, B_CurtainedWindow_wall].concat(this.exclusive_wall_furniture());
 
 
       this.roomFiller.set_object(this.w, 15, this._gen_furniture_function(misc_wall_furniture));
