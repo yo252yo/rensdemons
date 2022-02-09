@@ -178,9 +178,7 @@ if(sirenspart < 4) {
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
-
-var ff = new Filler(gen.get());
-var decorFiller = new MultiFiller(ff, 50, 60);
+var decorFiller = new Filler(gen.get(), 50, 60);
 decorFiller.add_default_constructor("S_Seashell", 0.6);
 decorFiller.add_default_constructor("S_Seashellpointy", 0.6);
 decorFiller.add_default_constructor("S_Planks", 0.4);

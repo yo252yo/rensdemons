@@ -67,8 +67,7 @@ if(floor == 0 && room == 0) {
 //hack E. DECOR
 // ===================
 
-var filler = new Filler(gen.get());
-var decorFiller = new MultiFiller(filler, 50, 50);
+var decorFiller = new Filler(gen.get(), 50, 50);
 decorFiller.set_zone(1200,1525,300,275);
 if (isGooRoom){
   decorFiller.add_default_constructor("S_HellEgg",7);
@@ -110,7 +109,9 @@ if (isGooRoom){
   }
 }
 
-var wallFiller = new MultiFiller(decorFiller, 75, 0);
+var wallFiller = new Filler(gen.get(), 75, 0);
+wallFiller.set_zone(1200,1525,300,275);
+//var wallFiller = decorFiller.copy(75, 0);
 wallFiller.add_default_constructor("S_Painting_wall");
 wallFiller.add_default_constructor("S_HellWindow_wall");
 wallFiller.add_default_constructor("S_Flag_wall");

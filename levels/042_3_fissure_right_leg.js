@@ -32,9 +32,8 @@ t.interaction = prophecy;
 // ===================
 
 
-var filler = new Filler(gen.get());
-filler.set_zone(1200,2650,450,1050);
-var decorFiller = new MultiFiller(filler, 60, 50);
+var decorFiller = new Filler(gen.get(), 60, 50);
+decorFiller.set_zone(1200,2650,450,1050);
 
 decorFiller.add_default_constructor("S_CristalSmall");
 decorFiller.add_default_constructor("S_RockColumn");

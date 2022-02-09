@@ -273,8 +273,7 @@ for(var j of stews ){
 //hack E. DECOR
 // ===================
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
+var filler = new Filler(gen.get(), 50, 50);
 filler.set_tries(3, 10);
 
 filler.add_default_constructor("B_Chest");

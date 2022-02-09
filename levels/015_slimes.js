@@ -381,8 +381,8 @@ if(slimepart == 1) {
 // ===================
 
 var filler = new Filler(gen.get());
-var bigDecorFiller = new MultiFiller(filler, 80, 80);
-var smallDecorFiller = new MultiFiller(filler, 40, 40);
+var bigDecorFiller = filler.copy(80, 80);
+var smallDecorFiller = filler.copy(40, 40);
 
 var rocks = 1/slimepart;
 var cristals = 1*slimepart;

@@ -46,8 +46,7 @@ const GENERATEDLEVELS = {
 
 
       var gen = new Generator(DICTIONARY.get("world_seed") + seed);
-      var filler = new Filler(gen.get());
-      var decor = new MultiFiller(filler, 40, 40);
+      var decor = new Filler(gen.get(), 40, 40);
 
       decor.add_default_constructor("S_HellPlantLeaning");
       decor.add_default_constructor("S_HellPlantSretching");

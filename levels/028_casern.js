@@ -23,8 +23,7 @@ var exit = new S_ExitFloor(1950,2325,150,50, "022_town5");
 //hack E. DECOR
 // ===================
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
+var filler = new Filler(gen.get(), 50, 50);
 filler.set_zone(1775,2300,550,550);
 
 filler.set_tries(7, 10);

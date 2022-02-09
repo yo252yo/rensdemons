@@ -53,8 +53,7 @@ whale.make_default_callback = function(){return function(){};};
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var f = new Filler(gen.get());
-var decorFiller = new MultiFiller(f, 50, 50);
+var decorFiller = new Filler(gen.get(), 50, 50);
 decorFiller.set_zone(1150,2600,1725,1300);
 decorFiller.add_default_constructor("S_AlgaeWall", 1, 100, 50);
 decorFiller.add_default_constructor("S_Coral", 3);

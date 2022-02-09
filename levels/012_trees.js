@@ -392,9 +392,7 @@ if(treepart == 39){
 // ===================
 //hack E. DECOR
 // ===================
-var f = new Filler(gen.get());
-
-var filler = new MultiFiller(f, 15, 20);
+var filler = new Filler(gen.get(), 15, 20);
 filler.set_zone(decor_zone[0],decor_zone[3],decor_zone[2] - decor_zone[0],decor_zone[3] - decor_zone[1]);
 filler.set_tries(5*multiplier, 15*multiplier);
 

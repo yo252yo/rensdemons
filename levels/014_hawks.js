@@ -550,8 +550,7 @@ if(hawkpart == 18){
 // ===================
 
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
+var filler = new Filler(gen.get(), 50, 50);
 
 filler.add_default_constructor("S_RocksHuge", 3, 200, 50);
 filler.add_default_constructor("S_Boulder", 0.3, 100, 100);

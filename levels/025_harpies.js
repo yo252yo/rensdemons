@@ -107,8 +107,7 @@ new S_SavePoint(1850, 1375);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f, 50, 50);
+var filler = new Filler(gen.get(), 50, 50);
 filler.set_zone(1250,2475,1350,1300);
 filler.set_tries(180, 200);
 

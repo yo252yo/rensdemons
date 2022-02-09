@@ -80,8 +80,7 @@ new S_SavePoint(1325, 1200);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var filler = new Filler(gen.get());
-var decorFiller = new MultiFiller(filler, 100, 100);
+var decorFiller = new Filler(gen.get(), 100, 100);
 decorFiller.set_zone(975,1650,750,475);
 decorFiller.add_default_constructor("S_HellEgg");
 decorFiller.add_default_constructor("B_Jar",2);
@@ -96,7 +95,7 @@ if (floor != 6) {
 }
 
 
-var wallFiller = new MultiFiller(filler, 75, 0);
+var wallFiller = new Filler(gen.get(), 75, 0);
 wallFiller.add_default_constructor("S_Painting_wall");
 wallFiller.add_default_constructor("S_HellWindow_wall");
 wallFiller.add_default_constructor("S_Flag_wall");

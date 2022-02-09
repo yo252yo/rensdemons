@@ -3,8 +3,6 @@
 
 
 New items:
-- actions (everything XXX)
-- put in use (especially wall, region lock)
 - improve house shapes
 - table chair combo
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??

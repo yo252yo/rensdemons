@@ -17,8 +17,7 @@ var w = 2950;
 var f = new S_MapFloor(1050, 1000+h, w, h-50, 'obj_dark');
 f.visual_element.html_rectangle.style.border = "1px dotted #FFFFFF22";
 
-var filler = new Filler(gen.get());
-var FMap = new MultiFiller(filler, 300, 200);
+var FMap = new Filler(gen.get(), 300, 200);
 FMap.set_zone(1075, 1000+h-25, w-50, h-100);
 //FMap.draw_for_debug('#FFFFFF')
 

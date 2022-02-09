@@ -10,6 +10,18 @@ class Filler {
     this.default_obj_h = obj_h;
   }
 
+  copy(obj_w, obj_h) {
+    var n = new Filler();
+    Object.assign(n, this);
+    if(obj_w){
+      n.default_obj_w = obj_w;
+    }
+    if(obj_h){
+      n.default_obj_h = obj_h;
+    }
+    return n;
+  }
+
   // ===================
   //hack Manage objects
   // ===================
@@ -278,24 +290,17 @@ class Filler {
   }
 }
 
-class MultiFiller extends Filler {
-  constructor(filler, obj_w, obj_h) {
-    super();
-    Object.assign(this, filler);
-    this.constructors = [];
-
-    this.default_obj_w = obj_w;
-    this.default_obj_h = obj_h;
-  }
-}
-
-class EventFiller extends MultiFiller {
+class EventFiller extends Filler {
   constructor(filler, hitbox_size, resize_event, recolor_event) {
     if(!hitbox_size){
       hitbox_size = 50;
     }
 
-    super(filler, hitbox_size, hitbox_size);
+    super();
+    Object.assign(this, filler);
+
+    this.default_obj_w = hitbox_size;
+    this.default_obj_h = hitbox_size;
 
     this.resize_event = resize_event;
     this.recolor_event = recolor_event;

@@ -132,8 +132,7 @@ if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE
 
 var placeholder = new S_Placeholder(1340, 1350, 100, 100);
 
-var filler = new Filler(gen.get());
-var decorFiller = new MultiFiller(filler, 100, 100);
+var decorFiller = new Filler(gen.get(), 100, 100);
 decorFiller.set_zone(1125,1550,500,500);
 
 switch(gen.int(3)){

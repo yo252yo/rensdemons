@@ -79,7 +79,7 @@ new S_SavePoint(1350, 2075);
 // ===================
 
 var filler = new Filler(gen.get());
-var decorFiller = new MultiFiller(filler, 60, 50);
+var decorFiller = new Filler(gen.get(), 60, 50);
 decorFiller.set_zone(1025,2500,700,975);
 decorFiller.add_default_constructor("S_CristalSmall", 0.5);
 decorFiller.add_default_constructor("S_RockColumn");

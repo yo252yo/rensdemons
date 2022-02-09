@@ -49,8 +49,7 @@ var postBossDialog = function(){
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var filler = new Filler(gen.get());
-var decorFiller = new MultiFiller(filler, 60, 50);
+var decorFiller = new Filler(gen.get(), 60, 50);
 decorFiller.set_zone(1000,2650,650,750);
 decorFiller.add_default_constructor("S_CristalSmall");
 decorFiller.add_default_constructor("S_RockColumn");

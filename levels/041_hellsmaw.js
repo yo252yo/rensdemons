@@ -12,10 +12,9 @@ var gen = new Generator(DICTIONARY.get("world_seed")*17 + hellsmawpart);
 
 AUDIO.music.levels.hellsmaw();
 
-var filler = new Filler(gen.get());
-var decor = new MultiFiller(filler, 40, 40);
+var decor = new Filler(gen.get(), 40, 40);
 
-var events = new EventFiller(filler, 1);
+var events = new EventFiller(decor, 1);
 events.set_tries(10, 12);
 
 

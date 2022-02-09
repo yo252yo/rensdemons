@@ -34,8 +34,7 @@ new SM_Altar(2050, 1125, ABILITIES_ARCHETYPES_NAMES.Spirit);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var filler = new Filler(gen.get());
-var FMap = new MultiFiller(filler, 80, 80);
+var FMap = new Filler(gen.get(), 80, 80);
 FMap.set_zone(1075, 1000+h-25, w-50, h-100);
 
 FMap.add_default_constructor("SM_Worm", 1.5);

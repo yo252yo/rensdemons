@@ -109,14 +109,14 @@ class HG_Room {
 
     decorate_bedroom(){ //70 px top
       if(this.is_top){
-        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        var topfiller = this.roomFiller.copy(55, 0);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      var decorFiller = this.roomFiller.copy(50, 50);
       decorFiller.add_default_constructor("B_Papers");
       decorFiller.add_default_constructor("B_Bed", 50, 80);
       decorFiller.add_default_constructor("B_Hay", 70, 50);
@@ -128,7 +128,7 @@ class HG_Room {
 
     decorate_kitchen(){
       if(this.is_top){
-        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        var topfiller = this.roomFiller.copy(55, 0);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
@@ -137,7 +137,7 @@ class HG_Room {
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      var decorFiller = this.roomFiller.copy(50, 50);
       decorFiller.add_default_constructor("B_Barrel");
       decorFiller.add_default_constructor("B_Bocals");
       decorFiller.add_default_constructor("B_Box");
@@ -153,7 +153,7 @@ class HG_Room {
 
     decorate_random_room(){
       if(this.is_top){
-        var topfiller = new MultiFiller(this.roomFiller, 55, 0);
+        var topfiller = this.roomFiller.copy(55, 0);
         topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
@@ -162,7 +162,7 @@ class HG_Room {
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
-      var decorFiller = new MultiFiller(this.roomFiller, 50, 50);
+      var decorFiller = this.roomFiller.copy(50, 50);
       decorFiller.add_default_constructor("B_Barrel");
       decorFiller.add_default_constructor("B_Bocals");
       decorFiller.add_default_constructor("B_Box");

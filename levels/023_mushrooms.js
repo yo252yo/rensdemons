@@ -74,8 +74,7 @@ new S_SavePoint(1975, 2050);
 // could improve load by making these cosmetics and not level items
 var noTreeZone = new S_LushFloor(2075,1475,100,175);
 
-var f = new Filler(gen.get());
-var filler = new MultiFiller(f);
+var filler = new Filler(gen.get());
 filler.set_zone(1150,2475,2100,1475);
 filler.set_tries(200, 250);
 

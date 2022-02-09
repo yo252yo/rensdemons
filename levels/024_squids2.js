@@ -49,8 +49,7 @@ new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
 
-var f = new Filler(gen.get());
-var decorFiller = new MultiFiller(f, 50, 50);
+var decorFiller = new Filler(gen.get(), 50, 50);
 decorFiller.set_zone(1625,1925,1175,650);
 decorFiller.add_default_constructor("S_Seashell");
 decorFiller.add_default_constructor("S_Seashellpointy");
