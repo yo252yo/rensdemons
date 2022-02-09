@@ -371,25 +371,12 @@ class B_Box extends ItemBattleObject {
 class B_Chimney_wall extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 51, 96, "interior/chimney");
-    this.oy = y;
     this.adjust_hitbox(-5,0,56,96);
-    this.position();
 
     this.add_interaction("Discover", "You're pretty sure this kind of chimney is the place where a secret passage would be. You wait until the fire dies down, then process to press methodically each and every stone of the fireplace. But there is nothing to be found. Although, maybe it required a special combination of presses...");
     this.add_interaction("Climb", "As soon as the fire dies of, you slide yourself inside the chimney and attempt to go up. You may have expected a secret compartment or even a noteworthy experience, but there's nothing but a lot of soot. When you come down, you realize with shame that you've made the whole room black, in addition to your own body of course.");
     this.add_interaction("Warm", "You warm yourself at the fire. The heated air is slowly engulfing you, making you drowsy. It feels good to be close to the heat source of this room. You deserve a little rest.");
     this.add_interaction("Observe", "You look at the dancing flames in the heart of the chimney. You remain there longer than you anticipated, mesmerized by the fluid movements of the fire.");
-  }
-
-  position(){
-    if(this.y != this.oy){
-      return;
-    }
-    if(this.shift){
-      this.shift(0, 20);
-    }
-    var self = this;
-    setTimeout(function(){self.position();}, 100);
   }
 
 }
@@ -531,8 +518,8 @@ class B_Bottles extends ItemBattleObject {
 
 class B_BottlesShelf_wall extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, 144,91, "interior/bottlesshelf", 1);
-    this.adjust_hitbox(-5,0,150,91);
+    super(x, y, 59,91, "interior/bottlesshelf", 1);
+    this.adjust_hitbox(-5,0,64,91);
 
     this.add_interaction("Sample", "Encouraged by the cheers of the villagers, you sample a little bit of various beverages. Unfortunately, they forget to warn you that mixing alcohols can have bad consequences, and before soon you find yourself puking on the floor.");
     this.add_interaction("Appraise", "Some of these bottles look pretty expensive, but as soon as you lay your eyes on them people around you encourage you to open them and try them out. No way you can ever take anything out of here.");
@@ -578,8 +565,8 @@ class B_PottedPlant extends ItemBattleObject {
 // Denial
 class B_Mask_wall extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, 64,89, "interior/mask", 1);
-    this.adjust_hitbox(0,0,64,89);
+    super(x, y, 32,55, "interior/mask", 1);
+    this.adjust_hitbox(0,0,32,55);
 
     this.add_interaction("Fear", "Something about this mask makes you deeply uneasy, but you cannot pinpoint exactly why.");
     this.add_interaction("Wonder", "You ask yourself what secrets lie behind this mask. You've seen a few people wear them around.");
@@ -590,8 +577,8 @@ class B_Mask_wall extends ItemBattleObject {
 
 class B_SpikyMask_wall extends ItemBattleObject {
   constructor(x, y){
-    super(x, y, 64,89, "interior/spikymask", 1);
-    this.adjust_hitbox(0,0,64,89);
+    super(x, y, 32,55, "interior/spikymask", 1);
+    this.adjust_hitbox(0,0,32,55);
 
     this.add_interaction("Extrapolate", "People in this village seem to be found of masks. They must not like their own faces very much.");
     this.add_interaction("Dismiss", "You feel that through the empty eyes of the mask some sort of entity is following you with an invisible gaze. You try to dismiss this oppressive feeling.");
