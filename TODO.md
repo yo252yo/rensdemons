@@ -3,8 +3,7 @@
 New items:
 - table chair combo
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??
-- decorate stores/trainers
-- the chest sprite should be closed
+- decorate stores/trainer
 
 
 
