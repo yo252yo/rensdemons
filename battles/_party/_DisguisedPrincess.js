@@ -48,12 +48,13 @@ var castle = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$DisguisedPrincess$: "No, no, no. Far from it. This is as real as it gets. To them, it is more real than the demons in the fields."`,
     `$$DisguisedPrincess$: "In the royal court, the game is everything. Your strategical abilities determine your standing and your reputation. Alliances, betrayals... it's the center of geopolitics, that's what it is.`,
     `$$DisguisedPrincess$: "A good game can make or break carreers. It's no wonder it's all they think about."`,
-    `$$DisguisedPrincess$: "Not to mention the money. Everyone is developing new equipment and variation for board game pieces... It has outweight real... I mean conventional weapons by far. Most of the kingdom's budget is going into this contest of power."`,
+    `$$DisguisedPrincess$: "Not to mention the money. Everyone is developing new equipment and variation for board game pieces... It has outweigh real... I mean conventional weapons by far. Most of the kingdom's budget is going into this contest of power."`,
     `$$DisguisedPrincess$: "So no, it's not just a 'game'. It's their lives. It literally dictates the way the kingdom is going!"`,
 
     `$$Ren$: "Doesn't sound like it's going very well..."`,
 
     `$$DisguisedPrincess$: "I'm with you on that one, and that's also why I want to get out of here. I can't bear to keep looking at this pointless masquerade."`,
+    `$$DisguisedPrincess$: "I know that there's no escaping their political game. Anywhere I go, I'll feel their influence... But still I would prefer not to associate with this as much as possible."`,
 
   ],
   outcome: BATTLETREE.NOTHING,
