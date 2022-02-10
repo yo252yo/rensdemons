@@ -1,7 +1,5 @@
 # WIP
 
-it seems that filler line puts too much stuff in, and sometimes goes too far left
-
 New items:
 - table chair combo
 - figure out rocks: mb the rocks that have straight bottom should be reserved for edges??

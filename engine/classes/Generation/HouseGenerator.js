@@ -186,7 +186,7 @@ class HG_Room {
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),70, 0);
         topfiller.set_zone_from_floor(this.floor);
-        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 70, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
         this.exclusive_wall_furniture(topfiller);
@@ -207,13 +207,13 @@ class HG_Room {
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),70, 0);
         topfiller.set_zone_from_floor(this.floor);
-        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 70, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
-        topfiller.add_default_constructor("B_Shelf_wall", 1, 55, 20);
-        topfiller.add_default_constructor("B_Cabinet_wall", 1, 30, 20);
-        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
-        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Shelf_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_Cabinet_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 70, 20);
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
@@ -238,10 +238,10 @@ class HG_Room {
       if(this.is_top){
         var topfiller = new Filler(this.gen.get(),70, 0);
         topfiller.set_zone_from_floor(this.floor);
-        topfiller.add_default_constructor("B_Chimney_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Chimney_wall", 1, 70, 20);
         topfiller.add_default_constructor("B_Clock_wall");
         topfiller.add_default_constructor("B_Candles_wall");
-        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 70, 20);
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
@@ -260,10 +260,10 @@ class HG_Room {
         var topfiller = new Filler(this.gen.get(),70, 0);
         topfiller.set_zone_from_floor(this.floor);
         topfiller.add_default_constructor("B_Candles_wall");
-        topfiller.add_default_constructor("B_Shelf_wall", 1, 55, 20);
-        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 55, 20);
-        topfiller.add_default_constructor("B_Cabinet_wall", 1, 30, 20);
-        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 55, 20);
+        topfiller.add_default_constructor("B_Shelf_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_FancyShelf_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_Cabinet_wall", 1, 70, 20);
+        topfiller.add_default_constructor("B_AlchemyShelf_wall", 1, 70, 20);
         this.exclusive_wall_furniture(topfiller);
         topfiller.fill_line();
       }
