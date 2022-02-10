@@ -119,7 +119,11 @@ const AUDIO = {
       if(key == "M_Boat"){
         AUDIO._play_sfx('water', cooldown, key);
       } else {
-        AUDIO._play_sfx('footstep', cooldown, key);
+        if(CURRENTLEVEL.is_map()){
+          AUDIO._play_sfx('footstepmuffled', cooldown, key);
+        } else {
+          AUDIO._play_sfx('footstep', cooldown, key);
+        }
       }
     },
     page: function() {
