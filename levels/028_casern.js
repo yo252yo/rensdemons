@@ -33,7 +33,7 @@ filler.fill_floor_by_retry();
 filler.clear();
 filler.set_tries(25, 30);
 filler.add_default_constructor("B_Bucket");
-filler.add_default_constructor("B_Table");
+filler.add_default_constructor("B_Table_Set", 2, 100, 100);
 filler.add_default_constructor("B_Jar");
 filler.add_default_constructor("B_Stool");
 filler.add_default_constructor("B_Barrel");

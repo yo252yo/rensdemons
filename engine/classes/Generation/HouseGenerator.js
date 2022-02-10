@@ -226,7 +226,7 @@ class HG_Room {
       decorFiller.add_default_constructor("B_Sack");
       decorFiller.add_default_constructor("B_Housefire");
       decorFiller.add_default_constructor("B_Bucket");
-      decorFiller.add_default_constructor("B_Table");
+      decorFiller.add_default_constructor("B_Table_Set", 2,100,100);
       decorFiller.add_default_constructor("B_Stool");
       decorFiller.add_default_constructor("B_Chair");
       this.exclusive_furniture(decorFiller);
@@ -247,7 +247,7 @@ class HG_Room {
       }
       var decorFiller = new Filler(this.gen.get(),50, 50);
       decorFiller.set_zone_from_floor(this.floor);
-      decorFiller.add_default_constructor("B_Table");
+      decorFiller.add_default_constructor("B_Table_Set", 2,100,100);
       decorFiller.add_default_constructor("B_Stool");
       decorFiller.add_default_constructor("B_Chair");
       this.exclusive_furniture(decorFiller);

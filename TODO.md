@@ -1,10 +1,5 @@
 # WIP
 
-New items:
-- table chair combo
-- decorate stores/trainer
-
-
 
 
 # FILLER CHECK  ----------------------------------------------------

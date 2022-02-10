@@ -301,6 +301,29 @@ class B_Table extends ItemBattleObject {
   }
 }
 
+class B_Table_Set extends LevelObject {
+  constructor(x, y, seed){
+    var g = new Generator(seed);
+    var visual = new Rectangle(x,y, 0, 0);
+    super(visual, x, y);
+    var t = new B_Table(x+30, y-25);
+    console.log(t);
+    if (g.get() < 0.5) {
+      var right = new B_Stool(x + 30 + 35, y - 25 - 5);
+    }
+    if (g.get() < 0.5) {
+      var bot = new B_Stool(x + 30 + 5, y);
+    }
+    if (g.get() < 0.5) {
+      var top = new B_Stool(x + 30 + 5, y - 25 - 35);
+    }
+    if (g.get() < 0.5) {
+      var left = new B_Stool(x, y - 25 - 5);
+    }
+  }
+}
+
+
 class B_Chest extends ItemBattleObject {
   constructor(x, y){
     super(x, y, 50,45, "interior/chest", 1);

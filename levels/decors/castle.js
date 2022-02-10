@@ -285,6 +285,7 @@ filler.add_default_constructor("B_Statue");
 filler.add_default_constructor("B_Barrel");
 filler.add_default_constructor("B_Box");
 filler.add_default_constructor("B_Sack");
+filler.add_default_constructor("B_Table_Set", 2, 100, 100);
 
 
 filler.add_default_constructor("B_WeaponRack", 2);
