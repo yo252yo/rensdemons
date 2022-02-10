@@ -208,7 +208,7 @@ const INTERFACE = {
         var r = "<div style='float:left;clear:both;position:relative;display:block;margin-bottom:20px;'>";
         for(var i of ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact]){
           if(STATS.unlocked(i)){
-            r += "<div id='achievement_menu_slot_" + i + "' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:50px;height:50px;'></div>";
+            r += "<div id='achievement_menu_slot_" + i + "' onClick='AUDIO.music.interface.artifact();' style='border: thick double #aaaaaa;float:left;position:relative;display:block;width:50px;height:50px;'></div>";
           } else if(ITEM.isItem(i)){
             r += "<div style='float:left;position:relative;display:block;width:50px;height:50px;border: thick double #aaaaaa;opacity:0.3;'></div>";
           }

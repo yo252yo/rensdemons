@@ -142,6 +142,7 @@ const AUDIO = {
       introduction: function() {      AUDIO._play_music('interface/love planet'); },
       gameover: function() {          AUDIO._play_music('interface/un triste echo trop juste'); },
       map: function() {               AUDIO._play_music('interface/un desert'); },
+      artifact: function() {          AUDIO._play_music('interface/this is the time to glisten'); },
     },
 
     characters:{ // chiptune, weird

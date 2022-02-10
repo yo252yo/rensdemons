@@ -160,6 +160,7 @@ const INVENTORY = {
     if(!quantity) {quantity = 1;}
     if(ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact].includes(name)){
       STATS.record.unlock(name);
+      AUDIO.music.interface.artifact();
     }
     INVENTORY._inventory.increment([name], quantity);
     CONSOLE.log.item(name, quantity);

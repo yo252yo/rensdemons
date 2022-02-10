@@ -82,17 +82,22 @@ const PLAYER_ACTIONS = {
       });
     },
 
-    win_in_one_hit: function(name, consume_item) {
+    win_in_one_hit: function(name, consume_item, extra_function) {
       var usage_descript = PLAYER_ACTIONS._internal._shorten_if_explored(name, LANGUAGE.actions.usage(name));
       var action_object = {
         name: name,
         outcome: BATTLETREE.WIN,
         description: usage_descript.concat(LANGUAGE.actions.win(name)),
-        consume_item: consume_item,
         function:function(){
           PLAYER_ACTIONS._internal.trigger_music(name);
         }
       };
+      if(consume_item){
+        action_object.consume_item = consume_item;
+      }
+      if(extra_function){
+        action_object.extra_function = extra_function;
+      }
       PLAYER_ACTIONS.add(action_object);
     },
   },
@@ -261,7 +266,7 @@ const PLAYER_ACTIONS = {
 
     var artifacts = ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Artifact);
     for(var i of artifacts){
-      PLAYER_ACTIONS.win(i, 1);
+      PLAYER_ACTIONS._internal.win_in_one_hit(i, undefined, function(){ AUDIO.music.interface.artifact(); });
     }
 
     PLAYER_ACTIONS.add({ // Removed by default if there is a winning outcome, see BATTLe.js
