@@ -1,33 +1,46 @@
 # WIP
 
 
+# NEEDS THOUGHS  ----------------------------------------------------
+- metapowers ? TP, make floors
+- power creep in NG+ satisfactory enough ???
+- Keep more stats and reuse the Stat of ren's desth
+- fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
+- MAKE BUG INTO A COMMAND???
 
-# FILLER CHECK  ----------------------------------------------------
-- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
-- graphical audit from >= first town
-- ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
-- spawn chara on exit bands, its safer
-See 051_pandemonium_room and 012_trees
-- A look for foreknowledge opportunities
+- town2 survivors rescue!
 
 # MORE HEAVEN  ----------------------------------------------------
+
+-- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
 
 WHO makes you do it??
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
 energy from running in the loop
 
-
 - add a link to the demo in heaven
-
 - the goddess SAVED your soul (save/save) as confirmation when you save
 
-
-
 Explain that the console is like magic words that change the fabric of the universe
-Link to rend demo
 The cycle of replay with the promise of a true ending is precisely what the system exploits
 
 You need to be OK with your lack ie with quitting the game and act outside the system
+
+
+
+# AERITH EVENTS  ----------------------------------------------------
+>> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
+>> put events in their own language file?
+- event from aerith: Don't you think it's weird how we always find what we need on our way
+- event from aerith: isnt it weird that merchants buy all your shit
+- event from aerith: do we not need breaks? no sleep or toilet
+- event from aerith: how do you know youre immortal
+- event from aerith: you have an intuition about where to go O.o
+- conversation about open worlds
+- event from aerith: i cant hurt you, no friendly fire
+      "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
+- event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
+- reference to the fact that there's always a crafting system
 
 # BATTLE ENCOUNTERS  ----------------------------------------------------
 - more?
@@ -36,13 +49,8 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - review battle_debris add a few more actions for rubble treasures
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 
-
-
-# OPTIONAL CONTENT  ----------------------------------------------------
-- town2 survivors rescue!
-- more itembattles for dungeons and world,
+# VILLAGERS  ----------------------------------------------------
 - villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
-
 
 
 # TROPES  ----------------------------------------------------
@@ -62,30 +70,6 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - wiseold: “Insanity is doing the same thing and expecting different results”
 - add death flag in hells maw before aetith death
 
-
-# AERITH EVENTS  ----------------------------------------------------
->> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
->> put events in their own language file?
-- event from aerith: Don't you think it's weird how we always find what we need on our way
-- event from aerith: isnt it weird that merchants buy all your shit
-- event from aerith: do we not need breaks? no sleep or toilet
-- event from aerith: how do you know youre immortal
-- event from aerith: you have an intuition about where to go O.o
-- conversation about open worlds
-- event from aerith: i cant hurt you, no friendly fire
-      "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
-- event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
-- reference to the fact that there's always a crafting system
-
-
-# NEEDS THOUGHS  ----------------------------------------------------
-- metapowers ? TP, make floors
--- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
-- should we specify that starting a battle clears the timeline?
-- power creep in NG+ satisfactory enough ???
-- Keep more stats and reuse the Stat of ren's desth
-- fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
-- MAKE BUG INTO A COMMAND???
 
 # BUGFIXES  ----------------------------------------------------
 - throwaway villagers with random names should always keep the same name otherwise they take way too much space (plus they should be displayed as resurected not born)
@@ -108,11 +92,19 @@ You need to be OK with your lack ie with quitting the game and act outside the s
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 - cache ressources  regenerate resource preloading list
+- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
+
+# FILLER CHECK  ----------------------------------------------------
+- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
+- graphical audit from >= first town
+- ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
+- spawn chara on exit bands, its safer
+See 051_pandemonium_room and 012_trees
+- A look for foreknowledge opportunities
 
 # SEND OUT FOR BETA  ----------------------------------------------------
 
 # POLISHING/PRODUCTIONIZE  ----------------------------------------------------
-- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - optimize size on disk
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - write walkthrough

@@ -1,4 +1,8 @@
 
+
+- itembattles for dungeons and world,
+
+
 and the title screen “Ultimate Illusion I” (in reference to Final Fantasy). We discover Ren, a young boy living in a grim medfan society where the church captures children and tortures them to try and find the Chosen One inhabited by the power of God who can resist and counter the torture.
 Ren is that Chosen One, and this dire fate will awaken him to his power: he can go back in time to a previous instant through the save game mechanism and exploit the die and retry mechanism.
 From there, he’ll embark on a typical RPG quest to slay the demon lord (in service of the Church or against the Church??).
