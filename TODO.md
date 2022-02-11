@@ -6,7 +6,6 @@
 thaumaturgy powers:
  - berkeley mode
  - make Stuff (floors)
- - win battles
  - fast travel?
  - increase martyrdom
 
@@ -22,7 +21,7 @@ thaumaturgy powers:
 - add a link to the demo in heaven
 - the goddess SAVED your soul (save/save) as confirmation when you save
 - The cycle of replay with the promise of a true ending is precisely what the system exploits
-
+- random itch io / steam game
 
 # NEEDS THOUGHS  ----------------------------------------------------
 

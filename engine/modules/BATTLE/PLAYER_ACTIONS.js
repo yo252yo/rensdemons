@@ -302,4 +302,25 @@ const PLAYER_ACTIONS = {
       }
     }
   },
+
+  add_thaumaturgy_actions: function(){
+    if(!THAUMATURGY.is_visible()){
+      return;
+    }
+
+    PLAYER_ACTIONS.add({
+      name: "LOSS",
+      outcome: BATTLETREE.LOSS,
+      unlock: true,
+      description: ["You summon a miracle to force the outcome of this battle to be a loss."],
+    });
+
+    PLAYER_ACTIONS.add({
+      name: "WIN",
+      outcome: BATTLETREE.WIN,
+      unlock: true,
+      description: ["You summon a miracle to force the outcome of this battle to be a win."],
+    });
+
+  }
 }

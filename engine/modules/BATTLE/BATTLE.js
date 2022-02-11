@@ -389,6 +389,8 @@ const BATTLE = {
         }
         CONSOLE.log.setup("battle " + name);
         DODGE.init();
+
+        PLAYER_ACTIONS.add_thaumaturgy_actions();
       },
     },
 
