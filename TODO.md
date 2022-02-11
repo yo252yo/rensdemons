@@ -7,8 +7,9 @@ VILLAGERS
 S_Altar
 trainers
 shops
-decor
 buildings?
+
+monster
 
 
 # MORE HEAVEN  ----------------------------------------------------
