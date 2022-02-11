@@ -5,6 +5,7 @@
   * [WINNING](#WINNING)
   * [DOCUMENTATION](#DOCUMENTATION)
     * [DEBUGGING](#DEBUGGING)
+    * [THAUMATURGY](#THAUMATURGY)
     * [GETTING STARTED](#GETTING-STARTED)
 
 ## ABOUT
@@ -80,15 +81,20 @@ It is organized in modules (global singletons), here are a few example commands:
 
 ### DEBUGGING
 
-You're also welcome to use the game-breaking features I implemented to make development easy or to give the player godlike powers at some point of their adventure[^2]:
+You'll find in the codebase a few helper functions that I used to make development easier.
 
-|                                               |                                   |
-|-----------------------------------------------|-----------------------------------|
 | **DEBUG**                                     |                                   |
+|-----------------------------------------------|-----------------------------------|
 | `DEBUG.draw_grid();`                          | Draws a grid                      |
 | `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
-|                                               |                                   |
+
+
+### THAUMATURGY
+
+With control of the code, you have godlike powers over the virtual world. You can use them during game development or at some point of your adventure[^2]:
+
 | **THAUMATURGY**                               |                                   |
+|-----------------------------------------------|-----------------------------------|
 | `THAUMATURGY.run_faster();`                   | Increase movement speed           |
 | `THAUMATURGY.toggle_teleport();`              | Replace movement by teleportation |
 | `THAUMATURGY.toggle_smiting();`               | Eliminate entities on click       |
@@ -102,7 +108,7 @@ You're also welcome to use the game-breaking features I implemented to make deve
 | `THAUMATURGY.get_all_items();`                | Get all items                     |
 | `THAUMATURGY.get_all_abilities();`            | Get all abilities                 |
 | `THAUMATURGY.get_all_party_members();`        | Get all party members             |
-|                                               |                                   |
+| `THAUMATURGY.boost_martyrdom();`              | Get extra level in all martyrdom  |
 
 
 ### GETTING STARTED

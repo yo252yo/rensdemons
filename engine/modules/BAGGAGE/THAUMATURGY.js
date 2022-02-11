@@ -56,6 +56,12 @@ const THAUMATURGY = {
     }
   },
 
+  boost_martyrdom: function(){
+    for(var m of Object.keys(MARTYRDOMS)){
+      MARTYRDOM._progress.increment([MARTYRDOMS[m]]);
+    }
+  },
+
   change_colors: function() {
     PALETTE.factory.make_new();
   },
@@ -84,6 +90,7 @@ const THAUMATURGY = {
                     {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
                     {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
                     {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
+                    {"text": "Boost martyrdom", "effect": THAUMATURGY.boost_martyrdom},
                     TEXTMENU_EMPTYROW,
                     {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
 

@@ -4,10 +4,8 @@
 # FAKEGOD MODE   ----------------------------------------------------
 
 thaumaturgy powers:
- - berkeley mode
  - make Stuff (floors)
  - fast travel?
- - increase martyrdom
 
 
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
