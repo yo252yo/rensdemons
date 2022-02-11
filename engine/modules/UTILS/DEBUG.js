@@ -106,11 +106,6 @@ const DEBUG = {
         CONSOLE.log.debug("Position:" + x + " / " + y);
         //console.log(document.elementFromPoint(x - window.pageXOffset, y - window.pageYOffset));
       }
-
-      if (THAUMATURGY.teleport && IO.interface._can_open_escape_menu()){
-        CHARACTER.character.destroy();
-        CHARACTER.initialize(x, y);
-      }
     },
 
     press_key: function(key) {

@@ -5,7 +5,7 @@
   * [WINNING](#WINNING)
   * [DOCUMENTATION](#DOCUMENTATION)
     * [DEBUGGING](#DEBUGGING)
-    * [GETTING-STARTED](#GETTING-STARTED)
+    * [GETTING STARTED](#GETTING-STARTED)
 
 ## ABOUT
 
@@ -90,7 +90,8 @@ You're also welcome to use the game-breaking features I implemented to make deve
 |                                               |                                   |
 | **THAUMATURGY**                               |                                   |
 | `THAUMATURGY.run_faster();`                   | Increase movement speed           |
-| `THAUMATURGY.activate_teleport();`            | Replace movement by teleportation |
+| `THAUMATURGY.toggle_teleport();`              | Replace movement by teleportation |
+| `THAUMATURGY.toggle_smiting();`               | Eliminate entities on click       |
 |                                               |                                   |
 | `THAUMATURGY.change_colors();`                | Change color scheme               |
 | `THAUMATURGY.glitch();`                       | Triggers a glitch                 |

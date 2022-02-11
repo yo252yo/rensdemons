@@ -1,13 +1,18 @@
 
 const THAUMATURGY = {
   teleport: false,
+  smite: false,
 
   is_visible: function(){
     return STATS.ending(ENDINGS.God);
   },
 
-  activate_teleport: function() {
-    THAUMATURGY.teleport = true;
+  toggle_teleport: function() {
+    THAUMATURGY.teleport = ! THAUMATURGY.teleport;
+  },
+
+  toggle_smiting: function() {
+    THAUMATURGY.smite = ! THAUMATURGY.smite;
   },
 
   remove_fog: function() {
@@ -63,7 +68,8 @@ const THAUMATURGY = {
     new CenteredTextMenu("Miracles",
                   [
                     {"text": "Run faster", "effect": THAUMATURGY.run_faster},
-                    {"text": "Activate teleport", "effect": THAUMATURGY.activate_teleport},
+                    {"text": (THAUMATURGY.teleport? "Dea" : "A") + "ctivate teleport", "effect": THAUMATURGY.toggle_teleport},
+                    {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
                     {"text": "Change colors", "effect": THAUMATURGY.change_colors},
                     {"text": "Glitch", "effect": THAUMATURGY.glitch},
@@ -77,5 +83,20 @@ const THAUMATURGY = {
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
+  },
+
+  react_to_click: function(x,y) {
+    if (THAUMATURGY.teleport && IO.interface._can_open_escape_menu()){
+      CHARACTER.character.destroy();
+      CHARACTER.initialize(x, y);
+    }
+
+    if(THAUMATURGY.smite && IO.interface._can_open_escape_menu()){
+      var obj = CURRENTLEVEL.io.select_interactible_at(x,y);
+      if(obj) {
+        obj.destroy();
+        GLITCH.screen.glitch();
+      }
+    }
   },
 }

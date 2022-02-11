@@ -289,6 +289,7 @@ const IO = {
       var destination_Y = window.pageYOffset + y;
 
       DEBUG.signal.mouse_position(destination_X, destination_Y);
+      THAUMATURGY.react_to_click(destination_X, destination_Y);
 
       if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
         IO._ACTIVE_SYSTEM.onClick(destination_X, destination_Y, is_hold);
