@@ -74,11 +74,23 @@ const GLITCH = {
   },
 
   berkeley: {
+    make_god_observer: function(){
+      GLITCH.berkeley._REQUEST_GOD = -1;
+    },
+
     update_surroundings: function() {
+      if(GLITCH.berkeley._REQUEST_GOD > 0){
+        return;
+      }
       var max = 1.5 * Math.max(SCREEN.width(), SCREEN.height());
 
       var c = CURRENTLEVEL.objects.get_all_objects();
       for(var o of c) {
+        if(GLITCH.berkeley._REQUEST_GOD == -1){
+          o.visual_element.show();
+          continue;
+        }
+
         if(!CHARACTER.character || !CHARACTER.character.sprite){
           break; // fail fast on levels without character or when character isnt loaded
         }
@@ -121,6 +133,9 @@ const GLITCH = {
             o.visual_element.hide();
           }
         }
+      }
+      if(GLITCH.berkeley._REQUEST_GOD == -1){
+        GLITCH.berkeley._REQUEST_GOD = 1;
       }
 
 

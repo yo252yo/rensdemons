@@ -85,14 +85,10 @@ const DEBUG = {
 
 
     setInterval(THAUMATURGY.remove_fog, 1000);
-    // DEBUG.stop_berkeley_mode();
+    setInterval(THAUMATURGY.force_observer_effect, 1000);
     //setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
-  },
-
-  stop_berkeley_mode: function(){
-    GLITCH.berkeley.update_surroundings = function(){};
   },
 
   signal: {

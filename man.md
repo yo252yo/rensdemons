@@ -97,6 +97,7 @@ You're also welcome to use the game-breaking features I implemented to make deve
 | `THAUMATURGY.glitch();`                       | Triggers a glitch                 |
 | `THAUMATURGY.remove_fog();`                   | Remove the fog                    |
 | `THAUMATURGY.remove_camera_lock();`           | Allow browser scroll              |
+| `THAUMATURGY.force_observer_effect();`        | Berkeley's God observes the world |
 |                                               |                                   |
 | `THAUMATURGY.get_all_items();`                | Get all items                     |
 | `THAUMATURGY.get_all_abilities();`            | Get all abilities                 |

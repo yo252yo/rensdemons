@@ -64,6 +64,10 @@ const THAUMATURGY = {
     GLITCH.screen.glitch();
   },
 
+  force_observer_effect: function(){
+    GLITCH.berkeley.make_god_observer();
+  },
+
   menu: function() {
     new CenteredTextMenu("Miracles",
                   [
@@ -75,6 +79,7 @@ const THAUMATURGY = {
                     {"text": "Glitch", "effect": THAUMATURGY.glitch},
                     {"text": "Remove fog", "effect": THAUMATURGY.remove_fog},
                     {"text": "Remove camera lock", "effect": THAUMATURGY.remove_camera_lock},
+                    {"text": "Force observer effect", "effect": THAUMATURGY.force_observer_effect},
                     TEXTMENU_EMPTYROW,
                     {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
                     {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
