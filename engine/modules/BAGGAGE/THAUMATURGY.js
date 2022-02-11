@@ -230,6 +230,25 @@ const THAUMATURGY = {
           complex_options.push({pattern: `new SBattle($x, $y, "${b}");`, name: b});
         }
         break;
+      case "Floors":
+        complex_options = [
+          {pattern: `new S_Floor($x-50, $y+50, 100, 100);`, name: "Empty"},
+          {pattern: `new S_WoodFloor($x-50, $y+50, 100, 100);`, name: "Wood"},
+          {pattern: `new S_SandFloor($x-50, $y+50, 100, 100);`, name: "Sand"},
+          {pattern: `new S_LushFloor($x-50, $y+50, 100, 100);`, name: "Lush"},
+          {pattern: `new S_MudFloor($x-50, $y+50, 100, 100);`, name: "Mud"},
+          {pattern: `new S_CloudFloor($x-50, $y+50, 100, 100);`, name: "Cloud"},
+          {pattern: `new S_GooFloor($x-50, $y+50, 100, 100);`, name: "Goo"},
+          {pattern: `new S_WebFloor($x-50, $y+50, 100, 100);`, name: "Web"},
+          {pattern: `new S_RockFloor($x-50, $y+50, 100, 100);`, name: "Rock"},
+          {pattern: `new S_LavaFloor($x-50, $y+50, 100, 100);`, name: "Lava"},
+          {pattern: `new S_TilingFloor($x-50, $y+50, 100, 100);`, name: "Tiling"},
+          {pattern: `new S_CastleFloor($x-50, $y+50, 100, 100);`, name: "Castle"},
+          {pattern: `new S_SeaFloor($x-50, $y+50, 100, 100);`, name: "Sea"},
+          {pattern: `new S_MapFloor($x-50, $y+50, 100, 100);`, name: "Map"},
+          {pattern: `new S_AntiFloor($x-50, $y+50, 100, 100);`, name: "Antifloor"},
+        ];
+        break;
       default:
         menu_options.push({"text": "Back to game", "effect": "##CLOSE"});
         break;
@@ -252,6 +271,7 @@ const THAUMATURGY = {
                   {"text": "Bosses", "effect": function() { THAUMATURGY.menu_summon_sub("Bosses"); }},
                   {"text": "Villagers", "effect": function() { THAUMATURGY.menu_summon_sub("Villagers"); }},
                   {"text": "Shops", "effect": function() { THAUMATURGY.menu_summon_sub("Shops"); }},
+                  {"text": "Floors", "effect": function() { THAUMATURGY.menu_summon_sub("Floors"); }},
                   {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},
                   {"text": "Decor", "effect": function() { THAUMATURGY.menu_summon_sub("Decor"); }},
                   {"text": "Special", "effect": function() { THAUMATURGY.menu_summon_sub("Special"); }},
