@@ -149,22 +149,27 @@ const INTERFACE = {
         iconography = {"text": "Eikonographia", "effect": function(){ THAUMATURGY.menu(); }};
       }
 
-      new CenteredTextMenu("",
-                    [
-                      {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
-                      {"text": "Abilities", "effect": function(){ ABILITIES.display(); }},
-                      {"text": "Inventory", "effect": function(){ INVENTORY.display(); }},
-                      {"text": "Party", "effect": function(){ PARTY.display.menu(); }},
-                      TEXTMENU_EMPTYROW,
-                      martyrdom,
-                      iconography,
-                      TEXTMENU_EMPTYROW,
-                      {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
-                      {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
-                      {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
-                      TEXTMENU_EMPTYROW,
-                      {"text": "Back to game", "effect": "##CLOSE"},
-                   ]);
+      var options = [
+        {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
+        {"text": "Abilities", "effect": function(){ ABILITIES.display(); }},
+        {"text": "Inventory", "effect": function(){ INVENTORY.display(); }},
+        {"text": "Party", "effect": function(){ PARTY.display.menu(); }},
+        TEXTMENU_EMPTYROW,
+        martyrdom,
+        iconography,
+        TEXTMENU_EMPTYROW,
+        {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
+        {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
+        {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
+        TEXTMENU_EMPTYROW,
+        {"text": "Back to game", "effect": "##CLOSE"},
+      ];
+
+      if (THAUMATURGY.is_visible() && SCREEN.is_mobile()){
+        options.push({"text": "<i style='opacity:0.2;'>console.js</i>", "effect": function(){ BATTLE.api.make("_060/_screen"); }});
+      }
+
+      new CenteredTextMenu("", options);
     },
 
 

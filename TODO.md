@@ -1,6 +1,5 @@
 # WIP
 
-check console access on mobile lol
 
 # MORE HEAVEN  ----------------------------------------------------
 
