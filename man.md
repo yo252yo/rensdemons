@@ -14,7 +14,7 @@ In addition to keeping the code clean, I thought I'd write this little guide for
 
 ## WINNING
 
-In the demo or in the main game, you control children stuck in a neverending cycle of pain and cruelty. In order to beat the game, you need to **break this cycle** and free the characters. It appears that you cannot do that from inside the universe of the game. You're gonna have to think outside the box.
+In the demo or in the main game, you control children stuck in a neverending cycle of pain and cruelty. In order to beat the game, you need to **break this cycle** and free the characters. It appears that you cannot do that from inside the universe of the game. You're gonna have to think outside the box[^1].
 
 ### Removing suffering
 
@@ -32,7 +32,9 @@ You can also prevent the suffering of the characters by **stoppping** the game e
 
 ## DOCUMENTATION
 
-If you feel like creating new universes or adventures, I've done my best to make this code clean. It is organized in modules (global singletons), here are a few example commands:
+If you feel like creating new universes or adventures, I've done my best to make this code clean. This engine is completely open source. Feel free to download it for yourself (it's also included in the game).
+
+It is organized in modules (global singletons), here are a few example commands:
 
 |                                               |                                   |
 |-----------------------------------------------|-----------------------------------|
@@ -68,21 +70,6 @@ If you feel like creating new universes or adventures, I've done my best to make
 | `BATTLE.api.make('_demo/_priest');`           | Start battle                      |
 |                                               |                                   |
 |                                               |                                   |
-| **PALETTE**                                   |                                   |
-| `THAUMATURGY.change_colors();`                | Change color scheme               |
-| `THAUMATURGY.glitch();`                       | Triggers a glitch                 |
-|                                               |                                   |
-|                                               |                                   |
-| **DEBUG**                                     |                                   |
-| `DEBUG.draw_grid();`                          | Draws a grid                      |
-| `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
-| `THAUMATURGY.remove_camera_lock();`           | Allow browser scroll              |
-| `THAUMATURGY.run_faster();`                   | Increase movement speed           |
-| `THAUMATURGY.get_all_abilities();`            | Get all abilities                 |
-| `THAUMATURGY.get_all_items();`                | Get all items                     |
-| `THAUMATURGY.get_all_party_members();`        | Get all party members             |
-| `THAUMATURGY.remove_fog();`                   | Remove the fog                    |
-|                                               |                                   |
 | **SPAWNING**                                  |                                   |
 | `new S_Floor(375,1425,50,125);`               | New 50x125 floor at 375x1425      |
 | `new S_SavePoint(225, 175);`                  | New save point at 225x175         |
@@ -90,10 +77,39 @@ If you feel like creating new universes or adventures, I've done my best to make
 | `new SE_event(20, 275, 'You find nothing');`  | New event mystery object          |
 |                                               |                                   |
 
-## MAKING OTHER WORLDS
+### DEBUGGING
 
-This engine is completely open source. Feel free to download it for yourself (it's also included in the game).
+You're also welcome to use the game-breaking features I implemented to make development easy or to give the player godlike powers at some point of their adventure[^2]:
 
-You can tweak the existing game as much as you'd like. You could look into the code for the bad monsters, for instance. There would be a lot less suffering without the Goddess, the Demon Lord, Battles or ConsciousObject... Of course, some tweaks will break the game. But maybe it needs to be broken.
+|                                               |                                   |
+|-----------------------------------------------|-----------------------------------|
+|                                               |                                   |
+| **DEBUG**                                     |                                   |
+| `DEBUG.draw_grid();`                          | Draws a grid                      |
+| `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
+|                                               |                                   |
+| **THAUMATURGY**                               |                                   |
+| `THAUMATURGY.run_faster();`                   | Increase movement speed           |
+| `THAUMATURGY.activate_teleport();`            | Replace movement by teleportation |
+|                                               |                                   |
+| `THAUMATURGY.change_colors();`                | Change color scheme               |
+| `THAUMATURGY.glitch();`                       | Triggers a glitch                 |
+| `THAUMATURGY.remove_fog();`                   | Remove the fog                    |
+| `THAUMATURGY.remove_camera_lock();`           | Allow browser scroll              |
+|                                               |                                   |
+| `THAUMATURGY.get_all_items();`                | Get all items                     |
+| `THAUMATURGY.get_all_abilities();`            | Get all abilities                 |
+| `THAUMATURGY.get_all_party_members();`        | Get all party members             |
+|                                               |                                   |
 
-Better yet, you can use the engine and make a totally new universe! I trust that the game provides enough examples to help you get started, especially with the syntax explanation above. Look at the `levels/` and `battles/` subfolders. Maybe this is the only way to a true end, where the cycle of suffering is transcended by a game world where characters are happy! Go and be a god!
+
+### GETTING STARTED
+
+You can tweak the existing game as much as you'd like. You could look into the code for the bad monsters, for instance. There would be a lot less suffering without the Goddess, the Demon Lord, Battles or ConsciousObject... Of course, some tweaks will break the game.[^3]
+
+Better yet, you can use the engine and make a totally new universe! I trust that the game provides enough examples to help you get started, especially with the syntax explanation above. Look at the `levels/` and `battles/` subfolders. Maybe this is the only way to a true happy end, where the cycle of suffering is transcended by a game world where characters are happy! Go and be your own god!
+
+
+[^1]: It is unclear whether or not this page is part of the game. This section probably is, though.
+[^2]: Prehaps right now, when you're reading this.
+[^3]: But maybe it deserves to be broken.

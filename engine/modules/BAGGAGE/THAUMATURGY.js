@@ -62,17 +62,17 @@ const THAUMATURGY = {
   menu: function() {
     new CenteredTextMenu("Miracles",
                   [
-                    {"text": "Activate teleport", "effect": THAUMATURGY.activate_teleport},
-                    {"text": "Glitch", "effect": THAUMATURGY.glitch},
                     {"text": "Run faster", "effect": THAUMATURGY.run_faster},
+                    {"text": "Activate teleport", "effect": THAUMATURGY.activate_teleport},
                     TEXTMENU_EMPTYROW,
                     {"text": "Change colors", "effect": THAUMATURGY.change_colors},
-                    {"text": "Remove camera lock", "effect": THAUMATURGY.remove_camera_lock},
+                    {"text": "Glitch", "effect": THAUMATURGY.glitch},
                     {"text": "Remove fog", "effect": THAUMATURGY.remove_fog},
+                    {"text": "Remove camera lock", "effect": THAUMATURGY.remove_camera_lock},
                     TEXTMENU_EMPTYROW,
                     {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
-                    {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
                     {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
+                    {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
 
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
