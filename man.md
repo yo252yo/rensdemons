@@ -4,7 +4,8 @@
   * [ABOUT](#ABOUT)
   * [WINNING](#WINNING)
   * [DOCUMENTATION](#DOCUMENTATION)
-  * [MAKING OTHER WORLDS](#MAKING-OTHER-WORLDS)
+    * [DEBUGGING](#DEBUGGING)
+    * [GETTING-STARTED](#GETTING-STARTED)
 
 ## ABOUT
 
@@ -83,7 +84,6 @@ You're also welcome to use the game-breaking features I implemented to make deve
 
 |                                               |                                   |
 |-----------------------------------------------|-----------------------------------|
-|                                               |                                   |
 | **DEBUG**                                     |                                   |
 | `DEBUG.draw_grid();`                          | Draws a grid                      |
 | `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
