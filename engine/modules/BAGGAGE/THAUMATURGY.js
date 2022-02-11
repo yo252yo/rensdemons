@@ -81,6 +81,9 @@ const THAUMATURGY = {
                     {"text": (THAUMATURGY.teleport? "Dea" : "A") + "ctivate teleport", "effect": THAUMATURGY.toggle_teleport},
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
+                    {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
+                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
+                    TEXTMENU_EMPTYROW,
                     {"text": "Change colors", "effect": THAUMATURGY.change_colors},
                     {"text": "Glitch", "effect": THAUMATURGY.glitch},
                     {"text": "Remove fog", "effect": THAUMATURGY.remove_fog},
@@ -91,12 +94,34 @@ const THAUMATURGY = {
                     {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
                     {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
                     {"text": "Boost martyrdom", "effect": THAUMATURGY.boost_martyrdom},
-                    TEXTMENU_EMPTYROW,
-                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
 
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
+  },
+
+  menu_fast_travel: function(){
+    var ft =
+    [
+      {"text": "Nowhere", "effect": "##CLOSE"},
+      TEXTMENU_EMPTYROW,
+    ];
+
+    var add_destination = function(name, destination){
+      ft.push(
+        {"text": name, "effect": function(){ CURRENTLEVEL.setup(destination)}}
+      );
+    }
+
+    add_destination(DICTIONARY.get("town_1"), "005_town1");
+    add_destination(DICTIONARY.get("town_2"), "020_town2");
+    add_destination(DICTIONARY.get("town_3"), "040_town3");
+    add_destination(DICTIONARY.get("town_4"), "021_town4");
+    add_destination(DICTIONARY.get("town_5"), "022_town5");
+    add_destination("World map", "010_world_map");
+    add_destination("Hell", "050_hell_map");
+
+    new CenteredTextMenu("Fast travel to...", ft);
   },
 
   react_to_click: function(x,y) {

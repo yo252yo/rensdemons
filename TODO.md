@@ -5,8 +5,6 @@
 
 thaumaturgy powers:
  - make Stuff (floors)
- - fast travel?
-
 
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 
