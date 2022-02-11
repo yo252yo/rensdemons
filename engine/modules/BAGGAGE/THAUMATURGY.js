@@ -102,7 +102,7 @@ const THAUMATURGY = {
   },
 
   menu_fast_travel: function(){
-    var ft =
+    var menu_options =
     [
       {"text": "Nowhere", "effect": "##CLOSE"},
       TEXTMENU_EMPTYROW,
@@ -135,7 +135,7 @@ const THAUMATURGY = {
     };
 
     var add_destination = function(name, destination){
-      ft.push(
+      menu_options.push(
         {"text": name, "effect": function(){ var f = effectFunction(destination); f();}}
       );
     };
@@ -148,58 +148,82 @@ const THAUMATURGY = {
     add_destination("World map", "010_world_map");
     add_destination("Hell", "050_hell_map");
 
-    new CenteredTextMenu("Fast travel to...", ft);
+    new CenteredTextMenu("Fast travel to...", menu_options);
   },
 
   menu_summon_sub: function(category){
-    var ft = [];
-    var effectFunction = function(constructorName){
+    var menu_options = [];
+    var simpleConstructor = function(constructorName){
       var pos = CURRENTLEVEL.io.get_front_location(0.4);
       eval (`new ${constructorName}(${pos[0]}, ${pos[1]});`);
       GLITCH.screen.glitch(true);
     };
+    var prefixConstructor = function(prefix){
+      var pos = CURRENTLEVEL.io.get_front_location(0.4);
+      eval (`${prefix} ${pos[0]}, ${pos[1]});`);
+      GLITCH.screen.glitch(true);
+    };
 
-    var add_destination = function(constructorName){
+    var create_menu_option = function(constructorName, fullName){
       var name = constructorName.split("_");
       if(name.length > 1){
-        name = name[1];
+        fullName = fullName || name[1];
       } else {
-        name = name[0];
+        fullName = fullName || name[0];
       }
-      ft.push(
-        {"text": name, "effect": function(){ effectFunction(constructorName); }}
-      );
+      var effect;
+      if(constructorName.includes("(")){
+        effect = function(){ prefixConstructor(constructorName); };
+      } else {
+        effect = function(){ simpleConstructor(constructorName); };
+      }
+
+      menu_options.push({"text": fullName, "effect": effect});
     };
-    var options = [];
+    var simple_options = [];
+    var complex_options = [];
     switch(category){
       case "Interior":
-        options = ["S_Column", "S_Door", "S_RoyalThrone", "S_SavePoint", "B_Statue", "B_Bed", "B_Bucket", "B_Cabinet_wall", "B_Chair", "B_Hay", "B_Housefire", "B_Jar", "B_Shelf_wall", "B_Stool", "B_Table", "B_Table_Set", "B_Chest", "B_AlchemyShelf_wall", "B_Barrel", "B_Bocals", "B_Box", "B_Chimney_wall", "B_Clock_wall", "B_Papers", "B_Sack", "B_FancyShelf_wall", "B_Candles_wall", "B_Window_wall", "B_CurtainedWindow_wall", "B_WeaponRack", "B_ShieldDisplay_wall", "B_WeaponDisplay_wall", "B_Bottles", "B_BottlesShelf_wall", "B_FlowerCrown_wall", "B_PottedFlower", "B_PottedPlant", "B_Mask_wall", "B_SpikyMask_wall", "B_Rope", "S_Armor","S_Candle","S_Organ","S_Throne","S_Bocals","S_Painting_wall","S_HellWindow_wall","S_Flag_wall","S_Mirror_wall"      ];
+        simple_options = ["S_Column", "S_Door", "S_RoyalThrone", "S_SavePoint", "B_Statue", "B_Bed", "B_Bucket", "B_Cabinet_wall", "B_Chair", "B_Hay", "B_Housefire", "B_Jar", "B_Shelf_wall", "B_Stool", "B_Table", "B_Table_Set", "B_Chest", "B_AlchemyShelf_wall", "B_Barrel", "B_Bocals", "B_Box", "B_Chimney_wall", "B_Clock_wall", "B_Papers", "B_Sack", "B_FancyShelf_wall", "B_Candles_wall", "B_Window_wall", "B_CurtainedWindow_wall", "B_WeaponRack", "B_ShieldDisplay_wall", "B_WeaponDisplay_wall", "B_Bottles", "B_BottlesShelf_wall", "B_FlowerCrown_wall", "B_PottedFlower", "B_PottedPlant", "B_Mask_wall", "B_SpikyMask_wall", "B_Rope", "S_Armor","S_Candle","S_Organ","S_Throne","S_Bocals","S_Painting_wall","S_HellWindow_wall","S_Flag_wall","S_Mirror_wall"      ];
         break;
       case "Decor":
-        options = ["S_Tree", "S_TreeSad", "S_TreePalm", "S_Vine", "S_Plant", "S_Shroomgiant", "S_Shroomsmall", "S_Shroomtall", "S_PlantSmall", "S_AlgaeWall", "S_Anemone", "S_Coral", "S_Seashell", "S_Seashellpointy", "S_Waterplants", "S_WaterPlantWall", "S_BubblePlant", "S_TentaPlant", "S_TentaPlantMini", "S_Planks", "S_Pebbles", "S_RocksHuge", "S_Rocks1", "S_Rocks2", "S_Rocks3", "S_Rocks4", "S_Boulder", "S_Rubble", "S_RubbleLarge", "S_Web", "S_WebLarge", "S_RockColumn", "S_CristalBig", "S_CristalSmall", "S_CristalTiny", "S_RockLump", "S_CristalFragment", "S_Caveplant", "S_Cavesprouts", "S_Hole", "S_Rootstall", "S_Root", "S_HellPlantLeaning", "S_HellPlantSretching", "S_HellPlantSlimy", "S_HellPlantLoops", "S_Spike", "S_HellEgg", "S_Cloud", "S_Waterfall"    ];
+        simple_options = ["S_Tree", "S_TreeSad", "S_TreePalm", "S_Vine", "S_Plant", "S_Shroomgiant", "S_Shroomsmall", "S_Shroomtall", "S_PlantSmall", "S_AlgaeWall", "S_Anemone", "S_Coral", "S_Seashell", "S_Seashellpointy", "S_Waterplants", "S_WaterPlantWall", "S_BubblePlant", "S_TentaPlant", "S_TentaPlantMini", "S_Planks", "S_Pebbles", "S_RocksHuge", "S_Rocks1", "S_Rocks2", "S_Rocks3", "S_Rocks4", "S_Boulder", "S_Rubble", "S_RubbleLarge", "S_Web", "S_WebLarge", "S_RockColumn", "S_CristalBig", "S_CristalSmall", "S_CristalTiny", "S_RockLump", "S_CristalFragment", "S_Caveplant", "S_Cavesprouts", "S_Hole", "S_Rootstall", "S_Root", "S_HellPlantLeaning", "S_HellPlantSretching", "S_HellPlantSlimy", "S_HellPlantLoops", "S_Spike", "S_HellEgg", "S_Cloud", "S_Waterfall"    ];
         break;
       case "Special":
-        options = ["S_Castle", "S_Casern", "S_Church", "S_Manor", "S_Beelzebub", "S_Maou", "S_RockColumnGoddess", "SE_gem", "S_GameBoard"         ];
+        simple_options = ["S_Castle", "S_Casern", "S_Church", "S_Manor", "S_Beelzebub", "S_Maou", "S_RockColumnGoddess", "SE_gem", "S_GameBoard"         ];
+        break;
+      case "Villagers":
+        complex_options = [
+          {prefix: `new M_Villager("${CITIES.hope}",`, name: "Expectations"},
+          {prefix: `new M_Villager("${CITIES.fear}",`, name: "Fear"},
+          {prefix: `new M_Villager("${CITIES.denial}",`, name: "Denial"},
+          {prefix: `new M_Villager("${CITIES.indulgence}",`, name: "Indulgence"},
+          {prefix: `new M_Villager("${CITIES.acceptance}",`, name: "Acceptance"},
+          {prefix: `new M_Villager("${CITIES.mourning}",`, name: "Mourning"}
+        ];
         break;
       default:
-        ft.push({"text": "Back to game", "effect": "##CLOSE"});
+        menu_options.push({"text": "Back to game", "effect": "##CLOSE"});
         break;
     }
 
-    for(var i of options){
-      add_destination(i);
+    for(var i of simple_options){
+      create_menu_option(i);
+    }
+    for(var i of complex_options){
+      create_menu_option(i.prefix, i.name);
     }
 
-    new CenteredTextMenu("Summon " + category, ft);
+    new CenteredTextMenu("Summon " + category, menu_options);
   },
 
   menu_summon: function(){
     new CenteredTextMenu("Summon",
                 [
+                  {"text": "Villagers", "effect": function() { THAUMATURGY.menu_summon_sub("Villagers"); }},
                   {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},
                   {"text": "Decor", "effect": function() { THAUMATURGY.menu_summon_sub("Decor"); }},
                   {"text": "Special", "effect": function() { THAUMATURGY.menu_summon_sub("Special"); }},
-
                   TEXTMENU_EMPTYROW,
                   {"text": "Nothing", "effect": "##CLOSE"}
                ]);
