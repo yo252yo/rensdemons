@@ -123,7 +123,7 @@ const DEBUG = {
   //  DEBUG.display_filler_zones();
 
 
-    setInterval(FOG.stop, 1000);
+    setInterval(THAUMATURGY.remove_fog, 1000);
     // DEBUG.stop_berkeley_mode();
     //setTimeout(DEBUG.draw_hitboxes, 1000);
 

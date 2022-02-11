@@ -140,6 +140,7 @@ new Module("UTILS/MAP");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/LEDGER");
   IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 new Module("BAGGAGE/ARCHETYPES");
+new Module("BAGGAGE/THAUMATURGY");
 
   IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
     IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");

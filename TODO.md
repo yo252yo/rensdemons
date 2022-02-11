@@ -1,18 +1,45 @@
 # WIP
 
 
-# NEEDS THOUGHS  ----------------------------------------------------
+
+# FAKEGOD MODE   ----------------------------------------------------
+-- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
+
+Explain that the console is like magic words that change the fabric of the universe
 - metapowers ? TP, make floors
-- power creep in NG+ satisfactory enough ???
-- Keep more stats and reuse the Stat of ren's desth
+
+I think et need a caprica God mode wt the end after the goddess fight revelations, but it cannot bring the true ends. Check that the true ends are last in list
+
+Called powers mb
+
+
+Makr a class thats an api god the user, caprica that h get after the goddess
+
+Call it fake God mode, make sure it's not useful but still give it powers
+
+In menu I guess
+
+
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
+
 - MAKE BUG INTO A COMMAND???
 
-- town2 survivors rescue!
+
+Iconism
+Iconodulism
+Apocryphe
+Acheiropoieta
+Iconography
+iconographism
+
+eikonographia
+
+miracle
+
+Thaumaturgy
+
 
 # MORE HEAVEN  ----------------------------------------------------
-
--- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
 
 WHO makes you do it??
 The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
@@ -21,12 +48,16 @@ energy from running in the loop
 - add a link to the demo in heaven
 - the goddess SAVED your soul (save/save) as confirmation when you save
 
-Explain that the console is like magic words that change the fabric of the universe
 The cycle of replay with the promise of a true ending is precisely what the system exploits
 
 You need to be OK with your lack ie with quitting the game and act outside the system
 
 
+
+# NEEDS THOUGHS  ----------------------------------------------------
+
+- Keep more stats and reuse the Stat of ren's desth
+- town2 survivors rescue!
 
 # AERITH EVENTS  ----------------------------------------------------
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
