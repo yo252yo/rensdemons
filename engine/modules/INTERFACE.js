@@ -137,13 +137,27 @@ const INTERFACE = {
 
     escape_menu: function() {
       AUDIO.effect.page();
+
+
+      var martyrdom = {"text": "???", "effect": function(){}, "keep_open": true};
+      if(STATS.get(STAT.Death) > 0){
+        martyrdom = {"text": INTERFACE.text.martyrdom(), "effect": function(){ MARTYRDOM.display.menu(); }};
+      }
+      var iconography = {"text": "???", "effect": function(){}, "keep_open": true};
+
+      if (true){ // CONDITION TBD
+        iconography = {"text": "Eikonographia", "effect": function(){ THAUMATURGY.menu(); }};
+      }
+
       new CenteredTextMenu("",
                     [
                       {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
                       {"text": "Abilities", "effect": function(){ ABILITIES.display(); }},
                       {"text": "Inventory", "effect": function(){ INVENTORY.display(); }},
-                      {"text": INTERFACE.text.martyrdom(), "effect": function(){ MARTYRDOM.display.menu(); }},
                       {"text": "Party", "effect": function(){ PARTY.display.menu(); }},
+                      TEXTMENU_EMPTYROW,
+                      martyrdom,
+                      iconography,
                       TEXTMENU_EMPTYROW,
                       {"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }},
                       {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},

@@ -3,41 +3,24 @@
 
 
 # FAKEGOD MODE   ----------------------------------------------------
--- Make sure the end feels like capricam superpowers, mb we can have a room like a test room!
 
-Explain that the console is like magic words that change the fabric of the universe
-- metapowers ? TP, make floors
-
-I think et need a caprica God mode wt the end after the goddess fight revelations, but it cannot bring the true ends. Check that the true ends are last in list
-
-Called powers mb
+Review Goddess dialog and endings
+- separate true ends and fake ends
+- condition for thaumaturgy menu in INTERFACE
+- Explain that the console is like magic words that change the fabric of the universe
 
 
-Makr a class thats an api god the user, caprica that h get after the goddess
-
-Call it fake God mode, make sure it's not useful but still give it powers
-
-In menu I guess
+thaumaturgy powers:
+ - berkeley mode
+ - man.md
+ - make Stuff (floors)
+ - win battles
+ - access a white space
+ - fast travel?
+ - smiting mode
 
 
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
-
-- MAKE BUG INTO A COMMAND???
-
-
-Iconism
-Iconodulism
-Apocryphe
-Acheiropoieta
-Iconography
-iconographism
-
-eikonographia
-
-miracle
-
-Thaumaturgy
-
 
 # MORE HEAVEN  ----------------------------------------------------
 

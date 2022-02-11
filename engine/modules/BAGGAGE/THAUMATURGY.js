@@ -2,6 +2,10 @@
 const THAUMATURGY = {
   teleport: false,
 
+  activate_teleport: function() {
+    THAUMATURGY.teleport = true;
+  },
+
   remove_fog: function() {
     FOG.stop();
   },
@@ -49,5 +53,25 @@ const THAUMATURGY = {
 
   glitch: function() {
     GLITCH.screen.glitch();
-  }
+  },
+
+  menu: function() {
+    new CenteredTextMenu("Miracles",
+                  [
+                    {"text": "Activate teleport", "effect": THAUMATURGY.activate_teleport},
+                    {"text": "Glitch", "effect": THAUMATURGY.glitch},
+                    {"text": "Run faster", "effect": THAUMATURGY.run_faster},
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Change colors", "effect": THAUMATURGY.change_colors},
+                    {"text": "Remove camera lock", "effect": THAUMATURGY.remove_camera_lock},
+                    {"text": "Remove fog", "effect": THAUMATURGY.remove_fog},
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
+                    {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
+                    {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
+
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Back to game", "effect": "##CLOSE"}
+                 ]);
+  },
 }
