@@ -107,11 +107,34 @@ const THAUMATURGY = {
       TEXTMENU_EMPTYROW,
     ];
 
+    var effectFunction = function(destination){
+      var setup =  function(){ CURRENTLEVEL.setup(destination)};
+
+      if(!["010_world_map", "050_hell_map"].includes(destination)){
+        return function(){
+          TextBannerSequence.make([
+            RANDOM.pick([
+              `The decor fades around you as you teleport to your destination.`,
+              `The world starts spinning around you and you need to close your eyes to not get sick.`,
+              `You concentrate and manipulate the fabric of the universe to change your location.`,
+            ]),
+            RANDOM.pick([
+              `Everyone screams in panic when you appear in the middle of the town, but before long life has taken back its course.`,
+              `Citizens watch you in terror as you pop into existence unnaturally in the middle of the city.`,
+              `Everyone around is traumatized by your sudden appearance out of thin air. Children are crying, villagers are screaming, priests are calling for heresy sanctions. It takes a while before the town is back to its normal state.`,
+            ]),
+          ], setup);
+        }
+      }
+
+      return setup;
+    };
+
     var add_destination = function(name, destination){
       ft.push(
-        {"text": name, "effect": function(){ CURRENTLEVEL.setup(destination)}}
+        {"text": name, "effect": function(){ var f = effectFunction(destination); f();}}
       );
-    }
+    };
 
     add_destination(DICTIONARY.get("town_1"), "005_town1");
     add_destination(DICTIONARY.get("town_2"), "020_town2");
