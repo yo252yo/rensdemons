@@ -82,7 +82,7 @@ const THAUMATURGY = {
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
                     {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
-                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
+                    {"text": "Summon", "effect": THAUMATURGY.menu_summon},
                     TEXTMENU_EMPTYROW,
                     {"text": "Change colors", "effect": THAUMATURGY.change_colors},
                     {"text": "Glitch", "effect": THAUMATURGY.glitch},
@@ -96,6 +96,7 @@ const THAUMATURGY = {
                     {"text": "Boost martyrdom", "effect": THAUMATURGY.boost_martyrdom},
 
                     TEXTMENU_EMPTYROW,
+                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
   },
@@ -108,7 +109,10 @@ const THAUMATURGY = {
     ];
 
     var effectFunction = function(destination){
-      var setup =  function(){ CURRENTLEVEL.setup(destination)};
+      var setup =  function(){
+        GLITCH.screen.glitch(true);
+        CURRENTLEVEL.setup(destination);
+      };
 
       if(!["010_world_map", "050_hell_map"].includes(destination)){
         return function(){
@@ -147,17 +151,64 @@ const THAUMATURGY = {
     new CenteredTextMenu("Fast travel to...", ft);
   },
 
+  menu_summon_sub: function(category){
+    var ft = [];
+    var effectFunction = function(constructorName){
+      var pos = CURRENTLEVEL.io.get_front_location(0.4);
+      eval (`new ${constructorName}(${pos[0]}, ${pos[1]});`);
+      GLITCH.screen.glitch(true);
+    };
+
+    var add_destination = function(constructorName){
+      var name = constructorName.split("_");
+      if(name.length > 1){
+        name = name[1];
+      } else {
+        name = name[0];
+      }
+      ft.push(
+        {"text": name, "effect": function(){ effectFunction(constructorName); }}
+      );
+    };
+    var options = [];
+    switch(category){
+      case "Interior":
+        options = ["S_Column", "S_Door", "S_RoyalThrone", "S_SavePoint", "B_Statue", "B_Bed", "B_Bucket", "B_Cabinet_wall", "B_Chair", "B_Hay", "B_Housefire", "B_Jar", "B_Shelf_wall", "B_Stool", "B_Table", "B_Table_Set", "B_Chest", "B_AlchemyShelf_wall", "B_Barrel", "B_Bocals", "B_Box", "B_Chimney_wall", "B_Clock_wall", "B_Papers", "B_Sack", "B_FancyShelf_wall", "B_Candles_wall", "B_Window_wall", "B_CurtainedWindow_wall", "B_WeaponRack", "B_ShieldDisplay_wall", "B_WeaponDisplay_wall", "B_Bottles", "B_BottlesShelf_wall", "B_FlowerCrown_wall", "B_PottedFlower", "B_PottedPlant", "B_Mask_wall", "B_SpikyMask_wall", "B_Rope"];
+        break;
+      default:
+        ft.push({"text": "Back to game", "effect": "##CLOSE"});
+        break;
+    }
+
+    for(var i of options){
+      add_destination(i);
+    }
+
+    new CenteredTextMenu("Summon " + category, ft);
+  },
+
+  menu_summon: function(){
+    new CenteredTextMenu("Summon",
+                [
+                  {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},
+
+                  TEXTMENU_EMPTYROW,
+                  {"text": "Nothing", "effect": "##CLOSE"}
+               ]);
+  },
+
   react_to_click: function(x,y) {
     if (THAUMATURGY.teleport && IO.interface._can_open_escape_menu()){
       CHARACTER.character.destroy();
       CHARACTER.initialize(x, y);
+      GLITCH.screen.glitch(true);
     }
 
     if(THAUMATURGY.smite && IO.interface._can_open_escape_menu()){
       var obj = CURRENTLEVEL.io.select_interactible_at(x,y);
       if(obj) {
         obj.destroy();
-        GLITCH.screen.glitch();
+        GLITCH.screen.glitch(true);
       }
     }
   },

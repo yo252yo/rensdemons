@@ -1,10 +1,15 @@
 # WIP
 
+check console access on mobile lol
 
-# FAKEGOD MODE   ----------------------------------------------------
+thaumaturgy summon:
+VILLAGERS
+S_Altar
+trainers
+shops
+decor
+buildings?
 
-thaumaturgy powers:
- - make Stuff (floors)
 
 # MORE HEAVEN  ----------------------------------------------------
 

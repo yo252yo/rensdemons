@@ -179,30 +179,35 @@ const CURRENTLEVEL = {
       return walkable;
     },
 
+    get_front_location(divider) {
+      var c = CHARACTER.get().gravity_center();
+      var x = c[0];
+      var y = c[1] + 10; // its more intuitive to take a point closer to legs
+      switch (CHARACTER.get().facing_direction()) {
+        case "LEFT":
+          x -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE / divider;
+          break;
+        case "RIGHT":
+          x += CURRENTLEVEL._FACE_INTERACTION_DISTANCE / divider;
+          break;
+        case "UP":
+          y -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE / divider;
+          break;
+        default:
+          y += CURRENTLEVEL._FACE_INTERACTION_DISTANCE / divider;
+          break;
+      }
+      return [x, y];
+    },
+
     interact_in_front: function(attempt) {
       if (!attempt){
         attempt = 1;
       } else if(attempt >=3 ){
         return;
       }
-      var c = CHARACTER.get().gravity_center();
-      var x = c[0];
-      var y = c[1] + 10; // its more intuitive to take a point closer to legs
-      switch (CHARACTER.get().facing_direction()) {
-        case "LEFT":
-          x -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE / attempt;
-          break;
-        case "RIGHT":
-          x += CURRENTLEVEL._FACE_INTERACTION_DISTANCE / attempt;
-          break;
-        case "UP":
-          y -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE / attempt;
-          break;
-        default:
-          y += CURRENTLEVEL._FACE_INTERACTION_DISTANCE / attempt;
-          break;
-      }
-      var element = CURRENTLEVEL.io.select_interactible_at(x, y);
+      var c = CURRENTLEVEL.io.get_front_location(attempt);
+      var element = CURRENTLEVEL.io.select_interactible_at(c[0], c[1]);
       if (element) {
         CURRENTLEVEL.io.try_interact(element);
       } else {

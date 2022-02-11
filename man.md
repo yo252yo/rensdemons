@@ -100,6 +100,7 @@ With control of the code, you have godlike powers over the virtual world. You ca
 | `THAUMATURGY.toggle_smiting();`               | Eliminate entities on click       |
 |                                               |                                   |
 | `THAUMATURGY.menu_fast_travel();`             | Opens a menu to teleport places   |
+| `THAUMATURGY.menu_summon();`                  | Opens a menu to summon objects    |
 |                                               |                                   |
 | `THAUMATURGY.change_colors();`                | Change color scheme               |
 | `THAUMATURGY.glitch();`                       | Triggers a glitch                 |

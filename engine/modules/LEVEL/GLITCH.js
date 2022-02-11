@@ -198,7 +198,7 @@ const GLITCH = {
       }
     },
 
-    glitch: function(){
+    glitch: function(prevent_next){
       AUDIO.effect.glitch();
       AUDIO.set_music_speed(0.5 + Math.random());
 
@@ -218,7 +218,7 @@ const GLITCH = {
       GLITCH.text.fuckup_banner();
       GLITCH.display_conscious_suffering();
 
-      if(Math.random() < 0.3){ // dble glitch
+      if(!prevent_next && Math.random() < 0.3){ // dble glitch
         var delay = 25 + 175 * Math.random();
         setTimeout(GLITCH.screen.glitch, delay);
         setTimeout(PALETTE.factory.make_new, delay - 15);
