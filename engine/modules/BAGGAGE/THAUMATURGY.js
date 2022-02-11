@@ -2,6 +2,10 @@
 const THAUMATURGY = {
   teleport: false,
 
+  is_visible: function(){
+    return STATS.ending(ENDINGS.God);
+  },
+
   activate_teleport: function() {
     THAUMATURGY.teleport = true;
   },

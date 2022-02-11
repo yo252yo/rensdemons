@@ -2,12 +2,13 @@
 
 
 
+
 # FAKEGOD MODE   ----------------------------------------------------
+
 
 Review Goddess dialog and endings
 - separate true ends and fake ends
-- condition for thaumaturgy menu in INTERFACE
-- Explain that the console is like magic words that change the fabric of the universe
+>- You need to be OK with your lack ie with quitting the game and act outside the system
 
 
 thaumaturgy powers:
@@ -18,23 +19,19 @@ thaumaturgy powers:
  - access a white space
  - fast travel?
  - smiting mode
+ - increase martyrdom
 
 
 - fast travel system? it would be fun to appear in front of everyone and theyre mindfucked but preted its ok
 
 # MORE HEAVEN  ----------------------------------------------------
 
-WHO makes you do it??
-The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by trapping them in truman show filter bubble)
-energy from running in the loop
-
+- Explain that the console is like magic words that change the fabric of the universe
+- WHO makes you do it??
+- The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by    trapping them in truman show filter bubble), energy from running in the loop
 - add a link to the demo in heaven
 - the goddess SAVED your soul (save/save) as confirmation when you save
-
-The cycle of replay with the promise of a true ending is precisely what the system exploits
-
-You need to be OK with your lack ie with quitting the game and act outside the system
-
+- The cycle of replay with the promise of a true ending is precisely what the system exploits
 
 
 # NEEDS THOUGHS  ----------------------------------------------------

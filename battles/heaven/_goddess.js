@@ -64,7 +64,7 @@ PLAYER_ACTIONS.add({
 });
 
 // ===================
-//hack Next ends
+//hack Next ends (after one kill)
 // ===================
 
 // careful, reachable from several paths
@@ -179,7 +179,7 @@ if (STATS.ending(ENDINGS.God)){
 }
 
 // ===================
-//hack True end
+//hack True end (after two fake endings have failed)
 // ===================
 
 var pray =  PLAYER_ACTIONS.function.unlock_replacing_action({

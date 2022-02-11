@@ -8,13 +8,13 @@ const STAT = {
 }
 
 const ENDINGS = {
-  War: "END OF WAR", // kill demon_lord
-  God: "END OF GOD", // kill goddess
-  Suffering: "END OF SUFFERING", // stop suffering
-  World: "END OF WORLD", // ask for a new world
-  Line: "END OF LINE", // code
-  Game: "END OF GAME", // leave the game
-  Universe: "END OF UNIVERSE", // Fork on git
+  War: "END OF WAR",              // end@A:    kill demon_lord
+  God: "END OF GOD",              // end@B:    kill goddess
+  Suffering: "END OF SUFFERING",  // end@C:    ask Goddess to stop suffering
+  World: "END OF WORLD",          // end@D:    ask Goddess for a new world
+  Line: "END OF LINE",            // end@E:    typing win(); in console
+  Game: "END OF GAME",            // STATS.js: leave the game
+  Universe: "END OF UNIVERSE",    // STATS.js: Fork on git
   // road, world, ear, year, universe, trail, story, day, journey
 }
 

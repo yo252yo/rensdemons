@@ -64,12 +64,14 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   var endFight = function() {
     if(INVENTORY.count("_killed_god")){
       var callback = function(){
+        MARTYRDOM.death(); // to get the menu notification
         CURRENTLEVEL.setup("end@B");
       }
       TextBannerSequence.make([
         `As you deliver the final blow, the holy body of the Goddess starts to fragment into a myriad of tiny sparkly particles. As the shining grains begin to dissipate, you see for the first time the sacred body actually move.`,
         `It's a very subtle motion. The Goddess' lips come very slightly apart, and you hear Her whisper.`,
         `Goddess: "Fool... You don't know anything..."`,
+        `Unexpectedly, the tone is one of compassion, not contempt. You feel a wave of empathy washing over you, as if you found in Her a kindred spirit. But you do not have time to asks the questions that submerge your mind.`,
         `The cloud of luminous dust, sole remainder of the entity that ruled the universe, dissipates slowly into the air...`,
       ], callback);
     } else if(INVENTORY.count("_ended_suffering")){
