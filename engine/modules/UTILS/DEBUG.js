@@ -7,7 +7,7 @@ const DEBUG = {
   },
 
   activate_character_tp: function() {
-    DEBUG.TP_CHARACTER = true;
+    THAUMATURGY.teleport = true;
   },
 
   activate_builder: function() {
@@ -145,7 +145,9 @@ const DEBUG = {
         CONSOLE.log.debug("Position:" + x + " / " + y);
         //console.log(document.elementFromPoint(x - window.pageXOffset, y - window.pageYOffset));
       }
-      if (DEBUG.TP_CHARACTER && KEYS_UTIL.is_pressed.ctrl()){
+
+      if (THAUMATURGY.teleport && IO.interface._can_open_escape_menu()){
+        CHARACTER.character.destroy();
         CHARACTER.initialize(x, y);
       }
     },
