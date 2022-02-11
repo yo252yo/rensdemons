@@ -7,7 +7,6 @@ thaumaturgy powers:
  - berkeley mode
  - make Stuff (floors)
  - win battles
- - access a white space
  - fast travel?
  - increase martyrdom
 

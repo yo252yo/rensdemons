@@ -79,6 +79,8 @@ const THAUMATURGY = {
                     {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
                     {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
                     {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
 
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}

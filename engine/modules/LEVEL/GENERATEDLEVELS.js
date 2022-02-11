@@ -1,6 +1,26 @@
 
 // We encode the seed in the level name to rebuild on save, keep state, etc...
 const GENERATEDLEVELS = {
+
+  blank: {
+    setup: function() {
+      var name = CURRENTLEVEL.GERERATED_LEVEL_PREFIX + "blank_" + CURRENTLEVEL.level_name;
+      CURRENTLEVEL.setup(name);
+    },
+
+    load: function(name) {
+      var decode = name.split("_");
+      var type = name.substring(decode[0].length + 1);
+
+      var f = new S_Floor(1000,1000,250,250);
+      var e = new S_ExitFloor(1100,1025,50,50, type);
+
+      CONSOLE.log.debug("waiting for something to happen?");
+      AUDIO.music.levels.house();
+      e.initialize_with_character();
+    },
+  },
+
   house: {
     setup: function(type, seed) {
       var name = CURRENTLEVEL.GERERATED_LEVEL_PREFIX + "house_" + type + "_" +seed;
