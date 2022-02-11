@@ -1,15 +1,7 @@
 # WIP
 
 
-
-
 # FAKEGOD MODE   ----------------------------------------------------
-
-
-Review Goddess dialog and endings
-- separate true ends and fake ends
->- You need to be OK with your lack ie with quitting the game and act outside the system
-
 
 thaumaturgy powers:
  - berkeley mode
@@ -26,6 +18,7 @@ thaumaturgy powers:
 
 # MORE HEAVEN  ----------------------------------------------------
 
+- proofread goddess and mirror
 - Explain that the console is like magic words that change the fabric of the universe
 - WHO makes you do it??
 - The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by    trapping them in truman show filter bubble), energy from running in the loop

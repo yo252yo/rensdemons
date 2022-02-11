@@ -232,8 +232,12 @@ const INTERFACE = {
       },
 
       endings: function(){
-        var r = "";
+        var r = `<h4 style="clear:both;display:block;">False endings</h4>`;
         for(var i in ENDINGS){
+          if(ENDINGS[i] == ENDINGS.Game){
+            r += `<h4 style="clear:both;display:block;">True endings</h4>`;
+          }
+
           if(STATS.ending(ENDINGS[i])){
             r += `<span id='${ENDINGS[i]}'>&lt;${ENDINGS[i]}&gt;</span> `;
           } else {
@@ -252,7 +256,6 @@ const INTERFACE = {
         ${INTERFACE.display.print_achieve.party()}
         <h4 style="clear:both;display:block;">Legendary weapons</h4>
         ${INTERFACE.display.print_achieve.artifacts()}
-        <h4 style="clear:both;display:block;">Endings</h4>
         ${INTERFACE.display.print_achieve.endings()}
            `, [
                {"text": "Back", "effect": "##BACK"}

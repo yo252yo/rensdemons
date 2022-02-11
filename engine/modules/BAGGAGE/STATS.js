@@ -7,15 +7,16 @@ const STAT = {
   Glitches: "Glitches",
 }
 
+// road, world, ear, year, universe, trail, story, day, journey, game
 const ENDINGS = {
   War: "END OF WAR",              // end@A:    kill demon_lord
   God: "END OF GOD",              // end@B:    kill goddess
   Suffering: "END OF SUFFERING",  // end@C:    ask Goddess to stop suffering
   World: "END OF WORLD",          // end@D:    ask Goddess for a new world
   Line: "END OF LINE",            // end@E:    typing win(); in console
-  Game: "END OF GAME",            // STATS.js: leave the game
-  Universe: "END OF UNIVERSE",    // STATS.js: Fork on git
-  // road, world, ear, year, universe, trail, story, day, journey
+
+  Game: "END OF LACK",            // STATS.js: leave the game - lacanian ending, be okay with your lack
+  Universe: "END OF SYSTEM",      // STATS.js: Fork on git - baudrillard ending, act outside the system
 }
 
 const STATS = {
