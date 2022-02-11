@@ -86,6 +86,10 @@ const GLITCH = {
 
       var c = CURRENTLEVEL.objects.get_all_objects();
       for(var o of c) {
+        if (!o || o == CHARACTER.character || !o.distance_to_character || !o.visual_element){
+          continue;
+        }
+
         if(GLITCH.berkeley._REQUEST_GOD == -1){
           o.visual_element.show();
           continue;
@@ -95,9 +99,6 @@ const GLITCH = {
           break; // fail fast on levels without character or when character isnt loaded
         }
 
-        if (!o || o == CHARACTER.character || !o.distance_to_character || !o.visual_element){
-          continue;
-        }
         if(Math.random() < 0.1){
           continue; // glitches
         }
