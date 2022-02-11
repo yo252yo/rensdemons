@@ -6,10 +6,6 @@ const DEBUG = {
     DEBUG.MOUSE_POSITIONS = true;
   },
 
-  activate_character_tp: function() {
-    THAUMATURGY.teleport = true;
-  },
-
   activate_builder: function() {
     DEBUG.ACTIVATE_BUILDER = true;
   },
@@ -27,10 +23,6 @@ const DEBUG = {
     window.removeEventListener('scroll', IO.handlers.onScroll);
     window.removeEventListener('resize', IO.handlers.onScroll);
     window.removeEventListener('wheel', IO.handlers.onWheel);
-  },
-
-  run_faster: function() {
-    MovingObject._RUNNING_BONUS = 10;
   },
 
   draw_hitboxes: function(even_floors) {
@@ -65,39 +57,6 @@ const DEBUG = {
     }
   },
 
-  allow_scroll: function() {
-    document.body.style.overflow = "scroll";
-  },
-
-  get_all_abilities: function() {
-    for(var i of Object.keys(ABILITY)){
-      if (typeof ABILITY[i] == "function"){
-        continue;
-      }
-      ABILITIES.unlock(ABILITY[i]);
-    }
-  },
-
-  get_all_party: function() {
-    for(var i of Object.keys(PARTYMEMBERS)){
-      if (typeof PARTYMEMBERS[i] == "function"){
-        continue;
-      }
-      if (i != PARTYMEMBERS.Ren){
-        PARTY.add(i);
-      }
-    }
-  },
-
-  get_all_items: function() {
-    for(var i of Object.keys(ITEM)){
-      if (typeof ITEM[i] == "function"){
-        continue;
-      }
-      INVENTORY.increase(ITEM[i]);
-    }
-  },
-
   reroll_seeds: function(){
     DICTIONARY.factory.make_new();
     STATS.record.death(11); // to get non harmonized palette.
@@ -111,15 +70,17 @@ const DEBUG = {
 
     //DEBUG.log_mouse_positions();
   //  DEBUG.draw_grid();
-    DEBUG.activate_character_tp();
-    DEBUG.run_faster();
-    DEBUG.allow_scroll();
-  //  DEBUG.deactivate_scroll(); // This isnt great.
-    //DEBUG.display_all_trees();
-    DEBUG.get_all_abilities();
-    DEBUG.get_all_items();
-    DEBUG.get_all_party();
+
+    THAUMATURGY.teleport = true;
+    THAUMATURGY.run_faster();
+    THAUMATURGY.remove_camera_lock();;
+    THAUMATURGY.get_all_abilities();
+    THAUMATURGY.get_all_items();
+    THAUMATURGY.get_all_party_members();
+
     DEBUG.reroll_seeds();
+    //  DEBUG.deactivate_scroll(); // This isnt great.
+      //DEBUG.display_all_trees()
   //  DEBUG.display_filler_zones();
 
 

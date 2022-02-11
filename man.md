@@ -56,10 +56,6 @@ If you feel like creating new universes or adventures, I've done my best to make
 | `PARTY.add(PARTYMEMBERS.BestFriend);`         | Add people to the party           |
 |                                               |                                   |
 |                                               |                                   |
-| **FOG**                                       |                                   |
-| `FOG.stop();`                                 | Removes the fog                   |
-|                                               |                                   |
-|                                               |                                   |
 | **CHARACTER**                                 |                                   |
 | `CHARACTER.initialize(x, y);`                 | Puts character at position (x,y)  |
 |                                               |                                   |
@@ -73,16 +69,19 @@ If you feel like creating new universes or adventures, I've done my best to make
 |                                               |                                   |
 |                                               |                                   |
 | **PALETTE**                                   |                                   |
-| `PALETTE.factory.make_new();`                 | Change color scheme               |
+| `THAUMATURGY.change_colors();`                | Change color scheme               |
+| `THAUMATURGY.glitch();`                       | Triggers a glitch                 |
 |                                               |                                   |
 |                                               |                                   |
 | **DEBUG**                                     |                                   |
 | `DEBUG.draw_grid();`                          | Draws a grid                      |
 | `DEBUG.draw_hitboxes();`                      | Draws items hitboxes              |
-| `DEBUG.allow_scroll();`                       | Allow browser scroll              |
-| `DEBUG.run_faster();`                         | Increase movement speed           |
-| `DEBUG.get_all_abilities();`                  | Change color scheme (random)      |
-| `DEBUG.get_all_items();`                      | Change color scheme (random)      |
+| `THAUMATURGY.remove_camera_lock();`           | Allow browser scroll              |
+| `THAUMATURGY.run_faster();`                   | Increase movement speed           |
+| `THAUMATURGY.get_all_abilities();`            | Get all abilities                 |
+| `THAUMATURGY.get_all_items();`                | Get all items                     |
+| `THAUMATURGY.get_all_party_members();`        | Get all party members             |
+| `THAUMATURGY.remove_fog();`                   | Remove the fog                    |
 |                                               |                                   |
 | **SPAWNING**                                  |                                   |
 | `new S_Floor(375,1425,50,125);`               | New 50x125 floor at 375x1425      |
