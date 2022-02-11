@@ -82,6 +82,7 @@ const THAUMATURGY = {
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
                     {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
+                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
                     {"text": "Summon", "effect": THAUMATURGY.menu_summon},
                     TEXTMENU_EMPTYROW,
                     {"text": "Change colors", "effect": THAUMATURGY.change_colors},
@@ -96,7 +97,6 @@ const THAUMATURGY = {
                     {"text": "Boost martyrdom", "effect": THAUMATURGY.boost_martyrdom},
 
                     TEXTMENU_EMPTYROW,
-                    {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
                     {"text": "Back to game", "effect": "##CLOSE"}
                  ]);
   },
@@ -158,9 +158,9 @@ const THAUMATURGY = {
       eval (`new ${constructorName}(${pos[0]}, ${pos[1]});`);
       GLITCH.screen.glitch(true);
     };
-    var prefixConstructor = function(prefix){
+    var patternConstructor = function(pattern){
       var pos = CURRENTLEVEL.io.get_front_location(0.4);
-      eval (`${prefix} ${pos[0]}, ${pos[1]});`);
+      eval (pattern.replace('$x', pos[0]).replace('$y', pos[1]));
       GLITCH.screen.glitch(true);
     };
 
@@ -173,7 +173,7 @@ const THAUMATURGY = {
       }
       var effect;
       if(constructorName.includes("(")){
-        effect = function(){ prefixConstructor(constructorName); };
+        effect = function(){ patternConstructor(constructorName); };
       } else {
         effect = function(){ simpleConstructor(constructorName); };
       }
@@ -194,12 +194,28 @@ const THAUMATURGY = {
         break;
       case "Villagers":
         complex_options = [
-          {prefix: `new M_Villager("${CITIES.hope}",`, name: "Expectations"},
-          {prefix: `new M_Villager("${CITIES.fear}",`, name: "Fear"},
-          {prefix: `new M_Villager("${CITIES.denial}",`, name: "Denial"},
-          {prefix: `new M_Villager("${CITIES.indulgence}",`, name: "Indulgence"},
-          {prefix: `new M_Villager("${CITIES.acceptance}",`, name: "Acceptance"},
-          {prefix: `new M_Villager("${CITIES.mourning}",`, name: "Mourning"}
+          {pattern: `new M_Villager("${CITIES.hope}", $x, $y, ${Math.random()});`, name: "Expectations"},
+          {pattern: `new M_Villager("${CITIES.fear}", $x, $y, ${Math.random()});`, name: "Fear"},
+          {pattern: `new M_Villager("${CITIES.denial}", $x, $y, ${Math.random()});`, name: "Denial"},
+          {pattern: `new M_Villager("${CITIES.indulgence}", $x, $y, ${Math.random()});`, name: "Indulgence"},
+          {pattern: `new M_Villager("${CITIES.acceptance}", $x, $y, ${Math.random()});`, name: "Acceptance"},
+          {pattern: `new M_Villager("${CITIES.mourning}", $x, $y, ${Math.random()});`, name: "Mourning"}
+        ];
+        break;
+      case "Shops":
+        complex_options = [
+          {pattern: `new M_Vendor($x, $y, 1, "${ITEMS_ARCHETYPES_NAMES.Alchemy}", 999999);`, name: "Alchemy vendor"},
+          {pattern: `new M_Vendor($x, $y, 1, "${ITEMS_ARCHETYPES_NAMES.Tool}", 999999);`, name: "Tool vendor"},
+          {pattern: `new M_Vendor($x, $y, 1, "${ITEMS_ARCHETYPES_NAMES.Weapon}", 999999);`, name: "Weapon vendor"},
+          {pattern: `new M_Trainer($x, $y, 1, "${ABILITIES_ARCHETYPES_NAMES.Diplomat}", 999999);`, name: "Diplomat trainer"},
+          {pattern: `new M_Trainer($x, $y, 1, "${ABILITIES_ARCHETYPES_NAMES.Element}", 999999);`, name: "Element trainer"},
+          {pattern: `new M_Trainer($x, $y, 1, "${ABILITIES_ARCHETYPES_NAMES.Spirit}", 999999);`, name: "Spirit trainer"},
+          {pattern: `new SM_Altar($x, $y, "${ITEMS_ARCHETYPES_NAMES.Alchemy}");`, name: "Alchemy altar"},
+          {pattern: `new SM_Altar($x, $y, "${ITEMS_ARCHETYPES_NAMES.Tool}");`, name: "Tool altar"},
+          {pattern: `new SM_Altar($x, $y, "${ITEMS_ARCHETYPES_NAMES.Weapon}");`, name: "Weapon altar"},
+          {pattern: `new SM_Altar($x, $y, "${ABILITIES_ARCHETYPES_NAMES.Diplomat}");`, name: "Diplomat altar"},
+          {pattern: `new SM_Altar($x, $y, "${ABILITIES_ARCHETYPES_NAMES.Element}");`, name: "Element altar"},
+          {pattern: `new SM_Altar($x, $y, "${ABILITIES_ARCHETYPES_NAMES.Spirit}");`, name: "Spirit altar"}
         ];
         break;
       default:
@@ -211,7 +227,7 @@ const THAUMATURGY = {
       create_menu_option(i);
     }
     for(var i of complex_options){
-      create_menu_option(i.prefix, i.name);
+      create_menu_option(i.pattern, i.name);
     }
 
     new CenteredTextMenu("Summon " + category, menu_options);
@@ -221,6 +237,7 @@ const THAUMATURGY = {
     new CenteredTextMenu("Summon",
                 [
                   {"text": "Villagers", "effect": function() { THAUMATURGY.menu_summon_sub("Villagers"); }},
+                  {"text": "Shops", "effect": function() { THAUMATURGY.menu_summon_sub("Shops"); }},
                   {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},
                   {"text": "Decor", "effect": function() { THAUMATURGY.menu_summon_sub("Decor"); }},
                   {"text": "Special", "effect": function() { THAUMATURGY.menu_summon_sub("Special"); }},
