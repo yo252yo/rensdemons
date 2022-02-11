@@ -218,6 +218,18 @@ const THAUMATURGY = {
           {pattern: `new SM_Altar($x, $y, "${ABILITIES_ARCHETYPES_NAMES.Spirit}");`, name: "Spirit altar"}
         ];
         break;
+      case "Monsters":
+        var battle_names = ['trial/arachnid', 'trial/cockroach', 'trial/rodent', 'trial/viper', 'forests/boar', 'forests/flower', 'forests/fox', 'forests/mandragora', 'forests/morel', 'forests/nymph', 'forests/squirrel', 'forests/tree', 'forests/truffle', 'forests/trunk', 'mountains/chimera', 'mountains/emu', 'mountains/harpy', 'mountains/hawk', 'mountains/manticore', 'mountains/pterosaur', 'caves/bat', 'caves/bloodsucker', 'caves/crawler', 'caves/mole', 'caves/scorpion', 'caves/slime', 'waters/anemone', 'waters/anglerjelly', 'waters/crab', 'waters/jellyfish', 'waters/mermaid', 'waters/naiad', 'waters/octopus', 'waters/squid', 'waters/triton', 'world/arsonist', 'world/bruiser', 'world/butcher', 'world/djinn', 'world/ghost', 'world/goblin', 'world/grizzly', 'world/knight', 'world/mammoth', 'world/mummy', 'world/skeleton', 'world/vadhaka', 'world/wraith', 'heaven/angel', 'heaven/cherub', 'heaven/maneki', 'heaven/ponpon', 'heaven/raijuu', 'heaven/seraph', 'heaven/valkyrie', 'hell/centipede', 'hell/devilfly', 'hell/eyeball', 'hell/hecatoncheir', 'hell/sandworm', 'hell/satyr', 'hell/serpentine', 'hell/toad', 'hell/warlock', 'pandemonium/abaddon', 'pandemonium/asmodeus', 'pandemonium/azazel', 'pandemonium/belial', 'pandemonium/belphegor', 'pandemonium/golem', 'pandemonium/hellhound', 'pandemonium/ifrit', 'pandemonium/mammon', 'pandemonium/titan' ];
+        for(var b of battle_names){
+          complex_options.push({pattern: `new SBattle($x, $y, "${b}");`, name: b});
+        }
+        break;
+      case "Bosses":
+        var battle_names = ['trial/basilisk', 'forests/blob', 'forests/fungus', 'mountains/dragon', 'mountains/phoenix', 'caves/lizard', 'caves/rhino', 'waters/serpent', 'waters/whale', 'pandemonium/lieutenant', 'pandemonium/lord'  ];
+        for(var b of battle_names){
+          complex_options.push({pattern: `new SBattle($x, $y, "${b}");`, name: b});
+        }
+        break;
       default:
         menu_options.push({"text": "Back to game", "effect": "##CLOSE"});
         break;
@@ -236,6 +248,8 @@ const THAUMATURGY = {
   menu_summon: function(){
     new CenteredTextMenu("Summon",
                 [
+                  {"text": "Monsters", "effect": function() { THAUMATURGY.menu_summon_sub("Monsters"); }},
+                  {"text": "Bosses", "effect": function() { THAUMATURGY.menu_summon_sub("Bosses"); }},
                   {"text": "Villagers", "effect": function() { THAUMATURGY.menu_summon_sub("Villagers"); }},
                   {"text": "Shops", "effect": function() { THAUMATURGY.menu_summon_sub("Shops"); }},
                   {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},

@@ -2,18 +2,6 @@
 
 check console access on mobile lol
 
-thaumaturgy summon:
-
-
-var v = new M_Villager(CITIES.acceptance, 1275, 1450);
-S_Altar(x, y, type)
-return new M_Vendor(1350, 1350, this.gen.get(), this.store_type, this.store_threshold);
-return new M_Trainer(1250, 1375, this.gen.get(), this.store_type, this.store_threshold);
-
-
-monster
-
-
 # MORE HEAVEN  ----------------------------------------------------
 
 - proofread goddess and mirror
