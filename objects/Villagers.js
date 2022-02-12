@@ -1,14 +1,17 @@
 
 class VillagerSoul extends SoulBattleObject {
+  static get_name(gen, sprite_nb){
+    if (sprite_nb == 2 || sprite_nb == 3) {
+      return gen.pick(DATASETS.female_names);
+    } else {
+      return gen.pick(DATASETS.male_names);
+    }
+  }
+
   constructor(type, sprite_nb, seed){
     super(seed * -1000, seed * -1000, "villagers/" + type, sprite_nb);
     this.gen = new Generator(seed);
-
-    if (sprite_nb == 2 || sprite_nb == 3) {
-      this.vname = this.gen.pick(DATASETS.female_names);
-    } else {
-      this.vname = this.gen.pick(DATASETS.male_names);
-    }
+    this.vname = VillagerSoul.get_name(this.gen, sprite_nb);
 
     switch(type){
       case CITIES.acceptance:
@@ -797,6 +800,7 @@ class M_Villager extends M_NPC {
     var gen = new Generator(seed);
     var sprite_nb = gen.int(5);
     var soul = get_villager_soul(type, seed, indoors, sprite_nb);
+    soul.vname = soul.vname || VillagerSoul.get_name(gen, sprite_nb);
     super(x, y, "villager" + sprite_nb, soul.vname, type, "villager");
     this.seed = seed;
     this.sprite_nb = sprite_nb;

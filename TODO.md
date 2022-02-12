@@ -1,6 +1,20 @@
 # WIP
 
 
+# AERITH EVENTS  ----------------------------------------------------
+>> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
+>> put events in their own language file?
+- event from aerith: Don't you think it's weird how we always find what we need on our way
+- event from aerith: isnt it weird that merchants buy all your shit
+- event from aerith: do we not need breaks? no sleep or toilet
+- event from aerith: how do you know youre immortal
+- event from aerith: you have an intuition about where to go O.o
+- conversation about open worlds
+- event from aerith: i cant hurt you, no friendly fire
+      "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
+- event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
+- reference to the fact that there's always a crafting system
+
 # MORE HEAVEN  ----------------------------------------------------
 
 - proofread goddess and mirror
@@ -20,19 +34,6 @@ http://store.steampowered.com/explore/random/
 - Keep more stats and reuse the Stat of ren's desth
 >> In heaven a stats memorial mb written in a picture smthing a big swag
 
-# AERITH EVENTS  ----------------------------------------------------
->> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
->> put events in their own language file?
-- event from aerith: Don't you think it's weird how we always find what we need on our way
-- event from aerith: isnt it weird that merchants buy all your shit
-- event from aerith: do we not need breaks? no sleep or toilet
-- event from aerith: how do you know youre immortal
-- event from aerith: you have an intuition about where to go O.o
-- conversation about open worlds
-- event from aerith: i cant hurt you, no friendly fire
-      "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
-- event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
-- reference to the fact that there's always a crafting system
 
 # BATTLE ENCOUNTERS  ----------------------------------------------------
 - more?
@@ -61,9 +62,10 @@ http://store.steampowered.com/explore/random/
 
 
 # BUGFIXES  ----------------------------------------------------
-- throwaway villagers with random names should always keep the same name otherwise they take way too much space (plus they should be displayed as resurected not born)
+- throwaway villagers with random names should always keep the same name otherwise they take way too much space
+
+
 - test on edge, epsecially functions starting by _, mb the nested ones
-- Mb interaction per villager per partymember
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - check save/disk size
