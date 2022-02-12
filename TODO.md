@@ -15,7 +15,6 @@
 # NEEDS THOUGHS  ----------------------------------------------------
 
 - Keep more stats and reuse the Stat of ren's desth
-- town2 survivors rescue!
 
 # AERITH EVENTS  ----------------------------------------------------
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
