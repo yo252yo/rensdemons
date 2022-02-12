@@ -775,7 +775,9 @@ var get_meta_soul = function(seed, sprite_nb) {
 
 var get_villager_soul = function(type, seed, indoors, sprite_nb) {
   if (seed < 0.03) {
-    return get_meta_soul(seed, sprite_nb);
+    var s = get_meta_soul(seed, sprite_nb);
+    s.vname = VillagerSoul.get_name(gen, sprite_nb);
+    return s;
   }
 
   var rejection_soul = get_rejection_soul(type, seed, indoors, seed);

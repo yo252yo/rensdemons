@@ -62,9 +62,6 @@ http://store.steampowered.com/explore/random/
 
 
 # BUGFIXES  ----------------------------------------------------
-- throwaway villagers with random names should always keep the same name otherwise they take way too much space
-
-
 - test on edge, epsecially functions starting by _, mb the nested ones
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)

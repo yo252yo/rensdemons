@@ -8,13 +8,7 @@ var sprite = SPECIALBATTLES._battle_extra_data[0];
 var gen = new Generator(SPECIALBATTLES._battle_extra_data[1]);
 
 var s = new CenteredMovingBattleImage("assets/characters/" + sprite + ".png", 'background', 32, 48, 2);
-var name = "Villager";
-
-if (sprite == "villager2" || sprite == "villager3") {
-  name = gen.pick(DATASETS.male_names);
-} else {
-  name = gen.pick(DATASETS.female_names);
-}
+var name = VillagerSoul.get_name(gen, sprite); // i think this is the same as the name of the sprite but it doesnt matter much anyway
 
 var unlocked_keys = [];
 var is_unlocked = function(key){
