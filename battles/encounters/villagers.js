@@ -138,8 +138,74 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+PLAYER_ACTIONS.add({
+  name: "Appearance",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "Why do you look like so many other villagers? Are you related?"`,
+                `${name}: "Hey! That's pretty racist..."`,
+              ],
+});
 
+PLAYER_ACTIONS.add({
+  name: "Intrude",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "How is little ${RANDOM.pick(DATASETS.male_names)}?"`,
+                `${name}: "How do you know my son? Who are you? I've never seen you around here before..."`,
+              ],
+});
 
+PLAYER_ACTIONS.add({
+  name: "Ransack",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "Can I go to your house, break everything and steal all your stuff?"`,
+                `The villager is obviously shocked by your proposal.`,
+                `${name}: "What? No! I'm calling the guard!"`,
+                `$$Ren$: "I'm the Promised Child."`,
+                `${name}: "Oh! Okay then, go ahead!"`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Impress",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "I bet I can guess your deepest secret."`,
+                `The villager is amused by your wager.`,
+                `${name}: "Go ahead"`,
+                `$$Ren$: "As a child, you used to steal jars of berry jam from your neighbor."`,
+                `The villager's face turns white from surprise.`,
+                `${name}: "What? How did you?"`,
+                `$$Ren$: "Don't worry, she knew all along. She set aside jars for you, you know..."`,
+                `The villager is taken aback and does not know what to say. You can see a little tear forming in the corner of their eye.`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Foreknowledge",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "I know what you did yesterday..."`,
+                `${name}: "What?"`,
+                `$$Ren$: "You cut down lumber."`,
+                `${name}: "Well yes, I'm a lumberjack, it doesn't take a genius to figure this out..."`,
+              ],
+});
+
+PLAYER_ACTIONS.add({
+  name: "Trick",
+  outcome: BATTLETREE.NOTHING,
+  unlock: is_unlocked(),
+  description: [`$$Ren$: "Think of a number"`,
+                `${name}: "What?"`,
+                `$$Ren$: "Just do, you'll see, it's fun."`,
+                `${name}: "Okay... Done."`,
+                `$$Ren$: "Is it 17?"`,
+                `${name}: "Yes. Nice little trick you got there. Maybe you should perform for gold. We could always use a distraction in these dire times..."`,
+              ],
+});
 
 // ===================
 //hack BASE ACTIONS

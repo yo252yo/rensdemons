@@ -11,10 +11,14 @@
 - the goddess SAVED your soul (save/save) as confirmation when you save
 - The cycle of replay with the promise of a true ending is precisely what the system exploits
 - random itch io / steam game
+https://itch.io/randomizer post ??
+http://store.steampowered.com/explore/random/
+
 
 # NEEDS THOUGHS  ----------------------------------------------------
 
 - Keep more stats and reuse the Stat of ren's desth
+>> In heaven a stats memorial mb written in a picture smthing a big swag
 
 # AERITH EVENTS  ----------------------------------------------------
 >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
@@ -36,9 +40,6 @@
 - double check battle/encounters especially sprites
 - review battle_debris add a few more actions for rubble treasures
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-
-# VILLAGERS  ----------------------------------------------------
-- villagers topics: hospitality (what are you doing here, etc..., scolding you), games, errands, ancestors, ren, complain about wife, news, other countries, sports, aspiratiosn, siblings (esp. second born), food (fav meal, etc..), travel (did u ever leave the town)
 
 
 # TROPES  ----------------------------------------------------

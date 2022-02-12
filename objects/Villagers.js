@@ -125,6 +125,30 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion",`${this.vname}: "Praise be to the Goddess and may She forgive us and lessen Her punishment!"`);
     this.add_interaction("Religion",`${this.vname}: "We pray, offer blood and lives, so that the Goddess may forgive us and ease our pain!"`);
     this.add_interaction("Religion",`${this.vname}: "Religion is the only way to forgiveness which will keep our punishment bearable."`);
+
+    this.add_interaction("Travel", `${this.vname}: "What's the point of leaving? As if things would be better elsewhere..."`);
+    this.add_interaction("Travel", `${this.vname}: "Other places are going to be wiped out too, you know. I'd rather die where I have my roots."`);
+    this.add_interaction("Travel", `${this.vname}: "It's more of the same everywhere. You can go see for yourself, if you want. But don't crawl back to tell me that I was right."`);
+
+    this.add_interaction("Love", `${this.vname}: "What they call love is obviously a sham! How can you really care for someone when you'll never have access to what they really think, how they really feel, who they really are?"`);
+    this.add_interaction("Love", `${this.vname}: "I've been in love a bunch of times and it never ended well. I don't need lovers. They disappoint me."`);
+    this.add_interaction("Love", `${this.vname}: "If that's how you want to call it, fine. But you know it's just biological chemistry trying to make you forget how horrible your life is to trick you into spawning an offspring, right?"`);
+
+    this.add_interaction("Leisure", `${this.vname}: "Nothing makes me happy. So I just sleep."`);
+    this.add_interaction("Leisure", `${this.vname}: "What's the point of looking away from our impending doom? Any happiness is just a fickle illusion."`);
+    this.add_interaction("Leisure", `${this.vname}: "We do have games in this village. Every month, we have a big tournament of cards. The winner gets to be sacrificed. It's never me!"`);
+
+    this.add_interaction("Hospitality", `${this.vname}: "Sure, you can sleep at my place. It doesn't matter."`);
+    this.add_interaction("Hospitality", `${this.vname}: "Whether I offer hospitality or not, we're all going to suffer and die in the end, so I don't really care either way."`);
+    this.add_interaction("Hospitality", `${this.vname}: "I suppose if you're motivated enough, there's no stopping you, so you might as well come to my house."`);
+
+    this.add_interaction("Past", `${this.vname}: "If only our ancestors had understood that we were doomed, they would not have birthed us, and we wouldn't have to suffer pointlessly. Silly idealists."`);
+    this.add_interaction("Past", `${this.vname}: "I don't think things were better in the past. Things have always been awful. We're just better at noticing it now."`);
+    this.add_interaction("Past", `${this.vname}: "I've heard that the ancients had incredible technologies. It did not save them, though. So how can we hope to survive without?"`);
+
+    this.add_interaction("News", `${this.vname}: "There's no news. It's always more of the same. War. Defeat. Death..."`);
+    this.add_interaction("News", `${this.vname}: "It may look like things are happening, but when you really look at it, it's always the same things. Nothing ever really change."`);
+    this.add_interaction("News", `${this.vname}: "What's the point of listening to the news? I already know what's inside! More defeats. Demons looming. Our sacrifices are not working..."`);
   }
 
   setup_denial() {
@@ -237,6 +261,30 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us such a perfect land!"`);
     this.add_interaction("Religion", `${this.vname}: "We pray so that the Goddess always shields us from experiencing pain!"`);
     this.add_interaction("Religion", `${this.vname}: "Religion is our way to give thanks for the blessings we have gotten."`);
+
+    this.add_interaction("Travel", `${this.vname}: "Why would you ever leave? This is the greatest city in the world!"`);
+    this.add_interaction("Travel", `${this.vname}: "I don't think there are any other cities besides this one, where would you want to go?"`);
+    this.add_interaction("Travel", `${this.vname}: "Hmmm... I don't think it's possible to leave this place. Too much paperwork and so on..."`);
+
+    this.add_interaction("Love", `${this.vname}: "Sure my husband and I have our issues, but what couple does not? He only beats me up when I deserve it, and that's really not that often, you know."`);
+    this.add_interaction("Love", `${this.vname}: "My wife spends a lot of time at my neighbor's. They're really good friends, you see. Once, I interrupted them while they were reorganizing the bedroom. I'm not allowed over there anymore."`);
+    this.add_interaction("Love", `${this.vname}: "My partner left me last month. But truth be told, it's probably all for the best. We were not a good fit for each other. I'm better off by myself. I'm fine. I'm fine!"`);
+
+    this.add_interaction("Leisure", `${this.vname}: "Absolutely! In this city, we love games and sports! We organize all kinds of tournaments and celebrate winners of all sorts!"`);
+    this.add_interaction("Leisure", `${this.vname}: "Without the threat of the war, we have all the time in the world to dedicate to our higher passions. Everyone here is a talented athlete or player."`);
+    this.add_interaction("Leisure", `${this.vname}: "I'm partial to games of cards myself. Especially games of chance. I could spend days at the parlor if I'm not careful!"`);
+
+    this.add_interaction("Hospitality", `${this.vname}: "Why would I turn away a stranger? Nothing bad can every come from welcoming people!"`);
+    this.add_interaction("Hospitality", `${this.vname}: "I'd gladly help anyone in need! I'm not sure why anyone would be in need, though..."`);
+    this.add_interaction("Hospitality", `${this.vname}: "Sorry, I've never seen anyone who needed... hospitality. What a strange concept."`);
+
+    this.add_interaction("Past", `${this.vname}: "The past was a barbaric dreadful time. Thank god we learned so much! We're civilized now!"`);
+    this.add_interaction("Past", `${this.vname}: "Someone told me that our ancestors had really great lives. So I suppose things did not change much!"`);
+    this.add_interaction("Past", `${this.vname}: "I think life has always been this great. But then again, each day is better than the last... Damn, it feels like there's a problem here... Hang on... Well nevermind. Best not to think too much."`);
+
+    this.add_interaction("News", `${this.vname}: "Not much has happened after our stellar victory over the demon armies. Nothing bad is happening anymore!"`);
+    this.add_interaction("News", `${this.vname}: "The biggest piece of news is probably the birth of these twin calves! Can you believe it? Two calves for one cow! We'll be telling that story for decades!"`);
+    this.add_interaction("News", `${this.vname}: "Not much happens in our lovely peaceful little town. The biggest news are probably things like births, town council elections, this kind of things... Nothing interesting for an outsider like you."`);
   }
 
   setup_fear() {
@@ -335,6 +383,35 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for keeping us righteous!"`);
     this.add_interaction("Religion", `${this.vname}: "We pray zealously to show that we are worthy and to keep the bad away from us."`);
     this.add_interaction("Religion", `${this.vname}: "Religion is the only way to purity which will keep the monsters at bay."`);
+
+    this.add_interaction("Travel", `${this.vname}: "Why would anyone travel? As if there aren't enough problems to fix at home already."`);
+    this.add_interaction("Travel", `${this.vname}: "No, I'm not very interested in how other people live. We've got it all figured it out, here. I don't have time to go see how they fail."`);
+    this.add_interaction("Travel", `${this.vname}: "There's already too many foreigners here, I'm not gonna go meet more of them!"`);
+
+    this.add_interaction("Love", `${this.vname}: "Love is seeing yourself reflected in another being. That's why my wife looks like my mother."`);
+    this.add_interaction("Love", `${this.vname}: "I have not found a partner yet. But it's only because I will not settle down! I deserve to be with someone great and pure. Someone like me!"`);
+    this.add_interaction("Love", `${this.vname}: "That's just a story that people say. You don't need to rely on others. You're your own full person. Nothing disgust me more than seeing codependent people cling to one another like parasites."`);
+
+    this.add_interaction("Leisure", `${this.vname}: "I don't have time for silly games, there's real business to take care of!"`);
+    this.add_interaction("Leisure", `${this.vname}: "I'm not going to waste my time with silly peasant recreation! I aspire to more! To real things! Like the nobles in the castle! One day it might be me! Until then, I have to prove my worth diligently."`);
+    this.add_interaction("Leisure", `${this.vname}: "Games only distract you from what really matters. I prefer to focus on the real important questions, like the politics of the kingdom and the power plays in the castle!"`);
+
+    this.add_interaction("Hospitality", `${this.vname}: "I'm not foolish enough to accept potential threats into my house!"`);
+    this.add_interaction("Hospitality", `${this.vname}: "No, our houses are well guarded here. I doubt you'll find anyone who would just take you in for free."`);
+    this.add_interaction("Hospitality", [`${this.vname}: "Sure, I'll let strangers in my place! It's not at all begging for trouble. I'll leave all my belongings exposed! Nothing bad will happen!"`, `${this.vname}: "That's all irony, by the way..."`]);
+
+    this.add_interaction("Past", `${this.vname}: "I wish we could get back to the Golden Age of the ancients. Their knowledge and prosperity reached heights we can't even conceive of. Why did we let civilization deteriorate so low?"`);
+    this.add_interaction("Past", `${this.vname}: "The ancients had it all figured out. They were a pure civilization, with no outsiders in their midst. We're supposed to be their mighty heirs, the chosen people. But look at where we are now... Surely, it the fault of others..."`);
+    this.add_interaction("Past", `${this.vname}: "Back in the days, life was great! People didn't complain about how life was better before all the time! It must mean that life has gotten a lot worse!"`);
+    this.add_interaction("Past", [
+      `${this.vname}: "I just want to make our kingdom great again, is that too much to ask? Things were a lot better before!"`,
+      `${this.vname}: "Sure, I have examples, but they're too many to list, so I won't tell you."`,
+      `${this.vname}: "I'm telling you, the ancients really got stuff done. They were not sitting on their asses whining all day long."`,
+    ]);
+
+    this.add_interaction("News", `${this.vname}: "The demon army is gaining grounds. We're on the verge of total defeat!"`);
+    this.add_interaction("News", `${this.vname}: "I've heard what the king and his council decided lately. It's complete nonsense. We'll never get anywhere with this kind of half-measures..."`);
+    this.add_interaction("News", `${this.vname}: "Every time I hear news, it's about how things go worse and worse. We could get out of this vicious cycle if only people listened to me instead of doing the wrong things all the time."`);
   }
 
   setup_hope() {
@@ -422,6 +499,30 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us a better tomorrow!"`);
     this.add_interaction("Religion", `${this.vname}: "We pray so that the Goddess helps us to victory and a peaceful future!"`);
     this.add_interaction("Religion", `${this.vname}: "Religion is the light that guides us to a bright destiny!"`);
+
+    this.add_interaction("Travel", `${this.vname}: "As soon as the situation gets better, I'm going to go see the world!"`);
+    this.add_interaction("Travel", `${this.vname}: "Of course I want to travel, I bet there are places even greater than this little town! I want to see them all!"`);
+    this.add_interaction("Travel", `${this.vname}: "You're travelling the world? It must be great! I can't wait to hear all your tales when you come back victorious!"`);
+
+    this.add_interaction("Love", `${this.vname}: "I have not found my one true love yet, but I'm not giving up, I know it's just around the corner!"`);
+    this.add_interaction("Love", `${this.vname}: "I'm a romantic at heart! What's the meaning of life, if not love? I just have to keep looking for that perfect person to match me, the One!"`);
+    this.add_interaction("Love", `${this.vname}: "I'm seeing someone, but I'm not sure it's the One. How can I know for sure if I should commit or not?"`);
+
+    this.add_interaction("Leisure", `${this.vname}: "We organize sports competition to figure out who is the strongest in the village. We always look up to the holder of this title!"`);
+    this.add_interaction("Leisure", `${this.vname}: "There's nothing wrong with a little game every now and then! I hear it trains your mental abilities and organization skills. If you do it in moderation, it's a great investment in personal growth!"`);
+    this.add_interaction("Leisure", `${this.vname}: "I love to watch athletes fight it off in sports game! It never cease to amaze me what the human body is actually capable of. Nothing can stand in our way, if we try hard enough!"`);
+
+    this.add_interaction("Hospitality", `${this.vname}: "My doors are always open! You must treat others as you would like to be treated!"`);
+    this.add_interaction("Hospitality", `${this.vname}: "I always welcome travelers in need. You never know when one of them will turn out to be your savior!"`);
+    this.add_interaction("Hospitality", `${this.vname}: "I welcome anyone who wants to come to my humble abode. You can only grow by welcoming the unknown into your heart!"`);
+
+    this.add_interaction("Past", `${this.vname}: "If we all work together, I'm sure we can bring back the wisdom of the ancients!"`);
+    this.add_interaction("Past", `${this.vname}: "Progress comes and goes. I hear the ancients had a golden age of prosperity. It's up to us to work and make the future as great as this!"`);
+    this.add_interaction("Past", `${this.vname}: "Life used to be pretty bad in this village. But thanks to the hard work of everyone, we're making things better little by little, and recovering from all the demon raids!"`);
+
+    this.add_interaction("News", `${this.vname}: "I hear we're starting to gain some grounds over the demon armies! Maybe victory is near?"`);
+    this.add_interaction("News", `${this.vname}: "Now that the Promised Child has been found, peace is just a matter of days!"`);
+    this.add_interaction("News", `${this.vname}: "I don't like bad news. I ask heralds to only tell me about our army's victories. They seem to get more frequent, I think..."`);
   }
 
   setup_indulgence() {
@@ -518,6 +619,30 @@ class VillagerSoul extends SoulBattleObject {
     this.add_interaction("Religion", `${this.vname}: "Praise be to the Goddess for giving us such pleasant experiences!"`);
     this.add_interaction("Religion", `${this.vname}: "We pray so the Goddess gives us more food and drinks!"`);
     this.add_interaction("Religion", `${this.vname}: "Religion? It's a good subject of inspiration for art, a great way to transcend our mortal senses."`);
+
+    this.add_interaction("Travel", `${this.vname}: "Yes, we should totally go on a trip together! Let me just pack my bottles!"`);
+    this.add_interaction("Travel", `${this.vname}: "You're absolutely right! Seize all that the world has to offer while you have the chance!"`);
+    this.add_interaction("Travel", `${this.vname}: "As soon as the party dies down here, I'll leave and go wherever things are happening! Gotta keep busy, you know!"`);
+
+    this.add_interaction("Love", `${this.vname}: "Love doesn't exist! Lust is all there is. Stop chasing after fairytales and come enjoy the pleasures of the real world!"`);
+    this.add_interaction("Love", `${this.vname}: "Why set boundaries and rules about love? Love is everywhere. I love everyone. I don't want to limit myself because of some silly social rules. There's plenty of good feelings to go around for everyone!"`);
+    this.add_interaction("Love", `${this.vname}: "Stop blabbering on about fairytales, honey. Let me show you what love is."`);
+
+    this.add_interaction("Leisure", `${this.vname}: "Wanna gamble? Cards? Dice? Animal fights? I've got them all!"`);
+    this.add_interaction("Leisure", `${this.vname}: "I'm in way too bad shape to take part in sports, but I do like to watch. Those athletes have very... inspiring bodies."`);
+    this.add_interaction("Leisure", `${this.vname}: "There's no sport quite like bedroom sport, if you know what I mean."`);
+
+    this.add_interaction("Hospitality", `${this.vname}: "Come into my home! Come into my bed! My doors are wide open."`);
+    this.add_interaction("Hospitality", `${this.vname}: "The notion of property in this town is pretty loose. Everyone comes and go anywhere as they please. We just follow the vibe of the party!"`);
+    this.add_interaction("Hospitality", `${this.vname}: "I'd invite you to my place, but I forgot which one it is. I did leave it open, though. Come back when I've sobered up, I'll show you!"`);
+
+    this.add_interaction("Past", `${this.vname}: "Past? What past? There's no past! There's no future! Come and have some fun!"`);
+    this.add_interaction("Past", `${this.vname}: "As far as I can remember, this city as always been this awesome! I can't remember a time where there was no party!"`);
+    this.add_interaction("Past", `${this.vname}: "The past? After all I've drunk, I can barely even remember yesterday!"`);
+
+    this.add_interaction("News", `${this.vname}: "There's going to be a huge party in the village tonight! Come and join if you can!"`);
+    this.add_interaction("News", `${this.vname}: "Things that have happened lately? Well I've made quite a little sum betting on horse races!"`);
+    this.add_interaction("News", `${this.vname}: "The biggest news everyone is talking about is the new line of outfits that are going to be all the rage in social gatherings! We all need to be ahead of the trend!"`);
   }
 
 
