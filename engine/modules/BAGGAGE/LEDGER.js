@@ -33,12 +33,14 @@ const LEDGER = {
     var gen = new Generator(seed);
     LEDGER.load_ledger();
     var name = gen.pick(Object.keys(LEDGER._ledger));
-    var villager = LEDGER.get_throwaway_villager(seed);
     if (name) {
       villager = LEDGER._ledger[name];
       villager.name = name;
+      return villager;
+    } else {
+      // make new
+      return LEDGER.get_throwaway_villager(seed);
     }
-    return villager;
   },
 
   load_ledger: function() {
@@ -125,7 +127,6 @@ const LEDGER = {
 
 
   clear_level: function(){
-
     for(var obj of CURRENTLEVEL.objects.get_all_objects()){
       if(obj && obj.record_death){
         obj.record_death();
