@@ -284,6 +284,11 @@ const IO = {
         y = event.changedTouches[0].clientY;
       }
 
+      if(SCREEN.is_mobile() && IO.interface._can_open_escape_menu() && x < 80 && y < 80){
+        INTERFACE.display.escape_menu();
+        return;
+      }
+
       event.preventDefault();
       var destination_X = window.pageXOffset + x;
       var destination_Y = window.pageYOffset + y;
