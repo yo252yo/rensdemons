@@ -41,8 +41,8 @@ const THAUMATURGY = {
       if (typeof PARTYMEMBERS[i] == "function"){
         continue;
       }
-      if (i != PARTYMEMBERS.Ren){
-        PARTY.add(i);
+      if (PARTYMEMBERS[i] != PARTYMEMBERS.Ren){
+        PARTY.add(PARTYMEMBERS[i]);
       }
     }
   },
