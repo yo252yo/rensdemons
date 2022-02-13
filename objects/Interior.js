@@ -307,7 +307,6 @@ class B_Table_Set extends LevelObject {
     var visual = new Rectangle(x,y, 0, 0);
     super(visual, x, y);
     var t = new B_Table(x+30, y-25);
-    console.log(t);
     if (g.get() < 0.5) {
       var right = new B_Stool(x + 30 + 35, y - 25 - 5);
     }
