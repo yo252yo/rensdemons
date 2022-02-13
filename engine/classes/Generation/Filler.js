@@ -338,4 +338,11 @@ class EventFiller extends Filler {
         eval (`new ${constructorName}(${x}, ${y}, "${color}", ${size});`);
       }, weight);
   }
+
+  add_shared_events(weight){
+    var w = (weight || 1) / LANGUAGE_EVENTS.shared.length;
+    for (var t of LANGUAGE_EVENTS.shared){
+      this.text(t, w);
+    }
+  }
 }

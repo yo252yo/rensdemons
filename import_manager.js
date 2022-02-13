@@ -158,6 +158,7 @@ new Module("LANGUAGE/BATTLE");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("BAGGAGE/SHOP");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("BAGGAGE/TRAINER");
 new Module("LANGUAGE/BESTIARY");
+new Module("LANGUAGE/EVENTS");
 
 new Module("BAGGAGE/PARTY");
   IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
