@@ -164,29 +164,31 @@ const INTERFACE = {
         TEXTMENU_EMPTYROW,
         {"text": "Back to game", "effect": "##CLOSE"},
       ];
-
-      if (THAUMATURGY.is_visible() && SCREEN.is_mobile()){
-        options.push({"text": "<i style='opacity:0.2;'>console.js</i>", "effect": function(){ BATTLE.api.make("_060/_screen"); }});
-      }
-
       new CenteredTextMenu("", options);
     },
 
 
 
     options_menu: function() {
+
+      var options = [
+        {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); }, "keep_open": true},
+        TEXTMENU_EMPTYROW,
+        {"text": "Back", "effect": "##BACK"}
+      ];
+
+      if (THAUMATURGY.is_visible() && SCREEN.is_mobile()){
+        options.push(TEXTMENU_EMPTYROW);
+        options.push({"text": "<i style='opacity:0.2;'>console.js</i>", "effect": function(){ BATTLE.api.make("_060/_screen"); }});
+      }
+
       new CenteredTextMenu(`
                    <h3>Audio</h3>
                    <b>Music</b>: <input type="range" min="1" max="100" value="` + (SETTINGS.get('volume_music') * 100) + `" class="slider" id="myRange1" onInput="AUDIO.set_volume('volume_music', this.value/100);"><br />
                    <b>Effects</b>: <input type="range" min="1" max="100" value="` + (SETTINGS.get('volume_sfx') * 100) + `" class="slider" id="myRange2" onInput="AUDIO.set_volume('volume_sfx', this.value/100);">
                    <h3>Battles</h3>
                    <b>Challenge</b>: <input type="range" min="1" max="100" value="` + (SETTINGS.get('challenge_level') * 100) + `" class="slider" id="myRange3" onInput="SETTINGS.set('challenge_level', this.value/100);"><br />
-                   `,
-                    [
-                      {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); }, "keep_open": true},
-                      TEXTMENU_EMPTYROW,
-                      {"text": "Back", "effect": "##BACK"}
-                   ]);
+                   `, options);
     },
 
     credits_menu: function() {
