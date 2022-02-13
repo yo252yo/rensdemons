@@ -30,7 +30,7 @@ class SE_event extends S_event {
 
   real_interaction() {
     var self = this;
-    var array = this.text;
+    var array =  Array.from(this.text);
     if (!Array.isArray(this.text)){
       array = [this.text];
     }
