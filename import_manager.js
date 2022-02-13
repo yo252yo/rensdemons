@@ -158,10 +158,10 @@ new Module("LANGUAGE/BATTLE");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("BAGGAGE/SHOP");
   IMPORTS.modules['BAGGAGE/INVENTORY'].child_module("BAGGAGE/TRAINER");
 new Module("LANGUAGE/BESTIARY");
-new Module("LANGUAGE/EVENTS");
 
 new Module("BAGGAGE/PARTY");
   IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/PARTY");
+  IMPORTS.modules['BAGGAGE/PARTY'].child_module("LANGUAGE/EVENTS");
   IMPORTS.modules['BAGGAGE/PARTY'].child_module("UTILS/STRING");
     IMPORTS.modules['UTILS/STRING'].child_class("Generation/Markov");
       IMPORTS.classes['Generation/Markov'].child_class("Generation/MarkovModels");

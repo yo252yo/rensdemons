@@ -1,7 +1,7 @@
 # WIP
 
 
-aerith shared EVENTS
+SHARED EVENTS
 
 # MORE HEAVEN  ----------------------------------------------------
 
