@@ -446,7 +446,7 @@ events.text(`You ponder at tiny tunnels branching out from your path. They must 
 events.text(`The atmosphere around you is thick with mineral dust. Every breath you take is an effort, and every time you speak you feel like your mouth is full of sand.`, 0.5);
 events.text(`You find a trail of pink goo that a slime left in its wake. Intrigued, you follow it, but it goes straight into the wall.`, 0.5);
 events.text(`You find yourself facing a giant purple slime. You start to get ready for battle, but to your surprise the monster recoils and collapses on the ground. You see its mass diminish, not understanding fully what is happening. By the time you figure out that the ground is soaking up the slime, nothing is left but a vaguely colorful puddle.`, 0.5);
-
+events.add_shared_events(0.4);
 
 events.set_tries(1, 1 + slimepart);
 for(var f of hallways) {

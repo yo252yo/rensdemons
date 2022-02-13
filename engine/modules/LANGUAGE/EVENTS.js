@@ -1,7 +1,18 @@
 LANGUAGE_EVENTS = {
-  shared: [
+  _without_bf: [
     [`test`, `reply`],
   ],
+  _with_bf: [
+    [`test`, `reply`],
+  ],
+
+  get_shared: function(after_bestfriend_death){
+    var r = LANGUAGE_EVENTS._without_bf;
+    if(!after_bestfriend_death){
+      r.concat(LANGUAGE_EVENTS._with_bf)
+    }
+    return r;
+  },
 }
 /*
 

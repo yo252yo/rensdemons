@@ -78,6 +78,7 @@ FEvents.text(`You can distinguish in the distance what is probably $$demon_lord$
 FEvents.text(`You gaze at the sky of this other universe. Unlike yours, it's perfectly clear: no star or cloud to be seen. It's simply radiating an overwhelming flat light that slowly but surely burns up deeper and deeper into your skin.`, 0.9);
 FEvents.text(`You take cover between the odd trees when a swarm of flying demons approaches in your direction. You cannot face a whole army by yourself. You wait patiently for them to go away, praying that they have not noticed you.`, 0.9);
 FEvents.text(`You find what appears clearly to be human bones half burrowed in the dry ground. Did an unfortunate adventurer loose its way? Was there another Promised Child in the past? Or did a demon simply take its food back home?`, 0.9);
+FEvents.add_shared_events(1, true);
 
 FEvents.set_tries(100, 150);
 FEvents.fill_floor_by_retry();

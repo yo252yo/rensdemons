@@ -87,6 +87,7 @@ events.text(`The water is very cold. It was hard to bear at first, but you're fi
 events.text(`There is a lot of fishing swimming all around you. Most of them are even above you, like weird birds, since you're at the very bottom of the lake. But you cannot look at any too closely, since they seem to run away from you every time you approach.`);
 events.text(`You find a huge rock that stands out suspiciously. It triggers your curiosity, so you try to push it to see if it covers anything, but despite all your efforts it won't budge. It's most likely a false trail...`);
 events.text(`You can be underwater thanks to the potion, but it doesn't prevent your clothes from being damp. You make progress really slowly. The water resistance is significantly stronger than air, which slows every of your motion. But it's ok, you'll just take your time.`);
+events.add_shared_events(0.8);
 
 events.byConstructor("EB_Seashell", 2);
 events.byConstructor("EB_Skeleton", 1);

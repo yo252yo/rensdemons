@@ -120,6 +120,7 @@ events.text('You do not see many creatures around you in these woods, but you do
 events.text('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');
 events.text('Fruity aromas reach your nostrils, but you have a suspicion that they might be a treacherous lure from some exotic plant to push you into a trap. You brace yourself and continue on.');
 events.text('The leaves and branches are so heavy here that you have to actively break them to make a path. Fortunately, it eases out before long, and you can go back to your usual velocity.');
+events.add_shared_events(0.8);
 
 for(var f of hallways) {
   events.set_zone_from_floor(f);

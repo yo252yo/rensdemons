@@ -339,9 +339,10 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  add_shared_events(weight){
-    var w = (weight || 1) / LANGUAGE_EVENTS.shared.length;
-    for (var t of LANGUAGE_EVENTS.shared){
+  add_shared_events(weight, after_bestfriend_death) {
+    var e = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
+    var w = (weight || 1) / e.length;
+    for (var t of e){
       this.text(t, w);
     }
   }
