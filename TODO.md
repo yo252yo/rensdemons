@@ -3,8 +3,6 @@
 
 SHARED EVENTS
 
-the way shared events are set up, they may overwrite battles since their composition changes as party comp changes
-
 
 # TROPES  ----------------------------------------------------
 - i expect more at the end of maou fight cause important enemies usually have stages

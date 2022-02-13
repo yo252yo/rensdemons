@@ -47,6 +47,16 @@ class SE_event extends S_event {
   }
 }
 
+class SE_shared_event extends SE_event {
+  constructor(x, y, seed, after_bestfriend_death, size, color) {
+
+    var possibilities = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
+    var gen = new Generator(seed);
+    var text = gen.pick(possibilities);
+
+    super(x, y, text, size, color);
+  }
+}
 
 class SE_event_loot extends SE_event {
 

@@ -340,10 +340,10 @@ class EventFiller extends Filler {
   }
 
   add_shared_events(weight, after_bestfriend_death) {
-    var e = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
-    var w = (weight || 1) / e.length;
-    for (var t of e){
-      this.text(t, w);
-    }
+    var size = this.resize_event;
+    var color = this.recolor_event;
+    this.add_constructor(function(x,y,seed){
+        new SE_shared_event(x, y, seed, after_bestfriend_death, size, color);
+      }, weight);
   }
 }
