@@ -25,6 +25,7 @@ var attack = {
 };
 
 BATTLE.monster_actions.add_textual("$$WiseOld$ hits you with a staff.", attack);
+BATTLE.monster_actions.add_textual(`$$WiseOld$: "Insanity is doing the same thing over and over again and expecting different results."`, attack);
 
 
 // ===================

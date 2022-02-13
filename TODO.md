@@ -13,11 +13,8 @@ SHARED EVENTS
 - invisible walls dialog at the end of the world
 - self awareness of weird hitboxes like church
 - review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
-- UpbeatDojikko: you have the power to communicate with another world
-- UpbeatDojikko:  I cN see your future you'll kill the bosses
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
-- wiseold: “Insanity is doing the same thing and expecting different results”
 - add death flag in hells maw before aetith death
 
 

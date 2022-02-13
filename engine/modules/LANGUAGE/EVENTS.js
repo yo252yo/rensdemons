@@ -31,10 +31,30 @@ LANGUAGE_EVENTS = {
             `...`,
             `...`
           ],
+          [
+            `...`,
+            `...`
+          ],
+          [
+            `...`,
+            `...`
+          ],
+          [
+            `...`,
+            `...`
+          ],
+          [
+            `...`,
+            `...`
+          ]
         ];
 
       case PARTYMEMBERS.PreciousChild:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -44,13 +64,27 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.UpbeatDojikko:
         return [
           [
-            `...`,
-            `...`
+            `$$UpbeatDojikko$: "I have been observing you for a while. I think you have the same power as I do, you can communicate with another world."`,
+            `$$Ren$: "You can do that?"`,
+            `$$UpbeatDojikko$: "Yes, I am atuned with the world of the dead. But I think your case is different. I've asked the specters and they do not recall talking to you. Who do you communicate with?"`,
+            `$$Ren$: "Does the Goddess count? Maybe that's her."`,
+            `$$UpbeatDojikko$: "Maybe."`,
+          ],
+          [
+            `$$Ren$: "Hey, $$UpbeatDojikko$, you can do divination, right? Can you see anything in my future? Maybe it could help..."`,
+            `$$UpbeatDojikko$: "Let me see..."`,
+            `$$UpbeatDojikko$ seizes her crystal ball, incense and tarot deck. She isolates herself for a while, then comes back with a smile on her face.`,
+            `$$UpbeatDojikko$: "I have seen your future, and it is promising. You will kill $$demon_lord$ and every monster that stands in your way. You will be successful in your quest!"`,
+            `$$Ren$: "That's good to know! Although I'm not sure I trust your methods yet..."`,
           ]
         ];
 
       case PARTYMEMBERS.StreetSmart:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -62,11 +96,19 @@ LANGUAGE_EVENTS = {
           [
             `...`,
             `...`
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
       case PARTYMEMBERS.TraitorFisher:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -78,11 +120,19 @@ LANGUAGE_EVENTS = {
           [
             `...`,
             `...`
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
       case PARTYMEMBERS.GeniusProdigy:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -94,11 +144,19 @@ LANGUAGE_EVENTS = {
           [
             `...`,
             `...`
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
       case PARTYMEMBERS.DisguisedPrincess:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -110,6 +168,10 @@ LANGUAGE_EVENTS = {
           [
             `...`,
             `...`
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
@@ -118,11 +180,19 @@ LANGUAGE_EVENTS = {
           [
             `...`,
             `...`
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
       case PARTYMEMBERS.RetiredProtector:
         return [
+          [
+            `...`,
+            `...`
+          ],
           [
             `...`,
             `...`
@@ -136,6 +206,10 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "Yes, pretty much anything can fit in my bags! It's always been that way. A kind of blessing from the Goddess!"`,
             `$$SnobRich$: "That's quite a useful talent to have in business. When you have a chance, perhaps we should negociate terms for your employment as my courrier..."`,
             `$$Ren$: "No, thanks. I have no interest in becoming a mule."`,
+          ],
+          [
+            `...`,
+            `...`
           ]
         ];
 
