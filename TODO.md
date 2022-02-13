@@ -3,6 +3,26 @@
 
 SHARED EVENTS
 
+the way shared events are set up, they may overwrite battles since their composition changes as party comp changes
+
+
+# TROPES  ----------------------------------------------------
+- i expect more at the end of maou fight cause important enemies usually have stages
+- Whale: Fights you're supposed to lose
+- a casino in vegas (and lootboxes) > the rng was helpful/not
+- when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
+- hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
+- invisible walls dialog at the end of the world
+- self awareness of weird hitboxes like church
+- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
+- UpbeatDojikko: you have the power to communicate with another world
+- UpbeatDojikko:  I cN see your future you'll kill the bosses
+- an old lady arrives, ofc she wants to help and gives you crap
+- a flashback that you know you survived
+- wiseold: “Insanity is doing the same thing and expecting different results”
+- add death flag in hells maw before aetith death
+
+
 # MORE HEAVEN  ----------------------------------------------------
 
 - proofread goddess and mirror
@@ -31,22 +51,6 @@ http://store.steampowered.com/explore/random/
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 
 
-# TROPES  ----------------------------------------------------
-- add comment about how anything can fit in my bags
-- i expect more at the end of maou fight cause important enemies usually have stages
-- Whale: Fights you're supposed to lose
-- a casino in vegas (and lootboxes) > the rng was helpful/not
-- when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
-- hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
-- invisible walls dialog at the end of the world
-- self awareness of weird hitboxes like church
-- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
-- UpbeatDojikko: you have the power to communicate with another world
-- UpbeatDojikko:  I cN see your future you'll kill the bosses
-- an old lady arrives, ofc she wants to help and gives you crap
-- a flashback that you know you survived
-- wiseold: “Insanity is doing the same thing and expecting different results”
-- add death flag in hells maw before aetith death
 
 
 # BUGFIXES  ----------------------------------------------------

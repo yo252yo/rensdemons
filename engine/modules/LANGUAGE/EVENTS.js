@@ -132,8 +132,10 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.SnobRich:
         return [
           [
-            `...`,
-            `...`
+            `$$SnobRich$: "You seem to amass quite a lot of items in your journey. Yet, I never see you struggle with carrying them around."`,
+            `$$Ren$: "Yes, pretty much anything can fit in my bags! It's always been that way. A kind of blessing from the Goddess!"`,
+            `$$SnobRich$: "That's quite a useful talent to have in business. When you have a chance, perhaps we should negociate terms for your employment as my courrier..."`,
+            `$$Ren$: "No, thanks. I have no interest in becoming a mule."`,
           ]
         ];
 
