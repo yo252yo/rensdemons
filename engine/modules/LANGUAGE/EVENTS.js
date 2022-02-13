@@ -11,9 +11,6 @@ LANGUAGE_EVENTS = {
     /*
 
     # AERITH EVENTS  ----------------------------------------------------
-    >> should these be a part of a pool of metaevents that can happen anywhere? should they include conversations with other characters???
-    >> put events in their own language file?
-    - event from aerith: Don't you think it's weird how we always find what we need on our way
     - event from aerith: isnt it weird that merchants buy all your shit
     - event from aerith: do we not need breaks? no sleep or toilet
     - event from aerith: how do you know youre immortal
@@ -28,12 +25,17 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.BestFriend:
         return [
           [
-            `...`,
-            `...`
+            `$$BestFriend$$: "Isn't it weird that we always find what we need on our way?"`,
+            `$$Ren$: "It's because the Goddess guides our steps!"`,
+            `$$BestFriend$$: "Sure, there's that. But it feels like every time we face an obstacle, the solution is somewhere nearby. That's not really a matter of what we do. We stumble onto things more than we succeed at finding them."`,
+            `$$Ren$: "The Goddess has many powers. She pretty much rules the world. I think She puts things where She knows we'll need them."`,
+            `$$BestFriend$$: "Don't you think that's odd? Why doesn't she give us what we need directly, then?"`,
+            `$$Ren$: "I don't know. She works in mysterious ways. She helps us so much, I don't want to question Her..."`,
+            `$$BestFriend$$: "Sounds like excuses to me..."`,
           ],
           [
-            `...`,
-            `...`
+            `$$BestFriend$$: ""`,
+            `$$Ren$: ""`,
           ],
           [
             `...`,
@@ -178,8 +180,8 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.TorturedSoul:
         return [
           [
-            `...`,
-            `...`
+            `$$TorturedSoul$: "Child, thou keep running into peril, yet thou endure every time. Thou miss every opportunity to bring your existence to an end, as if miraculously. Is this foolishness or bravery?"`,
+            `$$Ren$: "I don't really feel like I have a choice in the matter, you know. The Goddess always has my back, whether I want it or not."`,
           ],
           [
             `...`,
