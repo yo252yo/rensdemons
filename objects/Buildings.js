@@ -296,9 +296,7 @@ class S_Store extends S_LayeredBuilding {
 
 class S_Church extends S_LayeredBuilding {
   constructor(x, y, inside_lvl){
-    super("church", x, y, 166, 347,
-      "In every city, the temple is a beacon welcoming both devout villagers and wandering pilgrims."
-    );
+    super("church", x, y, 166, 347, "...");
     this.add_layer("details");
 
     new M_Herald(x+80, y-175);
@@ -309,6 +307,24 @@ class S_Church extends S_LayeredBuilding {
       });
     }
     this.adjust_hitbox(0,0,165,200);
+    this.describe = function() {
+
+      var dx = (CHARACTER.get().x + 15 - this.x);
+      var dy = (CHARACTER.get().y - this.y);
+
+      console.log(dx + "/" + dy);
+      if ((dx < 40 || dx > 125) && (dy > -100 || dy < -225)) {
+        var t = [RANDOM.pick([
+          "It appears to be still the temple. The building shape might be a cross, but its boundaries are clearly a simple rectangle.",
+          "Common sense may tell you that the temple looks like a cross, but in truth it seems that you can interact with a full rectangle around it.",
+          "The temple seems surrounded by a rectangle box that responds as the temple if you hit it."
+        ])];
+      } else {
+        var t = ["In every city, the temple is a beacon welcoming both devout villagers and wandering pilgrims."];
+      }
+      var churchtext = this.text_interaction(t);
+      churchtext();
+    }
   }
 }
 
