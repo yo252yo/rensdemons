@@ -88,6 +88,27 @@ class LevelObject {
       CURRENTLEVEL.system.html().appendChild(html_rectangle);
     }
 
+    draw_display_name() {
+      if(! this.display_name){
+        return;
+      }
+      var label = HTML.div.make({
+        w: 80,
+        h: 30,
+        z: 10000,
+        top:(this.visual_element.y + this.h_y - this.h_h) + 5,
+        left:this.visual_element.x + 5,// + this.h_x),
+      });
+      label.innerHTML = this.display_name();
+      label.style.fontWeight = "bold";
+      label.style.fontSize = "small";
+      label.style.border = "2px dotted black";
+      label.style.overflow = "hidden";
+      label.style.backgroundColor = "#FFFFFF55";
+
+      CURRENTLEVEL.system.html().appendChild(label);
+    }
+
     get_depth() {
       return this.visual_element.get_depth();
     }

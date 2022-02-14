@@ -62,6 +62,15 @@ const THAUMATURGY = {
     }
   },
 
+  display_events: function() {
+    var objects = CURRENTLEVEL.objects.get_all_objects();
+    for(var i in objects) {
+      if (objects[i] && objects[i].draw_display_name) {
+        objects[i].draw_display_name();
+      }
+    }
+  },
+
   change_colors: function() {
     PALETTE.factory.make_new();
   },
@@ -77,24 +86,25 @@ const THAUMATURGY = {
   menu: function() {
     new CenteredTextMenu("Miracles",
                   [
-                    {"text": "Run faster", "effect": THAUMATURGY.run_faster},
-                    {"text": (THAUMATURGY.teleport? "Dea" : "A") + "ctivate teleport", "effect": THAUMATURGY.toggle_teleport},
+                    {"text": "Increase body speed", "effect": THAUMATURGY.run_faster},
+                    {"text": (THAUMATURGY.teleport? "Dea" : "A") + "llow blink through space", "effect": THAUMATURGY.toggle_teleport},
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
                     {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
                     {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
-                    {"text": "Summon", "effect": THAUMATURGY.menu_summon},
+                    {"text": "Summon objects", "effect": THAUMATURGY.menu_summon},
                     TEXTMENU_EMPTYROW,
-                    {"text": "Change colors", "effect": THAUMATURGY.change_colors},
-                    {"text": "Glitch", "effect": THAUMATURGY.glitch},
-                    {"text": "Remove fog", "effect": THAUMATURGY.remove_fog},
-                    {"text": "Remove camera lock", "effect": THAUMATURGY.remove_camera_lock},
-                    {"text": "Force observer effect", "effect": THAUMATURGY.force_observer_effect},
+                    {"text": "Recolor reality", "effect": THAUMATURGY.change_colors},
+                    {"text": "Glitch fabric of space-time", "effect": THAUMATURGY.glitch},
+                    {"text": "Divinate event content", "effect": THAUMATURGY.display_events},
+                    {"text": "Use clairvoyance", "effect": THAUMATURGY.remove_fog},
+                    {"text": "Unlock astral projection", "effect": THAUMATURGY.remove_camera_lock},
+                    {"text": "Create absolute observer", "effect": THAUMATURGY.force_observer_effect},
                     TEXTMENU_EMPTYROW,
-                    {"text": "Get all items", "effect": THAUMATURGY.get_all_items},
-                    {"text": "Get all abilities", "effect": THAUMATURGY.get_all_abilities},
-                    {"text": "Get all party members", "effect": THAUMATURGY.get_all_party_members},
-                    {"text": "Boost martyrdom", "effect": THAUMATURGY.boost_martyrdom},
+                    {"text": "Summon all inventory items", "effect": THAUMATURGY.get_all_items},
+                    {"text": "Conjure all party members", "effect": THAUMATURGY.get_all_party_members},
+                    {"text": "Learn all abilities", "effect": THAUMATURGY.get_all_abilities},
+                    {"text": "Acquire all martyrdoms", "effect": THAUMATURGY.boost_martyrdom},
 
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSE"}

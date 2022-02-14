@@ -1,6 +1,13 @@
 # WIP
 
 
+
+Femme fatale confirms that everyone is always behaving the same way worse than her experience
+
+You can do anything you want , why are you still following the game
+
+
+
 SHARED EVENTS
 
 

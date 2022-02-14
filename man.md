@@ -104,6 +104,7 @@ With control of the code, you have godlike powers over the virtual world. You ca
 |                                               |                                   |
 | `THAUMATURGY.change_colors();`                | Change color scheme               |
 | `THAUMATURGY.glitch();`                       | Triggers a glitch                 |
+| `THAUMATURGY.display_events();`               | Displays the content of events    |
 | `THAUMATURGY.remove_fog();`                   | Remove the fog                    |
 | `THAUMATURGY.remove_camera_lock();`           | Allow browser scroll              |
 | `THAUMATURGY.force_observer_effect();`        | Berkeley's God observes the world |

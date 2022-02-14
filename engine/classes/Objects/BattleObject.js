@@ -71,6 +71,10 @@ class EventBattleObject extends BattleObject {
       super.interaction();
       this.destroy();
     }
+
+    display_name() {
+      return "Special: " + this.constructor.name;
+    }
 }
 
 class ItemBattleObject extends BattleObject {

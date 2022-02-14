@@ -88,4 +88,8 @@ class SBattle extends S_event {
   debug_name() {
     return super.debug_name() + "/" + this.battle;
   }
+
+  display_name() {
+    return "Battle: " + this.battle;
+  }
 }

@@ -8,6 +8,10 @@ class SB_rubble extends SBattle {
   real_interaction() {
     SPECIALBATTLES.rubble(this.battle, this.make_default_callback());
   }
+
+  display_name() {
+    return "Rubble event";
+  }
 }
 
 class SB_treasure extends SBattle {
@@ -18,6 +22,10 @@ class SB_treasure extends SBattle {
 
   real_interaction() {
     SPECIALBATTLES.treasure(this.battle, this.make_default_callback());
+  }
+
+  display_name() {
+    return "Treasure event";
   }
 }
 
@@ -45,6 +53,10 @@ class SE_event extends S_event {
       INVENTORY.increase(ITEM.XpToken);
     });
   }
+
+  display_name() {
+    return "Text event";
+  }
 }
 
 class SE_shared_event extends SE_event {
@@ -56,6 +68,10 @@ class SE_shared_event extends SE_event {
 
     super(x, y, text, size, color);
   }
+
+  display_name() {
+    return "Conversation event";
+  }
 }
 
 class SE_event_loot extends SE_event {
@@ -63,6 +79,10 @@ class SE_event_loot extends SE_event {
   constructor(x, y, text, size, color, extra) {
     super(x, y, text, size, color, extra);
     this.icon_type = "event_purse";
+  }
+
+  display_name() {
+    return "Loot";
   }
 }
 
@@ -93,11 +113,20 @@ class SE_groundItem extends S_event {
   debug_name() {
     return super.debug_name() + "/" + this.object;
   }
+
+  display_name() {
+    return "Loot: " + this.object;
+  }
 }
 
 class SE_small_groundItem extends SE_groundItem {
   constructor(x, y, object) {
     super(x, y, object, 1, 25);
+    this.object = object;
+  }
+
+  display_name() {
+    return "Loot: " + this.object;
   }
 }
 
