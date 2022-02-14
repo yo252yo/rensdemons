@@ -235,7 +235,7 @@ if(sirenspart < 4){
   events.text(`The water dulls the sounds around you. It makes it hard to be reactive to approaching danger. When a flesh eating fish charges you from behind, you only notice it way too late. Fortunately, $$BestFriend$ is ready and manages to counter the animal before you even get hurt.`);
   events.text(`The bottom of the lake is full of life. Huge swarms of fishes are swimming above your heads. Their colorful scale make them shine in the darkness like moving sparkly stars. The Sirens people must not be hungry.`);
   events.text(`The breathing potion makes it possible for you to remain underwater. You breathe in the liquid and it somehow sustains you without drowning. The feeling is weird, it's definitely more viscous and heavy than air, and it has a distinctly fishy taste.`);
-  events.add_shared_events(0.4);
+  events.add_conversations(0.4);
 
 if(sirenspart < 4){
   events.set_tries(50, 75);

@@ -151,7 +151,7 @@ events.text(`You inadvertently trigger a deadly trap: the tile you were just ste
 events.text(`This massive castle spells the end of your adventure. In your soul, the Goddess encourages you to climb higher and higher.`, 0.8);
 events.text(`You understand that this place is more than a symbol of power for $$demon_lord$. Based on the rooms you see around you, this is clearly a hatchery where demons are spawned. It's probably the very origin of the hordes that destroyed your world...`, 0.8);
 events.text(`You know that each step brings you closer to the final fight, and your subsequent victory. You keep pumping yourself up and preparing yourself for the final confrontation. You know that now is the time to prepare and summon all your strengths. There's only one possible outcome to all of this.`, 0.8);
-events.add_shared_events(0.2, true);
+events.add_conversations(0.2, true);
 
 events.set_tries(3, 7);
 events.fill_floor_by_retry();

@@ -339,7 +339,7 @@ class EventFiller extends Filler {
       }, weight);
   }
 
-  add_shared_events(weight, after_bestfriend_death) {
+  add_conversations(weight, after_bestfriend_death) {
     var size = this.resize_event;
     var color = this.recolor_event;
     this.add_constructor(function(x,y,seed){

@@ -157,7 +157,7 @@ FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be 
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
 FEasyEvents.text(`There is a vast area where the grass turns to bare charred ground. The armies of $$demon_lord$ are not only after humans, they seem determined to ransack all of $$world_name$ and destroy all life.`);
 FEasyEvents.text(`You see in the distance a battalion of the evil monsters brought to this world by $$demon_lord$. They seem way too numerous and organized for you to stand any chance against them. You opt to hide in nearby bushes and wait it out until they leave. Fortunately, they seem to not notice you.`);
-FEasyEvents.add_shared_events(2);
+FEasyEvents.add_conversations(2);
 
 FEasyEvents.set_zone_from_filler(FEasyS);
 FEasyEvents.set_tries(10, 25);
@@ -200,7 +200,7 @@ FHardEvents.text(`The sound of metal alerts you of the movement of enemy troops 
 FHardEvents.text(`You see a fellow human on the distance. As soon as he notices you, he immediately adopts a battle stance. In these wild lands, noone can be trusted. To demonstrate your good faith, you decide to keep the distance and move away from the poor fellow. It will probably be a while after you're out of sight for him to let his guard down.`);
 FHardEvents.text(`You arrive in a desolate area. The grass has been completely burnt to ashes. The ground is blackened and arid. Broken bones are shattered all over. You silently make your way through, trying not to imagine the horrible things that took place here.`);
 FHardEvents.text(`In the middle of a puddle of old blood that has long since dried up, you see a magnificent red flower blooming. It feels your heart with determination. There is hope and beauty in this world, and it can prevail over the destruction.`);
-FHardEvents.add_shared_events(1);
+FHardEvents.add_conversations(1);
 
 FHardEvents.set_zone_from_filler(FHardSW);
 FHardEvents.set_tries(8, 20);

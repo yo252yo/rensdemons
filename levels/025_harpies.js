@@ -170,7 +170,7 @@ events.text('The peaks in front of you seem to be piercing through the skies. Yo
 events.text('You find a few bones that belong to an adventurer less lucky than you. Were they part of your distant ancestors who built a shelter here? Or a more recent wanderer trying to seize the treasures of the past?');
 events.byConstructor("EB_Pebbles", 2);
 events.byConstructor("EB_Skeleton", 1);
-events.add_shared_events(0.8);
+events.add_conversations(0.8);
 
 events.set_zone(1250,2400,1350,1300);
 events.set_tries(50, 100);
