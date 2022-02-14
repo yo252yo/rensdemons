@@ -107,14 +107,14 @@ const THAUMATURGY = {
                     {"text": "Acquire all martyrdoms", "effect": THAUMATURGY.boost_martyrdom},
 
                     TEXTMENU_EMPTYROW,
-                    {"text": "Back to game", "effect": "##CLOSE"}
+                    {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
                  ]);
   },
 
   menu_fast_travel: function(){
     var menu_options =
     [
-      {"text": "Nowhere", "effect": "##CLOSE"},
+      {"text": "Nowhere", "effect": "##CLOSEWITHFOLLOW"},
       TEXTMENU_EMPTYROW,
     ];
 
@@ -260,7 +260,7 @@ const THAUMATURGY = {
         ];
         break;
       default:
-        menu_options.push({"text": "Back to game", "effect": "##CLOSE"});
+        menu_options.push({"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"});
         break;
     }
 
@@ -286,7 +286,7 @@ const THAUMATURGY = {
                   {"text": "Decor", "effect": function() { THAUMATURGY.menu_summon_sub("Decor"); }},
                   {"text": "Special", "effect": function() { THAUMATURGY.menu_summon_sub("Special"); }},
                   TEXTMENU_EMPTYROW,
-                  {"text": "Nothing", "effect": "##CLOSE"}
+                  {"text": "Nothing", "effect": "##CLOSEWITHFOLLOW"}
                ]);
   },
 

@@ -93,7 +93,7 @@ const INTERFACE = {
 
       battles_options.push(TEXTMENU_EMPTYROW);
       battles_options.push({"text": "Back to experiences", "effect": "##BACK"});
-      battles_options.push({"text": "Back to game", "effect": "##CLOSE"});
+      battles_options.push({"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"});
 
       new CenteredTextMenu(`<b>${INTERFACE.display._battle_type_title(category)}</b>`, battles_options);
     },
@@ -129,7 +129,7 @@ const INTERFACE = {
 
 
       battles_options.push(TEXTMENU_EMPTYROW);
-      battles_options.push({"text": "Back to game", "effect": "##CLOSE"});
+      battles_options.push({"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"});
 
       new CenteredTextMenu(`<b>${DICTIONARY.get(PARTYMEMBERS.Ren)}</b> - level ` + BATTLETREE.score.level() + ` (` + INVENTORY.count(ITEM.XpToken) + ` xp gathered)`,
         battles_options);
@@ -162,7 +162,7 @@ const INTERFACE = {
         {"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }},
         {"text": "Back to title", "effect": function(){ CURRENTLEVEL.setup("titlescreen"); }},
         TEXTMENU_EMPTYROW,
-        {"text": "Back to game", "effect": "##CLOSE"},
+        {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"},
       ];
       new CenteredTextMenu("", options);
     },

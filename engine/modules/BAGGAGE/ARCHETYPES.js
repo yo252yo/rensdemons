@@ -79,7 +79,7 @@ const ARCHETYPES = {
                   [
                    {"text": "Previous", "effect": "##BACK"},
                    TEXTMENU_EMPTYROW,
-                   {"text": "Back to game", "effect": "##CLOSE"}
+                   {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
                  ]);
   },
 

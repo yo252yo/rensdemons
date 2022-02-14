@@ -87,7 +87,7 @@ const ABILITIES = {
                     TEXTMENU_EMPTYROW,
                     ARCHETYPES.ability_list_item(),
                     TEXTMENU_EMPTYROW,
-                    {"text": "Back to game", "effect": "##CLOSE"}
+                    {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
                  ]);
   },
 

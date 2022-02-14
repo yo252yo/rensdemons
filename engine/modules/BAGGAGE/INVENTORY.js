@@ -144,7 +144,7 @@ const INVENTORY = {
                     ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Alchemy),
                     ARCHETYPES.inventory_list_item(ITEMS_ARCHETYPES_NAMES.Artifact),
                     TEXTMENU_EMPTYROW,
-                    {"text": "Back to game", "effect": "##CLOSE"}
+                    {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
                  ]);
   },
 

@@ -33,6 +33,47 @@ const _EXECUTOR = new MenuChoiceExecutor();
 var TEXTMENU_EMPTYROW = {"text": " ", "effect": function(){}, "keep_open": true};
 
 class TextMenu extends TextElement {
+
+    static followup() {
+      if(!IO.interface._can_open_escape_menu() || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
+        return;
+      }
+      TextBannerSequence.make(RANDOM.pick([
+        [
+          `$$BestFriend$: "$$Ren$? Are you okay?"`,
+          `$$Ren$: "Yes, why?"`,
+          `$$BestFriend$: "Well you were just standing there without moving or doing anything for a while..."`,
+          `$$Ren$: "Yeah sorry I just spaced out..."`,
+        ],
+        [
+          `$$BestFriend$: "What's wrong?"`,
+          `$$Ren$: "What do you mean?"`,
+          `$$BestFriend$: "You stopped moving for a while. I got worried, it seemed almost like you stopped breathing."`,
+          `$$Ren$: "Don't worry, I was just checking out stuff."`,
+          `$$BestFriend$: "Checking out... stuff?"`,
+          `$$Ren$: "Yeah, I was more or less talking to the Goddess. Nevermind, let's just go!"`,
+        ],
+        [
+          `$$BestFriend$: "$$Ren$? $$Ren$?!"`,
+          `$$Ren$: "What?"`,
+          `$$BestFriend$: "You were not responding before. It's like you spaced out pretty hard."`,
+          `$$Ren$: "Yeah, sorry, I was... hum... thinking about things."`,
+          `$$BestFriend$: "Oh."`,
+          `$$Ren$: "Let's go!"`,
+          `$$BestFriend$: "Are you sure you're fit to go? It's not the first time it happens! I usually don't say anything..."`,
+          `$$Ren$: "Yes, it was nothing."`,
+        ],
+        [
+          `$$BestFriend$: "Are you done?"`,
+          `$$Ren$: "What?"`,
+          `$$BestFriend$: "You got another one of those weird fits where you stop moving and like... talk to the Goddess in your head or whatever it is you do."`,
+          `$$Ren$: "Oh, yeah, sorry. I didn't know you could see that..."`,
+          `$$BestFriend$: "How could I not? It's pretty weird for you to stop all of a sudden..."`,
+          `$$Ren$: "Anyway, I'm done now. Thanks for waiting."`,
+        ],
+      ]));
+    }
+
     constructor(title, options, x, y, w, h, padding) {
         super(x,y, w, h, padding);
 
@@ -112,10 +153,14 @@ class TextMenu extends TextElement {
       return selected_element;
     }
 
-    close() {
+    close(with_follow) {
       this.in_destruction = true;
       this.destroy();
       setTimeout(function() { IO.control.cede(); }, 500);
+
+      if (with_follow && Math.random() < 0.05){
+        setTimeout(function() { TextMenu.followup(); }, 700);
+      }
     }
 
     back() {
@@ -157,8 +202,8 @@ class TextMenu extends TextElement {
       var menu = this;
       AUDIO.effect.choice();
 
-      if(menu.options[choice]["effect"] == "##CLOSE"){
-        f = function() { menu.close(); };
+      if(menu.options[choice]["effect"].startsWith("##CLOSE")){
+        f = function() { menu.close(menu.options[choice]["effect"].endsWith("FOLLOW")); };
       } else if(menu.options[choice]["effect"] == "##BACK"){
         f = function() { menu.back(); };
       } else {
@@ -202,8 +247,8 @@ class TextMenu extends TextElement {
         return;
       }
       for(var i in this.options) {
-        if (this.options[i]["effect"] == "##CLOSE"){
-          this.close();
+        if (this.options[i]["effect"].startsWith("##CLOSE")){
+          this.close(this.options[i]["effect"].endsWith("FOLLOW"));
           return;
         }
       }

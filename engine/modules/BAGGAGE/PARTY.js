@@ -162,7 +162,7 @@ const PARTY = {
                      TEXTMENU_EMPTYROW,
                      {"text": "Back to party", "effect": "##BACK"},
                      TEXTMENU_EMPTYROW,
-                     {"text": "Back to game", "effect": "##CLOSE"}
+                     {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
                    ]);
 
        var d = document.getElementById('character_portait_slot');
@@ -186,7 +186,7 @@ const PARTY = {
       }
 
       options.push(TEXTMENU_EMPTYROW);
-      options.push({"text": "Back to game", "effect": "##CLOSE"});
+      options.push({"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"});
       new CenteredTextMenu("Current party", options);
     },
   },
