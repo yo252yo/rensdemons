@@ -6,7 +6,6 @@ SHARED EVENTS
 
 # TROPES  ----------------------------------------------------
 - i expect more at the end of maou fight cause important enemies usually have stages
-- Whale: Fights you're supposed to lose
 - when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
 - hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
 - an old lady arrives, ofc she wants to help and gives you crap
