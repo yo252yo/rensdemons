@@ -1,23 +1,23 @@
 LANGUAGE_EVENTS = {
-  _without_bf: [
+  _all_alone: [
     [
-      `...`,
-      `...`
+      `You decide to make camp and have a little meal.`,
+      `You gaze at the fire, deep in thoughts. You really feel lonely without $$BestFriend$.`
+    ],
+    [
+      `You bitterly think about $$BestFriend$ and how much you miss the presence of your best friend besides you.`,
+      `Your life and your quest go on, but it feels like the world has lost its colors...`
     ],
   ],
 
   _party: function(member){
-  console.log(member);
     switch (member){
     /*
 
     # AERITH EVENTS  ----------------------------------------------------
-    - event from aerith: isnt it weird that merchants buy all your shit
     - event from aerith: how do you know youre immortal
-    - event from aerith: you have an intuition about where to go O.o
     - conversation about open worlds
     - event from aerith: i cant hurt you, no friendly fire
-          "I know where to go/how to progress/what to do": i.e. when you need to // game gives me clue for next location
     - event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
 
     */
@@ -41,8 +41,10 @@ LANGUAGE_EVENTS = {
             `$$BestFriend$: "I know that, but I can't help but worry about your body. Be careful, please!"`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$BestFriend$: "..."`,
+            `$$BestFriend$: "I'm so impressed, you always seem to know where we should go and what we should do."`,
+            `$$Ren$: "It's pretty easy. There's always some sort of clue. Most of the time we just follow the instructions of the last person we talked to, you know..."`,
+            `$$BestFriend$: "What if they didn't say anything? Or if we forgot? Or if we got lost?"`,
+            `$$Ren$: "Then it's time to pray the Goddess!"`,
           ],
           [
             `$$Ren$: "..."`,
@@ -227,8 +229,10 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "No, thanks. I have no interest in becoming a mule."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$SnobRich$: "..."`,
+            `$$SnobRich$: "Say, you've got a real talent for sales. How do you get the merchants to buy basically everything? They even purchase your weird goo and so on."`,
+            `$$Ren$: "Hmmm it's not really about the sale. It's more like I only pick up what I know they'll want..."`,
+            `$$SnobRich$: "Still, it's pretty weird to see them buy everything you offer. I suppose you have a really keen grasp on the market. Are you sure you don't want to be my business partner? We could make a fortune!"`,
+            `$$Ren$: "No, thanks."`,
           ]
         ];
 
@@ -239,7 +243,7 @@ LANGUAGE_EVENTS = {
   },
 
   get_shared: function(after_bestfriend_death){
-    var r = LANGUAGE_EVENTS._without_bf;
+    var r = [];
     if(!after_bestfriend_death){
       r = r.concat(LANGUAGE_EVENTS._party(PARTYMEMBERS.BestFriend));
     }
@@ -247,6 +251,9 @@ LANGUAGE_EVENTS = {
       if(PARTY.has_member(PARTYMEMBERS[member])){
         r = r.concat(LANGUAGE_EVENTS._party(PARTYMEMBERS[member]));
       }
+    }
+    if (r.length == 0){
+      r = LANGUAGE_EVENTS._all_alone;
     }
     return r;
   },
