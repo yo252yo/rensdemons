@@ -14,10 +14,7 @@ LANGUAGE_EVENTS = {
     switch (member){
     /*
 
-    # AERITH EVENTS  ----------------------------------------------------
-    - event from aerith: how do you know youre immortal
     - conversation about open worlds
-    - event from aerith: i cant hurt you, no friendly fire
     - event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
 
     */
@@ -45,6 +42,13 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "It's pretty easy. There's always some sort of clue. Most of the time we just follow the instructions of the last person we talked to, you know..."`,
             `$$BestFriend$: "What if they didn't say anything? Or if we forgot? Or if we got lost?"`,
             `$$Ren$: "Then it's time to pray the Goddess!"`,
+          ],
+          [
+            `$$BestFriend$: "I can't help but be scared. There's so many dangers all around... Maybe we should stop this quest. What if something were to happen to you?"`,
+            `$$Ren$: "Nothing bad will happen to me. One way or another, I'm bound to complete my mission."`,
+            `$$BestFriend$: "Still, how can you be so sure you won't die or get badly hurt?"`,
+            `$$Ren$: "Even if I'm hurt, I will recover. Don't worry. The Goddess is guaranteeing it. I'm the Promised Child, after all, am I not?"`,
+            `$$BestFriend$: "I hope you're right..."`,
           ],
           [
             `$$Ren$: "..."`,
@@ -119,12 +123,17 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.TraitorFisher:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$TraitorFisher$: "..."`,
+            `$$TraitorFisher$: "Why are you keeping me around? Aren't you afraid that I'll betray you?"`,
+            `$$Ren$: "Hmmm I'm pretty good at knowing where loyalties lie. I usually can rely on the people who join my party for life!"`,
+            `$$TraitorFisher$: "But I will betray you!"`,
+            `$$Ren$: "Oh, I know that fully well. But that doesn't mean you can't be useful in the meantime. Don't worry about me, I'm fully ready for your inevitable betrayal. When the time comes, I won't even bat a eye."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$TraitorFisher$: "..."`,
+            `$$Ren$: "So you're passionate about cooking?"`,
+            `$$TraitorFisher$: "Yes I am. It frustrates me a lot that we don't get any chance to cook or fish."`,
+            `$$Ren$: "I know! I was fully expecting to cook myself. Nowadays it's pretty standard for adventurers to fish and cook. It really feels like cooking should at least be an option."`,
+            `$$Ren$: "Though I guess, maybe it's a bit overdone? It seems that tons of adventurers forget about the meals they cook and don't even eat them."`,
+            `$$TraitorFisher$: "I'd consider that an insult. Maybe not cooking isn't that bad, if it avoids me that afront!"`,
           ]
         ];
 
@@ -140,8 +149,11 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "Well at least you have your priorities straight."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$SavageChild$: "..."`,
+            `$$SavageChild$: "$$Ren$..."`,
+            `$$Ren$: "You finally know my name!"`,
+            `$$SavageChild$: "$$SavageChild$ protect $$Ren$!"`,
+            `$$Ren$: "That's sweet! Thank you, $$SavageChild$!"`,
+            `$$SavageChild$: "Now meat, please!"`,
           ]
         ];
 
@@ -203,8 +215,11 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "I don't really feel like I have a choice in the matter, you know. The Goddess always has my back, whether I want it or not."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$TorturedSoul$: "..."`,
+            `$$TorturedSoul$: "Go forth! Make haste! I beg, do turn thine acursed blade against me!"`,
+            `$$Ren$: "I can't!"`,
+            `$$TorturedSoul$: "It is my deepest longing! I am in dire pain! Release me!"`,
+            `$$Ren$: "That's not the problem! There is no friendly fire in this universe. My weapons and spells litteraly cannot hurt you."`,
+            `$$TorturedSoul$: "Curses! Am I doomed to never escape from my unrelenting torment?"`,
           ]
         ];
 
