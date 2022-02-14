@@ -59,7 +59,7 @@ class SE_event extends S_event {
   }
 }
 
-class SE_shared_event extends SE_event {
+class SE_conversation extends SE_event {
   constructor(x, y, seed, after_bestfriend_death, size, color) {
 
     var possibilities = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
@@ -67,6 +67,7 @@ class SE_shared_event extends SE_event {
     var text = gen.pick(possibilities);
 
     super(x, y, text, size, color);
+    this.icon_type = "event_conversation";
   }
 
   display_name() {

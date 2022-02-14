@@ -343,7 +343,7 @@ class EventFiller extends Filler {
     var size = this.resize_event;
     var color = this.recolor_event;
     this.add_constructor(function(x,y,seed){
-        new SE_shared_event(x, y, seed, after_bestfriend_death, size, color);
+        new SE_conversation(x, y, seed, after_bestfriend_death, size, color);
       }, weight);
   }
 }
