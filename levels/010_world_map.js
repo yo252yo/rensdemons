@@ -14,7 +14,7 @@ var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("
 
 var h = 2550;
 var w = 2950;
-var f = new S_MapFloor(1050, 1000+h, w, h-50, 'obj_dark');
+var f = new S_BorderedMapFloor(1050, 1000+h, w, h-50, 'obj_dark');
 f.visual_element.html_rectangle.style.border = "1px dotted #FFFFFF22";
 
 var FMap = new Filler(gen.get(), 300, 200);

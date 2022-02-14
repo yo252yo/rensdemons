@@ -10,7 +10,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*23);
 // ===================
 var h = 1550;
 var w = 1950;
-var f = new S_MapFloor(1050, 1000+h, w, h-50, 'void');
+var f = new S_BorderedMapFloor(1050, 1000+h, w, h-50, 'void');
 
 f.visual_element.html_rectangle.style.border = "1px dotted #00000022";
 

@@ -171,6 +171,36 @@ class S_TownFloor extends S_Floor {
   }
 }
 
+class S_BorderedMapFloor extends S_MapFloor {
+  constructor(x, y, w, h, color) {
+    super(x, y, w, h, color);
+
+    var border = 50;
+    this.left_border = new S_AntiFloor(x-border, y, border, h, true);
+    this.right_border = new S_AntiFloor(x+w, y, border, h, true);
+    this.top_border = new S_AntiFloor(x, y-h, w, border, true);
+    this.bot_border = new S_AntiFloor(x, y+border, w, border, true);
+
+    var i = function() {
+      new TextBannerRandom([
+        "The world seems to stop abruptly. You cannot advance further.",
+        "You keep walking in the same direction, but the air blocks your motion in an unshakeable resistance, as if an invisible wall was blocking your way.",
+        "You cannot progress in that direction. An invisible force blocks all movement.",
+        "You expected the world to have the shape of a torus as a matter of fact, but it appears that it has well defined borders that you cannot cross. You'll never be able to figure out its true spatial configuration.",
+        "You have reached the end of the world. There is nothing but void behind this point.",
+        "The ground you're stepping on stops sharp. In front of you expands an infinite abyss of void. You're extremely curious to look down after this cliff, to see the layers of ground below your feet, but it appears that it's impossible to advance your head further than the ground.",
+        "The universe appears to stop there. Nothing but nothingness expands in front of your eyes. When you throw a rock towards this abyss, it bounces back at you.",
+        "It's like a wall, but invisible.",
+      ]);
+    }
+
+    this.left_border.interaction = i;
+    this.right_border.interaction = i;
+    this.top_border.interaction = i;
+    this.bot_border.interaction = i;
+
+  }
+}
 
 
 

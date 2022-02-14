@@ -9,9 +9,7 @@ SHARED EVENTS
 - Whale: Fights you're supposed to lose
 - when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
 - hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
-- invisible walls dialog at the end of the world
 - self awareness of weird hitboxes like church
-- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
 - add death flag in hells maw before aetith death
@@ -82,6 +80,8 @@ http://store.steampowered.com/explore/random/
 - spawn chara on exit bands, its safer
 See 051_pandemonium_room and 012_trees
 - A look for foreknowledge opportunities
+
+- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
 
 # SEND OUT FOR BETA  ----------------------------------------------------
 
