@@ -1,6 +1,5 @@
 # WIP
 
-Femme fatale confirms that everyone is always behaving the same way worse than her experience
 
 SHARED EVENTS
 
@@ -8,7 +7,6 @@ SHARED EVENTS
 # TROPES  ----------------------------------------------------
 - i expect more at the end of maou fight cause important enemies usually have stages
 - Whale: Fights you're supposed to lose
-- a casino in vegas (and lootboxes) > the rng was helpful/not
 - when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
 - hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
 - invisible walls dialog at the end of the world
@@ -18,6 +16,11 @@ SHARED EVENTS
 - a flashback that you know you survived
 - add death flag in hells maw before aetith death
 
+# CASINO ----------------------------------------------------
+- a casino in vegas (and lootboxes) > the rng was helpful/not
+- gambling as pseudorandom next to an altar
+- implemented as a special shop ?
+you ask them if theyre random or pseudorandom or deterministic << like wtf how would you even know in universe, "if i were to do the same action twice would it have the same outcome?"
 
 # MORE HEAVEN  ----------------------------------------------------
 
