@@ -1,12 +1,6 @@
 # WIP
 
-
-
 Femme fatale confirms that everyone is always behaving the same way worse than her experience
-
-You can do anything you want , why are you still following the game
-
-
 
 SHARED EVENTS
 
@@ -27,22 +21,28 @@ SHARED EVENTS
 
 # MORE HEAVEN  ----------------------------------------------------
 
-- proofread goddess and mirror
-- Explain that the console is like magic words that change the fabric of the universe
-- WHO makes you do it??
-- The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by    trapping them in truman show filter bubble), energy from running in the loop
 - add a link to the demo in heaven
-- the goddess SAVED your soul (save/save) as confirmation when you save
-- The cycle of replay with the promise of a true ending is precisely what the system exploits
 - random itch io / steam game
 https://itch.io/randomizer post ??
 http://store.steampowered.com/explore/random/
 
 
-# NEEDS THOUGHS  ----------------------------------------------------
+# PROOF GODDESS  ----------------------------------------------------
+
+- Explain that the console is like magic words that change the fabric of the universe
+- WHO makes you do it??
+- You can do anything you want , why are you still following the game
+- The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by    trapping them in truman show filter bubble), energy from running in the loop
+- the goddess SAVED your soul (save/save) as confirmation when you save
+- The cycle of replay with the promise of a true ending is precisely what the system exploits
+
+# PROOF MIRROR  ----------------------------------------------------
+
+# STATS DISPLAY  ----------------------------------------------------
 
 - Keep more stats and reuse the Stat of ren's desth
 >> In heaven a stats memorial mb written in a picture smthing a big swag
+>> use it in conversations??
 
 
 # BATTLE ENCOUNTERS  ----------------------------------------------------
@@ -54,7 +54,6 @@ http://store.steampowered.com/explore/random/
 
 
 
-
 # BUGFIXES  ----------------------------------------------------
 - test on edge, epsecially functions starting by _, mb the nested ones
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
@@ -63,7 +62,6 @@ http://store.steampowered.com/explore/random/
 - add rens parent sendoff/house before trial?
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
-- a suicide function?
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?

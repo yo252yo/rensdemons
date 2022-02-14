@@ -43,6 +43,8 @@ It is organized in modules (global singletons), here are a few example commands:
 |                                               |                                   |
 | `win();`                                      | Wipe Internal Negativity          |
 | `man();`                                      | Opens this page                   |
+| `suicide();`                                  | Kills yourself                    |
+|                                               |                                   |
 |                                               |                                   |
 | **INVENTORY**                                 |                                   |
 | `INVENTORY.increase(ITEM.Coin, 100);`         | Give yourself items               |

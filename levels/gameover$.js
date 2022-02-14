@@ -1,5 +1,10 @@
 AUDIO.music.interface.gameover();
 
+
+
+
+
+
 var ss0 = new StaticSprite("assets/screens/gameover_layer0.png", 'player', SCREEN.width(), SCREEN.height());
 var s0 = new LevelObject(ss0, 0, SCREEN.height());
 
@@ -77,7 +82,17 @@ var flavortext = RANDOM.pick(
   ["This is not how it ends.",
   "This is not how it's supposed to be.",
   "There's another way.",
-  "Your quest goes on."]);
+  "Your quest goes on.",
+  "Your story does not conclude here."]);
+
+
+var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
+if(s.length > 1 && s[1] == 'suicide'){
+  flavortext = RANDOM.pick(
+    ["You killed yourself. It is not what you should have done.",
+    "You're dead. What are you going to do now?",
+    "You are not supposed to end your life."]);
+}
 var te = new CenteredTextMenu("<i>"+flavortext+"</i><br />Reap the fruits of your misfortune in the Martyrdom menu.", options);
 
 if(!SCREEN.is_mobile()){

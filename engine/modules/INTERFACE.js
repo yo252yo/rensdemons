@@ -387,3 +387,7 @@ var win = function(){
     CURRENTLEVEL.setup("end@E");
   }
 }
+
+var suicide = function(){
+    CURRENTLEVEL.setup("gameover$@suicide");
+}

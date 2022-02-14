@@ -117,6 +117,7 @@ const MARTYRDOM = {
         })(i);
       }
       options.push({"text": "", "effect": function(){}, "keep_open": true});
+      options.push({"text": "Suicide", "effect": suicide});
       options.push({"text": "Don't pray now", "effect": "##CLOSE"});
       MARTYRDOM.menu.change(title, options);
       MARTYRDOM.menu.print_menu();
