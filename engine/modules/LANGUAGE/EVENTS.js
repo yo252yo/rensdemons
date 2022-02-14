@@ -13,10 +13,7 @@ LANGUAGE_EVENTS = {
   _party: function(member){
     switch (member){
     /*
-
     - conversation about open worlds
-    - event from aerith: i always pray before a risky event or when i sense the story might branch soon. You should save before risky event,  Save point before bosses
-
     */
 
       case PARTYMEMBERS.BestFriend:
@@ -199,8 +196,10 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.DumbMuscles:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$DumbMuscles$: "..."`,
+            `$$DumbMuscles$: "So mate, what are some good adventurer tips?"`,
+            `$$Ren$: "Hum... Pray frequently. Any time you feel a big battle coming, or maybe a big decision, or anything risky, really. Just go straight to an altar and pray there."`,
+            `$$DumbMuscles$: "Damn, I didn't know adventurers were so religious."`,
+            `$$Ren$: "Well, the Goddess is very important for adventurer. She guides and protects everyone, and adventurers are the ones who need it the most."`,
           ],
           [
             `$$Ren$: "..."`,
@@ -226,12 +225,18 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.RetiredProtector:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$RetiredProtector$: "..."`,
+            `$$RetiredProtector$: "It's incredible, the world has changed so much since I traveled last. It has more colors, more details..."`,
+            `$$Ren$: "Really?"`,
+            `$$RetiredProtector$: "Yes, you kids don't know how good you have it. Back in my days, adventurers had to spend days traveling between different places, trying out all kind of combinations of items in hope to find one that would work correctly..."`,
+            `$$Ren$: "There's still plenty of weirdness when it comes to what item works where, you know..."`,
+            `$$RetiredProtector$: "Sure, but nowadays you're more guided. We needed to do stuff on our own. It took a lot of patience, you know..."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$RetiredProtector$: "..."`,
+            `$$RetiredProtector$: "Been watching you fight for a while. You kids have it easy..."`,
+            `$$Ren$: "What do you mean?"`,
+            `$$RetiredProtector$: "All your hits land, all your enemies die so fast... There's no skill whatsoever in the way you fight. You don't know what adversity really is..."`,
+            `$$Ren$: "Is that... bad?"`,
+            `$$RetiredProtector$: "I suppose not, it bodes well for our quest. It does make me regret all the time and effort I wasted in my youth, though..."`,
           ]
         ];
 
