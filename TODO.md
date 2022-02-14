@@ -4,13 +4,10 @@
 SHARED EVENTS
 
 
-# TROPES  ----------------------------------------------------
-- i expect more at the end of maou fight cause important enemies usually have stages
+# TROPES need thinking ---------------------------------------------
 - when you open a menu, time stops and aerith says something when you're opening menus / matrix effect, you slow down the time when you think
-- hellsmaw: dont worry we're supposed to Encounter the big boss before youre ready, we're way too underlevel
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
-- add death flag in hells maw before aetith death
 
 # CASINO ----------------------------------------------------
 - a casino in vegas (and lootboxes) > the rng was helpful/not

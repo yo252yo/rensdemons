@@ -59,7 +59,9 @@ BATTLE.monster_actions.add_textual("$$demon_lieutenant$ snaps his fingers. Hundr
 
 BATTLE.operations.start([
   BESTIARY.intro("pandemonium/lieutenant"),
-  `$$demon_lieutenant$: "So you really think you can take me over by force?"`,
-  `$$Ren$: "Yes, the Goddess is with me!"`,
-  `$$demon_lieutenant$: "And where has she been the few hundred years? Anyway, you made your choice. It's time for you to accept the consequences..."`
+  `$$demon_lieutenant$: "So you really think you can take me over by brute force?"`,
+  `$$Ren$: "Yes, the Goddess is with me! I always succeed, eventually. Nothing can go wrong!"`,
+  `$$demon_lieutenant$ laughs out loud.`,
+  `$$demon_lieutenant$: "Child, this kind of declaration is like begging for trouble! You might as well sign your death warrant yourself."`,
+  `$$demon_lieutenant$: "Where has your precious Goddess been the few hundred years? Anyway, you made your choice. It's time for you to accept the consequences..."`
 ]);

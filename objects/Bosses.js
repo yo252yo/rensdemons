@@ -100,6 +100,7 @@ class S_Maou extends SimpleObject {
     var winn = function() {
       TextBannerSequence.make([
         `With a final prayer to the Goddess, you deliver the final blow to Her sworn enemy...`,
+        `You expected some sort of metamorphosis, some sort of new challenge. The final enemy could not be as mundane as the other ones. Yet, nothing comes. The demon lord slowly falls to the ground in a puddle of his own blood without showing any extra trick up his sleeve.`,
         `As he draws his last breath, you cannot help but be intrigued by his facial expression. He looks... relieved?`,
         `Something is not quite right...`,
       ], function(){
