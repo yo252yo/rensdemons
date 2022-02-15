@@ -202,7 +202,7 @@ class TextMenu extends TextElement {
       var menu = this;
       AUDIO.effect.choice();
 
-      if(menu.options[choice]["effect"] && menu.options[choice]["effect"].startsWith("##CLOSE")){
+      if(menu.options[choice]["effect"] && menu.options[choice]["effect"].startsWith && menu.options[choice]["effect"].startsWith("##CLOSE")){
         f = function() { menu.close(menu.options[choice]["effect"].endsWith("FOLLOW")); };
       } else if(menu.options[choice]["effect"] == "##BACK"){
         f = function() { menu.back(); };
@@ -247,7 +247,7 @@ class TextMenu extends TextElement {
         return;
       }
       for(var i in this.options) {
-        if (this.options[i]["effect"] && this.options[i]["effect"].startsWith("##CLOSE")){
+        if (this.options[i]["effect"] && this.options[i]["effect"].startsWith && this.options[i]["effect"].startsWith("##CLOSE")){
           this.close(this.options[i]["effect"].endsWith("FOLLOW"));
           return;
         }
