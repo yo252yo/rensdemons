@@ -14,6 +14,7 @@ LANGUAGE_EVENTS = {
     switch (member){
     /*
     - conversation about open worlds
+    Mb Aerith Ren discussion sur dommage qu'on puisse jamais partager les feelings directement 
     */
 
       case PARTYMEMBERS.BestFriend:
