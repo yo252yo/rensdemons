@@ -113,8 +113,8 @@ class S_CastleFloor extends S_Floor {
 }
 
 class S_AntiFloor extends S_Floor {
-  constructor(x, y, w, h, interactible) {
-    super(x, y, w, h, "void", undefined);
+  constructor(x, y, w, h, interactible, color) {
+    super(x, y, w, h, color || "void", undefined);
     this.walkable = false;
     if (interactible){
       this.interaction = function() {};
@@ -176,10 +176,10 @@ class S_BorderedMapFloor extends S_MapFloor {
     super(x, y, w, h, color);
 
     var border = 50;
-    this.left_border = new S_AntiFloor(x-border, y, border, h, true);
-    this.right_border = new S_AntiFloor(x+w, y, border, h, true);
-    this.top_border = new S_AntiFloor(x, y-h, w, border, true);
-    this.bot_border = new S_AntiFloor(x, y+border, w, border, true);
+    this.left_border = new S_AntiFloor(x-border, y, border, h, true, color);
+    this.right_border = new S_AntiFloor(x+w, y, border, h, true, color);
+    this.top_border = new S_AntiFloor(x, y-h, w, border, true, color);
+    this.bot_border = new S_AntiFloor(x, y+border, w, border, true, color);
 
     var i = function() {
       new TextBannerRandom([
