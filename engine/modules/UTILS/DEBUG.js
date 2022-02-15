@@ -71,8 +71,8 @@ const DEBUG = {
     //DEBUG.log_mouse_positions();
   //  DEBUG.draw_grid();
 
-    THAUMATURGY.teleport = true;
-    THAUMATURGY.run_faster();
+  //  THAUMATURGY.teleport = true;
+    THAUMATURGY.compress_time(4);
     THAUMATURGY.remove_camera_lock();;
     THAUMATURGY.get_all_abilities();
     THAUMATURGY.get_all_items();

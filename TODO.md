@@ -3,11 +3,6 @@
 
 
 
-- change "run faster" into a time slider >> can i make a space gauge too ?? would be fun lol (Slow down time is nothing but run faster actually )
->> Mb we can be nice and extent it to dodge by using like thaumsturgt.time
-
-
-
 # FINISH SHARED EVENTS
 
 

@@ -97,7 +97,6 @@ With control of the code, you have godlike powers over the virtual world. You ca
 
 | **THAUMATURGY**                               |                                   |
 |-----------------------------------------------|-----------------------------------|
-| `THAUMATURGY.run_faster();`                   | Increase movement speed           |
 | `THAUMATURGY.toggle_teleport();`              | Replace movement by teleportation |
 | `THAUMATURGY.toggle_smiting();`               | Eliminate entities on click       |
 |                                               |                                   |

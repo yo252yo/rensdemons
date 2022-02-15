@@ -46,7 +46,7 @@ const DODGE = {
       var challenge_tweak = (1 - DODGE.get_params.challenge_modifier()) * (0.99 * react_time);
       if(challenge_tweak > 0){ challenge_tweak *= 5; }
 
-      return Math.max (DODGE.MIN_TIMEOUT, react_time + rand_tweak + challenge_tweak);
+      return Math.max (DODGE.MIN_TIMEOUT, (react_time + rand_tweak + challenge_tweak) / THAUMATURGY.time_compression);
     },
 
     actual_warning_time_ms: function(){
@@ -54,7 +54,7 @@ const DODGE = {
       var rand_tweak = 2 * (Math.random() - 0.5) * DODGE.get_params.variability() * warning_time;
       var challenge_tweak = (1 - DODGE.get_params.challenge_modifier()) * (0.99 * warning_time);
 
-      return Math.max (DODGE.MIN_TIMEOUT, warning_time + rand_tweak + challenge_tweak);
+      return Math.max (DODGE.MIN_TIMEOUT, (warning_time + rand_tweak + challenge_tweak) / THAUMATURGY.time_compression);
     },
 
     get_attack_angle: function(){
@@ -275,7 +275,7 @@ const DODGE = {
       if(DODGE.get_params.attack_amplitude() < 0.005){
         return true;
       }
-      if (DODGE.get_params.actual_warning_time_ms() + DODGE.get_params.actual_react_time_ms() > 3500){
+      if (DODGE.get_params.actual_warning_time_ms() + DODGE.get_params.actual_react_time_ms() > 3500 / THAUMATURGY.time_compression){
         return true;
       }
 

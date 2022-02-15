@@ -1,11 +1,11 @@
 
 const SCREEN = {
   width: function() {
-      return Math.min(/*window.outerWidth,*/ window.innerWidth, document.documentElement.clientWidth);
+      return 1 / THAUMATURGY.space_compression * Math.min(/*window.outerWidth,*/ window.innerWidth, document.documentElement.clientWidth);
   },
 
   height: function() {
-    return Math.min(/*window.outerHeight,*/ window.innerHeight, document.documentElement.clientHeight);
+    return 1 / THAUMATURGY.space_compression * Math.min(/*window.outerHeight,*/ window.innerHeight, document.documentElement.clientHeight);
   },
 
   real_ratio: function() {
@@ -17,7 +17,8 @@ const SCREEN = {
       return;
     }
     FOG.moveToChar();
-    window.scrollTo(CHARACTER.get().x - SCREEN.width()/2, CHARACTER.get().y - SCREEN.height()/2);
+    var c = THAUMATURGY.space_compression;
+    window.scrollTo(CHARACTER.get().x * c - SCREEN.width()/2  * c, CHARACTER.get().y * c - SCREEN.height()/2 * c);
   },
 
   is_mobile: function() {

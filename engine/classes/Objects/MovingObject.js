@@ -156,7 +156,7 @@ class MovingObject extends LevelObject {
       }
     }
 
-    return Math.floor(increment);
+    return Math.floor(increment / THAUMATURGY.time_compression);
   }
 
   try_step_up() {    this.try_step(0, -1);  }

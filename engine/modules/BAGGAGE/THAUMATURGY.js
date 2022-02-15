@@ -2,6 +2,29 @@
 const THAUMATURGY = {
   teleport: false,
   smite: false,
+  time_compression: 1,
+  space_compression: 1,
+
+  compress_space: function(factor){
+    var f = THAUMATURGY.space_compression/factor;
+    THAUMATURGY.space_compression = f;
+    document.body.style.zoom = f;
+    var range = document.getElementById("compressSpaceRange");
+    if(range){
+      range.value = 1/THAUMATURGY.space_compression * 100;
+    }
+    GLITCH.screen.glitch();
+  },
+
+  compress_time: function(factor){
+    var f = THAUMATURGY.time_compression/factor;
+    THAUMATURGY.time_compression = f;
+    var range = document.getElementById("compressTimeRange");
+    if(range){
+      range.value = 1/THAUMATURGY.time_compression * 100;
+    }
+    GLITCH.screen.glitch();
+  },
 
   is_visible: function(){
     return STATS.ending(ENDINGS.God);
@@ -21,10 +44,6 @@ const THAUMATURGY = {
 
   remove_camera_lock: function() {
     document.body.style.overflow = "scroll";
-  },
-
-  run_faster: function() {
-    MovingObject._RUNNING_BONUS = 10;
   },
 
   get_all_abilities: function() {
@@ -82,11 +101,17 @@ const THAUMATURGY = {
   force_observer_effect: function(){
     GLITCH.berkeley.make_god_observer();
   },
-
   menu: function() {
-    new CenteredTextMenu("Miracles",
+    var spaceCompression = `<b>Space compression</b>: <input type="button" value="-" onClick="THAUMATURGY.compress_space(0.95);"><input type="range" id="compressSpaceRange" min="10" max="200" value="` + (1/THAUMATURGY.space_compression * 100) + `" class="slider" id="myRange1" disabled="true"><input type="button" value="+" onClick="THAUMATURGY.compress_space(1.05);"><br />`;
+    if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+      spaceCompression = "";
+    }
+
+    new CenteredTextMenu(`<h3>Miracles</h3>
+    ${spaceCompression}
+    <b>Time compression</b>: <input type="button" value="-" onClick="THAUMATURGY.compress_time(0.9);"><input type="range" id="compressTimeRange" min="10" max="500" value="` + (1/THAUMATURGY.time_compression * 100) + `" class="slider" id="myRange1" disabled="true"><input type="button" value="+" onClick="THAUMATURGY.compress_time(1.1);">
+      `,
                   [
-                    {"text": "Increase body speed", "effect": THAUMATURGY.run_faster},
                     {"text": (THAUMATURGY.teleport? "Dea" : "A") + "llow blink through space", "effect": THAUMATURGY.toggle_teleport},
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
