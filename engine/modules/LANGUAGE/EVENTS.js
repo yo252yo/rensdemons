@@ -14,7 +14,7 @@ LANGUAGE_EVENTS = {
     switch (member){
     /*
     - conversation about open worlds
-    Mb Aerith Ren discussion sur dommage qu'on puisse jamais partager les feelings directement 
+    Mb Aerith Ren discussion sur dommage qu'on puisse jamais partager les feelings directement
     */
 
       case PARTYMEMBERS.BestFriend:
@@ -61,12 +61,26 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.PreciousChild:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$PreciousChild$: "..."`,
+            `$$PreciousChild$: "Hey, $$Ren$, why are you fighting the demons?"`,
+            `$$Ren$: "To make the world a better place, of course!"`,
+            `$$PreciousChild$: "But... but... Are you sure it will be a good thing? Perhaps the demons are secretly good guys? Or maybe when they're gone there's gonna be something even worse! Or maybe..."`,
+            `$$Ren$: "Maybe, we can never know for sure, you're right."`,
+            `$$Ren$: "But it does seem that the way things are currently has plenty of bad aspects. I don't think we should use the fact that we could make things worse as an excuse to avoid trying to make things better!"`,
+            `$$PreciousChild$: "I understand now. I think you're right. Thanks, you explain things very well!"`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$PreciousChild$: "..."`,
+            `$$PreciousChild$: "Why are you going on an adventure?"`,
+            `$$Ren$: "To save the world!"`,
+            `$$PreciousChild$: "But why do you want to save the world?"`,
+            `$$Ren$: "Because it's the right thing to do!"`,
+            `$$PreciousChild$: "But... but... Why do you want to do the right thing?"`,
+            `$$Ren$: "Stop with the silly questions, that's what the right thing is, the thing you should do!"`,
+            `$$PreciousChild$: "Yes but why is it the thing you should do?"`,
+            `$$Ren$: "Listen, this is going nowhere. I don't think I can give you an answer you'd like."`,
+            `$$PreciousChild$: "But... why?"`,
+            `$$Ren$: "Because I don't know either! It's complicated! It's just the way things are! I'm just doing my best, you know. I know very little about the world, and I control even less."`,
+            `$$PreciousChild$: "Sorry I upset you."`,
+            `$$Ren$: "You didn't upset me. Don't worry. I'm the one who's sorry. I'm bad at explaining."`,
           ]
         ];
 
@@ -98,8 +112,9 @@ LANGUAGE_EVENTS = {
             `$$StreetSmart$: "Okay, whatever."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$StreetSmart$: "..."`,
+            `$$StreetSmart$: "You're pretty lucky, it seems that your equipment is pretty durable..."`,
+            `$$Ren$: "I know, right! I expected to have to repair it all the time! That's one less thing to think about!"`,
+            `$$StreetSmart$: "Sure, but if you ever find that you need it, hit me up, I know a guy."`,
           ]
         ];
 
@@ -158,12 +173,24 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.GeniusProdigy:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$GeniusProdigy$: "..."`,
+            `$$GeniusProdigy$: "You know, I've realized that this investigation is going to be quite difficult. Impossible even."`,
+            `$$Ren$: "How so?"`,
+            `$$GeniusProdigy$: "Well remember, my hypothesis is that you can travel between different branches of the multiverse. But from the outside observer perspective, that is to say me, there's no real difference between when you make such a trip or not."`,
+            `$$GeniusProdigy$: "Any second, you could be coming back from a doomed timeline, and I wouldn't be able to notice it."`,
+            `$$GeniusProdigy$: "It could be happening now!"`,
+            `$$GeniusProdigy$: "Or now!"`,
+            `$$Ren$: "So what? Are you giving up?"`,
+            `$$GeniusProdigy$: "No, but it's a real challenge to test my theory. It seems that the only point of difference between you traveling in the multiverse or not is the information you're able to gather. And even that's unclear. All I have to go on is your behavior, which I can use to infer whether or not you behave regularly or abnormally..."`,
+            `$$GeniusProdigy$: "But you always behave abnormally!"`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$GeniusProdigy$: "..."`,
+            `$$GeniusProdigy$: "It's pretty amazing how you can manipulate the multiverse without even realizing it."`,
+            `$$Ren$: "What do you mean?"`,
+            `$$GeniusProdigy$: "Without even being aware of it, you're twisting the timeline. There are many cases where I'm pretty sure you should have died. But you used the power given by the Goddess to avert your fate!"`,
+            `$$Ren$: "How can you tell? The world looks the same."`,
+            `$$GeniusProdigy$: "That's the thing with this kind of divine powers, when it's well done, there's no way to tell! When you can change the fabric of reality, you can also change everyone's memories to make them believe things have not changed."`,
+            `$$Ren$: "Doesn't that mean you'll never be able to gather data for your experiments on me?"`,
+            `$$GeniusProdigy$: "Alas, I think it does... But I'll find a way!"`,
           ]
         ];
 
@@ -185,12 +212,21 @@ LANGUAGE_EVENTS = {
       case PARTYMEMBERS.DisguisedPrincess:
         return [
           [
-            `$$Ren$: "..."`,
-            `$$DisguisedPrincess$: "..."`,
+            `$$DisguisedPrincess$: "Do you think that when we're done with that quest, bards will be telling our story?"`,
+            `$$Ren$: "Uh, I don't know... maybe..."`,
+            `$$DisguisedPrincess$: "It will be so cool! I think we'll make a great story! To be part of those adventures I've heard so much about! I can't wait to see what they'll say about us! How do you think they'll talk of me? Do you think they'll talk about this moment? Wouldn't that be funny?"`,
+            `$$Ren$: "I mostly think that before worrying about what people are going to say, we should focus on surviving this quest..."`,
+            `$$DisguisedPrincess$: "You're right, if we die, nobody will know what we've been through!"`,
+            `$$Ren$: "Do you only care about what other people think?"`,
+            `$$DisguisedPrincess$: "Hmmm not really, but it does matter, you know. I was always only treated as a noble, so I was forced to play the part. But I want to exist and be recognized for my own merit as an adventurer! And if you want to be the hero of a tale, you need the tale to have an audience, don't you?"`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$DisguisedPrincess$: "..."`,
+            `$$DisguisedPrincess$: "I'm just so happy to finally be inside one of the stories I love so much!"`,
+            `$$Ren$: "What do you mean?"`,
+            `$$DisguisedPrincess$: "This is just like the stuff the bards sang about! It has everything! A big bad enemy, setbacks, a hero bravely triumphing over adversity, sacrifices... I could not dream of a more textbook adventure to join!"`,
+            `$$Ren$: "I'm glad our troubles make you happy... In the meantime, in the real world, we're having a tough time, you know. So stop thinking about your stories and focus on the reality, please!"`,
+            `$$DisguisedPrincess$: "Yes, yes, sorry. But we are the heroes of our own story, happening right now! And if narrative rules are anything to go by, you're bound to get a happy ending!"`,
+            `$$Ren$: "That's a pretty unconvincing argument."`,
           ]
         ];
 
