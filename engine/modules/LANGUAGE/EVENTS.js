@@ -12,11 +12,6 @@ LANGUAGE_EVENTS = {
 
   _party: function(member){
     switch (member){
-    /*
-    - conversation about open worlds
-    Mb Aerith Ren discussion sur dommage qu'on puisse jamais partager les feelings directement
-    */
-
       case PARTYMEMBERS.BestFriend:
         return [
           [
@@ -49,12 +44,21 @@ LANGUAGE_EVENTS = {
             `$$BestFriend$: "I hope you're right..."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$BestFriend$: "..."`,
+            `$$BestFriend$: "Don't you ever feel like... words are not enough?"`,
+            `$$Ren$: "How so?"`,
+            `$$BestFriend$: "Well, if I want to tell you how I feel, no matter how many words I use, you won't be able to know exactly. I wish I could just show you."`,
+            `$$Ren$: "I understand. I think that as long as we're separate people, we'll never fully know what goes on in the other person's head. But you know, I think I know you well enough to sort of get it, most of the time."`,
+            `$$BestFriend$: "It seems that we have evolved past the need for words."`,
+            `You laugh together.`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$BestFriend$: "..."`,
+            `$$BestFriend$: "You know, $$Ren$, I try to put on a brave face, to be as supportive as I can, but deep down I'm really scared."`,
+            `$$Ren$: "It's going to be alright. We have the Goddess on our side!"`,
+            `$$BestFriend$: "I know that, but I don't feel Her the way you do. So for me it's just a matter of blind faith... And this may be a horrible thing to say, but sometimes my faith wavers."`,
+            `$$Ren$: "It's not horrible to say, it's only natural, it happens to everyone."`,
+            `$$BestFriend$: "If you say so."`,
+            `$$Ren$: "I'm sure of it. That's why we have each other, so that if one of us is in trouble, the other one can help!"`,
+            `$$BestFriend$: "Yes, I'll always help you, $$Ren$."`,
           ]
         ];
 
@@ -128,8 +132,12 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "Hmmm. This is all well and good, but I'm not sure how it'll help me defeat $$demon_lord$."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$WiseOld$: "..."`,
+            `$$WiseOld$: "You know, through meditation, you can reach the ultimate truth of all things..."`,
+            `$$Ren$: "Oh yeah? and what is this ultimate truth?"`,
+            `$$WiseOld$: "All things only exist as distinct entities when there is someone who makes the distinction between them and the rest. To be a thing means drawing a boundary and separating a thing from the non-thing. Everything begets its dual opposite by the simple fact of its existence."`,
+            `$$WiseOld$: "And it's the same for you. You only exist as the boundaries that are drawn between the you and the non-you. Others might draw these boundaries, but the final call comes to you, as the narrator of your own life."`,
+            `$$WiseOld$: "The self is nothing but a story you tell yourself. You exist because of that story. You and the story are eternally intertwined. "`,
+            `$$WiseOld$: "And your body will stop, one day. That much is true. But the story... The story will remain in the books. The story will live on forever."`,
           ]
         ];
 
@@ -204,8 +212,11 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "I try not to think about it too much, it's pretty scary. Maybe it's just the Goddess feeding them lines."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$FemmeFatale$: "..."`,
+            `$$FemmeFatale$: "Being the Promised Child is very peculiar. Everybody acts differently around you."`,
+            `$$Ren$: "Yeah, most people are bending themselves backwards to help me in my quest. It's pretty nice, but it can be overwhelming..."`,
+            `$$FemmeFatale$: "But as soon as you enter a room, everyone seems to already know you...  Could it be that you're that famous?"`,
+            `$$FemmeFatale$: "They stop whatever they are doing and focus they full attention on you. Whenever you talk to them, they reply immediately. They put their whole existence on pause just for you..."`,
+            `$$Ren$: "Stop it! That's not helping with the pressure at all!"`,
           ]
         ];
 
@@ -239,8 +250,15 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "Well, the Goddess is very important for adventurer. She guides and protects everyone, and adventurers are the ones who need it the most."`,
           ],
           [
-            `$$Ren$: "..."`,
-            `$$DumbMuscles$: "..."`,
+            `$$DumbMuscles$: "Wow, the world is so big, mate! And you can go anywhere?"`,
+            `$$Ren$: "Pretty much. It's not always the case, but the Goddess watches over me. She'll tell me if I go somewhere too dangerous."`,
+            `$$DumbMuscles$: "That's dope! But how do you know where to go?"`,
+            `$$Ren$: "Well it depends, if I want to do my quest, I go to my objectives. But since the world is so big and open, sometimes I do detours and explore it freely."`,
+            `$$DumbMuscles$: "Wait, does that mean you're slacking off on your quest?"`,
+            `$$Ren$: "Not necessarily! Exploring randomly is a great training for when the real battle come! And I get tons of treasures and weapons to make myself stronger."`,
+            `$$DumbMuscles$: "So you're saying it's a good idea to go on tangents?"`,
+            `$$Ren$: "Sometimes, when you feel like it. It could be perfect to train yourself some more if you feel like you're not ready for the next bit."`,
+            `$$DumbMuscles$: "Awesome! Let's do some training, then!"`,
           ]
         ];
 
@@ -292,7 +310,6 @@ LANGUAGE_EVENTS = {
             `$$Ren$: "No, thanks."`,
           ]
         ];
-
 
       default:
         return [];

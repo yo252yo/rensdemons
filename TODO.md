@@ -1,58 +1,10 @@
 # WIP
 
 
-
-
-# FINISH SHARED EVENTS
-
-
-
-
-##GeniusProdigy
-Genius is like from our pov you could come from the future at any moment  and we wouldn't notice. That's what's hard about observing you there isn't Rly much abnormality from the outside
-
-Mb like it's pretty awesome how you manipulate the multiversd without realizing there were times were it Rly felt like you should have died
-
-
-##PreciousChild
-Mb honey can be like you're my hero etc
-naive children questions, why are we doing ethis, etc...
-He asks very innocent questions like why do you have to fight
-
-
-Mb traduire ce débat en une discussion genre est ce qu'on doit tenter quand même si on ddg pas sur que ce soit objectivement bien  et oui on doit tenter parce que ça peut être mieux. Could be naïve qu'est-il  question of precious child
-
-metaethics debate: everything is arbitrary, do you really need to fight? the answer is yes.
-
-##StreetSmart
-Smart guy mb repair weapon?
-
-
-
-##DisguisedPrincess
-Baudrillard? What's baudrillard Ian about the pre ending run ?
-thing with narrator???
-
-
-He can be likr high on weed like bro erre like in a story bro. The story happens now. Bro it's happening to us like this is the story right now
-
-I bet they're already telling our tale right now
-What do you mean
-
-Doesn't our adventure feel cliche? Doesn't it feel like we're in a game? Ou alors a l'opposé : I can't wait to imagine how they'll tell our story
-
-Aren't you always telling yours le your own story in your head
-
-What if we're in a simulation right now? How would you even know
-
-
-THE STORY IS THE ONTOLOGICAL GROUNDING OF YOUR EXISTENCE
-
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
 
->> You exist as a self because you’re being conceived of as a self, be it only by yourself. Therefore you only exist because theres a story about yourself. The story is the ontological grounding of your existence.
 
 # CASINO ----------------------------------------------------
 - a casino in vegas (and lootboxes) > the rng was helpful/not
@@ -69,7 +21,7 @@ http://store.steampowered.com/explore/random/
 
 
 # PROOF GODDESS  ----------------------------------------------------
-- You thought you got powers because you killed god but it's because you understood on some lvl that the world is made by you for you
+- You thought you got powers because you killed god but it's because you understood on some lvl that the world is made by you for you (THE STORY IS THE ONTOLOGICAL GROUNDING OF YOUR EXISTENCE)
 - Explain that the console is like magic words that change the fabric of the universe
 - WHO makes you do it??
 - You can do anything you want , why are you still following the game
