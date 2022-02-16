@@ -175,7 +175,7 @@ var win_agiliy = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var game_agility = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Agility game (x10 payout)",
+  name: "Agility challenge (x10 payout)",
   unlock: true,
   description: [
     `The rules of this game are pretty simple. They throw a knife at you. If you can dodge it, you win. It's rare to see people put their lives on the line, so the crowd is going crazy when you accept to do it. You brace yourself for the impact...`,
