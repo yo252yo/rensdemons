@@ -28,15 +28,16 @@ new S_ExitFloor(1380,2425,20,80, "042_fissure");
 
 var riddle = function(text, answer, destination){
   var ask = function(){
-  //PROMPT
-    var reply = prompt("What will you say?");
-    if (!reply) { reply = ""; }
-    reply = reply.toLowerCase();
-    if(reply == answer){
-      CURRENTLEVEL.setup(destination);
-    } else {
-      TextBannerSequence.make(["Nothing happens."]);
+    var callback = function(reply){
+      if (!reply) { reply = ""; }
+      reply = reply.toLowerCase();
+      if(reply == answer){
+        CURRENTLEVEL.setup(destination);
+      } else {
+        TextBannerSequence.make(["Nothing happens."]);
+      }
     }
+    new PromptTextMenu("What will you say?", "", callback);
   }
   return function() {
     TextBannerSequence.make([
