@@ -5,6 +5,12 @@ new CenteredBattleImage("assets/battles/encounters/casino.png", 'background');
 var gen = new Generator(INVENTORY.count("_casino_seed") || DICTIONARY.get("world_seed"));
 var bet = 0;
 
+var record_generator = function(){
+  var g = gen.get();
+  INVENTORY.set("_casino_seed", g);
+  gen = new Generator(g);
+}
+
 PLAYER_ACTIONS.add({
   name: "Inquire",
   unlock: true,
@@ -82,7 +88,6 @@ var make_bet_function = function(sum) {
   });
 }
 
-
 var make_game_function = function(name, payout, descript) {
   var description = descript;
   if (payout > 0) {
@@ -98,6 +103,7 @@ var make_game_function = function(name, payout, descript) {
       [`$$Ren$: "Damn randomness generator, it wasn't very helpful!"`, `$$BestFriend$: "What are you talking about?"`],
       [`$$BestFriend$: "Has the Goddess abandoned us?"`],
       [`$$BestFriend$: "You lost..."`, `$$Ren$: "It's not my fault! It's the randomness generator!"`, `$$BestFriend$: "The what?"`, `$$Ren$: "The part of reality that decides the outcomes of chance games. One of the many powers of the Goddess, if you will."`],
+      [`$$BestFriend$: "But... I thought you could see the future!"`, `$$Ren$: "It's more complicated than that..."`],
     ]));
   }
 
@@ -122,11 +128,35 @@ var game_coin = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     BATTLE.player_actions.empty();
     var is_head = gen.get() < 0.5;
+    record_generator();
     var descript = ["You watch intensely, praying for your favored outcome, as the coin soars and spins through the air.",
       `The coin lands on ` + (is_head ? "heads." : "tails.")
       ];
     (make_game_function("Call heads", is_head ? 1.5 : 0, descript))();
     (make_game_function("Call tails", is_head ? 0 : 1.5, descript))();
+  }
+});
+
+var game_dice = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Dice roll (x3 payout)",
+  unlock: true,
+  description: [
+    `You decide to play with dice. The payout is x3 if you land on the right number. You now need to place your bet.`,
+    ],
+  function: function(){
+    BATTLE.player_actions.empty();
+    var roll = 1 + gen.int(6);
+    record_generator();
+    var descript = [
+      "You roll the dice and watch it swirl hesitantly between its six faces.",
+      `Finally, it lands on ${roll}.`
+      ];
+    (make_game_function("Call 1", roll == 1 ? 3 : 0, descript))();
+    (make_game_function("Call 2", roll == 2 ? 3 : 0, descript))();
+    (make_game_function("Call 3", roll == 3 ? 3 : 0, descript))();
+    (make_game_function("Call 4", roll == 4 ? 3 : 0, descript))();
+    (make_game_function("Call 5", roll == 5 ? 3 : 0, descript))();
+    (make_game_function("Call 6", roll == 6 ? 3 : 0, descript))();
   }
 });
 
@@ -137,12 +167,10 @@ var main_menu = function(){
   bets_submenu();
   if(bet){
     game_coin();
+    game_dice();
     whitdraw_bets();
   }
   BATTLE.monster_actions.add_textual(`You currently have ${INVENTORY.cash()} coins in your pocket and ${bet} coins locked in bets.`);
-  var g = gen.get();
-  INVENTORY.set("_casino_seed", g);
-  gen = new Generator(g);
 }
 
 main_menu();
