@@ -1,4 +1,6 @@
 
+AUDIO.music.levels.casino();
+
 new CenteredBattleImage("assets/battles/encounters/casino.png", 'background');
 var gen = new Generator(INVENTORY.count("_casino_seed") || DICTIONARY.get("world_seed"));
 var bet = 0;
@@ -38,12 +40,12 @@ var bets_submenu = PLAYER_ACTIONS.function.unlock_replacing_action({
     ],
   function: function(){
     BATTLE.player_actions.empty();
-    (make_bet_function(0))("Bet coins");
-    (make_bet_function(1))("Bet coins");
-    (make_bet_function(2))("Bet coins");
-    (make_bet_function(5))("Bet coins");
-    (make_bet_function(10))("Bet coins");
-    (make_bet_function(25))("Bet coins");
+    (make_bet_function(0))();
+    (make_bet_function(1))();
+    (make_bet_function(2))();
+    (make_bet_function(5))();
+    (make_bet_function(10))();
+    (make_bet_function(25))();
   }
 });
 
@@ -62,9 +64,7 @@ var whitdraw_bets = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
-
 var make_bet_function = function(sum) {
-  console.log(INVENTORY.cash());
   if (INVENTORY.cash() < sum){
     return function(){};
   }
@@ -83,12 +83,60 @@ var make_bet_function = function(sum) {
 }
 
 
+var make_game_function = function(name, payout, descript) {
+  var description = descript;
+  if (payout > 0) {
+  description = description.concat(RANDOM.pick([
+    ["You won!"],
+    [`$$BestFriend$: "You won, $$Ren$!"`, `$$Ren$: "I didn't do anything, the randomness generator was just in our favor."`],
+    [`$$BestFriend$: "Praised be the Goddess!"`],
+    [`$$BestFriend$: "Yay! Did you know this would happen?"`],
+  ]));
+  } else {
+    description = description.concat(RANDOM.pick([
+      ["You lost."],
+      [`$$Ren$: "Damn randomness generator, it wasn't very helpful!"`, `$$BestFriend$: "What are you talking about?"`],
+      [`$$BestFriend$: "Has the Goddess abandoned us?"`],
+      [`$$BestFriend$: "You lost..."`, `$$Ren$: "It's not my fault! It's the randomness generator!"`, `$$BestFriend$: "The what?"`, `$$Ren$: "The part of reality that decides the outcomes of chance games. One of the many powers of the Goddess, if you will."`],
+    ]));
+  }
+
+
+  return PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: `${name}`,
+    unlock: true,
+    description: description,
+    function: function() {
+      bet = Math.ceil(bet * payout);
+      main_menu();
+    }
+  });
+}
+
+var game_coin = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Coin toss (x1.5 payout)",
+  unlock: true,
+  description: [
+    `You decide to play a game of coin toss, the payout of which is x1.5. You now need to place your bet.`,
+    ],
+  function: function(){
+    BATTLE.player_actions.empty();
+    var is_head = gen.get() < 0.5;
+    var descript = ["You watch intensely, praying for your favored outcome, as the coin soars and spins through the air.",
+      `The coin lands on ` + (is_head ? "heads." : "tails.")
+      ];
+    (make_game_function("Call heads", is_head ? 1.5 : 0, descript))();
+    (make_game_function("Call tails", is_head ? 0 : 1.5, descript))();
+  }
+});
+
 var main_menu = function(){
   BATTLE.player_actions.empty();
   BATTLE.monster_actions.empty();
   unlock_escape();
   bets_submenu();
   if(bet){
+    game_coin();
     whitdraw_bets();
   }
   BATTLE.monster_actions.add_textual(`You currently have ${INVENTORY.cash()} coins in your pocket and ${bet} coins locked in bets.`);

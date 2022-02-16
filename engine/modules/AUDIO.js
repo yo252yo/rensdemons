@@ -189,6 +189,7 @@ const AUDIO = {
 
       castle: function() {            AUDIO._play_music("level/itsnevertoolateforsidequests") },
       manor: function() {             AUDIO._play_music("level/igot99broadswords") },
+      casino: function() {            AUDIO._play_music("level/glouglou") },
 
       mushrooms: function() {         AUDIO._play_music("level/jeudelaconversation"); },
       squids: function() {            AUDIO._play_music("level/ihatehimsomuch"); },
