@@ -156,11 +156,13 @@ class TextMenu extends TextElement {
     close(with_follow) {
       this.in_destruction = true;
       this.destroy();
-      setTimeout(function() { IO.control.cede(); }, 500);
+      setTimeout(function() {
+        IO.control.cede();
+        if (with_follow && Math.random() < 10.05){
+          setTimeout(function() { TextMenu.followup(); }, 200);
+        }
+      }, 500);
 
-      if (with_follow && Math.random() < 0.05){
-        setTimeout(function() { TextMenu.followup(); }, 700);
-      }
     }
 
     back() {
