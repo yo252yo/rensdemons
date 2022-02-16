@@ -17,8 +17,4 @@ const SPECIALBATTLES = {
     BATTLE.api.make("encounters/" + name, callback);
   },
 
-  shop: function(sprite_nb){
-    SPECIALBATTLES._battle_extra_data = [sprite_nb];
-    BATTLE.api.make('_shop');
-  },
 }
