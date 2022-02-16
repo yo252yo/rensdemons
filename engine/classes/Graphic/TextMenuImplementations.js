@@ -28,7 +28,7 @@ class CenteredTextMenu extends TextMenu {
 
 class PromptTextMenu extends CenteredTextMenu {
     constructor(text, value, callback) {
-        super(text + `:<br /><input type="input" value="${value}" id="prompttextmenu" />`, [{"text": "OK", "effect": "##CLOSE"}]);
+        super(text + `:<br /><form action='javascript:IO_MENU.pick(0);'><input type="input" value="${value}" id="prompttextmenu" /></form>`, [{"text": "OK", "effect": "##CLOSE"}]);
         this.callback = callback;
         IO.key_interceptor.deactivate();
     }
