@@ -191,8 +191,9 @@ var unlock_you = PLAYER_ACTIONS.function.unlock_replacing_action({
 var total_useless = 0;
 var called_useless = 0;
 
-var unlock_call = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: `Shout name`,
+
+var unlock_call2 = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Shout name `,
   unlock: true,
   description: [`$$Ren$: "Hey! $$GeniusProdigy$!"`,
                 `The boy turns around slowly and studies you with a piercing gaze.`,
@@ -201,11 +202,26 @@ var unlock_call = PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     BATTLE.player_actions.empty(true);
     BATTLE.monster_actions.empty(true);
-    PARTY.changeNickname(PARTYMEMBERS.GeniusProdigy, "What name will you shout?");
     unlock_pc(`Shout name`);
     unlock_powers(`Shout name`);
     unlock_you(`Shout name`);
     unlock_nobody(`Shout name`);
+  }
+});
+
+var unlock_call = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Shout name`,
+  unlock: true,
+  description: [],
+  function: function(){
+    BATTLE.player_actions.empty(true);
+    BATTLE.monster_actions.empty(true);
+    BATTLE.monster_actions.make_unique(
+      function() {
+        unlock_call2(`Shout name`);
+        PARTY.newChangeNickname(PARTYMEMBERS.GeniusProdigy, "What name will you shout?", BATTLE.turn_factory.player);
+      }
+    );
   }
 });
 

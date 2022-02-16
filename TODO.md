@@ -6,6 +6,8 @@ the name of spearker isnt always properly highlighted (almost never i think)
 
 working on replacing prompts and PARTY.changeNickname
 
+make it so the new prompt accepts ENTER key mb
+
 
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
