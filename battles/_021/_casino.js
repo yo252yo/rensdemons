@@ -1,5 +1,6 @@
 
 new CenteredBattleImage("assets/battles/encounters/casino.png", 'background');
+var gen = new Generator(INVENTORY.count("_casino_seed") || DICTIONARY.get("world_seed"));
 var bet = 0;
 
 PLAYER_ACTIONS.add({
@@ -23,7 +24,9 @@ var unlock_escape = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: RANDOM.pick([`You make your way out of the building, with the ${bet} coins of your bet.`]),
   outcome: BATTLETREE.ESCAPE,
   extra_function: function(){
-    INVENTORY.increase(ITEM.Coin, bet);
+    if (bet){
+      INVENTORY.increase(ITEM.Coin, bet);
+    }
   }
 });
 
@@ -51,14 +54,17 @@ var whitdraw_bets = PLAYER_ACTIONS.function.unlock_replacing_action({
     `You decide to withdraw your bets.`,
     ],
   function: function(){
-    INVENTORY.increase(ITEM.Coin, bet);
-    bet = 0;
+    if (bet){
+      INVENTORY.increase(ITEM.Coin, bet);
+      bet = 0;
+    }
     main_menu();
   }
 });
 
 
 var make_bet_function = function(sum) {
+  console.log(INVENTORY.cash());
   if (INVENTORY.cash() < sum){
     return function(){};
   }
@@ -86,6 +92,9 @@ var main_menu = function(){
     whitdraw_bets();
   }
   BATTLE.monster_actions.add_textual(`You currently have ${INVENTORY.cash()} coins in your pocket and ${bet} coins locked in bets.`);
+  var g = gen.get();
+  INVENTORY.set("_casino_seed", g);
+  gen = new Generator(g);
 }
 
 main_menu();
