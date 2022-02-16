@@ -214,4 +214,6 @@ main_menu();
 BATTLE.operations.start([
   "The building houses what appears to be a casino. The atmosphere is chaotic. Patrons are betting loudly against each others in heated battles of cards or dice. A few ruined gamblers are sobbing in a corner.",
   `$$Ren$: "Of course, there is a casino..."`,
+  `$$Ren$: "It seems that you can't go anywhere without running into some kind of gambling."`,
+  `Nobody around you seems to mind that you are children. The staff is encouraging you to take part in the games in very overbearing ways.`,
 ]);
