@@ -81,8 +81,10 @@ var make_bet_function = function(sum) {
       `You bet ${sum} extra coins. Your total bet is now ${sum+bet}.`,
     ],
     function: function() {
-      bet += sum;
-      INVENTORY.decrease(ITEM.Coin, sum);
+      if(sum){
+        bet += sum;
+        INVENTORY.decrease(ITEM.Coin, sum);
+      }
       main_menu();
     }
   });
@@ -160,6 +162,40 @@ var game_dice = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
+var win_agiliy = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Reward",
+  unlock: true,
+  description: [
+    `You successfully dodged the knife.`,
+    ],
+  function: function(){
+    bet = Math.ceil(bet * 10);
+    main_menu();
+  }
+});
+
+var game_agility = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Agility game (x10 payout)",
+  unlock: true,
+  description: [
+    `The rules of this game are pretty simple. They throw a knife at you. If you can dodge it, you win. It's rare to see people put their lives on the line, so the crowd is going crazy when you accept to do it. You brace yourself for the impact...`,
+    ],
+  function: function(){
+    BATTLE.monster_actions.empty();
+    var attack = {
+      attack_amplitude: 0.9, // Between 0 and 1
+      warning_time_s: 0.1,
+      react_time_s: 0.3,
+      variability: 0.01, // 1 = 100%
+    };
+    BATTLE.monster_actions.add_textual(`The knife pierces through the air towards your face.`, attack);
+    BATTLE.player_actions.empty();
+    win_agiliy();
+  }
+});
+
+
+
 var main_menu = function(){
   BATTLE.player_actions.empty();
   BATTLE.monster_actions.empty();
@@ -168,6 +204,7 @@ var main_menu = function(){
   if(bet){
     game_coin();
     game_dice();
+    game_agility();
     whitdraw_bets();
   }
   BATTLE.monster_actions.add_textual(`You currently have ${INVENTORY.cash()} coins in your pocket and ${bet} coins locked in bets.`);
