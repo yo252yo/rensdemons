@@ -238,8 +238,7 @@ class ConsciousObject extends MovingObject {
       "Kill me!",
       "Stop!",
       "Please!",
-
-
+      "Make it stop!",
     ]);
     this.actuallythink(thought);
   }
