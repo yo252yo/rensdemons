@@ -52,6 +52,9 @@ new SE_event(1925, 1800, 'You arrive at a split in the hallway.', 50, undefined,
              );
 });
 
+var callback2 = function(){
+  CURRENTLEVEL.setup("020_town2");
+}
 
 var chargenow = function(){
   TextBannerSequence.make([
@@ -63,9 +66,8 @@ var chargenow = function(){
     `$$DisguisedPrincess$: "I have a lot to learn, I need to be with experienced adventurers, right? Besides, I need to figure out a way to repay you for your help!"`,
     "$$DisguisedPrincess$ joins your party!",
   ], function(){
-    PARTY.changeNickname(PARTYMEMBERS.DisguisedPrincess);
     PARTY.add(PARTYMEMBERS.DisguisedPrincess);
-    CURRENTLEVEL.setup("020_town2");
+    PARTY.newChangeNickname(PARTYMEMBERS.DisguisedPrincess, undefined, callback2);
   });
 }
 

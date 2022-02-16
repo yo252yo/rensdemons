@@ -261,14 +261,16 @@ if(sirenspart == 1){
     BATTLE.api.make('_party/_TraitorFisherTrial', callback);
   }
 
-  var next = function() {
-    PARTY.changeNickname(PARTYMEMBERS.TraitorFisher);
+  var nextnext = function() {
     TextBannerSequence.make([
       `$$TraitorFisher$: "Why were you trespassing on the territory of the Sirens?"`,
       `$$Ren$: "The Sirens? Sorry, we had no idea..."`,
       `The crowd of merfolk exchange concerned murmurs in a tongue you cannot comprehend. It sounds like hisses and tongue clicks. $$TraitorFisher$ sends a few concerned gazes around.`,
       `$$TraitorFisher$: "I'm sorry, we must begin your formal trial."`,
     ], fight);
+  };
+  var next = function() {
+    PARTY.newChangeNickname(PARTYMEMBERS.TraitorFisher, undefined, nextnext);
   };
   CURRENTLEVEL.setup_text_start_function([
     `You get dragged all the way to the bottom of the lake. When the currents finally quiet down, the tentacular monster that brought you here is nowhere to be seen. Instead, you can see plenty of heavily armored sirens and tritons floating in the water all around. They are all watching you with a suspicious eye.`,
