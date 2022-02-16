@@ -90,7 +90,7 @@ var accept = PLAYER_ACTIONS.function.unlock_replacing_action({
 
       BATTLE.monster_actions.make_unique(
         function() {
-          PARTY.newChangeNickname(PARTYMEMBERS.FemmeFatale, undefined, BATTLE.operations.win);
+          PARTY.changeNickname(PARTYMEMBERS.FemmeFatale, undefined, BATTLE.operations.win);
         }
       );
     },

@@ -28,7 +28,7 @@ var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({
 
     BATTLE.monster_actions.make_unique(
       function() {
-        PARTY.newChangeNickname(PARTYMEMBERS.StreetSmart, undefined, BATTLE.operations.win);
+        PARTY.changeNickname(PARTYMEMBERS.StreetSmart, undefined, BATTLE.operations.win);
       }
     );
   },

@@ -67,7 +67,7 @@ var chargenow = function(){
     "$$DisguisedPrincess$ joins your party!",
   ], function(){
     PARTY.add(PARTYMEMBERS.DisguisedPrincess);
-    PARTY.newChangeNickname(PARTYMEMBERS.DisguisedPrincess, undefined, callback2);
+    PARTY.changeNickname(PARTYMEMBERS.DisguisedPrincess, undefined, callback2);
   });
 }
 

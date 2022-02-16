@@ -187,7 +187,7 @@ var unlock_short = PLAYER_ACTIONS.function.unlock_replacing_action({
     BATTLE.monster_actions.make_unique(
       function() {
         BATTLE.monster_actions.empty();
-        PARTY.newChangeNickname(PARTYMEMBERS.SnobRich, undefined, BATTLE.turn_factory.player);
+        PARTY.changeNickname(PARTYMEMBERS.SnobRich, undefined, BATTLE.turn_factory.player);
       }
     );
   }

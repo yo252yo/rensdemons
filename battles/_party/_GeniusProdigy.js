@@ -220,7 +220,7 @@ var unlock_call = PLAYER_ACTIONS.function.unlock_replacing_action({
       function() {
         BATTLE.monster_actions.empty(true);
         unlock_call2(`Shout name`);
-        PARTY.newChangeNickname(PARTYMEMBERS.GeniusProdigy, "What name will you shout?", BATTLE.turn_factory.player);
+        PARTY.changeNickname(PARTYMEMBERS.GeniusProdigy, "What name will you shout?", BATTLE.turn_factory.player);
       }
     );
   }

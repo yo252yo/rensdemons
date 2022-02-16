@@ -23,7 +23,7 @@ var unlock_hire = PLAYER_ACTIONS.function.unlock_replacing_action({
 
     BATTLE.monster_actions.make_unique(
       function() {
-        PARTY.newChangeNickname(PARTYMEMBERS.WiseOld, undefined, BATTLE.operations.win);
+        PARTY.changeNickname(PARTYMEMBERS.WiseOld, undefined, BATTLE.operations.win);
       }
     );
   },

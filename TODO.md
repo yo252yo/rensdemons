@@ -2,7 +2,7 @@
 
 
 
-working on replacing prompts and PARTY.changeNickname
+working on replacing prompt
 
 
 

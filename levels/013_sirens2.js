@@ -270,7 +270,7 @@ if(sirenspart == 1){
     ], fight);
   };
   var next = function() {
-    PARTY.newChangeNickname(PARTYMEMBERS.TraitorFisher, undefined, nextnext);
+    PARTY.changeNickname(PARTYMEMBERS.TraitorFisher, undefined, nextnext);
   };
   CURRENTLEVEL.setup_text_start_function([
     `You get dragged all the way to the bottom of the lake. When the currents finally quiet down, the tentacular monster that brought you here is nowhere to be seen. Instead, you can see plenty of heavily armored sirens and tritons floating in the water all around. They are all watching you with a suspicious eye.`,

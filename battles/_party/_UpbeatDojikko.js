@@ -216,7 +216,7 @@ PLAYER_ACTIONS.add({
 
     BATTLE.monster_actions.make_unique(
       function() {
-        PARTY.newChangeNickname(PARTYMEMBERS.UpbeatDojikko, undefined, BATTLE.operations.win);
+        PARTY.changeNickname(PARTYMEMBERS.UpbeatDojikko, undefined, BATTLE.operations.win);
       }
     );
   },

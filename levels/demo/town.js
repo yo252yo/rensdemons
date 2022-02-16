@@ -34,7 +34,7 @@ var change_nickname = function() {
       "Today is an important day, you're finally going to the church to learn how you're going to defeat the forces of evil!",
     ], function(){ IO.control.character(); });
   }
-  PARTY.newChangeNickname(PARTYMEMBERS.Ren, undefined, cb);
+  PARTY.changeNickname(PARTYMEMBERS.Ren, undefined, cb);
 };
 
 CURRENTLEVEL.setup_text_start_function([

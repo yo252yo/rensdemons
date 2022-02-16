@@ -28,7 +28,7 @@ if(INVENTORY.count("_torturedSoulSteps") > 5){
 
       BATTLE.monster_actions.make_unique(
         function() {
-          PARTY.newChangeNickname(PARTYMEMBERS.TorturedSoul, undefined, BATTLE.operations.win);
+          PARTY.changeNickname(PARTYMEMBERS.TorturedSoul, undefined, BATTLE.operations.win);
         }
       );
     },

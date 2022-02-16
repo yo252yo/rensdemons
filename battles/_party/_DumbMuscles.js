@@ -27,7 +27,7 @@ var yes3 = PLAYER_ACTIONS.function.unlock_replacing_action({
 
     BATTLE.monster_actions.make_unique(
       function() {
-        PARTY.newChangeNickname(PARTYMEMBERS.DumbMuscles, undefined, BATTLE.operations.win);
+        PARTY.changeNickname(PARTYMEMBERS.DumbMuscles, undefined, BATTLE.operations.win);
       }
     );
   },

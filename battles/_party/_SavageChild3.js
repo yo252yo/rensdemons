@@ -65,7 +65,7 @@ var check_adoption = function(){
 
         BATTLE.monster_actions.make_unique(
           function() {
-            PARTY.newChangeNickname(PARTYMEMBERS.SavageChild, undefined, callback);
+            PARTY.changeNickname(PARTYMEMBERS.SavageChild, undefined, callback);
           }
         );
       },
