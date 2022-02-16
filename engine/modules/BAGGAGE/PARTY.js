@@ -161,7 +161,7 @@ const PARTY = {
 
       var nameString = nickname;
       if (original != nickname){
-       nameString += "(" + original + ")";
+       nameString += " (formerly " + original + ")";
      }
 
      var extra = SCREEN.is_mobile() ? "clear:both;" : "float: left;";
