@@ -4,7 +4,7 @@ class Generator {
     if (typeof seed_source == "string"){
       this.seed = this._hash_seed(STRING_UTILS.hash_str_to_int(seed_source));
     } else {
-      this.seed = this._hash_seed(seed_source);
+      this.seed = this._hash_seed(seed_source + 0.0001);
     }
     this.original_seed = this.seed;
   }
