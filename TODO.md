@@ -1,16 +1,17 @@
 # WIP
 
 
+casino
+- lootboxes?
+- rng was not helpful!
+
+
+
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
 
 
-# CASINO ----------------------------------------------------
-- a casino in vegas (and lootboxes) > the rng was helpful/not
-- gambling as pseudorandom next to an altar
-- implemented as a special shop ?
-you ask them if theyre random or pseudorandom or deterministic << like wtf how would you even know in universe, "if i were to do the same action twice would it have the same outcome?"
 
 # MORE HEAVEN  ----------------------------------------------------
 

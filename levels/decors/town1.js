@@ -21,7 +21,7 @@ new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1700, 1175, gen.get
 new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 100, 1850, 1225, gen.get());
 
 var s = new S_Store(CITIES.hope, "Occult", 0, 1150, 1950, gen.get());
-s.enter = function() {
+s.enter_function = function() {
   CURRENTLEVEL.setup("006_occultshop$");
 };
 

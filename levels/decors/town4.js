@@ -25,6 +25,13 @@ new S_Manor(2525,1150);
 new M_FemmeFatale(2125, 1125);
 new M_SnobRich(2725, 1175);
 
+
+var s = new S_Store(CITIES.indulgence, "Gambler", 0, 1700, 1250, gen.get());
+s.enter_function = function() {
+  BATTLE.api.make("_021/_casino");
+};
+
+
 // ===================
 //hack 4. PERMANENT FILLER ELEMENTS (decoration)
 // ===================
