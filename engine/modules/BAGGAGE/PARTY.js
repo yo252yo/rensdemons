@@ -130,6 +130,17 @@ const PARTY = {
     }
   },
 
+  newChangeNickname: function(name, prompt_text, callback) {
+    var fullcallback = function(newName){
+      if (newName) {
+        DICTIONARY.set(name, newName.replaceAll(' ',''));
+      }
+      callback();
+    }
+    var trueName = PARTY.display._get_name(name);
+    new PromptTextMenu(prompt_text || "Chose a nickname for ", trueName, fullcallback);
+  },
+
   display: {
     _get_name: function(name) {
       if(DICTIONARY.has(name)){
