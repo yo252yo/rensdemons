@@ -28,6 +28,7 @@ new S_ExitFloor(1380,2425,20,80, "042_fissure");
 
 var riddle = function(text, answer, destination){
   var ask = function(){
+  //PROMPT
     var reply = prompt("What will you say?");
     if (!reply) { reply = ""; }
     reply = reply.toLowerCase();

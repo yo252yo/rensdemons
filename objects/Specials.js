@@ -164,6 +164,7 @@ class S_SlimeDoor extends S_event {
   }
 
   ask()  {
+    //PROMPT
     var guess = prompt("What will you say?");
     var answer = S_SlimeTip.get_answer(this.code);
     if (!guess) { guess = ""; }

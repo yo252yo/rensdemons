@@ -80,6 +80,7 @@ PLAYER_ACTIONS.add({
   description: ["You speak."],
   unlock: true,
   function: function(){
+    //PROMPT
     var answer = prompt("What will you say?");
     if (!answer) { answer = ""; }
     answer = answer.toLowerCase();

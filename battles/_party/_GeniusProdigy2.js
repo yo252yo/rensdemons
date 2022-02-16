@@ -297,6 +297,7 @@ var think = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   extra_function: function() {
     var trueName = DICTIONARY.get("GeniusProdigy");
+    //PROMPT
     var answer = prompt(`What number is ${trueName} thinking of?`);
     if(answer != 108){
       make_loss("Think", answer, [`$$GeniusProdigy$: "No... I was thinking of 108..."`]);
