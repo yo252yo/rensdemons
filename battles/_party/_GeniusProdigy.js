@@ -218,6 +218,7 @@ var unlock_call = PLAYER_ACTIONS.function.unlock_replacing_action({
     BATTLE.monster_actions.empty(true);
     BATTLE.monster_actions.make_unique(
       function() {
+        BATTLE.monster_actions.empty(true);
         unlock_call2(`Shout name`);
         PARTY.newChangeNickname(PARTYMEMBERS.GeniusProdigy, "What name will you shout?", BATTLE.turn_factory.player);
       }
