@@ -163,7 +163,7 @@ class TextMenu extends TextElement {
         IO.control.cede();
         if (with_follow){
           var f = follow_function || TextMenu.followup;
-          setTimeout(function() { f(); }, 200);
+          setTimeout(function() { f(); }, 250);
         }
       }, 500);
 
