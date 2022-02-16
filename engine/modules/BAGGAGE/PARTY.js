@@ -169,7 +169,7 @@ const PARTY = {
                       <div style='width:300px;height:300px;position:relative;${extra}' id='character_portait_slot'>
                       </div>` + PARTY.description(name),
                     [
-                     {"text": "Change nickname", "effect": function(){ PARTY.changeNickname(name); }},
+                     {"text": "Change nickname", "effect": function(){ PARTY.newChangeNickname(name); }},
                      TEXTMENU_EMPTYROW,
                      {"text": "Back to party", "effect": "##BACK"},
                      TEXTMENU_EMPTYROW,

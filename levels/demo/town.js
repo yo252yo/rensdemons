@@ -29,10 +29,12 @@ var change_nickname = function() {
   INVENTORY.increase(ITEM.Coin, 100);
   INVENTORY.increase(ITEM.XpToken, 150);
   MARTYRDOM.death(10);
-  PARTY.changeNickname(PARTYMEMBERS.Ren);
-  TextBannerSequence.make([
-    "Today is an important day, you're finally going to the church to learn how you're going to defeat the forces of evil!",
-  ], function(){ IO.control.character(); });
+  var cb = function(){
+    TextBannerSequence.make([
+      "Today is an important day, you're finally going to the church to learn how you're going to defeat the forces of evil!",
+    ], function(){ IO.control.character(); });
+  }
+  PARTY.newChangeNickname(PARTYMEMBERS.Ren, undefined, cb);
 };
 
 CURRENTLEVEL.setup_text_start_function([

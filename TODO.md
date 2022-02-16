@@ -1,10 +1,10 @@
 # WIP
 
 
-casino
-- lootboxes?
-- rng was not helpful!
+the name of spearker isnt always properly highlighted (almost never i think)
 
+
+working on replacing prompts and PARTY.changeNickname
 
 
 # TROPES need thinking ---------------------------------------------
@@ -64,7 +64,7 @@ http://store.steampowered.com/explore/random/
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 - cache ressources  regenerate resource preloading list
-- replace js prompt() and try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
+- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 
 # FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding

@@ -64,7 +64,7 @@ new S_Tree(1550,1100);
 
 child_in_tree(1420, 1120, "cfbf", new M_BestFriend(-1,-1), new TextBannerProgressive([
     "You found your best friend, $$BestFriend$!",
-    function(){  PARTY.changeNickname(PARTYMEMBERS.BestFriend); },
+    function(){  PARTY.newChangeNickname(PARTYMEMBERS.BestFriend); },
     "$$BestFriend$: \"I knew you'd find me $$Ren$!\"",
     "$$BestFriend$: \"Good luck for this afternoon, I'm sure you'll do great!\""
 ]));
@@ -82,7 +82,7 @@ child_in_tree(1370,1380, "cff2", new M_ChildF(-1,-1, DICTIONARY.get("child_frien
 child_in_tree(1250, 1280, "cfm3", new M_PreciousChild(-1,-1),
   new TextBannerProgressive([
     "You found $$PreciousChild$!",
-    function(){  PARTY.changeNickname(PARTYMEMBERS.PreciousChild); },
+    function(){  PARTY.newChangeNickname(PARTYMEMBERS.PreciousChild); },
     "$$PreciousChild$: \"Well done... You're so good at hide and seek, $$Ren$!\"",
     "$$PreciousChild$: \"Are you ready? It's about time! Good luck!\"",
 ]));
@@ -105,8 +105,7 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 // ===================
 //hack 7. START/INIT
 // ===================
-var callback = function(){
-  PARTY.changeNickname(PARTYMEMBERS.Ren);
+var callback2 = function(){
   TextBannerSequence.make([
     "$$Ren$: \"... 97\"",
     "$$Ren$: \"... 98\"",
@@ -114,6 +113,10 @@ var callback = function(){
     "$$Ren$: \"... 100! Ready or not, here I come!\"",
   ], function(){ IO.control.character(); });
 };
+
+var callback = function(){
+  PARTY.newChangeNickname(PARTYMEMBERS.Ren, undefined, callback2);
+}
 
 CURRENTLEVEL.setup_text_start_function([
   "Although for now, the Promised Child, unaware of the fate that awaited, is simply playing hide and seek in the outskirts of town.",
