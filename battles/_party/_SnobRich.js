@@ -181,13 +181,15 @@ var unlock_short = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `You were right about to ask her if you could call her something more... rememberable when she continued, as if reading your mind.`,
-    `$$SnobRich$: "You may call me $$SnobRich$"`,
-    `You quietly thank the Goddess. This much you can remember.`,
+    `$$SnobRich$: "You may call me..."`,
   ],
-  extra_function: function(){
-    PARTY.changeNickname(PARTYMEMBERS.SnobRich);
-  },
-  outcome: BATTLETREE.NOTHING,
+  function: function(){
+    BATTLE.monster_actions.make_unique(
+      function() {
+        PARTY.newChangeNickname(PARTYMEMBERS.SnobRich, undefined, BATTLE.turn_factory.player);
+      }
+    );
+  }
 });
 
 var unlock_no = PLAYER_ACTIONS.function.unlock_replacing_action({
