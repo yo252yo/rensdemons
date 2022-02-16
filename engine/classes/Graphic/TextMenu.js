@@ -38,6 +38,9 @@ class TextMenu extends TextElement {
       if(!IO.interface._can_open_escape_menu() || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
         return;
       }
+      if ( Math.random() >= 0.05){
+        return;
+      }
       TextBannerSequence.make(RANDOM.pick([
         [
           `$$BestFriend$: "$$Ren$? Are you okay?"`,
@@ -153,13 +156,14 @@ class TextMenu extends TextElement {
       return selected_element;
     }
 
-    close(with_follow) {
+    close(with_follow, follow_function) {
       this.in_destruction = true;
       this.destroy();
       setTimeout(function() {
         IO.control.cede();
-        if (with_follow && Math.random() < 0.05){
-          setTimeout(function() { TextMenu.followup(); }, 200);
+        if (with_follow){
+          var f = follow_function || TextMenu.followup;
+          setTimeout(function() { f(); }, 200);
         }
       }, 500);
 

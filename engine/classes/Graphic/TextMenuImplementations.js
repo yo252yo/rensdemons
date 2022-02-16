@@ -26,6 +26,26 @@ class CenteredTextMenu extends TextMenu {
     }
 }
 
+class PromptTextMenu extends CenteredTextMenu {
+    constructor(text, value, callback) {
+        super(text + `:<br /><input type="input" value="${value}" id="prompttextmenu" />`, [{"text": "OK", "effect": "##CLOSE"}]);
+        this.callback = callback;
+        IO.key_interceptor.deactivate();
+    }
+
+    close() {
+      var self = this;
+      var returnvalue = document.getElementById("prompttextmenu").value;
+      var f = function(){
+        IO.key_interceptor.activate();
+        self.callback(returnvalue);
+      };
+      super.close(true, f);
+    }
+}
+
+
+
 class FullTextMenu extends TextMenu {
     static getDimensions() {
       if(SCREEN.is_mobile()){
