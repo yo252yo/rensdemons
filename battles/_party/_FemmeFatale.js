@@ -84,12 +84,15 @@ var accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$FemmeFatale$: "Nice, I've always wanted to go see the world. Maybe this is my chance!"`,
     "$$FemmeFatale$ joins your party!",
-    `$$FemmeFatale$: "So... Where are we going?"`,
     ],
-    outcome: BATTLETREE.WIN,
     extra_function: function(){
-      PARTY.changeNickname(PARTYMEMBERS.FemmeFatale);
       PARTY.add(PARTYMEMBERS.FemmeFatale);
+
+      BATTLE.monster_actions.make_unique(
+        function() {
+          PARTY.newChangeNickname(PARTYMEMBERS.FemmeFatale, undefined, BATTLE.operations.win);
+        }
+      );
     },
 });
 

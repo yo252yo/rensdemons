@@ -19,14 +19,18 @@ var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "I promise I'll do my best! But please stop calling me kid, we are barely a few years apart."`,
     `$$StreetSmart$: "No can do, kid. We might be a few years apart, but you still have so much to learn about life."`,
     `$$StreetSmart$: "My name is $$StreetSmart$, by the way... Here, have your money back."`,
-    "$$StreetSmart$ joins your party!",
     `He hands you your coins back.`,
+    "$$StreetSmart$ joins your party!",
   ],
-  outcome: BATTLETREE.WIN,
   extra_function: function(){
-    PARTY.changeNickname(PARTYMEMBERS.StreetSmart);
     PARTY.add(PARTYMEMBERS.StreetSmart);
     INVENTORY.increase(ITEM.Coin, INVENTORY.count("_streetSmart_mugged_amount"));
+
+    BATTLE.monster_actions.make_unique(
+      function() {
+        PARTY.newChangeNickname(PARTYMEMBERS.StreetSmart, undefined, BATTLE.operations.win);
+      }
+    );
   },
 });
 

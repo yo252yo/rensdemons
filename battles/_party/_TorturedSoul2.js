@@ -23,10 +23,14 @@ if(INVENTORY.count("_torturedSoulSteps") > 5){
       `$$Ren$: "Sure... Whatever."`,
       "$$TorturedSoul$ joins your party!",
     ],
-    outcome: BATTLETREE.WIN,
     extra_function: function(){
-      PARTY.changeNickname(PARTYMEMBERS.TorturedSoul);
       PARTY.add(PARTYMEMBERS.TorturedSoul);
+
+      BATTLE.monster_actions.make_unique(
+        function() {
+          PARTY.newChangeNickname(PARTYMEMBERS.TorturedSoul, undefined, BATTLE.operations.win);
+        }
+      );
     },
   });
 }

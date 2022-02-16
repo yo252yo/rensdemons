@@ -199,7 +199,6 @@ PLAYER_ACTIONS.add({
 PLAYER_ACTIONS.add({
   name: askJosephine,
   replacing: useTarot,
-  outcome: BATTLETREE.WIN,
   description: [`$$Ren$: "It's not a game, I also have a special link with the spirits. Just ask Josephine, she'll tell you that this journey is the right thing to do."`,
                 `$$UpbeatDojikko$ looks stunned.`,
                 `$$UpbeatDojikko$: "How do you know about Josephine?"`,
@@ -209,13 +208,17 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$ looks over your shoulder.`,
                 `$$UpbeatDojikko$: "Is he right, nanny? Should I go?"`,
                 `You watch her listen to an answer you cannot hear.`,
-                `$$UpbeatDojikko$: "Very well, if you both say so, I will accompany the Promised Child on his quest."`,
+                `$$UpbeatDojikko$: "Very well, if you both say so, I will accompany the Promised Child on his quest. I'll take my spirit friends along!"`,
                 "$$UpbeatDojikko$ joins your party!",
-                `$$UpbeatDojikko$: "Let's go! I'll take my spirit friends along!"`,
                 ],
   extra_function: function(){
-    PARTY.changeNickname(PARTYMEMBERS.UpbeatDojikko);
     PARTY.add(PARTYMEMBERS.UpbeatDojikko);
+
+    BATTLE.monster_actions.make_unique(
+      function() {
+        PARTY.newChangeNickname(PARTYMEMBERS.UpbeatDojikko, undefined, BATTLE.operations.win);
+      }
+    );
   },
 });
 BATTLETREE.api.lock(battle, askJosephine);

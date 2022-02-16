@@ -22,10 +22,14 @@ var yes3 = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$DumbMuscles$: "Oh, just one thing, my name's $$DumbMuscles$! But if we're gonna be best mates, you're gonna have to give me a nickname! What do you think?"`,
     `He seems pleased with your choice.`,
     ],
-  outcome: BATTLETREE.WIN,
   extra_function: function(){
     ABILITIES.unlock("_followedByDumbMuscles");
-    PARTY.changeNickname(PARTYMEMBERS.DumbMuscles);
+
+    BATTLE.monster_actions.make_unique(
+      function() {
+        PARTY.newChangeNickname(PARTYMEMBERS.DumbMuscles, undefined, BATTLE.operations.win);
+      }
+    );
   },
 });
 
