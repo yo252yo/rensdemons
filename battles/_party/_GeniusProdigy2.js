@@ -297,16 +297,28 @@ var think = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   extra_function: function() {
     var trueName = DICTIONARY.get("GeniusProdigy");
-    //PROMPT
-    var answer = prompt(`What number is ${trueName} thinking of?`);
-    if(answer != 108){
-      make_loss("Think", answer, [`$$GeniusProdigy$: "No... I was thinking of 108..."`]);
+
+    var callback = function(answer){
+      BATTLE.monster_actions.empty(true);
+      if(answer != 108){
+        make_loss("Think", answer, [`${trueName}: "No... I was thinking of 108..."`]);
+      }
+
+      ooe("Think");
+      if(answer != 108){
+        BATTLETREE.api.lock("_party/_GeniusProdigy2", "108");
+      }
+
+      BATTLE.turn_factory.player();
     }
 
-    ooe("Think");
-    if(answer != 108){
-      BATTLETREE.api.lock("_party/_GeniusProdigy2", "108");
-    }
+    BATTLE.monster_actions.make_unique(
+      function() {
+        BATTLE.monster_actions.empty(true);
+        new PromptTextMenu(`What number is ${trueName} thinking of?`, "", callback);
+      }
+    );
+
   }
 });
 
