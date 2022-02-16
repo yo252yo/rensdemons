@@ -164,21 +164,22 @@ class S_SlimeDoor extends S_event {
   }
 
   ask()  {
-    //PROMPT
-    var guess = prompt("What will you say?");
-    var answer = S_SlimeTip.get_answer(this.code);
-    if (!guess) { guess = ""; }
-    guess = guess.toLowerCase();
-    if(guess == answer){
-      var self = this;
-      TextBannerSequence.make([
-        `In a wooshing sound, the curtain of metal burrows in the ceiling, leaving the way free.`,
-      ], function() { self.destroy(); });
-    } else {
-      TextBannerSequence.make([
-        `Nothing happens`,
-      ]);
+    var self = this;
+    var callback = function(guess){
+      var answer = S_SlimeTip.get_answer(self.code);
+      if (!guess) { guess = ""; }
+      guess = guess.toLowerCase();
+      if(guess == answer){
+        TextBannerSequence.make([
+          `In a wooshing sound, the curtain of metal burrows in the ceiling, leaving the way free.`,
+        ], function() { self.destroy(); });
+      } else {
+        TextBannerSequence.make([
+          `Nothing happens`,
+        ]);
+      }
     }
+    new PromptTextMenu("What will you say?", "", callback);
   }
 
   interaction() {
