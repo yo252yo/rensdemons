@@ -5,38 +5,43 @@ AUDIO.music.characters.SavageChild();
 PLAYER_ACTIONS.escape();
 
 
-var unlock_join = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: DICTIONARY.get(PARTYMEMBERS.SavageChild) + " ",
-  unlock: true,
-  description: [
-    `You keep repeating the name you chose for her in hope to establish a connection.`,
-    `Finally, she seems to understand you. She nods and smiles at you.`,
-    `$$SavageChild$: "I'm $$SavageChild$!"`,
-    `It's going to take a while to develop proper communication, but it seems that she's willing to follow you.`,
-    "$$SavageChild$ joins your party!",
-  ],
-  outcome: BATTLETREE.WIN,
-  extra_function: function(){
-    PARTY.add(PARTYMEMBERS.SavageChild);
-  },
-});
+var unlock_join = function () {
+  return PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: DICTIONARY.get(PARTYMEMBERS.SavageChild) + " ",
+    unlock: true,
+    description: [
+      `You keep repeating the name you chose for her in hope to establish a connection.`,
+      `Finally, she seems to understand you. She nods and smiles at you.`,
+      `$$SavageChild$: "I'm $$SavageChild$!"`,
+      `It's going to take a while to develop proper communication, but it seems that she's willing to follow you.`,
+      "$$SavageChild$ joins your party!",
+    ],
+    outcome: BATTLETREE.WIN,
+    extra_function: function(){
+      PARTY.add(PARTYMEMBERS.SavageChild);
+    },
+  });
+};
 
 
-
-var unlock_name = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: DICTIONARY.get(PARTYMEMBERS.SavageChild),
-  unlock: true,
-  description: [
-    `$$Ren$: "I'm $$Ren$. You're $$SavageChild$."`,
-  ],
-  function: function(){
-    if(INVENTORY.count("_sg_name") > 1){
-      unlock_join(DICTIONARY.get(PARTYMEMBERS.SavageChild));
-    } else {
-      INVENTORY.increase("_sg_name", 1);
+var unlock_name = function(){
+  return PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: DICTIONARY.get(PARTYMEMBERS.SavageChild),
+    unlock: true,
+    description: [
+      `$$Ren$: "I'm $$Ren$. You're $$SavageChild$."`,
+    ],
+    function: function(){
+      if(INVENTORY.count("_sg_name") > 1){
+        BATTLE.player_actions.empty(true);
+        var f = unlock_join(DICTIONARY.get(PARTYMEMBERS.SavageChild));
+        f();
+      } else {
+        INVENTORY.increase("_sg_name", 1);
+      }
     }
-  }
-});
+  });
+}
 
 var check_adoption = function(){
   if(INVENTORY.count("_sg_affection") > 3){
@@ -44,15 +49,25 @@ var check_adoption = function(){
       name: "Name",
       unlock: true,
       description: [
-        `$$Ren$: "You feel like the wild girl got used to you. As if to confirm this, she follows you when you move away. You think it may be a good time to give her a name."`,
+        `You feel like the wild girl got used to you. As if to confirm this, she follows you when you move away. You think it may be a good time to give her a name.`,
       ],
       function: function(){
-        PARTY.changeNickname(PARTYMEMBERS.SavageChild);
         BATTLE.player_actions.empty();
         BATTLE.monster_actions.empty();
-        BATTLE.monster_actions.add_textual("The child looks at you with big eyes full of expectations.");
-        unlock_name();
-        PLAYER_ACTIONS.escape();
+
+        var callback = function(){
+          BATTLE.monster_actions.empty();
+          BATTLE.monster_actions.add_textual("The child looks at you with big eyes full of expectations.");
+          (unlock_name())();
+          PLAYER_ACTIONS.escape();
+          BATTLE.turn_factory.player();
+        }
+
+        BATTLE.monster_actions.make_unique(
+          function() {
+            PARTY.newChangeNickname(PARTYMEMBERS.SavageChild, undefined, callback);
+          }
+        );
       },
     });
   }
