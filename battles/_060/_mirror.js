@@ -110,7 +110,7 @@ var whattodo = function(cause){
 var help = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Help you?",
   unlock: true,
-  description: [`$$Ren$: "I'm trapped in a neverending cycle of suffering... I see my best friend die over and over again. There's nothing I can do."`],
+  description: [`$$Ren$: "Well as I'm sure you know, I'm trapped in a neverending cycle of suffering... I see my best friend die over and over again. There's nothing I can do. It's pretty awful."`],
   function: whattodo,
 });
 
@@ -174,7 +174,7 @@ var why = function(cause){
   quick_action(cause, rensid, "For fun",              [`$$Ren$: "How can any of this be fun to you? You're horrible!"`]);
   quick_action(cause, rensid, "To make you suffer",   [`$$Ren$: "I see... So that's the type of person you are... You're horrible!"`]);
   quick_action(cause, rensid, "To win",               [`$$Ren$: "To win at what, exactly? What did you win?"`]);
-  quick_action(cause, freedom, "Had no choice",       [`$$Ren$: "I never thought about that! I thought Deities who could create universes would be free, but it turns out you have limits too!"`]);
+  quick_action(cause, freedom, "I had no choice",     [`$$Ren$: "I never thought about that! I thought Deities who could create universes would be free, but it turns out you have limits too!"`]);
   quick_action(cause, freedom, "It was written",      [`$$Ren$: "So you had no choice? I thought Deities who could create universes would be free, but it turns out you have limits too!"`]);
 }
 

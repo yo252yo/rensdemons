@@ -3,8 +3,6 @@
 
 
 
-- reread/flesh out man.md about forking
-- reread/flesh out mirror conv (esp more first person actions?? "you" direct)
 
 
 
