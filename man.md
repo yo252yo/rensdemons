@@ -12,7 +12,7 @@
 
 Ren's Demons is a game written in a custom js game engine for any computer/phone that runs a web browser. Its engine is accessible to anyone from the js console, or its code on github.
 
-In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo** or to get some endings.
+In addition to keeping the code clean, I thought I'd write this little guide for anyone curious. Also, it's probably **necessary to beat the demo**.
 
 ## WINNING
 
@@ -26,7 +26,7 @@ You can manipulate the game from the js console. This game engine has a built-in
 
 ### Bricking
 
-You can also prevent the suffering of the characters by **stoppping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't create any more suffering children. You can do that with the command:
+You can also prevent the suffering of the characters by **stopping** the game engine and making sure the game is not able to run anymore. This solution is more **permanent**. The game won't be able to run, and therefore won't create any more suffering children. You can do that with the command:
 
 `DISK.corrupt();`
 
