@@ -3,9 +3,6 @@
 
 
 
-
-
-
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
@@ -35,7 +32,6 @@ http://store.steampowered.com/explore/random/
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 
 
-
 # BUGFIXES  ----------------------------------------------------
 - test on edge, epsecially functions starting by _, mb the nested ones
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
@@ -51,7 +47,6 @@ http://store.steampowered.com/explore/random/
 - The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
-- confirmation when you save: the goddess SAVED your soul (save/save)
 - cache ressources  regenerate resource preloading list
 - try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 

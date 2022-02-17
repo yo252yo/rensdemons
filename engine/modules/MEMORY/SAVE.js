@@ -111,11 +111,15 @@ const SAVE = {
         CONSOLE.log.debug("Save file downloaded");
       }
 
-      new CenteredTextMenu("Save?", [
-        {"text": "Overwrite AUTOSAVE", "effect": function() { SAVE.save(0); }},
+      var menu = new CenteredTextMenu("Save?", [
+        {"text": "Overwrite AUTOSAVE", "effect": function() {
+          SAVE.save(0);
+          TextBannerSequence.make([`The Goddess saved your soul.`]);
+         }},
         {"text": `Download new save file`, "effect": dothesave, "keep_open": true},
-        {"text": "Back", "effect": "##BACK"}
+        {"text": "Stop praying", "effect": "##CLOSE"}
       ]);
+
       return true;
     },
 
