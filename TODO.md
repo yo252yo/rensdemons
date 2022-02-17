@@ -2,15 +2,15 @@
 
 
 
-working on replacing   //PROMPT
+
+- reread/flesh out man.md about forking
+- reread/flesh out mirror conv (esp more first person actions?? "you" direct)
 
 
 
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
-
-
 
 # MORE HEAVEN  ----------------------------------------------------
 
@@ -19,17 +19,8 @@ working on replacing   //PROMPT
 https://itch.io/randomizer post ??
 http://store.steampowered.com/explore/random/
 
-
-# PROOF GODDESS  ----------------------------------------------------
-- You thought you got powers because you killed god but it's because you understood on some lvl that the world is made by you for you (THE STORY IS THE ONTOLOGICAL GROUNDING OF YOUR EXISTENCE)
 - Explain that the console is like magic words that change the fabric of the universe
-- WHO makes you do it??
-- You can do anything you want , why are you still following the game
-- The SYSTEM goddess exploits the energy of someone stuck in a sollipsist simulation (like SNS feeding from ppl's attention by    trapping them in truman show filter bubble), energy from running in the loop
-- the goddess SAVED your soul (save/save) as confirmation when you save
-- The cycle of replay with the promise of a true ending is precisely what the system exploits
 
-# PROOF MIRROR  ----------------------------------------------------
 
 # STATS DISPLAY  ----------------------------------------------------
 
@@ -62,6 +53,7 @@ http://store.steampowered.com/explore/random/
 - The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
+- confirmation when you save: the goddess SAVED your soul (save/save)
 - cache ressources  regenerate resource preloading list
 - try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 
@@ -84,8 +76,6 @@ See 051_pandemonium_room and 012_trees
 - more event text in zones?
 - more text for existing objects?
 - mb more interactions with real world like books
-- reread/flesh out man.md about forking
-- reread/flesh out mirror conv (esp more first person actions?? "you" direct)
 - https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - trailer/arts
 - word count

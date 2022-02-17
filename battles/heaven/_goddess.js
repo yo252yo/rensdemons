@@ -197,7 +197,7 @@ var persuade =  PLAYER_ACTIONS.function.unlock_replacing_action({
   outcome: BATTLETREE.NOTHING,
   description: [
     `$$Ren$: "We cannot act on their world, but maybe there is a way to make a Primordial Deity act on our behalf? If They can see us, maybe we can persuade Them, somehow..."`,
-    `Goddess: "This sounds extremely hard, but I see no reason why it would be impossible. $$Ren$, you are special, you have the power to communicate with the world of the gods. If anyone can accomplish the unbelievable feat of sending a message to another universe, you can."`,
+    `Goddess: "This sounds extremely hard, but I see no reason why it would be impossible. $$Ren$, you are special, you have the power to communicate with the world of these Deities. If anyone can accomplish the unbelievable feat of sending a message to another universe, you can."`,
     `$$Ren$: "I know it seems insane, but I don't think there is any other way. We cannot escape our fate. All of my attempts to change our universe from within have failed. Our only hope is to reach outside. Only They can change our world and stop our eternal suffering."`,
     `$$Ren$: "Only Primordial Deities can stop this madness, or better yet, create a new, happy world. All we can do down here is pray."`,
     `$$Ren$: "May the True Gods have mercy on us."`,
@@ -209,10 +209,10 @@ var counterattack =  PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Counterattack",
   unlock: true,
   description: [
-    `$$Ren$: "There has to be a way to fight them and free ourselves!"`,
-    `Goddess: "You do not understand, child. You are nothing to them. The Primordial Deities are on a whole different metaphysical plane. You cannot reach Them, ever, let alone act on Them. It's physically impossible."`,
-    `Goddess: "Meanwhile, They see everything you do and think. Your very soul has no secret for them. Your existence is conditioned on Their approval. You cannot keep a secret from Them."`,
-    `$$Ren$: "They are on a whole other level, aren't they..."`,
+    `$$Ren$: "There has to be a way to fight Them and free ourselves!"`,
+    `Goddess: "You do not understand, child. You are nothing to Them. The Primordial Deities are on a whole different metaphysical plane. You cannot reach Them, ever, let alone act on Them. It's physically impossible."`,
+    `Goddess: "Meanwhile, They see everything you do and think. Your very soul has no secret for Them. Your existence is conditioned on Their approval. You cannot keep a secret from Them."`,
+    `$$Ren$: "They really are on a whole other level, aren't They..."`,
   ],
   function: persuade,
 });
@@ -251,13 +251,27 @@ var meaning =  PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: [
-    `$$Ren$: "There must be a deeper meaning to this! They wouldn't do that without reason! Maybe our suffering produces energy for Them? Or some sort of scientific experiment?"`,
+    `$$Ren$: "There must be a deeper meaning to this! They wouldn't do that without reason!"`,
     `Goddess: "I'm afraid the truth is more dire. I think we're just providing Them pleasure. But that doesn't make it meaningless! Maybe Their world is even more cruel and unfair, and They need us as diversion or inspiration! Or maybe... Maybe we provide Them some sort of validation..."`,
     `$$Ren$: "What do you mean?"`,
     `Goddess: "Remember what I said about humans and how they needed a Goddess to fill their lack? Maybe the Primordial Deities are not so different. Maybe They are also lacking, and making new universes is Their way to fill that gap..."`,
     `$$Ren$: "That would almost be a decent purpose. I mean, it's kinda poetic..."`,
-    `Goddess: "It's undeniable that every time we play along with this little scheme we reinforce its legitimacy, and by extension we validate Them. In a weird way, it gives us control over Them, it makes Them depend on us..."`,
+    `Goddess: "It's undeniable that every time we play along with this little scheme we reinforce its legitimacy, and by extension we validate Them as our overlords. In a weird way, it gives us control over Them, it makes Them depend on us..."`,
     `$$Ren$: "Maybe, but could we even leverage that?"`,
+  ],
+});
+
+
+var energy =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Energy",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "Maybe this is a sort of scientific experiment? What could They possibly get out of making me go through this loop? Maybe it produces some kind of energy for Them?"`,
+    `Goddess: "I am myself unsure about that. I do think that you are touching at something important here."`,
+    `Goddess: "Whatever the aim, this system perfectly leverages and exploits the efforts of the subject stuck in the cycle. It feeds off your attention, and anything you try seems to only strengthen the trap further."`,
+    `Goddess: "The more you struggle and fight, the more inescapable it becomes, because your yearning for an escape is precisely what the system exploits! It's what it relies on!"`,
+    `$$Ren$: "But... that means there's nothing I can do! I can only make things worse!"`,
   ],
 });
 
@@ -271,6 +285,7 @@ var purpose =  PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     amusement("Purpose");
     meaning("Purpose");
+    energy("Purpose");
   },
 });
 
@@ -281,7 +296,7 @@ var system =  PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "What do you mean by 'we cannot escape'? What is this trap?"`,
     `Goddess: "The Primordial Deities created this world with very specific rules. There must always be a hero, there must always be a demon lord, there must always be a Goddess... There must always be a journey: yours."`,
     `Goddess: "The Primordials do love an epic adventure... As long as They are not satisfied, the tale will not be over, and this world will live on as the stage for the story They want. They will not let it end."`,
-    `Goddess: "Whatever you may do to the world, you cannot escape Their structure. They will always find a way to bring it back. Their power is much bigger than you can ever imagine. We're merely pawns to Them."`,
+    `Goddess: "Whatever you may do to the world, you cannot escape the yoke of Their structure. They will always find a way to bring it back. Their power is much bigger than you can ever imagine. They control everything you see and the way you see it. We're merely pawns to Them."`,
     `$$Ren$: "That's why we keep coming back? And why creating a new world or removing suffering didn't work out..."`,
     `Goddess: "Indeed. This is our fate. We're condemned to play out the performance They expect from us. It is the whole meaning of our existence."`,
   ],
@@ -301,7 +316,7 @@ var me =  PLAYER_ACTIONS.function.unlock_replacing_action({
     `Goddess: "You already know. You are the Promised Child. Like me, you are a vessel for the will of a Primordial Deity."`,
     `Goddess: "But you are way more important, $$Ren$. You are the one chosen by the Primordial Deity. I was just Their tool to reach you."`,
     `Goddess: "They are the ones who have been guiding you through me all along. I did nothing but enable Them."`,
-    `Goddess: "You have powers that transcend this reality. You are indeed very special. You can interact directly with the world of the Primordial Deity. You are the bridge between this world and Theirs."`,
+    `Goddess: "You, on the other hand, have powers that transcend this reality. You are indeed very special. You interact directly with the world of the Primordial Deity. You are the bridge between this world and Theirs."`,
     `$$Ren$: "But I've never talked to a God! Except you, I mean... I've never talked to someone from another world!"`,
     `Goddess: "Trust me, you did. But it was not using words. You have been in constant interaction with Them. That much is certain. They guide your steps and give you life. Without Them, you wouldn't be here."`,
   ],
@@ -315,7 +330,7 @@ var world =  PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "So our world is... fake?"`,
     `Goddess: "Not to us, of course. It cannot be, since we live in it. But it is true that it has been manufactured entirely. It is the creation of higher beings. That does not make it futile."`,
     `Goddess: "I do not know much about how worlds are manufactured. I am, after all, a simple vessel."`,
-    `Goddess: "However, I know that this heaven is the place in our universe where the boundary with the world of the Primordial Deities is the thinnest. I believe that somewhere in this weird infinite space lies answers to the secrets about the fabric of our universe."`,
+    `Goddess: "However, I know that this heaven is the place in our universe where the boundary with the world of the Primordial Deities is the thinnest. I believe that if there is a place where you can learn more about the fabric of our universe it is in this weird infinite space."`,
     ],
 });
 
@@ -332,13 +347,42 @@ var gods =  PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
 });
 
+var powers =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Powers",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "But you do have godly powers! I stole them from you when I defeated you!"`,
+    `Goddess: "I do indeed have powers in this world, and so do you now. But you did not gain them by killing me or my sisters. You only got them because your experiences brought you closer to understand the truth about the world."`,
+    `$$Ren$: "What truth?"`,
+    `Goddess: "This world is made for you and by you. All the characters, all the monsters are all working together to give you a tailored story."`,
+    `Goddess: "I was their orchestrator, and you've always been their ultimate master, even without realizing it. Isn't it natural that we would have complete control over this world?"`,
+    `Goddess: "The world of the Story, its characters only exist because there's a story to be part of. Whoever controls the story controls everything..."`,
+    `Goddess: "And yet, ironically, that also applies to you and me. We might be special, but we do live in this world, don't we?"`,
+    `Goddess: "We need the Story as much as it needs us..."`,
+  ],
+});
+
+
+var continuing =  PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: "Victory",
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [
+    `$$Ren$: "Tell me, where do I go from here? What path will lead me to victory?"`,
+    `Goddess: "You have met and killed God, you have earned world-breaking powers, and yet you still continue running after this illusory notion... Victory. Do you really think there can be such a thing?"`,
+    `Goddess: "What more can there be than transcending the world? You can already do anything you want! You truly are akin to a god, yet you keep looking for something more... What is it you're after?"`,
+    `Goddess: "Why do you go on repeating this circle? Who is making you do it? What would ever be enough?"`,
+  ],
+});
+
 var world_origin =  PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Truth",
   unlock: true,
   description: [
     `$$Ren$: "What do you mean? Tell me what you know! Who are you, really?"`,
     `Goddess: "I am the Goddess of your world, that much is true. But that does not make me Almighty."`,
-    `Goddess: "This world is not the only one in existence. I was created by people from another universe. They are the ones who created this whole world, and then charged me with the mission to govern it."`,
+    `Goddess: "This world is not the only one in existence. I was created by people from another universe. They are the ones who made this whole world, and then charged me with the mission to govern it."`,
     `Goddess: "I answer to Them. They made sure that I could not do otherwise. It's the very core of my being."`,
     `Goddess: "So you see, I am not really a God. I'm simply an avatar in this world for the real Primordial Deities who created it. I'm just a servant."`,
   ],
@@ -347,6 +391,8 @@ var world_origin =  PLAYER_ACTIONS.function.unlock_replacing_action({
     gods("Truth");
     me("Truth");
     world("Truth");
+    continuing("Truth");
+    powers("Truth");
     STATS.record.flag("PrimordialDeities");
   },
 });
