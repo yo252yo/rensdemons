@@ -10,25 +10,40 @@
 
 window.onload = function() {
   var run = function() {
-    var lvl = (new URL(window.location.href)).searchParams.get("lvl");
-    var save = (new URL(window.location.href)).searchParams.get("s");
-    var battle = (new URL(window.location.href)).searchParams.get("battle");
-    if(lvl){
-      CURRENTLEVEL.setup(lvl);
-    } else if(save) {
-      SAVE.load(save);
-    } else if(battle) {
-      BATTLE.api.make(battle);
+    var lvl = (new URL(window.location.href)).searchParams.getAll("lvl");
+    var save = (new URL(window.location.href)).searchParams.getAll("s");
+    var battle = (new URL(window.location.href)).searchParams.getAll("battle");
+    if(lvl.length > 0 && lvl[0]){
+      CURRENTLEVEL.setup(lvl[0]);
+    } else if(battle.length > 0 && battle[0]) {
+      BATTLE.api.make(battle[0]);
+    } else if(save.length > 0 && save[0].length > 0) {
+      SAVE.load(save[0]);
     } else {
-      SAVE.load(1);
+      IO.key_interceptor.deactivate();
+
+      var my_form = HTML.div.make({top:100, left:100});
+      my_form.innerHTML=`
+        <h3>Indicate the entity to debug:</h3>
+        <form action="testing.html" method="get">
+        <input type="text" name="lvl" placeholder="level_name"><input type="submit">
+        </form><br />
+        <form action="testing.html" method="get">
+        <input type="text" name="battle" placeholder="battle_name"><input type="submit">
+        </form><br />
+        <form action="testing.html" method="get">
+        <input type="text" name="s" placeholder="save_number"><input type="submit">
+        </form><br />
+      `;
+      document.getElementById("page").appendChild(my_form);
     }
   }
 
   DISK.initialize_game();
   setTimeout(DEBUG.all, 300);
   setTimeout(run, 750);
-//  BATTLE.api.make("viper", undefined);
 }
+
 
 </script>
 <link rel="stylesheet" href="style.css">
