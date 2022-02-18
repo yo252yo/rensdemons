@@ -4,7 +4,7 @@
 var battle = "_060/_screen";
 var turnoff =  `Shutting down...`;
 
-AUDIO.music.interface.boss();
+AUDIO.music.interface.introduction();
 
 // ===================
 //hack LOG
@@ -141,23 +141,24 @@ var openframe = function(){
 var backtomenu = " <-- ";
 var displayconsole = "Console.exe";
 var displaybrowser = "Navigator.exe";
-var thoughts = "Thoughts";
-var program = "Programs/";
+var program = "./Programs/";
+var rd = "rens_demons_xx.exe";
+var rdd = "rens_demo.exe";
 
 
 var entersubmenu =  function(){
   BATTLETREE.api.lock(battle, displayconsole);
   BATTLETREE.api.lock(battle, displaybrowser);
-  BATTLETREE.api.lock(battle, thoughts);
   BATTLETREE.api.lock(battle, program);
   BATTLETREE.api.unlock(battle, backtomenu);
 }
 var exitsubmenu =  function(){
   BATTLETREE.api.unlock(battle, displayconsole);
   BATTLETREE.api.unlock(battle, displaybrowser);
-  BATTLETREE.api.unlock(battle, thoughts);
   BATTLETREE.api.unlock(battle, program);
   BATTLETREE.api.lock(battle, backtomenu);
+  BATTLETREE.api.lock(battle, rd);
+  BATTLETREE.api.lock(battle, rdd);
 }
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -205,6 +206,40 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
+
+var unlock_rd = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: rd,
+  unlock: true,
+  description: ["Loading " + rd],
+  function: function () {
+    STATS.record._increment(STAT.Endings);
+    window.location = "index.html";
+  }
+});
+
+var unlock_rdd = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: rdd,
+  unlock: true,
+  description: ["Loading " + rdd],
+  function: function () {
+    window.location = "index.html?trial";
+  }
+});
+
+
+var unlock_program = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: program,
+  unlock: true,
+  extra_function: function () {
+    entersubmenu();
+
+    unlock_rd();
+    unlock_rdd();
+  }
+});
+
+
+
 // ===================
 //hack STARTUP
 // ===================
@@ -221,20 +256,6 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
-var unlock_thoughts = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: thoughts,
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [`ttt`],
-});
-
-var unlock_program = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: program,
-  unlock: true,
-  outcome: BATTLETREE.NOTHING,
-  description: [`ttt`],
-});
-
 PLAYER_ACTIONS.add({
   name: "[R]etry",
   unlock: true,
@@ -246,7 +267,6 @@ PLAYER_ACTIONS.add({
     unlock_browser("[R]etry");
     back_to_menu("[R]etry");
     unlock_exit("[R]etry");
-    unlock_thoughts("[R]etry");
     unlock_program("[R]etry");
 
     exitsubmenu();
