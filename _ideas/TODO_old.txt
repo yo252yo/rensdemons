@@ -1,3 +1,6 @@
+
+- test on edge, epsecially functions starting by _, mb the nested ones
+- sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - DODGE.absorb_params
 - better memory management?
 - menu back->back makes an infinite loop (i.e. impossible to have more than 2 lvls)

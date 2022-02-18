@@ -23,10 +23,8 @@
 
 
 # BUGFIXES  ----------------------------------------------------
-- test on edge, epsecially functions starting by _, mb the nested ones
 - Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
-- check save/disk size
 - add rens parent sendoff/house before trial?
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
@@ -34,8 +32,6 @@
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?
 - palette has functions that return objects, strings and functinos that just outright change the colors
-- The character encoding of the HTML document was not declared. The document will render with garbled text in some browser configurations if the document contains characters from outside the US-ASCII range. The character encoding of the page must be declared in the document or in the transfer protocol.
-- sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 - cache ressources  regenerate resource preloading list
 - try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
@@ -51,6 +47,8 @@ See 051_pandemonium_room and 012_trees
 - review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
 
 # SEND OUT FOR BETA  ----------------------------------------------------
+- check save/disk size
+- record everything
 
 # POLISHING/PRODUCTIONIZE  ----------------------------------------------------
 - optimize size on disk
