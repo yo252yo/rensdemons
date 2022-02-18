@@ -5,8 +5,7 @@ VALID REFACTORINGS:
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
 
-
-
+- break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - test on edge, epsecially functions starting by _, mb the nested ones
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV
 - DODGE.absorb_params

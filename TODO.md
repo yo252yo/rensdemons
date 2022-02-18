@@ -19,12 +19,7 @@
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 !!!  RESOURCES.js  cache ressources  regenerate resource preloading list
 
-# BUGFIXES  ----------------------------------------------------
-- if theres a guy behind a house interaction interacts with the house (most prominent object)
-- break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
-- try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
-
-# FILLER CHECK  ----------------------------------------------------
+# 1. proof/ FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
 - graphical audit from >= first town
 - ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
@@ -34,12 +29,16 @@ See 051_pandemonium_room and 012_trees
 
 - review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
 
-# SEND OUT FOR BETA  ----------------------------------------------------
+# 2. Electron app ----------------------------------------------------
+https://en.wikipedia.org/wiki/Electron_(software_framework) then
+
+# 3. SEND OUT FOR BETA  ----------------------------------------------------
 - check save/disk size
 - record everything
 
-# POLISHING/PRODUCTIONIZE  ----------------------------------------------------
+# 4. POLISHING/PRODUCTIONIZE  ----------------------------------------------------
 - optimize size on disk
+- https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - write walkthrough
 - more event text in zones?
