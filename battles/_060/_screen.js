@@ -141,9 +141,10 @@ var openframe = function(){
 var backtomenu = " <-- ";
 var displayconsole = "Console.exe";
 var displaybrowser = "Navigator.exe";
-var program = "./Programs/";
+var program = "./Worlds/";
 var rd = "rens_demons_xx.exe";
 var rdd = "rens_demo.exe";
+var randomgame = "random_game.exe";
 
 
 var entersubmenu =  function(){
@@ -159,6 +160,7 @@ var exitsubmenu =  function(){
   BATTLETREE.api.lock(battle, backtomenu);
   BATTLETREE.api.lock(battle, rd);
   BATTLETREE.api.lock(battle, rdd);
+  BATTLETREE.api.lock(battle, randomgame);
 }
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -210,7 +212,7 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_rd = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: rd,
   unlock: true,
-  description: ["Loading " + rd],
+  description: ["Loading " + rd + "..."],
   function: function () {
     STATS.record._increment(STAT.Endings);
     window.location = "index.html";
@@ -220,9 +222,22 @@ var unlock_rd = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_rdd = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: rdd,
   unlock: true,
-  description: ["Loading " + rdd],
+  description: ["Loading " + rdd + "..."],
   function: function () {
     window.location = "index.html?trial";
+  }
+});
+
+var unlock_store = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: randomgame,
+  unlock: true,
+  description: ["Loading randomly other reality..."],
+  function: function () {
+    if(Math.random() < 0.4){
+      window.location = "http://store.steampowered.com/explore/random/";
+    } else{
+      window.location = "https://itch.io/randomizer/";
+    }
   }
 });
 
@@ -230,11 +245,13 @@ var unlock_rdd = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_program = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: program,
   unlock: true,
+  description: ["Chose world engine..."],
   extra_function: function () {
     entersubmenu();
 
     unlock_rd();
     unlock_rdd();
+    unlock_store();
   }
 });
 

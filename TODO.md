@@ -6,15 +6,6 @@
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
 
-# MORE HEAVEN  ----------------------------------------------------
-
-- add a link to the demo in heaven
-- random itch io / steam game
-https://itch.io/randomizer post ??
-http://store.steampowered.com/explore/random/
-
-- Explain that the console is like magic words that change the fabric of the universe
-
 
 # STATS DISPLAY  ----------------------------------------------------
 
