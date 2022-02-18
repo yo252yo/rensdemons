@@ -220,3 +220,7 @@ if (!ABILITIES.has_ability("_heaven_visited")){
 // We use a trick to always spawn in the same place!
 CURRENTLEVEL._recover_position = [1375,1325];
 CURRENTLEVEL.initialize_with_character(1375,1325);
+
+if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
+  SAVE.autosave();
+}
