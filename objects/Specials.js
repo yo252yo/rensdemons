@@ -94,16 +94,22 @@ class S_Computer extends SimpleObject {
 
 
     var nothing = function(){
-      TextBannerSequence.make([`That did not do anything.`]);
+      TextBannerSequence.make([`That did not do anything.`], approach);
     }
     var turnoff = function(){
       TextBannerSequence.make([`The light fades out from the glass plate, and everything comes back to the state it was when you first got here.`]);
+    }
+    var contemplate = function(){
+      TextBannerSequence.make([
+        `The scene on the glass screen looks pretty similar to the room you see around you. Considering where you are, you summarize that this apparatus might have some deep connection to the fabric of the universe. Perhaps by inputting the right letters, you might cast a magic spell and change the world...`
+      ], lookat);
     }
 
     var lookat = function(){
      new CenteredTextMenu("What will you do?",
                    [
-                     {"text": "Look at the glass screen", "effect": function(){BATTLE.api.make('_demo/_screen')}},
+                     {"text": "Look at the glass screen", "effect": function(){BATTLE.api.make('_060/_screen')}},
+                     {"text": "Speculate", "effect": contemplate},
                      {"text": "Walk away", "effect": turnoff},
                   ]
                 );
