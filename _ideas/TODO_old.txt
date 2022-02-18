@@ -1,3 +1,11 @@
+VALID REFACTORINGS:
+- why does battletree have lists as leaves and not simply state?
+- shop, trainer, player_action have a bit of language text, DISK?
+- palette has functions that return objects, strings and functinos that just outright change the colors
+- can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
+
+
+
 
 - test on edge, epsecially functions starting by _, mb the nested ones
 - sometimes audio fail with testing.html:1 Uncaught (in promise) DOMException: Failed to load because no supported source was found. << ONLY ON CHROME DEV

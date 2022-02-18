@@ -28,10 +28,6 @@
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - hitbox on the map is bigger than interact distance
-- why does battletree have lists as leaves and not simply state?
-- shop, trainer, player_action have a bit of language text, DISK?
-- palette has functions that return objects, strings and functinos that just outright change the colors
-- can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 - cache ressources  regenerate resource preloading list
 - try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 
