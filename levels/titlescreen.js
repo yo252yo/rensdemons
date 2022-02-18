@@ -57,7 +57,11 @@ options.push({"text": "New game", "effect": function(){ INTERFACE.start_game() }
 options.push({"text": "Load past save", "effect": function(){ SAVE.print.load_menu(); } });
 options.push({"text": "", "keep_open": true});
 options.push({"text": "Options", "effect": function(){ INTERFACE.display.options_menu(); }});
-options.push({"text": "Completion", "effect": function(){ INTERFACE.display.achievements(); }});
+
+if (!INTERFACE.is_trial()) {
+  options.push({"text": "Completion", "effect": function(){ INTERFACE.display.achievements(); }});
+}
+
 options.push({"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }});
 options.push({"text": "", "keep_open": true});
 options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
