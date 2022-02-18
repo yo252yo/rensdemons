@@ -48,6 +48,12 @@ var getUrl = function(){
     possibilities.push("https://en.wikipedia.org/wiki/Special:RandomInCategory/Character_pop");
   }
 
+  // Public domain books
+  for(var i = 0; i <35; i++){
+    var book = RANDOM.int(67430);
+    possibilities.push(`https://www.gutenberg.org/files/${book}/${book}-h/${book}-h.htm`);
+  }
+
   // RD
   for(var i = 0; i <30; i++){
     possibilities.push("");
