@@ -89,6 +89,18 @@ a:active {
   z-index:9000001;
 }
 
+#consoledisplay {
+  width:40%;
+  height:40%;
+  left:60%;
+  background: white;
+  font-family: monospace;
+  visibility:visible;
+  position:fixed;
+  opacity: 0.6;
+  z-index:9000002;
+}
+
 #level{
   width:100%;
   height:100%;

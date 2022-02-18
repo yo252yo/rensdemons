@@ -9,6 +9,12 @@ const CONSOLE = {
     }
     CONSOLE.logs.push(t);
     console.log("%c " + t, style);
+
+    var debugdisplay = document.getElementById("consoledisplay");
+    if(debugdisplay){
+      debugdisplay.innerHTML += t + "\n";
+      debugdisplay.scrollTop = debugdisplay.scrollHeight;
+    }
   },
 
   _sys_log: function(t, color, extra_style) {

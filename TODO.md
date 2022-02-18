@@ -5,6 +5,7 @@
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
+- add rens parent sendoff/house before trial?
 
 
 # STATS DISPLAY  ----------------------------------------------------
@@ -23,9 +24,7 @@
 
 
 # BUGFIXES  ----------------------------------------------------
-- Make debug.html user friendly: When you go to game folder, theres a debug.exe game that launches the same environments behind the scenes?
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
-- add rens parent sendoff/house before trial?
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - dodger initial position a litl bit more up
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
