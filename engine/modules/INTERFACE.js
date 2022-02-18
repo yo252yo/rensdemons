@@ -341,7 +341,7 @@ const INTERFACE = {
   },
 
   is_trial: function(){
-    return !(window.location.href.includes("ren") && !window.location.href.includes("trial"));
+    return window.location.href.includes("trial");
   },
 
   start_game: function(){
