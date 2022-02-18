@@ -138,21 +138,26 @@ var openframe = function(){
 //hack COMMANDS
 // ===================
 
-var hideconsole = "Hide console";
-var displayconsole = "Debug console";
-var hidebrowser = "Hide navigator";
-var displaybrowser = "Navigator screen";
+var backtomenu = " <-- ";
+var displayconsole = "Console.exe";
+var displaybrowser = "Navigator.exe";
+var thoughts = "Thoughts";
+var program = "Programs/";
 
 
 var entersubmenu =  function(){
   BATTLETREE.api.lock(battle, displayconsole);
   BATTLETREE.api.lock(battle, displaybrowser);
+  BATTLETREE.api.lock(battle, thoughts);
+  BATTLETREE.api.lock(battle, program);
+  BATTLETREE.api.unlock(battle, backtomenu);
 }
 var exitsubmenu =  function(){
   BATTLETREE.api.unlock(battle, displayconsole);
   BATTLETREE.api.unlock(battle, displaybrowser);
-  BATTLETREE.api.lock(battle, hideconsole);
-  BATTLETREE.api.lock(battle, hidebrowser);
+  BATTLETREE.api.unlock(battle, thoughts);
+  BATTLETREE.api.unlock(battle, program);
+  BATTLETREE.api.lock(battle, backtomenu);
 }
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -160,7 +165,6 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   function: function (){
     entersubmenu();
-    BATTLETREE.api.unlock(battle, hideconsole);
 
     updatelog("> Displaying console log");
     updatelog("Connection to the simulation established.");
@@ -175,13 +179,14 @@ var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
-var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: hideconsole,
+var back_to_menu = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: backtomenu,
   unlock: true,
   function: function (){
     exitsubmenu();
-    updatelog("> Hiding console log");
+    updatelog("> Back to main menu");
     log.style.visibility = "hidden";
+    frame_container.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
 });
@@ -191,7 +196,6 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   extra_function: function () {
     entersubmenu();
-    BATTLETREE.api.unlock(battle, hidebrowser);
 
     frame_container.style.visibility = "visible";
     IO.key_interceptor.deactivate();
@@ -201,22 +205,12 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
-var unlock_browser_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: hidebrowser,
-  unlock: true,
-  extra_function: function () {
-    exitsubmenu();
-    frame_container.style.visibility = "hidden";
-    IO.key_interceptor.activate();
-  }
-});
-
 // ===================
 //hack STARTUP
 // ===================
 
 var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Exit",
+  name: "[X]",
   unlock: true,
   outcome: BATTLETREE.ESCAPE,
   description: turnoff,
@@ -227,33 +221,47 @@ var unlock_exit = PLAYER_ACTIONS.function.unlock_replacing_action({
   }
 });
 
+var unlock_thoughts = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: thoughts,
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [`ttt`],
+});
+
+var unlock_program = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: program,
+  unlock: true,
+  outcome: BATTLETREE.NOTHING,
+  description: [`ttt`],
+});
+
 PLAYER_ACTIONS.add({
-  name: "Retry",
+  name: "[R]etry",
   unlock: true,
   description: ["CONNECTION ESTABLISHED.<br />MAIN MENU."],
   extra_function: function(){
     BATTLE.player_actions.empty();
 
-    unlock_terminal_show("Retry");
-    unlock_terminal_hide("Retry");
-    unlock_browser("Retry");
-    unlock_browser_hide("Retry");
-    unlock_exit("Retry");
+    unlock_terminal_show("[R]etry");
+    unlock_browser("[R]etry");
+    back_to_menu("[R]etry");
+    unlock_exit("[R]etry");
+    unlock_thoughts("[R]etry");
+    unlock_program("[R]etry");
 
-    BATTLETREE.api.lock(battle, hidebrowser);
-    BATTLETREE.api.lock(battle, hideconsole);
+    exitsubmenu();
   }
 });
 
 PLAYER_ACTIONS.add({
-  name: "Abort",
+  name: "[A]bort",
   outcome: BATTLETREE.ESCAPE,
   unlock: true,
   description: turnoff,
 });
 
 PLAYER_ACTIONS.add({
-  name: "Fail",
+  name: "[F]ail",
   outcome: BATTLETREE.ESCAPE,
   unlock: true,
   description: turnoff,
