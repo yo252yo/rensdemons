@@ -26,8 +26,8 @@
 # BUGFIXES  ----------------------------------------------------
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
 - When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
-- dodger initial position a litl bit more up
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
+- hitbox on the map is bigger than interact distance
 - why does battletree have lists as leaves and not simply state?
 - shop, trainer, player_action have a bit of language text, DISK?
 - palette has functions that return objects, strings and functinos that just outright change the colors

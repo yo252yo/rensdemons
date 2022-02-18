@@ -72,7 +72,7 @@ const DODGE = {
   },
 
   center_sprite: function(){
-      DODGE.sprite.defense.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100 + 10);
+      DODGE.sprite.defense.place_at(SCREEN.width() / 2 - 50 / 2, SCREEN.height() / 2 - 100 - 10);
   },
 
   init: function() {
