@@ -84,8 +84,8 @@ const DEBUG = {
   //  DEBUG.display_filler_zones();
 
 
-    setInterval(THAUMATURGY.remove_fog, 1000);
-    setInterval(THAUMATURGY.force_observer_effect, 1000);
+    setTimeout(THAUMATURGY.remove_fog, 1000);
+    setTimeout(THAUMATURGY.force_observer_effect, 1000);
     //setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
