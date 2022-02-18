@@ -47,6 +47,7 @@ const FOG = {
   },
 
   stop: function(){
+      CONSOLE.log.debug("Stopping fog");
       FOG._stop("fog_top");
       FOG._stop("fog_bot");
       FOG._stop("fog_left");

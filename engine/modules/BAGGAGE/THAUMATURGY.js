@@ -32,10 +32,12 @@ const THAUMATURGY = {
 
   toggle_teleport: function() {
     THAUMATURGY.teleport = ! THAUMATURGY.teleport;
+    CONSOLE.log.debug("Blink through space set to " + THAUMATURGY.teleport);
   },
 
   toggle_smiting: function() {
     THAUMATURGY.smite = ! THAUMATURGY.smite;
+    CONSOLE.log.debug("Smite set to " + THAUMATURGY.smite);
   },
 
   remove_fog: function() {
@@ -88,6 +90,7 @@ const THAUMATURGY = {
         objects[i].draw_display_name();
       }
     }
+    CONSOLE.log.debug("Events displayed");
   },
 
   change_colors: function() {
@@ -99,6 +102,7 @@ const THAUMATURGY = {
   },
 
   force_observer_effect: function(){
+    CONSOLE.log.debug("Force observer effect");
     GLITCH.berkeley.make_god_observer();
   },
   menu: function() {

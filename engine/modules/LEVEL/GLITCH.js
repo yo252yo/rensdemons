@@ -199,6 +199,7 @@ const GLITCH = {
     },
 
     glitch: function(prevent_next){
+      CONSOLE.log.debug("Glitch");
       AUDIO.effect.glitch();
       AUDIO.set_music_speed(0.5 + Math.random());
 
