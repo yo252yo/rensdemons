@@ -17,12 +17,10 @@
 - double check battle/encounters especially sprites
 - review battle_debris add a few more actions for rubble treasures
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-
 !!!  RESOURCES.js  cache ressources  regenerate resource preloading list
 
 # BUGFIXES  ----------------------------------------------------
 - if theres a guy behind a house interaction interacts with the house (most prominent object)
-- When u know a weapon defeats a enemy you should know how many steps to chose the most efficients
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - hitbox on the map is bigger than interact distance
 - try https://en.wikipedia.org/wiki/Electron_(software_framework) then https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
