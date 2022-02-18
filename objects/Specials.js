@@ -127,7 +127,7 @@ class S_Computer extends SimpleObject {
 
     this.default_text = function(){
       TextBannerSequence.make([
-        `It's an altar, but this one seems a bit different from the ones you've seen so far. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
+        `It looks like an altar, but this one seems a bit different from the ones you've seen so far. On its surface, there is a big plate of glass, surrounded by many little blocks. Each of these blocks has a letter or a symbol carved on it.`,
       ], approach);
     }
   }

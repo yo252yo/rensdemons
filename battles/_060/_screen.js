@@ -143,13 +143,24 @@ var displayconsole = "Debug console";
 var hidebrowser = "Hide navigator";
 var displaybrowser = "Navigator screen";
 
+
+var entersubmenu =  function(){
+  BATTLETREE.api.lock(battle, displayconsole);
+  BATTLETREE.api.lock(battle, displaybrowser);
+}
+var exitsubmenu =  function(){
+  BATTLETREE.api.unlock(battle, displayconsole);
+  BATTLETREE.api.unlock(battle, displaybrowser);
+  BATTLETREE.api.lock(battle, hideconsole);
+  BATTLETREE.api.lock(battle, hidebrowser);
+}
+
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: displayconsole,
   unlock: true,
   function: function (){
+    entersubmenu();
     BATTLETREE.api.unlock(battle, hideconsole);
-    BATTLETREE.api.lock(battle, displayconsole);
-    BATTLETREE.api.lock(battle, displaybrowser);
 
     updatelog("> Displaying console log");
     updatelog("Connection to the simulation established.");
@@ -168,10 +179,7 @@ var unlock_terminal_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: hideconsole,
   unlock: true,
   function: function (){
-    BATTLETREE.api.lock(battle, hideconsole);
-    BATTLETREE.api.unlock(battle, displayconsole);
-    BATTLETREE.api.unlock(battle, displaybrowser);
-
+    exitsubmenu();
     updatelog("> Hiding console log");
     log.style.visibility = "hidden";
     IO.key_interceptor.activate();
@@ -182,9 +190,8 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: displaybrowser,
   unlock: true,
   extra_function: function () {
+    entersubmenu();
     BATTLETREE.api.unlock(battle, hidebrowser);
-    BATTLETREE.api.lock(battle, displayconsole);
-    BATTLETREE.api.lock(battle, displaybrowser);
 
     frame_container.style.visibility = "visible";
     IO.key_interceptor.deactivate();
@@ -198,10 +205,7 @@ var unlock_browser_hide = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: hidebrowser,
   unlock: true,
   extra_function: function () {
-    BATTLETREE.api.lock(battle, hidebrowser);
-    BATTLETREE.api.unlock(battle, displayconsole);
-    BATTLETREE.api.unlock(battle, displaybrowser);
-
+    exitsubmenu();
     frame_container.style.visibility = "hidden";
     IO.key_interceptor.activate();
   }
@@ -228,14 +232,13 @@ PLAYER_ACTIONS.add({
   unlock: true,
   description: ["CONNECTION ESTABLISHED.<br />MAIN MENU."],
   extra_function: function(){
-    BATTLETREE.api.lock(battle, "Abort");
-    BATTLETREE.api.lock(battle, "Fail");
+    BATTLE.player_actions.empty();
 
     unlock_terminal_show("Retry");
     unlock_terminal_hide("Retry");
     unlock_browser("Retry");
     unlock_browser_hide("Retry");
-    unlock_exit("Retry")
+    unlock_exit("Retry");
 
     BATTLETREE.api.lock(battle, hidebrowser);
     BATTLETREE.api.lock(battle, hideconsole);

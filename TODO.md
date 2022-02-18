@@ -2,7 +2,6 @@
 
 
 
-
 # TROPES need thinking ---------------------------------------------
 - an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
