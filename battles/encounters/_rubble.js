@@ -36,4 +36,31 @@ PLAYER_ACTIONS.add({
   consume_item: ITEM.Elixir_fire,
 });
 
+PLAYER_ACTIONS.add({
+  name: ITEM.Stone,
+  description: RANDOM.pick([
+    "You add a stone to the pile of debris. It makes the pile slightly bigger.",
+  ]),
+  outcome: BATTLETREE.WIN,
+  consume_item: ITEM.Stone,
+});
+
+PLAYER_ACTIONS.add({
+  name: ITEM.Mace,
+  description: RANDOM.pick([
+    "You crush the pile of debris until only a thin powder is left. Not much you can do with that.",
+  ]),
+  outcome: BATTLETREE.WIN,
+});
+
+
+PLAYER_ACTIONS.add({
+  name: ABILITIY.Shrink,
+  description: RANDOM.pick([
+    "You shrink the pile of debris to a minuscule size. Whatever might have been in there is now too small to see.",
+  ]),
+  outcome: BATTLETREE.WIN,
+});
+
+
 BATTLE.operations.start("You find a pile of rubble and debris.");
