@@ -1,33 +1,36 @@
 # WIP
 
+BATTLE ENCOUNTERS
+- write
+- plug in the world
+- double check present especially rubble that may neeed a bit more actions
+
+
+
+EB_Tomb
+EB_Well
+EB_Sign
+EB_Tent
+EB_Camp
+EB_Bush
+
+encounters/_rubble (need more actions)
+encounters/elder
+encounters/minstrel
+encounters/purse
+
+
+# STATS DISPLAY  ----------------------------------------------------
+- Keep more stats and reuse the Stat of ren's desth
+cant be a book from library
+mb its a diary about ren like "oh sometimes he moves other times hes static, hes been active since 2PM"
+>> In heaven a stats memorial mb written in a picture smthing a big swag
+>> use it in conversations??
 
 
 # TROPES need thinking ---------------------------------------------
 - a flashback that you know you survived
 + add rens parent sendoff/house before trial?
-
-# STATS DISPLAY  ----------------------------------------------------
-- Keep more stats and reuse the Stat of ren's desth
-
-mb its a diary about ren like "oh sometimes he moves other times hes static, hes been active since 2PM"
->> In heaven a stats memorial mb written in a picture smthing a big swag
->> use it in conversations??
-
-# BATTLE ENCOUNTERS  ----------------------------------------------------
-- more?
-- more battle encounters (world map ruins, hellsmaw skeleton)
-- double check battle/encounters especially sprites
-- review battle_debris add a few more actions for rubble treasures
-- civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
-!!!  RESOURCES.js  cache ressources  regenerate resource preloading list
-
-
-
-Mb encounter hunger
-Buisson
-Minstrel
-- an old lady arrives, ofc she wants to help and gives you crap
-
 
 # 1. proof/ FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding

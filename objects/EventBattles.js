@@ -59,3 +59,88 @@ class EB_Skeleton extends EventBattleObject {
     this.add_interaction("Study", "You look at the different bones and how they fit together, shuddering at the thought that something very similar is present inside of you.");
   }
 }
+
+
+class EB_Tomb extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/tomb", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/tomb"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
+
+class EB_Well extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/well", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/well"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
+
+class EB_Sign extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/sign", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/sign"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
+
+class EB_Tent extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/tent", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/tent"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
+
+class EB_Camp extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/camp", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/camp"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
+
+class EB_Bush extends EventBattleObject {
+  constructor(x, y, color, size){
+    super(x, y, "exterior/bush", color, size);
+
+    this.set_description(BESTIARY.intro("exterior/bush"));
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+    this.add_interaction("...", "...");
+  }
+}
