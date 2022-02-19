@@ -1,13 +1,15 @@
 # WIP
 
 
+
 # TROPES need thinking ---------------------------------------------
-- an old lady arrives, ofc she wants to help and gives you crap
 - a flashback that you know you survived
 + add rens parent sendoff/house before trial?
 
 # STATS DISPLAY  ----------------------------------------------------
 - Keep more stats and reuse the Stat of ren's desth
+
+mb its a diary about ren like "oh sometimes he moves other times hes static, hes been active since 2PM"
 >> In heaven a stats memorial mb written in a picture smthing a big swag
 >> use it in conversations??
 
@@ -18,6 +20,14 @@
 - review battle_debris add a few more actions for rubble treasures
 - civilian battlers assets battle civilians suck, also theres some sprites in assets/battle that are not used
 !!!  RESOURCES.js  cache ressources  regenerate resource preloading list
+
+
+
+Mb encounter hunger
+Buisson
+Minstrel
+- an old lady arrives, ofc she wants to help and gives you crap
+
 
 # 1. proof/ FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
@@ -30,7 +40,7 @@ See 051_pandemonium_room and 012_trees
 - review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
 
 # 2. Electron app ----------------------------------------------------
-https://en.wikipedia.org/wiki/Electron_(software_framework) then
+https://en.wikipedia.org/wiki/Electron_(software_framework)
 
 # 3. SEND OUT FOR BETA  ----------------------------------------------------
 - check save/disk size
