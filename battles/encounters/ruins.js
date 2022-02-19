@@ -1,13 +1,9 @@
 // ===================
 //hack INITIALIZATION
 // ===================
-//new CenteredBattleImage("assets/battles/encounters/ruins.png", 'background');
+
 BESTIARY.picture('encounters/ruins');
 PLAYER_ACTIONS.allow_flight();
-
-BATTLE.operations.add_loot(ITEM.AncientRubbles, 0.2);
-BATTLE.operations.add_loot("", 1);
-
 // ===================
 //hack PLAYER CAPABILITIES
 // ===================
@@ -42,6 +38,19 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.WIN,
   unlock: true,
   description: ["You navigate through the metallic rubbles, in search for anything that could be of use to you. Maybe this place holds the secret to defeating $$demon_lord$.",
+                "Sadly, you only find piles of metallic junk. You decide to take some away with you, it might fetch a good price.",
+              ],
+  extra_function: function(){
+    INVENTORY.increase(ITEM.AncientRubbles);
+  }
+});
+
+
+PLAYER_ACTIONS.add({
+  name: "Scavenge",
+  outcome: BATTLETREE.WIN,
+  unlock: true,
+  description: ["You scavenge the metallic rubbles, in search of anything of value.",
                 "But after looking for a while, you conclude that time destroyed whatever could have been of use here, and decide to move on.",
               ],
 });
