@@ -18,6 +18,11 @@ class Import {
       this.html.src = this.src + ".js";
       this.html.id = "SC_" + this.src;
 
+      var debug = document.getElementById("sourceiframe");
+      if(debug){
+        debug.src = this.src + ".js";
+      }
+
       var self = this;
       this.html.addEventListener('load', function(){ self.onloaded() });
 

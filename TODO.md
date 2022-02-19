@@ -5,7 +5,6 @@ BATTLE ENCOUNTERS
 encounters/minstrel
 encounters/purse
 
-debug mode display code on the left
 
 
 # STATS DISPLAY  ----------------------------------------------------

@@ -59,8 +59,10 @@ window.onload = function() {
   <div id="glitch"></div>
   <div id="overlay" style="width:101%; height:101%; top:-1px; left:-1px; background-image: url('assets/screens/overlay.png'); background-size:100% 100%; z-index:19000001; position:fixed; overflow:visible; pointer-events:none;"></div>
 
+
   <textarea id="glitchcode"></textarea>
-  <textarea id="consoledisplay" disabled></textarea>
+  <iframe id="sourceiframe" style="width:25%;height:40%; left:5%;top:20%;background: white;font-family: monospace; visibility:visible;position:fixed;opacity: 0.6; z-index:9000002;">test</iframe>
+  <textarea id="consoledisplay" style="width:25%;height:40%; left:70%;top:20%;background: black;color:white;font-family: monospace; visibility:visible;position:fixed;opacity: 0.6; z-index:9000002;" disabled></textarea>
   <div id="resourceLoader" style="visibility:hidden"></div>
 </div>
 </body>
