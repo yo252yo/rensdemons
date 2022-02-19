@@ -113,14 +113,6 @@ BESTIARY.dict["encounters"]["villagers"] = {
   "no_img": true,
   "introed": "You started a self-aware conversation with a villager.",
 };
-BESTIARY.dict["encounters"]["bush"] = {
-  "intro": "You notice a fluffy lush bush.",
-  "introed": "You noticed a fluffy lush bush.",
-};
-BESTIARY.dict["encounters"]["campfire"] = {
-  "intro": "You answer the call of your stomach and establish a small campfire to eat.",
-  "introed": "You answered the call of your stomach and establish a small campfire to eat.",
-};
 BESTIARY.dict["encounters"]["elder"] = {
   "intro": "A cloaked eldery woman walks slowly towards you.",
   "introed": "A cloaked eldery woman walked slowly towards you.",
@@ -132,22 +124,6 @@ BESTIARY.dict["encounters"]["minstrel"] = {
 BESTIARY.dict["encounters"]["purse"] = {
   "intro": "You find an abandonned purse on the ground.",
   "introed": "You found an abandonned purse on the ground.",
-};
-BESTIARY.dict["encounters"]["sign"] = {
-  "intro": "This wooden sign may have useful information.",
-  "introed": "This wooden sign could have useful information.",
-};
-BESTIARY.dict["encounters"]["tent"] = {
-  "intro": "You decide it's high time to make camp and rest.",
-  "introed": "You decided it was high time to make camp and rest.",
-};
-BESTIARY.dict["encounters"]["tomb"] = {
-  "intro": "You come upon a run-down makeshift tomb.",
-  "introed": "You came upon a run-down makeshift tomb.",
-};
-BESTIARY.dict["encounters"]["well"] = {
-  "intro": "You find an old well. Perhaps you can still draw water?",
-  "introed": "You found an old well. Perhaps you could still draw water?",
 };
 
 
@@ -775,6 +751,30 @@ BESTIARY.dict["exterior"]["seashell"] = {
 BESTIARY.dict["exterior"]["skeleton"] = {
   "intro": "You discover what appears to be a human skeleton.",
   "introed": "You discovered what appeared to be a human skeleton.",
+};
+BESTIARY.dict["exterior"]["camp"] = {
+  "intro": "You answer the call of your stomach and establish a small campfire to eat.",
+  "introed": "You answered the call of your stomach and establish a small campfire to eat.",
+};
+BESTIARY.dict["exterior"]["sign"] = {
+  "intro": "This wooden sign may have useful information.",
+  "introed": "This wooden sign could have useful information.",
+};
+BESTIARY.dict["exterior"]["tent"] = {
+  "intro": "You decide it's high time to make camp and rest.",
+  "introed": "You decided it was high time to make camp and rest.",
+};
+BESTIARY.dict["exterior"]["tomb"] = {
+  "intro": "You come upon a run-down makeshift tomb.",
+  "introed": "You came upon a run-down makeshift tomb.",
+};
+BESTIARY.dict["exterior"]["well"] = {
+  "intro": "You find an old well. Perhaps you can still draw water?",
+  "introed": "You found an old well. Perhaps you could still draw water?",
+};
+BESTIARY.dict["exterior"]["bush"] = {
+  "intro": "You notice a fluffy lush bush.",
+  "introed": "You noticed a fluffy lush bush.",
 };
 
 //hack villagers
