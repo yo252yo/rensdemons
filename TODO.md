@@ -3,8 +3,6 @@
 BATTLE ENCOUNTERS
 
 encounters/minstrel
-encounters/purse
-
 
 
 # STATS DISPLAY  ----------------------------------------------------
