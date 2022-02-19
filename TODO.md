@@ -2,9 +2,10 @@
 
 BATTLE ENCOUNTERS
 
-encounters/elder
 encounters/minstrel
 encounters/purse
+
+debug mode display code on the left
 
 
 # STATS DISPLAY  ----------------------------------------------------
