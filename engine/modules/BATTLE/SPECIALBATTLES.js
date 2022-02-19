@@ -7,11 +7,6 @@ const SPECIALBATTLES = {
     BATTLE.api.make("_rubble", callback);
   },
 
-  treasure: function(payoff, callback){
-    SPECIALBATTLES._battle_extra_data = payoff;
-    BATTLE.api.make("_treasure", callback);
-  },
-
   encounters: function(name, payoff, seed, callback){
     SPECIALBATTLES._battle_extra_data = [payoff, seed];
     BATTLE.api.make("encounters/" + name, callback);

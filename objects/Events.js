@@ -14,21 +14,6 @@ class SB_rubble extends SBattle {
   }
 }
 
-class SB_treasure extends SBattle {
-  constructor(x, y, battle, size, color, is_map) {
-    super(x, y, battle, size, color, is_map);
-    this.icon_type = "event_purse";
-  }
-
-  real_interaction() {
-    SPECIALBATTLES.treasure(this.battle, this.make_default_callback());
-  }
-
-  display_name() {
-    return "Treasure event";
-  }
-}
-
 class SE_event extends S_event {
   constructor(x, y, text, size, color, extra) {
     super(x, y, size, color);
