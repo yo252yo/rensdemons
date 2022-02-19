@@ -1,4 +1,6 @@
 
+new CenteredBattleImage("assets/battles/encounters/rubble.png", 'background', 2);
+
 var dig = "Dig";
 
 PLAYER_ACTIONS.allow_flight(true);

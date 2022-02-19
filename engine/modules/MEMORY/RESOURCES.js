@@ -41,6 +41,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/battles/caves/slime.png');
     RESOURCES.get_img('assets/battles/encounters/casino.png');
     RESOURCES.get_img('assets/battles/encounters/ruins.png');
+    RESOURCES.get_img('assets/battles/encounters/rubble.png');
     RESOURCES.get_img('assets/battles/encounters/statue.png');
     RESOURCES.get_img('assets/battles/encounters/traveler.png');
     RESOURCES.get_img('assets/battles/forests/blob.png');
