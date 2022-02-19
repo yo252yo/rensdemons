@@ -2,18 +2,10 @@
 
 BATTLE ENCOUNTERS
 
-EB_Tomb
-EB_Well
-EB_Sign
-EB_Tent
-EB_Camp
-EB_Bush
-
 encounters/_rubble (need more actions)
 encounters/elder
 encounters/minstrel
 encounters/purse
-encounters/skeleton (more??)
 
 
 # STATS DISPLAY  ----------------------------------------------------
@@ -26,6 +18,7 @@ mb its a diary about ren like "oh sometimes he moves other times hes static, hes
 
 # TROPES need thinking ---------------------------------------------
 - a flashback that you know you survived
+>> mb as event item ? or eventitem piece of technology
 + add rens parent sendoff/house before trial?
 
 # 1. proof/ FILLER CHECK  ----------------------------------------------------
