@@ -10,9 +10,9 @@ if (SPECIALBATTLES._battle_extra_data){
   PLAYER_ACTIONS.add({
     name: dig,
     unlock: true,
-    description: RANDOM.pick([
+    description: [
       "You dig through the debris. After a while, you find something interesting. It's a " + SPECIALBATTLES._battle_extra_data + ".",
-    ]),
+    ],
     outcome: BATTLETREE.WIN,
     give_item: SPECIALBATTLES._battle_extra_data,
   });
@@ -20,45 +20,45 @@ if (SPECIALBATTLES._battle_extra_data){
   PLAYER_ACTIONS.add({
     name: dig,
     unlock: true,
-    description: RANDOM.pick([
+    description: [
       "You dig through the debris. It takes a long time, and you don't find anything noteworthy...",
-    ]),
+    ],
     outcome: BATTLETREE.WIN,
   });
 }
 
 PLAYER_ACTIONS.add({
   name: ITEM.Elixir_fire,
-  description: RANDOM.pick([
+  description: [
     "You burn it all to the ground to the ground without a second thought.",
-  ]),
+  ],
   outcome: BATTLETREE.WIN,
   consume_item: ITEM.Elixir_fire,
 });
 
 PLAYER_ACTIONS.add({
   name: ITEM.Stone,
-  description: RANDOM.pick([
+  description: [
     "You add a stone to the pile of debris. It makes the pile slightly bigger.",
-  ]),
+  ],
   outcome: BATTLETREE.WIN,
   consume_item: ITEM.Stone,
 });
 
 PLAYER_ACTIONS.add({
   name: ITEM.Mace,
-  description: RANDOM.pick([
+  description: [
     "You crush the pile of debris until only a thin powder is left. Not much you can do with that.",
-  ]),
+  ],
   outcome: BATTLETREE.WIN,
 });
 
 
 PLAYER_ACTIONS.add({
-  name: ABILITIY.Shrink,
-  description: RANDOM.pick([
+  name: ABILITY.Shrink,
+  description: [
     "You shrink the pile of debris to a minuscule size. Whatever might have been in there is now too small to see.",
-  ]),
+  ],
   outcome: BATTLETREE.WIN,
 });
 
