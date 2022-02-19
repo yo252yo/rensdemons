@@ -267,6 +267,8 @@ LANGUAGE_EVENTS = {
           [
             `$$TorturedSoul$: "Child, thou keep running into peril, yet thou endure every time. Thou miss every opportunity to bring your existence to an end, as if miraculously. Is this foolishness or bravery?"`,
             `$$Ren$: "I don't really feel like I have a choice in the matter, you know. The Goddess always has my back, whether I want it or not."`,
+            `$$Ren$: "Believe it or not, it's actually pretty hard to die as an adventurer. They do all sorts of potions and balms. Whatever your state, if you have a teammate nearby, they can fix you up."`,
+            `$$Ren$: "Maybe you've come to the wrong place..."`,
           ],
           [
             `$$TorturedSoul$: "Go forth! Make haste! I beg, do turn thine acursed blade against me!"`,
