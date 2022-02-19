@@ -114,7 +114,16 @@ events.groundItem(ITEM.Flower, 0.5);
 events.groundItem(ITEM.Mushroom);
 events.battleRubble(ITEM.AncientRubbles, 0.5);
 events.byConstructor("EB_Plants", 2);
-events.byConstructor("EB_Skeleton", 1);
+events.byConstructor("EB_Skeleton", 0.2);
+events.byConstructor("EB_Tomb", 0.2);
+events.byConstructor("EB_Tent", 0.2);
+events.byConstructor("EB_Camp", 0.2);
+events.byConstructor("EB_Bush", 0.5);
+events.byConstructor("EB_Well", 0.1);
+
+events.battle('encounters/elder', 0.2);
+events.battle('encounters/minstrel', 0.2);
+events.battle('encounters/purse', 0.2);
 
 events.text('You do not see many creatures around you in these woods, but you do hear scratching and cracklings all around you. The feeling of there being something nearby watching you that you cannot pinpoint is especially nerve-wracking.');
 events.text('The heavy vegetation around and above you is creating a very dark and damp place. The roots and bushes constantly hinder your progress, and when they\'re not you still have to contend with a very muddy floor. Your progress is slow and painful.');

@@ -1,11 +1,6 @@
 # WIP
 
 BATTLE ENCOUNTERS
-- write
-- plug in the world
-- double check present especially rubble that may neeed a bit more actions
-
-
 
 EB_Tomb
 EB_Well
@@ -18,6 +13,7 @@ encounters/_rubble (need more actions)
 encounters/elder
 encounters/minstrel
 encounters/purse
+encounters/skeleton (more??)
 
 
 # STATS DISPLAY  ----------------------------------------------------

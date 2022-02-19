@@ -434,7 +434,11 @@ events.battleRubble(ITEM.Sword_iron, 0.01);
 events.battleRubble(ITEM.Spear, 0.01);
 events.battleRubble(ITEM.Axe, 0.01);
 
-events.byConstructor("EB_Skeleton", 0.5);
+events.byConstructor("EB_Skeleton", 0.1);
+events.byConstructor("EB_Tomb", 0.1);
+events.byConstructor("EB_Tent", 0.1);
+events.byConstructor("EB_Camp", 0.1);
+events.byConstructor("EB_Well", 0.1);
 
 events.text(`You find traces of blue sludge on the ground. You summarize that a slimy monster must have recently passed here.`, 0.5);
 events.text(`You accidentally step into a puddle of yellowish slime, and curse yourself as you shake your still wet feet.`, 0.5);

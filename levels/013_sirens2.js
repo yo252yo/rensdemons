@@ -227,8 +227,10 @@ if(sirenspart < 4){
   events.battleRubble(ITEM.Elixir_venom, 0.1);
   events.battleRubble(ITEM.Poison_darts, 0.1);
   events.battleRubble(ITEM.BreathingPotion, 0.1);
-  events.byConstructor("EB_Seashell", 0.1);
+  events.byConstructor("EB_Seashell", 0.2);
   events.byConstructor("EB_Skeleton", 0.1);
+
+
   events.text('The waters in this lake are way more tumultuous than the placid surface had lead you to believe. Every now and then you see columns of bubbles swirling, or fishes being dragged by powerful chaotic currents.');
   events.text(`A patrol of heavily armed tritons is swimming nearby. You don't think you can take them head on. Fortunately, you can swim down to the sand. You croutch and wait for the menace to go away.`);
   events.text(`The lake is much deeper than you first thought. When you look up, you can barely see rays of light defracted by massive quantities of water. Most of the ambient light that allows you to see comes from fluorescent vegetals.`);

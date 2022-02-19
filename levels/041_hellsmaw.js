@@ -335,6 +335,10 @@ events.battleRubble(ITEM.Elixir_venom, 0.2);
 events.battleRubble(ITEM.Elixir_vine, 0.2);
 events.byConstructor("EB_Skeleton");
 
+events.byConstructor("EB_Tomb");
+events.byConstructor("EB_Tent", 0.2);
+events.byConstructor("EB_Camp", 0.2);
+
 events.text(`You cross an especially thick portion of fog. The stench is unbearable. You can't help but cough from the abrasive effect on your throat.`);
 events.text(`Violent shrieks echo in the valley. You and $$BestFriend$ exchange a worried glance, wondering what kind of inhuman creature can make such ungodly noises.`);
 events.text(`You've been climbing for hours. Each step is a bit more painful than the previous one. You're starting to worry that you'll never make it out of this hazy maze...`);

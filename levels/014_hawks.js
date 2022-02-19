@@ -586,7 +586,11 @@ events.groundItem(ITEM.Stone);
 events.groundItem(ITEM.Feather);
 events.battleRubble(ITEM.Arrow);
 
-events.byConstructor("EB_Pebbles", 0.5);
+events.byConstructor("EB_Pebbles", 0.2);
+events.byConstructor("EB_Tomb", 0.1);
+events.byConstructor("EB_Tent", 0.1);
+events.byConstructor("EB_Camp", 0.1);
+events.byConstructor("EB_Well", 0.1);
 
 events.text(`You hear a piercing whistling sound and you notice an eagle darting through the air in your direction. As it comes closer at an incredible speed, it appears to be of massive size. You barely have the time to dodge the charge by jumping behind nearby rocks.`, 0.5);
 events.text(`You jump with surprise as a massive flock of birds of prey take flight simultaneously from behind a nearby rock. The cumulated wing beating and shrieking is deafening. You can feel the air flow that their takeoff is producing.`, 0.5);

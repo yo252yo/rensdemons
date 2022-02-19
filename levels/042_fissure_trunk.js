@@ -152,6 +152,11 @@ events.text(`You cannot help but cough. The air around you is heavy and dusty, a
 events.text(`You find a little leaflet which has withstood the test of time. It says "Do your part and denounce anyone opposing Individualism! Only a total ruthless competition of all against all can push us to the greatest heights of the human spirit!".`);
 events.add_conversations(0.2);
 
+events.byConstructor("EB_Tomb", 0.1);
+events.byConstructor("EB_Camp", 0.1);
+
+events.battle('encounters/purse', 0.5);
+
 events.set_tries(30, 50);
 events.fill_floor_by_retry();
 

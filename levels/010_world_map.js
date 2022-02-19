@@ -150,8 +150,15 @@ FEasyEvents.groundItem(ITEM.Berry, 0.6);
 FEasyEvents.groundItem(ITEM.Mushroom, 1.5);
 
 FEasyEvents.byConstructor("EB_Plants", 0.5);
-FEasyEvents.byConstructor("EB_Skeleton", 0.1);
-FEasyEvents.battle('encounters/ruins', 1);
+FEasyEvents.byConstructor("EB_Tomb", 0.1);
+FEasyEvents.byConstructor("EB_Sign", 0.1);
+FEasyEvents.byConstructor("EB_Tent", 0.1);
+FEasyEvents.byConstructor("EB_Camp", 0.1);
+FEasyEvents.byConstructor("EB_Bush", 0.1);
+FEasyEvents.byConstructor("EB_Well", 0.1);
+FEasyEvents.battle('encounters/ruins', 0.2);
+FEasyEvents.battle('encounters/elder', 0.5);
+FEasyEvents.battle('encounters/minstrel', 0.5);
 
 FEasyEvents.text(`You find a puddle of a dark red liquid that you suppose to be blood. The forces of $$demon_lord$ met a few wandering humans here. There's no corpse to tell the tale of the battle, but maybe that in itself is telling enough.`);
 FEasyEvents.text(`You stumble upon the remains of a camp. The fire has been put out pretty recently. Judging by how messy the place is, this was probably not done by humans. Maybe you should hurry along...`);
@@ -185,15 +192,23 @@ FHardEvents.battleRubble(ITEM.Mace, 0.1);
 FHardEvents.battleRubble(ITEM.Shield, 0.05);
 FHardEvents.battleRubble(ITEM.Elixir_vine, 0.1);
 FHardEvents.battleRubble(ITEM.Elixir_venom, 0.05);
-FEasyEvents.battleRubble(ITEM.Stone, 0.2);
+FHardEvents.battleRubble(ITEM.Stone, 0.2);
 FHardEvents.groundItem(ITEM.AncientRubbles, 0.7);
 FHardEvents.groundItem(ITEM.Feather, 0.7);
 FHardEvents.groundItem(ITEM.Flower, 0.7);
 FHardEvents.groundItem(ITEM.Bone, 0.7);
 
 FHardEvents.byConstructor("EB_Skeleton", 2.5);
+FHardEvents.byConstructor("EB_Tomb", 2.0);
+FHardEvents.byConstructor("EB_Sign", 0.1);
+FHardEvents.byConstructor("EB_Tent", 0.1);
+FHardEvents.byConstructor("EB_Camp", 0.1);
+FHardEvents.byConstructor("EB_Bush", 0.1);
+FHardEvents.byConstructor("EB_Well", 0.1);
 FHardEvents.battle('encounters/traveler', 2);
-FHardEvents.battle('encounters/ruins', 1);
+FHardEvents.battle('encounters/ruins', 1.3);
+FHardEvents.battle('encounters/elder', 0.5);
+FHardEvents.battle('encounters/minstrel', 0.5);
 
 FHardEvents.text(`You stop your progression: you can see in the distance a pack of feral beasts. As you observe them carefully, you notice that they seem to be tearing to shreds the corpses of a few innocent travelers, throwing around the meat as if making a game out of it. Their fur is drenched in the blood of their unfortunate victims. Crouched on the floor, your heart beating fast, you wait for them to finish their meal, praying that you don't get noticed.`);
 FHardEvents.text(`The sound of metal alerts you of the movement of enemy troops in the distance. You barely have time to find shelter in a bush. A group of several heavily armored demons are patrolling the steppes at a fast pace. The sun makes the dark metal of their foreign armor shine softly.`);

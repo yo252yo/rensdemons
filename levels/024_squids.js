@@ -90,7 +90,9 @@ events.text(`You can be underwater thanks to the potion, but it doesn't prevent 
 events.add_conversations(0.8);
 
 events.byConstructor("EB_Seashell", 2);
-events.byConstructor("EB_Skeleton", 1);
+events.byConstructor("EB_Skeleton", 0.5);
+events.battle('encounters/purse', 0.5);
+
 
 events.set_tries(100, 120);
 events.fill_floor_by_retry();

@@ -71,6 +71,10 @@ FEvents.groundItem(ITEM.Eye, 0.6);
 FEvents.groundItem(ITEM.Meat, 0.6);
 
 FEvents.byConstructor("EB_Skeleton", 0.1);
+FEvents.byConstructor("EB_Tomb", 0.05);
+FEvents.byConstructor("EB_Sign", 0.05);
+FEvents.byConstructor("EB_Tent", 0.05);
+FEvents.byConstructor("EB_Camp", 0.05);
 
 FEvents.text(`Around you, the arid region extends in all directions. Perspectives play tricks on your mind, shapes shift and move on the horizon. It's very hard to keep your sense of orientation in a world filled with ungodly magic...`, 0.9);
 FEvents.text(`You can't help but scream as your foot burrows in a patch of loose sand. You lose your footing and fall to the ground. Insects start to crawl onto you. Fortunately, you manage to get back up and push them away easily.`, 0.9);

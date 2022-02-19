@@ -169,7 +169,19 @@ events.text('$$BestFriend$ slips on a bunch of small rocks, but you notice it in
 events.text('The peaks in front of you seem to be piercing through the skies. You can distinguish, close to the highest point, a shining spot in the facade of the rock. Seems like a door. It\'s probably your goal!');
 events.text('You find a few bones that belong to an adventurer less lucky than you. Were they part of your distant ancestors who built a shelter here? Or a more recent wanderer trying to seize the treasures of the past?');
 events.byConstructor("EB_Pebbles", 2);
-events.byConstructor("EB_Skeleton", 1);
+events.byConstructor("EB_Skeleton", 0.5);
+
+events.byConstructor("EB_Tomb", 1);
+events.byConstructor("EB_Sign", 0.2);
+events.byConstructor("EB_Tent", 0.2);
+events.byConstructor("EB_Camp", 0.2);
+events.byConstructor("EB_Bush", 0.2);
+events.byConstructor("EB_Well", 0.2);
+
+events.battle('encounters/elder', 0.1);
+events.battle('encounters/purse', 0.2);
+
+
 events.add_conversations(0.8);
 
 events.set_zone(1250,2400,1350,1300);
