@@ -13,11 +13,6 @@ mb its a diary about ren like "oh sometimes he moves other times hes static, hes
 >> use it in conversations??
 
 
-# FLASHBACK ---------------------------------------------
-- a flashback that you know you survived
->> mb as event item ? or eventitem piece of technology
-+ add rens parent sendoff/house before trial?
-
 
 
 

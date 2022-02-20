@@ -4,6 +4,11 @@ VALID REFACTORINGS:
 - palette has functions that return objects, strings and functinos that just outright change the colors
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
+# FLASHBACK ---------------------------------------------
+- a flashback that you know you survived
+>> mb as event item ? or eventitem piece of technology
++ add rens parent sendoff/house before trial?
+
 
 - break line bug <br><br>When you look at what suits your views<br<br>/&gt;When you idealize the past<br>When you follow that which feels true...
 - test on edge, epsecially functions starting by _, mb the nested ones
