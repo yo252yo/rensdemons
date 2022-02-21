@@ -89,6 +89,7 @@ const DISK = {
     initialize_game: function() {
       DISK.initialize._load_storage();
       DISK.initialize._restore_previous_state();
+      STATS.record.game_start();      
     },
 
     hard_reset: function() {

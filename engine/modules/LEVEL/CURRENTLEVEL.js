@@ -316,6 +316,8 @@ const CURRENTLEVEL = {
       CONSOLE.log.setup(name + " (from previous state)");
       CURRENTLEVEL._setup._setup_from_object(save);
     }
+
+    STATS.record.level_load();
   },
 
   objects: {

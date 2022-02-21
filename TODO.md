@@ -1,5 +1,7 @@
 # WIP
 
+- more stats in grimoire (death? kills? consciousobject counter)
+
 BATTLE ENCOUNTERS
 
 encounters/minstrel

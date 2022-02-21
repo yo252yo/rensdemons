@@ -5,6 +5,11 @@ const STAT = {
   Ledger: "LEDGER",
   MaxExplorationScore: "MaxExplorationScore",
   Glitches: "Glitches",
+  FirstConnection: "FirstConnection",
+  LastConnection: "LastConnection",
+  LastLevelLoad: "LastLevelLoad",
+  PreviousSessionEnd: "PreviousSessionEnd",
+  BootCount: "BootCount",
 }
 
 // road, world, ear, year, universe, trail, story, day, journey, game
@@ -92,6 +97,19 @@ const STATS = {
       }
     },
 
+    level_load: function(){
+      STATS.record._set(STAT.LastLevelLoad, (new Date()).getTime());
+    },
+
+    game_start: function(){
+      STATS.record._set(STAT.LastConnection, (new Date()).getTime());
+      STATS.record._set(STAT.PreviousSessionEnd, STATS.get(STAT.LastLevelLoad));
+      if(!STATS.get(STAT.FirstConnection)){
+        STATS.record._set(STAT.FirstConnection, (new Date()).getTime());
+      }
+      STATS.record._increment(STAT.BootCount);
+    },
+
   },
 
   get: function(key){
@@ -138,4 +156,5 @@ const STATS = {
   is_post_game: function(){
     return STATS.get(STAT.Endings);
   },
+
 }

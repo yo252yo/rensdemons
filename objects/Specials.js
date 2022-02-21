@@ -403,10 +403,21 @@ class S_Grimoire extends SimpleObject {
     this.adjust_hitbox(0,0,48, 41);
 
 
+    var dayNumber = Math.ceil(Math.abs(STATS.get(STAT.FirstConnnection) - (new Date()).getTime())/(1000 * 60 * 60 * 24));
+    var wakeup = (new Date(STATS.get(STAT.LastConnnection))).toTimeString().split(' ')[0];
+    var now = (new Date()).toTimeString().split(' ')[0];
+    var slumber = Math.ceil(Math.abs(STATS.get(STAT.LastConnection) - STATS.get(STAT.PreviousSessionEnd))/(1000 * 60));
+    var slumberText = Math.floor(slumber/60) + "h" + ((slumber % 60) < 10 ? "0" : "") + (slumber % 60);
+    var iteration = STATS.get(STAT.BootCount);
+
     this.default_text = function(){
       TextBannerSequence.make([
         `On the ground, an old looking tome is open to a half-written page. The ink looks fresh but traces letters with a inhuman precision. It appears to be some sort of diary. It reads:`,
-        `"Day XX."`
+        `"
+        Day ${dayNumber}.<br />
+        The child number ${STATS.get(STAT.Endings)} still exhibits a peculiar pattern of prolonged immobility followed by activity. The last active phase started at ${wakeup} after a slumber of approximately ${slumberText}. If I'm not mistaken, this is the awakening number ${iteration} I record."`,
+        `The child grows close and should reach me around ${now}. I hope we can reach a satisfactory outcome this time...`
+
       ]);
     };
 
