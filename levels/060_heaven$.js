@@ -110,7 +110,7 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
     BATTLE.api.make("heaven/_goddess", endFight);
   };
 
-  var s = new S_StainedGlass_wall(1175,1475, 'circle');
+  var s = new S_StainedGlass_wall(1200,1430, 'circle');
   s.visual_element.adjust_depth(0);
   s.interaction = undefined;
 
@@ -118,6 +118,10 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   new S_SavePoint(1550, 1525);
   new S_SavePoint(1550, 1125);
   new S_SavePoint(1150, 1125);
+
+  if (STATS.ending(ENDINGS.God)){
+    new S_Grimoire(1350,1495);
+  }
 }
 
 

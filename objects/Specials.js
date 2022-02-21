@@ -396,3 +396,19 @@ class S_SlimeTip extends S_event {
     ]);
   }
 }
+
+class S_Grimoire extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 48, 41, "heaven/grimoire");
+    this.adjust_hitbox(0,0,48, 41);
+
+
+    this.default_text = function(){
+      TextBannerSequence.make([
+        `On the ground, an old looking tome is open to a half-written page. The ink looks fresh but traces letters with a inhuman precision. It appears to be some sort of diary. It reads:`,
+        `"Day XX."`
+      ]);
+    };
+
+  }
+}

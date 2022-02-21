@@ -72,6 +72,8 @@ class S_StainedGlass_wall extends LevelObject {
     var visual = new StaticSprite("assets/objects/stainedglass/" + type + ".png", 'obj_light');
     if(type == "church") {
       visual.specify_sprite_size(41, 140);
+    } else if(type == "circle") {
+      visual.specify_sprite_size(350, 350);
     } else {
       visual.specify_sprite_size(55, 140);
     }

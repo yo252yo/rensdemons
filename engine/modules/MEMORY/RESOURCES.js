@@ -295,6 +295,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/objects/heaven/tomb1.png');
     RESOURCES.get_img('assets/objects/heaven/tomb2.png');
     RESOURCES.get_img('assets/objects/heaven/tomb3.png');
+    RESOURCES.get_img('assets/objects/heaven/grimoire.png');
     RESOURCES.get_img('assets/objects/hell/beelzebub.png');
     RESOURCES.get_img('assets/objects/hell/plant.png');
     RESOURCES.get_img('assets/objects/hell/plant2.png');
