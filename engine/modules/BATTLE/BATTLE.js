@@ -391,6 +391,7 @@ const BATTLE = {
         DODGE.init();
 
         PLAYER_ACTIONS.add_thaumaturgy_actions();
+        STATS.record.battle();
       },
     },
 

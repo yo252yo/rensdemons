@@ -8,8 +8,11 @@ const STAT = {
   FirstConnection: "FirstConnection",
   LastConnection: "LastConnection",
   LastLevelLoad: "LastLevelLoad",
+  LastPing: "LastPing",
   PreviousSessionEnd: "PreviousSessionEnd",
   BootCount: "BootCount",
+  Battles: "Battles",
+  Souls: "Souls",
 }
 
 // road, world, ear, year, universe, trail, story, day, journey, game
@@ -101,13 +104,29 @@ const STATS = {
       STATS.record._set(STAT.LastLevelLoad, (new Date()).getTime());
     },
 
+    battle: function(){
+      STATS.record._increment(STAT.Battles);
+    },
+
+    soul: function(){
+      STATS.buffer_soul = (STATS.buffer_soul || 0) + 1;
+    },
+
     game_start: function(){
       STATS.record._set(STAT.LastConnection, (new Date()).getTime());
-      STATS.record._set(STAT.PreviousSessionEnd, STATS.get(STAT.LastLevelLoad));
+      STATS.record._set(STAT.PreviousSessionEnd, Math.max(STATS.get(STAT.LastPing), STATS.get(STAT.LastLevelLoad)));
       if(!STATS.get(STAT.FirstConnection)){
         STATS.record._set(STAT.FirstConnection, (new Date()).getTime());
       }
       STATS.record._increment(STAT.BootCount);
+      setTimeout(STATS.record.commit_pending, 30*1000);
+    },
+
+    commit_pending: function(){
+      STATS.record._set(STAT.LastPing, (new Date()).getTime());
+      STATS.record._increment(STAT.Souls, STATS.buffer_soul);
+      STATS.buffer_soul = 0;
+      setTimeout(STATS.record.commit_pending, 30*1000);
     },
 
   },

@@ -95,6 +95,7 @@ const LEDGER = {
     if(! LEDGER._ledger[name]) {
       LEDGER._ledger[name] = LEDGER._villager(city);
       LEDGER.herald(`A new ${role} named ${name} has been born in the city of ${city}.`);
+      STATS.record.soul();
     } else {
       LEDGER.herald(`A ${role} named ${name} has been brought back to life by necromancy.`);
     }

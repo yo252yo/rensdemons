@@ -1,6 +1,5 @@
 # WIP
 
-- more stats in grimoire (death? kills? consciousobject counter)
 
 BATTLE ENCOUNTERS
 
@@ -10,16 +9,6 @@ Different stories and depending on your reaction you tip, it could be the same s
 Mb the tip is random
 
 Mb options are run kill listen and when u listen u get a story with random rewards and its always the story of Ren, mb it's his mom, but the jackpot is the story of the minstrel. Mb smthing like a minstrel who couldn't tell his own story
-
-# STATS DISPLAY  ----------------------------------------------------
-THE GODDESS HAS A DIARY ON  A LECTER
-
-- Keep more stats and reuse the Stat of ren's desth
-cant be a book from library
-mb its a diary about ren like "oh sometimes he moves other times hes static, hes been active since 2PM"
->> In heaven a stats memorial mb written in a picture smthing a big swag
->> use it in conversations??
-
 
 
 
