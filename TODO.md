@@ -3,9 +3,15 @@
 BATTLE ENCOUNTERS
 
 encounters/minstrel
+Different stories and depending on your reaction you tip, it could be the same story from different pov
 
+Mb the tip is random
+
+Mb options are run kill listen and when u listen u get a story with random rewards and its always the story of Ren, mb it's his mom, but the jackpot is the story of the minstrel. Mb smthing like a minstrel who couldn't tell his own story
 
 # STATS DISPLAY  ----------------------------------------------------
+THE GODDESS HAS A DIARY ON  A LECTER
+
 - Keep more stats and reuse the Stat of ren's desth
 cant be a book from library
 mb its a diary about ren like "oh sometimes he moves other times hes static, hes been active since 2PM"
@@ -31,11 +37,10 @@ See 051_pandemonium_room and 012_trees
 https://en.wikipedia.org/wiki/Electron_(software_framework)
 
 # 3. SEND OUT FOR BETA  ----------------------------------------------------
-- check save/disk size
+- check save/disk size and optimize (rencode songs)
 - record everything
 
 # 4. POLISHING/PRODUCTIONIZE  ----------------------------------------------------
-- optimize size on disk
 - https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - write walkthrough

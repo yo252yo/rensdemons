@@ -4,7 +4,7 @@ VALID REFACTORINGS:
 - palette has functions that return objects, strings and functinos that just outright change the colors
 - can we remove self adjustement from draw() now that we hardcode the dimensions of all sprites when theres filling?? mb noter for battle sprites etc....
 
-# FLASHBACK ---------------------------------------------
+# FLASHBACK: i love the idea but its not possible because the promised child starts at the trial
 - a flashback that you know you survived
 >> mb as event item ? or eventitem piece of technology
 + add rens parent sendoff/house before trial?
