@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.interface.map();
 INTERFACE.make_compass();
@@ -9,7 +9,7 @@ var after_going_to_town2 = function() { return ABILITIES.has_ability("_town2_vis
 var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("_town3_prompted") || STATS.flag("StoryOfTheAncients");};
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 var h = 2550;
@@ -42,7 +42,7 @@ FHardMain.set_zone(2075+50, 1000+h-25, w-1050-50, h-1050-25);
 
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 new SM_Town(1250, 2750, "005_town1", "town_1");
@@ -81,7 +81,7 @@ v.interaction = function() {
 
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 //hack landmarks
@@ -121,23 +121,23 @@ FHardMain.fill_floor_by_retry();
 FMap.add_default_constructor("SM_Trees", 2, 100, 100);
 FMap.add_default_constructor("SM_Lake", 1.5, 300, 200);
 FMap.add_default_constructor("SM_Mountain", 1, 300, 150);
-FMap.set_tries(40, 100);
+FMap.set_tries(50, 100);
 FMap.fill_floor_by_retry();
 // Place hills after as they are walkable
-FMap.set_tries(10, 40);
+FMap.set_tries(20, 30);
 FMap.clear();
 FMap.add_default_constructor("SM_Hills");
 FMap.fill_floor_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
 var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
-FEasyEvents.battle('world/ghost', 1.7);
-FEasyEvents.battle('world/goblin', 1.7);
-FEasyEvents.battle('world/mummy', 1.7);
-FEasyEvents.battle('world/skeleton', 1.7);
+FEasyEvents.battle('world/ghost', 1.8);
+FEasyEvents.battle('world/goblin', 1.8);
+FEasyEvents.battle('world/mummy', 1.8);
+FEasyEvents.battle('world/skeleton', 1.8);
 FEasyEvents.battle('world/wraith', 0.8);
 
 FEasyEvents.battleRubble(ITEM.Poison_darts, 0.1);
@@ -167,23 +167,23 @@ FEasyEvents.text(`You see in the distance a battalion of the evil monsters broug
 FEasyEvents.add_conversations(2);
 
 FEasyEvents.set_zone_from_filler(FEasyS);
-FEasyEvents.set_tries(10, 25);
+FEasyEvents.set_tries(15, 25);
 FEasyEvents.fill_floor_by_retry();
 
 FEasyEvents.set_zone_from_filler(FEasyN);
-FEasyEvents.set_tries(30, 60);
+FEasyEvents.set_tries(50, 60);
 FEasyEvents.fill_floor_by_retry();
 
 
 
 var FHardEvents = new EventFiller(FMap, 25, 25, 'obj_light');
-FHardEvents.battle('world/arsonist', 2);
-FHardEvents.battle('world/bruiser', 2);
-FHardEvents.battle('world/butcher', 2);
-FHardEvents.battle('world/djinn', 2);
-FHardEvents.battle('world/grizzly', 2);
-FHardEvents.battle('world/knight', 2);
-FHardEvents.battle('world/mammoth', 2);
+FHardEvents.battle('world/arsonist', 2.5);
+FHardEvents.battle('world/bruiser', 2.5);
+FHardEvents.battle('world/butcher', 2.5);
+FHardEvents.battle('world/djinn', 2.5);
+FHardEvents.battle('world/grizzly', 2.5);
+FHardEvents.battle('world/knight', 2.5);
+FHardEvents.battle('world/mammoth', 2.5);
 FHardEvents.battle('world/vadhaka', 0.7);
 
 
@@ -208,31 +208,31 @@ FHardEvents.byConstructor("EB_Well", 0.1);
 FHardEvents.battle('encounters/traveler', 2);
 FHardEvents.battle('encounters/ruins', 1.3);
 FHardEvents.battle('encounters/elder', 0.5);
-FHardEvents.battle('encounters/minstrel', 0.5);
+FHardEvents.battle('encounters/minstrel', 0.8);
 
 FHardEvents.text(`You stop your progression: you can see in the distance a pack of feral beasts. As you observe them carefully, you notice that they seem to be tearing to shreds the corpses of a few innocent travelers, throwing around the meat as if making a game out of it. Their fur is drenched in the blood of their unfortunate victims. Crouched on the floor, your heart beating fast, you wait for them to finish their meal, praying that you don't get noticed.`);
 FHardEvents.text(`The sound of metal alerts you of the movement of enemy troops in the distance. You barely have time to find shelter in a bush. A group of several heavily armored demons are patrolling the steppes at a fast pace. The sun makes the dark metal of their foreign armor shine softly.`);
 FHardEvents.text(`You see a fellow human on the distance. As soon as he notices you, he immediately adopts a battle stance. In these wild lands, noone can be trusted. To demonstrate your good faith, you decide to keep the distance and move away from the poor fellow. It will probably be a while after you're out of sight for him to let his guard down.`);
 FHardEvents.text(`You arrive in a desolate area. The grass has been completely burnt to ashes. The ground is blackened and arid. Broken bones are shattered all over. You silently make your way through, trying not to imagine the horrible things that took place here.`);
 FHardEvents.text(`In the middle of a puddle of old blood that has long since dried up, you see a magnificent red flower blooming. It feels your heart with determination. There is hope and beauty in this world, and it can prevail over the destruction.`);
-FHardEvents.add_conversations(1);
+FHardEvents.add_conversations(1.2);
 
 FHardEvents.set_zone_from_filler(FHardSW);
-FHardEvents.set_tries(8, 20);
+FHardEvents.set_tries(10, 20);
 FHardEvents.fill_floor_by_retry();
 
 FHardEvents.set_zone_from_filler(FHardNE);
-FHardEvents.set_tries(10, 40);
+FHardEvents.set_tries(15, 40);
 FHardEvents.fill_floor_by_retry();
 
 
 FHardEvents.set_zone_from_filler(FHardMain);
-FHardEvents.set_tries(60, 100);
+FHardEvents.set_tries(70, 100);
 FHardEvents.fill_floor_by_retry();
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 var foundAncientArmamentCondition = function(){
   return INVENTORY.has_ancient_armament && !ABILITIES.has_ability("_saw_ancient_armament_prompt");
@@ -255,6 +255,6 @@ CURRENTLEVEL.add_trigger("foundAncientArmament", foundAncientArmamentCondition, 
 CURRENTLEVEL.initialize_with_character(1280, 2760, 0.6);
 
 // ===================
-//hack 8. AUTOSAVE
+//hack H. AUTOSAVE
 // ===================
 SAVE.autosave();

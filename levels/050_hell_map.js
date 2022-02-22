@@ -1,12 +1,12 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.hell();
 INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*23);
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 var h = 1550;
 var w = 1950;
@@ -15,7 +15,7 @@ var f = new S_BorderedMapFloor(1050, 1000+h, w, h-50, 'void');
 f.visual_element.html_rectangle.style.border = "1px dotted #00000022";
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 new SM_HellVulcano(2500, 2200);
 
@@ -31,7 +31,7 @@ new SM_Altar(1925, 1550, ITEMS_ARCHETYPES_NAMES.Weapon);
 new SM_Altar(2050, 1125, ABILITIES_ARCHETYPES_NAMES.Spirit);
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var FMap = new Filler(gen.get(), 80, 80);
@@ -46,7 +46,7 @@ FMap.fill_floor_by_retry();
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
 
@@ -82,16 +82,15 @@ FEvents.text(`You can distinguish in the distance what is probably $$demon_lord$
 FEvents.text(`You gaze at the sky of this other universe. Unlike yours, it's perfectly clear: no star or cloud to be seen. It's simply radiating an overwhelming flat light that slowly but surely burns up deeper and deeper into your skin.`, 0.9);
 FEvents.text(`You take cover between the odd trees when a swarm of flying demons approaches in your direction. You cannot face a whole army by yourself. You wait patiently for them to go away, praying that they have not noticed you.`, 0.9);
 FEvents.text(`You find what appears clearly to be human bones half burrowed in the dry ground. Did an unfortunate adventurer loose its way? Was there another Promised Child in the past? Or did a demon simply take its food back home?`, 0.9);
-FEvents.add_conversations(1, true);
+FEvents.add_conversations(2, true);
 
 FEvents.set_tries(100, 150);
 FEvents.fill_floor_by_retry();
 
 
 
-
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 
@@ -109,6 +108,6 @@ CURRENTLEVEL.setup_text_start_function([
 CURRENTLEVEL.initialize_with_character(2475, 2225, 0.6);
 
 // ===================
-//hack 8. AUTOSAVE
+//hack H. AUTOSAVE
 // ===================
 //SAVE.autosave();
