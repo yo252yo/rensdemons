@@ -575,12 +575,12 @@ for (var floor of floors){
 
 var events = new EventFiller(filler, 10);
 var monstermodifier = 1 + hawkpart/20 * 1.5;
-events.set_tries(2+size/100, 2*size/100);
+events.set_tries(2+size/100, 2.3*size/100);
 events.battle('mountains/pterosaur',0.3 * monstermodifier);
-events.battle('mountains/emu',0.5 * monstermodifier);
-events.battle('mountains/hawk', 2 * monstermodifier);
-events.battle('world/grizzly', 1 * monstermodifier);
-events.battle('caves/scorpion', 0.5 * monstermodifier);
+events.battle('mountains/emu',0.7 * monstermodifier);
+events.battle('mountains/hawk', 2.2 * monstermodifier);
+events.battle('world/grizzly', 1.3 * monstermodifier);
+events.battle('caves/scorpion', 0.6 * monstermodifier);
 
 events.groundItem(ITEM.Stone);
 events.groundItem(ITEM.Feather);
@@ -601,7 +601,7 @@ events.text(`You look up at the peak of the mountain you're trying to climb. The
 events.text(`You hear the nearby shrieks of a ravenous bird echoing in the stone around you, but the creature is nowhere to be seen. After carefully monitoring your surroundings, you decide to progress slowly.`, 0.5);
 events.text(`A flock of vultures is fighting over the remains of what used to be a small mammal. The battle gets tense, in a flurry of beaks and claws. When the dust settles down, the birds fly away, leaving one of their kind wounded to death on the side of the path.`, 0.5);
 events.text(`The air gets colder as you progress down the path. You cough when you swallow some of the dust from the path that the wind threw in your face.`, 0.5);
-events.add_conversations(0.4);
+events.add_conversations(0.3);
 
 
 if(hawkpart != 20){

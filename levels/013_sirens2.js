@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.sirens();
 
@@ -19,11 +19,11 @@ if(sirenspart == 1){
   var modifier = 2;
 } else if(sirenspart == 3){
   var dim = [1300,600];
-  var modifier = 4;
+  var modifier = 3.5;
 }
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 if(sirenspart < 4){
@@ -37,7 +37,7 @@ if(sirenspart < 4){
 }
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 if(sirenspart == 1){
   var x = new S_ExitFloor(2150,2225,250,50, "010_world_map");
@@ -73,7 +73,7 @@ x.interaction = function(){
 }
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 if(sirenspart == 1){
   new S_SavePoint(2175, 1900, 100, 50);
@@ -174,9 +174,8 @@ if(sirenspart < 4) {
 
 
 
-
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 var decorFiller = new Filler(gen.get(), 50, 60);
 decorFiller.add_default_constructor("S_Seashell", 0.6);
@@ -210,16 +209,16 @@ if(sirenspart < 4){
 }
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
   var events = new EventFiller(decorFiller, 10);
-  events.battle('waters/anemone', modifier);
-  events.battle('waters/crab', modifier);
-  events.battle('waters/jellyfish', modifier);
-  events.battle('waters/mermaid', 2 * modifier);
+  events.battle('waters/anemone', 1.3 * modifier);
+  events.battle('waters/crab', 1.3 * modifier);
+  events.battle('waters/jellyfish', 1.3 * modifier);
+  events.battle('waters/mermaid', 2.3 * modifier);
   events.battle('waters/naiad', 0.5 * modifier);
-  events.battle('waters/triton', 2 * modifier);
+  events.battle('waters/triton', 2.3 * modifier);
   events.groundItem(ITEM.Scale);
   events.groundItem(ITEM.Seashell);
   events.battleRubble(ITEM.Bone);
@@ -231,12 +230,12 @@ if(sirenspart < 4){
   events.byConstructor("EB_Skeleton", 0.1);
 
 
-  events.text('The waters in this lake are way more tumultuous than the placid surface had lead you to believe. Every now and then you see columns of bubbles swirling, or fishes being dragged by powerful chaotic currents.');
-  events.text(`A patrol of heavily armed tritons is swimming nearby. You don't think you can take them head on. Fortunately, you can swim down to the sand. You croutch and wait for the menace to go away.`);
-  events.text(`The lake is much deeper than you first thought. When you look up, you can barely see rays of light defracted by massive quantities of water. Most of the ambient light that allows you to see comes from fluorescent vegetals.`);
-  events.text(`The water dulls the sounds around you. It makes it hard to be reactive to approaching danger. When a flesh eating fish charges you from behind, you only notice it way too late. Fortunately, $$BestFriend$ is ready and manages to counter the animal before you even get hurt.`);
-  events.text(`The bottom of the lake is full of life. Huge swarms of fishes are swimming above your heads. Their colorful scale make them shine in the darkness like moving sparkly stars. The Sirens people must not be hungry.`);
-  events.text(`The breathing potion makes it possible for you to remain underwater. You breathe in the liquid and it somehow sustains you without drowning. The feeling is weird, it's definitely more viscous and heavy than air, and it has a distinctly fishy taste.`);
+  events.text('The waters in this lake are way more tumultuous than the placid surface had lead you to believe. Every now and then you see columns of bubbles swirling, or fishes being dragged by powerful chaotic currents.', 0.8);
+  events.text(`A patrol of heavily armed tritons is swimming nearby. You don't think you can take them head on. Fortunately, you can swim down to the sand. You croutch and wait for the menace to go away.`, 0.8);
+  events.text(`The lake is much deeper than you first thought. When you look up, you can barely see rays of light defracted by massive quantities of water. Most of the ambient light that allows you to see comes from fluorescent vegetals.`, 0.8);
+  events.text(`The water dulls the sounds around you. It makes it hard to be reactive to approaching danger. When a flesh eating fish charges you from behind, you only notice it way too late. Fortunately, $$BestFriend$ is ready and manages to counter the animal before you even get hurt.`, 0.8);
+  events.text(`The bottom of the lake is full of life. Huge swarms of fishes are swimming above your heads. Their colorful scale make them shine in the darkness like moving sparkly stars. The Sirens people must not be hungry.`, 0.8);
+  events.text(`The breathing potion makes it possible for you to remain underwater. You breathe in the liquid and it somehow sustains you without drowning. The feeling is weird, it's definitely more viscous and heavy than air, and it has a distinctly fishy taste.`, 0.8);
   events.add_conversations(0.4);
 
 if(sirenspart < 4){
@@ -247,7 +246,7 @@ if(sirenspart < 4){
 placeholder.destroy();
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 if(sirenspart == 1){

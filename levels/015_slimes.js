@@ -416,11 +416,11 @@ for(var f of rooms) {
 
 var events = new EventFiller(bigDecorFiller, 5, 75);
 
-events.battle('caves/bloodsucker', 0.2);
-events.battle('caves/mole', 1);
-events.battle('caves/crawler', 0.5);
-events.battle('caves/slime', 1.5 + slimepart);
-events.battle('caves/bat', 1.5);
+events.battle('caves/bloodsucker', 0.3);
+events.battle('caves/mole', 1.5);
+events.battle('caves/crawler', 0.7);
+events.battle('caves/slime', 2 + 1.5*slimepart);
+events.battle('caves/bat', 2);
 
 
 events.groundItem(ITEM.Stone, 1 / slimepart);
@@ -450,9 +450,9 @@ events.text(`You ponder at tiny tunnels branching out from your path. They must 
 events.text(`The atmosphere around you is thick with mineral dust. Every breath you take is an effort, and every time you speak you feel like your mouth is full of sand.`, 0.5);
 events.text(`You find a trail of pink goo that a slime left in its wake. Intrigued, you follow it, but it goes straight into the wall.`, 0.5);
 events.text(`You find yourself facing a giant purple slime. You start to get ready for battle, but to your surprise the monster recoils and collapses on the ground. You see its mass diminish, not understanding fully what is happening. By the time you figure out that the ground is soaking up the slime, nothing is left but a vaguely colorful puddle.`, 0.5);
-events.add_conversations(0.4);
+events.add_conversations(0.3);
 
-events.set_tries(1, 1 + slimepart);
+events.set_tries(1, 2 + 1.5 * slimepart);
 for(var f of hallways) {
   events.set_zone(f.x,f.y+5,f.w,f.h);
   events.fill_floor_by_retry();

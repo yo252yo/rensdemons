@@ -416,12 +416,12 @@ filler.fill_floor_by_retry();
 //hack F. EVENTS
 // ===================
 var events = new EventFiller(filler, 10);
-events.set_tries(Math.ceil(1*multiplier), 7*multiplier);
-events.battle('forests/tree',3);
-events.battle('forests/trunk',3);
+events.set_tries(Math.ceil(1.5*multiplier), 7*multiplier);
+events.battle('forests/tree',3.2);
+events.battle('forests/trunk',3.2);
 events.battle('forests/nymph',0.5);
-events.battle('forests/flower');
-events.battle('forests/mandragora'); // 10
+events.battle('forests/flower', 1.3);
+events.battle('forests/mandragora', 1.3); // 10
 
 events.groundItem(ITEM.Stick, 0.7);
 events.groundItem(ITEM.Berry, 0.7);
@@ -447,6 +447,9 @@ events.text('You feel rather disappointed with this place so far. You expected a
 events.text('You are confident in the fairness of this forest. The tougher the trial, the better the reward. You continue your march empowered by this feeling of determination.', 0.5);
 events.text('You look carefully around you, but there seems to be nothing of note. This did not progress your quest at all.', 0.5);
 events.text('You examine closely every plant and animal you come across. Everything that seems even remotely intriguing. Who knows where you can find a hidden gem?', 0.5);
+
+events.add_conversations(0.3);
+
 
 if(events_zone){
   events.set_zone(events_zone[0],events_zone[3],events_zone[2] - events_zone[0],events_zone[3] - events_zone[1]);
