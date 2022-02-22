@@ -36,7 +36,7 @@ FMap.set_tries(3, 10);
 FMap.add_default_constructor("SM_Trees");
 FMap.fill_floor_by_retry();
 
-var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
+var FEasyEvents = new EventFiller(gen.get(), 25, 25, 'obj_light');
 FEasyEvents.battle('world/ghost', 1.7);
 FEasyEvents.battle('forests/flower', 1.7);
 FEasyEvents.battle('world/mummy', 1.7);

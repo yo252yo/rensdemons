@@ -212,7 +212,8 @@ if(sirenspart < 4){
 //hack F. EVENTS (temporary filler)
 // ===================
 
-  var events = new EventFiller(decorFiller, 10);
+  var events = new EventFiller(gen.get(), 10);
+  events.set_zone_from_filler(decorFiller);
   events.battle('waters/anemone', 1.3 * modifier);
   events.battle('waters/crab', 1.3 * modifier);
   events.battle('waters/jellyfish', 1.3 * modifier);

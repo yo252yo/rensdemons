@@ -44,7 +44,7 @@ new SBattle(1015, 1450, 'mountains/dragon');
 
 
 
-var events = new EventFiller(filler, 5);
+var events = new EventFiller(gen.get(), 5);
 
 events.battle('world/mummy', 1);
 events.battle('mountains/harpy', 1);

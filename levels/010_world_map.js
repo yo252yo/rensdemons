@@ -133,7 +133,7 @@ FMap.fill_floor_by_retry();
 //hack F. EVENTS (temporary filler)
 // ===================
 
-var FEasyEvents = new EventFiller(FMap, 25, 25, 'obj_light');
+var FEasyEvents = new EventFiller(gen.get(), 25, 25, 'obj_light');
 FEasyEvents.battle('world/ghost', 1.8);
 FEasyEvents.battle('world/goblin', 1.8);
 FEasyEvents.battle('world/mummy', 1.8);
@@ -176,7 +176,7 @@ FEasyEvents.fill_floor_by_retry();
 
 
 
-var FHardEvents = new EventFiller(FMap, 25, 25, 'obj_light');
+var FHardEvents = new EventFiller(gen.get(), 25, 25, 'obj_light');
 FHardEvents.battle('world/arsonist', 2.5);
 FHardEvents.battle('world/bruiser', 2.5);
 FHardEvents.battle('world/butcher', 2.5);

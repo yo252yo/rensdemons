@@ -414,7 +414,7 @@ for(var f of rooms) {
 // ===================
 
 
-var events = new EventFiller(bigDecorFiller, 5, 75);
+var events = new EventFiller(gen.get(), 5, 75);
 
 events.battle('caves/bloodsucker', 0.3);
 events.battle('caves/mole', 1.5);

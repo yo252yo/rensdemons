@@ -573,7 +573,8 @@ for (var floor of floors){
 // ===================
 
 
-var events = new EventFiller(filler, 10);
+var events = new EventFiller(gen.get(), 10);
+
 var monstermodifier = 1 + hawkpart/20 * 1.5;
 events.set_tries(2+size/100, 2.3*size/100);
 events.battle('mountains/pterosaur',0.3 * monstermodifier);

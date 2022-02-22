@@ -415,7 +415,8 @@ filler.fill_floor_by_retry();
 // ===================
 //hack F. EVENTS
 // ===================
-var events = new EventFiller(filler, 10);
+var events = new EventFiller(gen.get(), 10);
+
 events.set_tries(Math.ceil(1.5*multiplier), 7*multiplier);
 events.battle('forests/tree',3.2);
 events.battle('forests/trunk',3.2);
