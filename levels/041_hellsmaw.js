@@ -1,8 +1,6 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
-
 var hellsmawpart = 1;
 var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
 if(s.length > 1){
@@ -15,7 +13,7 @@ AUDIO.music.levels.hellsmaw();
 var decor = new Filler(gen.get(), 40, 40);
 
 var events = new EventFiller(gen.get(), 1);
-events.set_tries(10, 12);
+events.set_tries(12, 15);
 
 
 var summitExit = function(){
@@ -28,9 +26,9 @@ var summitExit = function(){
 
 
 // ===================
-//hack 1. FLOORS
-//hack 2. EXIT
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack B. FLOORS
+//hack C. EXIT
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 if(hellsmawpart == 1){
@@ -255,6 +253,11 @@ else if(hellsmawpart == 3){
   new S_ExitFloor(1950,2500,75,50, '041_hellsmaw@12', [1975, 1900]);
 
 
+
+  if (!ABILITIES.has_ability("_lieutenant_defeated")){
+    new S_Beelzebub(1900, 2200);
+  }
+
   events.set_tries(0, 0);
   floors = [
     [1900,2025,150,150],
@@ -279,13 +282,47 @@ else if(hellsmawpart == 3){
     [2050,2300,150,350],
     [1900,2450,150,225],
   ];
+
+  var s = new SE_event(1950, 2125);
+  var end = function(){
+    s.destroy();
+    INVENTORY.increase(ITEM.Medallion);
+  };
+
+  var prompt2 = function(){
+    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
+        [
+          {"text": "Take it", "effect": end},
+          {"text": "Leave it", "effect": function(){ s.destroy(); }},
+       ]
+     );
+   };
+
+  var investigate = function() {
+    TextBannerSequence.make(['You spend a long time rummaging through the ashes. Finally, under a thick layer of rubbles, something attracts your gaze. You can\'t help but gasp as you recognize $$BestFriend$\'s medallion.'],
+    prompt2);
+  }
+
+  var prompt = function(){
+    new CenteredTextMenu("Investigate the scene?",
+        [
+          {"text": "Yes", "effect": investigate},
+          {"text": "No", "effect": "##CLOSE"},
+       ]
+     );
+   };
+
+  s.real_interaction = function() {
+    TextBannerSequence.make(['Moved by a Goddess-given intuition, you make your way back to the scene of the terrible battle. You believe there must be something, some sort of treasure, that you should be able to find now...'],
+    prompt);
+  }
 } else {
   CONSOLE.error("Requested unimplemented hellsmawpart: " + hellsmawpart);
 }
 
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 decor.add_default_constructor("S_HellPlantLeaning");
@@ -308,7 +345,7 @@ for(var i of floors){
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
 events.battle('world/arsonist', 2);
@@ -432,51 +469,7 @@ if(hellsmawpart == 1){
 
 
 // ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-if (!ABILITIES.has_ability("_lieutenant_defeated") && hellsmawpart == 13){
-  new S_Beelzebub(1900, 2200);
-}
-
-if (hellsmawpart == 14){
-  var s = new SE_event(1950, 2125);
-  var end = function(){
-    s.destroy();
-    INVENTORY.increase(ITEM.Medallion);
-  };
-
-  var prompt2 = function(){
-    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
-        [
-          {"text": "Take it", "effect": end},
-          {"text": "Leave it", "effect": function(){ s.destroy(); }},
-       ]
-     );
-   };
-
-  var investigate = function() {
-    TextBannerSequence.make(['You spend a long time rummaging through the ashes. Finally, under a thick layer of rubbles, something attracts your gaze. You can\'t help but gasp as you recognize $$BestFriend$\'s medallion.'],
-    prompt2);
-  }
-
-  var prompt = function(){
-    new CenteredTextMenu("Investigate the scene?",
-        [
-          {"text": "Yes", "effect": investigate},
-          {"text": "No", "effect": "##CLOSE"},
-       ]
-     );
-   };
-
-  s.real_interaction = function() {
-    TextBannerSequence.make(['Moved by a Goddess-given intuition, you make your way back to the scene of the terrible battle. You believe there must be something, some sort of treasure, that you should be able to find now...'],
-    prompt);
-  }
-}
-
-// ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 if(hellsmawpart == 14){
   CURRENTLEVEL.initialize_with_character(1800, 2150);
