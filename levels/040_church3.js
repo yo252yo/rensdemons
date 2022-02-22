@@ -1,8 +1,8 @@
+
 // ===================
-//hack 0. INITIALIZATION
-//hack 1. FLOORS
-//hack 2. EXIT
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack A. INITIALIZATION (sound, etc...)
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
 // ===================
 new Snippet("levels/decors/temple");
 
@@ -36,7 +36,7 @@ new M_Trainer(1500, 1350, 99, ABILITIES_ARCHETYPES_NAMES.Spirit, 100000);
 new M_Trainer(1500, 1200, 101, ABILITIES_ARCHETYPES_NAMES.Diplomat, 2000);
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
-CURRENTLEVEL.initialize_with_character(1275, 1750);
+f.initialize_with_character(1275, 1750);

@@ -1,16 +1,55 @@
+// ===================
+//hack A. INITIALIZATION (sound, etc...)
+// ===================
+AUDIO.music.town.debauch();
+var gen = new Generator(DICTIONARY.get("world_seed")*5);
 
 // ===================
-//hack 0. INITIALIZATION
-//hack 1. FLOORS
-//hack 2. EXIT
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
-
-new Snippet("levels/decors/town4");
+var town = new S_TownFloor(1050, 2050, 2000, 1000, "010_world_map");
 
 // ===================
-//hack 7. START/INIT
+//hack D. UNIQUE ELEMENTS
+// ===================
+new S_Church(1950, 1300, "021_church4$");
+
+new S_Store(CITIES.indulgence, ITEMS_ARCHETYPES_NAMES.Weapon, 500, 1100, 2000, gen.get());
+new S_Store(CITIES.indulgence, ITEMS_ARCHETYPES_NAMES.Alchemy, 10000, 2825, 1900, gen.get());
+new S_Store(CITIES.indulgence, ABILITIES_ARCHETYPES_NAMES.Diplomat, 100000, 2200, 1375, gen.get());
+new S_Store(CITIES.indulgence, ABILITIES_ARCHETYPES_NAMES.Spirit, 2000, 2500, 1600, gen.get());
+
+new S_Manor(2525,1150);
+
+new M_FemmeFatale(2125, 1125);
+new M_SnobRich(2725, 1175);
+
+
+var s = new S_Store(CITIES.indulgence, "Gambler", 0, 1700, 1250, gen.get());
+s.enter_function = function() {
+  BATTLE.api.make("_021/_casino");
+};
+
+// ===================
+//hack E. DECOR (permanent filler)
+// ===================
+
+var houseFiller = new Filler(gen.get());
+houseFiller.set_zone(1075, 2025, 1950, 950);
+houseFiller.set_tries(5, 60);
+houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.indulgence, x, y, seed); },1 , 120, 160);
+houseFiller.fill_floor_by_retry();
+
+var villagerFiller = new Filler(gen.get());
+villagerFiller.set_zone(1075, 2025, 1950, 950);
+villagerFiller.set_tries(35, 120);//this.gen.int(10) - 7
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.indulgence, x, y, seed); }, 1, 50, 60);
+villagerFiller.fill_floor_by_retry();
+
+
+// ===================
+//hack G. START/INIT
 // ===================
 CURRENTLEVEL.setup_text_start_function([
   `As you enter $$town_4$, you're immediately assaulted by a flood of sensations. The streets are filled with people, in spite of the late hour. They are bathed in the lights of colorful lanterns hung at the facade of the houses. The building themselves are pretty colorful too, though no care was given to the paint job which looks obviously rushed, unfinished, and very uneven between different walls. A complete lack of coordination makes for a true chaos of hues.`,
@@ -24,4 +63,5 @@ CURRENTLEVEL.setup_text_start_function([
   `$$BestFriend$: "If nothing more, this place looks very friendly! Should we have a look around?"`,
 ]);
 
-CURRENTLEVEL.initialize_with_character(1100, 1100);
+
+town.get_exit().initialize_with_character(1100, 1100);

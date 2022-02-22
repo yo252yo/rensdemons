@@ -1,16 +1,49 @@
+// ===================
+//hack A. INITIALIZATION (sound, etc...)
+// ===================
+AUDIO.music.town.fear();
+var gen = new Generator(DICTIONARY.get("world_seed")*3);
 
 // ===================
-//hack 0. INITIALIZATION
-//hack 1. FLOORS
-//hack 2. EXIT
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
+var town = new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
 
-new Snippet("levels/decors/town2");
 
 // ===================
-//hack 7. START/INIT
+//hack D. UNIQUE ELEMENTS
+// ===================
+new S_Church(1700, 1750, "020_church2");
+
+new S_Castle(1075, 1425);
+
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Weapon, 500, 2200, 1300, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Tool, 200, 2225, 2225, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get());
+
+// ===================
+//hack E. DECOR (permanent filler)
+// ===================
+
+var houseFiller = new Filler(gen.get());
+houseFiller.set_zone(1075, 2525, 1475, 1450);
+houseFiller.set_tries(20, 100);
+houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.fear, x, y, seed); },1 ,120, 160);
+houseFiller.fill_floor_by_retry();
+
+var villagerFiller = new Filler(gen.get());
+villagerFiller.set_zone(1075, 2525, 1475, 1450);
+villagerFiller.set_tries(2, 10);//this.gen.int(10) - 7
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.fear, x, y, seed); },1,50,60);
+villagerFiller.fill_floor_by_retry();
+
+villagerFiller.set_tries(6, 20);
+villagerFiller.add_constructor(function(x,y,seed){ return new M_Guard(CITIES.fear, x, y, seed); },1,50,60);
+villagerFiller.fill_floor_by_retry();
+
+// ===================
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
@@ -26,4 +59,4 @@ CURRENTLEVEL.setup_text_start_function([
   `$$Ren$: "We don't have to stay long... Let's head for the church and see what kind of training they have for me!"`,
 ]);
 
-CURRENTLEVEL.initialize_with_character(1750, 2550);
+town.get_exit().initialize_with_character(1750, 2550);

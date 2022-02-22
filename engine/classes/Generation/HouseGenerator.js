@@ -67,7 +67,7 @@ class HG_Room {
           multiplier = 2;
           break;
         case CITIES.indulgence:
-          multiplier = 5;
+          multiplier = 4;
           break;
         case CITIES.denial:
           multiplier = 1;
@@ -174,7 +174,7 @@ class HG_Room {
         case CITIES.fear:
           return 1;
         case CITIES.indulgence:
-          return 5;
+          return 4;
         case CITIES.denial:
           return 1;
         case CITIES.acceptance:

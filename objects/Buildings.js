@@ -169,6 +169,10 @@ class S_TownFloor extends S_Floor {
     this.top_border = new S_ExitFloor(x+w/2-w/8, y-h+10, 2*w/8, exit+10, outside);
     this.bot_border = new S_ExitFloor(x+w/2-w/8, y+exit, 2*w/8, exit+10, outside);
   }
+
+  get_exit(){
+    return this.bot_border;
+  }
 }
 
 class S_BorderedMapFloor extends S_MapFloor {

@@ -1,19 +1,17 @@
-
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.town.fear();
 var gen = new Generator(DICTIONARY.get("world_seed")*3);
 
 // ===================
-//hack 1. FLOORS
-//hack 2. EXIT
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
-new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
+var town = new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 var g = new S_GameBoard(1125, 1425);
@@ -108,7 +106,7 @@ hp.interaction = function() {
 
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var houseFiller = new Filler(gen.get());
@@ -145,8 +143,9 @@ rubbleFiller.fill_floor_by_retry();
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
+
 
 CURRENTLEVEL.start_function = function() {
   STATS.record.flag("town2_ruin_seen");
@@ -158,4 +157,4 @@ CURRENTLEVEL.start_function = function() {
   ], IO.control.character);
 };
 
-CURRENTLEVEL.initialize_with_character(1750, 2550);
+town.get_exit().initialize_with_character(1750, 2550);

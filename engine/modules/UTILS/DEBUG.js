@@ -72,7 +72,7 @@ const DEBUG = {
   //  DEBUG.draw_grid();
 
   //  THAUMATURGY.teleport = true;
-    THAUMATURGY.compress_time(4);
+    THAUMATURGY.compress_time(3);
     THAUMATURGY.remove_camera_lock();;
     THAUMATURGY.get_all_abilities();
     THAUMATURGY.get_all_items();
@@ -84,8 +84,8 @@ const DEBUG = {
   //  DEBUG.display_filler_zones();
 
 
-    setTimeout(THAUMATURGY.remove_fog, 1000);
-    setTimeout(THAUMATURGY.force_observer_effect, 1000);
+    setInterval(THAUMATURGY.remove_fog, 5000);
+    setInterval(THAUMATURGY.force_observer_effect, 5000);
     setTimeout(DEBUG.draw_hitboxes, 1000);
 
     ABILITIES.unlock("_town2_visited");
