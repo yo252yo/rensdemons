@@ -1,3 +1,8 @@
+// ===================
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
+// ===================
+
 
 new S_TilingFloor(1500,2100,200,200);
 new S_TilingFloor(1575,1950,50,125);

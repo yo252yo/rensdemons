@@ -1,18 +1,14 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.trial();
 
 // ===================
-//hack 1. FLOORS
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
 // ===================
 new Snippet("levels/decors/maze");
 
-// ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 
 // start
 new SBattle(1525, 2075, '_003/_bone_pile');
@@ -115,7 +111,7 @@ make_statue(1575, 2850, "southern");
 make_statue(825, 2025, "western");
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 var boss_callback = function() {

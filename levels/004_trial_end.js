@@ -1,22 +1,27 @@
 
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
 // ===================
 ABILITIES.unlock("_trial_passed"); // redundant
 var gen = new Generator(DICTIONARY.get("world_seed"));
 
-// ===================
-//hack 1. FLOORS
-//hack 2. EXIT
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
-// ===================
 new Snippet("levels/decors/temple");
+
+// ===================
+//hack C. EXIT
+// ===================
+
+new S_ExitFloor(1250,1775,100,35, '005_town1');
+
+// ===================
+//hack D. UNIQUE ELEMENTS
+// ===================
+
 new S_StainedGlass_wall(1075, 1050, 'church');
 new S_StainedGlass_wall(1275, 1050, 'hope');
 new S_StainedGlass_wall(1475, 1050, 'church');
-
-
-new S_ExitFloor(1250,1775,100,35, '005_town1');
 
 var make_priest = function (x, y) {
   var priest = new M_Priest(x,y, CITIES.hope);
@@ -63,7 +68,7 @@ hp.interaction = function() {
  };
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.start_function = function(){

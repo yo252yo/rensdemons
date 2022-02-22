@@ -1,19 +1,18 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 
 AUDIO.music.levels.hideandseek();
 
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 new S_MudFloor(1050,1400,600,350);
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 var CHILDREN_FOUND = {};
@@ -103,7 +102,7 @@ CURRENTLEVEL.add_trigger("foundAllChildren", foundAll, function() {
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 var callback2 = function(){
   TextBannerSequence.make([

@@ -1,9 +1,9 @@
+// ===================
+//hack A. INITIALIZATION (sound, etc...)
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
+// ===================
 
-// ===================
-//hack 0. INITIALIZATION
-//hack 1. FLOORS
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
-// ===================
 
 new Snippet("levels/decors/temple");
 
@@ -114,7 +114,8 @@ make_priest(1350, 1550);
  };
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
+
 CURRENTLEVEL.start_function = function(){friend_go.call()};
 CURRENTLEVEL.initialize_with_character(1350, 1700);

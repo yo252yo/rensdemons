@@ -1,3 +1,9 @@
+// ===================
+//hack A. INITIALIZATION (sound, etc...)
+//hack B. FLOORS
+//hack D. UNIQUE ELEMENTS
+// ===================
+
 AUDIO.music.levels.temple();
 
 new S_WoodFloor(1050,1750,500,700);
