@@ -311,8 +311,6 @@ class S_Church extends S_LayeredBuilding {
 
       var dx = (CHARACTER.get().x + 15 - this.x);
       var dy = (CHARACTER.get().y - this.y);
-
-      console.log(dx + "/" + dy);
       if ((dx < 40 || dx > 125) && (dy > -100 || dy < -225)) {
         var t = [RANDOM.pick([
           "It appears to be still the temple. The building shape might be a cross, but its boundaries are clearly a simple rectangle.",
