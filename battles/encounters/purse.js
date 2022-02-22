@@ -13,7 +13,7 @@ PLAYER_ACTIONS.add({
   description: [
     "You ignore it and walk away.",
     `It turns out that the purse was an enchanted item. It is moved by your humility, and wishes to reward it.`,
-      `The next time you look at your own purse, it feels unnaturally heavier. It seems that 5 Coins manifested out of thin air to grow your fortune.`,
+    `The next time you look at your own purse, it feels unnaturally heavier. It seems that 5 Coins manifested out of thin air to grow your fortune.`,
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
