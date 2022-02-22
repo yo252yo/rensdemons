@@ -1,11 +1,11 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*11);
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 new S_SandFloor(1075,1375,625,50);
@@ -33,20 +33,20 @@ new S_SandFloor(2675,1900,100,575);
 new S_SandFloor(2725,1425,125,100);
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
 new S_ExitFloor(2800,1425,75,100, '024_squids');
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 // Maybe we should make a bigger deal out of this ???
 new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var decorFiller = new Filler(gen.get(), 50, 50);
@@ -58,10 +58,11 @@ decorFiller.set_tries(15, 50);
 decorFiller.fill_floor_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
-var events = new EventFiller(decorFiller, 10);
+var events = new EventFiller(gen.get(), 10);
+events.set_zone_from_filler(decorFiller);
 events.battleRubble(ITEM.Shield, 0.05);
 events.battleRubble(ITEM.Elixir_vine, 0.05);
 events.battleRubble(ITEM.Sword_wooden, 0.1);
@@ -75,6 +76,7 @@ events.text('You find a pile of goo that surely used to be other living creature
 events.text('The stench and humidity is unbearable. The floor under your feet is gooey and unsteady. You progress with difficulty.');
 events.text('You notice a dull pain in your feet. When you take a look, you notice that there is thin layer of thick liquid everywhere around you. It is weakening the leather of your shoes and slowly burning your skin underneath. It\'s taking a very long time, but things will surely get worse if you don\'t find a way out fast.');
 events.text('Trinkets and bits of human-made objects lie around you on the exposed flesh. It gives you hope that you can find something interesting around here.');
+events.add_conversations(0.8);
 
 events.byConstructor("EB_Skeleton", 1);
 events.byConstructor("EB_Seashell", 1);
@@ -84,7 +86,7 @@ events.fill_floor_by_retry();
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([

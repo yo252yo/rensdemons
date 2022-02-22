@@ -1,11 +1,11 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.mushrooms();
 var gen = new Generator(DICTIONARY.get("world_seed")*10);
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 var hallways = [
@@ -56,25 +56,25 @@ new S_LushFloor(2100,1375,125,50);
 new S_LushFloor(2100,1400,50,50);
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
-var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
+var exit = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 new S_SavePoint(1975, 2050);
 
-// ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
+new SBattle(2075, 1425, '_02/_loot_forest');
+new SBattle(2125, 1375, 'forests/fungus');
 
-// could improve load by making these cosmetics and not level items
-var noTreeZone = new S_LushFloor(2075,1475,100,175);
-
+// ===================
+//hack E. DECOR (permanent filler)
+// ===================
 var filler = new Filler(gen.get());
+
 filler.set_zone(1150,2475,2100,1475);
 filler.set_tries(200, 250);
 
@@ -82,8 +82,6 @@ filler.add_default_constructor("S_Shroomgiant", 1, 100, 100);
 filler.add_default_constructor("S_Tree", 3, 30, 10);
 filler.add_default_constructor("S_Shroomtall", 1, 20, 75);
 filler.fill_decor_by_retry(true);
-
-
 
 filler.clear();
 filler.set_tries(0, 2);
@@ -96,23 +94,23 @@ for(var f of hallways) {
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
-var events = new EventFiller(filler, 10);
-events.set_tries(0, 3);
+var events = new EventFiller(gen.get(), 10);
+events.set_tries(4, 8);
 events.battle('forests/boar');
-events.battle('forests/flower');
+events.battle('forests/flower', 1.2);
 events.battle('forests/mandragora');
 events.battle('forests/fox', 0.5);
-events.battle('forests/squirrel');
-events.battle('forests/morel',3);
-events.battle('forests/truffle',3);
-events.groundItem(ITEM.Stick, 0.5);
-events.groundItem(ITEM.Berry, 0.5);
-events.groundItem(ITEM.Flower, 0.5);
-events.groundItem(ITEM.Mushroom);
-events.battleRubble(ITEM.AncientRubbles, 0.5);
+events.battle('forests/squirrel', 1.2);
+events.battle('forests/morel',3.2);
+events.battle('forests/truffle',3.2);
+events.groundItem(ITEM.Stick, 0.6);
+events.groundItem(ITEM.Berry, 0.6);
+events.groundItem(ITEM.Flower, 0.6);
+events.groundItem(ITEM.Mushroom, 1.5);
+events.battleRubble(ITEM.AncientRubbles, 0.6);
 events.byConstructor("EB_Plants", 2);
 events.byConstructor("EB_Skeleton", 0.2);
 events.byConstructor("EB_Tomb", 0.2);
@@ -137,16 +135,10 @@ for(var f of hallways) {
 }
 
 
-// ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
 
-noTreeZone.destroy(true);
-new SBattle(2075, 1425, '_02/_loot_forest');
-new SBattle(2125, 1375, 'forests/fungus');
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
@@ -156,4 +148,4 @@ CURRENTLEVEL.setup_text_start_function([
   `$$BestFriend$: "That's going to be tough..."`,
 ]);
 
-CURRENTLEVEL.initialize_with_character(2000, 2425);
+exit.initialize_with_character(2000, 2425);

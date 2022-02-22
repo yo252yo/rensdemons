@@ -1,12 +1,12 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*13);
 
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 // main
@@ -71,7 +71,7 @@ new S_RockFloor(1300,2100,75,75);
 
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
 var door = new S_ExitFloor(1850,1250,50,25);
@@ -94,17 +94,23 @@ door.interaction = function() {
   }
 }
 
-var f = new S_ExitFloor(1900,2500,200,75, '010_world_map');
+var exit = new S_ExitFloor(1900,2500,200,75, '010_world_map');
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 new S_SavePoint(1975, 2350);
 new S_SavePoint(1850, 1375);
 
+
+new SBattle(2015, 1450, 'mountains/dragon');
+new SBattle(1325, 2075, '_02/_wrong_skeleton');
+new SBattle(1400, 1650, '_02/_right_skeleton');
+new SBattle(2475, 1275, '_02/_wrong_skeleton');
+
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var filler = new Filler(gen.get(), 50, 50);
@@ -150,45 +156,45 @@ for (var i=0; i<2; i++){
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
-var events = new EventFiller(f, 5);
+var events = new EventFiller(gen.get(), 5);
 
-events.battle('mountains/harpy', 3);
-events.battle('mountains/chimera', 2);
+events.battle('mountains/harpy', 4);
+events.battle('mountains/chimera', 2.5);
 events.battle('mountains/manticore', 0.4);
-events.battle('mountains/emu', 1);
+events.battle('mountains/emu', 1.5);
 events.groundItem(ITEM.Feather);
-events.groundItem(ITEM.Stone, 0.5);
-events.battleRubble(ITEM.Arrow, 0.2);
-events.battleRubble(ITEM.Bone, 0.2);
+events.groundItem(ITEM.Stone, 0.8);
+events.battleRubble(ITEM.Arrow, 0.3);
+events.battleRubble(ITEM.Bone, 0.3);
 events.battleRubble(ITEM.AncientRubbles, 0.2);
 events.text('The path is thin, the climb is steep. You feel sweat running down your forehead and your back as you struggle to continue your path.');
 events.text('$$BestFriend$ slips on a bunch of small rocks, but you notice it in time to extend a helping hand. You both manage to stay on your feet and watch the little rocks bounce back and forth until they reach the ground far behind you.');
 events.text('The peaks in front of you seem to be piercing through the skies. You can distinguish, close to the highest point, a shining spot in the facade of the rock. Seems like a door. It\'s probably your goal!');
 events.text('You find a few bones that belong to an adventurer less lucky than you. Were they part of your distant ancestors who built a shelter here? Or a more recent wanderer trying to seize the treasures of the past?');
-events.byConstructor("EB_Pebbles", 2);
+events.byConstructor("EB_Pebbles", 1);
 events.byConstructor("EB_Skeleton", 0.5);
 
-events.byConstructor("EB_Tomb", 1);
-events.byConstructor("EB_Sign", 0.2);
-events.byConstructor("EB_Tent", 0.2);
-events.byConstructor("EB_Camp", 0.2);
-events.byConstructor("EB_Bush", 0.2);
-events.byConstructor("EB_Well", 0.2);
+events.byConstructor("EB_Tomb", 0.6);
+events.byConstructor("EB_Sign", 0.1);
+events.byConstructor("EB_Tent", 0.1);
+events.byConstructor("EB_Camp", 0.1);
+events.byConstructor("EB_Bush", 0.1);
+events.byConstructor("EB_Well", 0.1);
 
 events.battle('encounters/elder', 0.1);
 events.battle('encounters/purse', 0.2);
 
 
-events.add_conversations(0.8);
+events.add_conversations(0.6);
 
-events.set_zone(1250,2400,1350,1300);
-events.set_tries(50, 100);
+events.set_zone(1275,2400,1275,1100);
+events.set_tries(100, 120);
 events.fill_floor_by_retry();
 
-events.set_tries(4, 10);
+events.set_tries(8, 15);
 events.set_zone(2300,1475,175,250);
 events.fill_floor_by_retry();
 
@@ -199,17 +205,9 @@ events.set_tries(15, 20);
 events.set_zone(1300,2275,575,175);
 events.fill_floor_by_retry();
 
-// ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-new SBattle(2015, 1450, 'mountains/dragon');
-new SBattle(1325, 2075, '_02/_wrong_skeleton');
-new SBattle(1400, 1650, '_02/_right_skeleton');
-new SBattle(2475, 1275, '_02/_wrong_skeleton');
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
@@ -218,4 +216,4 @@ CURRENTLEVEL.setup_text_start_function([
   `$$Ren$: "I suppose we'll have to find out."`,
 ]);
 
-CURRENTLEVEL.initialize_with_character(2000, 2425);
+exit.initialize_with_character(2000, 2425);

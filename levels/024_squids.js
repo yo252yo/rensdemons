@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.squids();
 var gen = new Generator(DICTIONARY.get("world_seed")*12);
@@ -7,7 +7,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*12);
 var access = "_squid_access";
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 
@@ -25,7 +25,7 @@ new S_SandFloor(1875,2575,100,75);
 
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
 var leave = function(){
@@ -42,7 +42,7 @@ new S_SandFloor(1375,2425,1275,50);
 
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 new S_SavePoint(2000, 2375);
 
@@ -50,7 +50,7 @@ var whale = new SBattle(1450, 1700, 'waters/whale');
 whale.make_default_callback = function(){return function(){};};
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var decorFiller = new Filler(gen.get(), 50, 50);
@@ -66,18 +66,18 @@ decorFiller.fill_floor_by_retry();
 
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
-var events = new EventFiller(decorFiller);
+var events = new EventFiller(gen.get(), 20);
 events.set_zone(1150,2475,2100,1475);
 
-events.battle('waters/anemone', 0.5);
-events.battle('waters/crab', 0.5);
-events.battle('waters/anglerjelly');
-events.battle('waters/jellyfish');
+events.battle('waters/anemone', 0.6);
+events.battle('waters/crab', 0.6);
+events.battle('waters/anglerjelly', 1.2);
+events.battle('waters/jellyfish', 1.2);
 events.battle('waters/octopus', 0.2);
-events.battle('waters/squid');
+events.battle('waters/squid', 1.2);
 events.battleRubble(ITEM.AncientRubbles, 0.5);
 events.battleRubble(ITEM.Scale, 0.3);
 events.groundItem(ITEM.Seashell);
@@ -89,17 +89,17 @@ events.text(`You find a huge rock that stands out suspiciously. It triggers your
 events.text(`You can be underwater thanks to the potion, but it doesn't prevent your clothes from being damp. You make progress really slowly. The water resistance is significantly stronger than air, which slows every of your motion. But it's ok, you'll just take your time.`);
 events.add_conversations(0.8);
 
-events.byConstructor("EB_Seashell", 2);
+events.byConstructor("EB_Seashell", 1.5);
 events.byConstructor("EB_Skeleton", 0.5);
 events.battle('encounters/purse', 0.5);
 
 
-events.set_tries(100, 120);
+events.set_tries(120, 150);
 events.fill_floor_by_retry();
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 var dive = function(){
@@ -122,7 +122,7 @@ CURRENTLEVEL.add_trigger("alreadyEaten", alreadyEaten, function() {
   CURRENTLEVEL.setup("024_squids2", [1100, 1350]);
 });
 
-CURRENTLEVEL.initialize_with_character(2000, 2425);
+CURRENTLEVEL.initialize_with_character(2000, 2525);
 var potion = function(){
   if (INVENTORY.count(access)){
     IO.control.character();

@@ -1,11 +1,11 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.harpies();
 var gen = new Generator(DICTIONARY.get("world_seed")*14);
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 
 // room
@@ -34,13 +34,13 @@ new S_Floor(700,1000,75,50);
 new S_Floor(700,1175,75,50);
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
-new S_ExitFloor(850,1250,50,50, '025_harpies');
+var exit = new S_ExitFloor(850,1250,50,50, '025_harpies');
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 var bed = function (x, y) {
@@ -70,7 +70,7 @@ new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
 
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -84,11 +84,11 @@ filler.add_default_constructor("S_Bocals", 1, 40, 25);
 filler.fill_floor_by_retry();
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
-
-var events = new EventFiller(filler, 10);
+var events = new EventFiller(gen.get(), 10);
+events.set_zone_from_filler(filler);
 
 events.battleRubble(ITEM.Dagger, 0.05);
 events.battleRubble(ITEM.ShelterKey, 0.1);
@@ -99,13 +99,14 @@ events.text("You find a heap of metallic debris on the floor. You cannot tell wh
 events.text("You cannot help but notice the total absence of human corpse or signs of life in this shelter. It looks like the poor souls for whom it was destined never made it on time...");
 events.text("The dim light that follows you from the door is barely enough to light up the place. The air is dusty and suffocating. Clearly this room has not been visited in a while.");
 events.text("Crafting a cave this size is quite an accomplishment. You wonder what else your ancestors were able to do with their mastery over nature. And how much of it can be regained if you succeed in your quest...");
+events.add_conversations(0.4);
 
 events.set_tries(10, 20);
 events.fill_floor_by_retry();
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
@@ -114,4 +115,4 @@ CURRENTLEVEL.setup_text_start_function([
   `$$BestFriend$: "Whatever we are looking for, it must be here somewhere!"`,
 ]);
 
-CURRENTLEVEL.initialize_with_character(850, 1225);
+exit.initialize_with_character(850, 1225);
