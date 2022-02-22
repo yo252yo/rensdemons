@@ -75,8 +75,9 @@ t2.interaction = prophecy;
 
 new S_SavePoint(1350, 2075);
 
+
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var filler = new Filler(gen.get());
@@ -103,9 +104,6 @@ decorFiller.add_default_constructor("S_Hole", 1, 75, 150);
 
 decorFiller.set_tries(20, 40);
 decorFiller.fill_floor_by_retry();
-
-
-
 
 
 

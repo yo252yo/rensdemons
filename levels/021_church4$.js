@@ -14,7 +14,8 @@ new S_StainedGlass_wall(1475, 1050, 'church');
 
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
+
 
 f.initialize_with_character(1275, 1750);
