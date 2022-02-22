@@ -69,6 +69,9 @@ class LevelObject {
       html_rectangle.style.zIndex = "30000";
       if (this.constructor.name == "SBattle"){
         html_rectangle.style.backgroundColor = "#FF000055";
+          if(this.battle && this.battle.startsWith("encounters/")){
+            html_rectangle.style.backgroundColor = "#00FF0055";
+          }
         } else if (this.constructor.name == "SE_small_groundItem" || this.constructor.name == "SE_groundItem" || this.constructor.name == "SB_rubble"){
           html_rectangle.style.backgroundColor = "#0000FF55";
         } else if (this.constructor.name == "SE_event" || this.constructor.name.startsWith("EB_")){
