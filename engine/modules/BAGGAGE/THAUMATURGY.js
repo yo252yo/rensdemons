@@ -225,6 +225,9 @@ const THAUMATURGY = {
       case "Interior":
         simple_options = ["S_Column", "S_Door", "S_RoyalThrone", "S_SavePoint", "B_Statue", "B_Bed", "B_Bucket", "B_Cabinet_wall", "B_Chair", "B_Hay", "B_Housefire", "B_Jar", "B_Shelf_wall", "B_Stool", "B_Table", "B_Table_Set", "B_Chest", "B_AlchemyShelf_wall", "B_Barrel", "B_Bocals", "B_Box", "B_Chimney_wall", "B_Clock_wall", "B_Papers", "B_Sack", "B_FancyShelf_wall", "B_Candles_wall", "B_Window_wall", "B_CurtainedWindow_wall", "B_WeaponRack", "B_ShieldDisplay_wall", "B_WeaponDisplay_wall", "B_Bottles", "B_BottlesShelf_wall", "B_FlowerCrown_wall", "B_PottedFlower", "B_PottedPlant", "B_Mask_wall", "B_SpikyMask_wall", "B_Rope", "S_Armor","S_Candle","S_Organ","S_Throne","S_Bocals","S_Painting_wall","S_HellWindow_wall","S_Flag_wall","S_Mirror_wall"      ];
         break;
+      case "Exterior":
+        simple_options = ["EB_Bush", "EB_Camp", "EB_Tent", "EB_Sign", "EB_Well", "EB_Tomb", "EB_Skeleton", "EB_Seashell", "EB_Plants", "EB_Pebbles"];
+        break;
       case "Decor":
         simple_options = ["S_Tree", "S_TreeSad", "S_TreePalm", "S_Vine", "S_Plant", "S_Shroomgiant", "S_Shroomsmall", "S_Shroomtall", "S_PlantSmall", "S_AlgaeWall", "S_Anemone", "S_Coral", "S_Seashell", "S_Seashellpointy", "S_Waterplants", "S_WaterPlantWall", "S_BubblePlant", "S_TentaPlant", "S_TentaPlantMini", "S_Planks", "S_Pebbles", "S_RocksHuge", "S_Rocks1", "S_Rocks2", "S_Rocks3", "S_Rocks4", "S_Boulder", "S_Rubble", "S_RubbleLarge", "S_Web", "S_WebLarge", "S_RockColumn", "S_CristalBig", "S_CristalSmall", "S_CristalTiny", "S_RockLump", "S_CristalFragment", "S_Caveplant", "S_Cavesprouts", "S_Hole", "S_Rootstall", "S_Root", "S_HellPlantLeaning", "S_HellPlantSretching", "S_HellPlantSlimy", "S_HellPlantLoops", "S_Spike", "S_HellEgg", "S_Cloud", "S_Waterfall"    ];
         break;
@@ -265,6 +268,12 @@ const THAUMATURGY = {
         break;
       case "Bosses":
         var battle_names = ['trial/basilisk', 'forests/blob', 'forests/fungus', 'mountains/dragon', 'mountains/phoenix', 'caves/lizard', 'caves/rhino', 'waters/serpent', 'waters/whale', 'pandemonium/lieutenant', 'pandemonium/lord'  ];
+        for(var b of battle_names){
+          complex_options.push({pattern: `new SBattle($x, $y, "${b}");`, name: b});
+        }
+        break;
+      case "Encounters":
+        var battle_names = ['encounters/elder', 'encounters/minstrel', 'encounters/purse', 'encounters/ruins', 'encounters/traveler'];
         for(var b of battle_names){
           complex_options.push({pattern: `new SBattle($x, $y, "${b}");`, name: b});
         }
@@ -312,8 +321,10 @@ const THAUMATURGY = {
                   {"text": "Shops", "effect": function() { THAUMATURGY.menu_summon_sub("Shops"); }},
                   {"text": "Floors", "effect": function() { THAUMATURGY.menu_summon_sub("Floors"); }},
                   {"text": "Interior", "effect": function() { THAUMATURGY.menu_summon_sub("Interior"); }},
+                  {"text": "Exterior", "effect": function() { THAUMATURGY.menu_summon_sub("Exterior"); }},
                   {"text": "Decor", "effect": function() { THAUMATURGY.menu_summon_sub("Decor"); }},
                   {"text": "Special", "effect": function() { THAUMATURGY.menu_summon_sub("Special"); }},
+                  {"text": "Encounters", "effect": function() { THAUMATURGY.menu_summon_sub("Encounters"); }},
                   TEXTMENU_EMPTYROW,
                   {"text": "Nothing", "effect": "##CLOSEWITHFOLLOW"}
                ]);
