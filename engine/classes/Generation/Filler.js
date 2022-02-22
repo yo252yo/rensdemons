@@ -282,13 +282,12 @@ class Filler {
 }
 
 class EventFiller extends Filler {
-  constructor(filler, hitbox_size, resize_event, recolor_event) {
+  constructor(seed, hitbox_size, resize_event, recolor_event) {
     if(!hitbox_size){
       hitbox_size = 50;
     }
 
-    super();
-    Object.assign(this, filler);
+    super(seed);
 
     this.default_obj_w = hitbox_size;
     this.default_obj_h = hitbox_size;
