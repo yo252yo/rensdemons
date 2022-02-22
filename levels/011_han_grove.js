@@ -1,19 +1,18 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.hideandseek();
 var gen = new Generator(DICTIONARY.get("world_seed")*8);
 
 // ===================
-//hack 1. FLOORS
-//hack 2. EXIT
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
 
-new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
+var town = new S_TownFloor(1050, 1550, 500, 500, "010_world_map", "assets/patterns/mud.png");
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var nap = function() {
@@ -79,12 +78,13 @@ treeFiller.add_constructor(makeTree);
 treeFiller.fill_floor_by_retry();
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
+
 
 CURRENTLEVEL.setup_text_start_function([
     "You arrive at a small grove. The lush trees provide a welcome shelter from the elements. Any of them would be a great place for a nap.",
     `$$BestFriend$: "How about a little break?"`,
   ], undefined, true);
 
-CURRENTLEVEL.initialize_with_character(1050, 1520);
+town.get_exit().initialize_with_character(1050, 1520);
