@@ -14,7 +14,7 @@ AUDIO.music.levels.hellsmaw();
 
 var decor = new Filler(gen.get(), 40, 40);
 
-var events = new EventFiller(decor, 1);
+var events = new EventFiller(gen.get(), 1);
 events.set_tries(10, 12);
 
 

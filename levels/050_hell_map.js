@@ -51,7 +51,7 @@ FMap.fill_floor_by_retry();
 
 
 
-var FEvents = new EventFiller(FMap, 25, 25, 'obj_light');
+var FEvents = new EventFiller(gen.get(), 25, 25, 'obj_light');
 FEvents.battle('hell/centipede', 1.9);
 FEvents.battle('hell/devilfly', 1.3);
 FEvents.battle('hell/eyeball', 1.9);
@@ -84,6 +84,7 @@ FEvents.text(`You take cover between the odd trees when a swarm of flying demons
 FEvents.text(`You find what appears clearly to be human bones half burrowed in the dry ground. Did an unfortunate adventurer loose its way? Was there another Promised Child in the past? Or did a demon simply take its food back home?`, 0.9);
 FEvents.add_conversations(2, true);
 
+FEvents.set_zone_from_filler(FMap);
 FEvents.set_tries(100, 150);
 FEvents.fill_floor_by_retry();
 

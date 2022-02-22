@@ -166,7 +166,7 @@ if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(decorFiller, 25);
+var events = new EventFiller(gen.get(), 25);
 events.set_zone(1125,1550,500,500);
 
 events.battle('heaven/angel');

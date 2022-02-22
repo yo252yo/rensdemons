@@ -60,7 +60,8 @@ decorFiller.fill_floor_by_retry();
 //hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
 // ===================
 
-var events = new EventFiller(decorFiller, 5);
+var events = new EventFiller(gen.get(), 5);
+events.set_zone_from_filler(decorFiller);
 events.battle('caves/bloodsucker', 0.1);
 events.battle('caves/bat');
 events.battle('caves/mole', 0.1);

@@ -113,7 +113,7 @@ if (floor != 6) {
 // ===================
 
 
-var events = new EventFiller(decorFiller, 15);
+var events = new EventFiller(gen.get(), 15);
 events.set_zone(975,1650,750,475);
 
 events.battle('pandemonium/abaddon', 1.5);

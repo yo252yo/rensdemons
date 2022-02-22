@@ -116,7 +116,7 @@ decorFiller.fill_floor_by_retry();
 // ===================
 
 
-var events = new EventFiller(decorFiller);
+var events = new EventFiller(gen.get());
 events.set_zone(1025,2500,700,975);
 
 events.battle('caves/bloodsucker', 0.1);

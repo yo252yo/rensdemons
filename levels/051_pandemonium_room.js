@@ -125,7 +125,7 @@ wallFiller.fill_line();
 //hack F. EVENTS
 // ===================
 
-var events = new EventFiller(decorFiller, 25);
+var events = new EventFiller(gen.get(), 25);
 events.set_zone(1200,1525,300,275);
 
 events.battle('pandemonium/abaddon');
