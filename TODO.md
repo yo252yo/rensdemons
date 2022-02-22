@@ -1,18 +1,3 @@
-# WIP
-
-
-BATTLE ENCOUNTERS
-
-encounters/minstrel
-Different stories and depending on your reaction you tip, it could be the same story from different pov
-
-Mb the tip is random
-
-Mb options are run kill listen and when u listen u get a story with random rewards and its always the story of Ren, mb it's his mom, but the jackpot is the story of the minstrel. Mb smthing like a minstrel who couldn't tell his own story
-
-
-
-
 
 # 1. proof/ FILLER CHECK  ----------------------------------------------------
 - the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
