@@ -1,12 +1,11 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.fissure();
 var gen = new Generator(DICTIONARY.get("world_seed")*21);
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 new S_WebFloor(1100,2425,550,850);
 
@@ -19,11 +18,11 @@ new S_WebFloor(1600,1775,150,200);
 new S_WebFloor(1300,1600,150,100);
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
 new S_ExitFloor(1380,2290,20,60, "042_fissure");
-new S_ExitFloor(1360,2370,20,100, "042_fissure");
+var exit = new S_ExitFloor(1360,2370,20,100, "042_fissure");
 new S_ExitFloor(1380,2425,20,80, "042_fissure");
 
 var riddle = function(text, answer, destination){
@@ -62,7 +61,7 @@ var head = new S_ExitFloor(1300,1525,150,50);
 head.interaction = riddle("What is the Goddess?","dead","042_5_fissure_head");
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 
 var prophecy = function() {
@@ -110,27 +109,26 @@ decorFiller.fill_floor_by_retry();
 
 
 
-
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
 
-var events = new EventFiller(gen.get());
+var events = new EventFiller(gen.get(), 20);
 events.set_zone(1025,2500,700,975);
 
-events.battle('caves/bloodsucker', 0.1);
-events.battle('caves/bat');
-events.battle('caves/mole', 0.2);
-events.battle('caves/scorpion');
-events.battle('caves/crawler', 0.5);
+events.battle('caves/bloodsucker', 0.2);
+events.battle('caves/bat',2);
+events.battle('caves/mole', 0.6);
+events.battle('caves/scorpion',2);
+events.battle('caves/crawler', 1);
 
 
 events.groundItem(ITEM.Linnens);
 events.groundItem(ITEM.AncientRubbles);
-events.battleRubble(ITEM.Arrow);
-events.battleRubble(ITEM.Poison_darts);
-events.battleRubble(ITEM.Rope);
+events.battleRubble(ITEM.Arrow, 0.8);
+events.battleRubble(ITEM.Poison_darts, 0.8);
+events.battleRubble(ITEM.Rope, 0.8);
 events.battleRubble(ITEM.Sword_iron, 0.1);
 events.battleRubble(ITEM.Net, 0.1);
 events.battleRubble(ITEM.Shield, 0.1);
@@ -139,17 +137,17 @@ events.battleRubble(ITEM.Shield, 0.1);
 events.text([
   `You find a metal tablet on the ground. It depicts with an uncanny precision huge machines from another time.`,
   `$$BestFriend$: "What do you think these were for?"`,
-  `$$Ren$: "No idea, but I'm more impressed by the craftsmanship, this is clearly beyond the abilities of humans today..."`]);
+  `$$Ren$: "No idea, but I'm more impressed by the craftsmanship, this is clearly beyond the abilities of humans today..."`], 0.8);
 events.text([
   `$$BestFriend$: "This place is weird... What do you think it used to be? A museum?"`,
-  `$$Ren$: "Possibly. Or maybe a temple?"`]);
-events.text(`You notice that the walls are covered with scratches. Looking more closely, it appears that it used to be sculpted into majestic scenes of the ancestor's daily lives, but time eroded the drawings beyond recognition, and most of the paint has since faded.`);
-events.text(`You pick up on the ground a little golden silhouette. It used to be a man, but several limbs are missing. Time took quite a toll on the icon, but you can still make out a few words written at the bottom: "no gods or kinds, only man".`);
-events.text(`You find scraps of papers that have withstood the passage of time, as if enchanted. On them are portrayed in the most realistic depiction you've ever seen the smiling faces of the ancestors. It's hard to think that you come from the same species, yet their lives were so easy, without famines or demons to fight...`);
-events.text(`You jump by surprise when a huge pile of rock and metal slides in a thunderous noise.`);
-events.text(`The faint glow of your torch is reflected on metallic surfaces on the walls. It appears to be some sort of broken mechanism, whose purpose has been long forgotten in the abyss of time.`);
-events.text(`You cannot help but cough. The air around you is heavy and dusty, and you can tell from the stale odor that nobody has been here in ages.`);
-events.text(`You find a little leaflet which has withstood the test of time. It says "Do your part and denounce anyone opposing Individualism! Only a total ruthless competition of all against all can push us to the greatest heights of the human spirit!".`);
+  `$$Ren$: "Possibly. Or maybe a temple?"`], 0.8);
+events.text(`You notice that the walls are covered with scratches. Looking more closely, it appears that it used to be sculpted into majestic scenes of the ancestor's daily lives, but time eroded the drawings beyond recognition, and most of the paint has since faded.`, 0.8);
+events.text(`You pick up on the ground a little golden silhouette. It used to be a man, but several limbs are missing. Time took quite a toll on the icon, but you can still make out a few words written at the bottom: "no gods or kinds, only man".`, 0.8);
+events.text(`You find scraps of papers that have withstood the passage of time, as if enchanted. On them are portrayed in the most realistic depiction you've ever seen the smiling faces of the ancestors. It's hard to think that you come from the same species, yet their lives were so easy, without famines or demons to fight...`, 0.8);
+events.text(`You jump by surprise when a huge pile of rock and metal slides in a thunderous noise.`, 0.8);
+events.text(`The faint glow of your torch is reflected on metallic surfaces on the walls. It appears to be some sort of broken mechanism, whose purpose has been long forgotten in the abyss of time.`, 0.8);
+events.text(`You cannot help but cough. The air around you is heavy and dusty, and you can tell from the stale odor that nobody has been here in ages.`, 0.8);
+events.text(`You find a little leaflet which has withstood the test of time. It says "Do your part and denounce anyone opposing Individualism! Only a total ruthless competition of all against all can push us to the greatest heights of the human spirit!".`, 0.8);
 events.add_conversations(0.2);
 
 events.byConstructor("EB_Tomb", 0.1);
@@ -160,8 +158,7 @@ events.battle('encounters/purse', 0.5);
 events.set_tries(30, 50);
 events.fill_floor_by_retry();
 
-
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
-CURRENTLEVEL.initialize_with_character(1360,2370);
+exit.initialize_with_character(1360,2370);

@@ -1,23 +1,20 @@
-
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 AUDIO.music.levels.fissure();
 var gen = new Generator(DICTIONARY.get("world_seed")*25);
-
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 new S_WebFloor(1225,2500,175,125);
 new S_WebFloor(1125,2400,375,325);
+// ===================
+//hack C. EXIT
+// ===================
+var exit = new S_ExitFloor(1225,2525,175,50, "042_fissure_trunk");
 
 // ===================
-//hack 2. EXIT
-// ===================
-new S_ExitFloor(1225,2525,175,50, "042_fissure_trunk");
-
-// ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 var postBossDialog = function(){
   TextBannerSequence.make([
@@ -45,10 +42,22 @@ var postBossDialog = function(){
   ABILITIES.unlock("_rhino_defeated");
 }
 
-// ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
 
+var s = new SBattle(1275, 2250, 'caves/rhino', 100);
+s.interaction = function(){
+  if (!ABILITIES.has_ability("_rhino_defeated")){
+    BATTLE.api.make("caves/rhino", postBossDialog);
+  } else{
+    TextBannerSequence.make([
+      `$$Ren$: "Let's go back to $$demon_lieutenant$. And this time, let's not stop until $$demon_lord$ is defeated and $$world_name$ is free! We need to be the arm that carries out the Goddess's will!"`,
+    ]);
+  }
+}
+
+
+// ===================
+//hack E. DECOR (permanent filler)
+// ===================
 var decorFiller = new Filler(gen.get(), 60, 50);
 decorFiller.set_zone(1000,2650,650,750);
 decorFiller.add_default_constructor("S_CristalSmall");
@@ -68,26 +77,9 @@ decorFiller.fill_decor_by_retry();
 
 
 
-// ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
-// ===================
-
-var s = new SBattle(1275, 2250, 'caves/rhino', 100);
-s.interaction = function(){
-  if (!ABILITIES.has_ability("_rhino_defeated")){
-    BATTLE.api.make("caves/rhino", postBossDialog);
-  } else{
-    TextBannerSequence.make([
-      `$$Ren$: "Let's go back to $$demon_lieutenant$. And this time, let's not stop until $$demon_lord$ is defeated and $$world_name$ is free! We need to be the arm that carries out the Goddess's will!"`,
-    ]);
-  }
-}
-
-
-
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 CURRENTLEVEL.setup_text_start_function([
@@ -100,4 +92,4 @@ CURRENTLEVEL.setup_text_start_function([
 ], undefined, true);
 
 
-CURRENTLEVEL.initialize_with_character(1300,2475);
+exit.initialize_with_character(1300,2475);
