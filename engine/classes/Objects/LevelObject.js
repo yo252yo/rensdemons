@@ -72,7 +72,7 @@ class LevelObject {
           if(this.battle && this.battle.startsWith("encounters/")){
             html_rectangle.style.backgroundColor = "#00FF0055";
           }
-        } else if (this.constructor.name == "SE_small_groundItem" || this.constructor.name == "SE_groundItem" || this.constructor.name == "SB_rubble"){
+        } else if (this.constructor.name == "SE_event_loot" || this.constructor.name == "SE_small_groundItem" || this.constructor.name == "SE_groundItem" || this.constructor.name == "SB_rubble"){
           html_rectangle.style.backgroundColor = "#0000FF55";
         } else if (this.constructor.name == "SE_event" || this.constructor.name.startsWith("EB_")){
           html_rectangle.style.backgroundColor = "#00FF0055";
