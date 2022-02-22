@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 var gen = new Generator(Math.random());//DICTIONARY.get("world_seed")*41);
 AUDIO.music.levels.heaven();
@@ -24,8 +24,8 @@ var checkProgress = function(pattern){
 }
 
 // ===================
-//hack 1. FLOORS
-//hack 2. EXIT
+//hack B. FLOORS
+//hack C. EXIT
 // ===================
 var t = new S_TownFloor(1125,1550,500,500, "050_hell_map", "assets/patterns/clouds.png");
 
@@ -57,7 +57,7 @@ t.bot_border.interaction   = function(){  exit("d");  };
 
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   var s1 = new B_Statue(1350,1275);
@@ -132,10 +132,10 @@ if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
    new S_MagicMirror(1350, 1300);
 }
-// ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
-// ===================
 
+// ===================
+//hack E. DECOR (permanent filler)
+// ===================
 var placeholder = new S_Placeholder(1340, 1350, 100, 100);
 
 var decorFiller = new Filler(gen.get(), 100, 100);
@@ -161,9 +161,8 @@ switch(gen.int(3)){
 if (HEAVEN_SEQUENCE && !HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE) && !HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   decorFiller.fill_decor_by_retry();
 }
-
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
 
 var events = new EventFiller(gen.get(), 25);
@@ -180,12 +179,12 @@ events.battle('heaven/valkyrie');
 events.groundItem(ITEM.Feather);
 events.groundItem(ITEM.AncientRubbles);
 
-events.text(`You cannot shake the distinct feeling of having been here before.`, 0.7);
-events.text(`Your head spins with the voluptuous motions of the vapor all around you. There's a sort of sweetness in the air. It seems that the fog is even in your head. You cannot think straight, your memories start being hard to grasp. How did you get here?`, 0.7);
-events.text(`You notice silhouettes floating above you. The clouds makes it impossible to see clearly, but it appears to be flying creatures with wide wingspan. Probably angels.`, 0.7);
-events.text(`You cannot shake the feeling that someone is watching you. As if there were some sort of invisible eyes pointed permanently on you...`, 0.7);
-events.text(`A fruity smell of incense is slowly surrounding you. You blink and feel like everything around you changed. Have you been teleported? Has the environment morphed? How will you ever get out of this everchanging maze of illusions?`, 0.7);
-events.text(`You get a vague impression of importance in this place. The air feels somehow thinner. This might be a delusion, but you can't help but think that you're close to the fabric of this universe. You get a weird ominous presentiment that a wrong move here could affect many lives in unexpected ways...`, 0.7);
+events.text(`You cannot shake the distinct feeling of having been here before.`, 0.6);
+events.text(`Your head spins with the voluptuous motions of the vapor all around you. There's a sort of sweetness in the air. It seems that the fog is even in your head. You cannot think straight, your memories start being hard to grasp. How did you get here?`, 0.6);
+events.text(`You notice silhouettes floating above you. The clouds makes it impossible to see clearly, but it appears to be flying creatures with wide wingspan. Probably angels.`, 0.6);
+events.text(`You cannot shake the feeling that someone is watching you. As if there were some sort of invisible eyes pointed permanently on you...`, 0.6);
+events.text(`A fruity smell of incense is slowly surrounding you. You blink and feel like everything around you changed. Have you been teleported? Has the environment morphed? How will you ever get out of this everchanging maze of illusions?`, 0.6);
+events.text(`You get a vague impression of importance in this place. The air feels somehow thinner. This might be a delusion, but you can't help but think that you're close to the fabric of this universe. You get a weird ominous presentiment that a wrong move here could affect many lives in unexpected ways...`, 0.6);
 events.add_conversations(0.2, true);
 
 events.set_tries(4, 18);
@@ -198,11 +197,7 @@ placeholder.destroy();
 
 
 // ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-
-// ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 
 // Start functions
@@ -225,6 +220,9 @@ if (!ABILITIES.has_ability("_heaven_visited")){
 CURRENTLEVEL._recover_position = [1375,1325];
 CURRENTLEVEL.initialize_with_character(1375,1325);
 
+// ===================
+//hack H. AUTOSAVE
+// ===================
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   SAVE.autosave();
 }

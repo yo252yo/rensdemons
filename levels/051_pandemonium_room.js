@@ -128,16 +128,16 @@ wallFiller.fill_line();
 var events = new EventFiller(gen.get(), 25);
 events.set_zone(1200,1525,300,275);
 
-events.battle('pandemonium/abaddon');
+events.battle('pandemonium/abaddon', 1.1);
 events.battle('pandemonium/asmodeus', 0.2);
-events.battle('pandemonium/azazel');
-events.battle('pandemonium/belial');
+events.battle('pandemonium/azazel', 1.1);
+events.battle('pandemonium/belial', 1.1);
 events.battle('pandemonium/belphegor', 0.3);
-events.battle('pandemonium/golem');
-events.battle('pandemonium/hellhound');
-events.battle('pandemonium/ifrit');
-events.battle('pandemonium/mammon');
-events.battle('pandemonium/titan');
+events.battle('pandemonium/golem', 1.1);
+events.battle('pandemonium/hellhound', 1.1);
+events.battle('pandemonium/ifrit', 1.1);
+events.battle('pandemonium/mammon', 1.1);
+events.battle('pandemonium/titan', 1.1);
 
 events.groundItem(ITEM.Elixir_chaos);
 events.groundItem(ITEM.Elixir_decay);

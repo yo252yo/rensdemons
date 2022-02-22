@@ -1,5 +1,5 @@
 // ===================
-//hack 0. INITIALIZATION
+//hack A. INITIALIZATION (sound, etc...)
 // ===================
 var floor = 0;
 var s = CURRENTLEVEL.level_name.split(CURRENTLEVEL.SAME_IMPORT_DIFFERENT_LEVEL_SEPARATOR);
@@ -11,12 +11,12 @@ AUDIO.music.levels.pandemonium();
 
 
 // ===================
-//hack 1. FLOORS
+//hack B. FLOORS
 // ===================
 new S_CastleFloor(950,1650,800,500);
 
 // ===================
-//hack 2. EXIT
+//hack C. EXIT
 // ===================
 
 if(floor == 0){
@@ -67,7 +67,7 @@ if (floor < 6) {
 }
 
 // ===================
-//hack 3. PERMANENT HARDCODED ELEMENTS (furniture)
+//hack D. UNIQUE ELEMENTS
 // ===================
 if (floor == 6) {
   new S_Throne(1250, 1400);
@@ -75,9 +75,27 @@ if (floor == 6) {
 
 new S_SavePoint(1325, 1200);
 
+if (floor == 6) {
+  new S_Maou(1200, 1600);
+
+  var i = function(){
+    TextBannerSequence.make([
+      `It's a statue of the Goddess... In the most evil place in the world...`,
+    ]);
+  }
+  var s1 = new B_Statue(975, 1175);
+  s1.interaction = i;
+  var s2 = new B_Statue(1675, 1175);
+  s2.interaction = i;
+  var s3 = new B_Statue(975, 1625);
+  s3.interaction = i;
+  var s4 = new B_Statue(1675, 1625);
+  s4.interaction = i;
+}
+
 
 // ===================
-//hack 4. PERMANENT FILLER ELEMENTS (decoration)
+//hack E. DECOR (permanent filler)
 // ===================
 
 var decorFiller = new Filler(gen.get(), 100, 100);
@@ -109,9 +127,8 @@ if (floor != 6) {
 }
 
 // ===================
-//hack 5. DESTRUCTIBLE FILLER ELEMENTS (encounters)
+//hack F. EVENTS (temporary filler)
 // ===================
-
 
 var events = new EventFiller(gen.get(), 15);
 events.set_zone(975,1650,750,475);
@@ -149,30 +166,9 @@ if (floor != 6){
   events.fill_floor_by_retry();
 }
 
-// ===================
-//hack 6. DESTRUCTIBLE HARDCODED ELEMENTS (bosses, etc...)
-// ===================
-if (floor == 6) {
-  new S_Maou(1200, 1600);
-
-  var i = function(){
-    TextBannerSequence.make([
-      `It's a statue of the Goddess... In the most evil place in the world...`,
-    ]);
-  }
-  var s1 = new B_Statue(975, 1175);
-  s1.interaction = i;
-  var s2 = new B_Statue(1675, 1175);
-  s2.interaction = i;
-  var s3 = new B_Statue(975, 1625);
-  s3.interaction = i;
-  var s4 = new B_Statue(1675, 1625);
-  s4.interaction = i;
-}
-
 
 // ===================
-//hack 7. START/INIT
+//hack G. START/INIT
 // ===================
 if (floor == 0){
   CURRENTLEVEL.setup_text_start_function([

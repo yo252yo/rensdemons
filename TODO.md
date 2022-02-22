@@ -1,18 +1,4 @@
 
-# 1. proof/ FILLER CHECK  ----------------------------------------------------
-
-- spawn
-- filler overlap
-- code structure
-
-- placeholder
-- graphics
-- events density
-
-> foreknowledge
-> fissure temple solution
-
-
 
 
 # 2. Electron app ----------------------------------------------------
