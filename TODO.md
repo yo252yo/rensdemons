@@ -1,13 +1,19 @@
 
 # 1. proof/ FILLER CHECK  ----------------------------------------------------
-- the hardcoded temporary items sometimes dont have a placeholder, like 025harpies, mb we should automate placeholding
-- graphical audit from >= first town
-- ZONES DONT OVERLAP OR IT MAY DOUBLE SPAWN ??
-- spawn chara on exit bands, its safer
-See 051_pandemonium_room and 012_trees
-- A look for foreknowledge opportunities
 
-- review the fissure temple to make sure its obvious "every problem has a solution" "a lock means theres a key" etc... i know we'll find a hint in this place!
+- spawn
+- filler overlap
+- code structure
+
+- placeholder
+- graphics
+- events density
+
+> foreknowledge
+> fissure temple solution
+
+
+
 
 # 2. Electron app ----------------------------------------------------
 https://en.wikipedia.org/wiki/Electron_(software_framework)
