@@ -5,20 +5,25 @@
   "main": "electron.js",
   "author": "yo252yo",
   "license": "MIT",
+  "icon": "icon.png",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
     "@electron-forge/maker-deb": "^6.0.0-beta.63",
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^17.0.1"
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13",
   },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
+    "electron-builder-squirrel-windows": "^23.0.0",
     "electron-squirrel-startup": "^1.0.0"
   },
   "config": {
@@ -44,6 +49,26 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        }
+      ]
+    }
+  },
+  "build": {
+    "appId": "yo252yo.rensdemons",
+    "directories": {
+      "output": "bin/out"
+    },
+    "win": {
+      "icon" : "assets/app/icon.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable"
         }
       ]
     }
