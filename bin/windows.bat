@@ -1,1 +1,0 @@
-"palemoon-windows/Palemoon-Portable.exe"  "file:///%cd%/../index.html"

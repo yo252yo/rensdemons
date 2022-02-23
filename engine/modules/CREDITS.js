@@ -42,8 +42,8 @@ const CREDITS = {
    <a href="https://pipoya.itch.io/" target="_blank">Pipoya</a>
    <br />
 
-   <b>Packaged web browser</b>:
-   <a href="https://www.palemoon.org/" target="_blank">Pale Moon</a>
+   <b>Binary distribution framework</b>:
+   <a href="https://www.electronjs.org/" target="_blank">Electron</a>
    <br />
 
 
