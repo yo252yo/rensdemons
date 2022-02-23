@@ -1,1 +1,2 @@
-bin/palemoon-windows/
+out/
+node_modules/
