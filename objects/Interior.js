@@ -387,7 +387,7 @@ class B_Box extends ItemBattleObject {
     this.add_interaction("Empty", "You proceed to move one by one all the potatoes from the box to the ground around. It's extremely slow and completely pointless. $$BestFriend$ is furious.");
     this.add_interaction("Look", "Harvest must have been decent for a change, the box is full of freshly reaped potatoes. It seems that it could last a while. It better, because who knows when the harvest will be good again?");
     this.add_interaction("Juggle", "You grab a few potatoes and start juggling with them. Since you don't know how to juggle, they fall quickly on the ground.");
-    this.add_interaction("Sneak", "You think for a moment that a wooden box such as this could be a great way to hide and sneak around without attracting unwanted attention, but you quickly come back to your senses, realizing that a moving box is bound to attract unwanted attention in the first place.");
+    this.add_interaction("Stealth", "You think for a moment that a wooden box such as this could be a great way to hide and sneak around without attracting unwanted attention, but you quickly come back to your senses, realizing that a moving box is bound to attract unwanted attention in the first place.");
     this.add_interaction("Taste", "Are you crazy? No matter what thoughts cross your mind, you can't eat raw potatoes! They take a lot of preparation before being ready for consumption...");
   }
 }

@@ -1,13 +1,15 @@
 
 
-
-# 2. Electron app ----------------------------------------------------
-https://en.wikipedia.org/wiki/Electron_(software_framework)
-
 # 3. SEND OUT FOR BETA  ----------------------------------------------------
 - check save/disk size and optimize (rencode songs)
 - record everything
 - look for foreknowledge opportunity
+
+
+- make sure that all the ABILITIES and items are not used anywhere like in battleobjects
+
+
+
 
 # 4. POLISHING/PRODUCTIONIZE  ----------------------------------------------------
 - https://github.com/greenheartgames/greenworks for steam achievements? http://twinery.org/questions/2934/steam-greenworks-with-twine-how-make-work-for-achievements
