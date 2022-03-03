@@ -144,7 +144,7 @@ class TextMenu extends TextElement {
             }
           } else if (i == this.selected){
               prefix += "<span class='highlighted'>>";
-              suffix += "<</span>";
+              suffix += "</span>";
               selected_element = current_item;
           } else {
               prefix += "_";
