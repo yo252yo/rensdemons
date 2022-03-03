@@ -73,7 +73,7 @@ var hp_menu = function () {
                 [
                   {"text": "Yes, sir", "effect": function(){
                     TextBannerSequence.make([
-                      "The head priest makes a pompous gesture, and a faint snapping sound can be heard. The floor tile under your feet slide to uncover a hole. With a little push from the priest, you falls in.",
+                      "The head priest makes a pompous gesture, and a faint snapping sound can be heard. The floor tile under your feet slide to uncover a hole. With a little push from the priest, you fall in.",
                     ], function(){ CURRENTLEVEL.setup("003_trial"); });
                    }},
                   {"text": "Not yet", "effect": "##CLOSE"},
