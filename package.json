@@ -59,7 +59,7 @@
       "output": "bin/out"
     },
     "win": {
-      "icon" : "assets/app/icon.png",
+      "icon": "assets/app/icon.png",
       "target": [
         {
           "target": "nsis",
