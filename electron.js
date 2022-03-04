@@ -92,8 +92,8 @@ const templateMenu = [
 
 const createWindow = () => {
   win = new BrowserWindow({
-    width: 1280,
-    height: 960,
+    width: 1440,
+    height: 1080,
 //    autoHideMenuBar: true,
   })
 
