@@ -284,9 +284,16 @@ const IO = {
         y = event.changedTouches[0].clientY;
       }
 
-      if(SCREEN.is_mobile() && IO.interface._can_open_escape_menu() && x < 80 && y < 80){
-        INTERFACE.display.escape_menu();
-        return;
+
+      if(IO.interface._can_open_escape_menu()){
+        if(SCREEN.is_mobile() && x < 80 && y < 80){
+          INTERFACE.display.escape_menu();
+          return;
+        }
+        if(!SCREEN.is_mobile() && x < 65 && y < 65){
+          INTERFACE.display.escape_menu();
+          return;
+        }
       }
 
       event.preventDefault();
