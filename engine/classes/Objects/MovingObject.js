@@ -165,7 +165,17 @@ class MovingObject extends LevelObject {
   try_step_right() {    this.try_step(1, 0);   }
 
   try_step(unit_x, unit_y) {
-    this._try_walk_by_pixels(this._movement_increment() * unit_x, this._movement_increment() * unit_y, true);
+    var dx = this._movement_increment() * unit_x;
+    var dy = this._movement_increment() * unit_y;
+    if(this._try_walk_by_pixels(dx, dy, true)){
+      return;
+    }
+    if(this._try_walk_by_pixels(dx/2, dy/2, true)){
+      return;
+    }
+    if(this._try_walk_by_pixels(dx/10, dy/10, true)){
+      return;
+    }
   }
 
   try_walk_to(x, y, callback, forced) {
