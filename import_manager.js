@@ -114,9 +114,10 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
-new Module("GRAPHICS/SCREEN");
-  IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
-  IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/GLITCH");
+new Module("BAGGAGE/THAUMATURGY");
+  IMPORTS.modules['BAGGAGE/THAUMATURGY'].child_module("GRAPHICS/SCREEN");
+    IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
+    IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/GLITCH");
 
 new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
@@ -145,7 +146,7 @@ new Module("UTILS/MAP");
   IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/LEDGER");
   IMPORTS.modules['UTILS/MAP'].child_module("LEVEL/LEVELSTATES");
 new Module("BAGGAGE/ARCHETYPES");
-new Module("BAGGAGE/THAUMATURGY");
+
 
   IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
     IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
