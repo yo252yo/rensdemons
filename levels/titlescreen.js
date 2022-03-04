@@ -47,10 +47,13 @@ var options = [];
 var title = "";
 if (INTERFACE.is_trial()) {
   document.title = "Ren's DEMO";
-  title = "Demo version of the upcoming RPG Ren's Demons by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).";
+  title = "<span style='font-size:14px;'>Demo version of the upcoming RPG Ren's Demons by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).</span>";
 } else {
   document.title = INTERFACE.game_title_string();
   INTERFACE.game_title();
+}
+if(/^((?!chrome|android).)*safari/i.test(navigator.userAgent)){
+  title += "<span style='font-size:14px;font-weight:bold;color:red;'>WARNING: It looks like you are using a web browser like Safari which does not respect all HTML standards and prevents developpers from debugging their code. The game may not run smoothly unless you change browser.</span>";
 }
 
 options.push({"text": "New game", "effect": function(){ INTERFACE.start_game() }});
