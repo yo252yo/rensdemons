@@ -1,4 +1,8 @@
 
+new CenteredBattleImage("assets/battles/encounters/rubble.png", 'background', 2);
+
+
+
 PLAYER_ACTIONS.escape();
 PLAYER_ACTIONS.escape("Avert eyes");
 
