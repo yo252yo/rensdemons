@@ -149,8 +149,16 @@ const BATTLETREE = {
       var battles = Object.keys(BATTLETREE._targets.get([]));
       var displayable_battles = [];
       for(var b in battles){
-        var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
-        if (!hidden && battles[b].startsWith(prefix)){
+        var hidden = false;
+        var split = battles[b].split("/");
+        if(split[0].startsWith("_")){
+          hidden = true;
+        }
+        if (split.length > 0 && split[1].startsWith("_")){
+          hidden = true;
+        }
+
+        if ((DEBUG.DISPLAY_ALL_TREES || !hidden) && battles[b].startsWith(prefix)){
           displayable_battles.push(battles[b]);
         }
       }
@@ -296,15 +304,8 @@ const BATTLETREE = {
     },
 
     score_category: function(prefix){
-      var battles = Object.keys(BATTLETREE._targets.get([]));
-      var n = 0;
-      for(var b in battles){
-        var hidden = !DEBUG.DISPLAY_ALL_TREES && battles[b].startsWith("_");
-        if (!hidden && battles[b].startsWith(prefix)){
-          n ++;
-        }
-      }
-      return n;
+      var battles = BATTLETREE.get.battles_of_type(prefix);
+      return battles.length;
     },
 
     total_category: function(prefix){
