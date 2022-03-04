@@ -114,10 +114,6 @@ const IMPORTS = {
 new Module("CONSOLE");
 new Module("UTILS/RANDOM");
 new Module("UTILS/HTML");
-new Module("BAGGAGE/THAUMATURGY");
-  IMPORTS.modules['BAGGAGE/THAUMATURGY'].child_module("GRAPHICS/SCREEN");
-    IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
-    IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/GLITCH");
 
 new Module("MEMORY/RESOURCES");
 new Module("MEMORY/DISK");
@@ -148,13 +144,17 @@ new Module("UTILS/MAP");
 new Module("BAGGAGE/ARCHETYPES");
 
 
-  IMPORTS.modules['UTILS/MAP'].child_module("UTILS/BUILDER");
-    IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
-      IMPORTS.modules['UTILS/DEBUG'].child_module("IO/IO");
-        IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
-        IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
-        IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
-        IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
+  IMPORTS.modules['UTILS/MAP'].child_module("BAGGAGE/THAUMATURGY");
+    IMPORTS.modules['BAGGAGE/THAUMATURGY'].child_module("GRAPHICS/SCREEN");
+      IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/FOG");
+      IMPORTS.modules['GRAPHICS/SCREEN'].child_module("LEVEL/GLITCH");
+    IMPORTS.modules['BAGGAGE/THAUMATURGY'].child_module("UTILS/BUILDER");
+      IMPORTS.modules['UTILS/BUILDER'].child_module("UTILS/DEBUG");
+        IMPORTS.modules['UTILS/DEBUG'].child_module("IO/IO");
+          IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
+          IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
+          IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
+          IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 
 const LANGUAGE = {};
   LANGUAGE.actions = {};
