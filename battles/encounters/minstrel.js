@@ -32,6 +32,12 @@ PLAYER_ACTIONS.add({
       `Bard: "Do you want to hear one of my stories?"`,
     ],
 });
+
+
+for(var i = 0 ; i < 7; i++){
+  BATTLETREE.api.lock('encounters/minstrel', "Listen" + " ".repeat(i));
+}
+
 var seed = Math.random();
 var tip = Math.min(10, INVENTORY.cash());
 PLAYER_ACTIONS.add({

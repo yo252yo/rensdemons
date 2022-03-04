@@ -7,7 +7,7 @@
 
 
 - make sure that all the ABILITIES and items are not used anywhere like in battleobjects
-- saw a misntrel with two listens (mb because i died and loaded)
+- Makr sure there's enough weapons in trial
 
 
 
