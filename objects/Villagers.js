@@ -303,7 +303,7 @@ class VillagerSoul extends SoulBattleObject {
     this.add_enemy_action(`${this.vname} doesn't seem convinced that you're telling the truth. They press you for more details.`, attack);
     this.add_enemy_action(`You have to subject yourself to the relentless questioning of ${this.vname}.`, attack);
     this.add_enemy_action(`${this.vname} asks for proof of your faith, but it seems that nothing you say will ever be good enough.`, attack);
-    this.add_enemy_action(`${this.vname} asks you an embarrassing questions.`, attack);
+    this.add_enemy_action(`${this.vname} asks you an embarrassing question.`, attack);
 
 
     var start_text = this.gen.pick([
