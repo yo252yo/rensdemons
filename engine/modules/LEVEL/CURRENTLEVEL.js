@@ -156,7 +156,9 @@ const CURRENTLEVEL = {
       var walkable = false;
 
       // could be optimized by ordering objects
-      for(var object of CURRENTLEVEL.objects.get_all_objects(x, y)) {
+      var objects = CURRENTLEVEL.objects.get_all_objects(x, y);
+      console.log(objects);
+      for(var object of objects) {
         if (!object){
           continue;
         }
@@ -171,11 +173,16 @@ const CURRENTLEVEL = {
         }
         var t = object.is_walkable(x,y);
         if (t == -1) {
+          console.log("Obstacle");
+          console.log(object);
           return false;
         } else if (t == 1) {
+          console.log("Floor");
+          console.log(object);
           walkable = true;
         }
       }
+      console.log(">>> Walkable?" + walkable);
       return walkable;
     },
 
