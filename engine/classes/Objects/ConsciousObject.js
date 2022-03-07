@@ -2,7 +2,7 @@
 class ConsciousObject extends MovingObject {
   constructor(visual, x, y, w, h, name, city, role, seed) {
     super(visual, x, y, w, h);
-    var gen = new Generator(seed || Math.random());
+    var gen = new Generator(seed || (x+y));
 
     this.city = city || LEDGER.get_random_city();
     this.role = role || "person";
