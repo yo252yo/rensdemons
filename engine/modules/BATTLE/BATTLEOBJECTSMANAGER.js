@@ -122,7 +122,12 @@ const BATTLEOBJECTSMANAGER = {
     if (!Array.isArray(text)){
       array = [text];
     }
-    TextBannerSequence.make(array);
+    var callback = function(){
+      if(battle_object.icon){
+        battle_object.icon.destroy();
+      }
+    }
+    TextBannerSequence.make(array, callback);
   },
 
   interact: function(battle_object) {

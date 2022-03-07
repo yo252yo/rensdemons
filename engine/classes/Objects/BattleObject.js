@@ -62,7 +62,7 @@ class EventBattleObject extends BattleObject {
     }
 
     interaction() {
-      // We rely on the CURRENTLEVEL cleanup to destroy it
+      // it's cleaned either by battleobjectmanager or the switch to a battle
       this.icon = S_event.make_icon("event_swords", this.x, this.y);
       super.interaction();
       this.destroy();
