@@ -57,7 +57,9 @@ BESTIARY = {
   is_empathized:function(battlename) {
     var score = BATTLETREE.score.num_wins(battlename);
 
-    if(BESTIARY.is_boss(battlename) && score > 0){
+    if(battlename.startsWith("encounters")){
+      return false;
+    } else if(BESTIARY.is_boss(battlename) && score > 0){
       return true;
     } else if (battlename.startsWith("trial") && score > 1) {
       return true;
