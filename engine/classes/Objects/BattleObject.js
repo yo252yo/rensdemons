@@ -8,7 +8,7 @@ class BattleObject extends LevelObject {
       var g = new Generator(x+y);
       this.interactions = {};
       this.special_effect = {};
-      this.max_actions = max_actions || 2;
+      this.max_actions = max_actions || 1;
       this.seeds = [];
       this.enemy_actions = [];
       for(var i = 0; i< this.max_actions; i++){
