@@ -88,10 +88,10 @@ class HG_Room {
       var thresholds = {};
       switch(this.type){
         case CITIES.hope:
-          thresholds = {prayer: 2, kitchen: 2, storage: 2, hangout: 1, bedroom: 1};
+          thresholds = {prayer: 2.5, kitchen: 2, storage: 2, hangout: 1, bedroom: 1};
           break;
         case CITIES.fear:
-          thresholds = {prayer: 3, kitchen: 1, storage: 3, hangout: 1, bedroom: 1};
+          thresholds = {prayer: 3.5, kitchen: 1, storage: 3, hangout: 1, bedroom: 1};
           break;
         case CITIES.indulgence:
           thresholds = {prayer: 0.5, kitchen: 3, storage: 1, hangout: 2, bedroom: 1};
