@@ -276,13 +276,10 @@ for(var j of stews ){
 var filler = new Filler(gen.get(), 50, 50);
 filler.set_tries(3, 10);
 
-filler.add_default_constructor("B_Chest");
 filler.add_default_constructor("B_Bucket");
 filler.add_default_constructor("B_Jar");
 filler.add_default_constructor("B_Stool");
-filler.add_default_constructor("B_Housefire");
 filler.add_default_constructor("B_Statue");
-filler.add_default_constructor("B_Barrel");
 filler.add_default_constructor("B_Box");
 filler.add_default_constructor("B_Sack");
 filler.add_default_constructor("B_Table_Set", 2, 100, 100);
