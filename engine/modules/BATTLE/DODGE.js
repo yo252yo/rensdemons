@@ -96,7 +96,7 @@ const DODGE = {
     },
 
     advance_battler: function(){
-      var animation_frames = 30;
+      var animation_frames = Math.min(30, DODGE.get_params.actual_react_time_ms() / 3);
       var attack_angle = DODGE.attack_angle * Math.PI * 2;
       var d = 0.5 * 0.5 * DODGE.sprite.prompt.width / animation_frames;
       for (var l in DODGE.initial_sprites){
