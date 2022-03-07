@@ -235,7 +235,7 @@ FHardEvents.fill_floor_by_retry();
 //hack G. START/INIT
 // ===================
 var foundAncientArmamentCondition = function(){
-  return INVENTORY.has_ancient_armament && !ABILITIES.has_ability("_saw_ancient_armament_prompt");
+  return INVENTORY.has_ancient_armament() && !ABILITIES.has_ability("_saw_ancient_armament_prompt");
 }
 
 CURRENTLEVEL.add_trigger("foundAncientArmament", foundAncientArmamentCondition, function() {
