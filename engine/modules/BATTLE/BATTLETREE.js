@@ -361,37 +361,67 @@ const BATTLETREE = {
       }
     },
 
+    _map_outcome_to_html_bundle: function(battle, name){
+      var display_name = name.trim();
+      var outcome = BATTLETREE.get.outcome(battle, display_name);
+      switch (outcome){
+        case BATTLETREE.NOT_TRIED:
+          if (BATTLETREE.api.is_unlocked(battle, display_name)){
+            return 4;
+          } else {
+            return 5;
+          }
+        case "Unexplored children":
+          return 4;
+        case BATTLETREE.HIDDEN:
+          return 5;
+        case BATTLETREE.WIN:
+          return 0;
+        case BATTLETREE.LOSS:
+          return 3;
+        case BATTLETREE.NOTHING:
+          return 1;
+        case BATTLETREE.ESCAPE:
+          return 2;
+        default:
+          return 5;
+      }
+    },
+
     _display_targets_element: function(html, to_print, battle) {
       var pair = to_print.pop();
       var ability = pair[0];
       var prefix = pair[1];
+      var start = "";
       if (prefix){
-        html[0] += prefix + "|- ";
+        start += prefix + "|- ";
       }
-      html[0] += "> " + BATTLETREE.display.stylize(ability, battle);
-
+      start += "> " + BATTLETREE.display.stylize(ability, battle);
+      var bundle = BATTLETREE.display._map_outcome_to_html_bundle(battle, ability);
       var target = BATTLETREE._targets.get([battle, ability]);
       if(!target){ target = BATTLETREE.HIDDEN; }
 
       switch (target[0]){
         case BATTLETREE.NOT_TRIED:
+          html[bundle] += start + " -> ?????<br/> ";
+          break;
         case BATTLETREE.HIDDEN:
-          html[0] += " -> ?????<br/> ";
+          html[bundle] += start + " -> ?????<br/> ";
           break;
         case BATTLETREE.WIN:
-          html[0] += " -> <b>WIN</b><br/> ";
+          html[bundle] += start + " -> <b>WIN</b><br/> ";
           break;
         case BATTLETREE.LOSS:
-          html[0] += " -> <s>LOSS</s><br/> ";
+          html[bundle] += start + " -> <s>LOSS</s><br/> ";
           break;
         case BATTLETREE.NOTHING:
-          html[0] += " ---<br/> ";
+          html[bundle] += start + " ---<br/> ";
           break;
         case BATTLETREE.ESCAPE:
-          html[0] += " -[]<br/> ";
+          html[bundle] += start + " -[]<br/> ";
           break;
         default:
-          html[0] += "<br/> "
+          html[bundle] += start + "<br/> "
           for(var i in target){
             to_print.push([target[i], prefix + "&nbsp;&nbsp;"]);
           }
@@ -400,11 +430,12 @@ const BATTLETREE = {
     },
 
     display_battletree: function(battle) {
-      var tree = [""]; // to pass by reference.
+      var tree = ["","","","","",""]; // to pass by reference.
       var to_print = BATTLETREE.get._starters(battle);
 
+      var previous = 0;
       while(to_print.length > 0) {
-        BATTLETREE.display._display_targets_element(tree, to_print, battle);
+        previous = BATTLETREE.display._display_targets_element(tree, to_print, battle, previous);
       }
 
       var intro = BESTIARY.introed(battle) || "";
@@ -438,7 +469,13 @@ const BATTLETREE = {
           <hr/>
           ${imghtml}
           <hr/>
-          ${tree[0]}`;
+          ${tree[0]}
+          ${tree[1]}
+          ${tree[2]}
+          ${tree[3]}
+          ${tree[4]}
+          ${tree[5]}
+          `;
       } else {
         var text = `
           <div style="width:100%;position:relative;display:inline-block;">
@@ -448,7 +485,13 @@ const BATTLETREE = {
               ${intro}
             </div>
           </div><hr />
-          ${tree[0]}`;
+          ${tree[0]}
+          ${tree[1]}
+          ${tree[2]}
+          ${tree[3]}
+          ${tree[4]}
+          ${tree[5]}
+          `;
       }
 
 
