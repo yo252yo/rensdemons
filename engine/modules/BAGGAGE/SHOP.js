@@ -57,7 +57,7 @@ _SHOP_PRICES[ITEM.MassiveGoldStatue] = 70;
 
 
 _SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom,
-ITEM.OldBook,ITEM.PorcelainDoll,ITEM.SnobRichKey,ITEM.Spoon,ITEM.SilverGoblet,ITEM.Umbrella,ITEM.Candle,ITEM.Vase,ITEM.RareWine,ITEM.StuffedBearHead,ITEM.MassiveGoldStatue,
+ITEM.OldBook,ITEM.PorcelainDoll,ITEM.SnobRichKey,ITEM.Spoon,ITEM.SilverGoblet,ITEM.Umbrella,ITEM.Candle,ITEM.Vase,ITEM.RareWine,ITEM.StuffedBearHead,ITEM.MassiveGoldStatue, ITEM.AncientRubbles,
 ];
 
 const SHOP = {
@@ -84,19 +84,46 @@ const SHOP = {
       SHOP._current_menu.close();
       SHOP._menu.buy();
     },
-    sell: function(object){
-      if (INVENTORY.count(object)){
-        INVENTORY.decrease(object);
-        INVENTORY.increase(ITEM.Coin, SHOP._prices.sell(object));
+
+    _sell: function(object, count){
+      var count = count || 1;
+      if (INVENTORY.count(object) >= count){
+        INVENTORY.decrease(object, count);
+        INVENTORY.increase(ITEM.Coin, count * SHOP._prices.sell(object));
         if(object == ITEM.Medallion){
           alert("You feel awful for getting rid of the last memento of the person you cared about the most... This sacrifice better be worth it.");
         }
       }
+    },
 
+    sell: function(object){
+      SHOP._transaction._sell(object, 1);
       SHOP._current_menu.close();
       SHOP._menu.sell();
     },
+
+    selljunk: function(object){
+      var sum = 0 ;
+      var summary = "";
+      for(var index of _SHOP_SELLONLY){
+        if(!Object.keys(_SHOP_PRICES).includes(index)){
+          continue;
+        }
+        var c = INVENTORY.count(index);
+        if(!c){
+          continue;
+        }
+        SHOP._transaction._sell(index, c);
+        sum += c *  SHOP._prices.sell(index);
+        if (summary.length > 0){
+          summary += ", ";
+        }
+        summary += c + " " + index;
+      }
+      alert(`You sold for ${sum} coins worth of junk: ${summary}`);
+    },
   },
+
 
   _menu: {
     buy: function(){
@@ -154,6 +181,7 @@ const SHOP = {
           [
             {"text": "Buy (Way of the " + SHOP._current_type + ")", "effect": function(){ SHOP._menu.buy(); }},
             {"text": "Sell", "effect": function(){ SHOP._menu.sell(); }},
+            {"text": "Sell all junk", "effect": function(){ SHOP._transaction.selljunk(); }},
             {"text": "Leave", "effect": "##CLOSE"},
          ]
        );
