@@ -87,7 +87,7 @@ const BATTLE = {
       }
 
       // remove meta blurb if you can win
-      if(winning_options_unknown > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
+      if(winning_options_unknown + options_winning.length > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
         options_flight = options_flight.filter(function(e){
             return e.index != ABILITY.Foresight;
         });
