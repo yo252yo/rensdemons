@@ -14,7 +14,6 @@ class BattleObject extends LevelObject {
       for(var i = 0; i< this.max_actions; i++){
         this.seeds.push(g.get());
       }
-      this.add_interaction(ABILITY.Escape, "You move away without looking back.");
     }
 
     add_interaction(command, description, effect) { // this will be adapted to give things, like items or something
