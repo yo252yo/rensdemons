@@ -69,21 +69,30 @@ const INTERFACE = {
     },
 
     experience_submenu: function(category) {
-      var battles = BATTLETREE.get.battles_of_type(category);
+      var battles_raw = BATTLETREE.get.battles_of_type(category);
+      var battles = [];
+      for(var i of battles_raw) {
+        battles.push({
+          name: i,
+          score: BATTLETREE.score.completion(i),
+        });
+      }
+      battles.sort((a, b) => b.score - a.score);
+
       var battles_options = [];
       for(var i in battles) {
         (function(index){
-          var split = battles[index].split("/");
+          var split = battles[index].name.split("/");
           var name = split[split.length - 1];
-          var img = BESTIARY.default_picture_address(battles[index]);
+          var img = BESTIARY.default_picture_address(battles[index].name);
           var prefix = ``;
           if (img){
             prefix = `<img style="width:50px;height:50px;margin:5px;margin-bottom:-5px;opacity:0.7" src="${img}" />`;
           }
-          var suffix = BESTIARY.is_empathized(battles[index]) ? " - empathized": "";
+          var suffix = BESTIARY.is_empathized(battles[index].name) ? " - empathized": "";
           battles_options.push({
-            "text": prefix + name + " (" + BATTLETREE.score.completion(battles[index]) + "%" + suffix + ")",
-            "effect": function(){ BATTLETREE.display.display_battletree(battles[index]); },
+            "text": prefix + name + " (" + battles[index].score + "%" + suffix + ")",
+            "effect": function(){ BATTLETREE.display.display_battletree(battles[index].name); },
           });
         }(i));
       };
