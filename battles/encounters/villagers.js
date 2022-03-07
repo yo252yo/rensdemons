@@ -22,6 +22,7 @@ var is_unlocked = function(key){
 //hack ACTIONS
 // ===================
 
+BATTLETREE.api.lock('encounters/villager', "Expose");
 PLAYER_ACTIONS.add({
   name: "Expose",
   outcome: BATTLETREE.NOTHING,
@@ -34,6 +35,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Dismiss");
 PLAYER_ACTIONS.add({
   name: "Dismiss",
   outcome: BATTLETREE.LOSS,
@@ -44,9 +46,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Challenge");
 PLAYER_ACTIONS.add({
   name: "Challenge",
-  outcome: BATTLETREE.WIN,
+  outcome: BATTLETREE.NOTHING,
   unlock: is_unlocked(),
   description: [`$$Ren$: "I know what you're going to say before you'll say it..."`,
                 `${name}: "Do you, now? How, pray tell!"`,
@@ -57,6 +60,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Worry");
 PLAYER_ACTIONS.add({
   name: "Worry",
   outcome: BATTLETREE.NOTHING,
@@ -68,6 +72,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Claim");
 PLAYER_ACTIONS.add({
   name: "Claim",
   outcome: BATTLETREE.NOTHING,
@@ -81,6 +86,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Offer");
 PLAYER_ACTIONS.add({
   name: "Offer",
   outcome: BATTLETREE.NOTHING,
@@ -94,6 +100,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Beg");
 PLAYER_ACTIONS.add({
   name: "Beg",
   outcome: BATTLETREE.NOTHING,
@@ -110,6 +117,7 @@ PLAYER_ACTIONS.add({
   }
 });
 
+BATTLETREE.api.lock('encounters/villager', "Remind");
 PLAYER_ACTIONS.add({
   name: "Remind",
   outcome: BATTLETREE.NOTHING,
@@ -121,6 +129,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Directions");
 PLAYER_ACTIONS.add({
   name: "Directions",
   outcome: BATTLETREE.NOTHING,
@@ -132,6 +141,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Appearance");
 PLAYER_ACTIONS.add({
   name: "Appearance",
   outcome: BATTLETREE.NOTHING,
@@ -141,6 +151,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Intrude");
 PLAYER_ACTIONS.add({
   name: "Intrude",
   outcome: BATTLETREE.NOTHING,
@@ -150,6 +161,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Ransack");
 PLAYER_ACTIONS.add({
   name: "Ransack",
   outcome: BATTLETREE.NOTHING,
@@ -162,6 +174,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Impress");
 PLAYER_ACTIONS.add({
   name: "Impress",
   outcome: BATTLETREE.NOTHING,
@@ -177,6 +190,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Foreknowledge");
 PLAYER_ACTIONS.add({
   name: "Foreknowledge",
   outcome: BATTLETREE.NOTHING,
@@ -188,6 +202,7 @@ PLAYER_ACTIONS.add({
               ],
 });
 
+BATTLETREE.api.lock('encounters/villager', "Trick");
 PLAYER_ACTIONS.add({
   name: "Trick",
   outcome: BATTLETREE.NOTHING,
