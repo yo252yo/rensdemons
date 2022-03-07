@@ -194,7 +194,7 @@ const BATTLETREE = {
       var starters = [];
       for (var i in BATTLETREE._targets.get([battle])){
         if(ancestors.get([i])) { continue;  }
-        if(! BATTLETREE.api.is_unlocked(battle, i) ) { continue;  }
+    //    if(! BATTLETREE.api.is_unlocked(battle, i) ) { continue;  }
 
         starters.push([i, ""]);
       }
@@ -335,6 +335,10 @@ const BATTLETREE = {
       // Used for generated names like party members
       if (DICTIONARY.has(display_name)) {
         display_name = DICTIONARY.get(display_name);
+      }
+
+      if(! BATTLETREE.api.is_unlocked(battle, name) ) {
+        return "???";
       }
 
       switch (BATTLETREE.get.outcome(battle, name)) {
