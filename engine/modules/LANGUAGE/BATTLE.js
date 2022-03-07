@@ -18,7 +18,7 @@ LANGUAGE.battle = {
   },
 
   loot: function(loot) {
-    return `You manage to salvage a ${loot} from your defeated foe.`;
+    return `As you walk away, you find something on the floor. It is a ${loot}.`;
   },
 
   escape: function() {
