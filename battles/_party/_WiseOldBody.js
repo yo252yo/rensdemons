@@ -14,7 +14,7 @@ LANGUAGE.actions["Endure"] = {
   },
 };
 
-PLAYER_ACTIONS.win("Endure", 13);
+PLAYER_ACTIONS.win("Endure", 9);
 BATTLETREE.api.unlock("_party/_WiseOldBody", "Endure");
 
 var attack = {
