@@ -3,12 +3,12 @@
 var _SHOP_PRICES = {};
 
 _SHOP_PRICES[ITEM.BreathingPotion] = 5;
-_SHOP_PRICES[ITEM.Elixir_fire] = 10;
-_SHOP_PRICES[ITEM.Elixir_ice] = 20;
-_SHOP_PRICES[ITEM.Elixir_vine] = 30;
-_SHOP_PRICES[ITEM.Elixir_venom] = 40;
-_SHOP_PRICES[ITEM.Elixir_decay] = 50;
-_SHOP_PRICES[ITEM.Elixir_chaos] = 75;
+_SHOP_PRICES[ITEM.Elixir_fire] = 5;
+_SHOP_PRICES[ITEM.Elixir_ice] = 10;
+_SHOP_PRICES[ITEM.Elixir_vine] = 20;
+_SHOP_PRICES[ITEM.Elixir_venom] = 30;
+_SHOP_PRICES[ITEM.Elixir_decay] = 40;
+_SHOP_PRICES[ITEM.Elixir_chaos] = 50;
 
 _SHOP_PRICES[ITEM.Sword_wooden] = 20;
 _SHOP_PRICES[ITEM.Dagger] = 50;
