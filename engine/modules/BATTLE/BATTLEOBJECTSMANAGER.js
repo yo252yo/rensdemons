@@ -107,25 +107,34 @@ const BATTLEOBJECTSMANAGER = {
   },
 
   textBoxInteraction: function(battle_object) {
-    var possibilities = [battle_object.description];
+    var possibilities = ["."];
     var battle = battle_object.battle_name();
 
     var commands = BATTLEOBJECTSMANAGER.interactions.get_all(battle_object);
     for (var i = 0; i < commands.length; i++){
-      if (commands[i] != ABILITY.Escape){
-        possibilities.push(battle_object.interactions[commands[i]]);
-      }
+      possibilities.push(commands[i]);
     }
-    var text = possibilities[Math.floor(battle_object.seeds[0] * possibilities.length)];
+    var command = possibilities[Math.floor(battle_object.seeds[0] * possibilities.length)];
+    var text = battle_object.interactions[command];
+    if (command == "."){
+      text = battle_object.description;
+    }
 
     var array = text;
     if (!Array.isArray(text)){
       array = [text];
     }
+
+    if (command != "."){
+      var f = battle_object.get_special_effect(command);
+    } else{
+      var f = function(){};
+    }
     var callback = function(){
       if(battle_object.icon){
         battle_object.icon.destroy();
       }
+      f();
     }
     TextBannerSequence.make(array, callback);
   },

@@ -220,7 +220,7 @@ class B_Chair extends ItemBattleObject {
     this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
     this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless, $$BestFriend$ is puzzled. But Her ways are mysterious.");
     this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
-    this.add_interaction("Obliterate", "With the Goddess on your side, you violently smash the piece of furniture. $$BestFriend$ is quite shocked by this behavior and tries to stop you, but to no avail. The deed is done. At least you can get a bit of wood out of this.", INVENTORY.increase_function(ITEM.Stick, 2));
+    this.add_interaction("Obliterate", "With the Goddess on your side, you violently smash the piece of furniture. $$BestFriend$ is quite shocked by this behavior and tries to stop you, but to no avail. The deed is done. At least you can get a bit of wood out of this.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -258,11 +258,11 @@ class B_Jar extends ItemBattleObject {
 
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
     this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
-    this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few for your personal use.", INVENTORY.increase_function(ITEM.Berry,3));
+    this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few for your personal use.", INVENTORY.increase_function(ITEM.Berry,3), true);
     this.add_interaction("Break", 'As you watch this jar, you can hear the voice of the Goddess inside you. "Break it... Break it...". You resist it. For now...');
-    this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarrassing. You try to put the pieced back together, but the deed is done. $$BestFriend$ is shocked when the owner turns out really understanding and forgives you as soon as you mention that you're the Promised Child.");
+    this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarrassing. You try to put the pieced back together, but the deed is done. $$BestFriend$ is shocked when the owner turns out really understanding and forgives you as soon as you mention that you're the Promised Child.", undefined, true);
     this.add_interaction("Appreciate", "This must be the work of a skillful potter. The surface is smooth, without obvious defect. So much effort went into this. And yet it is so fragile, so very breakable...");
-    this.add_interaction("Punch", "Moved by an unexplainable intuition that this jar might contain something of worth, you punch and smash the pottery. To your dismay, you find that it's completely empty. Some jars are.");
+    this.add_interaction("Punch", "Moved by an unexplainable intuition that this jar might contain something of worth, you punch and smash the pottery. To your dismay, you find that it's completely empty. Some jars are.", undefined, true);
   }
 }
 
@@ -287,7 +287,7 @@ class B_Stool extends ItemBattleObject {
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
     this.add_interaction("Climb", "You cannot resist the urge to stand on the stool. $$BestFriend$ watches you, split between amusement and concern. Surely an act of the Goddess again...");
     this.add_interaction("Sit", "Obeying your inner voice, you sit on this stool. Nothing happens. You stand back up. Thanks you, Goddess.");
-    this.add_interaction("Destroy", "The Goddess tells you that this stool would be much more useful to your quest as spare parts. $$BestFriend$ is not convinced by that argument, but cannot stop you from breaking down the piece of furniture and salvage its wood.", INVENTORY.increase_function(ITEM.Stick, 2));
+    this.add_interaction("Destroy", "The Goddess tells you that this stool would be much more useful to your quest as spare parts. $$BestFriend$ is not convinced by that argument, but cannot stop you from breaking down the piece of furniture and salvage its wood.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -299,7 +299,7 @@ class B_Table extends ItemBattleObject {
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
     this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you, especially $$BestFriend$ who keeps calling you back. This is so embarrassing. You finally get out, and swear to never acknowledge this happened.");
     this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
-    this.add_interaction("Obliterate", "Before $$BestFriend$ can stop you, you jump on the table with all your strength. It's not long before the table is in shambles, and you fall on your back in the middle of wood pieces. $$BestFriend$ may laugh at your misfortune, but at least you got a bit of lumber out of that.", INVENTORY.increase_function(ITEM.Stick, 2));
+    this.add_interaction("Obliterate", "Before $$BestFriend$ can stop you, you jump on the table with all your strength. It's not long before the table is in shambles, and you fall on your back in the middle of wood pieces. $$BestFriend$ may laugh at your misfortune, but at least you got a bit of lumber out of that.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -336,7 +336,7 @@ class B_Chest extends ItemBattleObject {
     this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linens that aren't yours. Nothing of interest here. You got nothing out of it but embarrassment.");
     this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthusiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
     this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
-    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden));
+    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden), true);
   }
 }
 
@@ -371,7 +371,7 @@ class B_Bocals extends ItemBattleObject {
     super(x, y, 41,42, "interior/bocals");
     this.adjust_hitbox(0,0,31,20);
 
-    this.add_interaction("Smash", "You take one of the delicates glass jars and violently smash it on the ground. Shards of glass are spread everywhere. It's now dangerous to walk around. Well done. You must be proud of yourself.");
+    this.add_interaction("Smash", "You take one of the delicates glass jars and violently smash it on the ground. Shards of glass are spread everywhere. It's now dangerous to walk around. Well done. You must be proud of yourself.", undefined, true);
     this.add_interaction("Dip", "You throw hygiene to the wind, open one of the jar and dip a finger in. You then lick the sugary jam from your skin. It's delicious, but this was gross.");
     this.add_interaction("Observe", "These two glass jars have been emptied recently. They're due for an in depth cleaning soon.");
     this.add_interaction("Judge", "You think it's a bit irresponsible to leave such a breakable glass jar on the floor. Any clumsy visitor or passing adventurer could just bump into it and spread its content on the floor. A chance you're not like that.");
@@ -534,7 +534,7 @@ class B_Bottles extends ItemBattleObject {
     super(x, y, 41,44, "interior/bottles", 1);
     this.adjust_hitbox(0,0,38,25);
 
-    this.add_interaction("Break", "You inadvertently push and break a glass bottle, spreading wine everywhere, but before you even have time to apologize the people around you cheer loudly at your clumsiness and comfort you, telling you that it's not a big deal and that you should drink it off.");
+    this.add_interaction("Break", "You inadvertently push and break a glass bottle, spreading wine everywhere, but before you even have time to apologize the people around you cheer loudly at your clumsiness and comfort you, telling you that it's not a big deal and that you should drink it off.", undefined, true);
     this.add_interaction("Chug", "You take a bottle and decide to drink it all in one go, under the reprobatory eye of $$BestFriend$. Fortunately for you, it was only half full to begin with, but it's still quite hard. You end up pretty drunk.");
     this.add_interaction("Tidy", "There's way too many bottles laying around on the floor in this town. They're everywhere, people keep stumbling. Nobody seems to take the time to tidy the trash properly. You attempt to do so, but it appears that villagers produce empty bottles faster than you can get rid of them.");
   }
@@ -569,7 +569,7 @@ class B_PottedFlower extends ItemBattleObject {
     this.adjust_hitbox(5,0,36,25);
 
     this.add_interaction("Smell", "In addition to filling the room with lovely colors, these flowers exude a sweet intoxicating aroma.");
-    this.add_interaction("Pluck", "You pluck out the flower. $$BestFriend$ is shocked and starts apologizing on your behalf, but the villagers tell you that it's not a problem. You've simply made more room for another one to grow. You admire their positivity.");
+    this.add_interaction("Pluck", "You pluck out the flower. $$BestFriend$ is shocked and starts apologizing on your behalf, but the villagers tell you that it's not a problem. You've simply made more room for another one to grow. You admire their positivity.", undefined, true);
     this.add_interaction("Admire", "The colorful petals capture the ambient light and almost have a shine of their own.");
     this.add_interaction("Offer", "You offer the flower to $$BestFriend$ who blushes in return but insists on giving the flower back to its rightful owner.");
   }
@@ -582,7 +582,7 @@ class B_PottedPlant extends ItemBattleObject {
 
     this.add_interaction("Water", "You start watering the plant. $$BestFriend$ scolds you, saying there's such a thing as overwatering and this plant seems very well cared for.");
     this.add_interaction("Watch", "You look at the plant at the precise moment where a butterfly lands on one of its green leaves.");
-    this.add_interaction("Smash", "You succumb to a compulsion of smashing pottery in people's houses, even if they obviously contain nothing but mud and roots. It's going to be a mess to clean.");
+    this.add_interaction("Smash", "You succumb to a compulsion of smashing pottery in people's houses, even if they obviously contain nothing but mud and roots. It's going to be a mess to clean.", undefined, true);
   }
 }
 

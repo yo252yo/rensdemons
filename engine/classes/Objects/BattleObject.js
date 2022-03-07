@@ -16,13 +16,19 @@ class BattleObject extends LevelObject {
       }
     }
 
-    add_interaction(command, description, effect) { // this will be adapted to give things, like items or something
+    add_interaction(command, description, effect, destructive) { // this will be adapted to give things, like items or something
       while (this.interactions[command]){
         command = command + " ";
       }
       this.interactions[command] = description;
-      if(effect) {
-        this.special_effect[command] = effect;
+      var self = this;
+      this.special_effect[command] = function(){
+        if(effect) {
+          effect();
+        }
+        if(destructive){
+          self.destroy();
+        }
       }
     }
 
