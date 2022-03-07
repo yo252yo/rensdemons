@@ -338,7 +338,7 @@ const BATTLETREE = {
       }
 
       if(! BATTLETREE.api.is_unlocked(battle, name) ) {
-        return "???";
+        return "?????";
       }
 
       switch (BATTLETREE.get.outcome(battle, name)) {
