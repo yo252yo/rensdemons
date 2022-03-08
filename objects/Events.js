@@ -48,11 +48,22 @@ class SE_conversation extends SE_event {
   constructor(x, y, seed, after_bestfriend_death, size, color) {
 
     var possibilities = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
+    var filteredpos = possibilities.filter(i => !LANGUAGE_EVENTS.used.includes(i[0]));
+    if(!filteredpos.length) { // reset
+      filteredpos = possibilities;
+      LANGUAGE_EVENTS.used = [];
+    }
     var gen = new Generator(seed);
-    var text = gen.pick(possibilities);
+    var text = gen.pick(filteredpos);
 
     super(x, y, text, size, color);
+    this.text = text;
     this.icon_type = "event_conversation";
+  }
+
+  interaction() {
+    LANGUAGE_EVENTS.used.push(this.text[0]);
+    super.interaction();
   }
 
   display_name() {
