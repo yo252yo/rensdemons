@@ -2,7 +2,7 @@
 // runtime: Rectangle, StaticSprite
 
 class MapObject extends LevelObject {
-  constructor(visual, x, y, label, destination, accessibility_function) {
+  constructor(visual, x, y, label, destination, accessibility_function, destination_position) {
     super(visual, x, y);
 
     if (label) {
@@ -12,6 +12,7 @@ class MapObject extends LevelObject {
     }
 
     this.destination = destination;
+    this.destination_position = destination_position;
     this.accessibility_function = accessibility_function;
   }
 
@@ -19,7 +20,7 @@ class MapObject extends LevelObject {
     if(this.accessibility_function && !this.accessibility_function()){
       new TextBanner("As you approach your destination, the Goddess strongly impresses in your mind that you are not prepared for what is to come. In Her infinite wisdom, She knows that this is not where are meant to be for now.");
     } else if(this.destination) {
-      CURRENTLEVEL.setup(this.destination);
+      CURRENTLEVEL.setup(this.destination, this.destination_position);
     }
   }
 
@@ -46,7 +47,7 @@ class MapObject extends LevelObject {
 
 
 class SM_Town extends MapObject {
-  constructor(x, y, destination, code, accessibility_function){
+  constructor(x, y, destination, code, accessibility_function, destination_position){
     var visual = new StaticSprite("assets/objects/map/town.png", 'obj_light');
 
     var subtitle = "";
@@ -70,7 +71,7 @@ class SM_Town extends MapObject {
     var label = DICTIONARY.get(code).toUpperCase() + subtitle;
 
     visual.specify_sprite_size(150,170);
-    super(visual, x, y, label, destination, accessibility_function);
+    super(visual, x, y, label, destination, accessibility_function, destination_position);
 
     if(this.legend) this.legend.shift(60);
     this.adjust_hitbox(20,-40,120,110);
@@ -78,20 +79,20 @@ class SM_Town extends MapObject {
 }
 
 class SM_Trees extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/trees0.png", 'obj_light');
         visual.specify_sprite_size(100, 100);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(20,0,65,80);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/trees1.png", 'obj_light');
         visual.specify_sprite_size(85, 100);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(20,0,55,80);
         break;
     }
@@ -108,50 +109,50 @@ class SM_Trees extends MapObject {
 }
 
 class SM_Forest extends MapObject {
-  constructor(x, y, label, destination, accessibility_function){
+  constructor(x, y, label, destination, accessibility_function, destination_position){
     var visual = new StaticSprite("assets/objects/map/forest.png", 'obj_light');
     visual.specify_sprite_size(310,245);
-    super(visual, x, y, label, destination, accessibility_function);
+    super(visual, x, y, label, destination, accessibility_function, destination_position);
     this.adjust_hitbox(15,0,285,220);
     if(this.legend) this.legend.shift(140);
   }
 }
 
 class SM_Cave extends MapObject {
-  constructor(x, y, label, destination, accessibility_function){
+  constructor(x, y, label, destination, accessibility_function, destination_position){
     var visual = new StaticSprite("assets/objects/map/cave.png", 'obj_light');
     visual.specify_sprite_size(75,50);
-    super(visual, x, y, label, destination, accessibility_function);
+    super(visual, x, y, label, destination, accessibility_function, destination_position);
     this.adjust_hitbox(0,-10,50,30);
     if(this.legend) this.legend.shift(20,10);
   }
 }
 
 class SM_Crevasse extends MapObject {
-  constructor(x, y, label, destination, accessibility_function){
+  constructor(x, y, label, destination, accessibility_function, destination_position){
     var visual = new StaticSprite("assets/objects/map/crevasse.png", 'obj_light');
     visual.specify_sprite_size(180,55);
-    super(visual, x, y, label, destination, accessibility_function);
+    super(visual, x, y, label, destination, accessibility_function, destination_position);
     this.adjust_hitbox(20,0,155,50);
     if(this.legend) this.legend.shift(80);
   }
 }
 
 class SM_Hills extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/hills0.png", 'obj_light');
         visual.specify_sprite_size(180,80);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(0,0,200,100);
         break;
 
       case 1:
         var visual = new StaticSprite("assets/objects/map/hills1.png", 'obj_light');
         visual.specify_sprite_size(190,125);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(0,0,200,100);
         break;
     }
@@ -168,13 +169,13 @@ class SM_Hills extends MapObject {
 }
 
 class SM_Lake extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/lake0.png", 'obj_light');
         visual.specify_sprite_size(280,155);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(0,0,270,150);
         if(this.legend) this.legend.shift(130);
         break;
@@ -182,7 +183,7 @@ class SM_Lake extends MapObject {
       case 1:
         var visual = new StaticSprite("assets/objects/map/lake1.png", 'obj_light');
         visual.specify_sprite_size(180,90);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(0,0,190,90);
         if(this.legend) this.legend.shift(70);
         break;
@@ -198,13 +199,13 @@ class SM_Lake extends MapObject {
 }
 
 class SM_Mountain extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
         var visual = new StaticSprite("assets/objects/map/mountain0.png", 'obj_light');
         visual.specify_sprite_size(165,130);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(10,0,140,90);
         if(this.legend) this.legend.shift(70);
         break;
@@ -212,7 +213,7 @@ class SM_Mountain extends MapObject {
       case 1:
         var visual = new StaticSprite("assets/objects/map/mountain1.png", 'obj_light');
         visual.specify_sprite_size(260,155);
-        super(visual, x, y, label, destination, accessibility_function);
+        super(visual, x, y, label, destination, accessibility_function, destination_position);
         this.adjust_hitbox(20,-5,240,120);
         if(this.legend) this.legend.shift(110);
         break;
@@ -229,10 +230,10 @@ class SM_Mountain extends MapObject {
 
 
 class SM_Vulcano extends MapObject {
-  constructor(x, y, label, destination, accessibility_function){
+  constructor(x, y, label, destination, accessibility_function, destination_position){
     var visual = new StaticSprite("assets/objects/map/vulcano.png", 'obj_light');
     visual.specify_sprite_size(315,266);
-    super(visual, x, y, label, destination, accessibility_function);
+    super(visual, x, y, label, destination, accessibility_function, destination_position);
     this.adjust_hitbox(30,-10,270,200);
     if(this.legend) this.legend.shift(150);
 
@@ -327,7 +328,7 @@ class SM_Worm extends MapObject {
 }
 
 class SM_Fang extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:
@@ -356,7 +357,7 @@ class SM_Fang extends MapObject {
 }
 
 class SM_Tenta extends MapObject {
-  constructor(x, y, seed, label, destination, accessibility_function){
+  constructor(x, y, seed, label, destination, accessibility_function, destination_position){
     var gen = new Generator(seed);
     switch(gen.int(2)){
       case 0:

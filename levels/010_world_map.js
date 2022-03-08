@@ -94,7 +94,7 @@ FEasyS.fill_floor_by_retry();
 
 FHardSW.set_guaranteed(1);
 FHardSW.add_constructor(function(x,y,seed){
-  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees");
+  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", undefined, [2000, 2475]);
 }, 1, 300, 250);
 FHardSW.fill_floor_by_retry();
 
@@ -108,13 +108,13 @@ FHardNE.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
-  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks");
+  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", undefined, [2500, 2500]);
 }, 1, 250, 150);
 FHardMain.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
-  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes");
+  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", undefined, [2225,5550]);
 },1 ,100, 50);
 FHardMain.fill_floor_by_retry();
 
