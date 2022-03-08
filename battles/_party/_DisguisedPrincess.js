@@ -15,23 +15,40 @@ var go = PLAYER_ACTIONS.function.unlock_replacing_action({
 
 
 // -------------------------------------------------------------------------------------
+var plandescription = [
+  `$$Ren$: "Huh... Don't we need... You know... a plan or something? There's a lot of guards, they won't let us just walk out!"`,
+  `$$DisguisedPrincess$: "Oh right, you're right! Good thinking! How did you know?`,
+  `$$DisguisedPrincess$: "I almost forgot! Sorry, I got too excited because it's the first time ever I get to interact in private with an adventurer! And to think I've been working on this plan for years! And now I have someone to help!"`,
+  `$$DisguisedPrincess$'s thoughts are clearly a mess, scrambled by the excitement of meeting you and potentially getting help. The noble takes a second to think clearly and continues on a calmer tone.`,
+  `$$DisguisedPrincess$: "Sorry, yes. Please forgive my excitement. I should have started by saying that I've been studying alchemy, and I've developed an elixir that should... indispose the guards. Without killing them, of course, I'm not a monster. But the castle is teeming with them, we do need to get rid of them if we want to get out safely."`,
+  `$$Ren$: "I see..."`,
+  `$$DisguisedPrincess$: "Take these herbs and put them in the guards' meals. It should leave us some time to get out."`,
+  `You obtain a ` + ITEM.PoisonousHerbs + ".",
+];
+var extrafun = function() {
+  INVENTORY.set(ITEM.PoisonousHerbs, 1);
+}
+
+if(INVENTORY.count("_poisoned_palace_guards")) {
+  plandescription = [
+    `$$Ren$: "I've put the herbs in the guards' food!"`,
+    `$$DisguisedPrincess$: "Cool, let's hope it's enough! We should go now!"`,
+  ];
+  extrafun = function(){};
+} else if(INVENTORY.count(ITEM.PoisonousHerbs)){
+  plandescription = [
+      `$$Ren$: "Can you remind me the plan for the guards?"`,
+      `$$DisguisedPrincess$: "Remember the herbs I gave you? Put them in the guards' meals. It's a mix I've prepared. It should... let's just say it will leave us some time to get out."`,
+    ];
+  extrafun = function(){};
+}
+
 var plan = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Plan`,
   unlock: true,
-  description: [
-    `$$Ren$: "Huh... Don't we need... You know... a plan or something? There's a lot of guards, they won't let us just walk out!"`,
-    `$$DisguisedPrincess$: "Oh right, you're right! Good thinking! How did you know?`,
-    `$$DisguisedPrincess$: "I almost forgot! Sorry, I got too excited because it's the first time ever I get to interact in private with an adventurer! And to think I've been working on this plan for years! And now I have someone to help!"`,
-    `$$DisguisedPrincess$'s thoughts are clearly a mess, scrambled by the excitement of meeting you and potentially getting help. The noble takes a second to think clearly and continues on a calmer tone.`,
-    `$$DisguisedPrincess$: "Sorry, yes. Please forgive my excitement. I should have started by saying that I've been studying alchemy, and I've developed an elixir that should... indispose the guards. Without killing them, of course, I'm not a monster. But the castle is teeming with them, we do need to get rid of them if we want to get out safely."`,
-    `$$Ren$: "I see..."`,
-    `$$DisguisedPrincess$: "Take these herbs and put them in the guards' meals. It should leave us some time to get out."`,
-    `You obtain a ` + ITEM.PoisonousHerbs + ".",
-  ],
+  description: plandescription,
   outcome: BATTLETREE.WIN,
-  extra_function: function() {
-    INVENTORY.set(ITEM.PoisonousHerbs, 1);
-  }
+  extra_function: extrafun,
 });
 
 var castle = PLAYER_ACTIONS.function.unlock_replacing_action({
