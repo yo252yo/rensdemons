@@ -131,7 +131,7 @@ class S_SeaFloor extends S_Floor {
 
 class S_ExitFloor extends S_Floor {
   constructor(x, y, w, h, outside, force_new_position) {
-    super(x, y, w, h, 'obj_dark', "assets/patterns/exit.png", force_new_position);
+    super(x, y, w, h, 'obj_dark', "assets/patterns/exit.png");
 
     if (outside){
       this.interaction = function() {

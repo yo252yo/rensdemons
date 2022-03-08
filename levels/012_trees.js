@@ -34,6 +34,8 @@ var spawnpoint = function(how){
     return [2300,2475];
   } else if (how == 'topmid'){
     return [2000,1900];
+  } else if (how == 'botmid'){
+    return [2000, 2475];
   }
   return undefined; //default
 }
