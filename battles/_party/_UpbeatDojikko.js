@@ -20,6 +20,8 @@ var readCards = "Read cards";
 var trade = "Trade";
 var apologize = "Apologize";
 
+var idreveal = false;
+
 var pricelock = function(){
   if(INVENTORY.cash() < 15) {
     BATTLETREE.api.lock(battle, readPalm);
@@ -54,71 +56,91 @@ var _spirits =  PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 
-var _read_palm = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: readPalm,
-  unlock: true,
-  description: [`$$Ren$: "What do you see in my hand?"`,
-                `You hold your hand to her. You feel the chilly touch of her cold fingers against your skin.`,
-                `She grabs your wrist to pull your hand closer, but in doing so the drags your arm on the table which knocks out one of her mystical looking grimoires. It falls on the ground, open at a page about 'starting your spiritual journey'.`,
-                `$$UpbeatDojikko$: "Oops... Sorry about that. It's ok, don't mind it. Let me see your hand."`,
-                `She goes back to staring at your skin. Something obviously catches her attention, because she doesn't move for a few minutes, only occasionally mumbling to herself or asking questions to an invisible presence.`,
-                `$$UpbeatDojikko$: "But what does this mean? I don't understand... Why?"`,
-                `After a while, she looks up, the face clouded by an expression of pain.`,
-                `$$UpbeatDojikko$: "I'm sorry, this has never happened before. I don't see anything. I cannot get a glance at your destiny. It's as if it's... not from this world."`,
-                `$$Ren$: "I guess I should have told you... I'm the Promised Child."`,
-                `$$UpbeatDojikko$: "Oh..."`,
-                `She says absently, as if not really comprehending the information. And then another time.`,
-                `$$UpbeatDojikko$: "Oh! That explains it. I certainly cannot peek into the mind of the Goddess. Neither me nor my friendly spirit helpers. We're not priests."`,
-                `$$Ren$: "I see, that makes sense. So there's nothing you can tell me about what is to come on my journey?"`,
-                `$$UpbeatDojikko$: "I'm afraid not. It's probably you who could tell me things about the future. You can speak to the Goddess, not just silly spirits..."`,
-  ],
-  function: function(){
-    INVENTORY.decrease(ITEM.Coin, 15);
-    INVENTORY.increase(ITEM.Coin, 15);
-    pricelock();
-    _spirits(readPalm);
-    STATS.record.flag("UpbeatDojikko_Book");
+var _read_palm = function (from){
+  var ren = `$$Ren$: "I guess I should have told you... I'm the Promised Child."`;
+  if (idreveal){
+    ren = `$$Ren$: "That's probably because I'm the Promised Child, remember?"`;
   }
-});
 
-var _read_cards = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: readCards,
-  unlock: true,
-  outcome: BATTLETREE.ESCAPE,
-  description: [`$$Ren$: "Can you read my cards?"`,
-                `The fortune teller nods in silence. She takes your coins, and draws a wooden box from a fold in her velvety dress. She opens it to reveal a deck of cards, so worn out that you can barely make out the symbols on the back.`,
-                `$$UpbeatDojikko$: "Let us see."`,
-                `She places a hand on top of the deck, and closes her eyes. She starts muttering esoterical chants you cannot understand. It lasts for a few minutes, before she finally speaks in a language you can understand.`,
-                `$$UpbeatDojikko$: "Spirits, show us the way. Tell us the secrets of this child's destiny."`,
-                `With a trembling hand, she draws three cards and places them on the old wood table. You cannot decipher the eroded symbols on them, but the general tone seems pretty ominous, as confirmed by the puzzled expression on your host's face.`,
-                `$$Ren$: "Is it bad?"`,
-                `$$UpbeatDojikko$: "It's... not that simple. The first card is Death. It seems you and it go hand in hand. It seems to be an ever-looming presence in your life. But the weird thing is... it's in the 'beginning' quadrant. And it resonates with the Wheel of Fortune. It's as if... you can transcend it? And use it to birth new life? But you're stuck in the never-ending cycle of the wheel... My poor child, there's no end to your suffering. And with the Priestess in the 'dominant' quadrant, it's almost as if you embody the cycle of life by yourself. I've never quite seen such a thing."`,
-                `Seeing her confusion grow, you decide it's time to come clean.`,
-                `$$Ren$: "I think it's because... I'm the Promised Child."`,
-                `Her eyes widen at the reveal, but the surprise is quickly replaced by a thoughtful look.`,
-                `$$UpbeatDojikko$: "I see... Well, that certainly explains some things. I can clearly see the Goddess within you. But that makes this exercise very challenging. I've never done a reading for a holy being before..."`,
-                `$$Ren$: "I imagine... Does this mean my quest won't end well?"`,
-                `$$UpbeatDojikko$: "From what I see, it may be that your quest won't end at all. I'm sorry, these visions are very confused. It probably means that it's not decided yet. That it could go either way..."`,
-                `$$BestFriend$: "That's not very reassuring..."`,
-                `$$UpbeatDojikko$: "Don't worry too much, you have the Goddess on your side. The one thing that the cards tell me clearly is that death may be a constant in your life, but it will never take you."`,
-                `$$Ren$: "How could that be?"`,
-                `$$UpbeatDojikko$: "I'm sorry, that's as much as I can tell. The spirits are vague, and..."`,
-                `The seer body is shaken by a spasm, her eyes close and her head tilts back at a worrying angle.`,
-                `Suddenly, she lets out the biggest sneeze you've ever heard. Cards fly all over the room. She rushes to gather them, but in her haste, she pushes over a shelf that crumbles. Amulets and trinkets fall on the ground in a metallic cacophony.`,
-                `$$UpbeatDojikko$: "Oh my, I'm sorry."`,
-                `She starts gathering the fallen artifacts, but accidentally steps on her dress and ends up on the floor.`,
-                `$$UpbeatDojikko$: "Don't worry, that happens all the time."`,
-                `$$Ren$: "Are you sure?"`,
-                `$$BestFriend$: "Maybe we could help..."`,
-                `$$UpbeatDojikko$: "No, no. I'm fine. I'm used to it. I just need a little time to tidy everything. Just leave me alone for a bit, will you?"`,
-                ],
-  extra_function: function(){
-    INVENTORY.decrease(ITEM.Coin, 15);
-    INVENTORY.increase(ITEM.Coin, 15);
-    pricelock();
-    STATS.record.flag("UpbeatDojikko_Cards");
+  var f = PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: readPalm,
+    unlock: true,
+    description: [`$$Ren$: "What do you see in my hand?"`,
+                  `You hold your hand to her. You feel the chilly touch of her cold fingers against your skin.`,
+                  `She grabs your wrist to pull your hand closer, but in doing so the drags your arm on the table which knocks out one of her mystical looking grimoires. It falls on the ground, open at a page about 'starting your spiritual journey'.`,
+                  `$$UpbeatDojikko$: "Oops... Sorry about that. It's ok, don't mind it. Let me see your hand."`,
+                  `She goes back to staring at your skin. Something obviously catches her attention, because she doesn't move for a few minutes, only occasionally mumbling to herself or asking questions to an invisible presence.`,
+                  `$$UpbeatDojikko$: "But what does this mean? I don't understand... Why?"`,
+                  `After a while, she looks up, the face clouded by an expression of pain.`,
+                  `$$UpbeatDojikko$: "I'm sorry, this has never happened before. I don't see anything. I cannot get a glance at your destiny. It's as if it's... not from this world."`,
+                  ren,
+                  `$$UpbeatDojikko$: "Oh..."`,
+                  `She says absently, as if not really comprehending the information. And then another time.`,
+                  `$$UpbeatDojikko$: "Oh! That explains it. I certainly cannot peek into the mind of the Goddess. Neither me nor my friendly spirit helpers. We're not priests."`,
+                  `$$Ren$: "I see, that makes sense. So there's nothing you can tell me about what is to come on my journey?"`,
+                  `$$UpbeatDojikko$: "I'm afraid not. It's probably you who could tell me things about the future. You can speak to the Goddess, not just silly spirits..."`,
+    ],
+    function: function(){
+    //  INVENTORY.decrease(ITEM.Coin, 15);
+    //  pricelock();
+    //  INVENTORY.increase(ITEM.Coin, 15);
+      _spirits(readPalm);
+      STATS.record.flag("UpbeatDojikko_Book");
+      BATTLETREE.api.lock(battle, readCards); // mutually exclusive stories (reveal of promised child)
+    }
+  });
+  f(from);
+}
+
+var _read_cards = function (from){
+  var ren = `$$Ren$: "I guess I should have told you... I'm the Promised Child."`;
+  var react = `Her eyes widen at the reveal, but the surprise is quickly replaced by a thoughtful look.`;
+  if (idreveal){
+    ren = `$$Ren$: "That's probably because I'm the Promised Child, remember?"`;
+    react = `$$UpbeatDojikko$: "Right. I forgot. Sorry I'm a bit distracted."`;
   }
-});
+
+  var f = PLAYER_ACTIONS.function.unlock_replacing_action({
+    name: readCards,
+    unlock: true,
+    outcome: BATTLETREE.ESCAPE,
+    description: [`$$Ren$: "Can you read my cards?"`,
+                  `The fortune teller nods in silence. She takes your coins, and draws a wooden box from a fold in her velvety dress. She opens it to reveal a deck of cards, so worn out that you can barely make out the symbols on the back.`,
+                  `$$UpbeatDojikko$: "Let us see."`,
+                  `She places a hand on top of the deck, and closes her eyes. She starts muttering esoterical chants you cannot understand. It lasts for a few minutes, before she finally speaks in a language you can understand.`,
+                  `$$UpbeatDojikko$: "Spirits, show us the way. Tell us the secrets of this child's destiny."`,
+                  `With a trembling hand, she draws three cards and places them on the old wood table. You cannot decipher the eroded symbols on them, but the general tone seems pretty ominous, as confirmed by the puzzled expression on your host's face.`,
+                  `$$Ren$: "Is it bad?"`,
+                  `$$UpbeatDojikko$: "It's... not that simple. The first card is Death. It seems you and it go hand in hand. It seems to be an ever-looming presence in your life. But the weird thing is... it's in the 'beginning' quadrant. And it resonates with the Wheel of Fortune. It's as if... you can transcend it? And use it to birth new life? But you're stuck in the never-ending cycle of the wheel... My poor child, there's no end to your suffering. And with the Priestess in the 'dominant' quadrant, it's almost as if you embody the cycle of life by yourself. I've never quite seen such a thing."`,
+                  `Seeing her confusion grow, you decide it's time to chime in.`,
+                  ren,
+                  react,
+                  `$$UpbeatDojikko$: "I see... Well, that certainly explains some things. I can clearly see the Goddess within you. But that makes this exercise very challenging. I've never done a reading for a holy being before..."`,
+                  `$$Ren$: "I imagine... Does this mean my quest won't end well?"`,
+                  `$$UpbeatDojikko$: "From what I see, it may be that your quest won't end at all. I'm sorry, these visions are very confused. It probably means that it's not decided yet. That it could go either way..."`,
+                  `$$BestFriend$: "That's not very reassuring..."`,
+                  `$$UpbeatDojikko$: "Don't worry too much, you have the Goddess on your side. The one thing that the cards tell me clearly is that death may be a constant in your life, but it will never take you."`,
+                  `$$Ren$: "How could that be?"`,
+                  `$$UpbeatDojikko$: "I'm sorry, that's as much as I can tell. The spirits are vague, and..."`,
+                  `The seer body is shaken by a spasm, her eyes close and her head tilts back at a worrying angle.`,
+                  `Suddenly, she lets out the biggest sneeze you've ever heard. Cards fly all over the room. She rushes to gather them, but in her haste, she pushes over a shelf that crumbles. Amulets and trinkets fall on the ground in a metallic cacophony.`,
+                  `$$UpbeatDojikko$: "Oh my, I'm sorry."`,
+                  `She starts gathering the fallen artifacts, but accidentally steps on her dress and ends up on the floor.`,
+                  `$$UpbeatDojikko$: "Don't worry, that happens all the time."`,
+                  `$$Ren$: "Are you sure?"`,
+                  `$$BestFriend$: "Maybe we could help..."`,
+                  `$$UpbeatDojikko$: "No, no. I'm fine. I'm used to it. I just need a little time to tidy everything. Just leave me alone for a bit, will you?"`,
+                  ],
+    extra_function: function(){
+  //    INVENTORY.decrease(ITEM.Coin, 15);
+  //    pricelock();
+  //    INVENTORY.increase(ITEM.Coin, 15);
+      STATS.record.flag("UpbeatDojikko_Cards");
+      BATTLETREE.api.lock(battle, readPalm); // mutually exclusive stories (reveal of promised child)
+    }
+  });
+  f(from);
+}
 
 var _poor = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Negociate",
@@ -289,6 +311,7 @@ PLAYER_ACTIONS.add({
     _browse_wares(warn);
     _question(warn);
     _ask_reading(warn);
+    idreveal = true;
 
     if(STATS.flag("UpbeatDojikko_Book")){
       BATTLETREE.api.unlock(battle, bluff);
