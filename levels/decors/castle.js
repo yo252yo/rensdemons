@@ -343,6 +343,7 @@ var make_noble = function (x, y, seed) {
       `Noble: "The demon lord is sure to be defeated! Our pieces are just too good, the game is almost over!"`,
       `Noble: "If you want to help the kingdom, why are you not on the board playing?"`,
       `Noble: "I think we'll see checkmate before soon..."`,
+      `Noble: "That was a total misplay..."`,
       `Noble: "The best generals in the kingdom have showed us incredible victories on the field. We can be proud to have such skilled players!"`,
       `Noble: "Some people say we're useless. But commentators are just as important as players! Analyzes are how we learn and develop new strategies!"`,
     ]);
