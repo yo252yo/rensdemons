@@ -294,6 +294,8 @@ class EventFiller extends Filler {
 
     this.resize_event = resize_event;
     this.recolor_event = recolor_event;
+
+    this.flavor_texts = [];
   }
 
   battle(name, weight) {
@@ -323,9 +325,21 @@ class EventFiller extends Filler {
   text(text, weight) {
     var size = this.resize_event;
     var color = this.recolor_event;
+    var self = this;
+    // weight is currently shared between all texts of this filler
     this.add_constructor(function(x,y,seed){
-        new SE_event(x, y, text, size, color);
+        new SE_FillerFlavor(x, y, seed, self, size, color);
       }, weight);
+
+    var array = text;
+    if (!Array.isArray(text)){
+      array = [text];
+    }
+    this.flavor_texts.push(array);
+  }
+
+  getPossibleTexts(){
+    return this.flavor_texts;
   }
 
   byConstructor(constructorName, weight) {

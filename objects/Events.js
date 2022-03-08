@@ -44,26 +44,53 @@ class SE_event extends S_event {
   }
 }
 
-class SE_conversation extends SE_event {
-  constructor(x, y, seed, after_bestfriend_death, size, color) {
+class SE_FlavorEvent extends SE_event {
+  // we store only in memory
+  static USED = [];
 
-    var possibilities = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
-    var filteredpos = possibilities.filter(i => !LANGUAGE_EVENTS.used.includes(i[0]));
-    if(!filteredpos.length) { // reset
-      filteredpos = possibilities;
-      LANGUAGE_EVENTS.used = [];
-    }
-    var gen = new Generator(seed);
-    var text = gen.pick(filteredpos);
-
-    super(x, y, text, size, color);
-    this.text = text;
-    this.icon_type = "event_conversation";
+  constructor(x, y, possibleTextArrays, seed, size, color, extra) {
+    super(x, y, "TBC", size, color, extra);
+    this.possibleTextArrays = possibleTextArrays;
+    this.gen = new Generator(seed);
   }
 
-  interaction() {
-    LANGUAGE_EVENTS.used.push(this.text[0]);
-    super.interaction();
+  pick_text(){
+    var filteredpos = this.possibleTextArrays.filter(i => !SE_FlavorEvent.USED.includes(i[0]));
+    if(!filteredpos.length) { // reset
+      filteredpos = this.possibleTextArrays;
+      // Remove all possibletext from used
+      var possibleArtifacts = this.possibleTextArrays.map(i => i[0]);
+      SE_FlavorEvent.USED = SE_FlavorEvent.USED.filter(i => !possibleArtifacts.includes(i));
+    }
+
+    return this.gen.pick(filteredpos);
+  }
+
+  real_interaction() {
+    this.text = this.pick_text();
+    SE_FlavorEvent.USED.push(this.text[0]);
+    super.real_interaction();
+  }
+}
+
+class SE_FillerFlavor extends SE_FlavorEvent {
+  constructor(x, y, seed, filler, size, color) {
+    super(x, y, [], seed, size, color);
+    this.filler = filler;
+  }
+
+  real_interaction() {
+    this.possibleTextArrays = this.filler.getPossibleTexts();
+    super.real_interaction();
+  }
+}
+
+class SE_conversation extends SE_FlavorEvent {
+  constructor(x, y, seed, after_bestfriend_death, size, color) {
+    var possibilities = LANGUAGE_EVENTS.get_shared(after_bestfriend_death);
+
+    super(x, y, possibilities, seed, size, color);
+    this.icon_type = "event_conversation";
   }
 
   display_name() {
