@@ -49,7 +49,7 @@ class SE_FlavorEvent extends SE_event {
   static USED = [];
 
   constructor(x, y, possibleTextArrays, seed, size, color, extra) {
-    super(x, y, "TBC", size, color, extra);
+    super(x, y, "To be picked at real_interaction runtime", size, color, extra);
     this.possibleTextArrays = possibleTextArrays;
     this.gen = new Generator(seed);
   }
@@ -75,7 +75,7 @@ class SE_FlavorEvent extends SE_event {
 
 class SE_FillerFlavor extends SE_FlavorEvent {
   constructor(x, y, seed, filler, size, color) {
-    super(x, y, [], seed, size, color);
+    super(x, y, [["To be picked at real_interaction runtime"]], seed, size, color);
     this.filler = filler;
   }
 
