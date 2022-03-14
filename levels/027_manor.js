@@ -58,7 +58,6 @@ new SE_event(1950, 1975, [
   ], 100, undefined);
 
 new SE_event_loot(1500, 1625, [
-  ], 50, undefined, function(){
     `You got a ${ITEM.SnobRichKey}.`,
     `$$Ren$: "Now this looks important."`,
     `$$SnobRich$: "Does it? It's just a random key..."`,
@@ -67,8 +66,9 @@ new SE_event_loot(1500, 1625, [
     `$$Ren$: "If there is a key, there must be something worth protecting!"`,
     `$$SnobRich$: "Yes, people sleeping!"`,
     `$$Ren$: "You'll see..."`,
-    INVENTORY.increase(ITEM.SnobRichKey);
-  });
+  ], 50, undefined, function(){
+  INVENTORY.increase(ITEM.SnobRichKey);
+});
 
 new SE_event(2450, 1625, [
   `$$Ren$: "There's nothing there..."`,
