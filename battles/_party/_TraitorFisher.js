@@ -21,7 +21,7 @@ var convince = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "Come on, $$BestFriend$. We can't just leave her here to die!"`,
     `$$BestFriend$: "I suppose you have a point. Fine, she can come."`,
     `$$TraitorFisher$: "I'm coming, but it's because I want to. I don't need your help or anything..."`,
-    "$$TraitorFisher$ joins your party!",
+    "$$TraitorFisher$ JOINS YOUR PARTY!",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){

@@ -20,7 +20,7 @@ var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$StreetSmart$: "No can do, kid. We might be a few years apart, but you still have so much to learn about life."`,
     `$$StreetSmart$: "My name is $$StreetSmart$, by the way... Here, have your money back."`,
     `He hands you your coins back.`,
-    "$$StreetSmart$ joins your party!",
+    "$$StreetSmart$ JOINS YOUR PARTY!",
   ],
   extra_function: function(){
     PARTY.add(PARTYMEMBERS.StreetSmart);

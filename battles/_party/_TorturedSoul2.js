@@ -21,7 +21,7 @@ if(INVENTORY.count("_torturedSoulSteps") > 5){
       `$$TorturedSoul$: "Such a shame... Yet I can glimpse in thee a kindred spirit. It soothes my heart that thou heard me out."`,
       `$$TorturedSoul$: "I have a mind to follow thee. As I am awaiting my demise, I could as well be at thine side. Thou seem to be on a suicidal expedition of thine own. Perchance could I also partake in the exquisite fruit of thine ascertained doom."`,
       `$$Ren$: "Sure... Whatever."`,
-      "$$TorturedSoul$ joins your party!",
+      "$$TorturedSoul$ JOINS YOUR PARTY!",
     ],
     extra_function: function(){
       PARTY.add(PARTYMEMBERS.TorturedSoul);

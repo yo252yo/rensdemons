@@ -14,7 +14,7 @@ var unlock_join = function () {
       `Finally, she seems to understand you. She nods and smiles at you.`,
       `$$SavageChild$: "I'm $$SavageChild$!"`,
       `It's going to take a while to develop proper communication, but it seems that she's willing to follow you.`,
-      "$$SavageChild$ joins your party!",
+      "$$SavageChild$ JOINS YOUR PARTY!",
     ],
     outcome: BATTLETREE.WIN,
     extra_function: function(){

@@ -64,7 +64,7 @@ var chargenow = function(){
     `$$DisguisedPrincess$: "Don't worry. Outside of the castle, many people know my name but not my face. Anyway, now I get to experience the world by myself! Adventure! And I'll have the best guide!"`,
     `$$Ren$: "You're coming with us?"`,
     `$$DisguisedPrincess$: "I have a lot to learn, I need to be with experienced adventurers, right? Besides, I need to figure out a way to repay you for your help!"`,
-    "$$DisguisedPrincess$ joins your party!",
+    "$$DisguisedPrincess$ JOINS YOUR PARTY!",
   ], function(){
     PARTY.add(PARTYMEMBERS.DisguisedPrincess);
     PARTY.changeNickname(PARTYMEMBERS.DisguisedPrincess, undefined, callback2);

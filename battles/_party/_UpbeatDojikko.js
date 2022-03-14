@@ -231,7 +231,7 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$: "Is he right, nanny? Should I go?"`,
                 `You watch her listen to an answer you cannot hear.`,
                 `$$UpbeatDojikko$: "Very well, if you both say so, I will accompany the Promised Child on his quest. I'll take my spirit friends along!"`,
-                "$$UpbeatDojikko$ joins your party!",
+                "$$UpbeatDojikko$ JOINS YOUR PARTY!",
                 ],
   extra_function: function(){
     PARTY.add(PARTYMEMBERS.UpbeatDojikko);

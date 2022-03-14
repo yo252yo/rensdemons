@@ -666,7 +666,7 @@ if(hawkpart == 19){
     `You exchange a smile.`,
     `$$Ren$: "Ok, you can tag along."`,
     `$$DumbMuscles$: "Sweet!"`,
-    "$$DumbMuscles$ joins your party!",
+    "$$DumbMuscles$ JOINS YOUR PARTY!",
   ], function(){ PARTY.add(PARTYMEMBERS.DumbMuscles); IO.control.character(); });
 }
 if(hawkpart == 20){

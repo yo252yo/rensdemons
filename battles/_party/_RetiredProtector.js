@@ -27,7 +27,7 @@ var goddess = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$RetiredProtector$: "You're right. After this conversation, I do feel changed. It feels like I never could have escaped this calling."`,
     `$$RetiredProtector$: "A few hours ago, I was an old soul getting ready to die. I had lost my faith and my motivation. But you and the Goddess barged into my life, and now it feels like it was always meant to be. Like my story is not over."`,
     `$$RetiredProtector$: "I'll follow you, kid. My blade is yours. The Goddess picked me through you, and made me alive again. The moment I turn away, I will stop existing."`,
-    "$$RetiredProtector$ joins your party!",
+    "$$RetiredProtector$ JOINS YOUR PARTY!",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function() {

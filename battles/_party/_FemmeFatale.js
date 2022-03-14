@@ -83,7 +83,7 @@ var accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$FemmeFatale$: "Nice, I've always wanted to go see the world. Maybe this is my chance!"`,
-    "$$FemmeFatale$ joins your party!",
+    "$$FemmeFatale$ JOINS YOUR PARTY!",
     ],
     extra_function: function(){
       PARTY.add(PARTYMEMBERS.FemmeFatale);

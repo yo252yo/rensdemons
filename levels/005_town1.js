@@ -52,7 +52,7 @@ var bf = new M_BestFriend(g[0] + 50, g[1] + 10);
 var bf_join_party = function(){
   PARTY.add(PARTYMEMBERS.BestFriend);
   TextBannerSequence.make([
-    "$$BestFriend$ joins your party!",
+    "$$BestFriend$ JOINS YOUR PARTY!",
   ], function(){ bf.destroy(); IO.control.character(); });
 };
 

@@ -20,7 +20,7 @@ var unlock_side_pc = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `$$PreciousChild$: "Yes, I promise! I'll be good!"`,
                 `$$BestFriend$: "If not, we'll just feed you to the monsters!"`,
                 `$$PreciousChild$: "Nooo! I'll be good, I swear! I'll help and I won't do anything bad!"`,
-                "$$PreciousChild$ joins your party!",
+                "$$PreciousChild$ JOINS YOUR PARTY!",
                 ],
   extra_function: function(){
     PARTY.add(PARTYMEMBERS.PreciousChild);

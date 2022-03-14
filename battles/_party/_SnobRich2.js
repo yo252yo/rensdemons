@@ -34,7 +34,7 @@ var hereyougo = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: [
     `$$SnobRich$: "Thanks! Now let us be on our way and accrue even more profit with your skillful fingers!"`,
-    "$$SnobRich$ joins your party!",
+    "$$SnobRich$ JOINS YOUR PARTY!",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){

@@ -16,7 +16,7 @@ var unlock_hire = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "A bit of both, I suppose."`,
     `$$WiseOld$: "You have the official blessing of the Church of $$town_2$ to go hunt $$demon_lord$. I trust you've talked to the head priest about the artifact? If not, you should go right now!"`,
     `$$WiseOld$: "In any case, now that your training is done, nothing binds me here. I am your humble servant. I've studied my whole life to assist you. I believe my knowledge could be of use on your journey. Please allow me to accompany you!"`,
-    "$$WiseOld$ joins your party!",
+    "$$WiseOld$ JOINS YOUR PARTY!",
   ],
   extra_function: function(){
     PARTY.add(PARTYMEMBERS.WiseOld);

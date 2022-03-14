@@ -38,7 +38,7 @@ var future = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$GeniusProdigy$: "Oh yeah sorry, I guess the proper social protocol is to ask? I don't really care, though, I'm coming with you whether you like it or not. I'm not about to let such an interesting subject escape me."`,
     `$$Ren$: "What? Oh ok. You're not going to kill me in my sleep, are you?"`,
     `$$GeniusProdigy$: "Well if I did, you wouldn't even notice..."`,
-    "$$GeniusProdigy$ joins your party!",
+    "$$GeniusProdigy$ JOINS YOUR PARTY!",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
