@@ -107,7 +107,7 @@ var beg = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Clause",
   unlock: true,
   description: [
-    `$$Ren$: ""We're simple travelers, we know how offensive our presence here is, but we mean the Sirens no harm. I demand application of the ... .-.. .- ...- . clause."`,
+    `$$Ren$: "We're simple travelers, we know how offensive our presence here is, but we mean the Sirens no harm. I demand application of the ... .-.. .- ...- . clause."`,
     `$$TraitorFisher$: "This is highly unusual. Stay put."`,
     `All around, the merfolks are deliberating in what you perceive as hushed voices.`,
     `$$TraitorFisher$ swims towards them and starts arguing in clicks and hisses.`,
