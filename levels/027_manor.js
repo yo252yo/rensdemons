@@ -121,7 +121,7 @@ new SE_event(1625, 1800, [
   `$$Ren$: "Not really."`,
   `$$BestFriend$: "They did in $$town_2$. But even then, they'd let us do whatever we wanted."`,
   `$$SnobRich$: "Unbelievable."`,
-  `$$Ren$: "Well you're not complaining either, are you? You're even guiding you through your villa."`,
+  `$$Ren$: "Well you're not complaining either, are you? You're even guiding me through your villa."`,
   `$$SnobRich$: "This case is... complicated. Let's leave it at that, shall we?"`,
   ], 50, undefined);
 
