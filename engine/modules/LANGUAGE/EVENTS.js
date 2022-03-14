@@ -1,4 +1,6 @@
 LANGUAGE_EVENTS = {
+  used: [],
+
   _all_alone: [
     [
       `You decide to make camp and have a little meal.`,
