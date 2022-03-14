@@ -32,7 +32,7 @@ const ABILITY = {
     Mystify: "Mystify",
 
     isLearnableAbility: function(s){
-      if (s == ABILITY.Spoiler || s == ABILITY.Foresight){
+      if (s == ABILITY.Spoiler || s == ABILITY.Foresight || s == ABILITY.Feed){
         return false;
       }
       for (var i in ABILITY){
