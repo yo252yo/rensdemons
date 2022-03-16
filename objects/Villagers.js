@@ -12,7 +12,7 @@ class VillagerSoul extends SoulBattleObject {
     super(seed * -1000, seed * -1000, "villagers/" + type, sprite_nb);
     this.gen = new Generator(seed);
     this.vname = VillagerSoul.get_name(this.gen, sprite_nb);
-    this.add_interaction(ABILITY.Escape, "You put an end to the conversation.");
+    this.add_interaction(ABILITY.Escape, "You ran out of things to say.");
 
     switch(type){
       case CITIES.acceptance:
