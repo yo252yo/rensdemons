@@ -269,12 +269,14 @@ const PLAYER_ACTIONS = {
       PLAYER_ACTIONS._internal.win_in_one_hit(i, undefined, function(){ AUDIO.music.interface.artifact(); });
     }
 
-    PLAYER_ACTIONS.add({ // Removed by default if there is a winning outcome, see BATTLe.js
-      name: ABILITY.Foresight,
-      unlock: true,
-      description: LANGUAGE.battle.foresight(),
-      outcome: BATTLETREE.ESCAPE,
-    });
+    if(threshold < 9999999999999){
+      PLAYER_ACTIONS.add({ // Removed by default if there is a winning outcome, see BATTLe.js
+        name: ABILITY.Foresight,
+        unlock: true,
+        description: LANGUAGE.battle.foresight(),
+        outcome: BATTLETREE.ESCAPE,
+      });
+    }
 
     // New game plus only
     if(BATTLE.current_battle && STATS.is_post_game() && BESTIARY.is_empathized(BATTLE.current_battle)){
