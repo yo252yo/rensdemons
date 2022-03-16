@@ -106,7 +106,7 @@ const DODGE = {
       DODGE.battler_steps ++;
 
       if (DODGE.battler_steps < animation_frames){
-        setTimeout(DODGE.draw.advance_battler, DODGE.get_params.actual_react_time_ms()/animation_frames);
+        DODGE.animation_timeout = setTimeout(DODGE.draw.advance_battler, DODGE.get_params.actual_react_time_ms()/animation_frames);
       }
     },
 
@@ -127,6 +127,9 @@ const DODGE = {
     },
 
     precise_hit: function (color) {
+      if(DODGE.animation_timeout){
+        clearTimeout(DODGE.animation_timeout);
+      }
       var mid = DODGE.sprite.prompt.width / 2;
 
       var from =  Math.PI * 2 * (DODGE.attack_angle - DODGE.get_params.attack_amplitude() / 2);
