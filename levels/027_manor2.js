@@ -50,11 +50,11 @@ glitch.real_interaction = function(){
 
   if(!INVENTORY.count(ITEM.Spoon)){
     TextBannerSequence.make([
-      `You got a ${ITEM.Spoon}.`,
+      `You got a ${ITEM.Spoon.toUpperCase()}.`,
     ], kill);
   } else if(INVENTORY.count(ITEM.Spoon) == 1) {
     TextBannerSequence.make([
-      `You got a ${ITEM.Spoon}.`,
+      `You got a ${ITEM.Spoon.toUpperCase()}.`,
       `$$BestFriend$: "Didn't we already pick up that spoon?"`,
       `$$Ren$: "I think so. But it came back. It must be glitched."`,
       `$$BestFriend$: "Glitched?"`,
@@ -62,7 +62,7 @@ glitch.real_interaction = function(){
     ], kill);
   } else {
     TextBannerSequence.make([
-      `You got a ${ITEM.Spoon}.`,
+      `You got a ${ITEM.Spoon.toUpperCase()}.`,
       `$$BestFriend$: "One more?"`,
       `$$Ren$: "Yep! We can get rich that way!"`,
       `$$SnobRich$: "That's a rather slow income, if you ask me."`,
@@ -72,7 +72,7 @@ glitch.real_interaction = function(){
 
 
 new SE_event_loot(1600, 2250, [
-  `You got a Coin.`,
+  `You got a COIN.`,
   `$$SnobRich$: "Wow, you'd even take a single coin from the floor?"`,
   `$$Ren$: "I know it's not much, but it does add up. Besides, once I've looked, I can't not take it."`,
   `$$SnobRich$: "Suit yourself."`,
@@ -85,7 +85,7 @@ new SE_event_loot(2400, 1725, [
   `$$SnobRich$: "See, I told you, it's just a normal bedroom."`,
   `$$Ren$: "It's never just a normal bedroom."`,
   `As you say that, you notice a loose plank on the wall. You push it and discover a hidden niche behind the wall. In it, you find a fancy weapon.`,
-  `You got a ${ITEM.Sword_great}.`,
+  `You got a ${ITEM.Sword_great.toUpperCase()}.`,
   `$$SnobRich$: "I never knew this was there... I guess my parents kept it for protection."`,
   ], 50, undefined, function(){
     INVENTORY.increase(ITEM.Sword_great);
@@ -107,7 +107,7 @@ cache.real_interaction = function(){
       `You look closely at the wall.`,
       `$$Ren$: "If there was a cache on the other side of the house, that means there's probably a symmetrical one here!"`,
       `You try to press on the planks, and sure enough one of them reveals a little niche like in the parent's bedroom. This one does not contain a sword, however, but a pretty old silver goblet.`,
-      `You got a ${ITEM.SilverGoblet}.`,
+      `You got a ${ITEM.SilverGoblet.toUpperCase()}.`,
     ], function() {
       INVENTORY.increase(ITEM.SilverGoblet);
       cache.destroy();
@@ -116,7 +116,7 @@ cache.real_interaction = function(){
 };
 
 new SE_event_loot(1675, 2000, [
-    `You got an ${ITEM.OldBook}.`,
+    `You got an ${ITEM.OldBook.toUpperCase()}.`,
     `$$SnobRich$: "What is this? Probably some old account books..."`,
     `$$BestFriend$: "What does it say?"`,
     `$$Ren$: "Most of the pages are blank, there's at most one or two paragraphs written in it."`,
@@ -127,7 +127,7 @@ new SE_event_loot(1675, 2000, [
   });
 
 new SE_event_loot(2300, 2200, [
-    `You got an ${ITEM.Elixir_ice}.`,
+    `You got an ${ITEM.Elixir_ice.toUpperCase()}.`,
     `$$BestFriend$: "Cool! This I know for sure we can use in battle!"`,
     `$$Ren$: "We could also sell it."`,
   ], 50, undefined, function(){
@@ -167,7 +167,7 @@ doll.real_interaction = function(){
     TextBannerSequence.make([
       `When you come back to the room, the porcelain doll is intact in all her usual creepiness. $$SnobRich$ is overjoyed but manages her reaction carefully. She takes the toy with infinite precautions and cradles it like an actual infant, making sure every one of her motion is as smooth and safe as can be.`,
       `$$SnobRich$: "I cannot believe you were right! How did you do that? You really have wonderful powers. Thank you so much!"`,
-      `You got a ${ITEM.PorcelainDoll}.`,
+      `You got a ${ITEM.PorcelainDoll.toUpperCase()}.`,
     ], function() {
       INVENTORY.increase(ITEM.PorcelainDoll);
       doll.destroy();

@@ -161,7 +161,7 @@ if(treepart == 1){
     next.interaction = function(){
       TextBannerSequence.make([
         `You approach this path, but as you expected, you cannot pass yet. The path is blocked by fierce looking sentient trees. They move very slowly, but they manage to convey to you that the inside of the forest is a holy sanctuary where only those of their kind may enter.`,
-        `However, you do not lose hope. You think there must be a way to disguise yourself as one of them. Perhaps if you could find a few branches...`,
+        `However, you do not lose hope. You think there must be a way to disguise yourself as one of them. Perhaps if you could find a few BRANCHES...`,
       ]);
     }
   }
@@ -216,7 +216,7 @@ if(treepart == 1){
       TextBannerSequence.make([
         `You know that a great treasure lies beyond this path, but as you guessed, it is not easy making your way to the innermost sanctum of the forest.`,
         `The sentient trees here are of a much higher status than the ones you've fooled before. They see right past through your ridiculous disguise and forbid you to pass.`,
-        `In order to trick them, you're going to need many more branches to complete your mimicry. Based on the layout of the clearing you've just crossed, you guess that you need to find a total of 6 in addition to the 3 you had from before.`,
+        `In order to trick them, you're going to need many more BRANCHES to complete your mimicry. Based on the layout of the clearing you've just crossed, you guess that you need to find a total of 6 in addition to the 3 you had from before.`,
         `You have faith that what you need is spread out fairly in the different corners of the forest. You chuckle at the irony of exploring the different branches of the path to gather literal branches.`,
         `Bracing yourself, you go back on your steps towards the clearing.`,
       ]);
@@ -328,12 +328,12 @@ if([8, 9, 10, 17, 21, 22, 23, 24, 27].includes(treepart)){
     b.interaction = function(){
       var after = function(){
         TextBannerSequence.make([
-          `However, you think that one branch is not going to be enough for anything. You convince yourself you need to find more.`,
+          `However, you think that one BRANCH is not going to be enough for anything. You convince yourself you need to find more.`,
           `You know there must be a certain symmetry in this forest. You decide to go back and explore the other paths in search for more branches.`,
         ]);
       }
       TextBannerSequence.make([
-        `You notice that there is a weirdly shaped branch on the ground. Since it's not like the other ones, you think it could be important.`,
+        `You notice that there is a weirdly shaped BRANCH on the ground. Since it's not like the other ones, you think it could be important.`,
       ],  function(){ b.real_interaction(after);});
     };
   }
@@ -345,7 +345,7 @@ if([29, 31].includes(treepart)){
   var press = function(){
     INVENTORY.increase("_knots_pressed");
     b.destroy();
-    var extra = ` You know that you need to press another knot somewhere, in another route. It would be absurd for the other path to be useless.`;
+    var extra = ` You know that you need to press another KNOT somewhere, in another route. It would be absurd for the other path to be useless.`;
     if(INVENTORY.count("_knots_pressed") >= 2){
       extra = ` You decide to retrace your steps and be on the lookout for changes in the environment.`;
     }
@@ -354,7 +354,7 @@ if([29, 31].includes(treepart)){
     ]);
   }
   var prompt = function(){
-    new CenteredTextMenu("Will you press the knot?",
+    new CenteredTextMenu("Will you press the KNOT?",
                   [
                     {"text": "Yes", "effect": press},
                     {"text": "No", "effect": "##CLOSE"},
@@ -385,7 +385,7 @@ if(treepart == 39){
     TextBannerSequence.make([
       `A plethora of roots join together in an complex entanglement. At the perfect center, they rise up to form a sort of pedestal which supports the artifact you've been longing for.`,
       `A quick glance could have confused it with one of the many branches you're now wearing, but this would be mistaken. The patterns of the bark seem to follow some sort of arrangement, and these arabesques emit an unnatural soft purple glow.`,
-      `When you seize the staff, you are surprised to find that this mystical piece of wood that is almost as big as you weighs practically nothing. You wave it around and feel the air crackle around the artifact. You're sure this holds a tremendous power.`,
+      `When you seize the ENCHANTED STAFF, you are surprised to find that this mystical piece of wood that is almost as big as you weighs practically nothing. You wave it around and feel the air crackle around the artifact. You're sure this holds a tremendous power.`,
       `You keep the Legendary Staff and decide to make your way out of this place.`,
     ], take);
   };

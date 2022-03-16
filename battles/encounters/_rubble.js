@@ -11,7 +11,7 @@ if (SPECIALBATTLES._battle_extra_data){
     name: dig,
     unlock: true,
     description: [
-      "You dig through the debris. After a while, you find something interesting. It's a " + SPECIALBATTLES._battle_extra_data + ".",
+      "You dig through the debris. After a while, you find something interesting. It's a " + SPECIALBATTLES._battle_extra_data.toUpperCase() + ".",
     ],
     outcome: BATTLETREE.WIN,
     give_item: SPECIALBATTLES._battle_extra_data,

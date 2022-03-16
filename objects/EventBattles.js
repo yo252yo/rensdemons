@@ -144,6 +144,6 @@ class EB_Bush extends EventBattleObject {
     this.add_interaction("Gather", "You decide to gather anything you can from this bush. There is not many berries, but maybe the leaves can be used for potions? When you're done, nothing is left but naked branches.");
     this.add_interaction("Scratch", "You walk a bit too close to the bush, and its thin branches scratch your skin in many tiny lines.");
     this.add_interaction("Fall", "As you walk near the bush, you trip and fall on it. Fortunately, the many branches of the plant cushion your fall, and you end up back on your feet without much damage.");
-    this.add_interaction("Below", "You look below the bush and discover a few fresh mushrooms that seem edible. You decide to collect them for later.", function(){INVENTORY.increase(ITEM.Mushroom);});
+    this.add_interaction("Below", "You look below the bush and discover a few fresh MUSHROOMS that seem edible. You decide to collect them for later.", function(){INVENTORY.increase(ITEM.Mushroom);});
   }
 }

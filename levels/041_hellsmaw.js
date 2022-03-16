@@ -290,7 +290,7 @@ else if(hellsmawpart == 3){
   };
 
   var prompt2 = function(){
-    new CenteredTextMenu("Will you take the medallion with you or leave it to rest undisturbed?",
+    new CenteredTextMenu("Will you take the MEDALLION with you or leave it to rest undisturbed?",
         [
           {"text": "Take it", "effect": end},
           {"text": "Leave it", "effect": function(){ s.destroy(); }},

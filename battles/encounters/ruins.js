@@ -38,7 +38,7 @@ PLAYER_ACTIONS.add({
   outcome: BATTLETREE.WIN,
   unlock: true,
   description: ["You navigate through the metallic rubbles, in search for anything that could be of use to you. Maybe this place holds the secret to defeating $$demon_lord$.",
-                "Sadly, you only find piles of metallic junk. You decide to take some away with you, it might fetch a good price.",
+                "Sadly, you only find piles of metallic junk. You decide to take some ANCIENT RUBBLES away with you, it might fetch a good price.",
               ],
   extra_function: function(){
     INVENTORY.increase(ITEM.AncientRubbles);

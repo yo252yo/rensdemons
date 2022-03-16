@@ -19,7 +19,7 @@ var unlock_talk_confess = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$Ren$: "I promise I'll do my best! But please stop calling me kid, we are barely a few years apart."`,
     `$$StreetSmart$: "No can do, kid. We might be a few years apart, but you still have so much to learn about life."`,
     `$$StreetSmart$: "My name is $$StreetSmart$, by the way... Here, have your money back."`,
-    `He hands you your coins back.`,
+    `He hands you your COINS back.`,
     "$$StreetSmart$ JOINS YOUR PARTY!",
   ],
   extra_function: function(){

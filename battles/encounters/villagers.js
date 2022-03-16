@@ -110,7 +110,7 @@ PLAYER_ACTIONS.add({
                 `$$Ren$: "I understand, but see, I am the Promised Child, and I'm working on ending all of this! If you could help a bit, I promise it will be put to good use."`,
                 `${name}: "I suppose that there is no better cause than helping the Promised Child. Well, here, take what I have. It's not much, but I hope it helps."`,
                 `$$Ren$: "Thank you! Your sacrifice won't be forgotten!"`,
-                `You receive 10 Coins.`,
+                `You receive 10 COINS.`,
               ],
   extra_function: function(){
     INVENTORY.increase_function(ITEM.Coin, 10);

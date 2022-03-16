@@ -4,21 +4,21 @@ LANGUAGE.battle = {
   },
 
   xp: function(before, after) {
-    var r = "Through this encounter, you learned more about the fabric of reality (" + (after.xp  - before.xp ) + " xp). ";
+    var r = "Through this encounter, you learned more about the fabric of reality (" + (after.xp  - before.xp ) + " XP). ";
     if (after.unseen > before.unseen){
-      r += "You discovered " + (after.unseen  - before.unseen ) + " new threads. ";
+      r += "You discovered " + (after.unseen  - before.unseen ) + " NEW THREADS. ";
     }
     if (after.explored > before.explored){
-      r += "You explored " + (after.explored  - before.explored ) + " threads. ";
+      r += "You explored " + (after.explored  - before.explored ) + " THREADS. ";
     }
     if(after.is_empathized && !before.is_empathized){
-      r += "You also got a glimpse at the true self of this opponent and unlocked Empathy. ";
+      r += "You also got a glimpse at the true self of this opponent and unlocked EMPATHY. ";
     }
     return r;
   },
 
   loot: function(loot) {
-    return `As you walk away, you find something on the floor. It is a ${loot}.`;
+    return `As you walk away, you find something on the floor. It is a ${loot.toUpperCase()}.`;
   },
 
   escape: function() {

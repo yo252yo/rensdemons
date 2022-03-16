@@ -13,7 +13,7 @@ PLAYER_ACTIONS.add({
   description: [
     "You ignore it and walk away.",
     `It turns out that the purse was an enchanted item. It is moved by your humility, and wishes to reward it.`,
-    `The next time you look at your own purse, it feels unnaturally heavier. It seems that 5 Coins manifested out of thin air to grow your fortune.`,
+    `The next time you look at your own purse, it feels unnaturally heavier. It seems that 5 COINS manifested out of thin air to grow your fortune.`,
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
@@ -26,9 +26,9 @@ PLAYER_ACTIONS.add({
   name: "Pick it up",
   unlock: true,
   description: [
-    "You pick up the purse and add it to your possession. You empty its content into your own purse and get excited when you notice it contains over 100 coins.",
+    "You pick up the purse and add it to your possession. You empty its content into your own purse and get excited when you notice it contains over 100 COINS.",
     `The next time you look at your own purse, however, it feels unnaturally lighter. The gold you found on the floor was cursed. Not only did it disappear, but it looks like it took some of your own coins with it!`,
-    `This little operation made you lose ${amount} Coins.`,
+    `This little operation made you lose ${amount} COINS.`,
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
@@ -43,7 +43,7 @@ PLAYER_ACTIONS.add({
   description: [
     "You look around for traces of its owner, but you cannot find anything. It's just a simple coin purse.",
     "You respectfully tuck it away in your bag, hoping to find a clue as to the whereabouts of its owner some day so that you can give the purse back.",
-    "The next time you open your bag, you find that the peculiar purse disappeared. But your own purse seems somehow 20 coins richer.",
+    "The next time you open your bag, you find that the peculiar purse disappeared. But your own purse seems somehow 20 COINS richer.",
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){

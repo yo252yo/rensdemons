@@ -160,7 +160,7 @@ if(sirenspart < 4) {
   b.interaction = function(){
     b.make_icon();
     TextBannerSequence.make([
-      `You discover a sword planted upright in the sand. It is unlike any weapon you've ever seen. The blade shines so bright that it lights up the whole surroundings. It's even hard to look at it. The hilt is ornamented with the finest golden arabesques you've ever seen. You quietly think that no human could have done that. It's surrounded by an aura that seems to slowly vibrate the very fabric of the universe, ringing your ears with an angelic buzz.`,
+      `You discover a MYSTERIOUS SWORD planted upright in the sand. It is unlike any weapon you've ever seen. The blade shines so bright that it lights up the whole surroundings. It's even hard to look at it. The hilt is ornamented with the finest golden arabesques you've ever seen. You quietly think that no human could have done that. It's surrounded by an aura that seems to slowly vibrate the very fabric of the universe, ringing your ears with an angelic buzz.`,
       `$$BestFriend$: "Woah!"`,
       `$$Ren$: "It's probably a holy artifact. It can help us tremendously on our quest!"`,
       `$$BestFriend$: "Take it!"`,

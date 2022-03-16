@@ -162,7 +162,7 @@ class B_Statue extends ItemBattleObject {
     this.add_interaction("Admire", "This crude statue barely does justice to Her splendor, but you're glad to see Her presence near you.");
     this.add_interaction("Ponder", "A holy statue of the Goddess, like many others in this town.");
     this.add_interaction("Contemplate", "An effigy of the protective Goddess. Its presence is a silent invitation for Her grace upon this place.");
-    this.add_interaction("Salvage", "You notice that this statue is a bit old. Some parts of it are crumbling. You seize a piece of rock that rolled a few feet away, and decide to keep it.", INVENTORY.increase_function(ITEM.Stone));
+    this.add_interaction("Salvage", "You notice that this statue is a bit old. Some parts of it are crumbling. You seize a piece of STONE that rolled a few feet away, and decide to keep it.", INVENTORY.increase_function(ITEM.Stone));
   }
 }
 
@@ -176,7 +176,7 @@ class B_Bed extends ItemBattleObject {
     this.add_interaction("Envy", "The pillow seems to be made with feathers. How were they able to afford such luxury?");
     this.add_interaction("Nap", "The Goddess wants you to take a nap. It's not your bed, but it will do. You comply reluctantly. You can get a few minutes of sleep, and wake up barely more rested than before. Maybe even a bit more groggy.");
     this.add_interaction("Sit", "You obey the voice of the Goddess inside you that urges you to sit on the bed. You sit for a while and look at your surroundings. It's pretty boring, so you stop.");
-    this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly, while $$BestFriend$ looks at you bewildered, between shock and consternation. At least you got some linens out of the whole ordeal...", INVENTORY.increase_function(ITEM.Linnens, 2));
+    this.add_interaction("Loot", "The Goddess whispers you to plunder this bed. You remove the sheets, throw the pillows on the ground, open up the mattress... It was all for naught, because there's obviously nothing of value in a random bed. You apologize meekly, while $$BestFriend$ looks at you bewildered, between shock and consternation. At least you got some LINNENS out of the whole ordeal...", INVENTORY.increase_function(ITEM.Linnens, 2));
     this.add_interaction("Roll", "You decide to embrace the joyful child in you and start rolling around on the bed. $$BestFriend$ seems judgmental at first, but finally concedes and joins you.");
     this.add_interaction("Assess", "Curious about the fabric quality, you rub your cheek against it. You're immediately embarrassed by the realization that you could have simply used your hands, but you're already committed. To top it all off, the fabric is not even especially soft.");
   }
@@ -206,7 +206,7 @@ class B_Cabinet_wall extends ItemBattleObject {
     this.add_interaction("Esteem", "Not everyone could afford a wooden cabinet with engravings of holy texts. This is surely a mark of wealth.");
     this.add_interaction("Condemn", "This storage container looks pretty unsteady. The people here probably built it themselves. Better not touch it.");
     this.add_interaction("Resist", "You try and resist the urge to open the cabinet and go through this family's possessions. Who would do such a thing?");
-    this.add_interaction("Violate", "You cannot help but opening the drawers of this cabinet. $$BestFriend$ is outraged and tries to stop you, but nothing can be done. The Goddess is acting through you again. You rummage through foreign clothes and linens. Seriously, what good is that? You still take some anyway, you never know...", INVENTORY.increase_function(ITEM.Linnens));
+    this.add_interaction("Violate", "You cannot help but opening the drawers of this cabinet. $$BestFriend$ is outraged and tries to stop you, but nothing can be done. The Goddess is acting through you again. You rummage through foreign clothes and linens. Seriously, what good is that? You still take some LINNENS anyway, you never know...", INVENTORY.increase_function(ITEM.Linnens));
     this.add_interaction("Open", "Pushed by Her Divine Grace, you go open this little cabinet. It's full of tableware and plates. What were you hoping to find?");
   }
 }
@@ -220,7 +220,7 @@ class B_Chair extends ItemBattleObject {
     this.add_interaction("Recall", "You recognize this chair as the work of a local craftsman.");
     this.add_interaction("Sit", "The Goddess compels you to sit on this chair for a few seconds, and to get up again. That was pointless, $$BestFriend$ is puzzled. But Her ways are mysterious.");
     this.add_interaction("Obey", "Obeying the commands of the Goddess, you stare at this perfectly unremarkable chair. It's so unremarkable. You stare at it so much that you start to wonder whether its utterly unremarkableness wouldn't be a special feature in itself. Was that what the Goddess wanted you to understand?");
-    this.add_interaction("Obliterate", "With the Goddess on your side, you violently smash the piece of furniture. $$BestFriend$ is quite shocked by this behavior and tries to stop you, but to no avail. The deed is done. At least you can get a bit of wood out of this.", INVENTORY.increase_function(ITEM.Stick, 2), true);
+    this.add_interaction("Obliterate", "With the Goddess on your side, you violently smash the piece of furniture. $$BestFriend$ is quite shocked by this behavior and tries to stop you, but to no avail. The deed is done. At least you can get a couple of wooden STICKS out of this.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -247,7 +247,7 @@ class B_Housefire extends ItemBattleObject {
     this.add_interaction("Smell", "The smell of burning wood is filling up the room. It feels... nostalgic.");
     this.add_interaction("Nab", "Compelled by the Goddess, you grab a bit of the food that's slowly roasting on the fire and devour it. It may not have been yours to take, but the Will of the Goddess is absolute.");
     this.add_interaction("Probe", "You extend a hand towards the fire. It's warm. You get your hand closer and closer... Aouch! You burned yourself. Surely, you were not in control of yourself. It must have been the Goddess. $$BestFriend$ smirks, happy to see you get what you deserve.");
-    this.add_interaction("Commandeer", "As Promised Child, you are entitled to the food of this household. $$BestFriend$ might not have realized that yet. But there is nothing your friend can do to stop you from grabbing what is cooking for yourself.", INVENTORY.increase_function(ITEM.Meat));
+    this.add_interaction("Commandeer", "As Promised Child, you are entitled to the food of this household. $$BestFriend$ might not have realized that yet. But there is nothing your friend can do to stop you from grabbing the MEAT that is cooking for yourself.", INVENTORY.increase_function(ITEM.Meat));
   }
 }
 
@@ -258,7 +258,7 @@ class B_Jar extends ItemBattleObject {
 
     this.add_interaction("Think", "This jar probably holds water. Or maybe a more expensive alcoholic beverage?");
     this.add_interaction("Reminisce", "You wonder for a second what secrets this jar holds. Maybe it's full of fruits, macerating in their juice...");
-    this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few for your personal use.", INVENTORY.increase_function(ITEM.Berry,3), true);
+    this.add_interaction("Crush", "Something in you compels you to break this jar. Jars are for breaking, aren't they? As you do, all the berries it contained spill on the floor. You manage to save a few BERRIES for your personal use.", INVENTORY.increase_function(ITEM.Berry,3), true);
     this.add_interaction("Break", 'As you watch this jar, you can hear the voice of the Goddess inside you. "Break it... Break it...". You resist it. For now...');
     this.add_interaction("Smash", "Compelled by the Goddess, you mercilessly throw that jar on the ground to break it. It was empty. How embarrassing. You try to put the pieced back together, but the deed is done. $$BestFriend$ is shocked when the owner turns out really understanding and forgives you as soon as you mention that you're the Promised Child.", undefined, true);
     this.add_interaction("Appreciate", "This must be the work of a skillful potter. The surface is smooth, without obvious defect. So much effort went into this. And yet it is so fragile, so very breakable...");
@@ -275,7 +275,7 @@ class B_Shelf_wall extends ItemBattleObject {
     this.add_interaction("Consider", "This shelf is mostly empty. Most people survive day to day, without much resources. The Demon Lord $$demon_lord$ and its armies have forced the village into poverty and famine. But this may be about to change...");
     this.add_interaction("Inspect", "The Goddess pushes you to look closely at every inch of this shelf. Are you looking for some sort of clue? There's nothing here, just an ordinary shelf, emptied by the cruel circumstances that the evil armies have forced the village into.");
     this.add_interaction("Mess up", "Compelled by forces beyond yourself, you shuffle all the vegetables from this shelf. It would feel satisfying, if it wasn't also a bit shameful. It's not easy being a Divine vessel.");
-    this.add_interaction("Pillage", "As soon as you feel like nobody is watching you, in a quick gesture, you grab something at random from the shelf and put it in your pocket. It turns out to be some medicinal herbs.", INVENTORY.increase_function(ITEM.Flower));
+    this.add_interaction("Pillage", "As soon as you feel like nobody is watching you, in a quick gesture, you grab something at random from the shelf and put it in your pocket. It turns out to be some medicinal FLOWERS.", INVENTORY.increase_function(ITEM.Flower));
   }
 }
 
@@ -287,7 +287,7 @@ class B_Stool extends ItemBattleObject {
     this.add_interaction("Avoid", "This stool doesn't seem very sturdy. It's obviously been put together by unskilled villagers. Better not rest on it.");
     this.add_interaction("Climb", "You cannot resist the urge to stand on the stool. $$BestFriend$ watches you, split between amusement and concern. Surely an act of the Goddess again...");
     this.add_interaction("Sit", "Obeying your inner voice, you sit on this stool. Nothing happens. You stand back up. Thanks you, Goddess.");
-    this.add_interaction("Destroy", "The Goddess tells you that this stool would be much more useful to your quest as spare parts. $$BestFriend$ is not convinced by that argument, but cannot stop you from breaking down the piece of furniture and salvage its wood.", INVENTORY.increase_function(ITEM.Stick, 2), true);
+    this.add_interaction("Destroy", "The Goddess tells you that this stool would be much more useful to your quest as spare parts. $$BestFriend$ is not convinced by that argument, but cannot stop you from breaking down the piece of furniture and salvage its wood as STICKS.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -299,7 +299,7 @@ class B_Table extends ItemBattleObject {
     this.add_interaction("Judge", "This table has clearly seen better days. You can see on it the marks of its usage. You can't help but think of the many meals, generation after generation, that this simple piece of furniture supported.");
     this.add_interaction("Hide", "You do not want to. You know how ridiculous it would be. But you also know you cannot resist the Goddess. So you crawl under the table, and stay hidden there for a while. You're not actually hidden, everyone can see you, especially $$BestFriend$ who keeps calling you back. This is so embarrassing. You finally get out, and swear to never acknowledge this happened.");
     this.add_interaction("Touch", "The Goddess makes you touch all the planks this table comprises. 13. This must mean something. Or must it?");
-    this.add_interaction("Obliterate", "Before $$BestFriend$ can stop you, you jump on the table with all your strength. It's not long before the table is in shambles, and you fall on your back in the middle of wood pieces. $$BestFriend$ may laugh at your misfortune, but at least you got a bit of lumber out of that.", INVENTORY.increase_function(ITEM.Stick, 2), true);
+    this.add_interaction("Obliterate", "Before $$BestFriend$ can stop you, you jump on the table with all your strength. It's not long before the table is in shambles, and you fall on your back in the middle of wood pieces. $$BestFriend$ may laugh at your misfortune, but at least you got a few STICKS of lumber out of that.", INVENTORY.increase_function(ITEM.Stick, 2), true);
   }
 }
 
@@ -336,7 +336,7 @@ class B_Chest extends ItemBattleObject {
     this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linens that aren't yours. Nothing of interest here. You got nothing out of it but embarrassment.");
     this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthusiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
     this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
-    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old wooden sword, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden), true);
+    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old WOODEN SWORD, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden), true);
   }
 }
 

@@ -35,7 +35,7 @@ new SE_event_loot(2025, 2200, [
     `$$SnobRich$ seems a bit disappointed`,
     `$$SnobRich$: "Just one?"`,
     `$$Ren$: "Usually, I can only take one thing per container."`,
-    `You got an ${ITEM.Umbrella}.`,
+    `You got an ${ITEM.Umbrella.toUpperCase()}.`,
   ], 50, undefined, function(){
     INVENTORY.increase(ITEM.Umbrella);
   });
@@ -58,7 +58,7 @@ new SE_event(1950, 1975, [
   ], 100, undefined);
 
 new SE_event_loot(1500, 1625, [
-    `You got a ${ITEM.SnobRichKey}.`,
+    `You got a ${ITEM.SnobRichKey.toUpperCase()}.`,
     `$$Ren$: "Now this looks important."`,
     `$$SnobRich$: "Does it? It's just a random key..."`,
     `$$Ren$: "Keys usually opens up something!"`,
@@ -78,13 +78,13 @@ new SE_event(2450, 1625, [
   ], 50, undefined);
 
 new SE_event_loot(2450, 2275, [
-  `You got a ${ITEM.Candle}.`,
+  `You got a ${ITEM.Candle.toUpperCase()}.`,
   ], 50, undefined, function(){
     INVENTORY.increase(ITEM.Candle);
   });
 
 new SE_event_loot(1500, 2275, [
-  `You got a ${ITEM.Vase}.`,
+  `You got a ${ITEM.Vase.toUpperCase()}.`,
   `$$SnobRich$: "Why did you remove the flowers before taking it?"`,
   `$$Ren$: "I can only get the vase."`,
   `$$BestFriend$: "Put it back! The flowers are going to die!"`,
@@ -127,7 +127,7 @@ new SE_event(1625, 1800, [
 
 
 new SE_event_loot(2275, 2075, [
-  `You got a ${ITEM.RareWine}.`,
+  `You got a ${ITEM.RareWine.toUpperCase()}.`,
   `$$SnobRich$: "Oh, good choice, that is worth a fortune!"`,
   `$$Ren$: "Why is it just lying on the floor then?"`,
   `$$SnobRich$: "I suppose this place has really gone downhill since we left!"`,
@@ -137,7 +137,7 @@ new SE_event_loot(2275, 2075, [
 
 
 new SE_event_loot(1700, 1600, [
-    `You got a ${ITEM.StuffedBearHead}.`,
+    `You got a ${ITEM.StuffedBearHead.toUpperCase()}.`,
     `$$BestFriend$: "You can't possibly tell me that we'll need that for our quest!"`,
     `$$Ren$: "I don't think so, but you never know what lies ahead... Besides, if it's not useful, I'll sell it."`,
     `$$BestFriend$: "That's so heavy though!"`,
@@ -155,7 +155,7 @@ new SE_event_loot(1700, 1600, [
 
 
 new SE_event_loot(2325, 1825, [
-    `You got a ${ITEM.MassiveGoldStatue}.`,
+    `You got a ${ITEM.MassiveGoldStatue.toUpperCase()}.`,
     `$$SnobRich$: "How are you going to carry that? It's huge!"`,
     `$$Ren$: "The Goddess made my bag bottomless. Look."`,
     `Your companions look in awe as you fit the oversized sculpture in your inventory.`,
@@ -164,7 +164,7 @@ new SE_event_loot(2325, 1825, [
   });
 
 new SE_event_loot(2125, 2100, [
-    `You got a ${ITEM.Berry}.`,
+    `You got a ${ITEM.Berry.toUpperCase()}.`,
     `$$BestFriend$: "Eww don't pick that up we don't know how long this has been on the floor!"`,
     `$$Ren$: "It's fine, I promise. It doesn't spoil!"`,
     `$$BestFriend$: "Well I'm not eating it!"`,
@@ -173,7 +173,7 @@ new SE_event_loot(2125, 2100, [
   });
 
 new SE_event_loot(1600, 2225, [
-    `You got a ${ITEM.Seashell}.`,
+    `You got a ${ITEM.Seashell.toUpperCase()}.`,
     `$$SnobRich$: "What on earth is this doing here?"`,
     `$$Ren$: "I'm not sure. Things don't always make sense. The bottom line is that it's ours now!"`,
   ], 50, undefined, function(){
