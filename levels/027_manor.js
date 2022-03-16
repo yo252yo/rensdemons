@@ -172,7 +172,7 @@ new SE_event_loot(2125, 2100, [
     INVENTORY.increase(ITEM.Berry);
   });
 
-new SE_event_loot(1600, 2225, [
+new SE_event_loot(2100, 1825, [
     `You got a ${ITEM.Seashell.toUpperCase()}.`,
     `$$SnobRich$: "What on earth is this doing here?"`,
     `$$Ren$: "I'm not sure. Things don't always make sense. The bottom line is that it's ours now!"`,
