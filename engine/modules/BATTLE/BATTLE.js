@@ -464,7 +464,7 @@ const BATTLE = {
         CURRENTLEVEL.setup(BATTLE.origin_level, true);
 
         if (BATTLE.win_callback){
-          setTimeout(BATTLE.win_callback, 200);
+          setTimeout(BATTLE.win_callback, 90);
         }
         BATTLE.builder.clear();
       },

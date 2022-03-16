@@ -127,22 +127,29 @@ const IO = {
 
   // Control structure API
   control: {
-    _activate: function(system, skip_push) {
+    _finish_activate: function(system) {
       IO._clear_inputs();
-      if(! skip_push){
-        IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
-      }
 
       if (system && system.onClick){
-        // Make it so we cant click straight away in a new environment to avoid click leak.
-        setTimeout(function(){
-          IO.click_interceptor.activate();
-        }, 100);
+        IO.click_interceptor.activate();
       } else {
         IO.click_interceptor.deactivate();
       }
       IO._ACTIVE_SYSTEM = system;
       IO.interface._check_transition_impact();
+    },
+
+    _activate: function(system, skip_push) {
+      if(! skip_push){
+        IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+      }
+
+      IO._ACTIVE_SYSTEM = undefined;
+
+      // Make it so we cant click straight away in a new environment to avoid click leak.
+      setTimeout(function(){
+        IO.control._finish_activate(system);
+      }, 110);
     },
 
     cede: function() {
