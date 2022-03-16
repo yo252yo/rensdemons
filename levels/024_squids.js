@@ -83,13 +83,13 @@ events.battleRubble(ITEM.Scale, 0.3);
 events.groundItem(ITEM.Seashell);
 events.groundItem(ITEM.Stone, 0.1);
 
-events.text(`The water is very cold. It was hard to bear at first, but you're finally getting used to it. You hope $$BestFriend$ handles it well, but you don't want to say anything to keep the topic off everyone's mind.`);
-events.text(`There is a lot of fishing swimming all around you. Most of them are even above you, like weird birds, since you're at the very bottom of the lake. But you cannot look at any too closely, since they seem to run away from you every time you approach.`);
-events.text(`You find a huge rock that stands out suspiciously. It triggers your curiosity, so you try to push it to see if it covers anything, but despite all your efforts it won't budge. It's most likely a false trail...`);
-events.text(`You can be underwater thanks to the potion, but it doesn't prevent your clothes from being damp. You make progress really slowly. The water resistance is significantly stronger than air, which slows every of your motion. But it's ok, you'll just take your time.`);
-events.add_conversations(0.8);
+events.text(`The water is very cold. It was hard to bear at first, but you're finally getting used to it. You hope $$BestFriend$ handles it well, but you don't want to say anything to keep the topic off everyone's mind.`, 0.9);
+events.text(`There is a lot of fishing swimming all around you. Most of them are even above you, like weird birds, since you're at the very bottom of the lake. But you cannot look at any too closely, since they seem to run away from you every time you approach.`, 0.9);
+events.text(`You find a huge rock that stands out suspiciously. It triggers your curiosity, so you try to push it to see if it covers anything, but despite all your efforts it won't budge. It's most likely a false trail...`, 0.9);
+events.text(`You can be underwater thanks to the potion, but it doesn't prevent your clothes from being damp. You make progress really slowly. The water resistance is significantly stronger than air, which slows every of your motion. But it's ok, you'll just take your time.`, 0.9);
+events.add_conversations(0.6);
 
-events.byConstructor("EB_Seashell", 1.5);
+events.byConstructor("EB_Seashell", 1.1);
 events.byConstructor("EB_Skeleton", 0.5);
 events.battle('encounters/purse', 0.5);
 
