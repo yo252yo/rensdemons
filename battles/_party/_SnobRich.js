@@ -15,7 +15,7 @@ var accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   outcome: BATTLETREE.WIN,
   extra_function: function(){
-    INVENTORY.increase("_followedBySnobRich");
+    INVENTORY.set("_followedBySnobRich", 1);
   },
 });
 

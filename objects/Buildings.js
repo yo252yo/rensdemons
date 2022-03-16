@@ -364,7 +364,7 @@ class S_Manor extends S_LayeredBuilding {
     this.add_layer("details");
 
     this.add_door(130, 170, function(){
-      if(INVENTORY.count("_followedBySnobRich")){
+      if(INVENTORY.count("_followedBySnobRich") != 0){
         CURRENTLEVEL.setup("027_manor");
       } else{
         TextBannerSequence.make(["You feel intimidated by the oppressive manor and do not dare enter."]);

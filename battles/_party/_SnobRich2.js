@@ -3,7 +3,7 @@ new CenteredMovingBattleImage("assets/characters/party/SnobRich.png", 'backgroun
 
 AUDIO.music.characters.SnobRich();
 
-INVENTORY.set("_followedBySnobRich", 0);
+INVENTORY.set("_followedBySnobRich", -1);
 
 var lose_item = function(item){
   if(INVENTORY.count(item)){

@@ -345,12 +345,14 @@ class M_SnobRich extends MovingObject {
 
     if(PARTY.has_member(PARTYMEMBERS.SnobRich) ){
       this.destroy();
+    } else if (INVENTORY.count("_followedBySnobRich") < 0 ){
+     this.destroy();
     }
   }
 
   interaction = function() {
     this.face_character();
-    if (INVENTORY.count("_followedBySnobRich")){
+    if (INVENTORY.count("_followedBySnobRich") > 0 ){
       TextBannerSequence.make([
         `$$SnobRich$: "I am so looking forward to your exciting demonstration!"`,
       ]);
