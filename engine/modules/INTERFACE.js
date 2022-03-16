@@ -206,6 +206,12 @@ const INTERFACE = {
             ]);
     },
 
+    cw_menu: function() {
+        new CenteredTextMenu(CREDITS.warnings, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+    },
+
     help_menu: function() {
         new CenteredTextMenu(`
            <a href="https://gamefaqs.gamespot.com/company/198099-yo252yo" target="_blank">gamefaq</a>
