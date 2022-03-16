@@ -25,6 +25,7 @@ const AUDIO = {
     AUDIO._load_sound('page');
     AUDIO._load_sound('unlock');
     AUDIO._load_sound('water');
+    AUDIO._load_sound('swim');
 
     AUDIO._load_music('chara/actionepic');
     AUDIO._load_music('chara/cestsurtoiquecavalemieux');
@@ -140,6 +141,8 @@ const AUDIO = {
       } else {
         if(CURRENTLEVEL.is_map()){
           AUDIO._play_sfx('footstepmuffled', cooldown, key);
+        } if(["024_squids","013_sirens2"].includes(CURRENTLEVEL.level_name)){
+          AUDIO._play_sfx('swim', cooldown, key);
         } else {
           AUDIO._play_sfx('footstep', cooldown, key);
         }
