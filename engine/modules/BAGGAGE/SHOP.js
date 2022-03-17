@@ -81,8 +81,10 @@ const SHOP = {
         INVENTORY.decrease(ITEM.Coin, price);
         alert("Purchased " + object);
       }
+      var choice = SHOP._current_menu.selected;
       SHOP._current_menu.close();
       SHOP._menu.buy();
+      SHOP._current_menu.select(choice);
     },
 
     _sell: function(object, count){
@@ -98,8 +100,10 @@ const SHOP = {
 
     sell: function(object){
       SHOP._transaction._sell(object, 1);
+      var choice = SHOP._current_menu.selected;
       SHOP._current_menu.close();
       SHOP._menu.sell();
+      SHOP._current_menu.select(choice);
     },
 
     selljunk: function(object){
