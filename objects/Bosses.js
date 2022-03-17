@@ -260,7 +260,7 @@ class SE_gem extends S_event {
 
 
     TextBannerSequence.make([
-      "You found something on the ground. It's a " + ITEM.Gemstone + ".",
+      "You found something on the ground. It's a " + ITEM.Gemstone.toUpperCase() + ".",
     ].concat(extras), function(){
       self.destroy();
     });
