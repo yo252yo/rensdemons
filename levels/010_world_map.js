@@ -241,13 +241,8 @@ var foundAncientArmamentCondition = function(){
 CURRENTLEVEL.add_trigger("foundAncientArmament", foundAncientArmamentCondition, function() {
   ABILITIES.unlock("_saw_ancient_armament_prompt");
   TextBannerSequence.make([
-    "$$BestFriend$: \"Hey $$Ren$, I'm no expert, but looking at the manual we found, I think we have everything we need to make this artifact work.\"",
-    "$$Ren$: \"Do we?\"",
-    "$$BestFriend$: \"Well there's nothing on the pictures except this weird armature and the ammunition we got in the lake.\"",
-    "$$Ren$: \"So how does it work? Can you use it?\"",
-    "$$BestFriend$: \"Wow, no, I can't decipher all these old runes. We need someone well versed in history. I suggest we go back to $$town_2$ and ask the priests.\"",
-    "$$Ren$: \"I don't think I have a better proposal. We'll see on the way if the Goddess has a better way for us.\"",
-    "$$Ren$: \"Let's go back to $$town_2$ then!\"",
+    "$$BestFriend$: \"What do you think the ancient artifact will do?\"",
+    "$$Ren$: \"I'm not sure... I think it's some sort of weapon? The priests of $$town_2$ will surely know more!\"",
   ], function(){ IO.control.character(); });
 });
 

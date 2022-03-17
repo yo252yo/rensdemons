@@ -42,8 +42,14 @@ new S_ExitFloor(2800,1425,75,100, '024_squids');
 //hack D. UNIQUE ELEMENTS
 // ===================
 
-// Maybe we should make a bigger deal out of this ???
-new SE_groundItem(1950, 1675, ITEM.AncientArmamentArmature);
+new SE_event(1950, 1675, [
+  "Between bowels, you find an odd object in a puddle of gastric acid. It appears to be some sort of tube made of metal. But despite everything in this beast's stomach, it perfectly resisted the corrosion of this inhospitable environment. In fact, it shines brighter than anything you've ever seen.",
+  "You seize the " +  ITEM.AncientArmamentArmature.toUpperCase() + ".",
+].concat(INVENTORY.ancient_armament_remaining_dialog(ITEM.AncientArmamentArmature)), 50, undefined, function(){
+  INVENTORY.increase(ITEM.AncientArmamentArmature);
+});
+
+
 
 // ===================
 //hack E. DECOR (permanent filler)

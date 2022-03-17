@@ -66,7 +66,15 @@ bed(575,700,150,150);
 
 new S_WebLarge(775, 575);
 
-new SE_groundItem(950, 650, ITEM.AncientArmamentAmmunition);
+
+new SE_event(950, 650, [
+  "You found something on the ground. Some metallic balls are spread on the floor. You almost trip on them.",
+  "Looking closer, you conclude that they are " +  ITEM.AncientArmamentAmmunition.toUpperCase() + ".",
+  "The little orbs are perfectly spherical. You have never seen an object so smooth and regular. If you did not know better, you would never have believed this were made by humans. There's definitely some powerful magic at play here...",
+].concat(INVENTORY.ancient_armament_remaining_dialog(ITEM.AncientArmamentAmmunition)), 50, undefined, function(){
+  INVENTORY.increase(ITEM.AncientArmamentAmmunition);
+});
+
 
 
 // ===================

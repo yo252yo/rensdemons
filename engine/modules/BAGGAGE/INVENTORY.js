@@ -198,6 +198,39 @@ const INVENTORY = {
     (INVENTORY.count(ITEM.AncientArmamentAmmunition) > 0);
   },
 
+  ancient_armament_remaining_dialog: function(item){
+    var owned = INVENTORY.count(ITEM.AncientArmamentAdvisor) +
+                INVENTORY.count(ITEM.AncientArmamentArmature) +
+                INVENTORY.count(ITEM.AncientArmamentAmmunition);
+    if (owned >= 2) {
+      return [
+        "$$BestFriend$: \"Hey $$Ren$, I'm no expert, but looking at the manual we found, I think we have everything we need to make this artifact work.\"",
+        "$$Ren$: \"Do we?\"",
+        "$$BestFriend$: \"Well there's nothing on the pictures except this weird armature and the ammunition we got in the lake.\"",
+        "$$Ren$: \"So how does it work? Can you use it?\"",
+        "$$BestFriend$: \"Wow, no, I can't decipher all these old runes. We need someone well versed in history. I suggest we go back to $$town_2$ and ask the priests.\"",
+        "$$Ren$: \"I don't think I have a better proposal. We'll see on the way if the Goddess has a better way for us.\"",
+        "$$Ren$: \"Let's go back to $$town_2$ then!\"",
+      ];
+    }
+    var dialog = [
+      `$$BestFriend$: "What is that?"`,
+      `$$Ren$: "I don't know... Maybe we need to explore other ruins to figure out what to do with this!"`,
+      `$$BestFriend$: "Maybe... Where was it that the priest suggested we go again?"`,
+    ];
+    if(item != ITEM.AncientArmamentAdvisor && INVENTORY.count(ITEM.AncientArmamentAdvisor) < 1) {
+      dialog.push(`$$Ren$: "He said something about a mushroom forest in the east..."`);
+    }
+    if(item != ITEM.AncientArmamentArmature && INVENTORY.count(ITEM.AncientArmamentArmature) < 1) {
+      dialog.push(`$$Ren$: "There was something about squid waters in the north west..."`);
+    }
+    if(item != ITEM.AncientArmamentAmmunition && INVENTORY.count(ITEM.AncientArmamentAmmunition) < 1) {
+      dialog.push(`$$Ren$: "Oh and some sort of harpy peak in the south east!"`);
+    }
+
+    return dialog;
+  },
+
   countEncounter: function(name){
     INVENTORY.increase("_encounter_" + name);
   },

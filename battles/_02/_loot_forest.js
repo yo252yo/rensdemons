@@ -1,6 +1,6 @@
 var common = [
   "After protecting the old document with leather and magic, you all take a careful look at it. Although the ink has faded and many pages are torn, there is enough left to make rough sense of it. The language is undecipherable, but there are many schematics painting a pretty clear picture of an old technology long forgotten, and how to use it to get rid of an enemy. This is definitely going to be useful.",
-  `You obtain the ${ITEM.AncientArmamentAdvisor}.`];
+  `You obtain the ${ITEM.AncientArmamentAdvisor.toUpperCase()}.`].concat(INVENTORY.ancient_armament_remaining_dialog(ITEM.AncientArmamentAdvisor));
 PLAYER_ACTIONS.add({
   name: PARTYMEMBERS.BestFriend,
   description: [
