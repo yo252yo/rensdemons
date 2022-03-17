@@ -1,6 +1,7 @@
 
 const LEVELSTATES = {
   _states: new FluidMap(),
+  _local_states: new FluidMap(),
 
   factory: {
     export: function(){
@@ -38,10 +39,16 @@ const LEVELSTATES = {
     if (save.level_name && !save.level_name.startsWith(CURRENTLEVEL.GERERATED_LEVEL_PREFIX) && !save.level_name.endsWith(CURRENTLEVEL.UNSAVED_LEVEL_SUFFIX)) {
       // Do not save generated level states
       LEVELSTATES._states.set([save.level_name], save);
+    } else if (save.level_name){
+      LEVELSTATES._local_states.set([save.level_name], save);
     }
   },
 
   get_save: function(level) {
-    return LEVELSTATES._states.get([level]);
+    var state = LEVELSTATES._states.get([level]);
+    if (!state){
+      state = LEVELSTATES._local_states.get([level]);
+    }
+    return state;
   },
 };
