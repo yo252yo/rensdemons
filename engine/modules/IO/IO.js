@@ -127,28 +127,37 @@ const IO = {
 
   // Control structure API
   control: {
-    _finish_activate: function(system) {
+    _finish_activate: function() {
       IO._clear_inputs();
 
-      if (system && system.onClick){
+      if (IO._PENDING_SYSTEM && IO._PENDING_SYSTEM.onClick){
         IO.click_interceptor.activate();
       } else {
         IO.click_interceptor.deactivate();
       }
-      IO._ACTIVE_SYSTEM = system;
+      IO._ACTIVE_SYSTEM = IO._PENDING_SYSTEM;
+      IO._PENDING_SYSTEM = undefined;
       IO.interface._check_transition_impact();
     },
 
     _activate: function(system, skip_push) {
       if(! skip_push){
-        IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+        if(IO._PENDING_SYSTEM){
+          IO._PREVIOUS_SYSTEMS.push(IO._PENDING_SYSTEM);
+        } else {
+          IO._PREVIOUS_SYSTEMS.push(IO._ACTIVE_SYSTEM);
+        }
       }
 
       IO._ACTIVE_SYSTEM = undefined;
+      IO._PENDING_SYSTEM = system;
 
-      // Make it so we cant click straight away in a new environment to avoid click leak.
-      setTimeout(function(){
-        IO.control._finish_activate(system);
+      // Make it so we cant click straight away in a new environment to avoid click leak. One timeout at a time only
+      if(IO._PENDING_TIMEOUT){
+        clearTimeout(IO._PENDING_TIMEOUT);
+      }
+      IO._PENDING_TIMEOUT = setTimeout(function(){
+        IO.control._finish_activate();
       }, 110);
     },
 
