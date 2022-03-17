@@ -133,8 +133,8 @@ PLAYER_ACTIONS.add({
   unlock: true,
   description: ["CONNECTION ESTABLISHED.<br />MAIN MENU."],
   extra_function: function(){
-    BATTLETREE.api.lock(battle, "Abort");
-    BATTLETREE.api.lock(battle, "Fail");
+    BATTLETREE.api.forget(battle, "Abort");
+    BATTLETREE.api.forget(battle, "Fail");
     unlock_terminal_show("Retry");
     unlock_terminal_hide("Retry");
     unlock_exit("Retry");

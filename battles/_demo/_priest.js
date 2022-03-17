@@ -62,7 +62,7 @@ PLAYER_ACTIONS.add({
     unlock_stab2("Enquire");
     unlock_escape("Enquire");
     unlock_help("Enquire");
-    BATTLETREE.api.lock("_demo/_priest", "Ambush");
+    BATTLETREE.api.forget("_demo/_priest", "Ambush");
     STATS.record.flag("_demo_died");
   },
 });

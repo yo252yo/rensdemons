@@ -46,7 +46,7 @@ PLAYER_ACTIONS.add({
     `$$FemmeFatale$: "You know my catchphrase?"`,
   ],
   function: function(){
-    BATTLETREE.api.lock("_party/_FemmeFatale0", "Let her talk");
+    BATTLETREE.api.forget("_party/_FemmeFatale0", "Let her talk");
     confront("Interrupt");
     if (INVENTORY.count("_FemmeFataleTokens") >= 4){
       confront2("Interrupt");

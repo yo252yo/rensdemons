@@ -35,7 +35,7 @@ PLAYER_ACTIONS.add({
 
 
 for(var i = 0 ; i < 7; i++){
-  BATTLETREE.api.lock('encounters/minstrel', "Listen" + " ".repeat(i));
+  BATTLETREE.api.forget('encounters/minstrel', "Listen" + " ".repeat(i));
 }
 
 var seed = Math.random();

@@ -45,7 +45,7 @@ var battle = "_060/_mirror";
 var list = [];
 var clean_answers = function(){
   for(var l of list) {
-    BATTLETREE.api.lock(battle, l);
+    BATTLETREE.api.forget(battle, l);
   }
 }
 

@@ -9,15 +9,15 @@ AUDIO.music.characters.Goddess();
 // ===================
 
 var enter_unique_route = function(name){
-  BATTLETREE.api.lock("heaven/_goddess", "Kill God");
-  BATTLETREE.api.lock("heaven/_goddess", "Notice");
-  BATTLETREE.api.lock("heaven/_goddess", "Negotiate");
-  BATTLETREE.api.lock("heaven/_goddess", "Believers");
-  BATTLETREE.api.lock("heaven/_goddess", "Denounce");
-  BATTLETREE.api.lock("heaven/_goddess", "Change world");
-  BATTLETREE.api.lock("heaven/_goddess", "Fix the world");
-  BATTLETREE.api.lock("heaven/_goddess", "Destroy world");
-  BATTLETREE.api.lock("heaven/_goddess", "End suffering");
+  BATTLETREE.api.forget("heaven/_goddess", "Kill God");
+  BATTLETREE.api.forget("heaven/_goddess", "Notice");
+  BATTLETREE.api.forget("heaven/_goddess", "Negotiate");
+  BATTLETREE.api.forget("heaven/_goddess", "Believers");
+  BATTLETREE.api.forget("heaven/_goddess", "Denounce");
+  BATTLETREE.api.forget("heaven/_goddess", "Change world");
+  BATTLETREE.api.forget("heaven/_goddess", "Fix the world");
+  BATTLETREE.api.forget("heaven/_goddess", "Destroy world");
+  BATTLETREE.api.forget("heaven/_goddess", "End suffering");
 
   BATTLETREE.api.unlock("heaven/_goddess", name);
 }
@@ -154,7 +154,7 @@ if (STATS.ending(ENDINGS.God)){
     unlock: true,
     function: function(){
       study_believers("Denounce");
-      BATTLETREE.api.lock("heaven/_goddess", "Negotiate");
+      BATTLETREE.api.forget("heaven/_goddess", "Negotiate");
     },
   });
 
@@ -172,7 +172,7 @@ if (STATS.ending(ENDINGS.God)){
       `Goddess: "You don't need to get angry, I shall do as you please. What do you want me to do?"`,
     ],
     function: function(){
-      BATTLETREE.api.lock("heaven/_goddess", "Denounce");
+      BATTLETREE.api.forget("heaven/_goddess", "Denounce");
       propose_end_suffering("Negotiate");
     }
   });

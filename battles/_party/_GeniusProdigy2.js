@@ -306,7 +306,7 @@ var think = PLAYER_ACTIONS.function.unlock_replacing_action({
 
       ooe("Think");
       if(answer != 108){
-        BATTLETREE.api.lock("_party/_GeniusProdigy2", "108");
+        BATTLETREE.api.forget("_party/_GeniusProdigy2", "108");
       }
 
       BATTLE.turn_factory.player();

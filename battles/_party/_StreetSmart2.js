@@ -99,7 +99,7 @@ var unlock_talk_animals = PLAYER_ACTIONS.function.unlock_replacing_action({
     unlock_talk_bluff("Animals");
     unlock_talk_goodbluff("Animals");
     if(!STATS.flag("StreetSmart_dogname")){ // not recorder and therefore appears striken
-      BATTLETREE.api.lock(battle, dog);
+      BATTLETREE.api.forget(battle, dog);
     }
   },
 });

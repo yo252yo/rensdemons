@@ -148,19 +148,19 @@ var randomgame = "random_game.exe";
 
 
 var entersubmenu =  function(){
-  BATTLETREE.api.lock(battle, displayconsole);
-  BATTLETREE.api.lock(battle, displaybrowser);
-  BATTLETREE.api.lock(battle, program);
+  BATTLETREE.api.forget(battle, displayconsole);
+  BATTLETREE.api.forget(battle, displaybrowser);
+  BATTLETREE.api.forget(battle, program);
   BATTLETREE.api.unlock(battle, backtomenu);
 }
 var exitsubmenu =  function(){
   BATTLETREE.api.unlock(battle, displayconsole);
   BATTLETREE.api.unlock(battle, displaybrowser);
   BATTLETREE.api.unlock(battle, program);
-  BATTLETREE.api.lock(battle, backtomenu);
-  BATTLETREE.api.lock(battle, rd);
-  BATTLETREE.api.lock(battle, rdd);
-  BATTLETREE.api.lock(battle, randomgame);
+  BATTLETREE.api.forget(battle, backtomenu);
+  BATTLETREE.api.forget(battle, rd);
+  BATTLETREE.api.forget(battle, rdd);
+  BATTLETREE.api.forget(battle, randomgame);
 }
 
 var unlock_terminal_show = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -204,7 +204,7 @@ var unlock_browser = PLAYER_ACTIONS.function.unlock_replacing_action({
     IO.key_interceptor.deactivate();
 
     BATTLETREE.api.unlock(battle, "Stop pressing button");
-    BATTLETREE.api.lock(battle, "Press buttons");
+    BATTLETREE.api.forget(battle, "Press buttons");
   }
 });
 

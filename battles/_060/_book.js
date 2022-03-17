@@ -87,8 +87,8 @@ if (STATS.ending(ENDINGS.God)){
     unlock: true,
     description: "It seems that all documents are accounts of the lives of different people, from this universe, but also from many others. Most of the writings are complete, but some are clearly half way done, waiting for a nearby angel to write the finishing lines.",
     function: function() {
-      BATTLETREE.api.lock("_060/_book", "Primordial Deities");
-      BATTLETREE.api.lock("_060/_book", "Read about you");
+      BATTLETREE.api.forget("_060/_book", "Primordial Deities");
+      BATTLETREE.api.forget("_060/_book", "Read about you");
       unlock_random_book("Browse other books");
     },
   });
@@ -145,7 +145,7 @@ if(STATS.flag("PrimordialDeities")){
     function: function() {
       unlock_mirror("Primordial Deities");
       unlock_code("Primordial Deities");
-      BATTLETREE.api.lock("_060/_book", "Browse other books");
+      BATTLETREE.api.forget("_060/_book", "Browse other books");
     },
   });
 }
@@ -212,7 +212,7 @@ PLAYER_ACTIONS.add({
     unlock_begin("Read about you");
     unlock_browse("Read about you");
     unlock_end("Read about you");
-    BATTLETREE.api.lock("_060/_book", "Browse other books");
+    BATTLETREE.api.forget("_060/_book", "Browse other books");
   },
 });
 

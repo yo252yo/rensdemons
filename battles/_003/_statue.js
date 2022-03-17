@@ -8,7 +8,7 @@ var battle = "_003/_statue";
 
 var update_inspect = function (order){
   if( BATTLETREE.api.is_unlocked(battle, "Inspect " + order + " statue")){
-    BATTLETREE.api.lock(battle, "Inspect " + order + " statue");
+    BATTLETREE.api.forget(battle, "Inspect " + order + " statue");
     BATTLETREE.api.unlock(battle, "Remember " + order + " statue");
   }
 }

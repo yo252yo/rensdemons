@@ -55,7 +55,7 @@ const BATTLETREE = {
       }
     },
 
-    lock: function(battle, name) {
+    forget: function(battle, name) {
       // This could be simply setting HIDDEN, maybe
       BATTLETREE._targets.delete([battle, name]);
       CONSOLE.log.battletree("locked: [" + name + "] on " + battle);

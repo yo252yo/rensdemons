@@ -71,10 +71,10 @@ var unlock_lesson = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$demon_lieutenant$: "Did you never wonder what happened back then? Why $$demon_lord$ came to cleanse $$world_name$?"`,
   ],
   function: function() {
-    BATTLETREE.api.lock(battle, DICTIONARY.get("demon_lord"));
-    BATTLETREE.api.lock(battle, "Despair");
-    BATTLETREE.api.lock(battle, "Attack");
-    BATTLETREE.api.lock(battle, "Run");
+    BATTLETREE.api.forget(battle, DICTIONARY.get("demon_lord"));
+    BATTLETREE.api.forget(battle, "Despair");
+    BATTLETREE.api.forget(battle, "Attack");
+    BATTLETREE.api.forget(battle, "Run");
     fake_answer("Lesson", "he's evil");
     fake_answer("Lesson", "he's mad");
     fake_answer("Lesson", "he's violent");
@@ -124,7 +124,7 @@ var unlock_notice = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$demon_lieutenant$: "It would appear that your Goddess has you in her good graces, child! Indeed, I am not $$demon_lord$, though you are the first human to ever notice it. I am $$demon_lieutenant$, $$demon_lord$'s lieutenant. I lead our armies during the invasion of $$world_name$. The Dark Master will not trouble Himself over vermin like you."`,
   ],
   function: function() {
-    BATTLETREE.api.lock(battle, "Answer");
+    BATTLETREE.api.forget(battle, "Answer");
     unlock_despair("Notice");
     unlock_maou("Notice");
     unlock_artifact("Notice");
@@ -153,8 +153,8 @@ PLAYER_ACTIONS.add({
                 `$$demon_lieutenant$: "Well done, little human. You have a lot of guts to do what you just did. Who are you and how did you get here?"`,
             ],
   function: function() {
-    BATTLETREE.api.lock(battle, ABILITY.Escape);
-    BATTLETREE.api.lock(battle, "Ancient Armament");
+    BATTLETREE.api.forget(battle, ABILITY.Escape);
+    BATTLETREE.api.forget(battle, "Ancient Armament");
     BATTLETREE.api.unlock(battle, "Run");
     unlock_answer("Ancient Armament");
     unlock_notice("Ancient Armament");
