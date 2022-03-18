@@ -20,6 +20,9 @@ class BattleObject extends LevelObject {
       while (this.interactions[command]){
         command = command + " ";
       }
+      if(!destructive && effect && BATTLETREE.score.is_explored(this.battle_name(), command)){
+        return;
+      }
       this.interactions[command] = description;
       var self = this;
       this.special_effect[command] = function(){
