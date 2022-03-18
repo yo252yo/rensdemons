@@ -18,6 +18,7 @@ LANGUAGE.actions[PARTYMEMBERS.BestFriend] = {
     var dialog = RANDOM.pick([
       `$$BestFriend$: "If you wouldn't mind letting us through, please?"`,
       `$$BestFriend$: "There's really no need for us to fight!"`,
+      `$$BestFriend$: "I'm sure that together we can find a better resolution!"`,
       `$$BestFriend$: "Must violence always be the answer?"`]);
     return [text, dialog];
   },
@@ -48,6 +49,7 @@ LANGUAGE.actions[PARTYMEMBERS.PreciousChild] = {
     var dialog = RANDOM.pick([
       `$$PreciousChild$: "Will you be my friend?"`,
       `$$PreciousChild$: "Please stop being a bad guy."`,
+      `$$PreciousChild$: "But... why are you hurting us?"`,
       `$$PreciousChild$: "I will protect my friends!"`]);
     return [text, dialog];
   },
@@ -77,6 +79,7 @@ LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
     var dialog = RANDOM.pick([
       `$$UpbeatDojikko$: "My little spirit friends are calling, why won't you play with them?"`,
       `$$UpbeatDojikko$: "Let me turn your frown upside down!"`,
+      `$$UpbeatDojikko$: "The spirits told me what fate has in store for you... we're going to have so much fun!"`,
       `$$UpbeatDojikko$: "You know, the afterlife can be a lot of fun too!"`]);
     return [text, dialog];
   },
@@ -106,6 +109,7 @@ LANGUAGE.actions[PARTYMEMBERS.StreetSmart] = {
 
     var dialog = RANDOM.pick([
       `$$StreetSmart$: "Did someone call for the best?"`,
+      `$$StreetSmart$: "Next time, show me a real challenge."`,
       `$$StreetSmart$: "I'll show you why they call me 'King of Beasts'!"`,
       `$$StreetSmart$: "Let's make this quick, my time is precious and you're not worth it."`]);
     return [text, dialog];
@@ -176,6 +180,7 @@ LANGUAGE.actions[PARTYMEMBERS.TraitorFisher] = {
     var dialog = RANDOM.pick([
       `$$TraitorFisher$: "My name is $$TraitorFisher$. Just $$TraitorFisher$."`,
       `$$TraitorFisher$: "All along, you thought I was an innocent naive girl? Fooled you! All this time, I've been..."`,
+      `$$TraitorFisher$: "Let me tell you all about my master plan! I can't believe you never suspected a thing! It all starts with..."`,
       `$$TraitorFisher$: "Brace yourself for the big reveal I've been working towards secretly the whole time!"`]);
     return [text, dialog];
   },
@@ -206,6 +211,7 @@ LANGUAGE.actions[PARTYMEMBERS.SavageChild] = {
     var dialog = RANDOM.pick([
     `$$SavageChild$: "$$SavageChild$ fight."`,
     `$$SavageChild$: "GRRRRR!"`,
+    `$$SavageChild$: "$$SavageChild$ protect $$Ren$."`,
     `$$SavageChild$: "$$SavageChild$ protect the pack."`,
     ]);
     return [text, dialog];
@@ -239,6 +245,7 @@ LANGUAGE.actions[PARTYMEMBERS.GeniusProdigy] = {
       `$$GeniusProdigy$: "When you get rid of all disproved hypotheses, whatever remains, however improbable, must be the truth."`,
       `$$GeniusProdigy$: "I have the perfect protocol for this! I hope it'll yield good samples!"`,
       `$$GeniusProdigy$: "Stand back, it's time to use science!"`,
+      `$$GeniusProdigy$: "It's simple. Taking into account all the variables, I can derive an exact probability of victory for this fight."`,
     ]);
     return [text, dialog];
   },
@@ -305,6 +312,7 @@ LANGUAGE.actions[PARTYMEMBERS.DisguisedPrincess] = {
       `$$DisguisedPrincess$: "I may never sit on the throne, but I can still save this kingdom!"`,
       `$$DisguisedPrincess$: "I had to run away and become nobody so that I could be free to be myself! No more and no less."`,
       `$$DisguisedPrincess$: "I will not be made to hide behind thick walls! I will not be anyone's puppet anymore!"`,
+      `$$DisguisedPrincess$: "I shall save this kingdom, even if for that I need to forsake my name."`,
     ]);
     return [text, dialog];
   },
@@ -403,6 +411,7 @@ LANGUAGE.actions[PARTYMEMBERS.RetiredProtector] = {
       `$$RetiredProtector$: "I'm getting too old for this kind of things..."`,
       `$$RetiredProtector$: "Just when I had earned a peaceful retirement, I get pulled back in..."`,
       `$$RetiredProtector$: "I used to be unmatched on the battlefields. Now I'm merely a shadow of my former self."`,
+      `$$RetiredProtector$: "The world may change but the fight... the fight never changes."`,
     ]);
     return [text, dialog];
   },
