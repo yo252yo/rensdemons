@@ -6,7 +6,7 @@ PLAYER_ACTIONS.allow_flight();
 
 BATTLE.operations.add_loot(ITEM.Feather, 0.5);
 BATTLE.operations.add_loot(ITEM.Fang, 1);
-BATTLE.operations.add_loot("", 1);
+BATTLE.operations.add_loot("", 0.5);
 
 
 

@@ -4,8 +4,7 @@
 BESTIARY.picture('forests/trunk');
 PLAYER_ACTIONS.allow_flight();
 
-BATTLE.operations.add_loot(ITEM.Stick, 1.5);
-BATTLE.operations.add_loot("", 0.5);
+BATTLE.operations.add_loot(ITEM.Stick, 1);
 
 
 // ===================

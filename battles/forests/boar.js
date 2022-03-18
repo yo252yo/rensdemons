@@ -7,7 +7,6 @@ PLAYER_ACTIONS.allow_flight();
 BATTLE.operations.add_loot(ITEM.Meat, 0.5);
 BATTLE.operations.add_loot(ITEM.Bone, 1);
 BATTLE.operations.add_loot(ITEM.Fur, 0.1);
-BATTLE.operations.add_loot("", 2);
 
 
 // ===================

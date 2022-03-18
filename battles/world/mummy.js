@@ -4,7 +4,7 @@
 BESTIARY.picture('world/mummy');
 PLAYER_ACTIONS.allow_flight();
 
-BATTLE.operations.add_loot(ITEM.Linnens, 1);
+BATTLE.operations.add_loot(ITEM.Linnens, 2);
 BATTLE.operations.add_loot("", 1);
 
 // ===================
