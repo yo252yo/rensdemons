@@ -25,17 +25,18 @@ _SHOP_PRICES[ITEM.Rope] = 100;
 _SHOP_PRICES[ITEM.Bow] = 150;
 _SHOP_PRICES[ITEM.Net] = 200;
 
-_SHOP_PRICES[ITEM.Stone] = 4;
-_SHOP_PRICES[ITEM.Mushroom] = 4;
+_SHOP_PRICES[ITEM.Potato] = 3;
+_SHOP_PRICES[ITEM.Stone] = 5;
+_SHOP_PRICES[ITEM.Mushroom] = 5;
 _SHOP_PRICES[ITEM.Berry] = 6;
-_SHOP_PRICES[ITEM.Stick] = 6;
-_SHOP_PRICES[ITEM.Seashell] = 6;
-_SHOP_PRICES[ITEM.Fang] = 10;
-_SHOP_PRICES[ITEM.Bone] = 10;
-_SHOP_PRICES[ITEM.Flower] = 10;
+_SHOP_PRICES[ITEM.Seashell] = 7;
+_SHOP_PRICES[ITEM.Stick] = 8;
 _SHOP_PRICES[ITEM.Meat] = 10;
+_SHOP_PRICES[ITEM.Flower] = 12;
+_SHOP_PRICES[ITEM.Fang] = 15;
+_SHOP_PRICES[ITEM.Bone] = 15;
 _SHOP_PRICES[ITEM.Feather] = 20;
-_SHOP_PRICES[ITEM.Linnens] = 20;
+_SHOP_PRICES[ITEM.Linnens] = 25;
 _SHOP_PRICES[ITEM.Goo] = 20;
 _SHOP_PRICES[ITEM.AncientRubbles] = 20;
 _SHOP_PRICES[ITEM.Fur] = 30;
@@ -56,7 +57,7 @@ _SHOP_PRICES[ITEM.StuffedBearHead] = 50;
 _SHOP_PRICES[ITEM.MassiveGoldStatue] = 70;
 
 
-_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom,
+_SHOP_SELLONLY = [ITEM.Medallion, ITEM.Goo, ITEM.Eye, ITEM.Fur, ITEM.Seashell, ITEM.Fang, ITEM.Bone, ITEM.Stick, ITEM.Potato, ITEM.Stone, ITEM.Scale, ITEM.Feather, ITEM.Flower, ITEM.Linnens, ITEM.Berry, ITEM.Mushroom,
 ITEM.OldBook,ITEM.PorcelainDoll,ITEM.SnobRichKey,ITEM.Spoon,ITEM.SilverGoblet,ITEM.Umbrella,ITEM.Candle,ITEM.Vase,ITEM.RareWine,ITEM.StuffedBearHead,ITEM.MassiveGoldStatue, ITEM.AncientRubbles,
 ];
 

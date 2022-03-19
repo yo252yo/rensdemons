@@ -194,6 +194,7 @@ class B_Bucket extends ItemBattleObject {
     this.add_interaction("Drink", "Moved by the Will of the Goddess, you grab the bucket and drink all the water in it. The family is due for another trip to the well, and $$BestFriend$ is angry at you... Good job.");
     this.add_interaction("Touch", "You impulsively cave to the urges the Goddess is imprinting on you, and put your hand in the bucket. You're wet now. Well done.");
     this.add_interaction("Seize", "Without a second thought, you grab the bucket and look inside. You don't know what you expected, it's just an empty bucket. Still, you can't shake the feeling that there should be something there...");
+    this.add_interaction("Repurpse", "This is a nice bucket. But you feel like it could be nicer. You decide to remodel it, following your instinct. Before long, you are facing nothing but a pile of STICKS.", INVENTORY.increase_function(ITEM.Stick));
   }
 }
 
@@ -234,6 +235,7 @@ class B_Hay extends ItemBattleObject {
     this.add_interaction("Jump", "The Goddess urges you to jump in the hay. $$BestFriend$ joins you and you have a great time. It's fun, but now you're covered in it.");
     this.add_interaction("Sleep", "You get the feeling that the Goddess wants you to nap there. You try for a while, but it's so uncomfortable. You get back up, feeling that you've failed Her.");
     this.add_interaction("Stare", "For some reason, it seems that the Goddess wants you to look at this haystack. Does She want you to count how many stems there are? Does She want you to find something in there? Surely She could not be this cruel... You try to chase the thought from your mind.");
+    this.add_interaction("Search", "For no apparent reason, you decide to search through the stack of hay. You don't know what you expected to find, but to your surprise you find a BONE. You decide to not think too hard about what it is doing here.", INVENTORY.increase_function(ITEM.Bone));
   }
 }
 
@@ -336,7 +338,7 @@ class B_Chest extends ItemBattleObject {
     this.add_interaction("Pillage", "You cannot help but obey the Goddess' orders. You force the chest open and dive into it head first. You swim through layers of linens that aren't yours. Nothing of interest here. You got nothing out of it but embarrassment.");
     this.add_interaction("Rob", "You jump on the chest and open it in a wide motion divinely guided, but your enthusiasm fades as soon as you see how empty it actually is. You fight tears thinking back at what it must have contained, one day. These people really need a savior.");
     this.add_interaction("Open", "You try to open the chest, but it is locked. Not all families leave their most pricy possessions at the mercy of the first passer-by...");
-    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old WOODEN SWORD, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden), true);
+    this.add_interaction("Plunder", "Pushed by a force beyond your control, you open the chest and take whatever content you deem could be useful. You find an old WOODEN SWORD, probably a child's toy. Surely they won't miss it, if it's for the Goddess.", INVENTORY.increase_function(ITEM.Sword_wooden));
   }
 }
 
@@ -376,6 +378,7 @@ class B_Bocals extends ItemBattleObject {
     this.add_interaction("Observe", "These two glass jars have been emptied recently. They're due for an in depth cleaning soon.");
     this.add_interaction("Judge", "You think it's a bit irresponsible to leave such a breakable glass jar on the floor. Any clumsy visitor or passing adventurer could just bump into it and spread its content on the floor. A chance you're not like that.");
     this.add_interaction("Play", "You take a bit of the remaining jam and put some on $$BestFriend$'s nose. The counterattack comes fast. Pretty soon, you're at each other's throats in an intense tickle match, without any consideration for the owner of the place.");
+    this.add_interaction("Surprise", "One of these is not like the others. It's a DECAY ELIXIR. What is it doing in a place like this? It could be dangerous! You decide to take it, not for your personal gain, of course, but to protect the citizens!", INVENTORY.increase_function(ITEM.Elixir_decay), true);
   }
 }
 
@@ -389,6 +392,7 @@ class B_Box extends ItemBattleObject {
     this.add_interaction("Juggle", "You grab a few potatoes and start juggling with them. Since you don't know how to juggle, they fall quickly on the ground.");
     this.add_interaction("Stealth", "You think for a moment that a wooden box such as this could be a great way to hide and sneak around without attracting unwanted attention, but you quickly come back to your senses, realizing that a moving box is bound to attract unwanted attention in the first place.");
     this.add_interaction("Taste", "Are you crazy? No matter what thoughts cross your mind, you can't eat raw potatoes! They take a lot of preparation before being ready for consumption...");
+    this.add_interaction("Grab", "You decide to take a POTATO. Who knows when it could come in handy? Probably never, though...", INVENTORY.increase_function(ITEM.Potato));
   }
 }
 
@@ -401,6 +405,7 @@ class B_Chimney_wall extends ItemBattleObject {
     this.add_interaction("Climb", "As soon as the fire dies of, you slide yourself inside the chimney and attempt to go up. You may have expected a secret compartment or even a noteworthy experience, but there's nothing but a lot of soot. When you come down, you realize with shame that you've made the whole room black, in addition to your own body of course.");
     this.add_interaction("Warm", "You warm yourself at the fire. The heated air is slowly engulfing you, making you drowsy. It feels good to be close to the heat source of this room. You deserve a little rest.");
     this.add_interaction("Observe", "You look at the dancing flames in the heart of the chimney. You remain there longer than you anticipated, mesmerized by the fluid movements of the fire.");
+    this.add_interaction("Pick up", "In the chimney, you find a single STONE left right in the middle. It almost seems as if someone left it on purpose there for you. You decide to keep it.", INVENTORY.increase_function(ITEM.Stone), true);
   }
 
 }
@@ -441,6 +446,7 @@ class B_Sack extends ItemBattleObject {
     this.add_interaction("Lift", "You grab the bag and get a good grip, but your attempts to lift it utterly fail. It's way heavier than you anticipated.");
     this.add_interaction("Examine", "You know this type of heavy burlap bags. They're used to bring wheat to the mill and take flour back. You can tell by the white deposits that this one is full of flour.");
     this.add_interaction("Appraise", "You wonder how much you could trade this bag of flour for. It seems like it could fetch a good price. But it's too impractical to carry around. Not to mention you don't want to deprive a family from their main food source.");
+    this.add_interaction("Rip", "You try to rip the burlap bag, but it is sturdier than you thought. You only manage to make a small dent, from which you can grab but a single POTATO. It's better than nothing.", INVENTORY.increase_function(ITEM.Potato));
   }
 }
 
@@ -452,6 +458,7 @@ class B_FancyShelf_wall extends ItemBattleObject {
     this.add_interaction("Admire", "This shelf has some metal linings and glass doors. This speaks volume about how expensive it is. This piece of furniture is fit for a castle, not a small peasant house.");
     this.add_interaction("Look", "The beautifully crafted container protects expensive looking plates and cutlery. Business must be going well for the owners.");
     this.add_interaction("Steal", "Such a display of wealth is begging to be robbed, but the door is securely locked close. You curse your luck and move on.");
+    this.add_interaction("Marvel", "This shelf contains so much fine silverware and SILVER GOBLETS. Surely nobody will mind if one goes mysteriously missing, right? Maybe they won't even notice!", INVENTORY.increase_function(ITEM.SilverGoblet));
   }
 }
 
@@ -463,6 +470,7 @@ class B_Candles_wall extends ItemBattleObject {
     this.add_interaction("Blow", "You blow on the candles. The room is a bit darker.");
     this.add_interaction("Play", "You play with the candles by passing your fingers quickly through the flame. If you're fast enough, it doesn't hurt. $$BestFriend$ wonders what the point of this is.");
     this.add_interaction("Appreciate", "The candles fill the room with a frail dancing light and a faint smell of wax.");
+    this.add_interaction("Commandeer", "You take one of the CANDLES, mumbling that it will be better used guiding your path in a cave than lighting up this random household. They have other ones anyway...", INVENTORY.increase_function(ITEM.Candle), true);
   }
 }
 
@@ -485,6 +493,7 @@ class B_CurtainedWindow_wall extends ItemBattleObject {
     this.add_interaction("Hide", "You roll yourself inside the heavy curtains. Despite everything, you're still a kid. It would be a great hiding spot if your friend was not next to you when you hid.");
     this.add_interaction("Close", "You close the curtains. They show signs of wear. This household probably does not like outsiders peeking inside.");
     this.add_interaction("Appraise", "The curtains are dusty. The bottoms are eaten to shreds by some insects. It's high time to replace them, but war makes this a low priority.");
+    this.add_interaction("Repurpose", "These are some nice curtains they have here. They could come in handy for your travels! Perhaps you can use them as blankets. Or trade them against weapons... You certainly cannot leave these LINNENS here.", INVENTORY.increase_function(ITEM.Linnens));
   }
 }
 
@@ -548,6 +557,7 @@ class B_BottlesShelf_wall extends ItemBattleObject {
     this.add_interaction("Sample", "Encouraged by the cheers of the villagers, you sample a little bit of various beverages. Unfortunately, they forget to warn you that mixing alcohols can have bad consequences, and before soon you find yourself puking on the floor.");
     this.add_interaction("Appraise", "Some of these bottles look pretty expensive, but as soon as you lay your eyes on them people around you encourage you to open them and try them out. No way you can ever take anything out of here.");
     this.add_interaction("Moderate", "You ask around for a glass of a non alcoholic drink. Everyone finds this request pretty weird and explains that they only have beverages fit for partying here, and that you should get over yourself and give them a try.");
+    this.add_interaction("Take", "You simply snag a bottle. People around are too drunk to notice or care anyway.", INVENTORY.increase_function(ITEM.RareWine));
   }
 }
 
@@ -569,7 +579,7 @@ class B_PottedFlower extends ItemBattleObject {
     this.adjust_hitbox(5,0,36,25);
 
     this.add_interaction("Smell", "In addition to filling the room with lovely colors, these flowers exude a sweet intoxicating aroma.");
-    this.add_interaction("Pluck", "You pluck out the flower. $$BestFriend$ is shocked and starts apologizing on your behalf, but the villagers tell you that it's not a problem. You've simply made more room for another one to grow. You admire their positivity.", undefined, true);
+    this.add_interaction("Pluck", "You pluck out the flower. $$BestFriend$ is shocked and starts apologizing on your behalf, but the villagers tell you that it's not a problem. You've simply made more room for another one to grow. You admire their positivity. They give you one of the FLOWERS to keep.", INVENTORY.increase_function(ITEM.Flower), true);
     this.add_interaction("Admire", "The colorful petals capture the ambient light and almost have a shine of their own.");
     this.add_interaction("Offer", "You offer the flower to $$BestFriend$ who blushes in return but insists on giving the flower back to its rightful owner.");
   }

@@ -18,6 +18,7 @@ const ITEM = {
     MassiveGoldStatue: "Massive Gold Statue",
 
   // Loot. IdeaS: spices, herbs, leather?
+    Potato: "Potato",
     Stone: "Blunt Stone",
     Mushroom: "Mushroom",
     Berry: "Berry",
