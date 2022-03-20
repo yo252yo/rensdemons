@@ -10,23 +10,15 @@ var gen = new Generator(SPECIALBATTLES._battle_extra_data[1]);
 var s = new CenteredMovingBattleImage("assets/characters/" + sprite + ".png", 'background', 32, 48, 2);
 var name = VillagerSoul.get_name(gen, sprite); // i think this is the same as the name of the sprite but it doesnt matter much anyway
 
-var unlocked_keys = [];
-var is_unlocked = function(key){
-  var unlock_proba = 2 / 8; /* avg number of unlocked / total number of possibilities */
-  var p = gen.get();
-  return p <= unlock_proba;
-}
-
 
 // ===================
 //hack ACTIONS
 // ===================
 
-BATTLETREE.api.forget('encounters/villager', "Expose");
 PLAYER_ACTIONS.add({
   name: "Expose",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "I am on to you, I know what you're doing."`,
                 `${name}: "What do you mean?"`,
                 `$$Ren$: "You and all the other villagers... You're only telling me generic platitudes. You're just dumping expository information on me to teach me about this world, aren't you?`,
@@ -35,22 +27,20 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Dismiss");
 PLAYER_ACTIONS.add({
   name: "Dismiss",
   outcome: BATTLETREE.LOSS,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Why should I listen to what you have to say? You're nobody. You're just a decoration. The Goddess told me you don't have kind of any real importance."`,
                 `${name} is really stunned to be talked to that way. After a few seconds of shock, you can see the villager's face grow purple with rage.`,
                 `${name}: "What?! How dare you, you little scoundrel! I'll teach you some manners."`,
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Challenge");
 PLAYER_ACTIONS.add({
   name: "Challenge",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "I know what you're going to say before you'll say it..."`,
                 `${name}: "Do you, now? How, pray tell!"`,
                 `$$Ren$: "The Goddess told me."`,
@@ -60,11 +50,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Worry");
 PLAYER_ACTIONS.add({
   name: "Worry",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Are you okay? You're always saying the same thing."`,
                 `${name}: "What?"`,
                 `$$Ren$: "Every time I talk to you, you keep saying the same thing, over and over again. I think you may be crazy."`,
@@ -72,11 +61,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Claim");
 PLAYER_ACTIONS.add({
   name: "Claim",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Give me everything you have."`,
                 `${name} seems shocked and amused.`,
                 `${name}: "What? Who do you think you are? Didn't your parents teach you some manners?"`,
@@ -86,11 +74,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Offer");
 PLAYER_ACTIONS.add({
   name: "Offer",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Do you have a quest for me?"`,
                 `${name}: "What?"`,
                 `$$Ren$: "Do you have a quest for me? An errand I could run for you? The Goddess told me you might."`,
@@ -100,11 +87,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Beg");
 PLAYER_ACTIONS.add({
   name: "Beg",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Excuse me, could you spare a bit of change for me?"`,
                 `${name}: "I'm sorry kid, we are all struggling... I barely have enough to feed myself. If I had to give money to every starving child..."`,
                 `$$Ren$: "I understand, but see, I am the Promised Child, and I'm working on ending all of this! If you could help a bit, I promise it will be put to good use."`,
@@ -117,11 +103,10 @@ PLAYER_ACTIONS.add({
   }
 });
 
-BATTLETREE.api.forget('encounters/villager', "Remind");
 PLAYER_ACTIONS.add({
   name: "Remind",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Don't you remember me?"`,
                 `${name}: "What?"`,
                 `$$Ren$: "We've already talked! We've already had this exact conversation!"`,
@@ -129,11 +114,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Directions");
 PLAYER_ACTIONS.add({
   name: "Directions",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Where should I go?"`,
                 `${name}: "Beg your pardon?"`,
                 `$$Ren$: "I believe you're supposed to give me some sort of hint towards my next objective."`,
@@ -141,31 +125,28 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Appearance");
 PLAYER_ACTIONS.add({
   name: "Appearance",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Why do you look like so many other villagers? Are you related?"`,
                 `${name}: "Hey! That's pretty racist..."`,
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Intrude");
 PLAYER_ACTIONS.add({
   name: "Intrude",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "How is little ${RANDOM.pick(DATASETS.male_names)}?"`,
                 `${name}: "How do you know my son? Who are you? I've never seen you around here before..."`,
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Ransack");
 PLAYER_ACTIONS.add({
   name: "Ransack",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Can I go to your house, break everything and steal all your stuff?"`,
                 `The villager is obviously shocked by your proposal.`,
                 `${name}: "What? No! I'm calling the guard!"`,
@@ -174,11 +155,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Impress");
 PLAYER_ACTIONS.add({
   name: "Impress",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "I bet I can guess your deepest secret."`,
                 `The villager is amused by your wager.`,
                 `${name}: "Go ahead"`,
@@ -190,11 +170,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Foreknowledge");
 PLAYER_ACTIONS.add({
   name: "Foreknowledge",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "I know what you did yesterday..."`,
                 `${name}: "What?"`,
                 `$$Ren$: "You cut down lumber."`,
@@ -202,11 +181,10 @@ PLAYER_ACTIONS.add({
               ],
 });
 
-BATTLETREE.api.forget('encounters/villager', "Trick");
 PLAYER_ACTIONS.add({
   name: "Trick",
   outcome: BATTLETREE.NOTHING,
-  unlock: is_unlocked(),
+  unlock: true,
   description: [`$$Ren$: "Think of a number"`,
                 `${name}: "What?"`,
                 `$$Ren$: "Just do, you'll see, it's fun."`,
@@ -215,6 +193,14 @@ PLAYER_ACTIONS.add({
                 `${name}: "Yes. Nice little trick you got there. Maybe you should perform for gold. We could always use a distraction in these dire times..."`,
               ],
 });
+
+
+var limit = THAUMATURGY.is_visible() ? 4 : 2;
+
+while(Object.keys(BATTLE._player_actions).length > limit){
+  var remove = gen.pick(Object.keys(BATTLE._player_actions));
+  delete BATTLE._player_actions[remove];
+}
 
 // ===================
 //hack BASE ACTIONS
