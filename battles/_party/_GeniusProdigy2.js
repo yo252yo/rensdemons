@@ -9,7 +9,7 @@ var make_loss = function(from, name, text){
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: name,
     unlock: true,
-    description: [text, `$$GeniusProdigy$ seems a bit confused and disappointed, struggling to grasp the explanation behind your previous success and current failure.`],
+    description: text.concat([`$$GeniusProdigy$ seems a bit confused and disappointed, struggling to grasp the explanation behind your previous success and current failure.`]),
     outcome: BATTLETREE.LOSS,
   });
   return f(from);
@@ -305,7 +305,9 @@ var think = PLAYER_ACTIONS.function.unlock_replacing_action({
       }
 
       ooe("Think");
+
       if(answer != 108){
+
         BATTLETREE.api.forget("_party/_GeniusProdigy2", "108");
       }
 
