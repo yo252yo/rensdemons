@@ -55,7 +55,7 @@ var getUrl = function(){
   }
 
   // RD
-  for(var i = 0; i <30; i++){
+  for(var i = 0; i <50; i++){
     possibilities.push("");
   }
 
@@ -87,8 +87,7 @@ if (STATS.ending(ENDINGS.God)){
     unlock: true,
     description: "It seems that all documents are accounts of the lives of different people, from this universe, but also from many others. Most of the writings are complete, but some are clearly half way done, waiting for a nearby angel to write the finishing lines.",
     function: function() {
-      BATTLETREE.api.forget("_060/_book", "Primordial Deities");
-      BATTLETREE.api.forget("_060/_book", "Read about you");
+      BATTLE.player_actions.empty(true);
       unlock_random_book("Browse other books");
     },
   });
@@ -113,6 +112,9 @@ var unlock_mirror = PLAYER_ACTIONS.function.unlock_replacing_action({
                   `"In conclusion, to see oneself whole and understand the full relationship between the self and its environment, it is necessary to turn inwards."`,
                   `"ONE MUST FOLLOW THE PATH OF THE MIRROR."`,
                 ],
+  extra_function: function(){
+    BATTLETREE.api.develop("_060/_book", "Identity", BATTLETREE.WIN);
+  }
 
 });
 
@@ -134,6 +136,10 @@ var unlock_code = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `"START_OF_TEXT = number 2, in binary 00000010<br /> CANCEL = number 24, in binary 00011000"`,
                 `"END_OF_TRANSMISSION = number 4, in binary 00000100"`,
                 ],
+  extra_function: function(){
+    BATTLETREE.api.develop("_060/_book", "Communication", BATTLETREE.WIN);
+  }
+
 });
 
 
@@ -143,9 +149,10 @@ if(STATS.flag("PrimordialDeities")){
     unlock: true,
     description: "You search through the books to see if anyone looks like it might have information about the Primordial Deities. You find an old tome that seems promising. It does not have a title. Instead, the cover is full of mysterious symbols. When you open it, some pages are so worn off that they are unreadable, others are torn, but it looks like some parts are still usable...",
     function: function() {
+      BATTLE.player_actions.empty(true);
       unlock_mirror("Primordial Deities");
       unlock_code("Primordial Deities");
-      BATTLETREE.api.forget("_060/_book", "Browse other books");
+      BATTLETREE.api.develop("_060/_book", "Primordial Deities", BATTLETREE.WIN);
     },
   });
 }
@@ -179,6 +186,9 @@ var unlock_solution = PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [`You read intently as the book explains how you will act. It seems that your reading will teach you the path to the Goddess through this foggy labyrinth.`,
                 `The correct path was apparently drawn according to a ritual from another world. It goes: up, up, down, down, left, right, left, right.`,
                 ],
+  extra_function: function(){
+    BATTLETREE.api.develop("_060/_book", "Read what to do", BATTLETREE.WIN);
+  }
 });
 
 
@@ -192,6 +202,9 @@ var unlock_bookshelf = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `Indeed, after describing your tribulations in Heaven, it narrates how you will find your way and encounter the Goddess.`,
                 ],
   function: unlock_solution,
+  extra_function: function(){
+    BATTLETREE.api.develop("_060/_book", "Read about now", BATTLETREE.WIN);
+  }
 });
 
 
@@ -202,6 +215,9 @@ var unlock_browse = PLAYER_ACTIONS.function.unlock_replacing_action({
                 "Near the end of the tome, a picture catches your gaze. It is the bookshelf you're standing in front of."
                 ],
   function: unlock_bookshelf,
+  extra_function: function(){
+    BATTLETREE.api.develop("_060/_book", "Browse", BATTLETREE.WIN);
+  }
 });
 
 PLAYER_ACTIONS.add({
@@ -209,10 +225,11 @@ PLAYER_ACTIONS.add({
   unlock: true,
   description: "The tome is pretty massive, where are you going to start?",
   function: function() {
+    BATTLE.player_actions.empty(true);
     unlock_begin("Read about you");
     unlock_browse("Read about you");
     unlock_end("Read about you");
-    BATTLETREE.api.forget("_060/_book", "Browse other books");
+  BATTLETREE.api.develop("_060/_book", "Read about you", BATTLETREE.WIN);
   },
 });
 
