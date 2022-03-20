@@ -71,10 +71,7 @@ var unlock_lesson = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$demon_lieutenant$: "Did you never wonder what happened back then? Why $$demon_lord$ came to cleanse $$world_name$?"`,
   ],
   function: function() {
-    BATTLETREE.api.forget(battle, DICTIONARY.get("demon_lord"));
-    BATTLETREE.api.forget(battle, "Despair");
-    BATTLETREE.api.forget(battle, "Attack");
-    BATTLETREE.api.forget(battle, "Run");
+    BATTLE.player_actions.empty();
     fake_answer("Lesson", "he's evil");
     fake_answer("Lesson", "he's mad");
     fake_answer("Lesson", "he's violent");
@@ -112,6 +109,7 @@ var unlock_maou = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$demon_lieutenant$: "He is comfortable in his castle in Hell. But you do realize that there's no way I'm letting you pass through, right?"`,
   ],
 });
+
 
 var unlock_notice = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Notice",

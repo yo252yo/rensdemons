@@ -58,11 +58,11 @@ PLAYER_ACTIONS.add({
               ],
   unlock: true,
   function: function() {
+    BATTLE.player_actions.empty(true);
     unlock_stab1("Enquire");
     unlock_stab2("Enquire");
     unlock_escape("Enquire");
     unlock_help("Enquire");
-    BATTLETREE.api.forget("_demo/_priest", "Ambush");
     STATS.record.flag("_demo_died");
   },
 });

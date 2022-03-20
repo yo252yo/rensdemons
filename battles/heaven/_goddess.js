@@ -8,20 +8,6 @@ AUDIO.music.characters.Goddess();
 //hack PLAYER CAPABILITIES
 // ===================
 
-var enter_unique_route = function(name){
-  BATTLETREE.api.forget("heaven/_goddess", "Kill God");
-  BATTLETREE.api.forget("heaven/_goddess", "Notice");
-  BATTLETREE.api.forget("heaven/_goddess", "Negotiate");
-  BATTLETREE.api.forget("heaven/_goddess", "Believers");
-  BATTLETREE.api.forget("heaven/_goddess", "Denounce");
-  BATTLETREE.api.forget("heaven/_goddess", "Change world");
-  BATTLETREE.api.forget("heaven/_goddess", "Fix the world");
-  BATTLETREE.api.forget("heaven/_goddess", "Destroy world");
-  BATTLETREE.api.forget("heaven/_goddess", "End suffering");
-
-  BATTLETREE.api.unlock("heaven/_goddess", name);
-}
-
 var easy_attack = {
   attack_amplitude: 0.95, // Between 0 and 1
   warning_time_s: 0.0,
@@ -57,7 +43,7 @@ PLAYER_ACTIONS.add({
   unlock: true,
   function: function(){
     BATTLE.monster_actions.add_textual(`Goddess: "Why?"`, easy_attack);
-    enter_unique_route("Kill God");
+    BATTLE.player_actions.empty(true);
     PLAYER_ACTIONS.win("Kill God", 6);
     INVENTORY.increase("_killed_god");
   }
@@ -153,8 +139,8 @@ if (STATS.ending(ENDINGS.God)){
     ],
     unlock: true,
     function: function(){
+      BATTLE.player_actions.empty(true);
       study_believers("Denounce");
-      BATTLETREE.api.forget("heaven/_goddess", "Negotiate");
     },
   });
 
@@ -172,7 +158,7 @@ if (STATS.ending(ENDINGS.God)){
       `Goddess: "You don't need to get angry, I shall do as you please. What do you want me to do?"`,
     ],
     function: function(){
-      BATTLETREE.api.forget("heaven/_goddess", "Denounce");
+      BATTLE.player_actions.empty(true);
       propose_end_suffering("Negotiate");
     }
   });
@@ -449,8 +435,8 @@ if (STATS.ending(ENDINGS.Suffering) && STATS.ending(ENDINGS.World)){
     unlock: true,
     function: function(){
       BATTLE.monster_actions.add_textual(`The Goddess does not want to hear you and tries to suppress your existence.`, hard_attack);
-      enter_unique_route("Notice");
-      sympathize("Notice");
+      BATTLE.player_actions.empty(true);
+      sympathize("BATTLE.player_actions.empty(true)");
     },
   });
 }

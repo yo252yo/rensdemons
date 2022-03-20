@@ -119,7 +119,7 @@ PLAYER_ACTIONS.add({
   unlock: ABILITIES.has_ability("_sg_spooked"),
   description: [`You approach the girl very slowly, careful to not make any sudden move.`, `You succeed at coming close to the child.`],
   function: function() {
-    BATTLETREE.api.forget("_party/_SavageChild3", "Approach");
+    BATTLE.player_actions.empty(true);
     check_adoption();
 
     make_spook("Touch hand");

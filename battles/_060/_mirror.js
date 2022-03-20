@@ -42,21 +42,13 @@ PLAYER_ACTIONS.allow_flight(true);
 var battle = "_060/_mirror";
 
 
-var list = [];
-var clean_answers = function(){
-  for(var l of list) {
-    BATTLETREE.api.forget(battle, l);
-  }
-}
-
 var quick_action = function(from, end, title, descript){
-  list.push(title);
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: title,
     unlock: true,
     description: descript,
     function: function(){
-      clean_answers();
+      BATTLE.player_actions.empty(true);
       end(title);
     },
   });
