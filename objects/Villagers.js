@@ -32,6 +32,7 @@ class VillagerSoul extends SoulBattleObject {
         break;
       case CITIES.mourning:
         this.setup_mourning();
+        this.max_actions *= 2;
         break;
     }
   }
