@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A RPG about a young child chosen by the gods.",
   "main": "electron.js",
-  "author": "yo252yo",
+  "author": "yo252yo <yo252yo@gmail.com>",
   "license": "MIT",
   "icon": "icon.png",
   "devDependencies": {
@@ -49,26 +49,6 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
-        }
-      ]
-    }
-  },
-  "build": {
-    "appId": "yo252yo.rensdemons",
-    "directories": {
-      "output": "bin/out"
-    },
-    "win": {
-      "icon": "assets/app/icon.png",
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        },
-        {
-          "target": "portable"
         }
       ]
     }

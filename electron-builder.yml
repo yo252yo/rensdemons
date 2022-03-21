@@ -1,0 +1,17 @@
+appId: yo252yo.rensdemons
+
+directories:
+  output: bin/out
+
+#win:
+#  target:
+#    - target: nsis
+#      arch:
+#        - x64
+
+linux:
+  target:
+    - "AppImage"
+    - "deb"
+
+dmg:
