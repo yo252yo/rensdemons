@@ -326,7 +326,8 @@ var unlock_2 = function(from, key) {
 
 var names = MARKOV_MODELS.human_names.mutate_n("Geralt", 5, 5);
 for(var n of names){
-  var f = function(name) {
+  var f = function(key) {
+    var name = STRING_UTILS.camel_case(key);
 
     PLAYER_ACTIONS.add({
       name: name,
