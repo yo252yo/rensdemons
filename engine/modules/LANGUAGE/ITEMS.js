@@ -4,7 +4,7 @@ var attack_blunt = function(name){
           `You attempt to strike the $$&ENEMY$ with the ${name}.`];
 };
 var attack_pointy = function(name){
-  return [`You attemp to stab the $$&ENEMY$ with your ${name}.`,
+  return [`You attempt to stab the $$&ENEMY$ with your ${name}.`,
           `You jump forward, ${name} first, to pierce the $$&ENEMY$.`,
           `You wave the ${name} at the $$&ENEMY$.`];
 };
