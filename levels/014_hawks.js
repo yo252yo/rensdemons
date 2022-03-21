@@ -397,7 +397,7 @@ if(hawkpart == 8){
         `$$DumbMuscles$: "Wow!"`,
         `Faerie: "Hello. Who are you?"`,
         `$$Ren$: "We're simple adventurers passing by. You must be a spirit of nature?"`,
-        `Faerie: "Yes, I am indeed the spirit of this mountain. I do not recall having ever had human visitors in eons."`,
+        `Faerie: "Yes, I am indeed the spirit of this mountain. I do not recall having had human visitors in eons."`,
         `$$DumbMuscles$: "This mountain is hard to climb."`,
         `Faerie: "I know. I commend you for making it this far. And warn you that the way ahead is even harder."`,
         `$$DumbMuscles$: "Thanks, but I've got my mate here, $$Ren$, nothing can stop us!"`,
