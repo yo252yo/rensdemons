@@ -72,7 +72,14 @@ class EventBattleObject extends BattleObject {
 
     interaction() {
       // it's cleaned either by battleobjectmanager or the switch to a battle
-      this.icon = S_event.make_icon("event_swords", this.x, this.y);
+
+      if (BATTLEOBJECTSMANAGER.interactions.has_explored(battle_object)){
+        this.icon = S_event.make_icon("event_text", this.x, this.y);
+      } else {
+        this.icon = S_event.make_icon("event_swords", this.x, this.y);
+      }
+
+
       super.interaction();
       this.destroy();
     }
