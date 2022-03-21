@@ -221,7 +221,7 @@ class M_TorturedSoul extends MovingObject {
     } else if( INVENTORY.count("_torturedSoulSteps") ){
       BATTLE.api.make('_party/_TorturedSoul2');
     } else {
-      BATTLE.api.make('_party/_TorturedSoul');
+      BATTLE.api.make('_party/_TorturedSoul', function(){SAVE.autosave();});
     }
   }
 }
