@@ -75,17 +75,29 @@ const SHOP = {
   },
 
   _transaction: {
-    buy: function(object){
+    _buy: function(object, quantity) {
       var price = SHOP._prices.buy(object);
-      if (INVENTORY.cash() >= price){
-        INVENTORY.increase(object);
-        INVENTORY.decrease(ITEM.Coin, price);
-        alert("Purchased " + object);
+      if (INVENTORY.cash() >= price * quantity){
+        INVENTORY.increase(object, quantity);
+        INVENTORY.decrease(ITEM.Coin, price * quantity);
+        alert("Purchased " + quantity + " " + object);
       }
       var choice = SHOP._current_menu.selected;
       SHOP._current_menu.close();
       SHOP._menu.buy();
       SHOP._current_menu.select(choice);
+    },
+
+    buy: function(object, shop_type){
+      console.log(shop_type);
+      if(shop_type == ITEMS_ARCHETYPES_NAMES.Alchemy || shop_type == ITEMS_ARCHETYPES_NAMES.Tool){
+        new PromptTextMenu("How many do you want?", "1", function(reply){
+          var amount = parseInt(reply) || 1;
+          SHOP._transaction._buy(object, amount);
+        });
+      } else {
+        SHOP._transaction._buy(object, 1);
+      }
     },
 
     _sell: function(object, count){
@@ -147,7 +159,7 @@ const SHOP = {
         }
         (function(i){
           var text = `${i}: ${SHOP._prices.buy(i)} coins`;
-          goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i); }, "keep_open": true});
+          goods.push({"text": text, "effect": function(){ SHOP._transaction.buy(i, SHOP._current_type); }, "keep_open": true});
         }(index));
       }
 
