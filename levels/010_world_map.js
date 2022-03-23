@@ -7,7 +7,16 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
 var after_going_to_town2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("_town3_prompted") || STATS.flag("StoryOfTheAncients");};
+var artifactDungeonsCondition = function() {
+  if(STATS.ending(ENDINGS.War)){
+    return true;
+  }
 
+  if(INVENTORY.count(ITEM.AncientArmamentAdvisor) + INVENTORY.count(ITEM.AncientArmamentArmature) + INVENTORY.count(ITEM.AncientArmamentAmmunition) > 0){
+    return false;
+  }
+  return true;
+}
 // ===================
 //hack B. FLOORS
 // ===================
@@ -94,27 +103,27 @@ FEasyS.fill_floor_by_retry();
 
 FHardSW.set_guaranteed(1);
 FHardSW.add_constructor(function(x,y,seed){
-  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", undefined, [2000, 2475]);
+  return new SM_Forest(x, y, `Woods of the<br />${DICTIONARY.get("trees_adj")} Trees`, "012_trees", artifactDungeonsCondition, [2000, 2475]);
 }, 1, 300, 250);
 FHardSW.fill_floor_by_retry();
 
 
 FHardNE.set_guaranteed(1);
 FHardNE.add_constructor(function(x,y,seed){
-  return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens");
+  return new SM_Lake(x, y, seed, `Sea of the<br />${DICTIONARY.get("sirens_adj")} Sirens`, "013_sirens", artifactDungeonsCondition);
 }, 1, 250, 150);
 FHardNE.fill_floor_by_retry();
 
 
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
-  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", undefined, [2475, 3825]);
+  return new SM_Mountain(x, y, seed, `Mounts of the<br />${DICTIONARY.get("hawk_adj")} Hawks`, "014_hawks", artifactDungeonsCondition, [2475, 3825]);
 }, 1, 250, 150);
 FHardMain.fill_floor_by_retry();
 
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
-  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", undefined, [2225,5500]);
+  return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", artifactDungeonsCondition, [2225,5500]);
 },1 ,100, 50);
 FHardMain.fill_floor_by_retry();
 
