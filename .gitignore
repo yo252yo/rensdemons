@@ -1,2 +1,5 @@
 bin/out
-node_modules/
+node_modules/*
+!node_modules/greenworks
+node_modules/greenworks/*
+!node_modules/greenworks/deps
