@@ -42,9 +42,13 @@ credits: `
  <a href="https://pipoya.itch.io/" target="_blank">Pipoya</a>
  <br />
 
- <b>Binary distribution framework</b>:
- <a href="https://www.electronjs.org/" target="_blank">Electron</a>
- <br />
+  <b>Binary distribution framework</b>:
+  <a href="https://www.electronjs.org/" target="_blank">Electron</a>.
+  <br />
+
+  <b>Steam API library</b>:
+  <a href="https://github.com/greenheartgames/greenworks" target="_blank">Greenworks</a>.
+  <br />
 
 
  <b>Fair use song lyrics brief quotation in the encounter in town of Acceptance</b>:

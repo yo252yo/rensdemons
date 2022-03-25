@@ -1,4 +1,7 @@
 const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
+
+var greenworks = require('greenworks');
+
 const isMac = process.platform === 'darwin'
 var win;
 var menuvisibility = false;
@@ -123,15 +126,38 @@ const createWindow = () => {
 }
 
 
+var steamApiTick = function(){
+  // need to be implemented with iframe communication, websocket kinda thing
+
+  //        greenworks.activateGameOverlay("Stats");
+    greenworks.getNumberOfPlayers(
+        function(a) { console.log("Number of players " + a) },
+        function(err) { console.log ('Failed on getting number of players'); });
+        /*
+            greenworks.activateAchievement('NEW_ACHIEVEMENT_1_0',
+                function() { console.log('Activating achievement successfully'); },
+                function(err) { console.log('Failed on activating achievement.'); });
+  */
+  /*    if(STATS){
+      console.log(STATS);
+    } else{
+      console.log("cant talk to gem");
+    }*/
+}
+
+
 app.whenReady().then(() => {
   createWindow()
 
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    if (BrowserWindow.getAllWindows().length === 0)   createWindow()
   })
+
+  if (greenworks.init()){
+    console.log('Steam API initalized.');
+    setInterval(steamApiTick, 5000);
+  }
 })
-
-
 
 
 app.on('window-all-closed', () => {
