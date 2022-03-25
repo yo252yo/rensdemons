@@ -97,7 +97,6 @@ const createWindow = () => {
   win = new BrowserWindow({
     width: 1440,
     height: 1080,
-//    autoHideMenuBar: true,
   })
 
   win.setMenuBarVisibility(menuvisibility);
@@ -127,22 +126,15 @@ const createWindow = () => {
 
 
 var steamApiTick = function(){
-  // need to be implemented with iframe communication, websocket kinda thing
-
-  //        greenworks.activateGameOverlay("Stats");
-    greenworks.getNumberOfPlayers(
-        function(a) { console.log("Number of players " + a) },
-        function(err) { console.log ('Failed on getting number of players'); });
-        /*
-            greenworks.activateAchievement('NEW_ACHIEVEMENT_1_0',
-                function() { console.log('Activating achievement successfully'); },
-                function(err) { console.log('Failed on activating achievement.'); });
-  */
-  /*    if(STATS){
-      console.log(STATS);
-    } else{
-      console.log("cant talk to gem");
-    }*/
+  win.webContents
+    .executeJavaScript('STATS._stats;', true)
+    .then(result => {
+    /*  console.log(result._map);
+    greenworks.activateAchievement('NEW_ACHIEVEMENT_1_0',
+        function() { console.log('Activating achievement successfully'); },
+        function(err) { console.log('Failed on activating achievement.'); });
+        */
+    });
 }
 
 
@@ -156,6 +148,8 @@ app.whenReady().then(() => {
   if (greenworks.init()){
     console.log('Steam API initalized.');
     setInterval(steamApiTick, 5000);
+  } else {
+    console.log('NO STEAM API LOADED.');
   }
 })
 
