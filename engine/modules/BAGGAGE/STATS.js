@@ -176,4 +176,9 @@ const STATS = {
     return STATS.get(STAT.Endings);
   },
 
+  get_steam_achievements: function(){
+    var achievements = [];
+    //achievements.push("MOO");
+    return achievements;
+  },
 }

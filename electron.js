@@ -127,13 +127,13 @@ const createWindow = () => {
 
 var steamApiTick = function(){
   win.webContents
-    .executeJavaScript('STATS._stats;', true)
+    .executeJavaScript('STATS.get_steam_achievements();', true)
     .then(result => {
-    /*  console.log(result._map);
-    greenworks.activateAchievement('NEW_ACHIEVEMENT_1_0',
-        function() { console.log('Activating achievement successfully'); },
-        function(err) { console.log('Failed on activating achievement.'); });
-        */
+      for(var n of result){
+        greenworks.activateAchievement(n,
+            function() {        console.log('Activated achievement ' + n); },
+            function(err) {     console.log('Failed setting achievement ' + n); });
+      }
     });
 }
 
