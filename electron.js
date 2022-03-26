@@ -124,15 +124,29 @@ const createWindow = () => {
   })
 }
 
+var activated = [];
+
+var achieve = function(n){
+  greenworks.activateAchievement(n,
+      function() {
+        console.log('Activated achievement ' + n);
+        activated.push(n);
+      },
+      function(err) {
+        console.log('Failed setting achievement ' + n);
+      }
+      });
+}
 
 var steamApiTick = function(){
   win.webContents
     .executeJavaScript('STATS.get_steam_achievements();', true)
     .then(result => {
       for(var n of result){
-        greenworks.activateAchievement(n,
-            function() {        console.log('Activated achievement ' + n); },
-            function(err) {     console.log('Failed setting achievement ' + n); });
+        if(activated.includes(n)){
+          continue;
+        }
+        achieve(n);
       }
     });
 }
