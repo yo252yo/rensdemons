@@ -178,7 +178,25 @@ const STATS = {
 
   get_steam_achievements: function(){
     var achievements = [];
-    //achievements.push("MOO");
+
+    for(var e of Object.keys(ENDINGS)){
+      if(STATS.ending(ENDINGS[e])){
+        achievements.push(ENDINGS[e]);
+      }
+    }
+
+    for(var e of Object.keys(PARTYMEMBERS)){
+      if(STATS.unlocked(PARTYMEMBERS[e])){
+        achievements.push(PARTYMEMBERS[e]);
+      }
+    }
+
+    for(var e of ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Artifact]){
+      if(STATS.unlocked(e)){
+        achievements.push(e);
+      }
+    }
+
     return achievements;
   },
 }
