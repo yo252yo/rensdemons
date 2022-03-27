@@ -30,7 +30,14 @@ class PromptTextMenu extends CenteredTextMenu {
     constructor(text, value, callback) {
         super(text + `:<br /><form action='javascript:IO_MENU.pick(0);'><input type="input" value="${value}" id="prompttextmenu" /></form>`, [{"text": "OK", "effect": "##CLOSE"}]);
         this.callback = callback;
+        this.container.style.zIndex = "200002";
         IO.key_interceptor.deactivate();
+
+        var select = function(){
+          document.getElementById("prompttextmenu").focus();
+          document.getElementById("prompttextmenu").select();
+        }
+        setTimeout(select, 400);
     }
 
     close() {
