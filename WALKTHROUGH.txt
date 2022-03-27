@@ -73,3 +73,24 @@ I'll do my best to distinguish between the two in this guide. In general, the sh
 Controls are the usual, WASD to move, SPACE or ENTER to interact, ESC to cancel...
 TODO: more??
 You control one character of unspecified gender (though they can be accompanied).
+
+
+
+
+
+
+
+Best Friend
+Precious Child
+Mystical Klutz
+Sly Swindler
+Wise Elder
+Suspicious Chef
+Savage Girl
+Genius Prodigy
+Wordly Seductress
+Undercover Noble
+Brawny Simpleton
+Tortured Maverick
+Retired Protector
+Wealthy Brat
