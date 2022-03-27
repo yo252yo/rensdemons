@@ -77,7 +77,7 @@ const MARTYRDOM = {
     },
 
     price: function(category_index) {
-      var ladder = [2, 4, 8, 15, 30, 50, 75, 100];
+      var ladder = [2, 4, 6, 12, 20, 50, 75, 100];
       var n = MARTYRDOM._get.lvl(MARTYRDOMS[category_index]);
       if(n <= 7){
         return ladder[n];
