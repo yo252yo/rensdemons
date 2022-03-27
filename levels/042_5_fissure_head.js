@@ -18,7 +18,7 @@ var exit = new S_ExitFloor(1225,2525,175,50, "042_fissure_trunk");
 // ===================
 var postBossDialog = function(){
   TextBannerSequence.make([
-    `The carcass of the rocky monster forms a pile of shining colorful minerals. You cannot help but look through the pile of prismatic stones without knowing exactly why. Perhaps simply to see the vibrant hues dance on the cave ceilling.`,
+    `The rocky monster leaves behind a pile of shining colorful minerals. You cannot help but look through the stack of prismatic stones without knowing exactly why. Perhaps simply to see the vibrant hues dance on the cave ceilling.`,
     `In the middle of the debris, you find a few stone tablets. Like all the inscriptions you've seen in this place, it is written in different languages, but unlike the others, this one has clearly been made by hand, without too much care for appearances. Some letters have faded out, but you can still make out the gist of the message.`,
 
     `To whoever sees this in the future, if there even is a future. Evil is upon us, the beast is unleashed. Our hubris and pride have blinded us. We were full of ourselves, entranced by our accomplishments, and we lost our way. We celebrated our greatness, revelled in our individuality... We took our world for granted. We were careless and ungrateful. We forgot the Goddess. All powerful that She is, She needs our worship to protect us... In our godless age, our faith decreased, so did Her Blessed Embrace. And now the beasts are swarming through the cracks to punish us for our sins...`,
