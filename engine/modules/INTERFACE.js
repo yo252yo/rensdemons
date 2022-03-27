@@ -404,5 +404,6 @@ var win = function(){
 }
 
 var suicide = function(){
+    SAVE.autosave();
     CURRENTLEVEL.setup("gameover$@suicide");
 }
