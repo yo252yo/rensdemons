@@ -37,8 +37,8 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 
 var attack = {
   attack_amplitude: 0.7, // Between 0 and 1
-  warning_time_s: 0.5,
-  react_time_s: 0.3,
+  warning_time_s: 0.4,
+  react_time_s: 0.5,
   variability: 0.8, // 1 = 100%
 };
 
