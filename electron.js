@@ -133,9 +133,9 @@ var achieve = function(n){
         activated.push(n);
       },
       function(err) {
-        console.log('Failed setting achievement ' + n);
+        console.log('Failed setting achievement ' + n + ':' + err);
       }
-      });
+    );
 }
 
 var steamApiTick = function(){
