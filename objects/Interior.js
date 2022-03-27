@@ -118,6 +118,7 @@ class S_Altar extends LevelObject {
 
     if (Object.keys(ITEMS_ARCHETYPES).includes(type)){
       options = [{"text": "Offer", "effect": function(){ SHOP.menu_sell(type, 100000); }},
+                {"text": "Offer all junk", "effect": function(){ SHOP._transaction.selljunk(); }},
                 {"text": "Request", "effect": function(){ SHOP.menu_buy(type, 100000); }}];
       text = "You can offer goods or coins for requests.";
     }
