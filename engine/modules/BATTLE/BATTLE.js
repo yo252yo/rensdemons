@@ -48,7 +48,7 @@ const BATTLE = {
           if(ABILITIES.is_special_flight_option(o.text)){
             options_flight.push(o);
           } else if(o.text.startsWith(BATTLE._last_action)){
-            o.text = "<b>" + o.text + "</b>";
+            o.text = ">>" + o.text;
             options_pursue.push(o);
           } else if(o.text.startsWith("<b>")){
             options_winning.push(o);
