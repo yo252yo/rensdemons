@@ -52,4 +52,4 @@ BATTLE.monster_actions.add_textual("The Hecatoncheir smothers your personality w
 //hack START
 // ===================
 
-BATTLE.operations.start(BESTIARY.intro("hell/hacatoncheir"));
+BATTLE.operations.start(BESTIARY.intro("hell/hecatoncheir"));

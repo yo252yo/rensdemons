@@ -426,7 +426,7 @@ BESTIARY.dict["hell"]["sandworm"] = {
   "introed": "A Swirly Sandworm Spewed its Spite.",
   "outro": "Only its husk remained as a refuge to shield travelers from unkind elements.",
 };
-BESTIARY.dict["hell"]["hacatoncheir"] = {
+BESTIARY.dict["hell"]["hecatoncheir"] = {
   "intro": "A Horrible Hecatoncheir Hovers in a Haze.",
   "introed": "A Horrible Hecatoncheir Hovered in a Haze.",
   "outro": "It tangled its tentacles in an sharp rock, and became a staple of the landmark.",
