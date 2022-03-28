@@ -3,6 +3,7 @@ var _DEFAULT = {
   challenge_level: 0.5,
   volume_music: 0.3,
   volume_sfx: 0.7,
+  battleorder: 'exploit',
 };
 
 const SETTINGS = {

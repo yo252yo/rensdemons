@@ -93,7 +93,13 @@ const BATTLE = {
         });
       }
 
-      var result = options_pursue.concat(options_winning).concat(options_started).concat(options_unknown);
+      var result = options_pursue;
+
+      if (SETTINGS.get('battleorder') == "explore"){
+        result = result.concat(options_started).concat(options_unknown).concat(options_winning);
+      } else {
+        result = result.concat(options_winning).concat(options_started).concat(options_unknown);
+      }
       if (options.length <= 10 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
         result = result.concat(options_losing);
       }

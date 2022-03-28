@@ -197,6 +197,10 @@ const INTERFACE = {
                    <b>Effects</b>: <input type="range" min="1" max="100" value="` + (SETTINGS.get('volume_sfx') * 100) + `" class="slider" id="myRange2" onInput="AUDIO.set_volume('volume_sfx', this.value/100);">
                    <h3>Battles</h3>
                    <b>Challenge</b>: <input type="range" min="1" max="100" value="` + (SETTINGS.get('challenge_level') * 100) + `" class="slider" id="myRange3" onInput="SETTINGS.set('challenge_level', this.value/100);"><br />
+                   <b>Commands</b>:<select onChange="SETTINGS.set('battleorder', this.value);">>
+                     <option value="explore" ${SETTINGS.get('battleorder') == "explore" ? "SELECTED" : ""}>Unexplored first</option>
+                     <option value="exploit" ${SETTINGS.get('battleorder') == "exploit" ? "SELECTED" : ""} >Winning first</option>
+                   </select>
                    `, options);
     },
 
