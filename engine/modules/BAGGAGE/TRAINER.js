@@ -31,7 +31,7 @@ const TRAINER = {
 
   _buy: function(ability){
     if (INVENTORY.count(ITEM.XpToken) >= TRAINER._price(ability)){
-      alert("Learned " + ability);
+      new AlertTextBox("Learned " + ability);
       ABILITIES.unlock(ability);
       INVENTORY.decrease(ITEM.XpToken, TRAINER._price(ability));
     }

@@ -80,7 +80,7 @@ const SHOP = {
       if (INVENTORY.cash() >= price * quantity){
         INVENTORY.increase(object, quantity);
         INVENTORY.decrease(ITEM.Coin, price * quantity);
-        alert("Purchased " + quantity + " " + object);
+        new AlertTextBox("Purchased " + quantity + " " + object);
       }
       var choice = SHOP._current_menu.selected;
       SHOP._current_menu.close();
@@ -89,7 +89,6 @@ const SHOP = {
     },
 
     buy: function(object, shop_type){
-      console.log(shop_type);
       if(shop_type == ITEMS_ARCHETYPES_NAMES.Alchemy || shop_type == ITEMS_ARCHETYPES_NAMES.Tool){
         new PromptTextMenu("How many do you want?", "1", function(reply){
           var amount = parseInt(reply) || 1;
@@ -106,7 +105,7 @@ const SHOP = {
         INVENTORY.decrease(object, count);
         INVENTORY.increase(ITEM.Coin, count * SHOP._prices.sell(object));
         if(object == ITEM.Medallion){
-          alert("You feel awful for getting rid of the last memento of the person you cared about the most... This sacrifice better be worth it.");
+          new AlertTextBox(`You feel awful for selling the precious memento`);
         }
       }
     },
@@ -133,11 +132,11 @@ const SHOP = {
         SHOP._transaction._sell(index, c);
         sum += c *  SHOP._prices.sell(index);
         if (summary.length > 0){
-          summary += ", ";
+          summary += ", <br />";
         }
         summary += c + " " + index;
       }
-      alert(`You sold for ${sum} coins worth of junk: ${summary}`);
+      new AlertTextBox(`You sold for ${sum} coins worth of junk.`);
     },
   },
 

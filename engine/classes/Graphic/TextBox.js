@@ -254,8 +254,18 @@ class TextBoxFitted extends TextBox {
 
 
 class InteractingTextBox extends TextBox {
-    constructor(x, y, w, h, padding, anchored) {
-        super(x,y,w,h, padding, anchored);
-        IO.control.dialog(this);
-    }
+  constructor(x, y, w, h, padding, anchored) {
+      super(x,y,w,h, padding, anchored);
+      IO.control.dialog(this);
   }
+}
+
+class AlertTextBox extends TextBoxFitted {
+    constructor(text) {
+        super(SCREEN.width()/2, SCREEN.height()/2, text);
+        this.container.style.position = "fixed"; // not great to bypass the Textelement constructor param
+        this.container.style.zIndex = "200004";
+        var self = this;
+        setTimeout(function(){self.destroy();}, 1000);
+    }
+}
