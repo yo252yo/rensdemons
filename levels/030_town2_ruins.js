@@ -39,7 +39,7 @@ var make_priest = function (x, y) {
       "Priest: \"Help us, you're our only hope!\"",
       "Priest: \"May the Goddess help us rebuild! And shield us while we do so!\"",
       "Priest: \"This is the end of $$town_2$... There's no recovering from this.\"",
-      "Priest: \"The High Priest wants to talk to you.\"",
+      "Priest: \"The Archpriest wants to talk to you.\"",
       "Priest: \"All the nobles perished or fled. We're all that's left, trying to salvage what we can here.\"",
     ]);
  };
@@ -56,8 +56,8 @@ make_priest(1275, 1200);
 
 var armament = function() {
   var short = [
-    `Priest: "To start your attack on $$demon_lord$, you must travel to the south east. That is where the Maw of Hell is open, at the edge of the world. It is the core of $$demon_lord$'s forces, it's where all his armies are coming from. Be careful, no human has ever seen this place and returned to tell the tale. We don't know what you'll encounter there. But we have faith that the Goddess will lead your path to victory!"`,
-    `Priest: "On the way, you should probably stop at $$town_3$ to rest and resupply. It is the human settlement the closest to the Maw of Hell, where the best warriors of mankind do their best to keep the forces of evil at bay. I'm sure you can learn a lot from their expertise."`,
+    `Archpriest: "To start your attack on $$demon_lord$, you must travel to the south east. That is where the Maw of Hell is open, at the edge of the world. It is the core of $$demon_lord$'s forces, it's where all his armies are coming from. Be careful, no human has ever seen this place and returned to tell the tale. We don't know what you'll encounter there. But we have faith that the Goddess will lead your path to victory!"`,
+    `Archpriest: "On the way, you should probably stop at $$town_3$ to rest and resupply. It is the human settlement the closest to the Maw of Hell, where the best warriors of mankind do their best to keep the forces of evil at bay. I'm sure you can learn a lot from their expertise."`,
     `$$Ren$: "Thank you! I'll be on my way."`,
     `$$BestFriend$: "Don't worry, you're going to do great!"`,
     `Things would be much simpler if either of you could truly believe it.`,
@@ -65,30 +65,30 @@ var armament = function() {
   if (!ABILITIES.has_ability("_town3_prompted")){
     ABILITIES.unlock("_town3_prompted");
     TextBannerSequence.make([
-      `Priest: "Promised Child! Am I glad to see you! The situation has taken a turn for the worst!"`,
+      `Archpriest: "Promised Child! Am I glad to see you! The situation has taken a turn for the worst!"`,
       `$$BestFriend$: "What happened?"`,
-      `Priest: "A few hours after you left the town, the armies of $$demon_lord$ launched a wide scale coordinated attack. Their numbers were unlike anything we had seen before. We were completely unprepared and overwhelmed. They tore through our defenses and destroyed the whole city, including the castle. Most people are dead. May the Goddess take care of their souls. Some have been captured by the demons and taken who knows where. I dare not imagine what tortures they must be going through."`,
-      `Priest: "We really need a ray of hope! Please, tell me that the Goddess helped you find something! Tell me you can help!"`,
+      `Archpriest: "A few hours after you left the town, the armies of $$demon_lord$ launched a wide scale coordinated attack. Their numbers were unlike anything we had seen before. We were completely unprepared and overwhelmed. They tore through our defenses and destroyed the whole city, including the castle. Most people are dead. May the Goddess take care of their souls. Some have been captured by the demons and taken who knows where. I dare not imagine what tortures they must be going through."`,
+      `Archpriest: "We really need a ray of hope! Please, tell me that the Goddess helped you find something! Tell me you can help!"`,
       `$$Ren$: "We found this..."`,
       `You show the head of the temple the artifacts you found. He examines briefly the armature and ammunition, then spends much longer studying the advisory manual in silence. You don't disturb his concentration and patiently wait. After what seems like an eternity, the priest turns back to you.`,
-      `Priest: "This is most interesting. I can only decipher some fragments of this book, but if what I understand is correct, this is a weapon of incredible power. Our ancestors were truly fearsome! It's a wonder how $$demon_lord$ was able to overtake them..."`,
+      `Archpriest: "This is most interesting. I can only decipher some fragments of this book, but if what I understand is correct, this is a weapon of incredible power. Our ancestors were truly fearsome! It's a wonder how $$demon_lord$ was able to overtake them..."`,
       `You shudder. If people so strong were wiped out, how could you even hold a stand against the armies of demons. Your eyes crosses the gaze of $$BestFriend$ and you can see the same uncertainty. But you decide that it would be better to not show it to the adults.`,
       `$$Ren$: "I see... How does it work?"`,
-      `Priest: "It's actually quite simple. That's what truly impresses me. They managed to harness such power in such an accessible form. Anyway, as I was saying, it's dead simple. You put this little marble in this tube, that's how you load the ammunition. Then you point the towards your target, and press here."`,
+      `Archpriest: "It's actually quite simple. That's what truly impresses me. They managed to harness such power in such an accessible form. Anyway, as I was saying, it's dead simple. You put this little marble in this tube, that's how you load the ammunition. Then you point the towards your target, and press here."`,
       `He demonstrates an example while talking.`,
       `$$Ren$: "And then?"`,
-      `Priest: "That's it. Your target will be gone."`,
+      `Archpriest: "That's it. Your target will be gone."`,
       `$$Ren$: "Really? That is indeed simple. How does it work?"`,
-      `Priest: "That much I don't know. The details are in this book, but it's well beyond our current understanding. We'll have to trust that it does. What really worries me is that with so few ammunition, we can't afford to try it out before the actual battle."`,
+      `Archpriest: "That much I don't know. The details are in this book, but it's well beyond our current understanding. We'll have to trust that it does. What really worries me is that with so few ammunition, we can't afford to try it out before the actual battle."`,
       `You swallow in anguish.`,
       `$$Ren$: "So it's a gamble?"`,
-      `Priest: "You could see it that way. But with the Goddess on our side, this is a gamble we cannot lose."`,
+      `Archpriest: "You could see it that way. But with the Goddess on our side, this is a gamble we cannot lose."`,
       `You would have loved a bit more certainty. You can tell by a quick look that $$BestFriend$ feels the same way. But certainty is a luxury you cannot afford. You've seen first hand what the armies of $$demon_lord$ can do. The handful of towns left in the human empire won't survive for long...`,
       `$$Ren$: "I see. Let's do it then!"`,
       `$$BestFriend$: "$$Ren$..."`,
       `$$Ren$: "Don't worry, it will be fine!"`,
       `You exchange a smile that makes it clear that neither of you really believes it. Nonetheless, you feel pressed onwards by the Goddess. There is no other way.`,
-      `Priest: "You are brave, as can be expected from the Promised Child! We are all grateful to you!"`,
+      `Archpriest: "You are brave, as can be expected from the Promised Child! We are all grateful to you!"`,
     ].concat(short));
   } else {
     TextBannerSequence.make(short);

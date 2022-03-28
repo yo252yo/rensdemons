@@ -479,6 +479,9 @@ const RESOURCES = {
     RESOURCES.get_img('assets/portraits_large/Priest_a.png');
     RESOURCES.get_img('assets/portraits_large/Priest_b.png');
     RESOURCES.get_img('assets/portraits_large/Priest_c.png');
+    RESOURCES.get_img('assets/portraits_large/Archpriest_a.png');
+    RESOURCES.get_img('assets/portraits_large/Archpriest_b.png');
+    RESOURCES.get_img('assets/portraits_large/Archpriest_c.png');
     RESOURCES.get_img('assets/portraits_large/Ren_a.png');
     RESOURCES.get_img('assets/portraits_large/Ren_b.png');
     RESOURCES.get_img('assets/portraits_large/Ren_c.png');

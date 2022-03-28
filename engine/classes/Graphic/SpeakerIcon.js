@@ -17,7 +17,7 @@ class SpeakerIcon extends TextElement {
       if(PARTYMEMBERS.isPartyMember(name)){
         return true;
       }
-      if(name == "demon_lieutenant" || name == "demon_lord" || name == "Priest" || name == "Goddess"){
+      if(name == "demon_lieutenant" || name == "demon_lord" || name == "Priest"  || name == "Archpriest" || name == "Goddess"){
         return true;
       }
       return false;

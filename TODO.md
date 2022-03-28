@@ -2,10 +2,8 @@ GOGLE KEEP
 
 - make an custom alert() like prompt(); could be same as autosave
 - autofight feature for end game
-- setting for fight option order: explore vs exploit
 - Have music continue where it left off
 - When you go back to a dungeon from which you fast escaped, the screens 2+ spawn you in wrong place. solution is to force all TPs and never use default mb
-- High priest should be more distinctive in text 
 
 
 
