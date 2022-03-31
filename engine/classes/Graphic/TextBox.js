@@ -100,7 +100,7 @@ class TextBox extends TextElement {
     static print_text(textbox, instant) {
       var text_printing = textbox.pages[0];
 
-      if (instant) {
+      if (instant || SETTINGS.get('fast_text_display')) {
         textbox.html.innerHTML += GLITCH.text.process(text_printing);
         return;
       }
