@@ -192,7 +192,9 @@ const INTERFACE = {
     translations: function() {
         new CenteredTextMenu( `
          <h3>Translations</h3>
-         This game is designed to be played in English. It contains wordplays and riddles that I deem impossible to translate. However, this game runs in web browsers, so you can activate your favorite web browser translation. If you do, make sure to check "dialog/instant display" in the settings to help. Just know that you will have a severely impaired experience.
+         I recommend to play in English. There are wordplays and riddles. I do not think it is possible to translate everything.<br />
+         This game works in web browsers, like Chrome, Edge or Firefox. You can activate the web browser translation tool. It works better if you activate "dialog/instant display" in the options.<br />
+         Be careful. The game will look bad.
          `, [
                {"text": "Back", "effect": "##BACK"}
             ]);
