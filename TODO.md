@@ -1,7 +1,6 @@
 GOGLE KEEP
 
-- bigger room in chest fissure
-- autofight feature for end game
+- autofight feature for end game << i dont think its possible
 - When you go back to a dungeon from which you fast escaped, the screens 2+ spawn you in wrong place. solution is to force all TPs and never use default mb
 
 
