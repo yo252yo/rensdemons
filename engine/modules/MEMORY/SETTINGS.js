@@ -66,7 +66,7 @@ const SETTINGS = {
                    </select>
 
                  <h3>Dialogs</h3>
-                 <b>Fast display</b>: <input type="checkbox" ` + (SETTINGS.get('fast_text_display')? "checked='true'": "") + ` onChange="SETTINGS.set('fast_text_display', this.checked);"><br />
+                 <b>Instant display</b>: <input type="checkbox" ` + (SETTINGS.get('fast_text_display')? "checked='true'": "") + ` onChange="SETTINGS.set('fast_text_display', this.checked);"><br />
                  `, options);
   },
 

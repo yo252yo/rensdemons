@@ -189,6 +189,15 @@ const INTERFACE = {
             ]);
     },
 
+    translations: function() {
+        new CenteredTextMenu( `
+         <h3>Translations</h3>
+         This game is designed to be played in English. It contains wordplays and riddles that I deem impossible to translate. However, this game runs in web browsers, so you can activate your favorite web browser translation. If you do, make sure to check "dialog/instant display" in the settings to help. Just know that you will have a severely impaired experience.
+         `, [
+               {"text": "Back", "effect": "##BACK"}
+            ]);
+    },
+
     help_menu: function() {
         new CenteredTextMenu(`
            <a href="https://gamefaqs.gamespot.com/company/198099-yo252yo" target="_blank">gamefaq</a>

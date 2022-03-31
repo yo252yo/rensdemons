@@ -67,13 +67,12 @@ if (!INTERFACE.is_trial()) {
 
 options.push({"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }});
 options.push({"text": "", "keep_open": true});
-options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
+options.push({"text": "Change language", "effect": function(){ INTERFACE.display.translations(); }});
 options.push({"text": "Content warnings", "effect": function(){ INTERFACE.display.cw_menu(); }});
+options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
 
 if (INTERFACE.is_trial()) {
   options.push({"text": "Updates on full version", "keep_open": true,"effect": function(){ window.open("https://www.twitter.com/yo252yo"); }});
-} else{
-  options.push({"text": "Ren's DEMO", "effect": function(){ CURRENTLEVEL.setup("demo/town"); }} )
 }
 
 
