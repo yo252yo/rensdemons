@@ -14,12 +14,31 @@ self.addEventListener('install', (event) => {
 
 
 self.addEventListener('activate', (event) => {});
-
+/*
+self.addEventListener('fetch', function(event) {
+ event.respondWith(
+   (async () => {
+     try {
+       const networkResponse = await fetch(event.request);
+       await cache.add(networkResponse);
+       return networkResponse;
+     } catch (error) {
+       const cache = await caches.open('rd');
+       const cachedResponse = await cache.match(event.request);
+       return cachedResponse;
+     }
+   })()
+ );
+});
+*/
 
 self.addEventListener('fetch', event => {
   event.respondWith(async function() {
-    const cachedResponse = await caches.match(event.request);
+    const cache = await caches.open('rd');
+    const cachedResponse = await cache.match(event.request);
     if (cachedResponse) return cachedResponse;
-    return fetch(event.request);
+    var r = fetch(event.request);
+    await cache.add(r);
+    return r;
   }());
 });
