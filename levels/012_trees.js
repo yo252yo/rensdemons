@@ -129,32 +129,32 @@ var bridgeleft = function(to, how, condition){
 
 
 if(treepart == 1){
-  topmid('012_trees@2');
+  topmid('012_trees@2', 'botmid');
   botmid('010_world_map');
 } else if(treepart == 2){
-  topmid('012_trees@3');
-  botmid('012_trees');
+  topmid('012_trees@3', 'botmid');
+  botmid('012_trees', 'topmid');
 } else if(treepart == 3){
-  botmid('012_trees@2');
+  botmid('012_trees@2', 'topmid');
   bridgeright();
   bridgeleft();
-  topleft('012_trees@5');
-  topright('012_trees@4');
+  topleft('012_trees@5', 'botmid');
+  topright('012_trees@4', 'botmid');
 } else if(treepart == 4){
-  botmid('012_trees@3');
+  botmid('012_trees@3', 'topright');
   ABILITIES.unlock("_treepart4");
 } else if(treepart == 5){
-  botmid('012_trees@3');
-  topmid('012_trees@6');
+  botmid('012_trees@3', 'topleft');
+  topmid('012_trees@6', 'botmid');
   bridgeleft('012_trees@7', 'bridgeright');
 } else if(treepart == 6){
-  botmid('012_trees@5');
+  botmid('012_trees@5', 'topmid');
   ABILITIES.unlock("_treepart6");
 } else if(treepart == 7){
-  bridgeright('012_trees@5');
+  bridgeright('012_trees@5', 'bridgeleft');
   botleft('012_trees@10', 'topmid');
-  topmid('012_trees@9');
-  topleft('012_trees@8');
+  topmid('012_trees@9', 'botmid');
+  topleft('012_trees@8', 'botmid');
   var next = bridgeleft('012_trees@11', 'bridgeright');
 
   if (INVENTORY.count(ITEM.Branch) < 3){
@@ -166,28 +166,28 @@ if(treepart == 1){
     }
   }
 } else if(treepart == 8){
-  botmid('012_trees@7');
+  botmid('012_trees@7', 'topleft');
 } else if(treepart == 9){
-  botmid('012_trees@7');
+  botmid('012_trees@7', 'topmid');
 } else if(treepart == 10){
-  topmid('012_trees@7');
+  topmid('012_trees@7', 'botleft');
 } else if(treepart == 11){
-  bridgeright('012_trees@7');
+  bridgeright('012_trees@7', 'bridgeleft');
   bridgeleft();
-  topleft('012_trees@12');
+  topleft('012_trees@12', 'botmid');
 }  else if(treepart == 12){
-  botmid('012_trees@11');
+  botmid('012_trees@11', 'topleft');
   bridgeright();
   bridgeleft();
-  topleft('012_trees@14');
-  topright('012_trees@13');
+  topleft('012_trees@14', 'botmid');
+  topright('012_trees@13', 'botmid');
 } else if(treepart == 13){
-  botmid('012_trees@12');
+  botmid('012_trees@12', 'topright');
 } else if(treepart == 14){
-  botmid('012_trees@12');
+  botmid('012_trees@12','topleft');
   bridgeright();
   bridgeleft('012_trees@40', 'bridgeright');
-  topright('012_trees@15');
+  topright('012_trees@15', 'botmid');
 } else if(treepart == 40){
   bridgeleft();
   bridgeright('012_trees@14', 'bridgeleft');
@@ -198,17 +198,17 @@ if(treepart == 1){
   topmid('012_trees@40', 'botmid');
   topleft('012_trees@40', 'botleft');
 } else if(treepart == 15){
-  botmid('012_trees@14');
-  topmid('012_trees@16');
+  botmid('012_trees@14', 'topright');
+  topmid('012_trees@16', 'botmid');
 
   botleft('012_trees@17', 'topmid');
   bridgeleft('012_trees@18', 'bridgeright');
-  topleft('012_trees@19');
-  topright('012_trees@20');
+  topleft('012_trees@19', 'botmid');
+  topright('012_trees@20', 'botmid');
   bridgeright('012_trees@21', 'bridgeleft');
   botright('012_trees@22', 'topmid');
 } else if(treepart == 16){
-  botmid('012_trees@15');
+  botmid('012_trees@15', 'topmid');
   var next = topmid('012_trees@28');
 
   if (INVENTORY.count(ITEM.Branch) < 3 + 6){
@@ -248,14 +248,14 @@ if(treepart == 1){
   bridgeright('012_trees@25', 'bridgeleft');
   botmid('012_trees@27', 'topmid');
 } else if(treepart == 27){
-  topmid('012_trees@26');
+  topmid('012_trees@26', 'botmid');
 } else if(treepart == 28){
   botmid('012_trees@16', 'topmid');
   bridgeleft('012_trees@29', 'bridgeright');
   bridgeright('012_trees@30', 'bridgeleft');
 
   if (INVENTORY.count("_knots_pressed") >= 2){
-    topmid('012_trees@32');
+    topmid('012_trees@32', 'botmid');
   }
 } else if(treepart == 29){
   bridgeright('012_trees@28', 'bridgeleft');
@@ -263,7 +263,7 @@ if(treepart == 1){
   bridgeleft('012_trees@28', 'bridgeright');
   botmid('012_trees@31', 'topmid');
 } else if(treepart == 31){
-  topmid('012_trees@30');
+  topmid('012_trees@30', 'botmid');
 } else if(treepart == 32){
   botmid('012_trees@28', 'topmid');
   bridgeleft('012_trees@33', 'bridgeright');
@@ -281,12 +281,12 @@ if(treepart == 1){
   bridgeleft('012_trees@32', 'bridgeright');
   topmid('012_trees@35', 'botmid');
 } else if(treepart == 37){
-  topmid('012_trees@38');
+  topmid('012_trees@38', 'botmid');
   bridgeleft('012_trees@34', 'bridgeright');
   bridgeright('012_trees@35', 'bridgeleft');
 } else if(treepart == 38){
   botmid('012_trees@37', 'topmid');
-  topmid('012_trees@39');
+  topmid('012_trees@39', 'botmid');
 } else if(treepart == 39){
   botmid('012_trees@38', 'topmid');
   var exit = topmid('012_trees@39');
