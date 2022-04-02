@@ -94,7 +94,35 @@ if(SCREEN.is_mobile()){
     padding: 50,
   };
 }
+
+title +=`<span onClick="install();" id='install'></span>`;
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
+
+
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('serviceWorker.js', {scope : '.' }).then(function() {});
+}
+
+var deferredPrompt;
+
+var install = function(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((result) => {
+      if (result.outcome === 'accepted') {
+        CONSOLE.log.debug("Web app install accepted");
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById("installSpan").innerHTML = "Install";
+});
+
 
 if(SCREEN.is_mobile()){
   te.container.style.opacity = 0.8;
