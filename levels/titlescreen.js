@@ -97,7 +97,7 @@ if(SCREEN.is_mobile()){
 if(title) {
   title += "<br /><br />";
 }
-title += `<span onClick="installWebApp();" id='installSpan' style="display:none;">Install<br /><br /></span>`;
+title += `<span onClick="installWebApp();" id='installSpan' style="display:none;"></span>`;
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding, true);
 
 

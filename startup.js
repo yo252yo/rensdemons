@@ -44,6 +44,7 @@ updateInstallMenu = function(){
     setTimeout(updateInstallMenu, 500);
     return;
   }
+  d.innerHTML = "Install<br /><br />";
   d.style.display = "block";
 }
 
