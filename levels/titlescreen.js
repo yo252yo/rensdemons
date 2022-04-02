@@ -99,7 +99,9 @@ title += `<span onClick="install();" id='installSpan' style="display:none"><br /
 var te = new TextMenu(undefined, options, d.left,d.top+d.height, d.width, d.height, d.padding, true);
 
 if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('serviceWorker.js', {scope : '.' }).then(function() {});
+  navigator.serviceWorker.register('serviceWorker.js', {scope : '.' }).then(function() {
+    CONSOLE.log.debug("Service worker registerd");
+  });
 }
 
 var deferredPrompt;
@@ -108,7 +110,7 @@ var install = function(){
   if(!deferredPrompt){
     return;
   }
-  
+
   deferredPrompt.prompt();
   deferredPrompt.userChoice.then((result) => {
     if (result.outcome === 'accepted') {
@@ -119,13 +121,25 @@ var install = function(){
   });
 }
 
-window.addEventListener('load', (event) => {
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    document.getElementById("installSpan").innerHTML = "Install";
-    document.getElementById("installSpan").style.visibility = "visible";
-  });
+
+// Tries for 5 seconds to update the INSTALL links
+updateMenu = function(){
+  var d = document.getElementById("installSpan");
+  if (!d || !deferredPrompt){
+    setTimeout(updateMenu, 200);
+    return;
+  }
+  d.innerHTML = "Install";
+  d.style.visibility = "visible";
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  updateMenu();
+  setTimeout(function(){
+    updateMenu = function(){};
+  }, 5000);
 });
 
 
