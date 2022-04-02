@@ -126,7 +126,7 @@ console.log(title);
 
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('sw.js', {scope : '.' })
+           .register('serviceWorker.js', {scope : '.' })
            .then(function() { console.log("Service Worker Registered"); });
 }
 
