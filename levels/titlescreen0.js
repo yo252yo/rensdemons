@@ -122,14 +122,15 @@ var install = function(){
 }
 
 title +=`<span onclick="install();">TEST</span>`;
+console.log(title);
 
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('sw.js')
+           .register('sw.js', {scope : '.' })
            .then(function() { console.log("Service Worker Registered"); });
 }
 
-var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
+var te = new TextMenu("A" + title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
 if(SCREEN.is_mobile()){
   te.container.style.opacity = 0.8;
