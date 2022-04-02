@@ -7,36 +7,19 @@ self.addEventListener('install', (event) => {
         'index.html',
         'import_manager.js',
       ]);
-    //  const index = await cache.add(new Request("index.html", {cache: 'reload'}));
     })()
   );
 });
 
 
 self.addEventListener('activate', (event) => {});
-/*
-self.addEventListener('fetch', function(event) {
- event.respondWith(
-   (async () => {
-     try {
-       const networkResponse = await fetch(event.request);
-       await cache.add(networkResponse);
-       return networkResponse;
-     } catch (error) {
-       const cache = await caches.open('rd');
-       const cachedResponse = await cache.match(event.request);
-       return cachedResponse;
-     }
-   })()
- );
-});
-*/
 
 self.addEventListener('fetch', event => {
   event.respondWith(async function() {
     const cache = await caches.open('rd');
     const cachedResponse = await cache.match(event.request);
     if (cachedResponse) return cachedResponse;
+
     var r = fetch(event.request);
     await cache.add(r);
     return r;
