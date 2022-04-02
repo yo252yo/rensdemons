@@ -123,6 +123,11 @@ var install = function(){
 
 title +=`<span onclick="install();">TEST</span>`;
 
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
 
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
