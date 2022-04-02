@@ -60,33 +60,72 @@ var size = sizes[o];
 var exit;
 var floors = [];
 
+var getSpawnPosition = function(from, direction){
+  var dest = (from + direction) % 4;
+  var new_size = sizes[Math.floor((from + direction-1) / 4)];
+  // technically we should do that for path too, and ideally we should factor these points with the ones used below for ExitFloors, but im tired
+
+  switch(dest){
+    case 1:
+      if(direction > 0){
+        return [centerX-new_size+new_size-25+25, centerY+new_size-path/2];
+      } else {
+        return [centerX-new_size+path/2, centerY+new_size-new_size+25-25];
+      }
+    break;
+    case 2:
+      if(direction < 0){
+        return [centerX-new_size+new_size-25+25, centerY-new_size + path-path/2];
+      } else {
+        return [centerX-new_size+path/2, centerY+25-25];
+      }
+    break;
+    case 3:
+      if(direction > 0){
+        return [centerX-25+25, centerY-new_size + path-path/2];
+      } else {
+        return [centerX+new_size - path+path/2, centerY+25-25];
+      }
+    break;
+    case 0: // 4
+      if (hawkpart < 20 && direction < 0){
+        return [centerX-25+25, centerY+new_size-path/2];
+      } else if (direction > 0){
+        return [centerX+new_size - path + path/2, centerY+new_size-new_size+25-25];
+      }
+    break;
+  }
+  return undefined;
+}
+
 switch(hawkpart % 4){
   case 1:
     floors.push(new S_MudFloor(centerX-size, centerY+size,           size, path));
     var destination = hawkpart > 1 ? "014_hawks@" + (hawkpart-1) : "010_world_map";
-    exit = new S_ExitFloor(centerX-size+size-25, centerY+size,           50, path, destination);
+    var spawn = hawkpart > 1 ? getSpawnPosition(hawkpart,-1) : undefined;
+    exit = new S_ExitFloor(centerX-size+size-25, centerY+size,           50, path, destination, spawn);
     floors.push(new S_MudFloor(centerX-size, centerY+size,           path, size));
-    new S_ExitFloor(centerX-size, centerY+size-size+25,           path, 50, "014_hawks@" + (hawkpart+1));
+    new S_ExitFloor(centerX-size, centerY+size-size+25,           path, 50, "014_hawks@" + (hawkpart+1), getSpawnPosition(hawkpart,1));
   break;
   case 2:
     floors.push(new S_MudFloor(centerX-size, centerY-size + path,    size, path));
-    new S_ExitFloor(centerX-size+size-25, centerY-size + path,    50, path, "014_hawks@" + (hawkpart+1));
+    new S_ExitFloor(centerX-size+size-25, centerY-size + path,    50, path, "014_hawks@" + (hawkpart+1), getSpawnPosition(hawkpart,1));
     floors.push(new S_MudFloor(centerX-size, centerY,                path, size));
-    exit = new S_ExitFloor(centerX-size, centerY+25,                path, 50, "014_hawks@" + (hawkpart-1));
+    exit = new S_ExitFloor(centerX-size, centerY+25,                path, 50, "014_hawks@" + (hawkpart-1), getSpawnPosition(hawkpart,-1));
   break;
   case 3:
     floors.push(new S_MudFloor(centerX, centerY-size + path,         size, path));
-    exit = new S_ExitFloor(centerX-25, centerY-size + path,  50, path, "014_hawks@" + (hawkpart-1));
+    exit = new S_ExitFloor(centerX-25, centerY-size + path,  50, path, "014_hawks@" + (hawkpart-1), getSpawnPosition(hawkpart,-1));
     floors.push(new S_MudFloor(centerX+size - path, centerY,         path, size));
-    new S_ExitFloor(centerX+size - path, centerY+25,  path, 50, "014_hawks@" + (hawkpart+1));
+    new S_ExitFloor(centerX+size - path, centerY+25,  path, 50, "014_hawks@" + (hawkpart+1), getSpawnPosition(hawkpart,1));
   break;
   case 0: // 4
     floors.push(new S_MudFloor(centerX, centerY+size,                size, path));
     if (hawkpart < 20){
-      new S_ExitFloor(centerX-25, centerY+size,       50, path, "014_hawks@" + (hawkpart+1));
+      new S_ExitFloor(centerX-25, centerY+size,       50, path, "014_hawks@" + (hawkpart+1), getSpawnPosition(hawkpart,1));
     }
     floors.push(new S_MudFloor(centerX+size - path, centerY+size,    path, size));
-    exit = new S_ExitFloor(centerX+size - path, centerY+size-size+25,  path, 50, "014_hawks@" + (hawkpart-1));
+    exit = new S_ExitFloor(centerX+size - path, centerY+size-size+25,  path, 50, "014_hawks@" + (hawkpart-1), getSpawnPosition(hawkpart,-1));
   break;
 }
 
