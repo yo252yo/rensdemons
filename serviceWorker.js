@@ -12,8 +12,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {});
 
 self.addEventListener('fetch', function(event) {
- event.respondWith(
-   (async () => {
+ event.respondWith((async () => {
      try {
        const networkResponse = await fetch(event.request);
        return networkResponse;
@@ -22,6 +21,6 @@ self.addEventListener('fetch', function(event) {
        const cachedResponse = await cache.match(event.request);
        return cachedResponse;
      }
-   });
+   }));
  })());
 });
