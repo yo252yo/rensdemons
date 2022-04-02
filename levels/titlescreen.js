@@ -95,7 +95,7 @@ if(SCREEN.is_mobile()){
   };
 }
 
-title +=`<span onClick="install();" id='install'></span>`;
+title +=`<span onClick="install();" id='installSpan'></span>`;
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
 
