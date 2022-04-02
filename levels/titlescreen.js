@@ -105,23 +105,27 @@ if('serviceWorker' in navigator) {
 var deferredPrompt;
 
 var install = function(){
-  if(deferredPrompt){
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((result) => {
-      if (result.outcome === 'accepted') {
-        CONSOLE.log.debug("Web app install accepted");
-        document.getElementById("installSpan").innerHTML = "Installed!";
-      }
-      deferredPrompt = null;
-    });
+  if(!deferredPrompt){
+    return;
   }
+  
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then((result) => {
+    if (result.outcome === 'accepted') {
+      CONSOLE.log.debug("Web app install accepted");
+      document.getElementById("installSpan").innerHTML = "Installed!";
+    }
+    deferredPrompt = null;
+  });
 }
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById("installSpan").innerHTML = "Install";
-  document.getElementById("installSpan").style.visibility = "visible";
+window.addEventListener('load', (event) => {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById("installSpan").innerHTML = "Install";
+    document.getElementById("installSpan").style.visibility = "visible";
+  });
 });
 
 
