@@ -95,7 +95,7 @@ if(SCREEN.is_mobile()){
   };
 }
 
-title +=`<span onClick="install();" id='installSpan'></span>`;
+title +=`<span onClick="install();" id='installSpan' style="visibility:hidden"></span>`;
 var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
 
 
@@ -111,6 +111,7 @@ var install = function(){
     deferredPrompt.userChoice.then((result) => {
       if (result.outcome === 'accepted') {
         CONSOLE.log.debug("Web app install accepted");
+        document.getElementById("installSpan").innerHTML = "Installed!";
       }
       deferredPrompt = null;
     });
@@ -121,6 +122,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
   document.getElementById("installSpan").innerHTML = "Install";
+  document.getElementById("installSpan").style.visibility = "visible";
 });
 
 
