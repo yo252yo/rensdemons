@@ -275,12 +275,12 @@ if(slimepart == 1) {
 var exit;
 if(slimepart == 1) {
   exit = new S_ExitFloor(2100,5525,250,50, '010_world_map');
-  new S_ExitFloor(2525,3350,50,125, '015_slimes@2');
+  new S_ExitFloor(2525,3350,50,125, '015_slimes@2', [2300+25,3300-125/2]);
 }  else if(slimepart == 2) {
-  new S_ExitFloor(5925,1550,50,100, '015_slimes@3');
-  exit = new S_ExitFloor(2300,3300,50,125, '015_slimes@1');
+  new S_ExitFloor(5925,1550,50,100, '015_slimes@3', [5925+25,1550-50]);
+  exit = new S_ExitFloor(2300,3300,50,125, '015_slimes@1', [2525+25,3350-125/2]);
 } else if(slimepart == 3) {
-  exit = new S_ExitFloor(5925,1550,50,100, '015_slimes@2');
+  exit = new S_ExitFloor(5925,1550,50,100, '015_slimes@2', [5925+25,1550-50]);
   var shortcut = new S_ExitFloor(3525,5025,50,50, '010_world_map');
   shortcut.interaction = function(){
     if(INVENTORY.count(ITEM.War_hammer)){
