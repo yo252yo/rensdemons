@@ -119,7 +119,7 @@ const MARTYRDOM = {
       options.push({"text": "", "effect": function(){}, "keep_open": true});
       options.push({"text": "Suicide", "effect": suicide});
       options.push({"text": "Don't pray now", "effect": "##CLOSEWITHFOLLOW"});
-      MARTYRDOM.menu.change(title, options);
+      MARTYRDOM.menu.change(title + "<br /><br />", options);
       MARTYRDOM.menu.print_menu();
       MARTYRDOM._spare_seen_points = MARTYRDOM._spare_points;
       INTERFACE.draw.escape_button();

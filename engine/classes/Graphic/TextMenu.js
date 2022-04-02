@@ -77,13 +77,16 @@ class TextMenu extends TextElement {
       ]));
     }
 
-    constructor(title, options, x, y, w, h, padding) {
+    constructor(title, options, x, y, w, h, padding, dont_expand_title) {
         super(x,y, w, h, padding);
 
         this.parent = IO._menu;
         this.last_executed = (new Date());
         IO.control.menu(this);
         this.title = title;
+        if (this.title && !dont_expand_title) {
+          this.title = title + "<br /><br />";
+        }
         this.options = options;
         this.selected = 0;
         this.in_destruction = false;
@@ -99,7 +102,7 @@ class TextMenu extends TextElement {
 
     print_menu() {
       if (this.title) {
-        var html = this.title + "<br /><br />";
+        var html = this.title;
         this.html.innerHTML = html;
       }
 

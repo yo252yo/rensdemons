@@ -65,7 +65,6 @@ if (!INTERFACE.is_trial()) {
   options.push({"text": "Completion", "effect": function(){ INTERFACE.display.achievements(); }});
 }
 
-options.push({"text": "Help", "effect": function(){ INTERFACE.display.help_menu(); }});
 options.push({"text": "", "keep_open": true});
 options.push({"text": "Change language", "effect": function(){ INTERFACE.display.translations(); }});
 options.push({"text": "Content warnings", "effect": function(){ INTERFACE.display.cw_menu(); }});
@@ -95,9 +94,9 @@ if(SCREEN.is_mobile()){
   };
 }
 
-title +=`<span onClick="install();" id='installSpan' style="visibility:hidden"></span>`;
-var te = new TextMenu(title, options, d.left,d.top+d.height, d.width, d.height, d.padding);
-
+title += "<br /><br />";
+title += `<span onClick="install();" id='installSpan' style="display:none"><br /></span>`;
+var te = new TextMenu(undefined, options, d.left,d.top+d.height, d.width, d.height, d.padding, true);
 
 if('serviceWorker' in navigator) {
   navigator.serviceWorker.register('serviceWorker.js', {scope : '.' }).then(function() {});
