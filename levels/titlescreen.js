@@ -139,7 +139,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   updateMenu();
   setTimeout(function(){
     updateMenu = function(){};
-  }, 5000);
+  }, 60000);
 });
 
 
