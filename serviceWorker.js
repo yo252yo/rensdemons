@@ -3,7 +3,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open('rd');
     await cache.addAll([
-      '/index.html',
+      'index.html',
     ]);
   })());
 });
