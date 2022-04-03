@@ -1,0 +1,32 @@
+npm init
+
+npm install --save-dev electron
+
+npm start
+
+npm install --save-dev @electron-forge/cli
+
+npx electron-forge import
+
+npm install --ignore-scripts
+
+npm install --save --ignore-scripts git+https://github.com/greenheartgames/greenworks.git
+
+xcopy "C:\Downloads\steamworks_sdk" "D:\work\rensdemons-master\node_modules\greenworks\deps\steamworks_sdk" /y /E /H
+
+npm install
+
+npm install --save-dev electron-rebuild
+
+"node_modules/.bin/electron-rebuild"
+
+npm install
+
+
+
+
+
+npm start
+
+
+npx electron-builder build
