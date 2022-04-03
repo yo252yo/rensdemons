@@ -12,7 +12,8 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^17.0.1",
+    "electron-prebuilt-compile": "8.2.0",
+    "electron": "^17.3.1",
     "electron-builder": "^22.14.13",
     "electron-rebuild": "^3.2.7"
   },
@@ -25,6 +26,8 @@
   },
   "dependencies": {
     "electron-builder-squirrel-windows": "^23.0.0",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "^8.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "greenworks": "git+https://github.com/greenheartgames/greenworks.git"
   },
