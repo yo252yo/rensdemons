@@ -151,7 +151,7 @@ const PARTY = {
       var original = PARTY.display._get_name("ORIGINAL_" + name);
 
       var nameString = nickname;
-      if (original != nickname){
+      if (original != nickname && name in PARTYMEMBERS){
        nameString += " (formerly " + original + ")";
      }
 

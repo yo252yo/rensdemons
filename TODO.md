@@ -1,4 +1,7 @@
-BATTLETREE.api.forget in wiseold and upbeatdok
+- BATTLETREE.api.forget in wiseold and upbeatdok
+- scrolling on phone is impossible (touch too sensitive)
+- CenteredTextMenu party par ex a way too much br /
+
 
 - finish beta
 - GOGLE KEEP
