@@ -66,6 +66,6 @@ credits: `
 
  warnings: `
   <h3>Content warnings</h3>
-  This game contains absolutely no graphic depiction of anything problematic, but it does feature textual mentions of war, violence, death, suicide, alcohol, and very briefly rape. It is not suitable for a young audience.
+  This game contains absolutely no graphic depiction of anything problematic, but it does feature textual mentions of war, violence, death, suicide, alcohol, gambling, and very briefly rape. It is not suitable for a young audience.
   `,
  }
