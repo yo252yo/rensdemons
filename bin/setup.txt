@@ -1,8 +1,0 @@
-npm install --ignore-scripts
-
-create node_modules/greenworks/deps/steamworks_sdk folder
-https://github.com/greenheartgames/greenworks/blob/master/docs/get-steamworks-sdk.md
-
-npm install
-
-npm start
