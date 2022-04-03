@@ -1,25 +1,20 @@
 ## npm init
 
 
-
-
-
 npm install --save-dev electron
-
-npm start
-
 npm install --save-dev @electron-forge/cli
 
+npm install --ignore-scripts
 npx electron-forge import
 
-npm install --ignore-scripts
 
 npm install --save --ignore-scripts git+https://github.com/greenheartgames/greenworks.git
 
 # adapt this
 # to create node_modules/greenworks/deps/steamworks_sdk folder
 # https://github.com/greenheartgames/greenworks/blob/master/docs/get-steamworks-sdk.md
-xcopy "C:\Downloads\steamworks_sdk" "D:\work\rensdemons-master\node_modules\greenworks\deps\steamworks_sdk" /y /E /H
+
+xcopy "C:\Downloads\steamworks_sdk" "D:\work\rensdemons\node_modules\greenworks\deps\steamworks_sdk" /y /E /H
 
 npm install
 
