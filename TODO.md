@@ -1,3 +1,5 @@
+BATTLETREE.api.forget in wiseold and upbeatdok
+
 - finish beta
 - GOGLE KEEP
 - trailer

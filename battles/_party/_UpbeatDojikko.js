@@ -24,8 +24,8 @@ var idreveal = false;
 
 var pricelock = function(){
   if(INVENTORY.cash() < 15) {
-    BATTLETREE.api.lock(battle, readPalm);
-    BATTLETREE.api.lock(battle, readCards);
+    BATTLETREE.api.forget(battle, readPalm);
+    BATTLETREE.api.forget(battle, readCards);
   }
   // we dont need an unlock in an else clause because its always unlocked by _ask_reading
 }
@@ -86,7 +86,7 @@ var _read_palm = function (from){
     //  INVENTORY.increase(ITEM.Coin, 15);
       _spirits(readPalm);
       STATS.record.flag("UpbeatDojikko_Book");
-      BATTLETREE.api.lock(battle, readCards); // mutually exclusive stories (reveal of promised child)
+      BATTLETREE.api.forget(battle, readCards); // mutually exclusive stories (reveal of promised child)
     }
   });
   f(from);
@@ -136,7 +136,7 @@ var _read_cards = function (from){
   //    pricelock();
   //    INVENTORY.increase(ITEM.Coin, 15);
       STATS.record.flag("UpbeatDojikko_Cards");
-      BATTLETREE.api.lock(battle, readPalm); // mutually exclusive stories (reveal of promised child)
+      BATTLETREE.api.forget(battle, readPalm); // mutually exclusive stories (reveal of promised child)
     }
   });
   f(from);
@@ -209,7 +209,7 @@ PLAYER_ACTIONS.add({
                 `$$Ren$: "Huh... okay..."`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, warn);
+    BATTLETREE.api.forget(battle, warn);
     STATS.record.flag("UpbeatDojikko_Fall");
     _withdraw(sayHello);
     _browse_wares(sayHello);
@@ -243,7 +243,7 @@ PLAYER_ACTIONS.add({
     );
   },
 });
-BATTLETREE.api.lock(battle, askJosephine);
+BATTLETREE.api.forget(battle, askJosephine);
 
 PLAYER_ACTIONS.add({
   name: useTarot,
@@ -259,13 +259,13 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$: "What I find more interesting is how you dare play around with the spirit realm!"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, useTarot);
+    BATTLETREE.api.forget(battle, useTarot);
     if(STATS.flag("UpbeatDojikko_Spirit")) {
       BATTLETREE.api.unlock(battle, askJosephine);
     }
   },
 });
-BATTLETREE.api.lock(battle, useTarot);
+BATTLETREE.api.forget(battle, useTarot);
 
 PLAYER_ACTIONS.add({
   name: bluff,
@@ -285,15 +285,15 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$: "What's in it for me?"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, bluff);
-    BATTLETREE.api.lock(battle, apologize);
-    BATTLETREE.api.lock(battle, trade);
+    BATTLETREE.api.forget(battle, bluff);
+    BATTLETREE.api.forget(battle, apologize);
+    BATTLETREE.api.forget(battle, trade);
     if(STATS.flag("UpbeatDojikko_Cards")) {
       BATTLETREE.api.unlock(battle, useTarot);
     }
   },
 });
-BATTLETREE.api.lock(battle, bluff);
+BATTLETREE.api.forget(battle, bluff);
 
 PLAYER_ACTIONS.add({
   name: warn,
@@ -306,7 +306,7 @@ PLAYER_ACTIONS.add({
                 `$$UpbeatDojikko$: "Are you? It's an honor to have you here. What can I do for you?"`,
                 ],
   function: function() {
-    BATTLETREE.api.lock(battle, sayHello);
+    BATTLETREE.api.forget(battle, sayHello);
     _withdraw(warn);
     _browse_wares(warn);
     _question(warn);
@@ -318,7 +318,7 @@ PLAYER_ACTIONS.add({
     }
   },
 });
-BATTLETREE.api.lock(battle, warn);
+BATTLETREE.api.forget(battle, warn);
 
 if(STATS.flag("UpbeatDojikko_Fall")){
   BATTLETREE.api.unlock(battle, warn);
