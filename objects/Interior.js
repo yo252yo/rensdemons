@@ -406,7 +406,7 @@ class B_Chimney_wall extends ItemBattleObject {
     this.add_interaction("Climb", "As soon as the fire dies of, you slide yourself inside the chimney and attempt to go up. You may have expected a secret compartment or even a noteworthy experience, but there's nothing but a lot of soot. When you come down, you realize with shame that you've made the whole room black, in addition to your own body of course.");
     this.add_interaction("Warm", "You warm yourself at the fire. The heated air is slowly engulfing you, making you drowsy. It feels good to be close to the heat source of this room. You deserve a little rest.");
     this.add_interaction("Observe", "You look at the dancing flames in the heart of the chimney. You remain there longer than you anticipated, mesmerized by the fluid movements of the fire.");
-    this.add_interaction("Pick up", "In the chimney, you find a single STONE left right in the middle. It almost seems as if someone left it on purpose there for you. You decide to keep it.", INVENTORY.increase_function(ITEM.Stone), true);
+    this.add_interaction("Pick up", "In the chimney, you find a single STONE left right in the middle. It almost seems as if someone left it on purpose there for you. You decide to keep it.", INVENTORY.increase_function(ITEM.Stone));
   }
 
 }
