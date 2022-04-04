@@ -84,9 +84,7 @@ class TextMenu extends TextElement {
         this.last_executed = (new Date());
         IO.control.menu(this);
         this.title = title;
-        if (this.title && !dont_expand_title) {
-          this.title = title + "<br /><br />";
-        }
+        this.dont_expand_title = dont_expand_title;
         this.options = options;
         this.selected = 0;
         this.in_destruction = false;
@@ -103,6 +101,9 @@ class TextMenu extends TextElement {
     print_menu() {
       if (this.title) {
         var html = this.title;
+        if (this.title && !this.dont_expand_title) {
+          html += "<br /><br />";
+        }
         this.html.innerHTML = html;
       }
 
