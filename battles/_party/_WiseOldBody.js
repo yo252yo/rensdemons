@@ -25,7 +25,8 @@ var attack = {
 };
 
 BATTLE.monster_actions.add_textual("$$WiseOld$ hits you with a staff.", attack);
-BATTLE.monster_actions.add_textual(`$$WiseOld$: "Insanity is doing the same thing over and over again and expecting different results."`, attack);
+BATTLE.monster_actions.add_textual(`$$WiseOld$: "You must hold on, even when it seems absurd."`, attack);
+BATTLE.monster_actions.add_textual(`$$WiseOld$: "The flesh is weak."`, attack);
 
 
 // ===================
@@ -33,4 +34,5 @@ BATTLE.monster_actions.add_textual(`$$WiseOld$: "Insanity is doing the same thin
 // ===================
 BATTLE.operations.start(
   `$$WiseOld$: "The trial of the body... We all know that the flesh is weak. But you must demonstrate stamina and dexterity! You must hold on, even when it seems absurd."`,
+  `$$WiseOld$: "Insanity is doing the same thing over and over again and expecting different results..."`
 );
