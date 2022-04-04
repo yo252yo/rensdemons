@@ -184,6 +184,9 @@ const CURRENTLEVEL = {
       var c = CHARACTER.get().gravity_center();
       var x = c[0];
       var y = c[1] + 10; // its more intuitive to take a point closer to legs
+      if (divider >= 3) {
+        return [x, y];
+      }
       switch (CHARACTER.get().facing_direction()) {
         case "LEFT":
           x -= CURRENTLEVEL._FACE_INTERACTION_DISTANCE / divider;
@@ -204,7 +207,7 @@ const CURRENTLEVEL = {
     interact_in_front: function(attempt) {
       if (!attempt){
         attempt = 1;
-      } else if(attempt >=3 ){
+      } else if(attempt >=4 ){
         return;
       }
       var c = CURRENTLEVEL.io.get_front_location(attempt);
