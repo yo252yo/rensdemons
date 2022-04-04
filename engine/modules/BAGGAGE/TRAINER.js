@@ -36,8 +36,20 @@ const TRAINER = {
       INVENTORY.decrease(ITEM.XpToken, TRAINER._price(ability));
     }
 
-    TRAINER._current_menu.close();
+  //  TRAINER._current_menu.close();
     TRAINER._menu.buy();
+  },
+
+  _promptBuy: function(ability, cost){
+
+    new CenteredTextMenu("Do you want to learn the secrets of " + ability + "? It will cost you about " + cost + " of your experience...",
+        [
+          {"text": "Learn", "effect": function(){ TRAINER._buy(ability); }},
+          {"text": "Refuse", "effect": "##BACK"},
+       ]
+     );
+
+
   },
 
   _menu: {
@@ -57,7 +69,7 @@ const TRAINER = {
         }
         (function(i){
           var text = `${i}: ${TRAINER._price(i)} xp`;
-          goods.push({"text": text, "effect": function(){ TRAINER._buy(i); }, "keep_open": true});
+          goods.push({"text": text, "effect": function(){ TRAINER._promptBuy(i, TRAINER._price(i)); }, "keep_open": false});
         }(index));
       }
 

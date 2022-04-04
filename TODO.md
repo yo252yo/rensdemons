@@ -4,7 +4,9 @@
 - Suicide doesn't give martyrdom
 
 - Dodge tutorial add keys guide image
+
 - scrolling on phone is impossible (touch too sensitive)
+
 - CenteredTextMenu party par ex a way too much br /
  >> a chaque fois que tu back en fait
 
@@ -16,9 +18,10 @@
 
 - Basilisk has empathy straight away  
 
-- Confirmer purchase on learning ability
-
 - Keep last text prompt when u can reply (for statue riddles mb ??)
+
+- titlescreen click on empty oiption crashes
+
 
 
 
