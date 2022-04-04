@@ -20,10 +20,8 @@ class TextElement extends VisualElement {
     constructor(x, y, w, h, padding, anchored) {
         super(x,y,w,h);
 
-        if (!padding) {
-          padding = 7;
-        }
-
+        this.padding = padding || 7;
+        
         this.html = document.createElement('div');
 
         this.adjust_depth(_TEXT_ZINDEX);
@@ -38,13 +36,13 @@ class TextElement extends VisualElement {
         this.container.style.left = x + "px";
         this.container.style.height = h + "px";
         this.container.style.width = w + "px";
-        this.html.style.height = (h - 2 * padding) + "px";
-        this.html.style.width = (w - 2 * padding) + "px";
+        this.html.style.height = (h - 2 * this.padding) + "px";
+        this.html.style.width = (w - 2 * this.padding) + "px";
         this.draw();
 
         TEXT_STYLE(this.html);
 
-        this.html.style.padding = padding + "px";
+        this.html.style.padding = this.padding + "px";
 
         this.html.style.overflow = "hidden";
         this.html.style.wordBreak = "break-all";

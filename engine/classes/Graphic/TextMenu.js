@@ -176,11 +176,12 @@ class TextMenu extends TextElement {
     back() {
       this.in_destruction = true;
 
-      if (this.parent) {
+      var p = this.parent;
+      if (p) {
         IO.control.cede();
         // Maybe we need to explicitely save title and option because of destroy()
         // This should create an object of the same type as "this".
-        new this.constructor(this.parent.title, this.parent.options);
+        new p.constructor(p.title, p.options, p.x, p.y, p.width, p.height, p.padding, p.dont_expand_title);
         this.destroy();
       } else {
         this.close();
