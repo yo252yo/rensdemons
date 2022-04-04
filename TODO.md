@@ -1,8 +1,6 @@
 - BATTLETREE.api.forget was in wiseold and upbeatdok, can it be replaced by empty??
 >> Wise old mind doesn't highlight good answer
 
-- goddess party icon shouldnt exit ??
-
 - Suicide doesn't give martyrdom
 
 - Dodge tutorial add keys guide image

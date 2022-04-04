@@ -168,7 +168,9 @@ const PARTY = {
                    ]);
 
        var d = document.getElementById('character_portait_slot');
-       new LayeredImage("assets/portraits_large/" + name + "_$.png", 300, 300, d);
+       if (d && name in PARTYMEMBERS){
+         new LayeredImage("assets/portraits_large/" + name + "_$.png", 300, 300, d);
+       }
     },
 
     menu: function() {
