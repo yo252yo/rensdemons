@@ -159,7 +159,7 @@ const INTERFACE = {
       }
 
       var options = [
-        {"text": "Experience", "effect": function(){ INTERFACE.display.experience_menu(); }},
+        {"text": "Experiences", "effect": function(){ INTERFACE.display.experience_menu(); }},
         {"text": "Abilities", "effect": function(){ ABILITIES.display(); }},
         {"text": "Inventory", "effect": function(){ INVENTORY.display(); }},
         {"text": "Party", "effect": function(){ PARTY.display.menu(); }},

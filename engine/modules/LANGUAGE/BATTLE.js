@@ -4,7 +4,7 @@ LANGUAGE.battle = {
   },
 
   xp: function(before, after) {
-    var r = "Through this encounter, you learned more about the fabric of reality (" + (after.xp  - before.xp ) + " XP). ";
+    var r = "Through this encounter, you EXPERIENCED more about the fabric of reality (" + (after.xp  - before.xp ) + " XP). ";
     if (after.unseen > before.unseen){
       r += "You discovered " + (after.unseen  - before.unseen ) + " NEW THREADS. ";
     }
