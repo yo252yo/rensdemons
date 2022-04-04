@@ -1,14 +1,9 @@
 - BATTLETREE.api.forget was in wiseold and upbeatdok, can it be replaced by empty??
 >> Wise old mind doesn't highlight good answer
 
-- Suicide doesn't give martyrdom
-
 - Dodge tutorial add keys guide image
 
 - scrolling on phone is impossible (touch too sensitive)
-
-- CenteredTextMenu party par ex a way too much br /
- >> a chaque fois que tu back en fait
 
 - redo aerith sprite sprite eyelashes et oeil creuse
 
