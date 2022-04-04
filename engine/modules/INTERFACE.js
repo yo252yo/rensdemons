@@ -388,6 +388,9 @@ var win = function(){
 }
 
 var suicide = function(){
+    MARTYRDOM.death(); // needs to happen before saving ^^
     SAVE.autosave();
-    CURRENTLEVEL.setup("gameover$@suicide");
+    setTimeout(function(){
+      CURRENTLEVEL.setup("gameover$@suicide");
+    }, 300);
 }
