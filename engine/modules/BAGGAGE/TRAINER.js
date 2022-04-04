@@ -70,9 +70,9 @@ const TRAINER = {
     },
 
     main: function() {
-      TRAINER._current_menu = new CenteredTextMenu("What do you want to do?",
+      TRAINER._current_menu = new CenteredTextMenu("Learn more about the Way of the " + TRAINER._current_type + "?",
           [
-            {"text": "Learn the way of the " + TRAINER._current_type, "effect": function(){ TRAINER._menu.buy(); }},
+            {"text": "Listen", "effect": function(){ TRAINER._menu.buy(); }},
             {"text": "Leave", "effect": "##CLOSE"},
          ]
        );
