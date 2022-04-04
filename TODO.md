@@ -16,11 +16,7 @@
 
 - widen FOV when climb up a hill ???
 
-- Basilisk has empathy straight away  
-
 - Keep last text prompt when u can reply (for statue riddles mb ??)
-
-- titlescreen click on empty oiption crashes
 
 
 
