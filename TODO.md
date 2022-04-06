@@ -1,17 +1,12 @@
 - BATTLETREE.api.forget was in wiseold and upbeatdok, can it be replaced by empty??
 >> Wise old mind doesn't highlight good answer
 
-- Dodge tutorial add keys guide image
-
 - scrolling on phone is impossible (touch too sensitive)
-
-- redo aerith sprite sprite eyelashes et oeil creuse
 
 - Vlad could open menu during cutscene sequence
 
 - widen FOV when climb up a hill ???
 
-- Keep last text prompt when u can reply (for statue riddles mb ??)
 
 
 

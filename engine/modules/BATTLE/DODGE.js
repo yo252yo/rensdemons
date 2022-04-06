@@ -86,7 +86,11 @@ const DODGE = {
   draw: {
     prompt: function() {
       DODGE.draw.resize_existing();
-      DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
+      if(BATTLE.current_battle == "trial/basilisk"){
+        DODGE.sprite.prompt = new CenteredImage("assets/interface/circle_tuto.png", 'void'); // it may have been resized.
+      } else {
+        DODGE.sprite.prompt = new CenteredImage("assets/interface/circle.png", 'player'); // it may have been resized.
+      }
       DODGE.sprite.prompt.adjust_depth(10098); // The sprite is a level object and has the zindex of its y.
       DODGE.center_sprite();
       DODGE.sprite.text = new TextBanner("Pick a position to dodge your opponent's assault.", true);
@@ -143,7 +147,11 @@ const DODGE = {
     },
 
     hit: function(){
-      DODGE.sprite.attacked = new CenteredImage("assets/interface/circle.png", 'obj_light');
+      if(BATTLE.current_battle == "trial/basilisk"){
+        DODGE.sprite.attacked = new CenteredImage("assets/interface/circle_tuto.png", 'obj_light'); // it may have been resized.
+      } else {
+        DODGE.sprite.attacked = new CenteredImage("assets/interface/circle.png", 'obj_light'); // it may have been resized.
+      }
       DODGE.draw.rough_hit();
       DODGE.sprite.attacked.show();
       DODGE.sprite.attacked.adjust_depth(10100); // The sprite is a level object and has the zindex of its y.

@@ -226,6 +226,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/characters/party/UpbeatDojikko.png');
     RESOURCES.get_img('assets/characters/party/WiseOld.png');
     RESOURCES.get_img('assets/interface/circle.png');
+    RESOURCES.get_img('assets/interface/circle_tuto.png');
     RESOURCES.get_img('assets/interface/cross.png');
     RESOURCES.get_img('assets/interface/dodger.png');
     RESOURCES.get_img('assets/interface/event.png');
