@@ -64,13 +64,13 @@ var functions_dictionary = {
     question: "Well... I think that's a wise enough answer.",
     function: function() {
       unlock_hire("As can be");
-      BATTLETREE.api.forget(battle, "Give up");
     }
   },
 };
 
 
 var make_quiz_answers = function(action_name, answers) {
+  BATTLE.player_actions.empty(true);
   for (var answer of answers){
     if (functions_dictionary[answer]){
       var f = functions_dictionary[answer];
@@ -79,9 +79,7 @@ var make_quiz_answers = function(action_name, answers) {
         unlock: true,
         description: [`$$WiseOld$: "${f.question}"`],
         function: function(){
-          for(var a of answers){
-            BATTLETREE.api.forget(battle, a);
-          }
+          BATTLE.player_actions.empty(true);
           f.function();
         }
       });
@@ -95,8 +93,6 @@ var make_quiz_answers = function(action_name, answers) {
     }
     unlock_answer(action_name);
   }
-
-  BATTLETREE.api.forget(battle, action_name);
 }
 
 var action_name = "Begin";

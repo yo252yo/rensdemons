@@ -1,5 +1,4 @@
-- BATTLETREE.api.forget was in wiseold and upbeatdok, can it be replaced by empty??
->> Wise old mind doesn't highlight good answer
+- BATTLETREE.api.forget was in upbeatdok, can it be replaced by empty??
 
 - scrolling on phone is impossible (touch too sensitive)
 
