@@ -66,7 +66,9 @@ if (!INTERFACE.is_trial()) {
 }
 
 options.push(TEXTMENU_EMPTYROW);
-options.push({"text": "Change language", "effect": function(){ INTERFACE.display.translations(); }});
+if(navigator.userAgent.includes("Electron")){
+  options.push({"text": "Change language", "effect": function(){ INTERFACE.display.translations(); }});
+}
 options.push({"text": "Content warnings", "effect": function(){ INTERFACE.display.cw_menu(); }});
 options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
 
