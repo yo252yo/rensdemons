@@ -1,12 +1,12 @@
 AUDIO.music.interface.titlescreen();
 
-var ss0 = new StaticSprite("assets/screens/title_layer0.png", 'player', SCREEN.width(), SCREEN.height());
+var ss0 = new StaticSprite("assets/screens/title_layer0.png", 'player');
 var s0 = new LevelObject(ss0, 0, SCREEN.height());
 
-var ss1 = new StaticSprite("assets/screens/title_layer1.png", 'background', SCREEN.width(), SCREEN.height());
+var ss1 = new StaticSprite("assets/screens/title_layer1.png", 'background');
 var s1 = new LevelObject(ss1, 0, SCREEN.height());
 
-var ss2 = new StaticSprite("assets/screens/title_layer2.png", 'obj_light', SCREEN.width(), SCREEN.height());
+var ss2 = new StaticSprite("assets/screens/title_layer2.png", 'obj_light');
 var s2 = new LevelObject(ss2, 0, SCREEN.height());
 
 
