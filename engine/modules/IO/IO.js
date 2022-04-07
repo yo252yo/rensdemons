@@ -186,6 +186,11 @@ const IO = {
       CONSOLE.log.io("Activating dodge");
       IO.control._activate(IO_DODGE);
     },
+
+    empty: function() {
+      CONSOLE.log.io("Activating empty");
+      IO.control._activate({});
+    },
   },
 
   click_interceptor: {

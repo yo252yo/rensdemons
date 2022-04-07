@@ -5,6 +5,7 @@ class Sequence {
     if (f.length != args.length) {
       CONSOLE.error("Attempting to chain function with wrong number of arguments (it's probably unchainable)", true);
       console.log(f);
+      console.log(args);
     }
     f.apply(null, args);
   }
@@ -40,7 +41,15 @@ class Sequence {
   }
 
   add_MoveObjectWalk(obj, x, y){
-    this.add(MovingObject.try_make_walk_to, [obj, x, y]);
+    var f = function(callback) {
+      IO.control.empty();
+      MovingObject.try_make_walk_to(obj, x, y, function(){
+        IO.control.cede();
+        callback();
+      });
+    }
+
+    this.add_function(f);
   }
 
   add_function(f){
