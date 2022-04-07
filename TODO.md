@@ -1,12 +1,4 @@
-- BATTLETREE.api.forget was in upbeatdok, can it be replaced by empty??
-
-- scrolling on phone is impossible (touch too sensitive)
-
-- Vlad could open menu during cutscene sequence
-
 - widen FOV when climb up a hill ???
-
-
 
 
 
@@ -20,5 +12,4 @@
 - Make sure there's enough weapons in trial
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - write walkthrough
-- https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
 - finally, produce a zip, put on steam
