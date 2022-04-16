@@ -43,7 +43,7 @@ var attack = {
 };
 
 BATTLE.monster_actions.add_textual("The Golem overwhelms you with a torrent of insults.", attack);
-BATTLE.monster_actions.add_textual("The Golem shouts abuses targeting your worst insecurities.", attack);
+BATTLE.monster_actions.add_textual("The Golem shouts abuse targeting your worst insecurities.", attack);
 BATTLE.monster_actions.add_textual("The Golem harasses you with a relentless flow of slander.", attack);
 
 // ===================
