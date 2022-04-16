@@ -47,7 +47,7 @@ const BATTLE = {
           var o = options[i];
           if(ABILITIES.is_special_flight_option(o.text)){
             options_flight.push(o);
-          } else if(o.text.startsWith(BATTLE._last_action)){
+          } else if(o.text.startsWith(BATTLE._last_action) || o.text.startsWith("<b>" + BATTLE._last_action)){
             o.text = ">>" + o.text;
             options_pursue.push(o);
           } else if(o.text.startsWith("<b>")){
