@@ -1,7 +1,7 @@
 - widen FOV when climb up a hill ???
 - Pressing wasd and arrow keys at the same time makes you run faster faster
-
-
+- Elevated text box conflicts with avatar icon
+- Only save music position when in fight, not from a level change
 
 
 - finish beta
