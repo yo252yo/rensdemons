@@ -41,6 +41,11 @@ const TRAINER = {
   },
 
   _promptBuy: function(ability, cost){
+    if (INVENTORY.count(ITEM.XpToken) < cost){
+      TRAINER._menu.buy();
+      new AlertTextBox("Not enough experience");
+      return;
+    }
 
     new CenteredTextMenu("Do you want to learn the secrets of " + ability + "? It will cost you about " + cost + " of your experience...",
         [
