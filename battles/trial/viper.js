@@ -15,6 +15,8 @@ PLAYER_ACTIONS.useless(ITEM.Stone);
 
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 
+PLAYER_ACTIONS.add_spoiler();
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

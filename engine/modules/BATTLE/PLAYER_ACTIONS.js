@@ -279,6 +279,10 @@ const PLAYER_ACTIONS = {
     }
 
     // New game plus only
+    PLAYER_ACTIONS.add_spoiler();
+  },
+
+  add_spoiler: function(){
     if(BATTLE.current_battle && STATS.is_post_game() && BESTIARY.is_empathized(BATTLE.current_battle)){
       PLAYER_ACTIONS.add({
         name: ABILITY.Spoiler,
@@ -292,7 +296,6 @@ const PLAYER_ACTIONS = {
       //BATTLETREE.api.develop(BATTLE.current_battle, ABILITY.Spoiler, BATTLETREE.WIN);
     }
   },
-
 
   kill_with_any_party_member: function(hits){
     for(var i in PARTYMEMBERS){

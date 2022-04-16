@@ -20,6 +20,8 @@ PLAYER_ACTIONS.win(ITEM.Fang, 1, true);
 PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
 PLAYER_ACTIONS.win(ITEM.Bone, 1, true);
 
+PLAYER_ACTIONS.add_spoiler();
+
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================

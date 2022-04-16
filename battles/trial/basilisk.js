@@ -56,6 +56,7 @@ PLAYER_ACTIONS.add({
 });
 
 
+PLAYER_ACTIONS.add_spoiler();
 
 
 // ===================
