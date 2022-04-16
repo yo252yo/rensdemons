@@ -3,6 +3,7 @@ const AUDIO = {
   _TRACKS: {},
   _MUSIC_PLAYER: new Audio(),
   _CURRENT_EFFECTS: {},
+  _SAVED: [],
 
   _load_sound: function (track){
     AUDIO._TRACKS[track] = new Audio('assets/sounds/' + track + '.wav');
@@ -89,14 +90,22 @@ const AUDIO = {
     });
   },
 
+  should_save: function(track){
+    return track && !track.startsWith("interface/") && !track.startsWith("chara/");
+  },
+
   _play_music: function(track){
     if (AUDIO._PLAYING == track){
       return;
+    }
+    if (AUDIO.should_save(AUDIO._PLAYING)) {
+      AUDIO._SAVED[AUDIO._PLAYING] = AUDIO._MUSIC_PLAYER.currentTime;
     }
     AUDIO._PLAYING = track;
     AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
     AUDIO._MUSIC_PLAYER.playbackRate = 1;
+    AUDIO._MUSIC_PLAYER.currentTime = AUDIO._SAVED[track] || 0;
     AUDIO._start_music();
   },
 
