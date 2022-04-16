@@ -8,11 +8,11 @@ class THOUGHTS {
 
       if (!start){
         // proba to actually think
-        if (RANDOM.float() < 0.3) {
+        if (RANDOM.float() < 0.09) {
           thinker.think();
         }
       }
-      var nextThoughtSeconds = 5 + RANDOM.int(30);
+      var nextThoughtSeconds = 1 + RANDOM.int(14);
       thinker.thoughtsTimeout = setTimeout(function(){THOUGHTS.thinkTrigger(thinker)}, nextThoughtSeconds * 1000);
   }
 
