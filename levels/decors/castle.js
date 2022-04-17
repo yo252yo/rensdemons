@@ -200,7 +200,7 @@ var jarfunction = function() {
     }
   } else {
     TextBannerSequence.make([
-      `A jar full of mead. The well deserved reward for a guard's duty!`
+      `A barrel full of mead. The well deserved reward for a guard's duty!`
     ]);
   }
  };

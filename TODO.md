@@ -3,6 +3,11 @@
 - Elevated text box conflicts with avatar icon
 - Only save music position when in fight, not from a level change
 
+Can I put a banner for autododge?
+
+Make it so that escape is auto explored
+
+
 
 - finish beta
 - GOGLE KEEP
