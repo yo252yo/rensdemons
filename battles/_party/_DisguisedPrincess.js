@@ -23,7 +23,7 @@ var plandescription = [
   `$$DisguisedPrincess$: "Sorry, yes. Please forgive my excitement. I should have started by saying that I've been studying alchemy, and I've developed an elixir that should... indispose the guards. Without killing them, of course, I'm not a monster. But the castle is teeming with them, we do need to get rid of them if we want to get out safely."`,
   `$$Ren$: "I see..."`,
   `$$DisguisedPrincess$: "Take these herbs and put them in the guards' meals. It should leave us some time to get out."`,
-  `You obtain a ` + ITEM.PoisonousHerbs + ".",
+  `You obtain ` + ITEM.PoisonousHerbs.toUpperCase() + ".",
 ];
 var extrafun = function() {
   INVENTORY.set(ITEM.PoisonousHerbs, 1);
