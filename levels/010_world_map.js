@@ -1,7 +1,7 @@
 // ===================
 //hack A. INITIALIZATION (sound, etc...)
 // ===================
-AUDIO.music.interface.map();
+AUDIO.music.levels.map();
 INTERFACE.make_compass();
 var gen = new Generator(DICTIONARY.get("world_seed")*7);
 

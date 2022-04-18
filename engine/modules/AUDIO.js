@@ -90,15 +90,18 @@ const AUDIO = {
     });
   },
 
-  should_save: function(track){
-    return track && !track.startsWith("interface/") && !track.startsWith("chara/");
+  should_save: function(from, to){
+    if(! (to == 'interface/im in the not a club')){
+      return false;
+    }
+    return from && !from.startsWith("interface/") && !from.startsWith("chara/");
   },
 
   _play_music: function(track){
     if (AUDIO._PLAYING == track){
       return;
     }
-    if (AUDIO.should_save(AUDIO._PLAYING)) {
+    if (AUDIO.should_save(AUDIO._PLAYING, track)) {
       AUDIO._SAVED[AUDIO._PLAYING] = AUDIO._MUSIC_PLAYER.currentTime;
     }
     AUDIO._PLAYING = track;
@@ -176,7 +179,6 @@ const AUDIO = {
       titlescreen: function() {       AUDIO._play_music('interface/time for adventure 4 opening'); },
       introduction: function() {      AUDIO._play_music('interface/love planet'); },
       gameover: function() {          AUDIO._play_music('interface/un triste echo trop juste'); },
-      map: function() {               AUDIO._play_music('interface/un desert'); },
       artifact: function() {          AUDIO._play_music('interface/this is the time to glisten'); },
     },
 
@@ -212,6 +214,8 @@ const AUDIO = {
       trial: function() {             AUDIO._play_music('level/a tale about somewhere where the end of the story already occurs'); },
       temple: function() {            AUDIO._play_music('level/ambiant inconvenient truth'); },
       house: function() {             AUDIO._play_music('level/floating temple'); },
+
+      map: function() {               AUDIO._play_music('level/un desert'); },
 
       sirens: function() {            AUDIO._play_music("level/whatifyouaretheevildoppleganger") },
       trees: function() {             AUDIO._play_music("level/whenyouareallovermybody") },
