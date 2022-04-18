@@ -231,6 +231,12 @@ const DODGE = {
       BATTLE.turn_factory.player();
     },
 
+    instadodge: function(){
+      CONSOLE.log.debug("[INSTANT DODGE]");
+      DODGE.outcome.cleanup();
+      TextBannerSequence.make(["You easily dodge your opponent's assault."], BATTLE.turn_factory.player);
+    },
+
     failure: function(){
       DODGE.outcome.cleanup();
       TextBannerSequence.make([LANGUAGE.battle.dodge_fail()], BATTLE.operations.lose);
@@ -295,9 +301,8 @@ const DODGE = {
 
     prompt: function(){
 
-      if (DODGE.events.instadodge()){
-        CONSOLE.log.debug("[INSTANT DODGE]");
-        DODGE.outcome.success();
+      if (true || DODGE.events.instadodge()){
+        DODGE.outcome.instadodge();
         return;
       }
 
