@@ -329,6 +329,9 @@ const BATTLETREE = {
       if (battle == "_treasure") {
         return display_name;
       }
+      if(display_name == ABILITY.Escape){ // always displays escape
+        return display_name;
+      }
       // Used for generated names like party members
       if (DICTIONARY.has(display_name)) {
         display_name = DICTIONARY.get(display_name);
