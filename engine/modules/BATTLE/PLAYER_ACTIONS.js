@@ -170,6 +170,7 @@ const PLAYER_ACTIONS = {
       outcome: BATTLETREE.ESCAPE,
       description: description,
     });
+    BATTLETREE.api.develop(BATTLE.current_battle, ABILITY.Escape, BATTLETREE.ESCAPE);
   },
 
   useless: function(name) {

@@ -1,8 +1,6 @@
 - widen FOV when climb up a hill ???
 - Pressing wasd and arrow keys at the same time makes you run faster faster
 
-Make it so that escape is auto explored
-
 
 
 - finish beta
