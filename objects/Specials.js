@@ -51,6 +51,7 @@ class S_Tomb extends SimpleObject {
     var type = gen.get();
     var selfproba = 0.25 * Math.min(STATS.get(STAT.Death) / 100, 1);
     if(type < 0.05) {
+
       var villager = LEDGER.get_throwaway_villager(gen.get());
       var birth = (new Date(villager.birth)).toLocaleString();
       var death = (new Date(villager.death)).toLocaleString();
@@ -62,14 +63,23 @@ class S_Tomb extends SimpleObject {
       this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br />Killed by a demon<br /> ${birth} - ${death}`]);
       S_Tomb.done_bf = true;
     } else if(type < 0.1 + selfproba && !S_Tomb.done_self) {
-      this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child<br />Abandonned by the gods`]);
+      this.default_text = this.text_interaction([`$$Ren$ of ${DICTIONARY.get("town_1")}<br />The Promised Child<br />Abandoned by the gods`]);
       S_Tomb.done_self = true;
     } else {
-      var villager = LEDGER.get_villager(gen.get());
-      var birth = (new Date(villager.birth)).toLocaleString();
-      var death = (new Date(villager.death)).toLocaleString();
-      var cod = gen.pick(["Assassinated by an otherwordly power", "Slain by a god", "Discarded after use", "Exterminated by a machine", "Wiped out of existence", "Recycled into more content", "Murdered for personal enjoyment", "Slaughtered for a higher being's pleasure", "Crushed to free up space", "Eradicated for amusement", "Discarded like a used toy", "Gone and forgotten", "Murdered without cause", "Killed by the system", "Obliterated by tradition", "Destroy by gods' disinterest", "Killed by you", "Murdered by you", "Slaughtered by you", "Destroyed by you", "Killed for your pleasure", "Massacred for your enjoyment", "Gave their life so you could go on", "Died because of you"]);
-      this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
+      var companion = LEDGER.get_dead_companion(gen.get());
+      if(companion && gen.get() < 0.2){
+        var birth = (new Date(companion.birth)).toLocaleString();
+        var death = (new Date(companion.death)).toLocaleString();
+        var adjective = PARTY.get_descriptor(companion.role);
+        var cod = gen.pick(["Discarded", "Replaced", "Ceased to be", "Relic of another time", "Fading memory", "Forgotten", "Abandoned", "Left to die", "Cast off", "Forlorn", "Deserted by heroes", "Cast away by peers", "Thrown away", "Brushed aside after use", "Left to rot", "Outlived usefulness", "World moved on", "Left behind", "Buried in an ancient world", "Entombed in another aeon", "Trapped in a lost past", "Now a memory" ]);
+        this.default_text = this.text_interaction([`${companion.name} the ${adjective}<br />${cod}<br /> ${birth} - ${death}`]);
+      } else {
+        var villager = LEDGER.get_villager(gen.get());
+        var birth = (new Date(villager.birth)).toLocaleString();
+        var death = (new Date(villager.death)).toLocaleString();
+        var cod = gen.pick(["Assassinated by an otherworldly power", "Slain by a god", "Discarded after use", "Exterminated by a machine", "Wiped out of existence", "Recycled into more content", "Murdered for personal enjoyment", "Slaughtered for a higher being's pleasure", "Crushed to free up space", "Eradicated for amusement", "Discarded like a used toy", "Gone and forgotten", "Murdered without cause", "Killed by the system", "Obliterated by tradition", "Destroy by gods' disinterest", "Killed by you", "Murdered by you", "Slaughtered by you", "Destroyed by you", "Killed for your pleasure", "Massacred for your enjoyment", "Gave their life so you could go on", "Died because of you"]);
+        this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
+      }
     }
   }
 }

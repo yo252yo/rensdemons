@@ -75,7 +75,11 @@ var unlock_random_book = PLAYER_ACTIONS.function.unlock_replacing_action({
     } else {
       document.getElementById('iframe').style.visibility = "hidden";
       fakeframe.style.visibility = "visible";
-      fakeframe.innerHTML = LEDGER.getBio();
+      if(Math.random() < 0.7) {
+        fakeframe.innerHTML = LEDGER.getBio();
+      } else{
+        fakeframe.innerHTML = LEDGER.getPartyBio();
+      }
     }
     frame_container.style.visibility = "visible";
   },

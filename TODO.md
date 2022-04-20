@@ -1,5 +1,11 @@
 - widen FOV when climb up a hill ???
 - Pressing wasd and arrow keys at the same time makes you run faster faster
+- Put monsters attack in their experience page
+- add demon lord and lieutenant to PC ledger
+
+
+
+
 
 
 

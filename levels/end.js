@@ -8,6 +8,7 @@ if(s.length > 1){
 
 
 AUDIO.music.interface.introduction();
+LEDGER.record_party_death();
 
 var size = 600;
 

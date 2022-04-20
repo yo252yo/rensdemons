@@ -32,9 +32,9 @@ const LEDGER = {
   get_villager: function (seed) {
     var gen = new Generator(seed);
     LEDGER.load_ledger();
-    var name = gen.pick(Object.keys(LEDGER._ledger));
+    var name = gen.pick(Object.keys(LEDGER._ledger["npc"]));
     if (name) {
-      villager = LEDGER._ledger[name];
+      villager = LEDGER._ledger["npc"][name];
       villager.name = name;
       return villager;
     } else {
@@ -49,7 +49,7 @@ const LEDGER = {
       if(json){
         LEDGER._ledger = JSON.parse(json);
       } else {
-        LEDGER._ledger = {};
+        LEDGER._ledger = {"npc": {}, "pc": {}};
       }
     }
     return LEDGER._ledger;
@@ -92,8 +92,8 @@ const LEDGER = {
         break;
     }
     LEDGER.load_ledger();
-    if(! LEDGER._ledger[name]) {
-      LEDGER._ledger[name] = LEDGER._villager(city);
+    if(! LEDGER._ledger["npc"][name]) {
+      LEDGER._ledger["npc"][name] = LEDGER._villager(city);
       LEDGER.herald(`A new ${role} named ${name} has been born in the city of ${city}.`);
       STATS.record.soul();
     } else {
@@ -109,13 +109,13 @@ const LEDGER = {
       role = "villager";
     }
     LEDGER.load_ledger();
-    if(LEDGER._ledger[name]) {
-      LEDGER._ledger[name].death = (new Date()).getTime();
+    if(LEDGER._ledger["npc"][name]) {
+      LEDGER._ledger["npc"][name].death = (new Date()).getTime();
       LEDGER.herald(`An innocent ${role} named ${name} has been mercilessly killed by our God.`);
     } else {
       // This shouldnt happen lol;
       var city = LEDGER.get_random_city(gen.get());
-      LEDGER._ledger[name] = LEDGER._villager(city);
+      LEDGER._ledger["npc"][name] = LEDGER._villager(city);
     }
   },
 
@@ -167,7 +167,7 @@ const LEDGER = {
     var pursuit = gen.pick(["perfection", "strength", "knowledge", "virtue", "truth", "peace", "enlightnement", "devotion", "piety", "power", "influence"]);
     var witness = gen.pick(["colleagues", "friends", "family", "countrymen", "acquaintances", "cousins", "neighbours", "lovers", "clients"]);
     var passion = gen.pick(["fruits", "birds", "fishing", "sports", "helping others", "religion", "flowers", "weapons", "art", "music", "cooking", "wine", "intimate relationships", "meditation", "poetry", "hunting", "fighting", "sculpting", "puppets", "gambling", "archery"]);
-    var adverb = gen.pick(["peacefully", "fearcely", "elegantly", "miserably", "cautiously", "boldly", "blissfully", "arrogantly", "enthusiastically", "randomly"]);
+    var adverb = gen.pick(["peacefully", "fiercely", "elegantly", "miserably", "cautiously", "boldly", "blissfully", "arrogantly", "enthusiastically", "randomly"]);
     var events = gen.pick([
       `${pronoun} witnessed ${possessive} parents die to a monster attack`,
       `${pronoun} got seduced by a noble`,
@@ -198,5 +198,85 @@ const LEDGER = {
     Of course, ${villager.name}'s brief life was not summarized by one simple trait. ${villager.name} lead a rich and fullfilling existence, most notably, ${possessive} ${witness} remember ${villager.name} fondly for ${possessive} passion for ${passion}.<br />
     ${meeting}
     ${villager.name} died as ${pronoun} lived, ${adverb}. Our God decided that ${pronoun} was no longer needed, and removed ${villager.name} from existence, but not from our memories.`;
+  },
+
+  getPartyBio: function(){
+    LEDGER.load_ledger();
+    var gen = new Generator(Math.random());
+    var name = gen.pick(Object.keys(LEDGER._ledger["pc"]));
+    var companion = LEDGER._ledger["pc"][name];
+
+    var birth = (new Date(companion.birth)).toLocaleString();
+    var death = "";
+    if (companion.death){
+      death = "<br /><strong>Death</strong>: " + (new Date(companion.death)).toLocaleString();
+    }
+
+    var adjective = PARTY.get_descriptor(companion.role);
+
+    return `<h1>${name} the ${adjective}</h1>
+    <hr>
+    <h5>Not from Wikipedia, the free encyclopedia</h5>
+    <strong>Birth</strong>: ${birth}
+    ${death}
+    <hr>` + PARTY.description(companion.role, name);
+  },
+
+  get_dead_companion: function(seed){
+    LEDGER.load_ledger();
+    var gen = new Generator(seed || Math.random());
+    var candidates = [];
+    var k = Object.keys(LEDGER._ledger["pc"]);
+    for(var key of k){
+        if(LEDGER._ledger["pc"][key]["death"]){
+          var c = LEDGER._ledger["pc"][key];
+          c.name = key;
+          candidates.push(c);
+        }
+    }
+
+    if(candidates.length < 1 ){
+      return undefined;
+    }
+    return gen.pick(candidates);
+  },
+
+  record_party_birth: function(role, name) {
+    if(role == PARTYMEMBERS.Ren){ // role == PARTYMEMBERS.BestFriend ||
+      // We keep BestFriend because it'll either be displayed in a book or be a previous incarnation in a tomb
+      return;
+    }
+    LEDGER.load_ledger();
+    LEDGER._ledger["pc"][name] = {
+      birth: (new Date()).getTime(),
+      role: role,
+    };
+    LEDGER.commit_to_stats();
+    LEDGER.herald(`A new lead character by the name of ${name} enters the stage, in the role of ${role}.`);
+  },
+
+  record_party_death: function() {
+    LEDGER.load_ledger();
+    for (var p of PARTY._members){
+      var name = DICTIONARY.get(p);
+      if(!LEDGER._ledger["pc"][name]){
+        continue;
+      }
+      if(!LEDGER._ledger["pc"][name]["death"]){
+        LEDGER._ledger["pc"][name]["death"] = (new Date()).getTime();
+      }
+    }
+    LEDGER.commit_to_stats();
+    LEDGER.herald(`All lead characters have been sacrificed for the good of the narrative.`);
+  },
+
+  record_party_name_change: function(from, to){
+    LEDGER.load_ledger();
+    var c = LEDGER._ledger["pc"][from];
+    delete LEDGER._ledger["pc"][from];
+    LEDGER._ledger["pc"][to] = c;
+    LEDGER.commit_to_stats();
+    LEDGER.herald(`The lead character formerly known as ${from} will now be known as ${to}.`);
   }
+
 }
