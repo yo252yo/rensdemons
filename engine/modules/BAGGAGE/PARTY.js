@@ -32,6 +32,8 @@ const PARTY = {
 
   get_descriptor: function(name){
     switch (name) {
+      case PARTYMEMBERS.BestFriend:
+        return "Dear";
       case PARTYMEMBERS.PreciousChild:
         return "Pure";
       case PARTYMEMBERS.UpbeatDojikko:
