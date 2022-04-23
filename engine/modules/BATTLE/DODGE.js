@@ -301,7 +301,7 @@ const DODGE = {
 
     prompt: function(){
 
-      if (true || DODGE.events.instadodge()){
+      if (DODGE.events.instadodge()){
         DODGE.outcome.instadodge();
         return;
       }
