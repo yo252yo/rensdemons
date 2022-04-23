@@ -441,7 +441,11 @@ const BATTLETREE = {
       var intro = BESTIARY.introed(battle) || "";
       intro += BESTIARY.outroed(battle) || "";
       if(intro){
+        var attacks = BESTIARY.attacks_list(battle) || "";
         intro = `<hr/><i>${intro}</i>`;
+        if(attacks){
+          intro += `<hr style="clear:both" />` + attacks;
+        }
       }
 
       var img = BESTIARY.picture_address(battle);
@@ -465,9 +469,9 @@ const BATTLETREE = {
       if (SCREEN.is_mobile()){
         var text = `
           <b>${dbattle}</b> - ${BATTLETREE.score.completion(battle)}%
-          ${intro}
           <hr/>
           ${imghtml}
+          ${intro}
           <hr/>
           ${tree[0]}
           ${tree[1]}

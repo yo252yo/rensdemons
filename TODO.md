@@ -1,9 +1,7 @@
 - widen FOV when climb up a hill ???
 - Pressing wasd and arrow keys at the same time makes you run faster faster
-- Put monsters attack in their experience page
 
-
-
+mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
 
 
 

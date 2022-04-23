@@ -99,6 +99,35 @@ BESTIARY = {
   picture: function(battlename) {
     return new CenteredBattleImage(BESTIARY.picture_address(battlename), 'background');
   },
+
+  setup_attacks: function(battlename, attack){
+    var split = battlename.split("/");
+    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]]){
+      return undefined;
+    }
+    var texts = BESTIARY.dict[split[0]][split[1]]["attacks"];
+    for(var a in texts) {
+      BATTLE.monster_actions.add_textual(texts[a], attack);
+    }
+  },
+
+  attacks_list: function(battlename){
+    if(!BESTIARY.is_empathized(battlename)){
+      return "";
+    }
+
+    var split = battlename.split("/");
+    if(split.length <= 1 || !BESTIARY.dict[split[0]] || !BESTIARY.dict[split[0]][split[1]]){
+      return undefined;
+    }
+    var texts = BESTIARY.dict[split[0]][split[1]]["attacks"];
+    var result = "<ul>";
+    for(var a in texts) {
+      result += `<li><b>${a}</b>:<ul style="list-style-type: none;"><li>${texts[a]}</ul></li></li>`;
+    }
+    result += "</ul>";
+    return result;
+  },
 }
 
 //hack encounters
