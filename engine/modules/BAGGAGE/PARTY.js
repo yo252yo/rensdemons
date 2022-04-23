@@ -60,6 +60,10 @@ const PARTY = {
         return "Protector";
       case PARTYMEMBERS.SnobRich:
         return "Wealthy";
+      case "demon_lord":
+        return "Zealous";
+      case "demon_lieutenant":
+        return "Devoted";
       default:
         return "";
     }

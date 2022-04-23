@@ -257,7 +257,9 @@ const LEDGER = {
 
   record_party_death: function() {
     LEDGER.load_ledger();
-    for (var p of PARTY._members){
+    var people_to_kill = PARTY._members;
+    people_to_kill.push("demon_lord", "demon_lieutenant");
+    for (var p of people_to_kill){
       var name = DICTIONARY.get(p);
       if(!LEDGER._ledger["pc"][name]){
         continue;

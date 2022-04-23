@@ -76,6 +76,10 @@ var displayText = function() {
   ], nextPage);
 }
 
+
+LEDGER.record_party_birth("demon_lord", DICTIONARY.get("demon_lord"));
+LEDGER.record_party_birth("demon_lieutenant", DICTIONARY.get("demon_lieutenant"));
+
 var te = INTERFACE.game_title();
 te.container.style.opacity = 0.75;
 
