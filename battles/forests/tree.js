@@ -43,17 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/tree", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.8,
   variability: 0.1, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Tree slaps you with a strong and lush branch.", attack);
-BATTLE.monster_actions.add_textual("The Tree whips you with a thousand leaves.", attack);
-BATTLE.monster_actions.add_textual("The Tree overwhelms you with a tornado of foliage.", attack);
-
+});
 
 
 // ===================

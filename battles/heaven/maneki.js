@@ -40,17 +40,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("heaven/maneki", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 0.4,
   variability: 0.99, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Maneki challenges you to a game of luck. Most outcomes will have you suffer, but there's a one in a million chance you might get extremely rich!", attack);
-BATTLE.monster_actions.add_textual("The Maneki makes a bet with you. Heads, it becomes your ally. Tails, you suffer.", attack);
-BATTLE.monster_actions.add_textual("The Maneki proposes a gamble. You think you see the flaw in the bargain and you have a winning strategy, so you accept. You were wrong.", attack);
+});
 
 
 // ===================

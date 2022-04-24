@@ -41,16 +41,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/vadhaka", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.4,
   variability: 0.95, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Vadhaka drowns you under hits from her many arms.", attack);
-BATTLE.monster_actions.add_textual("The Vadhaka attacks you from all sides with her numerous limbs.", attack);
-BATTLE.monster_actions.add_textual("The Vadhaka multiplies her assaults with her diverse weapons.", attack);
+});
 
 
 

@@ -44,16 +44,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/mermaid", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.7,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Mermaid winks at you and beckons you into her treacherous arms.", attack);
-BATTLE.monster_actions.add_textual("The Mermaid sings a song that lulls your defenses.", attack);
-BATTLE.monster_actions.add_textual("The Mermaid approaches you gently, but suddenly switches to grabbing your throat.", attack);
+});
 
 
 

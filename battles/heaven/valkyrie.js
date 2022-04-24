@@ -38,16 +38,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("heaven/valkyrie", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 0.4,
   variability: 0.95, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Valkyrie tells you to just be yourself. As long as you fit in with expectations, of course...", attack);
-BATTLE.monster_actions.add_textual("The Valkyrie tells you to express yourself. As long as they agree with what you are saying, of course...", attack);
-BATTLE.monster_actions.add_textual("The Valkyrie tells you to do what you want. As long as it coincides with what they want, of course...", attack);
+});
 
 // ===================
 //hack START

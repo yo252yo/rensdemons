@@ -41,17 +41,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/trunk", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.5,
   variability: 0.1, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Trunk falls in your direction in a loud rumble.", attack);
-BATTLE.monster_actions.add_textual("The Trunk rolls towards you at incredible speed.", attack);
-BATTLE.monster_actions.add_textual("The Trunk extends a pointy twig to pierce your body.", attack);
-
+});
 
 
 // ===================

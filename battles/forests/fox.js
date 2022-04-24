@@ -36,16 +36,12 @@ PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/fox", {
   attack_amplitude: 0.05, // Between 0 and 1
   warning_time_s: 1.2,
   react_time_s: 0.3,
   variability: 0.7, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Fox jumps at you. The momentum makes you tumble.", attack);
-BATTLE.monster_actions.add_textual("The Fox hits you with a front paw. The sharp claws leave marks in your skin.", attack);
-BATTLE.monster_actions.add_textual("The Fox bites you. Its sharp teeth and powerful jaw penetrate deep in your flesh.", attack);
+});
 
 
 

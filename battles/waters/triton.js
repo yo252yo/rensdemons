@@ -46,17 +46,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/triton", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 1.0,
   variability: 0.7, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Triton waves its hook towards you.", attack);
-BATTLE.monster_actions.add_textual("The Triton charges at you with his deadly javelin.", attack);
-BATTLE.monster_actions.add_textual("The Triton tries to slit your throat with his weapon.", attack);
-
+});
 
 
 // ===================

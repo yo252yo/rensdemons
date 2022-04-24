@@ -2,7 +2,7 @@
 - Pressing wasd and arrow keys at the same time makes you run faster faster
 
 mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
-
+party members should have attacks like monsters 
 
 
 - finish beta

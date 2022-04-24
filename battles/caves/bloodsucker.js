@@ -42,17 +42,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/bloodsucker", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 0.6,
   variability: 0.6, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Bloodusucker extends a long trunk towards your bare skin.", attack);
-BATTLE.monster_actions.add_textual("The Bloodusucker faces you mid-air, waiting for an opening to dive for your blood.", attack);
-BATTLE.monster_actions.add_textual("The Bloodusucker flutters like a moth and tries to grab your face.", attack);
-
+});
 
 
 // ===================

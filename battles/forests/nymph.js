@@ -43,18 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/nymph", {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.6,
   variability: 0.8, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Nymph extends her vines towards you and tries to ensnare you.", attack);
-BATTLE.monster_actions.add_textual("The Nymph uses her charms to lower your defenses.", attack);
-BATTLE.monster_actions.add_textual("The Nymph slowly surrounds you with her vines, making it hard to move.", attack);
-
-
+});
 
 // ===================
 //hack START

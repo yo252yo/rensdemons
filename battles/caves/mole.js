@@ -43,17 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/mole", {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.1,
   react_time_s: 0.8,
   variability: 0.9, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Mole burrows itself. Any second, it will come out under you.", attack);
-BATTLE.monster_actions.add_textual("The Mole slashes you with its unexpectedly long and sharp claws.", attack);
-BATTLE.monster_actions.add_textual("The Mole digs under you, and the ground becomes shaky. You start to get engulfed...", attack);
-
+});
 
 
 // ===================

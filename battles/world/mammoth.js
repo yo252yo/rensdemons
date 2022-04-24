@@ -47,17 +47,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/mammoth", {
   attack_amplitude: 0.95, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 1.3,
   variability: 0.1, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Mammoth slowly progresses towards you, each step making the ground around tremble.", attack);
-BATTLE.monster_actions.add_textual("The Mammoth stomps the ground in your direction, trying to crush you.", attack);
-BATTLE.monster_actions.add_textual("The Mammoth slams you with his powerful tusks.", attack);
-
+});
 
 
 // ===================

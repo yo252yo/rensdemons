@@ -43,17 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/butcher", {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 1.0,
   variability: 0.3, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Butcher smashes you with the biggest knife you've ever seen.", attack);
-BATTLE.monster_actions.add_textual("The Butcher hits you with a blade as big as yourself.", attack);
-BATTLE.monster_actions.add_textual("The Butcher slices through the air with precision, as if to cut you in half.", attack);
+});
 
 
 

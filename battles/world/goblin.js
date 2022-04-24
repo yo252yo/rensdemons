@@ -37,16 +37,12 @@ PLAYER_ACTIONS.win(ITEM.Arrow, 4, true);                  // 5    TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/goblin", {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 1.1,
   react_time_s: 0.7,
   variability: 0.6, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Goblin slaps you with its stick.", attack);
-BATTLE.monster_actions.add_textual("The Goblin shakes its vegetal weapon in your direction. Maybe it's cursing you...", attack);
-BATTLE.monster_actions.add_textual("The Goblin waves its bouquet around while mumbling something that sounds like an incantation.", attack);
+});
 
 
 

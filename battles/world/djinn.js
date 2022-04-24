@@ -41,16 +41,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.SavageChild);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/djinn", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.5,
   variability: 0.6, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Djinn charges in your direction, surrounded by a tornado that tears through the air.", attack);
-BATTLE.monster_actions.add_textual("The Djinn spins around in a whirlwind of lightning.", attack);
-BATTLE.monster_actions.add_textual("The Djinn dives towards you at an incredible speed, propelled by its mastery over the elements.", attack);
+});
 
 
 

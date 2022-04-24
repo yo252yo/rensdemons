@@ -33,16 +33,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/azazel", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.2,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Azazel projects in your mind the voices of everyone you care about listing the worst things they think about you. Nobody likes you.", attack);
-BATTLE.monster_actions.add_textual("The Azazel erases you from the memories of everyone you have known, plunging you in an abyss of loneliness. Nobody thinks about you.", attack);
-BATTLE.monster_actions.add_textual("The Azazel postulates you that nobody really loves you. Everyone is using you, tolerating you or just pretending. You matter to nobody.", attack);
+});
 
 // ===================
 //hack START

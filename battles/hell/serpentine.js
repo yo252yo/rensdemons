@@ -36,17 +36,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/serpentine", {
   attack_amplitude: 0.35, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.3,
   variability: 0.9, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Serpentine undulates lusciously her magnificent body, mesmerizing you with her charms.", attack);
-BATTLE.monster_actions.add_textual("The Serpentine winks and blows you a kiss, beckoning you to come closer.", attack);
-BATTLE.monster_actions.add_textual("The Serpentine makes indecent gestures in your direction, which does not fail to destabilize you.", attack);
+});
 
 
 // ===================

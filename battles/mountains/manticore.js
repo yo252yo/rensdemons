@@ -36,16 +36,12 @@ PLAYER_ACTIONS.win(ITEM.Net, 3);                          // 200  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("mountains/manticore", {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.6,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Manticore slams its powerful tail in your vicinity.", attack);
-BATTLE.monster_actions.add_textual("The Manticore flails its stringer around. Poison is dripping from it.", attack);
-BATTLE.monster_actions.add_textual("The Manticore's venomous stinger darts towards you.", attack);
+});
 
 // mb more into stinger
 

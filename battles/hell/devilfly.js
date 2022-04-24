@@ -35,18 +35,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TorturedSoul);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/devilfly", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.3,
   variability: 0.7, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Devilfly resounding buzz grows louder until it takes the place of all sounds in the unverse and crushes your spirit under its overwhelming omnipresence.", attack);
-BATTLE.monster_actions.add_textual("The Devilfly's macabre buzzing imprints on your mind that everything is either dead or dying. There is nothing but walking corpses, flesh in decay.", attack);
-BATTLE.monster_actions.add_textual("The Devilfly's hypnotic noise slowly turns your own brain against itself. It fills your mind with the hallucination that you're full of critters crawling inside you, making you want to rip your own skin.", attack);
-
+});
 
 
 // ===================

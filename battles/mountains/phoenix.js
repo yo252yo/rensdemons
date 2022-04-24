@@ -39,16 +39,12 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 3, true);           // 75  ALCH
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("mountains/phoenix", {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.3,
   variability: 0.6, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Phoenix opens its beak wide and lets out a single note. It seems that the air around you withers and contracts under the mysterious melancholy of its ethereal timbre, making it hard to breathe.", attack);
-BATTLE.monster_actions.add_textual("The Phoenix lets out a mighty shriek which clearly echoes miles and miles away. The sharp sound pierces through the ears and the brains of everyone in the vicinity.", attack);
-BATTLE.monster_actions.add_textual("The Phoenix whips you with its incandescent tail. A tornado of embers surround you, heating up the air and scorching your skin.", attack);
+});
 
 
 

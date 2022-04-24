@@ -35,16 +35,12 @@ PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/jellyfish", {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 1,
   react_time_s: 0.6,
   variability: 0.7, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Jellyfish extends a veil of venomous filaments in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Jellyfish tries to sting you with its translucent poisonous tentacles.", attack);
-BATTLE.monster_actions.add_textual("The Jellyfish swims all around you energetically. You must be extremely careful to avoid being burnt by its trail.", attack);
+});
 
 
 // ===================

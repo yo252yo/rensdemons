@@ -45,16 +45,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.BestFriend);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/naiad", {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 0.5,
   variability: 0.2, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Naiad slaps you with her tentacles.", attack);
-BATTLE.monster_actions.add_textual("The Naiad's slimy appendages expand and hit you.", attack);
-BATTLE.monster_actions.add_textual("The Naiad waves her rod and casts a choking spell on you.", attack);
+});
 
 
 

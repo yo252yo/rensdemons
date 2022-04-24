@@ -34,17 +34,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("heaven/seraph", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 0.1,
   variability: 0.6, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Seraph suggests you to take it easy. Nobody believes in you.", attack);
-BATTLE.monster_actions.add_textual("The Seraph patronizingly reminds you that it's ok to ask for help. It's not your fault you're bad.", attack);
-BATTLE.monster_actions.add_textual("The Seraph excuses your failures in a condescending tone. You did only what you could, which is not much.", attack);
-
+});
 
 
 // ===================

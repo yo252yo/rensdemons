@@ -22,7 +22,7 @@ PLAYER_ACTIONS.win(ABILITY.Asphyxiate, 2);                // 250  ELEM
 
 PLAYER_ACTIONS.win(ABILITY.Confusion, 1);                 // 666  SPIR
 
-PLAYER_ACTIONS.win(ITEM.Rope, 3);      
+PLAYER_ACTIONS.win(ITEM.Rope, 3);
 
 PLAYER_ACTIONS.win(ITEM.Elixir_venom, 6, true);           // 40  ALCH
 
@@ -34,17 +34,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/belphegor", {
   attack_amplitude: 0.65, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 0.5,
   variability: 0.9, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Belphegor reminds you that life has no objective meaning and your existence is futile. Nothing matters.", attack);
-BATTLE.monster_actions.add_textual("The Belphegor fills your mind with the conviction that you do not matter and nothing you can do will have any effect in the grand scheme of things. You are powerless.", attack);
-BATTLE.monster_actions.add_textual("The Belphegor's influence on your brain plunges you in an abyss of depression. You become acutely aware how insignificant any of your actions are. How can you even dream of changing anything?", attack);
+});
 
 
 

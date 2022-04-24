@@ -40,17 +40,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/warlock", {
   attack_amplitude: 0.7, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 0.6,
   variability: 0.5, // 1 = 100%
-};
+});
 
-
-BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt the fabric of time itself.", attack);
-BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt your ego. Everything that makes you you seems to dissolve.", attack);
-BATTLE.monster_actions.add_textual("The Warlock waves its mechanical rod and starts to melt the reality around you. Dimensions seem to erode and compress.", attack);
 
 
 // ===================

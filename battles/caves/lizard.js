@@ -40,17 +40,12 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 5, true);           // 75  ALCH
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/lizard", {
   attack_amplitude: 0.7, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.3,
   variability: 0.8, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Lizard flails its enormous tail, wiping up masses of rocks all around and even yanking some from the walls of the cave. They all get thrown towards you at incredible speed.", attack);
-BATTLE.monster_actions.add_textual("The Lizard slides and crawls to the ceiling of the cavern, above you. With an agility that you wouldn't expect from its size, it then immediately jumps on you, maw opened, trying to squish you under its colossal body.", attack);
-BATTLE.monster_actions.add_textual("The Lizard slithers towards you through the darkness. It slides around you in the shadows at a surprising speed, making it hard to know where you need to defend. It almost escapes your sight a few times. Then it jumps on you for the strike.", attack);
-
+});
 
 
 // ===================

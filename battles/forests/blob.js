@@ -41,17 +41,12 @@ PLAYER_ACTIONS.win(ITEM.Elixir_chaos, 3, true);           // 75  ALCH
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/blob", {
   attack_amplitude: 0.9, // Between 0 and 1
   warning_time_s: 0.1,
   react_time_s: 1.2,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Blob's gelatinous body deforms and slides towards you. At this rate, it won't be long before you're engulfed in the green goo.", attack);
-BATTLE.monster_actions.add_textual("The Blob shakes and jumps in the air. Its shape wobbles as it flies over you and its shadow surrounds you. In a few seconds, it will crash back on the ground, no doubt crushing you in the process.", attack);
-BATTLE.monster_actions.add_textual("The Blob splits up in a dozen smaller versions of itself, and then splits up some more. Pretty soon, you find yourself surrounded by a see of lush jelly crawling towards you from all sides.", attack);
-
+});
 
 
 // ===================

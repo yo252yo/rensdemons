@@ -46,16 +46,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.GeniusProdigy);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("mountains/hawk", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.6,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Hawk dives claws first in your direction.", attack);
-BATTLE.monster_actions.add_textual("The Hawk approaches and slashes you repeatedly with its sharp talons.", attack);
-BATTLE.monster_actions.add_textual("The Hawk's talons take a deep grip on your arm, digging your skin.", attack);
+});
 
 
 

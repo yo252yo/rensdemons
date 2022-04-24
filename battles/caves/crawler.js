@@ -43,17 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.SnobRich);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/crawler", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 1.1,
   react_time_s: 0.3,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Crawler blends in with the rocks around. You cannot see it in the shadows until it's already on you.", attack);
-BATTLE.monster_actions.add_textual("The Crawler dashes around you faster than your eyes. You can't see its assault coming.", attack);
-BATTLE.monster_actions.add_textual("The Crawler disappears on the wall in front of you. It reemerges a few moments later right behind you.", attack);
-
+});
 
 
 // ===================

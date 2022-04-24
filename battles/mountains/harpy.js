@@ -36,16 +36,12 @@ PLAYER_ACTIONS.win(ITEM.Rope, 3);                         // 100  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("mountains/harpy", {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 1.0,
   react_time_s: 0.4,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Harpy emits a loud shriek that seems to pierce your ears and melt you brain.", attack);
-BATTLE.monster_actions.add_textual("The Harpy dives towards you with a loud cry.", attack);
-BATTLE.monster_actions.add_textual("The Harpy emits a series of howls that pierce through your skull and chill you to the bone.", attack);
+});
 
 // mb more into shriek
 

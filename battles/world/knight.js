@@ -43,16 +43,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.FemmeFatale);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/knight", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 0.7,
   variability: 0.7, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Knight charges you with his wide and sturdy shield.", attack);
-BATTLE.monster_actions.add_textual("The Knight aims at your throat with a slash of his sword.", attack);
-BATTLE.monster_actions.add_textual("The Knight swings his sword expertly towards your weak spots.", attack);
+});
 
 
 

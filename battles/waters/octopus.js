@@ -35,16 +35,12 @@ PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/octopus", {
   attack_amplitude: 0.2, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.8,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Octopus stretches its many arms towards you.", attack);
-BATTLE.monster_actions.add_textual("The Octopus unfurls its tentacles. They get hold of your arms and legs and start dragging you towards the monster.", attack);
-BATTLE.monster_actions.add_textual("The Octopus grabs you with its many arms and squeezes you tighter and tighter.", attack);
+});
 
 // tentacle, squeeze, drag
 

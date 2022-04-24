@@ -195,8 +195,10 @@ window.onload = function() {
 
 </head>
 <body style="margin:0px;padding:0px;width:10000px;height:10000px;overflow:scroll;">
+<div id="resourceLoader" style="visibility:hidden"></div>
 <div id="page" style="width:100%;height:100%;">
   <canvas width="25px" height="25px" style="visibility:hidden;position:absolute;width:25px;height:25px;z-index:10000;" id="IME_click_confirmation_cross" draggable="false"></canvas>
+  <div id="IFE_escape_menu_button" style="margin:5px;font-size: 30px; font-family:monospace; border: 5px outset black; position:fixed;width:50px;height:50px;z-index:10001;top:0px;left:0px;display:none;">...</div>
 
   <!--- IT seems that we delete/refresh everything under level so it has to be the last -->
   <div id="level" style="width:100%;height:100%;"><div>

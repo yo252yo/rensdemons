@@ -20,19 +20,14 @@ PLAYER_ACTIONS.useless(ITEM.Wand, 1);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/whale", {
   attack_amplitude: 0.85, // Between 0 and 1
   warning_time_s: 1,
   react_time_s: 1.6,
   variability: 0.1, // 1 = 100%
-};
+});
 
-BATTLE.monster_actions.add_textual("The Whale moves slowly but surely in your direction, mouth wide open. It is so huge that it occupies almost all of your field of view. Escaping its implacable march is going to be tough.", attack);
-BATTLE.monster_actions.add_textual("The Whale moves slowly but surely in your direction, mouth wide open. It is so huge that it occupies almost all of your field of view. Escaping its implacable march is going to be tough.", attack);
-BATTLE.monster_actions.add_textual("The Whale sucks in a large quantity of water, creating a maelstrom of currents around you that shake you violently. You struggle to keep control of your body.", attack);
-BATTLE.monster_actions.add_textual("The Whale sucks in a large quantity of water, creating a maelstrom of currents around you that shake you violently. You struggle to keep control of your body.", attack);
-BATTLE.monster_actions.add_textual("The Whale emits a loud and deep cry that seems to make the whole lake vibrate. It then slaps its gigantic fin in your direction. It's several times the size of your house.", attack);
-BATTLE.monster_actions.add_textual("The Whale emits a loud and deep cry that seems to make the whole lake vibrate. It then slaps its gigantic fin in your direction. It's several times the size of your house.", attack);
+
 BATTLE.monster_actions.add_textual([
   `$$Ren$: "This may seem weird, but I'm having a weird hunch that this might be a fight we're supposed to lose..."`,
   `$$BestFriend$: "What do you mean? Are we supposed to just let ourselves... die?"`,

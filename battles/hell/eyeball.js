@@ -34,17 +34,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/eyeball", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 0.4,
   react_time_s: 0.4,
   variability: 0.8, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Eyeball stares at the depths of your mind.", attack);
-BATTLE.monster_actions.add_textual("The Eyeball relentless gaze pierces through your soul.", attack);
-BATTLE.monster_actions.add_textual("The Eyeball maintains its cold judging glance that seems to see clearly even what you're thinking.", attack);
+});
 
 
 // ===================

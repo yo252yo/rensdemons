@@ -31,17 +31,12 @@ PLAYER_ACTIONS.win(ITEM.Arrow, 3, true);                  // 5    TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/mandragora", {
   attack_amplitude: 0.1, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.8,
   variability: 0.8, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Mandragora slaps you with one of its thin flexible roots.", attack);
-BATTLE.monster_actions.add_textual("The Mandragora unleashes on you a deluge of whips from its roots.", attack);
-BATTLE.monster_actions.add_textual("The Mandragora tries to immobilize you by wrapping a root around you.", attack);
-
+});
 
 
 // ===================

@@ -32,16 +32,12 @@ PLAYER_ACTIONS.win(ITEM.Arrow, 5, true);                  // 5    TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("forests/morel", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 1.2,
   variability: 0.8, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Morel expands its rhizome at an incredible speed. It expands under your feet and starts ensnaring them.", attack);
-BATTLE.monster_actions.add_textual("The Morel grows its roots longer, and they surge suddenly out of the ground and converge towards you.", attack);
-BATTLE.monster_actions.add_textual("The Morel activates its rhizome which shakes the ground beneath you. You start to sink in the mud, grabbed by the vegetal tentacles.", attack);
+});
 
 
 

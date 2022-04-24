@@ -39,17 +39,12 @@ PLAYER_ACTIONS.win(ITEM.Elixir_decay, 4, true);           // 50  ALCH
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/rhino", {
   attack_amplitude: 0.85, // Between 0 and 1
   warning_time_s: 0.8,
   react_time_s: 0.8,
   variability: 0.2, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Rhino stomps the ground with a heavy paw. The whole cavern trembles around. Sharp rocks and stalactites fall from the ceiling in a flurry of projectiles.", attack);
-BATTLE.monster_actions.add_textual("The Rhino charges at you. With each step, the floor shakes under its massive weight. The rocks on its back shine slightly in the darkness.", attack);
-BATTLE.monster_actions.add_textual("The Rhino slams into the nearest wall. Its mineral body leaves an imprint on the solid walls of the cave. The vibrations threaten to make the whole place crumble. A fissure opens up under your feet and grows larger by the minute.", attack);
-
+});
 
 
 // ===================

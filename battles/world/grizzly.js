@@ -44,18 +44,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/grizzly", {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.7,
   react_time_s: 0.9,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Grizzly roars at you and then charges.", attack);
-BATTLE.monster_actions.add_textual("The Grizzly slaps you with a powerful paw.", attack);
-BATTLE.monster_actions.add_textual("The Grizzly bites you in a quick maw movement.", attack);
-
-
+});
 
 // ===================
 //hack START

@@ -46,16 +46,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.TraitorFisher);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/bat", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.5,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Bat flutters around your head and aims for your eyes.", attack);
-BATTLE.monster_actions.add_textual("The Bat dives to bite you with its poisonous fangs.", attack);
-BATTLE.monster_actions.add_textual("The Bat whirls around you in a flurry of slashes.", attack);
+});
 
 
 

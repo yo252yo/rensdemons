@@ -40,17 +40,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.RetiredProtector);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("caves/slime", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 0.9,
   variability: 0.5, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Slime throws some of its toxic goo at you.", attack);
-BATTLE.monster_actions.add_textual("The Slime bubbles up and grows in volume, trying to smother you in.", attack);
-BATTLE.monster_actions.add_textual("The Slime melts into an expanding noxious puddle that soon reaches your feet.", attack);
-
+});
 
 
 // ===================

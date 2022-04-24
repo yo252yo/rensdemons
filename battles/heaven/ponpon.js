@@ -34,17 +34,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.PreciousChild);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("heaven/ponpon", {
   attack_amplitude: 0.9, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 0.6,
   variability: 0.3, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Ponpon looks at you with big adorable eyes. Your heart melts.", attack);
-BATTLE.monster_actions.add_textual("The Ponpon wiggles its cute fluff. It squeezes your heart.", attack);
-BATTLE.monster_actions.add_textual("The Ponpon flies around making chirpy noises. The cuteness is too strong to handle.", attack);
-
+});
 
 // ===================
 //hack START

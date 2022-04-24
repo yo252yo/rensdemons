@@ -36,16 +36,12 @@ PLAYER_ACTIONS.win(ITEM.Rope, 1);                         // 100  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/mummy", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 1.5,
   variability: 0.05, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Mummy seizes your neck and starts choking you.", attack);
-BATTLE.monster_actions.add_textual("The Mummy whips you with a loose bandages.", attack);
-BATTLE.monster_actions.add_textual("The Mummy hits you with a slow but powerful punch.", attack);
+});
 
 
 

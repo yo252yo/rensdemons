@@ -38,16 +38,12 @@ PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/crab", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 1.1,
   react_time_s: 0.5,
   variability: 0.2, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Crab pinches your arm with its dented claws.", attack);
-BATTLE.monster_actions.add_textual("The Crab rushes at you, snapping its pincers towards your face.", attack);
-BATTLE.monster_actions.add_textual("The Crab crawls towards you and pinches your leg.", attack);
+});
 
 
 // ===================

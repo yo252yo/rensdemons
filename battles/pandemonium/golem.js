@@ -35,16 +35,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.UpbeatDojikko);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/golem", {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.0,
   react_time_s: 0.7,
   variability: 0.2, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Golem overwhelms you with a torrent of insults.", attack);
-BATTLE.monster_actions.add_textual("The Golem shouts abuse targeting your worst insecurities.", attack);
-BATTLE.monster_actions.add_textual("The Golem harasses you with a relentless flow of slander.", attack);
+});
 
 // ===================
 //hack START

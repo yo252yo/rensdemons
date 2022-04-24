@@ -34,16 +34,12 @@ PLAYER_ACTIONS.win(ITEM.Net, 1);                          // 200  TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("waters/anglerjelly", {
   attack_amplitude: 0.3, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 1.1,
   variability: 0.7, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Anglerjelly flickers its light gently, lulling you towards an eternal sleep in a watery grave.", attack);
-BATTLE.monster_actions.add_textual("The Anglerjelly moves its luminous appendage slowly in an attempt at hypnotizing you.", attack);
-BATTLE.monster_actions.add_textual("The Anglerjelly seems pretty innocuous. It bathes the scene in a soft light. You feel the urge to get closer...", attack);
+});
 
 
 // ===================

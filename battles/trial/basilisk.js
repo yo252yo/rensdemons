@@ -43,15 +43,15 @@ PLAYER_ACTIONS.add({
                 "It may just be your imagination, but you have a feeling that something is different. Maybe the Goddess heeded your plea.<br />You get the vague impression that by picking the right position, you may yet dodge the next attack from the beast, and even survive it."],
   function: swearLoyalty,
   extra_function: function(){
+    BATTLE.monster_actions.empty();
 
-    var attack = {
+    BESTIARY.setup_attacks("trial/basilisk", {
       attack_amplitude: 0.4,
       warning_time_s: 5.0,
       react_time_s: 3.0,
       variability: 0,
-    };
-    BATTLE.monster_actions.empty();
-    BATTLE.monster_actions.add_textual("The Basilisk straightens up, ready to pounce at you. Adrenaline rushes through your body. A cold shiver runs down your spine. You can hear your frantic heartbeat in your eardrums. Time seems to be slowing down for a moment.", attack);
+    });
+
   }
 });
 

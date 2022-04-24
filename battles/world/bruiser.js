@@ -46,16 +46,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DumbMuscles);
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("world/bruiser", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 0.5,
   react_time_s: 0.9,
   variability: 0.4, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Bruiser slams you with its heavy mace.", attack);
-BATTLE.monster_actions.add_textual("The Bruiser spins around, holding its spiked bludgeon.", attack);
-BATTLE.monster_actions.add_textual("The Bruiser chains up slow but powerful hits.", attack);
+});
 
 
 

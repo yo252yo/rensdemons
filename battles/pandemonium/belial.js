@@ -34,17 +34,13 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.DisguisedPrincess);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/belial", {
   attack_amplitude: 0.75, // Between 0 and 1
   warning_time_s: 0.3,
   react_time_s: 0.3,
   variability: 0.4, // 1 = 100%
-};
+});
 
-
-BATTLE.monster_actions.add_textual("The Belial threatens to spread false rumors about you. Nobody will trust you.", attack);
-BATTLE.monster_actions.add_textual("The Belial blackmails you by threatening the people you love. Wouldn't want anything bad to happen to them, would you?", attack);
-BATTLE.monster_actions.add_textual("The Belial denies your existence until you do what it wants. The onus is on you.", attack);
 
 
 // ===================

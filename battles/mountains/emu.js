@@ -34,17 +34,12 @@ PLAYER_ACTIONS.win(ITEM.Arrow, 2, true);                  // 5    TOOL
 // ===================
 //hack MONSTER BEHAVIOR
 // ===================
-var attack = {
+BESTIARY.setup_attacks("mountains/emu", {
   attack_amplitude: 0.5, // Between 0 and 1
   warning_time_s: 1,
   react_time_s: 1,
   variability: 0.9, // 1 = 100%
-};
-
-BATTLE.monster_actions.add_textual("The Emu stomps the ground with its bird legs. It looks like it can't fly.", attack);
-BATTLE.monster_actions.add_textual("The Emu pecks you violently.", attack);
-BATTLE.monster_actions.add_textual("The Emu looks pretty upset, shaking its head and ruffling its feathers. It emits a loud screech.", attack);
-
+});
 
 
 // ===================

@@ -35,18 +35,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/hellhound", {
   attack_amplitude: 0.6, // Between 0 and 1
   warning_time_s: 0.6,
   react_time_s: 0.2,
   variability: 0.5, // 1 = 100%
-};
+});
 
 
-
-BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can answer its riddle. You think about it for a while, but it's above your level.", attack);
-BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can outrun it. You raise to the challenge, but it is just much faster.", attack);
-BATTLE.monster_actions.add_textual("The Hellhound offers to let you go if you can win a stare contest. You fight valiantly but its spirit is stronger.", attack);
 
 
 // ===================

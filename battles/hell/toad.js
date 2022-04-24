@@ -35,18 +35,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.StreetSmart);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/toad", {
   attack_amplitude: 0.75, // Between 0 and 1
   warning_time_s: 0.1,
   react_time_s: 0.9,
   variability: 0.3, // 1 = 100%
-};
+});
 
 
-
-BATTLE.monster_actions.add_textual("The Toad skin shifts between bright colors. Suddenly, it adopts a hue that cannot exist. Your mind breaks down.", attack);
-BATTLE.monster_actions.add_textual("The Toad starts jumping around. The trajectory of the jumps is impossible in three dimensions. Your mind breaks down.", attack);
-BATTLE.monster_actions.add_textual("The Toad croaks first normaly, but then switch to frequencies that cannot exist. Your brain is filled with impossible sounds. Your mind breaks down.", attack);
 
 // ===================
 //hack START

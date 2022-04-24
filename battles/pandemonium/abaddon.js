@@ -32,17 +32,12 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("pandemonium/abaddon", {
   attack_amplitude: 0.8, // Between 0 and 1
   warning_time_s: 0.1,
   react_time_s: 0.6,
   variability: 0.2, // 1 = 100%
-};
-
-
-BATTLE.monster_actions.add_textual("The Abaddon fills your mind with your worst phobias and fears. You wuss.", attack);
-BATTLE.monster_actions.add_textual("The Abaddon digs deep in your mind and awakens the most embarrassing and cringy memories. You keep failing.", attack);
-BATTLE.monster_actions.add_textual("The Abaddon reminds you of all your sad and painful moments of your life. You keep losing what you care about.", attack);
+});
 
 
 

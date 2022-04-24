@@ -36,19 +36,14 @@ PLAYER_ACTIONS.win(PARTYMEMBERS.WiseOld);
 //hack MONSTER BEHAVIOR
 // ===================
 
-var attack = {
+BESTIARY.setup_attacks("hell/satyr", {
   attack_amplitude: 0.4, // Between 0 and 1
   warning_time_s: 0.2,
   react_time_s: 0.6,
   variability: 0.9, // 1 = 100%
-};
+});
 
 
-
-BATTLE.monster_actions.add_textual("The Satyr sends you a powerful curse that tricks you into believing you are a character from a story.", attack);
-BATTLE.monster_actions.add_textual("The Satyr places a hex on you that makes you forget who you are, and even the very fact that you are.", attack);
-BATTLE.monster_actions.add_textual("The Satyr curses you, and renders you unable to think.", attack);
-BATTLE.monster_actions.add_textual("The Satyr casts on you a powerful spell that convinces you that you are in a dream.", attack);
 
 
 // ===================
