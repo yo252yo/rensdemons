@@ -48,7 +48,7 @@ const AUDIO = {
     AUDIO._load_music('interface/the girl with the baseball bat');
     AUDIO._load_music('interface/this is the time to glisten');
     AUDIO._load_music('interface/time for adventure 4 opening');
-    AUDIO._load_music('interface/un desert');
+    AUDIO._load_music('level/un desert');
     AUDIO._load_music('interface/un triste echo trop juste');
     AUDIO._load_music('interface/you need to dodge that spell');
     AUDIO._load_music('level/a moment of calm');
