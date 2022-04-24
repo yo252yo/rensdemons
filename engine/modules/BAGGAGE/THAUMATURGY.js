@@ -127,7 +127,7 @@ const THAUMATURGY = {
                     {"text": "Glitch fabric of space-time", "effect": THAUMATURGY.glitch},
                     {"text": "Divinate event content", "effect": THAUMATURGY.display_events},
                     {"text": "Use clairvoyance", "effect": THAUMATURGY.remove_fog},
-                    {"text": "Unlock astral projection", "effect": THAUMATURGY.remove_camera_lock},
+                    {"text": "Unlock astral farsight", "effect": THAUMATURGY.remove_camera_lock},
                     {"text": "Create absolute observer", "effect": THAUMATURGY.force_observer_effect},
                     TEXTMENU_EMPTYROW,
                     {"text": "Summon all inventory items", "effect": THAUMATURGY.get_all_items},

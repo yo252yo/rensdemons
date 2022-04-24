@@ -155,7 +155,7 @@ const INTERFACE = {
       var iconography = {"text": "???", "effect": function(){}, "keep_open": true};
 
       if (THAUMATURGY.is_visible()){
-        iconography = {"text": "Eikonographia", "effect": function(){ THAUMATURGY.menu(); }};
+        iconography = {"text": "Miracles", "effect": function(){ THAUMATURGY.menu(); }};
       }
 
       var options = [
