@@ -44,7 +44,7 @@ const LEDGER = {
   },
 
   load_ledger: function() {
-    if(!LEDGER._ledger){
+    if(!LEDGER._ledger || Object.keys(LEDGER._ledger["npc"]).length + Object.keys(LEDGER._ledger["pc"]).length == 0){
       var json = STATS.get(STAT.Ledger);
       if(json){
         LEDGER._ledger = JSON.parse(json);
@@ -140,7 +140,10 @@ const LEDGER = {
 
   commit_to_stats: function() {
     LEDGER.load_ledger();
-    STATS.record.ledger(JSON.stringify(LEDGER._ledger));
+    var saved = JSON.stringify(LEDGER._ledger);
+    if (saved.length > 18){ // dont record an empty ledger
+      STATS.record.ledger(saved);
+    }
   },
 
   getBio: function(){
@@ -261,7 +264,7 @@ const LEDGER = {
     people_to_kill.push("demon_lord", "demon_lieutenant");
     for (var p of people_to_kill){
       var name = DICTIONARY.get(p);
-      if(!LEDGER._ledger["pc"][name]){
+      if(!LEDGER._ledger["pc"][name] || p == PARTYMEMBERS.Ren){
         continue;
       }
       if(!LEDGER._ledger["pc"][name]["death"]){
@@ -272,7 +275,11 @@ const LEDGER = {
     LEDGER.herald(`All lead characters have been sacrificed for the good of the narrative.`);
   },
 
-  record_party_name_change: function(from, to){
+  record_party_name_change: function(role, to){
+    if(role == PARTYMEMBERS.Ren){
+      return;
+    }
+    var from = DICTIONARY.get(role);
     LEDGER.load_ledger();
     var c = LEDGER._ledger["pc"][from];
     delete LEDGER._ledger["pc"][from];

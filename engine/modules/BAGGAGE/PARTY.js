@@ -192,7 +192,7 @@ const PARTY = {
   changeNickname: function(name, prompt_text, callback) {
     var fullcallback = function(newName){
       if (newName) {
-        LEDGER.record_party_name_change(DICTIONARY.get(name), newName);
+        LEDGER.record_party_name_change(name, newName);
         DICTIONARY.set(name, newName.replaceAll(' ',''));
       }
       if(callback){
