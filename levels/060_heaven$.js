@@ -171,6 +171,7 @@ events.set_zone(1125,1550,500,500);
 events.battle('heaven/angel');
 events.battle('heaven/cherub');
 events.battle('heaven/maneki', 0.1);
+events.battle('_060/_book', 0.1);
 events.battle('heaven/ponpon', 0.5);
 events.battle('heaven/raijuu', 0.5);
 events.battle('heaven/seraph');
@@ -225,6 +226,6 @@ CURRENTLEVEL.initialize_with_character(1375,1325);
 // ===================
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   SAVE.autosave();
-} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE){
+} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
   SAVE.autosave();
 }

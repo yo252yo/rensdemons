@@ -5,6 +5,7 @@ mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
 party members should have attacks like monsters
 
 
+lab room in heaven with bosses
 
 should i put the survivors of midgar after all ?\
 
