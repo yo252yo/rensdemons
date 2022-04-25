@@ -132,7 +132,7 @@ if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
 }
 
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
-  HEAVEN_SEQUENCE = ""; 
+  HEAVEN_SEQUENCE = "";
    new S_MagicMirror(1350, 1300);
 }
 

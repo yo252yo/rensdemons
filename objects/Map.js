@@ -41,7 +41,7 @@ class MapObject extends LevelObject {
 
   destroy(){
     this.legend.destroy();
-    super.destroy();
+    super.destroy(true);
   }
 }
 
@@ -264,15 +264,6 @@ class SM_Heaven extends MapObject {
     this.adjust_hitbox(40,-10,235,200);
     if(this.legend) this.legend.shift(150);
     this.make_walkable(true);
-  }
-
-  destroy(stillborn) {
-    if (this.visual_element){
-      this.visual_element.destroy();
-    }
-    this.legend.destroy();
-  //  CURRENTLEVEL.objects.program_destruction(this, stillborn);
-    delete this;
   }
 }
 

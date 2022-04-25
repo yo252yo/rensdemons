@@ -95,8 +95,13 @@ FEvents.fill_floor_by_retry();
 // ===================
 
 
-if(! ABILITIES.has_ability("_secret_ending_chosen")){
-  heaven.destroy();
+if(!ABILITIES.has_ability("_secret_ending_chosen") && !ABILITIES.has_ability("_heaven_visited")){
+  if (STATS.ending(ENDINGS.God)) {
+    heaven.visual_element.destroy();
+    heaven.legend.destroy();
+  } else {
+    heaven.destroy();
+  }
 }
 
 CURRENTLEVEL.setup_text_start_function([
