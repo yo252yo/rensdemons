@@ -13,7 +13,7 @@ class THOUGHTS {
         }
       }
       var nextThoughtSeconds = 1 + RANDOM.int(14);
-      thinker.thoughtsTimeout = setTimeout(function(){THOUGHTS.thinkTrigger(thinker)}, nextThoughtSeconds * 1000);
+      thinker.thoughtsTimeout = setTimeout(function(){THOUGHTS.thinkTrigger(thinker)}, nextThoughtSeconds * 1000 / THAUMATURGY.time_compression);
   }
 
   static stopThinking(thinker){
