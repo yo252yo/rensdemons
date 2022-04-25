@@ -328,5 +328,6 @@ const PLAYER_ACTIONS = {
       description: ["You summon a miracle to force the outcome of this battle to be a win."],
     });
 
+    BATTLETREE.api.develop(BATTLE.current_battle, "WIN", BATTLETREE.WIN);
   }
 }
