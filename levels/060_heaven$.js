@@ -60,6 +60,7 @@ t.bot_border.interaction   = function(){  exit("d");  };
 //hack D. UNIQUE ELEMENTS
 // ===================
 if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
+  HEAVEN_SEQUENCE = "";
   var s1 = new B_Statue(1350,1275);
   var endFight = function() {
     if(INVENTORY.count("_killed_god")){
@@ -126,10 +127,12 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
 
 
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
+  HEAVEN_SEQUENCE = "";
   var computer = new S_Computer(1350, 1300);
 }
 
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
+  HEAVEN_SEQUENCE = ""; 
    new S_MagicMirror(1350, 1300);
 }
 
