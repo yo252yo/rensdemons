@@ -27,15 +27,18 @@ class SE_event extends S_event {
     if (!Array.isArray(this.text)){
       array = [this.text];
     }
+
+    var inc = 1 + STATS.get(STAT.Endings);
+
     if(!array[array.length - 1].endsWith(`"`)){
-      array[array.length - 1] = array[array.length - 1] + " (1XP)";
+      array[array.length - 1] = array[array.length - 1] + " (" + inc + "XP)";
     }
     TextBannerSequence.make(array, function(){
       if(self.extra){
           self.extra();
       }
       self.destroy();
-      INVENTORY.increase(ITEM.XpToken);
+      INVENTORY.increase(ITEM.XpToken, inc);
     });
   }
 

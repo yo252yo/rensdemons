@@ -105,6 +105,7 @@ const THAUMATURGY = {
     CONSOLE.log.debug("Force observer effect");
     GLITCH.berkeley.make_god_observer();
   },
+
   menu: function() {
     var spaceCompression = `<b>Space compression</b>: <input type="button" value="-" onClick="THAUMATURGY.compress_space(0.95);"><input type="range" id="compressSpaceRange" min="10" max="200" value="` + (1/THAUMATURGY.space_compression * 100) + `" class="slider" id="myRange1" disabled="true"><input type="button" value="+" onClick="THAUMATURGY.compress_space(1.05);"><br />`;
     if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
