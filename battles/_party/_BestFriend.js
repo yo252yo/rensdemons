@@ -28,7 +28,7 @@ var unlock_promise = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var reply = ``;
-if (STATS.flag("KilledBestFriend") < 10){
+if (STATS.flag("KilledBestFriend") < 3){
   reply = `$$BestFriend$: "It's not even that much... There's always hope that this time will be different!"`;
 } else {
   reply = `$$BestFriend$: "Well... And after all that, we're still here, together, right? Maybe it's ok if I die. Maybe we'll always find each other again, in the end... We survived ${STATS.flag("KilledBestFriend")} separations, what's one more? I'll see you on the other side."`;
