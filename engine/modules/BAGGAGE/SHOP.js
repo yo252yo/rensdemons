@@ -5,8 +5,8 @@ var _SHOP_PRICES = {};
 _SHOP_PRICES[ITEM.BreathingPotion] = 5;
 _SHOP_PRICES[ITEM.Elixir_fire] = 5;
 _SHOP_PRICES[ITEM.Elixir_ice] = 10;
-_SHOP_PRICES[ITEM.Elixir_vine] = 20;
-_SHOP_PRICES[ITEM.Elixir_venom] = 30;
+_SHOP_PRICES[ITEM.Elixir_vine] = 15;
+_SHOP_PRICES[ITEM.Elixir_venom] = 25;
 _SHOP_PRICES[ITEM.Elixir_decay] = 40;
 _SHOP_PRICES[ITEM.Elixir_chaos] = 50;
 
