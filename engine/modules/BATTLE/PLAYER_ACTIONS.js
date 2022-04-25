@@ -294,7 +294,7 @@ const PLAYER_ACTIONS = {
           PLAYER_ACTIONS._internal.trigger_music(PARTYMEMBERS.Ren);
         }
       });
-      //BATTLETREE.api.develop(BATTLE.current_battle, ABILITY.Spoiler, BATTLETREE.WIN);
+      BATTLETREE.api.develop(BATTLE.current_battle, ABILITY.Spoiler, BATTLETREE.WIN);
     }
   },
 
