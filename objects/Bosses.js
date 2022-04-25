@@ -9,7 +9,8 @@ class S_Beelzebub extends SimpleObject {
     var self = this;
     var postBossPhase3 = function(){
       ABILITIES.unlock("_lieutenant_defeated");
-      STATS.record.set_flag("KilledBestFriend", (new Date()).getTime());
+      STATS.record.set_flag("KilledBestFriendDate", (new Date()).getTime());
+      STATS.record.set_flag("KilledBestFriend");
       AUDIO.music.stop();
 
       TextBannerSequence.make([

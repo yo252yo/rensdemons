@@ -59,7 +59,7 @@ class S_Tomb extends SimpleObject {
       this.default_text = this.text_interaction([`${villager.name} of ${villager.city}<br />${cod}<br /> ${birth} - ${death}`]);
     } else if(type < 0.1 && !S_Tomb.done_bf) {
       var birth = (new Date(DISK._CONTENT["#DISK_STATE_IDENTIFIER"])).toLocaleString();
-      var death = (new Date(STATS.flag("KilledBestFriend"))).toLocaleString();
+      var death = (new Date(STATS.flag("KilledBestFriendTime"))).toLocaleString();
       this.default_text = this.text_interaction([`$$BestFriend$ of ${DICTIONARY.get("town_1")}<br />Killed by a demon<br /> ${birth} - ${death}`]);
       S_Tomb.done_bf = true;
     } else if(type < 0.1 + selfproba && !S_Tomb.done_self) {
