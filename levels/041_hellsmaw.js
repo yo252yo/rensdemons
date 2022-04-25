@@ -454,7 +454,7 @@ if(hellsmawpart == 1){
       `The crater you find yourself in is indeed eerily similar to the one you just left. The whirlwinds of black fog and lava surrounding you continue their disorienting dance. Yet, a major difference shakes you to your very core.`,
       `In the middle of the pit stands a beast bigger than any building you've ever seen. His humanoid shape is draped in flames. The crackled skin covering his muscular body marries crimson and black, like charred flesh. Two huge horns adorn a face that displays permanent anger. His red eyes shine through the clouds of smoke.`,
       `$$BestFriend$: "Is that... $$demon_lord$?"`,
-      `$$Ren$: "Who else? Let's use our weapon before he notices us!"`,
+      `$$Ren$: "Who else? Let's attack before he notices us!"`,
       `$$BestFriend$: "What if he's stronger than us?"`,
       `$$Ren$: "Don't worry! The Goddess would not let us fight the demon lord unless we're ready!"`,
       `$$Ren$: "If we're too weak, then this won't be the real fight. We'll just get more time to prepare before the final encounter."`,
