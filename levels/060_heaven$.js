@@ -225,4 +225,6 @@ CURRENTLEVEL.initialize_with_character(1375,1325);
 // ===================
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
   SAVE.autosave();
+} else if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE){
+  SAVE.autosave();
 }
