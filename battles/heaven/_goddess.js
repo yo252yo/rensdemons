@@ -42,7 +42,8 @@ PLAYER_ACTIONS.add({
   description: LANGUAGE.actions.usage("Kill God"),
   unlock: true,
   function: function(){
-    BATTLE.monster_actions.add_textual(`Goddess: "Why?"`, easy_attack);
+    BATTLE.monster_actions.add_textual(`Goddess: "Why?"            `, easy_attack, function(){GLITCH.screen.glitch();});
+
     BATTLE.player_actions.empty(true);
     PLAYER_ACTIONS.win("Kill God", 6);
     INVENTORY.increase("_killed_god");
