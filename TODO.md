@@ -2,16 +2,12 @@
 - Pressing wasd and arrow keys at the same time makes you run faster faster
 
 mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
-party members should have attacks like monsters
 
 
-lab room in heaven with bosses
 
-should i put the survivors of midgar after all ?\
-
-should battle objects show the already explored options? should they show always 2 options including an explored one?
-
-isnt it a shame that im not using more weird battle path like the snake on the branch?
+- should i put the survivors of midgar after all ?\
+- should battle objects show the already explored options? should they show always 2 options including an explored one?
+- isnt it a shame that im not using more weird battle path like the snake on the branch?
 
 
 

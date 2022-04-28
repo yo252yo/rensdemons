@@ -293,6 +293,7 @@ const RESOURCES = {
     RESOURCES.get_img('assets/objects/heaven/cloud2.png');
     RESOURCES.get_img('assets/objects/heaven/cloud3.png');
     RESOURCES.get_img('assets/objects/heaven/mirror.png');
+    RESOURCES.get_img('assets/objects/heaven/lab.png');
     RESOURCES.get_img('assets/objects/heaven/tomb1.png');
     RESOURCES.get_img('assets/objects/heaven/tomb2.png');
     RESOURCES.get_img('assets/objects/heaven/tomb3.png');

@@ -144,7 +144,7 @@ var placeholder = new S_Placeholder(1340, 1350, 100, 100);
 var decorFiller = new Filler(gen.get(), 100, 100);
 decorFiller.set_zone(1125,1550,500,500);
 
-switch(gen.int(3)){
+switch(gen.int(4)){
   case 0:
     decorFiller.add_default_constructor("S_Bookshelf", 1, 50, 100);
     decorFiller.add_default_constructor("S_BookshelfBig", 3, 150, 150);
@@ -156,6 +156,10 @@ switch(gen.int(3)){
     break;
   case 2:
     decorFiller.add_default_constructor("S_Tomb", 50, 75);
+    decorFiller.set_tries(30, 50);
+    break;
+  case 3:
+    decorFiller.add_default_constructor("S_Lab", 50, 100);
     decorFiller.set_tries(30, 50);
     break;
 }

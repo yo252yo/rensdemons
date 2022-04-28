@@ -84,6 +84,138 @@ class S_Tomb extends SimpleObject {
   }
 }
 
+class S_Lab extends SimpleObject {
+  constructor(x, y, seed){
+    super(x, y, 42, 92, "heaven/lab");
+    this.adjust_hitbox(0,0,42,40);
+    this.gen = new Generator(seed);
+
+
+    var fight = this.fight;
+    var approach = function(){
+      new CenteredTextMenu("Get closer?",
+                    [
+                      {"text": "Yes", "effect": fight},
+                      {"text": "No", "effect": "##CLOSE"},
+                   ]
+                 );
+    }
+
+    this.default_text = function(){
+      TextBannerSequence.make([
+        `This is a column made of glass and metal. Inside, a colorful liquid is bubbling. You think you can distinguish a shape inside, floating ominously.`,
+      ], approach);
+
+    }
+  }
+
+  fight(){
+    var battle_names = [
+
+      'forests/boar',
+      'forests/flower',
+      'forests/fox',
+      'forests/mandragora',
+      'forests/morel',
+      'forests/nymph',
+      'forests/squirrel',
+      'forests/tree',
+      'forests/truffle',
+      'forests/trunk',
+      'mountains/chimera',
+      'mountains/emu',
+      'mountains/harpy',
+      'mountains/hawk',
+      'mountains/manticore',
+      'mountains/pterosaur',
+      'caves/bat',
+      'caves/bloodsucker',
+      'caves/crawler',
+      'caves/mole',
+      'caves/scorpion',
+      'caves/slime',
+      'waters/anemone',
+      'waters/anglerjelly',
+      'waters/crab',
+      'waters/jellyfish',
+      'waters/mermaid',
+      'waters/naiad',
+      'waters/octopus',
+      'waters/squid',
+      'waters/triton',
+      'world/arsonist',
+      'world/bruiser',
+      'world/butcher',
+      'world/djinn',
+      'world/ghost',
+      'world/goblin',
+      'world/grizzly',
+      'world/knight',
+      'world/mammoth',
+      'world/mummy',
+      'world/skeleton',
+      'world/vadhaka',
+      'world/wraith',
+      // 'heaven/angel',
+      // 'heaven/cherub',
+      // 'heaven/maneki',
+      // 'heaven/ponpon',
+      // 'heaven/raijuu',
+      // 'heaven/seraph',
+      // 'heaven/valkyrie',
+      'hell/centipede',
+      'hell/devilfly',
+      'hell/eyeball',
+      'hell/hecatoncheir',
+      'hell/sandworm',
+      'hell/satyr',
+      'hell/serpentine',
+      'hell/toad',
+      'hell/warlock',
+      'pandemonium/abaddon',
+      'pandemonium/asmodeus',
+      'pandemonium/azazel',
+      'pandemonium/belial',
+      'pandemonium/belphegor',
+      'pandemonium/golem',
+      'pandemonium/hellhound',
+      'pandemonium/ifrit',
+      'pandemonium/mammon',
+      'pandemonium/titan',
+
+      'forests/blob',
+      'forests/fungus',
+      'mountains/dragon',
+      'mountains/phoenix',
+      'caves/lizard',
+      'caves/rhino',
+      'waters/serpent',
+      'pandemonium/lieutenant',
+      'pandemonium/lord',
+      'forests/blob',
+      'forests/fungus',
+      'mountains/dragon',
+      'mountains/phoenix',
+      'caves/lizard',
+      'caves/rhino',
+      'waters/serpent',
+      'pandemonium/lieutenant',
+      'pandemonium/lord',
+      'forests/blob',
+      'forests/fungus',
+      'mountains/dragon',
+      'mountains/phoenix',
+      'caves/lizard',
+      'caves/rhino',
+      'waters/serpent',
+      'pandemonium/lieutenant',
+      'pandemonium/lord',
+    ];
+
+    BATTLE.api.make(gen.pick(battle_names), undefined);
+  }
+}
+
 class S_MagicMirror extends SimpleObject {
   constructor(x, y, seed){
     super(x, y, 50, 98, "heaven/mirror");
