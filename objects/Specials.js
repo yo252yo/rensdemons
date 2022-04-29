@@ -355,7 +355,7 @@ class S_SlimeTip extends S_event {
       case 1:
         return "The first password is that which binds";
       case 2:
-        return "Forbids and restrict some actions";
+        return "Forbids and restricts some actions";
       case 3:
         return "But creates a space for the minds";
       case 4:
@@ -431,11 +431,11 @@ class S_SlimeTip extends S_event {
         return "[y]";
 
       case 9:
-        return "[a] [?] [c]"; // c
+        return "[a] [c] [c]"; // c
       case 10:
         return "[e] [t]";
       case 11:
-        return "[s] [?]"; // e
+        return "[s] [e]"; // e
       case 12:
         return "[l] [p]";
 
@@ -444,25 +444,25 @@ class S_SlimeTip extends S_event {
       case 14:
         return "[s]";
       case 15:
-        return "[?]"; // a
+        return "[a]"; // a
       case 16:
         return "[b]";
 
       case 17:
-        return "[p] [c] [?]"; // e
+        return "[p] [c] [e]"; // e
       case 18:
-        return "[s] [?]"; // a
+        return "[s] [a]"; // a
       case 19:
-        return "[n] [e] [?]"; // a
+        return "[n] [e] [a]"; // a
       case 20:
-        return "[?] [r] [a]"; // p
+        return "[p] [r] [a]"; // p
 
       case 21:
         return "[o]";
       case 22:
-        return "[l] [?]"; // r
+        return "[l] [r]"; // r
       case 23:
-        return "[a] [?]"; // m
+        return "[a] [m]"; // m
       case 24:
         return "[n]";
     }
