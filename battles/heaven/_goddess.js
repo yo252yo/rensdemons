@@ -179,7 +179,7 @@ var pray =  PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 var persuade =  PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "Persuade",
+  name: "Call out",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: [
