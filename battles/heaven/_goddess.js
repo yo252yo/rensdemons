@@ -173,7 +173,8 @@ var pray =  PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Pray",
   unlock: true,
   description: [
-    `$$Ren$: "Only Primordial Deities can stop this madness, or better yet, create a new, happy world. All we can do down here is pray."`,
+    `$$Ren$: "Only Primordial Deities can stop this madness, or better yet, create a new, happy world."`,
+    `$$Ren$: "All we can do down here is pray, and hope that the barrier between our worlds is thin enough here so that it reaches Them."`,
     `$$Ren$: "May the True Gods have mercy on us."`,
   ],
 });
