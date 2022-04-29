@@ -187,6 +187,7 @@ const THAUMATURGY = {
     add_destination(DICTIONARY.get("town_5"), "022_town5");
     add_destination("World map", "010_world_map");
     add_destination("Hell", "050_hell_map");
+    add_destination("Heaven", "060_heaven$");
 
     new CenteredTextMenu("Fast travel to...", menu_options);
   },
