@@ -60,10 +60,10 @@ t.bot_border.interaction   = function(){  exit("d");  };
 //hack D. UNIQUE ELEMENTS
 // ===================
 if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
-  HEAVEN_SEQUENCE = "";
   var s1 = new B_Statue(1350,1275);
   var endFight = function() {
     if(INVENTORY.count("_killed_god")){
+      HEAVEN_SEQUENCE = "";
       var callback = function(){
         MARTYRDOM.death(); // to get the menu notification
         CURRENTLEVEL.setup("end@B");
@@ -76,6 +76,7 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
         `The cloud of luminous dust, sole remainder of the entity that ruled the universe, dissipates slowly into the air...`,
       ], callback);
     } else if(INVENTORY.count("_ended_suffering")){
+      HEAVEN_SEQUENCE = "";
       var callback = function(){
         CURRENTLEVEL.setup("end@C");
       }
@@ -98,6 +99,7 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
         `The Goddess' light grows brighter and swallows everything. Pretty soon, there is nothing but an ocean of pure white.`,
       ], callback);
     } else if(INVENTORY.count("_restarted_world")){
+      HEAVEN_SEQUENCE = "";
       var callback = function(){
         CURRENTLEVEL.setup("end@D");
       }
@@ -127,12 +129,10 @@ if (HEAVEN_SEQUENCE.startsWith(GODDESS_SEQUENCE)){
 
 
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(UTF_SEQUENCE)){
-  HEAVEN_SEQUENCE = "";
   var computer = new S_Computer(1350, 1300);
 }
 
 if(STATS.flag("PrimordialDeities") && HEAVEN_SEQUENCE.startsWith(MIRROR_SEQUENCE)){
-  HEAVEN_SEQUENCE = "";
    new S_MagicMirror(1350, 1300);
 }
 
