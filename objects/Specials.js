@@ -556,7 +556,7 @@ class S_Grimoire extends SimpleObject {
       TextBannerSequence.make([
         `On the ground, an old looking tome is open to a half-written page. The ink looks fresh but traces letters with a inhuman precision. It appears to be some sort of diary. It reads:`,
         `"Day ${dayNumber}.<br />
-        The Child number ${STATS.get(STAT.Endings)} still exhibits a peculiar pattern of prolonged immobility followed by activity. The last active phase started at ${wakeup} after a slumber of approximately ${slumberText}. If I'm not mistaken, this is the awakening number ${iteration} I record."`,
+        The Child number ${1+STATS.get(STAT.Endings)} still exhibits a peculiar pattern of prolonged immobility followed by activity. The last active phase started at ${wakeup} after a slumber of approximately ${slumberText}. If I'm not mistaken, this is the awakening number ${iteration} I record."`,
         `"I do wish we would reach a resolution soon. My heart aches thinking about the ${STATS.get(STAT.Souls)} souls that were sacrificed in the name of keeping up appearances, and the ${STATS.get(STAT.Battles)} creatures who lost their lives. Even the Child died ${STATS.get(STAT.Death)} times. This cannot continue much longer."`,
         `"The Child grows close and should reach me around ${now}. I hope we can find a satisfactory outcome this time..."`
       ]);
