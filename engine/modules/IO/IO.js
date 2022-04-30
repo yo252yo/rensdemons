@@ -317,7 +317,6 @@ const IO = {
         }
       }
 
-      event.preventDefault();
       var destination_X = window.pageXOffset + x;
       var destination_Y = window.pageYOffset + y;
 
@@ -325,7 +324,9 @@ const IO = {
       THAUMATURGY.react_to_click(destination_X, destination_Y);
 
       if (IO._ACTIVE_SYSTEM && IO._ACTIVE_SYSTEM.onClick) {
-        IO._ACTIVE_SYSTEM.onClick(destination_X, destination_Y, is_hold);
+        if (!IO._ACTIVE_SYSTEM.onClick(destination_X, destination_Y, is_hold, event)){
+          event.preventDefault();
+        }
       }
     },
 
