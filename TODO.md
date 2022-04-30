@@ -8,10 +8,9 @@
 - Goddess convo resets after you've reached the end, it should stick to the end
 - Doing a battle in heaven resets your position and TPs you at the entrance, i think its one of the recent changes
 - Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
-- put a wooden sword in trial
 - Goddess says demonlord is dead when he may not be
 - What happens if you use win on the goddess
-- Book of the goddess the counter of children is underestimating it 
+- Book of the goddess the counter of children is underestimating it
 
 
 

@@ -53,7 +53,7 @@ new SE_small_groundItem(2175, 1275, ITEM.Stone);
 new SE_small_groundItem(1075, 2550, ITEM.Stone);
 
 new SB_rubble(1275, 2775, ITEM.Bone);
-new SB_rubble(1725, 2550, ITEM.Bone);
+new SB_rubble(1725, 2550, ITEM.Sword_wooden);
 new SE_small_groundItem(1575, 1775, ITEM.Bone);
 
 new SE_small_groundItem(2175, 1900, ITEM.Stick);
