@@ -2,7 +2,6 @@
 - mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
 - investigate M*** memory leak
 - Slimes cave didn't spawn
-- Goddess convo resets after you've reached the end, it should stick to the end
 - Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
 - Goddess says demonlord is dead when he may not be
 - Book of the goddess the counter of children is underestimating it

@@ -407,6 +407,7 @@ var befriend =  PLAYER_ACTIONS.function.unlock_replacing_action({
   function: function(){
     trapped("Befriend");
     BATTLE.monster_actions.empty();
+    ABILITIES.unlock("_god_friend");
   },
 });
 
@@ -429,18 +430,24 @@ var sympathize =  PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 if (STATS.ending(ENDINGS.Suffering) && STATS.ending(ENDINGS.World)){
-  PLAYER_ACTIONS.add({
-    name: "Notice",
-    description: [
-      `$$Ren$: "We don't have to fight."`,
-    ],
-    unlock: true,
-    function: function(){
-      BATTLE.monster_actions.add_textual(`The Goddess does not want to hear you and tries to suppress your existence.`, hard_attack);
-      BATTLE.player_actions.empty(true);
-      sympathize("BATTLE.player_actions.empty(true)");
-    },
-  });
+  if(! ABILITIES.has_ability("_god_friend")){
+    PLAYER_ACTIONS.add({
+      name: "Notice",
+      description: [
+        `$$Ren$: "We don't have to fight."`,
+      ],
+      unlock: true,
+      function: function(){
+        BATTLE.monster_actions.add_textual(`The Goddess does not want to hear you and tries to suppress your existence.`, hard_attack);
+        BATTLE.player_actions.empty(true);
+        sympathize("BATTLE.player_actions.empty(true)");
+      },
+    });
+  } else{
+    BATTLE.player_actions.empty(true);
+    BATTLE.monster_actions.empty();
+    trapped();
+  }
 }
 
 // ===================
