@@ -1,7 +1,6 @@
 - Pressing wasd and arrow keys at the same time makes you run faster faster
 - mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
 - investigate M*** memory leak
-- Genius should never be called boy but teen
 - Slimes cave didn't spawn
 - Goddess convo resets after you've reached the end, it should stick to the end
 - Doing a battle in heaven resets your position and TPs you at the entrance, i think its one of the recent changes
