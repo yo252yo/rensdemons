@@ -237,7 +237,7 @@ var make_useless = function(name, text){
     extra_function: function(){
       called_useless ++;
 
-      if(called_useless == total_useless){
+      if(called_useless >= total_useless - 1){
         unlock_call(name);
       }
     }
