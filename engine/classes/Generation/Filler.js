@@ -150,7 +150,6 @@ class Filler {
       for(var j = -0.05; j <= 1.2; j += 0.25){
         var xx = Math.max(1, x + obj.obj_w * i);
         var yy = Math.max(1, y - obj.obj_h * j);
-        var elem = CURRENTLEVEL.io.select_interactible_at(xx, yy);
         if (!CURRENTLEVEL.io.is_walkable(xx, yy)){
           return false;
         }
