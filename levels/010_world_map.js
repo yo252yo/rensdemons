@@ -121,10 +121,11 @@ FHardMain.add_constructor(function(x,y,seed){
 }, 1, 250, 150);
 FHardMain.fill_floor_by_retry();
 
+
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
   return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", artifactDungeonsCondition, [2225,5500]);
-},1 ,100, 50);
+},1 ,75, 50);
 FHardMain.fill_floor_by_retry();
 
 FMap.add_default_constructor("SM_Trees", 2, 100, 100);

@@ -1,11 +1,7 @@
 - mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
 - investigate M*** memory leak
-- Slimes cave didn't spawn
 - Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
 - Goddess says demonlord is dead when he may not be
-
-
-
 
 
 - trailer

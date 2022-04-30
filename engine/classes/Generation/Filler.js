@@ -204,7 +204,7 @@ class Filler {
 
   fill_floor_by_retry() {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
-    var nb_tries = 10000;
+    var nb_tries = 50000;
     var nb_desired_products = this.desired_products || 10000;
 
     if (this.guaranteed_products){
@@ -231,7 +231,7 @@ class Filler {
 
   fill_decor_by_retry(allow_overlap) {
     this._assess_params(["zone_x", "zone_y", "zone_w", "zone_h"]);
-    var nb_tries = 10000;
+    var nb_tries = 8000;
     var nb_desired_products = this.desired_products || 10000;
 
     if (this.guaranteed_products){
