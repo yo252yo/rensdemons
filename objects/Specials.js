@@ -313,8 +313,8 @@ class S_SlimeDoor extends S_event {
 
   ask()  {
     var self = this;
+    var answer = S_SlimeTip.get_answer(self.code);
     var callback = function(guess){
-      var answer = S_SlimeTip.get_answer(self.code);
       if (!guess) { guess = ""; }
       guess = guess.toLowerCase();
       if(guess == answer){
@@ -327,7 +327,7 @@ class S_SlimeDoor extends S_event {
         ]);
       }
     }
-    new PromptTextMenu("What will you say?", "", callback);
+    new PromptTextMenu("What will you say?", "", callback,"*".repeat(answer.length));
   }
 
   interaction() {

@@ -1,6 +1,5 @@
 - Pressing wasd and arrow keys at the same time makes you run faster faster
 - mobile cant scroll big textmenu (battletree display) cause it auto dismisses it
-- textinput in cavern should have placeholder
 - investigate M*** memory leak
 - Genius prodigy didn't trigger shout name for M*** for some reason
 - Genius should never be called boy but teen
