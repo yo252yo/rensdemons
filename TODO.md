@@ -4,8 +4,6 @@
 - Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
 - Goddess says demonlord is dead when he may not be
 - Book of the goddess the counter of children is underestimating it
-- make sure the achievement for the mirror works
-
 
 
 

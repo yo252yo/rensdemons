@@ -197,6 +197,10 @@ const STATS = {
       }
     }
 
+    if(STATS.flag("MirrorConversation")){
+      achievements.push("MirrorConversation");
+    }
+
     return achievements;
   },
 }
