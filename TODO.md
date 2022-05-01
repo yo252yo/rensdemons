@@ -1,6 +1,5 @@
 - investigate M*** memory leak
 - Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
-- Goddess says demonlord is dead when he may not be
 
 
 - trailer

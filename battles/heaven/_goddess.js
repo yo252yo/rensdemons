@@ -145,6 +145,17 @@ if (STATS.ending(ENDINGS.God)){
     },
   });
 
+
+  var extra = [];
+  if(!ABILITIES.has_ability("_secret_ending_chosen")){
+    var extra = [
+      `$$Ren$: "Really? I have not fought him!"`,
+      `Goddess: "I know, yet there is a way the events must progress. You cannot prevent $$demon_lord$'s defeat."`,
+      `$$Ren$: "But I want things to change!"`,
+    ];
+
+  }
+
   PLAYER_ACTIONS.add({
     name: "Negotiate",
     unlock: true,
@@ -153,11 +164,12 @@ if (STATS.ending(ENDINGS.God)){
       `Goddess: "That is all true."`,
       `$$Ren$: "I want it to stop."`,
       `Goddess: "That is already the case. $$demon_lord$ is defeated."`,
+    ].concat(extra).concat([
       `$$Ren$: "I know that the demon armies will eventually come back if nothing changes."`,
       `Goddess: "That is also correct."`,
       `$$Ren$: "Well, make it stop! I know that killing you won't solve the problem, but I'm sure that as a god you have powers you can use. If you can control the demons, surely you can protect the peace. Make this all stop, or else..."`,
       `Goddess: "You don't need to get angry, I shall do as you please. What do you want me to do?"`,
-    ],
+    ]),
     function: function(){
       BATTLE.player_actions.empty(true);
       propose_end_suffering("Negotiate");
