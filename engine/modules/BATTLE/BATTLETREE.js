@@ -46,7 +46,7 @@ const BATTLETREE = {
       AUDIO.effect.unlock();
     },
 
-    unlock_ability: function(name){
+    forget_ability: function(name){
       for (var b in BATTLETREE._targets.get([])) {
         var current = BATTLETREE._targets.get([b, name]);
         if (current) {

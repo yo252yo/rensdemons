@@ -109,7 +109,7 @@ const ABILITIES = {
     }
     CONSOLE.log.abilities("Unlocked " + name);
     ABILITIES._abilities.set([name], true);
-    BATTLETREE.api.unlock_ability(name);
+    //BATTLETREE.api.forget_ability(name);
   },
 
 }
