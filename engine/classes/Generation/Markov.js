@@ -2,15 +2,22 @@
 
 
 class Markov {
-  constructor(depth, array) {
+  constructor(depth, array, threshold) {
     // Length of the learned sequences
     this.depth = depth;
 
     // Copy constructor
     if (array) {
-      this.kernel = JSON.parse(array);
+      var kernel = JSON.parse(array);
     } else {
-      this.kernel = {};
+      var kernel = {};
+    }
+
+    this.kernel = {};
+    for(var i in kernel){
+      if (!threshold || kernel[i] > threshold){
+        this.kernel[i] = kernel[i];
+      }
     }
   }
 

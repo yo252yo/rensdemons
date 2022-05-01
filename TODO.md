@@ -2,7 +2,6 @@ Optimisations:
 - compress battletree in memory ??
 - make sure that all the ABILITIES and items are not used anywhere like battleobjects
 - IO._menu.parent has potential memory leak
-- MARKOV_MODELS and DATASETS are a bit big
 
 
 - trailer
