@@ -231,6 +231,11 @@ class TextMenu extends TextElement {
       _EXECUTOR.synchronize(f);
     }
 
+    destroy() {
+      this.parent = undefined;
+      super.destroy();
+    }
+
     move_select(offset) {
       this.selected += offset;
 
