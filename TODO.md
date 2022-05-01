@@ -1,11 +1,14 @@
-- investigate M*** memory leak
-- Restart game forgets pray i think, anyway it deletes the pray part of the battle tree
+Optimisations:
+- compress battletree in memory ??
+- make sure that all the ABILITIES and items are not used anywhere like battleobjects
+- make sure console eventually garbage collects
+- IO._menu.parent has potential memory leak
+- MARKOV_MODELS and DATASETS are a bit big
 
 
 - trailer
 - arts
 - storepage
-- make sure that all the ABILITIES and items are not used anywhere like battleobjects
 - Make sure there's enough weapons in trial
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 - write walkthrough
