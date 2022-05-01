@@ -273,7 +273,7 @@ var helper = PLAYER_ACTIONS.function.unlock_replacing_action({
 
 
 var ooe = PLAYER_ACTIONS.function.unlock_replacing_action({
-  name: "108",
+  name: "2845",
   unlock: true,
   description: [
     `$$GeniusProdigy$: "Pretty impressive..."`,
@@ -282,9 +282,9 @@ var ooe = PLAYER_ACTIONS.function.unlock_replacing_action({
     `$$GeniusProdigy$: "Tell me, what does it feel like?"`,
   ],
   function: function(){
-    timetravel("108");
-    knowledge("108");
-    helper("108");
+    timetravel("2845");
+    knowledge("2845");
+    helper("2845");
   },
 });
 
@@ -300,15 +300,15 @@ var think = PLAYER_ACTIONS.function.unlock_replacing_action({
 
     var callback = function(answer){
       BATTLE.monster_actions.empty(true);
-      if(answer != 108){
-        make_loss("Think", answer, [`${trueName}: "No... I was thinking of 108..."`]);
+      if(answer != 2845){
+        make_loss("Think", answer, [`${trueName}: "No... I was thinking of 2845..."`]);
       }
 
       ooe("Think");
 
-      if(answer != 108){
+      if(answer != 2845){
 
-        BATTLETREE.api.forget("_party/_GeniusProdigy2", "108");
+        BATTLETREE.api.forget("_party/_GeniusProdigy2", "2845");
       }
 
       BATTLE.turn_factory.player();
