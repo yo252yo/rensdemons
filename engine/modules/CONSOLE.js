@@ -10,6 +10,10 @@ const CONSOLE = {
     CONSOLE.logs.push(t);
     console.log("%c " + t, style);
 
+    if(CONSOLE.logs.length > 2000){
+      CONSOLE.logs = CONSOLE.logs.slice(500);
+    }
+
     var debugdisplay = document.getElementById("consoledisplay");
     if(debugdisplay){
       debugdisplay.innerHTML += t + "\n";
