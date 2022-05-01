@@ -126,7 +126,7 @@ FHardMain.clear();
 FHardMain.set_guaranteed(1);
 FHardMain.add_constructor(function(x,y,seed){
   return new SM_Cave(x, y, `Cave of the<br />${DICTIONARY.get("slimes_adj")} Slimes`, "015_slimes", artifactDungeonsCondition, [2225,5500]);
-},1 ,75, 50);
+},1 ,75, 75);
 FHardMain.fill_floor_by_retry();
 
 
