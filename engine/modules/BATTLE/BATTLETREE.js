@@ -11,6 +11,7 @@ const BATTLETREE = {
   NOT_TRIED: 4,
   NOTHING: 5,
   ESCAPE: 6,
+  _ENUM: [1,2,3,4,5,6],
 
   factory: {
     export: function() {
@@ -30,9 +31,79 @@ const BATTLETREE = {
     },
   },
 
+  codes: {
+    txt_from_command: function(commandtxt){
+      if(Object.values(ABILITY).includes(commandtxt)){
+        return "." + Object.values(ABILITY).indexOf(commandtxt);
+      } else if(Object.values(ITEM).includes(commandtxt)){
+        return "/" + Object.values(ITEM).indexOf(commandtxt);
+      } else if(Object.values(PARTYMEMBERS).includes(commandtxt)){
+        return ":" + Object.values(PARTYMEMBERS).indexOf(commandtxt);
+      } else{
+        return commandtxt;
+      }
+    },
+
+    from_command: function(command){
+      if(BATTLETREE._ENUM.includes(command)){
+        return command;
+      }
+
+      var i = command.length - 1;
+      var spaces = 0;
+      while(command[i] == " "){
+        spaces ++;
+        i --;
+      }
+
+      var txtcommand = command.slice(0, i + 1);
+      var spacecode = "";
+      if (spaces > 0){
+        spacecode += "%";
+      }
+      if (spaces > 1){
+        spacecode += spaces;
+      }
+
+      var code = BATTLETREE.codes.txt_from_command(txtcommand) + spacecode;
+      return code;
+    },
+
+    txt_to_command: function(code){
+      switch(code[0]){
+        case ".":
+          return Object.values(ABILITY)[code.slice(1)];
+        case "/":
+          return Object.values(ITEM)[code.slice(1)];
+        case ":":
+          return Object.values(PARTYMEMBERS)[code.slice(1)];
+        default:
+          return code;
+      };
+    },
+
+    to_command: function(code){
+      if(BATTLETREE._ENUM.includes(code)){
+        return code;
+      }
+
+      var spaces = code.split("%");
+      var txtcode = spaces[0];
+      var spacestxt = "";
+      if (spaces.length > 1){
+        spacestxt += " ";
+      }
+      if(spaces[1]) {
+        spacestxt += " ".repeat(parseInt(spaces[1]) - 1);
+      }
+      return BATTLETREE.codes.txt_to_command(txtcode) + spacestxt;
+    },
+  },
+
   api: {
     is_unlocked: function(battle, name) {
-      var node = BATTLETREE._targets.get([battle, name]);
+      var code = BATTLETREE.codes.from_command(name);
+      var node = BATTLETREE._targets.get([battle, code]);
       return (node != null && !BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN));
     },
 
@@ -41,32 +112,36 @@ const BATTLETREE = {
         return; // already unlocked
       }
 
-      BATTLETREE._targets.set([battle, name], [BATTLETREE.NOT_TRIED]);
+      var code = BATTLETREE.codes.from_command(name);
+      BATTLETREE._targets.set([battle, code], [BATTLETREE.NOT_TRIED]);
       CONSOLE.log.battletree("unlocked: [" + name + "] on " + battle);
       AUDIO.effect.unlock();
     },
 
     forget_ability: function(name){
+      var code = BATTLETREE.codes.from_command(name);
       for (var b in BATTLETREE._targets.get([])) {
-        var current = BATTLETREE._targets.get([b, name]);
+        var current = BATTLETREE._targets.get([b, code]);
         if (current) {
-          var current = BATTLETREE._targets.set([b, name], [BATTLETREE.NOT_TRIED]);
+          var current = BATTLETREE._targets.set([b, code], [BATTLETREE.NOT_TRIED]);
         }
       }
     },
 
     forget: function(battle, name) {
       // This could be simply setting HIDDEN, maybe
-      BATTLETREE._targets.delete([battle, name]);
+      var code = BATTLETREE.codes.from_command(name);
+      BATTLETREE._targets.delete([battle, code]);
       CONSOLE.log.battletree("locked: [" + name + "] on " + battle);
     },
 
     declare: function(battle, name) {
-      if (BATTLETREE._targets.get([battle, name]) != null) {
+      var code = BATTLETREE.codes.from_command(name);
+      if (BATTLETREE._targets.get([battle, code]) != null) {
         return; // already unlocked
       }
         // check inventory and all ???
-      BATTLETREE._targets.set([battle, name], [BATTLETREE.HIDDEN]);
+      BATTLETREE._targets.set([battle, code], [BATTLETREE.HIDDEN]);
       CONSOLE.log.battletree("unknown action discovered ([" + name + "])");
     },
 
@@ -83,21 +158,25 @@ const BATTLETREE = {
 
       BATTLETREE.api.unlock(battle, name); // just in case
 
-      var node = BATTLETREE._targets.get([battle, name]);
-      if (node.includes(destination)) {    return;   }
+      var code = BATTLETREE.codes.from_command(name);
+      var coddestination = BATTLETREE.codes.from_command(destination);
+
+      var node = BATTLETREE._targets.get([battle, code]);
+      if (node.includes(coddestination)) {    return;   }
 
       if (BATTLETREE.get._check_node(node, BATTLETREE.NOT_TRIED) || BATTLETREE.get._check_node(node, BATTLETREE.HIDDEN)) {
-        BATTLETREE._targets.set([battle, name], []);
+        BATTLETREE._targets.set([battle, code], []);
       }
 
       CONSOLE.log.battletree("developed: [" + name + "] -> [" + destination + "] on " + battle);
-      BATTLETREE._targets.add([battle, name], destination);
+      BATTLETREE._targets.add([battle, code], coddestination);
     },
   },
 
   get: {
     outcome: function(battle, name){
-      var node = BATTLETREE._targets.get([battle, name]);
+      var code = BATTLETREE.codes.from_command(name);
+      var node = BATTLETREE._targets.get([battle, code]);
       if(!node || node.length == 0){
         return BATTLETREE.HIDDEN;
       }
@@ -105,10 +184,10 @@ const BATTLETREE = {
       var has_children = false;
       for (var i in node) {
         var o;
-        if([BATTLETREE.LOSS, BATTLETREE.WIN, BATTLETREE.HIDDEN, BATTLETREE.NOT_TRIED, BATTLETREE.NOTHING, BATTLETREE.ESCAPE].includes(node[i])){
+        if(BATTLETREE._ENUM.includes(node[i])){
           o = node[i];
         } else {
-          o = BATTLETREE.get.outcome(battle, node[i]);
+          o = BATTLETREE.get.outcome(battle, BATTLETREE.codes.to_command(node[i]));
           has_children = true;
         }
         if(!outcomes.includes(o)){
@@ -196,7 +275,7 @@ const BATTLETREE = {
         if(ancestors.get([i])) { continue;  }
     //    if(! BATTLETREE.api.is_unlocked(battle, i) ) { continue;  }
 
-        starters.push([i, ""]);
+        starters.push([BATTLETREE.codes.to_command(i), ""]);
       }
       return starters;
     },
@@ -248,7 +327,8 @@ const BATTLETREE = {
     },
 
     is_explored: function(battle, command) {
-      var outcome = BATTLETREE._targets.get([battle, command]);
+      var code = BATTLETREE.codes.from_command(command);
+      var outcome = BATTLETREE._targets.get([battle, code]);
 
       if(!outcome || outcome == BATTLETREE.NOT_TRIED || outcome == BATTLETREE.HIDDEN) {
         return false;
@@ -398,7 +478,8 @@ const BATTLETREE = {
       }
       start += "> " + BATTLETREE.display.stylize(ability, battle);
       var bundle = BATTLETREE.display._map_outcome_to_html_bundle(battle, ability);
-      var target = BATTLETREE._targets.get([battle, ability]);
+      var code = BATTLETREE.codes.from_command(ability);
+      var target = BATTLETREE._targets.get([battle, code]);
       if(!target){ target = BATTLETREE.HIDDEN; }
 
       switch (target[0]){
@@ -423,7 +504,7 @@ const BATTLETREE = {
         default:
           html[bundle] += start + "<br/> "
           for(var i in target){
-            to_print.push([target[i], prefix + "&nbsp;&nbsp;"]);
+            to_print.push([BATTLETREE.codes.to_command(target[i]), prefix + "&nbsp;&nbsp;"]);
           }
           break;
       }
