@@ -5,8 +5,6 @@ const ABILITY = {
   Pray: "Pray",
   Feed: "Feed",
   Spoiler: "Spoil",
-  WinA: "WIN",
-  LossA: "LOSS",
 
   // Way of the Elements
     Fireball: "Fireball",
