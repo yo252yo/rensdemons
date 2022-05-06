@@ -19,14 +19,63 @@ By Ryl3
 2.3 Experience ...................................... [A300]
 2.4 Martyrdom ....................................... [A400]
 2.5 Character builds ................................ [A500]
+2.6 Artifacts ....................................... [A600]
 
 3. Walkthrough ...................................... [B000]
 3.1. Hide and seek .................................. [B100]
 3.2. The Trial ...................................... [B200]
 3.3. First town ..................................... [B300]
+3.4. Second town .................................... [B400]
+3.5. Pieces of armament ............................. [B500]
+3.5.1 Mushroom forest ............................... [B510]
+3.5.2 Squid lake .................................... [B520]
+3.5.3 Harpies peak .................................. [B530]
+3.6. The ancient armament ........................... [B600]
+3.7. Hell's Maw ..................................... [B700]
+3.8. The Fissure .................................... [B800]
+3.9. Back to Hell ................................... [B900]
+3.10. Pandemonium ................................... [Ba00]
 
-4. Endings .......................................... [C000]
-5. Interpretations and analyses ..................... [D000]
+4. Post-game and endings ............................ [C000]
+4.1. End of War ..................................... [C100]
+4.2. Heaven ......................................... [C200]
+4.3. End of God ..................................... [C300]
+4.4. New Game Plus powers ........................... [C400]
+4.5. End of suffering/End of the world .............. [C500]
+4.6. The truth ...................................... [C600]
+4.7. True ends ...................................... [C700]
+4.8. Bonuses ........................................ [C800]
+
+5. Optional content ................................. [D000]
+5.1. Town of Debauch ................................ [D100]
+5.2. Town of Acceptance ............................. [D200]
+5.3. Woods of the Trees ............................. [D300]
+5.4. Sea of the Sirens .............................. [D400]
+5.5. Mounts of the Hawks ............................ [D500]
+5.6. Caves of the Slimes ............................ [D600]
+
+6. Party members .................................... [E000]
+6.1. Precious Child ................................. [E100]
+6.2. Mystical Klutz ................................. [E200]
+6.3. Sly Swindler ................................... [E300]
+6.4. Wise Elder ..................................... [E400]
+6.5. Suspicious Chef ................................ [E500]
+6.6. Savage Girl .................................... [E600]
+6.7. Genius Prodigy ................................. [E700]
+6.8. Wordly Seductress .............................. [E800]
+6.9. Undercover Noble ............................... [E900]
+6.10. Brawny Simpleton .............................. [Ea00]
+6.11. Tortured Maverick ............................. [Eb00]
+6.12. Retired Protector ............................. [Ec00]
+6.13. Wealthy Brat .................................. [Ed00]
+
+7. Interpretations and analyses ..................... [F000]
+7.1. The subjectivity spectacle ..................... [F100]
+7.2. Idealism ....................................... [F200]
+7.3. The game of thrones ............................ [F300]
+7.4. The element of meta ............................ [F400]
+7.5. The lack ....................................... [F500]
+7.6. The system ..................................... [F600]
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -45,7 +94,6 @@ I'll try to keep the spoilers to a minimum and properly tag them, but this is a 
 ===============================================================================
 
 Ren's Demons is definitely a weird game. It's a web browser game (if you got it anywhere else, know that what you're getting is actually a web browser) that is kind of a mix between a traditional JRPG, a text-based adventure game (chose your own adventure) or a visual novel, maybe.
-TODO: more??
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -53,7 +101,7 @@ TODO: more??
 -------------------------------------------------------------------------------
 ===============================================================================
 
-If you're having problems running the game, try another web browser, operating system or device. Apple enforces arbitrary limitations to javascript engines and also heavily censors information about it, so some problems cannot be investigated.
+If you're having problems running the game, try another web browser, operating system or device. The game is written in HTML and javascript, so any web browser should do the trick. Apple enforces arbitrary limitations to javascript engines and also heavily censors information about it, so some problems cannot be investigated or solved on Apple devices.
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -61,36 +109,119 @@ If you're having problems running the game, try another web browser, operating s
 -------------------------------------------------------------------------------
 ===============================================================================
 
-The game has elements that are fixed and elements that are generated at each playthrough. For instance, the color palette you start with will be different for everyone, but the solution to the puzzles will be the same. Names are also procedurally generated, so I won't be able to use them here. I'll work it out somehow ^^
+The game has elements that are fixed and elements that are generated at each playthrough. For instance, the color palette you start with will be different for everyone, but the solution to the puzzles will be the same.
 I'll do my best to distinguish between the two in this guide. In general, the shared elements are the ones that are important for the progression and the story. The procedurally generated elements tend to be flavor/worldbuilding to make your playthrough unique, so we will not talk about them much. Just be aware that your experience can differ from mine in small ways.
+In particular, all the character names are different between players, so I will refer to them by their titles that can be seen in the game's code.
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     2. MECHANICS/CONTROLS                              [A000]
+                     2. MECHANICS/CONTROLS                             [A000]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 Controls are the usual, WASD to move, SPACE or ENTER to interact, ESC to cancel...
-TODO: more??
-You control one character of unspecified gender (though they can be accompanied).
+I think E and Z also work for interact, and the arrow keys to move.
+You control one character of unspecified gender called Ren.
+This RPG does not have random encounters, but instead random events are spread out on the map. They can be good (treasures) or bad (battles), and most of them can be skipped by walking around.
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.1 BATTLE SYSTEM                                  [A100]
+-------------------------------------------------------------------------------
+===============================================================================
+
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.2 PARTY                                          [A200]
+-------------------------------------------------------------------------------
+===============================================================================
+
+
+- Best Friend:
+- Precious Child:
+- Mystical Klutz:
+- Sly Swindler:
+- Wise Elder:
+- Suspicious Chef:
+- Savage Girl:
+- Genius Prodigy:
+- Wordly Seductress:
+- Undercover Noble:
+- Brawny Simpleton:
+- Tortured Maverick:
+- Retired Protector:
+- Wealthy Brat:
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.3 EXPERIENCE                                     [A300]
+-------------------------------------------------------------------------------
+===============================================================================
 
 
 
 
 
+2.4 Martyrdom ....................................... [A400]
+2.5 Character builds ................................ [A500]
+2.6 Artifacts ....................................... [A600]
 
+3. Walkthrough ...................................... [B000]
+3.1. Hide and seek .................................. [B100]
+3.2. The Trial ...................................... [B200]
+3.3. First town ..................................... [B300]
+3.4. Second town .................................... [B400]
+3.5. Pieces of armament ............................. [B500]
+3.5.1 Mushroom forest ............................... [B510]
+3.5.2 Squid lake .................................... [B520]
+3.5.3 Harpies peak .................................. [B530]
+3.6. The ancient armament ........................... [B600]
+3.7. Hell's Maw ..................................... [B700]
+3.8. The Fissure .................................... [B800]
+3.9. Back to Hell ................................... [B900]
+3.10. Pandemonium ................................... [Ba00]
 
-Best Friend
-Precious Child
-Mystical Klutz
-Sly Swindler
-Wise Elder
-Suspicious Chef
-Savage Girl
-Genius Prodigy
-Wordly Seductress
-Undercover Noble
-Brawny Simpleton
-Tortured Maverick
-Retired Protector
-Wealthy Brat
+4. Post-game and endings ............................ [C000]
+4.1. End of War ..................................... [C100]
+4.2. Heaven ......................................... [C200]
+4.3. End of God ..................................... [C300]
+4.4. New Game Plus powers ........................... [C400]
+4.5. End of suffering/End of the world .............. [C500]
+4.6. The truth ...................................... [C600]
+4.7. True ends ...................................... [C700]
+4.8. Bonuses ........................................ [C800]
+
+5. Optional content ................................. [D000]
+5.1. Town of Debauch ................................ [D100]
+5.2. Town of Acceptance ............................. [D200]
+5.3. Woods of the Trees ............................. [D300]
+5.4. Sea of the Sirens .............................. [D400]
+5.5. Mounts of the Hawks ............................ [D500]
+5.6. Caves of the Slimes ............................ [D600]
+
+6. Party members .................................... [E000]
+6.1. Precious Child ................................. [E100]
+6.2. Mystical Klutz ................................. [E200]
+6.3. Sly Swindler ................................... [E300]
+6.4. Wise Elder ..................................... [E400]
+6.5. Suspicious Chef ................................ [E500]
+6.6. Savage Girl .................................... [E600]
+6.7. Genius Prodigy ................................. [E700]
+6.8. Wordly Seductress .............................. [E800]
+6.9. Undercover Noble ............................... [E900]
+6.10. Brawny Simpleton .............................. [Ea00]
+6.11. Tortured Maverick ............................. [Eb00]
+6.12. Retired Protector ............................. [Ec00]
+6.13. Wealthy Brat .................................. [Ed00]
+
+7. Interpretations and analyses ..................... [F000]
+7.1. The subjectivity spectacle ..................... [F100]
+7.2. Idealism ....................................... [F200]
+7.3. The game of thrones ............................ [F300]
+7.4. The element of meta ............................ [F400]
+7.5. The lack ....................................... [F500]
+7.6. The system ..................................... [F600]
