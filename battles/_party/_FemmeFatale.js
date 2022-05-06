@@ -386,7 +386,7 @@ var situations = [
     options: [
       {action: "Let him pass", reaction: "She tells you that everyone is like that here.", score: 1},
       {action: "Sober him up", reaction: "She does not care much for your intrusion in other people's lives.", score: 0},
-      {action: "Shield her", reaction: "She retorts that she does not need your protection.", score: 0},
+      {action: "Defend her", reaction: "She retorts that she does not need to be shielded.", score: 0},
     ]
   },
   {

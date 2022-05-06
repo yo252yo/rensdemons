@@ -289,7 +289,7 @@ if(INVENTORY.cash() > 1){
 }
 
 PLAYER_ACTIONS.add({
-  name: "Call help",
+  name: "Call for help",
   unlock: true,
   description: [`You scream, waking up $$BestFriend$. Seeing this, the rogue flies away with a speed that you didn't know humans were capable of. You're safe.`],
   outcome: BATTLETREE.ESCAPE,

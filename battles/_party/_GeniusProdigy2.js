@@ -197,7 +197,7 @@ var admit = PLAYER_ACTIONS.function.unlock_replacing_action({
 
     make_loss("Admit", "Cave-in", [`$$Ren$: "The ceiling is about to collapse."`, `$$GeniusProdigy$ looks doubtful, but humors you. You spend a few minutes waiting expectantly, but nothing happens, apart from a mole crawling slowly in a corner.`]);
     make_loss("Admit", "Slime", [`$$Ren$: "We'll be attacked by slimes!"`, `$$GeniusProdigy$ looks doubtful, but humors you. You spend a few minutes waiting expectantly, but nothing happens, apart from a mole crawling slowly in a corner.`]);
-    make_loss("Admit", "Earthquake", [`$$Ren$: "The ground is about to shake!"`, `$$GeniusProdigy$ looks doubtful, but humors you. You spend a few minutes waiting expectantly, but nothing happens, apart from a mole crawling slowly in a corner.`]);
+    make_loss("Admit", "Earth Quake", [`$$Ren$: "The ground is about to shake!"`, `$$GeniusProdigy$ looks doubtful, but humors you. You spend a few minutes waiting expectantly, but nothing happens, apart from a mole crawling slowly in a corner.`]);
     nothing("Admit");
     mole("Admit");
   },

@@ -56,7 +56,7 @@ attempt("Hang", `You help $$TorturedSoul$ hand himself to a tree. You avert your
 attempt("Flag", `You decide to seal the fate of $$TorturedSoul$ with an ominous declaration like 'do not worry, we will all be ok'. It's just as good as a death sentence: he immediately dies in a tragic accident, a thankful expression on his face.`);
 attempt("Drown", `You find the nearest pond and throw $$TorturedSoul$ in, heavily loaded with rocks. He falls to the bottom of the water and remains there.`);
 attempt("Slit", `You slit $$TorturedSoul$'s throat in a quick gesture. He falls on the ground with a thankful expression on his face.`);
-attempt("Poison", `You feed $$TorturedSoul$ some strong poison. After a few seconds, he falls on the ground with a thankful expression on his face.`);
+attempt("Empoison", `You feed $$TorturedSoul$ some strong poison. After a few seconds, he falls on the ground with a thankful expression on his face.`);
 attempt("Immolate", `You build a pyre and throw $$TorturedSoul$ in. He welcomes the flames with a thankful expression on his face.`);
 attempt("Spell", `You cast one of your spells on $$TorturedSoul$. Without any defense, it is fatal to him.`);
 attempt("Push", `You go with $$TorturedSoul$ to the nearest cliff. You give him a push. He crashes on the solid ground far below.`);
