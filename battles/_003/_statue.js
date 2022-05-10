@@ -143,9 +143,9 @@ PLAYER_ACTIONS.add({
 });
 
 
-make_riddle("fourth", "If the world is a stage, this is all you can do.<br />And when the curtain falls, it's time to start a new.<br />And though this speaks often of deceit and pretense.<br />So too this qualifies actions of any sense.<br />A*T");
+make_riddle("fourth", "How can so few letters describe many rich worlds?<br />Impossible to doubt, or to define in words.<br />No two ones are the same, yet we cherish our own.<br />For it lets us each be, or else 'I' would be gone.<br />*E");
 make_riddle("third", "This word bridges the way between the start and goal.<br />This is what you traverse, this is your course in whole.<br />This qualifies your means, your intermediate grind.<br />Though this bares resemblance to the thoughts in your mind.<br />*H*O*G*");
-make_riddle("second", "How can so few letters describe many rich worlds?<br />Impossible to doubt, or to define in words.<br />No two ones are the same, yet we cherish our own.<br />For it lets us each be, or else 'I' would be gone.<br />*E");
+make_riddle("second", "If the world is a stage, this is all you can do.<br />And when the curtain falls, it's time to start a new.<br />And though this speaks often of deceit and pretense.<br />So too this qualifies actions of any sense.<br />A*T");
 make_riddle("first", "To you, the chosen one, trapped in this dreary maze,<br />I'll obey your command, if you speak the right phrase.<br />When I hear the three words that my icons hinted<br />You will be my servant forever anointed.<br />*** ******* **");
 
 
