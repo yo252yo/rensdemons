@@ -93,7 +93,7 @@ const PARTY = {
         var name = override_dictionary || DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko);
         return `${name} is a fortune teller living in ${DICTIONARY.get("town_1")}. She has a way with the spirits, who let her peek into the fabric of time to reveal the things to come. In fact, she would probably know all the secrets of the universe by now, if only she wasn't such an airhead.<br /><br />
                 ${name} was very young when she lost her father to the monsters of ${DICTIONARY.get("demon_lord")}'s army, but not so young that she could remain oblivious to how this loss destroyed her mother's soul. She swore to always spread joy and happiness around her, to bring back the light in her mother's life. It's not often that she pauses to wonder if anything darker is hiding behind her warm smile, her upbeat demeanor and her legendary clumsiness.
-                <hr style="clear:both;"><b>Abilities</b>: Terrifying Predictions, Embarassing Visions, Dearly Departure<hr />`;
+                <hr style="clear:both;"><b>Abilities</b>: Terrifying Predictions, Embarrassing Visions, Dearly Departure<hr />`;
       case PARTYMEMBERS.StreetSmart:
         var name = override_dictionary || DICTIONARY.get(PARTYMEMBERS.StreetSmart);
         return `${name} is a beastmaster you encountered in a forest near ${DICTIONARY.get("town_1")}. Behind his innocent face hides a sly and calculating brain. Any means is good for him to reach his goals. Fortunately, his big heart means that he aims for nothing besides the happiness of those he cares about.<br /><br />
@@ -113,7 +113,7 @@ const PARTY = {
         var name = override_dictionary || DICTIONARY.get(PARTYMEMBERS.TraitorFisher);
         return `${name} loves cooking. She turns the study of ingredients and their interactions into an almost scientific discipline. She's always made a point to gather the best ingredients herself. That's how she also became an expert at fishing. But one day, while she was trying to catch a promising fish, she fell into the hands of the merfolks.<br /><br />
                 ${name} is very bright and calculating. She saw there an opportunity. She started to work as a double agent in the Siren army, spying for the humans. But she also had to prove her loyalty to her new masters by sabotaging mankind. And she quickly betrayed both to join you on your quest. She supposedly wants to discover new recipes, but her actual motivations are mysterious. It's impossible to keep track of all her convoluted schemes. In the end, only she knows where her true allegiance lies...
-                <hr style="clear:both;"><b>Abilities</b>: Convoluted Alliances, Inevitable Betrayal, Strategic Negociations<hr />`;
+                <hr style="clear:both;"><b>Abilities</b>: Convoluted Alliances, Inevitable Betrayal, Strategic Negotiations<hr />`;
       case PARTYMEMBERS.GeniusProdigy:
         var name = override_dictionary || DICTIONARY.get(PARTYMEMBERS.GeniusProdigy);
         return `${name} is one of the very few humans lucky enough to not have to worry about their survival every day. Otherwise, he would not have lived very long. He never pays attention to the down-to-earth problems of daily life. Instead, he's always in his own little world, daydreaming about his latest discoveries, pondering existential questions, designing experimental protocols, reading whatever he can find...<br /><br />

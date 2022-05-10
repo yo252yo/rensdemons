@@ -1,4 +1,4 @@
-Ren's Demons FAQ/Walkthrough
+NegotiationsRen's Demons FAQ/Walkthrough
 Version 0.0, April 13, 2009
 By Ryl3
 
@@ -124,14 +124,16 @@ I think E and Z also work for interact, and the arrow keys to move.
 You control one character of unspecified gender called Ren.
 This RPG does not have random encounters, but instead random events are spread out on the map. They can be good (treasures) or bad (battles), and most of them can be skipped by walking around.
 
-
 ===============================================================================
 -------------------------------------------------------------------------------
                      2.1 BATTLE SYSTEM                                  [A100]
 -------------------------------------------------------------------------------
 ===============================================================================
 
-
+The game uses a narrative turn-based battle system.
+On your turn, you chose what you want to do among all the possible commands (item, ability, party member or special commands). The monsters you will face are vulnerable to some but not all commands, so you have to figure out their weak points. The game helps you keep track by highlighting winning actions and striking losing ones.
+If you do not win the fight, your opponent often retaliates and you have to avoid their assault in a small dodging mini game. The mini game is simple: the enemy attacks in a direction, and you have to avoid it. You have some time before the attack to place a bet and some time after the attack to correct it. The timing and behavior is different between enemies, some stick to the same direction, other are more unpredictable.
+Sometimes you need several hits of the same command to vanquish your enemy. Also some items are consumables (arrows, elixirs...) so be sure to stock up!
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -139,22 +141,24 @@ This RPG does not have random encounters, but instead random events are spread o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+In this game, up to 14 companions can join your party. They can help you in battles or trigger random specific events. Some of them are more effective in some situations than others. Here is a list of their abilities:
 
-- Best Friend:
-- Precious Child:
-- Mystical Klutz:
-- Sly Swindler:
-- Wise Elder:
-- Suspicious Chef:
-- Savage Girl:
-- Genius Prodigy:
-- Wordly Seductress:
-- Undercover Noble:
-- Brawny Simpleton:
-- Tortured Maverick:
-- Retired Protector:
-- Wealthy Brat:
+- Best Friend: Persuasive Argument, Gentle Conversion, Communicative Kindness
+- Precious Child: Angelic Smile, Contagious Innocence, Heartful Candor
+- Mystical Klutz: Terrifying Predictions, Embarrassing Visions, Dearly Departure
+- Sly Swindler: Flying Raptors, Wildlife Stampede, Slithering Reptiles
+- Wise Elder: Tetanic Meditation, Blissful Rapture, Material Detachment
+- Suspicious Chef: Convoluted Alliances, Inevitable Betrayal, Strategic Negotiations
+- Savage Girl: Feral Rage, Feline Assault, Wild Pounce
+- Genius Prodigy: Optimal Computation, Outsmarting Tactics, Unfaillable Plan
+- Wordly Seductress: Deadly Kiss, Bewitching Whisper, Enthralling Temptation
+- Undercover Noble: Elaborate Trap, Chemical Powder, Strongest Potions
+- Brawny Simpleton: Wrestling Tackle, Torrential Blows, Berserker Charge
+- Tortured Maverick: Relatable Hopelessness, Unbearable Cringe, Infectious Despair
+- Retired Protector: Inferiority Retreat, Dominance Reputation, Admirative Awe
+- Wealthy Brat: Influencing Fame, Corruptive Bribe, Money Throw
 
+The Best Friend joins your team automatically as part of the story. For the others, refer to section 6 [E000] for a guide about how to get them.
 
 ===============================================================================
 -------------------------------------------------------------------------------
