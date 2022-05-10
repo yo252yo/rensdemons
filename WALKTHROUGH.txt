@@ -18,7 +18,7 @@ By Ryl3
 2.2 Party ........................................... [A200]
 2.3 Experience ...................................... [A300]
 2.4 Martyrdom ....................................... [A400]
-2.5 Character builds ................................ [A500]
+2.5 Character archetypes ............................ [A500]
 2.6 Artifacts ....................................... [A600]
 
 3. Walkthrough ...................................... [B000]
@@ -121,8 +121,10 @@ In particular, all the character names are different between players, so I will 
 
 Controls are the usual, WASD to move, SPACE or ENTER to interact, ESC to cancel...
 I think E and Z also work for interact, and the arrow keys to move.
+If you're not playing on mobile, you can press SHIFT to run. I don't think there's a way to run on mobile, sorry.
 You control one character of unspecified gender called Ren.
 This RPG does not have random encounters, but instead random events are spread out on the map. They can be good (treasures) or bad (battles), and most of them can be skipped by walking around.
+In very rare cases, you may be blocked by a battle you cannot win yet. It's time to go back to the city to buy better equipment/spells!
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -166,48 +168,208 @@ The Best Friend joins your team automatically as part of the story. For the othe
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This game has two main progression mechanics.
+The first is easy, you get gold, you buy equipment. Note that you'll very rarely find gold directly on the floor or on monsters, you need to sell the junk you find on them. That's for realism I guess.
+The other one is experience. It is used to learn abilities in the various schools of magic. You gain experience pretty much every time you do a random event, even if it's a story one. But the experience you gain from combats is a bit particular. You don't get experience by killing monsters, but by discovering and trying out new possibilities. You'll get the same amount of experience whether you win or lose a fight.
+For instance, if you get a new weapon, you'll get experience when you encounter a monster (you discover that you can use the weapon) and again when you use the weapon against the monster for the first time (you discover its effects).
+You can therefore level up just by seeing new monsters and failing to kill them.
+You can see the tree of all actions discovered and explored in the Experiences menu.
 
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.3 MARTYRDOM                                      [A400]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Another important mechanic in this game is Martyrdom. It's pretty unique, and you probably cannot beat the game without it, so pay attention to it. You gain martyrdom every time you die. There's even an option to suicide in the martyrdom menu. You can then spend the martyrdom points in game changing abilities:
+
+- Dodge speed: you get faster, so the enemies you have to dodge are slower.
+- Dodge precision: you get more precise in dodging, so the attack zone from the enemy hit is smaller.
+- Dodge predictability: you get better at reading the enemy, so the direction in which you have to dodge tend to be the same.
+
+- Barter skill: you pay less to buy items, and gain more coins when you sell items.
+- Learning rate: learning new abilities cost less XP points.
+
+- Walking speed: you walk and run faster.
+- sight range: the annoying fog of war square around you widens and you can see further away.
+
+The first few points in any domain provide a significant improvement, so it could be a good idea to spread out your investment, especially since mastery is more and more expensive.
+Walking speed and sight range are mostly quality of life and therefore useless.
+Dodge speed and dodge precision are must haves if you want to finish the game.
+It's worth noting that if you invest enough in barter, you can buy any item cheaper than you can sell it, and get infinite money, but it takes a while to get there.
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     2.3 Martyrdom                                     [A400]
+                     2.3 CHARACTER ARCHETYPES                           [A500]
+-------------------------------------------------------------------------------
+===============================================================================
+
+There are 6 categories of archetypes to chose from, 3 based on items (money) and 3 based on abilities (XP). You can mix-and-match or specialize, but it's a good idea to get powerful spells and weapons since late game monsters will not be affected by the cheap ones. They seem to be overall pretty balanced with no clear winner, so chose something that fits your playstyle!
+The prices indicated here are the base prices and will be affected by your martyrdom levels (see [A400]).
+The trainers and shops can be found in the game's cities, but not all cities carry all archetypes, and they don't have the same offerings. Typically the strongest weapons and powers are only found in the optional or final cities.
+
+=== Item based archetypes
+
+Way of the Alchemy
+------------------
+Fire Elixir ....................... 5 Coins
+Ice Elixir ........................ 10 Coins
+Vine Elixir ....................... 15 Coins
+Venom Elixir ...................... 25 Coins
+Decay Elixir ...................... 40 Coins
+Chaos Elixir ...................... 50 Coins
+Elixirs are consumed on usage.
+The master is in the town of acceptance.
+
+Way of the Weapon
+-----------------
+Wooden Sword ...................... 20 Coins
+Dagger ............................ 50 Coins
+Mace .............................. 75 Coins
+Shield ............................ 200 Coins
+Spear ............................. 250 Coins
+Iron Sword ........................ 500 Coins
+Axe ............................... 600 Coins
+Great Sword ....................... 1000 Coins
+You can find masters in the town of acceptance and denial.
+
+Way of the Tool
+---------------
+Arrow ............................. 2 Coins
+Laced Darts ....................... 5 Coins
+Rope .............................. 100 Coins
+Bow ............................... 150 Coins
+Net ............................... 200 Coins
+Arrows and darts are consumed on usage. You cannot use arrows without a bow, but once you have one they are a great cheap projectile that can hurt a lot of monsters (though you need many hits).
+You can find masters in the town of acceptance and denial.
+
+=== XP based archetypes
+
+Way of the Element
+------------------
+Fireball .......................... 50 XP
+Ice Bolt .......................... 150 XP
+Thunder ........................... 250 XP
+Storm ............................. 500 XP
+Asphyxiate ........................ 750 XP
+Earthquake ........................ 2000 XP
+Incinerate ........................ 3000 XP
+Summon ............................ 7500 XP
+The master is in the town of acceptance.
+
+Way of the Spirit
+-----------------
+Poison ............................ 75 XP
+Shrink ............................ 200 XP
+Petrify ........................... 500 XP
+Confusion ......................... 2000 XP
+Lull .............................. 5000 XP
+Charm ............................. 7500 XP
+The master is in the town of denial.
+
+Way of the Diplomat
+-------------------
+Circumvent ........................ 100 XP
+Sneak ............................. 250 XP
+Persuade .......................... 750 XP
+Intimidate ........................ 2000 XP
+Mystify ........................... 7500 XP
+The master is in the town of indulgence.
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.3 ARTIFACTS                                      [A600]
+-------------------------------------------------------------------------------
+===============================================================================
+
+This game contains 4 legendary weapons that can kill pretty much anything in one shot. They are in the four optional dungeons. If you struggle against bosses for instance, you might want to do one of these optional dungeons to get the most powerful equipment in the game. They are:
+- The Legendary Staff in the Woods of the Trees [D300]
+- The Holy Sword in the Sea of the Sirens [D400]
+- The Enchanted Wand in the Mounts of the Hawks [D500]
+- The Mighty War Hammer in Caves of the Slimes [D600]
+See the sections about those dungeons to know how to find them.
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     3. WALKTHROUGH                                     [B000]
 -------------------------------------------------------------------------------
 ===============================================================================
 ===============================================================================
 -------------------------------------------------------------------------------
-                     2.3 Character builds                                     [A500]
+                     3.1. HIDE AND SEEK                                 [B100]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+The game starts by a bit of lore, and then puts you in control of an innocent child (Ren) playing a game of hide and seek.
+After choosing the perfect name for your avatar, you must find 5 children hidden in the trees by interacting with them. It's easy enough to try them all, but just for the record they are in 10 o'clock, 1 o'clock, 3 o'clock, 5 o'clock and the center.
+You may want to talk to the children after having found them to chose appropriate names for Best Friend and Precious Child.
+Once you've found them all, priests come fetch you for a mysterious trial. Talk to them on the right side of the screen.
+They bring you to a church and explain that since you are the second born in your family, you need to take a mysterious trial to see if you are chosen by the Goddess as the Promised Child. Your odds do not sound good.
+Prepare yourself psychologically, save at the altar at the center of the room, and then talk to the priest at the top of the screen to start your doomed trial.
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     2.3 Artifacts                                     [A600]
+                     3.2. THE TRIAL                                     [B200]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+You fall through a hole in the ground into a maze, but before you can do anything, the first boss battle is already on you.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Basilisk               |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| You can only do two things: try to run away, and cry for help.             |
+| Both options lead to your doom, so pick whatever you want, and it's game   |
+| over.                                                                      |
+| But wait! You can retry the event (or load your save), and this time a new |
+| option "Pray" appears! Try it to draw the attention of the Goddess!        |
+| This time, when the Basilisk attacks, you get a chance to dodge! He's      |
+| really really slow, so it shouldn't be an issue, and it'll give you a      |
+| comfortable taste of the dodging system.                                   |
+| After that, you can "Swear loyalty" and pledge your soul to the Goddess    |
+| to summon a divine rescue. You made it!                                    |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+Now that the Goddess saved you from the fangs of the Basilisk, you find yourself in a labyrinth from where you must escape!
+
+o----------------------------------------------------------------------------o
+| Enemies
+|---------
+| VIPER: vulnerable to Bone, Stick, Wooden Sword, Fire Elixir
+| RODENT: vulnerable to Bone, Fang, Fire Elixir
+| COCKROACH: vulnerable to Fang, Stone, Fire Elixir
+| ARACHNID: vulnerable to Stone, Wooden Sword, Fire Elixir
+o----------------------------------------------------------------------------o
+
+This section is a bit particular because you don't have spells or weapons yet, so you have to fight with whatever you can get your hands on.
+In your starter area, you can find a Bone in a Bone pile and a Stone.
+From there on, you need to make your way to the periphery of the maze. There's many ways to do so, I will present you one possibility. Feel free to wander around, you can gather quite a few Fire Elixir, various junk to sell and even a Wooden Sword rotting in this maze.
+You can start by going left, where after defeating a rodent with your bone you'll find your predecessor who did not get a very happy fate.
+Go back to the starting point, and now go south. You will defeat a spider, then go south. At the intersection, go east, and then you can safely go towards the south. Once you've reached the border of the maze, follow it towards the west, and you'll see what this maze is really about.
+
+The maze forms a square, and in the middle of each side is a statue of the Goddess. These four statues will give you clues to a riddle you must solve. It does not matter in what order you visit the statues, and they will always remind you of your previous clues so you don't need to write them down.
+The first statue you observe tells you that you are looking for a phrase of the form *** ******* **. You can already look closer to reveal a few letters of the solution.
+Each other statue will give you clues about one of the words in the form of a poem, accompanied by a few letters.
+I'll consider that the game gives you enough clues to figure it out on your own, and that if you're here, you want the solution.
+Go to any statue and give it the solution with the option "Speak". The solution is "act through me".
+After that, just touch the statue, and prepared to be celebrated as the champion of the Goddess!
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     3. Walkthrough                                     [B000]
+                     3.3. FIRST TOWN                                    [B300]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+Everyone is overjoyed by your success.
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     3.1. Hide and seek                                     [B100]
+                     3.4. SECOND TOWN                                   [B400]
 -------------------------------------------------------------------------------
 ===============================================================================
-===============================================================================
--------------------------------------------------------------------------------
-                     3. .2. The Trial                                     [B200]
--------------------------------------------------------------------------------
-===============================================================================
-===============================================================================
--------------------------------------------------------------------------------
-                     3. 3. First town                                     [B300]
--------------------------------------------------------------------------------
-===============================================================================
-===============================================================================
--------------------------------------------------------------------------------
-                     3. 4. Second town                                     [B400]
--------------------------------------------------------------------------------
-===============================================================================
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3. .5. Pieces of armament                                     [B500]
@@ -278,6 +440,7 @@ The Best Friend joins your team automatically as part of the story. For the othe
                   4.4. New Game Plus powers                                      [C400]
 -------------------------------------------------------------------------------
 ===============================================================================
+Note that after you finish the game, in new game plus, your XP goes back to zero, but every time you meet a monster you regain all the XP from this fight all at once,
 ===============================================================================
 -------------------------------------------------------------------------------
                     4.5. End of suffering/End of the world                                     [C500]
