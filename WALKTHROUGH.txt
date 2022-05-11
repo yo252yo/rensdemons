@@ -430,31 +430,143 @@ The Mushroom Forest is east of the capital,
 The Squid Lake is north-west of the capital,
 The Harpies Peak is south-east of the capital.
 
+Don't forget to make use of Martyrdom or else the bosses may give you a tough time.
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.5.1 MUSHROOM FOREST                              [B510]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+o----------------------------------------------------------------------------o
+| Mushroom Forest                                                            |
+|----------------------------------------------------------------------------o
+| MONSTERS: Boar, Flower, Mandragora, Fox, Squirrel, Morel, Truffle
+o
+
+This forest has the shape of a tree (sic). You can explore it for loot and XP.
+In order to get to the armament piece, the right path is: RIGHT, UP, LEFT, UP, LEFT.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Fungus                 |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Vulnerable to all weapons over 1000 Coins and abilities over 3000 XP       |
+| All party members in 3 hits                                                |
+| Fireball (7), Earthquake (2)                                               |
+| Petrify (7), Confusion (2)                                                 |
+| Circumvent (7), Persuade (5)                                               |
+| Fire Elixir (7), Decay Elixir (4), Chaos Elixir (2)                        |
+| Mace (6), Shield (4), Spear (2)                                            |
+| Laced Darts (7), Net (2)                                                   |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+The event below the boss contains the Ancient Armament Advisor. Either examine to dig carefully or ask your Best Friend to help you retrieve it without damaging it.
+Exit the way you came.
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.5.2 SQUID LAKE                                   [B520]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+To enter this zone, you need a Breathing Potion. It's sold in the town of Fear, at the Alchemy shop.
+
+o----------------------------------------------------------------------------o
+| Squid Lake                                                                 |
+|----------------------------------------------------------------------------o
+| MONSTERS: Anemone, Crab, Anglerjelly, Jellyfish, Octopus, Squid
+o
+
+This zone is a big open lake. You need to find among all the random events the one for the boss. Once again, feel free to explore, loot, level up. All the events' positions are random, but the boss is consistently on the top left, around the 10 o'clock direction, a little away from the border.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Whale                  |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| This boss is a bit peculiar as the fight cannot be won. When you're        |
+| satisfied with your tries, pick the FEED option and let yourself be eaten  |
+| by the whale.                                                              |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+Once in this anatomically correct replica of a whale's insides, follow the digestive track. The Ancient Armament Armature is on the bottom right of the first stomach. Make your way out through an... unholy way, and swim back to the surface the way you came.
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.5.3 HARPIES PEAK                                 [B530]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+As for the other dungeons, feel free to loot and XP.
+
+o----------------------------------------------------------------------------o
+| Harpies Peak                                                               |
+|----------------------------------------------------------------------------o
+| MONSTERS: Harpy, Chimera, Manticore, Emu
+o
+
+You need to climb to the summit of the mountain, but there's also a key to pick up on the way.
+Go up through the little sinuous way, and go up at the fork. You reach a clearing with a little path going west. Follow it to find a skeleton that you can search for a key.
+Make your way back to the clearing, go up and follow the path. You'll be able to reach the top in no time.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Dragon                 |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Vulnerable to all weapons over 1000 Coins and abilities over 3000 XP       |
+| All party members in 3 hits                                                |
+| Thunder (7), Storm (7)                                                     |
+| Shrink (7), Confusion (3)                                                  |
+| Sneak (7), Intimidate (2)                                                  |
+| Vine Elixir (6), Venom Elixir (4), Chaos Elixir (2)                        |
+| Spear (4), Iron Sword (4), Axe (3)                                         |
+| Arrows (7), Net (3)                                                        |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+After defeating the boss, use the key to open the shelter door. You'll find the Ancient Armament Ammunition on the top right of the main room.
+Exit the way you came.
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.6. THE ANCIENT ARMAMENT                          [B600]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+Back in the city of Fear, you find that it has been devastated by the armies of the demon lord. If only you had known, you could have prevented this! You will be able to in your next playthrough.
+The Head Priest is still there, and directs you to the next phase of your mission: you'll now head to the south east to fight the demon lord in Hell's Maw.
+
+o----------------------------------------------------------------------------o
+| World map: rest of the world                                               |
+|----------------------------------------------------------------------------o
+| SIDE DUNGEONS: Woods of the Trees (SW), Sea of the Sirens (NE),
+| Mounts of the Hawks (SE), Caves of the Slimes (SE)
+| OPTIONAL TOWNS: Town of Debauch (NE), Town of Acceptance (S)
+| MONSTERS: Arsonist, Bruiser, Butcher, Djinn, Grizzly, Knight, Mammoth,
+| Vadhaka
+o
+
+Hell's Maw is at the very south-east of the map, but the Head Priest suggests that you can stop at the city of Denial, slightly north-west of Hell's Maw, to resupply. That being said, the town is in total denial, and will be of little help (except for its great shops), so feel free to skip and go directly to Hell's Maw.
+
+o----------------------------------------------------------------------------o
+| Town of Denial                                                               |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: N/A
+| SHOPS: Master Weapons, Master Tools
+| TRAINERS: Advanced Elements, Advanced Diplomat, Master Spirit
+| EXCLUSIVE ITEMS: Mask, Spiky Mask
+o
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.7. HELL'S MAW                                    [B700]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      3.8. THE FISSURE                                   [B800]
