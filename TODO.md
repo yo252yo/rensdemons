@@ -1,4 +1,5 @@
 Optimisations:
+- favicon.ico
 - trailer
 - arts
 - storepage

@@ -44,7 +44,7 @@ const LEDGER = {
   },
 
   load_ledger: function() {
-    if(!LEDGER._ledger || Object.keys(LEDGER._ledger["npc"]).length + Object.keys(LEDGER._ledger["pc"]).length == 0){
+    if(!LEDGER._ledger || !LEDGER._ledger["npc"] || !LEDGER._ledger["pc"] || Object.keys(LEDGER._ledger["npc"]).length + Object.keys(LEDGER._ledger["pc"]).length == 0){
       var json = STATS.get(STAT.Ledger);
       if(json){
         LEDGER._ledger = JSON.parse(json);
