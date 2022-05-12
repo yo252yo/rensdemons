@@ -5,6 +5,10 @@ credits: `
 
  <h3>Original assets provider</h3>
 
+ <b>Title art, alpha testing</b>:
+ <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>
+ <br />
+
  <b>Music</b>:
  <a href="https://loyaltyfreakmusic.com/" target="_blank">loyaltyfreakmusic</a>
  <br />
