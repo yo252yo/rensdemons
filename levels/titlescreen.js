@@ -17,9 +17,9 @@ function adapt_sprite(s, depth) {
   }
 
   if(SCREEN.is_mobile()){
-    s.visual_element.container.style.top = "-100px";
-    s.visual_element.container.style.left =  "-500px";
-    s.visual_element.html_canvas.style.left =  "-500px";
+    s.visual_element.container.style.top = "-300px";
+    s.visual_element.container.style.left =  "-200px";
+    s.visual_element.html_canvas.style.left =  "-200px";
   } else {
     s.visual_element.container.style.right =  "0px";
     s.visual_element.html_canvas.style.right =  "0px";
@@ -89,9 +89,9 @@ if(SCREEN.is_mobile()){
 } else{
   var d = {
     top: 200,
-    left: Math.floor(SCREEN.width() * 0.1),
+    left: Math.floor(SCREEN.width() - 700),
     height: 0,
-    width: 550,
+    width: 400,
     padding: 50,
   };
 }

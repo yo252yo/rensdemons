@@ -30,7 +30,7 @@ const INTERFACE = {
       };
     } else {
       var d = {
-        top: 75,
+        top: 50,
         left: Math.floor(SCREEN.width() * 0.5)-250,
         height: 80,
         width: 500,
