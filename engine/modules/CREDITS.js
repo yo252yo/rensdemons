@@ -5,7 +5,7 @@ credits: `
 
  <h3>Original assets provider</h3>
 
- <b>Title art, alpha testing</b>:
+ <b>Title art</b>:
  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>
  <br />
 
@@ -54,6 +54,9 @@ credits: `
   <a href="https://github.com/greenheartgames/greenworks" target="_blank">Greenworks</a>.
   <br />
 
+  <b>Testing</b>:
+  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>, Lorth
+  <br />
 
  <b>Fair use song lyrics brief quotation in the encounter in town of Acceptance</b>:
  'Welcome to My Life' - Simple Plan,
