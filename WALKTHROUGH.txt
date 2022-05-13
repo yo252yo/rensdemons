@@ -588,7 +588,17 @@ o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+Welcome to Hell's Maw! This vulcano is a little maze-y but not to worry I can get you through!
 
+o----------------------------------------------------------------------------o
+| Hell's Maw                                                                 |
+|----------------------------------------------------------------------------o
+| MONSTERS: Arsonist, Djinn, Knight, Butcher, Devilfly, Sandworm,
+| Serpentine, Toad, Warlock
+o
+
+As usual, there's tons of XP and items to grab. The way forward can be reached by going LEFT, UP, RIGHt, UP.
+You arrive at a weird clearing (the summit). Go either up or down and you'll see that it repeats infinitely. But most importantly, you'll face a giant demon!
 
 
 ===============================================================================
