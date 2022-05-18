@@ -109,5 +109,16 @@ if(SCREEN.is_mobile()){
 FOG.stop();
 
 
-var r = new Rectangle (-100,SCREEN.height()+100, SCREEN.width()+200, SCREEN.height()+200, undefined, "assets/screens/title_bg.png", true);
+var picx = 2000;
+var picy = 2000;
+
+var r = new Rectangle (0,SCREEN.height(), picx, picy, undefined, "assets/screens/title_bg.png", true);
 r.container.style.position = "fixed";
+
+var noise = function(){
+  var x = Math.floor(Math.random() * (picx - SCREEN.width())/10)*10;
+  var y = Math.floor(Math.random() * (picy - SCREEN.height())/10)*10;
+  r.place_at(-x, SCREEN.height() + y);
+  setTimeout(noise, 50);
+}
+setTimeout(noise, 50);
