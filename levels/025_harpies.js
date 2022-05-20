@@ -115,7 +115,7 @@ new SBattle(2475, 1275, '_02/_wrong_skeleton');
 
 var filler = new Filler(gen.get(), 50, 50);
 filler.set_zone(1250,2475,1350,1300);
-filler.set_tries(100, 150);
+filler.set_tries(80, 125);
 
 filler.add_default_constructor("S_RocksHuge", 5, 200, 50);
 filler.add_default_constructor("S_Rocks1");

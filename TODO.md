@@ -6,6 +6,10 @@ monotony issue:
 - mini game for loot
 - background for battle screen
 - new attack minigame
+>> varry between skill and random,
+>>>> weapon = click the target, click the Cube
+>>>> consumable = click a square on a grid to keep your item
+>>>> skills = chance game: bet on dice / chose a card in blackjack / slot machine
 
 
  write walkthrough

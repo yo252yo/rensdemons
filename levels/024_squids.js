@@ -94,7 +94,7 @@ events.byConstructor("EB_Skeleton", 0.5);
 events.battle('encounters/purse', 0.5);
 
 
-events.set_tries(120, 150);
+events.set_tries(100, 125);
 events.fill_floor_by_retry();
 
 

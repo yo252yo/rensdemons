@@ -98,7 +98,7 @@ for(var f of hallways) {
 // ===================
 
 var events = new EventFiller(gen.get(), 10);
-events.set_tries(4, 8);
+events.set_tries(3, 6);
 events.battle('forests/boar');
 events.battle('forests/flower', 1.2);
 events.battle('forests/mandragora');

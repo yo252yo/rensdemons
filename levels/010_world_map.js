@@ -179,11 +179,11 @@ FEasyEvents.text(`You see in the distance a battalion of the evil monsters broug
 FEasyEvents.add_conversations(2);
 
 FEasyEvents.set_zone_from_filler(FEasyS);
-FEasyEvents.set_tries(15, 25);
+FEasyEvents.set_tries(10, 20);
 FEasyEvents.fill_floor_by_retry();
 
 FEasyEvents.set_zone_from_filler(FEasyN);
-FEasyEvents.set_tries(50, 60);
+FEasyEvents.set_tries(40, 50);
 FEasyEvents.fill_floor_by_retry();
 
 

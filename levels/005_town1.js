@@ -8,7 +8,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*2);
 //hack B. FLOORS
 //hack C. EXIT
 // ===================
-TOWN = new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
+TOWN = new S_TownFloor(1150, 1950, 800, 800, "010_world_map");
 
 // ===================
 //hack D. UNIQUE ELEMENTS
@@ -16,10 +16,10 @@ TOWN = new S_TownFloor(1050, 2050, 1000, 1000, "010_world_map");
 
 new S_Church(1450, 1400, "004_trial_end");
 
-new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1700, 1175, gen.get());
-new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 100, 1850, 1225, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Weapon, 200, 1650, 1275, gen.get());
+new S_Store(CITIES.hope, ITEMS_ARCHETYPES_NAMES.Tool, 100, 1800, 1425, gen.get());
 
-var s = new S_Store(CITIES.hope, "Occult", 0, 1150, 1950, gen.get());
+var s = new S_Store(CITIES.hope, "Occult", 0, 1250, 1850, gen.get());
 s.enter_function = function() {
   CURRENTLEVEL.setup("006_occultshop$");
 };
@@ -29,19 +29,19 @@ if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
 }
 
 var houseFiller = new Filler(gen.get());
-houseFiller.set_zone(1075, 1975, 950,  975);
+houseFiller.set_zone(1175, 1875, 750,  775);
 houseFiller.set_tries(5, 70);
 houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.hope, x, y, seed); }, 1 ,120, 160);
 houseFiller.fill_floor_by_retry();
 
 
 var villagerFiller = new Filler(gen.get());
-villagerFiller.set_zone(1075, 1975, 1000, 975);
-villagerFiller.set_tries(3, 30);//this.gen.int(10) - 7
+villagerFiller.set_zone(1175, 1875, 800, 775);
+villagerFiller.set_tries(3, 20);//this.gen.int(10) - 7
 villagerFiller.add_constructor(function(x,y,seed){ return new M_Villager(CITIES.hope, x, y, seed); },1 , 50, 60);
 villagerFiller.fill_floor_by_retry();
 
-villagerFiller.set_tries(2, 6);
+villagerFiller.set_tries(2, 4);
 villagerFiller.add_constructor(function(x,y,seed){ return new M_Guard(CITIES.hope, x, y, seed); },1 , 50, 60);
 villagerFiller.fill_floor_by_retry();
 

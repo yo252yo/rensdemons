@@ -8,7 +8,7 @@ var gen = new Generator(DICTIONARY.get("world_seed")*3);
 //hack B. FLOORS
 //hack C. EXIT
 // ===================
-var town = new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
+var town = new S_TownFloor(1050, 2150, 1100, 1100, "010_world_map");
 
 
 // ===================
@@ -18,9 +18,9 @@ new S_Church(1700, 1750, "020_church2");
 
 new S_Castle(1075, 1425);
 
-new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Weapon, 500, 2200, 1300, gen.get());
-new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Tool, 200, 2225, 2225, gen.get());
-new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Weapon, 500, 1800, 1200, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Tool, 200, 1925, 2000, gen.get());
+new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1225, 1850, gen.get());
 
 // ===================
 //hack E. DECOR (permanent filler)
@@ -28,7 +28,7 @@ new S_Store(CITIES.fear, ITEMS_ARCHETYPES_NAMES.Alchemy, 100, 1425, 1850, gen.ge
 
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1075, 2525, 1475, 1450);
-houseFiller.set_tries(20, 100);
+houseFiller.set_tries(15, 75);
 houseFiller.add_constructor(function(x,y,seed){ return new S_House(CITIES.fear, x, y, seed); },1 ,120, 160);
 houseFiller.fill_floor_by_retry();
 
