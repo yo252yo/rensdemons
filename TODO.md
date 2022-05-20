@@ -1,7 +1,5 @@
 storepage: trailer
 
-Dodge prompt should be only when you dodge
-
 monotony issue:
 - mini game for loot
 - background for battle screen

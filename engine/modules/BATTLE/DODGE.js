@@ -211,9 +211,6 @@ const DODGE = {
       if(DODGE.sprite.defense){
         DODGE.sprite.defense.hide();
       }
-      if (DODGE.sprite.text){
-        DODGE.sprite.text.destroy();
-      }
       IO.control.cede();
     },
 
@@ -328,6 +325,11 @@ const DODGE = {
       AUDIO.effect.dodge_attack();
 
       var str = "attack at " + DODGE.attack_angle + " with amplitude " + DODGE.get_params.attack_amplitude() + " defending at " + DODGE.defense_angle;
+
+      if (DODGE.sprite.text){
+        DODGE.sprite.text.destroy();
+      }
+      
       if (DODGE.outcome.compute()){
         CONSOLE.log.debug("[DODGE] " + str );
         setTimeout(DODGE.outcome.success, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
