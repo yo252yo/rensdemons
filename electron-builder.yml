@@ -3,11 +3,13 @@ appId: yo252yo.rensdemons
 directories:
   output: bin/out
 
-#win:
-#  target:
-#    - target: nsis
-#      arch:
-#        - x64
+win:
+  icon: assets/app/icon.png
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
 
 linux:
   target:

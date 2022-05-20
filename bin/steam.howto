@@ -1,0 +1,6 @@
+
+put stuff in  D:\work\rensdemons\bin\steam\sdk\tools\ContentBuilder\content
+
+run  D:\work\rensdemons\bin\steam\steamcmd\steamcmd.exe
+> login
+> run_app_build  D:\work\rensdemons\bin\steam\sdk\tools\ContentBuilder\scripts\app_build_1949420.vdf
