@@ -25,8 +25,6 @@ const IO_HIT = {
   },
 
   onPressKey: function(key) {
-    if (KEYS_UTIL.is_ok(key)) {
-      HIT.raw_keyboard_ok();
-    }
+    HIT.raw_keyboard(key);
   },
 }

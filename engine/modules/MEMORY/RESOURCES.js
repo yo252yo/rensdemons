@@ -229,6 +229,8 @@ const RESOURCES = {
     RESOURCES.get_img('assets/interface/circle_tuto.png');
     RESOURCES.get_img('assets/interface/cross.png');
     RESOURCES.get_img('assets/interface/dodger.png');
+    RESOURCES.get_img('assets/interface/consumable_aim.png');
+    RESOURCES.get_img('assets/interface/consumable_target.png');
     RESOURCES.get_img('assets/interface/event.png');
     RESOURCES.get_img('assets/interface/event2.png');
     RESOURCES.get_img('assets/interface/event_conversation.png');

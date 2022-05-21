@@ -43,7 +43,7 @@ const HIT_ITEM_TARGET = {
 
   end: function(index){
     if(HIT_ITEM_TARGET.target_sprite){
-      HIT_ITEM_TARGET.raw_keyboard_ok();
+      HIT_ITEM_TARGET.raw_keyboard(undefined, true);
 
       if(HIT_ITEM_TARGET.untouched && !HIT_ITEM_TARGET.keyboard_help){
         HIT_ITEM_TARGET.keyboard_help = true;
@@ -97,7 +97,10 @@ const HIT_ITEM_TARGET = {
     }
   },
 
-  raw_keyboard_ok: function(){
+  raw_keyboard: function(key, forced){
+    if (!KEYS_UTIL.is_ok(key) && !forced) {
+      return;
+    }
     HIT_ITEM_TARGET.raw_click(HIT_ITEM_TARGET.tx + window.scrollX, HIT_ITEM_TARGET.ty + window.scrollY);
   },
 

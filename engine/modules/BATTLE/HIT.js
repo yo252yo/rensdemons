@@ -191,9 +191,9 @@ const HIT = {
     }
   },
 
-  raw_keyboard_ok: function(dx, dy){
-    if(HIT.current_module.raw_keyboard_ok){
-      HIT.current_module.raw_keyboard_ok();
+  raw_keyboard: function(key){
+    if(HIT.current_module.raw_keyboard){
+      HIT.current_module.raw_keyboard(key);
     }
   },
 }
