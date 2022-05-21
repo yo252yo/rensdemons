@@ -187,6 +187,11 @@ const IO = {
       IO.control._activate(IO_DODGE);
     },
 
+    hit: function() {
+      CONSOLE.log.io("Activating hit");
+      IO.control._activate(IO_HIT);
+    },
+
     empty: function() {
       CONSOLE.log.io("Activating empty");
       IO.control._activate({});

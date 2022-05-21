@@ -131,6 +131,7 @@ new Module("GRAPHICS/PALETTE");
 
 new Module("MEMORY/SETTINGS");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/DODGE");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/HIT");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("AUDIO");
 
 new Module("UTILS/MAP");
@@ -167,6 +168,7 @@ new Module("BAGGAGE/ARCHETYPES");
         IMPORTS.modules['UTILS/DEBUG'].child_module("IO/IO");
           IMPORTS.modules['IO/IO'].child_module("IO/IO_DIALOG");
           IMPORTS.modules['IO/IO'].child_module("IO/IO_DODGE");
+          IMPORTS.modules['IO/IO'].child_module("IO/IO_HIT");
           IMPORTS.modules['IO/IO'].child_module("IO/IO_CHARACTER");
           IMPORTS.modules['IO/IO'].child_module("IO/IO_MENU");
 

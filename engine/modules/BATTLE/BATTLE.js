@@ -113,33 +113,7 @@ const BATTLE = {
           continue;
         }
         (function(index){
-          var f = function() {
-            // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).
-            var action = undefined;
-            if (BATTLE._player_actions[index]) {
-              action = BATTLE.player_actions._make_player_action(BATTLE._player_actions[index]);
-            } else {
-              for(var i in BATTLE._player_actions){
-                if (i.startsWith(index)){
-                  action =  BATTLE.player_actions._make_player_action(BATTLE._player_actions[i]);
-                }
-              }
-            }
-            BATTLE._last_action = index.trim();
-            if (DICTIONARY.has(BATTLE._last_action)){
-              BATTLE._last_action = DICTIONARY.get(BATTLE._last_action);
-            }
-            var text = action();
-            // If I don't go through timeout, I think the event canceling blocks IO for the banner.
-            if (text) {
-              setTimeout(function(){
-                TextBannerSequence.make(text, BATTLE.operations.play_monster);
-              }, 200);
-            } else {
-              setTimeout( BATTLE.operations.play_monster, 200);
-            }
-            return true;
-          };
+          var f = HIT.battle.getCallback(index);
           var menu_entry = BATTLETREE.display.stylize(index, BATTLE.current_battle);
           options.push({"index": index, "text": menu_entry, "effect": f});
         })(i);
