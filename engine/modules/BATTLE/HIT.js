@@ -1,5 +1,6 @@
 const HIT = {
   saved_dimensions: {},
+  consecutive_losses: 0,
 
   result: {
     common: function(){
@@ -15,6 +16,7 @@ const HIT = {
       CONSOLE.log.debug("[HIT] success " + index );
 
       HIT.result.common();
+      HIT.consecutive_losses = 0;
 
       var f = HIT.callback.getf_success(index);
       f();
@@ -24,6 +26,7 @@ const HIT = {
       CONSOLE.log.debug("[HIT] miss " + index );
 
       HIT.result.common();
+      HIT.consecutive_losses ++;
 
       var f = HIT.callback.getf_miss(index);
       f();
@@ -200,6 +203,11 @@ const HIT = {
       // Fast success if we know we'll one shot the guy
       var known_outcome = BATTLETREE.get.outcome(BATTLE.current_battle,  action_object.name);
       if(known_outcome == BATTLETREE.WIN && action_object.outcome == BATTLETREE.WIN){
+        return HIT.callback.getf_success(index);
+      }
+
+      if(HIT.consecutive_losses >= 2){
+        HIT.consecutive_losses = 0;
         return HIT.callback.getf_success(index);
       }
 
