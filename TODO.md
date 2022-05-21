@@ -12,7 +12,9 @@ monotony issue:
 
 - allow dodge quick end
 
-- write walkthrough
+- write walkthrough:
+important options like difficulty should be included
+
 
 - marketing tips https://medium.com/free-code-camp/from-zero-to-game-designer-how-to-start-building-video-games-even-if-you-dont-have-any-experience-5e2f9f45f4bb
 
