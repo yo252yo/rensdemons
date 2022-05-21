@@ -1,7 +1,6 @@
 storepage: trailer
 
 monotony issue:
-- hit HIT_CONSUMABLE: pick a square from a 3x3 grid in hope to get item back?
 - HIT_SPIRIT: blackjack tarot?
 - HIT_ELEMENT: stop a slot machine
 - HIT_DIPLOMACY: bet on dice / line from reason to irrational

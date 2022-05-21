@@ -55,6 +55,7 @@ const HIT_ITEM_TARGET = {
     }
     if(HIT_ITEM_TARGET.untouched){
       delete HIT_ITEM_TARGET.untouched;
+      AUDIO.effect.dodge_attack();
       HIT.result.loss(index);
     }
   },
@@ -90,6 +91,7 @@ const HIT_ITEM_TARGET = {
     var dy =  HIT_ITEM_TARGET.y - (y - window.scrollY);
 
     if (dx <= 60 && dy <= 60 && dx >= -10 && dy >= -10){
+      AUDIO.effect.dodge_attack();
       HIT.result.success(HIT_ITEM_TARGET.untouched);
       delete HIT_ITEM_TARGET.untouched;
     } else {

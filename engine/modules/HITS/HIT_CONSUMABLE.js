@@ -108,6 +108,7 @@ const HIT_CONSUMABLE = {
   },
 
   win: function(){
+    AUDIO.effect.interaction();
     HIT.text_banner = new TextBanner("You find that you can still use your " + HIT_CONSUMABLE.consume + ".", true);
     INVENTORY.increase(HIT_CONSUMABLE.consume);
     setTimeout(function(){
@@ -116,6 +117,7 @@ const HIT_CONSUMABLE = {
   },
 
   lose: function(){
+    AUDIO.effect.choice();
     HIT.text_banner = new TextBanner("Your " + HIT_CONSUMABLE.consume + " is beyond reuse.", true);
     setTimeout(function(){
       HIT.result.success(HIT_CONSUMABLE.index);
