@@ -7,12 +7,8 @@ const HIT = {
       if(HIT.text_banner){
         HIT.text_banner.destroy();
       }
-      if(HIT.zone){
-        HIT.zone.destroy();
-      }
-      if(HIT.minigame.item_target.sprite){
-        HIT.minigame.item_target.sprite.destroy();
-        delete HIT.minigame.item_target.sprite;
+      if(HIT.current_module.cleanup){
+        HIT.current_module.cleanup();
       }
 
       IO.control.cede();
@@ -65,81 +61,6 @@ const HIT = {
     },
   },
 
-  minigame: {
-    item_target: {
-      start: function(index, action_object) {
-        var ease = SHOP._prices.sell(index.trim()) || 20; // Shittiest is 10, comfy is 500
-        var timeout = 1200 + ease * 2500 / 300;
-        var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
-        challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
-
-
-        HIT.minigame.item_target.untouched = index;
-
-        var amplitude = 150 * (1 - MARTYRDOM.effect(MARTYRDOMS.Foresight));
-        var x0 = SCREEN.width() / 2 - 25;
-        var y0 = SCREEN.height() / 2 - 100;
-
-        HIT.minigame.item_target.tx = x0;
-        HIT.minigame.item_target.ty = y0;
-
-        HIT.minigame.item_target.x = x0 + 2 * (Math.random() - 0.5) * amplitude;
-        HIT.minigame.item_target.y = y0 + 2 * (Math.random() - 0.5) * amplitude;
-        var w = 50;
-
-        HIT.text_banner = new TextBanner("Click on your target to hit.", true);
-
-        HIT.draw.resize_existing(w, HIT.minigame.item_target.x, HIT.minigame.item_target.y);
-
-        HIT.zone = new Rectangle(window.scrollX + x0 - amplitude, window.scrollY + y0 + amplitude, 2*amplitude + 50, 2*amplitude + 50, "obj_dark");
-        HIT.zone.border("void");
-
-        setTimeout(function(){
-                      HIT.minigame.item_target.end(index);
-                    }, Math.floor(timeout * challenge));
-
-        IO.control.hit();
-      },
-
-      end: function(index){
-        if(HIT.minigame.item_target.sprite){
-          HIT.minigame.item_target.hit(HIT.minigame.item_target.tx, HIT.minigame.item_target.ty);
-        }
-        if(HIT.minigame.item_target.untouched){
-          HIT.minigame.item_target.untouched = false;
-          HIT.result.loss(index);
-        }
-      },
-
-      move: function(dx, dy){
-        var mult = 18;
-        HIT.minigame.item_target.tx += dx * mult;
-        HIT.minigame.item_target.ty += dy * mult;
-
-        // move drawing
-        if (!HIT.minigame.item_target.sprite){
-          HIT.minigame.item_target.sprite = new FixedSprite("assets/interface/cross.png", 'void');
-          HIT.minigame.item_target.adjust_depth(100099);
-        }
-        HIT.minigame.item_target.sprite.place_at(HIT.minigame.item_target.tx - 12, HIT.minigame.item_target.ty - 12, true);
-      },
-
-      hit: function(x, y) {
-        var dx = x - window.scrollX - HIT.minigame.item_target.x;
-        var dy =  HIT.minigame.item_target.y - (y - window.scrollY);
-
-        if (dx <= 50 && dy <= 50 && dx >= 0 && dy >= 0){
-          HIT.result.success(HIT.minigame.item_target.untouched);
-          HIT.minigame.item_target.untouched = false;
-        }
-      },
-
-      hit_keyboard: function(){
-        HIT.minigame.item_target.hit(HIT.minigame.item_target.tx, HIT.minigame.item_target.ty);
-      },
-    },
-  },
-
   callback: {
     getf_success: function(index) {
       var f = function() {
@@ -185,27 +106,27 @@ const HIT = {
       if(action_object.consume_item){
         return function(){
           //console.log("consume minigame");
-          HIT.minigame.item_target.start(index, action_object);
+          HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       } else if (ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Weapon].includes(name) || ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool].includes(name)){
         return function(){
           //console.log("item minigame");
-          HIT.minigame.item_target.start(index, action_object);
+          HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Element].includes(name)){
         return function(){
           //console.log("elem minigame");
-          HIT.minigame.item_target.start(index, action_object);
+          HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Spirit].includes(name)){
         return function(){
           //console.log("spirit minigame");
-          HIT.minigame.item_target.start(index, action_object);
+          HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Diplomat].includes(name)){
         return function(){
           //console.log("diplo minigame");
-          HIT.minigame.item_target.start(index, action_object);
+          HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       }
       return HIT.callback.getf_success(index);
@@ -255,21 +176,29 @@ const HIT = {
     },
   },
 
+
+  start: function(module, index, action_object){
+    HIT.current_module = module;
+    module.start(index, action_object);
+
+    IO.control.hit();
+  },
+
   raw_click: function(x,y) {
-    if(HIT.minigame.item_target.untouched){
-      HIT.minigame.item_target.hit(x,y);
+    if(HIT.current_module.raw_click){
+      HIT.current_module.raw_click(x,y);
     }
   },
 
   raw_keyboard_move: function(dx, dy){
-    if(HIT.minigame.item_target.untouched){
-      HIT.minigame.item_target.move(dx,dy);
+    if(HIT.current_module.raw_keyboard_move){
+      HIT.current_module.raw_keyboard_move(dx,dy);
     }
   },
 
   raw_keyboard_ok: function(dx, dy){
-    if(HIT.minigame.item_target.untouched){
-      HIT.minigame.item_target.hit_keyboard();
+    if(HIT.current_module.raw_keyboard_ok){
+      HIT.current_module.raw_keyboard_ok();
     }
   },
 }

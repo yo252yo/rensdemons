@@ -132,6 +132,7 @@ new Module("GRAPHICS/PALETTE");
 new Module("MEMORY/SETTINGS");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/DODGE");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/HIT");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_ITEM_TARGET");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("AUDIO");
 
 new Module("UTILS/MAP");
