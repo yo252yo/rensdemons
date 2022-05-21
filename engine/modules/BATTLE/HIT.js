@@ -10,6 +10,10 @@ const HIT = {
       if(HIT.zone){
         HIT.zone.destroy();
       }
+      if(HIT.minigame.item_target.sprite){
+        HIT.minigame.item_target.sprite.destroy();
+        delete HIT.minigame.item_target.sprite;
+      }
 
       IO.control.cede();
       HIT.draw.restore_existing();
@@ -65,9 +69,10 @@ const HIT = {
     item_target: {
       start: function(index, action_object) {
         var ease = SHOP._prices.sell(index.trim()) || 20; // Shittiest is 10, comfy is 500
-        var timeout = 1000 + ease * 2500 / 300;
+        var timeout = 1200 + ease * 2500 / 300;
         var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
         challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
+
 
         HIT.minigame.item_target.untouched = index;
 
@@ -75,6 +80,8 @@ const HIT = {
         var x0 = SCREEN.width() / 2 - 25;
         var y0 = SCREEN.height() / 2 - 100;
 
+        HIT.minigame.item_target.tx = x0;
+        HIT.minigame.item_target.ty = y0;
 
         HIT.minigame.item_target.x = x0 + 2 * (Math.random() - 0.5) * amplitude;
         HIT.minigame.item_target.y = y0 + 2 * (Math.random() - 0.5) * amplitude;
@@ -95,10 +102,26 @@ const HIT = {
       },
 
       end: function(index){
+        if(HIT.minigame.item_target.sprite){
+          HIT.minigame.item_target.hit(HIT.minigame.item_target.tx, HIT.minigame.item_target.ty);
+        }
         if(HIT.minigame.item_target.untouched){
           HIT.minigame.item_target.untouched = false;
           HIT.result.loss(index);
         }
+      },
+
+      move: function(dx, dy){
+        var mult = 18;
+        HIT.minigame.item_target.tx += dx * mult;
+        HIT.minigame.item_target.ty += dy * mult;
+
+        // move drawing
+        if (!HIT.minigame.item_target.sprite){
+          HIT.minigame.item_target.sprite = new FixedSprite("assets/interface/cross.png", 'void');
+          HIT.minigame.item_target.adjust_depth(100099);
+        }
+        HIT.minigame.item_target.sprite.place_at(HIT.minigame.item_target.tx - 12, HIT.minigame.item_target.ty - 12, true);
       },
 
       hit: function(x, y) {
@@ -109,6 +132,10 @@ const HIT = {
           HIT.result.success(HIT.minigame.item_target.untouched);
           HIT.minigame.item_target.untouched = false;
         }
+      },
+
+      hit_keyboard: function(){
+        HIT.minigame.item_target.hit(HIT.minigame.item_target.tx, HIT.minigame.item_target.ty);
       },
     },
   },
@@ -231,6 +258,18 @@ const HIT = {
   raw_click: function(x,y) {
     if(HIT.minigame.item_target.untouched){
       HIT.minigame.item_target.hit(x,y);
+    }
+  },
+
+  raw_keyboard_move: function(dx, dy){
+    if(HIT.minigame.item_target.untouched){
+      HIT.minigame.item_target.move(dx,dy);
+    }
+  },
+
+  raw_keyboard_ok: function(dx, dy){
+    if(HIT.minigame.item_target.untouched){
+      HIT.minigame.item_target.hit_keyboard();
     }
   },
 }
