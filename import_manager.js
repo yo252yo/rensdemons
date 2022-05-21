@@ -133,6 +133,10 @@ new Module("MEMORY/SETTINGS");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/DODGE");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("BATTLE/HIT");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_ITEM_TARGET");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_CONSUMABLE");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_DIPLOMACY");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_SPIRIT");
+IMPORTS.modules['MEMORY/SETTINGS'].child_module("HITS/HIT_ELEMENT");
 IMPORTS.modules['MEMORY/SETTINGS'].child_module("AUDIO");
 
 new Module("UTILS/MAP");

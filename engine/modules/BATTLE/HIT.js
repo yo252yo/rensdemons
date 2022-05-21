@@ -105,28 +105,23 @@ const HIT = {
       var name = action_object.name.trim();
       if(action_object.consume_item){
         return function(){
-          //console.log("consume minigame");
-          HIT.start(HIT_ITEM_TARGET, index, action_object);
+          HIT.start(HIT_CONSUMABLE, index, action_object);
         }
       } else if (ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Weapon].includes(name) || ITEMS_ARCHETYPES[ITEMS_ARCHETYPES_NAMES.Tool].includes(name)){
         return function(){
-          //console.log("item minigame");
           HIT.start(HIT_ITEM_TARGET, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Element].includes(name)){
         return function(){
-          //console.log("elem minigame");
-          HIT.start(HIT_ITEM_TARGET, index, action_object);
+          HIT.start(HIT_ELEMENT, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Spirit].includes(name)){
         return function(){
-          //console.log("spirit minigame");
-          HIT.start(HIT_ITEM_TARGET, index, action_object);
+          HIT.start(HIT_SPIRIT, index, action_object);
         }
       } else if (ABILITIES_ARCHETYPES[ABILITIES_ARCHETYPES_NAMES.Diplomat].includes(name)){
         return function(){
-          //console.log("diplo minigame");
-          HIT.start(HIT_ITEM_TARGET, index, action_object);
+          HIT.start(HIT_DIPLOMACY, index, action_object);
         }
       }
       return HIT.callback.getf_success(index);
