@@ -7,6 +7,9 @@ const HIT = {
       if(HIT.text_banner){
         HIT.text_banner.destroy();
       }
+      if(HIT.zone){
+        HIT.zone.destroy();
+      }
 
       IO.control.cede();
       HIT.draw.restore_existing();
@@ -62,20 +65,28 @@ const HIT = {
     item_target: {
       start: function(index, action_object) {
         var ease = SHOP._prices.sell(index.trim()) || 20; // Shittiest is 10, comfy is 500
-        var timeout = 1000 + ease * 2500 / 500;
+        var timeout = 1000 + ease * 2500 / 300;
         var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
         challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
-        
+
         HIT.minigame.item_target.untouched = index;
 
         var amplitude = 150 * (1 - MARTYRDOM.effect(MARTYRDOMS.Foresight));
-        HIT.minigame.item_target.x = SCREEN.width() / 2 - 25     + 2 * (Math.random() - 0.5) * amplitude;
-        HIT.minigame.item_target.y = SCREEN.height() / 2 - 100    + 2 * (Math.random() - 0.5) * amplitude;
+        var x0 = SCREEN.width() / 2 - 25;
+        var y0 = SCREEN.height() / 2 - 100;
+
+
+        HIT.minigame.item_target.x = x0 + 2 * (Math.random() - 0.5) * amplitude;
+        HIT.minigame.item_target.y = y0 + 2 * (Math.random() - 0.5) * amplitude;
         var w = 50;
 
         HIT.text_banner = new TextBanner("Click on your target to hit.", true);
 
         HIT.draw.resize_existing(w, HIT.minigame.item_target.x, HIT.minigame.item_target.y);
+
+        HIT.zone = new Rectangle(window.scrollX + x0 - amplitude, window.scrollY + y0 + amplitude, 2*amplitude + 50, 2*amplitude + 50, "obj_dark");
+        HIT.zone.border("void");
+
         setTimeout(function(){
                       HIT.minigame.item_target.end(index);
                     }, Math.floor(timeout * challenge));

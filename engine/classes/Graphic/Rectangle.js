@@ -28,4 +28,8 @@ class Rectangle extends VisualElement {
     draw() {
       this.html_rectangle.style.backgroundColor = PALETTE.color_code_with_default(this.color, this.color);
     }
+
+    border(color){
+      this.html_rectangle.style.border = "3px solid " + PALETTE.color_code_with_default(color, color);
+    }
 }
