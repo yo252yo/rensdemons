@@ -14,6 +14,7 @@ const HIT_ITEM_TARGET = {
     var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
     challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
 
+    HIT_ITEM_TARGET.keyboard_help = false;
     HIT_ITEM_TARGET.untouched = index;
 
     var amplitude = HIT_ITEM_TARGET.amplitude();
@@ -42,7 +43,15 @@ const HIT_ITEM_TARGET = {
 
   end: function(index){
     if(HIT_ITEM_TARGET.target_sprite){
-      HIT_ITEM_TARGET.raw_click(HIT_ITEM_TARGET.tx, HIT_ITEM_TARGET.ty);
+      HIT_ITEM_TARGET.raw_keyboard_ok();
+
+      if(HIT_ITEM_TARGET.untouched && !HIT_ITEM_TARGET.keyboard_help){
+        HIT_ITEM_TARGET.keyboard_help = true;
+        setTimeout(function(){
+                      HIT_ITEM_TARGET.end(index);
+                    }, 2000);
+        return;
+      }
     }
     if(HIT_ITEM_TARGET.untouched){
       delete HIT_ITEM_TARGET.untouched;
@@ -71,22 +80,25 @@ const HIT_ITEM_TARGET = {
     if (!HIT_ITEM_TARGET.target_sprite){ // create the reticle only if needed
       HIT_ITEM_TARGET.target_sprite = new FixedSprite("assets/interface/cross.png", 'void');
       HIT_ITEM_TARGET.target_sprite.adjust_depth(100099);
+      CONSOLE.log.debug("CREATE SPRITE");
     }
-    HIT_ITEM_TARGET.target_sprite.place_at(HIT_ITEM_TARGET.tx - 12, HIT_ITEM_TARGET.ty - 12, true);
+    HIT_ITEM_TARGET.target_sprite.place_at(HIT_ITEM_TARGET.tx - 12, HIT_ITEM_TARGET.ty + 12, true);
   },
 
   raw_click: function(x, y) {
     var dx = x - window.scrollX - HIT_ITEM_TARGET.x;
     var dy =  HIT_ITEM_TARGET.y - (y - window.scrollY);
 
-    if (dx <= 50 && dy <= 50 && dx >= 0 && dy >= 0){
+    if (dx <= 60 && dy <= 60 && dx >= -10 && dy >= -10){
       HIT.result.success(HIT_ITEM_TARGET.untouched);
       delete HIT_ITEM_TARGET.untouched;
+    } else {
+      CONSOLE.log.debug("[HIT] MISS" + dx + "/ " + dy);
     }
   },
 
   raw_keyboard_ok: function(){
-    HIT_ITEM_TARGET.raw_click(HIT_ITEM_TARGET.tx, HIT_ITEM_TARGET.ty);
+    HIT_ITEM_TARGET.raw_click(HIT_ITEM_TARGET.tx + window.scrollX, HIT_ITEM_TARGET.ty + window.scrollY);
   },
 
   cleanup: function(){
