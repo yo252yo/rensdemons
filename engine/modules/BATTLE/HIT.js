@@ -64,11 +64,13 @@ const HIT = {
         var ease = SHOP._prices.sell(index.trim()) || 20; // Shittiest is 10, comfy is 500
         var timeout = 1000 + ease * 2500 / 500;
         var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
-
+        challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
+        
         HIT.minigame.item_target.untouched = index;
 
-        HIT.minigame.item_target.x = SCREEN.width() / 2 - 25     + 2 * (Math.random() - 0.5) * 150;
-        HIT.minigame.item_target.y = SCREEN.height() / 2 - 100    + 2 * (Math.random() - 0.5) * 150;
+        var amplitude = 150 * (1 - MARTYRDOM.effect(MARTYRDOMS.Foresight));
+        HIT.minigame.item_target.x = SCREEN.width() / 2 - 25     + 2 * (Math.random() - 0.5) * amplitude;
+        HIT.minigame.item_target.y = SCREEN.height() / 2 - 100    + 2 * (Math.random() - 0.5) * amplitude;
         var w = 50;
 
         HIT.text_banner = new TextBanner("Click on your target to hit.", true);
