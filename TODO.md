@@ -3,8 +3,6 @@ storepage: trailer
  ADD minigame to trailer and screenshots
 
 
-- allow dodge quick end
-
 - write walkthrough:
 >> important options like difficulty should be included
 >> add all the hit minigames

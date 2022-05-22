@@ -110,7 +110,7 @@ const DODGE = {
       DODGE.battler_steps ++;
 
       if (DODGE.battler_steps < animation_frames){
-        DODGE.animation_timeout = setTimeout(DODGE.draw.advance_battler, DODGE.get_params.actual_react_time_ms()/animation_frames);
+        DODGE.animation_timeout = DODGE.current_timeout = setTimeout(DODGE.draw.advance_battler, DODGE.get_params.actual_react_time_ms()/animation_frames);
       }
     },
 
@@ -297,6 +297,7 @@ const DODGE = {
     },
 
     prompt: function(){
+      DODGE.phase = 1;
 
       if (DODGE.events.instadodge()){
         DODGE.outcome.instadodge();
@@ -305,10 +306,15 @@ const DODGE = {
 
       DODGE.draw.prompt();
       DODGE.accepting_input = true;
-      setTimeout(DODGE.events.react, DODGE.get_params.actual_warning_time_ms());
+      DODGE.current_timeout = setTimeout(DODGE.events.react, DODGE.get_params.actual_warning_time_ms());
     },
 
     react: function(){
+      if (DODGE.phase != 1){
+        // make sure we dont trigger twice
+        return;
+      }
+      DODGE.phase = 2;
       DODGE.attack_angle = DODGE.get_params.get_attack_angle();
 
       DODGE.attack_target = Math.random();
@@ -316,10 +322,15 @@ const DODGE = {
       DODGE.draw.hit();
       AUDIO.effect.dodge_attack();
 
-      setTimeout(DODGE.events.hit, DODGE.get_params.actual_react_time_ms());
+      DODGE.current_timeout = setTimeout(DODGE.events.hit, DODGE.get_params.actual_react_time_ms());
     },
 
     hit: function(){
+      if (!DODGE.accepting_input){
+        // make sure we dont trigger twice
+        return;
+      }
+      DODGE.phase = 3;
       DODGE.accepting_input = false;
       DODGE.draw.hit_confirm();
       AUDIO.effect.dodge_attack();
@@ -329,13 +340,13 @@ const DODGE = {
       if (DODGE.sprite.text){
         DODGE.sprite.text.destroy();
       }
-      
+
       if (DODGE.outcome.compute()){
         CONSOLE.log.debug("[DODGE] " + str );
-        setTimeout(DODGE.outcome.success, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
+        DODGE.current_timeout = setTimeout(DODGE.outcome.success, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
       } else {
         CONSOLE.log.debug("[NODODGE] " + str);
-        setTimeout(DODGE.outcome.failure, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
+        DODGE.current_timeout = setTimeout(DODGE.outcome.failure, DODGE.TIME_SHOWING_RESULTS_BEFORE_CLEANUP);
       }
     },
   },
@@ -360,6 +371,22 @@ const DODGE = {
       DODGE.events.prompt();
     }
     return callback;
-  }
+  },
+
+  hasten: function(){
+    if(!DODGE.accepting_input){
+      return;
+    }
+
+    if(DODGE.phase == 1){
+      clearTimeout(DODGE.current_timeout);
+      CONSOLE.log.debug("Hastened dodge react");
+      DODGE.events.react();
+    } else if(DODGE.phase == 2){
+      clearTimeout(DODGE.current_timeout);
+      CONSOLE.log.debug("Hastened dodge hit");
+      DODGE.events.hit();
+    }
+  },
 
 }

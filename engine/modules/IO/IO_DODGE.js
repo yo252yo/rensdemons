@@ -24,6 +24,9 @@ const IO_DODGE = {
     var up = 0, down = 0, target = 0, denom = 0;
 
     for (var key of pressed_keys) {
+      if (KEYS_UTIL.is_ok(key)) {
+        return;
+      }
       if (KEYS_UTIL.is_up(key)) {
         up = true;
       }
@@ -67,6 +70,12 @@ const IO_DODGE = {
       DODGE.io.pick_target(target);
     } else {
       DODGE.io.move_target(0.2 * diff);
+    }
+  },
+
+  onPressKey: function(key) {
+    if (KEYS_UTIL.is_ok(key)) {
+      DODGE.hasten();
     }
   },
 }
