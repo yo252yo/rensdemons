@@ -231,6 +231,10 @@ const RESOURCES = {
     RESOURCES.get_img('assets/interface/dodger.png');
     RESOURCES.get_img('assets/interface/consumable_aim.png');
     RESOURCES.get_img('assets/interface/consumable_target.png');
+    RESOURCES.get_img('assets/interface/elements_1.png');
+    RESOURCES.get_img('assets/interface/elements_2.png');
+    RESOURCES.get_img('assets/interface/graph.png');
+    RESOURCES.get_img('assets/interface/spirit.png');
     RESOURCES.get_img('assets/interface/event.png');
     RESOURCES.get_img('assets/interface/event2.png');
     RESOURCES.get_img('assets/interface/event_conversation.png');
