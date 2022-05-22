@@ -100,6 +100,7 @@ const HIT_ITEM_TARGET = {
       HIT.result.success(HIT_ITEM_TARGET.untouched);
       delete HIT_ITEM_TARGET.untouched;
       AUDIO.effect.dodge_attack();
+      HIT.text_banner.change_text("Success.", true);
     } else {
       CONSOLE.log.debug("[HIT] MISS" + dx + "/ " + dy);
     }
