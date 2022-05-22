@@ -162,17 +162,19 @@ const HIT = {
         return HIT.callback.getf_success(index);
       }
 
-      if(HIT.consecutive_losses >= 2){
-        HIT.consecutive_losses = 0;
-        return HIT.callback.getf_success(index);
-      }
-
       return HIT.callback.wrap_around(index);
     },
   },
 
 
   start: function(module, index, action_object){
+    if(HIT.consecutive_losses >= 2){
+      HIT.consecutive_losses = 0;
+      CONSOLE.log.debug("[HIT] pity triggered");
+      var f = HIT.callback.getf_success(index);
+      return f();
+    }
+
     HIT.current_module = module;
     module.start(index, action_object);
 
