@@ -40,7 +40,7 @@ const HIT_SPIRIT = {
     HIT_SPIRIT.sprite.show();
 
     var timeout = 40 + 1250 * (TRAINER._raw_price(HIT_SPIRIT.index.trim()) || 75) / 7500; // 75 to 7500
-    timeout *= (1 + MARTYRDOM.effect(MARTYRDOMS.Reflex));
+    timeout *= (1 + MARTYRDOM.effect(MARTYRDOMS.Vision));
 
     setTimeout(HIT_SPIRIT.hide, Math.floor(timeout)); // 50 is min, 500 is medium
   },
@@ -94,7 +94,7 @@ const HIT_SPIRIT = {
     if(HIT_SPIRIT.lock){
       return;
     }
-    
+
     var mult = 9;
     HIT_SPIRIT.keyboard_x += dx * mult;
     HIT_SPIRIT.keyboard_y += dy * mult;
