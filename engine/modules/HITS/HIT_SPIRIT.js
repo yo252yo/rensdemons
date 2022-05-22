@@ -15,7 +15,7 @@ const HIT_SPIRIT = {
     HIT_SPIRIT.sprite.place_at(HIT_SPIRIT.result_x - 35, HIT_SPIRIT.result_y + 35);
     HIT_SPIRIT.sprite.hide();
 
-    HIT.text_banner = new TextBanner("Find the elusive spark of spirits.", true);
+    HIT.text_banner.change_text("Find the elusive spark of spirits.", true);
 
     HIT_SPIRIT.background = new Rectangle(window.scrollX + c[0] - 100, window.scrollY + c[1] + 100, 500, 500, "obj_dark");
     HIT_SPIRIT.background.html_rectangle.style.opacity = 0.8;
@@ -66,12 +66,12 @@ const HIT_SPIRIT = {
     CONSOLE.log.debug("[HIT] Distance: " + dist);
 
     if(dist < 30) {
-      HIT.text_banner.destroy();
-      HIT.text_banner = new TextBanner("You channeled spiritual energies.", true);
+      HIT.text_banner.change_text("You channeled spiritual energies.", true);
       setTimeout(function(){
                     HIT.result.success(HIT_SPIRIT.index);
                 }, 1000);
     } else {
+      HIT.text_banner.destroy();
       setTimeout(function(){
                     HIT.result.loss(HIT_SPIRIT.index);
                 }, 1000);

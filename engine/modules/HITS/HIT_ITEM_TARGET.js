@@ -28,7 +28,7 @@ const HIT_ITEM_TARGET = {
     HIT_ITEM_TARGET.y = c[1] + 2 * (Math.random() - 0.5) * amplitude;
     var w = 50;
 
-    HIT.text_banner = new TextBanner("Click on your target to hit.", true);
+    HIT.text_banner.change_text("Click on your target to hit.", true);
 
     HIT.draw.resize_existing(w, HIT_ITEM_TARGET.x, HIT_ITEM_TARGET.y);
 

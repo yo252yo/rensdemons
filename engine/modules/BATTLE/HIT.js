@@ -176,6 +176,7 @@ const HIT = {
     }
 
     HIT.current_module = module;
+    HIT.text_banner = new TextBanner("", true);
     module.start(index, action_object);
 
     IO.control.hit();

@@ -3,7 +3,7 @@ const HIT_CONSUMABLE = {
     HIT_CONSUMABLE.consume = action_object.consume_item;
     HIT_CONSUMABLE.sprite = new CenteredImage("assets/interface/consumable_aim.png", 'player');
     HIT_CONSUMABLE.sprite.adjust_depth(100000);
-    HIT.text_banner = new TextBanner("Chose where to aim. With a bit of luck, you could reuse your " + HIT_CONSUMABLE.consume + "!", true);
+    HIT.text_banner.change_text("Chose where to aim. With a bit of luck, you could reuse your " + HIT_CONSUMABLE.consume + "!", true);
     delete HIT_CONSUMABLE.result;
     HIT_CONSUMABLE.index = index;
   },
@@ -109,7 +109,7 @@ const HIT_CONSUMABLE = {
 
   win: function(){
     AUDIO.effect.interaction();
-    HIT.text_banner = new TextBanner("You find that you can still use your " + HIT_CONSUMABLE.consume + ".", true);
+    HIT.text_banner.change_text("You find that you can still use your " + HIT_CONSUMABLE.consume + ".", true);
     INVENTORY.increase(HIT_CONSUMABLE.consume);
     setTimeout(function(){
       HIT.result.success(HIT_CONSUMABLE.index);
@@ -118,7 +118,7 @@ const HIT_CONSUMABLE = {
 
   lose: function(){
     AUDIO.effect.choice();
-    HIT.text_banner = new TextBanner("Your " + HIT_CONSUMABLE.consume + " is beyond reuse.", true);
+    HIT.text_banner.change_text("Your " + HIT_CONSUMABLE.consume + " is beyond reuse.", true);
     setTimeout(function(){
       HIT.result.success(HIT_CONSUMABLE.index);
     }, 1200);

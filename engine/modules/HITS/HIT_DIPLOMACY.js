@@ -19,7 +19,7 @@ const HIT_DIPLOMACY = {
 
     HIT_DIPLOMACY.sprite = new CenteredImage("assets/interface/graph.png", 'void');
     HIT_DIPLOMACY.sprite.adjust_depth(100000);
-    HIT.text_banner = new TextBanner("What approach are you going to use?", true);
+    HIT.text_banner.change_text("What approach are you going to use?", true);
 
     var c = HIT_DIPLOMACY.origin();
     HIT_DIPLOMACY.background = new Rectangle(window.scrollX + c[0] - 100, window.scrollY + c[1] + 100, 500, 500, "obj_dark");
@@ -134,12 +134,12 @@ const HIT_DIPLOMACY = {
     );
 
     if(intersect){
-      HIT.text_banner.destroy();
-      HIT.text_banner = new TextBanner("You successfully predicted your opponent's personality.", true);
+      HIT.text_banner.change_text("You successfully predicted your opponent's personality.", true);
       setTimeout(function(){
                     HIT.result.success(HIT_DIPLOMACY.index);
                 }, 1000);
     } else {
+      HIT.text_banner.destroy();
       setTimeout(function(){
                     HIT.result.loss(HIT_DIPLOMACY.index);
                 }, 1000);
