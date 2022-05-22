@@ -12,8 +12,8 @@ const HIT_ELEMENT = {
 
     var ability = (TRAINER._raw_price(HIT_ELEMENT.index.trim()) || 50) / 7500; // 50 to 7500
 
-    var timer1 = 200 + 1000 * MARTYRDOM.effect(MARTYRDOMS.Movement) + ability * 1000;
-    var timer2 = timer1 * (1 + (0.2 + Math.random() * 0.5) * (1.01-ability));
+    var timer1 = 200 + 1000 * MARTYRDOM.effect(MARTYRDOMS.Movement) + ability * 1500;
+    var timer2 = timer1 * (1 + (0.2 + Math.random() * 0.5) * (1.05-ability));
 
     var r =  Math.random() < 0.5;
     HIT_ELEMENT.elem = [1, 1];
