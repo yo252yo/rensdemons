@@ -38,7 +38,7 @@ const HIT_SPIRIT = {
 
   show: function(){
     HIT_SPIRIT.sprite.show();
-    
+
     var timeout = 40 + 1250 * (TRAINER._raw_price(HIT_SPIRIT.index.trim()) || 75) / 7500; // 75 to 7500
     timeout *= (1 + MARTYRDOM.effect(MARTYRDOMS.Reflex));
 
@@ -88,5 +88,29 @@ const HIT_SPIRIT = {
     if(HIT_SPIRIT.background){
       HIT_SPIRIT.background.destroy();
     }
+  },
+
+  raw_keyboard_move: function(dx, dy){
+    if(HIT_SPIRIT.lock){
+      return;
+    }
+    
+    var mult = 9;
+    HIT_SPIRIT.keyboard_x += dx * mult;
+    HIT_SPIRIT.keyboard_y += dy * mult;
+
+    if (!HIT_SPIRIT.keyboard_sprite){ // create the reticle only if needed
+      HIT_SPIRIT.keyboard_sprite = new FixedSprite("assets/interface/cross.png", 'player');
+      HIT_SPIRIT.keyboard_sprite.adjust_depth(100199);
+      CONSOLE.log.debug("now accepting keyboard input");
+    }
+    HIT_SPIRIT.keyboard_sprite.place_at(HIT_SPIRIT.keyboard_x - 12, HIT_SPIRIT.keyboard_y + 12, true);
+  },
+
+  raw_keyboard: function(key, forced){
+    if (!KEYS_UTIL.is_ok(key) && !forced) {
+      return;
+    }
+    HIT_SPIRIT.raw_click(HIT_SPIRIT.keyboard_x + window.scrollX, HIT_SPIRIT.keyboard_y + window.scrollY);
   },
 }
