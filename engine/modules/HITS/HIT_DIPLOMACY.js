@@ -118,9 +118,11 @@ const HIT_DIPLOMACY = {
     var int_x0_in_1 = x0 >= x1 && x0 < x1 + w1;
     var int_x0w_in_1 = x0 + w0 > x1 && x0 + w0 <= x1 + w1;
     var int_x_1_included = x0 <= x1 && x1 + w1 <= x0 + w0;
+
     var int_y0_in_1 = y0 >= y1 && y0 < y1 + h1;
     var int_y0h_in_1 = y0 + h0 > y1 && y0 + h0 <= y1 + h1;
-    var int_y_1_included = y0 <= y1 && y1 + h1 <= y1 + h1;
+    var int_y_1_included = y0 <= y1 && y1 + h1 <= y0 + h0;
+
     return (int_x0_in_1 || int_x0w_in_1 || int_x_1_included)
           && (int_y0_in_1 || int_y0h_in_1 || int_y_1_included);
   },

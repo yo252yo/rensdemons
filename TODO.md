@@ -1,8 +1,6 @@
 storepage: trailer
 
-monotony issue:
-- rectangle bug in paint
-- ADD minigame to trailer and screenshots
+ ADD minigame to trailer and screenshots
 
 
 - allow dodge quick end
