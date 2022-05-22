@@ -42,6 +42,7 @@ const HIT_ITEM_TARGET = {
   },
 
   end: function(index){
+    // Keyboard players get a grace period
     if(HIT_ITEM_TARGET.target_sprite){
       HIT_ITEM_TARGET.raw_keyboard(undefined, true);
 
@@ -81,7 +82,7 @@ const HIT_ITEM_TARGET = {
     if (!HIT_ITEM_TARGET.target_sprite){ // create the reticle only if needed
       HIT_ITEM_TARGET.target_sprite = new FixedSprite("assets/interface/cross.png", 'void');
       HIT_ITEM_TARGET.target_sprite.adjust_depth(100099);
-      CONSOLE.log.debug("CREATE SPRITE");
+      CONSOLE.log.debug("now accepting keyboard input");
     }
     HIT_ITEM_TARGET.target_sprite.place_at(HIT_ITEM_TARGET.tx - 12, HIT_ITEM_TARGET.ty + 12, true);
   },

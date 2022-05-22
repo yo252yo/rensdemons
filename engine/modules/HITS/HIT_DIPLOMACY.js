@@ -11,7 +11,7 @@ const HIT_DIPLOMACY = {
   },
 
   origin: function(){
-    return [SCREEN.width() / 2 - 1 - 90, SCREEN.height() / 2 - 172 + 90];
+    return [SCREEN.width() / 2 - 90, SCREEN.height() / 2 - 172 + 90];
   },
 
   start: function(index, action_object) {
@@ -26,7 +26,11 @@ const HIT_DIPLOMACY = {
     HIT_DIPLOMACY.background.html_rectangle.style.opacity = 0.8;
     HIT_DIPLOMACY.background.adjust_depth(1000);
 
+    HIT_DIPLOMACY.keyboard_x = c[0] + 90;
+    HIT_DIPLOMACY.keyboard_y = c[1] - 90;
+
     delete HIT_DIPLOMACY.lock;
+    delete HIT_DIPLOMACY.keyboard_sprite;
   },
 
   cleanup: function(){
@@ -41,6 +45,9 @@ const HIT_DIPLOMACY = {
     }
     if(HIT_DIPLOMACY.monster_rect){
       HIT_DIPLOMACY.monster_rect.destroy();
+    }
+    if(HIT_DIPLOMACY.keyboard_sprite){
+      HIT_DIPLOMACY.keyboard_sprite.destroy();
     }
   },
 
@@ -107,13 +114,26 @@ const HIT_DIPLOMACY = {
     HIT_DIPLOMACY.monster_rect.adjust_depth(100089);
   },
 
-  compute_result: function(square_x, square_y, hit_size){
-    var intersect_x_1 = square_x >= HIT_DIPLOMACY.monster_x && square_x < HIT_DIPLOMACY.monster_x + HIT_DIPLOMACY.monster_w;
-    var intersect_x_2 = square_x + hit_size > HIT_DIPLOMACY.monster_x && square_x + hit_size <= HIT_DIPLOMACY.monster_x + HIT_DIPLOMACY.monster_w;
-    var intersect_y_1 = square_y >= HIT_DIPLOMACY.monster_y && square_y < HIT_DIPLOMACY.monster_y + HIT_DIPLOMACY.monster_h;
-    var intersect_y_2 = square_y + hit_size > HIT_DIPLOMACY.monster_y && square_y + hit_size <= HIT_DIPLOMACY.monster_y + HIT_DIPLOMACY.monster_h;
+  rect_intersect: function(x0, y0, w0, h0, x1, y1, w1, h1){
+    var int_x0_in_1 = x0 >= x1 && x0 < x1 + w1;
+    var int_x0w_in_1 = x0 + w0 > x1 && x0 + w0 <= x1 + w1;
+    var int_x_1_included = x0 <= x1 && x1 + w1 <= x0 + w0;
+    var int_y0_in_1 = y0 >= y1 && y0 < y1 + h1;
+    var int_y0h_in_1 = y0 + h0 > y1 && y0 + h0 <= y1 + h1;
+    var int_y_1_included = y0 <= y1 && y1 + h1 <= y1 + h1;
+    return (int_x0_in_1 || int_x0w_in_1 || int_x_1_included)
+          && (int_y0_in_1 || int_y0h_in_1 || int_y_1_included);
+  },
 
-    if((intersect_x_1 || intersect_x_2) && (intersect_y_1 || intersect_y_2)){
+  compute_result: function(square_x, square_y, hit_size){
+    var intersect = HIT_DIPLOMACY.rect_intersect(
+      square_x, square_y,
+      hit_size, hit_size,
+      HIT_DIPLOMACY.monster_x, HIT_DIPLOMACY.monster_y,
+      HIT_DIPLOMACY.monster_w, HIT_DIPLOMACY.monster_h
+    );
+
+    if(intersect){
       HIT.text_banner.destroy();
       HIT.text_banner = new TextBanner("You successfully predicted your opponent's personality.", true);
       setTimeout(function(){
@@ -124,5 +144,38 @@ const HIT_DIPLOMACY = {
                     HIT.result.loss(HIT_DIPLOMACY.index);
                 }, 1000);
     }
+  },
+
+
+  raw_keyboard_move: function(dx, dy){
+    var c = HIT_DIPLOMACY.origin();
+
+    var mult = 9;
+    HIT_DIPLOMACY.keyboard_x += dx * mult;
+    HIT_DIPLOMACY.keyboard_y += dy * mult;
+    if (HIT_DIPLOMACY.keyboard_x < c[0]){
+      HIT_DIPLOMACY.keyboard_x = c[0];
+    } else if (HIT_DIPLOMACY.keyboard_x > c[0] + 180){
+      HIT_DIPLOMACY.keyboard_x = c[0] + 180;
+    }
+    if (HIT_DIPLOMACY.keyboard_y < c[1 - 180]){
+      HIT_DIPLOMACY.keyboard_y = c[1] - 180;
+    } else if (HIT_DIPLOMACY.keyboard_y > c[1]){
+      HIT_DIPLOMACY.keyboard_y = c[1];
+    }
+
+    if (!HIT_DIPLOMACY.keyboard_sprite){ // create the reticle only if needed
+      HIT_DIPLOMACY.keyboard_sprite = new FixedSprite("assets/interface/cross.png", 'void');
+      HIT_DIPLOMACY.keyboard_sprite.adjust_depth(100199);
+      CONSOLE.log.debug("now accepting keyboard input");
+    }
+    HIT_DIPLOMACY.keyboard_sprite.place_at(HIT_DIPLOMACY.keyboard_x - 12, HIT_DIPLOMACY.keyboard_y + 12, true);
+  },
+
+  raw_keyboard: function(key, forced){
+    if (!KEYS_UTIL.is_ok(key) && !forced) {
+      return;
+    }
+    HIT_DIPLOMACY.raw_click(HIT_DIPLOMACY.keyboard_x + window.scrollX, HIT_DIPLOMACY.keyboard_y + window.scrollY);
   },
 }
