@@ -17,7 +17,7 @@ const HIT_SPIRIT = {
 
     HIT.text_banner.change_text("Find the elusive spark of spirits.", true);
 
-    HIT_SPIRIT.background = new Rectangle(window.scrollX + c[0] - 100, window.scrollY + c[1] + 100, 500, 500, "obj_dark");
+    HIT_SPIRIT.background = new Rectangle(window.scrollX + c[0] - 2000, window.scrollY + c[1] + 2000, 5000, 5000, "obj_dark");
     HIT_SPIRIT.background.html_rectangle.style.opacity = 0.8;
     HIT_SPIRIT.background.adjust_depth(1000);
 

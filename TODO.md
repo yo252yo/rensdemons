@@ -1,6 +1,7 @@
 storepage: trailer
 
- ADD minigame to trailer and screenshots
+try to remove achievement
+
 
 
 - write walkthrough:

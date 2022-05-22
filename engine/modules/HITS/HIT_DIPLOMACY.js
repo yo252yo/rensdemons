@@ -22,7 +22,7 @@ const HIT_DIPLOMACY = {
     HIT.text_banner.change_text("What approach are you going to use?", true);
 
     var c = HIT_DIPLOMACY.origin();
-    HIT_DIPLOMACY.background = new Rectangle(window.scrollX + c[0] - 100, window.scrollY + c[1] + 100, 500, 500, "obj_dark");
+    HIT_DIPLOMACY.background = new Rectangle(window.scrollX + c[0] - 2000, window.scrollY + c[1] + 2000, 5000, 5000, "obj_dark");
     HIT_DIPLOMACY.background.html_rectangle.style.opacity = 0.8;
     HIT_DIPLOMACY.background.adjust_depth(1000);
 
