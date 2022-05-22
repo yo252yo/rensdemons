@@ -76,12 +76,14 @@ const HIT_ELEMENT = {
     HIT_ELEMENT.lock = true;
 
     if(HIT_ELEMENT.elem[0] == HIT_ELEMENT.elem[1]) {
+      AUDIO.effect.choice();
       HIT.text_banner.change_text("The elements resonate.", true);
       setTimeout(function(){
                     HIT.result.success(HIT_ELEMENT.index);
                 }, 1000);
     } else {
       HIT.text_banner.destroy();
+      AUDIO.effect.interaction();
       setTimeout(function(){
                     HIT.result.loss(HIT_ELEMENT.index);
                 }, 1000);

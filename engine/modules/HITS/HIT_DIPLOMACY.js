@@ -136,11 +136,13 @@ const HIT_DIPLOMACY = {
     );
 
     if(intersect){
+      AUDIO.effect.choice();
       HIT.text_banner.change_text("You successfully predicted your opponent's personality.", true);
       setTimeout(function(){
                     HIT.result.success(HIT_DIPLOMACY.index);
                 }, 1000);
     } else {
+      AUDIO.effect.interaction();
       HIT.text_banner.destroy();
       setTimeout(function(){
                     HIT.result.loss(HIT_DIPLOMACY.index);

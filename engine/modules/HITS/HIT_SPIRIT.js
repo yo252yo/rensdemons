@@ -68,11 +68,13 @@ const HIT_SPIRIT = {
     CONSOLE.log.debug("[HIT] Distance: " + dist);
 
     if(dist < 30) {
+      AUDIO.effect.choice();
       HIT.text_banner.change_text("You channeled spiritual energies.", true);
       setTimeout(function(){
                     HIT.result.success(HIT_SPIRIT.index);
                 }, 1000);
     } else {
+      AUDIO.effect.interaction();
       HIT.text_banner.destroy();
       setTimeout(function(){
                     HIT.result.loss(HIT_SPIRIT.index);
