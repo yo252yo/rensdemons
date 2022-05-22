@@ -13,6 +13,7 @@ const HIT_ITEM_TARGET = {
     var timeout = 1200 + ease * 3000 / 300;
     var challenge = 1 + 0.8 * 2 * (0.5 - SETTINGS.get("challenge_level")); // 2 *() is between -1 and 1 with 0 by default
     challenge += MARTYRDOM.effect(MARTYRDOMS.Reflex);
+    challenge /= THAUMATURGY.time_compression;
 
     HIT_ITEM_TARGET.keyboard_help = false;
     HIT_ITEM_TARGET.untouched = index;

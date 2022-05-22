@@ -13,6 +13,9 @@ const HIT_ELEMENT = {
     var ability = (TRAINER._raw_price(HIT_ELEMENT.index.trim()) || 50) / 7500; // 50 to 7500
 
     var timer1 = 200 + 1000 * MARTYRDOM.effect(MARTYRDOMS.Movement) + ability * 1500;
+    timer1 *= 1 + 1.8 * (0.5 - SETTINGS.get("challenge_level"));
+    timer1 /= THAUMATURGY.time_compression;
+
     var timer2 = timer1 * (1 + (0.2 + Math.random() * 0.5) * (1.05-ability));
 
     var r =  Math.random() < 0.5;

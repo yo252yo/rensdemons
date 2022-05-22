@@ -41,6 +41,8 @@ const HIT_SPIRIT = {
 
     var timeout = 40 + 1250 * (TRAINER._raw_price(HIT_SPIRIT.index.trim()) || 75) / 7500; // 75 to 7500
     timeout *= (1 + MARTYRDOM.effect(MARTYRDOMS.Vision));
+    timeout *= 1 + 1.8 * (0.5 - SETTINGS.get("challenge_level"));
+    timeout /= THAUMATURGY.time_compression;
 
     setTimeout(HIT_SPIRIT.hide, Math.floor(timeout)); // 50 is min, 500 is medium
   },

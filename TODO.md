@@ -2,7 +2,6 @@ storepage: trailer
 
 monotony issue:
 - rectangle bug in paint
-- do a pass to add the time compression and difficulty
 - ADD minigame to trailer and screenshots
 
 
