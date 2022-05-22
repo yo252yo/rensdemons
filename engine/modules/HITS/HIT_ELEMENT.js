@@ -13,10 +13,10 @@ const HIT_ELEMENT = {
     var ability = (TRAINER._raw_price(HIT_ELEMENT.index.trim()) || 50) / 7500; // 50 to 7500
 
     var timer1 = 200 + 1000 * MARTYRDOM.effect(MARTYRDOMS.Movement) + ability * 1000;
-    var timer2 = timer1 * (1 + Math.random() * 0.7 * (1.01-ability));
+    var timer2 = timer1 * (1 + (0.2 + Math.random() * 0.5) * (1.01-ability));
 
     var r =  Math.random() < 0.5;
-    HIT_ELEMENT.elem = [1, 2];
+    HIT_ELEMENT.elem = [1, 1];
     HIT_ELEMENT.timers = [r?timer1:timer2, r?timer2:timer1];
     HIT_ELEMENT.elem_sprites = [[], []];
     HIT_ELEMENT.elem_sprites[0][1] = new FixedSprite("assets/interface/elements_1.png", 'void');

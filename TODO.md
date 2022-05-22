@@ -1,11 +1,10 @@
 storepage: trailer
 
 monotony issue:
-- HIT_SPIRIT: flash a symbol for a very short time and ask for its position
-- HIT_ELEMENT: stop a slot machine of 2 elements to put them aligned
+- rectangle bug in paint
+- do a pass to add the time compression and difficulty
 - ADD minigame to trailer and screenshots
 
-CHECK PALETTE WASNT SUBMITTED BY MISTAKE
 
 - allow dodge quick end
 
