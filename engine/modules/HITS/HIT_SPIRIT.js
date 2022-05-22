@@ -48,6 +48,15 @@ const HIT_SPIRIT = {
   },
 
   raw_click: function(x, y) {
+    var relative_x = x - window.scrollX;
+    var relative_y = y - window.scrollY;
+
+    var c = HIT_SPIRIT.origin();
+
+    if (relative_x > c[0] + 400 || relative_y > c[1] + 100 || relative_x < c[0] - 100 || relative_y < c[1] - 400){
+      return;
+    }
+
     if(HIT_SPIRIT.lock){
       return;
     }
@@ -60,8 +69,6 @@ const HIT_SPIRIT = {
       HIT_SPIRIT.keyboard_sprite.adjust_depth(100199);
     }
 
-    var relative_x = x - window.scrollX;
-    var relative_y = y - window.scrollY;
     HIT_SPIRIT.keyboard_sprite.place_at(relative_x - 12, relative_y + 12, true);
 
     var dist = Math.sqrt(Math.pow(relative_x - HIT_SPIRIT.result_x,2) + Math.pow(relative_y - HIT_SPIRIT.result_y,2));
