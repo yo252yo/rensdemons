@@ -1,9 +1,9 @@
 storepage: trailer
 
 monotony issue:
-- HIT_SPIRIT: blackjack tarot?
-- HIT_ELEMENT: stop a slot machine
-- HIT_DIPLOMACY: bet on dice / line from reason to irrational
+- HIT_SPIRIT: flash a symbol for a very short time and ask for its position
+- HIT_ELEMENT: stop a slot machine of 2 elements to put them aligned
+- HIT_DIPLOMACY: guess random position on a graph of emotion/reason empathy/forceful conciliatory
 
 
 

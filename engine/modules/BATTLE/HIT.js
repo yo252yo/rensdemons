@@ -198,4 +198,8 @@ const HIT = {
       HIT.current_module.raw_keyboard(key);
     }
   },
+
+  init: function(){
+    HIT_DIPLOMACY.init();
+  },
 }

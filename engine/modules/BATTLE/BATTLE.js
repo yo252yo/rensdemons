@@ -369,6 +369,7 @@ const BATTLE = {
         }
         CONSOLE.log.setup("battle " + name);
         DODGE.init();
+        HIT.init();
 
         PLAYER_ACTIONS.add_thaumaturgy_actions();
         STATS.record.battle();

@@ -16,7 +16,7 @@ _TRAINER_PRICES[ABILITY.Confusion] = 2000;
 _TRAINER_PRICES[ABILITY.Lull] = 5000;
 _TRAINER_PRICES[ABILITY.Charm] = 7500;
 
-_TRAINER_PRICES[ABILITY.Circumvent] = 100;
+_TRAINER_PRICES[ABILITY.Circumvent] = 75;
 _TRAINER_PRICES[ABILITY.Sneak] = 250;
 _TRAINER_PRICES[ABILITY.Persuade] = 750;
 _TRAINER_PRICES[ABILITY.Intimidate] = 2000;
@@ -25,8 +25,12 @@ _TRAINER_PRICES[ABILITY.Mystify] = 7500;
 const TRAINER = {
   xp_to_gold_multiplier: 3,
 
+  _raw_price: function(ability){
+    return _TRAINER_PRICES[ability];
+  },
+
   _price: function(ability){
-    return Math.round(_TRAINER_PRICES[ability] * (1 - 0.6 * MARTYRDOM.effect(MARTYRDOMS.Learning)));
+    return Math.round(TRAINER._raw_price(ability) * (1 - 0.6 * MARTYRDOM.effect(MARTYRDOMS.Learning)));
   },
 
   _buy: function(ability){
