@@ -47,11 +47,11 @@ credits: `
  <br />
 
   <b>Binary distribution framework</b>:
-  <a href="https://www.electronjs.org/" target="_blank">Electron</a>.
+  <a href="https://www.electronjs.org/" target="_blank">Electron</a>
   <br />
 
   <b>Steam API library</b>:
-  <a href="https://github.com/greenheartgames/greenworks" target="_blank">Greenworks</a>.
+  <a href="https://github.com/greenheartgames/greenworks" target="_blank">Greenworks</a>
   <br />
 
   <b>Testing</b>:
