@@ -137,6 +137,17 @@ var achieve = function(n){
       }
     );
 }
+var unachieve = function(n){
+  greenworks.clearAchievement(n,
+      function() {
+        console.log('Deactivated achievement ' + n);
+        activated.push(n);
+      },
+      function(err) {
+        console.log('Failed unsetting achievement ' + n + ':' + err);
+      }
+    );
+}
 
 var steamApiTick = function(){
   win.webContents
@@ -162,6 +173,7 @@ app.whenReady().then(() => {
   if (greenworks.init()){
     console.log('Steam API initalized.');
     setInterval(steamApiTick, 5000);
+    unachieve("END OF LACK");
   } else {
     console.log('NO STEAM API LOADED.');
   }
@@ -171,3 +183,11 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
+
+app.on('before-quit' , (e) => {
+  if (greenworks.init()){
+    if(activated.includes("END OF SUFFERING") && activated.includes("END OF WORLD")){
+      achieve("END OF LACK");
+    }
+  }
+});
