@@ -19,7 +19,7 @@ const HIT_ELEMENT = {
     var timer2 = timer1 * (1 + (0.2 + Math.random() * 0.5) * (1.05-ability));
 
     var r =  Math.random() < 0.5;
-    HIT_ELEMENT.elem = [1, 1];
+    HIT_ELEMENT.elem = [1, (ability > 0.2)? 1 : 2];
     HIT_ELEMENT.timers = [r?timer1:timer2, r?timer2:timer1];
     HIT_ELEMENT.elem_sprites = [[], []];
     HIT_ELEMENT.elem_sprites[0][1] = new FixedSprite("assets/interface/elements_1.png", 'void');
