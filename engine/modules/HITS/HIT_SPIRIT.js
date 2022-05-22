@@ -31,16 +31,18 @@ const HIT_SPIRIT = {
   },
 
   hide: function(){
-    if(HIT_SPIRIT.sprite){
+    if(HIT_SPIRIT.sprite && !HIT_SPIRIT.lock){
       HIT_SPIRIT.sprite.hide();
     }
   },
 
   show: function(){
     HIT_SPIRIT.sprite.show();
-    setTimeout(HIT_SPIRIT.hide, 50); // 50 is min, 500 is medium
+    
+    var timeout = 40 + 1250 * (TRAINER._raw_price(HIT_SPIRIT.index.trim()) || 75) / 7500; // 75 to 7500
+    timeout *= (1 + MARTYRDOM.effect(MARTYRDOMS.Reflex));
 
-    // ADD WEAPON, MARTYRDOM, KEYBOARD
+    setTimeout(HIT_SPIRIT.hide, Math.floor(timeout)); // 50 is min, 500 is medium
   },
 
   raw_click: function(x, y) {
