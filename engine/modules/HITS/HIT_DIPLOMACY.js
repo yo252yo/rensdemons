@@ -148,6 +148,10 @@ const HIT_DIPLOMACY = {
 
 
   raw_keyboard_move: function(dx, dy){
+    if(HIT_DIPLOMACY.lock){
+      return;
+    }
+
     var c = HIT_DIPLOMACY.origin();
 
     var mult = 9;
