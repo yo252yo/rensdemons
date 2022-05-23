@@ -504,7 +504,7 @@ o------------------------------o---------------------------------------------o
 | BOSS: Fungus                 |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Vulnerable to all weapons over 1000 Coins and abilities over 3000 XP       |
+| Vulnerable to items over 1000 Coins and abilities over 3000 XP             |
 | All party members in 3 hits                                                |
 | Fireball (7), Earthquake (2)                                               |
 | Petrify (7), Confusion (2)                                                 |
@@ -570,7 +570,7 @@ o------------------------------o---------------------------------------------o
 | BOSS: Dragon                 |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Vulnerable to all weapons over 1000 Coins and abilities over 3000 XP       |
+| Vulnerable to items over 1000 Coins and abilities over 3000 XP             |
 | All party members in 3 hits                                                |
 | Thunder (7), Storm (7)                                                     |
 | Shrink (7), Confusion (3)                                                  |
@@ -688,7 +688,7 @@ o------------------------------o---------------------------------------------o
 | BOSS: Rhino                  |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Vulnerable to all weapons over 2000 Coins and abilities over 6000 XP       |
+| Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
 | All party members in 5 hits                                                |
 | Ice Bolt (8), Earthquake (3)                                               |
 | Petrify (7), Confusion (3)                                                 |
@@ -881,6 +881,22 @@ spoil and empathy v(add empathy in the mechanics section)
 -------------------------------------------------------------------------------
 ===============================================================================
 
+o------------------------------o---------------------------------------------o
+| Blob
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Goo, Elixir
+|                                                                            |
+| Vulnerable to items over 2000 Coins and abilities over 6000 XP               |
+| Persuade (7), Intimidate (3)
+| Mace (8), Shield (4), Sword_great (3)
+| Thunder (6), Incinerate (3)
+| Shrink (7), Lull (3)
+| Laced Darts (12), Net (4)
+| Ice Elixir (7), Decay Elixir (5), Chaos Elixir (3)
+|                                                                            |
+o----------------------------------------------------------------------------o
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      5.4. SEA OF THE SIRENS                             [D400]
@@ -898,6 +914,23 @@ spoil and empathy v(add empathy in the mechanics section)
                      5.6. CAVE OF THE SLIMES                            [D600]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+
+o------------------------------o---------------------------------------------o
+| Lizard
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Stone, Meat
+|                                                                            |
+| Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
+| Sneak (9), Persuade (4)
+| Dagger (8), Spear (5), Axe (3)
+| Thunder (7), Asphyxiate (4)
+| Confusion (6), Lull (2)
+| Laced Darts (12), Rope (7)
+| Vine Elixir (9), Decay Elixir (6), Chaos Elixir (5)
+|                                                                            |
+o----------------------------------------------------------------------------o
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1037,6 +1070,184 @@ o----------------------------------------------------------------------------o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+o------------------------------o---------------------------------------------o
+| Boar                         |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Meat, Bone, Fur                                                     |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Sly Swindler, Savage Girl, Suspicious Chef                                 |
+| Ice bolt (5), Asphyxiate                                                   |
+| Petrify                                                                    |
+| Circumvent (3)                                                             |
+| Ice Elixir (2), Vine Elixir                                                |
+| Mace (4), Spear                                                            |
+| Rope (3)                                                                   |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Flower                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Flower                                                              |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Best Friend, Undercover Noble, Retired Protector                           |
+| Storm (2), Asphyxiate                                                      |
+| Shrink (2)                                                                 |
+| Sneak (3)                                                                  |
+| Fire Elixir (2), Decay Elixir                                              |
+| Dagger (3), Spear (2)                                                      |
+| Arrow (2)                                                                  |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Fox                          |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Meat, Bone, Fur                                                     |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Genius Prodigy, Wise Elder                                                 |
+| Thunder (3), Storm (2)                                                     |
+| Shrink (3)                                                                 |
+| Circumvent (3)                                                             |
+| Venom Elixir, Chaos Elixir                                                 |
+| Shield, Wooden Sword (6)                                                   |
+| Net                                                                        |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Mandragora                   |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Precious Child, Wordly Seductress, Brawny Simpleton                        |
+| Fireball (4), Ice bolt (3)                                                 |
+| Shrink (3)                                                                 |
+| Persuade                                                                   |
+| Fire Elixir (2), Chaos Elixir                                              |
+| Wooden Sword (4), Dagger (3)                                               |
+| Arrow (3)                                                                  |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Morel                        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Mushroom                                                            |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Mystical Klutz, Tortured Maverick                                          |
+| Fireball (3), Asphyxiate                                                   |
+| Petrify                                                                    |
+| Sneak (2)                                                                  |
+| Venom Elixir, Decay Elixir                                                 |
+| Dagger (3), Spear                                                          |
+| Arrow (5)                                                                  |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Nymph                        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Mushroom, Berry, Flower                                             |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Circumvent (3), Sneak (2)                                                  |
+| Shield (2), Spear                                                          |
+| Ice bolt (2), Earthquake (2)                                               |
+| Poison (3), Confusion                                                      |
+| Arrow (7), Laced Darts (4)                                                 |
+| Ice Elixir (3), Chaos Elixir                                               |
+| Wordly Seductress, Undercover Noble, Suspicious Chef                       |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Squirrel                     |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Meat, Berry, Fur                                                    |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Wealthy Brat, Retired Protector                                            |
+| Ice bolt (5), Asphyxiate                                                   |
+| Poison (4)                                                                 |
+| Persuade                                                                   |
+| Decay Elixir, Chaos Elixir                                                 |
+| Mace (4), Spear                                                            |
+| Laced Darts (5)                                                            |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Tree                         |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Mushroom, Berry, Stick                                              |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Persuade (2), Intimidate                                                   |
+| Mace (3), Axe                                                              |
+| Fireball (2), Asphyxiate                                                   |
+| Shrink (3), Petrify (2)                                                    |
+| Laced Darts (4), Rope                                                      |
+| Fire Elixir, Decay Elixir                                                  |
+| Savage Girl, Brawny Simpleton, Sly Swindler                                |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Truffle                      |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Mushroom                                                            |
+|                                                                            |
+| Vulnerable to items over 300 Coins and abilities over 900 XP               |
+| Brawny Simpleton, Suspicious Chef, Wealthy Brat                            |
+| Fireball (4), Storm (2)                                                    |
+| Petrify (2)                                                                |
+| Persuade                                                                   |
+| Vine Elixir, Chaos Elixir                                                  |
+| Mace (4), Shield (2)                                                       |
+| Net (3)                                                                    |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Trunk                        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Stick                                                               |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Circumvent (3), Intimidate                                                 |
+| Dagger (4), Iron Sword                                                     |
+| Thunder (2), Storm                                                         |
+| Poison (3), Confusion                                                      |
+| Laced Darts (6), Net                                                       |
+| Vine Elixir (2), Venom Elixir (2)                                          |
+| Tortured Maverick, Retired Protector, Brawny Simpleton                     |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      7.3. MOUNTAINS                                     [F300]
@@ -1054,6 +1265,115 @@ o----------------------------------------------------------------------------o
                      7.5. CAVES                                         [F500]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+
+o------------------------------o---------------------------------------------o
+| Bat                          |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Meat, Fang, Bone                                                    |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Circumvent (3), Persuade (2)                                               |
+| Mace (3), Axe                                                              |
+| Fireball (3), Thunder                                                      |
+| Shrink (2), Petrify (2)                                                    |
+| Laced Darts (6), Net                                                       |
+| Decay Elixir (2), Venom Elixir                                             |
+| Sly Swindler, Tortured Maverick, Suspicious Chef                           |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Bloodsucker                  |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Feather                                                             |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Sneak (2), Intimidate                                                      |
+| Dagger (3), Axe                                                            |
+| Storm, Asphyxiate                                                          |
+| Poison (3), Confusion                                                      |
+| Arrow (5), Rope                                                            |
+| Venom Elixir (2), Decay Elixir                                             |
+| Mystical Klutz, Wordly Seductress, Wise Elder                              |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Crawler                      |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Stone                                                               |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Circumvent (3), Intimidate                                                 |
+| Shield, Spear                                                              |
+| Ice bolt (3), Earthquake                                                   |
+| Poison (3), Petrify                                                        |
+| Net, Laced Darts (6)                                                       |
+| Ice Elixir (3), Chaos Elixir                                               |
+| Precious Child, Savage Girl, Wealthy Brat                                  |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Mole                         |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Meat, Bone                                                          |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Sneak (3), Persuade (2)                                                    |
+| Mace, Shield                                                               |
+| Thunder (3), Storm                                                         |
+| Poison (3), Confusion                                                      |
+| Rope (2), Net                                                              |
+| Ice Elixir (3), Chaos Elixir (2)                                           |
+| Retired Protector, Best Friend, Undercover Noble                           |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Scorpion                     |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Poison, Scale                                                       |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Sneak (2), Intimidate                                                      |
+| Wooden Sword (4), Dagger (5)                                               |
+| Ice bolt (2), Storm (2)                                                    |
+| Shrink (3), Confusion (2)                                                  |
+| Arrow (5), Net                                                             |
+| Fire Elixir (2), Vine Elixir (2)                                           |
+| Best Friend, Wealthy Brat, Genius Prodigy                                  |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Slime                        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Goo                                                                 |
+|                                                                            |
+| Vulnerable to items over 700 Coins and abilities over 2100 XP              |
+| Circumvent (3), Persuade                                                   |
+| Wooden Sword (2), Iron Sword                                               |
+| Asphyxiate, Earthquake                                                     |
+| Shrink (3), Petrify (2)                                                    |
+| Laced Darts (7), Rope (2)                                                  |
+| Decay Elixir, Vine Elixir                                                  |
+| Sly Swindler, Brawny Simpleton, Retired Protector                          |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1074,8 +1394,130 @@ o----------------------------------------------------------------------------o
 ===============================================================================
 
 
+o------------------------------o---------------------------------------------o
+| Angel                        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Feather                                                             |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Intimidate (2)                                                             |
+| Spear (3)                                                                  |
+| Incinerate                                                                 |
+| Confusion                                                                  |
+| Net (4)                                                                    |
+| Vine Elixir (6)                                                            |
+| Undercover Noble                                                           |
+|                                                                            |
+o----------------------------------------------------------------------------o
 
 
+o------------------------------o---------------------------------------------o
+| Cherub                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Feather, Spear                                                      |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Intimidate                                                                 |
+| Iron Sword                                                                 |
+| Earthquake (2)                                                             |
+| Lull (2)                                                                   |
+| Arrow (7)                                                                  |
+| Chaos Elixir (2)                                                           |
+| Wealthy Brat                                                               |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Maneki                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Coin, Artifacts                                                     |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Persuade                                                                   |
+| Dagger                                                                     |
+| Incinerate                                                                 |
+| Petrify                                                                    |
+| Net                                                                        |
+| Venom Elixir                                                               |
+| Precious Child                                                             |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Ponpon                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Fur                                                                 |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Intimidate                                                                 |
+| Shield (2)                                                                 |
+| Storm (3)                                                                  |
+| Lull (2)                                                                   |
+| Rope (3)                                                                   |
+| Decay Elixir (2)                                                           |
+| Precious Child                                                             |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Raijuu                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Chaos Elixirs                                                       |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Sneak (4)                                                                  |
+| Axe                                                                        |
+| Asphyxiate (2)                                                             |
+| Shrink (4)                                                                 |
+| Net (2)                                                                    |
+| Chaos Elixir (3)                                                           |
+| Mystical Klutz                                                             |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Seraph                       |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Feather, Spear                                                      |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Persuade                                                                   |
+| Mace (6)                                                                   |
+| Ice bolt (4)                                                               |
+| Petrify (3)                                                                |
+| Arrow (8)                                                                  |
+| Decay Elixir (4)                                                           |
+| Retired Protector                                                          |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+
+o------------------------------o---------------------------------------------o
+| Valkyrie                     |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| Drops: Feather, Iron Sword                                                 |
+|                                                                            |
+| Vulnerable to items over 1500 Coins and abilities over 4500 XP             |
+| Sneak (5)                                                                  |
+| Great Sword                                                                |
+| Thunder (5)                                                                |
+| Confusion (2)                                                              |
+| Rope (5)                                                                   |
+| Ice Elixir (6)                                                             |
+| Wordly Seductress                                                          |
+|                                                                            |
+o----------------------------------------------------------------------------o
 
 
 ===============================================================================
