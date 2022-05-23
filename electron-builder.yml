@@ -6,12 +6,13 @@ directories:
 win:
   icon: assets/app/icon.png
   target:
+    - target: portable
     - target: nsis
       arch:
         - x64
-    - target: portable
 
 linux:
+  icon: assets/app/icon.png
   target:
     - "AppImage"
     - "deb"
