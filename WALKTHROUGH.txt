@@ -20,7 +20,16 @@ By Ryl3
 2.3 Experience ...................................... [A300]
 2.4 Martyrdom ....................................... [A400]
 2.5 Character archetypes ............................ [A500]
-2.6 Artifacts ....................................... [A600]
+  |_  Way of the Alchemy ............................ [A501]
+  |_  Way of the Weapon ............................. [A502]
+  |_  Way of the Tool ............................... [A503]
+  |_  Way of the Element ............................ [A504]
+  |_  Way of the Spirit ............................. [A505]
+  |_  Way of the Diplomat ........................... [A506]
+  |_  Way of the Artifact ........................... [A507]
+  |_  Your party .................................... [A508]
+
+2.6 Options ......................................... [A600]
 
 3. Walkthrough ...................................... [B000]
 3.1. Hide and seek .................................. [B100]
@@ -152,8 +161,12 @@ In very rare cases, you may be blocked by a battle you cannot win yet. It's time
 ===============================================================================
 
 The game uses a narrative turn-based battle system.
+
 On your turn, you chose what you want to do among all the possible commands (item, ability, party member or special commands). The monsters you will face are vulnerable to some but not all commands, so you have to figure out their weak points. The game helps you keep track by highlighting winning actions and striking losing ones.
-If you do not win the fight, your opponent often retaliates and you have to avoid their assault in a small dodging mini game. The mini game is simple: the enemy attacks in a direction, and you have to avoid it. You have some time before the attack to place a bet and some time after the attack to correct it. The timing and behavior is different between enemies, some stick to the same direction, other are more unpredictable.
+Some commands trigger a special interaction depending on their types. This is all detailed in section [A500]. Some of these special interaction can result in your hit missing if you fail them, but do not fear: there's a pity system in the game, and after two failed attempt the third one is guaranteed to work!
+
+After the attack phase comes a defense phase. If you do not win the fight immediately, your opponent often retaliates and you have to avoid their assault in a small dodging mini game. The mini game is simple: the enemy attacks in a direction, and you have to avoid it. You have some time before the attack to place a bet and some time after the attack to correct it. The timing and behavior is different between enemies, some stick to the same direction, other are more unpredictable.
+
 Sometimes you need several hits of the same command to vanquish your enemy. Also some items are consumables (arrows, elixirs...) so be sure to stock up!
 All monsters vulnerabilities are listed in section [F000]. They may be arbitrary and sometimes a bit weird, meaning-wise, but I think it's part of the fun of the game, and at least they are balanced between all the different builds.
 
@@ -214,11 +227,12 @@ Another important mechanic in this game is Martyrdom. It's pretty unique, and yo
 - Learning rate: learning new abilities cost less XP points.
 
 - Walking speed: you walk and run faster.
-- sight range: the annoying fog of war square around you widens and you can see further away.
+- Sight range: the annoying fog of war square around you widens and you can see further away.
 
 The first few points in any domain provide a significant improvement, so it could be a good idea to spread out your investment, especially since mastery is more and more expensive.
 Walking speed and sight range are mostly quality of life and therefore useless.
 Dodge speed and dodge precision are must haves if you want to finish the game.
+Walking speed and Sight range also help for some attack interactions (see details of [A500]).
 It's worth noting that if you invest enough in barter, you can buy any item cheaper than you can sell it, and get infinite money, but it takes a while to get there.
 
 
@@ -234,19 +248,19 @@ The trainers and shops can be found in the game's cities, but not all cities car
 
 === Item based archetypes
 
-Way of the Alchemy
-------------------
+Way of the Alchemy [A501]
+-------------------------
 Fire Elixir ....................... 5 Coins
 Ice Elixir ........................ 10 Coins
 Vine Elixir ....................... 15 Coins
 Venom Elixir ...................... 25 Coins
 Decay Elixir ...................... 40 Coins
 Chaos Elixir ...................... 50 Coins
-Elixirs are consumed on usage.
-The master is in the town of acceptance.
+Elixirs are consumed on usage. However, after each use, you have the chance to chose between four aim directions, one of which will give you your item back. It's completely random, so I have no tips for you here.
+The master of Alchemy is in the town of acceptance.
 
-Way of the Weapon
------------------
+Way of the Weapon [A502]
+------------------------
 Wooden Sword ...................... 20 Coins
 Dagger ............................ 50 Coins
 Mace .............................. 75 Coins
@@ -255,22 +269,24 @@ Spear ............................. 250 Coins
 Iron Sword ........................ 500 Coins
 Axe ............................... 600 Coins
 Great Sword ....................... 1000 Coins
-You can find masters in the town of acceptance and denial.
+On using a weapon, you'll need to confirm your hit by clicking or taping on a small silhouette of your oponent. If you miss, your hit will not do anything. Note that the more expensive your weapon, the easier it is to aim (the longer you have to target). The martyrdom "enemy predictability" will reduce the zone where the enemy can be, whereas "dodge speed" will also help you out-speeding your opponent. Interestingly, I think the game is a bit more generous with time if you're moving with the keyboard.
+You can find masters of Weapons in the town of acceptance and denial.
 
-Way of the Tool
----------------
+Way of the Tool [A503]
+----------------------
 Arrow ............................. 2 Coins
 Laced Darts ....................... 5 Coins
 Rope .............................. 100 Coins
 Bow ............................... 150 Coins
 Net ............................... 200 Coins
 Arrows and darts are consumed on usage. You cannot use arrows without a bow, but once you have one they are a great cheap projectile that can hurt a lot of monsters (though you need many hits).
-You can find masters in the town of acceptance and denial.
+The interaction on hit is a mix of the two above: consumables can be gained back like Alchemy [A501], and non consumables can miss like Weapon [A502].
+You can find masters of Tool in the town of acceptance and denial.
 
 === XP based archetypes
 
-Way of the Element
-------------------
+Way of the Element [A504]
+-------------------------
 Fireball .......................... 50 XP
 Ice Bolt .......................... 150 XP
 Thunder ........................... 250 XP
@@ -279,34 +295,34 @@ Asphyxiate ........................ 750 XP
 Earthquake ........................ 2000 XP
 Incinerate ........................ 3000 XP
 Summon ............................ 7500 XP
-The master is in the town of acceptance.
+The interaction action is like a slot machine with two symbols: if stops when you tap/click, so you can either trust your luck or your skill. If you use a strong ability, the slots go slower and are more in sync. After a certain threshold it seems that the elements start in sync so you can win straight away if you're quick.
+The master of Element is in the town of acceptance.
 
-Way of the Spirit
------------------
+Way of the Spirit [A505]
+------------------------
 Poison ............................ 75 XP
 Shrink ............................ 200 XP
 Petrify ........................... 500 XP
 Confusion ......................... 2000 XP
 Lull .............................. 5000 XP
 Charm ............................. 7500 XP
-The master is in the town of denial.
+The interaction is pretty simple: a dot flashes in front of you and you have to tap on it. The stronger the ability, the longer the flash. It is also affected by the "sight range" martyrdom (probably for balance).
+The master of Spirit is in the town of denial.
 
-Way of the Diplomat
--------------------
+Way of the Diplomat [A506]
+--------------------------
 Circumvent ........................ 100 XP
 Sneak ............................. 250 XP
 Persuade .......................... 750 XP
 Intimidate ........................ 2000 XP
 Mystify ........................... 7500 XP
-The master is in the town of indulgence.
+The interaction here is quite interesting: you pick a position on a graph describing potential psychology of your oponent, and if your prediction overlaps with their actual psyche, you win. The psyche of the monster is different for each battle but stays the same within a battle so you can use your memory :) A stronger ability and a high "enemy predictability" martyrdom will make your guess into a bigger zone, increasing the chances to catch the enemy.
+The master of Diplomat is in the town of indulgence.
 
+=== Other archetypes
 
-===============================================================================
--------------------------------------------------------------------------------
-                     2.3 ARTIFACTS                                      [A600]
--------------------------------------------------------------------------------
-===============================================================================
-
+Way of the Artifact [A507]
+--------------------------
 This game contains 4 legendary weapons that can kill pretty much anything in one shot. They are in the four optional dungeons. If you struggle against bosses for instance, you might want to do one of these optional dungeons to get the most powerful equipment in the game. They are:
 - The Legendary Staff in the Woods of the Trees [D300]
 - The Holy Sword in the Sea of the Sirens [D400]
@@ -314,6 +330,23 @@ This game contains 4 legendary weapons that can kill pretty much anything in one
 - The Mighty War Hammer in Caves of the Slimes [D600]
 See the sections about those dungeons to know how to find them.
 
+Your party [A508]
+-----------------
+During your adventure, you are joined by your Best Friend, as well as up to 13 side characters (see [A200] for their presentation and [E000] for how to get each one).
+Of course, they will come to your help in battle. They are called just like any weapon or ability, and they likewise have strengths and weaknesses. They have no hit interaction, so they can get special quotes and theme song.
+They're especially nice in boss fights, as any of your allies can take down any boss if given sufficient attempts.
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     2.3 OPTIONS                                        [A600]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Like any game, this one has an option menu, but there are a few elements that I think bear pointing out:
+- You can change the color scheme of the minimalist art style at any time, it's randomly generated.
+- There's a checkbox to display dialogs instantly, in case you want to try and use a translation software.
+- You can chose the order of commands during a battle: do you want to see winning option first (to go fast) or the options you havent tried yet (to explore) first??
+- Finally, this game has an interesting approach to difficulty: you can set it with a "challenge" slider, which will make your dodges and attacks either a breeze or hell! Adjust it to make it just right for your playstyle! I wonder why there isnt more games using this kind of difficulty slider...
 
 ===============================================================================
 -------------------------------------------------------------------------------
