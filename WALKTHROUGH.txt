@@ -1,4 +1,4 @@
-NegotiationsRen's Demons FAQ/Walkthrough
+Ren's Demons FAQ/Walkthrough
 Version 0.0, April 13, 2009
 By Ryl3
 
@@ -31,7 +31,7 @@ By Ryl3
 
 2.6 Options ......................................... [A600]
 
-3. Walkthrough ...................................... [B000]
+3. Base storyline ................................... [B000]
 3.1. Hide and seek .................................. [B100]
 3.2. The Trial ...................................... [B200]
 3.3. First town ..................................... [B300]
@@ -46,15 +46,16 @@ By Ryl3
 3.9. Back to Hell ................................... [B900]
 3.10. Pandemonium ................................... [Ba00]
 
-4. Post-game and endings ............................ [C000]
+4. Meta-game and endings ............................ [C000]
 4.1. End of War ..................................... [C100]
-4.2. Heaven ......................................... [C200]
-4.3. End of God ..................................... [C300]
-4.4. New Game Plus powers ........................... [C400]
-4.5. End of suffering/End of the world .............. [C500]
-4.6. The truth ...................................... [C600]
-4.8. True ends ...................................... [C700]
-4.8. Bonuses ........................................ [C800]
+4.2. Meta-game powers ............................... [C200]
+4.3. Heaven ......................................... [C300]
+4.4. End of God ..................................... [C400]
+4.5. Miracles ....................................... [C500]
+4.6. End of suffering/End of the world .............. [C600]
+4.7. The truth ...................................... [C700]
+4.8. True ends ...................................... [C800]
+4.9. Bonuses ........................................ [C900]
 
 5. Optional content ................................. [D000]
 5.1. Town of Debauch ................................ [D100]
@@ -96,7 +97,7 @@ By Ryl3
 8.3. Objectivism .................................... [H300]
 8.4. The game of thrones ............................ [H400]
 8.5. The element of meta ............................ [H500]
-8.6. The lack ....................................... [H600]
+8.6. The lack and the Goddess ....................... [H600]
 8.7. The system ..................................... [H700]
 
 
@@ -351,7 +352,7 @@ Like any game, this one has an option menu, but there are a few elements that I 
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     3. WALKTHROUGH                                     [B000]
+                     3. BASE STORYLINE                                  [B000]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -796,15 +797,14 @@ The game rewards you with a hopeful description of the peace you brought, the pr
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     4.POST-GAME AND ENDINGS                            [C000]
+                     4. META-GAME AND ENDINGS                           [C000]
 -------------------------------------------------------------------------------
 ===============================================================================
 
-But after the game also tells you that things end up taking a turn: drunk on their own prosperity, humans are turning away from the Goddess. Now where have I seen that before?
+But right after the game also tells you that, things end up taking a turn: drunk on their own prosperity, humans are turning away from the Goddess. Now where have I seen that before?
 The Goddess finally withdraws her protection, and a new wave of demons take over the land. The title appears: it's time for Ren's Demons II. And we're once again looking for a Promised Child.
-
-
-
+The meta-structure of the game is now revealed: you are trapped in some sort of cycle, from which you must escape.
+Fortunately, the game is designed for that, and exploring these loops is made quite easy. You'll get incredible powers on the way, and it will lead you to the 7 possible endings.
 
 
 ===============================================================================
@@ -813,47 +813,159 @@ The Goddess finally withdraws her protection, and a new wave of demons take over
 -------------------------------------------------------------------------------
 ===============================================================================
 
+By now, you already know the first ending: the End of War is what happens when you kill the demon lord. It's the mandatory step to unlock the post-game/new game +/meta-loop or whatever you want to call it. It's also the least interesting, so let's move on :)
+Next time you'll fight the demon lord, you will have the option to spare him (though the game will test your determination ^^).
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     4.2. HEAVEN                                        [C200]
+                     4.2. META-GAME POWERS                              [C200]
+-------------------------------------------------------------------------------
+===============================================================================
+
+After the end of war, things change quite a bit to make it easy for you to explore the meta-game.
+You can use your knowledge of the adventure to avoid the mistakes of the previous playthrough: you can warn the priests of the city of Fear about the impending attack to save them, you can skip the construction of the Ancient Armament which you know doesn't work, you can skip the whole bit about going to the Forgotten Fissure since you know the lesson already. Basically you can just go straight to Hell's Maw if you want, or explore only optional content [D000]. The only thing you cannot seem to avoid is the death of your Best Friend :,(
+Furthermore, after the End of War, you're kinda required to go back to the Pandemonium, but after that you can use save and load to save-scum and rush your way through exploring the different endings.
+
+After each ending, your XP goes back to zero, but every time you meet a monster you regain all the XP from this fight all at once, allowing you to catch up in XP pretty fast. The text events also provide you with more XP. There's nothing for coins, except if you've invested in the barter martyrdom in which case you could get a fortune pretty fast.
+
+Another thing that changes is the fog of war: it becomes translucent and allows you to see things around you. You can see that the decor only exists in your immediate vicinity and disappears when you walk away. You can also peek at the thoughts of all the NPCs who seem less than thrilled about having to play their role for you. It seems that everything is orchestrated for you. Make of that what you will, but I'll include my thoughts in sections [H100] and [H200].
+By the way, this is a good time to tell you that this game being a web browser game, you can access the javascript debug console (ctrl+shift+j). It's even included in the "options" on mobile. It shows you the flip side of the game. Among the debug messages, you see all these NPC complaints.
+
+As you progress in the meta-game, you'll unlock new powers in battle. After the End of War, you'll be able to Spoil the enemies for which you have empathy (see [A300]). Letting them know you're on to their little scheme will cause you to instantly win the fight.
+Later, after the End of God, you also gain more control over the game engine (see [C500]), and you can dictate the outcome of each fight (WIN or LOSS).
+
+Finally, another thing that changes is that from now on, you'll have glitches every now and then featuring the Goddess begging you to stop and changing the colors of your game and the audio speed. They really start picking up if you refuse to kill the demon lord.
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.3. HEAVEN                                        [C300]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Make your way through the storyline skipping what you want (see [C200]), and defeat the Demon Lord again at the top of the Pandemonium. But this time, at the end of the fight, chose the new option to spare him.
+The Demon Lord will reveal that he was just following the Goddess' orders, and She is not very happy about that! He kills himself in fear, leaving you to wonder the true character of the Goddess. It looks like she purposefully unleashed the demons she was pretending to fight. Not so holy after all :)
+Make your way down and out of the Pandemonium, and you'll see a new zone north that just appeared: heaven!
+Head there to, in pure JRPG fashion, take on God!
+
+o----------------------------------------------------------------------------o
+| Heaven                                                                     |
+|----------------------------------------------------------------------------o
+| MONSTERS: Angel, Cherub, Maneki, Ponpon, Raijuu, Seraph, Valkyrie
+o
+
+The enemies here go even one step further than the ones in Pandemonium: their attacks are often psychological, but they seem directed at the player, not the character.
+
+Heaven is a weird place. It's very hard to get any kind of bearing, everything changes all the time and you get catapulted out of it seemingly randomly. the decor changes with every fight and every screen with four possibilities: clouds, tombs, bookshelves or lab experiments.
+The clouds are just decorative.
+The lab experiments will confirm that the demons originate from here, letting you fight all the creatures and bosses in the game.
+The tomb illustrate how many NPCs, companions and so on... were sacrificed on your journey.
+But the screen we're most interested in is the one with bookshelves: they contain the life stories being written for everyone in the world, including Ren! Looking at the book for your life, you'll notice that it describes a path to get through this maze to the Goddess.
+
+You do not have to look for the books, though. If you want, you can follow the path yourself, straight away. People knowledgeable of videogame history might recognize this path:
+Go UP, UP, DOWN, DOWN, LEFT, RIGHT, LEFT, and then finally RIGHT (a mythical sequence known as Konami Code).
+You'll find yourself facing the Goddess Herself. It's time for the final (?) fight!
+Make sure you save before the fight, in case you want to come back and explore alternative endings faster.
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.4. END OF GOD                                    [C400]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Talk to the massive silhouette to begin the fight.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Goddess                |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| This fight is pretty straightforward: there's only one option, "Kill God", |
+| that you must use 7 times to succeed.                                      |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+The ending of the fight is reminiscent of the one with Demon Lord: some things seem unexplained/unsaid. The Goddess too seem almost happy to be defeated... But the solution to this mystery is for later! For now, enjoy the End of God!
+Though the peace it brought did not last long! It seems that after the end of god, humanity will just create a new one :)
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.5. MIRACLES                                      [C500]
+-------------------------------------------------------------------------------
+===============================================================================
+
+The meta-game/new game + already gave you new powers (see [C200]), but it takes a whole new level after the End of God. The question marks in the menu are finally dispelled and you have access to the "Miracles" menu.
+This menu gives you godlike powers over the very fabric of the game world by manipulating directly the game engine. Note that if you're into programming, you've always been able to use these powers from the debug console (ctrl+shift+j). They are attached to the library called "THAUMATURGY". The game even includes a documentation at: https://github.com/yo252yo/rensdemons/blob/master/man.md
+Of course, doing so, you open yourself to the possibility of bugs.
+
+- Space/Time compression: changes the base parameters of reality. Space will mostly affect the display zoom, but playing with time could be useful to make you run or dodge faster.
+- Teleport: clicks become teleports
+- Smite: clicks destroy whatever you click on. This is pretty dangerous
+- Fast travel: go instantly to any city
+- White Space: an empty room you can teleport to, ideal to experiment with the next option
+- Summon: allows you to summon any monster/object in front of you. A must for completionists
+- Recolor reality: the same as the option to change color
+- Glitch: you can trigger a glitch yourself
+- Display event content: very useful if you're looking for a specific type of random encounter
+- Clairvoyance: removes the fog in the viewport
+- Astral Farsight: allows you to use scrolling to see where you're not
+- Absolute observer: makes sure that the decor and NPC further away from you don't blink out of existence (more explanations in [H200])
+- You can also get all items, party members, abilities or martyrdoms in one click
+
+This is obviously very powerful, and you will be able to ask the Goddess how you got these powers.
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.6. END OF SUFFERING/END OF THE WORLD             [C600]
+-------------------------------------------------------------------------------
+===============================================================================
+
+Load or go back to the Goddess to explore the two next endings.
+Now that you know what happens if you kill her, new options are available: Denounce and Negotiate. Both lead to lore dumps in which the Goddess explains that she's simply answering a basic human need, and that's why she always comes back. Depending on how the conversation goes, Ren has two possible ideas:
+- put an end to the suffering in the world (typically after Negociate). This will have the unintended consequence of suppressing the whole world, since everything can be a source of suffering, and a new world will emerge with just as much suffering.
+- destroy and remake a better world (Denounce -> Believers -> Change World -> Fix the world -> Destroy world), which will end in the same way: the new world also cannot be rid of suffering, which gives birth to a new Goddess.
+The situation seems pretty hopeless. But after all trying both of these failed attempts, the next time you meet the Goddess, a new option will appear!
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.7. THE TRUTH                                     [C700]
+-------------------------------------------------------------------------------
+===============================================================================
+
+You can now use "Notice" on the Goddess to try and properly befriend her.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Goddess (befriending)  |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| This fight is also straightforward and leaves you only one option at a     |
+| time. The Goddess is not happy about it, and her attacks will be stronger  |
+| than before (the strongest in the game). But using your miraculous powers, |
+| surely you can get strong enough to prevail.                               |
+| Anyway the order of attacks is imposed:                                    |
+| Notice -> Sympathize -> Empathize -> BestFriend                            |
+| After which the attacks will stop and you can have a proper talk.          |
+|                                                                            |
+o----------------------------------------------------------------------------o
+
+After this brawl, the Goddess finally gives in and tells you what she knows.
+
+... the truth
+
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.8. TRUE ENDS                                     [C800]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     4.3. END OF GOD                                    [C300]
--------------------------------------------------------------------------------
-===============================================================================
-
-===============================================================================
--------------------------------------------------------------------------------
-                     4.4. NEW GAME PLUS POWERS                          [C400]
--------------------------------------------------------------------------------
-===============================================================================
-Note that after you finish the game, in new game plus, your XP goes back to zero, but every time you meet a monster you regain all the XP from this fight all at once,
-
-spoil ans win
-===============================================================================
--------------------------------------------------------------------------------
-                     4.5. END OF SUFFERING/END OF THE WORLD             [C500]
--------------------------------------------------------------------------------
-===============================================================================
-
-===============================================================================
--------------------------------------------------------------------------------
-                     4.6. THE TRUTH                                     [C600]
--------------------------------------------------------------------------------
-===============================================================================
-
-===============================================================================
--------------------------------------------------------------------------------
-                     4.7. TRUE ENDS                                     [C700]
--------------------------------------------------------------------------------
-===============================================================================
-
-===============================================================================
--------------------------------------------------------------------------------
-                     4.8. BONUSES                                       [C800]
+                     4.9. BONUSES                                       [C900]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -863,6 +975,10 @@ spoil ans win
                      5. OPTIONAL CONTENT                                [D000]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+Because of the structure of the game (see [C000]), most of its content is optional for you to discover at your own pace. Some of it is pretty interesting, so don't be scared to try!
+In particular, that's how you get most of your party members as well as the four ultimate artifacts, the most powerful weapons in the game. You're limited to one of them in your first playthrough (before the End of War) but after that you're free as a bird.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -2405,24 +2521,26 @@ o----------------------------------------------------------------------------o
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.4. THE GAME OF THRONES                           [H300]
+                     8.4. THE GAME OF THRONES                           [H400]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.5. THE ELEMENT OF META                           [H400]
+                     8.5. THE ELEMENT OF META                           [H500]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.6. THE LACK                                      [H500]
+                     8.6. THE LACK AND THE GODDESS                      [H600]
 -------------------------------------------------------------------------------
 ===============================================================================
 
+suffering brings goddess
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.7. THE SYSTEM                                    [H600]
+                     8.7. THE SYSTEM                                    [H700]
 -------------------------------------------------------------------------------
 ===============================================================================

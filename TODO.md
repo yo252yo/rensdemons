@@ -2,6 +2,44 @@ storepage: trailer
 
 - write walkthrough
 
+4.6. The truth ...................................... [C600]
+4.8. True ends ...................................... [C700]
+4.8. Bonuses ........................................ [C800]
+
+5. Optional content ................................. [D000]
+5.1. Town of Debauch ................................ [D100]
+5.2. Town of Acceptance ............................. [D200]
+5.3. Woods of the Trees ............................. [D300]
+5.4. Sea of the Sirens .............................. [D400]
+5.5. Mounts of the Hawks ............................ [D500]
+5.6. Caves of the Slimes ............................ [D600]
+5.8. Special encounters ............................. [D700]
+
+6. Party members .................................... [E000]
+6.1. Precious Child ................................. [E100]
+6.2. Mystical Klutz ................................. [E200]
+6.3. Sly Swindler ................................... [E300]
+6.4. Wise Elder ..................................... [E400]
+6.5. Suspicious Chef ................................ [E500]
+6.6. Savage Girl .................................... [E600]
+6.8. Genius Prodigy ................................. [E700]
+6.8. Wordly Seductress .............................. [E800]
+6.9. Undercover Noble ............................... [E900]
+6.10. Brawny Simpleton .............................. [Ea00]
+6.11. Tortured Maverick ............................. [Eb00]
+6.12. Retired Protector ............................. [Ec00]
+6.13. Wealthy Brat .................................. [Ed00]
+
+8. Interpretations and analyses ..................... [H000]
+8.1. The subjectivity spectacle ..................... [H100]
+8.2. Idealism ....................................... [H200]
+8.3. Objectivism .................................... [H300]
+8.4. The game of thrones ............................ [H400]
+8.5. The element of meta ............................ [H500]
+8.6. The lack ....................................... [H600]
+8.7. The system ..................................... [H700]
+
+
 
 - Make and send a presskit: http://dopresskit.com/ https://github.com/pixelnest/presskit.html
 >> Find writers you like and Google their name. Their email is bound to come up somewhere: Twitter, LinkedIn, etc. Or..
@@ -11,5 +49,8 @@ IndieGames./Siliconera./FreeGamesPlanet. Super nice admin./PCGamer./Kotaku./Rock
 - Contact discords
 - Contact streamers
 - SNS, reddit (👍). Pick an appropriate subreddit. Some of my favorites are /r/WebGames, /r/IndieGaming/, and /r/visualnovels.
+https://twitter.com/IGCollective
+
+
 
 - produce a zip
