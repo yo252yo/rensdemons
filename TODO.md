@@ -2,9 +2,6 @@ storepage: trailer
 
 - write walkthrough
 
-5. Optional content ................................. [D000]
-5.1. Town of Debauch ................................ [D100]
-5.2. Town of Acceptance ............................. [D200]
 5.3. Woods of the Trees ............................. [D300]
 5.4. Sea of the Sirens .............................. [D400]
 5.5. Mounts of the Hawks ............................ [D500]

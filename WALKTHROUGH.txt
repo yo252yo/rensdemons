@@ -1036,11 +1036,35 @@ In particular, that's how you get most of your party members as well as the four
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This town is located at the top-right of the map.
+
+o----------------------------------------------------------------------------o
+| Town of Debauch                                                            |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Wordly Seductress, Wealthy Brat
+| SHOPS: Basic Weapons, Advanced Alchemy
+| TRAINERS: Master Diplomat, Advanced Spirit
+| EXCLUSIVE ITEMS: Bottles, BottlesShelf
+o
+
+There is a casino in the bottom left part of the town where you can bet on randomness or agility. The randomness is predictable so you can save scum your way to a little fortune here.
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      5.2. TOWN OF ACCEPTANCE                            [D200]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+This town is in the south of the map, approximately in the middle.
+
+o----------------------------------------------------------------------------o
+| Town of Acceptance                                                         |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Tortured Maverick, Retired Protector
+| SHOPS: Master Weapons, Master Tools, Master Alchemy
+| TRAINERS: Master Element, Basic Spirit
+| EXCLUSIVE ITEMS: Rope
+o
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1048,21 +1072,40 @@ In particular, that's how you get most of your party members as well as the four
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This dungeon is in the south west of the map, a bit below the starting town.
+
+o----------------------------------------------------------------------------o
+| Woods of the Trees                                                         |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Savage Girl
+| MONSTERS: Tree, Trunk, Nymph, Flower, Mandragora
+o
+
+
+............................................
+
+
+
+
+
+
 o------------------------------o---------------------------------------------o
-| Blob
+| BOSS: Blob                   |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Drops: Goo, Elixir
-|                                                                            |
-| Vulnerable to items over 2000 Coins and abilities over 6000 XP               |
-| Persuade (7), Intimidate (3)
-| Mace (8), Shield (4), Sword_great (3)
-| Thunder (6), Incinerate (3)
-| Shrink (7), Lull (3)
-| Laced Darts (12), Net (4)
-| Ice Elixir (7), Decay Elixir (5), Chaos Elixir (3)
+| Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
+| All party members in 5 hits                                                |
+| Persuade (7), Intimidate (3)                                               |
+| Mace (8), Shield (4), Sword_great (3)                                      |
+| Thunder (6), Incinerate (3)                                                |
+| Shrink (7), Lull (3)                                                       |
+| Laced Darts (12), Net (4)                                                  |
+| Ice Elixir (7), Decay Elixir (5), Chaos Elixir (3)                         |
 |                                                                            |
 o----------------------------------------------------------------------------o
+
+Grab the Legendary Staff right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1070,22 +1113,38 @@ o----------------------------------------------------------------------------o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This dungeon is in the north-east, close to the city of indulgence.
+
+o----------------------------------------------------------------------------o
+| Sea of the Sirens                                                          |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Suspicious Chef
+| MONSTERS: Anemone, Crab, Jellyfish, Mermaid, Naiad, Triton
+o
+
+
+............................................
+
+
+
+
 
 o------------------------------o---------------------------------------------o
-| Serpent                      |                                             |
+| BOSS: Serpent                |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Drops: Scale
-|                                                                            |
 | Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
-| Persuade (6), Sneak (8)
-| Spear (7), Shield (5), Great Sword (3)
-| Earthquake (4), Asphyxiate (4)
-| Shrink (7), Confusion (4)
-| Laced Darts (12), Rope (8)
-| Vine Elixir (8), Venom Elixir (6), Decay Elixir (4)
+| All party members in 5 hits                                                |
+| Persuade (6), Sneak (8)                                                    |
+| Spear (7), Shield (5), Great Sword (3)                                     |
+| Earthquake (4), Asphyxiate (4)                                             |
+| Shrink (7), Confusion (4)                                                  |
+| Laced Darts (12), Rope (8)                                                 |
+| Vine Elixir (8), Venom Elixir (6), Decay Elixir (4)                        |
 |                                                                            |
 o----------------------------------------------------------------------------o
+
+Grab the Holy Sword right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
 
 
 ===============================================================================
@@ -1094,24 +1153,38 @@ o----------------------------------------------------------------------------o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This dungeons is in the middle of the map, near the Forgotten Fissure and city of Denial.
+
+o----------------------------------------------------------------------------o
+| Mounts of the Hawks                                                        |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Brawny Simpleton
+| MONSTERS: Pterosaur, Emu, Hawk, Grizzly, Scorpion
+o
+
+
+............................................
+
+
+
 
 
 o------------------------------o---------------------------------------------o
-| Phoenix                      |                                             |
+| BOSS:  Phoenix               |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Drops: Elixir
-|                                                                            |
 | Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
-| Sneak (6), Persuade (4)
-| Dagger (4), Mace (6), Great Sword (3)
-| Thunder (8), Storm (4)
-| Petrify (7), Lull (2)
-| Laced Darts (11), Net (6)
-| Ice Elixir (9), Venom Elixir (6), Chaos Elixir (3)
+| All party members in 5 hits                                                |
+| Sneak (6), Persuade (4)                                                    |
+| Dagger (4), Mace (6), Great Sword (3)                                      |
+| Thunder (8), Storm (4)                                                     |
+| Petrify (7), Lull (2)                                                      |
+| Laced Darts (11), Net (6)                                                  |
+| Ice Elixir (9), Venom Elixir (6), Chaos Elixir (3)                         |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
+Grab the Enchanted Wand right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1119,22 +1192,39 @@ o----------------------------------------------------------------------------o
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This dungeon is in the south east of the map, close to Hell's Maw.
+
+o----------------------------------------------------------------------------o
+| Cave of the Slimes                                                         |
+|----------------------------------------------------------------------------o
+| SIDE CHARACTERS: Genius Prodigy
+| MONSTERS: Bloodsucker, Mole, Crawler, Slime, Bat
+o
+
+
+............................................
+
+
+
+
 
 o------------------------------o---------------------------------------------o
-| Lizard
+| BOSS: Lizard                 |                                             |
 |------------------------------|                                             |
 |                                                                            |
-| Drops: Stone, Meat
-|                                                                            |
 | Vulnerable to items over 2000 Coins and abilities over 6000 XP             |
-| Sneak (9), Persuade (4)
-| Dagger (8), Spear (5), Axe (3)
-| Thunder (7), Asphyxiate (4)
-| Confusion (6), Lull (2)
-| Laced Darts (12), Rope (7)
-| Vine Elixir (9), Decay Elixir (6), Chaos Elixir (5)
+| All party members in 5 hits                                                |
+| Sneak (9), Persuade (4)                                                    |
+| Dagger (8), Spear (5), Axe (3)                                             |
+| Thunder (7), Asphyxiate (4)                                                |
+| Confusion (6), Lull (2)                                                    |
+| Laced Darts (12), Rope (7)                                                 |
+| Vine Elixir (9), Decay Elixir (6), Chaos Elixir (5)                        |
 |                                                                            |
 o----------------------------------------------------------------------------o
+
+Grab the Nighty War Hammer right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1143,6 +1233,7 @@ o----------------------------------------------------------------------------o
 ===============================================================================
 
 
+............................................
 
 
 ===============================================================================
