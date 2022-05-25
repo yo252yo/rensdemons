@@ -54,8 +54,9 @@ By Ryl3
 4.5. Miracles ....................................... [C500]
 4.6. End of suffering/End of the world .............. [C600]
 4.7. The truth ...................................... [C700]
-4.8. True ends ...................................... [C800]
-4.9. Bonuses ........................................ [C900]
+4.8. End of Line .................................... [C800]
+4.9. True ends ...................................... [C900]
+4.10. Bonuses ....................................... [Ca00]
 
 5. Optional content ................................. [D000]
 5.1. Town of Debauch ................................ [D100]
@@ -951,23 +952,72 @@ o------------------------------o---------------------------------------------o
 |                                                                            |
 o----------------------------------------------------------------------------o
 
-After this brawl, the Goddess finally gives in and tells you what she knows.
-
-... the truth
-
+After this brawl, the Goddess finally gives in and tells you what she knows. This has all been a show orchestrated by and for Primordial Deities (i.e. you). The Goddess and Ren are both intermediaries for them to act upon this world. Ensues what is probably the most interesting conversation in the game, but to keep this walkthrough to the point I'll gather my thoughts in section [H000] and keep this focused on mechanics.
+The conversation goes over the identity of Primordial Deities, their motivations and powers. Even if you explore all the branches of the dialog, the only conclusion is that Ren and the Goddess join in prayer. They cannot do anything from their side of the screen. To break the circle of suffering, you, the player, will have to act from your side!
 
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     4.8. TRUE ENDS                                     [C800]
+                     4.8. END OF LINE                                   [C800]
 -------------------------------------------------------------------------------
 ===============================================================================
 
+Now that you know about the Primordial Deities, new options have opened up in heaven, as it is the place where the barrier between the worlds is the thinnest.
+What that means is that you can now look up the Primordial Deities in any of the bookshelves in Heaven.
+Doing so, you can read about Primordial Deities -> Communications or -> Identity.
+Communications is what interests us for this ending. It will give you a riddle based on ASCII encoding of special characters. You need to convert the binary into a route in heaven, with 1 corresponding to UP and 0 to DOWN.
+The path you want to follow is the one corresponding to END_OF_TRANSMISSIO, the odd one out in the list given by the book. That is to say: DOWN DOWN DOWN DOWN DOWN UP DOWN DOWN.
+You'll arrive at what looks like a save point, but on closer inspection appears to be some sort of touch-activated machine.
+Interact with it, touch the glass and look at the screen to open a new battle screen, and chose Retry to pass through the initial error.
+You are now interacting with a bona fide computer.
+
+- The Worlds menu will allow you to switch game engines. You probably don't want to do that, because it will take you away from Ren's Demons. It can launch the demo version of Ren's Demons, but also random games on Steam and itch.io. It's a pretty fun feature. just be careful using it.
+- Navigator will give you an actual web browser featuring by default the manual of the game engine, which you can read at https://github.com/yo252yo/rensdemons/blob/master/man.md It contains important hints for the End of Line ending and the True endings [C900].
+- Console opens a terminal to the actual engine that is running the game (discussed briefly in [C200]). It's pretty much the same as doing CTRL+SHIFT+J in your web browser. You can enter arbitrary code and it will run! You can use this to manipulate the game engine like you need for [C900].
+
+But for now, let's focus on the End of Line ending. To trigger it, you simply need to follow the instructions from the manual and enter the right command in the console. You could do DISK.corrupt(), which will make your game unplayable and thereby unlock some of the True Ends (see [C900]), but it is a complete destruction of the game.
+Instead, I recommend using simply typing "win();" in the console to trigger the ending. It also works in the javascript console of your browser, if you're feeling adventurous.
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
-                     4.9. BONUSES                                       [C900]
+                     4.9. TRUE ENDS                                     [C900]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+We are left with the two endings referred by the game as "true ends". As explained before, they take place on yet another level of meta. The characters are trapped in a cycle of suffering, and they cannot break the cycle from within. It's up to us, real humans (Primordial Deities), to help them. The game proposes you two paths, one inspired by psychoanalysis, one inspired by politics.
+
+- The END OF LACK:
+This ending is simple: you need to accept that playing the game can only make the characters suffer, so the only thing you can do is... stop. ALT+F4. Go on with your life. Stop torturing poor little Ren. "The only winning move is not to play".
+Actually, this ending in the game code is programmed as always TRUE if you're not playing the game, and FALSE when the game is on. You can see this a little bit on the steam version: the achievement triggers every time you leave the game and disappears every time you start it, after you've unlocked the end of the world and end of suffering.
+
+This ending might not be super satisfactory, in which case you might like the other better:
+- The END OF SYSTEM:
+You cannot break the cycle of suffering from within the system, but fortunately we as human have a way to act on the system as a whole and potentially destroy it!
+The game is pretty vague about how this is done. Whatever the case, we're going outside the boundaries of a game as such. It seems to continue in the in the manual of the game engine on github: https://github.com/yo252yo/rensdemons/blob/master/man.md
+With these hints, I've also investigated the source code (this thing is almost like an ARG XD), so here is my best guess:
+Whatever the case, it seems that the game is trying to push you to go beyond your status a simple passive player towards questioning and seizing control of the medium.
+The bare minimum to get this ending is to destroy the game engine. The code checks for the existence of the module "engine/modules/BATTLE/BATTLE", the "engine/classes/Objects/ConsciousObject" class, and the files "battles/heaven/_goddess.js" and "battles/pandemonium/lord.js". You can delete those, but it will completely break the game.
+Ultimately, the game is trying to get you to take control over the code and make the game engine the way you want it.
+You can try to manipulate the engine from the terminal in [C800], but I find it much simpler to work outside: The game being open source, you can access all the code at https://github.com/yo252yo/rensdemons/. In order to properly accomplish this ending, you need to download the source code and tweak it to create a new universe without suffering.
+You could find the commit that introduced conscious entities, monsters, the invasion or whatnot and revert it... You can also be sneaky and change the achievement code to give yourself the achievement.
+But if you want to do things properly, you could try to tweak and redeem the existing game. However, I would encourage you to simply make a new project. In the words of the "GETTING STARTED" section of the manual: "Go and be your own god!". I think I remember a declaration by the game designer saying that this paragraph was the ultimate end of the game.
+To sum up: to win this ending, you need to fork the game into a new one.
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     4.10. BONUSES                                      [Ca00]
+-------------------------------------------------------------------------------
+===============================================================================
+
+In addition to including all the games on Steam and itch.io on the console in [C800], the end game holds a few other surprises for you.
+They start in the bookshelves of heaven.
+First, you can check out other books here: the angels are writing (directing?) the lives of everyone in all the universes. You'll see fictional and real characters biographies from wikipedia, as well as books from the public domain. This game pretty much includes all books and games ever made xDD
+Another secret is the other path of the books about Primordial Deities, the one about Identity. It tells you to "follow the path of the mirror".
+That means following a mirror itinerary from the path you know, the path of the Goddess (the Konami code).
+Head through the following path: DOWN, DOWN, UP, UP, RIGHT, LEFT, RIGHT, LEFT and you'll find a mirror.
+This could be considered the final battle of the game, where you battle the True Mastermind ;). I won't say anything because I don't want to spoil you, but it's quite emotional, and it's definitely BEST EXPERIENCED ON A LAPTOP.
 
 
 ===============================================================================
