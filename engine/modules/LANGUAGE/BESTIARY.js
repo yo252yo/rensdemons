@@ -424,7 +424,7 @@ BESTIARY.dict["trial"]["rodent"] = {
   "introed": "A Repulsive Rodent Rushed to your Rear.",
   "outro": "It never found its way home and erred forever in the labyrinth.",
   "attacks": {
-    "Bite": "The Rodent takes a bite off your leg. It strings. You hope it won't get infected.",
+    "Bite": "The Rodent takes a bite off your leg. It stings. You hope it won't get infected.",
     "Scratch": "The Rodent scratches around, like it's looking for something.",
     "Squeak ": "The Rodent shakes its whiskers. Maybe it's calling for help.",
   },
