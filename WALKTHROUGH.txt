@@ -1012,7 +1012,8 @@ To sum up: to win this ending, you need to fork the game into a new one.
 ===============================================================================
 
 In addition to including all the games on Steam and itch.io on the console in [C800], the end game holds a few other surprises for you.
-They start in the bookshelves of heaven.
+You can access a special developer interface with all kind of debug info that looks like "the other side of the screen" by opening debug.html instead of index.html. That's just a little easter egg.
+The real meat of the bonuses start in the bookshelves of heaven.
 First, you can check out other books here: the angels are writing (directing?) the lives of everyone in all the universes. You'll see fictional and real characters biographies from wikipedia, as well as books from the public domain. This game pretty much includes all books and games ever made xDD
 Another secret is the other path of the books about Primordial Deities, the one about Identity. It tells you to "follow the path of the mirror".
 That means following a mirror itinerary from the path you know, the path of the Goddess (the Konami code).
@@ -1081,13 +1082,11 @@ o----------------------------------------------------------------------------o
 | MONSTERS: Tree, Trunk, Nymph, Flower, Mandragora
 o
 
-
-............................................
-
-
-
-
-
+Follow the path and the narrator's instruction (take a left at the two forks).
+You reach a clearing with a save point. You cannot move on towards the left yet, you need to explore the two path on the top and the one on the bottom to get the weird branches that are at the end of each. With the three branches, you can now make a disguise and go back to the save point and head left.
+Follow the path, take a left, then a right, and you'll find another save point requiring even more branches. The way forward (middle top) requires 6 more weird branches that you find in the other paths (left top, mid, bot and right top, mid, bot).
+At the next save point, you need to explore the paths left and right and press the two knots that are represented by massive random events. Doing so will open a way forward.
+You arrive now at a loop, you can take either side and arrive at the same point.  When you see a save point, it means that you've reached your destination. Go up and then up again to find the boss of the dungeon blocking the way.
 
 o------------------------------o---------------------------------------------o
 | BOSS: Blob                   |                                             |
@@ -1104,7 +1103,7 @@ o------------------------------o---------------------------------------------o
 |                                                                            |
 o----------------------------------------------------------------------------o
 
-Grab the Legendary Staff right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
+Grab the Legendary Staff right behind and use it immediately by moving forward to fast-exit the dungeon.
 
 
 ===============================================================================
@@ -1114,6 +1113,42 @@ Grab the Legendary Staff right behind and use it immediately by interacting with
 ===============================================================================
 
 This dungeon is in the north-east, close to the city of indulgence.
+You arrive on a beach with an abandoned boat. Interact with it and don't listen to your gut to go on a little boat ride that will take a turn for the worst.
+Loot the boat to find breathing potions and drink them immediately to help you survive the shipwreck.
+You are dragged to the bottom of the sea where Suspicious Chef proceeds to your trial.
+
+o------------------------------o---------------------------------------------o
+| BOSS: Suspicious Chef        |                                             |
+|------------------------------|                                             |
+|                                                                            |
+| You are on trial for trespassing on Siren territory.                       |
+| Your first attempt will necessarily be a failure. It doesn't matter what   |
+| you chose, you'll be executer, so pick your favorite.                      |
+| On your next attempt, however, you can appeal to your judge by name.       |
+| Do so.                                                                     |
+| It will unlock 3 new actions: Accuse, Plead and Liberate, which are all    |
+| losing too. Pick one and lose to restart the fight.                        |
+| This time, the loss allowed you to unlock the "Question" command to take   |
+| an interest in the person of your judge. Do it and insist. You'll still    |
+| be condemned, but you'll have learned how much Sirens value silence.       |
+| Therefore, next attempt, decide to "Stay quiet" and "Listen". They will    |
+| take a more lenient approach with you, which will allow you to probe       |
+| their "Customs". Confirm that you want to "Learn" a bit of siren           |
+| language. It will not save you now, but when you next try, you'll          |
+| remember what you learned!                                                 |
+| After the fight resets (again!), pronounce the words you just learned      |
+| (it looks like morse code) to invoke some sort of special treatment by     |
+| the law. Pick "Clause", then "Wait", to respectfully invoke your right     |
+| to mercy. This will allow you to chose your executioner.                   |
+| You might be tempted to try and scam them, but the only way forward is     |
+| to trust your life to your fellow human judge. Chose her as an             |
+| executioner, and "Submit" without resisting, and she'll take pity on you   |
+| and take advantage of the circumstances to help you escape.                |
+                                                                             |
+o----------------------------------------------------------------------------o
+
+You can go back and talk to Suspicious Chef to get her in your party (see instructions in [E500]).
+But here we'll focus on the fact that you can now move freely in the Sea of the Sirens.
 
 o----------------------------------------------------------------------------o
 | Sea of the Sirens                                                          |
@@ -1122,12 +1157,11 @@ o----------------------------------------------------------------------------o
 | MONSTERS: Anemone, Crab, Jellyfish, Mermaid, Naiad, Triton
 o
 
-
-............................................
-
-
-
-
+This is probably the hardest dungeon for me to guide you through. It's entirely procedurally generated. There's three levels of depths, and you pass from one to the other interacting with the water vortexes. But only one vortex will send you further, all the other ones send you back.
+You need to take note of your surroundings to see if you're moving forward or backwards, and remember which vortex you took to move forward. The position of the exit and the size of the floor can help you keep track of what direction you're moving.
+Alternatively, if you know how to use a javascript console (CTRL+SHIFT+J) the position of the good vortex is recorded in the logs every time a level is loaded, as a (x,y) pair, representing horizontal and vertical percentage of the sand floor, from (0,0) on the bottom left to (100, 100) on the top right.
+Good luck with your search. I know it's tedious but hey you're going for one of the strongest weapons in the game here :)
+After escaping the three levels, you reach the fourth and final level, the depths, which look like a long hallway. Progress to the right through the text events to reach the final boss.
 
 o------------------------------o---------------------------------------------o
 | BOSS: Serpent                |                                             |
@@ -1144,7 +1178,7 @@ o------------------------------o---------------------------------------------o
 |                                                                            |
 o----------------------------------------------------------------------------o
 
-Grab the Holy Sword right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
+Grab the Holy Sword right behind and use it immediately by interacting with the wall on the right to fast-exit the dungeon.
 
 
 ===============================================================================
@@ -1271,6 +1305,12 @@ Grab the Nighty War Hammer right behind and use it immediately by interacting wi
                      6.5. SUSPICIOUS CHEF                               [E500]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+You first need to make your way to the Sea of the Sirens and survive the trial. Instructions to do that are in section [D400].
+After the trial ends, interact with the silhouette of the Suspicious Chef to continue the conversation.
+
+....
+
 
 ===============================================================================
 -------------------------------------------------------------------------------

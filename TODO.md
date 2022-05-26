@@ -2,8 +2,6 @@ storepage: trailer
 
 - write walkthrough
 
-5.3. Woods of the Trees ............................. [D300]
-5.4. Sea of the Sirens .............................. [D400]
 5.5. Mounts of the Hawks ............................ [D500]
 5.6. Caves of the Slimes ............................ [D600]
 5.8. Special encounters ............................. [D700]
