@@ -65,7 +65,6 @@ By Ryl3
 5.4. Sea of the Sirens .............................. [D400]
 5.5. Mounts of the Hawks ............................ [D500]
 5.6. Caves of the Slimes ............................ [D600]
-5.8. Special encounters ............................. [D700]
 
 6. Party members .................................... [E000]
 6.1. Precious Child ................................. [E100]
@@ -91,6 +90,7 @@ By Ryl3
 7.6. Hell ........................................... [F600]
 7.7. Pandemonium .................................... [F700]
 7.8. Heaven ......................................... [F800]
+7.9. Special encounters ............................. [F900]
 
 8. Interpretations and analyses ..................... [H000]
 8.1. The subjectivity spectacle ..................... [H100]
@@ -1196,12 +1196,30 @@ o----------------------------------------------------------------------------o
 | MONSTERS: Pterosaur, Emu, Hawk, Grizzly, Scorpion
 o
 
+This dungeon is more or less guided, you shouldn't have trouble progressing, but just in case:
+You'll walk along a spiral path that climbs up a mountain. Every few screens, you'll find a save point, ideal for taking a break :)
 
-............................................
+On the second screen, you'll meet the Brawny Simpleton who is puzzled by a gap in the road. Keep saying "Yes" to him and he'll start following you.
+You can now move the boulder right next to him to bridge the gap and continue your progress.
+Your path will soon be blocked by a bigger gap. It's time to turn back to the previous screen and interact with the random encounters towards the end of that screen: one of them will be a pile of rocks that you can destroy to make a bridge over the big gap.
+But soon after you've started crossing the gap, you're attacked by a predator (when you interact with the encounter blocking the way). Run away to take shelter in the previous screen and come back: the way is now clear.
 
+Arriving at a tiny ledge, the Brawny Simpleton will try to rush forward. You need to stop him to save his life before continuing.
 
+The next screen contains the only real puzzle of this dungeon. Push the boulder immediately on the left to free the side path and go through it. At this point, I recommend interacting with the first boulder to make a path on the far right which will allow you to get a Shiny Gemstone for later.
+Do not interact with the boulder next to the intersection, however: follow the path to the left and only push the furthest boulder.
+You can now go back to the main path and access a second platform on the right. Push the boulder there to fix the way forward.
 
+The next screen has another Shiny Gemstone among its random encounter. You need to find it, even if that means trying them all out (sorry it's randomized).
 
+Continue forward to reach yet another gap without a solution in sight. The solution is behind the waterfall: go up straight away and follow the small path. You'll arrive at a weirdly shaped pillar. You can put in your shiny gemstones. If you missed them, it's now time to go back for them to the two previous screens.
+Talk to the translucent faerie to fix the path, and go back to climbing.
+
+The rest of the way up is pretty smooth. At some point a big even blocks your way: you set a trap for a rabbit. You need to go back to the previous screen and come back for the trap to work.
+
+After that, there's a boulder you need to push out of the way, and Brawny Simpleton finally finishes his quest. However, he decides to stay with you.
+
+Continue to the next screen to find the boss of the dungeon.
 
 o------------------------------o---------------------------------------------o
 | BOSS:  Phoenix               |                                             |
@@ -1218,7 +1236,8 @@ o------------------------------o---------------------------------------------o
 |                                                                            |
 o----------------------------------------------------------------------------o
 
-Grab the Enchanted Wand right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
+Grab the Enchanted Wand right behind and use it immediately by interacting with the other side of the summit to fast-exit to the world map.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1235,12 +1254,44 @@ o----------------------------------------------------------------------------o
 | MONSTERS: Bloodsucker, Mole, Crawler, Slime, Bat
 o
 
+This dungeon is a huge network of tunnels, some of which are blocked by little riddles you have to answer to progress. The clues are disseminated all over the dungeon. There are four clues by riddle. They look like normal random events, except smaller. They spell out a poem and an anagram of the solution.
+It is highly non linear, so there's a lot of ways you could go. You could rush straight for the doors without doing the clues. The door order is fixed so you can still refer to this walkthrough.
+However I will suggest here a path that will get you all the clues.
 
-............................................
+Start by going all the way to the right where you'll find a clue in a dead end. Go back up to the very end of the path to find another clue.
+Retrace your steps to the entrance and this time take a left. Follow the path without going up to find the third clue, then go up to the big room. A path makes a small loop above the room: that's where you'll find the last clue.
+There's a big event on the right of the cavern: it's a door, but it's the second one. Make a mental note, we'll have to come back later.
+For now exit through the bottom right path to get to another cavern.
+The Genius Prodigy is here studying the place, so it's a good time to refer to [E700] if you want him.
+The first door is right above him. The answer to the riddle is "rules".
 
+Go forward to find a clue in the next cavern. Exit by the right and go consistently down to find a clue in an eastwards cul de sac.
+Retrace your steps and go towards the east. Cross a room, ignore a path up, follow the path down then left to get a third tip in another cul de sac room.
+Go back where you come from but this time take the path up that you just ignored. This small tunnel makes a small dent towards the south: that's where the last clue is. You can continue to follow the path and move towards west to come back to the room behind the first door.
+Armed with all your clues, you can now go down and left to come back to the second door that you've already seen. The password is "play".
 
+You're now in the second screen. Same thing, more monsters, smaller tunnels.
+Go all the way right to get the first clue of the third door, then come back up.
+At the save point, go east. Ignore the first path up and take the second: you'll find a clue. Continue through the path and take a right. At the very top-right is another clue. Note that right below you is the fourth door, but we don't care for now.
+For now go all the way west, crossing a small room with a tip and then arriving in another room with the third door. The password is "spectacle".
 
+The first clue of the fourth door is right behind. Take it and go down.
+Start by exploring the path on the west which will give you another clue, then go to the path at the bottom of the room.
+Go down as much as you can, then west as much as you can for a clue.
+Then go east as much as you can and down to find a small room containing the fourth and final clue.
+Retrace your steps: up, left, up, up, and then eastwards as much as possible. The fourth door is right below you a little bit on the east. The password is "bias".
+Move to the third and final screen.
 
+Start by going straight east to find a clue in a little room. Go east, down, east, east (follow the eastmost path) to find another clue in a slightly bigger room.
+Go down and then straight west to reach another room with a third clue, then up. You'll see the door, but you might as well take the fourth clue before: it's right above, and slightly left, in the top left corner of a little tunnel loop.
+Go back down to cross the door. The password is "appearances" (be careful, it's plural).
+
+Go down, west, up for your first tip, then all the way down to find a little room with an escape at the bottom left: that's where you'll find the second clue.
+It's a cul de sac, so go back to the room, exit it through the top left. At the fork, go up. Follow the path through two small rooms: one has a save point, the other one has an exit at the bottom: that's where the third clue is.
+Go back up to the room, then west and all the way down to find the final clue. Now to make your way to the final door.
+Go a bit up to find a westward path to a room. Exit this room by the bottom to reach a smaller cave. Exit it by the bottom too. Finally, go down at the fork to find the final door. The password is "normal".
+
+You have to make your way through a very long and thin tunnel before arriving at a cavern guarded by a boss.
 
 o------------------------------o---------------------------------------------o
 | BOSS: Lizard                 |                                             |
@@ -1257,17 +1308,7 @@ o------------------------------o---------------------------------------------o
 |                                                                            |
 o----------------------------------------------------------------------------o
 
-Grab the Nighty War Hammer right behind and use it immediately by interacting with the other side of the "room" to fast-exit the dungeon.
-
-
-===============================================================================
--------------------------------------------------------------------------------
-                     5.8. SPECIAL ENCOUNTERS                            [D700]
--------------------------------------------------------------------------------
-===============================================================================
-
-
-............................................
+Grab the Nighty War Hammer right behind and use it immediately by interacting with the bottom side of the "room" to fast-exit the dungeon.
 
 
 ===============================================================================
@@ -1341,6 +1382,9 @@ After the trial ends, interact with the silhouette of the Suspicious Chef to con
                      6.10. BRAWNY SIMPLETON                             [Ea00]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+You get him pretty much for free as you complete the dungeon Mounts of the Hawks. See section [D500].
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -2674,6 +2718,30 @@ o------------------------------o---------------------------------------------o
 | Wordly Seductress                                                          |
 |                                                                            |
 o----------------------------------------------------------------------------o
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     7.9. SPECIAL ENCOUNTERS                            [F900]
+-------------------------------------------------------------------------------
+===============================================================================
+
+A few encounters, especially on the world map, can be quite disorienting. Some of them are just for lore but I wanted to detail a few of the others:
+
+- The eldery woman:
+You don't have to avoid or slay her: she gives you all kind of elixirs. Welcome gives you Vine, Receive gives you Ice, Refuse gives you Decay (basically the more humble you are the better the reward).
+
+- The minstrel:
+This one is random. Half of his stories give you a big XP boost (10 XP), the other half makes you tip 10 coins. There's a small chance to get a special story that will give you 100 coins.
+
+- The purse:
+This one also kinda rewards honesty: looking for the owner will give you 20 coins, ignoring it will give you 5. If you pick it up for yourself, you will lose up to 30 coins!
+
+- The weary traveler:
+Not everyone you meet on the road is friendly. This one will hurt you if you're kind. You'll lose if you try to Rob, Greet or Help him. The only way out is to Pray, Kill or Escape.
+
+= The self aware villager:
+This one takes place in cities. Every now and then you'll come across a weirdo with special interactions that have nothing to do with the vibe of the city. Enjoy :)
 
 
 ===============================================================================
