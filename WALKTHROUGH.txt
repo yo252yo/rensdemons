@@ -34,8 +34,8 @@ By Ryl3
 3. Base storyline ................................... [B000]
 3.1. Hide and seek .................................. [B100]
 3.2. The Trial ...................................... [B200]
-3.3. First town ..................................... [B300]
-3.4. Second town .................................... [B400]
+3.3. Town of Expectations ........................... [B300]
+3.4. Town of Fear ................................... [B400]
 3.5. Pieces of armament ............................. [B500]
 3.5.1 Mushroom forest ............................... [B510]
 3.5.2 Squid lake .................................... [B520]
@@ -59,7 +59,7 @@ By Ryl3
 4.10. Bonuses ....................................... [Ca00]
 
 5. Optional content ................................. [D000]
-5.1. Town of Debauch ................................ [D100]
+5.1. Town of Indulgence ............................. [D100]
 5.2. Town of Acceptance ............................. [D200]
 5.3. Woods of the Trees ............................. [D300]
 5.4. Sea of the Sirens .............................. [D400]
@@ -423,16 +423,16 @@ After that, just touch the statue, and prepared to be celebrated as the champion
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     3.3. FIRST TOWN                                    [B300]
+                     3.3. TOWN OF EXPECTATIONS                          [B300]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 Everyone is overjoyed by your success. But this little town is not well equipped to guide you for the tasks that await you. Talk to the priest in the top of the screen to get all the information you want, and it's time to make your way to the capital for a proper training!
 As soon as you exit the building, you are joined by your Best Friend, the first party member.
-You can take a moment if you want to explore the town of Hope.
+You can take a moment if you want to explore the town of Expectations.
 
 o----------------------------------------------------------------------------o
-| Town of Hope                                                               |
+| Town of Expectations                                                       |
 |----------------------------------------------------------------------------o
 | SIDE CHARACTERS: Mystical Klutz, Precious Child
 | SHOPS: Basic Weapons, Basic Tools
@@ -455,11 +455,11 @@ o
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     3.4. SECOND TOWN                                   [B400]
+                     3.4. TOWN OF FEAR                                  [B400]
 -------------------------------------------------------------------------------
 ===============================================================================
 
-The town of Fear is north-east of the town of Hope. It is the capital of the kingdom, as you can tell by the size and the royal castle.
+The town of Fear is north-east of the town of Expectations. It is the capital of the kingdom, as you can tell by the size and the royal castle.
 Go to the church, where you'll find trainers, and a head priest that will explain to you your best chance at taking down the demon lord. You'll have to find three fragments of an ancient weapon and assemble it. The order in which you do does not matter much, so you're free to tackle the challenge any way you want.
 Before you leave, make sure to go to the Alchemy shop west of the town to get a Breathing potion. You'll need it later.
 Feel free to explore this little town, it has a lot to offer.
@@ -602,7 +602,7 @@ o----------------------------------------------------------------------------o
 |----------------------------------------------------------------------------o
 | SIDE DUNGEONS: Woods of the Trees (SW), Sea of the Sirens (NE),
 | Mounts of the Hawks (SE), Caves of the Slimes (SE)
-| OPTIONAL TOWNS: Town of Debauch (NE), Town of Acceptance (S)
+| OPTIONAL TOWNS: Town of Indulgence (NE), Town of Acceptance (S)
 | MONSTERS: Arsonist, Bruiser, Butcher, Djinn, Grizzly, Knight, Mammoth,
 | Vadhaka
 o
@@ -1033,14 +1033,14 @@ In particular, that's how you get most of your party members as well as the four
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     5.1. TOWN OF DEBAUCH                               [D100]
+                     5.1. TOWN OF INDULGENCE                            [D100]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 This town is located at the top-right of the map.
 
 o----------------------------------------------------------------------------o
-| Town of Debauch                                                            |
+| Town of Indulgence                                                         |
 |----------------------------------------------------------------------------o
 | SIDE CHARACTERS: Wordly Seductress, Wealthy Brat
 | SHOPS: Basic Weapons, Advanced Alchemy
@@ -1323,11 +1323,33 @@ Grab the Nighty War Hammer right behind and use it immediately by interacting wi
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: First town (town of Expectations), standing alone at the south east of the town.
+
+Talk to him to start the conversation.
+"Reassure" him, then talk about your "Best Friend".
+"Stay silent" to hear his side, then "Accept".
+You'll have to chose between siding with your Best Friend or with this Precious Child. If you chose the Precious Child, he joins your party.
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.2. MYSTICAL KLUTZ                                [E200]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+LOCATION: First town (town of Expectations), in an occult shop, south west of the town.
+SPECIAL REQUIREMENTS: owning 15 coins.
+
+Start a casual conversation and witness how clumsy this person is.
+Ask for a reading. You'll have to pay 15 coins, but you'll get them back anyway.
+Have her read you your cards, to know what will come up. The conversation will retry.
+This time, have her read you your palm, and enquire about the "Spirits" she sees, and continue to "Ask about spirit".
+With that done, you have enough to really impress her. The next time the conversation start, "Warn" her of what's about to happen.
+Push on your luck by "Bluff"-ing about knowing exactly what book she'll knock out and how.
+It's time to "Use tarot" to show her that you too can play divination.
+Finally, show that you know about her spirit friends by "Asking Josephine".
+This will convince her to join your ranks.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1335,17 +1357,52 @@ Grab the Nighty War Hammer right behind and use it immediately by interacting wi
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: around the first town (town of Expectations), there's one of the trees that will lead you to a dedicated level.
+SPECIAL REQUIREMENTS: owning more than 6 coins.
+
+Before doing that quest, I suggest converting most of your money into items.
+Look around the town of Expectations to find a tree that will lead you to a dedicated level, a "small grove".
+Interact with one of the trees, and accept to take a nap. You're woken up by a thief trying to mug you!
+Screaming wont help: your only option is to give him all of your cash. That's quite a loss...
+Now you're going to need to go back into town and sell some stuff to get some cash back. It's important to have more than 6 coins for the rest of the operation.
+Go back to the grove, but this time instead of napping blissfully, "Pretend to nap to trap thieves". Now the real fight begins.
+Start by "Offering money", even though I know it's hard considering what that guy did to you.
+Be the bigger person, and "Insist", then "Pay".
+"Outwit" him to get him to talk, then "Question" him to learn about his love for animals.
+Go through this whole charade again ("Offer" "Insist" "Pay" "Outwit") and steer the conversation towards "Animals". For now you can only "Bluff" to learn the dog's name!
+But now you can do this again ("Offer" "Insist" "Pay" "Outwit" "Animals") and chose the dog's name to get this guy's attention. Don't try to bullshit him, "Confess" your limitations, and he will join your party and give you your money back.
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.4. WISE ELDER                                    [E400]
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: top-right of the church of the City of Fear.
+
+In this church where you're given instructions for your mission, you can find in the corner of the room an Odd Old Oaf. It's actually a priest in disguise, waiting to train you. He'll subject you to three trials.
+
+The trial of the heart:
+You need to basically be able to approach a scary smelly bum. "Approach" "Approach more", "Continue" and "Sustain" despite the warnings of your Best Friend. Offer him anything, and you pass.
+
+The trial of the body:
+You just have to dodge his attack 9 times to prove your resilience and perseverence.
+
+The trial of the mind:
+It takes the form of a little quizz which appears inspired by buddhist theory. The good answers are:
+"More than I should", "Fleeting thoughts", "Nobody", "An illusion", "As can be"
+
+You can then use the "Graduate" option which will make him join your party.
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.5. SUSPICIOUS CHEF                               [E500]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+LOCATION: Sea of the Sirens, right where you arrive.
 
 You first need to make your way to the Sea of the Sirens and survive the trial. Instructions to do that are in section [D400].
 After the trial ends, interact with the silhouette of the Suspicious Chef to continue the conversation.
@@ -1359,11 +1416,22 @@ After the trial ends, interact with the silhouette of the Suspicious Chef to con
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: random in the Forest of Trees.
+
+....
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.8. GENIUS PRODIGY                                [E700]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+LOCATION: in one of the first rooms of the Caves of the Slimes, see [D600] for access details.
+
+....
+
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1371,17 +1439,28 @@ After the trial ends, interact with the silhouette of the Suspicious Chef to con
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: city of Indulgence, right next to the church, on the right side.
+
+....
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.9. UNDERCOVER NOBLE                              [E900]
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: city of Fear, in the castle, in the top-left most room that is not the throne room.
+
+....
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.10. BRAWNY SIMPLETON                             [Ea00]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+LOCATION: in the Mounts of the Hawks [D500].
 
 You get him pretty much for free as you complete the dungeon Mounts of the Hawks. See section [D500].
 
@@ -1392,11 +1471,19 @@ You get him pretty much for free as you complete the dungeon Mounts of the Hawks
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: in the city of Acceptance, brooding in the bottom left corner.
+
+....
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      6.12. RETIRED PROTECTOR                            [Ec00]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+LOCATION: in the city of Acceptance, in some sort of casern on the bottom right.
+
+....
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1404,10 +1491,9 @@ You get him pretty much for free as you complete the dungeon Mounts of the Hawks
 -------------------------------------------------------------------------------
 ===============================================================================
 
+LOCATION: in the city of Indulgence, on the top right, at the entrance of a significantly bigger house.
 
-
-
-
+....
 
 
 ===============================================================================
