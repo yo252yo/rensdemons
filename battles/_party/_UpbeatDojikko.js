@@ -25,10 +25,11 @@ var idreveal = false;
 var _behind =  PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Ask about spirit",
   unlock: true,
-  outcome: BATTLETREE.ESCAPE,
+  outcome: BATTLETREE.LOSS,
   description: [`$$Ren$: "Is there something behind me?"`,
                 `$$UpbeatDojikko$: "Yes, it's the spirit of my granny, Josephine. She's always near me. I think she likes you."`,
                 `This is a bit too much for you to handle. You run away in a panic.`,
+                `You feel that the conversation did not go the way it should have...`,
   ],
   extra_function: function(){
     STATS.record.flag("UpbeatDojikko_Spirit");
@@ -95,7 +96,7 @@ var _read_cards = function (from){
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: readCards,
     unlock: true,
-    outcome: BATTLETREE.ESCAPE,
+    outcome: BATTLETREE.LOSS,
     description: [`$$Ren$: "Can you read my cards?"`,
                   `The fortune teller nods in silence. She takes your coins, and draws a wooden box from a fold in her velvety dress. She opens it to reveal a deck of cards, so worn out that you can barely make out the symbols on the back.`,
                   `$$UpbeatDojikko$: "Let us see."`,
@@ -122,6 +123,7 @@ var _read_cards = function (from){
                   `$$Ren$: "Are you sure?"`,
                   `$$BestFriend$: "Maybe we could help..."`,
                   `$$UpbeatDojikko$: "No, no. I'm fine. I'm used to it. I just need a little time to tidy everything. Just leave me alone for a bit, will you?"`,
+                  `You feel that the conversation did not go the way it should have...`,
                   ],
     extra_function: function(){
   //    INVENTORY.decrease(ITEM.Coin, 15);

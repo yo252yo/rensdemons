@@ -236,8 +236,8 @@ var unlock_pay = PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
   function: function() {
     INVENTORY.decrease(ITEM.Coin, 2);
-    INVENTORY.increase(ITEM.Coin, 2);
-    // INVENTORY.increase("_streetSmart_mugged_amount", 2);
+    // INVENTORY.increase(ITEM.Coin, 2);
+   INVENTORY.increase("_streetSmart_mugged_amount", 2);
     unlock_outwit("Give 2 coins");
     unlock_goodbye("Give 2 coins");
   },
