@@ -184,7 +184,7 @@ if(hawkpart == 2) {
   }
 
   b.interaction = function(){
-    if (!ABILITIES.has_ability("_followedByDumbMuscles")){
+    if (!ABILITIES.has_ability("_followedByDumbMuscles") && !PARTY.has_member(PARTYMEMBERS.DumbMuscles)){
       TextBannerSequence.make([
         `A perfectly spherical boulder, about the size of the gap in the road. If only someone was strong enough to push it...`,
       ]);
