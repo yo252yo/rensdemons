@@ -138,9 +138,10 @@ var _read_cards = function (from){
 var _poor = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Negociate",
   unlock: true,
-  outcome: BATTLETREE.ESCAPE,
+  outcome: BATTLETREE.LOSS,
   description: [`$$Ren$: "I'm sorry, I don't have that kind of money..."`,
                 `$$UpbeatDojikko$: "Well I'm already giving you a discount. I can't exactly work for free, you know, I need to eat too! Why don't you ask your parents for a few coins and come back?"`,
+                `You feel that the conversation did not go the way it should have...`,
                 ],
 });
 

@@ -5,9 +5,6 @@ storepage: trailer
 
 
 - write walkthrough
-
->>> Remove all escape from party battles
-
 6.5. Suspicious Chef ................................ [E500]
 6.6. Savage Girl .................................... [E600]
 6.8. Genius Prodigy ................................. [E700]
