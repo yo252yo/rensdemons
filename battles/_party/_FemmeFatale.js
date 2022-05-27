@@ -217,12 +217,23 @@ var flag = PLAYER_ACTIONS.function.unlock_replacing_action({
 });
 
 
+var choices = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: `Choices`,
+  unlock: true,
+  description: [
+    `$$Ren$: "This is not what I wanted! Did none of my choices matter?"`,
+    `$$FemmeFatale$: "Of course they did, I wouldn't be standing here talking to you otherwise. But maybe it mattered in a way you were not expecting. Maybe you were so fixated on an illusionary goal that you didn't see the real growth happening in front of you..."`,
+  ],
+  outcome: BATTLETREE.NOTHING,
+});
+
+
 var route = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: `Routes`,
   unlock: true,
   description: [
-    `$$Ren$: "This is not the route I wanted for this relationship to go down! Did none of my choices matter?"`,
-    `$$FemmeFatale$: "Of course they did, I wouldn't be standing here talking to you otherwise. But maybe it mattered in a way you were not expecting. Maybe you were so fixated on an illusionary goal that you didn't see the real growth happening in front of you..."`,
+    `$$Ren$: "This is not the route I wanted for this relationship to go down!"`,
+    `$$FemmeFatale$: "Oh sweetie, you shouldn't think of relationships like that. A relationship is not a 'route', a date is not a 'target', affection is not a 'score'. You'll never form healthy human bonds if you continue to think in these terms..."`,
   ],
   outcome: BATTLETREE.NOTHING,
 });
