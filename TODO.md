@@ -2,7 +2,6 @@ storepage: trailer
 
 
 - Remove all escape from party battles
-- Maybe have fixed and shared? Ticks but with a random prova of switching to other element
 - musique a 0 est pas  a 0
 - download with keyboard
 - game over pour dojikko
