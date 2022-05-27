@@ -1,7 +1,6 @@
 storepage: trailer
 
 
-- can we display hidden battletrees
 
 
 

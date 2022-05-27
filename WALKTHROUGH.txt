@@ -912,6 +912,7 @@ Of course, doing so, you open yourself to the possibility of bugs.
 - Clairvoyance: removes the fog in the viewport
 - Astral Farsight: allows you to use scrolling to see where you're not
 - Absolute observer: makes sure that the decor and NPC further away from you don't blink out of existence (more explanations in [H200])
+- Reveal hidden experiences: allows the display of the arborescence of the battles that are hidden from the Experience menu, such as party members. They can be buggy.
 - You can also get all items, party members, abilities or martyrdoms in one click
 
 This is obviously very powerful, and you will be able to ask the Goddess how you got these powers.

@@ -44,6 +44,10 @@ const THAUMATURGY = {
     FOG.stop();
   },
 
+  reveal_hidden_experience: function(){
+    DEBUG.display_all_trees();
+  },
+
   remove_camera_lock: function() {
     document.body.style.overflow = "scroll";
   },
@@ -130,6 +134,7 @@ const THAUMATURGY = {
                     {"text": "Use clairvoyance", "effect": THAUMATURGY.remove_fog},
                     {"text": "Unlock astral farsight", "effect": THAUMATURGY.remove_camera_lock},
                     {"text": "Create absolute observer", "effect": THAUMATURGY.force_observer_effect},
+                    {"text": "Reveal hidden experiences", "effect": THAUMATURGY.reveal_hidden_experience},
                     TEXTMENU_EMPTYROW,
                     {"text": "Summon all inventory items", "effect": THAUMATURGY.get_all_items},
                     {"text": "Conjure all party members", "effect": THAUMATURGY.get_all_party_members},
