@@ -1,5 +1,19 @@
 storepage: trailer
 
+
+- Remove all escape from party battles
+- Maybe have fixed and shared? Ticks but with a random prova of switching to other element
+- musique a 0 est pas  a 0
+- download with keyboard
+- game over pour dojikko
+- idk why pib got the dojikko unlocked without going through the conversation dead ends, he could bluff - without checking game state and then use tarot
+- pib couldnt use fire elixir mb prefix
+- foresight appears on boss and on random creatures
+
+
+
+
+
 - write walkthrough
 
 
@@ -21,6 +35,7 @@ storepage: trailer
 8.5. The element of meta ............................ [H500]
 8.6. The lack ....................................... [H600]
 8.7. The system ..................................... [H700]
+
 
 
 

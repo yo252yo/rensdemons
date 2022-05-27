@@ -44,10 +44,10 @@ const KEYS_UTIL = {
   },
 
   is_ok: function(key) {
-    return KEYS_UTIL.is_space(key) || KEYS_UTIL.is_enter(key) || KEYS_UTIL.is_e(key) || KEYS_UTIL.is_z(key) ;
+    return KEYS_UTIL.is_space(key) || KEYS_UTIL.is_enter(key) || KEYS_UTIL.is_e(key) || KEYS_UTIL.is_x(key) ;
   },
   is_cancel: function(key) {
-    return KEYS_UTIL.is_esc(key) || KEYS_UTIL.is_backspace(key) || KEYS_UTIL.is_x(key) ;
+    return KEYS_UTIL.is_esc(key) || KEYS_UTIL.is_backspace(key) ;
   },
   is_modifier: function(key) {
     return KEYS_UTIL.is_shift(key) || KEYS_UTIL.is_alt(key) || KEYS_UTIL.is_ctrl(key);
