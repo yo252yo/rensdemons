@@ -22,8 +22,8 @@ const HIT_ELEMENT = {
     var r =  Math.random() < 0.5;
     HIT_ELEMENT.elem = [1, (ability > 0.2)? 1 : 2];
 
-    HIT_ELEMENT.period[0] = Math.round(2 + Math.random() * 80 * modifier);
-    HIT_ELEMENT.period[1] = Math.round(2 + Math.random() * 80 * modifier);
+    HIT_ELEMENT.period[0] = Math.ceil(2 + Math.random() * 80 * modifier);
+    HIT_ELEMENT.period[1] = Math.ceil(2 + Math.random() * 80 * modifier);
     // syncrhonization
     HIT_ELEMENT.period[1] = Math.round(HIT_ELEMENT.period[0] + (1-ability) * (HIT_ELEMENT.period[1] - HIT_ELEMENT.period[0]));
 
