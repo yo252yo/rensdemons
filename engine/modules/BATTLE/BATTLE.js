@@ -73,15 +73,14 @@ const BATTLE = {
           if(!b){ // text has been modified by dictionary
             b = BATTLE._player_actions[options_unknown[i].index];
           }
-          if (b && b.outcome){ // outcome null is most often win in several hits
-            if(b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
-              useless_options_unknown ++;
-              if (useless_options_unknown > 3){
-                options_unknown.splice(i, 1);
-              }
-            } else {
-              winning_options_unknown ++;
+          if (b && b.outcome && b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
+            useless_options_unknown ++;
+            if (useless_options_unknown > 3){
+              options_unknown.splice(i, 1);
             }
+          } else {
+            // outcome null is most often win in several hits
+            winning_options_unknown ++;
           }
         }
       }

@@ -2,12 +2,9 @@ storepage: trailer
 
 
 - Remove all escape from party battles
-- musique a 0 est pas  a 0
-- download with keyboard
-- game over pour dojikko
+
 - idk why pib got the dojikko unlocked without going through the conversation dead ends, he could bluff - without checking game state and then use tarot
 - pib couldnt use fire elixir mb prefix
-- foresight appears on boss and on random creatures
 
 
 
