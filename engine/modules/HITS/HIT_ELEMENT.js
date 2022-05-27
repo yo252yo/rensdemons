@@ -11,7 +11,7 @@ const HIT_ELEMENT = {
     var c = HIT_ELEMENT.center();
 
     var ability = Math.sqrt((TRAINER._raw_price(HIT_ELEMENT.index.trim()) || 50) / 7500); // 50 to 7500
-    var modifier = (ability * 2 * SETTINGS.get("challenge_level"));
+    var modifier = (ability * 2 * (1-SETTINGS.get("challenge_level")));
     modifier /= THAUMATURGY.time_compression;
 
     HIT_ELEMENT.baseclock = 100;
