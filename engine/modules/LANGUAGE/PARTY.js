@@ -72,7 +72,7 @@ LANGUAGE.actions[PARTYMEMBERS.PreciousChild] = {
 LANGUAGE.actions[PARTYMEMBERS.UpbeatDojikko] = {
   usage: function(){
     var text = summon_friend(DICTIONARY.get(PARTYMEMBERS.UpbeatDojikko)) + RANDOM.pick([
-      `$$UpbeatDojikko$ takes out her crystal ball to peek at the world of the departed. As she gets it out of her bag, however, it sleeps between her fingers. She juggles with it for a moment, as the ball resist her attempts at catching, before finally seizing it.`,
+      `$$UpbeatDojikko$ takes out her crystal ball to peek at the world of the departed. As she gets it out of her bag, however, it slips between her fingers. She juggles with it for a moment, as the ball resist her attempts at catching, before finally seizing it.`,
       `$$UpbeatDojikko$ stands in front of the $$&ENEMY$ and takes out her proverbial tarot deck. A draft immediately causes the cards to fly in all directions, and she moans as she puts them back together.`,
       `$$UpbeatDojikko$ closes her eyes and enters a state of trance to communicate with the spirit world. Her body begins to shake, producing a tingling noise from the jewelry she's wearing. She shakes so much that she falls on the ground. She crawls back on all fours.`]);
 
