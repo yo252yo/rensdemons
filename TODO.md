@@ -1,10 +1,8 @@
 storepage: trailer
 
 
-- Remove all escape from party battles
 
 - idk why pib got the dojikko unlocked without going through the conversation dead ends, he could bluff - without checking game state and then use tarot
-- pib couldnt use fire elixir mb prefix
 
 
 
@@ -12,6 +10,7 @@ storepage: trailer
 
 - write walkthrough
 
+>>> Remove all escape from party battles
 
 6.5. Suspicious Chef ................................ [E500]
 6.6. Savage Girl .................................... [E600]

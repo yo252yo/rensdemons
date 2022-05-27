@@ -246,9 +246,9 @@ const PLAYER_ACTIONS = {
       if(ITEMS_NOT_BATTLE.includes(i)) {
         continue;
       } else if(
-        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
-        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
-        !ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Tool).includes(i)
+        !(ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Alchemy).includes(i) ||
+          ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Weapon).includes(i) ||
+          ARCHETYPES.get_items(ITEMS_ARCHETYPES_NAMES.Tool).includes(i))
       ) {
         continue;
       } else if(prices[i] >= threshold){
