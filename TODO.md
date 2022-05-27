@@ -1,10 +1,7 @@
 storepage: trailer
 
 
-
-- idk why pib got the dojikko unlocked without going through the conversation dead ends, he could bluff - without checking game state and then use tarot
-
-
+- can we display hidden battletrees
 
 
 

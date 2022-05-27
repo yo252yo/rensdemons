@@ -216,7 +216,6 @@ PLAYER_ACTIONS.add({
 var unlock_askJosephine = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: askJosephine,
   replacing: useTarot,
-  unlock: STATS.flag("UpbeatDojikko_Spirit"),
   description: [`$$Ren$: "It's not a game, I also have a special link with the spirits. Just ask Josephine, she'll tell you that this journey is the right thing to do."`,
                 `$$UpbeatDojikko$ looks stunned.`,
                 `$$UpbeatDojikko$: "How do you know about Josephine?"`,
@@ -243,7 +242,6 @@ var unlock_askJosephine = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_usetarot = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: useTarot,
   replacing: bluff,
-  unlock: STATS.flag("UpbeatDojikko_Cards"),
   description: [`$$Ren$: "Let me put it this way. Take out your tarot deck, and draw three cards for me. They will be the major arcana of Death, the Wheel of Fortune and the Priestess. This combination should be unusual enough to trigger your curiosity. Don't you want to know more?"`,
                 `$$UpbeatDojikko$: "What are you on about?"`,
                 `The fortune teller execute your instructions, growing more curious than skeptical. While she's doing her usual ritual, $$BestFriend$ whispers to you.`,
@@ -255,14 +253,15 @@ var unlock_usetarot = PLAYER_ACTIONS.function.unlock_replacing_action({
                 `$$UpbeatDojikko$: "What I find more interesting is how you dare play around with the spirit realm!"`,
                 ],
   function: function() {
-    unlock_askJosephine(useTarot);
+    if( STATS.flag("UpbeatDojikko_Spirit")){
+      unlock_askJosephine(useTarot);
+    }
   },
 });
 
 var unlock_bluff = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: bluff,
   replacing: warn,
-  unlock: STATS.flag("UpbeatDojikko_Book"),
   description: [`$$Ren$: "I think you'll see a very special proposition if you look at my palm."`,
                 `The fortune teller is pretty suspicious. You have not convinced her yet.`,
                 `$$UpbeatDojikko$: "Are you trying to get a free reading out of me?"`,
@@ -281,7 +280,9 @@ var unlock_bluff = PLAYER_ACTIONS.function.unlock_replacing_action({
     BATTLE.player_actions.empty(true);
     _ask_reading(bluff);
     _question(bluff);
-    unlock_usetarot(bluff);
+    if(STATS.flag("UpbeatDojikko_Cards")){
+      unlock_usetarot(bluff);
+    }
   },
 });
 
@@ -303,8 +304,9 @@ PLAYER_ACTIONS.add({
     _question(warn);
     _ask_reading(warn);
     idreveal = true;
-
-    unlock_bluff(warn);
+    if(STATS.flag("UpbeatDojikko_Book")){
+      unlock_bluff(warn);
+    }
   },
 });
 
