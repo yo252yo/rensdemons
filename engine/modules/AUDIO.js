@@ -105,7 +105,7 @@ const AUDIO = {
       AUDIO._SAVED[AUDIO._PLAYING] = AUDIO._MUSIC_PLAYER.currentTime;
     }
     AUDIO._PLAYING = track;
-    AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music');
+    AUDIO._MUSIC_PLAYER.volume = SETTINGS.get('volume_music') || 0.01 - 0.01;
     AUDIO._MUSIC_PLAYER.src = 'assets/music/' + track + '.mp3';
     AUDIO._MUSIC_PLAYER.playbackRate = 1;
     AUDIO._MUSIC_PLAYER.currentTime = AUDIO._SAVED[track] || 0;
@@ -130,7 +130,7 @@ const AUDIO = {
 
     var audio = new Audio('assets/sounds/' + track + '.wav');
     AUDIO._CURRENT_EFFECTS[key] = audio;
-    audio.volume = SETTINGS.get('volume_sfx');
+    audio.volume = SETTINGS.get('volume_sfx') || 0.01 - 0.01;
     audio.play();
     setTimeout(function(){ AUDIO._free_sfx_slot(key); }, cooldown);
   },
