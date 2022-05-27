@@ -1,7 +1,7 @@
 appId: yo252yo.rensdemons
 
 directories:
-  output: bin/out
+  output: ../rensdemons_meta/bin/out
 
 win:
   icon: assets/app/icon.png
