@@ -228,7 +228,7 @@ if (!ABILITIES.has_ability("_metDisguisedPrincess")){
     `As soon as you enter the room, a young aristocrat grabs your shoulders and asks.`,
     `$$DisguisedPrincess$: "Are you an adventurer? I've never seen you around here!"`,
   ]);
-} else{
+} else {
   BATTLE.operations.start([
     `$$DisguisedPrincess$ stares at you impatiently.`,
     `$$DisguisedPrincess$: "Are you helping me or not?"`,

@@ -1408,7 +1408,10 @@ LOCATION: Sea of the Sirens, right where you arrive.
 You first need to make your way to the Sea of the Sirens and survive the trial. Instructions to do that are in section [D400].
 After the trial ends, interact with the silhouette of the Suspicious Chef to continue the conversation.
 
-....
+Begin by "Lingering", and then "Call out" your judge to get her to reveal her true intentions.
+But you won't take her at her word! "Call her out" again to see the truth behind her lies.
+Her web of lies is pretty complex. You need to "Believe" in her when she says she's siding with the humans (an odd number of "call out"), after at least 5 "Call out". For simplicity's sake, just "Call out" a total of five times, and then "Believe".
+Ask about "Consequences", "Plan" and "Accept" her scheme. Finally "Convince" your Best Friend to let this new member join your party!
 
 
 ===============================================================================
@@ -1417,9 +1420,19 @@ After the trial ends, interact with the silhouette of the Suspicious Chef to con
 -------------------------------------------------------------------------------
 ===============================================================================
 
-LOCATION: random in the Forest of Trees.
+LOCATION: random in the Woods of Trees.
+SPECIAL REQUIREMENTS: 6 Meat
 
-....
+During your exploration of the Woods of the Trees ([D300]), a special random encounter can appear anywhere. It looks like an empty screen and prompts you to thow meat.
+It's the only event that is not "fixed": it can appear and disappear if you leave the screen, so that's a good way to track it without having to do all the events. It can spawn on any screen, even the ones where you've already been.
+Anyway, throw meat every time you're prompted to do so. It should happen about 3 times.
+Starting now, you'll see a silhouette from the corner of your eye. You now need to "Give meat" to the silhouette, 3 more times. All the other options are lures that can cost you your meat, so be careful.
+Finally, the next time you'll encounter the event, you'll be able to tame this wild creature: it's just a human child, but she's still weary of you despite your generous meat giveaway.
+The first time you approach, she'll run away. But the time after that, you'll be able to "Approach carefully" which will let you access a wide range of potential actions.
+Some actions are neutral, some will spook her away, some will increase her trust for you.
+You need to do at least 4 positive actions, to unlock the way forward.
+The positive actions are: "Meow", "Scratch chin", "Praise", "Play fetch", "Race", "Pluck berry"
+Once your trust level is high enough, the option "Name" will appear. Chose a suitable name, and repeat it a couple of times (I think 3 is enough) for her to understand it's her name. She'll decide to follow you.
 
 
 ===============================================================================
@@ -1430,8 +1443,18 @@ LOCATION: random in the Forest of Trees.
 
 LOCATION: in one of the first rooms of the Caves of the Slimes, see [D600] for access details.
 
-....
-
+This gentleman is pretty absorbed in his research. You'll have to try to get his attention through a variety of methods that will all fail.
+After failing everything else, you get the option to shout a name. "Shout name", and pick any name to get his attention.
+He will wonder how you know his name: tell him you're the "Promised Child", and that it's "Heavy". There's actually a lot of ways to go through this conversation, I'm just highlighting one good example.
+Chose either "Guide, "Knowledge" or "Supernatural" to prompt his curiosity and say "OK" to the tests he wants to run on you.
+Talk to him again to enter phase two of the conversation.
+"Start" and guess that his favorite food is "Apple".
+"Think" and guess that he's thinking about the number "2845".
+Once again, several branches are possible. "Helper" works, then "Admit" your shortcomings.
+Predict that a "Mole" is going to arrive.
+Guess that "Clues" are what lie beyond the door, and "Dodge" his surprise assault.
+"Ask" for his conclusions, and finally ask about his investigations plans for the "Future".
+That will get him to follow you.
 
 
 ===============================================================================
@@ -1442,7 +1465,83 @@ LOCATION: in one of the first rooms of the Caves of the Slimes, see [D600] for a
 
 LOCATION: city of Indulgence, right next to the church, on the right side.
 
-....
+You first need to talk to her outside of the church, where she'll promised to give you the time of your life.
+After you've talked to her twice that way, you'll be able to go into a deeper conversation.
+"Interrupt" her to show her you know what she will say, and "Explain" what's going on.
+Next time you talk to her, you can "Interrupt" her and "Anticipate" what she will say.
+That will create a rapport between you, and the next time you talk to her will trigger her "minigame".
+This sequence is a sort of visual novel/dating sim: it'll present you with situation and different choices. You have to make the right choice to increase your "affection" score. See below for a full guide.
+When you get your score above 99.9%, you can "Accept defeat" and realize you'll never reach 100%.
+From there on, ask about the "Good end", worry about the "Ethics" of it all, "Outrage" at the insinuations about your character, and discuss the "Others".
+Ask if she ever feels "Lonely", and "Accept" her offer to join you.
+
+
+-- Guide to raise affection level:
+
+"You start up a conversation."
+> "Talk about her"
+
+"You want to say something nice."
+> "Compliment her face"
+> "Compliment her body"
+> "Compliment her eyes"
+
+"You want to be more forward."
+> "Stay calm"
+
+"The conversation moves to her work."
+> "I recognize your efforts"
+
+"You introduce yourself."
+> "Tell the honest truth"
+
+"You want to know more about her."
+> "Ask what she's doing here"
+
+"You want to give her a present."
+> "A delicacy"
+
+"You try to guess her favorite literature."
+> "Adventure books"
+
+"She seems at odds with Best Friend."
+> "Try peaceful mediation"
+
+"The recent past comes up..."
+> "Ask about her week"
+
+"What are you thinking about?"
+> "How to make a good impression"
+
+"Anything to ask?"
+> "Ask about the town"
+
+"She seems about to leave."
+> "Ask her to stay"
+
+"A brawl erupts in a nearby street."
+> "Intervene"
+
+"A stranger ogles Worldy Seductress from afar."
+> "Warn her"
+
+"A thief pickpockets a nearby villager."
+> "Chase him and give the money back"
+
+"A way too drunk stranger approaches."
+> "Let him pass"
+
+"Loud music can be heard from a nearby house."
+> "Enjoy it"
+
+"A group of passerbys offers you to share their drinks."
+> "Share with her"
+
+"Another pretty girl walks by."
+> "Ignore her"
+
+"You bump into her."
+> "Apologize"
 
 
 ===============================================================================
@@ -1453,7 +1552,24 @@ LOCATION: city of Indulgence, right next to the church, on the right side.
 
 LOCATION: city of Fear, in the castle, in the top-left most room that is not the throne room.
 
-....
+Go to the top-left most room to find this person in their room.
+Talk to them to start the conversation. Say "Yes" and witness their excitement.
+It does not matter what you do after, but let's say "Tell" to play nice.
+Say "Ok" and "Go". Then chose "Yes" to experience a failed getaway.
+Load the autosave which should be just before the conversation, and start the conversation again.
+But you just realize that in all the excitement, you forgot to discuss a proper plan!
+Start the conversation again, and this time after saying "Ok" ask about the "Plan"! You'll get poisonous herbs to get rid of the guards.
+Don't try to sneak out just yet, instead go use your poison.
+There's two places where you need to use it: on the stews that are brewing on the east side of the castle (go all the way to the right), and on the barrels of mead just left of the castle entrance.
+When you've poisoned both places, go back to the undercover noble to start the getaway.
+
+Start by going left, and chose "Look left".
+Go down and "Examine ground" when you get the chance.
+Take the path to the right, and take shelter in the room on the top.
+Do not go into the next room but instead interact with the event in the middle of the hallway.
+Finish your run towards the exit and "Charge now" without waiting.
+You'll find that the disguised aristocrat will not leave your side.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
