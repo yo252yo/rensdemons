@@ -986,7 +986,9 @@ Instead, I recommend using simply typing "win();" in the console to trigger the 
 -------------------------------------------------------------------------------
 ===============================================================================
 
-We are left with the two endings referred by the game as "true ends". As explained before, they take place on yet another level of meta. The characters are trapped in a cycle of suffering, and they cannot break the cycle from within. It's up to us, real humans (Primordial Deities), to help them. The game proposes you two paths, one inspired by psychoanalysis, one inspired by politics.
+We are left with the two endings referred by the game as "true ends". As explained before, they take place on yet another level of meta. The characters are trapped in a cycle of suffering, and they cannot break the cycle from within. It's up to us, real humans (Primordial Deities), to help them.
+The game proposes you two paths, one about your self inspired by psychoanalysis, and one about the world inspired by politics.
+These endings are a bit unclear and reach outside of the game: you need to transcend the game and not just do what the game tells you, otherwise you're still stuck in its system.
 
 - The END OF LACK:
 This ending is simple: you need to accept that playing the game can only make the characters suffer, so the only thing you can do is... stop. ALT+F4. Go on with your life. Stop torturing poor little Ren. "The only winning move is not to play".
@@ -2977,11 +2979,17 @@ This one takes place in cities. Every now and then you'll come across a weirdo w
 -------------------------------------------------------------------------------
 ===============================================================================
 
+This game is very rich in philosophical perspective, and like all good works of arts you should (and it invites you to) make your own reflection about it, but I've decided nonetheless to leave you with some drafts of the thoughts that this game inspired me, in hope that it can help you think about it :)
+Obviously this part is not a guide or a "correct interpretation" in any sense of the term.
+
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      8.1. THE SUBJECTIVITY SPECTACLE                    [H100]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+desire with femmefatale?? budhism with wiseold,
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -2994,6 +3002,10 @@ This one takes place in cities. Every now and then you'll come across a weirdo w
                      8.3. OBJECTIVISM                                   [H300]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+objectivism with fissure,
+bioshock These endings are a bit unclear and reach outside of the game: you need to transcend the game and not just do what the game tells you, otherwise you're still stuck in its system.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -3020,3 +3032,5 @@ suffering brings goddess
                      8.7. THE SYSTEM                                    [H700]
 -------------------------------------------------------------------------------
 ===============================================================================
+nietzsche ubermensh with the end of system
+baudrillard?
