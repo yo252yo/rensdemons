@@ -1590,7 +1590,12 @@ You get him pretty much for free as you complete the dungeon Mounts of the Hawks
 
 LOCATION: in the city of Acceptance, brooding in the bottom left corner.
 
-....
+I hope you're ready to cringe. Talk to the loner and tell him you're "Not really" ok
+Ask him about "Meaning" and admit that you "Sometimes" feel like giving up, but that you "can't die".
+He will be intrigued by your power, and next time you talk to him he'll ask you to help kill him.
+You have a variety of ways to do so but they all fail.
+After trying at least 6 times, you can "Admit defeat" and have him join your adventures in hope of a lethal accident.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1600,7 +1605,10 @@ LOCATION: in the city of Acceptance, brooding in the bottom left corner.
 
 LOCATION: in the city of Acceptance, in some sort of casern on the bottom right.
 
-....
+This one is pretty easy: go to the casern, and talk to literally anyone: it will turn out to be the right person.
+Chose any path in the conversation (except for escape) and you'll dynamically write his backstory.
+At the end, he will join your party.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -1610,7 +1618,23 @@ LOCATION: in the city of Acceptance, in some sort of casern on the bottom right.
 
 LOCATION: in the city of Indulgence, on the top right, at the entrance of a significantly bigger house.
 
-....
+You find this wealthy looking woman peeking at the manor. "Approach", and say "No, sorry", you don't know who she is.
+Feel free to "Shorten her name", and "Grovel exaggeratedly".
+Tell her that "you're not poor" to spike her interest, and that "she should know" why you're incognito.
+Forgive her through "It's forgotten", and introduce her to the secrets of "Gathering", or looting, or pillaging :)
+"Accept" to have her follow you, and make your way to the manor.
+You'll learn that she used to live there but got kicked out because of her dad's gambling debts. Interact with the random events to loot various pieces of furniture or household objects.
+You won't be able to get up unless you gather an Umbrella, a Candle, a Rare wine, a Vase, a Massive Gold Statue and a Stuffed Bear Head. The "Big Rusty Key" can open a crate so you might want to take it too.
+All the random events are text based so you can just go through them and plunder everything.
+Make your way up the stairs in front of the manor's main entrance.
+On the upper floor, there's a glitchy item that you can take over and over again for infinite (but slow xD) money.
+For now go to the room on the left and interact with the item in the middle of the room. It's a porcelain doll your host cares a lot about, but she accidentally breaks it!
+Go back down and then back up to see that the doll has respawned intact.
+There's more to loot on this floor but I suggest you first go back down and towards the exit. An event will trigger.
+Now you'll have to chose between keeping your loot or getting a new party member. I'm assuming you're here for the latter.
+Just say "Huh... ok" and  "Here you go", and she'll join your party at the cost of what you've gathered so far.
+Alternatively you can tell her off and keep the money.
+After that, you're welcome to go back upstairs and finish looting: there's a Great Sword waiting for you.
 
 
 ===============================================================================
