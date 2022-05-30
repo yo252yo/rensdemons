@@ -74,7 +74,7 @@ By Ryl3
 6.5. Suspicious Chef ................................ [E500]
 6.6. Savage Girl .................................... [E600]
 6.8. Genius Prodigy ................................. [E700]
-6.8. Wordly Seductress .............................. [E800]
+6.8. Worldly Seductress ............................. [E800]
 6.9. Undercover Noble ............................... [E900]
 6.10. Brawny Simpleton .............................. [Ea00]
 6.11. Tortured Maverick ............................. [Eb00]
@@ -93,10 +93,10 @@ By Ryl3
 7.9. Special encounters ............................. [F900]
 
 8. Interpretations and analyses ..................... [H000]
-8.1. The subjectivity spectacle ..................... [H100]
-8.2. The death of the self .......................... [H200]
-8.3. Objectivism .................................... [H300]
-8.4. The game of thrones ............................ [H400]
+8.1. The generative power of idealism ............... [H100]
+8.2. Society of the Spectacle ....................... [H200]
+8.3. A game of thrones .............................. [H300]
+8.4. The death of the self .......................... [H400]
 8.5. The element of meta ............................ [H500]
 8.6. The lack and the Goddess ....................... [H600]
 8.7. The system ..................................... [H700]
@@ -189,7 +189,7 @@ In this game, up to 14 companions can join your party. They can help you in batt
 - Suspicious Chef: Convoluted Alliances, Inevitable Betrayal, Strategic Negotiations
 - Savage Girl: Feral Rage, Feline Assault, Wild Pounce
 - Genius Prodigy: Optimal Computation, Outsmarting Tactics, Unfaillable Plan
-- Wordly Seductress: Deadly Kiss, Bewitching Whisper, Enthralling Temptation
+- Worldly Seductress: Deadly Kiss, Bewitching Whisper, Enthralling Temptation
 - Undercover Noble: Elaborate Trap, Chemical Powder, Strongest Potions
 - Brawny Simpleton: Wrestling Tackle, Torrential Blows, Berserker Charge
 - Tortured Maverick: Relatable Hopelessness, Unbearable Cringe, Infectious Despair
@@ -1045,7 +1045,7 @@ This town is located at the top-right of the map.
 o----------------------------------------------------------------------------o
 | Town of Indulgence                                                         |
 |----------------------------------------------------------------------------o
-| SIDE CHARACTERS: Wordly Seductress, Wealthy Brat
+| SIDE CHARACTERS: Worldly Seductress, Wealthy Brat
 | SHOPS: Basic Weapons, Advanced Alchemy
 | TRAINERS: Master Diplomat, Advanced Spirit
 | EXCLUSIVE ITEMS: Bottles, BottlesShelf
@@ -1461,7 +1461,7 @@ That will get him to follow you.
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     6.8. WORDLY SEDUCTRESS                             [E800]
+                     6.8. WORLDLY SEDUCTRESS                            [E800]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -1668,7 +1668,7 @@ o------------------------------o---------------------------------------------o
 | Poison (3), Confusion                                                      |
 | Laced Darts (5), Rope                                                      |
 | Venom Elixir (3), Chaos Elixir                                             |
-| Wordly Seductress, Wise Elder, Retired Protector                           |
+| Worldly Seductress, Wise Elder, Retired Protector                          |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -1794,7 +1794,7 @@ o------------------------------o---------------------------------------------o
 | Poison (3), Confusion                                                      |
 | Arrow (56), Net                                                            |
 | Fire Elixir (4), Decay Elixir                                              |
-| Suspicious Chef, Precious Child, Wordly Seductress                         |
+| Suspicious Chef, Precious Child, Worldly Seductress                        |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -1824,7 +1824,7 @@ o------------------------------o---------------------------------------------o
 | Drops: Linnens                                                             |
 |                                                                            |
 | Vulnerable to items over 300 Coins and abilities over 900 XP               |
-| Wordly Seductress, Brawny Simpleton                                        |
+| Worldly Seductress, Brawny Simpleton                                       |
 | Ice bolt (3), Storm                                                        |
 | Shrink (2), Petrify (4)                                                    |
 | Circumvent (2), Persuade                                                   |
@@ -1952,7 +1952,7 @@ o------------------------------o---------------------------------------------o
 |------------------------------|                                             |
 |                                                                            |
 | Vulnerable to items over 300 Coins and abilities over 900 XP               |
-| Precious Child, Wordly Seductress, Brawny Simpleton                        |
+| Precious Child, Worldly Seductress, Brawny Simpleton                       |
 | Fireball (4), Ice bolt (3)                                                 |
 | Shrink (3)                                                                 |
 | Persuade                                                                   |
@@ -1994,7 +1994,7 @@ o------------------------------o---------------------------------------------o
 | Poison (3), Confusion                                                      |
 | Arrow (7), Laced Darts (4)                                                 |
 | Ice Elixir (3), Chaos Elixir                                               |
-| Wordly Seductress, Undercover Noble, Suspicious Chef                       |
+| Worldly Seductress, Undercover Noble, Suspicious Chef                      |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -2121,7 +2121,7 @@ o------------------------------o---------------------------------------------o
 | Drops: Feather                                                             |
 |                                                                            |
 | Vulnerable to items over 300 Coins and abilities over 900 XP               |
-| Wise Elder, Wordly Seductress, Suspicious Chef                             |
+| Wise Elder, Worldly Seductress, Suspicious Chef                            |
 | Storm (3), Asphyxiate                                                      |
 | Petrify (3)                                                                |
 | Circumvent, Sneak                                                          |
@@ -2248,7 +2248,7 @@ o------------------------------o---------------------------------------------o
 |------------------------------|                                             |
 |                                                                            |
 | Vulnerable to items over 300 Coins and abilities over 900 XP               |
-| Wordly Seductress, Suspicious Chef, Tortured Maverick                      |
+| Worldly Seductress, Suspicious Chef, Tortured Maverick                     |
 | Fireball (5), Thunder (2), Asphyxiate                                      |
 | Poison (4), Petrify                                                        |
 | Circumvent (4), Persuade                                                   |
@@ -2340,7 +2340,7 @@ o------------------------------o---------------------------------------------o
 | Poison (4), Shrink (2)                                                     |
 | Rope, Net (3)                                                              |
 | Fire Elixir (3), Venom Elixir                                              |
-| Wealthy Brat, Wordly Seductress, Mystical Klutz                            |
+| Wealthy Brat, Worldly Seductress, Mystical Klutz                           |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -2383,7 +2383,7 @@ o------------------------------o---------------------------------------------o
 | Poison (3), Confusion                                                      |
 | Arrow (5), Rope                                                            |
 | Venom Elixir (2), Decay Elixir                                             |
-| Mystical Klutz, Wordly Seductress, Wise Elder                              |
+| Mystical Klutz, Worldly Seductress, Wise Elder                             |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -2588,7 +2588,7 @@ o------------------------------o---------------------------------------------o
 | Confusion (2)                                                              |
 | Net (3)                                                                    |
 | Decay Elixir (4)                                                           |
-| Wordly Seductress                                                          |
+| Worldly Seductress                                                         |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -2944,7 +2944,7 @@ o------------------------------o---------------------------------------------o
 | Confusion (2)                                                              |
 | Rope (5)                                                                   |
 | Ice Elixir (6)                                                             |
-| Wordly Seductress                                                          |
+| Worldly Seductress                                                         |
 |                                                                            |
 o----------------------------------------------------------------------------o
 
@@ -2985,17 +2985,25 @@ Obviously this part is not a guide or a "correct interpretation" in any sense of
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.1. THE SUBJECTIVITY SPECTACLE                    [H100]
+                     8.1. THE GENERATIVE POWER OF IDEALISM              [H100]
 -------------------------------------------------------------------------------
 ===============================================================================
 
 Berkley's idealism is clearly an important inspiration for the game. The gist of it is summarized in the phrase "to be is to be perceived". Essentially, if something is not perceived by anything, it might as well not exist.
-After you defeat the demon lord, it becomes pretty clear that only the things in your viewport exist. Indeed videogames are a perfect example of this philosophical school of thought. Only the content of the screen exists for the player. The decor, but also NPCs, pop in and out of existence at the border of your eye. It’s made even more obvious by the martyrdom Sight Range.
+After you defeat the demon lord, it becomes pretty clear that only the things in your viewport exist. Indeed videogames are a perfect example of this metaphysical school of thought. Only the content of the screen exists for the player. The decor, but also NPCs, pop in and out of existence at the border of your eye. It’s made even more obvious by the martyrdom Sight Range.
 If this needed any more emphasis, one of the powers you gain in the meta-game (see [C200]) is explicitly labeled “create an absolute observer”. The absolute observer, i.e. God, is often advanced as Berkeley’s explanation for the consistency of the world even when not perceived.
 In the logs (javascript or in the End of Line), you can have the confirmation that people pop in and out of existence as you exit the level, often in screams of agony ^^ It is recalled in Heaven, where the tombstones show you how many people died in order to make your journey. Some even lasted less than a fraction of a second, being immediately garbage collected by the game.
 Berkeley’s idealism is famous for being an unfalsifiable solipsism, which is a great thing to keep in mind as we board our thought journey: whatever we base our thinking (or society) on, it may ultimately turn out to be shaky ground. Humility is needed from the very start.
 More than highlighting the connection between the medium of videogames and this famous philosophical model, the game uses this as a basis for its political dimension.
 Such an idealist conception of the world puts us as fundamental in reality: we get to design our own universe, we can build our own system of values. It puts us in the position of Gods, not unlike the Goddess who controls Ren (the player controls both Ren and the Goddess). The Goddess herself goes on and on about the generative godly powers of the Primordial Deities which gave birth to their world. This is best illustrated by the character of the Retired Protector, that you fashion completely using your perception.
+
+
+===============================================================================
+-------------------------------------------------------------------------------
+                     8.2. SOCIETY OF THE SPECTACLE                      [H200]
+-------------------------------------------------------------------------------
+===============================================================================
+
 Perception as the source of existence has the corollary that if everyone agrees about something, it is de facto real. The socio-economic reality is, in a way, a collective illusion we agree to sustain. This is the ontological ground of the System, what grounds it, and what should be overthrown to destroy it (more in section [H700]).
 The social aspect is reinforced by the fact that you see the thoughts of the NPCs, from this edge where the world disappears (and in the logs). They are all “in on it”, putting up a front, an act, a show, for your benefit. You peek into this conspiracy that everybody shares (orchestrated by the Big Other? But I’m going ahead of myself [H600]).
 Indeed, it explicits the fact that all videogames take for granted: they’re all kind of Truman Shows, paranoid delusions come true where a whole world acts in concert to provide you entertainment. Some NPC thoughts are even direct references to the movie. Some are nods to Last Thursdayism, whose full version espouses this system of belief (http://www.last-thursday.org/).
@@ -3015,7 +3023,7 @@ The core of ideology lies in that power of normalization, which is referenced in
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.2. THE GAME OF THRONES                           [H200]
+                     8.3. A GAME OF THRONES                             [H300]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -3024,11 +3032,14 @@ I'm using airquotes here because the notion of reality is at the heart of contro
 A few lines echo this sentiment in the game, from the colors of the board game to the thoughts of the nobles: it is the game, not the war, that dictates the very real politics and economics of the country. In a sense, the game matters more than the war. It is the board game that controls the country, and the "reality" is just the pretense, the excuse that it uses to justify itself. Clearly the author wanted to distance themselves from the Matrix "debacle".
 In doing so, the board game draws our attention towards the fact that videogames as a medium are themselves eminently hyperreal. It sheds light on the importance of these recreational/social activities as the very place where our reality is being written. The dictature of appearances is not an ad hoc superficial veneer, it is the fundamental structure of reality, deeply entangled in our lives. And that’s precisely what the Matrix movie misses by stipulating the existence of a “ground truth” level of reality (albeit that’s debatable for the rest of the Matrix trilogy but thats a whole other discussion ^^).
 That being said, the Matrix is still a brilliant movie, and a precious key to read this game. The System ([H600]) is a kind of Matrix trapping and exploiting both the fictional characters but also the player themselves. The parallel redeems the worst part of the Matrix movies: the prisoners of the Matrix are not here batteries producing electricity, but they produce "narrative", "sense", "meaning" (to fill the Lack [H500]). The cyclical structure of the game is a hamster wheel in which the player runs again and again to generate the game's very legitimacy. Maybe Baudrillard would have liked the movie better if the bodies in the matrix were not providing electricity but computational power to run the Matrix software in their own brains ^^
+The system extracts meaning out of its victim, and thereby sucks out any potential richness in narrative (dare I say, alienates?) to make it more consumable, more exploitable. The Goddess explicits these narrative constraints: there must always be a hero, there must always be a lighthouse… shedding a light on the formulaic form that the system imposes on cultural creation.
+All games end up feeling the same, copies of a copy, simulacra, like the different iterations of Ren Demon’s who share the same skeleton behind different procedurally generated names. The market is saturated by video games repeating the same formula, sometimes literally repeating themselves, as remake or simply rerelease. All originality is stripped in profit of efficiency. Though this trend is obviously not limited to games.
+One might even say it’s a necessary feature of the system, that uniformization as simulacra might be an unavoidable byproduct of the pressure of Other's judgement inside a system of implicit social consensus.
 
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.3. THE DEATH OF THE SELF                         [H300]
+                     8.4. THE DEATH OF THE SELF                         [H400]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -3046,7 +3057,7 @@ The fate of the world shows us the logical conclusion of such ideals, in the sam
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.4. THE ELEMENT OF META                           [H400]
+                     8.5. THE ELEMENT OF META                           [H500]
 -------------------------------------------------------------------------------
 ===============================================================================
 
@@ -3069,24 +3080,35 @@ Another clear reminder is the discourse of the Goddess. By including the player 
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.5. THE LACK AND THE GODDESS                      [H500]
+                     8.6. THE LACK AND THE GODDESS                      [H600]
 -------------------------------------------------------------------------------
 ===============================================================================
 
-desire with femmefatale??
-suffering brings goddess
-Human lack brings the goddess both for NPC and for player
+It is now time for us to turn towards what the game presents as “endings”, as “resolutions”, since it does contain “true ends”.
+The first one, the End of Lack, is rooted in psychoanalysis and is proposing a resolution at the level of the individual. The title is a reference to Jacques Lacan’s advice to “accept your lack”.
+The best way to see this is in the encounter with the Worldly Seductress (who directly quotes Lacan btw). Desire is like a 100% affection score in her event: you’ll always chase it, and you can infinitely get closer, but you’ll never reach it.
+So too is the end of the loop, the resolution of the game always slightly out of reach. The only way to win out of this cycle is “not to play” in the first place, to simply step away. Hence the End of Lack.
+It is programmed in the code as true if and only if the game is shut down, i.e. when you’re not playing. That’s how the game assesses that you’re walking away and accepting its own lack of resolution. Of course, here, once again, the game does give you some form of resolution through other endings, but no portrayal is perfect, sadly.
+This lack is important in psychoanalysis because it is the very constitutive element of the self. You will always be lacking something.
+In her speech, the Goddess explains that this lack is the reason why humans trapped in the circle always “create” a new Goddess. The suffering from the lack always creates a god. Even when “God is dead”, “appearances” can take its divine place ([H100]). Humans in and outside the game create their own masters to fill their lack.
+In lacanian psychoanalysis, it is called the Big Other, which can be identified with the Goddess, but even more so with the Player. It is the entity that is the guarantor of the ontology of the world, which I said in [H100] was essentially the social consensus. We’re playing the Big Other both in the game, and in real life. We are our own judges, so we should be clement ones.
+The Goddess also wonders about the origin of the lack and concludes that any self aware being will necessarily have to deal with it as it will construct a self in opposition to a non-self. What this means is that this question is a very fundamental one, and that the acceptance of lack is a pretty universal therapeutic recommendation and a prerequisite to form any healthy society.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.6. THE SYSTEM                                    [H600]
+                     8.7. THE SYSTEM                                    [H700]
 -------------------------------------------------------------------------------
 ===============================================================================
-nietzsche ubermensh with the end of system
-Baudrillard?
-Debord and Baudrillard’s work can help us navigate the society of the spectacle [H100], but also present it as unavoidable. It is an invariant, but can/should such invariants be changed?
 
-How do you innovate outside of a broken system, how can u act on the system from the inside
-A pov is u can only pray to god, to a transcendental intervention
-Another pov is that you need to undermine the very foundations that ground the system.
-It is reminiscing of the pro terrorist ending of baudrilalrd book
+The second true end is titled End of the System and has a decidedly more political/societal vibe.
+Baudrillard and Fisher both lament on how impossible it is to transcend the society of the spectacle, how any revolution gets co-opted by the system [H200]. In this game, so too do any of the “endings” simply propel forward a new generation of the cycle.
+The meta-cycle of suffering presented in Ren’s Demons is analogous in many ways to the Capitalist-realism system some feel stuck in. They’re both inescapable ideological systems that get stronger with every attack against them they co-opt. We could see in the End of the System a recommendation for real world problems.
+But it all hinges on the very crucial question: how can you act on a system from the inside, especially when this system thrives on your failed attempts at battling against it like most hunters’ traps?
+The powerlessness of Ren and the Goddess in their conversation illustrates the natural conclusion that your only hope out of a truly efficient ensnaring maximization system would be some sort of transcendental intervention, a divine act of God or of some Programmer of the Simulation. This is of course hopeless, because these entities are very unlikely and most importantly allowed the toxic system get you so far already.
+But the game seems to advocate for an alternative. In the End of the System, it tries to push you to undermine the very foundations of the system. It calls upon you to negate the game altogether ([H400]), by changing it in its most fundamental level (code, files…).
+Now we have a problem, which is that we can’t hack the source code of reality, and hoping to find a console to access it like the game is a bit delusional. However, we have seen in the previous sections that things, including institutions, concepts, and norms are usually not deconstructed to their fundamental level ([H100]).
+What the game tells us in essence is to look at the root, always more towards the foundation, and it could well be that this foundation is intrinsically social (perceptive)  ([H100]).
+If we are to have any hope to escape a toxic enclosing loop, we need new radical ideas. We need to think not just outside the box, but outside the room altogether. Look as far away from us as the source code is from the narrative in a game.
+What the game says, in essence, is to deny the reality that you have been given, and to make your own universe ([H100]). Essentially, become an Ubermensh. And to do that, the game tries to stimulate your creativity. It tries to make you into a creator, a programmer, a true agentic subject reaching out of your reach instead of a passive receiver of the established narrative, of the game’s story. Maybe the only way outside of a toxic system is to truly make your own.
+Though we must punctuate this hopeful conclusion by reminding ourselves that the game is also pretty clear on the inevitability of the repetition of negative trends (the unavoidable lack will give rise to a society of the spectacle co-opting all opposition). It does look pretty grim. But if it has any chance to happen at all, it will be extremely hard, and will require massively innovative (creative?) thinking.

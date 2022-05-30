@@ -1,9 +1,7 @@
 storepage: trailer
 
+-proofread and double check all the reference codes in the text because i have shuffled things around :x
 
-- write walkthrough part 8
-proofread and double check all the reference codes in the text because i have shuffled things around :x
-update the table of contents with the actual final structure
 
 
 
