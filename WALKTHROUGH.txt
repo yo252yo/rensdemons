@@ -2995,7 +2995,7 @@ If this needed any more emphasis, one of the powers you gain in the meta-game (s
 In the logs (javascript or in the End of Line), you can have the confirmation that people pop in and out of existence as you exit the level, often in screams of agony ^^ It is recalled in Heaven, where the tombstones show you how many people died in order to make your journey. Some even lasted less than a fraction of a second, being immediately garbage collected by the game.
 Berkeley’s idealism is famous for being an unfalsifiable solipsism, which is a great thing to keep in mind as we board our thought journey: whatever we base our thinking (or society) on, it may ultimately turn out to be shaky ground. Humility is needed from the very start.
 More than highlighting the connection between the medium of videogames and this famous philosophical model, the game uses this as a basis for its political dimension.
-Such an idealist conception of the world puts us as fundamental in reality: we get to design our own universe, we can build our own system of values. This is illustrated by the character of the Retired Protector, that you fashion completely using your perception.
+Such an idealist conception of the world puts us as fundamental in reality: we get to design our own universe, we can build our own system of values. It puts us in the position of Gods, not unlike the Goddess who controls Ren (the player controls both Ren and the Goddess). The Goddess herself goes on and on about the generative godly powers of the Primordial Deities which gave birth to their world. This is best illustrated by the character of the Retired Protector, that you fashion completely using your perception.
 Perception as the source of existence has the corollary that if everyone agrees about something, it is de facto real. The socio-economic reality is, in a way, a collective illusion we agree to sustain. This is the ontological ground of the System, what grounds it, and what should be overthrown to destroy it (more in section [H700]).
 The social aspect is reinforced by the fact that you see the thoughts of the NPCs, from this edge where the world disappears (and in the logs). They are all “in on it”, putting up a front, an act, a show, for your benefit. You peek into this conspiracy that everybody shares (orchestrated by the Big Other? But I’m going ahead of myself [H600]).
 Indeed, it explicits the fact that all videogames take for granted: they’re all kind of Truman Shows, paranoid delusions come true where a whole world acts in concert to provide you entertainment. Some NPC thoughts are even direct references to the movie. Some are nods to Last Thursdayism, whose full version espouses this system of belief (http://www.last-thursday.org/).
@@ -3050,31 +3050,21 @@ The fate of the world shows us the logical conclusion of such ideals, in the sam
 -------------------------------------------------------------------------------
 ===============================================================================
 
-Bioshock is a great example to bring up, because it puts its finger precisely on the crux of the relation between player and character. Bioshock 1's big twist reveal is especially powerful because you learn that the character you're playing has been conditioned to follow orders in the same way as the game itself has conditioned the player to follow (and keep following!) the game.
-But where Bioshock is content with showing how the player is no different from a character, I think Ren's Demons is ultimately a message of hope,
-
-
-
-
-Transcending dimensionw, manipulating the game engine within the game engine, godels point
-Mirror, console,
-True ends
-Equating reality and fiction on the same ontological ground in the heaven library and in the web browser in the end of line
-
-when the Goddess insistence that Primordial deities may share the NPCs’ flaws [H600]
-
-Step 1: player is the same as character, fiction is like reality, all levels have the same worth
-(same as bioshock referenced in the temple of fissure)
-Step 2: nonetheless theres a way to reach out of your level
-
-
-bioshock These endings are a bit unclear and reach outside of the game:
-
-you need to transcend the game and not just do what the game tells you, otherwise you're still stuck in its system.
-
-
-the primordials control the goddess like the goddess control ren
-
+Bioshock is a great example to bring up, because it puts its finger precisely on the crux of the relation between player and character. Bioshock 1's big twist reveal is especially powerful because you learn that the character you're playing has been conditioned to follow orders in the same way as the game itself has conditioned the player to follow (and keep following!) the game. In this very way, Bioshock tells us that if “a man chose and a slave obeys”, there is no man that is not also a slave.
+Like in Bioshock, the relationship between the character and the player is at the heart of the game (and the explicit topic of the Mirror scene which might be considered the culmination of the game). It might be some sort of representation of the relation between a self and the world ([H600]), but it is first and foremost an exploration on the medium of videogame that tackles the question of the relationship between the player and his character.
+Both the Promised Child and the Goddess are avatars of the player in the game world. The hero embodies the direct commands of motion, but the Goddess embodies the implicit expectations, the unconscious of the player. The Goddess appears as an extra interface through which the player controls Ren. I guess that means that we may see the Goddess as the game itself embodied.
+This game shows the player as a God, but it also shows Gods as servants. Like Bioshock, the mise en abyme of the relation between player and character portrayed in the game is grim: it portrays the player, however divine, as conditioned completely by the game.
+This pretty commonplace “you don’t have free will” creed can incidentally be seen in most scripted interactions, most notably in the Forest of the Trees and its Stanley Parable nods.
+But where Bioshock is content with showing how the player is no different from a character, I think Ren's Demons is ultimately a message of hope. In RD, man is not just the conditioned, it is also the conditioner. Capitalizing on that, the “true” endings of the game all call for the player to transcend the game and not simply do what the game tells you.
+Both the End of Lack and End of System demand that you negate the game, by closing it or by recreating it. It acknowledges fully the difficulty of this act ([H600]) but ultimately posits it as possible.
+Ultimately, though, we have to ask if this attempt really succeeds, because by the simple act of mentioning them, the game makes these supposedly transcendental endings part of the game, which means that Mark Fisher might be right in deploring that any attempt at transcending the system will end up co-opted by it. Though I do give credits to the game for the length it goes through to not make those endings appear inside the game (notably the github man page ^^).
+Whether you think it succeeds in its appeal to transcendence, it does propose concrete directions for which this would go ([H600]). And they center around meta-reflection.
+Interestingly, the first point of action that the game proposes for the character to act upon its own reality is a programming terminal, a portal to the game engine within the game engine, a sort of self-referential Godel point. The thaumaturgy meta-powers give you a taste of what it could be like to control the very fabric of your universe. Though maybe the only way to do this so literally is uploaded in a VR like Caprica. It does seem pretty much like magic.
+Funnily enough, this point is echoed in the description of the Mirror, which can be seen as a second point of action. The Mirror is a “portal between dimensions”, where fiction and reality meet (especially if you have a camera). But it’s also the path towards identity in psychoanalysis [H600] (and part of the conversation also says that the power to transcend realities is directly the player’s).
+By making the player themselves part of the game, the game negates the fundamental separation between game and player, between fiction and reality.
+This paints a picture of a world where characters are not too different from the players, where fiction and reality stand on the same ontological ground, none more important than the other. And if the player and the character are on the same level, the whole scale of meta is invalidated and collapses.
+The sentiment of merging all the levels of meta is most clear in the library in heaven where real people are mixed with fictional characters, or in the web browser at the End of Line where real websites are mixed with fictional ones.
+Another clear reminder is the discourse of the Goddess. By including the player in the long chain of big villains (the Primordial Deities control the Goddess who controls the Demons…), the Goddess is including us directly as characters. She also more explicitly hints that Primordial Deities may be no better than the game human NPCs and share their fundamental psychological flaws.
 
 
 ===============================================================================
