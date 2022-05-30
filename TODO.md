@@ -2,6 +2,7 @@ storepage: trailer
 
 -proofread and double check all the reference codes in the text because i have shuffled things around :x
 
+- push all OSs, itch, etc...
 
 
 
