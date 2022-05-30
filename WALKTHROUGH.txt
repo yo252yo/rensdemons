@@ -94,7 +94,7 @@ By Ryl3
 
 8. Interpretations and analyses ..................... [H000]
 8.1. The subjectivity spectacle ..................... [H100]
-8.2. Idealism ....................................... [H200]
+8.2. The death of the self .......................... [H200]
 8.3. Objectivism .................................... [H300]
 8.4. The game of thrones ............................ [H400]
 8.5. The element of meta ............................ [H500]
@@ -830,7 +830,7 @@ Furthermore, after the End of War, you're kinda required to go back to the Pande
 
 After each ending, your XP goes back to zero, but every time you meet a monster you regain all the XP from this fight all at once, allowing you to catch up in XP pretty fast. The text events also provide you with more XP. There's nothing for coins, except if you've invested in the barter martyrdom in which case you could get a fortune pretty fast.
 
-Another thing that changes is the fog of war: it becomes translucent and allows you to see things around you. You can see that the decor only exists in your immediate vicinity and disappears when you walk away. You can also peek at the thoughts of all the NPCs who seem less than thrilled about having to play their role for you. It seems that everything is orchestrated for you. Make of that what you will, but I'll include my thoughts in sections [H100] and [H200].
+Another thing that changes is the fog of war: it becomes translucent and allows you to see things around you. You can see that the decor only exists in your immediate vicinity and disappears when you walk away. You can also peek at the thoughts of all the NPCs who seem less than thrilled about having to play their role for you. It seems that everything is orchestrated for you. Make of that what you will, but I'll include my thoughts in sections [H100].
 By the way, this is a good time to tell you that this game being a web browser game, you can access the javascript debug console (ctrl+shift+j). It's even included in the "options" on mobile. It shows you the flip side of the game. Among the debug messages, you see all these NPC complaints.
 
 As you progress in the meta-game, you'll unlock new powers in battle. After the End of War, you'll be able to Spoil the enemies for which you have empathy (see [A300]). Letting them know you're on to their little scheme will cause you to instantly win the fight.
@@ -2989,22 +2989,42 @@ Obviously this part is not a guide or a "correct interpretation" in any sense of
 -------------------------------------------------------------------------------
 ===============================================================================
 
-desire with femmefatale?? budhism with wiseold,
+Berkley's idealism is clearly an important inspiration for the game. The gist of it is summarized in the phrase "to be is to be perceived". Essentially, if something is not perceived by anything, it might as well not exist.
+After you defeat the demon lord, it becomes pretty clear that only the things in your viewport exist. Indeed videogames are a perfect example of this philosophical school of thought. Only the content of the screen exists for the player. The decor, but also NPCs, pop in and out of existence at the border of your eye. It’s made even more obvious by the martyrdom Sight Range.
+If this needed any more emphasis, one of the powers you gain in the meta-game (see [C200]) is explicitly labeled “create an absolute observer”. The absolute observer, i.e. God, is often advanced as Berkeley’s explanation for the consistency of the world even when not perceived.
+In the logs (javascript or in the End of Line), you can have the confirmation that people pop in and out of existence as you exit the level, often in screams of agony ^^ It is recalled in Heaven, where the tombstones show you how many people died in order to make your journey. Some even lasted less than a fraction of a second, being immediately garbage collected by the game.
+Berkeley’s idealism is famous for being an unfalsifiable solipsism, which is a great thing to keep in mind as we board our thought journey: whatever we base our thinking (or society) on, it may ultimately turn out to be shaky ground. Humility is needed from the very start.
+More than highlighting the connection between the medium of videogames and this famous philosophical model, the game uses this as a basis for its political dimension: perception as the source of existence has the corollary that if everyone agrees about something, it is de facto real. The socio-economic reality is, in a way, a collective illusion we agree to sustain. This is the ontological ground of the System, what grounds it, and what should be overthrown to destroy it (more in section [H700]).
+The social aspect is reinforced by the fact that you see the thoughts of the NPCs, from this edge where the world disappears (and in the logs). They are all “in on it”, putting up a front, an act, a show, for your benefit. You peek into this conspiracy that everybody shares (orchestrated by the Big Other? But I’m going ahead of myself [H600]).
+Indeed, it explicits the fact that all videogames take for granted: they’re all kind of Truman Shows, paranoid delusions come true where a whole world acts in concert to provide you entertainment. Some NPC thoughts are even direct references to the movie. Some are nods to Last Thursdayism, whose full version espouses this system of belief (http://www.last-thursday.org/).
+Their suffering with every glitch echoes the Goddess’ discourse about being a servant of Primordial Deities. As the player, you have literally created this world as a simulation on your computer, presumably for the sole purpose of your entertainment. Can you be sure there was no amount of consciousness, no suffering, in this little play of yours? We may never know what makes up consciousness…
+The bulk of their thoughts revolve around their role as figments of a machine that exists only for the benefit of a single player. They are trapped in a prison, forced to serve a higher purpose that they cannot possibly comprehend, unfortunate batteries in a Matrix ([H400]) to sustain a meta-System that operates not unlike our economic reality ([H700]). They are literally hostages of the System that conditions their very existence.
+The tragedy of characters as playthings is beautifully illustrated by Dangan Ronpa V3, which also draws the parallel to reality television, the “missing link” between full on player-controlled video games and implicitly spectator-control world of social reality. This perspective helps us understand the prevalence of social perception in the contemporary world which feels like a generalized version of the Truman Show. Social Networks accentuated the world into as many television channels airing their own reality-livestream.
+The asymmetric relationship between the player and the game world highlights that this social mediation is the very core of our world, which has become basically reality TV ontologized. But why would we be surprised to find the Gaze, a very crucial element of the foundation of the Self, also be the ontological foundation of reality.
+This results in a cult of appearances where only facades and pretense matter: the famous Society of the Spectacle prophesied by Guy Debord, a post-truth era where meaning is nothing but a simulacrum, where we only matter if we “trend”, where we are each and all a curated brand, a story we write ourselves. And just like the Goddess, to exist, you need to be a good story.
+The dialog with the Goddess goes over the constraints that the teleological cosmogenesis generated by the player puts on the game universe: it constrains it to fit a specific pattern, specific forms of narratives. Only then can it receive existence through its acknowledgment by the player. The need for perception results in the creation of a mold that is the very necessary condition for existence. No wonder why our social roles have such a hold on our psyches…
+What is life besides playing the various roles of “me” (and what is me but a collection of masks  [H200])? This theme is very present in their discourse through the references to literal acting and theater, most notably the famous quotes from Hamlet around the fact that “life is a stage”. All NPCs are actors playing roles to create a narrative experience (yours). They often complain about the script they have to follow, without having any option not to follow it.
+Projecting this back onto reality may portray us darkly as powerless toys trapped in a higher system that we can’t move away from, but one needs to remember who is the causal source of this: it is all for the benefit of the Spectator, the player in the game, the citizen in reality, who dictates the tropes and expectations that must be followed.
+But let us not forget that we are the player, not the NPC: We’re both the actors and the spectators, but the latter seems to be where the real power to act lies. Before “being the change we wish to see”, we do need to fully embody it in the most ontological lens we use to view the world. This point is reminiscent of philosopher Slavoj Zizek who often calls out: 'Don't Act. Just Think'
+The most important point to act upon is the very ontological framework that grounds our world view: the ideology. There’s an excellent PhilosophyTube video about this. Concretely, this means that social expectations are at the heart of any militant movement. For instance, the first step to lowering meat consumption or the existence of billionaires is to make it uncool, something shameful to be avoided. The social shunning and implicit incentives will then get us there. We must understand mob mentality and channel it into a good project, because it will always unavoidably be the main driving force. We will be its victim, but maybe we can also be in control. After all, we are the players.
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
-                     8.2. IDEALISM                                      [H200]
+                     8.2. THE DEATH OF THE SELF                         [H200]
 -------------------------------------------------------------------------------
 ===============================================================================
 
-===============================================================================
--------------------------------------------------------------------------------
-                     8.3. OBJECTIVISM                                   [H300]
--------------------------------------------------------------------------------
-===============================================================================
-
-objectivism with fissure,
-bioshock These endings are a bit unclear and reach outside of the game: you need to transcend the game and not just do what the game tells you, otherwise you're still stuck in its system.
+The fact that “I” am just a collection of roles that I play can hint at the fact that “I” have no substance of my own (outside of interactions), that the self might not be a thing in itself. Indeed, the Berkeley corollary tells us that the perceiver himself has no existence outside of being perceived.
+The fact that there is no such thing as a “self”, highlighted by Humean empiricist considerations, was the very core of the previous game from this author, called “You Doesn’t Exist”.
+In this game, it is mostly seen in the conversation with the Wise Elder. The quiz assessing your mind is mostly a lesson on the buddhist perception of the self, which advocates for the dissolution of the ego.The self is just “fleeting thoughts”, “illusions” had by “nobody”. There is no fundamental observer (there is no Big Other [H600]).
+The whole “you could be someone’s NPC” permeating the game is certainly a form of ego death advocating for humility, so is the whole collapse of the meta scale postulating that reality is not too different (and not more important) than fiction [H500]. What could be happening at higher levels of meta from us? Ren, the Promised Child, sanctified by Gods as different from his peers as a human can be, is nonetheless a mechanical puppet (Zizek might call it christian xD).
+It could be construed as a anti-humanist argument, but also as a call for equality: as long as we think of ourselves as “special” in some way, we won’t be able to build relationships on an equality basis that are not hierarchised or oppressive in any way. It may be nice to consider ourselves the heroes of our own stories, but it relegates everyone else to the rank of NPCs.
+Not to mention that the emphasis on the first person point of view lead through major misconceptions in the past, all kind of anthropological fallacies: flat earth, geocentrism….The lack of humility lead us build our knowledge on very shaky and arbitrary foundations.
+Which is not without bringing to mind the various plot twists of the game: our various objectives get put into perspective every time it is revealed that this has all been just a part of a bigger plan. We think our enemy is the Demon Lord, but it turns out it’s the Goddess, but it turns out it’s the player… The complete picture extends infinitely through the never ending iterations of Ren’s Demons N… There is an infinity of heroes of the story, so why should you expect to be any different? Who is pushing your buttons, Stanley?
+The place where this ego-check and anti-humanism is most explicit is in the Fissure dungeon.
+This dungeon, shaped like a human body, is a temple (a museum, therefore a showcase, sic) to the glory of mankind. It's riddled with references to objectivism and cultimates in the death of God.
+The fate of the world shows us the logical conclusion of such ideals, in the same way than Bioshock did.
 
 
 ===============================================================================
@@ -3013,11 +3033,34 @@ bioshock These endings are a bit unclear and reach outside of the game: you need
 -------------------------------------------------------------------------------
 ===============================================================================
 
+Baudrillard = the matrix is true but whats extracted is meaning,  ie the meaning of the neverending play cycle, the energy expense
+
 ===============================================================================
 -------------------------------------------------------------------------------
                      8.5. THE ELEMENT OF META                           [H500]
 -------------------------------------------------------------------------------
 ===============================================================================
+
+Transcending dimensionw, manipulating the game engine within the game engine, godels point
+Mirror, console,
+True ends
+Equating reality and fiction on the same ontological ground in the heaven library and in the web browser in the end of line
+
+when the Goddess insistence that Primordial deities may share the NPCs’ flaws [H600]
+
+Step 1: player is the same as character, fiction is like reality, all levels have the same worth
+(same as bioshock referenced in the temple of fissure)
+Step 2: nonetheless theres a way to reach out of your level
+
+Bioshock is a great example to bring up, because it puts its finger precisely on the crux of the relation between player and character. Bioshock 1's big twist reveal is especially powerful because you learn that the character you're playing has been conditioned to follow orders in the same way as the game itself has conditioned the player to follow (and keep following!) the game.
+But where Bioshock is content with showing how the player is no different from a character, I think Ren's Demons is ultimately a message of hope,
+
+bioshock These endings are a bit unclear and reach outside of the game:
+
+you need to transcend the game and not just do what the game tells you, otherwise you're still stuck in its system.
+
+
+
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -3025,7 +3068,9 @@ bioshock These endings are a bit unclear and reach outside of the game: you need
 -------------------------------------------------------------------------------
 ===============================================================================
 
+desire with femmefatale??
 suffering brings goddess
+Human lack brings the goddess both for NPC and for player
 
 ===============================================================================
 -------------------------------------------------------------------------------
@@ -3033,4 +3078,10 @@ suffering brings goddess
 -------------------------------------------------------------------------------
 ===============================================================================
 nietzsche ubermensh with the end of system
-baudrillard?
+Baudrillard?
+Debord and Baudrillard’s work can help us navigate the society of the spectacle [H100], but also present it as unavoidable. It is an invariant, but can/should such invariants be changed?
+
+How do you innovate outside of a broken system, how can u act on the system from the inside
+A pov is u can only pray to god, to a transcendental intervention
+Another pov is that you need to undermine the very foundations that ground the system.
+It is reminiscing of the pro terrorist ending of baudrilalrd book

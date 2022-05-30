@@ -2,14 +2,15 @@ storepage: trailer
 
 
 - write walkthrough
-8. Interpretations and analyses ..................... [H000]
-8.1. The subjectivity spectacle ..................... [H100]
-8.2. Idealism ....................................... [H200]
-8.3. Objectivism .................................... [H300]
+
 8.4. The game of thrones ............................ [H400]
 8.5. The element of meta ............................ [H500]
 8.6. The lack ....................................... [H600]
 8.7. The system ..................................... [H700]
+
+
+attention jai supprime une partie faut renumber
+
 
 
 
