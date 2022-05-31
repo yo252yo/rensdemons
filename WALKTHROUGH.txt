@@ -837,6 +837,7 @@ As you progress in the meta-game, you'll unlock new powers in battle. After the 
 Later, after the End of God, you also gain more control over the game engine (see [C500]), and you can dictate the outcome of each fight (WIN or LOSS).
 
 Finally, another thing that changes is that from now on, you'll have glitches every now and then featuring the Goddess begging you to stop and changing the colors of your game and the audio speed. They really start picking up if you refuse to kill the demon lord.
+You may be tempted to ask: why does Ren Demons 1 crash? What are those glitches? I guess it's just the Goddess trying to stop your progression. Or is it trying to draw your attention to the meta elements of the game? (see [H500]).
 
 
 ===============================================================================
