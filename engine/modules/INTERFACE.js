@@ -202,7 +202,7 @@ const INTERFACE = {
 
     help_menu: function() {
         new CenteredTextMenu(`
-           <a href="https://gamefaqs.gamespot.com/company/198099-yo252yo" target="_blank">gamefaq</a>
+           <a href="https://gamefaqs.gamespot.com/pc/368651-rens-demons-i/faqs" target="_blank">gamefaq</a>
            `, [
                {"text": "Back", "effect": "##BACK"}
             ]);
