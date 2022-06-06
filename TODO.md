@@ -3,6 +3,11 @@ storepage: trailer
 - push all OSs, itch, etc...
 
 
+shoot the trailer (see in keep)
+
+
+upd8 walkthrough
+ The game says "think", "do", mb increment the version number
 
 
 - Make and send a presskit: http://dopresskit.com/ https://github.com/pixelnest/presskit.html

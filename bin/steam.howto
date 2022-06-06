@@ -1,6 +1,8 @@
+Move from
+D:\work\rensdemons_meta\bin\out
+to
+D:\work\rensdemons_meta\steam\sdk\tools\ContentBuilder\content
 
-put stuff in  D:\work\rensdemons\bin\steam\sdk\tools\ContentBuilder\content
-
-run  D:\work\rensdemons_meta\steam\steamcmd\steamcmd.exe
+run  D:\work\rensdemons_meta\steam\steamcmd\  steamcmd.exe
 > login
 > run_app_build  D:\work\rensdemons_meta\steam\sdk\tools\ContentBuilder\scripts\app_build_1949420.vdf
