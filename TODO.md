@@ -5,11 +5,6 @@ storepage: trailer
 
 shoot the trailer (see in keep)
 
-
-upd8 walkthrough
- The game says "think", "do", mb increment the version number
-
-
 - Make and send a presskit: http://dopresskit.com/ https://github.com/pixelnest/presskit.html
 >> Find writers you like and Google their name. Their email is bound to come up somewhere: Twitter, LinkedIn, etc. Or..
 >> Find the magazine/new’s company-wide email on their About page. It’s usually in the format of tips@company.com.

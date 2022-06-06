@@ -25,7 +25,7 @@ s.enter_function = function() {
 };
 
 if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
-  var preciousChild  = new M_PreciousChild(1875, 1980);
+  var preciousChild  = new M_PreciousChild(1875, 1900);
 }
 
 var houseFiller = new Filler(gen.get());
