@@ -32,7 +32,12 @@ BATTLE.monster_actions.add_textual([
   `$$Ren$: "This may seem weird, but I'm having a weird hunch that this might be a fight we're supposed to lose..."`,
   `$$BestFriend$: "What do you mean? Are we supposed to just let ourselves... die?"`,
   `$$Ren$: "Something like that? I'm not sure... I'm getting this weird intuition from the Goddess, but I don't fully understand it. It seems that anything we do would be futile..."`,
-  ], attack);
+  ], {
+  attack_amplitude: 0.85, // Between 0 and 1
+  warning_time_s: 1,
+  react_time_s: 1.6,
+  variability: 0.1, // 1 = 100%
+});
 
 PLAYER_ACTIONS.add({
   name: ABILITY.Feed,
