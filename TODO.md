@@ -9,8 +9,6 @@ preciouschild despawning puts more houses
 
 add warning screen before dodge
 
-make high lvl item more expensive
-
 display inventory in battle
 
 
