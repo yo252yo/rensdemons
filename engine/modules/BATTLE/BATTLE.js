@@ -75,9 +75,9 @@ const BATTLE = {
           }
           if (b && b.outcome && b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
             useless_options_unknown ++;
-            if (useless_options_unknown > 3){
-              options_unknown.splice(i, 1);
-            }
+//            if (useless_options_unknown > 3){
+  //            options_unknown.splice(i, 1);
+    //        }
           } else {
             // outcome null is most often win in several hits
             winning_options_unknown ++;
@@ -99,7 +99,7 @@ const BATTLE = {
       } else {
         result = result.concat(options_winning).concat(options_started).concat(options_unknown);
       }
-      if (options.length <= 10 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
+      if (options.length <= 7 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
         result = result.concat(options_losing);
       }
       return result.concat(options_flight);

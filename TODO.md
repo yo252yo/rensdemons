@@ -3,13 +3,12 @@ storepage: trailer
 - push all OSs, itch, etc...
 
 
-pibou didnt see all losing options in battle??? keep all losing options when unexplored!
-
 preciouschild despawning puts more houses
 
-add warning screen before dodge
 
-display inventory in battle
+add warning screen before dodge
+display inventory in battle (how many arrows do i have)
+can i divinate all actions results at high thaumaturgy?
 
 
 
