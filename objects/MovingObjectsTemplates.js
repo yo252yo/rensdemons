@@ -177,7 +177,13 @@ class M_PreciousChild extends MovingObject {
 
   interaction = function() {
     this.face_character();
-    BATTLE.api.make('_party/_PreciousChild');
+    if (PARTY.has_member(PARTYMEMBERS.PreciousChild)){
+      TextBannerSequence.make([
+        `$$PreciousChild$: "I'll be good, I promise!"`,
+      ]);
+    } else {
+      BATTLE.api.make('_party/_PreciousChild');
+    }
    }
 }
 

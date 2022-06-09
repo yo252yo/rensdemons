@@ -3,8 +3,6 @@ storepage: trailer
 - push all OSs, itch, etc...
 
 
-preciouschild despawning puts more houses
-
 
 add warning screen before dodge
 display inventory in battle (how many arrows do i have)

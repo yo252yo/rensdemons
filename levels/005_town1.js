@@ -24,9 +24,7 @@ s.enter_function = function() {
   CURRENTLEVEL.setup("006_occultshop$");
 };
 
-if (!PARTY.has_member(PARTYMEMBERS.PreciousChild)){
-  var preciousChild  = new M_PreciousChild(1875, 1900);
-}
+var preciousChild  = new M_PreciousChild(1875, 1900);
 
 var houseFiller = new Filler(gen.get());
 houseFiller.set_zone(1175, 1875, 750,  775);
