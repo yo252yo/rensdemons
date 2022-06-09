@@ -3,6 +3,20 @@ storepage: trailer
 - push all OSs, itch, etc...
 
 
+pibou didnt see all losing options in battle??? keep all losing options when unexplored!
+
+preciouschild despawning puts more houses
+
+add warning screen before dodge
+
+make high lvl item more expensive
+
+display inventory in battle
+
+
+
+
+
 shoot the trailer (see in keep)
 
 - Make and send a presskit: http://dopresskit.com/ https://github.com/pixelnest/presskit.html

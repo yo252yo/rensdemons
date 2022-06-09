@@ -7,12 +7,13 @@ var gen = new Generator(DICTIONARY.get("world_seed")*7);
 
 var after_going_to_town2 = function() { return ABILITIES.has_ability("_town2_visited");};
 var after_town2_sends_you_to_town3 = function() { return ABILITIES.has_ability("_town3_prompted") || STATS.flag("StoryOfTheAncients");};
+var after_armament_failure = function() { return ABILITIES.has_ability("_lieutenant_confronted") || STATS.flag("StoryOfTheAncients");};
 var artifactDungeonsCondition = function() {
   if(STATS.ending(ENDINGS.War)){
     return true;
   }
 
-  if(INVENTORY.count(ITEM.AncientArmamentAdvisor) + INVENTORY.count(ITEM.AncientArmamentArmature) + INVENTORY.count(ITEM.AncientArmamentAmmunition) > 0){
+  if(INVENTORY.count(ITEM.Sword_legend) + INVENTORY.count(ITEM.War_hammer) + INVENTORY.count(ITEM.Staff) + INVENTORY.count(ITEM.Wand) > 0){
     return false;
   }
   return true;
@@ -68,7 +69,7 @@ new SM_Town(2450, 3500, "022_town5", "town_5", after_going_to_town2); // optiona
 new SM_Forest(2675, 1350, `Forest of the<br />${DICTIONARY.get("mushroom_adj")} Mushrooms`, "023_mushrooms", after_going_to_town2);
 new SM_Lake(1250, 1200, new Generator(1), `Waters of the<br />${DICTIONARY.get("squid_adj")} Squids`, "024_squids", after_going_to_town2);
 new SM_Mountain(2300, 2025, gen.get(), `Peaks of the<br />${DICTIONARY.get("harpies_adj")} Harpies`, "025_harpies", after_going_to_town2);
-new SM_Crevasse(2700, 3025, `Forgotten Fissure`, "042_fissure", after_town2_sends_you_to_town3);
+new SM_Crevasse(2700, 3025, `Forgotten Fissure`, "042_fissure", after_armament_failure);
 
 
 var v = new SM_Vulcano(3650, 2800, `Maw of Hell`, "041_hellsmaw", after_town2_sends_you_to_town3);
