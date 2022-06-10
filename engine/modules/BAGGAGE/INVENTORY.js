@@ -117,6 +117,7 @@ ITEMS_NOT_BATTLE = [ITEM.Bow, ITEM.BreathingPotion, ITEM.Meat];
 const INVENTORY = {
   _inventory: new FluidMap(),
 
+
   factory: {
     export: function() {
       return INVENTORY._inventory.export();
@@ -240,4 +241,7 @@ const INVENTORY = {
     return INVENTORY.count("_encounter_" + name);
   },
 
+  is_consumable: function(name){
+    return name.endsWith("Elixir") || name == ITEM.Arrow || name == ITEM.Poison_darts;
+  },
 }

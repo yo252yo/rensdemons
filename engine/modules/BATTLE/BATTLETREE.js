@@ -345,23 +345,27 @@ const BATTLETREE = {
         return "?????";
       }
 
+      var suffix = "";
+      if(INVENTORY.count(name.trim()) && INVENTORY.is_consumable(name.trim())){
+        suffix += ` [` + INVENTORY.count(name.trim()) + `]`;
+      }
       switch (BATTLETREE.get.outcome(battle, name)) {
         case BATTLETREE.WIN:
           var i = BATTLETREE.get.childrenCount(battle, name);
-          var textI = "";
+
           if (i > 1){
-            textI = ` (${i})`;
+            suffix = ` (${i} hits)` + suffix;
           }
-          return "<b>" + display_name + `${textI}</b>`;
+          return "<b>" + display_name + `${suffix}</b>`;
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
-          return "<s>" + display_name + "</s>";
+          return "<s>" + display_name + "${suffix}</s>";
         case BATTLETREE.HIDDEN:
         case BATTLETREE.NOT_TRIED:
-          return display_name;
+          return display_name + suffix;
         default: // Leads somewhere else.
-          return "<i>" + display_name + "</i>";
+          return "<i>" + display_name + "${suffix}</i>";
       }
     },
 

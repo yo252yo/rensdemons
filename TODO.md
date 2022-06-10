@@ -4,10 +4,6 @@ storepage: trailer
 
 
 
-add warning screen before dodge
-display inventory in battle (how many arrows do i have)
-
-
 
 
 
