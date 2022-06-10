@@ -85,7 +85,7 @@ const DODGE = {
 
   draw: {
     prompt: function() {
-      DODGE.draw.resize_existing();
+
       if(BATTLE.current_battle == "trial/basilisk"){
         DODGE.sprite.prompt = new CenteredImage("assets/interface/circle_tuto.png", 'void'); // it may have been resized.
       } else {
@@ -296,13 +296,18 @@ const DODGE = {
       return false;
     },
 
-    prompt: function(){
-      DODGE.phase = 1;
-
+    start: function(){
       if (DODGE.events.instadodge()){
         DODGE.outcome.instadodge();
         return;
       }
+
+      DODGE.draw.resize_existing();
+      setTimeout(DODGE.events.prompt, 700);
+    },
+
+    prompt: function(){
+      DODGE.phase = 1;
 
       DODGE.draw.prompt();
       DODGE.accepting_input = true;
@@ -368,7 +373,7 @@ const DODGE = {
   getCallback: function(params) {
     var callback = function () {
       DODGE.absorb_params(params);
-      DODGE.events.prompt();
+      DODGE.events.start();
     }
     return callback;
   },
