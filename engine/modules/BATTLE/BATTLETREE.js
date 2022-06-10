@@ -76,7 +76,7 @@ const BATTLETREE = {
       }
     },
 
-    develop: function(battle, name, destination) {
+    develop: function(battle, name, destination, strict) {
       if (!destination) {
         destination = BATTLETREE.NOTHING;
       }
@@ -91,7 +91,11 @@ const BATTLETREE = {
       }
 
       CONSOLE.log.battletree("developed: [" + name + "] -> [" + destination + "] on " + battle);
-      BATTLETREE._targets.add([battle, name], destination);
+      if(strict){
+        BATTLETREE._targets.set([battle, name], [destination]);
+      } else {
+        BATTLETREE._targets.add([battle, name], destination);
+      }
     },
   },
 
