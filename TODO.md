@@ -6,7 +6,6 @@ storepage: trailer
 
 add warning screen before dodge
 display inventory in battle (how many arrows do i have)
-can i divinate all actions results at high thaumaturgy?
 
 
 

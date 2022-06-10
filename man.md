@@ -99,6 +99,7 @@ With control of the code, you have godlike powers over the virtual world. You ca
 |-----------------------------------------------|-----------------------------------|
 | `THAUMATURGY.toggle_teleport();`              | Replace movement by teleportation |
 | `THAUMATURGY.toggle_smiting();`               | Eliminate entities on click       |
+| `THAUMATURGY.toggle_battleforesight();`       | Autoexplore battle options        |
 |                                               |                                   |
 | `THAUMATURGY.menu_fast_travel();`             | Opens a menu to teleport places   |
 | `THAUMATURGY.menu_summon();`                  | Opens a menu to summon objects    |

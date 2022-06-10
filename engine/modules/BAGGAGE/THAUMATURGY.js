@@ -2,6 +2,8 @@
 const THAUMATURGY = {
   teleport: false,
   smite: false,
+  battleforesight: false,
+
   time_compression: 1,
   space_compression: 1,
 
@@ -38,6 +40,11 @@ const THAUMATURGY = {
   toggle_smiting: function() {
     THAUMATURGY.smite = ! THAUMATURGY.smite;
     CONSOLE.log.debug("Smite set to " + THAUMATURGY.smite);
+  },
+
+  toggle_battleforesight: function() {
+    THAUMATURGY.battleforesight = ! THAUMATURGY.battleforesight;
+    CONSOLE.log.debug("Battleforesight set to " + THAUMATURGY.battleforesight);
   },
 
   remove_fog: function() {
@@ -123,6 +130,7 @@ const THAUMATURGY = {
                   [
                     {"text": (THAUMATURGY.teleport? "Dea" : "A") + "llow blink through space", "effect": THAUMATURGY.toggle_teleport},
                     {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
+                    {"text": (THAUMATURGY.battleforesight? "Dea" : "A") + "cquire battle prescience", "effect": THAUMATURGY.toggle_battleforesight},
                     TEXTMENU_EMPTYROW,
                     {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
                     {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},

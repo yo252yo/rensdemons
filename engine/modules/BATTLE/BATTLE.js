@@ -203,6 +203,10 @@ const BATTLE = {
     add: function(action_object) {
       BATTLE._player_actions[action_object.name] = action_object;//BATTLE.player_actions._make_player_action(action_object);
 
+      if(THAUMATURGY.battleforesight){
+        BATTLETREE.api.develop(BATTLE.current_battle, action_object.name, action_object.outcome);
+      }
+
       if (action_object.replacing) {
         BATTLETREE.api.develop(BATTLE.current_battle, action_object.replacing, action_object.name);
         BATTLETREE.api.unlock(BATTLE.current_battle, action_object.name);
