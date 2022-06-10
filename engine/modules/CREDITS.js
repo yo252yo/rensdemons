@@ -55,7 +55,7 @@ credits: `
   <br />
 
   <b>Testing</b>:
-  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>, Lorth
+  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>, Lorth, ryl3
   <br />
 
  <b>Fair use song lyrics brief quotation in the encounter in town of Acceptance</b>:
