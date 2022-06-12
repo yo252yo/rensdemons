@@ -5,7 +5,7 @@ credits: `
 
  <h3>Original assets provider</h3>
 
- <b>Title art</b>:
+ <b>Title art, trailer</b>:
  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>
  <br />
 
@@ -55,7 +55,7 @@ credits: `
   <br />
 
   <b>Testing</b>:
-  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>, Lorth, ryl3
+  <a href="https://twitter.com/miru_kyu" target="_blank">miru</a>, Lorth, ryl3, Pibou421 
   <br />
 
  <b>Fair use song lyrics brief quotation in the encounter in town of Acceptance</b>:
