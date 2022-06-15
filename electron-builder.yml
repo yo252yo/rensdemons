@@ -1,4 +1,5 @@
 appId: yo252yo.rensdemons
+npmRebuild: 'false'
 
 directories:
   output: ../rensdemons_meta/bin/out
@@ -18,3 +19,4 @@ linux:
     - "deb"
 
 dmg:
+  icon: assets/app/icon.png

@@ -6,9 +6,18 @@
   "author": "yo252yo <yo252yo@gmail.com>",
   "license": "MIT",
   "icon": "icon.png",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "greenworks": "git+https://github.com/greenheartgames/greenworks.git"
+  },
+  "devDependencies": {
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3",
+    "electron-rebuild": "^3.2.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "rebuild-greenworks": "electron-rebuild",
+    "build": "electron-builder build"
   }
 }
