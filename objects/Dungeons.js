@@ -649,7 +649,7 @@ class S_HellPlantSlimy extends SimpleObject {
     this.default_text = this.text_interaction([
       "This vegetal is constantly dripping brownish slime, like a repulsive fountain.",
       "All you can think of to describe this plant is that it looks a lot like someone dipped a little shrub in some sort of dark goo.",
-      "You observe with a disgusted fascination the gunk that drops form the leaves of whatever this is. It makes an irregular squishy sound.",
+      "You observe with a disgusted fascination the gunk that drops from the leaves of whatever this is. It makes an irregular squishy sound.",
     ], seed);
   }
 }
