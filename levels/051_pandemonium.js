@@ -101,7 +101,6 @@ if (floor == 6) {
 var decorFiller = new Filler(gen.get(), 100, 100);
 decorFiller.set_zone(975,1650,750,475);
 decorFiller.add_default_constructor("S_HellEgg");
-decorFiller.add_default_constructor("B_Jar",2);
 decorFiller.add_default_constructor("S_Armor",4);
 decorFiller.add_default_constructor("S_Candle",4);
 decorFiller.add_default_constructor("S_Spike");

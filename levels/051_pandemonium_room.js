@@ -100,7 +100,6 @@ if (isGooRoom){
     decorFiller.fill_decor_by_retry();
   } else{
     decorFiller.add_default_constructor("S_HellEgg");
-    decorFiller.add_default_constructor("B_Jar",2);
     decorFiller.add_default_constructor("S_Armor",4);
     decorFiller.add_default_constructor("S_Candle",4);
     decorFiller.add_default_constructor("S_Spike");
