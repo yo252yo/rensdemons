@@ -360,12 +360,12 @@ const BATTLETREE = {
         case BATTLETREE.LOSS:
         case BATTLETREE.NOTHING:
         case BATTLETREE.ESCAPE:
-          return "<s>" + display_name + "${suffix}</s>";
+          return "<s>" + display_name + `${suffix}</s>`;
         case BATTLETREE.HIDDEN:
         case BATTLETREE.NOT_TRIED:
           return display_name + suffix;
         default: // Leads somewhere else.
-          return "<i>" + display_name + "${suffix}</i>";
+          return "<i>" + display_name + `${suffix}</i>`;
       }
     },
 
