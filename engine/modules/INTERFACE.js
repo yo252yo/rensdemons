@@ -344,7 +344,7 @@ const INTERFACE = {
   },
 
   is_trial: function(){
-    return window.location.href.includes("trial");
+    return window.location.href.includes("yo252yo.com") && !window.location.href.includes("winarg");
   },
 
   start_game: function(){
