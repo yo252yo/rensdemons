@@ -8,9 +8,6 @@ win:
   icon: assets/app/icon.png
   target:
     - target: portable
-    - target: nsis
-      arch:
-        - x64
 
 linux:
   icon: assets/app/icon.png
