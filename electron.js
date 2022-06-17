@@ -3,6 +3,7 @@ const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
 var greenworks = require('greenworks');
 
 const isMac = process.platform === 'darwin'
+var argvs = process.argv;
 var win;
 var menuvisibility = false;
 
@@ -104,7 +105,11 @@ const createWindow = () => {
   const menu = Menu.buildFromTemplate(templateMenu)
   Menu.setApplicationMenu(menu)
 
-  win.loadFile('index.html')
+  if(argvs.length > 2){
+    win.loadFile('index.html');
+  } else{
+    win.loadURL(`file://${__dirname}/index.html?trial=yo252yo.com`);
+  }
 
 
   win.webContents.on('before-input-event', (event, input) => {
