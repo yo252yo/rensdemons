@@ -7,9 +7,8 @@ var displayText = function() {
   FOG.stop();
   TextBannerSequence.make([
     "CONGRATULATIONS for beating this demo of Ren's demons, and thanks a lot for playing!!!",
-    "If you have access to this, I guess you know who to send all your thoughts, comments and impressions to. Especially bug reports. Your victory awards you priority treatment ;)",
-    "Remember that the full version (under development) will be a complete game, with a few similar mechanics and items but a completely different story and meaning! I hope this demo gets you excited for it and eager to play the real thing! Follow @yo252yo for updates /o/",
-  ], function(){ window.open("https://www.twitter.com/yo252yo"); });
+    "Remember that the full version is be a complete game, with a few similar mechanics and items but a completely different story and meaning! I hope this demo gets you excited for it and eager to play the real thing! Follow @yo252yo for updates /o/",
+  ], function(){ window.open("https://www.yo252yo.com/qr_code.html"); });
 }
 
 setTimeout(displayText, 1000);
