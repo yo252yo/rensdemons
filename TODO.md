@@ -3,7 +3,6 @@ publish itch
 publish steam
 
 check that bad actions dont reappear
-check gerald biography
 still forsight bug
 
 

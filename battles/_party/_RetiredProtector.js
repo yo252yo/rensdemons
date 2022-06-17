@@ -61,24 +61,16 @@ var unlock_9 = function(from, name) {
 
 var unlock_8_keys = ["lost daughter", "dead liege", "inspiring master", "abandoned wife"];
 var unlock_8 = function(from, key) {
+
   var pronoun = "her";
   var name = STRING_UTILS.camel_case(key);
   switch(key){
-    case unlock_8_keys[0]:
-      _COST = "he never saw his daughter grow up";
-     break;
     case unlock_8_keys[1]:
-      _COST = "he lost his liege in a tragic battle";
-      pronoun = "him";
-     break;
     case unlock_8_keys[2]:
-      _COST = "he was too busy to mourn the master whom he looked up to";
       pronoun = "him";
-     break;
-    case unlock_8_keys[3]:
-      _COST = "he had to leave his beloved wife behind";
      break;
   }
+
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: name,
     unlock: true,
@@ -92,6 +84,22 @@ var unlock_8 = function(from, key) {
       `$$Ren$: "Actually, you're wrong, it has been..."`,
     ],
     function: function() {
+
+      switch(key){
+        case unlock_8_keys[0]:
+          _COST = "he never saw his daughter grow up";
+         break;
+        case unlock_8_keys[1]:
+          _COST = "he lost his liege in a tragic battle";
+         break;
+        case unlock_8_keys[2]:
+          _COST = "he was too busy to mourn the master whom he looked up to";
+         break;
+        case unlock_8_keys[3]:
+          _COST = "he had to leave his beloved wife behind";
+         break;
+      }
+
       BATTLE.player_actions.empty(true);
       for (var k of unlock_9_keys){
         unlock_9(name, k);
@@ -105,7 +113,6 @@ var unlock_8 = function(from, key) {
 var unlock_7_keys = ["heart", "orders", "honor", "conscience"];
 var unlock_7 = function(from, key) {
   var name = STRING_UTILS.camel_case(key);
-  _MOTIVATION = key;
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: name,
     unlock: true,
@@ -118,6 +125,7 @@ var unlock_7 = function(from, key) {
       `$$Ren$: "Please, do it for..."`,
     ],
     function: function() {
+      _MOTIVATION = key;
       BATTLE.player_actions.empty(true);
       for (var k of unlock_8_keys){
         unlock_8(name, k);
@@ -169,19 +177,15 @@ var unlock_5 = function(from, key) {
   switch(key){
     case unlock_5_keys[0]:
      var value = "I know about your betrayal, how you turned against your liege.";
-     _RETIRE = "he discovered that the liege he was serving was sacrificing the country for his selfish interest";
      break;
     case unlock_5_keys[1]:
      var value = "I know about that battle in which you failed to protect your liege.";
-     _RETIRE = "he failed to protect his ruler in a terrible bloodshed";
      break;
     case unlock_5_keys[2]:
      var value = "I know about the lie you've been living all these years.";
-     _RETIRE = "a scandal revealed that his position in the army was built on shameless lies";
      break;
     case unlock_5_keys[3]:
      var value = "I know about that terrible accident where you poured the blood of an innocent.";
-     _RETIRE = "he accidentally killed a man from his battalion on the field";
      break;
   }
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -192,6 +196,20 @@ var unlock_5 = function(from, key) {
       `$$RetiredProtector$'s shocked face shows that you've hit a nerve. $$BestFriend$ gasps in surprise and puzzlement, dying to ask more questions about how you know this, but stays silent.`,
     ],
     function: function() {
+      switch(key){
+        case unlock_5_keys[0]:
+         _RETIRE = "he discovered that the liege he was serving was sacrificing the country for his selfish interest";
+         break;
+        case unlock_5_keys[1]:
+         _RETIRE = "he failed to protect his ruler in a terrible bloodshed";
+         break;
+        case unlock_5_keys[2]:
+         _RETIRE = "a scandal revealed that his position in the army was built on shameless lies";
+         break;
+        case unlock_5_keys[3]:
+         _RETIRE = "he accidentally killed a man from his battalion on the field";
+         break;
+      }
       BATTLE.player_actions.empty(true);
       for (var k of unlock_6_keys){
         unlock_6(name, k);
@@ -282,7 +300,6 @@ var unlock_3 = function(from, key) {
 var unlock_20_keys = ["warrior", "tactician", "general", "strategist", "soldier", "commander"];
 var unlock_20 = function(from, key) {
   var name = STRING_UTILS.camel_case(key);
-  _ROLE = key;
   var f = PLAYER_ACTIONS.function.unlock_replacing_action({
     name: name,
     unlock: true,
@@ -292,8 +309,9 @@ var unlock_20 = function(from, key) {
     ],
     function: function() {
       BATTLE.player_actions.empty(true);
-      for (var key of unlock_3_keys){
-        unlock_3(name, key);
+      _ROLE = key;
+      for (var k of unlock_3_keys){
+        unlock_3(name, k);
       }
     },
   });
