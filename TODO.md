@@ -2,8 +2,10 @@ make zip for Web
 publish itch
 publish steam
 
+
+
+
 check that bad actions dont reappear
-still forsight bug
 
 
 
