@@ -47,7 +47,7 @@ var options = [];
 var title = "";
 if (INTERFACE.is_trial()) {
   document.title = "Ren's DEMO";
-  title = "<span style='font-size:14px;'>Demo version of the upcoming RPG Ren's Demons by yo252yo (WIP), giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).</span>";
+  title = "<span style='font-size:14px;'>Demo version of the RPG Ren's Demons by yo252yo, giving a taste of the atmosphere/mechanics/design with a 30min-1h totally standalone different story (i.e. no spoil).</span>";
 } else {
   document.title = INTERFACE.game_title_string();
   INTERFACE.game_title();
