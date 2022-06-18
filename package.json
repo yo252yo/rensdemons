@@ -4,6 +4,7 @@
   "description": "A RPG about a young child chosen by the gods.",
   "main": "electron.js",
   "author": "yo252yo <yo252yo@gmail.com>",
+  "homepage": "https://www.yo252yo.com/rd/qr_code.html",
   "license": "MIT",
   "icon": "icon.png",
   "dependencies": {
