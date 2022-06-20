@@ -6,3 +6,4 @@ D:\work\rensdemons_meta\steam\sdk\tools\ContentBuilder\content
 run  D:\work\rensdemons_meta\steam\steamcmd\  steamcmd.exe
 > login
 > run_app_build  D:\work\rensdemons_meta\steam\sdk\tools\ContentBuilder\scripts\app_build_1949420.vdf
+> run_app_build  D:\work\rensdemons_meta\steam\sdk\tools\ContentBuilder\scripts\app_build_2060850.vdf
