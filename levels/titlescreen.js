@@ -73,7 +73,7 @@ options.push({"text": "Content warnings", "effect": function(){ INTERFACE.displa
 options.push({"text": "Credits", "effect": function(){ INTERFACE.display.credits_menu(); }});
 
 if (INTERFACE.is_trial()) {
-  options.push({"text": "Updates on full version", "keep_open": true,"effect": function(){ window.open("https://www.yo252yo.com/rd/qr_code.html"); }});
+  options.push({"text": "Full version", "keep_open": true,"effect": function(){ window.open("https://www.yo252yo.com/rd/qr_code.html"); }});
 }
 
 
