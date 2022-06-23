@@ -113,7 +113,7 @@ var agent_number_text = function(n){
     return arr[n];
   }
 
-  var numberfix = ["","un", "duo", "tri", "quattuor", "quinqua", "sexa", "septen", "otco", "novem"];
+  var numberfix = ["","un", "duo", "tri", "quattuor", "quinqua", "sexa", "septen", "octo", "novem"];
   var s = "";
   s += numberfix[n % 10];
 
