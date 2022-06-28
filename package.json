@@ -19,6 +19,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "rebuild-greenworks": "electron-rebuild",
-    "build": "electron-builder build"
+    "build": "electron-builder build -c.mac.identity=null "
   }
 }
