@@ -239,6 +239,7 @@ const IO = {
 
   // Global events handlers
   handlers: {
+    // Wrapping
     wrap: function(handlerf){
       try{
         return handlerf();
@@ -250,18 +251,31 @@ const IO = {
       }
     },
     
+    onClickHold: function(event, is_hold) {
+      IO.handlers.onClick(event, true);
+    },
+
+    onMousemove: function(event) {
+      if (event.buttons > 0) {
+        IO.handlers.onClickHold(event);
+      }
+    },
+    
+    // Redirect
     onKeyDown: function (event) {
-        return IO.handlers.wrap(function(){
-          return IO.raw_handlers.onKeyDown(event);
-        });
+        var key = event.key || event.keyCode;
+        IO.handlers.onPressKey(key.toLowerCase());
+        event.preventDefault();
     },
 
     onKeyUp: function (event) {
-        return IO.handlers.wrap(function(){
-          return IO.raw_handlers.onKeyUp(event);
-        });
+        var key = event.key || event.keyCode;
+        IO.handlers.onReleaseKey(key.toLowerCase());
+        event.preventDefault();
     },
 
+    
+    // Wrapped raw_handlers
     onScroll: function(event) {
         return IO.handlers.wrap(function(){        
           return IO.raw_handlers.onScroll(event);
@@ -297,33 +311,9 @@ const IO = {
            return IO.raw_handlers.onClick(event, is_hold);
         });
     },
-
-    onClickHold: function(event, is_hold) {
-        return IO.handlers.wrap(function(){
-          return IO.raw_handlers.onClickHold(event, is_hold);
-        });
-    },
-
-    onMousemove: function(event) {
-        return IO.handlers.wrap(function(){
-          return IO.raw_handlers.onMousemove(event);
-        });
-    },
   },
   
   raw_handlers: {
-    onKeyDown: function (event) {
-        var key = event.key || event.keyCode;
-        IO.handlers.onPressKey(key.toLowerCase());
-        event.preventDefault();
-    },
-
-    onKeyUp: function (event) {
-        var key = event.key || event.keyCode;
-        IO.handlers.onReleaseKey(key.toLowerCase());
-        event.preventDefault();
-    },
-
     onScroll: function(event) {
         event.preventDefault();
         return true;
@@ -406,16 +396,6 @@ const IO = {
         if (!IO._ACTIVE_SYSTEM.onClick(destination_X, destination_Y, is_hold, event)){
           event.preventDefault();
         }
-      }
-    },
-
-    onClickHold: function(event, is_hold) {
-      IO.handlers.onClick(event, true);
-    },
-
-    onMousemove: function(event) {
-      if (event.buttons > 0) {
-        IO.handlers.onClickHold(event);
       }
     },
   },
