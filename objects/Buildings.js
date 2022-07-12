@@ -303,7 +303,9 @@ class S_Church extends S_LayeredBuilding {
     super("church", x, y, 166, 347, "...");
     this.add_layer("details");
 
-    new M_Herald(x+80, y-175);
+    if(inside_lvl != "004_trial_end" || STATS.is_post_game()){
+      new M_Herald(x+80, y-175);
+    }
 
     if(inside_lvl){
       this.add_door(50, 115, function(){
