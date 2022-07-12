@@ -158,7 +158,7 @@ const IO = {
       }
       IO._PENDING_TIMEOUT = setTimeout(function(){
         IO.control._finish_activate();
-      }, 110);
+      }, 200);
     },
 
     cede: function() {
