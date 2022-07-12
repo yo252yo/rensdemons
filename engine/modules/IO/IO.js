@@ -251,6 +251,7 @@ const IO = {
       }
     },
     
+    // Redirect handlers
     onClickHold: function(event, is_hold) {
       IO.handlers.onClick(event, true);
     },
@@ -261,7 +262,6 @@ const IO = {
       }
     },
     
-    // Redirect
     onKeyDown: function (event) {
         var key = event.key || event.keyCode;
         IO.handlers.onPressKey(key.toLowerCase());
