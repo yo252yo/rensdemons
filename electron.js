@@ -90,6 +90,27 @@ const templateMenu = [
         }
       }
     ]
+  },
+  {
+    label: 'HELP IN CASE OF PROBLEMS',
+    submenu: [
+      { role: 'toggleDevTools',
+        accelerator: 'Ctrl+Shift+I',
+       },
+      { role: 'reload', accelerator: '', },
+      {
+        label: 'Teleport to world map (reinitialize)',
+        click: async () => {
+          win.loadFile('testing.html?lvl=010_world_map')
+        }
+      },
+      {
+        label: 'Teleport to hell (reinitialize)',
+        click: async () => {
+          win.loadFile('testing.html?lvl=050_hell_map')
+        }
+      }
+    ]
   }
 ]
 
