@@ -22,9 +22,9 @@ var wiseOldFool = new M_WiseOld(1500, 1125);
 var explanations = function() {
   var short = [
     `Archpriest: "Of course I would never be so presumptuous as to give orders to the Promised Child. But what I advise you is to look for the secrets of our ancestors. There are ruins of their grand civilization, but we haven't been able to explore them because they are swarming with monsters. But that should not be a problem for the Promised Child."`,
-    `Archpriest: "In the north west, you'll find the Waters of the $$sea_adj$ Squids. We're sure there's some ancient secrets drowned in, but make sure you buy breathing potions at the alchemist before!"`,
-    `Archpriest: "In the south east, there is the Peaks of the $$mountain_adj$ Harpies. There used to be some sort of refuge there, but it's been overtaken by monsters."`,
-    `Archpriest: "And finally, east of here, the Forest of the $$forest_adj$ Mushrooms is surely worth exploring too."`,
+    `Archpriest: "In the north west, you'll find the Waters of the $$squid_adj$ Squids. We're sure there's some ancient secrets drowned in, but make sure you buy breathing potions at the alchemist before!"`,
+    `Archpriest: "In the south east, there is the Peaks of the $$harpies_adj$ Harpies. There used to be some sort of refuge there, but it's been overtaken by monsters."`,
+    `Archpriest: "And finally, east of here, the Forest of the $$mushroom_adj$ Mushrooms is surely worth exploring too."`,
     `Archpriest: "Now go forth, Promised Child! Rid our beautiful lands of the scum that invaded it, and make $$world_name$ prosperous again!"`,
   ];
   if (!ABILITIES.has_ability("_town2_visited")){
