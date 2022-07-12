@@ -111,13 +111,16 @@ const SAVE = {
         CONSOLE.log.debug("Save file downloaded");
       }
 
-      var menu = new CenteredTextMenu("Save?", [
-        {"text": "Overwrite AUTOSAVE", "effect": function() {
+      var menu = new CenteredTextMenu("You found an Altar of the Goddess. You pray that She remembers you.", [
+/*        {"text": "Overwrite AUTOSAVE", "effect": function() {
           SAVE.save(0);
           TextBannerSequence.make([`The Goddess saved your soul.`]);
-         }},
-        {"text": `Download new save file`, "effect": dothesave, "keep_open": true},
-        {"text": "Stop praying", "effect": "##CLOSE"}
+        }},*/
+        {"text": `Download save file`, "effect": dothesave, "keep_open": true},
+        {"text": "Stop praying", "effect": function() {
+            SAVE.autosave(); // autosave
+            TextBannerSequence.make([`The Goddess saved your soul.`]);
+          }}
       ]);
 
       return true;
