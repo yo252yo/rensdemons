@@ -239,44 +239,75 @@ const IO = {
 
   // Global events handlers
   handlers: {
+    wrap: function(handlerf){
+      try{
+        return handlerf();
+      }
+      catch(e){
+        CONSOLE.log.io("MAJOR FAILURE IN IO HANDLING, CEDING SYSTEM");
+        console.log(e);
+        IO.control.cede();        
+      }
+    },
+    
     onKeyDown: function (event) {
-        return IO.raw_handlers.onKeyDown(event);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onKeyDown(event);
+        });
     },
 
     onKeyUp: function (event) {
-        return IO.raw_handlers.onKeyUp(event);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onKeyUp(event);
+        });
     },
 
     onScroll: function(event) {
-        return IO.raw_handlers.onScroll(event);
+        return IO.handlers.wrap(function(){        
+          return IO.raw_handlers.onScroll(event);
+        });
     },
 
     onWheel: function(event) {
-        return IO.raw_handlers.onWheel(event);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onWheel(event);
+        });
     },
 
     onPressKey: function(key) {
-        return IO.raw_handlers.onPressKey(key);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onPressKey(key);
+        });
     },
 
     onReleaseKey: function(key) {
-        return IO.raw_handlers.onReleaseKey(key);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onReleaseKey(key);
+        });
     },
 
     onContinuousKeyPress: function() {
-        return IO.raw_handlers.onContinuousKeyPress();
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onContinuousKeyPress();
+        });
     },
 
     onClick: function(event, is_hold) {
-        return IO.raw_handlers.onClick(event, is_hold);
+        return IO.handlers.wrap(function(){
+           return IO.raw_handlers.onClick(event, is_hold);
+        });
     },
 
     onClickHold: function(event, is_hold) {
-        return IO.raw_handlers.onClickHold(event, is_hold);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onClickHold(event, is_hold);
+        });
     },
 
     onMousemove: function(event) {
-        return IO.raw_handlers.onMousemove(event);
+        return IO.handlers.wrap(function(){
+          return IO.raw_handlers.onMousemove(event);
+        });
     },
   },
   
