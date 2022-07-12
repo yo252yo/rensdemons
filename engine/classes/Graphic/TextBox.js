@@ -2,7 +2,7 @@
 // runtime PALETTE
 
 var _LETTER_BY_LETTER_DELAY = 20;
-var _MIN_PAGE_TIME_MS = 250;
+var _MIN_PAGE_TIME_MS = 400;
 
 // Initialize the module (measure char size)
 var test_div = document.createElement('div');
