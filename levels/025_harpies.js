@@ -74,7 +74,7 @@ new S_RockFloor(1300,2100,75,75);
 //hack C. EXIT
 // ===================
 
-var door = new S_ExitFloor(1850,1250,50,25);
+var door = new S_ExitFloor(1850,1275,50,50);
 door.interaction = function() {
   if(INVENTORY.count(ITEM.ShelterKey) > 0){
     TextBannerSequence.make([
