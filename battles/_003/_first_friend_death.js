@@ -8,6 +8,7 @@ PLAYER_ACTIONS.escape("Avert eyes");
 PLAYER_ACTIONS.escape("Enter denial");
 PLAYER_ACTIONS.escape("Go look for help");
 
+STATS.record.flag("SeenMichaelCorpse");
 
 var look = "Look";
 var approach = "Approach";

@@ -102,7 +102,7 @@ var whattodo = function(cause){
 var help = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Help you?",
   unlock: true,
-  description: [`$$Ren$: "Well as I'm sure you know, I'm trapped in a neverending cycle of suffering... I see my best friend die over and over again. There's nothing I can do. It's pretty awful."`],
+  description: [`$$Ren$: "Well as I'm sure you know, I'm trapped in a neverending cycle of suffering... I see thousands of Second-Borns sacrificed to the Goddess. I see my best friend die over and over again. There's nothing I can do. It's pretty awful."`],
   function: whattodo,
 });
 

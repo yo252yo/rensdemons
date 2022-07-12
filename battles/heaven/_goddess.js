@@ -101,7 +101,7 @@ var changeWorld =  PLAYER_ACTIONS.function.unlock_replacing_action({
   description: [
     `$$Ren$: "I want to break that cycle. I want to change the world."`,
     `Goddess: "I am not sure you can. The Self require the Other. You can't stop self-aware creatures from creating gods."`,
-    `$$Ren$: "I have to try! I can't just accept an infinite cycle of suffering! Billions of humans through history are suffering through your little manipulations."`,
+    `$$Ren$: "I have to try! I can't just accept an infinite cycle of suffering! Billions of humans through history are suffering through your little manipulations. How many Second-Borns killed in your name?"`,
     `Goddess: "How noble of you. And how futile. But anyway, you are just a child, you don't have the power to change the world."`,
     `$$Ren$: "Maybe not, but you do!"`,
   ],
@@ -234,14 +234,19 @@ var innovate =  PLAYER_ACTIONS.function.unlock_replacing_action({
   ],
 });
 
+var extra = "";
+if(STATS.flag("SeenMichaelCorpse")){
+  extra += DICTIONARY.get("child_friends_m1") + "... ";
+}
+
 var amusement =  PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Amusement",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
   description: [
     `$$Ren$: "Are we just... toys to Them?"`,
+    `$$Ren$: "All these deaths... The Second-Borns killed in trial... The fall of the kingdom... All this suffering...${extra} $$BestFriend$... It was all for laughs?"`,
     `Goddess: "So it would seem... My hypothesis is that They create new worlds for Their entertainment."`,
-    `$$Ren$: "All these deaths... The fall of the kingdom... All this suffering... $$BestFriend$... It was all for laughs?"`,
     `The Goddess's silence speaks louder than words.`,
   ],
 });
