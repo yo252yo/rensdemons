@@ -162,7 +162,11 @@ const IO = {
     },
 
     cede: function() {
-      IO.control._activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+      if (IO._PREVIOUS_SYSTEMS.length){
+        IO.control._activate(IO._PREVIOUS_SYSTEMS.pop(), true);
+      } else {
+        IO.control.character(); // this will be our default
+      }
     },
 
     dialog: function(dialog) {
