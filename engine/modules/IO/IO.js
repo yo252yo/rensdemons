@@ -237,11 +237,50 @@ const IO = {
   },
 
 
-
-
   // Global events handlers
   handlers: {
+    onKeyDown: function (event) {
+        return IO.raw_handlers.onKeyDown(event);
+    },
 
+    onKeyUp: function (event) {
+        return IO.raw_handlers.onKeyUp(event);
+    },
+
+    onScroll: function(event) {
+        return IO.raw_handlers.onScroll(event);
+    },
+
+    onWheel: function(event) {
+        return IO.raw_handlers.onWheel(event);
+    },
+
+    onPressKey: function(key) {
+        return IO.raw_handlers.onPressKey(key);
+    },
+
+    onReleaseKey: function(key) {
+        return IO.raw_handlers.onReleaseKey(key);
+    },
+
+    onContinuousKeyPress: function() {
+        return IO.raw_handlers.onContinuousKeyPress();
+    },
+
+    onClick: function(event, is_hold) {
+        return IO.raw_handlers.onClick(event, is_hold);
+    },
+
+    onClickHold: function(event, is_hold) {
+        return IO.raw_handlers.onClickHold(event, is_hold);
+    },
+
+    onMousemove: function(event) {
+        return IO.raw_handlers.onMousemove(event);
+    },
+  },
+  
+  raw_handlers: {
     onKeyDown: function (event) {
         var key = event.key || event.keyCode;
         IO.handlers.onPressKey(key.toLowerCase());
