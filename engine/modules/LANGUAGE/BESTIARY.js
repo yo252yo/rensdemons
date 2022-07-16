@@ -469,10 +469,10 @@ BESTIARY.dict["pandemonium"]["lieutenant"] = {
   "introed": "A Loquacious Lieutenant Laughed at your Logic.",
   "outro": "The only thing it ever cared about and wanted was recognition from his lord.",
   "attacks": {
-    "Unholy Warcry": "$$demon_lieutenant$ roars, and the ground trembles below your feet. A torrent of obsidian rocks rolls down from the nearest peak and head straight for you.",
-    "Blazing Musculature": "$$demon_lieutenant$ pumps up his ungodly muscles. Flames start surrounding his crackled skin. He charges at you with a torrent of powerful fist blows.",
-    "Volcanic Eruption": "$$demon_lieutenant$ raises both arms and screams. As an answer to his cry, cracks open in the ground under your feet, and molten lava starts to make its way up. You quickly have to find a place safe from this scorching flooding.",
-    "Ablaze Rain": "$$demon_lieutenant$ snaps his fingers. Hundreds of incandescent ball of fire appear in the air all around him. They dash through the air in your direction, leaving sparkly trails as they go.",
+    "Unholy Warcry": "The Lieutenant roars, and the ground trembles below your feet. A torrent of obsidian rocks rolls down from the nearest peak and head straight for you.",
+    "Blazing Musculature": "The Lieutenant pumps up his ungodly muscles. Flames start surrounding his crackled skin. He charges at you with a torrent of powerful fist blows.",
+    "Volcanic Eruption": "The Lieutenant raises both arms and screams. As an answer to his cry, cracks open in the ground under your feet, and molten lava starts to make its way up. You quickly have to find a place safe from this scorching flooding.",
+    "Ablaze Rain": "The Lieutenant snaps his fingers. Hundreds of incandescent ball of fire appear in the air all around him. They dash through the air in your direction, leaving sparkly trails as they go.",
   },
 };
 BESTIARY.dict["pandemonium"]["lord"] = {
@@ -480,11 +480,11 @@ BESTIARY.dict["pandemonium"]["lord"] = {
   "introed": "A Luciferian Lord Lamented at your Loftiness.",
   "outro": "It rejoiced as the sweet embrace of death liberated it from the too heavy weight of its duty.",
   "attacks": {
-    "Ardent Tornado": "$$demon_lord$ raises an arm in the air. Immediately, he gets surrounded by a pillar of flames that reaches the ceiling and follows along the dark stone to engulf the whole room. The temperature of the atmosphere raises sharply, and it becomes hard to breathe. The flames are everywhere.",
-    "Overwhelming Projection": "$$demon_lord$ projects his demonic spirit into your mind. You try to put on psychological defenses, but they are laughable faced with the brute force of the monster. He fills your brain with horrific visions of nightmares. Your biggest fears and traumas harass you relentlessly, and you fall on the ground, paralyzed.",
-    "Internal Combustion": "$$demon_lord$ attacks you with a wave of magical energy. It sips into your whole body and sets your nerves ablaze. Every inch of yourself feels like it has been lit on fire. The acute pain is so overwhelming that you almost faint.",
-    "Blazing Exhalation": "$$demon_lord$ breathes on the ball of fire that he holds in his hand. A wave of flames expands from it and surrounds him. He soon finds himself at the center of an incandescent tornado. You realize with horror that the devouring whirlwind is expanding, taking more and more of the room's volume. It won't be long before the whole space is a burning maelstrom.",
-    "Barren Aridity": "$$demon_lord$ snaps his finger. The air around you warms up fast. It becomes dry and sparks appear here and there. It seems to take up a crimson shade. Suddenly, you find yourself ablaze. A layer of flames surrounds every inch of your body and slowly devour your flesh.",
+    "Ardent Tornado": "The Demon Lord raises an arm in the air. Immediately, he gets surrounded by a pillar of flames that reaches the ceiling and follows along the dark stone to engulf the whole room. The temperature of the atmosphere raises sharply, and it becomes hard to breathe. The flames are everywhere.",
+    "Overwhelming Projection": "The Demon Lord projects his demonic spirit into your mind. You try to put on psychological defenses, but they are laughable faced with the brute force of the monster. He fills your brain with horrific visions of nightmares. Your biggest fears and traumas harass you relentlessly, and you fall on the ground, paralyzed.",
+    "Internal Combustion": "The Demon Lord attacks you with a wave of magical energy. It sips into your whole body and sets your nerves ablaze. Every inch of yourself feels like it has been lit on fire. The acute pain is so overwhelming that you almost faint.",
+    "Blazing Exhalation": "The Demon Lord breathes on the ball of fire that he holds in his hand. A wave of flames expands from it and surrounds him. He soon finds himself at the center of an incandescent tornado. You realize with horror that the devouring whirlwind is expanding, taking more and more of the room's volume. It won't be long before the whole space is a burning maelstrom.",
+    "Barren Aridity": "The Demon Lord snaps his finger. The air around you warms up fast. It becomes dry and sparks appear here and there. It seems to take up a crimson shade. Suddenly, you find yourself ablaze. A layer of flames surrounds every inch of your body and slowly devour your flesh.",
   },
 };
 BESTIARY.dict["pandemonium"]["abaddon"] = {
