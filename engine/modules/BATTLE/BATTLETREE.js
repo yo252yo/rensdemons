@@ -353,7 +353,11 @@ const BATTLETREE = {
         case BATTLETREE.WIN:
           var i = BATTLETREE.get.childrenCount(battle, name);
 
-          if (i > 1){
+          if ((
+                ITEM.isItem(name.trim()) ||
+                ABILITY.isLearnableAbility(name.trim()) ||
+                PARTYMEMBERS.isPartyMember(name.trim())
+              ) && i > 1){
             suffix = ` (${i} hits)` + suffix;
           }
           return "<b>" + display_name + `${suffix}</b>`;
