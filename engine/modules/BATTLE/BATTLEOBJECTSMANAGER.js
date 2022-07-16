@@ -65,7 +65,7 @@ const BATTLEOBJECTSMANAGER = {
         var candidate = commands[Math.floor(battle_object.seeds[i] * commands.length)];
         var duplicate = false;
         for(var r of result){
-          if (r.trim() == candidate.trim()){
+          if (candidate && r && r.trim() == candidate.trim()){
             duplicate = true; // mutual exclusivity
             break;
           }
