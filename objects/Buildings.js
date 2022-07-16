@@ -303,7 +303,7 @@ class S_Church extends S_LayeredBuilding {
     super("church", x, y, 166, 347, "...");
     this.add_layer("details");
 
-    if(inside_lvl != "004_trial_end" || STATS.is_post_game()){
+    if(STATS.is_post_game() || (!inside_lvl.startsWith("demo") && inside_lvl != "004_trial_end")){
       new M_Herald(x+80, y-175);
     }
 
