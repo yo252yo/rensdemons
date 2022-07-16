@@ -41,12 +41,21 @@ const SETTINGS = {
 
 
   options_menu: function() {
-
     var options = [
       {"text": "Change color scheme", "effect": function(){ PALETTE.factory.make_new(); }, "keep_open": true},
       TEXTMENU_EMPTYROW,
-      {"text": "Back", "effect": "##BACK"}
     ];
+
+    if(document.fullscreenEnabled){
+      if(document.fullscreen){
+        options.push({"text": "Leave fullscreen", "effect": function(){ document.exitFullscreen(); }});
+      } else {
+        options.push({"text": "Start fullscreen", "effect": function(){ document.documentElement.requestFullscreen(); }});
+      }
+      options.push(TEXTMENU_EMPTYROW);
+    }
+
+    options.push({"text": "Back", "effect": "##BACK"});
 
     if (THAUMATURGY.is_visible() && SCREEN.is_mobile()){
       options.push(TEXTMENU_EMPTYROW);
