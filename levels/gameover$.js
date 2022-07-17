@@ -75,6 +75,12 @@ var options = [];
 if (BATTLE.api.can_reload()) {
   options.push({"text": "Retry event", "effect": function(){ BATTLE.api.reload(); }});
 }
+if(CURRENTLEVEL.previous_lvl == "026_castle2"){
+  options.push({"text": "Retry event", "effect": function(){
+    SAVE.load(0);
+    setTimeout(function(){ MARTYRDOM.death();}, 1000);
+   }});
+}
 options.push({"text": "Load", "effect": function(){ SAVE.print.load_menu(); }});
 options.push({"text": "New game", "effect": function(){ INTERFACE.start_game(); }});
 
