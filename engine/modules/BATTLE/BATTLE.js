@@ -43,7 +43,7 @@ const BATTLE = {
       var options_losing = [];
       var options_flight = [];
 
-      for (var i in options){
+      for (var i in options) {
           var o = options[i];
           if(ABILITIES.is_special_flight_option(o.text)){
             options_flight.push(o);
@@ -64,28 +64,25 @@ const BATTLE = {
       RANDOM.shuffle(options_winning);
       RANDOM.shuffle(options_unknown);
 
-      // Only keep 3 losing unknown actions for standard battles
-      if(!BATTLE.current_battle.includes("_")){
-        var useless_options_unknown = 0;
-        var winning_options_unknown = 0;
-        for (var i = options_unknown.length - 1; i >=0; i--){
-          var b = BATTLE._player_actions[options_unknown[i].text];
-          if(!b){ // text has been modified by dictionary
-            b = BATTLE._player_actions[options_unknown[i].index];
-          }
-          if (b && b.outcome && b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
-            useless_options_unknown ++;
+      var useless_options_unknown = 0;
+      var winning_options_unknown = 0;
+      for (var i = options_unknown.length - 1; i >=0; i--){
+        var b = BATTLE._player_actions[options_unknown[i].text];
+        if(!b){ // text has been modified by dictionary
+          b = BATTLE._player_actions[options_unknown[i].index];
+        }
+        if (b && b.outcome && b.outcome == BATTLETREE.LOSS || b.outcome == BATTLETREE.NOTHING){
+          useless_options_unknown ++;
 //            if (useless_options_unknown > 3){
-  //            options_unknown.splice(i, 1);
-    //        }
-          } else {
-            // outcome null is most often win in several hits
-            winning_options_unknown ++;
-          }
+//            options_unknown.splice(i, 1);
+  //        }
+        } else {
+          // outcome null is most often win in several hits
+          winning_options_unknown ++;
         }
       }
 
-      // remove meta blurb if you can win
+      // remove meta blurb if present you can win
       if(winning_options_unknown + options_pursue.length + options_winning.length > 0 || !PARTY.has_member(PARTYMEMBERS.BestFriend)){
         options_flight = options_flight.filter(function(e){
             return e.index != ABILITY.Foresight;
@@ -99,9 +96,13 @@ const BATTLE = {
       } else {
         result = result.concat(options_winning).concat(options_started).concat(options_unknown);
       }
-      if (options.length <= 7 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
+
+      if(BATTLE.current_battle.includes("_")){
+        result = result.concat(options_losing);
+      } else if (options.length <= 7 && !BATTLE.current_battle.startsWith(BATTLEOBJECTSMANAGER.prefix)) {
         result = result.concat(options_losing);
       }
+
       return result.concat(options_flight);
     },
 
