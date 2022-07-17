@@ -114,7 +114,7 @@ var unlock_mirror = PLAYER_ACTIONS.function.unlock_replacing_action({
                   `"Therefore, the child, when facing a mirror, becomes for the first time aware that they are not just a floating point of view but a complete body. They become aware of the whole of their selves: a dual system of mind and body. This mirror stage is paramount to the development of a person."`,
                   `...`,
                   `"In conclusion, to see oneself whole and understand the full relationship between the self and its environment, it is necessary to turn inwards."`,
-                  `"ONE MUST FOLLOW THE PATH OF THE MIRROR."`,
+                  `"One must FOLLOW the PATH of the MIRROR."`,
                 ],
   extra_function: function(){
     BATTLETREE.api.develop("_060/_book", "Identity", BATTLETREE.WIN);
