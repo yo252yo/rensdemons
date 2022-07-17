@@ -48,9 +48,15 @@ const SETTINGS = {
 
     if(document.fullscreenEnabled){
       if(document.fullscreen){
-        options.push({"text": "Leave fullscreen", "effect": function(){ document.exitFullscreen(); }});
+        options.push({
+          "text": "Leave fullscreen",
+          "effect": function(){ document.exitFullscreen(); },
+          "keep_open": true});
       } else {
-        options.push({"text": "Start fullscreen", "effect": function(){ document.documentElement.requestFullscreen(); }});
+        options.push(
+          {"text": "Start fullscreen",
+          "effect": function(){ document.documentElement.requestFullscreen(); },
+          "keep_open": true});
       }
       options.push(TEXTMENU_EMPTYROW);
     }
