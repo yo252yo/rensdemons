@@ -44,7 +44,7 @@ class THOUGHTS {
 
 
 const GLITCH = {
-  BERKELEY_DISTANCE: 170,
+  BERKELEY_DISTANCE: 170 + (SCREEN.is_mobile() ? 0 : 40),
   GLITCH_CHARACTER: "^",
 
   init_level:function(){

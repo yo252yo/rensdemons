@@ -1,6 +1,6 @@
 
 const FOG = {
-  MIN_VIEWPORT: 350,
+  MIN_VIEWPORT: 350 + (SCREEN.is_mobile() ? 0 : 100),
   MAX_VIEWPORT: 1000,
   MASK_WIDTH: 2*SCREEN.width(),
   MASK_HEIGHT: 2*SCREEN.height(),
