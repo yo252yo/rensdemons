@@ -180,6 +180,10 @@ class ConsciousObject extends MovingObject {
 
       `I can't believe anyone<br />is buying this masquerade...`,
 
+      `I really wish I was<br />allowed to move.`,
+      `Dammit I have an itch<br />and can't even scratch!`,
+      `I bet they suspect<br />something by now...`,
+
 
       "What happens if the<br />child figures out we're<br />all in on it?",
       "I wonder if they've<br />already figured out that<br />it's all staged...",
