@@ -734,7 +734,7 @@ BESTIARY.dict["hell"]["sandworm"] = {
   "outro": "Only its husk remained as a refuge to shield travelers from unkind elements.",
   "attacks": {
     "Flesh Hyperawareness": "The Sandworm undulates hypnotically and makes you realize that you're only a flesh puppet subject to circumstances without any free will.",
-    "Alien Limbs": "The Sandworm mersmerizes motions makes you feel like you don't know yourself anymore. You feel alien in this body. Is it really you?",
+    "Alien Limbs": "The Sandworm's mersmerizing motions make you feel like you don't know yourself anymore. You feel alien in this body. Is it really you?",
     "Phenomenological Self": "The Sandworm mystic dance seems to have severed the link between your body and your soul. The flesh puppet acts by itself, and you're stuck within, powerless to control anything, not even managing to articulate a mouth into a scream.",
   },
 };

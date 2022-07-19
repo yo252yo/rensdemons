@@ -16,7 +16,7 @@ var town = new S_TownFloor(1050, 2550, 1500, 1500, "010_world_map");
 
 var g = new S_GameBoard(1125, 1425);
 g.default_text = g.text_interaction([
-  "All that remains of the castle is the King's game board. Its in surprisingly good condition contrasts with the shreds of the real buildings slowly rotting all around in the desertic reality.",
+  "All that remains of the castle is the King's game board. It's in surprisingly good condition contrasts with the shreds of the real buildings slowly rotting all around in the desertic reality.",
 ]);
 
 var obj = [];
