@@ -13,29 +13,10 @@ if(s.length > 1){
 var gen = new Generator(DICTIONARY.get("world_seed")*37 + floor + room);
 AUDIO.music.levels.pandemonium();
 
-var isGooRoom = false;
-if (gen.get() < 0.25){
-  isGooRoom = true;
-}
-
 // ===================
 //hack B. FLOORS
 // ===================
-if (isGooRoom){
-  new S_GooFloor(1175,1525,350,275);
-} else {
-  new S_CastleFloor(1175,1525,350,275);
-}
-
-// ===================
-//hack C. EXIT
-// ===================
-var exit;
-if(room < 2){
-  exit = new S_ExitFloor(1500,1400,50,50, '051_pandemonium@' + floor);
-} else {
-  exit =  new S_ExitFloor(1150,1400,50,50, '051_pandemonium@' + floor);
-}
+var keyfloor = new S_GooFloor(1175,1525,350,275);
 
 
 // ===================
@@ -49,6 +30,7 @@ if(room >= 2){
   x += 200;
 }
 
+var key = true;
 if(floor == 0 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey0);
 } else if(floor == 1 && room == 2) {
@@ -61,7 +43,23 @@ if(floor == 0 && room == 0) {
   new SE_groundItem(x, y, ITEM.MaouKey4);
 } else if(floor == 5 && room == 2) {
   new SE_groundItem(x, y, ITEM.MaouKey5);
+} else {
+  key = false;
+  keyfloor.destroy();
+  new S_CastleFloor(1175,1525,350,275);
 }
+
+
+// ===================
+//hack C. EXIT
+// ===================
+var exit;
+if(room < 2){
+  exit = new S_ExitFloor(1500,1400,50,50, '051_pandemonium@' + floor);
+} else {
+  exit = new S_ExitFloor(1150,1400,50,50, '051_pandemonium@' + floor);
+}
+
 
 // ===================
 //hack E. DECOR
@@ -69,7 +67,7 @@ if(floor == 0 && room == 0) {
 
 var decorFiller = new Filler(gen.get(), 50, 50);
 decorFiller.set_zone(1200,1525,300,275);
-if (isGooRoom){
+if (key){
   decorFiller.add_default_constructor("S_HellEgg",7);
   decorFiller.add_default_constructor("S_HellPlantLeaning");
   decorFiller.add_default_constructor("S_HellPlantSretching");
@@ -153,8 +151,10 @@ events.text(`You know that each step brings you closer to the final fight, and y
 events.add_conversations(0.2, true);
 
 events.set_tries(3, 7);
-events.fill_floor_by_retry();
 
+if(!key) {
+  events.fill_floor_by_retry();
+}
 
 // ===================
 //hack G. START/INIT
