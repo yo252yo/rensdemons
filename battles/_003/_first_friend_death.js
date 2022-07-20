@@ -62,7 +62,7 @@ var unlock_telltruth = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: telltruth,
   unlock: true,
   description: ["$$Ren$: \"It doesn't look good, buddy. I think this might be it...\"",
-                "You expected him to be angry, but instead you can see acceptation in his eyes.",
+                "You expected him to be angry, but instead you can see acceptance in his eyes.",
                 "$$child_friends_m1$: \"I... I see... I knew it... Thanks...\"",
                 "His voice is peaceful, but his face is distorted by pain.",
                 "$$child_friends_m1$: \"Can I... ask you a favor?\"",
