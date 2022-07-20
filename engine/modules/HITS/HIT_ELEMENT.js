@@ -1,4 +1,6 @@
 const HIT_ELEMENT = {
+  GRACE_PERIOD: 1,
+
   center: function(){
     return [SCREEN.width() / 2 - 75, SCREEN.height() / 2 - 125];
   },
@@ -74,6 +76,13 @@ const HIT_ELEMENT = {
 
   switch1: function(is_start){
     if(HIT_ELEMENT.lock){
+      if(HIT_ELEMENT.elem[0] != HIT_ELEMENT.elem[1]){
+        if(HIT_ELEMENT.tick[1] <= HIT_ELEMENT.GRACE_PERIOD){
+          HIT_ELEMENT.switch_sprite(0, true);
+        } else if (HIT_ELEMENT.period[1] - HIT_ELEMENT.tick[1] <= HIT_ELEMENT.GRACE_PERIOD){
+          HIT_ELEMENT.switch_sprite(1, true);
+        }
+      }
       return;
     }
     HIT_ELEMENT.switch_sprite(1, is_start);
@@ -82,6 +91,13 @@ const HIT_ELEMENT = {
 
   switch0: function(is_start){
     if(HIT_ELEMENT.lock){
+      if(HIT_ELEMENT.elem[0] != HIT_ELEMENT.elem[1]){
+        if(HIT_ELEMENT.tick[0] <= HIT_ELEMENT.GRACE_PERIOD){
+          HIT_ELEMENT.switch_sprite(1, true);
+        } else if (HIT_ELEMENT.period[0] - HIT_ELEMENT.tick[0] <= HIT_ELEMENT.GRACE_PERIOD){
+          HIT_ELEMENT.switch_sprite(0, true);
+        }
+      }
       return;
     }
     HIT_ELEMENT.switch_sprite(0, is_start);
@@ -93,7 +109,10 @@ const HIT_ELEMENT = {
       return;
     }
     HIT_ELEMENT.lock = true;
+    setTimeout(HIT_ELEMENT.end_click, HIT_ELEMENT.baseclock * 2);
+  },
 
+  end_click: function(){
     if(HIT_ELEMENT.elem[0] == HIT_ELEMENT.elem[1]) {
       AUDIO.effect.choice();
       HIT.text_banner.change_text("The elements resonate.", true);
