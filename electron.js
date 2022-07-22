@@ -95,21 +95,23 @@ const templateMenu = [
     label: 'HELP IN CASE OF PROBLEMS',
     submenu: [
       {
-        label: 'Force load main menu',
-        click: async () => {
-          win.loadURL(`file://${__dirname}/testing.html?lvl=titlescreen`);
-        }
-      },
-      {
         label: 'Teleport to world map (reinitialize)',
         click: async () => {
-          win.loadURL(`file://${__dirname}/testing.html?lvl=010_world_map`);
+          win.webContents
+            .executeJavaScript('CURRENTLEVEL.setup("010_world_map");', true);
         }
       },
       {
         label: 'Teleport to hell (reinitialize)',
         click: async () => {
-          win.loadURL(`file://${__dirname}/testing.html?lvl=050_hell_map`);
+          win.webContents
+            .executeJavaScript('CURRENTLEVEL.setup("050_hell_map");', true);
+        }
+      },
+      {
+        label: 'Force load main menu',
+        click: async () => {
+          win.loadURL(`file://${__dirname}/testing.html?lvl=titlescreen`);
         }
       }
     ]
