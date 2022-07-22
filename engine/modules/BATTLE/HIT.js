@@ -172,7 +172,10 @@ const HIT = {
       HIT.consecutive_losses = 0;
       CONSOLE.log.debug("[HIT] pity triggered");
       var f = HIT.callback.getf_success(index);
-      return f();
+      var g = function(){
+          TextBannerSequence.make(["Luck smiles upon you, your action succeeds without effort."], f);
+      }
+      return g();
     }
 
     HIT.current_module = module;
