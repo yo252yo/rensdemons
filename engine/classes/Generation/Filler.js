@@ -220,7 +220,11 @@ class Filler {
       var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
       if (this._canWalk(o, x, y) && this._isEmpty(o, x, y)) {
-        o.constructor(x, y, this.gen.get());
+        try{
+          o.constructor(x, y, this.gen.get());
+        } catch(e){
+          CONSOLE.error(e.msg);
+        }
         nb_placed ++;
       }
 
@@ -247,7 +251,11 @@ class Filler {
       var y = this.zone_y - this.gen.get() * (this.zone_h - o.obj_h);
 
       if (!this._blockWalk(o, x, y) && (allow_overlap || this._isEmpty(o, x, y))) {
-        o.constructor(x, y, this.gen.get());
+        try{
+          o.constructor(x, y, this.gen.get());
+        } catch(e){
+          CONSOLE.error(e.msg);
+        }
         nb_placed ++;
       }
 
@@ -268,14 +276,20 @@ class Filler {
       o = this.get_object(this.gen.get());
 
       // provisory position for hash of object
-      var obj = o.constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);
-      var x_offset = i * slot_size + r * (slot_size - obj.h_w);
 
-      obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + o.obj_h);
+      try{
+        var obj = o.constructor(this.zone_x + i * slot_size, this.zone_y - this.zone_h + o.obj_h);
+        var x_offset = i * slot_size + r * (slot_size - obj.h_w);
 
-      if (x_offset > this.zone_w - obj.h_w) {
-        obj.destroy(true);
+        obj.place_at(this.zone_x + x_offset, this.zone_y - this.zone_h + o.obj_h);
+
+        if (x_offset > this.zone_w - obj.h_w) {
+          obj.destroy(true);
+        }
+      } catch(e){
+        CONSOLE.error(e.msg);
       }
+
     }
   }
 }
