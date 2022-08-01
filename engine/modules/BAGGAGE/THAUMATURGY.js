@@ -124,22 +124,22 @@ const THAUMATURGY = {
     }
 
     new CenteredTextMenu(`<h3>Miracles</h3>
+    <i>Powers meddling with the fabric of reality can trigger unpredictable chaos.</i>
+    <br /><br />
     ${spaceCompression}
     <b>Time compression</b>: <input type="button" value="-" onClick="THAUMATURGY.compress_time(0.9);"><input type="range" id="compressTimeRange" min="10" max="500" value="` + (1/THAUMATURGY.time_compression * 100) + `" class="slider" id="myRange1" disabled="true"><input type="button" value="+" onClick="THAUMATURGY.compress_time(1.1);">
       `,
                   [
                     {"text": (THAUMATURGY.teleport? "Dea" : "A") + "llow blink through space", "effect": THAUMATURGY.toggle_teleport},
-                    {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting", "effect": THAUMATURGY.toggle_smiting},
-                    {"text": (THAUMATURGY.battleforesight? "Dea" : "A") + "cquire battle prescience", "effect": THAUMATURGY.toggle_battleforesight},
+                    {"text": (THAUMATURGY.smite? "Dea" : "A") + "ctivate smiting touch", "effect": THAUMATURGY.toggle_smiting},
                     TEXTMENU_EMPTYROW,
                     {"text": "Fast travel", "effect": THAUMATURGY.menu_fast_travel},
                     {"text": "Go to White Space", "effect": GENERATEDLEVELS.blank.setup},
                     {"text": "Summon objects", "effect": THAUMATURGY.menu_summon},
                     TEXTMENU_EMPTYROW,
-                    {"text": "Recolor reality", "effect": THAUMATURGY.change_colors},
-                    {"text": "Glitch fabric of space-time", "effect": THAUMATURGY.glitch},
+                    {"text": (THAUMATURGY.battleforesight? "Dea" : "A") + "cquire battle prescience", "effect": THAUMATURGY.toggle_battleforesight},
                     {"text": "Divinate event content", "effect": THAUMATURGY.display_events},
-                    {"text": "Use clairvoyance", "effect": THAUMATURGY.remove_fog},
+                    {"text": "Have clairvoyance", "effect": THAUMATURGY.remove_fog},
                     {"text": "Unlock astral farsight", "effect": THAUMATURGY.remove_camera_lock},
                     {"text": "Create absolute observer", "effect": THAUMATURGY.force_observer_effect},
                     {"text": "Reveal hidden experiences", "effect": THAUMATURGY.reveal_hidden_experience},
@@ -148,6 +148,9 @@ const THAUMATURGY = {
                     {"text": "Conjure all party members", "effect": THAUMATURGY.get_all_party_members},
                     {"text": "Learn all abilities", "effect": THAUMATURGY.get_all_abilities},
                     {"text": "Acquire all martyrdoms", "effect": THAUMATURGY.boost_martyrdom},
+                    TEXTMENU_EMPTYROW,
+                    {"text": "Recolor reality", "effect": THAUMATURGY.change_colors},
+                    {"text": "Glitch fabric of space-time", "effect": THAUMATURGY.glitch},
 
                     TEXTMENU_EMPTYROW,
                     {"text": "Back to game", "effect": "##CLOSEWITHFOLLOW"}
