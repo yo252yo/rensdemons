@@ -223,7 +223,7 @@ class Filler {
         try{
           o.constructor(x, y, this.gen.get());
         } catch(e){
-          CONSOLE.error(e.msg);
+          CONSOLE.error(e.message);
         }
         nb_placed ++;
       }
@@ -254,7 +254,7 @@ class Filler {
         try{
           o.constructor(x, y, this.gen.get());
         } catch(e){
-          CONSOLE.error(e.msg);
+          CONSOLE.error(e.message);
         }
         nb_placed ++;
       }
@@ -287,7 +287,7 @@ class Filler {
           obj.destroy(true);
         }
       } catch(e){
-        CONSOLE.error(e.msg);
+        CONSOLE.error(e.message);
       }
 
     }
