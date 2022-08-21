@@ -207,12 +207,16 @@ if(hawkpart == 2) {
     }
   }
 
-  new S_AntiFloor(1300,1325,70,145);
-  var walkable_antifoor = new S_AntiFloor(1300,1180,70,80);
+  new S_AntiFloor(1300,1245,70,65);
+  var walkable_antifoor = new S_AntiFloor(1300,1190,70,90);
 
   new M_DumbMuscles(1250, 1275);
 
   var placeholder = new S_AntiFloor(1175,1350,500,300, true);
+
+  var walkable_antifoor2 = new S_AntiFloor(1300,1325,70,90);
+  var returnBoulder = new M_Boulder(1400, 1325);
+  plugBoulder(returnBoulder, walkable_antifoor2, 1330, 1330);
 }
 if(hawkpart == 3) {
   var a = new SE_event(3775, 2450, [`...`]);
@@ -342,7 +346,7 @@ if(hawkpart == 5) {
   });
 }
 if(hawkpart == 6) {
-  new S_AntiFloor(1750,1695,70,120);
+  new S_AntiFloor(1750,1695,70,50);
   var placeholder = new S_AntiFloor(1525,2725,600,1225, true);
 
 
@@ -388,6 +392,12 @@ if(hawkpart == 6) {
   gem_antifloor.visual_element.adjust_depth(-2);
   var gem_boulder = new M_Boulder(2200, 2300);
   plugBoulder(gem_boulder, gem_antifloor, 2375, 2425);
+
+
+
+  var return_antifloor = new S_AntiFloor(1750,1650,70,70);
+  var returnBoulder = new M_Boulder(1850, 1625);
+  plugBoulder(returnBoulder, return_antifloor, 1775, 1650);
 
 }
 if(hawkpart == 7){
