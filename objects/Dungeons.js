@@ -322,7 +322,7 @@ class S_Pebbles extends SimpleObject {
   }
 }
 
-var rocks = [
+var rocks_lines = [
   "These are rocks, obviously.",
   "Yes, you are surrounded by rocks.",
   "You have to make your way slowly between massive rocks and peaks.",
@@ -337,7 +337,7 @@ class S_RocksHuge extends SimpleObject {
     super(x, y, 157,171, "mountain/rockshuge");
     this.adjust_hitbox(10,0,130,50);
 
-    this.default_text = this.text_interaction(rocks, seed);
+    this.default_text = this.text_interaction(rocks_lines, seed);
   }
 }
 
@@ -346,7 +346,7 @@ class S_Rocks1 extends SimpleObject {
     super(x, y, 79,54, "mountain/rocks1");
     this.adjust_hitbox(20,0,50,20);
 
-    this.default_text = this.text_interaction(rocks, seed);
+    this.default_text = this.text_interaction(rocks_lines, seed);
   }
 }
 
@@ -355,7 +355,7 @@ class S_Rocks2 extends SimpleObject {
     super(x, y, 57,69, "mountain/rocks2");
     this.adjust_hitbox(10,0,40,20);
 
-    this.default_text = this.text_interaction(rocks, seed);
+    this.default_text = this.text_interaction(rocks_lines, seed);
   }
 }
 
@@ -364,7 +364,7 @@ class S_Rocks3 extends SimpleObject {
     super(x, y, 50,50, "mountain/rocks3");
     this.adjust_hitbox(0,0,40,20);
 
-    this.default_text = this.text_interaction(rocks, seed);
+    this.default_text = this.text_interaction(rocks_lines, seed);
   }
 }
 
@@ -373,7 +373,7 @@ class S_Rocks4 extends SimpleObject {
     super(x, y, 30,59, "mountain/rocks4");
     this.adjust_hitbox(0,0,30,20);
 
-    this.default_text = this.text_interaction(rocks, seed);
+    this.default_text = this.text_interaction(rocks_lines, seed);
   }
 }
 
