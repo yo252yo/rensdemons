@@ -39,7 +39,7 @@ class TextBanner extends InteractingTextBox {
 
 class TextBannerSequence {
   static make(texts, callback){
-    if (texts.length == 0) {
+    if (!texts || texts.length == 0) {
       if (callback) return callback();
       else return;
     }
