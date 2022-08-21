@@ -64,6 +64,10 @@ const HIT = {
   callback: {
     getf_success: function(index) {
       var f = function() {
+        if (!index) {
+          setTimeout( BATTLE.operations.play_monster, 200);
+          return false;
+        }
         // For repeated actions, index can be a substring (i.e. the real action has a lot of trailing spaces).
         var action_object = HIT.battle.getActionObject(index);
         var action = BATTLE.player_actions._make_player_action(action_object);
@@ -87,6 +91,10 @@ const HIT = {
 
     getf_miss: function(index) {
       var f = function() {
+        if (!index) {
+          setTimeout( BATTLE.operations.play_monster, 200);
+          return false;
+        }
         BATTLE._last_action = index.trim();
         if (DICTIONARY.has(BATTLE._last_action)){
           BATTLE._last_action = DICTIONARY.get(BATTLE._last_action);
