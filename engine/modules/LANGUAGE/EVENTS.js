@@ -61,6 +61,17 @@ LANGUAGE_EVENTS = {
             `$$BestFriend$: "If you say so."`,
             `$$Ren$: "I'm sure of it. That's why we have each other, so that if one of us is in trouble, the other one can help!"`,
             `$$BestFriend$: "Yes, I'll always help you, $$Ren$."`,
+          ],
+          [
+            `$$BestFriend$: "Travelling is tough, but I feel like we're getting stronger with every battle we take."`,
+            `$$Ren$: "That's probably true."`,
+            `$$BestFriend$: "Shouldn't we... train a lot on easy targets, before going into more dangerous territory?"`,
+            `$$Ren$: "We can certainly do that, but I fear it might be pretty dull..."`,
+            `$$Ren$: "Maybe there should be a place where we can fight a lot of battles in safe conditions for training purposes..."`,
+            `$$Ren$: "Oh and when we've mastered the basic monsters, we could fight other human adventurers!"`,
+            `$$Ren$: "And maybe, we could have a big tournament, and the winner would get a great weapon or a very important mission! That sounds like a better way to decide who the Promised Child should be!"`,
+            `$$BestFriend$: "I see your point, but I think it's pretty stupid. Why would human fight amongst themselves when their lives are threatened every day? There's real danger everywhere, nobody has time for a tournament!"`,
+            `$$Ren$: "You're right, I don't know what I was thinking..."`,
           ]
         ];
 
