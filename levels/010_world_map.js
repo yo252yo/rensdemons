@@ -84,7 +84,7 @@ v.interaction = function() {
   } else if(after_town2_sends_you_to_town3()){
     CURRENTLEVEL.setup("041_hellsmaw");
   } else{
-    new TextBanner("The gates of hell are spewing a thick black fog on the land of the living. The Goddess strongly impresses in your mind that you are not prepared for what is to come. In Her infinite wisdom, She knows that this is not where are meant to be for now.");
+    new TextBanner("The gates of hell are spewing a thick black fog on the land of the living. The Goddess strongly impresses in your mind that you are not prepared for what is to come. In Her infinite wisdom, She knows that this is not where you are meant to be for now.");
   }
 }
 
