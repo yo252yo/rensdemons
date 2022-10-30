@@ -71,7 +71,7 @@ var tip_object = function() {
 
 PLAYER_ACTIONS.add({
   name: look_closer,
-  description: ["There is nothing mode that stands out about the statue. You've seen hundreds like this. You could try to investigate further, if you're really desperate for a hint."],
+  description: ["There is nothing more that stands out about the statue. You've seen hundreds like this. You could try to investigate further, if you're really desperate for a hint."],
   function: PLAYER_ACTIONS.function.unlock_replacing_action(tip_object()),
 });
 
