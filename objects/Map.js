@@ -18,7 +18,7 @@ class MapObject extends LevelObject {
 
   interaction() {
     if(this.accessibility_function && !this.accessibility_function()){
-      new TextBanner("As you approach your destination, the Goddess strongly impresses in your mind that you are not prepared for what is to come. In Her infinite wisdom, She knows that this is not where are meant to be for now.");
+      new TextBanner("As you approach your destination, the Goddess strongly impresses in your mind that you are not prepared for what is to come. In Her infinite wisdom, She knows that this is not where you are meant to be for now.");
     } else if(this.destination) {
       CURRENTLEVEL.setup(this.destination, this.destination_position);
     }
