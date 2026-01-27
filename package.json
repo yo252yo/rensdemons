@@ -4,21 +4,57 @@
   "description": "A RPG about a young child chosen by the gods.",
   "main": "electron.js",
   "author": "yo252yo <yo252yo@gmail.com>",
-  "homepage": "https://www.yo252yo.com/rd/qr_code.html",
+  "homepage": "https://www.yo252yo.com",
   "license": "MIT",
   "icon": "icon.png",
   "dependencies": {
-    "greenworks": "git+https://github.com/greenheartgames/greenworks.git"
+    "electron-squirrel-startup": "^1.0.0",
+    "greenworks": "git+https://github.com/greenheartgames/greenworks.git",
+    "node-gyp": "^9.0.0",
+    "npm": "^8.12.1"
   },
   "devDependencies": {
-    "electron": "^19.0.4",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^18.0.1",
+    "electron-rebuild": "^3.2.7",
     "electron-builder": "^23.0.3",
-    "electron-rebuild": "^3.2.7"
+    "electron-builder-squirrel-windows": "^23.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "rebuild-greenworks": "electron-rebuild",
-    "build": "electron-builder build -c.mac.identity=null "
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "rensdemons"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }

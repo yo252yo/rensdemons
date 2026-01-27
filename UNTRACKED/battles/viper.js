@@ -1,0 +1,66 @@
+// ===================
+// =================== INITIALIZATION
+// ===================
+new CenteredImage("assets/battles/viper.png", 'background');
+
+// ===================
+// =================== ABILITIES CALLBACKS
+// ===================
+
+PLAYER_ACTIONS.can_flee();
+
+PLAYER_ACTIONS.useless(ABILITY.Pray);
+PLAYER_ACTIONS.useless(ITEM.Stone);
+
+PLAYER_ACTIONS.win(ITEM.Elixir_fire, 1, true);
+
+// ===================
+// =================== DEFAULT MONSTER BEHAVIOR
+// ===================
+var throwbranch = "Throw branch";
+
+var attack = {
+  attack_amplitude: 0.01, // Between 0 and 1
+  warning_time_s: 0.5,
+  react_time_s: 0.1,
+  time_variation: 0.01, // 1 = 100%
+};
+BATTLE.monster_actions.add_textual("The Viper slithers on the ground towards you.", attack);
+BATTLE.monster_actions.add_textual("The Viper open its jaw, it shines with drool. Or is that poison?", attack);
+BATTLE.monster_actions.add_textual("The Viper's pointy tongue emits a strident hiss.", attack);
+
+var putSnakeOnStick = PLAYER_ACTIONS.function.unlock_replacing_action({
+  name: throwbranch,
+  outcome: BATTLETREE.WIN,
+  description: ["You throw the branch with its temporary occupant.",
+                "They disappear together in the darkness, far from you."],
+  consume_item: ITEM.Stick,
+});
+
+PLAYER_ACTIONS.add({
+  name: ITEM.Stick,
+  description: "You point the branch towards the vicious enemy with your trembling hand. The viper gets distracted and seems more interested by the branch than you. It wraps yourself around it.",
+  function: putSnakeOnStick,
+});
+
+var lootfang_text = "In its fresh remains, you manage to extract one of its fangs. It could be useful later.";
+PLAYER_ACTIONS.add({
+  name: ITEM.Bone,
+  outcome: BATTLETREE.WIN,
+  description: [LANGUAGE.actions.usage(ITEM.Bone), lootfang_text],
+  consume_item: ITEM.Bone,
+  give_item: ITEM.Fang,
+});
+
+PLAYER_ACTIONS.add({
+  name: ITEM.Sword_wooden,
+  outcome: BATTLETREE.WIN,
+  description: [LANGUAGE.actions.usage(ITEM.Sword_wooden), lootfang_text],
+  give_item: ITEM.Fang,
+});
+
+
+// ===================
+// =================== START
+// ===================
+BATTLE.operations.start("A Vicious Viper Ventured into View.");

@@ -1,14 +1,13 @@
 // ===================
 // =================== INITIALIZATION
 // ===================
-new CenteredMovingBattleImage("assets/characters/child_m.png", 'background',32,48, 2);
+new CenteredImage("assets/battles/child_m.png", 'background');
 
-PLAYER_ACTIONS.escape();
+PLAYER_ACTIONS.escape("Run away");
 PLAYER_ACTIONS.escape("Avert eyes");
 PLAYER_ACTIONS.escape("Enter denial");
 PLAYER_ACTIONS.escape("Go look for help");
 
-STATS.record.flag("SeenMichaelCorpse");
 
 var look = "Look";
 var approach = "Approach";
@@ -34,9 +33,9 @@ var unlock_goodbye = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: "Say goodbye",
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["$$Ren$: \"Not without sending you off.\"",
+  description: ["Ren: \"Not without sending you off.\"",
                 "Warm tears start running down your face. It seems so long ago that you both were joking together about the trial. A distant memory in a different world. You knew that not everyone made it through the Trial. But in a much more real way, you had no idea... You curse the world that lead you to this.",
-                "$$Ren$: \"Goodbye, $$child_friends_m1$. You did not deserve this. I will always remember you...\""],
+                "Ren: \"Goodbye, $$child_friends_m1$. You did not deserve this. I will always remember you...\""],
 });
 
 var unlock_refuse = PLAYER_ACTIONS.function.unlock_replacing_action({
@@ -49,7 +48,7 @@ var unlock_refuse = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: accept,
   unlock: true,
-  description: ["$$Ren$: \"Anything you want.\"",
+  description: ["Ren: \"Anything you want.\"",
                 "$$child_friends_m1$: \"Please... It hurts... so much... I want it to stop... I don't want to go slow and painfully... Please, make it stop...\""],
   function: function() {
     unlock_euthanasia(accept);
@@ -61,8 +60,8 @@ var unlock_accept = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_telltruth = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: telltruth,
   unlock: true,
-  description: ["$$Ren$: \"It doesn't look good, buddy. I think this might be it...\"",
-                "You expected him to be angry, but instead you can see acceptance in his eyes.",
+  description: ["Ren: \"It doesn't look good, buddy. I think this might be it...\"",
+                "You expected him to be angry, but instead you can see acceptation in his eyes.",
                 "$$child_friends_m1$: \"I... I see... I knew it... Thanks...\"",
                 "His voice is peaceful, but his face is distorted by pain.",
                 "$$child_friends_m1$: \"Can I... ask you a favor?\"",
@@ -77,7 +76,7 @@ var unlock_telltruth = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: lie,
   unlock: true,
-  description: ["$$Ren$: \"Don't worry. It's gonna be okay. I'll find a way to help you.\"",
+  description: ["Ren: \"Don't worry. It's gonna be okay. I'll find a way to help you.\"",
                 "But you can see in his eyes that he doesn't believe you.",
                 "$$child_friends_m1$: \"It hurts... So much... Please, do something... \""
                 ],
@@ -90,7 +89,7 @@ var unlock_lie = PLAYER_ACTIONS.function.unlock_replacing_action({
 var unlock_listen = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: listen,
   unlock: true,
-  description: ["$$Ren$: \"I'm here! $$child_friends_m1$! Are you okay?\"",
+  description: ["Ren: \"I'm here! $$child_friends_m1$! Are you okay?\"",
                 "$$child_friends_m1$: \"Of course not! Everything hurts... I... can't see... tell me... how is it?\""],
   function: function() {
     unlock_lie(listen);
@@ -102,7 +101,7 @@ var unlock_pray = PLAYER_ACTIONS.function.unlock_replacing_action({
   name: pray,
   unlock: true,
   outcome: BATTLETREE.NOTHING,
-  description: ["If the people can do such horrible things, surely the Goddess, in her Almighty glory, is better than that.",
+  description: ["If the people can do such horrible things, surely the Goddess, in her Allmighty glory, is better than that.",
                 "You close your eyes and repeat prayers, hoping for a miracle.",
                 "But nothing happens. Long minutes pass without anything but the groans of pain of the dying child."],
 });
@@ -148,7 +147,7 @@ var unlock_approach = PLAYER_ACTIONS.function.unlock_replacing_action({
   unlock: true,
   description: ["You get closer to $$child_friends_m1$.",
                 "You can hear his irregular heavy breathing. You can barely make out a hoarse whisper.",
-                "$$child_friends_m1$: \"$$Ren$... $$Ren$? Is that you?\""],
+                "$$child_friends_m1$: \"Ren... Ren? Is that you?\""],
   function: function() {
     unlock_listen(approach);
     unlock_examine(approach);

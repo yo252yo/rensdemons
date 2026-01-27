@@ -1,59 +1,33 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
 <script src="import_manager.js"></script>
 <script>
 
 window.onload = function() {
   DISK.initialize_game();
-  var lvl = (new URL(window.location.href)).searchParams.getAll("lvl");
-  var save = (new URL(window.location.href)).searchParams.getAll("s");
-  var battle = (new URL(window.location.href)).searchParams.getAll("battle");
-  if(lvl.length > 0 && lvl[0]){
-    CURRENTLEVEL.setup(lvl[0]);
-  } else if(battle.length > 0 && battle[0]) {
-    BATTLE.api.make(battle[0]);
-  } else if(save.length > 0 && save[0].length > 0) {
-    SAVE.load(save[0]);
+  var lvl = (new URL(window.location.href)).searchParams.get("lvl");
+  var save = (new URL(window.location.href)).searchParams.get("s");
+  if(lvl){
+    CURRENTLEVEL.setup(lvl);
+  } else if(save) {
+    SAVE.load(save);
   } else {
-    IO.key_interceptor.deactivate();
-
-    var my_form = HTML.div.make({top:100, left:100});
-    my_form.innerHTML=`
-      <h3>Indicate the entity to view:</h3>
-      <form action="testing.html" method="get">
-      <input type="text" name="lvl" placeholder="level_name"><input type="submit">
-      </form><br />
-      <form action="testing.html" method="get">
-      <input type="text" name="battle" placeholder="battle_name"><input type="submit">
-      </form><br />
-      <form action="testing.html" method="get">
-      <input type="text" name="s" placeholder="save_number"><input type="submit">
-      </form><br />
-    `;
-    document.getElementById("page").appendChild(my_form);
+    SAVE.load(1);
   }
+  //BATTLE.api.make("viper", undefined);
 }
 
 </script>
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body style="margin:0px;padding:0px;width:10000px;height:10000px;">
 <div id="page" style="width:100%;height:100%;">
-  <div id="IFE_escape_menu_button" style="margin:5px;font-size: 30px; font-family:monospace; border: 5px outset black; position:fixed;width:50px;height:50px;z-index:10001;top:0px;left:0px;">...</div>
+  <div id="IFE_escape_menu_button" style="margin:5px;font-size: 14px; font-family:monospace; border: 5px outset black; position:fixed;width:25px;height:25px;z-index:10001;top:0px;left:0px;" onClick="IO.interface._try_special_key_actions('escape');">...</div>
   <canvas width="25px" height="25px" style="visibility:hidden;position:absolute;width:25px;height:25px;z-index:10001;" id="IME_click_confirmation_cross" draggable="false"></canvas>
 
   <!--- IT seems that we delete/refresh everything under level so it has to be the last -->
-  <div id="level"></div>
-  <div id="glitch"></div>
-  <textarea id="glitchcode"></textarea>
-  <div id="resourceLoader" style="visibility:hidden"></div>
+  <div id="level" style="width:100%;height:100%;"><div>
 </div>
 
 </body>

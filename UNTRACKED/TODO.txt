@@ -1,0 +1,16 @@
+maybe have the element turn around when talked to
+
+?animation at the end of clue is weird (blink screen)
+
+add variety to LANGUAGE
+
+the ability tree doesnt overflow scroll :/
+
+?i think the transition between levels is fucked up probably because of concurrency
+
+better battler for statue, corpse
+
+Trop denemis
+Move corpse ?
+
+martyrdom gauge
